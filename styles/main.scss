@@ -1,7 +1,6 @@
 @import 'bootstrap/bootstrap';
 
-$type: 'sans-serif';
-
-body {
-  font-family: $type;
-}
+// Import components' own Sass files
+@import 'settings/mixins';
+@import 'settings/colors';
+@import 'components/buttons';

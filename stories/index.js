@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import Button from '../lib/Button';
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <button className="btn btn-primary" onClick={action('clicked')}>Hello Button</button>
+  .add('Primary', () => (
+    <Button type="primary" value="Primary button" onClickHandler={action('clicked')}></Button>
   ))
-  .add('with some emoji', () => (
-    <button onClick={action('clicked')}>😀 😎 👍 💯</button>
+  .add('Secondary', () => (
+    <Button type="secondary" value="Secondary button" onClickHandler={action('clicked')}></Button>
   ));

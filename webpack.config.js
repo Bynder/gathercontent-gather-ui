@@ -11,6 +11,7 @@ module.exports = {
         path: path.join(__dirname, 'public'),
         filename: '[name].js'
     },
+    plugins: {},
     module: {
         loaders: [{
             test: /\.js$/,
