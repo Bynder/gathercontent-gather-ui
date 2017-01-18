@@ -1,6 +1,9 @@
-@import 'bootstrap/bootstrap';
-
-// Import components' own Sass files
+// Settings
 @import 'settings/mixins';
 @import 'settings/colors';
-@import 'components/buttons';
+
+// Components
+@import '../lib/Button/styles.scss';
+
+//to do: from the app, we'd import the compiled CSS like so:
+//const css = require('!style!css!gather-ui/dist/styles.css');
