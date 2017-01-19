@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css",
+    "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
+    "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer",
     "build": "node_modules/.bin/babel lib --out-dir dist && npm run styles",
     "postinstall": "echo Building GatherUI assets... && npm build",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -36,6 +37,7 @@
     "jsdom-global": "^2.1.1",
     "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
+    "postcss-cli-simple": "^1.0.3",
     "postcss-load-config": "^1.1.0",
     "postcss-loader": "^1.2.2",
     "react-addons-test-utils": "^15.4.2",
