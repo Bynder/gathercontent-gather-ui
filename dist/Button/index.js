@@ -80,7 +80,10 @@ var Button = function (_Component) {
 
       return _react2.default.createElement(
         'button',
-        { disabled: disable || this.state.disabled, onClick: this.handleOnClick, className: classes },
+        {
+          disabled: disable || this.state.disabled,
+          onClick: this.handleOnClick,
+          className: classes },
         value
       );
     }

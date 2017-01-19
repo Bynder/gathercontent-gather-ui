@@ -4,7 +4,8 @@
   border-radius: 3px;
   box-shadow: none;
   display: inline-block;
-  font-family: 'Whitney SSm A', 'Whitney SSm B', sans-serif;
+  font-family: $fontStack;
+  display: flex;
   font-size: 14px;
   font-weight: 400;
   padding: 11px 18px !important;
@@ -12,13 +13,16 @@
   text-shadow: none;
   transition: all .2s ease;
   white-space: nowrap;
+  cursor: pointer;
 
   & + & {
   	margin-left: 10px;
   }
+
   & + .dropdown {
     margin-left: 10px;
   }
+
   &--primary {
     background: $color-btn-primary--bg;
     color: $color-btn-primary--text;
@@ -29,6 +33,7 @@
       text-decoration: none;
     }
   }
+
   &--secondary {
     background: $color-btn-secondary--bg;
     color: $color-btn-primary--text;
@@ -54,6 +59,7 @@
       color: $color-btn-secondary--hover;
     }
   }
+
   &--warning {
     background: $color-btn-warning--bg;
     color: $color-btn-warning--text;
@@ -63,6 +69,7 @@
       background: $color-btn-warning--hover;
     }
   }
+
   &--larger {
     padding: 14px 19px;
   }
@@ -77,6 +84,7 @@
       text-decoration: none;
     }
   }
+
   &-default--dark {
     background: $color-btn-default-dark--bg;
     color: $color-btn-default-dark--text;
@@ -87,6 +95,7 @@
       text-decoration: none;
     }
   }
+
   &--clear {
     background: none;
     border: 0;
@@ -95,6 +104,7 @@
       background: none;
     }
   }
+
   &--collapsed {
     padding: 0 !important;
 
@@ -102,6 +112,7 @@
       margin-left: 20px;
     }
   }
+
   &--has-tooltip {
     position: relative;
 
@@ -114,35 +125,4 @@
       }
     }
   }
-}
-
-.btn__tooltip {
-  background: rgba(0,0,0,1);
-  border-radius: 4px;
-  left: 50%;
-  opacity: 0;
-  padding: 1em .75em;
-  position: absolute;
-  top: 120%;
-  transition: .2s ease-in-out 0s;
-  visibility: hidden;
-  width: 15em;
-  margin-left: -7.5em;
-  @include arrowPointer(black);
-}
-
-
-.flat-button:hover {
-  .btn__tooltip {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.btn__helper {
-  border-bottom: 1px dotted;
-  float: right;
-  font-size: .8em;
-  margin-left: 5px;
-  margin-top: 1px;
 }
