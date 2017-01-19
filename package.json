@@ -6,7 +6,7 @@
   "scripts": {
     "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
     "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer",
-    "build": "node_modules/.bin/babel lib --out-dir dist && npm run styles",
+    "build": "node_modules/.bin/babel lib/ --out-dir dist/ && npm run styles",
     "postinstall": "echo Building GatherUI assets... && npm build",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
@@ -32,7 +32,6 @@
     "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.5.0",
     "enzyme": "^2.7.0",
-    "extract-text-webpack-plugin": "^1.0.1",
     "jsdom": "^9.9.1",
     "jsdom-global": "^2.1.1",
     "mocha": "^3.2.0",
