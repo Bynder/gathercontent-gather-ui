@@ -5,9 +5,14 @@ module.exports = {
     loaders: [
       {
         test: /.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style', 'css', 'postcss-loader', 'sass'],
         include: path.resolve(__dirname, '../')
       }
     ]
+  },
+  postcss: () => {
+    return [
+      require('autoprefixer')
+    ];
   }
 };
