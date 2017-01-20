@@ -1,7 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-import Button from '../lib/Button/';
 
+import Button from '../lib/Button/';
+import CheckToggle from '../lib/CheckToggle';
+import NotificationAlert from '../lib/NotificationAlert';
+
+// Button
 storiesOf('Button', module)
   .add('Primary', () => (
     <Button type="primary" value="Primary button" clickHandler={action('clicked')}></Button>
@@ -23,3 +27,24 @@ storiesOf('Button', module)
       </div>
     );
   });
+
+// Radio buttons
+storiesOf('Radio Button', module)
+  .add('Custom toggle', () => (
+    <CheckToggle />
+  ))
+  .add('Custom toggle with labels', () => (
+    <CheckToggle labelLeft="Label left" labelRight="Label right" />
+));
+
+// Alerts
+storiesOf('Notification Alert', module)
+  .add('Warning', () => (
+    <NotificationAlert level="warning" text="Warning, I am too sexy for this notification." />
+  ))
+  .add('Danger', () => (
+    <NotificationAlert level="danger" text="You're about to delete your whole life." />
+  ))
+  .add('Info', () => (
+    <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
+))
