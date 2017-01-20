@@ -1,0 +1,35 @@
+.alert {
+	font-size: 13px;
+	line-height: 1.75em;
+	padding: 10px 15px;
+	border: 1px solid transparent;
+	font-weight: inherit;
+
+	&--danger {
+		background-color: $color-alert--danger;
+		color: $color-alert--danger-text;
+		border-color: $color-alert--danger-border;
+	}
+
+	&--warning {
+		background-color: $color-alert--warning;
+		color: $color-alert--warning-text;
+		border-color: $color-alert--warning-border;
+	}
+
+	&--info {
+		background-color: $color-alert--info;
+		color: $color-alert--info-text;
+		border-color: $color-alert--info-border;
+	}
+
+	&--success {
+		background-color: $color-alert--success;
+		color: $color-alert--success-text;
+		border-color: $color-alert--success-border;
+	}
+
+	&.has-click-handler {
+		cursor: pointer;
+	}
+}
