@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
-
+import * as assets from '../assets/data';
 import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
 import NotificationAlert from '../lib/NotificationAlert';
+import DropdownMenu from '../lib/DropdownMenu';
+import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 
 // Button
 storiesOf('Button', module)
@@ -48,3 +50,18 @@ storiesOf('Notification Alert', module)
   .add('Info', () => (
     <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
 ))
+
+// Dropdowns
+storiesOf('Dropdowns', module)
+  .add('Dropdown Menu', () => (
+    <DropdownMenu value="Actions" caret shouldDisplay items={assets.getDropdownItems()} />
+  ));
+
+// Icons
+storiesOf('Icons', module)
+  .add('FontAwesome', () => (
+    <div>
+      <FontAwesomeIcon name="fa-cog" style={{ marginRight: '10px' }} />
+      <FontAwesomeIcon name="fa-file" style={{ color: 'red' }} />
+    </div>
+  ));
