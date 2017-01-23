@@ -64,4 +64,8 @@ storiesOf('Icons', module)
       <FontAwesomeIcon name="fa-cog" style={{ marginRight: '10px' }} />
       <FontAwesomeIcon name="fa-file" style={{ color: 'red' }} />
     </div>
+  )).add('FontAwesome with text', () => (
+    <FontAwesomeIcon name="fa-cog">
+      <span style={{ marginRight: '10px' }}>Settings</span>
+    </FontAwesomeIcon>
   ));
