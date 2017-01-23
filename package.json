@@ -20,7 +20,9 @@
     "classnames": "^2.2.5",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-svg-inline": "^1.2.0",
+    "svg-url-loader": "^1.1.1"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
@@ -39,6 +41,7 @@
     "postcss-cli-simple": "^1.0.3",
     "postcss-load-config": "^1.1.0",
     "postcss-loader": "^1.2.2",
+    "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.4.2",
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.7",
