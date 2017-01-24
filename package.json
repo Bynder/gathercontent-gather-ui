@@ -1,7 +1,7 @@
 {
   "name": "gather-ui",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "GatherContent UI Library",
   "main": "dist/index.js",
   "scripts": {
     "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
