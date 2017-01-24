@@ -11,7 +11,8 @@
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "mocha tests --compilers js:babel-register || exit 0",
-    "test:watch": "mocha tests --watch --compilers js:babel-register"
+    "test:watch": "mocha tests --watch --compilers js:babel-register",
+    "tdd": "npm run test:watch"
   },
   "keywords": [],
   "author": "",
