@@ -4,9 +4,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.scss$/,
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.s?css$/,
         loaders: ['style', 'css', 'postcss-loader', 'sass'],
-        include: path.resolve(__dirname, '../')
+        include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
       },
       {
         test: /.less$/,
