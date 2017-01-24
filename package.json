@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "font-awesome": "git+ssh://git@github.com/FortAwesome/Font-Awesome.git",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
@@ -45,6 +46,7 @@
     "sass-loader": "^4.1.1",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7"
   }
 }
