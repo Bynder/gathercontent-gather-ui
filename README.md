@@ -12,6 +12,7 @@ UI component library for all GatherContent components.
 ## Running the test suite
 
 Tests live under the `tests` folder and should be ran using `npm run test`.
+To develop the components, a TDD runner is available by running `npm run tdd`
 
 ## Building for production
 
@@ -31,5 +32,8 @@ import { Button } from 'gather-ui';
 
 // Require once all the CSS directly from the node_modules folder
 require('gather-ui/dist/styles.css');
-
 ```
+
+## External dependencies
+
+This particular version of the Styleguide depends on the Bootstrap and FontAwesome libraries. These do not ship with the components' CSS and should be included separately wherever they are consumed.
