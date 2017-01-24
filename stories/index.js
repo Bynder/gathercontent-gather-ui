@@ -8,6 +8,7 @@ import DropdownMenu from '../lib/DropdownMenu';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
 import Progress from '../lib/Progress';
+import Table from '../lib/Table';
 
 // Button
 storiesOf('Button', module)
@@ -95,3 +96,20 @@ storiesOf('Progress', module)
       />
     </Progress.Bar>
 );
+
+storiesOf('Table', module)
+  .add('Column', () =>
+    <Table.Column className="table-column--test">
+      <p>Table column text</p>
+    </Table.Column>
+  )
+  .add('Heading', () =>
+    <Table.Heading
+      sortHandler={ action('sortHandler') }
+      columns={['Name', 'Archived by', 'On']}
+      toggleHandler={ action('toggleHandler') }
+      activeSortingProp="Name"
+      sortingOrder={1}
+      columnNameSanitiser={ action('columnNameSanitiser') }
+    />
+  );
