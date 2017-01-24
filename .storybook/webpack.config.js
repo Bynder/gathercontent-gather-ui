@@ -10,8 +10,14 @@ module.exports = {
       {
         test: /\.s?css$/,
         loaders: ['style', 'css', 'postcss-loader', 'sass'],
-        include: [path.resolve(__dirname, '../styles'), path.resolve(__dirname, '../node_modules/')]
-      }, {
+        include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
+      },
+      {
+        test: /.less$/,
+        loaders: ['style-loader', 'css-loader', 'less-loader'],
+        include: path.resolve(__dirname, '../')
+      },
+      {
         test: /\.svg$/,
         loader: 'raw-loader'
       }

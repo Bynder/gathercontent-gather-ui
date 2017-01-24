@@ -6,6 +6,8 @@ import CheckToggle from '../lib/CheckToggle';
 import NotificationAlert from '../lib/NotificationAlert';
 import DropdownMenu from '../lib/DropdownMenu';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon';
+import ProgressButton from '../lib/ProgressButton';
+import Progress from '../lib/Progress';
 
 // Button
 storiesOf('Button', module)
@@ -30,6 +32,11 @@ storiesOf('Button', module)
     );
   });
 
+storiesOf('Progressive Button', module)
+  .add('Loading', () => (
+    <ProgressButton clickHandler={action('clicked submit')} value="Submit"/>
+  ))
+
 // Radio buttons
 storiesOf('Radio Button', module)
   .add('Custom toggle', () => (
@@ -49,7 +56,7 @@ storiesOf('Notification Alert', module)
   ))
   .add('Info', () => (
     <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
-))
+));
 
 // Dropdowns
 storiesOf('Dropdowns', module)
@@ -68,4 +75,23 @@ storiesOf('Icons', module)
     <FontAwesomeIcon name="fa-cog">
       <span style={{ marginRight: '10px' }}>Settings</span>
     </FontAwesomeIcon>
-  ));
+));
+
+storiesOf('Progress', module)
+  .add('Bar and Unit', () =>
+    <Progress.Bar>
+      <Progress.Unit
+        className='progress-unit--test'
+        percent={50}
+        color="red"
+        name='Unit 1'
+        filterLink="#test"
+      />
+      <Progress.Unit
+        className='progress-unit--test'
+        percent={50}
+        name='Unit 2'
+        filterLink="#test"
+      />
+    </Progress.Bar>
+);

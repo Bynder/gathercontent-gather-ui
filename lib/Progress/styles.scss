@@ -1,0 +1,15 @@
+.c-progress-bar {
+	background-color: rgb(241, 241, 241);
+	border-radius: 16px;
+	height: 12px;
+	margin-top: 13px;
+	overflow: hidden;
+	transform: rotateY(180deg);
+	width: 100%;
+}
+
+.c-progress-unit {
+	display: inline-block;
+	height: 18px;
+	transition: all 2000ms ease-in-out .5s;
+}
