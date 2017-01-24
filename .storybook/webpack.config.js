@@ -7,6 +7,10 @@ module.exports = {
         test: /.scss$/,
         loaders: ['style', 'css', 'postcss-loader', 'sass'],
         include: path.resolve(__dirname, '../')
+      },
+      {
+        test: /\.svg$/,
+        loader: 'raw-loader'
       }
     ]
   },

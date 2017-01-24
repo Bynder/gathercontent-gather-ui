@@ -4,6 +4,7 @@ import { storiesOf, action } from '@kadira/storybook';
 import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
 import NotificationAlert from '../lib/NotificationAlert';
+import ProgressButton from '../lib/ProgressButton';
 
 // Button
 storiesOf('Button', module)
@@ -27,6 +28,11 @@ storiesOf('Button', module)
       </div>
     );
   });
+
+storiesOf('Progressive Button', module)
+  .add('Loading', () => (
+    <ProgressButton clickHandler={action('clicked submit')} value="Submit"/>
+  ))
 
 // Radio buttons
 storiesOf('Radio Button', module)
