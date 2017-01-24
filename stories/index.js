@@ -5,6 +5,7 @@ import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
 import NotificationAlert from '../lib/NotificationAlert';
 import ProgressButton from '../lib/ProgressButton';
+import Progress from '../lib/Progress';
 
 // Button
 storiesOf('Button', module)
@@ -53,4 +54,23 @@ storiesOf('Notification Alert', module)
   ))
   .add('Info', () => (
     <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
-))
+));
+
+storiesOf('Progress', module)
+  .add('Bar and Unit', () =>
+    <Progress.Bar>
+      <Progress.Unit
+        className='progress-unit--test'
+        percent={50}
+        color="red"
+        name='Unit 1'
+        filterLink="#test"
+      />
+      <Progress.Unit
+        className='progress-unit--test'
+        percent={50}
+        name='Unit 2'
+        filterLink="#test"
+      />
+    </Progress.Bar>
+  );
