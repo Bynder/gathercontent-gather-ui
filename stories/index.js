@@ -61,9 +61,15 @@ storiesOf('Progress', module)
     <Progress.Bar>
       <Progress.Unit
         className='progress-unit--test'
-        percent={100}
+        percent={50}
         color="red"
         name='Unit 1'
+        filterLink="#test"
+      />
+      <Progress.Unit
+        className='progress-unit--test'
+        percent={50}
+        name='Unit 2'
         filterLink="#test"
       />
     </Progress.Bar>
