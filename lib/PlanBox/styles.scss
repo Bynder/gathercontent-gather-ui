@@ -1,0 +1,251 @@
+$plan-box-color: #4B5761;
+$plan-box-color-light: #7c8898;
+$plan-box-border-radius: 4px;
+
+$plan-box-highlight-grey: #e4e8ee;
+$plan-box-highlight-grey-hover: #4B5761;
+$plan-box-highlight-green: #5FCF80;
+$plan-box-highlight-blue: #3D8AEB;
+$plan-box-highlight-purple: #965DE8;
+
+$plan-box-title-font-size: 24px;
+$plan-box-title-line-height: 1.4em;
+$plan-box-title-font-weight: 300;
+$plan-box-title-margin: 0 0 .5em;
+
+$plan-box-description-margin: 0 0 1.5em;
+$plan-box-description-line-height: 1.5em;
+
+.plan-box {
+    box-shadow: 0 -1px 7px 0 rgba(228, 232, 238, 0.61);
+    color: $plan-box-color;
+    display: table;
+    position: relative;
+    text-align: center;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-size: $plan-box-title-font-size;
+        line-height: $plan-box-title-line-height;
+        margin: $plan-box-title-margin;
+        font-weight: $plan-box-title-font-weight;
+    }
+
+    &__description {
+        margin: $plan-box-description-margin;
+        line-height: $plan-box-description-line-height;
+    }
+
+    &__content {
+        background-color: #fff;
+        border: 1px solid $plan-box-highlight-grey;
+        border-radius: $plan-box-border-radius;
+        display: table-cell;
+        padding: 40px 50px;
+        vertical-align: middle;
+    }
+
+    &__prices {
+        margin: 30px 0;
+    }
+
+    &__price {
+        margin: 0 0 10px;
+
+        &--savings {
+            color: $color-red;
+            text-transform: uppercase;
+            font-size: .9em;
+
+            strong {
+                font-size: 1.5em;
+            }
+        }
+
+        &--original {
+            font-size: 1.75em;
+            color: $plan-box-color-light;
+
+            .plan-box__price-text {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    height: 1px;
+                    width: 100%;
+                    background: $plan-box-color-light;
+                    position: absolute;
+                    left: 0;
+                    top: .6em;
+                }
+            }
+        }
+
+        &--large {
+            font-size: 3.428571429em;
+        }
+    }
+
+    &__recurring,
+    &__currency {
+        color: $plan-box-color-light;
+        font-size: .5em;
+    }
+
+    &__allowance-info {
+        font-size: 1.142857143em;
+        list-style: none;
+        margin: 20px 0 40px;
+        padding: 0;
+
+        li {
+            margin: 0 0 .5em;
+        }
+    }
+
+    &__button {
+        display: inline-block;
+        font-size: 1.142857143em;
+        padding: 18px 30px;
+        border-radius: $plan-box-border-radius;
+        border: 1px solid $plan-box-highlight-grey;
+        background: none;
+
+        &:hover {
+            background: $plan-box-highlight-grey-hover;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .is-disabled & {
+            opacity: .6;
+        }
+    }
+
+    &--recommended,
+    &--studio,
+    &--plus,
+    &--pro,
+    &__parent--highlight .plan-box {
+        &:before {
+            content: "";
+            display: block;
+            border-radius: $plan-box-border-radius $plan-box-border-radius 0 0;
+            box-sizing: border-box;
+            height: 8px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    &--recommended {
+        min-height: 532px;
+        margin: -25px -1px 0 0;
+
+        &:before {
+            background-color: $plan-box-highlight-green;
+            border: 1px solid $plan-box-highlight-green;
+        }
+    }
+
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            animation: $i/3 + s slightOpacityIncrease ease-in-out 0 + s forwards;
+        }
+    }
+
+    &__parent--highlight .plan-box {
+        &__title {
+            margin-top: 8px;
+        }
+    }
+    &__parent--highlight .grid__cell:nth-child(1) .plan-box {
+        &:before {
+            background-color: $plan-box-highlight-green;
+            border: 1px solid $plan-box-highlight-green;
+        }
+
+        &__title,
+        &__price--large .plan-box__price-text {
+            color: $plan-box-highlight-green;
+        }
+
+        &__button {
+            border-color: $plan-box-highlight-green;
+            color: $plan-box-highlight-green;
+
+            &:hover {
+                background: $plan-box-highlight-green;
+                color: #fff;
+            }
+        }
+    }
+    &__parent--highlight .grid__cell:nth-child(2) .plan-box {
+        &:before {
+            background-color: $plan-box-highlight-blue;
+            border: 1px solid $plan-box-highlight-blue;
+        }
+
+        &__title,
+        &__price--large .plan-box__price-text {
+            color: $plan-box-highlight-blue;
+        }
+
+        &__button {
+            border-color: $plan-box-highlight-blue;
+            color: $plan-box-highlight-blue;
+
+            &:hover {
+                background: $plan-box-highlight-blue;
+                color: #fff;
+            }
+        }
+    }
+    &__parent--highlight .grid__cell:nth-child(3) .plan-box {
+        &:before {
+            background-color: $plan-box-highlight-purple;
+            border: 1px solid $plan-box-highlight-purple;
+        }
+
+        &__title,
+        &__price--large .plan-box__price-text {
+            color: $plan-box-highlight-purple;
+        }
+
+        &__button {
+            border-color: $plan-box-highlight-purple;
+            color: $plan-box-highlight-purple;
+
+            &:hover {
+                background: $plan-box-highlight-purple;
+                color: #fff;
+            }
+        }
+    }
+
+    &__parent--recommend-collapse .grid__cell:first-child .plan-box {
+        &:before {
+            border-radius: $plan-box-border-radius 0 0 0;
+        }
+
+        &__content {
+            border-right: 0;
+            border-radius: $plan-box-border-radius 0 0 $plan-box-border-radius;
+        }
+    }
+    &__parent--recommend-collapse .grid__cell:last-child .plan-box {
+        &:before {
+            border-radius: 0 $plan-box-border-radius 0 0;
+        }
+
+        &__content {
+            border-left: 0;
+            border-radius: 0 $plan-box-border-radius $plan-box-border-radius 0;
+        }
+    }
+}
