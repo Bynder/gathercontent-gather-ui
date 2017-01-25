@@ -8,6 +8,9 @@ import DropdownMenu from '../lib/DropdownMenu';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
 import Progress from '../lib/Progress';
+import PlanBox from '../lib/PlanBox';
+import PlanBoxPricing from '../lib/PlanBox/Pricing';
+import PlanBoxAllowanceDetails from '../lib/PlanBox/AllowanceDetails';
 
 // Button
 storiesOf('Button', module)
@@ -94,4 +97,25 @@ storiesOf('Progress', module)
         filterLink="#test"
       />
     </Progress.Bar>
-);
+  );
+
+storiesOf('Pricing', module)
+  .add('PlanBox', () =>
+    <PlanBox
+      recommended={true}
+      disabled={false}
+      name="Plan name"
+      description="Plan description"
+      upgradeUrl="#upgrade"
+      buttonText="Button text"
+    >
+      <PlanBoxPricing
+        price={100}
+        priceIn="/mo"
+        priceType="priceMonthly"
+      />
+      <PlanBoxAllowanceDetails
+        plan={{ items: "100", projects: "10" }}
+      />
+    </PlanBox>
+  );
