@@ -9,6 +9,7 @@ import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
 import NavLink from '../lib/NavLink';
 import Progress from '../lib/Progress';
+import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
 
 // Button
@@ -85,6 +86,7 @@ storiesOf('Icons', module)
   </FontAwesomeIcon>
 ));
 
+// Progress Units
 storiesOf('Progress', module)
   .add('Bar and Unit', () =>
     <Progress.Bar>
@@ -102,9 +104,28 @@ storiesOf('Progress', module)
         filterLink="#test"
       />
     </Progress.Bar>
-  );
+);
 
-storiesOf('SearchInput', module)
+// Tables
+storiesOf('Table', module)
+  .add('Column', () =>
+    <Table.Column className="table-column--test">
+      <p>Table column text</p>
+    </Table.Column>
+  )
+  .add('Heading', () =>
+    <Table.Heading
+      sortHandler={ action('sortHandler') }
+      columns={['Name', 'Archived by', 'On']}
+      toggleHandler={ action('toggleHandler') }
+      activeSortingProp="Name"
+      sortingOrder={1}
+      columnNameSanitiser={ action('columnNameSanitiser') }
+    />
+);
+
+// Inputs
+storiesOf('Inputs', module)
   .add('Search input with clear button', () =>
     <SearchInput onChangeHandler={ action('change') } />
-  )
+  );
