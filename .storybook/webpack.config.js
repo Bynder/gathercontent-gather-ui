@@ -5,7 +5,8 @@ module.exports = {
     loaders: [
       {
         test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader: 'file-loader'
+        loader: 'file-loader',
+        include: path.resolve(__dirname, '../node_modules/font-awesome')  
       },
       {
         test: /\.s?css$/,

@@ -7,6 +7,7 @@ import NotificationAlert from '../lib/NotificationAlert';
 import DropdownMenu from '../lib/DropdownMenu';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
+import NavLink from '../lib/NavLink';
 import Progress from '../lib/Progress';
 import SearchInput from '../lib/SearchInput';
 
@@ -59,6 +60,12 @@ storiesOf('Notification Alert', module)
     <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
 ));
 
+// NavLink
+storiesOf('Navigation', module)
+  .add('Link', () => (
+    <NavLink url="/" target="_blank" className="link">Go to dashboard</NavLink>
+  ));
+
 // Dropdowns
 storiesOf('Dropdowns', module)
   .add('Dropdown Menu', () => (
@@ -73,9 +80,9 @@ storiesOf('Icons', module)
       <FontAwesomeIcon name="fa-file" style={{ color: 'red' }} />
     </div>
   )).add('FontAwesome with text', () => (
-    <FontAwesomeIcon name="fa-cog">
-      <span style={{ marginRight: '10px' }}>Settings</span>
-    </FontAwesomeIcon>
+  <FontAwesomeIcon name="fa-cog">
+    <span style={{ marginRight: '10px' }}>Settings</span>
+  </FontAwesomeIcon>
 ));
 
 storiesOf('Progress', module)
@@ -100,4 +107,4 @@ storiesOf('Progress', module)
 storiesOf('SearchInput', module)
   .add('Search input with clear button', () =>
     <SearchInput onChangeHandler={ action('change') } />
-  );
+  )
