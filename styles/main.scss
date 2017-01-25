@@ -1,5 +1,5 @@
 // Settings
-@import 'settings/typography';
+@import 'settings/typography.scss';
 @import 'settings/mixins';
 @import 'settings/colors';
 @import 'helpers/helpers';
@@ -12,3 +12,8 @@
 @import '../lib/Progress/styles.scss';
 @import '../lib/ProgressButton/styles.scss';
 @import '../lib/Table/Heading/styles.scss';
+@import '../lib/SearchInput/styles.scss';
+
+#root {
+  padding: 20px; // Give the playarea some room to breathe
+}
