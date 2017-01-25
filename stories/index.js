@@ -14,12 +14,6 @@ import PlanBoxPricing from '../lib/PlanBox/Pricing';
 import PlanBoxAllowanceDetails from '../lib/PlanBox/AllowanceDetails';
 import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
-/*import Modal from '../lib/Modal/Modal';
-import ModalColumn from '../lib/Modal/ModalColumn';
-import ModalContent from '../lib/Modal/ModalContent';
-import ModalHeader from '../lib/Modal/ModalHeader';
-import ModalFooter from '../lib/Modal/ModalFooter';*/
-
 import Modal from '../lib/Modal/';
 
 // Button
