@@ -9,6 +9,7 @@ import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
 import NavLink from '../lib/NavLink';
 import Progress from '../lib/Progress';
+import SearchInput from '../lib/SearchInput';
 
 // Button
 storiesOf('Button', module)
@@ -102,3 +103,8 @@ storiesOf('Progress', module)
       />
     </Progress.Bar>
   );
+
+storiesOf('SearchInput', module)
+  .add('Search input with clear button', () =>
+    <SearchInput onChangeHandler={ action('change') } />
+  )
