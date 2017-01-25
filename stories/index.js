@@ -14,6 +14,13 @@ import PlanBoxPricing from '../lib/PlanBox/Pricing';
 import PlanBoxAllowanceDetails from '../lib/PlanBox/AllowanceDetails';
 import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
+/*import Modal from '../lib/Modal/Modal';
+import ModalColumn from '../lib/Modal/ModalColumn';
+import ModalContent from '../lib/Modal/ModalContent';
+import ModalHeader from '../lib/Modal/ModalHeader';
+import ModalFooter from '../lib/Modal/ModalFooter';*/
+
+import Modal from '../lib/Modal/';
 
 // Button
 storiesOf('Button', module)
@@ -153,4 +160,23 @@ storiesOf('Table', module)
 storiesOf('Inputs', module)
   .add('Search input with clear button', () =>
     <SearchInput onChangeHandler={ action('change') } />
+);
+
+// Modals
+storiesOf('Modal', module)
+  .add('2-column', () =>
+      <Modal.Modal show contentOnly>
+        <Modal.ModalHeader>Hello</Modal.ModalHeader>
+        <Modal.ModalContent>
+          <Modal.ModalColumn>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+          </Modal.ModalColumn>
+          <Modal.ModalColumn>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+          </Modal.ModalColumn>
+        </Modal.ModalContent>
+        <Modal.ModalFooter>
+          <Button value="Confirm"></Button>
+        </Modal.ModalFooter>
+      </Modal.Modal>
   );
