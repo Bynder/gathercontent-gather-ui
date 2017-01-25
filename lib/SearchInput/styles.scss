@@ -1,0 +1,63 @@
+/**
+ * We're using important here simply because bloody Bootstrap
+ * is overwriting basic component styling based on <input> tag.
+ * Damn Bootstrap.
+ */
+
+/* Outer wrapper for the component */
+.c-input-search {
+    float: right;
+    position: relative;
+}
+
+.input-search,
+.c-input {
+    border: 1px solid #eaeaea !important;
+    box-shadow: none;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 10px !important;
+
+    &--pad-right {
+        margin-right: 20px;
+    }
+}
+
+.c-input { height: auto !important; /* because Bootstrap, again. */}
+
+.input-search__clear {
+    display: inline-block;
+    opacity: 0;
+    transition: all .125s ease-in-out ;
+    color: #ccc;
+    width: 1.34em;
+    text-align: center;
+    height: 1.34em;
+    border-radius: 50%;
+    background: none;
+    border: 0;
+    padding: 0;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateX(-2em);
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(20, 20, 20, .05);
+        }
+    }
+}
+
+.c-input-search__icon {
+    position: absolute;
+    top: 13px;
+    color: #ccc;
+    right: 30px;
+    transition: all .125s ease-in-out;
+
+    &.is-visible {
+        opacity: 0;
+        transform: translateX(2em);
+    }
+}
