@@ -41,20 +41,13 @@
   margin: 3px 0;
 }
 
-.dropdown-switcher {
-  width: auto;
-
-  &:hover .dropdown-switcher__arrow {
-    color: $color-btn-primary--hover;
-  }
-}
-
-.dropdown-switcher__title {
-  display: inline-block;
-  cursor: pointer;
-}
-
 .dropdown__menu {
+	li a {
+		color: #6f7c82;
+		text-decoration: none;
+		font-size: 13px;
+	}
+
   li.disabled a {
     opacity: .4;
   }

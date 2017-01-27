@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import * as assets from '../assets/data';
 import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
@@ -16,6 +17,7 @@ import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
 import Carousel from '../lib/Carousel';
 import Modal from '../lib/Modal/';
+import DropdownSwitcher from '../lib/DropdownSwitcher';
 
 // Button
 storiesOf('Button', module)
@@ -176,6 +178,7 @@ storiesOf('Modal', module)
       </Modal.Modal>
   );
 
+// Carousel
 storiesOf('Carousel', module)
   .add('Base', () =>
     <Carousel
@@ -188,3 +191,26 @@ storiesOf('Carousel', module)
       <div>Slide 3</div>
     </Carousel>
   );
+
+
+// Dropdown Switcher
+storiesOf('Dropdown Switcher', module)
+  .add('Base', () => {
+    const menu = (
+      <Dropdown.Menu className="dropdown__menu dropdown-menu--arrowed">
+        <MenuItem href="#" eventKey="1">
+          <FontAwesomeIcon name="fa-folder-o" /> Items
+        </MenuItem>
+        <MenuItem divider />
+        <MenuItem disabled eventKey="2">
+          <FontAwesomeIcon name="fa-archive" /> Archived Items
+        </MenuItem>
+      </Dropdown.Menu>);
+
+    return (<DropdownSwitcher
+      title="Archived Items"
+      id="ai"
+      menu={ menu }
+    />);
+  }
+)
