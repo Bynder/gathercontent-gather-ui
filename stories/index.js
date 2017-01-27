@@ -14,6 +14,7 @@ import PlanBoxPricing from '../lib/PlanBox/Pricing';
 import PlanBoxAllowanceDetails from '../lib/PlanBox/AllowanceDetails';
 import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
+import Carousel from '../lib/Carousel';
 
 // Button
 storiesOf('Button', module)
@@ -50,7 +51,7 @@ storiesOf('Radio Button', module)
   ))
   .add('Custom toggle with labels', () => (
     <CheckToggle labelLeft="Label left" labelRight="Label right" />
-));
+  ));
 
 // Alerts
 storiesOf('Notification Alert', module)
@@ -62,7 +63,7 @@ storiesOf('Notification Alert', module)
   ))
   .add('Info', () => (
     <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
-));
+  ));
 
 // NavLink
 storiesOf('Navigation', module)
@@ -87,7 +88,7 @@ storiesOf('Icons', module)
   <FontAwesomeIcon name="fa-cog">
     <span style={{ marginRight: '10px' }}>Settings</span>
   </FontAwesomeIcon>
-));
+  ));
 
 // Progress Units
 storiesOf('Progress', module)
@@ -129,7 +130,7 @@ storiesOf('Pricing', module)
         plan={{ items: "100", projects: "10" }}
       />
     </PlanBox>
-);
+  );
 
 // Tables
 storiesOf('Table', module)
@@ -147,10 +148,23 @@ storiesOf('Table', module)
       sortingOrder={1}
       columnNameSanitiser={ action('columnNameSanitiser') }
     />
-);
+  );
 
 // Inputs
 storiesOf('Inputs', module)
   .add('Search input with clear button', () =>
     <SearchInput onChangeHandler={ action('change') } />
+  );
+
+storiesOf('Carousel', module)
+  .add('Base', () =>
+    <Carousel
+      showIndicators
+      selected={1}
+      className="gc-carousel"
+    >
+      <div>Slide 1</div>
+      <div>Slide 2</div>
+      <div>Slide 3</div>
+    </Carousel>
   );
