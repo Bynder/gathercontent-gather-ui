@@ -31,6 +31,10 @@
       color: $color-btn-primary--text;
       text-decoration: none;
     }
+
+    &:focus {
+      color: $color-btn-primary--text;
+    }
   }
 
   &--secondary {
@@ -39,6 +43,10 @@
 
     &:hover {
       background: $color-btn-secondary--hover;
+      color: $color-btn-primary--text;
+    }
+
+    &:focus {
       color: $color-btn-primary--text;
     }
   }
@@ -66,6 +74,10 @@
     &:hover {
       color: $color-btn-warning--text;
       background: $color-btn-warning--hover;
+    }
+
+    &:focus {
+      color: $color-btn-warning--text;
     }
   }
 
