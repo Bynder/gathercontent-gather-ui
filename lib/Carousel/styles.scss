@@ -1,0 +1,43 @@
+.gc-carousel {
+    position: relative;
+    line-height: 1.45;
+}
+
+.gc-carousel {
+    .carousel-indicators {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .carousel-indicator__item {
+        border: none;
+        padding: 0;
+        background-color: #E4E8EE;
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 50%;
+        vertical-align: middle;
+        transition: all .2s ease;
+
+        &.is-active {
+            background-color: #3D8AEB;
+        }
+    }
+}
+
+.gc-carousel__controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/**
+ * Modifiers
+ */
+
+.gc-carousel--welcome .carousel__slide-wrapper {
+    height: 330px;
+}
