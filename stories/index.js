@@ -17,6 +17,7 @@ import Table from '../lib/Table';
 import SearchInput from '../lib/SearchInput';
 import Carousel from '../lib/Carousel';
 import Modal from '../lib/Modal/';
+import RadioButtonGroup from '../lib/Form/RadioButtonGroup';
 import DropdownSwitcher from '../lib/DropdownSwitcher';
 
 // Button
@@ -192,6 +193,32 @@ storiesOf('Carousel', module)
     </Carousel>
   );
 
+storiesOf('Form', module)
+  .add('RadioButtonGroup', () =>
+    <div>
+      <RadioButtonGroup
+        onChange={() => action('onChange')}
+        title="Title 1"
+        id="group-1"
+        name="group-choice-1"
+        subtitle="Subtitle"
+      />
+      <RadioButtonGroup
+        onChange={() => action('onChange')}
+        title="Title 2"
+        id="group-2"
+        name="group-choice-2"
+        subtitle="Subtitle"
+      />
+      <RadioButtonGroup
+        onChange={() => action('onChange')}
+        title="Title 3"
+        id="group-3"
+        name="group-choice-3"
+        subtitle="Subtitle"
+      />
+    </div>
+  );
 
 // Dropdown Switcher
 storiesOf('Dropdown Switcher', module)
