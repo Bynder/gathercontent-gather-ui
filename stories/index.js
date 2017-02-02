@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
+import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import * as assets from '../assets/data';
 import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
@@ -17,6 +18,7 @@ import SearchInput from '../lib/SearchInput';
 import Carousel from '../lib/Carousel';
 import Modal from '../lib/Modal/';
 import RadioButtonGroup from '../lib/Form/RadioButtonGroup';
+import DropdownSwitcher from '../lib/DropdownSwitcher';
 
 // Button
 storiesOf('Button', module)
@@ -177,6 +179,7 @@ storiesOf('Modal', module)
       </Modal.Modal>
   );
 
+// Carousel
 storiesOf('Carousel', module)
   .add('Base', () =>
     <Carousel
@@ -203,16 +206,38 @@ storiesOf('Form', module)
       <RadioButtonGroup
         onChange={() => action('onChange')}
         title="Title 2"
-        id="group-1"
-        name="group-choice-1"
+        id="group-2"
+        name="group-choice-2"
         subtitle="Subtitle"
       />
       <RadioButtonGroup
         onChange={() => action('onChange')}
         title="Title 3"
-        id="group-1"
-        name="group-choice-1"
+        id="group-3"
+        name="group-choice-3"
         subtitle="Subtitle"
       />
     </div>
   );
+
+// Dropdown Switcher
+storiesOf('Dropdown Switcher', module)
+  .add('Base', () => {
+    const menu = (
+      <Dropdown.Menu className="dropdown__menu dropdown-menu--arrowed">
+        <MenuItem href="#" eventKey="1">
+          <FontAwesomeIcon name="fa-folder-o" /> Items
+        </MenuItem>
+        <MenuItem divider />
+        <MenuItem disabled eventKey="2">
+          <FontAwesomeIcon name="fa-archive" /> Archived Items
+        </MenuItem>
+      </Dropdown.Menu>);
+
+    return (<DropdownSwitcher
+      title="Archived Items"
+      id="ai"
+      menu={ menu }
+    />);
+  }
+)
