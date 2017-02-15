@@ -19,6 +19,9 @@
 @import '../lib/Form/RadioButtonGroup/styles.scss';
 @import '../lib/DropdownSwitcher/styles.scss';
 
+// Styleguide
+@import 'styleguide/main.scss';
+
 #root {
   padding: 20px; // Give the playarea some room to breathe
 }

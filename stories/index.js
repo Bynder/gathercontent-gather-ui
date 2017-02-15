@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import * as assets from '../assets/data';
-import Button from '../lib/Button/';
 import CheckToggle from '../lib/CheckToggle';
 import NotificationAlert from '../lib/NotificationAlert';
 import DropdownMenu from '../lib/DropdownMenu';
@@ -20,31 +19,11 @@ import Modal from '../lib/Modal/';
 import RadioButtonGroup from '../lib/Form/RadioButtonGroup';
 import DropdownSwitcher from '../lib/DropdownSwitcher';
 
-// Button
-storiesOf('Button', module)
-  .add('Primary', () => (
-    <Button type="primary" value="Primary button" clickHandler={action('clicked')}></Button>
-  ))
-  .add('Secondary', () => (
-    <Button type="secondary" value="Secondary button" clickHandler={action('clicked')}></Button>
-  ))
-  .add('Link', () => (
-    <Button type="link" value="Link type" clickHandler={action('clicked')}></Button>
-  ))
-  .add('Danger', () => (
-    <Button type="danger" value="Danger button" clickHandler={action('clicked')}></Button>
-  ))
-  .add('Side by side', () => {
-    return (
-      <div>
-        <Button type="danger" value="Delete Items" clickHandler={action('clicked confirm')}></Button>
-        <Button type="link" value="Cancel" clickHandler={action('clicked cancel')}></Button>
-      </div>
-    );
-  });
+import Base from './base/Base';
+import Button from './components/Button';
 
-storiesOf('Progressive Button', module)
-  .add('Loading', () => (
+storiesOf('Components', module)
+  .add('Loading button', () => (
     <ProgressButton clickHandler={action('clicked submit')} value="Submit"/>
   ))
 
