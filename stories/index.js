@@ -2,8 +2,6 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import * as assets from '../assets/data';
-import CheckToggle from '../lib/CheckToggle';
-import NotificationAlert from '../lib/NotificationAlert';
 import DropdownMenu from '../lib/DropdownMenu';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon';
 import ProgressButton from '../lib/ProgressButton';
@@ -13,7 +11,6 @@ import PlanBox from '../lib/PlanBox';
 import PlanBoxPricing from '../lib/PlanBox/Pricing';
 import PlanBoxAllowanceDetails from '../lib/PlanBox/AllowanceDetails';
 import Table from '../lib/Table';
-import SearchInput from '../lib/SearchInput';
 import Carousel from '../lib/Carousel';
 import Modal from '../lib/Modal/';
 import RadioButtonGroup from '../lib/Form/RadioButtonGroup';
@@ -21,33 +18,10 @@ import DropdownSwitcher from '../lib/DropdownSwitcher';
 
 import Base from './base/Base';
 import Button from './components/Button';
-
-storiesOf('Components', module)
-  .add('Loading button', () => (
-    <ProgressButton clickHandler={action('clicked submit')} value="Submit"/>
-  ))
-
-// Radio buttons
-storiesOf('Radio Button', module)
-  .add('Custom toggle', () => (
-    <CheckToggle />
-  ))
-  .add('Custom toggle with labels', () => (
-    <CheckToggle labelLeft="Label left" labelRight="Label right" />
-  ));
-
-// Alerts
-storiesOf('Notification Alert', module)
-  .add('Warning', () => (
-    <NotificationAlert level="warning" text="Warning, I am too sexy for this notification." />
-  ))
-  .add('Danger', () => (
-    <NotificationAlert level="danger" text="You're about to delete your whole life." />
-  ))
-  .add('Info', () => (
-    <NotificationAlert level="info" text="Did you know Nirvana started in Aberdeen?" />
-  ));
-
+import CheckToggle from './components/CheckToggle';
+import NotificationAlert from './components/NotificationAlert';
+import SearchInput from './components/SearchInput';
+/*
 // NavLink
 storiesOf('Navigation', module)
   .add('Link', () => (
@@ -133,12 +107,6 @@ storiesOf('Table', module)
     />
   );
 
-// Inputs
-storiesOf('Inputs', module)
-  .add('Search input with clear button', () =>
-    <SearchInput onChangeHandler={ action('change') } />
-);
-
 // Modals
 storiesOf('Modal', module)
   .add('2-column', () =>
@@ -220,3 +188,4 @@ storiesOf('Dropdown Switcher', module)
     />);
   }
 )
+*/
