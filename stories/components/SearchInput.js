@@ -14,4 +14,4 @@ storiesOf('Components', module)
         </StoryItem>
       </div>
     );
-  })
+  });
