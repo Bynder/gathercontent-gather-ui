@@ -6,7 +6,6 @@
 
 /* Outer wrapper for the component */
 .c-input-search {
-    float: right;
     position: relative;
 }
 
@@ -51,7 +50,7 @@
 
 .c-input-search__icon {
     position: absolute;
-    top: 13px;
+    top: 0;
     color: #ccc;
     right: 30px;
     transition: all .125s ease-in-out;
