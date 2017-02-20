@@ -12,7 +12,8 @@
     "build-storybook": "build-storybook",
     "test": "mocha tests/** --compilers js:babel-register || exit 0",
     "test:watch": "mocha tests --watch --compilers js:babel-register",
-    "tdd": "npm run test:watch"
+    "tdd": "npm run test:watch",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.json lib/* || exit 0"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,11 @@
     "chai": "^3.5.0",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "file-loader": "^0.9.0",
     "jsdom": "^9.9.1",
     "jsdom-global": "^2.1.1",
