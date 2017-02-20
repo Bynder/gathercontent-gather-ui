@@ -1,4 +1,4 @@
-.btn {
+.button {
   -webkit-box-shadow: none !important;
   border: none;
   border-radius: 3px;
@@ -67,7 +67,7 @@
     }
   }
 
-  &--warning {
+  &--danger {
     background: $color-btn-warning--bg;
     color: $color-btn-warning--text;
 
