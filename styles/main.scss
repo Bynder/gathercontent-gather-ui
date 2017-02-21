@@ -1,25 +1,43 @@
-// Settings
-@import 'settings/typography.scss';
-@import 'settings/mixins';
-@import 'settings/colors';
-@import 'helpers/helpers';
+/* @ Settings
+ * All configuration variables.
+ */
+@import 'settings/typography';
+@import 'settings/colours';
 
-// Components
-@import '../lib/Button/styles.scss';
-@import '../lib/CheckToggle/styles.scss';
-@import '../lib/NotificationAlert/styles.scss';
-@import '../lib/DropdownMenu/styles.scss';
-@import '../lib/Progress/styles.scss';
-@import '../lib/ProgressButton/styles.scss';
-@import '../lib/PlanBox/styles.scss';
-@import '../lib/Table/Heading/styles.scss';
-@import '../lib/SearchInput/styles.scss';
-@import '../lib/Carousel/styles.scss';
-@import '../lib/Modal/styles.scss';
-@import '../lib/Form/RadioButtonGroup/styles.scss';
-@import '../lib/DropdownSwitcher/styles.scss';
+/* @ Tools
+ * These include all the mixins and functions.
+ */
+@import 'tools/mixins';
 
-// Styleguide
+/** @ Generic
+ * Reset and/or normalize styles, box-sizing definitions, etc.
+ */
+
+/** @ Base
+ * Element styles, no classes or IDs. Base, raw elements definitions go in here.
+ */
+@import 'base/forms';
+
+/* @ Objects
+ * This layer is mostly layout-driven, composable structure.
+ */
+@import 'objects/animations';
+@import 'objects/media';
+
+/* @ Components
+ * The cosmetic and functional layer for all the composed components.
+ */
+@import 'components/ui';
+
+/* @ Overrides
+ * These are styles that override other styles, and should be used very
+ * sparingly. Color overrides, forced floats, and text alignment classes can go here.
+ */
+@import 'overrides/helpers';
+
+/* @ Styleguide
+ * Styles for the components that exist only for styleguide purposes.
+ */
 @import 'styleguide/main.scss';
 
 #root {
