@@ -7,7 +7,6 @@
     "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
     "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer",
     "build": "node_modules/.bin/babel lib/ --out-dir dist/ && npm run styles",
-    "postinstall": "echo Building GatherUI assets... && npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "mocha tests/** --compilers js:babel-register || exit 0",
