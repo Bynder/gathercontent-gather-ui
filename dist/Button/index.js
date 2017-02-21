@@ -18,35 +18,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Ideally, we'd just be doing this, but we need to account for Sass
-// mixins and settings... to study a bit more.
-// require('./styles.scss');
-
+/**
+ * Example Usage
+ *
+ * <Button
+ *  types={['clear', 'collapsed']}
+ *  clickHandler={() => {}}
+ * >
+ *   ...test goes here
+ * </Button>
+ */
 var Button = function (_Component) {
   _inherits(Button, _Component);
-
-  _createClass(Button, null, [{
-    key: 'getClassName',
-    value: function getClassName(type) {
-      switch (type) {
-        case 'primary':
-          return 'btn btn--primary';
-        case 'secondary':
-          return 'btn btn--secondary';
-        case 'danger':
-          return 'btn btn--warning';
-        case 'link':
-          return 'btn btn--link';
-        case 'clear':
-          return 'btn btn--clear';
-        case 'clear-and-collapsed':
-          return 'btn btn--clear btn--collapsed';
-        case 'neutral':
-        default:
-          return 'btn btn-default--light';
-      }
-    }
-  }]);
 
   function Button() {
     _classCallCheck(this, Button);
@@ -58,6 +41,7 @@ var Button = function (_Component) {
     };
 
     _this.handleOnClick = _this.handleOnClick.bind(_this);
+    _this.getTypeClasses = _this.getTypeClasses.bind(_this);
     return _this;
   }
 
@@ -68,23 +52,29 @@ var Button = function (_Component) {
       this.props.clickHandler();
     }
   }, {
+    key: 'getTypeClasses',
+    value: function getTypeClasses() {
+      return this.props.types.reduce(function (typeClasses, type) {
+        return typeClasses + ' button--' + type;
+      }, 'button');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          value = _props.value,
-          type = _props.type,
-          className = _props.className,
-          disable = _props.disable;
+          disabled = _props.disabled,
+          children = _props.children,
+          className = _props.className;
 
-      var classes = [Button.getClassName(type), className].join(' ').trim();
 
       return _react2.default.createElement(
         'button',
         {
-          disabled: disable || this.state.disabled,
+          disabled: disabled || this.state.disabled,
           onClick: this.handleOnClick,
-          className: classes },
-        value
+          className: this.getTypeClasses() + ' ' + className
+        },
+        children
       );
     }
   }]);
@@ -93,19 +83,17 @@ var Button = function (_Component) {
 }(_react.Component);
 
 Button.defaultProps = {
-  type: 'primary',
-  enabled: true,
-  value: '',
-  disableOnClick: false
+  types: ['primary'],
+  disableOnClick: false,
+  disabled: false,
+  className: ''
 };
-
 Button.propTypes = {
-  value: _react.PropTypes.string,
-  className: _react.PropTypes.string,
-  type: _react.PropTypes.string,
-  clickHandler: _react.PropTypes.func,
-  disable: _react.PropTypes.bool,
-  disableOnClick: _react.PropTypes.bool
+  children: _react.PropTypes.string.isRequired,
+  clickHandler: _react.PropTypes.func.isRequired,
+  types: _react.PropTypes.arrayOf(_react.PropTypes.string),
+  disabled: _react.PropTypes.bool,
+  disableOnClick: _react.PropTypes.bool,
+  className: _react.PropTypes.string
 };
-
 exports.default = Button;
