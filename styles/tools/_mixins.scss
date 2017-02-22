@@ -1,9 +1,4 @@
 /**
- * Mixin for generating the basic button component.
- *
- */
-
-/**
  * Create a pseudo-element arrow (triangle)
  *
  * @param  {String} $color: black         Color
@@ -17,7 +12,6 @@
     top: -5px;
     left: 45%;
     position: absolute;
-    top: -5px;
   }
 }
 
@@ -100,7 +94,6 @@
 /**
  * Responsive Design Mixins
  */
-
 @mixin respond-to($media) {
   @if $media == small {
     @media only screen and (max-width: $break-small) { @content; }
