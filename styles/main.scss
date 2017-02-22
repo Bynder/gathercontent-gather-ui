@@ -34,12 +34,3 @@
  * sparingly. Color overrides, forced floats, and text alignment classes can go here.
  */
 @import 'overrides/helpers';
-
-/* @ Styleguide
- * Styles for the components that exist only for styleguide purposes.
- */
-@import 'styleguide/main.scss';
-
-#root {
-  padding: 20px; // Give the playarea some room to breathe
-}
