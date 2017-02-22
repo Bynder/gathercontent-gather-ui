@@ -13,15 +13,15 @@
 
 /* ==========================================================================
    @ Generic
-   Resets, normalize styles, box-sizing definitions, etc
+   Resets, normalize styles, box-sizing definitions
    ========================================================================== */
-@import "../node_modules/normalize-scss/sass/normalize";
+@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import 'generic/global';
 
 /* ==========================================================================
    @ Base
    Element styles, no classes or IDs. Base, raw elements definitions
    ========================================================================== */
-@import 'base/global';
 @import 'base/typography';
 
 /* ==========================================================================
@@ -39,7 +39,7 @@
 
 /* ==========================================================================
    @ Overrides
-   Override other styles, use very sparingly.
-   Color overrides, forced floats, and text alignment classes can go here.
+   Override other styles, use very sparingly. Color overrides, forced floats,
+   and text alignment classes can go here
    ========================================================================== */
 @import 'overrides/helpers';
