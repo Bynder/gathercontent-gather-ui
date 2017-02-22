@@ -15,6 +15,7 @@
    @ Generic
    Resets, normalize styles, box-sizing definitions
    ========================================================================== */
+@import 'generic/normalize-vars';
 @import "../node_modules/normalize-scss/sass/normalize/import-now";
 @import 'generic/global';
 
