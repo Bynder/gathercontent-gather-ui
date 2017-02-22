@@ -9,7 +9,7 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Carousel with slides"
-          description="A customisable Carousel component that renders the content of different slide containers that are passed down onto it.">
+          description="A customisable Carousel component that renders the content of different slide containers that are passed down onto it. ">
           <Carousel
             showIndicators
             selected={1}

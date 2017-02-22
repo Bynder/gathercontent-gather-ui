@@ -1,3 +1,7 @@
+#root {
+  padding: 20px; // Give the playarea some room to breathe
+}
+
 .sg__colour {
   display: flex;
   justify-content: center;
@@ -20,7 +24,4 @@
   margin-top: 1em;
   padding-bottom: 2em;
   border-bottom: 1px solid #eee;
-}
-.story-item__title {
-
 }
