@@ -2,8 +2,6 @@ import { React, expect, sinon, jsDomGlobal, mount } from './setup';
 import Button from '../lib/Button';
 jsDomGlobal();
 
-import { Button as ButtonBob } from '../dist/index';
-
 describe('Button', () => {
   let sandbox, wrapper, button, clickHandlerSpy;
 
