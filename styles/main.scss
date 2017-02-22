@@ -15,8 +15,7 @@
    @ Generic
    Resets, normalize styles, box-sizing definitions
    ========================================================================== */
-@import 'generic/normalize-vars';
-@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import 'generic/normalize';
 @import 'generic/global';
 
 /* ==========================================================================
@@ -24,6 +23,7 @@
    Element styles, no classes or IDs. Base, raw elements definitions
    ========================================================================== */
 @import 'base/typography';
+@import 'base/forms';
 
 /* ==========================================================================
    @ Objects
