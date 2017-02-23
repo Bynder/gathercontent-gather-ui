@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/no-unused-prop-types": ["error", { "customValidators": [], "skipShapeProps": true }],
+    "new-cap": ["error", { "capIsNewExceptions": ["Intercom"] }],
+    "no-underscore-dangle": ["error", { "allow": ["_account", "_user", "_userPermissions", "_FluxActions"] }],
+    "max-len": [0],
+    "react/no-danger": [0],
+    "react/no-unescaped-entities": [0],
+    "no-bitwise": ["error", { "allow": ["~"]}]
+  }
+}
