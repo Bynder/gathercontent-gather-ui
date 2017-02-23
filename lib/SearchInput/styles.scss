@@ -7,6 +7,10 @@
 /* Outer wrapper for the component */
 .c-input-search {
     position: relative;
+
+    input {
+        margin: 0;
+    }
 }
 
 .input-search,
@@ -19,12 +23,6 @@
 
     &--pad-right {
         margin-right: 20px;
-    }
-}
-
-.input-search {
-    input {
-        margin: 0;
     }
 }
 

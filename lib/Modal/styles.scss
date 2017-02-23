@@ -1,3 +1,57 @@
+.modal {
+	overflow: hidden;
+}
+
+.modal-body {
+	padding: 15px;
+
+	h4 {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+}
+
+.modal-header {
+	min-height: 16px;
+	padding: 16px;
+	font-weight: 600;
+}
+
+.modal-content {
+	background-clip: padding-box;
+	margin: 0;
+	background-color: white;
+	position: relative;
+}
+
+.modal-dialog {
+	position: relative;
+}
+
+.modal-footer__link {
+	margin-right: 10px;
+}
+
+.modal-footer button {
+	margin-right: 0;
+}
+
+.modal-title {
+	font-size: 18px;
+}
+
+.modal.fade .modal-dialog {
+	transition: transform .3s ease-out;
+}
+
+.modal.in .modal-dialog {
+	transform: translate(0, 0);
+}
+
 .modal-body p {
 	line-height: 1.4;
 }
@@ -99,6 +153,14 @@
 			min-height: 420px;
 			width: 780px;
 			overflow: hidden;
+		}
+
+		&.modal.fade.in {
+			transform: translateY(-50%);
+
+			.ie9 & {
+				margin-top: -300px;
+			}
 		}
 	}
 

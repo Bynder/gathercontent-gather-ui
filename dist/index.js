@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DropdownSwitcher = exports.RadioButtonGroup = exports.CarouselSlides = exports.PlanBoxAllowanceDetails = exports.PlanBoxPricing = exports.PlanBox = exports.Table = exports.SearchInput = exports.ProgressBar = exports.NavLink = exports.ProgressButton = exports.FontAwesomeIcon = exports.DropdownMenu = exports.NotificationAlert = exports.CheckToggle = exports.Button = undefined;
+exports.Modal = exports.DropdownSwitcher = exports.RadioButtonGroup = exports.CarouselSlides = exports.PlanBoxAllowanceDetails = exports.PlanBoxPricing = exports.PlanBox = exports.Table = exports.SearchInput = exports.Progress = exports.ProgressButton = exports.FontAwesomeIcon = exports.DropdownMenu = exports.Notification = exports.CheckToggle = exports.Button = undefined;
 
 var _Button2 = require('./Button');
 
@@ -13,9 +13,9 @@ var _CheckToggle2 = require('./CheckToggle');
 
 var _CheckToggle3 = _interopRequireDefault(_CheckToggle2);
 
-var _NotificationAlert2 = require('./NotificationAlert');
+var _Notification2 = require('./Notification');
 
-var _NotificationAlert3 = _interopRequireDefault(_NotificationAlert2);
+var _Notification3 = _interopRequireDefault(_Notification2);
 
 var _DropdownMenu2 = require('./DropdownMenu');
 
@@ -29,13 +29,9 @@ var _ProgressButton2 = require('./ProgressButton');
 
 var _ProgressButton3 = _interopRequireDefault(_ProgressButton2);
 
-var _NavLink2 = require('./NavLink');
+var _Progress2 = require('./Progress');
 
-var _NavLink3 = _interopRequireDefault(_NavLink2);
-
-var _Progress = require('./Progress');
-
-var _Progress2 = _interopRequireDefault(_Progress);
+var _Progress3 = _interopRequireDefault(_Progress2);
 
 var _SearchInput2 = require('./SearchInput');
 
@@ -69,16 +65,19 @@ var _DropdownSwitcher2 = require('./DropdownSwitcher');
 
 var _DropdownSwitcher3 = _interopRequireDefault(_DropdownSwitcher2);
 
+var _Modal2 = require('./Modal');
+
+var _Modal3 = _interopRequireDefault(_Modal2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Button = _Button3.default;
 exports.CheckToggle = _CheckToggle3.default;
-exports.NotificationAlert = _NotificationAlert3.default;
+exports.Notification = _Notification3.default;
 exports.DropdownMenu = _DropdownMenu3.default;
 exports.FontAwesomeIcon = _FontAwesomeIcon3.default;
 exports.ProgressButton = _ProgressButton3.default;
-exports.NavLink = _NavLink3.default;
-exports.ProgressBar = _Progress2.default;
+exports.Progress = _Progress3.default;
 exports.SearchInput = _SearchInput3.default;
 exports.Table = _Table3.default;
 exports.PlanBox = _PlanBox3.default;
@@ -87,3 +86,4 @@ exports.PlanBoxAllowanceDetails = _AllowanceDetails2.default;
 exports.CarouselSlides = _Carousel2.default;
 exports.RadioButtonGroup = _RadioButtonGroup3.default;
 exports.DropdownSwitcher = _DropdownSwitcher3.default;
+exports.Modal = _Modal3.default;

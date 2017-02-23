@@ -26,12 +26,12 @@ var _ModalContent2 = _interopRequireDefault(_ModalContent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Modals = {
-  Modal: _Modal2.default,
-  ModalContent: _ModalContent2.default,
-  ModalHeader: _ModalHeader2.default,
-  ModalColumn: _ModalColumn2.default,
-  ModalFooter: _ModalFooter2.default
+var Modal = {
+  Container: _Modal2.default,
+  Content: _ModalContent2.default,
+  Header: _ModalHeader2.default,
+  Column: _ModalColumn2.default,
+  Footer: _ModalFooter2.default
 };
 
-exports.default = Modals;
+exports.default = Modal;
