@@ -22,9 +22,17 @@
     }
 }
 
+.input-search {
+    input {
+        margin: 0;
+    }
+}
+
 .c-input { height: auto !important; /* because Bootstrap, again. */}
 
 .input-search__clear {
+    position: absolute;
+    transform: translateY(50%);
     display: inline-block;
     opacity: 0;
     transition: all .125s ease-in-out ;
@@ -39,7 +47,7 @@
 
     &.is-visible {
         opacity: 1;
-        transform: translateX(-2em);
+        transform: translateY(50%) translateX(-2em);
         cursor: pointer;
 
         &:hover {
@@ -52,7 +60,7 @@
     position: absolute;
     top: 0;
     color: #ccc;
-    right: 30px;
+    right: 10px;
     transition: all .125s ease-in-out;
 
     &.is-visible {

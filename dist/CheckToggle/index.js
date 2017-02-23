@@ -90,7 +90,6 @@ CheckToggle.propTypes = {
 };
 
 CheckToggle.defaultProps = {
-  id: 'quick-view',
   labelLeft: null,
   labelRight: null,
   clickHandler: function clickHandler() {},
