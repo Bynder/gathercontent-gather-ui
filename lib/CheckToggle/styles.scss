@@ -1,10 +1,6 @@
 $backgroundColour: #667386;
 $borderColour: #F8FBFC;
 
-.toggle-switch * {
-  box-sizing: border-box;
-}
-
 .toggle-switch {
   position: absolute;
   margin-left: -9999px;
@@ -18,18 +14,21 @@ $borderColour: #F8FBFC;
   outline: none;
 }
 
-.toggle-wrapper__label,
-.toggle-wrapper__inner {
-  float: left;
+.toggle-wrapper {
+  display: block;
+  overflow: hidden;
+  text-align: center;
 }
 
-.toggle-wrapper {
-  display: flex;
-  
+.toggle-wrapper__label,
+.toggle-wrapper__inner {
+  display: inline-block;
 }
 
 .toggle-wrapper__label {
   font-size: 13px;
+  margin-top: 7px;
+  vertical-align: top;
 
   &:first-of-type { margin-right: 10px; }
   &:last-of-type { margin-left: 10px; }
@@ -68,8 +67,8 @@ $borderColour: #F8FBFC;
 /*  New switch */
 .toggle-switch + .toggle-switch__label {
   padding: 2px;
-  width: 45px;
-  height: 25px;
+  width: 53px;
+  height: 33px;
   border: 2px solid $borderColour;
   background-color: $backgroundColour;
   border-radius: 60px;
