@@ -85,7 +85,7 @@
     padding: 14px 19px;
   }
 
-  &-default--light {
+  &--default-light {
     background: $color-btn-default-light--bg;
     color: $color-btn-default-light--text;
 
@@ -96,7 +96,7 @@
     }
   }
 
-  &-default--dark {
+  &--default-dark {
     background: $color-btn-default-dark--bg;
     color: $color-btn-default-dark--text;
 
