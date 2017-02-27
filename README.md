@@ -3,6 +3,8 @@
 **Warning: This is still an experimental repository and all commands and functionality are bound to change.**
 UI component library for all GatherContent components.
 
+This uses [React Storybook](https://github.com/storybooks/react-storybook) to showcase and host the development of the UI components used at GatherContent.
+
 ## Developing the library
 
 1. Download the repository and run `npm install`
@@ -21,14 +23,19 @@ Running `npm build` will:
 
 1. Generate ES5 compliant versions of each component in `/dist`
 2. Generate a `.css` files containing all the concatenated component styles.
+3. Copy over Sass configuration files to the `/dist` folder in order to be consumed externally.
 
 ## Using the library
+
+The library is available on npm.
+
+`npm install gather-content-ui`
 
 Using the components is just like any other npm module. For e.g.:
 
 ```js
 // Import the button component
-import { Button } from 'gather-ui';
+import { Button } from 'gather-content-ui';
 
 // Require once all the CSS directly from the node_modules folder
 require('gather-ui/dist/styles.css');
