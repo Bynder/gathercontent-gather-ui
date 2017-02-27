@@ -38,6 +38,18 @@ $borderColour: #F8FBFC;
   &:last-of-type { margin-left: 10px; }
 }
 
+.toggle-switch + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 52px;
+  transition: margin 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
 .toggle-switch:checked + label:after {
   margin-left: 26px;
 }
