@@ -128,7 +128,7 @@
     position: relative;
 
     &:hover {
-      .btn {
+      .button {
         &__tooltip {
           opacity: 1;
           visibility: visible;
@@ -136,4 +136,27 @@
       }
     }
   }
+}
+
+.button__tooltip {
+  background: rgba(0,0,0,1);
+  border-radius: 4px;
+  left: 50%;
+  opacity: 0;
+  padding: 1em .75em;
+  position: absolute;
+  top: 120%;
+  transition: .2s ease-in-out 0s;
+  visibility: hidden;
+  width: 15em;
+  margin-left: -7.5em;
+  @include arrowPointer(black);
+}
+
+.button__helper {
+  border-bottom: 1px dotted;
+  float: right;
+  font-size: .8em;
+  margin-left: 5px;
+  margin-top: 1px;
 }
