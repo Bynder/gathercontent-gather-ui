@@ -1,18 +1,15 @@
 .button {
-  -webkit-box-shadow: none !important;
   border: none;
   border-radius: 3px;
   box-shadow: none;
   display: inline-block;
-  font-family: $typo-stack-base;
-  font-size: 14px;
   font-weight: 400;
-  padding: 11px 18px !important;
-  text-decoration: none;
-  text-shadow: none;
+  padding: 11px 18px;
   transition: all .2s ease;
-  white-space: nowrap;
-  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   & + & {
   	margin-left: 10px;
@@ -21,142 +18,104 @@
   & + .dropdown {
     margin-left: 10px;
   }
-
-  &--primary {
-    background: $color-btn-primary--bg;
-    color: $color-btn-primary--text;
-
-    &:hover {
-      background: $color-btn-primary--hover;
-      color: $color-btn-primary--text;
-      text-decoration: none;
-    }
-
-    &:focus {
-      color: $color-btn-primary--text;
-    }
-  }
-
-  &--secondary {
-    background: $color-btn-secondary--bg;
-    color: $color-btn-primary--text;
-
-    &:hover {
-      background: $color-btn-secondary--hover;
-      color: $color-btn-primary--text;
-    }
-
-    &:focus {
-      color: $color-btn-primary--text;
-    }
-  }
-
-  &--link {
-    background: transparent;
-    color: rgb(70, 142, 229);
-    border: 0 none;
-
-    &:focus {
-      outline: none;
-      text-decoration: underline;
-    }
-
-    &:hover {
-      background: transparent;
-      color: $color-btn-secondary--hover;
-    }
-  }
-
-  &--danger {
-    background: $color-btn-warning--bg;
-    color: $color-btn-warning--text;
-
-    &:hover {
-      color: $color-btn-warning--text;
-      background: $color-btn-warning--hover;
-    }
-
-    &:focus {
-      color: $color-btn-warning--text;
-    }
-  }
-
-  &--larger {
-    padding: 14px 19px;
-  }
-
-  &--default-light {
-    background: $color-btn-default-light--bg;
-    color: $color-btn-default-light--text;
-
-    &:hover {
-      background: $color-btn-default-light--hover;
-      color: $color-btn-default-light--text;
-      text-decoration: none;
-    }
-  }
-
-  &--default-dark {
-    background: $color-btn-default-dark--bg;
-    color: $color-btn-default-dark--text;
-
-    &:hover {
-      background: $color-btn-default-dark--hover;
-      color: $color-btn-default-dark--text;
-      text-decoration: none;
-    }
-  }
-
-  &--clear {
-    background: none;
-    border: 0;
-
-    &:hover {
-      background: none;
-    }
-  }
-
-  &--collapsed {
-    padding: 0 !important;
-
-    & + & {
-      margin-left: 20px;
-    }
-  }
-
-  &--has-tooltip {
-    position: relative;
-
-    &:hover {
-      .button {
-        &__tooltip {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-  }
-}
-
-.button__tooltip {
-  background: rgba(0,0,0,1);
-  border-radius: 4px;
-  left: 50%;
-  opacity: 0;
-  padding: 1em .75em;
-  position: absolute;
-  top: 120%;
-  transition: .2s ease-in-out 0s;
-  visibility: hidden;
-  width: 15em;
-  margin-left: -7.5em;
-  @include arrowPointer(black);
 }
 
 .button__helper {
   border-bottom: 1px dotted;
-  float: right;
-  font-size: .8em;
   margin-left: 5px;
-  margin-top: 1px;
+}
+
+.button--primary {
+  background: $color-btn-primary--bg;
+  color: $color-btn-primary--text;
+
+  &:hover {
+    background: $color-btn-primary--hover;
+    color: $color-btn-primary--text;
+  }
+
+  &:focus {
+    color: $color-btn-primary--text;
+  }
+}
+
+.button--secondary {
+  background: $color-btn-secondary--bg;
+  color: $color-btn-primary--text;
+
+  &:hover {
+    background: $color-btn-secondary--hover;
+    color: $color-btn-primary--text;
+  }
+
+  &:focus {
+    color: $color-btn-primary--text;
+  }
+}
+
+.button--link {
+  background: transparent;
+  color: rgb(70, 142, 229);
+  border: 0 none;
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    background: transparent;
+    color: $color-btn-secondary--hover;
+  }
+}
+
+.button--danger {
+  background: $color-btn-warning--bg;
+  color: $color-btn-warning--text;
+
+  &:hover {
+    color: $color-btn-warning--text;
+    background: $color-btn-warning--hover;
+  }
+
+  &:focus {
+    color: $color-btn-warning--text;
+  }
+}
+
+.button--light-grey {
+  background: $color-btn-default-light--bg;
+  color: $color-btn-default-light--text;
+
+  &:hover {
+    background: $color-btn-default-light--hover;
+    color: $color-btn-default-light--text;
+  }
+}
+
+.button--dark-grey {
+  background: $color-btn-default-dark--bg;
+  color: $color-btn-default-dark--text;
+
+  &:hover {
+    background: $color-btn-default-dark--hover;
+    color: $color-btn-default-dark--text;
+  }
+}
+
+.button--clear {
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.button--has-tooltip {
+  display: inline-block;
+}
+
+.tooltip {
+  font-family: $typo-stack-base;
+  -webkit-font-smoothing: antialiased;
 }
