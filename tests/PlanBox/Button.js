@@ -35,8 +35,8 @@ describe('PlanBox/Button', () => {
       disabled: true,
     });
     expect(shallowWrapper.find('.plan-box__button').type()).to.equal('span');
-    expect(shallowWrapper.find('.btn__tooltip')).to.have.length(1);
-    expect(shallowWrapper.find('.btn__tooltip').text().includes('exceeds')).to.equal(true);
+    expect(shallowWrapper.find('.button__tooltip')).to.have.length(1);
+    expect(shallowWrapper.find('.button__tooltip').text().includes('exceeds')).to.equal(true);
   });
 
   it('renders a button with a function that is called when clicked', () => {
