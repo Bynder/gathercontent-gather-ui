@@ -23,10 +23,6 @@ $plan-box-description-line-height: 1.5em;
     position: relative;
     text-align: center;
 
-    * {
-        box-sizing: border-box;
-    }
-
     &__title {
         font-size: $plan-box-title-font-size;
         line-height: $plan-box-title-line-height;
@@ -86,6 +82,7 @@ $plan-box-description-line-height: 1.5em;
 
         &--large {
             font-size: 3.428571429em;
+            line-height: 1em;
         }
     }
 

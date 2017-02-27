@@ -46,12 +46,13 @@ var CheckToggle = function (_Component) {
       var _props = this.props,
           labelLeft = _props.labelLeft,
           labelRight = _props.labelRight,
-          id = _props.id;
+          id = _props.id,
+          className = _props.className;
 
 
       return _react2.default.createElement(
         "div",
-        { className: "toggle-wrapper" },
+        { className: "toggle-wrapper " + className },
         labelLeft && _react2.default.createElement(
           "p",
           { className: "toggle-wrapper__label" },
@@ -72,7 +73,12 @@ var CheckToggle = function (_Component) {
         labelRight && _react2.default.createElement(
           "p",
           { className: "toggle-wrapper__label" },
-          labelRight
+          labelRight,
+          _react2.default.createElement(
+            "small",
+            { className: "toggle-wrapper__annual" },
+            "(2 months free)"
+          )
         )
       );
     }
@@ -82,6 +88,7 @@ var CheckToggle = function (_Component) {
 }(_react.Component);
 
 CheckToggle.propTypes = {
+  className: _react.PropTypes.string,
   id: _react.PropTypes.string.isRequired,
   checked: _react.PropTypes.bool,
   clickHandler: _react.PropTypes.func,
