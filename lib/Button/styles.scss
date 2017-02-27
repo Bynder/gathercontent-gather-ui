@@ -1,28 +1,24 @@
 .button {
   border: none;
   border-radius: 3px;
-  box-shadow: none;
   display: inline-block;
-  font-weight: 400;
-  padding: 11px 18px;
-  transition: all .2s ease;
+  font-weight: $typo-weight-roman;
+  padding: ($layout-spacing-base/2 + 1px) ($layout-spacing-base - 2px);
+  transition: all $animation-time-micro ease;
 
   &:hover {
     text-decoration: none;
   }
 
-  & + & {
-  	margin-left: 10px;
-  }
-
+  & + &,
   & + .dropdown {
-    margin-left: 10px;
+  	margin-left: $layout-spacing-base/2;
   }
 }
 
 .button__helper {
   border-bottom: 1px dotted;
-  margin-left: 5px;
+  margin-left: $layout-spacing-base/4;
 }
 
 .button--primary {
@@ -55,8 +51,6 @@
 
 .button--link {
   background: transparent;
-  color: rgb(70, 142, 229);
-  border: 0 none;
 
   &:focus {
     outline: none;
@@ -113,9 +107,4 @@
 
 .button--has-tooltip {
   display: inline-block;
-}
-
-.tooltip {
-  font-family: $typo-stack-base;
-  -webkit-font-smoothing: antialiased;
 }

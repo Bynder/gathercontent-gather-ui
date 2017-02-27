@@ -26,7 +26,8 @@ module.exports = {
   },
   postcss: () => {
     return [
-      require('autoprefixer')
+      require('autoprefixer'),
+      require('pixrem'),
     ];
   }
 };

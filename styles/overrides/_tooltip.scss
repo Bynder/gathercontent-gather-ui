@@ -1,0 +1,8 @@
+.tooltip {
+    font-family: $typo-stack-base;
+    @include font-smoothing;
+}
+
+.tooltip-inner {
+    //padding: $layout-spacing-base/2 !important;
+}

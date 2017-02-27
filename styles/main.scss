@@ -4,12 +4,15 @@
    ========================================================================== */
 @import 'settings/typography';
 @import 'settings/colours';
+@import 'settings/animations';
+@import 'settings/layout';
 
 /* ==========================================================================
    @ Tools
    All mixins and functions
    ========================================================================== */
 @import 'tools/mixins';
+@import 'tools/typography';
 
 /* ==========================================================================
    @ Generic
@@ -44,3 +47,4 @@
    and text alignment classes can go here
    ========================================================================== */
 @import 'overrides/helpers';
+@import 'overrides/tooltip';
