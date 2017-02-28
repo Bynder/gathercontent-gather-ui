@@ -8,10 +8,14 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _ButtonWithTooltip = require('../Button/ButtonWithTooltip');
+
+var _ButtonWithTooltip2 = _interopRequireDefault(_ButtonWithTooltip);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PlanBoxButton = function PlanBoxButton(props) {
-  var buttonClass = 'plan-box__button btn--has-tooltip';
+  var buttonClass = 'plan-box__button button--has-tooltip';
 
   if (props.clickHandler) {
     return _react2.default.createElement(
@@ -42,19 +46,14 @@ var PlanBoxButton = function PlanBoxButton(props) {
   }
 
   return _react2.default.createElement(
-    'span',
-    { className: buttonClass },
-    _react2.default.createElement(
-      'span',
-      { className: 'btn__helper' },
-      '(?)'
-    ),
-    props.buttonText,
-    _react2.default.createElement(
-      'span',
-      { className: 'btn__tooltip' },
-      props.exceedsUsageMessage
-    )
+    _ButtonWithTooltip2.default,
+    {
+      className: buttonClass,
+      types: [''],
+      tooltipText: props.exceedsUsageMessage,
+      clickHandler: function clickHandler() {}
+    },
+    props.buttonText
   );
 };
 

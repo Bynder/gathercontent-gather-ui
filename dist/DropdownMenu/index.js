@@ -33,10 +33,10 @@ var DropdownMenu = function (_Component) {
     key: 'getClassName',
     value: function getClassName(type) {
       return (0, _classnames2.default)({
-        'btn btn--primary': type === 'primary',
-        'btn btn--secondary': type === 'secondary',
-        'btn btn--warning': type === 'warning',
-        'btn--link': type === 'link'
+        'button button--primary': type === 'primary',
+        'button button--secondary': type === 'secondary',
+        'button button--warning': type === 'warning',
+        'button--link': type === 'link'
       });
     }
   }, {
@@ -130,7 +130,7 @@ var DropdownMenu = function (_Component) {
           alignRight = _props.alignRight;
 
 
-      var buttonClass = DropdownMenu.getClassName(type).concat(' btn--dropdown');
+      var buttonClass = DropdownMenu.getClassName(type).concat(' button--dropdown');
 
       var menuClass = (0, _classnames2.default)({
         'dropdown': true,
