@@ -20,8 +20,9 @@
   }],
   "scripts": {
     "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
+    "pixrem": "node_modules/.bin/postcss --use pixrem dist/styles.css -o dist/styles.css",
     "copy-settings": "echo Copying Sass settings... && node_modules/.bin/copyfiles -f styles/settings/*.scss dist/settings",
-    "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer",
+    "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer && npm run pixrem",
     "build": "node_modules/.bin/babel lib/ --out-dir dist/ && npm run styles",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -69,6 +70,7 @@
     "less-loader": "^2.2.3",
     "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
+    "pixrem": "^3.0.2",
     "postcss-cli-simple": "^1.0.3",
     "postcss-load-config": "^1.1.0",
     "postcss-loader": "^1.2.2",

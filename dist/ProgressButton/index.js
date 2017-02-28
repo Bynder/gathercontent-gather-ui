@@ -65,13 +65,13 @@ var ProgressButton = function (_React$Component) {
 
       switch (type) {
         case 'primary':
-          return defaultClass + ' btn btn--primary';
+          return defaultClass + ' button button--primary';
         case 'secondary':
-          return defaultClass + ' btn btn--neutral';
+          return defaultClass + ' button button--neutral';
         case 'danger':
-          return defaultClass + ' btn btn--warning';
+          return defaultClass + ' button button--warning';
         default:
-          return ' btn btn--primary';
+          return ' button button--primary';
       }
     }
   }]);

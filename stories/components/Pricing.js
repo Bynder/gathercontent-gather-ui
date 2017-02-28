@@ -14,11 +14,12 @@ storiesOf('Components', module)
           description="The plan boxes to display an entire plan type in the pricing section. It's made up of three different composable components: PlanBox, PlanBoxPricing and PlanBoxAllowanceDetails">
           <PlanBox
             recommended={true}
-            disabled={false}
+            disabled={true}
             name="Plan name"
             description="Plan description"
             upgradeUrl="#upgrade"
             buttonText="Button text"
+            exceedsUsageMessage="Exceeded item limit"
           >
             <PlanBoxPricing
               price={100}

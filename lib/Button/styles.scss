@@ -1,139 +1,110 @@
 .button {
-  -webkit-box-shadow: none !important;
   border: none;
   border-radius: 3px;
-  box-shadow: none;
   display: inline-block;
-  font-family: $typo-stack-base;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 11px 18px !important;
-  text-decoration: none;
-  text-shadow: none;
-  transition: all .2s ease;
-  white-space: nowrap;
-  cursor: pointer;
+  font-weight: $typo-weight-roman;
+  padding: ($layout-spacing-base/2 + 1px) ($layout-spacing-base - 2px);
+  transition: all $animation-time-micro ease;
 
-  & + & {
-  	margin-left: 10px;
+  &:hover {
+    text-decoration: none;
   }
 
+  & + &,
   & + .dropdown {
-    margin-left: 10px;
+  	margin-left: $layout-spacing-base/2;
   }
+}
 
-  &--primary {
-    background: $color-btn-primary--bg;
+.button__helper {
+  border-bottom: 1px dotted;
+  margin-left: $layout-spacing-base/4;
+}
+
+.button--primary {
+  background: $color-btn-primary--bg;
+  color: $color-btn-primary--text;
+
+  &:hover {
+    background: $color-btn-primary--hover;
     color: $color-btn-primary--text;
-
-    &:hover {
-      background: $color-btn-primary--hover;
-      color: $color-btn-primary--text;
-      text-decoration: none;
-    }
-
-    &:focus {
-      color: $color-btn-primary--text;
-    }
   }
 
-  &--secondary {
-    background: $color-btn-secondary--bg;
+  &:focus {
     color: $color-btn-primary--text;
+  }
+}
 
-    &:hover {
-      background: $color-btn-secondary--hover;
-      color: $color-btn-primary--text;
-    }
+.button--secondary {
+  background: $color-btn-secondary--bg;
+  color: $color-btn-primary--text;
 
-    &:focus {
-      color: $color-btn-primary--text;
-    }
+  &:hover {
+    background: $color-btn-secondary--hover;
+    color: $color-btn-primary--text;
   }
 
-  &--link {
+  &:focus {
+    color: $color-btn-primary--text;
+  }
+}
+
+.button--link {
+  background: transparent;
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  &:hover {
     background: transparent;
-    color: rgb(70, 142, 229);
-    border: 0 none;
-
-    &:focus {
-      outline: none;
-      text-decoration: underline;
-    }
-
-    &:hover {
-      background: transparent;
-      color: $color-btn-secondary--hover;
-    }
+    color: $color-btn-secondary--hover;
   }
+}
 
-  &--danger {
-    background: $color-btn-warning--bg;
+.button--danger {
+  background: $color-btn-warning--bg;
+  color: $color-btn-warning--text;
+
+  &:hover {
     color: $color-btn-warning--text;
-
-    &:hover {
-      color: $color-btn-warning--text;
-      background: $color-btn-warning--hover;
-    }
-
-    &:focus {
-      color: $color-btn-warning--text;
-    }
+    background: $color-btn-warning--hover;
   }
 
-  &--larger {
-    padding: 14px 19px;
+  &:focus {
+    color: $color-btn-warning--text;
   }
+}
 
-  &--default-light {
-    background: $color-btn-default-light--bg;
+.button--light-grey {
+  background: $color-btn-default-light--bg;
+  color: $color-btn-default-light--text;
+
+  &:hover {
+    background: $color-btn-default-light--hover;
     color: $color-btn-default-light--text;
-
-    &:hover {
-      background: $color-btn-default-light--hover;
-      color: $color-btn-default-light--text;
-      text-decoration: none;
-    }
   }
+}
 
-  &--default-dark {
-    background: $color-btn-default-dark--bg;
+.button--dark-grey {
+  background: $color-btn-default-dark--bg;
+  color: $color-btn-default-dark--text;
+
+  &:hover {
+    background: $color-btn-default-dark--hover;
     color: $color-btn-default-dark--text;
-
-    &:hover {
-      background: $color-btn-default-dark--hover;
-      color: $color-btn-default-dark--text;
-      text-decoration: none;
-    }
   }
+}
 
-  &--clear {
+.button--clear {
+  background: none;
+
+  &:hover {
     background: none;
-    border: 0;
-
-    &:hover {
-      background: none;
-    }
   }
+}
 
-  &--collapsed {
-    padding: 0 !important;
-
-    & + & {
-      margin-left: 20px;
-    }
-  }
-
-  &--has-tooltip {
-    position: relative;
-
-    &:hover {
-      .btn {
-        &__tooltip {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-    }
-  }
+.button--has-tooltip {
+  display: inline-block;
 }
