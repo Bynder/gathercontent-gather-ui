@@ -50,7 +50,8 @@ var PlanBox = function PlanBox(props) {
         buttonText: props.buttonText,
         disabled: props.disabled,
         useInput: props.buttonUseInput,
-        clickHandler: props.buttonClickHandler
+        clickHandler: props.buttonClickHandler,
+        exceedsUsageMessage: props.exceedsUsageMessage
       })
     )
   );
@@ -70,7 +71,8 @@ PlanBox.propTypes = {
   recommended: _react.PropTypes.bool,
   buttonUseInput: _react.PropTypes.bool,
   buttonClickHandler: _react.PropTypes.func,
-  headingClassName: _react.PropTypes.string
+  headingClassName: _react.PropTypes.string,
+  exceedsUsageMessage: _react.PropTypes.string
 };
 
 exports.default = PlanBox;

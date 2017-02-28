@@ -1,5 +1,6 @@
 import { React, expect, sinon, shallow } from '../setup';
 import PlanBoxButton from '../../lib/PlanBox/Button';
+import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 
 describe('PlanBox/Button', () => {
   const props = {
@@ -34,9 +35,8 @@ describe('PlanBox/Button', () => {
     shallowWrapper.setProps({
       disabled: true,
     });
-    expect(shallowWrapper.find('.plan-box__button').type()).to.equal('span');
-    expect(shallowWrapper.find('.btn__tooltip')).to.have.length(1);
-    expect(shallowWrapper.find('.btn__tooltip').text().includes('exceeds')).to.equal(true);
+    expect(shallowWrapper.find(ButtonWithTooltip)).to.have.length(1);
+    expect(shallowWrapper.find(ButtonWithTooltip).prop('tooltipText')).to.equal('This exceeds your plan');
   });
 
   it('renders a button with a function that is called when clicked', () => {

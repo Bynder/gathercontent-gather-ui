@@ -3,11 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Modal = exports.DropdownSwitcher = exports.RadioButtonGroup = exports.CarouselSlides = exports.PlanBoxAllowanceDetails = exports.PlanBoxPricing = exports.PlanBox = exports.Table = exports.SearchInput = exports.Progress = exports.ProgressButton = exports.FontAwesomeIcon = exports.DropdownMenu = exports.Notification = exports.CheckToggle = exports.Button = undefined;
+exports.Modal = exports.DropdownSwitcher = exports.RadioButtonGroup = exports.CarouselSlides = exports.PlanBoxAllowanceDetails = exports.PlanBoxPricing = exports.PlanBox = exports.Table = exports.SearchInput = exports.Progress = exports.ProgressButton = exports.FontAwesomeIcon = exports.DropdownMenu = exports.Notification = exports.CheckToggle = exports.ButtonWithTooltip = exports.Button = undefined;
 
 var _Button2 = require('./Button');
 
 var _Button3 = _interopRequireDefault(_Button2);
+
+var _ButtonWithTooltip2 = require('./Button/ButtonWithTooltip');
+
+var _ButtonWithTooltip3 = _interopRequireDefault(_ButtonWithTooltip2);
 
 var _CheckToggle2 = require('./CheckToggle');
 
@@ -72,6 +76,7 @@ var _Modal3 = _interopRequireDefault(_Modal2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Button = _Button3.default;
+exports.ButtonWithTooltip = _ButtonWithTooltip3.default;
 exports.CheckToggle = _CheckToggle3.default;
 exports.Notification = _Notification3.default;
 exports.DropdownMenu = _DropdownMenu3.default;
