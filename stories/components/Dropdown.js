@@ -11,27 +11,14 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Dropdown Menu"
-          description="A dropdown menu that accepts a list of menu items">
+          description="A dropdown menu that accepts a list of menu items.">
           <DropdownMenu value="Actions" caret shouldDisplay items={assets.getDropdownItems()} />
         </StoryItem>
 
         <StoryItem
-          title="Dropdown Menu"
-          description="A dropdown menu that accepts a list of menu items">
-          {(() => {
-            class Ex extends React.Component {
-              constructor() {
-                super();
-                this.state = { display: false };
-              }
-
-              render() {
-                <DropdownMenu value="Actions" caret shouldDisplay items={assets.getDropdownItems()} />
-              }
-            }
-            return Ex;
-          })()
-          }
+          title="Dropdown without a button"
+          description="A link that opens a dropdown.">
+          <DropdownMenu value="Actions" type="link" caret shouldDisplay items={assets.getDropdownItems()} />
         </StoryItem>
       </div>
     );

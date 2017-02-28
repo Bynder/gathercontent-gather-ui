@@ -38,20 +38,6 @@ $borderColour: #F8FBFC;
   &:last-of-type { margin-left: 10px; }
 }
 
-.toggle-switch + label:before,
-.toggle-switch + label:after {
-  display: block;
-  position: absolute;
-  content: "";
-}
-
-.toggle-switch:checked + label:before {
-  font-size: 9px;
-  font-family: sans-serif;
-  color: #fff;
-  text-indent: 5px;
-}
-
 .toggle-switch + label:after {
   top: 4px;
   left: 4px;
