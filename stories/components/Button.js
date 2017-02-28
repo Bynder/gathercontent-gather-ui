@@ -65,8 +65,10 @@ const button = storiesOf('Components', module)
       >
         <ButtonWithTooltip
           types={['light-grey']}
-          tooltipText="Context..."
           clickHandler={action('clickedHandler')}
+          tooltipText="You may reverse this action at a later date"
+          tooltipSize="large"
+          tooltipPosition="right"
         >
           Archive Item
         </ButtonWithTooltip>

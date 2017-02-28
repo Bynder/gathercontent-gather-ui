@@ -6,3 +6,8 @@
 .tooltip-inner {
     //padding: $layout-spacing-base/2 !important;
 }
+
+.tooltip--large {
+    padding: .5em .25em;
+    font-size: $typo-size-lead;
+}
