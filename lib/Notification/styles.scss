@@ -1,9 +1,7 @@
 .notification {
-	font-size: 13px;
-	line-height: 1.75em;
-	padding: 10px 15px;
+	font-size: $typo-size-slight;
+	padding: $layout-spacing-base/2 $layout-spacing-base*0.75;
 	border: 1px solid transparent;
-	font-weight: inherit;
 
 	&--danger {
 		background-color: $color-alert--danger;
