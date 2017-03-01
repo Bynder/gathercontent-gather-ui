@@ -1,60 +1,43 @@
-/**
- * We're using important here simply because bloody Bootstrap
- * is overwriting basic component styling based on <input> tag.
- * Damn Bootstrap.
- */
-
-/* Outer wrapper for the component */
-.c-input-search {
+.search-input {
     position: relative;
-
-    input {
-        margin: 0;
-    }
 }
 
-.input-search,
-.c-input {
-    border: 1px solid #eaeaea !important;
-    box-shadow: none;
+.search-input__input {
+    margin: 0;
+    border: 1px solid $color-input-border;
     font-size: 13px;
     line-height: 1.5;
-    padding: 10px !important;
-
-    &--pad-right {
-        margin-right: 20px;
-    }
+    padding: $layout-spacing-base/2;
 }
 
-.c-input { height: auto !important; /* because Bootstrap, again. */}
-
-.input-search__clear {
+.search-input__clear {
     position: absolute;
-    transform: translateY(50%);
+    transform: translateY(-50%);
+    top: 50%;
     display: inline-block;
     opacity: 0;
-    transition: all .125s ease-in-out ;
-    color: #ccc;
-    width: 1.34em;
-    text-align: center;
-    height: 1.34em;
+    color: $color-text-light;
     border-radius: 50%;
     background: none;
     border: 0;
+    width: 23px;
+    height: 23px;
     padding: 0;
+    line-height: 1em;
+    transition: all .125s ease-in-out;
+    cursor: pointer;
 
     &.is-visible {
         opacity: 1;
-        transform: translateY(50%) translateX(-2em);
-        cursor: pointer;
+        transform: translateY(-50%) translateX(-33px);
 
         &:hover {
-            background: rgba(20, 20, 20, .05);
+            background: rgba($color-btn-default-light--bg, .5);
         }
     }
 }
 
-.c-input-search__icon {
+.search-input__icon {
     position: absolute;
     top: 0;
     color: #ccc;
