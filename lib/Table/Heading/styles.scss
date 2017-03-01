@@ -1,15 +1,14 @@
 .table-heading {
-    padding: 15px;
+    padding: $layout-spacing-base - 5px;
     border-bottom: 1px solid #e0e0e0;
-    border-radius: 4px 4px 0 0;
     background: $color-table-heading--bg;
     color: #6f7c82;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: $typo-size-small;
+    font-weight: $typo-weight-semi-bold;
 
     > * {
         display: inline-block;
-        margin-left: 20px;
+        margin-left: $layout-spacing-base;
     }
 }
 
@@ -24,8 +23,7 @@
 .table-heading__icon {
     position: relative;
     top: -2px;
-    font-size: 14px;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 $layout-spacing-base/4;
     opacity: .25;
 
     .is-active & {
@@ -35,4 +33,8 @@
     .is-reversed & {
         top: 4px;
     }
+}
+
+.table-heading__checkbox {
+    margin: 0;
 }
