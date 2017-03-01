@@ -1,11 +1,9 @@
 /* ==========================================================================
    Text
    ========================================================================== */
-$color-red: #FC5C54;
-$color-secondary-title--text: #8894a5;
-
 $color-text-base: rgb(56, 64, 71);
 $color-text-heading: #384047;
+$color-text-danger: #FC5C54;
 
 /* ==========================================================================
    Links
@@ -17,31 +15,10 @@ $color-link-quiet: #C8C8C8;
 /* ==========================================================================
    Status (danger, warning, success & info)
    ========================================================================== */
-$color-icon--success: rgb(110, 209, 140);
 
 /* ==========================================================================
    Backgrounds
    ========================================================================== */
-$color-well-background: rgb(251, 252, 253);
-
-/* ==========================================================================
-   Alerts
-   ========================================================================== */
-$color-alert--danger: #FEEEEE;
-$color-alert--danger-text: #B33D37;
-$color-alert--danger-border: #FCCECB;
-
-$color-alert--warning: #FFFCEF;
-$color-alert--warning-text: #71591C;
-$color-alert--warning-border: #FCF5D2;
-
-$color-alert--success: #EFFAF2;
-$color-alert--success-text: #206B17;
-$color-alert--success-border: #CFF1D8;
-
-$color-alert--info: #F7F9FA;
-$color-alert--info-text: #4B5761;
-$color-alert--info-border: #EDEEEF;
 
 /* ==========================================================================
    Buttons
