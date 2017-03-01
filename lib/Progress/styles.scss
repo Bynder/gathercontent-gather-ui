@@ -1,15 +1,28 @@
-.c-progress-bar {
-	background-color: rgb(241, 241, 241);
-	border-radius: 16px;
-	height: 12px;
-	margin-top: 13px;
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$progress-bg: $color-background-light !default;
+$progress-border-radius: 16px !default;
+$progress-height: 12px !default;
+$progress-transition: .5s !default;
+$progress-animation-delay: 2000ms !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.progress__bar {
+	background-color: $progress-bg;
+	border-radius: $progress-border-radius;
+	height: $progress-height;
+
 	overflow: hidden;
 	transform: rotateY(180deg);
-	width: 100%;
 }
 
-.c-progress-unit {
+.progress__unit {
+	height: $progress-height;
+
 	display: inline-block;
-	height: 18px;
-	transition: all 2000ms ease-in-out .5s;
+	vertical-align: top;
+	transition: all $progress-animation-delay ease-in-out $progress-transition;
 }
