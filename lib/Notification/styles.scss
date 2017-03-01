@@ -1,32 +1,57 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$notification-font-size: $typo-size-base !default;
+$notification-padding: $layout-spacing-base/2 !default;
+$notification-border-width: 1px !default;
+$notification-border-style: solid !default;
+
+$notification-danger-bg: #FEEEEE !default;
+$notification-danger-text: #B33D37 !default;
+$notification-danger-border: #FCCECB !default;
+
+$notification-warning-bg: #FFFCEF !default;
+$notification-warning-text: #71591C !default;
+$notification-warning-border: #FCF5D2 !default;
+
+$notification-success-bg: #EFFAF2 !default;
+$notification-success-text: #206B17 !default;
+$notification-success-border: #CFF1D8 !default;
+
+$notification-info-bg: #F7F9FA !default;
+$notification-info-text: #4B5761 !default;
+$notification-info-border: #EDEEEF !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .notification {
-	font-size: 13px;
-	line-height: 1.75em;
-	padding: 10px 15px;
-	border: 1px solid transparent;
-	font-weight: inherit;
+	font-size: $notification-font-size;
+	padding: $notification-padding;
+	border: $notification-border-width $notification-border-style transparent;
 
 	&--danger {
-		background-color: $color-alert--danger;
-		color: $color-alert--danger-text;
-		border-color: $color-alert--danger-border;
+		background-color: $notification-danger-bg;
+		color: $notification-danger-text;
+		border-color: $notification-danger-border;
 	}
 
 	&--warning {
-		background-color: $color-alert--warning;
-		color: $color-alert--warning-text;
-		border-color: $color-alert--warning-border;
+		background-color: $notification-warning-bg;
+		color: $notification-warning-text;
+		border-color: $notification-warning-border;
 	}
 
 	&--info {
-		background-color: $color-alert--info;
-		color: $color-alert--info-text;
-		border-color: $color-alert--info-border;
+		background-color: $notification-info-bg;
+		color: $notification-info-text;
+		border-color: $notification-info-border;
 	}
 
 	&--success {
-		background-color: $color-alert--success;
-		color: $color-alert--success-text;
-		border-color: $color-alert--success-border;
+		background-color: $notification-success-bg;
+		color: $notification-success-text;
+		border-color: $notification-success-border;
 	}
 
 	&.has-click-handler {
