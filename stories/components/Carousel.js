@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import Carousel from '../../lib/Carousel/';
 import StoryItem from '../styleguide/StoryItem';
+import ExampleCarouselChild from '../styleguide/ExampleCarouselChild';
 
 storiesOf('Components', module)
   .add('Carousel', () => {
@@ -15,9 +16,9 @@ storiesOf('Components', module)
             selected={1}
             className="gc-carousel"
           >
-            <div>Slide 1</div>
-            <div>Slide 2</div>
-            <div>Slide 3</div>
+            <ExampleCarouselChild title="Slide 1" />
+            <ExampleCarouselChild title="Slide 2" />
+            <ExampleCarouselChild title="Slide 3" />
           </Carousel>
         </StoryItem>
       </div>
