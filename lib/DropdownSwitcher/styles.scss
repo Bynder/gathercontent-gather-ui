@@ -1,8 +1,16 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$dropdown-switcher-hover-color: $color-btn-primary--hover !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .dropdown-switcher {
   width: auto;
 
   &:hover .dropdown-switcher__arrow {
-    color: $color-btn-primary--hover;
+    color: $dropdown-switcher-hover-color;
   }
 }
 

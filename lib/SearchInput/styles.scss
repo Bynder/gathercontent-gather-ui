@@ -1,3 +1,11 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$search-input-clear-hover-bg: rgba($color-btn-default-light--bg, .5) !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .search-input {
     position: relative;
 }
@@ -32,7 +40,7 @@
         transform: translateY(-50%) translateX(-33px);
 
         &:hover {
-            background: rgba($color-btn-default-light--bg, .5);
+            background: $search-input-clear-hover-bg;
         }
     }
 }

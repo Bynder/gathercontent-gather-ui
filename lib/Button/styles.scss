@@ -1,3 +1,27 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$color-btn-primary--bg: rgb(74, 181, 69);
+$color-btn-primary--text: white;
+$color-btn-primary--hover: rgb(73, 171, 0);
+
+$color-btn-secondary--bg: rgb(70, 142, 229);
+$color-btn-secondary--hover: rgb(61, 125, 204);
+
+$color-btn-warning--bg: #da4f49;
+$color-btn-warning--hover: #bd362f;
+$color-btn-warning--text: white;
+
+$color-btn-default-light--bg: #eaeaea;
+$color-btn-default-light--text: #444;
+$color-btn-default-light--hover: #D3D3D3;
+$color-btn-default-dark--bg: #777;
+$color-btn-default-dark--text: white;
+$color-btn-default-dark--hover: #5e5e5e;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .button {
   border: none;
   border-radius: 3px;
