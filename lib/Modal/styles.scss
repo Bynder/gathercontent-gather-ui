@@ -1,3 +1,10 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$modal-title-font-size: 21px;
+$modal-large-width: 780px;
+$modal-x-large-width: 900px;
+
 .modal {
 	overflow: hidden;
 }
@@ -7,11 +14,11 @@
 
 	h4 {
 		font-size: 18px;
-		margin-bottom: 10px;
+		margin-bottom: $layout-spacing-base / 2;
 	}
 
 	p {
-		font-size: 14px;
+		font-size: $typo-size-small;
 	}
 }
 
@@ -57,19 +64,18 @@
 }
 
 /**
- * React bootstrap suddenly injects a padding-right: 15px to the modals
- * we're using. Until we figure out why, we override it manually...
- */
+* React bootstrap suddenly injects a padding-right: 15px to the modals
+* we're using. Until we figure out why, we override it manually...
+*/
 .modal--no-padding {
 	padding: 0 !important;
 }
 
 .modal {
-	* { box-sizing: border-box; }
 
-  &__content {
-    overflow: hidden;
-  }
+	&__content {
+		overflow: hidden;
+	}
 
 	&__column {
 		padding: 30px;
@@ -95,7 +101,7 @@
 	}
 
 	&__title {
-		font-size: 21px;
+		font-size: $modal-title-font-size;
 		font-weight: 400;
 		line-height: 1.3;
 		color: rgb(75, 86, 95);
@@ -113,27 +119,8 @@
 	&__actions {
 		position: absolute;
 		background-color: transparent !important;
-		bottom: 20px;
+		bottom: $layout-spacing-base;
 		right: 30px;
-	}
-
-	&__password-setup {
-		margin-top: 30px;
-		background-color: transparent !important; // Override Chrome's autofill bg
-
-		.c-input {
-			float: left;
-		}
-
-		.c-input + .button {
-			float: left;
-		}
-	}
-
-	&__password-setup-error {
-		color: $color-text-danger;
-		font-size: 12px;
-		margin-top: 10px;
 	}
 
 	&--large,
@@ -146,25 +133,22 @@
 		box-shadow: none;
 		border: none;
 
+		.modal-content {
+			border: none;
+			box-shadow: none;
+		}
+
 		.modal-dialog {
 			border-radius: 10px;
 			margin: 30px auto;
 			background: #fff;
 			min-height: 420px;
-			width: 780px;
+			width: $modal-large-width;
 			overflow: hidden;
-		}
-
-		&.modal.fade.in {
-			transform: translateY(-50%);
-
-			.ie9 & {
-				margin-top: -300px;
-			}
 		}
 	}
 
 	&--x-large {
-		.modal-dialog { width: 900px; }
+		.modal-dialog { width: $modal-x-large-width; }
 	}
 }
