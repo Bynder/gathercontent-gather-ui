@@ -9,7 +9,7 @@ $search-input-line-height: $typo-line-height-base !default;
    Styles
    ========================================================================== */
 .search-input {
-    position: relative;
+  position: relative;
 }
 
 .search-input__input {
@@ -37,9 +37,9 @@ $search-input-line-height: $typo-line-height-base !default;
     transition: all $animation-time-micro ease-in-out;
     cursor: pointer;
 
-    &.is-visible {
-        opacity: 1;
-        transform: translateY(-50%) translateX(-33px);
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-33px);
 
         &:hover {
             background: $search-input-clear-hover-bg;
