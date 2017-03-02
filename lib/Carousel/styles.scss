@@ -5,7 +5,8 @@ $carousel-indicators-margin: $layout-spacing-base !default;
 $carousel-indicator-item-width: 10px !default;
 $carousel-indicator-item-height: 10px !default;
 $carousel-indicator-item-margin-right: $layout-spacing-base/2 !default;
-$carousel-indicator-item-background: $color-btn-default-light--bg !default;
+$carousel-indicator-item-background: $color-background-light !default;
+$carousel-indicator-item-active-background: $color-background-blue !default;
 
 /* ==========================================================================
    Styles
@@ -29,6 +30,6 @@ $carousel-indicator-item-background: $color-btn-default-light--bg !default;
     transition: all .2s ease;
 
     &.is-active {
-        background-color: $color-btn-secondary--bg;
+        background-color: $carousel-indicator-item-active-background;
     }
 }
