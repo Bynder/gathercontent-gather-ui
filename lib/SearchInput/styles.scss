@@ -34,7 +34,7 @@ $search-input-line-height: $typo-line-height-base !default;
     height: 23px;
     padding: 0;
     line-height: 1em;
-    transition: all .125s ease-in-out;
+    transition: all $animation-time-micro ease-in-out;
     cursor: pointer;
 
     &.is-visible {
@@ -56,6 +56,6 @@ $search-input-line-height: $typo-line-height-base !default;
 
     &.is-visible {
         opacity: 0;
-        transform: translateX(2em);
+        transform: translateX(33px);
     }
 }
