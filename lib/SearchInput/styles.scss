@@ -2,6 +2,8 @@
    Config
    ========================================================================== */
 $search-input-clear-hover-bg: rgba($color-btn-default-light--bg, .5) !default;
+$search-input-font-size: $typo-size-base !default;
+$search-input-line-height: $typo-line-height-base !default;
 
 /* ==========================================================================
    Styles
@@ -13,8 +15,8 @@ $search-input-clear-hover-bg: rgba($color-btn-default-light--bg, .5) !default;
 .search-input__input {
     margin: 0;
     border: 1px solid $color-input-border;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: $search-input-font-size;
+    line-height: $search-input-line-height;
     padding: $layout-spacing-base/2;
 }
 
@@ -48,9 +50,9 @@ $search-input-clear-hover-bg: rgba($color-btn-default-light--bg, .5) !default;
 .search-input__icon {
     position: absolute;
     top: 0;
-    color: #ccc;
-    right: 10px;
-    transition: all .125s ease-in-out;
+    color: $color-text-light;
+    right: $layout-spacing-base/2;
+    transition: all $animation-time-micro ease-in-out;
 
     &.is-visible {
         opacity: 0;

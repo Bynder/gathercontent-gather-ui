@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $dropdown-switcher-hover-color: $color-btn-primary--hover !default;
+$dropdown-switcher-title-margin: 0 0 $layout-spacing-base !default;
 
 /* ==========================================================================
    Styles
@@ -15,12 +16,12 @@ $dropdown-switcher-hover-color: $color-btn-primary--hover !default;
 }
 
 .dropdown-switcher__arrow {
-  margin-left: 10px;
+  margin-left: $layout-spacing-base/2;
 }
 
 .dropdown-switcher__title {
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 5px;
-  font-weight: 400;
+  margin-bottom: $layout-spacing-base/4;
+  font-weight: $typo-weight-roman;
 }
