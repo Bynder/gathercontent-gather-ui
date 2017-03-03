@@ -1,8 +1,21 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$table-heading-padding: $layout-spacing-base !default;
+$table-heading-color: #6f7c82 !default;
+$table-heading-border-color: $color-background-light !default;
+$table-heading-bg: $color-table-heading--bg !default;
+$table-heading-font-size: $typo-size-base !default;
+$table-heading-font-weight: $typo-weight-semi-bold !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .table-heading {
-    padding: $layout-spacing-base - 5px;
-    border-bottom: 1px solid #e0e0e0;
-    background: $color-table-heading--bg;
-    color: #6f7c82;
+    padding: $table-heading-padding;
+    border-bottom: 1px solid $table-heading-border-color;
+    background: $table-heading-bg;
+    color: $table-heading-color;
     font-size: $typo-size-small;
     font-weight: $typo-weight-semi-bold;
 
