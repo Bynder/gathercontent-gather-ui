@@ -21,7 +21,7 @@ storiesOf('Components', module)
         <StoryItem
           title="Dropdown without a button"
           description="A link that opens a dropdown.">
-          <DropdownMenu type="link" caret shouldDisplay items={assets.getDropdownItems()}>
+          <DropdownMenu type="link" caret shouldDisplay items={assets.getDropdownItemsWithSeparator()}>
             Actions
           </DropdownMenu>
         </StoryItem>
