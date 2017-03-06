@@ -1,0 +1,94 @@
+$backgroundColour: #667386;
+$borderColour: #F8FBFC;
+
+.toggle-switch {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.toggle-switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.toggle-wrapper {
+  display: block;
+  overflow: hidden;
+}
+
+.toggle-wrapper--center {
+  text-align: center;
+}
+
+.toggle-wrapper__label,
+.toggle-wrapper__inner {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle-wrapper__label {
+  font-size: 14px;
+  margin-top: 9px;
+  vertical-align: top;
+
+  &:first-of-type { margin-right: 10px; }
+  &:last-of-type { margin-left: 10px; }
+}
+
+.toggle-switch + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 52px;
+  transition: margin 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle-switch:checked + label:after {
+  margin-left: 26px;
+}
+
+/*  New switch */
+.toggle-switch + .toggle-switch__label {
+  padding: 2px;
+  width: 53px;
+  height: 33px;
+  border: 2px solid $borderColour;
+  background-color: $backgroundColour;
+  border-radius: 60px;
+  transition: background 0.4s;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+}
+
+.toggle-switch + .toggle-switch__label:before,
+.toggle-switch + .toggle-switch__label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+.toggle-switch + .toggle-switch__label:after {
+  top: 3px;
+  left: 3px;
+  bottom: 4px;
+  width: 23px;
+  height: 23px;
+  background-color: #fff;
+  border-radius: 52px;
+  transition: margin 0.2s cubic-bezier(0.4, 0, 1, 1),
+              background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toggle-switch:checked + .toggle-switch__label:after {
+  margin-left: 20px;
+}
+
+.toggle-switch--inline + label {
+  display: inline-block;
+}
