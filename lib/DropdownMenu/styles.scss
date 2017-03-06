@@ -74,7 +74,7 @@ $dropdown-link-padding: 7px 15px !default;
 }
 
 .dropdown__separator {
-  background-color: $color-input-border;
+  background-color: rgba($color-input-border, .5);
   height: 1px;
   margin: 3px 0;
 }

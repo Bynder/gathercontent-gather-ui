@@ -32,8 +32,7 @@ $search-input-line-height: $typo-line-height-base !default;
     border: 0;
     width: 23px;
     height: 23px;
-    padding: 0;
-    line-height: 1em;
+    line-height: 1;
     transition: all $animation-time-micro ease-in-out;
     cursor: pointer;
 
