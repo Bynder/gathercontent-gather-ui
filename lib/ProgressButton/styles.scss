@@ -1,18 +1,18 @@
-.progress-button__spinner {
+/* ==========================================================================
+   Styling
+   ========================================================================== */
+.progress-button__wrapper {
   position: relative;
-
-  .hide-button {
-    visibility: hidden;
-  }
 }
 
-.progress-button__spinner-icon {
-  @include animateKeyframe(spin360, 1s);
-  
+.progress-button__icon {
   position: absolute;
   left: 0;
   right: 0;
-  top: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
   margin-left: auto;
   margin-right: auto;
+  @include animateKeyframe(spin360, 1s);
 }

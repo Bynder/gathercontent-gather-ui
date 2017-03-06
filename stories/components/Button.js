@@ -33,7 +33,10 @@ const button = storiesOf('Components', module)
         title="Loading button"
         description="A button that generates a spinner when pressed. It can be of any button type."
       >
-        <ProgressButton clickHandler={action('clickedHandler')} value="Click to load"/>
+        <ProgressButton
+          clickHandler={action('clickedHandler')}
+          value="Click to load"
+        />
       </StoryItem>
 
       <StoryItem
