@@ -1,0 +1,46 @@
+.modal {
+    overflow: hidden;
+}
+
+.modal-body {
+    padding: $modal-padding;
+    font-size: $modal-font-size;
+
+    h4 {
+        font-size: $modal-heading-font-size;
+        margin-bottom: $layout-spacing-base / 2;
+    }
+}
+
+.modal-header {
+    min-height: 16px;
+    padding: $modal-padding;
+    font-weight: $typo-weight-bold;
+}
+
+.modal-content {
+    background-clip: padding-box;
+    margin: 0;
+    background-color: white;
+    position: relative;
+}
+
+.modal-dialog {
+    position: relative;
+}
+
+.modal-title {
+    font-size: $modal-heading-font-size;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform .3s ease-out;
+}
+
+.modal.in .modal-dialog {
+    transform: translate(0, 0);
+}
+
+.modal--no-padding {
+    padding: 0 !important;
+}

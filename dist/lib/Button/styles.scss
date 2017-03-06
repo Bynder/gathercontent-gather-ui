@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$color-btn-primary--bg: rgb(74, 181, 69) !default;
+$color-btn-primary--text: white !default;
+$color-btn-primary--hover: rgb(73, 171, 0) !default;
+
+$color-btn-secondary--bg: rgb(70, 142, 229) !default;
+$color-btn-secondary--hover: rgb(61, 125, 204) !default;
+
+$color-btn-warning--bg: #da4f49 !default;
+$color-btn-warning--hover: #bd362f !default;
+$color-btn-warning--text: white !default;
+
+$color-btn-default-light--bg: #eaeaea !default;
+$color-btn-default-light--text: #444 !default;
+$color-btn-default-light--hover: #D3D3D3 !default;
+$color-btn-default-dark--bg: #777 !default;
+$color-btn-default-dark--text: white !default;
+$color-btn-default-dark--hover: #5e5e5e !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.button {
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: $typo-weight-roman;
+  padding: ($layout-spacing-base/2 + 1px) ($layout-spacing-base - 2px);
+  transition: all $animation-time-micro ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  & + &,
+  & + .dropdown {
+  	margin-left: $layout-spacing-base/2;
+  }
+}
+
+.button__helper {
+  border-bottom: 1px dotted;
+  margin-left: $layout-spacing-base/4;
+}
+
+.button--primary {
+  background: $color-btn-primary--bg;
+  color: $color-btn-primary--text;
+
+  &:hover {
+    background: $color-btn-primary--hover;
+    color: $color-btn-primary--text;
+  }
+
+  &:focus {
+    color: $color-btn-primary--text;
+  }
+}
+
+.button--secondary {
+  background: $color-btn-secondary--bg;
+  color: $color-btn-primary--text;
+
+  &:hover {
+    background: $color-btn-secondary--hover;
+    color: $color-btn-primary--text;
+  }
+
+  &:focus {
+    color: $color-btn-primary--text;
+  }
+}
+
+.button--link {
+  background: transparent;
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    background: transparent;
+    color: $color-btn-secondary--hover;
+  }
+}
+
+.button--danger {
+  background: $color-btn-warning--bg;
+  color: $color-btn-warning--text;
+
+  &:hover {
+    color: $color-btn-warning--text;
+    background: $color-btn-warning--hover;
+  }
+
+  &:focus {
+    color: $color-btn-warning--text;
+  }
+}
+
+.button--light-grey {
+  background: $color-btn-default-light--bg;
+  color: $color-btn-default-light--text;
+
+  &:hover {
+    background: $color-btn-default-light--hover;
+    color: $color-btn-default-light--text;
+  }
+}
+
+.button--dark-grey {
+  background: $color-btn-default-dark--bg;
+  color: $color-btn-default-dark--text;
+
+  &:hover {
+    background: $color-btn-default-dark--hover;
+    color: $color-btn-default-dark--text;
+  }
+}
+
+.button--clear {
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.button--has-tooltip {
+  display: inline-block;
+}

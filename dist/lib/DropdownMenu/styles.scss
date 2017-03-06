@@ -1,0 +1,90 @@
+.dropdown-menu__button-text {
+	position: relative;
+	font-size: 14px;
+}
+
+.dropdown-menu__button-text + .fa {
+	margin-left: 5px;
+}
+
+.dropdown-menu {
+	.open & {
+		display: block;
+		opacity: 1;
+		transition: opacity;
+	}
+}
+
+/** Bootstrap styling **/
+.dropup,
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+	&.is-hidden {
+		> button {
+			display: none;
+		}
+	}
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-toggle {
+  i {
+    font-size: 12px;
+    margin-right: 3px;
+    vertical-align: baseline;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/** Custom **/
+.dropdown__link {
+  display: block;
+  padding: 7px 15px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #6f7c82;
+  font-weight: 500;
+	font-size: 13px;
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    color: #111823;
+    background: #f9f9f9;
+  }
+}
+
+.dropdown__separator {
+  background-color: #f1f6f7;
+  height: 1px;
+  margin: 3px 0;
+}
+
+.dropdown__menu {
+	li a {
+		color: #6f7c82;
+		text-decoration: none;
+		font-size: 13px;
+	}
+
+  li.disabled a {
+    opacity: .4;
+  }
+
+  a[role="menuitem"]:focus {
+    outline: none;
+  }
+}

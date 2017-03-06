@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Styling
+   ========================================================================== */
+.progress-button__wrapper {
+  position: relative;
+}
+
+.progress-button__icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  @include animateKeyframe(spin360, 1s);
+}

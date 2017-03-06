@@ -1,0 +1,27 @@
+#root {
+  padding: 20px; // Give the playarea some room to breathe
+}
+
+.sg__colour {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  float: left;
+  align-items: center;
+  margin: 1em;
+}
+
+.sg__colour-block {
+  width: 5em;
+  height: 5em;
+  padding: 1em;
+  background: rgb(255,100,125);
+  border-radius: 3px;
+}
+
+.story-item {
+  margin-bottom: 2em;
+  margin-top: 1em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #eee;
+}

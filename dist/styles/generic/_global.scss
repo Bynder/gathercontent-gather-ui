@@ -1,0 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $typo-stack-base;
+    line-height: $typo-line-height-base;
+    font-size: $typo-size-base;
+    color: $color-text-base;
+}

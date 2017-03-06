@@ -2,7 +2,7 @@
   "name": "gather-content-ui",
   "version": "0.2.0",
   "description": "GatherContent UI Library",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gathercontent/gather-ui"
@@ -19,18 +19,18 @@
     "email": "ricardo@gathercontent.com"
   }],
   "scripts": {
-    "autoprefixer": "node_modules/.bin/postcss --use autoprefixer dist/styles.css -o dist/styles.css",
-    "pixrem": "node_modules/.bin/postcss --use pixrem dist/styles.css -o dist/styles.css",
-    "copy-settings": "echo Copying Sass settings... && node_modules/.bin/copyfiles -f styles/settings/*.scss dist/settings",
-    "styles": "echo Building Sass files... && node_modules/.bin/node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer && npm run pixrem",
-    "build": "node_modules/.bin/babel lib/ --out-dir dist/ && npm run styles",
+    "autoprefixer": "postcss --use autoprefixer dist/styles.css -o dist/styles.css",
+    "pixrem": "postcss --use pixrem dist/styles.css -o dist/styles.css",
+    "copy-styles": "echo Copying Sass settings... && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
+    "styles": "echo Building Sass files... && node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer && npm run pixrem",
+    "build": "babel lib/ --out-dir dist/lib && npm run styles && npm run copy-styles",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "mocha tests/** --compilers js:babel-register || exit 0",
     "test:watch": "mocha tests --watch --compilers js:babel-register",
     "tdd": "npm run test:watch",
-    "lint": "./node_modules/.bin/eslint -c .eslintrc.json lib/* || exit 0"
+    "lint": "eslint -c .eslintrc.json lib/* || exit 0"
   },
   "keywords": ["React", "UI Library"],
   "license": "MIT",
