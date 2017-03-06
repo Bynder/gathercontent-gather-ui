@@ -16,8 +16,9 @@ storiesOf('Components', module)
           message="That kittens are just as awesome as dogs?"
           submitText="Hell yes"
           cancelText="Meow no"
-          type="primary" />
+          type="primary"
+        />
       </StoryItem>
       </div>
     );
-  })
+  });

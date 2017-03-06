@@ -21,7 +21,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#upgrade"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -29,7 +29,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
             <PlanBox
@@ -38,7 +38,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -46,7 +46,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
             <PlanBox
@@ -55,7 +55,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#upgrade"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -63,7 +63,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
           </PlanBoxWrapper>
@@ -81,7 +81,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#upgrade"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -89,7 +89,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
             <PlanBox
@@ -99,7 +99,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -109,7 +109,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
             <PlanBox
@@ -118,7 +118,7 @@ storiesOf('Components', module)
               description="Plan description"
               upgradeUrl="#upgrade"
               buttonText="Button text"
-              exceedsUsageMessage="Exceeded item limit"
+              tooltipText="Exceeded item limit"
             >
               <PlanBoxPricing
                 price={100}
@@ -126,7 +126,7 @@ storiesOf('Components', module)
                 priceType="priceMonthly"
               />
               <PlanBoxAllowanceDetails
-                plan={{ items: 100, projects: "10" }}
+                plan={{ items: 100, projects: 10 }}
               />
             </PlanBox>
           </PlanBoxWrapper>

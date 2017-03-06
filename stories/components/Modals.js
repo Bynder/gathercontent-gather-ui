@@ -22,7 +22,7 @@ storiesOf('Components', module)
               </Modal.Column>
             </Modal.Content>
             <Modal.Footer>
-              <Button types={['secondary']}>Confirm</Button>
+              <Button types={['secondary']} clickHandler={action('clickHandler')}>Confirm</Button>
             </Modal.Footer>
           </Modal.Container>
         </StoryItem>
