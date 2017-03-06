@@ -21,7 +21,7 @@ describe('SearchInput', () => {
 		let input = Element.find('input');
 
 		expect(input).to.have.length(1);
-		expect(input.props().className).to.equal('input-search');
+		expect(input.props().className).to.equal('search-input__input');
 	});
 
 	it('should run a callback when the query changes', () => {
@@ -45,8 +45,8 @@ describe('SearchInput', () => {
 		let callback = sinon.stub();
 
 		const Element = mount(<SearchInput onChangeHandler={ callback } />);
-		const clearButton = Element.find('.input-search__clear');
-		const input = Element.find('.input-search');
+		const clearButton = Element.find('.search-input__clear');
+		const input = Element.find('.search-input__input');
 		const onClick = sinon.spy();
 
 		Element.setState({query: 'fake query'});

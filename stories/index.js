@@ -6,6 +6,7 @@ import Base from './base/Base';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';
+import ConfirmationModal from './components/ConfirmationModal';
 import SearchInput from './components/SearchInput';
 import DropdownMenu from './components/Dropdown';
 import Icons from './components/Icons';
