@@ -1,154 +1,92 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$modal-title-font-size: 21px;
-$modal-large-width: 780px;
-$modal-x-large-width: 900px;
+$modal-title-font-size: 21px !default;
+$modal-large-width: 780px !default;
+$modal-x-large-width: 900px !default;
 
-.modal {
+$modal-padding: $layout-spacing-base !default;
+$modal-font-size: $typo-size-small !default;
+$modal-heading-font-size: $typo-size-base !default;
+$modal-column-padding: $modal-padding !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.modal__content {
 	overflow: hidden;
 }
 
-.modal-body {
-	padding: 15px;
+.modal__column {
+	padding: $modal-column-padding;
+	width: 50%;
+	float: left;
+	position: relative;
 
-	h4 {
-		font-size: 18px;
-		margin-bottom: $layout-spacing-base / 2;
+	&--1-3 {
+		width: 33%;
+		min-height: 430px;
 	}
 
-	p {
-		font-size: $typo-size-small;
+	&--3-4 {
+		width: 67%;
+		min-height: 430px;
+	}
+
+	&--highlight {
+		background: rgb(247, 250, 253);
+		color: rgb(76, 88, 96);
+		border-right: 1px solid rgb(229, 233, 238);
 	}
 }
 
-.modal-header {
-	min-height: 16px;
-	padding: 16px;
-	font-weight: 600;
+.modal__title {
+	font-size: $modal-title-font-size;
+	font-weight: $typo-weight-roman;
+	color: rgb(75, 86, 95);
 }
 
-.modal-content {
-	background-clip: padding-box;
-	margin: 0;
-	background-color: white;
-	position: relative;
+.modal__illustration {
+	margin: 90px 0 0;
+
+	svg {
+		transform: scale(1);
+		height: 100px;
+	}
 }
 
-.modal-dialog {
-	position: relative;
+.modal__actions {
+	position: absolute;
+	background-color: transparent !important;
+	bottom: $layout-spacing-base;
+	right: 30px;
 }
 
-.modal-footer__link {
-	margin-right: 10px;
-}
+.modal--large,
+.modal--x-large {
+	left: 0;
+	right: 0;
+	width: auto;
+	margin: auto;
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
 
-.modal-footer button {
-	margin-right: 0;
-}
+	.modal-content {
+		border: none;
+		box-shadow: none;
+	}
 
-.modal-title {
-	font-size: 18px;
-}
-
-.modal.fade .modal-dialog {
-	transition: transform .3s ease-out;
-}
-
-.modal.in .modal-dialog {
-	transform: translate(0, 0);
-}
-
-.modal-body p {
-	line-height: 1.4;
-}
-
-/**
-* React bootstrap suddenly injects a padding-right: 15px to the modals
-* we're using. Until we figure out why, we override it manually...
-*/
-.modal--no-padding {
-	padding: 0 !important;
-}
-
-.modal {
-
-	&__content {
+	.modal-dialog {
+		border-radius: 10px;
+		margin: 30px auto;
+		background: #fff;
+		min-height: 420px;
+		width: $modal-large-width;
 		overflow: hidden;
 	}
+}
 
-	&__column {
-		padding: 30px;
-		width: 50%;
-		float: left;
-		position: relative;
-
-		&--1-3 {
-			width: 33%;
-			min-height: 430px;
-		}
-
-		&--3-4 {
-			width: 67%;
-			min-height: 430px;
-		}
-
-		&--highlight {
-			background: rgb(247, 250, 253);
-			color: rgb(76, 88, 96);
-			border-right: 1px solid rgb(229, 233, 238);
-		}
-	}
-
-	&__title {
-		font-size: $modal-title-font-size;
-		font-weight: 400;
-		line-height: 1.3;
-		color: rgb(75, 86, 95);
-	}
-
-	&__illustration {
-		margin: 90px 0 0;
-
-		svg {
-			transform: scale(1);
-			height: 100px;
-		}
-	}
-
-	&__actions {
-		position: absolute;
-		background-color: transparent !important;
-		bottom: $layout-spacing-base;
-		right: 30px;
-	}
-
-	&--large,
-	&--x-large {
-		left: 0;
-		right: 0;
-		width: auto;
-		margin: auto;
-		background-color: transparent;
-		box-shadow: none;
-		border: none;
-
-		.modal-content {
-			border: none;
-			box-shadow: none;
-		}
-
-		.modal-dialog {
-			border-radius: 10px;
-			margin: 30px auto;
-			background: #fff;
-			min-height: 420px;
-			width: $modal-large-width;
-			overflow: hidden;
-		}
-	}
-
-	&--x-large {
-		.modal-dialog { width: $modal-x-large-width; }
-	}
+.modal--x-large {
+	.modal-dialog { width: $modal-x-large-width; }
 }
