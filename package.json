@@ -11,13 +11,16 @@
     "url": "https://github.com/gathercontent/gather-ui/issues"
   },
   "author": "",
-  "contributors": [{
-    "name": "Kyle Harper",
-    "email": "kyle@gathercontent.com"
-  },{
-    "name": "Ricardo Magalhães",
-    "email": "ricardo@gathercontent.com"
-  }],
+  "contributors": [
+    {
+      "name": "Kyle Harper",
+      "email": "kyle@gathercontent.com"
+    },
+    {
+      "name": "Ricardo Magalhães",
+      "email": "ricardo@gathercontent.com"
+    }
+  ],
   "scripts": {
     "autoprefixer": "postcss --use autoprefixer dist/styles.css -o dist/styles.css",
     "pixrem": "postcss --use pixrem dist/styles.css -o dist/styles.css",
@@ -32,7 +35,10 @@
     "tdd": "npm run test:watch",
     "lint": "eslint -c .eslintrc.json lib/* || exit 0"
   },
-  "keywords": ["React", "UI Library"],
+  "keywords": [
+    "React",
+    "UI Library"
+  ],
   "license": "MIT",
   "dependencies": {
     "bootstrap": "3.3.6",
@@ -49,6 +55,7 @@
     "@kadira/storybook": "^2.35.3",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-inline-react-svg": "^0.2.0",
     "babel-preset-es2015": "^6.18.0",
