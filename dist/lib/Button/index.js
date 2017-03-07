@@ -36,6 +36,13 @@ var Button = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
 
+    _this.defaultProps = {
+      types: ['primary'],
+      disableOnClick: false,
+      disabled: false,
+      className: ''
+    };
+
     _this.state = {
       disabled: false
     };
@@ -46,17 +53,17 @@ var Button = function (_Component) {
   }
 
   _createClass(Button, [{
-    key: 'handleOnClick',
-    value: function handleOnClick() {
-      this.setState({ disabled: this.props.disableOnClick });
-      this.props.clickHandler();
-    }
-  }, {
     key: 'getTypeClasses',
     value: function getTypeClasses() {
       return this.props.types.reduce(function (typeClasses, type) {
         return typeClasses + ' button--' + type;
       }, 'button');
+    }
+  }, {
+    key: 'handleOnClick',
+    value: function handleOnClick() {
+      this.setState({ disabled: this.props.disableOnClick });
+      this.props.clickHandler();
     }
   }, {
     key: 'render',

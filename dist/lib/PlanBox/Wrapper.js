@@ -28,4 +28,17 @@ var PlanBoxWrapper = function PlanBoxWrapper(props) {
   );
 };
 
+PlanBoxWrapper.defaultProps = {
+  className: '',
+  gridClassName: '',
+  gridCellClassName: ''
+};
+
+PlanBoxWrapper.propTypes = {
+  children: _react.PropTypes.arrayOf(_react.PropTypes.node).isRequired,
+  className: _react.PropTypes.string,
+  gridClassName: _react.PropTypes.string,
+  gridCellClassName: _react.PropTypes.string
+};
+
 exports.default = PlanBoxWrapper;

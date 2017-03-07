@@ -18,8 +18,12 @@ var ModalContent = function ModalContent(props) {
   );
 };
 
+ModalContent.defaultProps = {
+  className: ''
+};
+
 ModalContent.propTypes = {
-  children: _react.PropTypes.arrayOf(_react.PropTypes.node),
+  children: _react.PropTypes.arrayOf(_react.PropTypes.node).isRequired,
   className: _react.PropTypes.string
 };
 

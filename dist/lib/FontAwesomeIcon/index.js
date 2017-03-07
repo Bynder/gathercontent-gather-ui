@@ -22,14 +22,16 @@ var FontAwesomeIcon = function FontAwesomeIcon(props) {
 };
 
 FontAwesomeIcon.defaultProps = {
-  className: ''
+  className: '',
+  children: '',
+  style: {}
 };
 
 FontAwesomeIcon.propTypes = {
-  name: _react2.default.PropTypes.string.isRequired,
-  className: _react2.default.PropTypes.string,
-  children: _react2.default.PropTypes.node,
-  style: _react2.default.PropTypes.node
+  name: _react.PropTypes.string.isRequired,
+  className: _react.PropTypes.string,
+  children: _react.PropTypes.node,
+  style: _react.PropTypes.shape(_react.PropTypes.any)
 };
 
 exports.default = FontAwesomeIcon;

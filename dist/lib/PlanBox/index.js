@@ -51,28 +51,32 @@ var PlanBox = function PlanBox(props) {
         disabled: props.disabled,
         useInput: props.buttonUseInput,
         clickHandler: props.buttonClickHandler,
-        exceedsUsageMessage: props.exceedsUsageMessage
+        tooltipText: props.tooltipText
       })
     )
   );
 };
 
 PlanBox.defaultProps = {
-  disabled: false
+  disabled: false,
+  recommended: false,
+  buttonUseInput: false,
+  headingClassName: '',
+  buttonClickHandler: null
 };
 
 PlanBox.propTypes = {
-  name: _react.PropTypes.string,
-  description: _react.PropTypes.string,
-  children: _react.PropTypes.node,
-  upgradeUrl: _react.PropTypes.string,
-  buttonText: _react.PropTypes.string,
+  name: _react.PropTypes.string.isRequired,
+  description: _react.PropTypes.string.isRequired,
+  children: _react.PropTypes.node.isRequired,
+  upgradeUrl: _react.PropTypes.string.isRequired,
+  buttonText: _react.PropTypes.string.isRequired,
   disabled: _react.PropTypes.bool,
   recommended: _react.PropTypes.bool,
   buttonUseInput: _react.PropTypes.bool,
   buttonClickHandler: _react.PropTypes.func,
   headingClassName: _react.PropTypes.string,
-  exceedsUsageMessage: _react.PropTypes.string
+  tooltipText: _react.PropTypes.string.isRequired
 };
 
 exports.default = PlanBox;

@@ -18,8 +18,12 @@ var ModalColumn = function ModalColumn(props) {
   );
 };
 
+ModalColumn.defaultProps = {
+  className: ''
+};
+
 ModalColumn.propTypes = {
-  children: _react.PropTypes.node,
+  children: _react.PropTypes.node.isRequired,
   className: _react.PropTypes.string
 };
 

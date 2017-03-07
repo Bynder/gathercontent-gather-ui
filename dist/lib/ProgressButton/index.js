@@ -142,10 +142,9 @@ var ProgressButton = function (_Component) {
 ProgressButton.defaultProps = {
   buttonType: 'primary'
 };
-
 ProgressButton.propTypes = {
-  buttonType: _react2.default.PropTypes.string,
-  clickHandler: _react2.default.PropTypes.func
+  buttonType: _react.PropTypes.string,
+  clickHandler: _react.PropTypes.func.isRequired,
+  value: _react.PropTypes.string.isRequired
 };
-
 exports.default = ProgressButton;

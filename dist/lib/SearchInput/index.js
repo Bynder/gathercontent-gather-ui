@@ -10,9 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FontAwesomeIcon = require('../FontAwesomeIcon');
-
-var _FontAwesomeIcon2 = _interopRequireDefault(_FontAwesomeIcon);
+var _index = require('../index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -88,7 +86,7 @@ var SearchInputField = function (_Component) {
           },
           '\xD7'
         ),
-        _react2.default.createElement(_FontAwesomeIcon2.default, {
+        _react2.default.createElement(_index.FontAwesomeIcon, {
           name: 'fa-search',
           className: 'search-input__icon ' + hasSearch
         })
@@ -102,10 +100,8 @@ var SearchInputField = function (_Component) {
 SearchInputField.defaultProps = {
   placeholder: 'Search...'
 };
-
 SearchInputField.propTypes = {
   placeholder: _react.PropTypes.string,
-  onChangeHandler: _react.PropTypes.func
+  onChangeHandler: _react.PropTypes.func.isRequired
 };
-
 exports.default = SearchInputField;

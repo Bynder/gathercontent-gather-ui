@@ -78,12 +78,18 @@ var PlanBoxPricing = function PlanBoxPricing(props) {
   );
 };
 
+PlanBoxPricing.defaultProps = {
+  priceIn: '',
+  savings: null,
+  originalPrice: null
+};
+
 PlanBoxPricing.propTypes = {
-  price: _react.PropTypes.number,
+  price: _react.PropTypes.number.isRequired,
   priceIn: _react.PropTypes.string,
-  priceType: _react.PropTypes.string,
-  savings: _react.PropTypes.number,
-  originalPrice: _react.PropTypes.number
+  priceType: _react.PropTypes.string.isRequired,
+  savings: _react.PropTypes.node,
+  originalPrice: _react.PropTypes.node
 };
 
 exports.default = PlanBoxPricing;

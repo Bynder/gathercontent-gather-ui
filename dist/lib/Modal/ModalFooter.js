@@ -20,4 +20,8 @@ var ModalFooter = function ModalFooter(props) {
   );
 };
 
+ModalFooter.propTypes = {
+  children: _react.PropTypes.node.isRequired
+};
+
 exports.default = ModalFooter;

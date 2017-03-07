@@ -24,4 +24,8 @@ var ModalHeader = function ModalHeader(props) {
   );
 };
 
+ModalHeader.propTypes = {
+  children: _react.PropTypes.node.isRequired
+};
+
 exports.default = ModalHeader;

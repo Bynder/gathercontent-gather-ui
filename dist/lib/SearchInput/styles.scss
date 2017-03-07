@@ -4,6 +4,7 @@
 $search-input-clear-hover-bg: rgba($color-btn-default-light--bg, .5) !default;
 $search-input-font-size: $typo-size-base !default;
 $search-input-line-height: $typo-line-height-base !default;
+$search-input-padding: $layout-spacing-base/2 !default;
 
 /* ==========================================================================
    Styles
@@ -17,7 +18,7 @@ $search-input-line-height: $typo-line-height-base !default;
     border: 1px solid $color-input-border;
     font-size: $search-input-font-size;
     line-height: $search-input-line-height;
-    padding: $layout-spacing-base/2;
+    padding: $search-input-padding;
 }
 
 .search-input__clear {
@@ -32,8 +33,7 @@ $search-input-line-height: $typo-line-height-base !default;
     border: 0;
     width: 23px;
     height: 23px;
-    padding: 0;
-    line-height: 1em;
+    line-height: 1;
     transition: all $animation-time-micro ease-in-out;
     cursor: pointer;
 

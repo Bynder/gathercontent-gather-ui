@@ -68,10 +68,16 @@ var CarouselSlides = function CarouselSlides(props) {
   );
 };
 
+CarouselSlides.defaultProps = {
+  length: 0,
+  className: '',
+  showIndicators: true
+};
+
 CarouselSlides.propTypes = {
   length: _react.PropTypes.number,
-  selected: _react.PropTypes.number,
-  children: _react.PropTypes.arrayOf(_react.PropTypes.object),
+  selected: _react.PropTypes.number.isRequired,
+  children: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
   className: _react.PropTypes.string,
   showIndicators: _react.PropTypes.bool
 };

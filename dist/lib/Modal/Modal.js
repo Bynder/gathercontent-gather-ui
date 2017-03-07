@@ -132,7 +132,7 @@ Modal.defaultProps = {
 
 Modal.propTypes = {
   show: _react.PropTypes.bool,
-  children: _react.PropTypes.node,
+  children: _react.PropTypes.node.isRequired,
   size: _react.PropTypes.string,
   contentOnly: _react.PropTypes.bool
 };

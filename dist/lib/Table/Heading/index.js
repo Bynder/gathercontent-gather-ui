@@ -54,7 +54,7 @@ var TableHeading = function (_Component) {
     value: function makeSortingColumns() {
       var _this2 = this;
 
-      return this.props.columns.map(function (column, idx) {
+      return this.props.columns.map(function (column) {
         var sanitisedColumnName = _this2.props.columnNameSanitiser(column);
         var isActive = _this2.sortingColumnIsActive(sanitisedColumnName);
 
@@ -70,7 +70,7 @@ var TableHeading = function (_Component) {
         return _react2.default.createElement(
           _Column2.default,
           {
-            key: idx,
+            key: sanitisedColumnName,
             className: columnClassName
           },
           _react2.default.createElement(
@@ -136,12 +136,14 @@ var TableHeading = function (_Component) {
 }(_react.Component);
 
 TableHeading.propTypes = {
-  columns: _react.PropTypes.arrayOf(_react.PropTypes.string),
-  sortingOrder: _react.PropTypes.number,
-  toggleHandler: _react.PropTypes.func,
-  sortHandler: _react.PropTypes.func,
+  columns: _react.PropTypes.arrayOf(_react.PropTypes.string).isRequired,
+  sortingOrder: _react.PropTypes.number.isRequired,
+  toggleHandler: _react.PropTypes.func.isRequired,
+  sortHandler: _react.PropTypes.func.isRequired,
   activeSortingProp: _react.PropTypes.string,
   columnNameSanitiser: _react.PropTypes.func.isRequired
 };
-
+TableHeading.defaultProps = {
+  activeSortingProp: ''
+};
 exports.default = TableHeading;

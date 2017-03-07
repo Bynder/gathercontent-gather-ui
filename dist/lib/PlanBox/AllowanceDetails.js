@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12,35 +12,39 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var PlanBoxAllowanceDetails = function PlanBoxAllowanceDetails(props) {
   return _react2.default.createElement(
-    "ul",
-    { className: "plan-box__allowance-info" },
+    'ul',
+    { className: 'plan-box__allowance-info' },
     _react2.default.createElement(
-      "li",
+      'li',
       null,
       props.iconElement,
       props.plan.items,
-      " Item limit"
+      ' Item limit'
     ),
     _react2.default.createElement(
-      "li",
+      'li',
       null,
       props.iconElement,
       props.plan.projects,
-      " Active Projects"
+      ' Active Projects'
     ),
     _react2.default.createElement(
-      "li",
+      'li',
       null,
       props.iconElement,
-      "Unlimited users"
+      'Unlimited users'
     ),
     _react2.default.createElement(
-      "li",
+      'li',
       null,
       props.iconElement,
-      "100GB storage"
+      '100GB storage'
     )
   );
+};
+
+PlanBoxAllowanceDetails.defaultProps = {
+  iconElement: ''
 };
 
 PlanBoxAllowanceDetails.propTypes = {
@@ -48,7 +52,7 @@ PlanBoxAllowanceDetails.propTypes = {
   plan: _react.PropTypes.shape({
     items: _react.PropTypes.number,
     projects: _react.PropTypes.number
-  })
+  }).isRequired
 };
 
 exports.default = PlanBoxAllowanceDetails;

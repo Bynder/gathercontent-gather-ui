@@ -50,20 +50,28 @@ var PlanBoxButton = function PlanBoxButton(props) {
     {
       className: buttonClass,
       types: [''],
-      tooltipText: props.exceedsUsageMessage,
+      tooltipText: props.tooltipText,
+      tooltipSize: 'large',
       clickHandler: function clickHandler() {}
     },
     props.buttonText
   );
 };
 
+PlanBoxButton.defaultProps = {
+  disabled: false,
+  useInput: false,
+  clickHandler: {},
+  tooltipText: ''
+};
+
 PlanBoxButton.propTypes = {
-  href: _react.PropTypes.string,
-  buttonText: _react.PropTypes.string,
+  href: _react.PropTypes.string.isRequired,
+  buttonText: _react.PropTypes.string.isRequired,
   disabled: _react.PropTypes.bool,
   useInput: _react.PropTypes.bool,
   clickHandler: _react.PropTypes.func,
-  exceedsUsageMessage: _react.PropTypes.string
+  tooltipText: _react.PropTypes.string
 };
 
 exports.default = PlanBoxButton;

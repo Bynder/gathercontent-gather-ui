@@ -8,11 +8,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _index = require('./index');
-
-var _index2 = _interopRequireDefault(_index);
-
 var _lib = require('react-bootstrap/lib');
+
+var _ = require('../');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48,7 +46,7 @@ var ButtonWithTooltip = function ButtonWithTooltip(props) {
       'span',
       { className: 'button--has-tooltip' },
       _react2.default.createElement(
-        _index2.default,
+        _.Button,
         props,
         props.children,
         _react2.default.createElement(
@@ -62,14 +60,15 @@ var ButtonWithTooltip = function ButtonWithTooltip(props) {
 };
 
 ButtonWithTooltip.defaultProps = {
-  tooltipPosition: 'bottom'
+  tooltipPosition: 'bottom',
+  tooltipSize: ''
 };
 
 ButtonWithTooltip.propTypes = {
-  tooltipText: _react.PropTypes.string,
+  tooltipText: _react.PropTypes.string.isRequired,
   tooltipSize: _react.PropTypes.string,
   tooltipPosition: _react.PropTypes.string,
-  children: _react.PropTypes.string
+  children: _react.PropTypes.node.isRequired
 };
 
 exports.default = ButtonWithTooltip;

@@ -41,8 +41,12 @@ var Notification = function Notification(_ref) {
   );
 };
 
+Notification.defaultProps = {
+  clickHandler: function clickHandler() {}
+};
+
 Notification.propTypes = {
-  level: _react.PropTypes.string,
+  level: _react.PropTypes.string.isRequired,
   clickHandler: _react.PropTypes.func,
   children: _react.PropTypes.node.isRequired
 };

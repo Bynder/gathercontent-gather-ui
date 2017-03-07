@@ -37,8 +37,12 @@ var RadioButtonGroup = function RadioButtonGroup(props) {
   );
 };
 
+RadioButtonGroup.defaultProps = {
+  subtitle: ''
+};
+
 RadioButtonGroup.propTypes = {
-  onChange: _react2.default.PropTypes.func,
+  onChange: _react2.default.PropTypes.func.isRequired,
   name: _react2.default.PropTypes.string.isRequired,
   id: _react2.default.PropTypes.string.isRequired,
   title: _react2.default.PropTypes.string.isRequired,

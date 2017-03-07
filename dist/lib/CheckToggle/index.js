@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -35,13 +35,13 @@ var CheckToggle = function (_Component) {
   }
 
   _createClass(CheckToggle, [{
-    key: "onClickHandler",
+    key: 'onClickHandler',
     value: function onClickHandler() {
       this.props.clickHandler();
       this.setState({ checked: !this.state.checked });
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var _props = this.props,
           labelLeft = _props.labelLeft,
@@ -51,28 +51,28 @@ var CheckToggle = function (_Component) {
 
 
       return _react2.default.createElement(
-        "div",
-        { className: "toggle-wrapper " + className },
+        'div',
+        { className: 'toggle-wrapper ' + className },
         labelLeft && _react2.default.createElement(
-          "p",
-          { className: "toggle-wrapper__label" },
+          'p',
+          { className: 'toggle-wrapper__label' },
           labelLeft
         ),
         _react2.default.createElement(
-          "span",
-          { className: "toggle-wrapper__inner" },
-          _react2.default.createElement("input", {
+          'span',
+          { className: 'toggle-wrapper__inner' },
+          _react2.default.createElement('input', {
             onChange: this.onClickHandler,
             checked: this.state.checked,
-            type: "checkbox",
+            type: 'checkbox',
             id: id,
-            className: "toggle-switch toggle-switch--inline"
+            className: 'toggle-switch toggle-switch--inline'
           }),
-          _react2.default.createElement("label", { "data-label-id": true, className: "toggle-switch__label", htmlFor: id })
+          _react2.default.createElement('label', { 'data-label-id': true, className: 'toggle-switch__label', htmlFor: id })
         ),
         labelRight && _react2.default.createElement(
-          "p",
-          { className: "toggle-wrapper__label" },
+          'p',
+          { className: 'toggle-wrapper__label' },
           labelRight
         )
       );
@@ -90,13 +90,12 @@ CheckToggle.propTypes = {
   labelLeft: _react.PropTypes.string,
   labelRight: _react.PropTypes.string
 };
-
 CheckToggle.defaultProps = {
   labelLeft: null,
   labelRight: null,
   clickHandler: function clickHandler() {},
 
-  checked: false
+  checked: false,
+  className: ''
 };
-
 exports.default = CheckToggle;

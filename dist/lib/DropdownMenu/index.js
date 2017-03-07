@@ -34,14 +34,9 @@ var DropdownMenu = function (_Component) {
   _inherits(DropdownMenu, _Component);
 
   _createClass(DropdownMenu, null, [{
-    key: 'handleBodyClick',
-    value: function handleBodyClick(e) {
-      e.stopPropagation();
-    }
-  }, {
     key: 'makeItems',
     value: function makeItems(items) {
-      return items.map(function (item, index) {
+      return items.map(function (item, idx) {
         var type = item.type;
 
         if (typeof type === 'undefined') {
@@ -50,12 +45,12 @@ var DropdownMenu = function (_Component) {
 
         switch (type) {
           case 'separator':
-            return _react2.default.createElement('li', { className: 'dropdown__separator', key: index });
+            return _react2.default.createElement('li', { className: 'dropdown__separator', key: idx });
 
           case 'link':
             return _react2.default.createElement(
               'li',
-              { className: 'dropdown__item', key: index },
+              { className: 'dropdown__item', key: idx },
               _react2.default.createElement(
                 'a',
                 { className: 'dropdown__link', href: item.href },
@@ -66,7 +61,7 @@ var DropdownMenu = function (_Component) {
           default:
             return _react2.default.createElement(
               'li',
-              { className: 'dropdown__item', key: index },
+              { className: 'dropdown__item', key: idx },
               _react2.default.createElement(
                 'button',
                 { className: 'dropdown__link', onClick: item.action },
@@ -102,7 +97,7 @@ var DropdownMenu = function (_Component) {
     }
   }, {
     key: 'closeDropdown',
-    value: function closeDropdown() {
+    value: function closeDropdown(e) {
       if (this.state.selected) {
         this.setState({ selected: false });
       }
@@ -117,7 +112,6 @@ var DropdownMenu = function (_Component) {
     value: function render() {
       var items = this.props.items;
       var _props = this.props,
-          value = _props.value,
           caret = _props.caret,
           type = _props.type,
           shouldDisplay = _props.shouldDisplay,
@@ -125,11 +119,11 @@ var DropdownMenu = function (_Component) {
 
 
       var menuClass = (0, _classnames2.default)({
-        'dropdown': true,
+        dropdown: true,
         'is-visible': shouldDisplay,
         'is-hidden': !shouldDisplay,
-        'open': this.state.selected,
-        'dropup': this.props.direction === 'up'
+        open: this.state.selected,
+        dropup: this.props.direction === 'up'
       }).concat(' ' + this.props.className);
 
       var listClass = (0, _classnames2.default)({
@@ -145,14 +139,8 @@ var DropdownMenu = function (_Component) {
         _react2.default.createElement(
           _Button2.default,
           { types: [type], className: 'btn--dropdown', clickHandler: this.toggleItems },
-          value,
-          ' ',
-          _react2.default.createElement(
-            'span',
-            { className: 'dropdown-menu__button-text' },
-            this.props.children
-          ),
-          caret && _react2.default.createElement(_FontAwesomeIcon2.default, { name: 'fa-caret-down' })
+          this.props.children,
+          caret && _react2.default.createElement(_FontAwesomeIcon2.default, { className: 'dropdown-menu__caret', name: 'fa-caret-down' })
         ),
         _react2.default.createElement(
           'ul',
@@ -169,22 +157,20 @@ var DropdownMenu = function (_Component) {
 DropdownMenu.propTypes = {
   items: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired,
   className: _react.PropTypes.string,
-  value: _react.PropTypes.string,
   type: _react.PropTypes.string,
   direction: _react.PropTypes.string,
   caret: _react.PropTypes.bool,
-  children: _react.PropTypes.node,
+  children: _react.PropTypes.node.isRequired,
   shouldDisplay: _react.PropTypes.oneOfType([_react2.default.PropTypes.bool, _react2.default.PropTypes.number]),
   alignRight: _react.PropTypes.bool
 };
-
 DropdownMenu.defaultProps = {
   type: 'secondary',
   selected: false,
   alignRight: false,
   className: '',
   caret: false,
-  direction: 'down'
+  direction: 'down',
+  shouldDisplay: true
 };
-
 exports.default = DropdownMenu;

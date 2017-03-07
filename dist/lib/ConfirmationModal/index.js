@@ -10,17 +10,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Button = require('../Button');
-
-var _Button2 = _interopRequireDefault(_Button);
-
 var _Modal = require('react-bootstrap/lib/Modal');
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _ProgressButton = require('../ProgressButton');
-
-var _ProgressButton2 = _interopRequireDefault(_ProgressButton);
+var _index = require('../index');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38,7 +32,10 @@ var ConfirmationModal = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (ConfirmationModal.__proto__ || Object.getPrototypeOf(ConfirmationModal)).call(this, props));
 
-    _this.state = { show: props.show || false, callback: null };
+    _this.state = {
+      show: props.show || false,
+      callback: null
+    };
 
     _this.hideModal = _this.hideModal.bind(_this);
     _this.submitCallback = _this.submitCallback.bind(_this);
@@ -63,7 +60,7 @@ var ConfirmationModal = function (_Component) {
   }, {
     key: 'submitCallback',
     value: function submitCallback(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
 
       if (this.state.callback !== null) {
         this.state.callback();
@@ -125,13 +122,14 @@ var ConfirmationModal = function (_Component) {
             _Modal2.default.Footer,
             null,
             _react2.default.createElement(
-              _Button2.default,
+              _index.Button,
               {
                 types: ['link'],
-                clickHandler: this.hideModal },
+                clickHandler: this.hideModal
+              },
               cancelText
             ),
-            _react2.default.createElement(_ProgressButton2.default, { clickHandler: this.submitCallback, type: type, value: submitText })
+            _react2.default.createElement(_index.ProgressButton, { clickHandler: this.submitCallback, type: type, value: submitText })
           )
         )
       );
@@ -142,19 +140,19 @@ var ConfirmationModal = function (_Component) {
 }(_react.Component);
 
 ConfirmationModal.propTypes = {
-  title: _react2.default.PropTypes.string.isRequired,
-  message: _react2.default.PropTypes.node.isRequired,
-  submitText: _react2.default.PropTypes.string.isRequired,
-  cancelText: _react2.default.PropTypes.string.isRequired,
-  type: _react2.default.PropTypes.string
+  title: _react.PropTypes.string.isRequired,
+  message: _react.PropTypes.node.isRequired,
+  submitText: _react.PropTypes.string.isRequired,
+  cancelText: _react.PropTypes.string.isRequired,
+  type: _react.PropTypes.string,
+  show: _react.PropTypes.bool
 };
-
 ConfirmationModal.defaultProps = {
   title: 'Delete',
   message: 'Are you sure?',
   submitText: 'Delete',
   cancelText: 'Cancel',
-  type: 'primary'
+  type: 'primary',
+  show: false
 };
-
 exports.default = ConfirmationModal;

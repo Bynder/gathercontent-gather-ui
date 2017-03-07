@@ -35,19 +35,25 @@ var Carousel = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this));
 
     _this.renderChildren = _this.renderChildren.bind(_this);
+    _this.mapPropsToChild = _this.mapPropsToChild.bind(_this);
     return _this;
   }
 
   _createClass(Carousel, [{
+    key: 'mapPropsToChild',
+    value: function mapPropsToChild(child) {
+      return _react2.default.cloneElement(child, {
+        goNext: this.props.goNext,
+        goPrevious: this.props.goPrevious
+      });
+    }
+  }, {
     key: 'renderChildren',
     value: function renderChildren() {
       var _this2 = this;
 
       return _react2.default.Children.map(this.props.children, function (child) {
-        return _react2.default.cloneElement(child, {
-          goNext: _this2.props.goNext,
-          goPrevious: _this2.props.goPrevious
-        });
+        return _this2.mapPropsToChild(child);
       });
     }
   }, {
@@ -56,7 +62,6 @@ var Carousel = function (_Component) {
       return _react2.default.createElement(
         _Slides2.default,
         {
-          showIndicators: true,
           selected: this.props.selected,
           goToSlide: this.props.goToSlide,
           className: 'carousel ' + this.props.className
@@ -70,7 +75,14 @@ var Carousel = function (_Component) {
 }(_react.Component);
 
 Carousel.propTypes = {
-  children: _react.PropTypes.arrayOf(_react.PropTypes.node),
-  className: _react.PropTypes.string
+  children: _react.PropTypes.arrayOf(_react.PropTypes.node).isRequired,
+  className: _react.PropTypes.string,
+  goNext: _react.PropTypes.func.isRequired,
+  goPrevious: _react.PropTypes.func.isRequired,
+  goToSlide: _react.PropTypes.func.isRequired,
+  selected: _react.PropTypes.number.isRequired
+};
+Carousel.defaultProps = {
+  className: ''
 };
 exports.default = (0, _navigation2.default)(Carousel);

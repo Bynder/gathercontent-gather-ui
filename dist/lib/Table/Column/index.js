@@ -18,6 +18,10 @@ var TableColumn = function TableColumn(props) {
   );
 };
 
+TableColumn.defaultProps = {
+  className: ''
+};
+
 TableColumn.propTypes = {
   className: _react.PropTypes.string,
   children: _react.PropTypes.node.isRequired
