@@ -8,7 +8,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lib = require('react-bootstrap/lib');
+var _reactBootstrap = require('react-bootstrap');
 
 var _classnames = require('classnames');
 
@@ -31,7 +31,7 @@ var Notification = function Notification(_ref) {
   });
 
   return _react2.default.createElement(
-    _lib.Alert,
+    _reactBootstrap.Alert,
     {
       onClick: clickHandler,
       bsStyle: level,

@@ -8,7 +8,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lib = require('react-bootstrap/lib');
+var _reactBootstrap = require('react-bootstrap');
 
 var _ = require('../');
 
@@ -27,7 +27,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 var ButtonWithTooltip = function ButtonWithTooltip(props) {
   var tooltip = _react2.default.createElement(
-    _lib.Tooltip,
+    _reactBootstrap.Tooltip,
     { id: Math.random() },
     _react2.default.createElement(
       'div',
@@ -37,7 +37,7 @@ var ButtonWithTooltip = function ButtonWithTooltip(props) {
   );
 
   return _react2.default.createElement(
-    _lib.OverlayTrigger,
+    _reactBootstrap.OverlayTrigger,
     {
       placement: props.tooltipPosition,
       overlay: tooltip

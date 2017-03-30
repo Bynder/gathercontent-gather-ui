@@ -10,9 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Modal = require('react-bootstrap/lib/Modal');
-
-var _Modal2 = _interopRequireDefault(_Modal);
+var _reactBootstrap = require('react-bootstrap');
 
 var _index = require('../index');
 
@@ -86,7 +84,7 @@ var ConfirmationModal = function (_Component) {
 
 
       return _react2.default.createElement(
-        _Modal2.default,
+        _reactBootstrap.Modal,
         {
           className: 'modal--no-padding',
           show: this.state.show,
@@ -96,7 +94,7 @@ var ConfirmationModal = function (_Component) {
           'form',
           { onSubmit: this.submitCallback },
           _react2.default.createElement(
-            _Modal2.default.Header,
+            _reactBootstrap.Modal.Header,
             null,
             _react2.default.createElement(
               'button',
@@ -108,18 +106,18 @@ var ConfirmationModal = function (_Component) {
               )
             ),
             _react2.default.createElement(
-              _Modal2.default.Title,
+              _reactBootstrap.Modal.Title,
               null,
               title
             )
           ),
           _react2.default.createElement(
-            _Modal2.default.Body,
+            _reactBootstrap.Modal.Body,
             null,
             message
           ),
           _react2.default.createElement(
-            _Modal2.default.Footer,
+            _reactBootstrap.Modal.Footer,
             null,
             _react2.default.createElement(
               _index.Button,

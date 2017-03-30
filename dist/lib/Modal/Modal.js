@@ -12,9 +12,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Modal = require('react-bootstrap/lib/Modal');
-
-var _Modal2 = _interopRequireDefault(_Modal);
+var _reactBootstrap = require('react-bootstrap');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24,13 +22,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Modal = function (_Component) {
-  _inherits(Modal, _Component);
+var ModalCustom = function (_Component) {
+  _inherits(ModalCustom, _Component);
 
-  function Modal(props) {
-    _classCallCheck(this, Modal);
+  function ModalCustom(props) {
+    _classCallCheck(this, ModalCustom);
 
-    var _this = _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ModalCustom.__proto__ || Object.getPrototypeOf(ModalCustom)).call(this, props));
 
     _this.state = {
       show: _this.shouldDisplayModal(),
@@ -42,7 +40,7 @@ var Modal = function (_Component) {
     return _this;
   }
 
-  _createClass(Modal, [{
+  _createClass(ModalCustom, [{
     key: 'shouldDisplayModal',
     value: function shouldDisplayModal() {
       return this.props.show;
@@ -88,7 +86,7 @@ var Modal = function (_Component) {
       }
 
       return _react2.default.createElement(
-        _Modal2.default,
+        _reactBootstrap.Modal,
         _extends({ className: classNames }, this.props),
         this.props.children
       );
@@ -106,13 +104,13 @@ var Modal = function (_Component) {
       }
 
       return _react2.default.createElement(
-        _Modal2.default,
+        _reactBootstrap.Modal,
         _extends({ className: 'modal--no-padding' }, this.props),
         _react2.default.createElement(
           'form',
           { onSubmit: this.submitCallback },
           _react2.default.createElement(
-            _Modal2.default.Body,
+            _reactBootstrap.Modal.Body,
             null,
             this.props.children
           )
@@ -121,20 +119,20 @@ var Modal = function (_Component) {
     }
   }]);
 
-  return Modal;
+  return ModalCustom;
 }(_react.Component);
 
-Modal.defaultProps = {
+ModalCustom.defaultProps = {
   show: false,
   size: '',
   contentOnly: false
 };
 
-Modal.propTypes = {
+ModalCustom.propTypes = {
   show: _react.PropTypes.bool,
   children: _react.PropTypes.node.isRequired,
   size: _react.PropTypes.string,
   contentOnly: _react.PropTypes.bool
 };
 
-exports.default = Modal;
+exports.default = ModalCustom;

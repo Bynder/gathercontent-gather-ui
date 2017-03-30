@@ -8,7 +8,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lib = require('react-bootstrap/lib');
+var _reactBootstrap = require('react-bootstrap');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17,7 +17,7 @@ var DropdownSwitcher = function DropdownSwitcher(_ref) {
       id = _ref.id,
       menu = _ref.menu;
   return _react2.default.createElement(
-    _lib.Dropdown,
+    _reactBootstrap.Dropdown,
     { className: 'dropdown-switcher', id: id },
     _react2.default.createElement(
       'div',

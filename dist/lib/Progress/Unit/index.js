@@ -14,7 +14,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _lib = require('react-bootstrap/lib');
+var _reactBootstrap = require('react-bootstrap');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52,7 +52,7 @@ var ProgressUnit = function (_Component) {
       }
 
       return _react2.default.createElement(
-        _lib.OverlayTrigger,
+        _reactBootstrap.OverlayTrigger,
         { placement: 'top', overlay: tooltip, delayShow: 100 },
         _react2.default.createElement(
           'a',
@@ -65,7 +65,7 @@ var ProgressUnit = function (_Component) {
     key: 'buildTooltip',
     value: function buildTooltip(text, percent) {
       return _react2.default.createElement(
-        _lib.Tooltip,
+        _reactBootstrap.Tooltip,
         { id: Math.random() },
         text + ' (' + Math.round(percent) + '%)'
       );
