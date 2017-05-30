@@ -39,6 +39,18 @@
         &--1-2 {
             width: 50%;
         }
+
+        &--1-4 {
+            width: 25%;
+        }
+
+        &--3-4 {
+            width: 75%;
+        }
+
+        &--offset-1-4 {
+            margin-left: 25%;
+        }
     }
 
     &--collapse {
