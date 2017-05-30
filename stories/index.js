@@ -17,3 +17,4 @@ import Modals from './components/Modals';
 import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
+import Field from './components/Field';
