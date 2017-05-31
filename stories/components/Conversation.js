@@ -43,6 +43,12 @@ storiesOf('Components', module)
           description="..."
         >
           <div className="grid">
+            {/* todo: collapsed state (default) */}
+            {/* todo: click to fire action */}
+            {/* todo: click off to fire action */}
+            {/* todo: hover state */}
+            {/* todo: truncated text */}
+            {/* todo: hidden comments */}
             <div className="grid__cell grid__cell--1-2">
               <Conversation
                 id={mockConversation.id}
