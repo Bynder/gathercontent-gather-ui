@@ -5,8 +5,8 @@ import StoryItem from '../styleguide/StoryItem';
 
 const mockComments = [{
   id: 11,
-  body: 'Comment body...',
-  createdAt: 'today',
+  body: 'Here is a decent size comment that was created by someone who wanted to comment.',
+  createdAt: 'Less than a minute ago',
   person: {
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
     name: 'Ricardo',
@@ -14,7 +14,7 @@ const mockComments = [{
 }, {
   id: 12,
   body: 'Comment body...',
-  createdAt: 'today',
+  createdAt: 'Less than a minute ago',
   person: {
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
     name: 'Ricardo',
@@ -49,7 +49,7 @@ storiesOf('Components', module)
             {/* todo: hover state */}
             {/* todo: truncated text */}
             {/* todo: hidden comments */}
-            <div className="grid__cell grid__cell--1-2">
+            {/*<div className="grid__cell grid__cell--1-2">*/}
               <Conversation
                 id={mockConversation.id}
                 comments={mockConversation.comments}
@@ -59,7 +59,7 @@ storiesOf('Components', module)
                 userId={2}
                 isResolved={false}
               />
-            </div>
+            {/*</div>*/}
           </div>
         </StoryItem>
       </div>

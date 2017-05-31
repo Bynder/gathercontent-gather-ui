@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$person-name-weight: $typo-weight-semi-bold !default;
+$person-avatar-size: 40px !default;
+$person-avatar-border-radius: 40px !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.person {
+  display: flex;
+  align-items: center;
+}
+
+.person__name {
+  display: block;
+  font-weight: $person-name-weight;
+}
+
+.person__avatar {
+  border-radius: $person-avatar-border-radius;
+  width: $person-avatar-size;
+  margin: 0 $layout-spacing-base/2 0 0;
+}

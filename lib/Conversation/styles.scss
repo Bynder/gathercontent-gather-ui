@@ -1,6 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$comment-body-padding: 0 0 0 ($person-avatar-size + $layout-spacing-base/2) !default;
 
 /* ==========================================================================
    Styles
@@ -8,10 +9,10 @@
 .conversation {
   border: 1px solid $color-input-border;
   border-radius: 5px;
+}
 
-  form {
-    margin: ($layout-spacing-base / 2) 0;
-  }
+.conversation__foot {
+  padding: $layout-spacing-base/2;
 }
 
 .conversation__resolve {
@@ -19,30 +20,31 @@
   border-bottom: 1px solid $color-input-border;
 }
 
-.conversation__form {
-
-}
-
+// Comment
 .comment {
   position: relative;
   border-bottom: 1px solid $color-input-border;
-  padding: $layout-spacing-base;
-
-  &__body {
-    padding: 0 0 0 50px;
-  }
+  padding: $layout-spacing-base/2;
 }
 
-.person {
-  &__name {
-    font-weight: $typo-weight-semi-bold;
-  }
+.comment__body {
+  margin: -$typo-size-base/2 0 0;
+  padding: $comment-body-padding;
+}
 
-  img {
-    position: absolute;
-    left: $layout-spacing-base;
-    border-radius: 40px;
-    width: 30px;
-    margin: 0 ($layout-spacing-base / 2) 0 0;
-  }
+.comment__text {
+  margin: 0;
+}
+
+.comment__meta {
+  font-size: $typo-size-small;
+  color: $color-text-light;
+  margin: 0 $layout-spacing-base/2 0 0;
+}
+
+// Form
+.form__input {
+  padding: $layout-spacing-base/2;
+  margin: 0 0 $layout-spacing-base/2;
+  width: 100%;
 }
