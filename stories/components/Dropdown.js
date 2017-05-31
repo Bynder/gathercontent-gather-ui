@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import DropdownMenu from '../../lib/DropdownMenu/';
 import FontAwesomeIcon from '../../lib/FontAwesomeIcon';
 import StoryItem from '../styleguide/StoryItem';

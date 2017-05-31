@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import Button from '../../lib/Button/';
 import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 import ProgressButton from '../../lib/ProgressButton';

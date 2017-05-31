@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import PlanBox from '../../lib/PlanBox';
 import PlanBoxPricing from '../../lib/PlanBox/Pricing';
 import PlanBoxWrapper from '../../lib/PlanBox/Wrapper';

@@ -1,4 +1,4 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 import { addCSS } from './utils';
 
 const FONTS_CSS = 'https://cloud.typography.com/6854674/6820952/css/fonts.css';
