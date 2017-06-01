@@ -2,20 +2,21 @@
    Config
    ========================================================================== */
 $highlight-color: rgb(245, 218, 116);
-
+$card-width: 200px;
+$action-size: 32px;
 /* ==========================================================================
    Styles
    ========================================================================== */
 .file-card {
-  width: 200px;
+  width: $card-width;
   height: 180px;
   margin-right: 10px;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   overflow: hidden;
 
-  &:hover {
+  &:hover,
+  .file-card__action:focus {
     @for $i from 1 through 4 {
       .file-card__action:nth-child(#{$i}) {
         transform: translateY(0);
@@ -27,6 +28,11 @@ $highlight-color: rgb(245, 218, 116);
   &.has-comments {
     border: 3px solid $highlight-color;
   }
+}
+
+.file-card__wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .file-card__thumbnail {
@@ -63,7 +69,7 @@ $highlight-color: rgb(245, 218, 116);
   padding: .5rem;
   justify-content: flex-start;
 
-  > div {
+  > .file-card__action {
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         transform: translateY(-3rem);
@@ -71,21 +77,23 @@ $highlight-color: rgb(245, 218, 116);
       }
     }
   }
-
 }
 
 .file-card__action {
+  display: flex;
+  justify-content: center;
+  border: none;
   margin-right: .5rem;
-  width: 32px;
+  width: $action-size;
   cursor: pointer;
-  height: 32px;
-  background: rgba(10, 10, 10, .6);
+  height: $action-size;
+  background: rgba(20, 20, 20, .6);
   border-radius: 3px;
   transition: .2s all ease-in-out;
 
   &:last-child { margin-right: 0; }
 
   &:hover {
-    background: rgba(10, 10, 10, .7);
+    background: rgba(10, 10, 10, .9);
   }
 }

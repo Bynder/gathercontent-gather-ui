@@ -19,14 +19,31 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
-        title="File Card"
-        description="A single image thumbnail which has comments.">
+          title="File Card with comments"
+          description="A single image thumbnail which has comments.">
+          <FileCard
+            hasComments
+            type="image"
+            filename="sheep_in_iceland.jpg"
+            label="Sheep in Iceland"
+            image="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Multiple File Cards"
+          description="Multiple file cards side by side">
         <FileCard
-          hasComments
           type="image"
           filename="sheep_in_iceland.jpg"
           label="Sheep in Iceland"
           image="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+        />
+        <FileCard
+          type="image"
+          filename="sunset_in_berlin_large_filename.jpg"
+          label="Large sunset in Berlin, Germany"
+          image="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
         />
       </StoryItem>
       </div>
