@@ -8,7 +8,7 @@ const mockComments = [{
   body: 'Here is a decent size comment that was created by someone who wanted to comment.',
   createdAt: 'Less than a minute ago',
   person: {
-    avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+    avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
     name: 'Ricardo',
   }
 }, {
@@ -16,7 +16,7 @@ const mockComments = [{
   body: 'Comment body...',
   createdAt: 'Less than a minute ago',
   person: {
-    avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+    avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
     name: 'Ricardo',
   }
 }];
@@ -32,6 +32,12 @@ const mockActions = {
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
+};
+
+const mockUser = {
+  id: '1',
+  name: 'Bruce',
+  avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg'
 };
 
 storiesOf('Components', module)
@@ -51,12 +57,12 @@ storiesOf('Components', module)
             {/* todo: hidden comments */}
             {/*<div className="grid__cell grid__cell--1-2">*/}
               <Conversation
-                id={mockConversation.id}
+                id="1234567"
                 comments={mockConversation.comments}
                 actions={mockActions}
                 userCanEdit={true}
                 userCanComment={true}
-                userId={2}
+                user={mockUser}
                 isResolved={false}
               />
             {/*</div>*/}

@@ -45,6 +45,7 @@
     "classnames": "^2.2.5",
     "font-awesome": "git+ssh://git@github.com/FortAwesome/Font-Awesome.git",
     "normalize-scss": "^6.0.0",
+    "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
