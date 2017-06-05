@@ -89,6 +89,11 @@ $conversation-meta-text-color: $color-brand-dark !default;
   }
 }
 
+.conversation__focus-fallback {
+  position: absolute;
+  left: -999em;
+}
+
 .conversation__date-text {
   color: $conversation-meta-text-color;
 }
@@ -101,6 +106,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
   }
 
   .conversation__comment {
+    display: block;
     border-bottom: $conversation-border-width solid $conversation-border-color;
   }
 
@@ -135,8 +141,12 @@ $conversation-meta-text-color: $color-brand-dark !default;
   }
 }
 
-.form__drop-down {
-  position: absolute;
+.form__actions--has-value-visibility {
+  display: none;
+}
+
+.form--has-value .form__actions--has-value-visibility {
+  display: inline-block;
 }
 
 .form__button {

@@ -3,11 +3,13 @@ import Conversation from '../../lib/Conversation';
 import CommentList from '../../lib/Conversation/CommentList';
 import CommentForm from '../../lib/Conversation/CommentForm';
 import Button from '../../lib/Button';
+import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 describe('Conversation', () => {
   let wrapper;
-  let resolveConversationSpy = sinon.spy();
-  let addCommentSpy = sinon.spy();
+  let sandbox = sinon.sandbox.create();
+  let resolveConversationSpy;
+  let addCommentSpy;
 
   const props = {
     id: '123',
@@ -16,28 +18,47 @@ describe('Conversation', () => {
       { person: { name: 'Toyah' }, id: 123 },
       { person: { name: 'Sapphire' }, id: 321 }
     ],
-    actions: {
-      resolveConversation: resolveConversationSpy,
-      addComment: addCommentSpy,
-    }
   };
 
   beforeEach(() => {
+    resolveConversationSpy = sandbox.spy();
+    addCommentSpy = sandbox.spy();
     wrapper = shallow(
       <Conversation
         {...props}
         userCanComment
+        actions={{
+          resolveConversation: resolveConversationSpy,
+          addComment: addCommentSpy,
+        }}
       />,
     );
   });
 
   beforeEach(() => {
-    // resolveConversationSpy.restore();
-    // addCommentSpy.restore();
+    sandbox.restore();
   });
 
   it('renders a resolve conversation Button', () => {
     expect(wrapper.find(Button)).to.have.length(1);
+  });
+
+  it('adds a BEM modifier of is-active', () => {
+    wrapper.setState({ isActive: true });
+    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.true;
+
+    wrapper.setState({ isActive: false });
+    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.false;
+
+    wrapper.setProps({ isActive: true });
+    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.true;
+  });
+
+  it('uses a BoundaryClickWatcher component (with the correct props)', () => {
+    const boundaryWatcher = wrapper.find(BoundaryClickWatcher);
+    expect(boundaryWatcher).to.have.length(1);
+    expect(boundaryWatcher.prop('outsideClickHandler')).to.equal(wrapper.instance().deactivateConversation);
+    expect(boundaryWatcher.prop('initialClickHandler')).to.equal(wrapper.instance().activateConversation);
   });
 
   it('renders a list of comments (with correct props)', () => {
@@ -45,7 +66,10 @@ describe('Conversation', () => {
     expect(commentList).to.have.length(1);
     expect(commentList.prop('conversationId')).to.equal(props.id);
     expect(commentList.prop('comments')).to.equal(props.comments);
-    expect(commentList.prop('actions')).to.equal(props.actions);
+    expect(commentList.prop('actions')).to.deep.equal({
+      resolveConversation: resolveConversationSpy,
+      addComment: addCommentSpy,
+    });
     expect(commentList.prop('userCanComment')).to.equal(true);
     expect(commentList.prop('id')).to.not.equal(props.id);
   });
@@ -69,6 +93,7 @@ describe('Conversation', () => {
     const commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
     expect(commentForm.prop('user')).to.equal(props.user);
+    expect(commentForm.prop('onSubmit')).to.equal(wrapper.instance().addComment);
   });
 
   it('does not render a comment form', () => {

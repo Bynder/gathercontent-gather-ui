@@ -38,20 +38,20 @@ describe('Comment', () => {
   });
 
   it('renders the comment body text', () => {
-    expect(wrapper.find('.comment__text').text()).to.equal(props.comment.body);
+    expect(wrapper.find('.conversation__text').text()).to.equal(props.comment.body);
   });
 
   it('renders the comment created at text', () => {
-    expect(wrapper.find('.comment__created-at').text()).to.equal(props.comment.createdAt)
+    expect(wrapper.find('.conversation__date-text').text()).to.equal(props.comment.createdAt)
   });
 
   it('does not render the edit controls', () => {
     wrapper.setProps({ userCanEdit: false });
-    expect(wrapper.find('.comment__actions')).to.have.length(0);
+    expect(wrapper.find('.conversation__actions')).to.have.length(0);
   });
 
   it('renders the edit comment controls', () => {
-    const actions = wrapper.find('.comment__actions');
+    const actions = wrapper.find('.conversation__actions');
     expect(actions.find(Button)).to.have.length(2);
     expect(actions.find(Button).first().prop('clickHandler')).to.deep.equal(wrapper.instance().showEditForm);
     expect(actions.find(Button).last().prop('clickHandler')).to.deep.equal(wrapper.instance().removeComment);
@@ -62,7 +62,7 @@ describe('Comment', () => {
     const commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
     expect(commentForm.prop('onSubmit')).to.deep.equal(wrapper.instance().editComment);
-    expect(commentForm.prop('onCancel')).to.deep.equal(wrapper.instance().showEditForm);
+    expect(commentForm.prop('onCancel')).to.deep.equal(wrapper.instance().hideEditForm);
     expect(commentForm.prop('useTextArea')).to.equal(true);
     expect(commentForm.prop('user')).to.equal(props.comment.person);
     expect(commentForm.prop('value')).to.equal(props.comment.body);
