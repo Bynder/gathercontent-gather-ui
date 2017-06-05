@@ -27,11 +27,13 @@ const mockConversation = {
 };
 
 const mockActions = {
-  resolveConversation: action('resoleConversation'),
-  unresolveConversation: action('unresoleConversation'),
+  resolveConversation: action('resolveConversation'),
+  unresolveConversation: action('unresolveConversation'),
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
+  activateConversation: action('activateConversation'),
+  deactivateConversation: action('deactivateConversation'),
 };
 
 const mockUser = {
@@ -49,23 +51,17 @@ storiesOf('Components', module)
           description="..."
         >
           <div className="grid">
-            {/* todo: collapsed state (default) */}
-            {/* todo: click to fire action */}
-            {/* todo: click off to fire action */}
-            {/* todo: hover state */}
             {/* todo: truncated text */}
             {/* todo: hidden comments */}
-            {/*<div className="grid__cell grid__cell--1-2">*/}
-              <Conversation
-                id="1234567"
-                comments={mockConversation.comments}
-                actions={mockActions}
-                userCanEdit={true}
-                userCanComment={true}
-                user={mockUser}
-                isResolved={false}
-              />
-            {/*</div>*/}
+            <Conversation
+              id="1234567"
+              comments={mockConversation.comments}
+              actions={mockActions}
+              userCanEdit={true}
+              userCanComment={true}
+              user={mockUser}
+              isResolved={false}
+            />
           </div>
         </StoryItem>
       </div>
