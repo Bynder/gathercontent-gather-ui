@@ -16,7 +16,7 @@ describe('Conversation', () => {
     user: { name: 'kyle', id: '123' },
     comments: [
       { person: { name: 'Toyah' }, id: 123 },
-      { person: { name: 'Sapphire' }, id: 321 }
+      { person: { name: 'Sapphire' }, id: 321 },
     ],
   };
 
@@ -39,8 +39,21 @@ describe('Conversation', () => {
     sandbox.restore();
   });
 
-  it('renders a resolve conversation Button', () => {
-    expect(wrapper.find(Button)).to.have.length(1);
+  it('pluralises the reply count text ', () => {
+    expect(wrapper.find(Button).last().children().text()).to.equal('View 1 reply');
+
+    wrapper.setProps({
+      comments: [
+        ...props.comments,
+        { person: { name: 'Corinne' }, id: 567 },
+      ]
+    });
+    expect(wrapper.find(Button).last().children().text()).to.equal('View 2 replies');
+  });
+
+  it('does not render the reply count text', () => {
+    wrapper.setState({ isActive: true });
+    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
   });
 
   it('adds a BEM modifier of is-active', () => {
@@ -76,7 +89,7 @@ describe('Conversation', () => {
 
   it('calls the resolveConversation action', () => {
     const resolveConversation = wrapper.instance().resolveConversation;
-    expect(wrapper.find(Button).prop('clickHandler')).to.equal(resolveConversation);
+    expect(wrapper.find(Button).first().prop('clickHandler')).to.equal(resolveConversation);
     resolveConversation();
     expect(resolveConversationSpy.getCall(0).args[0]).to.equal(props.id);
   });
