@@ -49,15 +49,15 @@ describe('Comment Form', () => {
     expect(onCancelSpy).to.be.called.once;
   });
 
-  it('adds a BEM modifier of has-value', () => {
+  it('adds a state class of has-value', () => {
     wrapper.setState({ inputValue: 'test' });
-    expect(wrapper.find('form').hasClass('form--has-value')).to.be.true;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.true;
 
     wrapper.setState({ inputValue: '' });
-    expect(wrapper.find('form').hasClass('form--has-value')).to.be.false;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.false;
 
     wrapper.setProps({ value: 'test' });
-    expect(wrapper.find('form').hasClass('form--has-value')).to.be.true;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.true;
   });
 
   it('renders an avatar (with the correct props)', () => {

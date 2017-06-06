@@ -31,17 +31,17 @@ describe('Comment Form Actions', () => {
   });
 
   it('renders a button of type submit', () => {
-    const submitButton = wrapper.find('.form__actions').children().find('.form__actions').find(Button).last();
+    const submitButton = wrapper.find('.comment-form__actions--submit').find(Button).last();
     expect(submitButton.prop('isSubmit')).to.equal(true);
   });
 
   it('calls props.onCancel and sets the inputValue to empty', () => {
-    wrapper.find('.form__actions').children().find('.form__actions').find(Button).first().simulate('click');
+    wrapper.find('.comment-form__actions--submit').find(Button).first().simulate('click');
     expect(onCancelSpy).to.be.called.once;
   });
 
   it('calls props.onSubmit', () => {
-    wrapper.find('.form__actions').children().find('.form__actions').find(Button).last().simulate('click');
+    wrapper.find('.comment-form__actions--submit').find(Button).last().simulate('click');
     expect(onSubmitSpy).to.be.called.once;
   });
 });

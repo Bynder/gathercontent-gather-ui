@@ -56,15 +56,15 @@ describe('Conversation', () => {
     expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
   });
 
-  it('adds a BEM modifier of is-active', () => {
+  it('adds a state class of is-active', () => {
     wrapper.setState({ isActive: true });
-    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.true;
+    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true;
 
     wrapper.setState({ isActive: false });
-    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.false;
+    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.false;
 
     wrapper.setProps({ isActive: true });
-    expect(wrapper.find('.conversation').hasClass('conversation--is-active')).to.be.true;
+    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true;
   });
 
   it('uses a BoundaryClickWatcher component (with the correct props)', () => {
