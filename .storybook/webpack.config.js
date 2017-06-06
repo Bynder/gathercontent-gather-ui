@@ -2,32 +2,52 @@ const path = require('path');
 
 module.exports = {
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader: 'file-loader',
+        use: [{
+          loader: 'file-loader'
+        }],
         include: path.resolve(__dirname, '../node_modules/font-awesome')
       },
       {
         test: /\.s?css$/,
-        loaders: ['style', 'css', 'postcss-loader', 'sass'],
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: function () {
+              return [
+                require('autoprefixer'),
+                require('pixrem'),
+              ]
+            }
+          }
+        }, {
+          loader: 'sass-loader'
+        }],
         include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
       },
       {
         test: /.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader'],
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'less-loader'
+        }],
         include: path.resolve(__dirname, '../')
       },
       {
         test: /\.svg$/,
-        loader: 'raw-loader'
+        use: [{
+          loader: 'raw-loader'
+        }]
       }
     ]
   },
-  postcss: () => {
-    return [
-      require('autoprefixer'),
-      require('pixrem'),
-    ];
-  }
 };

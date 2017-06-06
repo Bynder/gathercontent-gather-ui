@@ -89,9 +89,19 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 }
 
 .button--link-default {
-  color: $color-btn-secondary--hover;
+  color: $color-brand-blue;
 
   &:hover {
+    color: $color-brand-blue;
+    text-decoration: underline;
+  }
+}
+
+.button--link-danger {
+  color: $color-text-danger;
+
+  &:hover {
+    color: $color-text-danger;
     text-decoration: underline;
   }
 }
@@ -148,4 +158,8 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 
 .button--has-tooltip {
   display: inline-block;
+}
+
+.button--size-sm {
+  padding: $layout-spacing-base/4 $layout-spacing-base/2;
 }

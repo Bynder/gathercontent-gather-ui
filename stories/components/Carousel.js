@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import Carousel from '../../lib/Carousel/';
 import StoryItem from '../styleguide/StoryItem';
 import ExampleCarouselChild from '../styleguide/ExampleCarouselChild';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
 
@@ -18,3 +18,4 @@ import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
 import Field from './components/Field';
+import Conversation from './components/Conversation';
