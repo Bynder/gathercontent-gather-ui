@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
+import { storiesOf, action } from '@storybook/react';
 import FileCard from '../../lib/FileCard';
 import StoryItem from '../styleguide/StoryItem';
 

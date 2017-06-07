@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$comment-form-padding: $layout-spacing-base/2;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.comment-form__input {
+  border: 1px solid $color-input-border;
+  border-radius: 5px;
+  padding: $comment-form-padding;
+  width: 100%;
+}
+
+.comment-form__body {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 0 $comment-form-padding;
+}
+
+.comment-form__actions {
+  position: relative;
+  text-align: right;
+}
+
+.comment-form__actions--submit {
+  display: none;
+  margin: 0 0 0 $comment-form-padding;
+}
+
+.comment-form__button {
+  padding-left: 0;
+  padding-right: 0;
+
+  svg {
+    position: relative;
+    top: 2px;
+  }
+}
+
+/* ==========================================================================
+   State Styles
+   ========================================================================== */
+.has-value .comment-form__actions--submit {
+  display: inline-block;
+}
