@@ -1,21 +1,32 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$field-spacing-base: $layout-spacing-base !default;
+
+$field-label-size: $typo-size-lead !default;
+$field-label-weight: $typo-weight-semi-bold !default;
+
+$field-data-size: $typo-size-slight !default;
+$field-data-color: $color-brand-dark !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
+.field {
+  margin: 0 0 $field-spacing-base*2;
+}
+
 .field__data {
   text-align: right;
 }
 
 .field__content {
-  padding: 0 0 0 ($layout-spacing-base * 2);
+  padding: 0 0 0 $field-spacing-base*2;
 }
 
 .field__label {
-  font-size: $typo-size-lead;
-  font-weight: $typo-weight-semi-bold;
+  font-size: $field-label-size;
+  font-weight: $field-label-weight;
 }
 
 .field__actions,
@@ -31,11 +42,11 @@
 
 .field__instructions,
 .field__validations {
-  font-size: $typo-size-slight;
-  color: $color-brand-dark;
+  font-size: $field-data-size;
+  color: $field-data-color;
 }
 
 .field__instructions {
   font-style: italic;
-  margin: $layout-spacing-base 0 0;
+  margin: $field-spacing-base 0 0;
 }
