@@ -31,6 +31,17 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
+          title="File Card without preview"
+          description="A single image thumbnail which has no preview">
+          <FileCard
+            hasComments
+            type="text"
+            filename="field_notes.txt"
+            label="Field notes"
+          />
+        </StoryItem>
+
+        <StoryItem
           title="Multiple File Cards"
           description="Multiple file cards side by side">
         <FileCard

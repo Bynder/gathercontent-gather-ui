@@ -1,16 +1,23 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$highlight-color: rgb(245, 218, 116);
-$card-width: 200px;
-$action-size: 32px;
+$field-card-width: 200px !default;
+$field-card-height: 180px !default;
+$field-card-action-button-size: 32px !default;
+$field-card-margin: $layout-spacing-base !default;
+
+$field-card-label-font-size: $typo-size-slight !default;
+$field-card-actions-padding: .5rem !default;
+
+$field-card-label-bg: rgba(0, 0, 0, .7) !default;
+$field-card-highlight-color: rgb(245, 218, 116);
 /* ==========================================================================
    Styles
    ========================================================================== */
 .file-card {
-  width: $card-width;
-  height: 180px;
-  margin-right: 10px;
+  width: $field-card-width;
+  height: $field-card-height;
+  margin-right: $field-card-margin;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -26,7 +33,12 @@ $action-size: 32px;
   }
 
   &.has-comments {
-    border: 3px solid $highlight-color;
+    border: 3px solid $field-card-highlight-color;
+    transition: border .1s ease-in;
+
+    &:hover {
+      border: 3px solid darken($field-card-highlight-color, 20%);
+    }
   }
 }
 
@@ -48,14 +60,25 @@ $action-size: 32px;
   }
 }
 
+.file-card__thumbnail--no-preview {
+  align-content: center;
+  justify-content: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  display: flex;
+  margin-top: 35%;
+  overflow: visible;
+  font-weight: 600;
+}
+
 .file-card__label {
-  background: rgba(0, 0, 0, .7);
+  background: $field-card-label-bg;
   color: #fff;
   position: absolute;
-  bottom: .5rem;
-  font-size: .8rem;
+  bottom: $field-card-actions-padding;
+  font-size: $field-card-label-font-size;
   border-radius: 3px;
-  padding: .2rem .5rem;
+  padding: .2rem $field-card-actions-padding;
   max-width: 90%;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -83,10 +106,10 @@ $action-size: 32px;
   display: flex;
   justify-content: center;
   border: none;
-  margin-right: .5rem;
-  width: $action-size;
+  margin-right: $field-card-actions-padding;
+  width: $field-card-action-button-size;
   cursor: pointer;
-  height: $action-size;
+  height: $field-card-action-button-size;
   background: rgba(20, 20, 20, .6);
   border-radius: 3px;
   transition: .2s all ease-in-out;
