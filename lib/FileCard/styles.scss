@@ -61,12 +61,13 @@ $field-card-highlight-color: rgb(245, 218, 116);
 }
 
 .file-card__thumbnail--no-preview {
+  background-color: rgba(155, 155, 155, .1);
   align-content: center;
   justify-content: center;
   font-size: 2em;
   text-transform: uppercase;
   display: flex;
-  margin-top: 35%;
+  padding-top: 35%;
   overflow: visible;
   font-weight: 600;
 }
