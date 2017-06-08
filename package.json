@@ -1,6 +1,6 @@
 {
   "name": "gather-content-ui",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "GatherContent UI Library",
   "main": "dist/lib/index.js",
   "repository": {
@@ -26,7 +26,8 @@
     "pixrem": "postcss --use pixrem dist/styles.css -o dist/styles.css",
     "copy-styles": "echo Copying Sass settings... && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
     "styles": "echo Building Sass files... && node-sass --output-style compressed styles/main.scss > dist/styles.css && npm run autoprefixer && npm run pixrem",
-    "build": "babel lib/ --out-dir dist/lib && npm run styles && npm run copy-styles",
+    "styles-bootstrap": "echo Building Sass files... && node-sass --output-style compressed styles/bootstrap.scss > dist/bootstrap.css && npm run autoprefixer && npm run pixrem",
+    "build": "babel lib/ --out-dir dist/lib && npm run styles && npm run styles-bootstrap && npm run copy-styles",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
@@ -42,6 +43,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "3.3.6",
+    "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
     "font-awesome": "git+ssh://git@github.com/FortAwesome/Font-Awesome.git",
     "normalize-scss": "^6.0.0",

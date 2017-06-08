@@ -1,9 +1,0 @@
-.tooltip {
-    font-family: $typo-stack-base;
-    @include font-smoothing;
-}
-
-.tooltip--large {
-    padding: .5em .25em;
-    font-size: $typo-size-lead;
-}
