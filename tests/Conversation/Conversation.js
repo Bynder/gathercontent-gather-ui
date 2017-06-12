@@ -39,21 +39,16 @@ describe('Conversation', () => {
     sandbox.restore();
   });
 
-  it('pluralises the reply count text ', () => {
-    expect(wrapper.find(Button).last().children().text()).to.equal('View 1 reply');
-
-    wrapper.setProps({
-      comments: [
-        ...props.comments,
-        { person: { name: 'Corinne' }, id: 567 },
-      ]
-    });
-    expect(wrapper.find(Button).last().children().text()).to.equal('View 2 replies');
+  it('renders the resolve conversation Button', () => {
+    const resolveButton = wrapper.find(Button).first();
+    expect(resolveButton.prop('clickHandler')).to.deep.equal(wrapper.instance().resolveConversation);
   });
 
-  it('does not render the reply count text', () => {
-    wrapper.setState({ isActive: true });
-    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
+  it('calls the resolveConversation action', () => {
+    const resolveConversation = wrapper.instance().resolveConversation;
+    expect(wrapper.find(Button).first().prop('clickHandler')).to.equal(resolveConversation);
+    resolveConversation();
+    expect(resolveConversationSpy.getCall(0).args[0]).to.equal(props.id);
   });
 
   it('adds a state class of is-active', () => {
@@ -85,13 +80,33 @@ describe('Conversation', () => {
     });
     expect(commentList.prop('userCanComment')).to.equal(true);
     expect(commentList.prop('id')).to.not.equal(props.id);
+    expect(commentList.prop('focusFallback')).to.deep.equal(props.focusFallback);
   });
 
-  it('calls the resolveConversation action', () => {
-    const resolveConversation = wrapper.instance().resolveConversation;
-    expect(wrapper.find(Button).first().prop('clickHandler')).to.equal(resolveConversation);
-    resolveConversation();
-    expect(resolveConversationSpy.getCall(0).args[0]).to.equal(props.id);
+  it('does not render the reply count text', () => {
+    wrapper.setState({ isActive: true });
+    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
+  });
+
+  it('does not render the reply count text (when there is only 1 comment)', () => {
+    wrapper.setProps({ comments: [props.comments[0]] });
+    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
+  });
+
+  it('does render the reply count text', () => {
+    expect(wrapper.find('.conversation__reply-count')).to.have.length(1);
+  });
+
+  it('pluralises the reply count text ', () => {
+    expect(wrapper.find(Button).last().children().text()).to.equal('View 1 reply');
+
+    wrapper.setProps({
+      comments: [
+        ...props.comments,
+        { person: { name: 'Corinne' }, id: 567 },
+      ]
+    });
+    expect(wrapper.find(Button).last().children().text()).to.equal('View 2 replies');
   });
 
   it('calls the addComment action', () => {
@@ -105,7 +120,7 @@ describe('Conversation', () => {
   it('renders a comment form (with correct props)', () => {
     const commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
-    expect(commentForm.prop('user')).to.equal(props.user);
+    expect(commentForm.prop('author')).to.equal(props.user);
     expect(commentForm.prop('onSubmit')).to.equal(wrapper.instance().addComment);
   });
 

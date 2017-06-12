@@ -13,7 +13,7 @@ describe('Comment Form', () => {
 
   const props = {
     conversationId: '123',
-    user: {
+    author: {
       name: 'Bruce',
       avatar: 'url/of/image',
     }
@@ -35,18 +35,8 @@ describe('Comment Form', () => {
     sandbox.restore();
   });
 
-  it('sets the initial state based on props.value', () => {
+  it('sets the initial state', () => {
     expect(wrapper.state('inputValue')).to.equal('');
-  });
-
-  it('calls props.onSubmit when submitted', () => {
-    wrapper.find('form').simulate('submit');
-    expect(onSubmitSpy).to.be.called.once;
-  });
-
-  it('calls props.onCancel', () => {
-    wrapper.instance().cancelComment();
-    expect(onCancelSpy).to.be.called.once;
   });
 
   it('adds a state class of has-value', () => {
@@ -60,11 +50,21 @@ describe('Comment Form', () => {
     expect(wrapper.find('form').hasClass('has-value')).to.be.true;
   });
 
+  it('calls props.onSubmit when submitted', () => {
+    wrapper.find('form').simulate('submit');
+    expect(onSubmitSpy).to.be.called.once;
+  });
+
+  it('calls props.onCancel', () => {
+    wrapper.instance().cancelComment();
+    expect(onCancelSpy).to.be.called.once;
+  });
+
   it('renders an avatar (with the correct props)', () => {
     const avatar = wrapper.find(Avatar);
     expect(avatar).to.have.length(1);
-    expect(avatar.prop('src')).to.equal(props.user.avatar);
-    expect(avatar.prop('altText')).to.equal(props.user.name);
+    expect(avatar.prop('src')).to.equal(props.author.avatar);
+    expect(avatar.prop('altText')).to.equal(props.author.name);
   });
 
   it('renders CommentFormInput (with correct props)', () => {
@@ -73,6 +73,9 @@ describe('Comment Form', () => {
     expect(input.prop('handleOnChange')).to.deep.equal(wrapper.instance().updateInputValue);
     expect(input.prop('focusOnMount')).to.equal(false);
     expect(input.prop('value')).to.equal('');
+
+    wrapper.setProps({ value: 'test' });
+    expect(input.prop('value')).to.equal('test');
   });
 
   it('renders CommentFormActions (with correct props)', () => {
