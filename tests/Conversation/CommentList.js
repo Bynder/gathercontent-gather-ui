@@ -7,7 +7,7 @@ describe('Comment List', () => {
 
   const comments = [{}, {}];
   const props = {
-    comments: [{}, {}],
+    comments: [{ id: 2 }, {}],
     conversationId: '123',
   };
 
@@ -22,5 +22,6 @@ describe('Comment List', () => {
     expect(comments).to.have.length(2);
     expect(comments.first().prop('conversationId')).to.equal(props.conversationId);
     expect(comments.first().prop('comments')).to.not.deep.equal(props.comments);
+    expect(comments.first().prop('id')).to.equal(2);
   });
 });

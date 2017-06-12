@@ -40,8 +40,8 @@ describe('Comment Form Actions', () => {
     expect(onCancelSpy).to.be.called.once;
   });
 
-  it('calls props.onSubmit', () => {
+  it('does not call props.onSubmit', () => {
     wrapper.find('.comment-form__actions--submit').find(Button).last().simulate('click');
-    expect(onSubmitSpy).to.be.called.once;
+    expect(onSubmitSpy).to.not.be.called;
   });
 });

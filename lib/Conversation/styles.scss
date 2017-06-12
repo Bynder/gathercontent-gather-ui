@@ -42,6 +42,10 @@ $conversation-meta-text-color: $color-brand-dark !default;
   }
 }
 
+.conversation__comment-list {
+  padding: 0 0 $conversation-padding;
+}
+
 .conversation__comment {
   position: relative;
   display: none;
@@ -54,6 +58,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
 
 .conversation__reply-count {
   padding: 0 0 $conversation-padding $conversation-padding+$avatar-size;
+  margin: -$conversation-padding 0 0;
   font-size: $conversation-meta-text-size;
 }
 
