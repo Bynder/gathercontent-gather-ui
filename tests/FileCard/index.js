@@ -5,6 +5,7 @@ describe('FileCard', () => {
   let wrapper;
 
   const NO_PREVIEW_CLASS = '.file-card__thumbnail--no-preview';
+  const ACTION_DELETE_CLASS = '.file-card__action--delete';
 
   const props = {
     hasComments: true,
@@ -44,6 +45,12 @@ describe('FileCard', () => {
     wrapper.setProps({ type: 'image' });
     const actions = wrapper.find('.file-card__action');
     expect(actions.length).to.equal(4);
+  });
+
+   it('does not render the delete action based on permissions', () => {
+     wrapper.setProps({ showDelete: false });
+     const deleteWrapper = wrapper.find(ACTION_DELETE_CLASS);
+     expect(deleteWrapper.length).to.equal(0);
   });
 
 });
