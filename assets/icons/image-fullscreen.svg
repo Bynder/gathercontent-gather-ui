@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon/image-fullscreen/standard" transform="translate(-7.000000, -7.000000)" fill="#FFFFFF">
+            <g id="icon-image-fullsize">
+                <g id="Group-6" transform="translate(7.000000, 7.000000)">
+                    <path d="M12.6,2 L9.3,5.3 L9.3,5.3 C8.91340068,5.68659932 8.91340068,6.31340068 9.3,6.7 L9.3,6.7 L9.3,6.7 C9.68659932,7.08659932 10.3134007,7.08659932 10.7,6.7 L14,3.4 L14,6 L14,6 C14,6.55228475 14.4477153,7 15,7 L15,7 L15,7 C15.5522847,7 16,6.55228475 16,6 L16,1 L16,1 C16,0.44771525 15.5522847,2.78052031e-16 15,-1.11022302e-16 L10,0 L10,0 C9.44771525,1.01453063e-16 9,0.44771525 9,1 L9,1 L9,1 C9,1.55228475 9.44771525,2 10,2 L12.6,2 Z" id="Fill-297"></path>
+                    <path d="M2,12.6 L2,10 L2,10 C2,9.44771525 1.55228475,9 1,9 L1,9 L1,9 C0.44771525,9 -6.76353751e-17,9.44771525 0,10 L0,15 L-1.11022302e-16,15 C4.47140469e-16,15.5522847 0.44771525,16 1,16 L6,16 L6,16 C6.55228475,16 7,15.5522847 7,15 L7,15 L7,15 C7,14.4477153 6.55228475,14 6,14 L3.4,14 L6.7,10.7 L6.7,10.7 C7.08659932,10.3134007 7.08659932,9.68659932 6.7,9.3 L6.7,9.3 L6.7,9.3 C6.31340068,8.91340068 5.68659932,8.91340068 5.3,9.3 L2,12.6 Z" id="Fill-298"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
