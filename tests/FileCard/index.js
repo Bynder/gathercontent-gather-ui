@@ -4,6 +4,8 @@ import FileCard from '../../lib/FileCard';
 describe('FileCard', () => {
   let wrapper;
 
+  const NO_PREVIEW_CLASS = '.file-card__thumbnail--no-preview';
+
   const props = {
     hasComments: true,
     type: 'text',
@@ -31,8 +33,10 @@ describe('FileCard', () => {
     expect(wrapper.find('.file-card__label').contains(props.filename)).to.equal(true);
   });
 
-  it('contains 3 action types for non-image types', () => {
+  it('non-image types contain specific properties', () => {
+    wrapper.setProps({ image: null });
     const actions = wrapper.find('.file-card__action');
+    expect(wrapper.find(NO_PREVIEW_CLASS).length).to.equal(1);
     expect(actions.length).to.equal(3);
   });
 
