@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $form-checkbox-margin: $layout-spacing-base/2 !default;
-$form-checkbox-font-weight: 400;
+$form-checkbox-font-weight: $typo-weight-roman !default;
 $form-checkbox-label-size: 1rem !default;
 
 /* ==========================================================================
