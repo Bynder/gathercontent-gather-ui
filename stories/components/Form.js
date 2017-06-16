@@ -12,7 +12,7 @@ storiesOf('Components', module)
           title="Checkboxes"
           description="Radio input choices"
         >
-          <p>
+          <div className="form__choice-element-wrapper">
             <Checkbox.Input
               name="ch1"
               id="id1"
@@ -20,16 +20,16 @@ storiesOf('Components', module)
               checked
             />
             <Checkbox.Label label="Ethiopian roast" id="id1" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <Checkbox.Input
               name="ch1"
               onChangeHandler={action('hello')}
               id="id2"
             />
             <Checkbox.Label label="Guatemala roast" id="id2" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <Checkbox.Input
               name="ch1"
               id="id3"
@@ -37,14 +37,14 @@ storiesOf('Components', module)
               checked
             />
             <Checkbox.Label label="Honduras roast" id="id3" />
-          </p>
+          </div>
         </StoryItem>
 
         <StoryItem
           title="Checkboxes: Disabled"
           description="Radio input choices can be disabled. This can be achieved by passing in the disabled property."
         >
-          <p>
+          <div className="form__choice-element-wrapper">
             <Checkbox.Input
               name="ch44"
               id="id44"
@@ -53,8 +53,8 @@ storiesOf('Components', module)
               checked
             />
             <Checkbox.Label label="Ethiopian roast" id="id44" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <Checkbox.Input
               name="ch44"
               disabled
@@ -62,7 +62,7 @@ storiesOf('Components', module)
               id="id55"
             />
             <Checkbox.Label label="Guatemala roast" id="id55" />
-          </p>
+          </div>
         </StoryItem>
       </div>
     )
@@ -75,7 +75,7 @@ storiesOf('Components', module)
           title="Radio inputs"
           description="Multiple, default styling checkboxes"
         >
-          <p>
+          <div className="form__choice-element-wrapper">
             <RadioButton.Input
               name="ch1"
               id="id1"
@@ -84,8 +84,8 @@ storiesOf('Components', module)
               checked
             />
             <RadioButton.Label label="Ethiopian roast" id="id1" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <RadioButton.Input
               name="ch1"
               value="value 2"
@@ -93,8 +93,8 @@ storiesOf('Components', module)
               id="id2"
             />
             <RadioButton.Label label="Guatemala roast" id="id2" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <RadioButton.Input
               name="ch1"
               id="id3"
@@ -102,14 +102,14 @@ storiesOf('Components', module)
               onChangeHandler={action('hello')}
             />
             <RadioButton.Label label="Honduras roast" id="id3" />
-          </p>
+          </div>
         </StoryItem>
 
         <StoryItem
           title="Radio inputs: disabled"
           description="Multiple radios can be disabled by passing in the disabled property"
         >
-          <p>
+          <div className="form__choice-element-wrapper">
             <RadioButton.Input
               name="ch21"
               disabled
@@ -119,8 +119,8 @@ storiesOf('Components', module)
               checked
             />
             <RadioButton.Label label="Ethiopian roast" id="id21" />
-          </p>
-          <p>
+          </div>
+          <div className="form__choice-element-wrapper">
             <RadioButton.Input
               disabled
               name="ch21"
@@ -129,7 +129,7 @@ storiesOf('Components', module)
               id="id22"
             />
             <RadioButton.Label label="Guatemala roast" id="id22" />
-          </p>
+          </div>
         </StoryItem>
       </div>
     )

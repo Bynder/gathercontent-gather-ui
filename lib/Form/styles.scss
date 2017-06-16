@@ -15,3 +15,7 @@ $form-checkbox-label-size: 1rem !default;
     font-weight: $form-checkbox-font-weight;
     font-size: $form-checkbox-label-size;
 }
+
+.form__choice-element-wrapper {
+  margin: $form-checkbox-label-size/2;
+}
