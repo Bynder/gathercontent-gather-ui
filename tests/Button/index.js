@@ -24,6 +24,20 @@ describe('Button', () => {
     expect(button.prop('className')).contains('button button--primary');
   });
 
+  it('should not be a submit button by default', () => {
+    console.log(button);
+    expect(button.prop('type')).to.equal('button');
+  });
+
+  it('can be a submit button', () => {
+    wrapper.setProps({
+      'isSubmit': true,
+    });
+
+    expect(button.prop('type')).to.equal('submit');
+  });
+
+
   it('should render a button with multiple type classes', () => {
     wrapper.setProps({
       'types': ['clear', 'collapsed'],
