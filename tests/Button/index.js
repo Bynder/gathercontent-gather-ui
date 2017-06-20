@@ -25,7 +25,6 @@ describe('Button', () => {
   });
 
   it('should not be a submit button by default', () => {
-    console.log(button);
     expect(button.prop('type')).to.equal('button');
   });
 
