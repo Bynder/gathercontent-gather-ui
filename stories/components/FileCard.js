@@ -3,11 +3,20 @@ import { storiesOf, action } from '@storybook/react';
 import FileCard from '../../lib/FileCard';
 import StoryItem from '../styleguide/StoryItem';
 
-const actions = [
-  function downloadHandler() {},
-  function fullscreenHandler() {},
-  function commentHandler() {},
-];
+const actions = {
+  deleteHandler() {
+    console.log('delete handler')
+  },
+  fullscreenHandler() {
+    console.log('full screen handler');
+  },
+  downloadHandler() {
+    console.log('download handler');
+  },
+  commentHandler() {
+    console.log('comment handler');
+  }
+};
 
 storiesOf('Components', module)
   .add('FileCard', () => {
