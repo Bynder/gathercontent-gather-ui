@@ -1,11 +1,12 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$file-card-width: 200px !default;
-$file-card-height: 180px !default;
+$file-card-width: 160px !default;
+$file-card-height: $file-card-width !default;
 $file-card-action-button-size: 32px !default;
 $file-card-margin: $layout-spacing-base !default;
 $file-card-border-radius: 3px !default;
+$file-card-border: 0 0 0 2px #f1f1f1 inset !default;
 
 $file-card-label-font-size: $typo-size-slight !default;
 $file-card-actions-padding: .5rem !default;
@@ -24,10 +25,11 @@ $file-card-border-style: 3px solid;
 .file-card {
   width: $file-card-width;
   height: $file-card-height;
-  margin-right: $file-card-margin;
+  margin: $file-card-margin / 2;
   position: relative;
   display: inline-block;
   overflow: hidden;
+  box-shadow: $file-card-border;
 
   &:hover,
   .file-card__action:focus {
@@ -43,6 +45,7 @@ $file-card-border-style: 3px solid;
 .file-card__has-comments {
   border: $file-card-border-style $file-card-highlight-color;
   transition: border .1s ease-in;
+  box-shadow: none;
 
   &:hover {
     border: $file-card-border-style darken($file-card-highlight-color, 20%);
