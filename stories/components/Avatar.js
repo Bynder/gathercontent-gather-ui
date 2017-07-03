@@ -63,6 +63,17 @@ storiesOf('Components', module)
               <AvatarPresence email="la@gmail.com" onlyInitials colour="rgb(249,95,93)" initials="LA" name="Seymour Butts" />
             </AvatarPresenceGroup>
         </StoryItem>
+
+        <StoryItem
+          title="Avatar List Group — extra users"
+          description="A list of overlapping avatars can be used by wrapping them in a `AvatarPresenceGroup` component, only fitting in a maximum number of N. Other avatars can be displayed by tapping the plus sign.">
+            <AvatarPresenceGroup maximum={1}>
+              <AvatarPresence email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
+              <AvatarPresence email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
+              <AvatarPresence email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
+              <AvatarPresence email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
+            </AvatarPresenceGroup>
+        </StoryItem>
       </div>
     );
   });

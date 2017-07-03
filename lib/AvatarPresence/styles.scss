@@ -6,6 +6,9 @@ $avatar-border-radius: 40px !default;
 $avatar-tooltip-name-weight: $typo-weight-semi-bold !default;
 $avatar-tooltip-name-size: $typo-size-lead !default;
 
+$avatar-show-more-background: rgb(175, 165, 175);
+$avatar-faded-background: rgb(60, 50, 60);
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -25,8 +28,13 @@ $avatar-tooltip-name-size: $typo-size-lead !default;
   &:hover { transform: scale(1.1); }
 
   &.is-faded {
-    background: rgb(60, 50, 60) !important;
+    background: $avatar-faded-background !important;
   }
+}
+
+.avatar--show-more {
+  background-color: $avatar-show-more-background;
+  color: rgb(100, 100, 100);
 }
 
 .avatar--supporting {
