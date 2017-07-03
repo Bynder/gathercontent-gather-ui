@@ -3,6 +3,8 @@
    ========================================================================== */
 $avatar-size: 40px !default;
 $avatar-border-radius: 40px !default;
+$avatar-tooltip-name-weight: $typo-weight-semi-bold !default;
+$avatar-tooltip-name-size: $typo-size-lead !default;
 
 /* ==========================================================================
    Styles
@@ -17,6 +19,14 @@ $avatar-border-radius: 40px !default;
   display: inline-block;
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset;
+  cursor: pointer;
+  transition: transform .1s ease-in-out .1s;
+
+  &:hover { transform: scale(1.1); }
+
+  &.is-faded {
+    background: rgb(60, 50, 60) !important;
+  }
 }
 
 .avatar--supporting {
@@ -52,4 +62,27 @@ $avatar-border-radius: 40px !default;
   .avatar {
     margin-right: -1em;
   }
+}
+
+.avatar__tooltip {
+  background: #fff;
+}
+
+.avatar__tooltip-name {
+  font-weight: $avatar-tooltip-name-weight;
+  font-size: $avatar-tooltip-name-size;
+  margin: 0;
+}
+
+.avatar__tooltip-email {
+  margin: .5rem 0 .5rem 0;
+}
+
+.avatar__pillbox {
+  background-color: $color-pillbox-background;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  padding: .3rem .5rem;
+  font-size: $typo-size-small;
 }
