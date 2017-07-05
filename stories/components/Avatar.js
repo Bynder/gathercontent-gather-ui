@@ -32,6 +32,17 @@ storiesOf('Components', module)
             </div>
         </StoryItem>
 
+         <StoryItem
+          title="Avatar — with image and no tooltip"
+          description="Passing a `noTooltip` property displays no tooltip on hover.">
+          <AvatarPresence
+            noTooltip
+            url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
+            name="Seymour Butts"
+            email="example@gmail.com"
+          />
+        </StoryItem>
+
         <StoryItem
           title="Avatar — with image"
           description="Without the `onlyInitials` prop and given a URL, it will display the image URL as the background.">
