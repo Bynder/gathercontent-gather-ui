@@ -21,3 +21,8 @@ import Field from './components/Field';
 import FileCard from './components/FileCard';
 import Conversation from './components/Conversation';
 import Form from './components/Form';
+<<<<<<< Updated upstream
+import Tooltip from './components/Tooltip';
+=======
+import FloatingButton from './components/FloatingButton';
+>>>>>>> Stashed changes
