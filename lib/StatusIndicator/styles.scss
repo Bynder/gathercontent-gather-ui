@@ -2,38 +2,30 @@
    Config
    ========================================================================== */
 
-$size-status-indicator: 1em !default;
-$cursor-status-indicator--hover: pointer !default;
-$color-status-indicator-label--text: rgb(111, 121, 129) !default;
+$status-indicator-size: 1em !default;
+$status-indicator-label-color--text: rgb(111, 121, 129) !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 
+.status-indicator {
+  display: inline-block;
+  vertical-align: middle;
+  color: $status-indicator-label-color--text;
+}
+
 .status-indicator__circle {
   display: inline-block;
   vertical-align: middle;
   border-radius: 50%;
-  width: $size-status-indicator;
-  height: $size-status-indicator;
+  width: $status-indicator-size;
+  height: $status-indicator-size;
   margin-right: .5rem;
   margin-left: .25rem;
 }
 
-.status-indicator {
-  display: inline-block;
-  vertical-align: middle;
-  color: $color-status-indicator-label--text;
-}
-
 .status-indicator__label {
   margin-right: .25rem;
-}
-
-.status-indicator__children .dateTime {
-  text-decoration: underline;
-  
-  &:hover {
-    cursor: $cursor-status-indicator--hover;
-  }
+  color: darken($status-indicator-label-color--text, 10);
 }
