@@ -7,7 +7,7 @@ const mockValidations = [{
   text: '120/100',
   hasFailed: true,
 }, {
-  text: 'Plain text field bro!',
+  text: 'Validation failed text',
   hasFailed: false,
 }];
 
@@ -25,14 +25,15 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Field"
-          description="A field component">
+          description="A field component provides supporting UI for gathering content. The child component should be responsible for handling the gathering experience but this component renders labels, actions and validations to support that experience."
+        >
           <Field
-            label="Test Label Text"
+            label="Field label text"
             actions={mockActions}
             validations={mockValidations}
-            guidelines="Guideline text here!!!"
+            instructions="Instruction text to help inform the user of what they are mean't to add into this field."
           >
-            <div>Add editor component here from app!</div>
+            <small><i>A child component will be rendered here...</i></small>
           </Field>
         </StoryItem>
 
