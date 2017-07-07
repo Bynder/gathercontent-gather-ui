@@ -11,7 +11,7 @@ storiesOf('Components', module)
           title="Status Indicator"
           description="Consists of a color and a label to express a status.">
           <StatusIndicator color="#ff6300" label="Draft">
-            <span> due <a href="#">Tommorrow at 12:00pm</a></span>
+            due <span className="dateTime">Tommorrow at 12:00pm</span>
           </StatusIndicator>
         </StoryItem>
       </div>
