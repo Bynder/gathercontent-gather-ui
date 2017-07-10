@@ -163,13 +163,3 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 .button--size-sm {
   padding: $layout-spacing-base/4 $layout-spacing-base/2;
 }
-
-.button--floating {
-  background: #fff;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  padding: 0;
-  box-shadow: 0 0 0 2px rgb(225, 225, 225);
-  cursor: pointer;
-}

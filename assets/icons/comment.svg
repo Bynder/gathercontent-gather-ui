@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Comment Icon</title>
+    <desc>Comment Icon</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="start-a-conversation" transform="translate(-40.000000, -37.000000)">
+            <path d="M48,37 C43.6,37 40,40.1 40,44 C40,47.9 43.6,51 48,51 L48.6,51 L54,53 L54,48.6 C55.2,47.4 56,45.8 56,44 C56,40.1 52.4,37 48,37 L48,37 Z M52,47.8 L52,50.1 L48.9,49 L48,49 C44.7,49 42,46.8 42,44 C42,41.2 44.7,39 48,39 C51.3,39 54,41.2 54,44 C54,46.2 52,47.8 52,47.8 L52,47.8 Z" id="Fill-160"></path>
+        </g>
+    </g>
+</svg>

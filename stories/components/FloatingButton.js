@@ -6,7 +6,7 @@ import StoryItem from '../styleguide/StoryItem';
 const position = {
   position: 'relative',
   top: '10px',
-  left: '10px',
+  left: '150px',
 };
 
 storiesOf('Components', module)
@@ -14,13 +14,24 @@ storiesOf('Components', module)
     return (
       <div>
         <StoryItem
-          title="FloatingButton"
-          description="...">
+          title="Floating Button"
+          description="A floating button defaults to the comment icon. It can, optionally, receive custom positioning properties.">
           <div>
             <FloatingButton
-              position={position}
               type="comment"
-              onClickHandler={() => {}}
+              onClickHandler={action('I was clicked')}
+            />
+          </div>
+        </StoryItem>
+
+        <StoryItem
+          title="Floating Button with custom placement"
+          description="Passing a `position` object property, allows its position to be customised.">
+          <div>
+            <FloatingButton
+              type="comment"
+              position={position}
+              onClickHandler={action('I was clicked')}
             />
           </div>
         </StoryItem>
