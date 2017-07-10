@@ -5,11 +5,18 @@ import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 jsDomGlobal();
 
 describe('ButtonWithTooltip', () => {
-  let sandbox, wrapper, clickHandlerSpy;
+  let sandbox, wrapper;
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    wrapper = mount(<ButtonWithTooltip clickHandler={clickHandlerSpy}>Botão</ButtonWithTooltip>);
+    wrapper = mount(
+      <ButtonWithTooltip
+        clickHandler={() => {}}
+        tooltipText="tooltip text"
+      >
+        Botão
+      </ButtonWithTooltip>
+    );
   });
 
   afterEach(() => {
@@ -32,6 +39,7 @@ describe('ButtonWithTooltip', () => {
   it('should set the overlay as a Tooltip component', () => {
     const tooltip = mount(wrapper.find(OverlayTrigger).prop('overlay'));
     expect(tooltip.instance()).to.be.instanceOf(Tooltip);
+    expect(tooltip.text()).to.equal('tooltip text');
   });
 
   it('should set the tooltip size, text and position', () => {

@@ -11,13 +11,14 @@ describe('PlanBox', () => {
     buttonText: 'Switch',
     disabled: false,
     recommended: false,
+    tooltipText: 'tooltip text',
   };
   let shallowWrapper;
 
   beforeEach(() => {
     shallowWrapper = shallow(
       <PlanBox {...props}>
-        <div className="child-node"></div>
+        <div className="child-node">test</div>
       </PlanBox>
     );
   });
@@ -36,7 +37,7 @@ describe('PlanBox', () => {
   });
 
   it('passes the correct props to the PlanBoxButton UI component', () => {
-    const mountedWrapper = mount(<PlanBox {...props} />);
+    const mountedWrapper = mount(<PlanBox {...props}>Children content</PlanBox>);
     const planBoxButtonComponent = mountedWrapper.find(PlanBoxButton);
     expect(planBoxButtonComponent.prop('recommended')).to.equal(false);
     expect(planBoxButtonComponent.prop('href')).to.equal('test/url/here');

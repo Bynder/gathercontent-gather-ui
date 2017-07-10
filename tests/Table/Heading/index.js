@@ -23,6 +23,7 @@ describe('Table/Heading', () => {
         sortHandler={sortingSpy}
         toggleHandler={toggleSpy}
         columnNameSanitiser={sanitiserSpy}
+        sortingOrder={-1}
       />
     );
   });

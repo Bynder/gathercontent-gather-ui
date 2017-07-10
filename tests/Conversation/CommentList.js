@@ -5,9 +5,12 @@ import Comment from '../../lib/Conversation/Comment';
 describe('Comment List', () => {
   let wrapper;
 
-  const comments = [{}, {}];
+  const comments = [
+    { id: 2, body: 'comment body', createdAt: '', createdBy: 2 },
+    { id: 3, body: 'comment body', createdAt: '', createdBy: 2 },
+  ];
   const props = {
-    comments: [{ id: 2 }, {}],
+    comments,
     conversationId: '123',
   };
 

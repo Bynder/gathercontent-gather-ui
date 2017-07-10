@@ -37,7 +37,6 @@ describe('PlanBox/Button', () => {
       disabled: true,
     });
     expect(shallowWrapper.find(ButtonWithTooltip)).to.have.length(1);
-    console.log(shallowWrapper.find(ButtonWithTooltip).props());
     expect(shallowWrapper.find(ButtonWithTooltip).prop('tooltipText')).to.equal('This exceeds your plan');
   });
 
