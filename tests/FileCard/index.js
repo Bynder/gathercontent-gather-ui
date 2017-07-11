@@ -13,6 +13,7 @@ describe('FileCard', () => {
     filename: 'field_notes.txt',
     label: 'Field notes',
     image: 'https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922',
+    actions: {},
   };
 
   beforeEach(() => {
