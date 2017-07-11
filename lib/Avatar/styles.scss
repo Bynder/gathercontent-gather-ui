@@ -3,6 +3,13 @@
    ========================================================================== */
 $avatar-size: 40px !default;
 $avatar-border-radius: 40px !default;
+$avatar-tooltip-name-weight: $typo-weight-semi-bold !default;
+$avatar-tooltip-name-size: $typo-size-lead !default;
+
+$avatar-show-more-background: rgb(175, 165, 175);
+$avatar-faded-background: rgb(60, 50, 60);
+$avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset;
+$avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
 
 /* ==========================================================================
    Styles
@@ -10,8 +17,85 @@ $avatar-border-radius: 40px !default;
 .avatar {
   border-radius: $avatar-border-radius;
   width: $avatar-size;
+  height: $avatar-size;
+}
+
+.avatar {
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: $avatar-shadow;
+  cursor: pointer;
+  transition: transform .1s ease-in-out .1s;
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 5 !important; // Overrides inline JSX styling
+  }
+
+  &.is-faded {
+    background: $avatar-faded-background !important;
+  }
+}
+
+.avatar--show-more {
+  background-color: $avatar-show-more-background;
+  color: rgb(100, 100, 100);
 }
 
 .avatar--supporting {
   margin: 0 $layout-spacing-base/2 0 0;
+}
+
+.avatar__wrapper {
+  height: $avatar-size;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.avatar__initials {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: $typo-weight-semi-bold;
+  font-size: $typo-size-slight;
+  line-height: 1;
+  color: #fff;
+}
+
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatar-group-list {
+  display: flex;
+
+  .avatar {
+    margin-right: -1em;
+  }
+}
+
+.avatar__tooltip {
+  background: #fff;
+}
+
+.avatar__tooltip-name {
+  font-weight: $avatar-tooltip-name-weight;
+  font-size: $avatar-tooltip-name-size;
+  margin: 0;
+}
+
+.avatar__tooltip-email {
+  margin: $typo-size-lead/2 0 $typo-size-lead/2 0;
+}
+
+.avatar__pillbox {
+  background-color: $color-pillbox-background;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  padding: $avatar-pillbox-padding;
+  font-size: $typo-size-small;
 }

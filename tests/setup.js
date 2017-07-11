@@ -18,4 +18,4 @@ export {
   jsDomGlobal,
   shallow,
   mount,
-}
+};
