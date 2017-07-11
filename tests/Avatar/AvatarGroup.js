@@ -1,20 +1,20 @@
 import { React, expect, sinon, mount } from '../setup';
 import Avatar from '../../lib/Avatar';
-import AvatarPresenceGroup from '../../lib/AvatarGroup';
+import AvatarGroup from '../../lib/AvatarGroup';
 
-describe('Avatar/Presence', () => {
+describe('AvatarGroup', () => {
   let wrapper;
   let showMoreSpy;
 
   beforeEach(() => {
-    showMoreSpy = sinon.spy(AvatarPresenceGroup.prototype, 'showMore');
+    showMoreSpy = sinon.spy(AvatarGroup.prototype, 'showMore');
     wrapper = mount(
-      <AvatarPresenceGroup maximum={3}>
+      <AvatarGroup maximum={3}>
         <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
         <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-    </AvatarPresenceGroup>
+      </AvatarGroup>
     );
   });
 
@@ -32,12 +32,12 @@ describe('Avatar/Presence', () => {
 
   it('renders a custom maximum specified size of individual Avatar components', () => {
     const customWrapper = mount(
-      <AvatarPresenceGroup maximum={1}>
+      <AvatarGroup maximum={1}>
         <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
         <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-    </AvatarPresenceGroup>);
+    </AvatarGroup>);
 
     expect(customWrapper.find(Avatar).length).to.equal(1);
   });
