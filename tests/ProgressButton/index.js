@@ -6,7 +6,7 @@ describe('ProgressButton', () => {
   let wrapper, button;
 
   beforeEach(() => {
-    wrapper = mount(<ProgressButton >Botão</ProgressButton>);
+    wrapper = mount(<ProgressButton clickHandler={() => {}} value="Botão" />);
     button = wrapper.find('button');
   });
 

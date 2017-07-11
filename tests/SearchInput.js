@@ -15,7 +15,7 @@ describe('SearchInput', () => {
 	});
 
 	it('should render an input component', () => {
-		props = { value: 'Botão', type: 'primary' };
+		props = { value: 'Botão', type: 'primary', onChangeHandler() {} };
 
 		let Element = shallow(<SearchInput {...props}/>);
 		let input = Element.find('input');
@@ -34,7 +34,7 @@ describe('SearchInput', () => {
 	});
 
 	it('should map the state query to the input value', () => {
-		const Element = mount(<SearchInput />);
+		const Element = mount(<SearchInput onChangeHandler={() => {}} />);
 		const input = Element.find('.input-search');
 
 		Element.setState({query: 'fake query'});

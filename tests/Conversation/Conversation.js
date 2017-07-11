@@ -9,6 +9,8 @@ describe('Conversation', () => {
   let wrapper;
   let sandbox = sinon.sandbox.create();
   let resolveConversationSpy;
+  let activateConversationSpy;
+  let deactivateConversationSpy;
   let addCommentSpy;
 
   const props = {
@@ -22,12 +24,16 @@ describe('Conversation', () => {
 
   beforeEach(() => {
     resolveConversationSpy = sandbox.spy();
+    activateConversationSpy = sandbox.spy();
+    deactivateConversationSpy = sandbox.spy();
     addCommentSpy = sandbox.spy();
     wrapper = shallow(
       <Conversation
         {...props}
         userCanComment
         actions={{
+          deactivateConversation: deactivateConversationSpy,
+          activateConversation: activateConversationSpy,
           resolveConversation: resolveConversationSpy,
           addComment: addCommentSpy,
         }}
@@ -75,6 +81,8 @@ describe('Conversation', () => {
     expect(commentList.prop('conversationId')).to.equal(props.id);
     expect(commentList.prop('comments')).to.equal(props.comments);
     expect(commentList.prop('actions')).to.deep.equal({
+      deactivateConversation: deactivateConversationSpy,
+      activateConversation: activateConversationSpy,
       resolveConversation: resolveConversationSpy,
       addComment: addCommentSpy,
     });

@@ -8,6 +8,7 @@ describe('PlanBox/Button', () => {
     href: '/some/href',
     buttonText: 'Switch',
     exceedsUsageMessage: 'This exceeds your plan',
+    tooltipText: "This exceeds your plan",
   };
   let shallowWrapper;
 

@@ -14,7 +14,7 @@ describe('CheckToggle', () => {
   });
 
   it('renders a wrapper with an input', () => {
-    let Element = shallow(<CheckToggle />);
+    let Element = shallow(<CheckToggle id="test-id" />);
     let div = Element.find('div');
     let input = div.find('input');
 

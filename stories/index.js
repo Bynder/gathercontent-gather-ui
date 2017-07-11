@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
-
+import Avatar from './components/Avatar';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';
@@ -21,4 +21,6 @@ import Field from './components/Field';
 import FileCard from './components/FileCard';
 import Conversation from './components/Conversation';
 import Form from './components/Form';
+import Tooltip from './components/Tooltip';
+import StatusIndicator from './components/StatusIndicator';
 import FloatingButton from './components/FloatingButton';
