@@ -35,6 +35,10 @@ $avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
   &.is-faded {
     background: $avatar-faded-background !important;
   }
+
+  &.is-assigned {
+    box-shadow: 0 0 0 2px rgb(155, 169, 185) inset;
+  }
 }
 
 .avatar--show-more {
