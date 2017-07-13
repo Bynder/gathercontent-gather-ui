@@ -86,6 +86,16 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
+         title="Avatar List Group"
+         description="It can still hold just one item, or none.">
+           <AvatarGroup>
+             <Avatar email="poppycox@gmail.com" onlyInitials isAssigned colour="rgb(249,95,93)" initials="MR" name="Mike Rotch" />
+             
+           </AvatarGroup>
+       </StoryItem>
+
+
+        <StoryItem
           title="Avatar List Group — extra users"
           description="A list of overlapping avatars can be used by wrapping them in a `AvatarGroup` component, only fitting in a maximum number of N. Other avatars can be displayed by tapping the plus sign.">
             <AvatarGroup maximum={1}>
