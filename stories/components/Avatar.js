@@ -11,7 +11,7 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Avatar — only with initials"
-          description="Simple avatars, to be used individually (not in a group). Here, examples with two colours passed through the component, with one assigned user (hover to see the tooltip).">
+          description="Simple avatars, to be used individually (not in a group). Here, examples with two colours passed through the component, with one assigned user.">
             <div>
               <Avatar
                 url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
@@ -19,12 +19,13 @@ storiesOf('Components', module)
                 initials="SB"
                 name="Seymour Butts"
                 email="example@gmail.com"
+                colour="rgb(155, 223, 190)"
             />
 
             <Avatar
               initials="PC"
               onlyInitials
-              colour="rgb(230, 133, 173)"
+              colour="rgb(200, 133, 173)"
               name="Poppy Cox"
               email="poppycox@gmail.com"
               isAssigned
@@ -79,9 +80,9 @@ storiesOf('Components', module)
           title="Avatar List Group"
           description="A list of overlapping avatars can be used by wrapping them in a `AvatarPresenceGroup` component.">
             <AvatarGroup>
-              <Avatar email="poppycox@gmail.com" onlyInitials isAssigned colour="rgb(249,95,93)" initials="MR" name="Mike Rotch" />
+              <Avatar email="poppycox@gmail.com" onlyInitials isAssigned initials="MR" name="Mike Rotch" />
               <Avatar email="hugh@gmail.com" onlyInitials initials="HJ" name="Hugh Jass" />
-              <Avatar email="la@gmail.com" onlyInitials colour="rgb(249,95,93)" initials="LA" name="Seymour Butts" />
+              <Avatar email="la@gmail.com" onlyInitials initials="LA" name="Seymour Butts" />
             </AvatarGroup>
         </StoryItem>
 
@@ -90,7 +91,7 @@ storiesOf('Components', module)
          description="It can still hold just one item, or none.">
            <AvatarGroup>
              <Avatar email="poppycox@gmail.com" onlyInitials isAssigned colour="rgb(249,95,93)" initials="MR" name="Mike Rotch" />
-             
+
            </AvatarGroup>
        </StoryItem>
 
