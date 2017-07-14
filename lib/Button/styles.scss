@@ -183,7 +183,7 @@ $animation-curve: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   padding: 0;
   box-shadow: $icon-shadow;
   cursor: pointer;
-  transition: transform .3s $animation-curve 0.05s;
+  transition: transform .3s $animation-curve;
 
   &:hover {
     transform: scale(1.1);
