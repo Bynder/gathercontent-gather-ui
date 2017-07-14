@@ -23,4 +23,3 @@ import Conversation from './components/Conversation';
 import Form from './components/Form';
 import Tooltip from './components/Tooltip';
 import StatusIndicator from './components/StatusIndicator';
-import FloatingButton from './components/FloatingButton';

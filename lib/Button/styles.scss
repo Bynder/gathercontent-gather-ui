@@ -19,6 +19,12 @@ $color-btn-default-dark--bg: #777 !default;
 $color-btn-default-dark--text: white !default;
 $color-btn-default-dark--hover: #5e5e5e !default;
 
+$icon-default-color: #456;
+$icon-outline-color: rgb(225, 225, 225);
+$icon-size: 30px;
+$icon-shadow: 0 0 0 2px $icon-outline-color;
+$animation-curve: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -162,4 +168,34 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 
 .button--size-sm {
   padding: $layout-spacing-base/4 $layout-spacing-base/2;
+}
+
+/*** Button with icon ****/
+
+.button--floating {
+  background: #fff;
+  width: $icon-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $icon-size;
+  border-radius: 50%;
+  padding: 0;
+  box-shadow: $icon-shadow;
+  cursor: pointer;
+  transition: transform .3s $animation-curve 0.05s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    transform: scale(0.9);
+    outline: none;
+  }
+}
+
+.button--no-border {
+  border: none;
+  box-shadow: none;
 }

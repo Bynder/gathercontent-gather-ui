@@ -3,6 +3,7 @@ import { storiesOf, action } from '@storybook/react';
 import Button from '../../lib/Button/';
 import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 import ProgressButton from '../../lib/ProgressButton';
+import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import StoryItem from '../styleguide/StoryItem';
 
 const button = storiesOf('Components', module)
@@ -75,6 +76,17 @@ const button = storiesOf('Components', module)
         >
           Archive Item
         </ButtonWithTooltip>
+      </StoryItem>
+
+      <StoryItem
+        title="Button with Icon"
+        description="A button with an icon can receive a custom (existing) type, which will use a predefined SVG, or receive its own children.">
+        <div>
+          <ButtonWithIcon
+            type="comment"
+            clickHandler={action('I was clicked')}
+          />
+        </div>
       </StoryItem>
     </div>
   ));
