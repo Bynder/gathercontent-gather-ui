@@ -47,7 +47,8 @@ describe('AvatarGroup', () => {
         <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-    </AvatarGroup>);
+      </AvatarGroup>,
+    );
 
     expect(customWrapper.find(Avatar).length).to.equal(1);
   });
