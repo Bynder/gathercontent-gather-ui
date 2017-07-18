@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$icon-size: 30px !default;
+$icon-hover-color: $color-brand-green !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button:hover &,
+  button:focus & {
+    svg path {
+      stroke: $icon-hover-color;
+    }
+  }
+}
+
+.icon__image,
+.icon__image svg {
+  width: $icon-size;
+  height: $icon-size;
+}
+
+.icon__text {
+  margin: 0 0 0 $layout-spacing-base/2;
+}
+
+.icon--hide-text .icon__text {
+  display: none;
+}
+
+/* ==========================================================================
+   SVG fill / stroke overrides (due to issues with SVGs)
+   ========================================================================== */
+.icon--comment {
+  button:hover &,
+  button:focus & {
+    path:first-child {
+      fill: $icon-hover-color;
+      stroke: none;
+    }
+  }
+}
