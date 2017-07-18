@@ -6,10 +6,12 @@ $avatar-border-radius: 40px !default;
 $avatar-tooltip-name-weight: $typo-weight-semi-bold !default;
 $avatar-tooltip-name-size: $typo-size-lead !default;
 
-$avatar-show-more-background: rgb(175, 165, 175);
-$avatar-faded-background: rgb(60, 50, 60);
-$avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset;
+$avatar-show-more-background: rgb(175, 165, 175) !default;
+$avatar-faded-background: rgb(60, 50, 60) !default;
+$avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset !default;
 $avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
+
+$avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 
 /* ==========================================================================
    Styles
@@ -34,6 +36,10 @@ $avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
 
   &.is-faded {
     background: $avatar-faded-background !important;
+  }
+
+  &.is-highlighted {
+    box-shadow: $avatar-highlight-shadow;
   }
 }
 

@@ -22,6 +22,16 @@ describe('AvatarGroup', () => {
     showMoreSpy.restore();
   });
 
+  it('renders a single Avatar', () => {
+    const mountedWrapper = mount(
+      <AvatarGroup maximum={3}>
+        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
+      </AvatarGroup>
+    );
+
+    expect(mountedWrapper.find(Avatar).length).to.equal(1);
+  });
+
   it('renders an AvatarGroup component', () => {
     expect(wrapper.find('[data-component="avatar-group"]')).to.have.length(1);
   });
@@ -37,7 +47,8 @@ describe('AvatarGroup', () => {
         <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-    </AvatarGroup>);
+      </AvatarGroup>,
+    );
 
     expect(customWrapper.find(Avatar).length).to.equal(1);
   });
