@@ -2,7 +2,6 @@
    Config
    ========================================================================== */
 
-$status-indicator-size: 1em !default;
 $status-indicator-label-color--text: rgb(111, 121, 129) !default;
 
 /* ==========================================================================
@@ -10,22 +9,48 @@ $status-indicator-label-color--text: rgb(111, 121, 129) !default;
    ========================================================================== */
 
 .status-indicator {
-  display: inline-block;
-  vertical-align: middle;
   color: $status-indicator-label-color--text;
+  .due-date {
+    color: #8492a6;
+    font-size: 12px;
+  }
+}
+
+.status-indicator--flex {
+  display: flex;
+  align-items: center;
 }
 
 .status-indicator__circle {
-  display: inline-block;
-  vertical-align: middle;
   border-radius: 50%;
-  width: $status-indicator-size;
-  height: $status-indicator-size;
+  width: 12px;
+  height: 12px;
   margin-right: .5rem;
-  margin-left: .25rem;
 }
 
 .status-indicator__label {
-  margin-right: .25rem;
-  color: darken($status-indicator-label-color--text, 10);
+  margin-right: .5rem;
+  color: #4b5761;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-indicator--completed {
+  .status-indicator__label {
+    text-decoration: line-through;
+  }
+}
+
+.status-indicator--current {
+  .status-indicator__label {
+    font-size: 16px;
+  }
+  .status-indicator__circle {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+.status-indicator__description {
+  color: #5d6871;
 }
