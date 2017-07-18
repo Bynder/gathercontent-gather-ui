@@ -22,6 +22,16 @@ describe('AvatarGroup', () => {
     showMoreSpy.restore();
   });
 
+  it('renders a single Avatar', () => {
+    const mountedWrapper = mount(
+      <AvatarGroup maximum={3}>
+        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
+      </AvatarGroup>
+    );
+
+    expect(mountedWrapper.find(Avatar).length).to.equal(1);
+  });
+
   it('renders an AvatarGroup component', () => {
     expect(wrapper.find('[data-component="avatar-group"]')).to.have.length(1);
   });
