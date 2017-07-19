@@ -1,24 +1,23 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$caret-margin: $layout-spacing-base/2 !default;
-$icon-size: $typo-size-slight !default;
-$dropdown-link-padding: 7px 15px !default;
+$dropdown-menu-caret-margin: $layout-spacing-base/2 !default;
+$dropdown-menu-icon-size: $typo-size-slight !default;
+$dropdown-menu-link-padding: 7px 15px !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
-
 .dropdown-menu__caret {
-	margin-left: $caret-margin;
+  margin-left: $dropdown-menu-caret-margin;
 }
 
 .dropdown-menu {
-	.open & {
-		display: block;
-		opacity: 1;
-		transition: opacity;
-	}
+  .open & {
+    display: block;
+    opacity: 1;
+    transition: opacity;
+  }
 }
 
 /** Bootstrap styling **/
@@ -29,11 +28,11 @@ $dropdown-link-padding: 7px 15px !default;
 }
 
 .dropdown {
-	&.is-hidden {
-		> button {
-			display: none;
-		}
-	}
+  &.is-hidden {
+    > button {
+      display: none;
+    }
+  }
 }
 
 .dropdown-toggle:focus {
@@ -42,7 +41,7 @@ $dropdown-link-padding: 7px 15px !default;
 
 .dropdown-toggle {
   i {
-    font-size: $icon-size;
+    font-size: $dropdown-menu-icon-size;
     margin-right: 3px;
     vertical-align: baseline;
   }
@@ -55,7 +54,7 @@ $dropdown-link-padding: 7px 15px !default;
 /** Custom **/
 .dropdown__link {
   display: block;
-  padding: $dropdown-link-padding;
+  padding: $dropdown-menu-link-padding;
   text-decoration: none;
   cursor: pointer;
   color: #6f7c82;
@@ -80,11 +79,11 @@ $dropdown-link-padding: 7px 15px !default;
 }
 
 .dropdown__menu {
-	li a {
-		color: #6f7c82;
-		text-decoration: none;
-		font-size: $icon-size;
-	}
+  li a {
+    color: #6f7c82;
+    text-decoration: none;
+    font-size: $dropdown-menu-icon-size;
+  }
 
   li.disabled a {
     opacity: .4;
