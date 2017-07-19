@@ -2,30 +2,58 @@
    Config
    ========================================================================== */
 
-$status-indicator-size: 1em !default;
 $status-indicator-label-color--text: rgb(111, 121, 129) !default;
+$status-indicator-circle-size: $typo-size-small !default;
+$status-indicator-circle-size--current: $typo-size-base !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 
 .status-indicator {
-  display: inline-block;
-  vertical-align: middle;
   color: $status-indicator-label-color--text;
+
+  .status-indicator__children {
+    color: $color-text-light;
+    font-size: $typo-size-small;
+  }
+
+  .status-indicator--flex {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .status-indicator__circle {
-  display: inline-block;
-  vertical-align: middle;
   border-radius: 50%;
-  width: $status-indicator-size;
-  height: $status-indicator-size;
+  width: $status-indicator-circle-size;
+  height: $status-indicator-circle-size;
   margin-right: .5rem;
-  margin-left: .25rem;
 }
 
 .status-indicator__label {
-  margin-right: .25rem;
-  color: darken($status-indicator-label-color--text, 10);
+  margin-right: .5rem;
+  color: #4b5761;
+  font-size: $typo-size-base;
+  font-weight: $typo-weight-semi-bold;
+}
+
+.status-indicator--completed {
+  .status-indicator__label {
+    text-decoration: line-through;
+  }
+}
+
+.status-indicator--current {
+  .status-indicator__label {
+    font-size: $typo-size-lead;
+  }
+  .status-indicator__circle {
+    height: $status-indicator-circle-size--current;
+    width: $status-indicator-circle-size--current;
+  }
+}
+
+.status-indicator__description {
+  color: $color-text-base;
 }

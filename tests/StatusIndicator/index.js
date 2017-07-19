@@ -1,15 +1,15 @@
-import { React, expect, jsDomGlobal, mount, shallow } from '../setup';
+import { React, expect, jsDomGlobal, mount } from '../setup';
 import StatusIndicator from '../../lib/StatusIndicator';
+
 jsDomGlobal();
 
 describe('StatusIndicator', () => {
-  let wrapper, status;
+  let wrapper;
 
   beforeEach(() => {
     wrapper = mount(<StatusIndicator color="#00ff00" label="Review">
       due <span>Tommorrow at 12:00pm</span>
-      </StatusIndicator>
-    );
+    </StatusIndicator>);
   });
 
   it('should have a circle with a backgroundColor of #00ff00', () => {
@@ -22,5 +22,23 @@ describe('StatusIndicator', () => {
 
   it('should have a child', () => {
     expect(wrapper.find('.status-indicator__children')).to.include.text('due Tommorrow at 12:00pm');
+  });
+
+  it('can be a current status, with a description', () => {
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--current')).to.equal(false);
+    expect(wrapper.find('.status-indicator__description')).to.have.length(0);
+
+    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" current />);
+
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--current')).to.equal(true);
+    expect(wrapper.find('.status-indicator__description')).to.have.length(1);
+  });
+
+  it('can be a completed status', () => {
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--completed')).to.equal(false);
+
+    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" completed />);
+
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--completed')).to.equal(true);
   });
 });
