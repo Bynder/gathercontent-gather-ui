@@ -14,25 +14,25 @@ storiesOf('Components', module)
             current
             description={'Edits to be made in response to user testing and the feedback from the senior editor and subject matter expert.'}
           >
-            <span className={'due-date'}>due Tommorrow at 12:00pm</span>
+            due Tommorrow at 12:00pm
           </StatusIndicator>
         </StoryItem>
 
         <StoryItem description="Completed">
           <StatusIndicator color="#3d8aeb" label="Review" completed>
-            <span className={'due-date'}>due Tommorrow at 12:00pm</span>
+            due Tommorrow at 12:00pm
           </StatusIndicator>
         </StoryItem>
 
         <StoryItem description="Consists of a color and a label to express a status.">
           <StatusIndicator color="#ff6300" label="Draft">
-            <span className={'due-date'}>due Tommorrow at 12:00pm</span>
+            due Tommorrow at 12:00pm
           </StatusIndicator>
         </StoryItem>
 
         <StoryItem description="">
           <StatusIndicator color="#93724f" label="Publishing">
-            <span className={'due-date'}>set a due date</span>
+            set a due date
           </StatusIndicator>
         </StoryItem>
 
