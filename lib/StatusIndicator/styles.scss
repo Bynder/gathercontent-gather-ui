@@ -2,7 +2,6 @@
    Config
    ========================================================================== */
 
-$status-indicator-label-color--text: rgb(111, 121, 129) !default;
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-size--current: $typo-size-base !default;
 
@@ -11,10 +10,10 @@ $status-indicator-circle-size--current: $typo-size-base !default;
    ========================================================================== */
 
 .status-indicator {
-  color: $status-indicator-label-color--text;
+  color: $color-brand-dark;
 
   .status-indicator__children {
-    color: $color-text-light;
+    color: $color-brand-dark;
     font-size: $typo-size-small;
   }
 
@@ -33,7 +32,7 @@ $status-indicator-circle-size--current: $typo-size-base !default;
 
 .status-indicator__label {
   margin-right: .5rem;
-  color: #4b5761;
+  color: $color-text-base;
   font-size: $typo-size-base;
   font-weight: $typo-weight-semi-bold;
 }
@@ -55,5 +54,5 @@ $status-indicator-circle-size--current: $typo-size-base !default;
 }
 
 .status-indicator__description {
-  color: $color-text-base;
+  color: $color-brand-dark;
 }
