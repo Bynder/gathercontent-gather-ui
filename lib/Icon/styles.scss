@@ -8,9 +8,7 @@ $icon-hover-color: $color-brand-green !default;
    Styles
    ========================================================================== */
 .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 
   button:hover &,
   button:focus & {
@@ -18,6 +16,15 @@ $icon-hover-color: $color-brand-green !default;
       stroke: $icon-hover-color;
     }
   }
+}
+
+.icon + .icon {
+  margin-left: $layout-spacing-base/2;
+}
+
+.icon__body {
+  display: flex;
+  align-items: center;
 }
 
 .icon__image,

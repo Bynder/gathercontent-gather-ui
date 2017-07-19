@@ -31,4 +31,11 @@ describe('Icon', () => {
     wrapper.setProps({ hideText: true });
     expect(wrapper.hasClass('icon--hide-text')).to.equal(true);
   });
+
+  it('only renders icon__text when props.text has been set', () => {
+    expect(wrapper.find('.icon__text')).to.have.length(0);
+    wrapper.setProps({ text: 'hello world' });
+    expect(wrapper.find('.icon__text')).to.have.length(1);
+    expect(wrapper.find('.icon__text').text()).equal('hello world');
+  });
 });
