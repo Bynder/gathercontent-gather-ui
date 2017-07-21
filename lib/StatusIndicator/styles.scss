@@ -1,15 +1,14 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-
 $status-indicator-label-color--text: rgb(111, 121, 129) !default;
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-size--current: $typo-size-base !default;
+$status-indicator-horizontal-margin: .5rem !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
-
 .status-indicator {
   color: $status-indicator-label-color--text;
 
@@ -28,14 +27,17 @@ $status-indicator-circle-size--current: $typo-size-base !default;
   border-radius: 50%;
   width: $status-indicator-circle-size;
   height: $status-indicator-circle-size;
-  margin-right: .5rem;
 }
 
 .status-indicator__label {
-  margin-right: .5rem;
+  margin-left: $status-indicator-horizontal-margin;
   color: #4b5761;
   font-size: $typo-size-base;
   font-weight: $typo-weight-semi-bold;
+}
+
+.status-indicator__children {
+  margin-left: $status-indicator-horizontal-margin;
 }
 
 .status-indicator--completed {
