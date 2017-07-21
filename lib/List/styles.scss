@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$list-border: 1px solid $color-input-border;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.list__head {
+  display: flex;
+  align-items: center;
+  padding: $layout-spacing-base;
+  border-top: $list-border;
+  border-bottom: $list-border;
+}
+
+.list__title {
+  font-size: $typo-size-lead;
+  font-weight: $typo-weight-semi-bold;
+}
+
+.list__body {
+  margin-left: $layout-spacing-base;
+
+  .list__body {
+    margin: 0;
+  }
+}
+
+.list__item {
+  position: relative;
+}
+
+.list__item-content {
+  padding: $layout-spacing-base/2;
+  border-bottom: $list-border;
+
+  .list .list & {
+    padding-left: $layout-spacing-base*1.5;
+  }
+
+  .list .list .list & {
+    padding-left: $layout-spacing-base*2.5;
+  }
+
+  .list .list .list .list & {
+    padding-left: $layout-spacing-base*3.5;
+  }
+
+  .is-current & {
+    background: #f9f9f9;
+  }
+}
+
+.list__item-title {
+  margin-left: $layout-spacing-base/2;
+}
+
+.list__item-label {
+  text-transform: uppercase;
+  margin-left: $layout-spacing-base/2;
+}
+
+.list__item-content {
+  display: flex;
+  align-items: center;
+}
+
+.list__actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.list__action {
+  margin-left: $layout-spacing-base/2;
+  line-height: 0;
+}
+
+.list__toggle {
+  svg {
+    transform: rotate(-90deg);
+  }
+
+  .is-active svg {
+    transform: rotate(0deg);
+  }
+}
