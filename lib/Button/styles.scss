@@ -170,13 +170,17 @@ $color-btn-default-dark--hover: #5e5e5e !default;
   box-shadow: none;
   padding: 0;
   transition: transform $animation-time-micro $animation-curve;
-
-  &:hover {
-    transform: scale(1.1);
-  }
+  line-height: 0;
 
   &:focus {
-    transform: scale(0.9);
     outline: none;
+  }
+}
+
+.button--icon-only-cover {
+  padding: 5px;
+
+  &:hover {
+    background: #f9f9f9;
   }
 }
