@@ -1,7 +1,7 @@
 import { React, expect, shallow } from '../setup';
 import Icon from '../../lib/Icon';
 import commentSVG from '../../assets/icons/comment.svg';
-import plusSVG from '../../assets/icons/plus.svg';
+import plusCircleSVG from '../../assets/icons/plus-circle.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -23,8 +23,8 @@ describe('Icon', () => {
   });
 
   it('should render the plus icon', () => {
-    wrapper.setProps({ name: 'plus' });
-    expect(wrapper.find('svg').props()).to.deep.equal(plusSVG().props);
+    wrapper.setProps({ name: 'plusCircle' });
+    expect(wrapper.find('svg').props()).to.deep.equal(plusCircleSVG().props);
   });
 
   it('adds a modifier class of icon--hide-text', () => {
