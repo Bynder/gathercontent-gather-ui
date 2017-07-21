@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 255</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Item-list-Copy-4" transform="translate(-293.000000, -388.000000)" fill="#4B5761">
+            <g id="Group-5" transform="translate(30.000000, 366.000000)">
+                <g id="Group-4" transform="translate(0.000000, 16.000000)">
+                    <path d="M267.556135,11.6898323 C267.908636,12.1128325 268.483634,12.1086532 268.832651,11.6898323 L272.299244,7.52992072 C273.003371,6.68496884 272.67533,6 271.575602,6 L264.813185,6 C263.709402,6 263.39034,6.69087747 264.089542,7.52992072 L267.556135,11.6898323 Z" id="Fill-255" transform="translate(268.195000, 8.933908) rotate(-360.000000) translate(-268.195000, -8.933908) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
