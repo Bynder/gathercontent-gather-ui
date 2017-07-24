@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
-    <title>plus</title>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="plus" transform="translate(1.000000, 1.000000)" stroke-width="2">
-            <path d="M17,9.27272727 L17,24.7272727" id="Stroke-5523" stroke="#303030"></path>
-            <path d="M24.7272727,17 L9.27272727,17" id="Stroke-5524" stroke="#2F2F2F"></path>
-            <path d="M0,17 C0,7.61136364 7.61136364,0 17,0 C26.3886364,0 34,7.61136364 34,17 C34,26.3886364 26.3886364,34 17,34 C7.61136364,34 0,26.3886364 0,17 L0,17 Z" id="Stroke-5528" stroke="#303030"></path>
+        <g id="Item-list-Copy-4" transform="translate(-282.000000, -101.000000)" fill="#4B5761">
+            <g id="Group-2" transform="translate(282.000000, 101.000000)">
+                <path d="M15,7 L9,7 L9,1 C9,0.4 8.6,0 8,0 C7.4,0 7,0.4 7,1 L7,7 L1,7 C0.4,7 0,7.4 0,8 C0,8.6 0.4,9 1,9 L7,9 L7,15 C7,15.6 7.4,16 8,16 C8.6,16 9,15.6 9,15 L9,9 L15,9 C15.6,9 16,8.6 16,8 C16,7.4 15.6,7 15,7" id="Fill-208"></path>
+            </g>
         </g>
     </g>
 </svg>
