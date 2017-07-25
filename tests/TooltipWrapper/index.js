@@ -1,6 +1,6 @@
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import { React, expect, shallow } from '../setup';
-import TooltipWrapper from '../../lib/TooltipWrapper';
+import { TooltipWrapper } from '../../lib';
 
 describe('Tooltip Wrapper', () => {
   let wrapper;
