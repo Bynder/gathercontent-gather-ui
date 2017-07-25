@@ -24,3 +24,4 @@ import Form from './components/Form';
 import PopoverWrapper from './components/PopoverWrapper';
 import StatusIndicator from './components/StatusIndicator';
 import List from './components/List';
+import TooltipWrapper from './components/TooltipWrapper';

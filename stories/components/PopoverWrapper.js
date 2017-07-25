@@ -26,7 +26,7 @@ const popoverWrapperOne = () => (
 );
 
 storiesOf('Components', module)
-  .add('Tooltip', () => (
+  .add('Popover', () => (
     <div>
       <StoryItem
         title="PopoverWrapper — custom styling (on hover)"
