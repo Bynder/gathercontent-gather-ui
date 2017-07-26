@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
-import Tooltip from 'react-bootstrap/lib/Tooltip';
+import TooltipWrapper from '../../lib/TooltipWrapper';
 import List from '../../lib/List';
 import ListItem from '../../lib/List/ListItem';
 import StoryItem from '../styleguide/StoryItem';
@@ -10,54 +9,40 @@ import Button from '../../lib/Button';
 import Icon from '../../lib/Icon';
 
 const addNewItemButton = (size, placement, id, tooltipText) => (
-  <OverlayTrigger
+  <TooltipWrapper
+    id={id}
+    tooltipText={tooltipText}
     placement={placement}
-    overlay={
-      <Tooltip id={id}>
-        {tooltipText}
-      </Tooltip>
-    }
   >
-    <span className="tooltip__trigger-container">
-      <Button
-        types={['icon-only']}
-        clickHandler={action('add new item')}
-      >
-        <Icon
-          size={size}
-          name="plus"
-        />
-      </Button>
-    </span>
-  </OverlayTrigger>
+    <Button
+      types={['icon-only']}
+      clickHandler={action('add new item')}
+    >
+      <Icon
+        size={size}
+        name="plus"
+      />
+    </Button>
+  </TooltipWrapper>
 );
 
 const statusWithTooltip = (color, placement, id, tooltipText) => (
-  <OverlayTrigger
+  <TooltipWrapper
+    id={id}
+    tooltipText={tooltipText}
     placement={placement}
-    overlay={
-      <Tooltip id={id}>
-        {tooltipText}
-      </Tooltip>
-    }
   >
-    <span className="tooltip__trigger-container color-overdue">
-      <StatusIndicator color={color} />
-    </span>
-  </OverlayTrigger>
+    <StatusIndicator color={color} />
+  </TooltipWrapper>
 );
 
 const overdueTitle = (title, id) => (
-  <OverlayTrigger
-    placement="bottom"
-    overlay={
-      <Tooltip id={id}>Overdue</Tooltip>
-    }
+  <TooltipWrapper
+    id={id}
+    tooltipText="Overdue"
   >
-    <span className="tooltip__trigger-container">
-      <span className="color-overdue">{title}</span>
-    </span>
-  </OverlayTrigger>
+    <span className="color-overdue">{title}</span>
+  </TooltipWrapper>
 );
 
 storiesOf('Components', module)
@@ -104,20 +89,7 @@ storiesOf('Components', module)
         title="ListItem: Title Component"
         description="The title can be text or a component."
       >
-        <ListItem
-          title={
-            <OverlayTrigger
-              placement="bottom"
-              overlay={
-                <Tooltip id="id-1">
-                  Tooltip text
-                </Tooltip>
-              }
-            >
-              <span>Row title</span>
-            </OverlayTrigger>
-          }
-        />
+        <ListItem title={overdueTitle('Row title 1', 'id-20')} />
       </StoryItem>
 
       <StoryItem

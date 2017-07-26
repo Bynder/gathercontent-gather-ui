@@ -1,7 +1,7 @@
 import React from 'react';
-import {storiesOf, action} from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import Avatar from '../../lib/Avatar/';
-import AvatarWithTooltip from '../../lib/Avatar/AvatarWithTooltip';
+import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
 import AvatarGroup from '../../lib/AvatarGroup';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -49,7 +49,7 @@ storiesOf('Components', module)
           title="Avatar — with image and tooltip"
           description="We can use the `AvatarWithTooltip` component to have a tooltip displayed on the avatar."
         >
-          <AvatarWithTooltip
+          <AvatarWithPopover
             url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
             name="Seymour Butts"
             email="example@gmail.com"
@@ -60,7 +60,7 @@ storiesOf('Components', module)
           title="Avatar — with image and tooltip"
           description="Without the `onlyInitials` prop and given a URL, it will display the image URL as the background."
         >
-          <AvatarWithTooltip
+          <AvatarWithPopover
             url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
             name="Seymour Butts"
             email="example@gmail.com"
@@ -98,8 +98,14 @@ storiesOf('Components', module)
           description="It can still hold just one item, or none."
         >
           <AvatarGroup>
-            <Avatar email="poppycox@gmail.com" onlyInitials isHighlighted colour="rgb(249,95,93)" initials="MR"
-                    name="Mike Rotch"/>
+            <Avatar
+              email="poppycox@gmail.com"
+              onlyInitials
+              isHighlighted
+              colour="rgb(249,95,93)"
+              initials="MR"
+              name="Mike Rotch"
+            />
           </AvatarGroup>
         </StoryItem>
 
