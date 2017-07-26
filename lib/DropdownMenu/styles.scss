@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $dropdown-menu-caret-margin: $layout-spacing-base/2 !default;
-$dropdown-menu-icon-size: $typo-size-slight !default;
+$dropdown-menu-icon-size: $typo-size-small !default;
 $dropdown-menu-link-padding: 7px 15px !default;
 
 /* ==========================================================================
@@ -59,7 +59,7 @@ $dropdown-menu-link-padding: 7px 15px !default;
   cursor: pointer;
   color: #6f7c82;
   font-weight: $typo-weight-roman;
-  font-size: $typo-size-slight;
+  font-size: $typo-size-small;
   background: none;
   border: 0;
   -webkit-appearance: none;
@@ -73,7 +73,7 @@ $dropdown-menu-link-padding: 7px 15px !default;
 }
 
 .dropdown__separator {
-  background-color: rgba($color-input-border, .5);
+  background-color: rgba($color-border-base, .5);
   height: 1px;
   margin: 3px 0;
 }
