@@ -3,11 +3,11 @@
    ========================================================================== */
 $avatar-size: 40px !default;
 $avatar-border-radius: 40px !default;
-$avatar-tooltip-name-weight: $typo-weight-semi-bold !default;
-$avatar-tooltip-name-size: $typo-size-lead !default;
+$avatar-popover-name-weight: $typo-weight-semi-bold !default;
+$avatar-popover-name-size: $typo-size-lead !default;
 
 $avatar-show-more-background: rgb(175, 165, 175) !default;
-$avatar-faded-background: rgb(60, 50, 60) !default;
+$avatar-offline-background: rgb(60, 50, 60) !default;
 $avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset !default;
 $avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
 
@@ -34,12 +34,18 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
     z-index: 5 !important; // Overrides inline JSX styling
   }
 
-  &.is-faded {
-    background: $avatar-faded-background !important;
+  &.is-offline {
+    background: $avatar-offline-background;
+    box-shadow: none;
   }
 
   &.is-highlighted {
     box-shadow: $avatar-highlight-shadow;
+  }
+
+  &.has-image {
+    box-shadow: none;
+    background: transparent;
   }
 }
 
@@ -75,6 +81,15 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   border-radius: 50%;
 }
 
+.avatar__image--offline {
+  opacity: .6;
+
+  @supports (filter: grayscale(100)) {
+    filter: grayscale(100);
+    opacity: 1;
+  }
+}
+
 .avatar-group-list {
   display: flex;
 
@@ -83,17 +98,17 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   }
 }
 
-.avatar__tooltip {
+.avatar__popover {
   background: #fff;
 }
 
-.avatar__tooltip-name {
-  font-weight: $avatar-tooltip-name-weight;
-  font-size: $avatar-tooltip-name-size;
+.avatar__popover-name {
+  font-weight: $avatar-popover-name-weight;
+  font-size: $avatar-popover-name-size;
   margin: 0;
 }
 
-.avatar__tooltip-email {
+.avatar__popover-email {
   margin: $typo-size-lead/2 0 $typo-size-lead/2 0;
 }
 
