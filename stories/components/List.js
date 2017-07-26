@@ -41,7 +41,7 @@ const overdueTitle = (title, id) => (
     id={id}
     tooltipText="Overdue"
   >
-    <span className="color-overdue">{title}</span>
+    <span className="color-overdue"><a href="/#">{title}</a></span>
   </TooltipWrapper>
 );
 
@@ -121,13 +121,13 @@ storiesOf('Components', module)
         >
           <ListItem
             indicator={statusWithTooltip('green', 'bottom', 'id-7', 'Research')}
-            title="Row title 1"
+            title={<a href="/#">Row title 1</a>}
             label="entry parent"
             action={addNewItemButton('small', 'bottom', 'id-4', 'Add entry item')}
           >
             <ListItem
               indicator={statusWithTooltip('blue', 'bottom', 'id-6', 'Review')}
-              title="Row title 2"
+              title={<a href="/#">Row title 2</a>}
               label="entry"
             />
             <ListItem

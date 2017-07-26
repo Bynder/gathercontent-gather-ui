@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$list-border: 1px solid $color-input-border;
+$list-border: 1px solid $color-border-base;
 
 /* ==========================================================================
    Styles
@@ -15,7 +15,6 @@ $list-border: 1px solid $color-input-border;
 }
 
 .list__title {
-  font-size: $typo-size-lead;
   font-weight: $typo-weight-semi-bold;
 }
 
@@ -34,6 +33,8 @@ $list-border: 1px solid $color-input-border;
 .list__item-content {
   padding: $layout-spacing-base/2;
   border-bottom: $list-border;
+  display: flex;
+  align-items: baseline;
 
   .list .list & {
     padding-left: $layout-spacing-base*1.5;
@@ -52,18 +53,27 @@ $list-border: 1px solid $color-input-border;
   }
 }
 
+.list__item-indicator {
+  display: inline-flex;
+}
+
 .list__item-title {
   margin-left: $layout-spacing-base/2;
+
+  a {
+    color: $color-text-base;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .list__item-label {
+  font-size: $typo-size-small;
   text-transform: uppercase;
   margin-left: $layout-spacing-base/2;
-}
-
-.list__item-content {
-  display: flex;
-  align-items: center;
 }
 
 .list__actions {

@@ -15,7 +15,7 @@ $search-input-padding: $layout-spacing-base/2 !default;
 
 .search-input__input {
     margin: 0;
-    border: 1px solid $color-input-border;
+    border: 1px solid $color-border-base;
     font-size: $search-input-font-size;
     line-height: $search-input-line-height;
     padding: $search-input-padding;
