@@ -1,4 +1,5 @@
 # GatherContent UI Library
+[![Build Status](https://travis-ci.org/gathercontent/gather-ui.svg?branch=master)](https://travis-ci.org/gathercontent/gather-ui)
 
 **Warning: This is still an experimental repository and all commands and functionality are bound to change.**
 UI component library for all GatherContent components.
