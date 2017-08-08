@@ -2,13 +2,17 @@
   padding: 20px; // Give the playarea some room to breathe
 }
 
+.sg__base {
+  display: flex;
+}
+
 .sg__colour {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  float: left;
-  align-items: center;
-  margin: 1em;
+  align-items: flex-start;
+  margin: 0 2em 20px 0;
+  text-align: left;
+  width: 10em;
 }
 
 .sg__colour-block {
