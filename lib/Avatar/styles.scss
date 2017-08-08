@@ -9,7 +9,7 @@ $avatar-popover-name-size: $typo-size-lead !default;
 $avatar-show-more-background: rgb(175, 165, 175) !default;
 $avatar-offline-background: rgb(60, 50, 60) !default;
 $avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset !default;
-$avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
+$avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 
 $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 
@@ -31,8 +31,8 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   box-shadow: 0 0 0 2px #fff;
 
   &:hover {
-    -webkit-transform: scale3d(1.2,1.2,1);
-    transform: scale3d(1.2,1.2,1);
+    -webkit-transform: scale3d(1.1,1.1,1);
+    transform: scale3d(1.1,1.1,1);
     -webkit-transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
@@ -112,14 +112,16 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 }
 
 .avatar__popover-email {
-  margin: $typo-size-lead/2 0 $typo-size-lead/2 0;
+  margin: $typo-size-lead/5 0 $typo-size-lead/2 0;
 }
 
 .avatar__pillbox {
   background-color: $color-pillbox-background;
   color: #fff;
+  display: inline-block;
   text-transform: uppercase;
   border-radius: 1rem;
   padding: $avatar-pillbox-padding;
-  font-size: $typo-size-small;
+  font-size: $typo-size-micro;
+  margin-bottom: $typo-size-lead/3;
 }
