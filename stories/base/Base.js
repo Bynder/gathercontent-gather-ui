@@ -11,7 +11,7 @@ const brandColours = [
 ];
 
 const textColours = [
-  { value: '#394240', name: 'Text Base' },
+  { value: 'rgb(75, 87, 97)', name: 'Text Base' },
   { value: '#384047', name: 'Text Heading' },
   { value: '#FC5C54', name: 'Text Danger' },
   { value: '#cccccc', name: 'Text Light' },
@@ -35,8 +35,7 @@ const tableColours = [
 ];
 
 const borderColours = [
-  { value: '#eaeaea', name: 'Input Border' },
-  { value: '#e6eaed', name: 'Dropdown Border' },
+  { value: 'rgb(230, 234, 228)', name: 'Border Base' },
 ];
 
 const componentColours = [
