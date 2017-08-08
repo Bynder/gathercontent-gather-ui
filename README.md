@@ -1,4 +1,5 @@
 # GatherContent UI Library
+[![Build Status](https://travis-ci.org/gathercontent/gather-ui.svg?branch=master)](https://travis-ci.org/gathercontent/gather-ui)
 
 **Warning: This is still an experimental repository and all commands and functionality are bound to change.**
 UI component library for all GatherContent components.
@@ -44,3 +45,4 @@ require('gather-ui/dist/styles.css');
 ## External dependencies
 
 This particular version of the Styleguide depends on the Bootstrap and FontAwesome libraries. These do not ship with the components' CSS and should be included separately wherever they are consumed.
+
