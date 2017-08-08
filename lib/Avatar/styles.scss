@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$avatar-size: 40px !default;
+$avatar-size: 33px !default;
 $avatar-border-radius: 40px !default;
 $avatar-popover-name-weight: $typo-weight-semi-bold !default;
 $avatar-popover-name-size: $typo-size-lead !default;
@@ -25,26 +25,29 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 .avatar {
   display: inline-block;
   border-radius: 50%;
-  box-shadow: $avatar-shadow;
   cursor: pointer;
-  transition: transform .1s ease-in-out .1s;
+  transition: transform 0.5s;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 2px #fff;
 
   &:hover {
-    transform: scale(1.1);
-    z-index: 5 !important; // Overrides inline JSX styling
+    -webkit-transform: scale3d(1.2,1.2,1);
+    transform: scale3d(1.2,1.2,1);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
   }
 
   &.is-offline {
     background: $avatar-offline-background;
-    box-shadow: none;
   }
 
   &.is-highlighted {
-    box-shadow: $avatar-highlight-shadow;
+    box-shadow: 0 0 0 2px #965DE8, 0 0 0 4px #fff;
   }
 
   &.has-image {
-    box-shadow: none;
     background: transparent;
   }
 }
@@ -68,9 +71,9 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 .avatar__initials {
   text-transform: uppercase;
   text-align: center;
-  font-weight: $typo-weight-semi-bold;
+  font-weight: $typo-weight-roman;
   font-size: $typo-size-small;
-  line-height: 1;
+  line-height: 1.1;
   color: #fff;
 }
 
@@ -94,7 +97,7 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   display: flex;
 
   .avatar {
-    margin-right: -1em;
+    margin-right: -.25em;
   }
 }
 
