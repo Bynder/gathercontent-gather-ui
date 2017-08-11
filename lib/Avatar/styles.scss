@@ -1,15 +1,15 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$avatar-size: 40px !default;
-$avatar-border-radius: 40px !default;
+$avatar-size: 33px !default;
+$avatar-border-radius: $avatar-size !default;
 $avatar-popover-name-weight: $typo-weight-semi-bold !default;
 $avatar-popover-name-size: $typo-size-lead !default;
 
 $avatar-show-more-background: rgb(175, 165, 175) !default;
 $avatar-offline-background: rgb(60, 50, 60) !default;
 $avatar-shadow: 0 0 0 1px rgba(100, 100, 100, 0.2) inset !default;
-$avatar-pillbox-padding: $typo-size-lead/3 $typo-size-lead/2 !default;
+$avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 
 $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 
@@ -20,31 +20,27 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   border-radius: $avatar-border-radius;
   width: $avatar-size;
   height: $avatar-size;
-}
-
-.avatar {
   display: inline-block;
-  border-radius: 50%;
-  box-shadow: $avatar-shadow;
   cursor: pointer;
-  transition: transform .1s ease-in-out .1s;
+  transition: transform 0.5s;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 2px #fff;
 
   &:hover {
-    transform: scale(1.1);
-    z-index: 5 !important; // Overrides inline JSX styling
+    transform: scale3d(1.1, 1.1, 1);
+    transition: transform $animation-time-micro;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
   &.is-offline {
     background: $avatar-offline-background;
-    box-shadow: none;
   }
 
   &.is-highlighted {
-    box-shadow: $avatar-highlight-shadow;
+    box-shadow: 0 0 0 2px #965DE8, 0 0 0 4px #fff;
   }
 
   &.has-image {
-    box-shadow: none;
     background: transparent;
   }
 }
@@ -68,9 +64,8 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 .avatar__initials {
   text-transform: uppercase;
   text-align: center;
-  font-weight: $typo-weight-semi-bold;
   font-size: $typo-size-small;
-  line-height: 1;
+  line-height: 1.1;
   color: #fff;
 }
 
@@ -90,14 +85,6 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
   }
 }
 
-.avatar-group-list {
-  display: flex;
-
-  .avatar {
-    margin-right: -1em;
-  }
-}
-
 .avatar__popover {
   background: #fff;
 }
@@ -109,14 +96,5 @@ $avatar-highlight-shadow: 0 0 0 2px rgb(155, 169, 185) inset !default;
 }
 
 .avatar__popover-email {
-  margin: $typo-size-lead/2 0 $typo-size-lead/2 0;
-}
-
-.avatar__pillbox {
-  background-color: $color-pillbox-background;
-  color: #fff;
-  text-transform: uppercase;
-  border-radius: 1rem;
-  padding: $avatar-pillbox-padding;
-  font-size: $typo-size-small;
+  margin: $typo-size-lead/5 0 $typo-size-lead/2 0;
 }
