@@ -139,12 +139,26 @@ storiesOf('Components', module)
         <StoryItem
           title="Avatar List Group — extra users"
           description="A list of overlapping avatars can be used by wrapping them in a `AvatarGroup` component, only fitting in a maximum number of N. Other avatars can be displayed by tapping the plus sign.">
-          <AvatarGroup maximum={1}>
-            <Avatar url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg" email="poppycox@gmail.com" isHighlighted offline initials="MR" name="Mike Rotch"/>
-            <Avatar email="hugh@gmail.com" colour="rgb(249,99,89)" offline initials="HJ" name="Hugh Jass"/>
-            <Avatar email="la@gmail.com" offline initials="FD" name="Fedra Droid"/>
-            <Avatar email="la@gmail.com" offline initials="KM" name="Kann Schemll"/>
-          </AvatarGroup>
+          <div style={{ display: 'flex' }}>
+            <AvatarGroup maximum={1}>
+              <Avatar url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg" email="poppycox@gmail.com" isHighlighted offline initials="MR" name="Mike Rotch"/>
+              <Avatar email="hugh@gmail.com" colour="rgb(249,99,89)" offline initials="HJ" name="Hugh Jass"/>
+              <Avatar email="la@gmail.com" offline initials="FD" name="Fedra Droid"/>
+              <Avatar email="la@gmail.com" offline initials="KM" name="Kann Schemll"/>
+            </AvatarGroup>
+            <AvatarGroup maximum={2}>
+              <Avatar url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg" email="poppycox@gmail.com" isHighlighted offline initials="MR" name="Mike Rotch"/>
+              <Avatar email="hugh@gmail.com" colour="rgb(249,99,89)" offline initials="HJ" name="Hugh Jass"/>
+              <Avatar email="la@gmail.com" offline initials="FD" name="Fedra Droid"/>
+              <Avatar email="la@gmail.com" offline initials="KM" name="Kann Schemll"/>
+            </AvatarGroup>
+            <AvatarGroup maximum={3}>
+              <Avatar url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg" email="poppycox@gmail.com" isHighlighted offline initials="MR" name="Mike Rotch"/>
+              <Avatar email="hugh@gmail.com" colour="rgb(249,99,89)" offline initials="HJ" name="Hugh Jass"/>
+              <Avatar email="la@gmail.com" offline initials="FD" name="Fedra Droid"/>
+              <Avatar email="la@gmail.com" offline initials="KM" name="Kann Schemll"/>
+            </AvatarGroup>
+          </div>
         </StoryItem>
       </div>
     );
