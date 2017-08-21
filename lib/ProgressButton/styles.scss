@@ -15,4 +15,8 @@
   margin-left: auto;
   margin-right: auto;
   @include animateKeyframe(spin360, 1s);
+
+  path {
+    fill: white;
+  }
 }
