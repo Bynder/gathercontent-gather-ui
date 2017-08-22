@@ -6,12 +6,17 @@ $icon-size-minor: 20px !default;
 $icon-size-small: 15px !default;
 $icon-size-micro: 10px !default;
 $icon-hover-color: $color-brand-green !default;
+$icon-active-color: $color-brand-blue !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .icon {
   display: inline-block;
+}
+
+.is-active .icon path {
+  stroke: $icon-active-color;
 }
 
 .icon + .icon {
@@ -57,29 +62,41 @@ $icon-hover-color: $color-brand-green !default;
 }
 
 .icon--interactive {
-  button:hover &,
-  button:focus & {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
     transform: scale(1.1);
 
-    svg path {
+    path {
       stroke: $icon-hover-color;
     }
-  }
-
-  button:focus & {
-    transform: scale(0.9);
   }
 }
 
 /* ==========================================================================
-   SVG fill / stroke overrides (due to issues with SVGs)
+   SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */
-.icon--comment.icon--interactive {
-  button:hover &,
-  button:focus & {
+.icon--interactive.icon--fill-override {
+  &:hover, &:focus {
+    path {
+      fill: $icon-hover-color;
+      stroke: none;
+    }
+  }
+}
+
+.icon--interactive.icon--fill-override-alt {
+  &:hover, &:focus {
     path:first-child {
       fill: $icon-hover-color;
       stroke: none;
     }
   }
+}
+
+.is-active .icon--fill-override path,
+.is-active .icon--fill-override-alt path:first-child {
+  fill: $icon-active-color;
+  stroke: none;
 }

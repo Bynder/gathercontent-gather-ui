@@ -38,4 +38,30 @@ describe('Icon', () => {
     expect(wrapper.find('.icon__text')).to.have.length(1);
     expect(wrapper.find('.icon__text').text()).equal('hello world');
   });
+
+  it('adds a modifier class of icon--interactive', () => {
+    wrapper.setProps({ isInteractive: true });
+    expect(wrapper.hasClass('icon--interactive')).to.equal(true);
+  });
+
+  it('adds a modifier class of icon--fill-override', () => {
+    wrapper.setProps({ name: 'caret' });
+    expect(wrapper.hasClass('icon--fill-override')).to.equal(true);
+  });
+
+  it('adds a modifier class of icon--fill-override-alt', () => {
+    wrapper.setProps({ name: 'comment' });
+    expect(wrapper.hasClass('icon--fill-override-alt')).to.equal(true);
+  });
+
+  it('adds a size modifier class', () => {
+    wrapper.setProps({ size: 'micro' });
+    expect(wrapper.hasClass('icon--micro')).to.equal(true);
+
+    wrapper.setProps({ size: 'small' });
+    expect(wrapper.hasClass('icon--small')).to.equal(true);
+
+    wrapper.setProps({ size: 'minor' });
+    expect(wrapper.hasClass('icon--minor')).to.equal(true);
+  });
 });
