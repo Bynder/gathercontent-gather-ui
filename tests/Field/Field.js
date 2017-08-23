@@ -14,7 +14,7 @@ describe('Field', () => {
         instructions="Instructions test text"
       >
         <Button clickHandler={() => {}}>Hello world</Button>
-      </Field>
+      </Field>,
     );
   });
 
