@@ -49,4 +49,12 @@ describe('StatusIndicator', () => {
 
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--last')).to.equal(true);
   });
+
+  it('can be overdue', () => {
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--overdue')).to.equal(false);
+
+    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" overdue />);
+
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--overdue')).to.equal(true);
+  });
 });
