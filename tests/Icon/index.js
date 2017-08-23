@@ -4,7 +4,7 @@ import commentSVG from '../../assets/icons/comment.svg';
 import plusCircleSVG from '../../assets/icons/plus-circle.svg';
 import tickSVG from '../../assets/icons/tick.svg';
 
-describe.only('Icon', () => {
+describe('Icon', () => {
   let wrapper;
 
   beforeEach(() => {
