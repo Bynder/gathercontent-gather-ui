@@ -14,7 +14,7 @@ describe('AvatarGroup', () => {
         <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
         <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-      </AvatarGroup>
+      </AvatarGroup>,
     );
   });
 
@@ -26,7 +26,7 @@ describe('AvatarGroup', () => {
     const mountedWrapper = mount(
       <AvatarGroup maximum={3}>
         <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
-      </AvatarGroup>
+      </AvatarGroup>,
     );
 
     expect(mountedWrapper.find(Avatar).length).to.equal(1);
@@ -70,5 +70,22 @@ describe('AvatarGroup', () => {
     const first = wrapper.find(Avatar).first();
     expect(first.find('.avatar__initials').length).to.equal(1);
     expect(first.find('.avatar__initials').text()).to.equal('MR');
+  });
+
+  it('sets the correct zindex style for the first and last item', () => {
+    const customWrapper = mount(
+      <AvatarGroup maximum={4}>
+        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
+        <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
+        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
+        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
+      </AvatarGroup>,
+    );
+
+    const first = customWrapper.find('.avatar-group__item').first();
+    expect(first.prop('style')).to.deep.equal({ zIndex: 4 });
+
+    const last = customWrapper.find('.avatar-group__item').last();
+    expect(last.prop('style')).to.deep.equal({ zIndex: 1 });
   });
 });

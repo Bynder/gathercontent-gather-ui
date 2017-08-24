@@ -51,13 +51,8 @@ describe('Icon', () => {
   });
 
   it('adds a modifier class of icon--fill-override', () => {
-    wrapper.setProps({ name: 'caret' });
-    expect(wrapper.hasClass('icon--fill-override')).to.equal(true);
-  });
-
-  it('adds a modifier class of icon--fill-override-alt', () => {
     wrapper.setProps({ name: 'comment' });
-    expect(wrapper.hasClass('icon--fill-override-alt')).to.equal(true);
+    expect(wrapper.hasClass('icon--fill-override')).to.equal(true);
   });
 
   it('adds a size modifier class', () => {
