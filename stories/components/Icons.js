@@ -12,6 +12,7 @@ const allIcons = additionalProps => (
     <Icon name="caret" {...additionalProps} />
     <Icon name="menu" {...additionalProps} />
     <Icon name="loader" {...additionalProps} />
+    <Icon name="tick" {...additionalProps} />
   </div>
 );
 
