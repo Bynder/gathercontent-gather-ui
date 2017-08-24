@@ -37,7 +37,7 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem description="Optional children">
-          <StatusIndicator color="#965de8" label="Approval" last overdue/>
+          <StatusIndicator color="#965de8" label="Approval" last overdue />
         </StoryItem>
       </div>
     );
