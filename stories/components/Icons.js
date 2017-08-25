@@ -3,13 +3,26 @@ import { storiesOf } from '@storybook/react';
 import FontAwesomeIcon from '../../lib/FontAwesomeIcon';
 import Icon from '../../lib/Icon';
 import StoryItem from '../styleguide/StoryItem';
-import Button from '../../lib/Button';
+
+const allIcons = additionalProps => (
+  <div>
+    <Icon name="comment" {...additionalProps} />
+    <Icon name="plusCircle" {...additionalProps} />
+    <Icon name="plus" {...additionalProps} />
+    <Icon name="caret" {...additionalProps} />
+    <Icon name="menu" {...additionalProps} />
+    <Icon name="menuDotted" {...additionalProps} />
+    <Icon name="loader" {...additionalProps} />
+    <Icon name="tick" {...additionalProps} />
+    <Icon name="backArrow" {...additionalProps} />
+  </div>
+);
 
 storiesOf('Components', module)
   .add('Icons', () => (
     <div>
       <StoryItem
-        title="FontAwesome Icon"
+        title="FontAwesome Icons"
         description="A wrapper around FontAwesome icons."
       >
         <div>
@@ -22,54 +35,23 @@ storiesOf('Components', module)
         title="SVG Icons"
         description=""
       >
-        <div>
-          <Icon name="comment" />
-          <Icon name="plusCircle" />
-          <Icon name="plus" />
-          <Icon name="caret" />
-        </div>
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (minor)"
-        description=""
-      >
-        <div>
-          <Icon name="comment" size="minor" />
-          <Icon name="plusCircle" size="minor" />
-          <Icon name="plus" size="minor" />
-        </div>
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (small)"
-        description=""
-      >
-        <div>
-          <Icon name="comment" size="small" />
-          <Icon name="plusCircle" size="small" />
-          <Icon name="plus" size="small" />
-          <Icon name="caret" size="small" />
-        </div>
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (micro)"
-        description=""
-      >
-        <div>
-          <Icon name="plus" size="micro" />
-          <Icon name="caret" size="micro" />
-        </div>
+        {allIcons()}
       </StoryItem>
 
       <StoryItem
         title="Interactive SVG Icons"
-        description="Certain SVG icons have a unique interactive state when hovered or focused."
+        description="Icons can be interactive hovered or focused."
       >
-        <Button types={['icon-only']}>
-          <Icon name="comment" isInteractive />
-        </Button>
+        {allIcons({ isInteractive: true })}
+      </StoryItem>
+
+      <StoryItem
+        title="Active SVG Icons"
+        description="Active icons become a specific colour."
+      >
+        <div className="is-active">
+          {allIcons()}
+        </div>
       </StoryItem>
     </div>
   ));

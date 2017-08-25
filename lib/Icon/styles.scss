@@ -1,17 +1,22 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$icon-size: 30px !default;
-$icon-size-minor: 20px !default;
-$icon-size-small: 15px !default;
-$icon-size-micro: 10px !default;
 $icon-hover-color: $color-brand-green !default;
+$icon-active-color: $color-brand-blue !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .icon {
   display: inline-block;
+}
+
+.icon svg {
+  display: block;
+}
+
+.is-active .icon path {
+  fill: $icon-active-color;
 }
 
 .icon + .icon {
@@ -24,12 +29,6 @@ $icon-hover-color: $color-brand-green !default;
   background: transparent;
 }
 
-.icon__image,
-.icon__image svg {
-  width: $icon-size;
-  height: $icon-size;
-}
-
 .icon__text {
   margin: 0 0 0 $layout-spacing-base/2;
 }
@@ -38,48 +37,46 @@ $icon-hover-color: $color-brand-green !default;
   display: none;
 }
 
-.icon--micro,
-.icon--micro svg {
-  height: $icon-size-micro;
-  width: $icon-size-micro;
-}
-
-.icon--small,
-.icon--small svg {
-  height: $icon-size-small;
-  width: $icon-size-small;
-}
-
-.icon--minor,
-.icon--minor svg {
-  height: $icon-size-minor;
-  width: $icon-size-minor;
-}
-
 .icon--interactive {
-  button:hover &,
-  button:focus & {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
     transform: scale(1.1);
 
-    svg path {
-      stroke: $icon-hover-color;
+    path {
+      fill: $icon-hover-color;
     }
-  }
-
-  button:focus & {
-    transform: scale(0.9);
   }
 }
 
 /* ==========================================================================
-   SVG fill / stroke overrides (due to issues with SVGs)
+   SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */
-.icon--comment.icon--interactive {
-  button:hover &,
-  button:focus & {
+.icon--interactive.icon--fill-override {
+  &:hover, &:focus {
+    path {
+      fill: none;
+      stroke: $icon-hover-color;
+    }
+  }
+}
+
+.icon--interactive.icon--fill-override {
+  &:hover, &:focus {
     path:first-child {
       fill: $icon-hover-color;
       stroke: none;
     }
   }
+}
+
+.is-active .icon--fill-override path {
+  fill: none;
+  stroke: $icon-active-color;
+}
+
+.is-active .icon--fill-override path:first-child {
+  fill: $icon-active-color;
+  stroke: none;
 }

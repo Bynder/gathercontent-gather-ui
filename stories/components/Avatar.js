@@ -10,8 +10,8 @@ storiesOf('Components', module)
     return (
       <div>
         <StoryItem
-          title="Avatar — falls back to initials"
-          description="If a url prop isn't given to Avatar, it will fallback to its initials."
+          title="Avatar – base"
+          description="A base avatar will fall back to initials if no url prop is passed."
         >
           <div>
             <Avatar
@@ -23,56 +23,22 @@ storiesOf('Components', module)
             />
           </div>
         </StoryItem>
-        <StoryItem
-          title="Avatar — only with initials"
-          description="Simple avatars, to be used individually (not in a group). Here, examples with two colours passed through the component, with one assigned user."
-        >
-          <div>
-            <Avatar
-              url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
-              onlyInitials
-              initials="SB"
-              name="Seymour Butts"
-              email="example@gmail.com"
-              colour="rgb(155, 223, 190)"
-            />
-
-            <Avatar
-              initials="PC"
-              onlyInitials
-              colour="rgb(200, 133, 173)"
-              name="Poppy Cox"
-              email="poppycox@gmail.com"
-              isHighlighted
-            />
-          </div>
-        </StoryItem>
 
         <StoryItem
-          title="Avatar — with image"
-          description="Passing a `url` property displays the avatar image."
+          title="Avatar – with image"
+          description="An avatar can display an image."
         >
           <Avatar
-            url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
+            url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
             name="Seymour Butts"
             email="example@gmail.com"
+            colour="rgb(255, 255, 255)"
           />
         </StoryItem>
 
         <StoryItem
-          title="Avatar — with image and tooltip"
-          description="We can use the `AvatarWithTooltip` component to have a tooltip displayed on the avatar."
-        >
-          <AvatarWithPopover
-            url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
-            name="Seymour Butts"
-            email="example@gmail.com"
-          />
-        </StoryItem>
-
-        <StoryItem
-          title="Avatar — with image and tooltip"
-          description="Without the `onlyInitials` prop and given a URL, it will display the image URL as the background."
+          title="Avatar - with image and popover"
+          description="An avatar can show a popover on focus or hover."
         >
           <AvatarWithPopover
             url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
@@ -84,66 +50,77 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
-          title="Avatar — faded out (signed off)"
-          description="Without the `onlyInitials` prop and given a URL, it will display the image URL as the background."
+          title="Avatar - highlighted, online, offline (with and without image)"
+          description="An avatar can have multiple states, these can be highlighted, online and offline."
         >
-          <Avatar
-            onlyInitials
-            name="Seymour Butts"
-            initials="SB"
-            email="example@gmail.com"
-            offline
-          />
-        </StoryItem>
-
-        <StoryItem
-          title="Avatar — with image, offline"
-          description="An avatar with an image, but offline, appears greyed out."
-        >
-          <Avatar
-            url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg"
-            name="Seymour Butts"
-            initials="SB"
-            email="example@gmail.com"
-            offline
-          />
-        </StoryItem>
-
-        <StoryItem
-          title="Avatar List Group"
-          description="A list of overlapping avatars can be used by wrapping them in a `AvatarPresenceGroup` component."
-        >
-          <AvatarGroup>
-            <Avatar email="poppycox@gmail.com" onlyInitials isHighlighted initials="MR" name="Mike Rotch"/>
-            <Avatar email="hugh@gmail.com" onlyInitials initials="HJ" name="Hugh Jass"/>
-            <Avatar email="la@gmail.com" onlyInitials initials="LA" name="Seymour Butts"/>
-          </AvatarGroup>
-        </StoryItem>
-
-        <StoryItem
-          title="Avatar List Group"
-          description="It can still hold just one item, or none."
-        >
-          <AvatarGroup>
+          <AvatarGroup maximum={6}>
             <Avatar
-              email="poppycox@gmail.com"
-              onlyInitials
+              initials="BH"
               isHighlighted
-              colour="rgb(249,95,93)"
-              initials="MR"
-              name="Mike Rotch"
+              colour="rgb(252, 92, 84)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/male-67.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+              isHighlighted
+            />
+            <Avatar
+              initials="KH"
+              colour="rgb(95, 207, 128)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/female-53.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              initials="JD"
+              offline
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+              offline
             />
           </AvatarGroup>
         </StoryItem>
 
         <StoryItem
-          title="Avatar List Group — extra users"
-          description="A list of overlapping avatars can be used by wrapping them in a `AvatarGroup` component, only fitting in a maximum number of N. Other avatars can be displayed by tapping the plus sign.">
-          <AvatarGroup maximum={1}>
-            <Avatar url="https://pbs.twimg.com/profile_images/766954609306927104/ZHAfr9OP_400x400.jpg" email="poppycox@gmail.com" isHighlighted offline initials="MR" name="Mike Rotch"/>
-            <Avatar email="hugh@gmail.com" colour="rgb(249,99,89)" offline initials="HJ" name="Hugh Jass"/>
-            <Avatar email="la@gmail.com" offline initials="FD" name="Fedra Droid"/>
-            <Avatar email="la@gmail.com" offline initials="KM" name="Kann Schemll"/>
+          title="Avatar Group"
+          description="An avatar group has a toggle to show extra users.">
+          <AvatarGroup maximum={2}>
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/male-52.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/male-5.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/female-34.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/male-66.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/b86f0cda-6219-4453-a93b-e34e16d3b52d-Nicola_Rushton_photo.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
+            <Avatar
+              url="https://d3iw72m71ie81c.cloudfront.net/male-90.jpg"
+              initials="BH"
+              colour="rgb(255, 255, 255)"
+            />
           </AvatarGroup>
         </StoryItem>
       </div>

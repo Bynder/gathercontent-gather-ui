@@ -11,6 +11,10 @@ $dropdown-menu-link-padding: 7px 15px !default;
 
 .dropdown-menu__caret {
   margin-left: $dropdown-menu-caret-margin;
+
+  svg path {
+    fill: white;
+  }
 }
 
 .dropdown-menu {

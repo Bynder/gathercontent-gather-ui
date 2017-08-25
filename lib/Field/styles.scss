@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $field-spacing-base: $layout-spacing-base !default;
+$field-aside-width: 40px !default;
 
 $field-label-size: $typo-size-lead !default;
 $field-label-weight: $typo-weight-semi-bold !default;
@@ -45,4 +46,22 @@ $field-data-color: $color-brand-dark !default;
 .field__instructions {
   font-style: italic;
   margin: $field-spacing-base 0 0;
+}
+
+.field__child {
+  position: relative;
+}
+
+.field__aside {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: $field-aside-width;
+}
+
+.field__aside-action {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

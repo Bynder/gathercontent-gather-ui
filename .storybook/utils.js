@@ -6,4 +6,4 @@ export function addCSS(src) {
   link.type = 'text/css';
 
   document.head.appendChild(link);
-};
+}

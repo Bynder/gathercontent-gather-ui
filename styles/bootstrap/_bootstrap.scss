@@ -5,9 +5,9 @@
  */
 
 // Core variables and mixins
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "variable-overrides";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
 //@import "bootstrap/normalize";
@@ -18,14 +18,14 @@
 //@import "bootstrap/scaffolding";
 //@import "bootstrap/type";
 //@import "bootstrap/code";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/grid";
 //@import "bootstrap/tables";
 //@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
 //@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
 //@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
 //@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
 //@import "bootstrap/navs";
@@ -44,14 +44,14 @@
 //@import "bootstrap/panels";
 //@import "bootstrap/responsive-embed";
 //@import "bootstrap/wells";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/close";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/close";
 
 // Components w/ JavaScript
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/modals";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/popovers";
 //@import "bootstrap/carousel";
 
 // Utility classes
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 //@import "bootstrap/responsive-utilities";
