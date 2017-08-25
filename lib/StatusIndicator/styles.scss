@@ -40,12 +40,6 @@ $status-indicator-horizontal-margin: .5rem !default;
   margin-left: $status-indicator-horizontal-margin;
 }
 
-.status-indicator--completed {
-  .status-indicator__label {
-    text-decoration: line-through;
-  }
-}
-
 .status-indicator--current {
   .status-indicator__label {
     font-size: $typo-size-lead;
