@@ -92,6 +92,17 @@ const button = storiesOf('Components', module)
               hideText
             />
           </Button>
+
+          <Button
+            types={['icon-only', 'contained', 'hover-transform']}
+            clickHandler={action('I was clicked')}
+          >
+            <Icon
+              name="comment"
+              text="add comment"
+              hideText
+            />
+          </Button>
         </div>
       </StoryItem>
     </div>

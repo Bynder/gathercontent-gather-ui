@@ -15,6 +15,8 @@ const allIcons = additionalProps => (
     <Icon name="loader" {...additionalProps} />
     <Icon name="tick" {...additionalProps} />
     <Icon name="backArrow" {...additionalProps} />
+    <Icon name="pencil" {...additionalProps} />
+    <Icon name="upload" {...additionalProps} />
   </div>
 );
 
@@ -36,13 +38,6 @@ storiesOf('Components', module)
         description=""
       >
         {allIcons()}
-      </StoryItem>
-
-      <StoryItem
-        title="Interactive SVG Icons"
-        description="Icons can be interactive hovered or focused."
-      >
-        {allIcons({ isInteractive: true })}
       </StoryItem>
 
       <StoryItem
