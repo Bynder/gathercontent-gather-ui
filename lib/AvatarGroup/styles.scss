@@ -13,4 +13,5 @@ $avatar-group-item-spacing: .25em;
 
 .avatar-group__item {
   margin-right: -$avatar-group-item-spacing;
+  z-index: 1;
 }

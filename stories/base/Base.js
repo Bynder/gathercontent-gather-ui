@@ -1,19 +1,57 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
+import ColourPalette from './ColourPalette';
+
+const brandColours = [
+  { value: '#5FCF80', name: 'Brand Green' },
+  { value: '#3D8AEB', name: 'Brand Blue' },
+  { value: '#5D6871', name: 'Brand Dark' },
+  { value: '#965DE8', name: 'Brand Purple' },
+];
+
+const textColours = [
+  { value: 'rgb(75, 87, 97)', name: 'Text Base' },
+  { value: '#384047', name: 'Text Heading' },
+  { value: '#FC5C54', name: 'Text Danger' },
+  { value: '#cccccc', name: 'Text Light' },
+];
+
+const linkColours = [
+  { value: 'rgb(70, 142, 229)', name: 'Link Base' },
+  { value: 'rgb(61, 125, 204)', name: 'Link Hover' },
+  { value: '#C8C8C8', name: 'Link Quiet' },
+];
+
+const backgroundColours = [
+  { value: 'rgb(241, 241, 241)', name: 'Background Light' },
+  { value: 'rgb(70, 142, 229)', name: 'Background Blue' },
+];
+
+const tableColours = [
+  { value: '#fbfbfb', name: 'Table Heading BG' },
+  { value: '#E8FAFF', name: 'Table Item Selected' },
+  { value: '#F1FCFF', name: 'Table Item Hover' },
+];
+
+const borderColours = [
+  { value: 'rgb(230, 234, 228)', name: 'Border Base' },
+];
+
+const componentColours = [
+  { value: 'rgb(153, 166, 182)', name: 'Pillbox Background' },
+];
 
 const base = storiesOf('Base', module)
   .add('Colours', () => (
-    <div className="sg__base">
-      <div className="sg__colour">
-        <div style={{backgroundColor: '#00ABBD'}} className="sg__colour-block"></div>
-        <p>Brand colour: #00ABBD</p>
-      </div>
-
-      <div className="sg__colour">
-        <div style={{backgroundColor: '#2f2f2f'}} className="sg__colour-block"></div>
-        <p>Background colour: #2f2f2f</p>
-      </div>
+    <div>
+      <ColourPalette colours={brandColours} />
+      <ColourPalette colours={textColours} />
+      <ColourPalette colours={linkColours} />
+      <ColourPalette colours={backgroundColours} />
+      <ColourPalette colours={tableColours} />
+      <ColourPalette colours={borderColours} />
+      <ColourPalette colours={componentColours} />
     </div>
   ))
 
@@ -32,30 +70,30 @@ const base = storiesOf('Base', module)
         <table>
           <caption>House Stark</caption>
           <thead>
-          <tr>
-            <th>Eddard Stark</th>
-            <th>Jon Snow</th>
-            <th>Arya Stark</th>
-          </tr>
+            <tr>
+              <th>Eddard Stark</th>
+              <th>Jon Snow</th>
+              <th>Arya Stark</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Has a sword named Ice</td>
-            <td>Has a sword named Longclaw</td>
-            <td>Has a sword named Needle</td>
-          </tr>
-          <tr>
-            <td>No direwolf</td>
-            <td>Direwolf: Ghost</td>
-            <td>Direwolf: Nymeria</td>
-          </tr>
+            <tr>
+              <td>Has a sword named Ice</td>
+              <td>Has a sword named Longclaw</td>
+              <td>Has a sword named Needle</td>
+            </tr>
+            <tr>
+              <td>No direwolf</td>
+              <td>Direwolf: Ghost</td>
+              <td>Direwolf: Nymeria</td>
+            </tr>
           </tbody>
           <tfoot>
-          <tr>
-            <td>Lord of Winterfell</td>
-            <td>Knows nothing</td>
-            <td>No one</td>
-          </tr>
+            <tr>
+              <td>Lord of Winterfell</td>
+              <td>Knows nothing</td>
+              <td>No one</td>
+            </tr>
           </tfoot>
         </table>
       </StoryItem>

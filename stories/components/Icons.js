@@ -11,7 +11,10 @@ const allIcons = additionalProps => (
     <Icon name="plus" {...additionalProps} />
     <Icon name="caret" {...additionalProps} />
     <Icon name="menu" {...additionalProps} />
+    <Icon name="menuDotted" {...additionalProps} />
     <Icon name="loader" {...additionalProps} />
+    <Icon name="tick" {...additionalProps} />
+    <Icon name="backArrow" {...additionalProps} />
   </div>
 );
 
@@ -19,7 +22,7 @@ storiesOf('Components', module)
   .add('Icons', () => (
     <div>
       <StoryItem
-        title="FontAwesome Icon"
+        title="FontAwesome Icons"
         description="A wrapper around FontAwesome icons."
       >
         <div>
@@ -33,27 +36,6 @@ storiesOf('Components', module)
         description=""
       >
         {allIcons()}
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (minor)"
-        description=""
-      >
-        {allIcons({ size: 'minor' })}
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (small)"
-        description=""
-      >
-        {allIcons({ size: 'small' })}
-      </StoryItem>
-
-      <StoryItem
-        title="SVG Icons (micro)"
-        description=""
-      >
-        {allIcons({ size: 'micro' })}
       </StoryItem>
 
       <StoryItem

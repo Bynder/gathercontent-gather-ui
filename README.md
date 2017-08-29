@@ -8,19 +8,19 @@ This uses [React Storybook](https://github.com/storybooks/react-storybook) to sh
 
 ## Developing the library
 
-1. Download the repository and run `npm install`
+1. Download the repository and run `yarn install`
 2. Make changes to the components living on the `/lib` folder
-3. Preview changes by running the live style guide, using `npm run storybook` and pointing your browser to `http://localhost:6006/`
+3. Preview changes by running the live style guide, using `yarn storybook` and pointing your browser to `http://localhost:6006/`
 
 ## Running the test suite
 
-Tests live under the `tests` folder and should be ran using `npm run test`.
-To develop the components, a TDD runner is available by running `npm run tdd`
+Tests live under the `tests` folder and should be ran using `yarn test`.
+To develop the components, a TDD runner is available by running `yarn tdd`
 
 ## Building for production
 
 To build the components to be consumed by any application, both JavaScript and CSS files need to be generated.
-Running `npm build` will:
+Running `yarn build` will:
 
 1. Generate ES5 compliant versions of each component in `/dist`
 2. Generate a `.css` files containing all the concatenated component styles.

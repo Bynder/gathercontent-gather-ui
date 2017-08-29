@@ -9,11 +9,12 @@ $status-indicator-horizontal-margin: .5rem !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
+
 .status-indicator {
-  color: $status-indicator-label-color--text;
+  color: $color-brand-dark;
 
   .status-indicator__children {
-    color: $color-text-light;
+    color: $color-brand-dark;
     font-size: $typo-size-small;
   }
 
@@ -31,7 +32,6 @@ $status-indicator-horizontal-margin: .5rem !default;
 
 .status-indicator__label {
   margin-left: $status-indicator-horizontal-margin;
-  color: #4b5761;
   font-size: $typo-size-base;
   font-weight: $typo-weight-semi-bold;
 }
@@ -57,5 +57,5 @@ $status-indicator-horizontal-margin: .5rem !default;
 }
 
 .status-indicator__description {
-  color: $color-text-base;
+  color: $color-brand-dark;
 }
