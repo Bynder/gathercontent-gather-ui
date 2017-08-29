@@ -41,4 +41,12 @@ describe('StatusIndicator', () => {
 
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--completed')).to.equal(true);
   });
+
+  it('can be bordered', () => {
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--bordered')).to.equal(false);
+
+    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" bordered />);
+
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--bordered')).to.equal(true);
+  });
 });
