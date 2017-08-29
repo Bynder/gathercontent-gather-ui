@@ -24,6 +24,12 @@ storiesOf('Components', module)
           </StatusIndicator>
         </StoryItem>
 
+        <StoryItem description="Bordered">
+          <StatusIndicator color="#3d8aeb" label="Review" bordered>
+            due Tommorrow at 12:00pm
+          </StatusIndicator>
+        </StoryItem>
+
         <StoryItem description="Consists of a color and a label to express a status.">
           <StatusIndicator color="#ff6300" label="Draft">
             due Tommorrow at 12:00pm

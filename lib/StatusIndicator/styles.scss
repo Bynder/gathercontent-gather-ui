@@ -50,6 +50,12 @@ $status-indicator-horizontal-margin: .5rem !default;
   }
 }
 
+.status-indicator--bordered {
+  border: 2px solid $color-border-base;
+  border-radius: .25rem;
+  padding: 0.7rem;
+}
+
 .status-indicator__description {
   color: $color-text-base;
 }
