@@ -36,13 +36,14 @@ storiesOf('Components', module)
           <div>
             <p>Hello world...</p>
             <FieldAside>
-              <Button
-                className="field__aside-action"
-                types={['icon-only']}
-                clickHandler={() => action('field aside action clicked')}
-              >
-                <Icon name="plus" size="small" />
-              </Button>
+              <div className="field__aside-action">
+                <Button
+                  types={['icon-only', 'hover-transform', 'contained']}
+                  clickHandler={() => action('field aside action clicked')}
+                >
+                  <Icon name="comment" size="small" />
+                </Button>
+              </div>
             </FieldAside>
           </div>
         </Field>

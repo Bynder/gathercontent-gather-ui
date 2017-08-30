@@ -37,46 +37,10 @@ $icon-active-color: $color-brand-blue !default;
   display: none;
 }
 
-.icon--interactive {
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-
-    path {
-      fill: $icon-hover-color;
-    }
-  }
-}
-
 /* ==========================================================================
    SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */
-.icon--interactive.icon--fill-override {
-  &:hover, &:focus {
-    path {
-      fill: none;
-      stroke: $icon-hover-color;
-    }
-  }
-}
-
-.icon--interactive.icon--fill-override {
-  &:hover, &:focus {
-    path:first-child {
-      fill: $icon-hover-color;
-      stroke: none;
-    }
-  }
-}
-
-.is-active .icon--fill-override path {
+.is-active .icon--upload path {
   fill: none;
   stroke: $icon-active-color;
-}
-
-.is-active .icon--fill-override path:first-child {
-  fill: $icon-active-color;
-  stroke: none;
 }
