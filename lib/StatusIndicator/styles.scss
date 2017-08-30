@@ -5,7 +5,7 @@ $status-indicator-label-color--text: rgb(111, 121, 129) !default;
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-size--current: $typo-size-base !default;
 $status-indicator-horizontal-margin: .5rem !default;
-$status-indicator-bordered-border: 2px solid #eaeaea !default;
+$status-indicator-bordered-border: 2px solid $color-background-light !default;
 $status-indicator-bordered-radius: .25rem !default;
 
 /* ==========================================================================
