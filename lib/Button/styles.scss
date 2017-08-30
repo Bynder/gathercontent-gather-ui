@@ -178,9 +178,21 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 }
 
 .button--icon-only-cover {
-  padding: 5px;
+  padding: $layout-spacing-base/4;
 
   &:hover {
-    background: #f9f9f9;
+    background: $color-background-light;
+  }
+}
+
+.button--contained {
+  border: 2px solid $color-border-base;
+  border-radius: 100%;
+  padding: $layout-spacing-base/2;
+}
+
+.button--hover-transform {
+  &:hover {
+    transform: scale(1.1);
   }
 }

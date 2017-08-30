@@ -79,20 +79,47 @@ const button = storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
-        title="Button with an Icon"
-        description="A Button can use more than just text as content. For example an Icon component can be used alongside the Button type of 'icon-only'.">
-        <div>
-          <Button
-            types={['icon-only']}
-            clickHandler={action('I was clicked')}
-          >
-            <Icon
-              name="comment"
-              text="add comment"
-              hideText
-            />
-          </Button>
-        </div>
+        title="Icon Only Content"
+        description="A Button can use more than just text as content."
+      >
+        <Button
+          types={['icon-only']}
+          clickHandler={action('I was clicked')}
+        >
+          <Icon
+            name="comment"
+            text="add comment"
+            hideText
+          />
+        </Button>
+      </StoryItem>
+
+      <StoryItem
+        title="Icon Contents & Contained"
+        description="Icon contents go well with a border when they're interactive."
+      >
+        <Button
+          types={['icon-only', 'contained']}
+          clickHandler={action('I was clicked')}
+        >
+          <Icon
+            name="comment"
+            text="add comment"
+            hideText
+          />
+        </Button>
+      </StoryItem>
+
+      <StoryItem
+        title="Enhanced Hover Interaction"
+        description="Buttons can have an enhanced hover interaction."
+      >
+        <Button
+          types={['primary', 'hover-transform']}
+          clickHandler={action('I was clicked')}
+        >
+          Hover me
+        </Button>
       </StoryItem>
     </div>
   ));
