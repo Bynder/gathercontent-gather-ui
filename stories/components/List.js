@@ -1,12 +1,14 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import TooltipWrapper from '../../lib/TooltipWrapper';
-import List from '../../lib/List';
-import ListItem from '../../lib/List/ListItem';
 import StoryItem from '../styleguide/StoryItem';
-import StatusIndicator from '../../lib/StatusIndicator';
-import Button from '../../lib/Button';
-import Icon from '../../lib/Icon';
+import {
+  List,
+  ListItem,
+  StatusIndicator,
+  Button,
+  Icon,
+  TooltipWrapper,
+} from '../../lib';
 
 const addNewItemButton = (size, placement, id, tooltipText) => (
   <TooltipWrapper
@@ -118,6 +120,7 @@ storiesOf('Components', module)
         <List
           title="Example Project Title"
           action={addNewItemButton('minor', 'bottom', 'id-3', 'Add new item')}
+          borderedRight
         >
           <ListItem
             indicator={statusWithTooltip('green', 'bottom', 'id-7', 'Research')}
