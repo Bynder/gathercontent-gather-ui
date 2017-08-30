@@ -5,6 +5,8 @@ $status-indicator-label-color--text: rgb(111, 121, 129) !default;
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-size--current: $typo-size-base !default;
 $status-indicator-horizontal-margin: .5rem !default;
+$status-indicator-bordered-border: 2px solid $color-background-light !default;
+$status-indicator-bordered-radius: .25rem !default;
 
 /* ==========================================================================
    Styles
@@ -54,6 +56,12 @@ $status-indicator-horizontal-margin: .5rem !default;
     height: $status-indicator-circle-size--current;
     width: $status-indicator-circle-size--current;
   }
+}
+
+.status-indicator--bordered {
+  border: $status-indicator-bordered-border;
+  border-radius: $status-indicator-bordered-radius;
+  padding: $layout-spacing-base/2;
 }
 
 .status-indicator__description {
