@@ -34,7 +34,7 @@ $list-border: 1px solid $color-border-base;
   padding: $layout-spacing-base/2;
   border-bottom: $list-border;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 
   .list .list & {
     padding-left: $layout-spacing-base*1.5;
@@ -51,6 +51,11 @@ $list-border: 1px solid $color-border-base;
   .is-current & {
     background: #f9f9f9;
   }
+}
+
+.list__item-text {
+  display: flex;
+  align-items: baseline;
 }
 
 .list__item-indicator {
@@ -80,11 +85,11 @@ $list-border: 1px solid $color-border-base;
   display: flex;
   align-items: center;
   margin-left: auto;
+  line-height: 0;
 }
 
 .list__action {
   margin-left: $layout-spacing-base/2;
-  line-height: 0;
 }
 
 .list__toggle {
@@ -95,4 +100,8 @@ $list-border: 1px solid $color-border-base;
   .is-active svg {
     transform: rotate(0deg);
   }
+}
+
+.list--bordered-right {
+  border-right: 1px solid $color-border-base;
 }

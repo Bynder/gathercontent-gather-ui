@@ -183,6 +183,12 @@ $color-btn-default-dark--hover: #5e5e5e !default;
   &:hover {
     background: $color-background-light;
   }
+
+  &.is-active {
+    svg path {
+      fill: $color-text-base;
+    }
+  }
 }
 
 .button--contained {
