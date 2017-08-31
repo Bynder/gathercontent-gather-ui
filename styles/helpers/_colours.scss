@@ -1,3 +1,7 @@
 .color-overdue {
   color: $color-text-danger;
+
+  a {
+    color: inherit;
+  }
 }

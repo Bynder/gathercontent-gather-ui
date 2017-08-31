@@ -1,7 +1,6 @@
 import { React, expect, shallow } from '../setup';
-import List from '../../lib/List';
+import { List, ListItem } from '../../lib';
 import ListHead from '../../lib/List/ListHead';
-import ListItem from '../../lib/List/ListItem';
 
 describe('List', () => {
   let wrapper;
@@ -33,5 +32,10 @@ describe('List', () => {
 
   it('renders 2 children and surrounds them with a list__row div', () => {
     expect(wrapper.find('.list__row')).to.have.length(2);
+  });
+
+  it('renders a modifier class of "--bordered-right"', () => {
+    wrapper.setProps({ borderedRight: true });
+    expect(wrapper.hasClass('list--bordered-right')).to.equal(true);
   });
 });
