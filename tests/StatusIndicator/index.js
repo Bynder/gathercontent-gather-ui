@@ -28,7 +28,7 @@ describe('StatusIndicator', () => {
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--current')).to.equal(false);
     expect(wrapper.find('.status-indicator__description')).to.have.length(0);
 
-    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" current />);
+    wrapper.setProps({ current: true });
 
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--current')).to.equal(true);
     expect(wrapper.find('.status-indicator__description')).to.have.length(1);
@@ -37,8 +37,16 @@ describe('StatusIndicator', () => {
   it('can be a completed status', () => {
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--completed')).to.equal(false);
 
-    wrapper = mount(<StatusIndicator color="#00ff00" label="Review" completed />);
+    wrapper.setProps({ completed: true });
 
     expect(wrapper.find('.status-indicator').hasClass('status-indicator--completed')).to.equal(true);
+  });
+
+  it('can be bordered', () => {
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--bordered')).to.equal(false);
+
+    wrapper.setProps({ bordered: true });
+
+    expect(wrapper.find('.status-indicator').hasClass('status-indicator--bordered')).to.equal(true);
   });
 });

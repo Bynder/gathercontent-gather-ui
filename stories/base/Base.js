@@ -14,7 +14,7 @@ const textColours = [
   { value: 'rgb(75, 87, 97)', name: 'Text Base' },
   { value: '#384047', name: 'Text Heading' },
   { value: '#FC5C54', name: 'Text Danger' },
-  { value: '#cccccc', name: 'Text Light' },
+  { value: '#8492A6', name: 'Text Light' },
 ];
 
 const linkColours = [
@@ -35,7 +35,7 @@ const tableColours = [
 ];
 
 const borderColours = [
-  { value: 'rgb(230, 234, 228)', name: 'Border Base' },
+  { value: 'rgb(230, 234, 227)', name: 'Border Base' },
 ];
 
 const componentColours = [
