@@ -131,6 +131,40 @@ storiesOf('Components', module)
             <RadioButton.Label label="Guatemala roast" id="id22" />
           </div>
         </StoryItem>
+
+        <StoryItem
+          title="Radio inputs: with other field"
+          description="Radio inputs can have a user-provided value"
+        >
+          <div className="form__choice-element-wrapper">
+            <RadioButton.Input
+              name="ch22"
+              id="id23"
+              value="value 1"
+              onChangeHandler={action('hello')}
+            />
+            <RadioButton.Label label="Ethiopian roast" id="id23" />
+          </div>
+          <div className="form__choice-element-wrapper">
+            <RadioButton.Input
+              name="ch22"
+              value="value 2"
+              onChangeHandler={action('hello')}
+              id="id24"
+            />
+            <RadioButton.Label label="Guatemala roast" id="id24" />
+          </div>
+          <div className="form__choice-element-wrapper">
+            <RadioButton.Other
+              name="ch22"
+              id="id25"
+              label="Or enter a value manually"
+              checked
+              value="Columbian"
+              onChangeHandler={v => action(v)()}
+            />
+          </div>
+        </StoryItem>
       </div>
-    )
+    );
   });
