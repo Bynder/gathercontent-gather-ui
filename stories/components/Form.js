@@ -161,7 +161,7 @@ storiesOf('Components', module)
               label="Or enter a value manually"
               checked
               value="Columbian"
-              onChangeHandler={action}
+              onChangeHandler={v => action(v)()}
             />
           </div>
         </StoryItem>
