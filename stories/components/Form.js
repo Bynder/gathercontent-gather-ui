@@ -5,68 +5,56 @@ import Checkbox from '../../lib/Form/Checkbox';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
-  .add('Form: Checkboxes', () => {
-    return (
-      <div>
-        <StoryItem
-          title="Checkboxes"
-          description="Radio input choices"
-        >
-          <div className="form__choice-element-wrapper">
-            <Checkbox.Input
-              name="ch1"
-              id="id1"
-              onChangeHandler={action('hello')}
-              checked
-            />
-            <Checkbox.Label label="Ethiopian roast" id="id1" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <Checkbox.Input
-              name="ch1"
-              onChangeHandler={action('hello')}
-              id="id2"
-            />
-            <Checkbox.Label label="Guatemala roast" id="id2" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <Checkbox.Input
-              name="ch1"
-              id="id3"
-              onChangeHandler={action('hello')}
-              checked
-            />
-            <Checkbox.Label label="Honduras roast" id="id3" />
-          </div>
-        </StoryItem>
+  .add('Form: Checkboxes', () => (
+    <div>
+      <StoryItem
+        title="Checkboxes"
+        description="Radio input choices"
+      >
+        <Checkbox
+          name="ch1"
+          id="id1"
+          onChangeHandler={e => action(e.target.value)()}
+          checked
+          label="Ethiopian roast"
+        />
+        <Checkbox
+          name="ch1"
+          onChangeHandler={e => action(e.target.value)()}
+          id="id2"
+          label="Guatemala roast"
+        />
+        <Checkbox
+          name="ch1"
+          id="id3"
+          onChangeHandler={e => action(e.target.value)()}
+          checked
+          label="Honduras roast"
+        />
+      </StoryItem>
 
-        <StoryItem
-          title="Checkboxes: Disabled"
-          description="Radio input choices can be disabled. This can be achieved by passing in the disabled property."
-        >
-          <div className="form__choice-element-wrapper">
-            <Checkbox.Input
-              name="ch44"
-              id="id44"
-              disabled
-              onChangeHandler={action('hello')}
-              checked
-            />
-            <Checkbox.Label label="Ethiopian roast" id="id44" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <Checkbox.Input
-              name="ch44"
-              disabled
-              onChangeHandler={action('hello')}
-              id="id55"
-            />
-            <Checkbox.Label label="Guatemala roast" id="id55" />
-          </div>
-        </StoryItem>
-      </div>
-    )
-  })
+      <StoryItem
+        title="Checkboxes: Disabled"
+        description="Radio input choices can be disabled. This can be achieved by passing in the disabled property."
+      >
+        <Checkbox
+          name="ch44"
+          id="id44"
+          disabled
+          onChangeHandler={action('hello')}
+          checked
+          label="Ethiopian roast"
+        />
+        <Checkbox
+          name="ch44"
+          disabled
+          onChangeHandler={action('hello')}
+          id="id55"
+          label="Guatemala roast"
+        />
+      </StoryItem>
+    </div>
+  ))
 
   .add('Form: Radios', () => {
     return (
