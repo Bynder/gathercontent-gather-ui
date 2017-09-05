@@ -9,13 +9,22 @@ $form-checkbox-label-size: 1rem !default;
    Styles
    ========================================================================== */
 
-.form-checkbox__label {
-    cursor: pointer;
-    margin-left: $form-checkbox-margin;
-    font-weight: $form-checkbox-font-weight;
-    font-size: $form-checkbox-label-size;
-}
-
 .form__choice-element-wrapper {
   margin: $form-checkbox-label-size/2;
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox__label {
+  cursor: pointer;
+  margin-left: $form-checkbox-margin;
+  font-weight: $form-checkbox-font-weight;
+  font-size: $form-checkbox-label-size;
+  display: block;
+}
+
+.form-checkbox__label__subtitle {
+  display: block;
+  font-size: $typo-size-small;
+  color: $color-text-light;
 }
