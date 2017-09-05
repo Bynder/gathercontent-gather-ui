@@ -56,42 +56,82 @@ storiesOf('Components', module)
     </div>
   ))
 
-  .add('Form: Radios', () => {
-    return (
-      <div>
-        <StoryItem
-          title="Radio inputs"
-          description="Multiple, default styling checkboxes"
-        >
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch1"
-              id="id1"
-              value="value 1"
-              onChangeHandler={action('hello')}
-              checked
-            />
-            <RadioButton.Label label="Ethiopian roast" id="id1" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch1"
-              value="value 2"
-              onChangeHandler={action('hello')}
-              id="id2"
-            />
-            <RadioButton.Label label="Guatemala roast" id="id2" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch1"
-              id="id3"
-              value="value 3"
-              onChangeHandler={action('hello')}
-            />
-            <RadioButton.Label label="Honduras roast" id="id3" />
-          </div>
-        </StoryItem>
+  .add('Form: Radios', () => (
+    <div>
+      <StoryItem
+        title="Radio inputs"
+        description="Multiple, default styling checkboxes"
+      >
+        <RadioButton
+          name="ch1"
+          id="id1"
+          value="value 1"
+          onChangeHandler={e => action(e.target.value)()}
+          checked
+          label="Ethiopian roast"
+        />
+        <RadioButton
+          name="ch1"
+          value="value 2"
+          onChangeHandler={e => action(e.target.value)()}
+          id="id2"
+          label="Guatemala roast"
+        />
+        <RadioButton
+          name="ch1"
+          id="id3"
+          value="value 3"
+          onChangeHandler={e => action(e.target.value)()}
+          label="Honduras roast"
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Radio inputs: disabled"
+        description="Multiple radios can be disabled by passing in the disabled property"
+      >
+        <RadioButton
+          name="ch21"
+          disabled
+          id="id21"
+          value="value 1"
+          onChangeHandler={action('hello')}
+          checked
+          label="Ethiopian roast"
+        />
+        <RadioButton
+          disabled
+          name="ch21"
+          value="value 2"
+          onChangeHandler={action('hello')}
+          id="id22"
+          label="Guatemala roast"
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Radio inputs: label with subtitle"
+        description="A label can have a subtitle"
+      >
+        <RadioButton
+          name="ch21"
+          id="id21"
+          value="value 1"
+          onChangeHandler={action('hello')}
+          checked
+          label="Ethiopian roast"
+          subtitle="This is my favourite"
+        />
+        <RadioButton
+          disabled
+          name="ch21"
+          value="value 2"
+          onChangeHandler={action('hello')}
+          id="id22"
+          label="Guatemala roast"
+          subtitle="This one is nice too"
+        />
+      </StoryItem>
 
         <StoryItem
           title="Radio inputs: disabled"
