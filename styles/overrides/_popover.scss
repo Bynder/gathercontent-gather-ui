@@ -1,4 +1,6 @@
 .popover.bottom {
+  font-family: $typo-stack-base;
+  @include font-smoothing;
   box-shadow: none;
   border: 2px solid rgba(0, 0, 0, 0.05);
 
