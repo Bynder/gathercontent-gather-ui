@@ -57,7 +57,7 @@ $dropdown-menu-link-padding: 7px 15px !default;
 }
 
 /** Custom **/
-.dropdown__link {
+.dropdown__link, .dropdown-menu a.dropdown__link {
   display: block;
   padding: $dropdown-menu-link-padding;
   text-decoration: none;
