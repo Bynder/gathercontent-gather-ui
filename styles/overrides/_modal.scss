@@ -27,6 +27,8 @@
 
 .modal-dialog {
     position: relative;
+    top: 50%;
+    margin-top: -250px;
 }
 
 .modal-title {
