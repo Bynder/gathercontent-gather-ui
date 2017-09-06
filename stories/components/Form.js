@@ -3,7 +3,7 @@ import assign from 'object-assign';
 import { storiesOf, action } from '@storybook/react';
 import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
-import RadioButtonGroup from '../../lib/Form/RadioButtonGroup';
+import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
 import Checkbox from '../../lib/Form/Checkbox';
 import CheckboxGroup from '../../lib/Form/Checkbox/Group';
 import StoryItem from '../styleguide/StoryItem';

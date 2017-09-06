@@ -1,6 +1,6 @@
 import assign from 'object-assign';
 import { React, expect, sinon, shallow } from '../setup';
-import RadioButtonGroup from '../../lib/Form/RadioButtonGroup';
+import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
 import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 
