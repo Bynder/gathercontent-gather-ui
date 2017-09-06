@@ -5,6 +5,7 @@ import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 import RadioButtonGroup from '../../lib/Form/RadioButtonGroup';
 import Checkbox from '../../lib/Form/Checkbox';
+import CheckboxGroup from '../../lib/Form/Checkbox/Group';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
@@ -12,7 +13,7 @@ storiesOf('Components', module)
     <div>
       <StoryItem
         title="Checkboxes"
-        description="Radio input choices"
+        description="Checkbox input choices"
       >
         <Checkbox
           name="ch1"
@@ -38,7 +39,7 @@ storiesOf('Components', module)
 
       <StoryItem
         title="Checkboxes: Disabled"
-        description="Radio input choices can be disabled. This can be achieved by passing in the disabled property."
+        description="Checkbox input choices can be disabled. This can be achieved by passing in the disabled property."
       >
         <Checkbox
           name="ch2"
@@ -54,6 +55,26 @@ storiesOf('Components', module)
           onChangeHandler={action('hello')}
           id="id22"
           label="Guatemala roast"
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Checkboxes: in a CheckboxGroup"
+        description="Checkbox input choices can be controlled in a CheckboxGroup"
+      >
+        <CheckboxGroup
+          choices={[{
+            name: 'ch3',
+            id: 'id31',
+            checked: true,
+            label: 'Ethiopian roast',
+          }, {
+            name: 'ch3',
+            id: 'id32',
+            checked: true,
+            label: 'Guatemala roast',
+          }]}
+          onChangeHandler={action('hello')}
         />
       </StoryItem>
     </div>
