@@ -1,17 +1,15 @@
 import { React, expect, shallow } from '../../setup';
 import composeNavigation from '../../../lib/Carousel/composition/navigation';
 
+const MockComponent = () => <div />;
+
 describe('Carousel/composition/navigation', () => {
-  let shallowWrapper, MockComponent, WrapperComponent;
+  let shallowWrapper, mockComponent, WrapperComponent;
 
   beforeEach(() => {
-    MockComponent = React.createClass({
-      render() {
-        return (<div></div>);
-      }
-    });
+    mockComponent = <MockComponent />;
 
-    WrapperComponent = composeNavigation(MockComponent);
+    WrapperComponent = composeNavigation(mockComponent);
     shallowWrapper = shallow(<WrapperComponent />);
   });
 
