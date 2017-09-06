@@ -1,4 +1,4 @@
-import { React, expect, sinon, jsDomGlobal, shallow } from '../setup';
+import { React, expect, sinon, jsDomGlobal, shallow, mount } from '../setup';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 import RadioButtonInput from '../../lib/Form/RadioButton/Input';
 import Label from '../../lib/Form/Label';
@@ -24,23 +24,13 @@ describe('RadioButtonOther', () => {
     expect(Other.find(Label)).to.have.length(1);
   });
 
-  it('has a label', () => {
-    expect(Other.find(Label)).to.have.length(1);
+  it('has a text input, if it is checked', () => {
+    Other.setProps({ checked: true });
+    expect(Other.find('input[type="text"]')).to.have.length(1);
   });
 
   it('hides the user input field if it is not checked', () => {
-    expect(Other.find('input')).to.have.length(0);
-  });
-
-  it('shows the user input field if it is checked', () => {
-    Other = shallow(<RadioButtonOther
-      name="foo"
-      id="4"
-      label="Something else"
-      checked
-    />);
-
-    expect(Other.find('input')).to.have.length(1);
+    expect(Other.find('input[type="text"]')).to.have.length(0);
   });
 
   it('uses the "value" prop to set the initial value of the user input field', () => {
@@ -55,8 +45,25 @@ describe('RadioButtonOther', () => {
     expect(Other.find('input').props().value).to.equal('the initial value');
   });
 
-  it('returns the user input value to the onChange handler', () => {
+  it('returns the id to the onChangeHandler when it is checked', () => {
     const onChangeSpy = sinon.spy();
+    const e = { target: { id: 4 } };
+
+    Other = shallow(<RadioButtonOther
+      name="foo"
+      id="4"
+      label="Something else"
+      value="the initial value"
+      onChangeHandler={onChangeSpy}
+    />);
+
+    Other.find(RadioButtonInput).prop('onChangeHandler')(e);
+
+    expect(onChangeSpy).to.have.been.calledWith(e);
+  });
+
+  it('returns the user input value to the onTextChange handler', () => {
+    const onTextChangeSpy = sinon.spy();
 
     Other = shallow(<RadioButtonOther
       name="foo"
@@ -64,11 +71,11 @@ describe('RadioButtonOther', () => {
       label="Something else"
       value="the initial value"
       checked
-      onChangeHandler={onChangeSpy}
+      onTextChangeHandler={onTextChangeSpy}
     />);
 
-    Other.find('input').simulate('change', { target: { value: 'new input' } });
+    Other.find('input[type="text"]').simulate('change', { target: { value: 'new input' } });
 
-    expect(onChangeSpy).to.have.been.calledWith('new input');
+    expect(onTextChangeSpy).to.have.been.calledWith({ target: { value: 'new input' } });
   });
 });

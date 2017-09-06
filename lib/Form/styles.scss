@@ -28,3 +28,7 @@ $form-checkbox-label-size: 1rem !default;
   font-size: $typo-size-small;
   color: $color-text-light;
 }
+
+.form-radiobutton__other {
+  margin-left: $form-checkbox-margin;
+}
