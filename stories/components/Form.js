@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import assign from 'object-assign';
 import { storiesOf, action } from '@storybook/react';
 import RadioButton from '../../lib/Form/RadioButton';
+import RadioButtonOther from '../../lib/Form/RadioButton/Other';
+import RadioButtonGroup from '../../lib/Form/RadioButtonGroup';
 import Checkbox from '../../lib/Form/Checkbox';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -38,18 +41,18 @@ storiesOf('Components', module)
         description="Radio input choices can be disabled. This can be achieved by passing in the disabled property."
       >
         <Checkbox
-          name="ch44"
-          id="id44"
+          name="ch2"
+          id="id21"
           disabled
           onChangeHandler={action('hello')}
           checked
           label="Ethiopian roast"
         />
         <Checkbox
-          name="ch44"
+          name="ch2"
           disabled
           onChangeHandler={action('hello')}
-          id="id55"
+          id="id22"
           label="Guatemala roast"
         />
       </StoryItem>
@@ -63,23 +66,23 @@ storiesOf('Components', module)
         description="Multiple, default styling checkboxes"
       >
         <RadioButton
-          name="ch1"
-          id="id1"
+          name="ch3"
+          id="id31"
           value="value 1"
           onChangeHandler={e => action(e.target.value)()}
           checked
           label="Ethiopian roast"
         />
         <RadioButton
-          name="ch1"
+          name="ch3"
           value="value 2"
           onChangeHandler={e => action(e.target.value)()}
-          id="id2"
+          id="id32"
           label="Guatemala roast"
         />
         <RadioButton
-          name="ch1"
-          id="id3"
+          name="ch3"
+          id="id33"
           value="value 3"
           onChangeHandler={e => action(e.target.value)()}
           label="Honduras roast"
@@ -91,9 +94,9 @@ storiesOf('Components', module)
         description="Multiple radios can be disabled by passing in the disabled property"
       >
         <RadioButton
-          name="ch21"
+          name="ch4"
           disabled
-          id="id21"
+          id="id41"
           value="value 1"
           onChangeHandler={action('hello')}
           checked
@@ -101,10 +104,10 @@ storiesOf('Components', module)
         />
         <RadioButton
           disabled
-          name="ch21"
+          name="ch4"
           value="value 2"
           onChangeHandler={action('hello')}
-          id="id22"
+          id="id42"
           label="Guatemala roast"
         />
       </StoryItem>
@@ -114,8 +117,8 @@ storiesOf('Components', module)
         description="A label can have a subtitle"
       >
         <RadioButton
-          name="ch21"
-          id="id21"
+          name="ch5"
+          id="id51"
           value="value 1"
           onChangeHandler={action('hello')}
           checked
@@ -123,76 +126,70 @@ storiesOf('Components', module)
           subtitle="This is my favourite"
         />
         <RadioButton
-          disabled
-          name="ch21"
+          name="ch5"
           value="value 2"
           onChangeHandler={action('hello')}
-          id="id22"
+          id="id52"
           label="Guatemala roast"
           subtitle="This one is nice too"
         />
       </StoryItem>
 
-        <StoryItem
-          title="Radio inputs: disabled"
-          description="Multiple radios can be disabled by passing in the disabled property"
-        >
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch21"
-              disabled
-              id="id21"
-              value="value 1"
-              onChangeHandler={action('hello')}
-              checked
-            />
-            <RadioButton.Label label="Ethiopian roast" id="id21" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              disabled
-              name="ch21"
-              value="value 2"
-              onChangeHandler={action('hello')}
-              id="id22"
-            />
-            <RadioButton.Label label="Guatemala roast" id="id22" />
-          </div>
-        </StoryItem>
+      <StoryItem
+        title="Radio inputs: with other field"
+        description="Radio inputs can have a user-provided value"
+      >
+        <RadioButton
+          name="ch6"
+          id="id61"
+          value="value 1"
+          onChangeHandler={e => console.log(e.target.value)}
+          label="Ethiopian roast"
+        />
+        <RadioButton
+          name="ch6"
+          value="value 2"
+          onChangeHandler={e => console.log(e.target.value)}
+          id="id62"
+          label="Guatemala roast"
+        />
+        <RadioButtonOther
+          other_option
+          name="ch6"
+          id="id63"
+          label="Or enter your own"
+          checked
+          value="Tea"
+          onChangeHandler={v => action(v)()}
+          onTextChangeHandler={e => action('other value')(e.target.value)}
+        />
+      </StoryItem>
 
-        <StoryItem
-          title="Radio inputs: with other field"
-          description="Radio inputs can have a user-provided value"
-        >
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch22"
-              id="id23"
-              value="value 1"
-              onChangeHandler={action('hello')}
-            />
-            <RadioButton.Label label="Ethiopian roast" id="id23" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Input
-              name="ch22"
-              value="value 2"
-              onChangeHandler={action('hello')}
-              id="id24"
-            />
-            <RadioButton.Label label="Guatemala roast" id="id24" />
-          </div>
-          <div className="form__choice-element-wrapper">
-            <RadioButton.Other
-              name="ch22"
-              id="id25"
-              label="Or enter a value manually"
-              checked
-              value="Columbian"
-              onChangeHandler={v => action(v)()}
-            />
-          </div>
-        </StoryItem>
-      </div>
-    );
-  });
+      <StoryItem
+        title="Radio inputs: in a RadioButtonGroup"
+        description="The group is used to control the checked state"
+      >
+        <RadioButtonGroup
+          choices={[{
+            name: 'ch7',
+            id: 'id71',
+            value: 'value 1',
+            label: 'Ethiopian roast',
+            checked: true,
+          }, {
+            name: 'ch7',
+            id: 'id72',
+            value: 'value 2',
+            label: 'Guatemala roast',
+          }, {
+            name: 'ch7',
+            id: 'id73',
+            value: 'Tea',
+            label: 'Or enter your own',
+            other_option: true,
+          }]}
+          onChangeHandler={(selected) => { action('selected')(selected); }}
+        />
+      </StoryItem>
+    </div>
+  ));
