@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.editable-text__wrapper {
+  display: flex;
+
+  &:hover {
+    .editable-text__button {
+      visibility: visible;
+    }
+  }
+}
+
+.editable-text__button {
+  margin-left: 1em;
+  visibility: hidden;
+}
+
+.editable-text__button {
+  margin-left: 1em;
+  visibility: hidden;
+  fill: $color-brand-dark;
+
+  &:hover {
+    fill: $color-brand-blue;
+  }
+}
+
+
+.editable-text__input {
+  background: $color-background-light;
+  border-radius: 3px;
+  border: none;
+  padding: $layout-spacing-base / 4;
+  outline: none;
+}
