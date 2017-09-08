@@ -1,5 +1,6 @@
-import { React, expect, shallow } from '../setup';
+import { React, expect, shallow, sinon } from '../setup';
 import PageInformation from '../../lib/PageInformation';
+import EditableTextWrapper from '../../lib/EditableTextWrapper';
 
 describe('PageInformation', () => {
   let wrapper;
@@ -22,5 +23,13 @@ describe('PageInformation', () => {
     );
     wrapper = shallow(<PageInformation title="Foo" subtitle={subtitle} />);
     expect(wrapper.find('.page-information__subtitle').text()).to.equal('Template: hi');
+  });
+
+  it('can have an editable title', () => {
+    const renameSpy = sinon.spy();
+    wrapper = shallow(<PageInformation title="Original" editable rename={renameSpy} />);
+    expect(wrapper.find(EditableTextWrapper)).to.have.length(1);
+    wrapper.find(EditableTextWrapper).prop('onChange')('foo');
+    expect(renameSpy).to.have.been.calledWith('foo');
   });
 });

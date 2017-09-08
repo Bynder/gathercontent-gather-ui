@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import PageInformation from '../../lib/PageInformation';
+import EditableTextWrapper from '../../lib/EditableTextWrapper';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
@@ -34,6 +35,17 @@ storiesOf('Components', module)
         <PageInformation
           title="This title is really really really really really really really really long"
           subtitle="The subtitle just goes on and on and on and on and on and on and on and on"
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Page information: with an editable title"
+      >
+        <PageInformation
+          editable
+          title="The original title"
+          subtitle="This is the subtitle"
+          rename={name => action('Title renamed to')(name)}
         />
       </StoryItem>
 
