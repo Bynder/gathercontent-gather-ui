@@ -1,31 +1,53 @@
 /* ==========================================================================
+   Neutral
+   ========================================================================== */
+$neutral-dark: rgb(75, 87, 97);
+$neutral-base: rgb(132, 146, 166);
+$neutral-light: rgb(230, 234, 237);
+
+/* ==========================================================================
+   Primary
+   ========================================================================== */
+$primary-blue: rgb(61, 138, 235);
+$primary-red: rgb(252, 92, 84);
+$primary-green: rgb(95, 207, 128);
+$primary-yellow: rgb(249, 223, 110);
+$primary-purple: rgb(150, 93, 232);
+$primary-brown: rgb(147, 114, 79);
+
+/* ==========================================================================
+   Tints
+   ========================================================================== */
+$neutral-base-light: rgb(230, 234, 237);
+
+/* ==========================================================================
    Brand
    ========================================================================== */
-$color-brand-green: #5FCF80;
-$color-brand-blue: #3D8AEB;
-$color-brand-dark: #5D6871;
-$color-brand-purple: #965DE8;
+$color-brand-green: $primary-green;
+$color-brand-blue: $primary-blue;
+$color-brand-dark: $neutral-dark;
+$color-brand-purple: $primary-purple;
 
 /* ==========================================================================
    Text
    ========================================================================== */
-$color-text-base: rgb(75, 87, 97);
+$color-text-base: $neutral-dark;
 $color-text-heading: #384047;
-$color-text-danger: #FC5C54;
-$color-text-light: #8492A6;
+$color-text-danger: $primary-red;
+$color-text-light: $neutral-base;
 
 /* ==========================================================================
    Links
    ========================================================================== */
-$color-link-base: rgb(70, 142, 229);
+$color-link-base: $primary-blue;
 $color-link-hover: rgb(61, 125, 204);
 $color-link-quiet: #C8C8C8;
 
 /* ==========================================================================
    Backgrounds
    ========================================================================== */
-$color-background-light: rgb(241, 241, 241);
-$color-background-blue: rgb(70, 142, 229);
+$color-background-light: $neutral-light;
+$color-background-blue: $primary-blue;
 
 /* ==========================================================================
    Tables
@@ -37,4 +59,4 @@ $color-table-item--hover: #F1FCFF;
 /* ==========================================================================
    Borders
    ========================================================================== */
-$color-border-base: rgb(230, 234, 227);
+$color-border-base: $neutral-light;
