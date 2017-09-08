@@ -54,6 +54,14 @@ const primaryColours = [
   },
 ];
 
+const tints = [
+  {
+    rgbValue: 'rgb(230, 234, 237)',
+    hexValue: '#e6eaed',
+    name: '$neutral-base-light',
+  },
+];
+
 const base = storiesOf('Base', module)
   .add('Colours', () => (
     <div>
@@ -69,6 +77,13 @@ const base = storiesOf('Base', module)
         description="Our primary palette is used for alerts, actions, and for anywhere across the app we may need to draw the user's attention to something doable, such as a button."
       >
         <ColourPalette colours={primaryColours} />
+      </StoryItem>
+
+      <StoryItem
+        title="Tint Colours"
+        description="Our tint palette is used for light and dark variations of colours."
+      >
+        <ColourPalette colours={tints} />
       </StoryItem>
     </div>
   ))
