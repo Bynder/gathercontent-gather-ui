@@ -3,55 +3,88 @@ import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
 import ColourPalette from './ColourPalette';
 
-const brandColours = [
-  { value: '#5FCF80', name: 'Brand Green' },
-  { value: '#3D8AEB', name: 'Brand Blue' },
-  { value: '#5D6871', name: 'Brand Dark' },
-  { value: '#965DE8', name: 'Brand Purple' },
+const neutralColours = [
+  {
+    rgbValue: 'rgb(75, 87, 97)',
+    hexValue: '#4B5761',
+    name: '$neutral-dark',
+  },
+  {
+    rgbValue: 'rgb(132, 146, 166)',
+    hexValue: '#8492A6',
+    name: '$neutral',
+  },
+  {
+    rgbValue: 'rgb(230, 234, 237)',
+    hexValue: '#e6eaed',
+    name: '$neutral-light',
+  },
 ];
 
-const textColours = [
-  { value: 'rgb(75, 87, 97)', name: 'Text Base' },
-  { value: '#384047', name: 'Text Heading' },
-  { value: '#FC5C54', name: 'Text Danger' },
-  { value: '#8492A6', name: 'Text Light' },
+const primaryColours = [
+  {
+    rgbValue: 'rgb(61, 138, 235)',
+    hexValue: '#3D8AEB',
+    name: '$primary-blue',
+  },
+  {
+    rgbValue: 'rgb(252, 92, 84)',
+    hexValue: '#FC5C54',
+    name: '$primary-red',
+  },
+  {
+    rgbValue: 'rgb(95, 207, 128)',
+    hexValue: '#5FCF80',
+    name: '$primary-green',
+  },
+  {
+    rgbValue: 'rgb(249, 223, 110)',
+    hexValue: '#F9DF6E',
+    name: '$primary-yellow',
+  },
+  {
+    rgbValue: 'rgb(150, 93, 232)',
+    hexValue: '#965DE8',
+    name: '$primary-purple',
+  },
+  {
+    rgbValue: 'rgb(147, 114, 79)',
+    hexValue: '#93724F',
+    name: '$primary-brown',
+  },
 ];
 
-const linkColours = [
-  { value: 'rgb(70, 142, 229)', name: 'Link Base' },
-  { value: 'rgb(61, 125, 204)', name: 'Link Hover' },
-  { value: '#C8C8C8', name: 'Link Quiet' },
-];
-
-const backgroundColours = [
-  { value: 'rgb(241, 241, 241)', name: 'Background Light' },
-  { value: 'rgb(70, 142, 229)', name: 'Background Blue' },
-];
-
-const tableColours = [
-  { value: '#fbfbfb', name: 'Table Heading BG' },
-  { value: '#E8FAFF', name: 'Table Item Selected' },
-  { value: '#F1FCFF', name: 'Table Item Hover' },
-];
-
-const borderColours = [
-  { value: 'rgb(230, 234, 227)', name: 'Border Base' },
-];
-
-const componentColours = [
-  { value: 'rgb(153, 166, 182)', name: 'Pillbox Background' },
+const tints = [
+  {
+    rgbValue: 'rgb(230, 234, 237)',
+    hexValue: '#e6eaed',
+    name: '$neutral-base-light',
+  },
 ];
 
 const base = storiesOf('Base', module)
   .add('Colours', () => (
     <div>
-      <ColourPalette colours={brandColours} />
-      <ColourPalette colours={textColours} />
-      <ColourPalette colours={linkColours} />
-      <ColourPalette colours={backgroundColours} />
-      <ColourPalette colours={tableColours} />
-      <ColourPalette colours={borderColours} />
-      <ColourPalette colours={componentColours} />
+      <StoryItem
+        title="Neutral Colours"
+        description="The use of the neutral palette throughout the app coupled with bursts of colour help catch the user's eye and draw attention to important actionables."
+      >
+        <ColourPalette colours={neutralColours} />
+      </StoryItem>
+
+      <StoryItem
+        title="Primary Colours"
+        description="Our primary palette is used for alerts, actions, and for anywhere across the app we may need to draw the user's attention to something doable, such as a button."
+      >
+        <ColourPalette colours={primaryColours} />
+      </StoryItem>
+
+      <StoryItem
+        title="Tint Colours"
+        description="Our tint palette is used for light and dark variations of colours."
+      >
+        <ColourPalette colours={tints} />
+      </StoryItem>
     </div>
   ))
 
