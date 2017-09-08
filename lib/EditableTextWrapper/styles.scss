@@ -23,16 +23,16 @@
 .editable-text__button {
   margin-left: 1em;
   visibility: hidden;
-  fill: $color-brand-dark;
+  fill: $neutral-dark;
 
   &:hover {
-    fill: $color-brand-blue;
+    fill: $primary-blue;
   }
 }
 
 
 .editable-text__input {
-  background: $color-background-light;
+  background: $neutral-light;
   border-radius: 3px;
   border: none;
   padding: $layout-spacing-base / 4;

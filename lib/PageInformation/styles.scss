@@ -15,6 +15,7 @@ $page-info-content-max-width: 350px !default;
   text-overflow: ellipsis;
   max-width: $page-info-content-max-width;
   white-space: nowrap;
+  color: $neutral-dark;
 }
 
 .page-information__title {
@@ -25,9 +26,9 @@ $page-info-content-max-width: 350px !default;
 
 .page-information__subtitle {
   font-size: $typo-size-small;
-  color: $color-text-light;
+  color: $neutral-base;
 }
 
 .page-information__subtitle--highlight {
-  color: $color-brand-blue;
+  color: $primary-blue;
 }
