@@ -10,7 +10,7 @@ describe('Label', () => {
 
   it('may have a subtitle', () => {
     const wrapper = shallow(<Label id="123" label="foo bar" subtitle="some description" />);
-    const expectedSubtitle = <span className="form-checkbox__label__subtitle">some description</span>;
+    const expectedSubtitle = <span className="form-checkbox__subtitle">some description</span>;
     expect(wrapper.find('label').prop('children')).to.include(expectedSubtitle);
   })
 });
