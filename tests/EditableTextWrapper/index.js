@@ -1,4 +1,4 @@
-import { React, expect, shallow, mount, sinon } from '../setup';
+import { React, expect, shallow, sinon } from '../setup';
 import EditableTextWrapper from '../../lib/EditableTextWrapper';
 import Button from '../../lib/Button';
 
@@ -46,14 +46,6 @@ describe('EditableTextWrapper', () => {
   });
 
   it('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
-    wrapper = mount(
-      <EditableTextWrapper
-        value="Hello"
-        onChange={onChangeSpy}
-      >
-        Hello
-      </EditableTextWrapper>);
-
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
@@ -64,14 +56,6 @@ describe('EditableTextWrapper', () => {
   });
 
   it('returns the input to the non editing state when the esc key is pressed', () => {
-    wrapper = mount(
-      <EditableTextWrapper
-        value="Hello"
-        onChange={onChangeSpy}
-      >
-        Hello
-      </EditableTextWrapper>);
-
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
@@ -82,14 +66,6 @@ describe('EditableTextWrapper', () => {
   });
 
   it('returns the input when the text input looses focus', () => {
-    wrapper = mount(
-      <EditableTextWrapper
-        value="Hello"
-        onChange={onChangeSpy}
-      >
-        Hello
-      </EditableTextWrapper>);
-
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
@@ -97,5 +73,13 @@ describe('EditableTextWrapper', () => {
 
     expect(onChangeSpy).not.to.have.been.called;
     expect(wrapper.find('.editable-text__button')).to.have.length(1);
+  });
+
+  it('updates the value stored in the state, when the value prop is updated by the parent', () => {
+    expect(wrapper.state('value')).to.equal('Hello');
+
+    wrapper.setProps({ value: 'New Value' });
+
+    expect(wrapper.state('value')).to.equal('New Value');
   });
 });
