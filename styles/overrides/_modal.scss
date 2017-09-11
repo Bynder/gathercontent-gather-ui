@@ -3,8 +3,7 @@
 }
 
 .modal-body {
-    padding: 0;
-    font-size: $modal-font-size;
+    padding: $modal-padding;
     overflow: hidden;
     background-color: white;
     border-radius: 6px;
@@ -14,12 +13,21 @@
         font-size: $modal-heading-font-size;
         margin-bottom: 0;
     }
+
+  &.has-columns {
+    padding: 0;
+  }
 }
 
 .modal-header {
-    min-height: 16px;
     padding: $modal-padding;
-    font-weight: $typo-weight-bold;
+    display: flex;
+    align-items: baseline;
+
+  .close {
+    order: 2;
+    margin-left: auto;
+  }
 }
 
 .modal-content {
@@ -39,6 +47,7 @@
 
 .modal-title {
     font-size: $modal-heading-font-size;
+    font-weight: $typo-weight-semi-bold;
 }
 
 .modal.fade .modal-dialog {

@@ -7,8 +7,7 @@ $modal-x-large-width: 900px !default;
 $modal-small-width: 450px !default;
 
 $modal-padding: $layout-spacing-base !default;
-$modal-font-size: $typo-size-small !default;
-$modal-heading-font-size: $typo-size-base !default;
+$modal-heading-font-size: $typo-size-large !default;
 $modal-column-padding: $modal-padding !default;
 
 /* ==========================================================================
@@ -90,6 +89,10 @@ $modal-column-padding: $modal-padding !default;
 .modal--center,
 .modal--center .modal-footer {
 	text-align: center;
+
+	.modal-title {
+		margin: 0 auto;
+	}
 
 	.close {
 		position: absolute;
