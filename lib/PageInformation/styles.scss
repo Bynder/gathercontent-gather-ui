@@ -11,7 +11,7 @@ $page-info-content-max-width: 350px !default;
 .page-information__subtitle {
   display: block;
   text-align: left;
-  overflow: hidden;
+  overflow-x: hidden;
   text-overflow: ellipsis;
   max-width: $page-info-content-max-width;
   white-space: nowrap;
@@ -20,7 +20,7 @@ $page-info-content-max-width: 350px !default;
 
 .page-information__title {
   font-size: $typo-size-lead;
-  line-height: 1em;
+  line-height: 1.25em;
   margin: 0 0 .25em;
 }
 

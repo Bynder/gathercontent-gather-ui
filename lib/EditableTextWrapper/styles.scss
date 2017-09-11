@@ -7,21 +7,21 @@
    ========================================================================== */
 .editable-text__wrapper {
   display: flex;
+  margin: 0 0 0.25em;
 
   &:hover {
     .editable-text__button {
       visibility: visible;
     }
   }
+
+  .page-information__title {
+    margin: 0;
+  }
 }
 
 .editable-text__button {
-  margin-left: 1em;
-  visibility: hidden;
-}
-
-.editable-text__button {
-  margin-left: 1em;
+  margin-left: 0.5em;
   visibility: hidden;
   fill: $neutral-dark;
 
@@ -30,11 +30,13 @@
   }
 }
 
-
 .editable-text__input {
-  background: $neutral-light;
-  border-radius: 3px;
   border: none;
-  padding: $layout-spacing-base / 4;
   outline: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 500;
+  height: 1.25em;
 }
