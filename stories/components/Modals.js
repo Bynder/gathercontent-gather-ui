@@ -14,7 +14,7 @@ storiesOf('Components', module)
       >
         <ModalTrigger>
           <Modal.Container>
-            <Modal.Header closeButton>
+            <Modal.Header>
               Hello
             </Modal.Header>
             <Modal.Body className="has-columns">
@@ -65,8 +65,8 @@ storiesOf('Components', module)
             className="modal--center modal--clear"
             size="small"
           >
-            <Modal.Header closeButton>
-              <h1 className="modal__title">Lorem ipsum dolor</h1>
+            <Modal.Header>
+              Lorem ipsum dolor
             </Modal.Header>
             <Modal.Body>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
@@ -111,7 +111,6 @@ storiesOf('Components', module)
         <ModalTrigger>
           <ConfirmationModal
             title="Are you sure?"
-            message="That kittens are just as awesome as dogs?"
             submitText="Hell yes"
             cancelText="Meow no"
             type="primary"
@@ -119,7 +118,9 @@ storiesOf('Components', module)
               action(e);
               e.preventDefault();
             }}
-          />
+          >
+            That kittens are just as awesome as dogs?
+          </ConfirmationModal>
         </ModalTrigger>
       </StoryItem>
     </div>
