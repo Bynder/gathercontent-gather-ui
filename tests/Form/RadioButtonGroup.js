@@ -1,37 +1,61 @@
-import { React, expect, sinon, jsDomGlobal, shallow } from '../setup';
-import RadioButtonGroup from '../../lib/Form/RadioButtonGroup';
-jsDomGlobal();
+import assign from 'object-assign';
+import { React, expect, sinon, shallow } from '../setup';
+import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
+import RadioButton from '../../lib/Form/RadioButton';
+import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 
 describe('RadioButtonGroup', () => {
-	let shallowWrapper;
-	let props = {
-		name: 'name',
-		title: 'gardens',
-		subtitle: 'subtitle',
-		id: 'id',
-		onChange: sinon.spy()
-	};
+  let wrapper;
+  const choices = [{
+    name: 'foo',
+    label: 'First choice',
+    id: '123',
+  }, {
+    name: 'foo',
+    label: 'Second choice',
+    id: '456',
+  }];
+  const otherChoice = {
+    name: 'foo',
+    label: 'Enter your option',
+    id: '789',
+    other_option: true,
+  };
+  const choicesWithOtherChoice = choices.concat(otherChoice);
+  const onChangeSpy = sinon.spy();
 
-	beforeEach(() => {
-		shallowWrapper = shallow(<RadioButtonGroup {...props}/>);
-	});
+  beforeEach(() => {
+    wrapper = shallow(<RadioButtonGroup choices={choices} onChangeHandler={onChangeSpy} />);
+  });
 
-	it('should render an outer DIV wrapper as a CSS media object', () => {
-		expect(shallowWrapper.first().type()).to.equal('div');
-		expect(shallowWrapper.first().hasClass('o-media-obj')).to.equal(true);
-	});
+  it('can render a list of choices as a radio button group', () => {
+    expect(wrapper.find(RadioButton)).to.have.length(2);
+  });
 
-	it('should contain only one input of type "radio"', () => {
-		expect(shallowWrapper.find('input[type="radio"]')).to.have.length(1);
-	});
+  it('can have an other option', () => {
+    wrapper = shallow(<RadioButtonGroup choices={choicesWithOtherChoice} onChangeHandler={onChangeSpy} />);
 
-	it('should render the title property as the label', () => {
-		expect(shallowWrapper.text().indexOf(props.title)).to.not.equal(-1);
-	});
+    expect(wrapper.find(RadioButtonOther)).to.have.length(1);
+  });
 
-	it('should run a callback when the input changes state"', () => {
-		// Trigger an input change
-		shallowWrapper.find('input').simulate('change');
-		expect(props.onChange.calledOnce).to.equal(true);
-	});
+  it('returns the selected options onChange', () => {
+    const firstOption = wrapper.find(RadioButton).at(0);
+    const secondOption = wrapper.find(RadioButton).at(1);
+
+    firstOption.prop('onChangeHandler')({ target: { id: '123' } });
+    expect(onChangeSpy).to.have.been.calledWith([choices[0]]);
+
+    secondOption.prop('onChangeHandler')({ target: { id: '456' } });
+    expect(onChangeSpy).to.have.been.calledWith([choices[1]]);
+  });
+
+  it('returns the selected options when the other option value changes', () => {
+    wrapper = shallow(<RadioButtonGroup choices={choicesWithOtherChoice} onChangeHandler={onChangeSpy} />);
+    const otherOption = wrapper.find(RadioButtonOther);
+    otherOption.prop('onTextChangeHandler')({ target: { value: 'Hello' } });
+
+    const expectedOptionChoice = assign({}, otherChoice, { value: 'Hello' });
+
+    expect(onChangeSpy).to.have.been.calledWith([expectedOptionChoice]);
+  });
 });
