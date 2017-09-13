@@ -8,13 +8,21 @@ $dropdown-menu-link-padding: 7px 15px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-
-.dropdown-menu__caret {
-  margin-left: $dropdown-menu-caret-margin;
-
+.dropdown,
+.dropdown.is-active {
   svg path {
     fill: white;
   }
+}
+
+.dropdown-menu__button {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu__caret {
+  display: inline-flex;
+  margin-left: $dropdown-menu-caret-margin;
 }
 
 .dropdown-menu {
@@ -57,7 +65,8 @@ $dropdown-menu-link-padding: 7px 15px !default;
 }
 
 /** Custom **/
-.dropdown__link, .dropdown-menu a.dropdown__link {
+.dropdown__link,
+.dropdown-menu a.dropdown__link {
   display: block;
   padding: $dropdown-menu-link-padding;
   text-decoration: none;

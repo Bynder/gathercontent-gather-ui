@@ -7,14 +7,12 @@
 
 .progress-button__icon {
   position: absolute;
-  left: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
   top: 50%;
   transform: translateY(-50%);
   height: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  @include animateKeyframe(spin360, 1s);
+  width: 100%;
 
   path {
     fill: white;

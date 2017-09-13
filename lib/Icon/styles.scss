@@ -1,6 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$icon-display: inline-block !default;
 $icon-hover-color: $color-brand-green !default;
 $icon-active-color: $color-brand-blue !default;
 
@@ -8,7 +9,7 @@ $icon-active-color: $color-brand-blue !default;
    Styles
    ========================================================================== */
 .icon {
-  display: inline-block;
+  display: $icon-display;
 }
 
 .icon svg {

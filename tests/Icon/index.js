@@ -8,10 +8,19 @@ describe('Icon', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Icon name="comment" />);
+    wrapper = shallow(
+      <Icon
+        className="custom-icon-class"
+        name="comment"
+      />,
+    );
   });
 
   afterEach(() => {});
+
+  it('adds a className prop to classNames', () => {
+    expect(wrapper.hasClass('custom-icon-class')).to.equal(true);
+  });
 
   it('adds a BEM modifier with the name prop', () => {
     wrapper.setProps({ name: 'comment' });
