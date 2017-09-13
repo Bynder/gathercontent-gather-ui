@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$page-info-content-max-width: 350px !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+.page-information__title,
+.page-information__subtitle {
+  display: block;
+  text-align: left;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: $page-info-content-max-width;
+  white-space: nowrap;
+  color: $neutral-dark;
+}
+
+.page-information__title {
+  font-size: $typo-size-lead;
+  line-height: 1.25em;
+  margin: 0 0 .25em;
+}
+
+.page-information__subtitle {
+  font-size: $typo-size-small;
+  color: $neutral-base;
+}
+
+.page-information__subtitle--highlight {
+  color: $primary-blue;
+}

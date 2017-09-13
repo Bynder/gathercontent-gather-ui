@@ -52,8 +52,9 @@ describe('Button', () => {
   });
 
   it('should call props.clickHandler when clicked', () => {
-    wrapper.simulate('click');
+    wrapper.simulate('click', { target: { value: 'foo' } });
     expect(clickHandlerSpy.calledOnce).to.equal(true);
+    expect(clickHandlerSpy.firstCall.args[0].target.value).to.equal('foo');
   });
 
   it('should set state.disabled to true when clicked if props.disableOnClick is true', () => {
