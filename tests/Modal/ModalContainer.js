@@ -35,4 +35,8 @@ describe('Modal Container', () => {
     wrapper.setProps({ size: 'x-large' });
     expect(wrapper.prop('className')).to.equal('test-class modal--x-large');
   });
+
+  it('sets the keyboard prop to true by default', () => {
+    expect(wrapper.prop('keyboard')).to.equal(true);
+  });
 });

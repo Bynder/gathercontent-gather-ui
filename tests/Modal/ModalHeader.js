@@ -22,4 +22,8 @@ describe('Modal Header', () => {
     expect(wrapper.type()).to.deep.equal(Header);
     expect(wrapper.prop('testProp')).to.equal('test');
   });
+
+  it('sets the closeButton prop to true by default', () => {
+    expect(wrapper.prop('closeButton')).to.equal(true);
+  });
 });
