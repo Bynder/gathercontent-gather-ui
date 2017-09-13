@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 import { Modal, Button, ConfirmationModal, withModalTrigger } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
-
-const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
 
 storiesOf('Components', module)
   .add('Modals', () => (
@@ -18,12 +18,24 @@ storiesOf('Components', module)
               Hello
             </Modal.Header>
             <Modal.Body className="has-columns">
-              <Modal.Column>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </Modal.Column>
-              <Modal.Column>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </Modal.Column>
+              <Row>
+                <Col
+                  className="modal__column-wrapper modal__column-wrapper--highlight"
+                  xs={6}
+                >
+                  <div className="modal__column">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                  </div>
+                </Col>
+                <Col
+                  className="modal__column-wrapper"
+                  xs={6}
+                >
+                  <div className="modal__column">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                  </div>
+                </Col>
+              </Row>
             </Modal.Body>
             <Modal.Footer>
               <Button types={['link']} clickHandler={action('clickHandler')}>Cancel</Button>
@@ -40,17 +52,23 @@ storiesOf('Components', module)
         <ModalTrigger>
           <Modal.Container>
             <Modal.Body className="has-columns">
-              <Modal.Column>
-                <h2 className="modal__title">Lorem ipsum dolor</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </Modal.Column>
-              <Modal.Column>
-                <div className="modal__illustration">
-                  <div style={{ background: 'grey', height: '100px', color: 'white' }}>
-                    Illustration goes here
+              <Row className="modal__row">
+                <Col xs={6} className="modal__column-wrapper modal__column-wrapper--highlight">
+                  <div className="modal__column">
+                    <h2 className="modal__body-title">Lorem ipsum dolor</h2>
                   </div>
-                </div>
-              </Modal.Column>
+                </Col>
+                <Col xs={6} className="modal__column-wrapper">
+                  <div className="modal__column">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div className="modal__illustration">
+                      <div style={{ background: 'grey', height: '100px', color: 'white' }}>
+                        Illustration goes here
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
             </Modal.Body>
           </Modal.Container>
         </ModalTrigger>
@@ -125,3 +143,5 @@ storiesOf('Components', module)
       </StoryItem>
     </div>
   ));
+
+const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
