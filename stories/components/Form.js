@@ -205,7 +205,7 @@ storiesOf('Components', module)
           }, {
             name: 'ch7',
             id: 'id73',
-            value: 'Tea',
+            value: '',
             label: 'Or enter your own',
             other_option: true,
           }]}

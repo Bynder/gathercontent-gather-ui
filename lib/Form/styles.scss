@@ -23,6 +23,10 @@ $form-checkbox-label-size: 1rem !default;
   display: block;
 }
 
+.form-checkbox__label--other-option {
+  color: $primary-blue;
+}
+
 .form-checkbox__subtitle {
   display: block;
   font-size: $typo-size-small;
@@ -31,4 +35,12 @@ $form-checkbox-label-size: 1rem !default;
 
 .form-radiobutton__other {
   margin-left: $form-checkbox-margin;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.form-radiobutton--invisible {
+  visibility: hidden;
 }
