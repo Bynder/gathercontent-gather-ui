@@ -8,7 +8,7 @@ $field-label-size: $typo-size-lead !default;
 $field-label-weight: $typo-weight-semi-bold !default;
 
 $field-data-size: $typo-size-small !default;
-$field-data-color: $color-brand-dark !default;
+$field-data-color: $neutral-base !default;
 
 /* ==========================================================================
    Styles
@@ -46,6 +46,11 @@ $field-data-color: $color-brand-dark !default;
 .field__instructions {
   font-style: italic;
   margin: $field-spacing-base 0 0;
+}
+
+.field__content {
+  padding-left: $field-spacing-base;
+  font-size: $typo-size-lead;
 }
 
 .field__child {

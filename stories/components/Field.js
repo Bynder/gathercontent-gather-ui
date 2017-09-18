@@ -4,10 +4,10 @@ import { Field, FieldAside, Button, Icon } from '../../lib/index';
 import StoryItem from '../styleguide/StoryItem';
 
 const mockValidations = [{
-  text: '120/100',
+  text: 'Validation failed text',
   hasFailed: true,
 }, {
-  text: 'Validation failed text',
+  text: 'Validation text',
   hasFailed: false,
 }];
 
