@@ -1,5 +1,5 @@
 import { React, expect, shallow } from '../setup';
-import ListItem from '../../lib/List/ListItem';
+import { ListItem } from '../../lib';
 import Button from '../../lib/Button';
 
 describe('List Item', () => {

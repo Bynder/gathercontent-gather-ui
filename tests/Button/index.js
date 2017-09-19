@@ -1,5 +1,6 @@
 import { React, expect, sinon, jsDomGlobal, mount } from '../setup';
-import Button from '../../lib/Button';
+import { Button } from '../../lib';
+
 jsDomGlobal();
 
 describe('Button', () => {

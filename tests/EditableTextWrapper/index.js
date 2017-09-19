@@ -1,5 +1,5 @@
 import { React, expect, shallow, sinon } from '../setup';
-import EditableTextWrapper from '../../lib/EditableTextWrapper';
+import { EditableTextWrapper } from '../../lib';
 import Button from '../../lib/Button';
 
 describe('EditableTextWrapper', () => {
