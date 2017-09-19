@@ -6,8 +6,8 @@ import Button from '../../lib/Button';
 
 describe('Comment', () => {
   let wrapper;
-  let editCommentSpy = sinon.spy();
-  let removeCommentSpy = sinon.spy();
+  const editCommentSpy = sinon.spy();
+  const removeCommentSpy = sinon.spy();
 
   const props = {
     id: '123',
