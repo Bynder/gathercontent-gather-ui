@@ -6,30 +6,31 @@ $file-card-height: $file-card-width !default;
 $file-card-action-button-size: 32px !default;
 $file-card-margin: $layout-spacing-base !default;
 $file-card-border-radius: 3px !default;
-$file-card-border: 0 0 0 2px #f1f1f1 inset !default;
 
-$file-card-label-font-size: $typo-size-small !default;
+$file-card-label-font-size: $typo-size-base !default;
 $file-card-actions-padding: .5rem !default;
 $file-card-no-preview-font-size: $typo-size-lead * 2 !default;
-$file-card-no-preview-background: rgba(155, 155, 155, .1);
+$file-card-no-preview-background: $neutral-light;
 
-$file-card-label-bg: rgba(0, 0, 0, .7) !default;
-$file-card-highlight-color: rgb(245, 218, 116);
+$file-card-label-bg: rgba(black, .2) !default;
+$file-card-highlight-color: $primary-yellow;
+$file-card-highlight-color-hover: darken($file-card-highlight-color, 5%);
 $file-card-action-background: rgba(20, 20, 20, .6);
 $file-card-action-background-hover: rgba(10, 10, 10, .9);
 
-$file-card-border-style: 3px solid;
+$file-card-border-style: 2px solid;
+$file-card-border-radius: 3px;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
 .file-card {
+  display: inline-flex;
   width: $file-card-width;
   height: $file-card-height;
   margin: $file-card-margin / 2;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  box-shadow: $file-card-border;
+  border-radius: $file-card-border-radius;
+
 
   &:hover,
   .file-card__action:focus {
@@ -42,51 +43,54 @@ $file-card-border-style: 3px solid;
   }
 }
 
-.file-card__has-comments {
+.file-card__wrapper {
+  position: relative;
+  overflow: hidden;
+  background: $file-card-no-preview-background;
+  width: 100%;
+}
+
+.file-card--highlighted {
+  background: $file-card-highlight-color;
   border: $file-card-border-style $file-card-highlight-color;
   transition: border .1s ease-in;
-  box-shadow: none;
 
   &:hover {
-    border: $file-card-border-style darken($file-card-highlight-color, 20%);
+    border-color: $file-card-highlight-color-hover;
+    background-color: $file-card-highlight-color-hover;
   }
 }
 
-.file-card__wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.file-card__thumbnail {
+.file-card__thumbnail,
+.file-card__title {
+  background: $file-card-no-preview-background center;
   background-size: cover;
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  overflow: hidden;
   z-index: 0;
+  border-radius: $file-card-border-radius;
 
   &:hover {
     cursor: pointer;
   }
 }
 
-.file-card__thumbnail--no-preview {
-  background-color: $file-card-no-preview-background;
-  align-content: center;
+.file-card__title {
+  display: flex;
+  align-items: center;
   justify-content: center;
   font-size: $file-card-no-preview-font-size;
   text-transform: uppercase;
-  display: flex;
-  padding-top: 35%; // % needed to center it from the top given its font size
-  overflow: visible;
-  font-weight: 600;
+  font-weight: $typo-weight-bold;
 }
 
 .file-card__label {
-  background: $file-card-label-bg;
-  color: #fff;
   position: absolute;
   bottom: $file-card-actions-padding;
+  left: $file-card-actions-padding;
+  background: $file-card-label-bg;
+  color: #fff;
   font-size: $file-card-label-font-size;
   border-radius: $file-card-border-radius;
   padding: $file-card-actions-padding/3 $file-card-actions-padding;
@@ -94,17 +98,15 @@ $file-card-border-style: 3px solid;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  align-self: center;
-  text-align: center;
+  z-index: 1;
 }
 
 .file-card__actions {
   display: flex;
-  padding: $file-card-actions-padding;
   justify-content: flex-start;
+  padding: $file-card-actions-padding;
 
   > .file-card__action {
-    // Maximum of 4 actions per card, hence the 4
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         transform: translateY(-3rem);
@@ -126,7 +128,11 @@ $file-card-border-style: 3px solid;
   border-radius: $file-card-border-radius;
   transition: .2s all ease-in-out;
 
-  &:last-child { margin-right: 0; }
+  &:last-child {
+    margin-right: 0;
+  }
 
-  &:hover { background: $file-card-action-background-hover; }
+  &:hover {
+    background: $file-card-action-background-hover;
+  }
 }
