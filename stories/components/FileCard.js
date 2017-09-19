@@ -18,7 +18,7 @@ storiesOf('Components', module)
     <div>
       <StoryItem
         title="File Card"
-        description="A single image thumbnail"
+        description="A file card showing a preview of the file."
       >
         <FileCard
           filename="cute_sheep_in_iceland.jpg"
@@ -30,8 +30,8 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
-        title="File Card with comments"
-        description="A single image thumbnail which has comments."
+        title="File Card (highlighted)"
+        description="A file card can have a highlighted state."
       >
         <FileCard
           filename="sheep_in_iceland.jpg"
@@ -44,25 +44,12 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
-        title="File Card without preview"
-        description="A single image thumbnail which has no preview"
+        title="File Card (without preview)"
+        description="A file card without a preview image"
       >
         <FileCard
           filename="field_notes.txt"
           label="Field notes"
-        >
-          {actions}
-        </FileCard>
-      </StoryItem>
-
-      <StoryItem
-        title="File Card without permission to delete"
-        description="A single file without the action to be deleted (no permissions)"
-      >
-        <FileCard
-          filename="glasses_prescription.doc"
-          label="Notes"
-          isHighlighted
         >
           {actions}
         </FileCard>
