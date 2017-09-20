@@ -6,3 +6,6 @@ input[type='email'],
 input[type='search'] {
     height: auto;
 }
+input::placeholder {
+  color: $neutral-base;
+}
