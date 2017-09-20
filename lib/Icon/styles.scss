@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $icon-display: inline-block !default;
+$icon-default-color: $neutral-dark !default;
 $icon-hover-color: $color-brand-green !default;
 $icon-active-color: $color-brand-blue !default;
 
@@ -14,6 +15,10 @@ $icon-active-color: $color-brand-blue !default;
 
 .icon svg {
   display: block;
+}
+
+.icon path {
+  fill: $icon-default-color;
 }
 
 .is-active .icon path {
@@ -41,6 +46,10 @@ $icon-active-color: $color-brand-blue !default;
 /* ==========================================================================
    SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */
+.icon--upload path {
+  fill: none;
+}
+
 .is-active .icon--upload path {
   fill: none;
   stroke: $icon-active-color;

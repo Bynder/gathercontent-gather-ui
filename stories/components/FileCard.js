@@ -1,16 +1,12 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import FileCard from '../../lib/FileCard';
+import { FileCard, Icon } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
-import binSVG from './../../assets/icons/image-trash.svg';
-import commentSVG from './../../assets/icons/image-comment.svg';
-import fullScreenSVG from './../../assets/icons/image-fullscreen.svg';
-import downloadSVG from './../../assets/icons/image-download.svg';
 
-const trashButton = <button onClick={action('test')}>{binSVG()}</button>;
-const commentButton = <button onClick={action('test')}>{commentSVG()}</button>;
-const fullScreenButton = <button onClick={action('test')}>{fullScreenSVG()}</button>;
-const downloadButton = <button onClick={action('test')}>{downloadSVG()}</button>;
+const trashButton = <button onClick={action('test')}><Icon name="trash" /></button>;
+const commentButton = <button onClick={action('test')}><Icon name="comment" /></button>;
+const fullScreenButton = <button onClick={action('test')}><Icon name="fullScreen" /></button>;
+const downloadButton = <button onClick={action('test')}>{<Icon name="download" />}</button>;
 const actions = [trashButton, commentButton, fullScreenButton, downloadButton];
 
 storiesOf('Components', module)
