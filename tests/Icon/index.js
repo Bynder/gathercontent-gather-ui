@@ -3,6 +3,9 @@ import Icon from '../../lib/Icon';
 import commentSVG from '../../assets/icons/comment.svg';
 import plusCircleSVG from '../../assets/icons/plus-circle.svg';
 import tickSVG from '../../assets/icons/tick.svg';
+import trashSVG from '../../assets/icons/trash.svg';
+import downloadSVG from '../../assets/icons/download.svg';
+import fullScreenSVG from '../../assets/icons/fullscreen.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -40,6 +43,21 @@ describe('Icon', () => {
   it('should render the tick icon', () => {
     wrapper.setProps({ name: 'tick' });
     expect(wrapper.find('svg').props()).to.deep.equal(tickSVG().props);
+  });
+
+  it('should render the trash icon', () => {
+    wrapper.setProps({ name: 'trash' });
+    expect(wrapper.find('svg').props()).to.deep.equal(trashSVG().props);
+  });
+
+  it('should render the download icon', () => {
+    wrapper.setProps({ name: 'download' });
+    expect(wrapper.find('svg').props()).to.deep.equal(downloadSVG().props);
+  });
+
+  it('should render the full screen icon', () => {
+    wrapper.setProps({ name: 'fullScreen' });
+    expect(wrapper.find('svg').props()).to.deep.equal(fullScreenSVG().props);
   });
 
   it('adds a modifier class of icon--hide-text', () => {
