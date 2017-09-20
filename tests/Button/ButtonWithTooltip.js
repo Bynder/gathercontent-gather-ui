@@ -1,7 +1,7 @@
 import { Tooltip, OverlayTrigger } from 'react-bootstrap/lib';
 import { React, expect, sinon, jsDomGlobal, mount } from '../setup';
-import Button from '../../lib/Button';
-import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
+import { Button, ButtonWithTooltip } from '../../lib';
+
 jsDomGlobal();
 
 describe('ButtonWithTooltip', () => {

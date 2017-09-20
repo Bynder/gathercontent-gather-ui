@@ -1,5 +1,6 @@
-import { React, expect, sinon, jsDomGlobal, shallow, mount } from '../setup';
+import { React, expect, jsDomGlobal, shallow } from '../setup';
 import { withModalTrigger, Button, Modal } from '../../lib';
+
 jsDomGlobal();
 
 describe('Modal Body', () => {

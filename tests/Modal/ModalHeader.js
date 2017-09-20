@@ -1,6 +1,7 @@
 import { Header } from 'react-bootstrap/lib/Modal';
 import { React, expect, jsDomGlobal, shallow } from '../setup';
 import { Modal } from '../../lib';
+
 jsDomGlobal();
 
 describe('Modal Header', () => {

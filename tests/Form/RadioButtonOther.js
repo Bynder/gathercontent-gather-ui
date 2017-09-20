@@ -1,4 +1,4 @@
-import { React, expect, sinon, jsDomGlobal, shallow, mount } from '../setup';
+import { React, expect, sinon, jsDomGlobal, shallow } from '../setup';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 import RadioButtonInput from '../../lib/Form/RadioButton/Input';
 import Label from '../../lib/Form/Label';
@@ -9,11 +9,15 @@ describe('RadioButtonOther', () => {
   let Other;
 
   beforeEach(() => {
-    Other = shallow(<RadioButtonOther
-      name="foo"
-      id="4"
-      label="Something else"
-    />);
+    Other = shallow(
+      <RadioButtonOther
+        name="foo"
+        id="4"
+        label="Something else"
+        onChangeHandler={() => {}}
+        onTextChangeHandler={() => {}}
+      />,
+    );
   });
 
   it('has a radio button input', () => {
@@ -34,13 +38,17 @@ describe('RadioButtonOther', () => {
   });
 
   it('uses the "value" prop to set the initial value of the user input field', () => {
-    Other = shallow(<RadioButtonOther
-      name="foo"
-      id="4"
-      label="Something else"
-      checked
-      value="the initial value"
-    />);
+    Other = shallow(
+      <RadioButtonOther
+        name="foo"
+        id="4"
+        label="Something else"
+        checked
+        value="the initial value"
+        onChangeHandler={() => {}}
+        onTextChangeHandler={() => {}}
+      />,
+    );
 
     expect(Other.find('input').props().value).to.equal('the initial value');
   });
@@ -49,13 +57,16 @@ describe('RadioButtonOther', () => {
     const onChangeSpy = sinon.spy();
     const e = { target: { id: 4 } };
 
-    Other = shallow(<RadioButtonOther
-      name="foo"
-      id="4"
-      label="Something else"
-      value="the initial value"
-      onChangeHandler={onChangeSpy}
-    />);
+    Other = shallow(
+      <RadioButtonOther
+        name="foo"
+        id="4"
+        label="Something else"
+        value="the initial value"
+        onChangeHandler={onChangeSpy}
+        onTextChangeHandler={() => {}}
+      />,
+    );
 
     Other.find(RadioButtonInput).prop('onChangeHandler')(e);
 
@@ -65,14 +76,17 @@ describe('RadioButtonOther', () => {
   it('returns the user input value to the onTextChange handler', () => {
     const onTextChangeSpy = sinon.spy();
 
-    Other = shallow(<RadioButtonOther
-      name="foo"
-      id="4"
-      label="Something else"
-      value="the initial value"
-      checked
-      onTextChangeHandler={onTextChangeSpy}
-    />);
+    Other = shallow(
+      <RadioButtonOther
+        name="foo"
+        id="4"
+        label="Something else"
+        value="the initial value"
+        checked
+        onTextChangeHandler={onTextChangeSpy}
+        onChangeHandler={() => {}}
+      />,
+    );
 
     Other.find('input[type="text"]').simulate('change', { target: { value: 'new input' } });
 

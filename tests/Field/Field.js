@@ -1,5 +1,5 @@
 import { React, expect, shallow } from '../setup';
-import Field from '../../lib/Field';
+import { Field } from '../../lib';
 import FieldActions from '../../lib/Field/FieldActions';
 import FieldValidations from '../../lib/Field/FieldValidations';
 import Button from '../../lib/Button';
@@ -12,6 +12,7 @@ describe('Field', () => {
       <Field
         label="Test label"
         instructions="Instructions test text"
+        fieldId="123"
       >
         <Button clickHandler={() => {}}>Hello world</Button>
       </Field>,

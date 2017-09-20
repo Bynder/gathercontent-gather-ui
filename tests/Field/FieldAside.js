@@ -1,5 +1,5 @@
 import { React, expect, shallow } from '../setup';
-import { FieldAside, Button } from '../../lib/index';
+import { FieldAside, Button } from '../../lib';
 
 describe('Field aside', () => {
   let wrapper;

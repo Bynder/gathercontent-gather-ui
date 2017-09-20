@@ -1,24 +1,20 @@
-import { React, expect, sinon, shallow } from '../setup';
+import { React, expect, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
 
 describe('FileCard', () => {
   let wrapper;
 
-  const NO_PREVIEW_CLASS = '.file-card__thumbnail--no-preview';
-  const ACTION_DELETE_CLASS = '.file-card__action--delete';
-
   const props = {
-    hasComments: true,
-    type: 'text',
     filename: 'field_notes.txt',
     label: 'Field notes',
-    image: 'https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922',
-    actions: {},
+    previewSrc: 'https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922',
   };
 
   beforeEach(() => {
     wrapper = shallow(
-      <FileCard {...props} />,
+      <FileCard {...props}>
+        <button>Test action</button>
+      </FileCard>,
     );
   });
 
@@ -27,31 +23,25 @@ describe('FileCard', () => {
   });
 
   it('renders an element with the correct background-image', () => {
-    expect(wrapper.find('.file-card__thumbnail')).to.have.length(1);
-    expect(wrapper.find('.file-card__thumbnail').props().style.backgroundImage).to.equal(`url(${props.image})`);
+    expect(wrapper.find('.file-card__thumbnail').props().style.backgroundImage).to.equal(`url(${props.previewSrc})`);
   });
 
   it('renders the correct filename and label for a thumbnail', () => {
-    expect(wrapper.find('.file-card__label').contains(props.filename)).to.equal(true);
+    expect(wrapper.find('.file-card__label').contains(props.label)).to.equal(true);
   });
 
-  it('non-image types contain specific properties', () => {
-    wrapper.setProps({ image: null });
+  it('renders 1 action from props.children', () => {
     const actions = wrapper.find('.file-card__action');
-    expect(wrapper.find(NO_PREVIEW_CLASS).length).to.equal(1);
-    expect(actions.length).to.equal(3);
+    expect(actions.length).to.equal(1);
   });
 
-  it('contains 4 action types for image types', () => {
-    wrapper.setProps({ type: 'image' });
-    const actions = wrapper.find('.file-card__action');
-    expect(actions.length).to.equal(4);
+  it('adds a highlighted modifier class', () => {
+    wrapper.setProps({ isHighlighted: true });
+    expect(wrapper.hasClass('file-card--highlighted')).to.equal(true);
   });
 
-   it('does not render the delete action based on permissions', () => {
-     wrapper.setProps({ showDelete: false });
-     const deleteWrapper = wrapper.find(ACTION_DELETE_CLASS);
-     expect(deleteWrapper.length).to.equal(0);
+  it('renders the file format extension as the title and adds a modifier', () => {
+    wrapper.setProps({ previewSrc: '' });
+    expect(wrapper.find('.file-card__title').contains('txt')).to.equal(true);
   });
-
 });
