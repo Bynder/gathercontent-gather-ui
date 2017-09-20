@@ -3,7 +3,7 @@
    ========================================================================== */
 $form-checkbox-margin: $layout-spacing-base/2 !default;
 $form-checkbox-font-weight: $typo-weight-roman !default;
-$form-checkbox-label-size: 1rem !default;
+$form-checkbox-label-size: $typo-size-lead !default;
 
 /* ==========================================================================
    Styles
@@ -37,7 +37,7 @@ $form-checkbox-label-size: 1rem !default;
   margin-left: $form-checkbox-margin;
   border: none;
   outline: none;
-  font-size: 1rem;
+  font-size: $form-checkbox-label-size;
   padding: 0;
 }
 
