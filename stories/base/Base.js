@@ -19,6 +19,11 @@ const neutralColours = [
     hexValue: '#e6eaed',
     name: '$neutral-light',
   },
+  {
+    rgbValue: 'rgb(247, 249, 250)',
+    hexValue: '#F7F9FA',
+    name: '$neutral-lightest',
+  },
 ];
 
 const primaryColours = [
@@ -57,7 +62,7 @@ const primaryColours = [
 const tints = [
   {
     rgbValue: 'rgb(247, 250, 253)',
-    hexValue: '#F5F8FC',
+    hexValue: '#F7F9FA',
     name: '$neutral-base-lighter',
   },
 ];
