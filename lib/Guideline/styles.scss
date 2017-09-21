@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$guideline-bg-colour: $neutral-base-lighter !default;
+$guideline-border: 1px solid $neutral-light !default;
+$guideline-spacing: $layout-spacing-base !default;
+$guideline-title-size: $typo-size-large !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.guideline {
+  background: $guideline-bg-colour;
+  border: 1px solid $guideline-border;
+  padding: $guideline-spacing;
+}
+
+.guideline__head {
+  display: flex;
+  align-items: center;
+}
+
+.guideline__button {
+  margin-left: auto;
+}
+
+.guideline__title {
+  margin: 0;
+  font-size: $guideline-title-size;
+}
+
+.guideline__body {
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
