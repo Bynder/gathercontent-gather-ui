@@ -50,5 +50,11 @@ describe('Field', () => {
 
   it('renders instructions', () => {
     expect(wrapper.contains('Instructions test text')).to.be.true;
+
+    wrapper.setProps({
+      instructions: '',
+    });
+
+    expect(wrapper.contains('Instructions test text')).to.be.false;
   });
 });
