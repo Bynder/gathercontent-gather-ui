@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$guideline-bg-colour: $neutral-base-lighter !default;
+$guideline-bg-colour: $neutral-lightest !default;
 $guideline-border: 1px solid $neutral-light !default;
 $guideline-spacing: $layout-spacing-base !default;
 $guideline-title-size: $typo-size-large !default;
@@ -11,8 +11,9 @@ $guideline-title-size: $typo-size-large !default;
    ========================================================================== */
 .guideline {
   background: $guideline-bg-colour;
-  border: 1px solid $guideline-border;
+  border: $guideline-border;
   padding: $guideline-spacing;
+  border-radius: 4px;
 }
 
 .guideline__head {
