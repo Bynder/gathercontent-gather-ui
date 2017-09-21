@@ -3,7 +3,7 @@ import { storiesOf, action } from '@storybook/react';
 import { FileCard, Icon } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-const trashButton = <button onClick={action('test')}><Icon name="trash" /></button>;
+const trashButton = <a><Icon name="trash" /></a>;
 const commentButton = <button onClick={action('test')}><Icon name="comment" /></button>;
 const fullScreenButton = <button onClick={action('test')}><Icon name="fullScreen" /></button>;
 const downloadButton = <button onClick={action('test')}>{<Icon name="download" />}</button>;

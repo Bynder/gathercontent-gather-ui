@@ -3,7 +3,7 @@
    ========================================================================== */
 $file-card-width: 160px !default;
 $file-card-height: $file-card-width !default;
-$file-card-action-button-size: 32px !default;
+$file-card-action-button-size: 30px !default;
 $file-card-margin: $layout-spacing-base !default;
 $file-card-border-radius: 3px !default;
 
@@ -13,13 +13,13 @@ $file-card-no-preview-font-size: $typo-size-lead * 2 !default;
 $file-card-no-preview-background: $neutral-light;
 
 $file-card-label-bg: rgba(black, .2) !default;
-$file-card-highlight-color: $primary-yellow;
-$file-card-highlight-color-hover: darken($file-card-highlight-color, 5%);
-$file-card-action-background: rgba(20, 20, 20, .6);
-$file-card-action-background-hover: rgba(10, 10, 10, .9);
+$file-card-highlight-color: $primary-yellow !default;
+$file-card-highlight-color-hover: darken($file-card-highlight-color, 5%) !default;
+$file-card-action-background: rgba(20, 20, 20, .6) !default;
+$file-card-action-background-hover: rgba(10, 10, 10, .9) !default;
 
-$file-card-border-style: 2px solid;
-$file-card-border-radius: 3px;
+$file-card-border-style: 2px solid !default;
+$file-card-border-radius: 3px !default;
 
 /* ==========================================================================
    Styles
@@ -119,6 +119,7 @@ $file-card-border-radius: 3px;
 .file-card__action {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: none;
   margin-right: $file-card-actions-padding;
   width: $file-card-action-button-size;
