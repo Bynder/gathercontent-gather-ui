@@ -26,3 +26,4 @@ import List from './components/List';
 import TooltipWrapper from './components/TooltipWrapper';
 import PageInformation from './components/PageInformation';
 import EditableTextWrapper from './components/EditableTextWrapper';
+import Guideline from './components/Guideline';

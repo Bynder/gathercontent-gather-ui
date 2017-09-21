@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/lib/Col';
 import { Modal, Button, ConfirmationModal, withModalTrigger } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
+const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
+
 storiesOf('Components', module)
   .add('Modals', () => (
     <div>
@@ -143,5 +145,3 @@ storiesOf('Components', module)
       </StoryItem>
     </div>
   ));
-
-const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
