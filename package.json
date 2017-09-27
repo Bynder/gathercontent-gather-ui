@@ -30,8 +30,8 @@
     "test": "mocha tests/**/** --compilers js:babel-register || exit 0",
     "test:watch": "mocha tests --watch --compilers js:babel-register --recursive",
     "tdd": "yarn run test:watch",
-    "lint": "eslint -c .eslintrc.json lib/* || exit 0",
-    "lint:fix": "eslint -c .eslintrc.json --fix lib/*"
+    "lint": "eslint -c .eslintrc.json lib/* tests/* || exit 0",
+    "lint:fix": "eslint -c .eslintrc.json --fix lib/* tests/*"
   },
   "keywords": [
     "React",

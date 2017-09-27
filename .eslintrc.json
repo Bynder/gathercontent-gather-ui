@@ -21,5 +21,8 @@
         "trailingComma": "es6"
       }
     ]
+  },
+  "env": {
+    "mocha": true
   }
 }
