@@ -11,12 +11,10 @@ describe('EditableTextWrapper', () => {
     sandbox = sinon.sandbox.create();
     onChangeSpy = sinon.spy();
     wrapper = shallow(
-      <EditableTextWrapper
-        value="Hello"
-        onChange={onChangeSpy}
-      >
+      <EditableTextWrapper value="Hello" onChange={onChangeSpy}>
         Hello
-      </EditableTextWrapper>);
+      </EditableTextWrapper>
+    );
   });
 
   afterEach(() => {
@@ -42,13 +40,17 @@ describe('EditableTextWrapper', () => {
 
     expect(wrapper.find('.editable-text__button')).to.have.length(0);
     expect(wrapper.find('.editable-text__wrapper--editing')).to.have.length(1);
-    expect(wrapper.find('.editable-text__input').prop('autoFocus')).to.be.true;
+    expect(
+      wrapper.find('.editable-text__input').prop('autoFocus')
+    ).to.be.true();
   });
 
   it('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
-    wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
+    wrapper
+      .find('.editable-text__input')
+      .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 13 });
 
     expect(onChangeSpy).to.have.been.calledWith('hey');
@@ -58,20 +60,24 @@ describe('EditableTextWrapper', () => {
   it('returns the input to the non editing state when the esc key is pressed', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
-    wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
+    wrapper
+      .find('.editable-text__input')
+      .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 27 });
 
-    expect(onChangeSpy).not.to.have.been.called;
+    expect(onChangeSpy).not.to.have.been.called();
     expect(wrapper.find('.editable-text__button')).to.have.length(1);
   });
 
   it('returns the input when the text input looses focus', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
-    wrapper.find('.editable-text__input').simulate('change', { target: { value: 'hey' } });
+    wrapper
+      .find('.editable-text__input')
+      .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('blur');
 
-    expect(onChangeSpy).not.to.have.been.called;
+    expect(onChangeSpy).not.to.have.been.called();
     expect(wrapper.find('.editable-text__button')).to.have.length(1);
   });
 

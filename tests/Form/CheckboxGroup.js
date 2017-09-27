@@ -4,25 +4,31 @@ import Checkbox from '../../lib/Form/Checkbox';
 
 describe('CheckboxGroup', () => {
   let wrapper;
-  const choices = [{
-    name: 'foo',
-    id: '123',
-    label: 'Option 1',
-    checked: true,
-  }, {
-    name: 'foo',
-    id: '456',
-    label: 'Option 2',
-  }, {
-    name: 'foo',
-    id: '789',
-    label: 'Option 3',
-    checked: true,
-  }];
+  const choices = [
+    {
+      name: 'foo',
+      id: '123',
+      label: 'Option 1',
+      checked: true
+    },
+    {
+      name: 'foo',
+      id: '456',
+      label: 'Option 2'
+    },
+    {
+      name: 'foo',
+      id: '789',
+      label: 'Option 3',
+      checked: true
+    }
+  ];
   const onChangeSpy = sinon.spy();
 
   beforeEach(() => {
-    wrapper = shallow(<CheckboxGroup choices={choices} onChangeHandler={onChangeSpy} />);
+    wrapper = shallow(
+      <CheckboxGroup choices={choices} onChangeHandler={onChangeSpy} />
+    );
   });
 
   it('can render an array of choices as checkboxes', () => {
@@ -33,7 +39,11 @@ describe('CheckboxGroup', () => {
     const secondOption = wrapper.find(Checkbox).at(1);
     secondOption.prop('onChangeHandler')({ target: { id: '456' } });
 
-    expect(onChangeSpy).to.have.been.calledWith([choices[0], choices[2], choices[1]]);
+    expect(onChangeSpy).to.have.been.calledWith([
+      choices[0],
+      choices[2],
+      choices[1]
+    ]);
   });
 
   it('returns all the current selected choices to the onChangeHander when a choice is deselected', () => {

@@ -8,7 +8,7 @@ describe('PlanBox/Button', () => {
     href: '/some/href',
     buttonText: 'Switch',
     exceedsUsageMessage: 'This exceeds your plan',
-    tooltipText: "This exceeds your plan",
+    tooltipText: 'This exceeds your plan'
   };
   let shallowWrapper;
 
@@ -27,23 +27,25 @@ describe('PlanBox/Button', () => {
   it('renders a none interactive element if the buttonText is "Current Plan"', () => {
     shallowWrapper.setProps({
       disabled: true,
-      buttonText: 'Current Plan',
+      buttonText: 'Current Plan'
     });
     expect(shallowWrapper.find('.plan-box__button').type()).to.equal('span');
   });
 
   it('renders a span with a exceeds usage tooltip message', () => {
     shallowWrapper.setProps({
-      disabled: true,
+      disabled: true
     });
     expect(shallowWrapper.find(ButtonWithTooltip)).to.have.length(1);
-    expect(shallowWrapper.find(ButtonWithTooltip).prop('tooltipText')).to.equal('This exceeds your plan');
+    expect(shallowWrapper.find(ButtonWithTooltip).prop('tooltipText')).to.equal(
+      'This exceeds your plan'
+    );
   });
 
   it('renders a button with a function that is called when clicked', () => {
     const spy = sinon.spy();
     shallowWrapper.setProps({
-      clickHandler: spy,
+      clickHandler: spy
     });
     shallowWrapper.find('button').simulate('click');
     expect(spy.calledOnce).to.equal(true);

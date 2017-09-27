@@ -4,17 +4,10 @@ import ListHead from '../../lib/List/ListHead';
 describe('List Head', () => {
   let wrapper;
 
-  const mockAction = (
-    <button>test button</button>
-  );
+  const mockAction = <button>test button</button>;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <ListHead
-        title="Project name"
-        action={mockAction}
-      />,
-    );
+    wrapper = shallow(<ListHead title="Project name" action={mockAction} />);
   });
 
   afterEach(() => {});

@@ -12,7 +12,7 @@ describe('Modal Body', () => {
     wrapper = shallow(
       <Trigger>
         <Modal.Container>test</Modal.Container>
-      </Trigger>,
+      </Trigger>
     );
   });
 

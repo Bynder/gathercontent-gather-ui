@@ -7,12 +7,9 @@ describe('Modal Container', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Modal.Container
-        testProp="test"
-        className="test-class"
-      >
+      <Modal.Container testProp="test" className="test-class">
         <p>Hello world</p>
-      </Modal.Container>,
+      </Modal.Container>
     );
   });
 

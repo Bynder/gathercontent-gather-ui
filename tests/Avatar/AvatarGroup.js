@@ -10,11 +10,36 @@ describe('AvatarGroup', () => {
     showMoreSpy = sinon.spy(AvatarGroup.prototype, 'showMore');
     wrapper = mount(
       <AvatarGroup maximum={3}>
-        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
-        <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-      </AvatarGroup>,
+        <Avatar
+          email="poppycox@gmail.com"
+          onlyInitials
+          isAssigned
+          fadedOut
+          initials="MR"
+          name="Mike Rotch"
+        />
+        <Avatar
+          email="hugh@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="HJ"
+          name="Hugh Jass"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="FD"
+          name="Fedra Droid"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="KM"
+          name="Kann Schemll"
+        />
+      </AvatarGroup>
     );
   });
 
@@ -25,8 +50,15 @@ describe('AvatarGroup', () => {
   it('renders a single Avatar', () => {
     const mountedWrapper = mount(
       <AvatarGroup maximum={3}>
-        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
-      </AvatarGroup>,
+        <Avatar
+          email="poppycox@gmail.com"
+          onlyInitials
+          isAssigned
+          fadedOut
+          initials="MR"
+          name="Mike Rotch"
+        />
+      </AvatarGroup>
     );
 
     expect(mountedWrapper.find(Avatar).length).to.equal(1);
@@ -43,11 +75,36 @@ describe('AvatarGroup', () => {
   it('renders a custom maximum specified size of individual Avatar components', () => {
     const customWrapper = mount(
       <AvatarGroup maximum={1}>
-        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
-        <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-      </AvatarGroup>,
+        <Avatar
+          email="poppycox@gmail.com"
+          onlyInitials
+          isAssigned
+          fadedOut
+          initials="MR"
+          name="Mike Rotch"
+        />
+        <Avatar
+          email="hugh@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="HJ"
+          name="Hugh Jass"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="FD"
+          name="Fedra Droid"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="KM"
+          name="Kann Schemll"
+        />
+      </AvatarGroup>
     );
 
     expect(customWrapper.find(Avatar).length).to.equal(1);
@@ -63,7 +120,7 @@ describe('AvatarGroup', () => {
     const showMore = wrapper.find('[data-component="show-more-avatar"]');
     showMore.simulate('click');
     expect(wrapper.state().showExtra).to.equal(true);
-    expect(showMoreSpy).to.have.been.called;
+    expect(showMoreSpy).to.have.been.called();
   });
 
   it('renders the initials for an Avatar when the prop is enabled', () => {
@@ -75,11 +132,36 @@ describe('AvatarGroup', () => {
   it('sets the correct zindex style for the first and last item', () => {
     const customWrapper = mount(
       <AvatarGroup maximum={4}>
-        <Avatar email="poppycox@gmail.com" onlyInitials isAssigned fadedOut initials="MR" name="Mike Rotch" />
-        <Avatar email="hugh@gmail.com" onlyInitials fadedOut initials="HJ" name="Hugh Jass" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="FD" name="Fedra Droid" />
-        <Avatar email="la@gmail.com" onlyInitials fadedOut initials="KM" name="Kann Schemll" />
-      </AvatarGroup>,
+        <Avatar
+          email="poppycox@gmail.com"
+          onlyInitials
+          isAssigned
+          fadedOut
+          initials="MR"
+          name="Mike Rotch"
+        />
+        <Avatar
+          email="hugh@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="HJ"
+          name="Hugh Jass"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="FD"
+          name="Fedra Droid"
+        />
+        <Avatar
+          email="la@gmail.com"
+          onlyInitials
+          fadedOut
+          initials="KM"
+          name="Kann Schemll"
+        />
+      </AvatarGroup>
     );
 
     const first = customWrapper.find('.avatar-group__item').first();

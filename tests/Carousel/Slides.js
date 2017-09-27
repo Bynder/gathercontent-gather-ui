@@ -1,4 +1,4 @@
-import {React, expect, shallow} from '../setup';
+import { React, expect, shallow } from '../setup';
 import CarouselSlides from '../../lib/Carousel/Slides';
 
 describe('Carousel/Slides', () => {
@@ -6,10 +6,7 @@ describe('Carousel/Slides', () => {
 
   beforeEach(() => {
     shallowWrapper = shallow(
-      <CarouselSlides
-        selected={0}
-        className="custom-class"
-      >
+      <CarouselSlides selected={0} className="custom-class">
         <div>slide 1</div>
         <div>slide 2</div>
       </CarouselSlides>

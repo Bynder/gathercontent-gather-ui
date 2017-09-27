@@ -16,21 +16,19 @@ describe('Comment', () => {
     createdBy: 2,
     author: {
       name: 'Bruce',
-      avatar: 'url/to/image',
+      avatar: 'url/to/image'
     },
     user: { id: 2 },
     conversationId: '123',
     actions: {
       editComment: editCommentSpy,
-      removeComment: removeCommentSpy,
+      removeComment: removeCommentSpy
     },
-    focusFallback: document.createElement('input'),
+    focusFallback: document.createElement('input')
   };
 
   beforeEach(() => {
-    wrapper = shallow(
-      <Comment {...props} />,
-    );
+    wrapper = shallow(<Comment {...props} />);
   });
 
   it('renders a person component', () => {
@@ -43,7 +41,9 @@ describe('Comment', () => {
   });
 
   it('renders the comment created at text', () => {
-    expect(wrapper.find('.conversation__date-text').text()).to.equal(props.createdAt)
+    expect(wrapper.find('.conversation__date-text').text()).to.equal(
+      props.createdAt
+    );
   });
 
   it('does not render the edit controls', () => {
@@ -54,16 +54,30 @@ describe('Comment', () => {
   it('renders the edit comment controls (when a user can edit)', () => {
     const actions = wrapper.find('.conversation__actions');
     expect(actions.find(Button)).to.have.length(2);
-    expect(actions.find(Button).first().prop('clickHandler')).to.deep.equal(wrapper.instance().showEditForm);
-    expect(actions.find(Button).last().prop('clickHandler')).to.deep.equal(wrapper.instance().removeComment);
+    expect(
+      actions
+        .find(Button)
+        .first()
+        .prop('clickHandler')
+    ).to.deep.equal(wrapper.instance().showEditForm);
+    expect(
+      actions
+        .find(Button)
+        .last()
+        .prop('clickHandler')
+    ).to.deep.equal(wrapper.instance().removeComment);
   });
 
   it('renders the edit comment form (with correct props)', () => {
     wrapper.instance().showEditForm();
     const commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
-    expect(commentForm.prop('onSubmit')).to.deep.equal(wrapper.instance().editComment);
-    expect(commentForm.prop('onCancel')).to.deep.equal(wrapper.instance().hideEditForm);
+    expect(commentForm.prop('onSubmit')).to.deep.equal(
+      wrapper.instance().editComment
+    );
+    expect(commentForm.prop('onCancel')).to.deep.equal(
+      wrapper.instance().hideEditForm
+    );
     expect(commentForm.prop('author')).to.equal(props.author);
     expect(commentForm.prop('value')).to.equal(props.body);
     expect(commentForm.prop('focusOnMount')).to.equal(true);
@@ -73,7 +87,7 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     const editComment = wrapper.instance().editComment;
     editComment('test');
-    expect(editCommentSpy).to.be.called.once;
+    expect(editCommentSpy).to.be.called.once();
     expect(editCommentSpy.getCall(0).args[0]).to.equal(props.id);
     expect(editCommentSpy.getCall(0).args[1]).to.equal('test');
     expect(wrapper.state('showEditForm')).to.equal(false);
@@ -83,7 +97,7 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     const removeComment = wrapper.instance().removeComment;
     removeComment();
-    expect(removeCommentSpy).to.be.called.once;
+    expect(removeCommentSpy).to.be.called.once();
     expect(removeCommentSpy.getCall(0).args[0]).to.equal(props.id);
     expect(removeCommentSpy.getCall(0).args[1]).to.equal(props.conversationId);
     expect(wrapper.state('showEditForm')).to.equal(false);

@@ -5,7 +5,7 @@ describe('PlanBox/Pricing', () => {
   const props = {
     price: 200,
     priceIn: '/mo',
-    priceType: 'priceMonthly',
+    priceType: 'priceMonthly'
   };
   let shallowWrapper;
 
@@ -22,7 +22,7 @@ describe('PlanBox/Pricing', () => {
   });
 
   it('includes the additional billing information', () => {
-    shallowWrapper.setProps({priceType: 'priceYearly'});
+    shallowWrapper.setProps({ priceType: 'priceYearly' });
     expect(shallowWrapper.text().includes('Billed annually')).to.equal(true);
   });
 });

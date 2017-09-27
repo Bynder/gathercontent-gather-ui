@@ -8,7 +8,7 @@ describe('Field aside', () => {
     wrapper = shallow(
       <FieldAside label="Test label">
         <Button clickHandler={() => {}}>Hello world</Button>
-      </FieldAside>,
+      </FieldAside>
     );
   });
 

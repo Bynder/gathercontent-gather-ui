@@ -5,9 +5,7 @@ import Button from '../../lib/Button';
 describe('List Item', () => {
   let wrapper;
 
-  const mockAction = (
-    <button>test button</button>
-  );
+  const mockAction = <button>test button</button>;
 
   beforeEach(() => {
     wrapper = shallow(
@@ -19,7 +17,7 @@ describe('List Item', () => {
         isCurrent
       >
         <ListItem title="title" />
-      </ListItem>,
+      </ListItem>
     );
   });
 
@@ -52,18 +50,29 @@ describe('List Item', () => {
   });
 
   it('renders the title', () => {
-    expect(wrapper.find('.list__item-title').contains('title text')).to.equal(true);
+    expect(wrapper.find('.list__item-title').contains('title text')).to.equal(
+      true
+    );
   });
 
   it('renders an indicator', () => {
-    expect(wrapper.find('.list__item-indicator').contains('indicator')).to.equal(true);
+    expect(
+      wrapper.find('.list__item-indicator').contains('indicator')
+    ).to.equal(true);
   });
 
   it('renders an label', () => {
-    expect(wrapper.find('.list__item-label').contains('label text')).to.equal(true);
+    expect(wrapper.find('.list__item-label').contains('label text')).to.equal(
+      true
+    );
   });
 
   it('renders an action', () => {
-    expect(wrapper.find('.list__action').first().contains('test button')).to.equal(true);
+    expect(
+      wrapper
+        .find('.list__action')
+        .first()
+        .contains('test button')
+    ).to.equal(true);
   });
 });

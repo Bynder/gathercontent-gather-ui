@@ -17,7 +17,7 @@ describe('RadioButtonOther', () => {
         label="Something else"
         onChangeHandler={onChangeHandler}
         onTextChangeHandler={() => {}}
-      />,
+      />
     );
   });
 
@@ -65,10 +65,12 @@ describe('RadioButtonOther', () => {
         value="the initial value"
         onChangeHandler={() => {}}
         onTextChangeHandler={() => {}}
-      />,
+      />
     );
 
-    expect(Other.find('input[type="text"]').props().value).to.equal('the initial value');
+    expect(Other.find('input[type="text"]').props().value).to.equal(
+      'the initial value'
+    );
   });
 
   it('returns the id to the onChangeHandler when it is checked', () => {
@@ -83,7 +85,7 @@ describe('RadioButtonOther', () => {
         value="the initial value"
         onChangeHandler={onChangeSpy}
         onTextChangeHandler={() => {}}
-      />,
+      />
     );
 
     Other.find(RadioButtonInput).prop('onChangeHandler')(e);
@@ -102,11 +104,15 @@ describe('RadioButtonOther', () => {
         checked
         onTextChangeHandler={onTextChangeSpy}
         onChangeHandler={() => {}}
-      />,
+      />
     );
 
-    Other.find('input[type="text"]').simulate('change', { target: { value: 'new input' } });
-    expect(onTextChangeSpy).to.have.been.calledWith({ target: { value: 'new input' } });
+    Other.find('input[type="text"]').simulate('change', {
+      target: { value: 'new input' }
+    });
+    expect(onTextChangeSpy).to.have.been.calledWith({
+      target: { value: 'new input' }
+    });
   });
 
   it('focuses the input element', () => {
@@ -118,11 +124,15 @@ describe('RadioButtonOther', () => {
         value="the initial value"
         onTextChangeHandler={() => {}}
         onChangeHandler={() => {}}
-      />,
+      />
     );
 
-    expect(mountedWrapper.instance().input).to.not.equal(document.activeElement);
+    expect(mountedWrapper.instance().input).to.not.equal(
+      document.activeElement
+    );
     mountedWrapper.setProps({ checked: true });
-    expect(mountedWrapper.instance().input).to.deep.equal(document.activeElement);
+    expect(mountedWrapper.instance().input).to.deep.equal(
+      document.activeElement
+    );
   });
 });

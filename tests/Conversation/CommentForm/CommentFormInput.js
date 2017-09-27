@@ -1,10 +1,11 @@
 import { React, expect, sinon, mount, jsDomGlobal } from '../../setup';
 import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
+
 jsDomGlobal();
 
 describe('Comment Form Input', () => {
   let wrapper;
-  let sandbox = sinon.sandbox.create();
+  const sandbox = sinon.sandbox.create();
   let handleOnChangeSpy;
 
   const props = {};
@@ -12,10 +13,7 @@ describe('Comment Form Input', () => {
   beforeEach(() => {
     handleOnChangeSpy = sandbox.spy();
     wrapper = mount(
-      <CommentFormInput
-        {...props}
-        handleOnChange={handleOnChangeSpy}
-      />,
+      <CommentFormInput {...props} handleOnChange={handleOnChangeSpy} />
     );
   });
 
@@ -28,12 +26,14 @@ describe('Comment Form Input', () => {
     const textarea = wrapper.find('textarea');
     expect(textarea).to.have.length(1);
     expect(textarea.prop('value')).to.equal(wrapper.prop('value'));
-    expect(textarea.prop('onChange')).to.deep.equal(wrapper.prop('handleOnChange'));
+    expect(textarea.prop('onChange')).to.deep.equal(
+      wrapper.prop('handleOnChange')
+    );
   });
 
   it('calls props.handleOnChange when changed', () => {
     wrapper.find('textarea').simulate('change', { target: 'test' });
-    expect(handleOnChangeSpy).to.be.called.once;
+    expect(handleOnChangeSpy).to.be.called.once();
     expect(handleOnChangeSpy.getCall(0).args[0].target).to.deep.equal('test');
   });
 });

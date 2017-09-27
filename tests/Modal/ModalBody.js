@@ -9,7 +9,7 @@ describe('Modal Body', () => {
     wrapper = shallow(
       <Modal.Body testProp="test">
         <p>Hello world</p>
-      </Modal.Body>,
+      </Modal.Body>
     );
   });
 

@@ -2,18 +2,16 @@ import { Tooltip, OverlayTrigger } from 'react-bootstrap/lib';
 import { React, expect, sinon, jsDomGlobal, mount } from '../setup';
 import { Button, ButtonWithTooltip } from '../../lib';
 
-jsDomGlobal();
-
 describe('ButtonWithTooltip', () => {
-  let sandbox, wrapper;
+  let sandbox;
+  let wrapper;
+
+  jsDomGlobal();
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
     wrapper = mount(
-      <ButtonWithTooltip
-        clickHandler={() => {}}
-        tooltipText="tooltip text"
-      >
+      <ButtonWithTooltip clickHandler={() => {}} tooltipText="tooltip text">
         Botão
       </ButtonWithTooltip>
     );
@@ -46,13 +44,15 @@ describe('ButtonWithTooltip', () => {
     wrapper.setProps({
       tooltipPosition: 'top',
       tooltipSize: 'large',
-      tooltipText: 'tooltip text',
+      tooltipText: 'tooltip text'
     });
     const tooltip = mount(wrapper.find(OverlayTrigger).prop('overlay'));
 
     expect(wrapper.find(OverlayTrigger).prop('placement')).to.equal('top');
     expect(tooltip.find('.tooltip--large')).to.have.length(1);
-    expect(tooltip.find('.tooltip--large').prop('children')).to.equal('tooltip text');
+    expect(tooltip.find('.tooltip--large').prop('children')).to.equal(
+      'tooltip text'
+    );
   });
 
   it('should render tooltip helper HTML element', () => {

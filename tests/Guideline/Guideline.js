@@ -8,7 +8,7 @@ describe('Guideline', () => {
     wrapper = shallow(
       <Guideline title="Guideline title">
         <p>Guideline content</p>
-      </Guideline>,
+      </Guideline>
     );
   });
 
