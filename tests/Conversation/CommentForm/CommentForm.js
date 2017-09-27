@@ -47,12 +47,12 @@ describe('Comment Form', () => {
 
   it('calls props.onSubmit when submitted', () => {
     wrapper.find('form').simulate('submit');
-    expect(onSubmitSpy).to.be.called.once();
+    expect(onSubmitSpy).to.be.calledOnce();
   });
 
   it('calls props.onCancel', () => {
     wrapper.instance().cancelComment();
-    expect(onCancelSpy).to.be.called.once();
+    expect(onCancelSpy).to.be.calledOnce();
   });
 
   it('renders an avatar (with the correct props)', () => {

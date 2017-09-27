@@ -33,7 +33,7 @@ describe('Comment Form Input', () => {
 
   it('calls props.handleOnChange when changed', () => {
     wrapper.find('textarea').simulate('change', { target: 'test' });
-    expect(handleOnChangeSpy).to.be.called.once();
+    expect(handleOnChangeSpy).to.be.calledOnce();
     expect(handleOnChangeSpy.getCall(0).args[0].target).to.deep.equal('test');
   });
 });

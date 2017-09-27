@@ -87,7 +87,7 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     const editComment = wrapper.instance().editComment;
     editComment('test');
-    expect(editCommentSpy).to.be.called.once();
+    expect(editCommentSpy).to.be.calledOnce();
     expect(editCommentSpy.getCall(0).args[0]).to.equal(props.id);
     expect(editCommentSpy.getCall(0).args[1]).to.equal('test');
     expect(wrapper.state('showEditForm')).to.equal(false);
@@ -97,7 +97,7 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     const removeComment = wrapper.instance().removeComment;
     removeComment();
-    expect(removeCommentSpy).to.be.called.once();
+    expect(removeCommentSpy).to.be.calledOnce();
     expect(removeCommentSpy.getCall(0).args[0]).to.equal(props.id);
     expect(removeCommentSpy.getCall(0).args[1]).to.equal(props.conversationId);
     expect(wrapper.state('showEditForm')).to.equal(false);

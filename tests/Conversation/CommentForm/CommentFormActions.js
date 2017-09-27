@@ -44,7 +44,7 @@ describe('Comment Form Actions', () => {
       .find(Button)
       .first()
       .simulate('click');
-    expect(onCancelSpy).to.be.called.once();
+    expect(onCancelSpy).to.be.calledOnce();
   });
 
   it('does not call props.onSubmit', () => {
