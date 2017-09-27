@@ -30,7 +30,8 @@
     "test": "mocha tests/**/** --compilers js:babel-register || exit 0",
     "test:watch": "mocha tests --watch --compilers js:babel-register --recursive",
     "tdd": "yarn run test:watch",
-    "lint": "eslint -c .eslintrc.json lib/* || exit 0"
+    "lint": "eslint -c .eslintrc.json lib/* || exit 0",
+    "lint:fix": "eslint -c .eslintrc.json --fix lib/*"
   },
   "keywords": [
     "React",
@@ -41,6 +42,7 @@
     "bootstrap": "3.3.6",
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
+    "eslint-config-prettier": "^2.6.0",
     "font-awesome": "^4.7.0",
     "normalize-scss": "^6.0.0",
     "object-assign": "^4.1.1",
@@ -71,6 +73,7 @@
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.9.0",
     "jsdom": "^9.9.1",
@@ -82,6 +85,8 @@
     "postcss-cli-simple": "^1.0.3",
     "postcss-load-config": "^1.1.0",
     "postcss-loader": "^1.2.2",
+    "prettier": "^1.7.0",
+    "prettier-eslint": "^8.1.1",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.4.2",
     "sass-loader": "^4.1.1",
