@@ -11,12 +11,7 @@ describe('Icon', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <Icon
-        className="custom-icon-class"
-        name="comment"
-      />,
-    );
+    wrapper = shallow(<Icon className="custom-icon-class" name="comment" />);
   });
 
   afterEach(() => {});

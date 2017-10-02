@@ -5,19 +5,14 @@ import ListHead from '../../lib/List/ListHead';
 describe('List', () => {
   let wrapper;
 
-  const mockAction = (
-    <button>test button</button>
-  );
+  const mockAction = <button>test button</button>;
 
   beforeEach(() => {
     wrapper = shallow(
-      <List
-        title="Project name"
-        action={mockAction}
-      >
+      <List title="Project name" action={mockAction}>
         <ListItem title="row title" />
         <ListItem title="row title" />
-      </List>,
+      </List>
     );
   });
 

@@ -1,6 +1,7 @@
 import { React, expect, jsDomGlobal, shallow, mount } from '../setup';
 import PlanBox from '../../lib/PlanBox';
 import PlanBoxButton from '../../lib/PlanBox/Button';
+
 jsDomGlobal();
 
 describe('PlanBox', () => {
@@ -11,7 +12,7 @@ describe('PlanBox', () => {
     buttonText: 'Switch',
     disabled: false,
     recommended: false,
-    tooltipText: 'tooltip text',
+    tooltipText: 'tooltip text'
   };
   let shallowWrapper;
 
@@ -25,7 +26,9 @@ describe('PlanBox', () => {
 
   it('renders the correct plan name and description', () => {
     expect(shallowWrapper.find('.plan-box__title').text()).to.equal(props.name);
-    expect(shallowWrapper.find('.plan-box__description').text()).to.equal(props.description);
+    expect(shallowWrapper.find('.plan-box__description').text()).to.equal(
+      props.description
+    );
   });
 
   it('renders children', () => {
@@ -37,7 +40,9 @@ describe('PlanBox', () => {
   });
 
   it('passes the correct props to the PlanBoxButton UI component', () => {
-    const mountedWrapper = mount(<PlanBox {...props}>Children content</PlanBox>);
+    const mountedWrapper = mount(
+      <PlanBox {...props}>Children content</PlanBox>
+    );
     const planBoxButtonComponent = mountedWrapper.find(PlanBoxButton);
     expect(planBoxButtonComponent.prop('recommended')).to.equal(false);
     expect(planBoxButtonComponent.prop('href')).to.equal('test/url/here');
@@ -46,12 +51,12 @@ describe('PlanBox', () => {
   });
 
   it('has a disabled state class', () => {
-    shallowWrapper.setProps({disabled: true});
+    shallowWrapper.setProps({ disabled: true });
     expect(shallowWrapper.hasClass('is-disabled')).to.equal(true);
   });
 
   it('has a recommended state class', () => {
-    shallowWrapper.setProps({recommended: true});
+    shallowWrapper.setProps({ recommended: true });
     expect(shallowWrapper.hasClass('plan-box--recommended')).to.equal(true);
   });
 });

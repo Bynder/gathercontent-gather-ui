@@ -14,7 +14,7 @@ describe('Tooltip Wrapper', () => {
         trigger={['click']}
       >
         <div className="test">Test child</div>
-      </TooltipWrapper>,
+      </TooltipWrapper>
     );
   });
 
@@ -25,7 +25,9 @@ describe('Tooltip Wrapper', () => {
   });
 
   it('sets a Tooltip component as the overlay', () => {
-    const overlayComponent = shallow(wrapper.find(OverlayTrigger).prop('overlay'))
+    const overlayComponent = shallow(
+      wrapper.find(OverlayTrigger).prop('overlay')
+    );
     expect(overlayComponent.hasClass('tooltip')).to.equal(true);
     expect(overlayComponent.prop('id')).to.equal('id-1');
     expect(overlayComponent.contains('test text')).to.equal(true);

@@ -1,11 +1,13 @@
+import { Alert } from 'react-bootstrap/lib';
 import { React, expect, sinon, jsDomGlobal, shallow } from './setup';
 import Notification from '../lib/Notification/';
-import { Alert } from 'react-bootstrap/lib';
 
 jsDomGlobal();
 
 describe('Notification', () => {
-  let wrapper, sandbox, clickHandlerSpy;
+  let wrapper;
+  let sandbox;
+  let clickHandlerSpy;
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
@@ -26,12 +28,14 @@ describe('Notification', () => {
   });
 
   it('renders the correct level class', () => {
-    expect(wrapper.find(Alert).hasClass('notification notification--warning')).to.equal(true);
+    expect(
+      wrapper.find(Alert).hasClass('notification notification--warning')
+    ).to.equal(true);
   });
 
   it('passes the clickHandler prop to the Alert component and adds class', () => {
     wrapper.setProps({
-      clickHandler: clickHandlerSpy,
+      clickHandler: clickHandlerSpy
     });
     expect(wrapper.find(Alert).prop('onClick')).to.equal(clickHandlerSpy);
     expect(wrapper.find(Alert).hasClass('has-click-handler')).to.equal(true);

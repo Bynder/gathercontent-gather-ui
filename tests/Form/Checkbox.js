@@ -6,11 +6,7 @@ import Checkbox from '../../lib/Form/Checkbox';
 describe('Checkbox', () => {
   it('has a label and an input', () => {
     const wrapper = shallow(
-      <Checkbox
-        id="123"
-        label="Click me"
-        name="input name"
-      />,
+      <Checkbox id="123" label="Click me" name="input name" />
     );
 
     expect(wrapper.find(Label)).to.have.length(1);

@@ -1,13 +1,12 @@
-import { React, expect, sinon, mount, jsDomGlobal } from '../../setup';
+import { React, expect, sinon, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
 import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
-import Button from '../../../lib/Button/index';
 
 describe('Comment Form', () => {
   let wrapper;
-  let sandbox = sinon.sandbox.create();
+  const sandbox = sinon.sandbox.create();
   let onSubmitSpy;
   let onCancelSpy;
 
@@ -15,7 +14,7 @@ describe('Comment Form', () => {
     conversationId: '123',
     author: {
       name: 'Bruce',
-      avatar: 'url/of/image',
+      avatar: 'url/of/image'
     }
   };
 
@@ -23,11 +22,7 @@ describe('Comment Form', () => {
     onSubmitSpy = sandbox.spy();
     onCancelSpy = sandbox.spy();
     wrapper = mount(
-      <CommentForm
-        {...props}
-        onSubmit={onSubmitSpy}
-        onCancel={onCancelSpy}
-      />,
+      <CommentForm {...props} onSubmit={onSubmitSpy} onCancel={onCancelSpy} />
     );
   });
 
@@ -41,23 +36,23 @@ describe('Comment Form', () => {
 
   it('adds a state class of has-value', () => {
     wrapper.setState({ inputValue: 'test' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.true;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.true();
 
     wrapper.setState({ inputValue: '' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.false;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.false();
 
     wrapper.setProps({ value: 'test' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.true;
+    expect(wrapper.find('form').hasClass('has-value')).to.be.true();
   });
 
   it('calls props.onSubmit when submitted', () => {
     wrapper.find('form').simulate('submit');
-    expect(onSubmitSpy).to.be.called.once;
+    expect(onSubmitSpy).to.be.calledOnce();
   });
 
   it('calls props.onCancel', () => {
     wrapper.instance().cancelComment();
-    expect(onCancelSpy).to.be.called.once;
+    expect(onCancelSpy).to.be.calledOnce();
   });
 
   it('renders an avatar (with the correct props)', () => {
@@ -70,7 +65,9 @@ describe('Comment Form', () => {
   it('renders CommentFormInput (with correct props)', () => {
     const input = wrapper.find(CommentFormInput);
     expect(input).to.have.length(1);
-    expect(input.prop('handleOnChange')).to.deep.equal(wrapper.instance().updateInputValue);
+    expect(input.prop('handleOnChange')).to.deep.equal(
+      wrapper.instance().updateInputValue
+    );
     expect(input.prop('focusOnMount')).to.equal(false);
     expect(input.prop('value')).to.equal('');
 
@@ -82,7 +79,9 @@ describe('Comment Form', () => {
     const actions = wrapper.find(CommentFormActions);
     expect(actions).to.have.length(1);
     expect(actions.prop('onSubmit')).to.deep.equal(wrapper.instance().onSubmit);
-    expect(actions.prop('onCancel')).to.deep.equal(wrapper.instance().cancelComment);
+    expect(actions.prop('onCancel')).to.deep.equal(
+      wrapper.instance().cancelComment
+    );
   });
 
   it('updates the input value', () => {

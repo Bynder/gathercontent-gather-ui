@@ -1,10 +1,11 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:jsx-a11y/recommended"],
   "globals": {
     "window": true,
     "document": true
   },
+  "plugins": ["prettier", "jsx-a11y"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-unused-prop-types": ["error", { "customValidators": [], "skipShapeProps": true }],
@@ -13,6 +14,15 @@
     "max-len": [0],
     "react/no-danger": [0],
     "react/no-unescaped-entities": [0],
-    "no-bitwise": ["error", { "allow": ["~"]}]
+    "no-bitwise": ["error", { "allow": ["~"]}],
+    "prettier/prettier": [
+      "error", {
+        "singleQuote": true,
+        "trailingComma": "es6"
+      }
+    ]
+  },
+  "env": {
+    "mocha": true
   }
 }

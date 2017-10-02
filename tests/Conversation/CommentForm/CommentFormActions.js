@@ -4,7 +4,7 @@ import Button from '../../../lib/Button/index';
 
 describe('Comment Form Actions', () => {
   let wrapper;
-  let sandbox = sinon.sandbox.create();
+  const sandbox = sinon.sandbox.create();
   let onSubmitSpy;
   let onCancelSpy;
 
@@ -18,7 +18,7 @@ describe('Comment Form Actions', () => {
         {...props}
         onSubmit={onSubmitSpy}
         onCancel={onCancelSpy}
-      />,
+      />
     );
   });
 
@@ -31,17 +31,28 @@ describe('Comment Form Actions', () => {
   });
 
   it('renders a button of type submit', () => {
-    const submitButton = wrapper.find('.comment-form__actions--submit').find(Button).last();
+    const submitButton = wrapper
+      .find('.comment-form__actions--submit')
+      .find(Button)
+      .last();
     expect(submitButton.prop('isSubmit')).to.equal(true);
   });
 
   it('calls props.onCancel and sets the inputValue to empty', () => {
-    wrapper.find('.comment-form__actions--submit').find(Button).first().simulate('click');
-    expect(onCancelSpy).to.be.called.once;
+    wrapper
+      .find('.comment-form__actions--submit')
+      .find(Button)
+      .first()
+      .simulate('click');
+    expect(onCancelSpy).to.be.calledOnce();
   });
 
   it('does not call props.onSubmit', () => {
-    wrapper.find('.comment-form__actions--submit').find(Button).last().simulate('click');
-    expect(onSubmitSpy).to.not.be.called;
+    wrapper
+      .find('.comment-form__actions--submit')
+      .find(Button)
+      .last()
+      .simulate('click');
+    expect(onSubmitSpy).to.not.be.called();
   });
 });

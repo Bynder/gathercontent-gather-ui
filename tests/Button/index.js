@@ -4,7 +4,10 @@ import { Button } from '../../lib';
 jsDomGlobal();
 
 describe('Button', () => {
-  let sandbox, wrapper, button, clickHandlerSpy;
+  let sandbox;
+  let wrapper;
+  let button;
+  let clickHandlerSpy;
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
@@ -31,18 +34,19 @@ describe('Button', () => {
 
   it('can be a submit button', () => {
     wrapper.setProps({
-      'isSubmit': true,
+      isSubmit: true
     });
 
     expect(button.prop('type')).to.equal('submit');
   });
 
-
   it('should render a button with multiple type classes', () => {
     wrapper.setProps({
-      'types': ['clear', 'collapsed'],
+      types: ['clear', 'collapsed']
     });
-    expect(button.prop('className')).contains('button button--clear button--collapsed');
+    expect(button.prop('className')).contains(
+      'button button--clear button--collapsed'
+    );
   });
 
   it('should render custom classes', () => {
@@ -60,7 +64,7 @@ describe('Button', () => {
 
   it('should set state.disabled to true when clicked if props.disableOnClick is true', () => {
     wrapper.setProps({
-      disableOnClick: true,
+      disableOnClick: true
     });
     wrapper.simulate('click');
     expect(wrapper.state('disabled')).to.equal(true);

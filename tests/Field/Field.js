@@ -15,7 +15,7 @@ describe('Field', () => {
         fieldId="123"
       >
         <Button clickHandler={() => {}}>Hello world</Button>
-      </Field>,
+      </Field>
     );
   });
 
@@ -32,7 +32,7 @@ describe('Field', () => {
   });
 
   it('renders a label', () => {
-    expect(wrapper.contains('Test label')).to.be.true;
+    expect(wrapper.contains('Test label')).to.be.true();
   });
 
   it('renders actions', () => {
@@ -49,12 +49,12 @@ describe('Field', () => {
   });
 
   it('renders instructions', () => {
-    expect(wrapper.contains('Instructions test text')).to.be.true;
+    expect(wrapper.contains('Instructions test text')).to.be.true();
 
     wrapper.setProps({
-      instructions: '',
+      instructions: ''
     });
 
-    expect(wrapper.contains('Instructions test text')).to.be.false;
+    expect(wrapper.contains('Instructions test text')).to.be.false();
   });
 });

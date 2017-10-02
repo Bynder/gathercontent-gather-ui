@@ -11,7 +11,7 @@ describe('Modal Header', () => {
     wrapper = shallow(
       <Modal.Header testProp="test">
         <p>Hello world</p>
-      </Modal.Header>,
+      </Modal.Header>
     );
   });
 

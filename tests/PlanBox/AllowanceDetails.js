@@ -1,18 +1,19 @@
 import { React, expect, jsDomGlobal, shallow, mount } from '../setup';
 import PlanBoxAllowanceDetails from '../../lib/PlanBox/AllowanceDetails';
+
 jsDomGlobal();
 
 describe('PlanBox/AllowanceDetails', () => {
   const props = {
-    iconElement: <img />,
+    iconElement: <img alt="alt text" />,
     plan: {
-      name: 'studio',
-    },
+      name: 'studio'
+    }
   };
   let shallowWrapper;
 
   beforeEach(() => {
-    shallowWrapper = shallow(<PlanBoxAllowanceDetails {...props}/>);
+    shallowWrapper = shallow(<PlanBoxAllowanceDetails {...props} />);
   });
 
   afterEach(() => {
@@ -29,7 +30,7 @@ describe('PlanBox/AllowanceDetails', () => {
   });
 
   it('does not render any icons', () => {
-    shallowWrapper.setProps({iconElement: null});
+    shallowWrapper.setProps({ iconElement: null });
     expect(shallowWrapper.find('img')).to.have.length(0);
   });
 });

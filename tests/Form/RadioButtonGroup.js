@@ -6,26 +6,31 @@ import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 
 describe('RadioButtonGroup', () => {
   let wrapper;
-  const choices = [{
-    name: 'foo',
-    label: 'First choice',
-    id: '123',
-  }, {
-    name: 'foo',
-    label: 'Second choice',
-    id: '456',
-  }];
+  const choices = [
+    {
+      name: 'foo',
+      label: 'First choice',
+      id: '123'
+    },
+    {
+      name: 'foo',
+      label: 'Second choice',
+      id: '456'
+    }
+  ];
   const otherChoice = {
     name: 'foo',
     label: 'Enter your option',
     id: '789',
-    other_option: true,
+    other_option: true
   };
   const choicesWithOtherChoice = choices.concat(otherChoice);
   const onChangeSpy = sinon.spy();
 
   beforeEach(() => {
-    wrapper = shallow(<RadioButtonGroup choices={choices} onChangeHandler={onChangeSpy} />);
+    wrapper = shallow(
+      <RadioButtonGroup choices={choices} onChangeHandler={onChangeSpy} />
+    );
   });
 
   it('can render a list of choices as a radio button group', () => {
@@ -33,7 +38,12 @@ describe('RadioButtonGroup', () => {
   });
 
   it('can have an other option', () => {
-    wrapper = shallow(<RadioButtonGroup choices={choicesWithOtherChoice} onChangeHandler={onChangeSpy} />);
+    wrapper = shallow(
+      <RadioButtonGroup
+        choices={choicesWithOtherChoice}
+        onChangeHandler={onChangeSpy}
+      />
+    );
 
     expect(wrapper.find(RadioButtonOther)).to.have.length(1);
   });
@@ -50,7 +60,12 @@ describe('RadioButtonGroup', () => {
   });
 
   it('returns the selected options when the other option value changes', () => {
-    wrapper = shallow(<RadioButtonGroup choices={choicesWithOtherChoice} onChangeHandler={onChangeSpy} />);
+    wrapper = shallow(
+      <RadioButtonGroup
+        choices={choicesWithOtherChoice}
+        onChangeHandler={onChangeSpy}
+      />
+    );
     const otherOption = wrapper.find(RadioButtonOther);
     otherOption.prop('onTextChangeHandler')({ target: { value: 'Hello' } });
 

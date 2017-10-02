@@ -4,7 +4,9 @@ import composeNavigation from '../../../lib/Carousel/composition/navigation';
 const MockComponent = () => <div />;
 
 describe('Carousel/composition/navigation', () => {
-  let shallowWrapper, mockComponent, WrapperComponent;
+  let shallowWrapper;
+  let mockComponent;
+  let WrapperComponent;
 
   beforeEach(() => {
     mockComponent = <MockComponent />;

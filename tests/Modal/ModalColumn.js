@@ -8,7 +8,7 @@ describe('Modal Column', () => {
     wrapper = shallow(
       <Modal.Column className="test">
         <p>Hello world</p>
-      </Modal.Column>,
+      </Modal.Column>
     );
   });
 

@@ -6,11 +6,7 @@ import RadioButton from '../../lib/Form/RadioButton';
 describe('RadioButton', () => {
   it('has a label and an input', () => {
     const wrapper = shallow(
-      <RadioButton
-        id="123"
-        label="Click me"
-        name="input name"
-      />,
+      <RadioButton id="123" label="Click me" name="input name" />
     );
 
     expect(wrapper.find(Label)).to.have.length(1);
