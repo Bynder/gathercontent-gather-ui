@@ -57,6 +57,18 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.find('.editable-text__button')).to.have.length(1);
   });
 
+  it('fires the onChangeHandler when when the text input looses focus', () => {
+    wrapper.find(Button).prop('clickHandler')(); // edit mode
+
+    wrapper
+      .find('.editable-text__input')
+      .simulate('change', { target: { value: 'yo' } });
+    wrapper.find('.editable-text__input').simulate('blur');
+
+    expect(onChangeSpy).to.have.been.calledWith('yo');
+    expect(wrapper.find('.editable-text__button')).to.have.length(1);
+  });
+
   it('returns the input to the non editing state when the esc key is pressed', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
@@ -64,18 +76,6 @@ describe('EditableTextWrapper', () => {
       .find('.editable-text__input')
       .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 27 });
-
-    expect(onChangeSpy).not.to.have.been.called();
-    expect(wrapper.find('.editable-text__button')).to.have.length(1);
-  });
-
-  it('returns the input when the text input looses focus', () => {
-    wrapper.find(Button).prop('clickHandler')(); // edit mode
-
-    wrapper
-      .find('.editable-text__input')
-      .simulate('change', { target: { value: 'hey' } });
-    wrapper.find('.editable-text__input').simulate('blur');
 
     expect(onChangeSpy).not.to.have.been.called();
     expect(wrapper.find('.editable-text__button')).to.have.length(1);
