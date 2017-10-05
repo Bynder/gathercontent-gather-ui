@@ -1,7 +1,7 @@
 import { React, expect, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
 
-describe.only('FileCard', () => {
+describe('FileCard', () => {
   let wrapper;
 
   const props = {
