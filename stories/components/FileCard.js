@@ -40,6 +40,16 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
+        title="File Card Without Children"
+        description="A file card can have no children passed to it."
+      >
+        <FileCard
+          filename="sheep_in_iceland.jpg"
+          label="No children"
+        />
+      </StoryItem>
+
+      <StoryItem
         title="File Card (without preview)"
         description="A file card without a preview image"
       >
