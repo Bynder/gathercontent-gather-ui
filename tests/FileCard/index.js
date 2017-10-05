@@ -1,7 +1,7 @@
 import { React, expect, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
 
-describe('FileCard', () => {
+describe.only('FileCard', () => {
   let wrapper;
 
   const props = {
@@ -25,8 +25,11 @@ describe('FileCard', () => {
 
   it('renders an element with the correct background-image', () => {
     expect(
-      wrapper.find('.file-card__thumbnail').props().style.backgroundImage
-    ).to.equal(`url(${props.previewSrc})`);
+      wrapper
+        .find('img')
+        .props()
+        .src.indexOf(props.previewSrc)
+    ).to.equal(0);
   });
 
   it('renders the correct filename and label for a thumbnail', () => {
