@@ -5,7 +5,9 @@ describe('AvatarGroup', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Avatar name="Angus Edwardson" isHighlighted isOffline />);
+    wrapper = shallow(
+      <Avatar initials="AE" name="Angus Edwardson" isHighlighted isOffline />
+    );
   });
 
   afterEach(() => {});

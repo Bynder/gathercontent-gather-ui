@@ -24,6 +24,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
+  outline: none;
   transition: transform 0.5s;
 
   &:hover {

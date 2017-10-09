@@ -11,14 +11,14 @@ storiesOf('Components', module).add('Avatar', () => (
       title="Avatar – base"
       description="A base avatar will fall back to initials if no url prop is passed."
     >
-      <Avatar name="Seymour Butts" />
+      <Avatar name="Angus Edwardson" initials="AE" />
     </StoryItem>
 
     <StoryItem
       title="Avatar – highlighted"
       description="An avatar can be highlighted."
     >
-      <Avatar isHighlighted name="Seymour Butts" />
+      <Avatar name="Angus Edwardson" initials="AE" isHighlighted />
     </StoryItem>
 
     <StoryItem
@@ -34,10 +34,11 @@ storiesOf('Components', module).add('Avatar', () => (
     >
       <Avatar
         url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
-        name="Seymour Butts"
+        name="Angus Edwardson"
+        initials="AE"
         isOffline
       />
-      <Avatar name="Seymour Butts" isOffline />
+      <Avatar name="Angus Edwardson" initials="AE" isOffline />
     </StoryItem>
 
     <StoryItem
@@ -45,7 +46,8 @@ storiesOf('Components', module).add('Avatar', () => (
       description="An avatar can show a popover on focus or hover."
     >
       <AvatarWithPopover
-        name="Seymour Butts"
+        name="Angus Edwardson"
+        initials="AE"
         email="example@gmail.com"
         pillboxText="Assigned"
       />
@@ -57,7 +59,6 @@ storiesOf('Components', module).add('Avatar', () => (
     >
       <Avatar
         url="https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg"
-        name="Seymour Butts"
         colour="red"
       />
     </StoryItem>
@@ -67,12 +68,20 @@ storiesOf('Components', module).add('Avatar', () => (
       description="An avatar group has a toggle to show extra users."
     >
       <AvatarGroup maximum={2}>
-        <Avatar name="Richard Swagshaw" colour="rgb(252, 92, 84)" />
-        <Avatar name="James Darracott" colour="rgb(61, 138, 235)" />
-        <Avatar name="James Deer" colour="rgb(95, 207, 128)" />
-        <Avatar name="Alice Deer" colour="rgb(249, 223, 110)" />
-        <Avatar name="Mat" colour="rgb(150, 93, 232)" />
-        <Avatar name="Pickle Rik" colour="rgb(147, 114, 79)" />
+        <Avatar
+          initials="RS"
+          name="Richard Swagshaw"
+          colour="rgb(252, 92, 84)"
+        />
+        <Avatar
+          initials="JD"
+          name="James Darracott"
+          colour="rgb(61, 138, 235)"
+        />
+        <Avatar initials="JD" name="James Deer" colour="rgb(95, 207, 128)" />
+        <Avatar initials="AD" name="Alice Deer" colour="rgb(249, 223, 110)" />
+        <Avatar initials="M" name="Mat" colour="rgb(150, 93, 232)" />
+        <Avatar initials="PR" name="Pickle Rik" colour="rgb(147, 114, 79)" />
       </AvatarGroup>
     </StoryItem>
   </div>
