@@ -48,6 +48,7 @@ $file-card-border-radius: 3px !default;
   overflow: hidden;
   background: $file-card-no-preview-background;
   width: 100%;
+  border-radius: $file-card-border-radius;
 }
 
 .file-card--highlighted {
