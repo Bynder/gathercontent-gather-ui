@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Avatar from '../../lib/Avatar/';
-import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
-import AvatarGroup from '../../lib/AvatarGroup';
+import { Avatar, AvatarGroup, AvatarWithPopover } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Avatar', () => (
