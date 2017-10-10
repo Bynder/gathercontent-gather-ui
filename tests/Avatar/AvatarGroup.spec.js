@@ -1,6 +1,5 @@
 import { React, expect, sinon, mount } from '../setup';
-import Avatar from '../../lib/Avatar';
-import AvatarGroup from '../../lib/AvatarGroup';
+import { Avatar, AvatarGroup } from '../../lib';
 
 describe('AvatarGroup', () => {
   let wrapper;
@@ -114,6 +113,7 @@ describe('AvatarGroup', () => {
     const showMore = wrapper.find('[data-component="show-more-avatar"]');
     expect(showMore).to.have.length(1);
     expect(showMore.text()).to.equal('+1');
+    expect(showMore.hasClass('avatar--with-toggle')).to.be.true();
   });
 
   it('renders the remaining avatars once clicked on "Show more"', () => {

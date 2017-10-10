@@ -6,11 +6,21 @@ describe('AvatarGroup', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Avatar initials="AE" name="Angus Edwardson" isHighlighted isOffline />
+      <Avatar
+        initials="AE"
+        name="Angus Edwardson"
+        className="avatar--has-toggle"
+        isHighlighted
+        isOffline
+      />
     );
   });
 
   afterEach(() => {});
+
+  it('renders the className prop', () => {
+    expect(wrapper.hasClass('avatar--has-toggle')).to.be.true();
+  });
 
   it('adds a highlighted BEM modifier', () => {
     expect(wrapper.hasClass('avatar--highlighted')).to.be.true();
