@@ -12,12 +12,9 @@ describe('Guideline', () => {
     );
   });
 
-  it('does not render its children', () => {
-    expect(wrapper.find('p')).to.have.length(0);
-  });
-
-  it('renders its children', () => {
+  it('adds an active class', () => {
     wrapper.setState({ showContent: true });
+    expect(wrapper.hasClass('is-active')).to.be.true();
   });
 
   it('sets the showContent state to true', () => {

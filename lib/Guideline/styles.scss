@@ -32,7 +32,18 @@ $guideline-title-size: $typo-size-large !default;
 }
 
 .guideline__body {
-  > *:last-child {
+  transition: max-height $animation-time-micro ease-out;
+  max-height: 0;
+  overflow: hidden;
+
+  > *:last-child,
+  > *:last-child > *:last-child {
     margin-bottom: 0;
+  }
+}
+
+.guideline.is-active {
+  .guideline__body {
+    max-height: 400px;
   }
 }
