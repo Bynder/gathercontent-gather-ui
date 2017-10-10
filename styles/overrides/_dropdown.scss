@@ -1,3 +1,7 @@
+.dropdown-menu {
+  box-shadow: 0 $layout-spacing-base/4 $layout-spacing-base/2 $neutral-light;
+}
+
 .dropdown-menu > li > a {
   color: $color-text-base;
   font-weight: $typo-weight-semi-bold;

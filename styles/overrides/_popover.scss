@@ -1,22 +1,5 @@
 .popover {
   font-family: $typo-stack-base;
+  box-shadow: 0 $layout-spacing-base/4 $layout-spacing-base/2 $neutral-light;
   @include font-smoothing;
-  box-shadow: none;
-  border: 2px solid rgba(0, 0, 0, 0.05);
-
-  &.right > .arrow {
-    border-right-color: rgba(0, 0, 0, 0.15) !important;
-  }
-
-  &.left > .arrow {
-    border-left-color: rgba(0, 0, 0, 0.15) !important;
-  }
-
-  &.top > .arrow {
-    border-top-color: rgba(0, 0, 0, 0.15) !important;
-  }
-
-  &.bottom > .arrow {
-    border-bottom-color: rgba(0, 0, 0, 0.15) !important;
-  }
 }

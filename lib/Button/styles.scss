@@ -5,8 +5,8 @@ $color-btn-primary--bg: rgb(74, 181, 69) !default;
 $color-btn-primary--text: white !default;
 $color-btn-primary--hover: rgb(73, 171, 0) !default;
 
-$color-btn-secondary--bg: rgb(70, 142, 229) !default;
-$color-btn-secondary--hover: rgb(61, 125, 204) !default;
+$color-btn-secondary--bg: $primary-blue !default;
+$color-btn-secondary--hover: darken($color-btn-secondary--bg, 6%) !default;
 
 $color-btn-warning--bg: #da4f49 !default;
 $color-btn-warning--hover: #bd362f !default;
