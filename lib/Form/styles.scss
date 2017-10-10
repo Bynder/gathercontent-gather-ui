@@ -12,7 +12,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form__choice-element-wrapper {
   margin: $form-checkbox-label-size/2;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .form-checkbox__label {
