@@ -141,3 +141,6 @@ $file-card-border-radius: 3px !default;
     background: $file-card-action-background-hover;
   }
 }
+.file-card__loader {
+  display: none;
+}
