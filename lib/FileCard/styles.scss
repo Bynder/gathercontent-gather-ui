@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$file-card-size: 33.333333333% !default;
+$file-card-size: 100% !default;
 $file-card-action-button-size: 30px !default;
 $file-card-margin: $layout-spacing-base / 2 !default;
 $file-card-border-radius: 3px !default;
@@ -43,11 +43,6 @@ $file-card-border-radius: 3px !default;
 }
 
 .file-card__wrapper {
-  margin: $file-card-margin;
-  position: relative;
-}
-
-.file-card__sub-wrapper {
   position: absolute;
   overflow: hidden;
   height: 100%;
