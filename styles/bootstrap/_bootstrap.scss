@@ -4,6 +4,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+// GatherContent UI Settings
+@import '../settings/layout';
+
 // Core variables and mixins
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "variable-overrides";
