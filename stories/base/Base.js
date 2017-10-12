@@ -7,22 +7,27 @@ const neutralColours = [
   {
     rgbValue: 'rgb(75, 87, 97)',
     hexValue: '#4B5761',
-    name: '$neutral-dark',
+    name: '$neutral-dark'
+  },
+  {
+    rgbValue: 'rgb(56, 64, 71)',
+    hexValue: '#384047',
+    name: '$neutral-darkest'
   },
   {
     rgbValue: 'rgb(132, 146, 166)',
     hexValue: '#8492A6',
-    name: '$neutral-base',
+    name: '$neutral-base'
   },
   {
     rgbValue: 'rgb(230, 234, 237)',
     hexValue: '#e6eaed',
-    name: '$neutral-light',
+    name: '$neutral-light'
   },
   {
     rgbValue: 'rgb(247, 249, 250)',
     hexValue: '#F7F9FA',
-    name: '$neutral-lightest',
+    name: '$neutral-lightest'
   },
 ];
 
