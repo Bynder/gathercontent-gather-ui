@@ -49,6 +49,20 @@ storiesOf('Components', module).add('FileCard', () => (
     </StoryItem>
 
     <StoryItem
+      title="File Card Without Children"
+      description="A file card can have no children passed to it."
+    >
+      <Row>
+        <Col xs={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            label="No children"
+          />
+        </Col>
+      </Row>
+    </StoryItem>
+
+    <StoryItem
       title="File Card (without preview)"
       description="A file card without a preview image"
     >
