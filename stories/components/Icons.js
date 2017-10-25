@@ -20,6 +20,7 @@ const allIcons = additionalProps => (
     <Icon name="trash" {...additionalProps} />
     <Icon name="fullScreen" {...additionalProps} />
     <Icon name="download" {...additionalProps} />
+    <Icon name="person" {...additionalProps} />
   </div>
 );
 
