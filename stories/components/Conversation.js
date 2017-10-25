@@ -43,14 +43,21 @@ storiesOf('Components', module)
   .add('Conversation', () => {
     return (
       <div>
+
         <StoryItem
           title="Conversation"
-          description="..."
+          description="A simple conversation"
         >
           <Conversation
             id="1234567"
-            comments={mockConversation.comments}
-            actions={mockActions}
+            comments={[mockConversation.comments[0]]}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
+            activateConversation={mockActions.activateConversation}
+            deactivateConversation={mockActions.deactivateConversation}
             user={mockUser}
             userCanComment
           />
@@ -58,13 +65,52 @@ storiesOf('Components', module)
 
         <StoryItem
           title="Conversation"
-          description="..."
+          description="Conversation with reply"
         >
           <Conversation
             id="1234567"
-            comments={[mockConversation.comments[0]]}
-            actions={mockActions}
+            comments={mockConversation.comments}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
+            activateConversation={mockActions.activateConversation}
+            deactivateConversation={mockActions.deactivateConversation}
             user={mockUser}
+            userCanComment
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Collapsed Conversation with reply"
+        >
+          <Conversation
+            id="1234567"
+            comments={mockConversation.comments}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
+            activateConversation={mockActions.activateConversation}
+            deactivateConversation={mockActions.deactivateConversation}
+            user={mockUser}
+            userCanComment
+            isActive={false}
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Starting a new conversation"
+        >
+          <Conversation
+            id="1234567"
+            user={mockUser}
+            addComment={mockActions.addComment}
+            isActive
             userCanComment
           />
         </StoryItem>

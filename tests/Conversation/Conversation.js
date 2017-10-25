@@ -3,7 +3,6 @@ import Conversation from '../../lib/Conversation';
 import CommentList from '../../lib/Conversation/CommentList';
 import CommentForm from '../../lib/Conversation/CommentForm';
 import Button from '../../lib/Button';
-import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 describe('Conversation', () => {
   let wrapper;
@@ -31,12 +30,10 @@ describe('Conversation', () => {
       <Conversation
         {...props}
         userCanComment
-        actions={{
-          deactivateConversation: deactivateConversationSpy,
-          activateConversation: activateConversationSpy,
-          resolveConversation: resolveConversationSpy,
-          addComment: addCommentSpy
-        }}
+        deactivateConversation={deactivateConversationSpy}
+        activateConversation={activateConversationSpy}
+        resolveConversation={resolveConversationSpy}
+        addComment={addCommentSpy}
       />
     );
   });
@@ -65,25 +62,13 @@ describe('Conversation', () => {
   });
 
   it('adds a state class of is-active', () => {
-    wrapper.setState({ isActive: true });
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
 
-    wrapper.setState({ isActive: false });
+    wrapper.setProps({ isActive: false });
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.false();
 
     wrapper.setProps({ isActive: true });
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
-  });
-
-  it('uses a BoundaryClickWatcher component (with the correct props)', () => {
-    const boundaryWatcher = wrapper.find(BoundaryClickWatcher);
-    expect(boundaryWatcher).to.have.length(1);
-    expect(boundaryWatcher.prop('outsideClickHandler')).to.equal(
-      wrapper.instance().deactivateConversation
-    );
-    expect(boundaryWatcher.prop('initialClickHandler')).to.equal(
-      wrapper.instance().activateConversation
-    );
   });
 
   it('renders a list of comments (with correct props)', () => {
@@ -91,12 +76,16 @@ describe('Conversation', () => {
     expect(commentList).to.have.length(1);
     expect(commentList.prop('conversationId')).to.equal(props.id);
     expect(commentList.prop('comments')).to.equal(props.comments);
-    expect(commentList.prop('actions')).to.deep.equal({
-      deactivateConversation: deactivateConversationSpy,
-      activateConversation: activateConversationSpy,
-      resolveConversation: resolveConversationSpy,
-      addComment: addCommentSpy
-    });
+    expect(commentList.prop('deactivateConversation')).to.equal(
+      deactivateConversationSpy
+    );
+    expect(commentList.prop('activateConversation')).to.equal(
+      activateConversationSpy
+    );
+    expect(commentList.prop('resolveConversation')).to.equal(
+      resolveConversationSpy
+    );
+    expect(commentList.prop('addComment')).to.equal(addCommentSpy);
     expect(commentList.prop('userCanComment')).to.equal(true);
     expect(commentList.prop('id')).to.not.equal(props.id);
     expect(commentList.prop('focusFallback')).to.deep.equal(
@@ -105,20 +94,22 @@ describe('Conversation', () => {
   });
 
   it('does not render the reply count text', () => {
-    wrapper.setState({ isActive: true });
     expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
   });
 
   it('does not render the reply count text (when there is only 1 comment)', () => {
+    wrapper.setProps({ isActive: false });
     wrapper.setProps({ comments: [props.comments[0]] });
     expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
   });
 
   it('does render the reply count text', () => {
+    wrapper.setProps({ isActive: false });
     expect(wrapper.find('.conversation__reply-count')).to.have.length(1);
   });
 
   it('pluralises the reply count text ', () => {
+    wrapper.setProps({ isActive: false });
     expect(
       wrapper
         .find(Button)
@@ -144,7 +135,6 @@ describe('Conversation', () => {
     expect(wrapper.find(CommentForm).prop('onSubmit')).to.equal(addComment);
     addComment('test');
     expect(addCommentSpy.getCall(0).args[0]).to.equal('test');
-    expect(addCommentSpy.getCall(0).args[1]).to.equal(props.id);
   });
 
   it('renders a comment form (with correct props)', () => {
@@ -159,5 +149,10 @@ describe('Conversation', () => {
   it('does not render a comment form', () => {
     wrapper.setProps({ userCanComment: false });
     expect(wrapper.find(CommentForm)).to.have.length(0);
+  });
+
+  it('does not render a resolveConversation button', () => {
+    wrapper.setProps({ comments: [] });
+    expect(wrapper.find('.conversation__resolve')).to.have.length(0);
   });
 });
