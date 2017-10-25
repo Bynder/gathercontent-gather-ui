@@ -28,48 +28,53 @@ const neutralColours = [
     rgbValue: 'rgb(247, 249, 250)',
     hexValue: '#F7F9FA',
     name: '$neutral-lightest'
-  },
+  }
 ];
 
 const primaryColours = [
   {
     rgbValue: 'rgb(61, 138, 235)',
     hexValue: '#3D8AEB',
-    name: '$primary-blue',
+    name: '$primary-blue'
   },
   {
     rgbValue: 'rgb(252, 92, 84)',
     hexValue: '#FC5C54',
-    name: '$primary-red',
+    name: '$primary-red'
   },
   {
     rgbValue: 'rgb(95, 207, 128)',
     hexValue: '#5FCF80',
-    name: '$primary-green',
+    name: '$primary-green'
   },
   {
     rgbValue: 'rgb(249, 223, 110)',
     hexValue: '#F9DF6E',
-    name: '$primary-yellow',
+    name: '$primary-yellow'
   },
   {
     rgbValue: 'rgb(150, 93, 232)',
     hexValue: '#965DE8',
-    name: '$primary-purple',
+    name: '$primary-purple'
   },
   {
     rgbValue: 'rgb(147, 114, 79)',
     hexValue: '#93724F',
-    name: '$primary-brown',
-  },
+    name: '$primary-brown'
+  }
 ];
 
 const tints = [
   {
     rgbValue: 'rgb(247, 250, 253)',
     hexValue: '#F7F9FA',
-    name: '$neutral-base-lighter',
+    name: '$neutral-base-lighter'
   },
+  {
+    rgbValue: 'rgb(38, 46, 51)',
+    hexValue: '#262E33',
+    name: '$primary-blue-darkest'
+  }
 ];
 
 const base = storiesOf('Base', module)
@@ -97,16 +102,22 @@ const base = storiesOf('Base', module)
       </StoryItem>
     </div>
   ))
-
   .add('Typography', () => (
     <div>
       <h1 className="heading-one">Heading level one</h1>
       <h2 className="heading-two">Heading level two</h2>
       <h3 className="heading-three">Heading level three</h3>
-      <p className="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p className="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
     </div>
   ))
-
   .add('Tables', () => (
     <div>
       <StoryItem title="A simple table">
@@ -142,7 +153,6 @@ const base = storiesOf('Base', module)
       </StoryItem>
     </div>
   ))
-
   .add('Forms', () => (
     <div>
       <StoryItem title="Form Inputs">
