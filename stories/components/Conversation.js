@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import Conversation from '../../lib/Conversation';
 import StoryItem from '../styleguide/StoryItem';
+import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 const mockComments = [{
   id: 11,
@@ -93,6 +94,31 @@ storiesOf('Components', module)
             showComments={false}
           />
         </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Collapsed Conversation with reply wrapped in BoundaryClickWatcher"
+        >
+          <BoundaryClickWatcher>
+            {(boundaryIsActive) => {
+              return (
+                <Conversation
+                  id="1234567"
+                  comments={mockConversation.comments}
+                  resolveConversation={mockActions.resolveConversation}
+                  unresolveConversation={mockActions.unresolveConversation}
+                  removeComment={mockActions.removeComment}
+                  addComment={mockActions.addComment}
+                  editComment={mockActions.editComment}
+                  user={mockUser}
+                  userCanComment
+                  showComments={boundaryIsActive}
+                />
+              )
+            }}
+          </BoundaryClickWatcher>
+        </StoryItem>
+
 
         <StoryItem
           title="Conversation"
