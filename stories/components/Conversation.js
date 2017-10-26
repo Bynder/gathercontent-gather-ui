@@ -90,7 +90,7 @@ storiesOf('Components', module)
             editComment={mockActions.editComment}
             user={mockUser}
             userCanComment
-            isActive={false}
+            showComments={false}
           />
         </StoryItem>
 
@@ -102,7 +102,7 @@ storiesOf('Components', module)
             id="1234567"
             user={mockUser}
             addComment={mockActions.addComment}
-            isActive
+            showComments
             userCanComment
           />
         </StoryItem>
