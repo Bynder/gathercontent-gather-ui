@@ -8,8 +8,6 @@ describe('Conversation', () => {
   let wrapper;
   const sandbox = sinon.sandbox.create();
   let resolveConversationSpy;
-  let activateConversationSpy;
-  let deactivateConversationSpy;
   let addCommentSpy;
 
   const props = {
@@ -23,15 +21,11 @@ describe('Conversation', () => {
 
   beforeEach(() => {
     resolveConversationSpy = sandbox.spy();
-    activateConversationSpy = sandbox.spy();
-    deactivateConversationSpy = sandbox.spy();
     addCommentSpy = sandbox.spy();
     wrapper = shallow(
       <Conversation
         {...props}
         userCanComment
-        deactivateConversation={deactivateConversationSpy}
-        activateConversation={activateConversationSpy}
         resolveConversation={resolveConversationSpy}
         addComment={addCommentSpy}
       />
@@ -76,12 +70,6 @@ describe('Conversation', () => {
     expect(commentList).to.have.length(1);
     expect(commentList.prop('conversationId')).to.equal(props.id);
     expect(commentList.prop('comments')).to.equal(props.comments);
-    expect(commentList.prop('deactivateConversation')).to.equal(
-      deactivateConversationSpy
-    );
-    expect(commentList.prop('activateConversation')).to.equal(
-      activateConversationSpy
-    );
     expect(commentList.prop('resolveConversation')).to.equal(
       resolveConversationSpy
     );
@@ -151,8 +139,9 @@ describe('Conversation', () => {
     expect(wrapper.find(CommentForm)).to.have.length(0);
   });
 
-  it('does not render a resolveConversation button', () => {
+  it('does not render a resolveConversation button or a CommentList', () => {
     wrapper.setProps({ comments: [] });
     expect(wrapper.find('.conversation__resolve')).to.have.length(0);
+    expect(wrapper.find(CommentList)).to.have.length(0);
   });
 });

@@ -29,8 +29,6 @@ const mockActions = {
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
-  activateConversation: action('activateConversation'),
-  deactivateConversation: action('deactivateConversation'),
 };
 
 const mockUser = {
@@ -56,8 +54,6 @@ storiesOf('Components', module)
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
-            activateConversation={mockActions.activateConversation}
-            deactivateConversation={mockActions.deactivateConversation}
             user={mockUser}
             userCanComment
           />
@@ -75,8 +71,6 @@ storiesOf('Components', module)
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
-            activateConversation={mockActions.activateConversation}
-            deactivateConversation={mockActions.deactivateConversation}
             user={mockUser}
             userCanComment
           />
@@ -94,8 +88,6 @@ storiesOf('Components', module)
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
-            activateConversation={mockActions.activateConversation}
-            deactivateConversation={mockActions.deactivateConversation}
             user={mockUser}
             userCanComment
             isActive={false}
