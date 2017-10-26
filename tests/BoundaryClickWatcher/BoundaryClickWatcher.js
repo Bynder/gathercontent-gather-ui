@@ -3,7 +3,7 @@ import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 let wrapper;
 
-describe.only('BoundaryClickWatcher', () => {
+describe('BoundaryClickWatcher', () => {
   jsDomGlobal();
 
   beforeEach(() => {
