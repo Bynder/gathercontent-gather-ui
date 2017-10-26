@@ -6,6 +6,7 @@ import tickSVG from '../../assets/icons/tick.svg';
 import trashSVG from '../../assets/icons/trash.svg';
 import downloadSVG from '../../assets/icons/download.svg';
 import fullScreenSVG from '../../assets/icons/fullscreen.svg';
+import personSVG from '../../assets/icons/person.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -53,6 +54,11 @@ describe('Icon', () => {
   it('should render the full screen icon', () => {
     wrapper.setProps({ name: 'fullScreen' });
     expect(wrapper.find('svg').props()).to.deep.equal(fullScreenSVG().props);
+  });
+
+  it('should render the person icon', () => {
+    wrapper.setProps({ name: 'person' });
+    expect(wrapper.find('svg').props()).to.deep.equal(personSVG().props);
   });
 
   it('adds a modifier class of icon--hide-text', () => {
