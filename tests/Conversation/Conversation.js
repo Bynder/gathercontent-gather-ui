@@ -58,10 +58,10 @@ describe('Conversation', () => {
   it('adds a state class of is-active', () => {
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
 
-    wrapper.setProps({ isActive: false });
+    wrapper.setProps({ showComments: false });
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.false();
 
-    wrapper.setProps({ isActive: true });
+    wrapper.setProps({ showComments: true });
     expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
   });
 
@@ -86,18 +86,18 @@ describe('Conversation', () => {
   });
 
   it('does not render the reply count text (when there is only 1 comment)', () => {
-    wrapper.setProps({ isActive: false });
+    wrapper.setProps({ showComments: false });
     wrapper.setProps({ comments: [props.comments[0]] });
     expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
   });
 
   it('does render the reply count text', () => {
-    wrapper.setProps({ isActive: false });
+    wrapper.setProps({ showComments: false });
     expect(wrapper.find('.conversation__reply-count')).to.have.length(1);
   });
 
   it('pluralises the reply count text ', () => {
-    wrapper.setProps({ isActive: false });
+    wrapper.setProps({ showComments: false });
     expect(
       wrapper
         .find(Button)
