@@ -1,19 +1,20 @@
-#Conversation
+# Conversation
 A collection of components used to render conversations
 
-##Usage
+## Usage
 
-####Required props
-`id`: the conversation ID
-`addComment`: the function you want to fire when the add comment button is clicked
-`user`: The user who is submitting the comment
+### Props
 
-####Optional props
-`comments`: An array of comments that are in the conversation
-`resolveConversation`: the function you want to fire when the resolve conversation button is clicked
-`onCancel`: if you want to pass in any added functionality when the cancel button is clicked on the conversation form. By default it will just clear the form.
-`userCanComment`: Set to false by default which will not allow the user to comment, if set to true it will let them comment.
-`showComments`: Set to true by default. If true it will show the conversation in an expanded format and display the form. If false it will show the conversation in the collapsed format.
+| Name                | Type          | Default  | Required | Description                                                                   |
+| ------------------- |-------------- | -------- | -------- |------------------------------------------------------------------------------ |
+| id                  | String/Number | N/A      | Yes      | The conversation ID.                                                          |
+| addComment          | Function      | N/A      | Yes      | Executes when the add comment button is clicked.                              |
+| user                | Object        | N/A      | Yes      | The user who is submitting the comment.                                       |
+| comments            | Array         | `[]`     | No       | An array of comments that are in the conversation.                            |
+| resolveConversation | Function      | `() {}`  | No       | Executes when the add resolve conversation button is clicked.                 |
+| onCancel            | Function      | `() {}`  | No       | Executes when the cancel button is clicked.                                   |
+| userCanComment      | Boolean       | `false`  | No       | Determines whether the user is allowed to comment and if to display the form. |
+| showComments        | Boolean       | `true`   | No       | Determines whether to show the conversation in the expanded format.           |
 
 ```
 <Conversation
