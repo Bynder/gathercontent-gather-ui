@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import Conversation from '../../lib/Conversation';
 import StoryItem from '../styleguide/StoryItem';
+import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 const mockComments = [{
   id: 11,
@@ -29,8 +30,6 @@ const mockActions = {
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
-  activateConversation: action('activateConversation'),
-  deactivateConversation: action('deactivateConversation'),
 };
 
 const mockUser = {
@@ -43,14 +42,19 @@ storiesOf('Components', module)
   .add('Conversation', () => {
     return (
       <div>
+
         <StoryItem
           title="Conversation"
-          description="..."
+          description="A simple conversation"
         >
           <Conversation
             id="1234567"
-            comments={mockConversation.comments}
-            actions={mockActions}
+            comments={[mockConversation.comments[0]]}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
             user={mockUser}
             userCanComment
           />
@@ -58,13 +62,73 @@ storiesOf('Components', module)
 
         <StoryItem
           title="Conversation"
-          description="..."
+          description="Conversation with reply"
         >
           <Conversation
             id="1234567"
-            comments={[mockConversation.comments[0]]}
-            actions={mockActions}
+            comments={mockConversation.comments}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
             user={mockUser}
+            userCanComment
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Collapsed Conversation with reply"
+        >
+          <Conversation
+            id="1234567"
+            comments={mockConversation.comments}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
+            user={mockUser}
+            userCanComment
+            showComments={false}
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Collapsed Conversation with reply wrapped in BoundaryClickWatcher"
+        >
+          <BoundaryClickWatcher>
+            {(boundaryIsActive) => {
+              return (
+                <Conversation
+                  id="1234567"
+                  comments={mockConversation.comments}
+                  resolveConversation={mockActions.resolveConversation}
+                  unresolveConversation={mockActions.unresolveConversation}
+                  removeComment={mockActions.removeComment}
+                  addComment={mockActions.addComment}
+                  editComment={mockActions.editComment}
+                  user={mockUser}
+                  userCanComment
+                  showComments={boundaryIsActive}
+                />
+              )
+            }}
+          </BoundaryClickWatcher>
+        </StoryItem>
+
+
+        <StoryItem
+          title="Conversation"
+          description="Starting a new conversation"
+        >
+          <Conversation
+            id="1234567"
+            user={mockUser}
+            addComment={mockActions.addComment}
+            showComments
             userCanComment
           />
         </StoryItem>

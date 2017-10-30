@@ -20,10 +20,8 @@ describe('Comment', () => {
     },
     user: { id: 2 },
     conversationId: '123',
-    actions: {
-      editComment: editCommentSpy,
-      removeComment: removeCommentSpy
-    },
+    editComment: editCommentSpy,
+    removeComment: removeCommentSpy,
     focusFallback: document.createElement('input')
   };
 
