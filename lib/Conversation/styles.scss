@@ -9,6 +9,7 @@ $conversation-active-shadow-size: 0px 0px 5px 0px !default;
 $conversation-border-radius: 5px !default;
 $conversation-padding: $layout-spacing-base !default;
 
+$conversation-margin: 10px 0 !default;
 
 $conversation-border-width: 1px !default;
 $conversation-border-color: $color-border-base !default;
@@ -25,7 +26,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
 .conversation {
   border-radius: $conversation-border-radius;
   border: $conversation-border-width solid transparent;
-
+  margin: $conversation-margin;
   &:hover {
     border-color: $conversation-border-color;
   }
@@ -63,7 +64,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
 }
 
 .conversation__reply-count {
-  padding: 0 0 $conversation-padding $conversation-padding+$avatar-size;
+  padding: 0 0 $conversation-padding $conversation-padding+$avatar-size+10;
   margin: -$conversation-padding 0 0;
   font-size: $conversation-meta-text-size;
 }

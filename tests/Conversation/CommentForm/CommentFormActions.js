@@ -27,7 +27,7 @@ describe('Comment Form Actions', () => {
   });
 
   it('renders form actions', () => {
-    expect(wrapper.find(Button)).to.have.length(3);
+    expect(wrapper.find(Button)).to.have.length(2);
   });
 
   it('renders a button of type submit', () => {

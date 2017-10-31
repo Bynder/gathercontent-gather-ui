@@ -27,7 +27,6 @@ $comment-form-input-background-color: #FDFDFD !default;
 }
 
 .comment-form__actions--submit {
-  display: none;
   margin: 0 0 0 $comment-form-padding;
 }
 
@@ -39,11 +38,4 @@ $comment-form-input-background-color: #FDFDFD !default;
     position: relative;
     top: 2px;
   }
-}
-
-/* ==========================================================================
-   State Styles
-   ========================================================================== */
-.has-value .comment-form__actions--submit {
-  display: inline-block;
 }

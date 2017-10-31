@@ -76,6 +76,7 @@ describe('Comment Form', () => {
   });
 
   it('renders CommentFormActions (with correct props)', () => {
+    wrapper.setProps({ value: 'test' });
     const actions = wrapper.find(CommentFormActions);
     expect(actions).to.have.length(1);
     expect(actions.prop('onSubmit')).to.deep.equal(wrapper.instance().onSubmit);
