@@ -18,6 +18,7 @@ A collection of components used to render conversations
 | userCanComment      | Boolean       | `false`  | No       | Determines whether the user is allowed to comment and if to display the form. |
 | showComments        | Boolean       | `true`   | No       | Determines whether to show the conversation in the expanded format.           |
 | focusOnMount        | Boolean       | `true`   | No       | Determines whether to have the form in focus when the component mounts.       |
+| hasError            | Boolean       | `false`  | No       | Determines whether to to show an error Notification.                          |
 
 ```
 <Conversation

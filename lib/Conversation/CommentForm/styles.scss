@@ -2,7 +2,6 @@
    Config
    ========================================================================== */
 $comment-form-padding: $layout-spacing-base/2;
-$comment-form-input-background-color: #FDFDFD !default;
 
 /* ==========================================================================
    Styles
@@ -12,7 +11,6 @@ $comment-form-input-background-color: #FDFDFD !default;
   border-radius: 5px;
   padding: $comment-form-padding;
   width: 100%;
-  background-color: $comment-form-input-background-color;
 }
 
 .comment-form__body {
@@ -30,6 +28,7 @@ $comment-form-input-background-color: #FDFDFD !default;
   margin: 0 0 0 $comment-form-padding;
 }
 
+
 .comment-form__button {
   padding-left: 0;
   padding-right: 0;
@@ -39,3 +38,25 @@ $comment-form-input-background-color: #FDFDFD !default;
     top: 2px;
   }
 }
+
+/* ==========================================================================
+   State Styles
+   ========================================================================== */
+   .new-conversation .is-submitted .button--secondary {
+     background-color: $neutral-base;
+     vertical-align: bottom;
+     padding-bottom: 0;
+   }
+   
+   .is-active .new-conversation .is-submitted {
+     .icon svg {
+       height:$layout-spacing-base;
+     }
+     .icon path {
+       fill: white;
+     }
+   }
+
+   .new-conversation .comment-form__input.is-submitted {
+      background-color: $neutral-light;
+   }

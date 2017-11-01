@@ -45,9 +45,16 @@ describe('Comment Form', () => {
     expect(wrapper.find('form').hasClass('has-value')).to.be.true();
   });
 
-  it('calls props.onSubmit when submitted', () => {
+  it('sets a focused state', () => {
+    expect(wrapper.state('focused')).to.equal(false);
+    wrapper.find('textarea').simulate('focus');
+    expect(wrapper.state('focused')).to.equal(true);
+  });
+
+  it('calls props.onSubmit, sets a submitted state', () => {
     wrapper.find('form').simulate('submit');
     expect(onSubmitSpy).to.be.calledOnce();
+    expect(wrapper.state('submitted')).to.equal(true);
   });
 
   it('calls props.onCancel', () => {
@@ -68,6 +75,8 @@ describe('Comment Form', () => {
     expect(input.prop('handleOnChange')).to.deep.equal(
       wrapper.instance().updateInputValue
     );
+    expect(input.prop('onFocus')).to.deep.equal(wrapper.instance().onFocus);
+    expect(input.prop('onBlur')).to.deep.equal(wrapper.instance().onBlur);
     expect(input.prop('focusOnMount')).to.equal(false);
     expect(input.prop('value')).to.equal('');
 

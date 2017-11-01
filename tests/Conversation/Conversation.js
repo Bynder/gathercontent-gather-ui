@@ -36,6 +36,11 @@ describe('Conversation', () => {
     sandbox.restore();
   });
 
+  it('renders an error notification', () => {
+    wrapper.setProps({ hasError: true });
+    expect(wrapper.find('Notification')).to.have.length(1);
+  });
+
   it('renders the resolve conversation Button', () => {
     const resolveButton = wrapper.find(Button).first();
     expect(resolveButton.prop('clickHandler')).to.deep.equal(
