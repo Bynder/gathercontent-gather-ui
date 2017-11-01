@@ -36,4 +36,11 @@ describe('Comment Form Input', () => {
     expect(handleOnChangeSpy).to.be.calledOnce();
     expect(handleOnChangeSpy.getCall(0).args[0].target).to.deep.equal('test');
   });
+
+  it('adds a state class of is-submitted', () => {
+    expect(wrapper.find('textarea').hasClass('is-submitted')).to.be.false();
+
+    wrapper.setProps({ submitted: true });
+    expect(wrapper.find('textarea').hasClass('is-submitted')).to.be.true();
+  });
 });

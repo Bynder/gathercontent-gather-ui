@@ -37,6 +37,7 @@ describe('Conversation', () => {
   });
 
   it('renders an error notification', () => {
+    expect(wrapper.find('Notification')).to.have.length(0);
     wrapper.setProps({ hasError: true });
     expect(wrapper.find('Notification')).to.have.length(1);
   });
@@ -131,12 +132,16 @@ describe('Conversation', () => {
   });
 
   it('renders a comment form (with correct props)', () => {
-    const commentForm = wrapper.find(CommentForm);
+    let commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
+    expect(commentForm.prop('existingConversation')).to.equal(true);
     expect(commentForm.prop('author')).to.equal(props.user);
     expect(commentForm.prop('onSubmit')).to.equal(
       wrapper.instance().addComment
     );
+    wrapper.setProps({ comments: [], resolveConversation: () => {} });
+    commentForm = wrapper.find(CommentForm);
+    expect(commentForm.prop('existingConversation')).to.equal(false);
   });
 
   it('does not render a comment form', () => {
