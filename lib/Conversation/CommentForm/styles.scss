@@ -42,21 +42,21 @@ $comment-form-padding: $layout-spacing-base/2;
 /* ==========================================================================
    State Styles
    ========================================================================== */
-   .is-submitting .button--secondary {
-     background: $color-btn-secondary--bg;
-     vertical-align: bottom;
-     padding-bottom: 0;
-   }
+ .is-submitting .button--secondary {
+   background: $color-btn-secondary--bg;
+   vertical-align: bottom;
+   padding-bottom: 0;
+ }
 
-   .is-active .is-submitting {
-     .icon svg {
-       height:$layout-spacing-base;
-     }
-     .icon path {
-       fill: white;
-     }
+ .is-active .is-submitting {
+   .icon svg {
+     height:$layout-spacing-base;
    }
+   .icon path {
+     fill: white;
+   }
+ }
 
-   .comment-form__input.is-submitting {
-      background-color: $neutral-light;
-   }
+ .comment-form__input.is-submitting {
+    background-color: $neutral-light;
+ }
