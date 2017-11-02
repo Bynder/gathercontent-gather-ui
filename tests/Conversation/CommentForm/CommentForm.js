@@ -54,7 +54,7 @@ describe('Comment Form', () => {
   it('calls props.onSubmit, sets a submitted state', () => {
     wrapper.find('form').simulate('submit');
     expect(onSubmitSpy).to.be.calledOnce();
-    expect(wrapper.state('submitted')).to.equal(true);
+    expect(wrapper.state('showLoader')).to.equal(true);
   });
 
   it('calls props.onCancel', () => {
@@ -82,10 +82,11 @@ describe('Comment Form', () => {
 
     wrapper.setProps({ value: 'test' });
     expect(input.prop('value')).to.equal('test');
-    expect(input.prop('submitted')).to.equal(false);
+    expect(input.prop('submitting')).to.equal(false);
     wrapper.find('form').simulate('submit');
+    wrapper.setProps({ isSubmitting: true });
     input = wrapper.find(CommentFormInput);
-    expect(input.prop('submitted')).to.equal(true);
+    expect(input.prop('submitting')).to.equal(true);
   });
 
   it('renders CommentFormActions on focus', () => {
@@ -102,10 +103,12 @@ describe('Comment Form', () => {
     expect(actions.prop('onCancel')).to.deep.equal(
       wrapper.instance().cancelComment
     );
-    expect(actions.prop('submitted')).to.equal(false);
+    expect(actions.prop('submitting')).to.equal(false);
+
     wrapper.find('form').simulate('submit');
+    wrapper.setProps({ isSubmitting: true });
     actions = wrapper.find(CommentFormActions);
-    expect(actions.prop('submitted')).to.equal(true);
+    expect(actions.prop('submitting')).to.equal(true);
   });
 
   it('updates the input value', () => {

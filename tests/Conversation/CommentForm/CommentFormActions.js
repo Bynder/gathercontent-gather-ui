@@ -66,15 +66,15 @@ describe('Comment Form Actions', () => {
   });
 
   it('adds a state class of is-submitted', () => {
-    expect(wrapper.find('div.comment-form__actions').hasClass('is-submitted')).to.be.false();
+    expect(wrapper.find('div.comment-form__actions').hasClass('is-submitting')).to.be.false();
 
-    wrapper.setProps({ submitted: true });
-    expect(wrapper.find('div.comment-form__actions').hasClass('is-submitted')).to.be.true();
+    wrapper.setProps({ submitting: true });
+    expect(wrapper.find('div.comment-form__actions').hasClass('is-submitting')).to.be.true();
   });
 
   it('adds a loading icon on submit of new conversation', () => {
     expect(wrapper.find('Icon')).to.have.length(0);
-    wrapper.setProps({ submitted: true, existingConversation: false });
+    wrapper.setProps({ submitting: true });
     expect(wrapper.find('Icon')).to.have.length(1);
   });
 });
