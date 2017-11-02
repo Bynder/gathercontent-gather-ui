@@ -25,9 +25,9 @@ $comment-form-padding: $layout-spacing-base/2;
 }
 
 .comment-form__actions--submit {
-  display: none;
   margin: 0 0 0 $comment-form-padding;
 }
+
 
 .comment-form__button {
   padding-left: 0;
@@ -42,6 +42,21 @@ $comment-form-padding: $layout-spacing-base/2;
 /* ==========================================================================
    State Styles
    ========================================================================== */
-.has-value .comment-form__actions--submit {
-  display: inline-block;
-}
+ .is-submitting .button--secondary {
+   background: $color-btn-secondary--bg;
+   vertical-align: bottom;
+   padding-bottom: 0;
+ }
+
+ .is-active .is-submitting {
+   .icon svg {
+     height:$layout-spacing-base;
+   }
+   .icon path {
+     fill: white;
+   }
+ }
+
+ .comment-form__input.is-submitting {
+    background-color: $neutral-light;
+ }

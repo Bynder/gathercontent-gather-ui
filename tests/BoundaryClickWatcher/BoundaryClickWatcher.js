@@ -1,5 +1,5 @@
 import { React, expect, shallow, jsDomGlobal, sinon } from '../setup';
-import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
+import { BoundaryClickWatcher } from '../../lib';
 
 let sandbox;
 

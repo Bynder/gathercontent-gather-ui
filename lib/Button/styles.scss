@@ -4,6 +4,9 @@
 $color-btn-primary--bg: rgb(74, 181, 69) !default;
 $color-btn-primary--text: white !default;
 $color-btn-primary--hover: rgb(73, 171, 0) !default;
+$color-btn-primary--disabled: $neutral-light !default;
+$color-btn-primary--disabled-text: $neutral-base !default;
+
 
 $color-btn-secondary--bg: $primary-blue !default;
 $color-btn-secondary--hover: darken($color-btn-secondary--bg, 6%) !default;
@@ -57,6 +60,11 @@ $color-btn-default-dark--hover: #5e5e5e !default;
   &:focus {
     color: $color-btn-primary--text;
   }
+
+  &:disabled {
+    background: $color-btn-primary--disabled;
+    color: $color-btn-primary--disabled-text;
+  }
 }
 
 .button--secondary {
@@ -70,6 +78,11 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 
   &:focus {
     color: $color-btn-primary--text;
+  }
+
+  &:disabled {
+    background: $color-btn-primary--disabled;
+    color: $color-btn-primary--disabled-text;
   }
 }
 
@@ -125,6 +138,11 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 
   &:focus {
     color: $color-btn-warning--text;
+  }
+
+  &:disabled {
+    color: $color-btn-primary--disabled-text;
+    background: $color-btn-primary--disabled;
   }
 }
 
