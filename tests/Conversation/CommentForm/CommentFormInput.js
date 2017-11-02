@@ -40,7 +40,7 @@ describe('Comment Form Input', () => {
   it('adds a state class of is-submitting', () => {
     expect(wrapper.find('textarea').hasClass('is-submitting')).to.be.false();
 
-    wrapper.setProps({ submitting: true });
+    wrapper.setProps({ isSubmitting: true });
     expect(wrapper.find('textarea').hasClass('is-submitting')).to.be.true();
   });
 });
