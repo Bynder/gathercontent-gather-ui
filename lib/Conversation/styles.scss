@@ -1,6 +1,10 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$conversation-active-background-color: #ffffff !default;
+$conversation-active-shadow-color: rgba(158, 158, 158, 0.17) !default;
+$conversation-active-shadow-size: 0px 0px 5px 0px !default;
+
 $conversation-border-radius: 5px !default;
 $conversation-padding: $layout-spacing-base !default;
 
@@ -11,7 +15,7 @@ $conversation-comment-body-padding: 0 0 0 ($person-avatar-size + $layout-spacing
 
 $conversation-meta-bullet-size: 4px !default;
 $conversation-meta-text-size: $typo-size-small !default;
-$conversation-meta-text-color: $color-brand-dark !default;
+$conversation-meta-text-color: $neutral-base !default;
 
 /* ==========================================================================
    Styles
@@ -19,7 +23,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
 .conversation {
   border-radius: $conversation-border-radius;
   border: $conversation-border-width solid transparent;
-
+  margin: $layout-spacing-base/2;
   &:hover {
     border-color: $conversation-border-color;
   }
@@ -57,7 +61,7 @@ $conversation-meta-text-color: $color-brand-dark !default;
 }
 
 .conversation__reply-count {
-  padding: 0 0 $conversation-padding $conversation-padding+$avatar-size;
+  padding: 0 0 $conversation-padding $layout-spacing-base*3;
   margin: -$conversation-padding 0 0;
   font-size: $conversation-meta-text-size;
 }
@@ -68,12 +72,11 @@ $conversation-meta-text-color: $color-brand-dark !default;
 }
 
 .conversation__text {
-  margin: 0 0 $conversation-padding/4;
+  margin: $conversation-padding/4 0 $conversation-padding/4 0;
 }
 
-.conversation__meta-wrapper {
-  display: flex;
-  align-items: center;
+.conversation__actions {
+  white-space: nowrap;
 }
 
 .conversation__meta {
@@ -113,6 +116,8 @@ $conversation-meta-text-color: $color-brand-dark !default;
    ========================================================================== */
 .is-active.conversation {
   border-color: $conversation-border-color;
+  background-color: $conversation-active-background-color;
+  box-shadow: $shadow-shallow;
 }
 
 .is-active .conversation__resolve {
@@ -121,11 +126,25 @@ $conversation-meta-text-color: $color-brand-dark !default;
 
 .is-active .conversation__comment {
   padding-bottom: $conversation-padding;
-  border-bottom: $conversation-border-width solid $conversation-border-color;
+  &:last-child {
+    border-bottom: $conversation-border-width solid $conversation-border-color;
+  }
 }
 
 .is-active .conversation__foot,
 .is-active .conversation__resolve,
 .is-active .conversation__comment {
   display: block;
+}
+
+.is-active .conversation__comment.has-reply {
+  position: relative;
+  &:before {
+    content: ' ';
+    border-left: $conversation-border-width solid $conversation-border-color;
+    position: absolute;
+    top: $conversation-padding+$avatar-size;
+    height: 100%;
+    left: ($avatar-size/2)+$conversation-padding - 1;
+  }
 }

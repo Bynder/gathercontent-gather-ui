@@ -12,6 +12,7 @@ describe('Comment Form', () => {
 
   const props = {
     conversationId: '123',
+    isSubmitting: false,
     author: {
       name: 'Bruce',
       avatar: 'url/of/image'
@@ -45,7 +46,13 @@ describe('Comment Form', () => {
     expect(wrapper.find('form').hasClass('has-value')).to.be.true();
   });
 
-  it('calls props.onSubmit when submitted', () => {
+  it('sets a focused state', () => {
+    expect(wrapper.state('focused')).to.equal(false);
+    wrapper.find('textarea').simulate('focus');
+    expect(wrapper.state('focused')).to.equal(true);
+  });
+
+  it('calls props.onSubmit', () => {
     wrapper.find('form').simulate('submit');
     expect(onSubmitSpy).to.be.calledOnce();
   });
@@ -63,25 +70,43 @@ describe('Comment Form', () => {
   });
 
   it('renders CommentFormInput (with correct props)', () => {
-    const input = wrapper.find(CommentFormInput);
+    let input = wrapper.find(CommentFormInput);
     expect(input).to.have.length(1);
     expect(input.prop('handleOnChange')).to.deep.equal(
       wrapper.instance().updateInputValue
     );
+    expect(input.prop('onFocus')).to.deep.equal(wrapper.instance().onFocus);
+    expect(input.prop('onBlur')).to.deep.equal(wrapper.instance().onBlur);
     expect(input.prop('focusOnMount')).to.equal(false);
     expect(input.prop('value')).to.equal('');
 
     wrapper.setProps({ value: 'test' });
     expect(input.prop('value')).to.equal('test');
+    expect(input.prop('isSubmitting')).to.equal(false);
+    wrapper.setProps({ isSubmitting: true });
+    input = wrapper.find(CommentFormInput);
+    expect(input.prop('isSubmitting')).to.equal(true);
+  });
+
+  it('renders CommentFormActions on focus', () => {
+    expect(wrapper.find(CommentFormActions)).to.have.length(0);
+    wrapper.find('textarea').simulate('focus');
+    expect(wrapper.find(CommentFormActions)).to.have.length(1);
   });
 
   it('renders CommentFormActions (with correct props)', () => {
-    const actions = wrapper.find(CommentFormActions);
+    wrapper.setProps({ value: 'test' });
+    let actions = wrapper.find(CommentFormActions);
     expect(actions).to.have.length(1);
     expect(actions.prop('onSubmit')).to.deep.equal(wrapper.instance().onSubmit);
     expect(actions.prop('onCancel')).to.deep.equal(
       wrapper.instance().cancelComment
     );
+    expect(actions.prop('isSubmitting')).to.equal(false);
+
+    wrapper.setProps({ isSubmitting: true });
+    actions = wrapper.find(CommentFormActions);
+    expect(actions.prop('isSubmitting')).to.equal(true);
   });
 
   it('updates the input value', () => {

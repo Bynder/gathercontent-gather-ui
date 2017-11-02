@@ -45,6 +45,19 @@ storiesOf('Components', module)
 
         <StoryItem
           title="Conversation"
+          description="Starting a new conversation"
+        >
+          <Conversation
+            id="1234567"
+            user={mockUser}
+            addComment={mockActions.addComment}
+            showComments
+            userCanComment
+          />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
           description="A simple conversation"
         >
           <Conversation
@@ -57,6 +70,7 @@ storiesOf('Components', module)
             editComment={mockActions.editComment}
             user={mockUser}
             userCanComment
+            focusOnMount={false}
           />
         </StoryItem>
 
@@ -74,6 +88,7 @@ storiesOf('Components', module)
             editComment={mockActions.editComment}
             user={mockUser}
             userCanComment
+            focusOnMount={false}
           />
         </StoryItem>
 
@@ -117,20 +132,6 @@ storiesOf('Components', module)
               )
             }}
           </BoundaryClickWatcher>
-        </StoryItem>
-
-
-        <StoryItem
-          title="Conversation"
-          description="Starting a new conversation"
-        >
-          <Conversation
-            id="1234567"
-            user={mockUser}
-            addComment={mockActions.addComment}
-            showComments
-            userCanComment
-          />
         </StoryItem>
       </div>
     );
