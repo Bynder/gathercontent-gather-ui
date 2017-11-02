@@ -132,7 +132,7 @@ describe('Conversation', () => {
   });
 
   it('renders a comment form (with correct props)', () => {
-    let commentForm = wrapper.find(CommentForm);
+    const commentForm = wrapper.find(CommentForm);
     expect(commentForm).to.have.length(1);
     expect(commentForm.prop('author')).to.equal(props.user);
     expect(commentForm.prop('onSubmit')).to.equal(

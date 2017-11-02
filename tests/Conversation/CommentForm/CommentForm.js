@@ -92,7 +92,7 @@ describe('Comment Form', () => {
     expect(wrapper.find(CommentFormActions)).to.have.length(0);
     wrapper.find('textarea').simulate('focus');
     expect(wrapper.find(CommentFormActions)).to.have.length(1);
-  })
+  });
 
   it('renders CommentFormActions (with correct props)', () => {
     wrapper.setProps({ value: 'test' });
