@@ -11,6 +11,9 @@ $comment-form-padding: $layout-spacing-base/2;
   border-radius: 5px;
   padding: $comment-form-padding;
   width: 100%;
+  &:focus {
+    outline-color: $primary-blue;
+  }
 }
 
 .comment-form__body {

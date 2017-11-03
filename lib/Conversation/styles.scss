@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$conversation-active-background-color: #ffffff !default;
+$conversation-active-background-color: #fff !default;
 $conversation-active-shadow-color: rgba(158, 158, 158, 0.17) !default;
 $conversation-active-shadow-size: 0px 0px 5px 0px !default;
 
@@ -26,6 +26,7 @@ $conversation-meta-text-color: $neutral-base !default;
   margin: $layout-spacing-base/2;
   &:hover {
     border-color: $conversation-border-color;
+    background-color: $neutral-lightest;
   }
 }
 
@@ -137,7 +138,7 @@ $conversation-meta-text-color: $neutral-base !default;
   display: block;
 }
 
-.is-active .conversation__comment.has-reply {
+.is-active .conversation__comment {
   position: relative;
   &:before {
     content: ' ';
@@ -146,5 +147,10 @@ $conversation-meta-text-color: $neutral-base !default;
     top: $conversation-padding+$avatar-size;
     height: 100%;
     left: ($avatar-size/2)+$conversation-padding - 1;
+  }
+  &:last-of-type {
+    &:before {
+      content: none;
+    }
   }
 }

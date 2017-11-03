@@ -1,0 +1,8 @@
+.boundary-click-watcher {
+  &:focus {
+    outline: 0;
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
+  }
+}
