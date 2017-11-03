@@ -127,6 +127,7 @@ storiesOf('Components', module)
                   editComment={mockActions.editComment}
                   user={mockUser}
                   userCanComment
+                  focusOnMount
                   showComments={boundaryIsActive}
                 />
               )

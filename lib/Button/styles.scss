@@ -22,6 +22,8 @@ $color-btn-default-dark--bg: #777 !default;
 $color-btn-default-dark--text: white !default;
 $color-btn-default-dark--hover: #5e5e5e !default;
 
+$color-btn-contained--bg: white !default;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -210,9 +212,11 @@ $color-btn-default-dark--hover: #5e5e5e !default;
 }
 
 .button--contained {
-  border: 2px solid $color-border-base;
+  border: 1px solid $color-border-base;
   border-radius: 100%;
   padding: $layout-spacing-base/2;
+  background-color: $color-btn-contained--bg;
+  box-shadow: $shadow-shallow;
 }
 
 .button--hover-transform {
