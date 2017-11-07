@@ -33,4 +33,12 @@ describe('Label', () => {
       .hasClass('form__input-text--highlight');
     expect(hasHighlightClass).to.equal(true);
   });
+
+  it('adds an active state class to the text', () => {
+    wrapper.setProps({ active: true });
+    const hasActiveClass = wrapper
+      .find('.form-input__text')
+      .hasClass('is-active');
+    expect(hasActiveClass).to.equal(true);
+  });
 });
