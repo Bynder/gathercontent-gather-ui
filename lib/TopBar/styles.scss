@@ -10,6 +10,7 @@ $top-bar-main-breakpoint: medium;
    ========================================================================== */
 .top-bar {
   height: $top-bar-height;
+  padding: 0;
 
   @include respond-to($top-bar-main-breakpoint) {
     height: $top-bar-height-medium;
