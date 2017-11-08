@@ -23,5 +23,5 @@ describe('TopBar', () => {
       fixed: true
     });
     expect(wrapper.find('.top-bar__wrapper--fixed')).to.have.length(1);
-  })
+  });
 });
