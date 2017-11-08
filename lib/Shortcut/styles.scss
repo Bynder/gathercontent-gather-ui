@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$shortcut-max-width: 400px !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.shortcut {
+  border-bottom: 1px solid $color-border-base;
+  padding: $layout-spacing-base/2 0;
+  max-width: $shortcut-max-width;
+
+  &:last-child {
+    border: 0 none;
+  }
+}
+
+.shortcut__name {
+  display: inline-block;
+}
+
+.shortcut__wrapper {
+  display: inline-block;
+  float: right;
+}
+
+.shortcut__keyboard {
+  padding: 3px 6px;
+  background: #FFFFFF;
+  border: 1px solid $color-border-base;
+  box-shadow: $shadow-shallow;
+  border-radius: 4px;
+  font-family: Courier;
+}
+
+.shortcut__plus {
+  font-weight: 500;
+  color: $neutral-base;
+  margin: 0 $layout-spacing-base/5;
+}
+
+
+.shortcut__bold {
+  font-weight: bold;
+}
+
+.shortcut__italic {
+  font-style: italic;
+}
+
+.shortcut__underline {
+  text-decoration: underline;
+}
+
+.shortcut__strikethrough {
+  text-decoration: line-through;
+}
