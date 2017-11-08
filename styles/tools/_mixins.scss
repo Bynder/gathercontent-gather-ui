@@ -96,12 +96,12 @@
  */
 @mixin respond-to($media) {
   @if $media == small {
-    @media only screen and (max-width: $break-small) { @content; }
+    @media only screen and (max-width: $screen-sm-min) { @content; }
   }
   @else if $media == medium {
-    @media only screen and (min-width: $break-medium) { @content; }
+    @media only screen and (min-width: $screen-md-min) { @content; }
   }
   @else if $media == wide {
-    @media only screen and (min-width: $break-large) { @content; }
+    @media only screen and (min-width: $screen-lg-min) { @content; }
   }
 }
