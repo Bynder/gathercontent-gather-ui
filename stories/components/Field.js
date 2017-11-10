@@ -74,18 +74,30 @@ storiesOf('Components', module)
           isStructureEditor
          >
           <div>Some dummy text
+          <FieldAside>
+            <div className="field__aside-action">
+              <Button
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="caretUp" size="small" />
+              </Button>
+              <Button
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="caret" size="small" />
+              </Button>
+              <Button
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="trash" size="small" />
+              </Button>
+            </div>
+          </FieldAside>
           </div>
          </Field>
-         <FieldAside>
-           <div className="field__aside-action">
-             <Button
-               types={['icon-only', 'hover-transform', 'contained']}
-               clickHandler={() => action('field aside action clicked')}
-             >
-               <Icon name="comment" size="small" />
-             </Button>
-           </div>
-         </FieldAside>
       </StoryItem>
     </div>
   ));
