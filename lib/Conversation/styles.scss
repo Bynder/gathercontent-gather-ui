@@ -54,7 +54,7 @@ $conversation-meta-text-color: $neutral-base !default;
 .conversation__comment {
   position: relative;
   display: none;
-  padding: $conversation-padding $conversation-padding 0;
+  padding: $conversation-padding $conversation-padding 0 $conversation-padding;
 
   &:first-child {
     display: block;
@@ -125,13 +125,6 @@ $conversation-meta-text-color: $neutral-base !default;
   border-bottom: $conversation-border-width solid $conversation-border-color;
 }
 
-.is-active .conversation__comment {
-  padding-bottom: $conversation-padding;
-  &:last-child {
-    border-bottom: $conversation-border-width solid $conversation-border-color;
-  }
-}
-
 .is-active .conversation__foot,
 .is-active .conversation__resolve,
 .is-active .conversation__comment {
@@ -148,7 +141,9 @@ $conversation-meta-text-color: $neutral-base !default;
     height: 100%;
     left: ($avatar-size/2)+$conversation-padding - 1;
   }
-  &:last-of-type {
+  &:last-child {
+    border-bottom: $conversation-border-width solid $conversation-border-color;
+    padding-bottom: $conversation-padding;
     &:before {
       content: none;
     }
