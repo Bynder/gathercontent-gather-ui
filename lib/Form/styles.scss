@@ -8,7 +8,6 @@ $form-checkbox-label-size: $typo-size-lead !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-
 .form__choice-element-wrapper {
   margin: $form-checkbox-label-size/2;
   display: flex;
@@ -21,6 +20,17 @@ $form-checkbox-label-size: $typo-size-lead !default;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
   display: block;
+}
+
+.form__input-text {
+  &--highlight {
+    border-bottom: 1px solid $primary-yellow;
+
+    &:hover,
+    &.is-active {
+      background: $primary-yellow;
+    }
+  }
 }
 
 .form-checkbox__label--other-option {
