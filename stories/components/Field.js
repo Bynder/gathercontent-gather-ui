@@ -71,24 +71,28 @@ storiesOf('Components', module)
           fieldId="123"
           label="Field label text"
           instructions="Instruction text to help inform the user of what they are mean't to add into this field."
-          isStructureEditor
+          canEdit
+          actions={mockActions}
          >
-          <div>Some dummy text
+          <div>Hello world...
           <FieldAside>
             <div className="field__aside-action">
               <Button
+                className="field-aside__button"
                 types={['icon-only', 'hover-transform']}
                 clickHandler={() => action('field aside action clicked')}
               >
                 <Icon name="caretUp" size="small" />
               </Button>
               <Button
+                className="field-aside__button"
                 types={['icon-only', 'hover-transform']}
                 clickHandler={() => action('field aside action clicked')}
               >
                 <Icon name="caret" size="small" />
               </Button>
               <Button
+                className="field-aside__button"
                 types={['icon-only', 'hover-transform']}
                 clickHandler={() => action('field aside action clicked')}
               >
