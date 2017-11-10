@@ -10,10 +10,7 @@ import StoryItem from '../styleguide/StoryItem';
 storiesOf('Components', module)
   .add('Form: Checkboxes', () => (
     <div>
-      <StoryItem
-        title="Checkboxes"
-        description="Checkbox input choices"
-      >
+      <StoryItem title="Checkboxes" description="Checkbox input choices">
         <Checkbox
           name="ch1"
           id="id1"
@@ -62,23 +59,30 @@ storiesOf('Components', module)
         description="Checkbox input choices can be controlled in a CheckboxGroup"
       >
         <CheckboxGroup
-          choices={[{
-            name: 'ch3',
-            id: 'id31',
-            checked: true,
-            label: 'Ethiopian roast',
-          }, {
-            name: 'ch3',
-            id: 'id32',
-            checked: true,
-            label: 'Guatemala roast',
-          }]}
+          choices={[
+            {
+              name: 'ch3',
+              id: 'id31',
+              checked: true,
+              label: 'Ethiopian roast'
+            },
+            { name: 'ch3', id: 'id32', checked: true, label: 'Guatemala roast' }
+          ]}
           onChangeHandler={action('hello')}
+        />
+      </StoryItem>
+      <StoryItem title="Checkboxes: highlighted">
+        <Checkbox
+          name="checkbox-highlight"
+          id="checkbox-highlight"
+          onChangeHandler={action('hello')}
+          label="Ethiopian roast"
+          checked
+          highlight
         />
       </StoryItem>
     </div>
   ))
-
   .add('Form: Radios', () => (
     <div>
       <StoryItem
@@ -170,25 +174,42 @@ storiesOf('Components', module)
         description="The group is used to control the checked state and the text value for the other option."
       >
         <RadioButtonGroup
-          choices={[{
-            name: 'ch7',
-            id: 'id71',
-            value: 'value 1',
-            label: 'Ethiopian roast',
-            checked: true,
-          }, {
-            name: 'ch7',
-            id: 'id72',
-            value: 'value 2',
-            label: 'Guatemala roast',
-          }, {
-            name: 'ch7',
-            id: 'id73',
-            value: '',
-            label: 'Or enter your own',
-            other_option: true,
-          }]}
-          onChangeHandler={(selected) => { action('onChangeHandler')(selected); }}
+          choices={[
+            {
+              name: 'ch7',
+              id: 'id71',
+              value: 'value 1',
+              label: 'Ethiopian roast',
+              checked: true
+            },
+            {
+              name: 'ch7',
+              id: 'id72',
+              value: 'value 2',
+              label: 'Guatemala roast'
+            },
+            {
+              name: 'ch7',
+              id: 'id73',
+              value: '',
+              label: 'Or enter your own',
+              other_option: true
+            }
+          ]}
+          onChangeHandler={selected => action('onChangeHandler')(selected)}
+        />
+      </StoryItem>
+
+      <StoryItem title="Radio Input (highlighted)">
+        <RadioButton
+          name="highlighted"
+          id="id-highlighted"
+          value="value 1"
+          onChangeHandler={e => action('onChangeHandler')(e)}
+          label="Option label"
+          subtitle="label subtext"
+          checked
+          highlight
         />
       </StoryItem>
     </div>
