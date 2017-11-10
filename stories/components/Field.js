@@ -62,5 +62,30 @@ storiesOf('Components', module)
       >
         <Field isReadOnly fieldId="987" />
       </StoryItem>
+
+      <StoryItem
+        title="Field (Editing)"
+        description="A field component when in an editing state"
+      >
+        <Field
+          fieldId="123"
+          label="Field label text"
+          instructions="Instruction text to help inform the user of what they are mean't to add into this field."
+          isStructureEditor
+         >
+          <div>Some dummy text
+          </div>
+         </Field>
+         <FieldAside>
+           <div className="field__aside-action">
+             <Button
+               types={['icon-only', 'hover-transform', 'contained']}
+               clickHandler={() => action('field aside action clicked')}
+             >
+               <Icon name="comment" size="small" />
+             </Button>
+           </div>
+         </FieldAside>
+      </StoryItem>
     </div>
   ));
