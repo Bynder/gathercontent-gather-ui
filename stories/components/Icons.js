@@ -10,6 +10,7 @@ const allIcons = additionalProps => (
     <Icon name="plusCircle" {...additionalProps} />
     <Icon name="plus" {...additionalProps} />
     <Icon name="caret" {...additionalProps} />
+    <Icon name="caretUp" {...additionalProps} />
     <Icon name="menu" {...additionalProps} />
     <Icon name="menuDotted" {...additionalProps} />
     <Icon name="loader" {...additionalProps} />

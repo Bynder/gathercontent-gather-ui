@@ -51,10 +51,7 @@ $field-data-color: $neutral-base !default;
 .field__content {
   padding-left: $field-spacing-base;
   font-size: $typo-size-lead;
-}
-
-.field__child {
-  position: relative;
+  margin-right: $field-aside-width;
 }
 
 .field__aside {
@@ -69,4 +66,55 @@ $field-data-color: $neutral-base !default;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.field-aside__button {
+  margin-bottom: $field-spacing-base/2;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.field__editor {
+  .field__content {
+    box-shadow: $shadow-shallow;
+    background-color: white;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid $neutral-light;
+  }
+  .field__child {
+    padding: $field-spacing-base/2;
+    color: $neutral-light;
+    font-size: $typo-size-lead;
+    p {
+      margin: 0;
+      font-size: $typo-size-lead;
+    }
+  }
+
+  .field__label,
+  .field__instructions {
+    border: 0;
+    resize: none;
+    overflow: auto;
+    outline: none;
+    display: block;
+    width: 100%;
+    height: auto;
+    color: $neutral-dark;
+  }
+  .field__instructions {
+    font-size: $typo-size-small;
+    text-decoration: none;
+    font-style: normal;
+    padding: $field-spacing-base/2;
+    margin: 0;
+    border-top: 1px solid $neutral-light;
+    border-radius: 0 0 $field-spacing-base/4 $field-spacing-base/4;
+  }
+  .field__label {
+    text-align: right;
+    background: transparent;
+  }
 }

@@ -62,5 +62,46 @@ storiesOf('Components', module)
       >
         <Field isReadOnly fieldId="987" />
       </StoryItem>
+
+      <StoryItem
+        title="Field (Editing)"
+        description="A field component when in an editing state"
+      >
+        <Field
+          fieldId="123"
+          label="Field label text"
+          instructions="Instruction text to help inform the user of what they are mean't to add into this field."
+          canEdit
+          actions={mockActions}
+         >
+          <div>Hello world...
+          <FieldAside>
+            <div className="field__aside-action">
+              <Button
+                className="field-aside__button"
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="caretUp" size="small" />
+              </Button>
+              <Button
+                className="field-aside__button"
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="caret" size="small" />
+              </Button>
+              <Button
+                className="field-aside__button"
+                types={['icon-only', 'hover-transform']}
+                clickHandler={() => action('field aside action clicked')}
+              >
+                <Icon name="trash" size="small" />
+              </Button>
+            </div>
+          </FieldAside>
+          </div>
+         </Field>
+      </StoryItem>
     </div>
   ));

@@ -211,6 +211,20 @@ $color-btn-contained--bg: white !default;
   }
 }
 
+.button--white {
+  background-color: white;
+  border: 1px solid $neutral-light;
+  width:100%;
+  text-align: left;
+  box-shadow: $shadow-shallow;
+  &:hover {
+    background-color: $neutral-lightest;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 .button--contained {
   border: 1px solid $color-border-base;
   border-radius: 100%;
