@@ -25,9 +25,9 @@ describe('BoundaryClickWatcher', () => {
 
   const wrapper = shallow(
     <BoundaryClickWatcher>
-      {(boundaryIsActive) => {
-        return <div className="child" isActive={boundaryIsActive} />;
-      }}
+      {boundaryIsActive => (
+        <div className="child" isActive={boundaryIsActive} />
+      )}
     </BoundaryClickWatcher>
   );
 
