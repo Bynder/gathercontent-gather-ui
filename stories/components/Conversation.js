@@ -115,23 +115,21 @@ storiesOf('Components', module)
           description="Collapsed Conversation with reply wrapped in BoundaryClickWatcher"
         >
           <BoundaryClickWatcher>
-            {(boundaryIsActive) => {
-              return (
-                <Conversation
-                  id="1234567"
-                  comments={mockConversation.comments}
-                  resolveConversation={mockActions.resolveConversation}
-                  unresolveConversation={mockActions.unresolveConversation}
-                  removeComment={mockActions.removeComment}
-                  addComment={mockActions.addComment}
-                  editComment={mockActions.editComment}
-                  user={mockUser}
-                  userCanComment
-                  focusOnMount
-                  showComments={boundaryIsActive}
-                />
-              )
-            }}
+            {boundaryIsActive => (
+              <Conversation
+                id="1234567"
+                comments={mockConversation.comments}
+                resolveConversation={mockActions.resolveConversation}
+                unresolveConversation={mockActions.unresolveConversation}
+                removeComment={mockActions.removeComment}
+                addComment={mockActions.addComment}
+                editComment={mockActions.editComment}
+                user={mockUser}
+                userCanComment
+                focusOnMount
+                showComments={boundaryIsActive}
+              />
+            )}
           </BoundaryClickWatcher>
         </StoryItem>
       </div>
