@@ -31,6 +31,12 @@ describe('Field', () => {
     expect(wrapper.text()).to.equal('READ ONLY!');
   });
 
+  it('renders an editing state', () => {
+    wrapper.setProps({ canEdit: true });
+    expect(wrapper.find('.field__label').type()).to.equal('input');
+    expect(wrapper.find('.field__instructions').type()).to.equal('input');
+  });
+
   it('renders a label', () => {
     expect(wrapper.contains('Test label')).to.be.true();
   });
