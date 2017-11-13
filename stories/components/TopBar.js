@@ -12,7 +12,7 @@ storiesOf('Components', module).add('TopBar', () => (
   <div>
     <StoryItem
       title="TopBar Wrapper"
-      description="TopBar is the top bar used throughout the whole site."
+      description="TopBar is the top bar used throughout the whole site, can add a fixed attribute to fix it to the top."
     >
       <TopBar>
         <Col className="top-bar__content top-bar__content--left" xs={10} md={5}>
