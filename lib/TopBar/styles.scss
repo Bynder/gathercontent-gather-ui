@@ -33,6 +33,7 @@ $top-bar-main-breakpoint: medium;
 
   .top-bar__inner {
     min-height: 53px;
+    position: relative;
     @include respond-to($top-bar-main-breakpoint) {
       display: flex;
       align-items: center;
