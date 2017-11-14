@@ -24,11 +24,12 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
 .form__input-text {
   &--highlight {
-    border-bottom: 1px solid $primary-yellow;
+    border-bottom: 2px solid $primary-yellow-lighter;
 
     &:hover,
-    &.is-active {
-      background: $primary-yellow;
+    &.is-active,
+    &.highlight-active {
+      background: $primary-yellow-lighter;
     }
   }
 }

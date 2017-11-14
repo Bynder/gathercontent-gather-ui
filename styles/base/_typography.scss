@@ -3,3 +3,12 @@ h2,
 h3 {
     font-weight: $typo-weight-semi-bold;
 }
+
+mark {
+  background-color: transparent;
+  border-bottom: 2px solid $primary-yellow-lighter;
+  &.active,
+  &:hover {
+    background-color: $primary-yellow-lighter;
+  }
+}
