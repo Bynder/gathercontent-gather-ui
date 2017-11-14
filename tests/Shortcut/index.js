@@ -6,7 +6,7 @@ import {
   ShortcutIcon
 } from '../../lib';
 
-describe.only('Button', () => {
+describe('Shortcut', () => {
   let wrapper;
 
   beforeEach(() => {
