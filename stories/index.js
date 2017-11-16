@@ -27,3 +27,4 @@ import TooltipWrapper from './components/TooltipWrapper';
 import PageInformation from './components/PageInformation';
 import EditableTextWrapper from './components/EditableTextWrapper';
 import Guideline from './components/Guideline';
+import NavTabs from './components/NavTabs';
