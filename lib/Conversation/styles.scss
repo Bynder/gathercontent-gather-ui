@@ -20,7 +20,7 @@ $conversation-meta-text-color: $neutral-base !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-div.conversation {
+.conversation {
   border-radius: $conversation-border-radius;
   border: $conversation-border-width solid transparent;
   margin: $layout-spacing-base/2;
