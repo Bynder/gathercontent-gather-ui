@@ -4,11 +4,24 @@ import Conversation from '../../lib/Conversation';
 import StoryItem from '../styleguide/StoryItem';
 import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
+const mockUser = {
+  id: 2,
+  name: 'Bruce',
+  avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+  initials: 'BB',
+};
+
+const mockUserNoAvatar = {
+  id: 5,
+  name: 'Lynda',
+  initials: 'LC',
+};
+
 const mockComments = [{
   id: 11,
   body: 'Here is a decent size comment that was created by someone who wanted to comment.',
   createdAt: '2017-06-08 09:56:41',
-  createdBy: 2,
+  author: mockUser,
 }, {
   id: 12,
   body: 'Comment body...',
@@ -16,6 +29,7 @@ const mockComments = [{
   author: {
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
     name: 'Ricardo',
+    initials: 'RB',
   }
 }];
 
@@ -30,12 +44,6 @@ const mockActions = {
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
-};
-
-const mockUser = {
-  id: 2,
-  name: 'Bruce',
-  avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg'
 };
 
 storiesOf('Components', module)
@@ -68,7 +76,7 @@ storiesOf('Components', module)
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
-            user={mockUser}
+            user={mockUserNoAvatar}
             userCanComment
             focusOnMount={false}
           />

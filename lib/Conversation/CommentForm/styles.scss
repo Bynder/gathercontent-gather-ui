@@ -45,11 +45,6 @@ $comment-form-padding: $layout-spacing-base/2;
 /* ==========================================================================
    State Styles
    ========================================================================== */
- .is-submitting .button--secondary {
-   background: $color-btn-secondary--bg;
-   vertical-align: bottom;
-   padding-bottom: 0;
- }
 
  .is-active .is-submitting {
    .icon svg {
@@ -60,6 +55,13 @@ $comment-form-padding: $layout-spacing-base/2;
    }
  }
 
- .comment-form__input.is-submitting {
+ .comment-form.is-submitting {
+  textarea {
     background-color: $neutral-light;
+  }
+  .button--secondary {
+    background: $color-btn-secondary--bg;
+    vertical-align: bottom;
+    padding-bottom: 0;
+  }
  }

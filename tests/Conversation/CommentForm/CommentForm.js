@@ -1,6 +1,6 @@
 import { React, expect, sinon, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
-import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
+import ExpandingTextArea from '../../../lib/ExpandingTextArea';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
 
@@ -15,7 +15,8 @@ describe('Comment Form', () => {
     isSubmitting: false,
     author: {
       name: 'Bruce',
-      avatar: 'url/of/image'
+      avatar: 'url/of/image',
+      initials: 'BB'
     }
   };
 
@@ -59,12 +60,12 @@ describe('Comment Form', () => {
   it('renders an avatar (with the correct props)', () => {
     const avatar = wrapper.find(Avatar);
     expect(avatar).to.have.length(1);
-    expect(avatar.prop('src')).to.equal(props.author.avatar);
-    expect(avatar.prop('altText')).to.equal(props.author.name);
+    expect(avatar.prop('url')).to.equal(props.author.avatar);
+    expect(avatar.prop('initials')).to.equal(props.author.initials);
   });
 
-  it('renders CommentFormInput (with correct props)', () => {
-    let input = wrapper.find(CommentFormInput);
+  it('renders ExpandingTextArea (with correct props)', () => {
+    let input = wrapper.find(ExpandingTextArea);
     expect(input).to.have.length(1);
     expect(input.prop('handleOnChange')).to.deep.equal(
       wrapper.instance().updateInputValue
@@ -74,10 +75,6 @@ describe('Comment Form', () => {
 
     wrapper.setProps({ value: 'test' });
     expect(input.prop('value')).to.equal('test');
-    expect(input.prop('isSubmitting')).to.equal(false);
-    wrapper.setProps({ isSubmitting: true });
-    input = wrapper.find(CommentFormInput);
-    expect(input.prop('isSubmitting')).to.equal(true);
   });
 
   it('renders CommentFormActions (with correct props)', () => {
