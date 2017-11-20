@@ -1,8 +1,9 @@
 import React from 'react';
-import Col from 'react-bootstrap/lib/Col';
 import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
 import TopBar from '../../lib/TopBar';
+import TopBarContent from '../../lib/TopBar/TopBarContent';
+import TopBarCell from '../../lib/TopBar/TopBarCell';
 import Button from '../../lib/Button';
 import Icon from '../../lib/Icon';
 import Avatar from '../../lib/Avatar';
@@ -15,11 +16,11 @@ storiesOf('Components', module).add('TopBar', () => (
       description="TopBar is the top bar used throughout the whole site, can add a fixed attribute to fix it to the top."
     >
       <TopBar>
-        <Col className="top-bar__content top-bar__content--left" xs={10} md={5}>
-          <div className="top-bar__cell">
+        <TopBarContent left xs={10} md={5}>
+          <TopBarCell>
             <Icon name="backArrow" className="top-bar__action top-bar__action--collapse-left" />
-          </div>
-          <div className="top-bar__cell top-bar__cell--bordered">
+          </TopBarCell>
+          <TopBarCell bordered>
             <Button
               types={['icon-only']}
               clickHandler={() => {}}
@@ -27,10 +28,10 @@ storiesOf('Components', module).add('TopBar', () => (
             >
               <Icon name="menu" size="minor" />
             </Button>
-          </div>
-        </Col>
-        <Col className="top-bar__content top-bar__content--right" xs={2} md={4}>
-          <div className="top-bar__cell">
+          </TopBarCell>
+        </TopBarContent>
+        <TopBarContent right xs={2} md={4}>
+          <TopBarCell>
             <AvatarGroup maximum={2}>
               <Avatar
                 initials="RS"
@@ -43,8 +44,8 @@ storiesOf('Components', module).add('TopBar', () => (
                 colour="rgb(61, 138, 235)"
               />
             </AvatarGroup>
-          </div>
-          <div className="top-bar__cell top-bar__cell--bordered">
+          </TopBarCell>
+          <TopBarCell bordered>
             <Button
               types={['icon-only']}
               className="top-bar__action"
@@ -52,15 +53,11 @@ storiesOf('Components', module).add('TopBar', () => (
             >
               <Icon name="menuDotted" />
             </Button>
-          </div>
-        </Col>
-        <Col
-          className="top-bar__content top-bar__content--center"
-          xs={12}
-          md={3}
-        >
+          </TopBarCell>
+        </TopBarContent>
+        <TopBarContent center xs={12} md={3}>
           Centered content
-        </Col>
+        </TopBarContent>
       </TopBar>
     </StoryItem>
   </div>
