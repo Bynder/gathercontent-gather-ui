@@ -18,7 +18,10 @@ storiesOf('Components', module).add('TopBar', () => (
       <TopBar>
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
-            <Icon name="backArrow" className="top-bar__action top-bar__action--collapse-left" />
+            <Icon
+              name="backArrow"
+              className="top-bar__action top-bar__action--collapse-left"
+            />
           </TopBarCell>
           <TopBarCell bordered>
             <Button
