@@ -24,6 +24,7 @@ If you want the TopBar to be fixed to the top of the container give it a fixed a
 A collection of components used to render conversations
 
 ## Usage
+Props are passed down to the [react-bootstrap/col](https://react-bootstrap.github.io/components.html#grid-props-col)
 
 ### Props
 
