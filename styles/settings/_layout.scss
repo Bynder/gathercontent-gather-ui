@@ -10,3 +10,15 @@ $layout-spacing-base: 20px;
    ========================================================================== */
 $shadow-deep: 0 $layout-spacing-base/4 $layout-spacing-base/2 $neutral-light;
 $shadow-shallow: 0px 0px 6px 0px transparentize($neutral-light, 0.3);
+
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
+$screen-sm-min: 680px;
+$screen-sm: 680px;
+
+$screen-md-min: 900px;
+$screen-md: 900px;
+
+$screen-lg-min: 1200px;
+$screen-lg: 1200px;
