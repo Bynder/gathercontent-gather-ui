@@ -12,3 +12,16 @@
   margin: 3px 0;
   background-color: $color-background-light;
 }
+
+.popover-dropdown .dropdown-menu {
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  display: block;
+  float: inherit;
+  border: 0 none;
+}
+
+.popover-dropdown .popover-content {
+  padding: 0;
+}
