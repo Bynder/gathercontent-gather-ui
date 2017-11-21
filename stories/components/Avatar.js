@@ -1,6 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Avatar, AvatarGroup, AvatarWithPopover } from '../../lib';
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarWithPopover,
+  ParticipantInfo
+} from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Avatar', () => (
@@ -48,7 +53,13 @@ storiesOf('Components', module).add('Avatar', () => (
         initials="AE"
         email="example@gmail.com"
         pillboxText="Assigned"
-      />
+      >
+        <ParticipantInfo
+          name="Angus Edwardson"
+          email="example@gmail.com"
+          pillboxText="Assigned"
+        />
+      </AvatarWithPopover>
     </StoryItem>
 
     <StoryItem
