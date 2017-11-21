@@ -91,3 +91,18 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 .avatar__popover-email {
   margin: $typo-size-lead/5 0 $typo-size-lead/2 0;
 }
+
+
+.avatar_dropdown__target {
+  display: inline-block;
+}
+
+.avatar_dropdown__caret {
+  margin-left: 10px;
+  position: relative;
+  top: 12px;
+}
+
+.avatar_dropdown__popover.popover {
+  margin-top: 20px;
+}
