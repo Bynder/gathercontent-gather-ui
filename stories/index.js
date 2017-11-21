@@ -28,3 +28,4 @@ import PageInformation from './components/PageInformation';
 import EditableTextWrapper from './components/EditableTextWrapper';
 import Guideline from './components/Guideline';
 import TopBar from './components/TopBar';
+import NavTabs from './components/NavTabs';
