@@ -1,0 +1,32 @@
+.nav-tabs {
+  border-bottom: 1px solid $neutral-light;
+  margin: $layout-spacing-base 0;
+  list-style: none;
+}
+
+.nav-tabs__item {
+  bottom: -1px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-tabs__item a {
+  display: block;
+  color: inherit;
+  padding: $layout-spacing-base;
+  text-decoration: none;
+}
+
+.nav-tabs__item--active {
+  border-bottom: 2px solid $primary-blue;
+  font-weight: $typo-weight-semi-bold;
+}
+
+.nav-tabs__item--active a {
+  color: $primary-blue;
+  font-weight: $typo-weight-roman;
+}
+
+.nav-tabs__item:hover {
+  border-bottom: 2px solid $primary-blue;
+}

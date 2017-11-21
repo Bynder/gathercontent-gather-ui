@@ -10,7 +10,8 @@ describe('RadioButtonGroup', () => {
     {
       name: 'foo',
       label: 'First choice',
-      id: '123'
+      id: '123',
+      highlight: true
     },
     {
       name: 'foo',
@@ -72,5 +73,12 @@ describe('RadioButtonGroup', () => {
     const expectedOptionChoice = assign({}, otherChoice, { value: 'Hello' });
 
     expect(onChangeSpy).to.have.been.calledWith([expectedOptionChoice]);
+  });
+
+  it('sets a highlightHover state on mouseEnter and sets it to false on mouseLeave', () => {
+    wrapper.simulate('mouseEnter');
+    expect(wrapper.state().highlightHover).to.equal(true);
+    wrapper.simulate('mouseLeave');
+    expect(wrapper.state().highlightHover).to.equal(false);
   });
 });
