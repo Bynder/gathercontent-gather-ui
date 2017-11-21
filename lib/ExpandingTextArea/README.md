@@ -12,6 +12,7 @@ A component that renders a textarea that automatically resizes depending on its 
 | value               | String        | ''        | No       | The value of the input                                                                 |
 | focusOnMount        | Boolean       | `false`   | No       | Determines whether to focus the textfield on mount                                     |
 | setValue            | Boolean       | `false`   | No       | If false the component will handle input changes and assign the value to its own state |
+| className           | String        | ''        | No       | Sets the component className                                                           |
 
 ```
 <ExpandingTextArea
@@ -20,5 +21,6 @@ A component that renders a textarea that automatically resizes depending on its 
   value="some string"
   placeholder="some string"
   setValue={someBool}
+  className="some string"
 />
 ```

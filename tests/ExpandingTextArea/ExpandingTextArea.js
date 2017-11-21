@@ -51,7 +51,7 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.find('.expanding-textarea')).to.have.length(1);
     expect(setInitialRowsSpy.calledOnce).to.equal(true);
     expect(calculateRowsSpy.calledOnce).to.equal(true);
-    expect(wrapper.state('rows')).to.equal(
+    expect(wrapper.state('rowCount')).to.equal(
       calculateRowsSpy.lastCall.returnValue
     );
   });
@@ -72,7 +72,7 @@ describe('EditableTextWrapper', () => {
     expect(handleChangeSpy.called).to.equal(true);
     expect(resizeTextAreaSpy.called).to.equal(true);
     expect(calculateRowsSpy.called).to.equal(true);
-    expect(wrapper.state('rows')).to.equal(
+    expect(wrapper.state('rowCount')).to.equal(
       calculateRowsSpy.lastCall.returnValue
     );
   });
