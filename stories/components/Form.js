@@ -81,6 +81,23 @@ storiesOf('Components', module)
           highlight
         />
       </StoryItem>
+
+      <StoryItem title="Checkboxes in a group: highlighted">
+
+        <CheckboxGroup
+          choices={[
+            {
+              name: 'ch3',
+              id: 'id31',
+              checked: true,
+              label: 'Ethiopian roast',
+              highlight: true
+            },
+            { name: 'ch3', id: 'id32', checked: true, label: 'Guatemala roast', highlight: true }
+          ]}
+          onChangeHandler={action('hello')}
+        />
+      </StoryItem>
     </div>
   ))
   .add('Form: Radios', () => (

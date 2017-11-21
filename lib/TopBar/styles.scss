@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$top-bar-height: 114px;
+$top-bar-height-medium: 74px;
+$top-bar-main-breakpoint: medium;
+$top-bar-box-shadow: 0 0 6px 0 rgba(230,234,237,0.29);
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.top-bar {
+  height: $top-bar-height;
+  padding: 0;
+
+  @include respond-to($top-bar-main-breakpoint) {
+    height: $top-bar-height-medium;
+  }
+
+  .top-bar__wrapper {
+    background: #fff;
+    border-bottom: 1px solid $color-border-base;
+    box-shadow: $top-bar-box-shadow;
+    padding: $layout-spacing-base/2 $layout-spacing-base/1.5;
+    width: 100%;
+  }
+
+  .top-bar__wrapper--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .top-bar__inner {
+    min-height: 53px;
+    position: relative;
+    @include respond-to($top-bar-main-breakpoint) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .top-bar__content {
+    position: static;
+    display: flex;
+    align-items: center;
+  }
+
+  .top-bar__content--left {
+    @include respond-to($top-bar-main-breakpoint) {
+      position: absolute;
+    }
+  }
+
+  .top-bar__content--center {
+    justify-content: center;
+
+    @include respond-to($top-bar-main-breakpoint) {
+      margin: 0 auto;
+    }
+  }
+
+  .top-bar__content--right {
+    justify-content: flex-end;
+
+    @include respond-to($top-bar-main-breakpoint) {
+      position: absolute;
+      right: 0;
+      order: 3;
+    }
+  }
+
+  .top-bar__cell {
+    padding: 0 $layout-spacing-base 0 0;
+
+    img {
+      display: block;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .top-bar__cell--bordered {
+    padding-left: $layout-spacing-base;
+    border-left: 1px solid $color-border-base;
+  }
+
+  .top-bar__action {
+    fill: $neutral-dark;
+  }
+
+  .top-bar__action,
+  .item-settings .button {
+    display: block;
+    padding: $layout-spacing-base/2.5;
+    margin: 0 (-$layout-spacing-base/2.5);
+  }
+
+  .top-bar__action--collapse-left {
+    margin-left: 0;
+  }
+
+  .top-bar__action--collapse-right,
+  .item-settings .button {
+    margin-right: 0;
+  }
+
+  .top-bar__drop-down {
+    background: #fff;
+    overflow: scroll;
+    position: fixed;
+    top: $top-bar-height;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    @include respond-to($top-bar-main-breakpoint) {
+      max-width: 400px;
+      top: $top-bar-height-medium;
+    }
+  }
+}

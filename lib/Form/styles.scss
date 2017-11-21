@@ -22,13 +22,14 @@ $form-checkbox-label-size: $typo-size-lead !default;
   display: block;
 }
 
-.form__input-text {
-  &--highlight {
-    border-bottom: 1px solid $primary-yellow;
+.form-input__text {
+  &.is-highlight {
+    border-bottom: 2px solid $primary-yellow-lighter;
 
     &:hover,
-    &.is-active {
-      background: $primary-yellow;
+    &.is-active,
+    &--active {
+      background: $primary-yellow-lighter;
     }
   }
 }
