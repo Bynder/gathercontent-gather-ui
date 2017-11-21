@@ -3,8 +3,6 @@
    ========================================================================== */
 $avatar-size: 30px !default;
 $avatar-border-radius: $avatar-size !default;
-$avatar-popover-name-weight: $typo-weight-semi-bold !default;
-$avatar-popover-name-size: $typo-size-lead !default;
 
 $avatar-highlighted-background: $neutral-base !default;
 $avatar-highlighted-color: white !default;
@@ -78,16 +76,8 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   }
 }
 
-.avatar__popover {
-  background: #fff;
-}
-
-.avatar__popover-name {
-  font-weight: $avatar-popover-name-weight;
-  font-size: $avatar-popover-name-size;
-  margin: 0;
-}
-
-.avatar__popover-email {
-  margin: $typo-size-lead/5 0 $typo-size-lead/2 0;
+.avatar__caret {
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
 }
