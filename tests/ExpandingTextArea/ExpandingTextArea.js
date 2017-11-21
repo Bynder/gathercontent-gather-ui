@@ -1,6 +1,5 @@
-import { React, expect, shallow, mount, jsDomGlobal, sinon } from '../setup';
+import { React, expect, mount, jsDomGlobal, sinon } from '../setup';
 import { ExpandingTextArea } from '../../lib';
-import Button from '../../lib/Button';
 
 describe('EditableTextWrapper', () => {
   jsDomGlobal();
@@ -18,11 +17,17 @@ describe('EditableTextWrapper', () => {
     style = {
       lineHeight: '20px',
       padding: '10px 0 10px'
-    }
+    };
     handleOnChangeSpy = sinon.spy();
-    setInitialRowsSpy = sinon.spy(ExpandingTextArea.prototype, 'setInitialRows');
+    setInitialRowsSpy = sinon.spy(
+      ExpandingTextArea.prototype,
+      'setInitialRows'
+    );
     handleChangeSpy = sinon.spy(ExpandingTextArea.prototype, 'handleChange');
-    resizeTextAreaSpy = sinon.spy(ExpandingTextArea.prototype, 'resizeTextArea');
+    resizeTextAreaSpy = sinon.spy(
+      ExpandingTextArea.prototype,
+      'resizeTextArea'
+    );
     calculateRowsSpy = sinon.spy(ExpandingTextArea.prototype, 'calculateRows');
     sandbox = sinon.sandbox.create();
     wrapper = mount(
@@ -46,7 +51,9 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.find('.expanding-textarea')).to.have.length(1);
     expect(setInitialRowsSpy.calledOnce).to.equal(true);
     expect(calculateRowsSpy.calledOnce).to.equal(true);
-    expect(wrapper.state('rows')).to.equal(calculateRowsSpy.lastCall.returnValue);
+    expect(wrapper.state('rows')).to.equal(
+      calculateRowsSpy.lastCall.returnValue
+    );
   });
 
   it('sets the input value as the value prop', () => {
@@ -65,7 +72,9 @@ describe('EditableTextWrapper', () => {
     expect(handleChangeSpy.called).to.equal(true);
     expect(resizeTextAreaSpy.called).to.equal(true);
     expect(calculateRowsSpy.called).to.equal(true);
-    expect(wrapper.state('rows')).to.equal(calculateRowsSpy.lastCall.returnValue);
+    expect(wrapper.state('rows')).to.equal(
+      calculateRowsSpy.lastCall.returnValue
+    );
   });
 
   it('sets the value state if the setValue prop is false', () => {

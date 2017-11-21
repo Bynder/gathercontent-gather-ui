@@ -65,7 +65,7 @@ describe('Comment Form', () => {
   });
 
   it('renders ExpandingTextArea (with correct props)', () => {
-    let input = wrapper.find(ExpandingTextArea);
+    const input = wrapper.find(ExpandingTextArea);
     expect(input).to.have.length(1);
     expect(input.prop('handleOnChange')).to.deep.equal(
       wrapper.instance().updateInputValue
