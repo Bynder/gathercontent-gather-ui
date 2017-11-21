@@ -75,3 +75,9 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     opacity: 1;
   }
 }
+
+.avatar--caret {
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+}
