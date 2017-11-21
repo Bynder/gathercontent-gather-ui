@@ -1,10 +1,35 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Avatar, AvatarGroup, AvatarWithPopover } from '../../lib';
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarWithPopover,
+  AvatarWithDropdown
+} from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Avatar', () => (
   <div>
+    <StoryItem
+      title="Avatar - with dropdown"
+      description="An avatar can show a popover as a dropdown."
+    >
+      <AvatarWithDropdown
+        name="Angus Edwardson"
+        initials="AE"
+        email="example@gmail.com"
+        trigger={['focus']}
+      >
+        <ul className="dropdown-menu">
+          <li className="dropdown__item">
+            <a href="#test" className="dropdown__link">
+              Personal Settings
+            </a>
+          </li>
+        </ul>
+      </AvatarWithDropdown>
+    </StoryItem>
+
     <StoryItem
       title="Avatar – base"
       description="A base avatar will fall back to initials if no url prop is passed."
