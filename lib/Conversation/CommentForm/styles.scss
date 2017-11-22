@@ -33,23 +33,14 @@ $comment-form-padding: $layout-spacing-base/2;
 
 
 .comment-form__button {
-  padding-left: 0;
-  padding-right: 0;
-
   svg {
     position: relative;
-    top: 2px;
   }
 }
 
 /* ==========================================================================
    State Styles
    ========================================================================== */
- .is-submitting .button--secondary {
-   background: $color-btn-secondary--bg;
-   vertical-align: bottom;
-   padding-bottom: 0;
- }
 
  .is-active .is-submitting {
    .icon svg {
@@ -60,6 +51,13 @@ $comment-form-padding: $layout-spacing-base/2;
    }
  }
 
- .comment-form__input.is-submitting {
+ .comment-form.is-submitting {
+  .comment-form__input {
     background-color: $neutral-light;
+  }
+  .comment-form__button {
+    background: $color-btn-secondary--bg;
+    vertical-align: bottom;
+    padding-bottom: 0;
+  }
  }
