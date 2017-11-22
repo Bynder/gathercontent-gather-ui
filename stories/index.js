@@ -30,3 +30,4 @@ import Guideline from './components/Guideline';
 import TopBar from './components/TopBar';
 import NavTabs from './components/NavTabs';
 import ParticipantInfo from './components/ParticipantInfo';
+import Branding from './components/Branding';
