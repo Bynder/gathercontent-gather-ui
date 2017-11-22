@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { MenuItem } from 'react-bootstrap/lib';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
 import StoryItem from '../styleguide/StoryItem';
 import TopBar from '../../lib/TopBar';
 import TopBarContent from '../../lib/TopBar/TopBarContent';
@@ -12,6 +12,7 @@ import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
 import AvatarGroup from '../../lib/AvatarGroup';
 import Navigation from '../../lib/Navigation';
 import Branding from '../../lib/Branding';
+import ProjectSwitcher from '../../lib/ProjectSwitcher';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
@@ -75,6 +76,17 @@ storiesOf('Components', module).add('TopBar', () => (
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Branding />
+          </TopBarCell>
+          <TopBarCell>
+            <ProjectSwitcher name="Project Name">
+              <ul className="dropdown-menu">
+                <li className="dropdown__item">
+                  <a href="#test" className="dropdown__link">
+                    Personal Settings
+                  </a>
+                </li>
+              </ul>
+            </ProjectSwitcher>
           </TopBarCell>
           <TopBarCell bordered>
             <Navigation>
