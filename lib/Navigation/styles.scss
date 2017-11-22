@@ -1,0 +1,21 @@
+.project-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-nav__item {
+  display: inline-block;
+  margin-right: $layout-spacing-base;
+}
+
+.project-nav__item > * {
+  font-size: $typo-size-lead;
+  font-weight: $typo-weight-semi-bold;
+  color: $neutral-darkest;
+  text-decoration: none;
+}
+
+.project-nav__item--active > * {
+  color: $primary-blue;
+}
