@@ -1,13 +1,13 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$branding-max-height: 40px !default;
-$branding-max-width: 150px !default;
+$logo-max-height: 40px !default;
+$logo-max-width: 150px !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
-.branding__image {
-  max-width: $branding-max-width;
-  max-height: $branding-max-height;
+.logo__image {
+  max-width: $logo-max-width;
+  max-height: $logo-max-height;
 }

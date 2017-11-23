@@ -11,7 +11,7 @@ import Avatar from '../../lib/Avatar';
 import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
 import AvatarGroup from '../../lib/AvatarGroup';
 import Navigation from '../../lib/Navigation';
-import Branding from '../../lib/Branding';
+import Logo from '../../lib/Logo';
 import ProjectSwitcher from '../../lib/ProjectSwitcher';
 
 storiesOf('Components', module).add('TopBar', () => (
@@ -75,7 +75,7 @@ storiesOf('Components', module).add('TopBar', () => (
       <TopBar>
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
-            <Branding />
+            <Logo />
           </TopBarCell>
           <TopBarCell>
             <ProjectSwitcher name="Project Name">
