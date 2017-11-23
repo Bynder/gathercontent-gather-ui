@@ -1,21 +1,49 @@
-.project-nav {
+.navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.project-nav__item {
+.navigation__item {
   display: inline-block;
   margin-right: $layout-spacing-base;
 }
 
-.project-nav__item > * {
+.navigation__item > * {
+  display: block;
   font-size: $typo-size-lead;
-  font-weight: $typo-weight-semi-bold;
   color: $neutral-darkest;
   text-decoration: none;
+  padding: $layout-spacing-base / 2 0;
 }
 
-.project-nav__item--active > * {
+.navigation__item--active > * {
   color: $primary-blue;
+}
+
+/* ==========================================================================
+   Tabbed Modifier
+   ========================================================================== */
+
+.navigation--tabs {
+  border-bottom: 1px solid $neutral-light;
+}
+
+.navigation--tabs .navigation__item {
+  bottom: -1px;
+  position: relative;
+  margin-right: 0;
+}
+
+.navigation--tabs .navigation__item > * {
+  padding: $layout-spacing-base;
+}
+
+.navigation--tabs .navigation__item--active, .navigation--tabs .navigation__item:hover {
+  border-bottom: 2px solid $primary-blue;
+}
+
+.navigation--tabs .navigation__item--active > * {
+  color: $primary-blue;
+  font-weight: $typo-weight-roman;
 }

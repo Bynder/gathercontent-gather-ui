@@ -7,10 +7,21 @@ import StoryItem from '../styleguide/StoryItem';
 storiesOf('Components', module).add('Navigation', () => (
   <div>
     <StoryItem
-      title="Nav Tabs"
-      description="An inline tabbed navigation to be used across the whole site."
+      title="Navigation"
+      description="An inline navigation currently used in app TopBar."
     >
       <Navigation>
+        <MenuItem href="#" active>
+          Items
+        </MenuItem>
+        <MenuItem href="#">Archived Items</MenuItem>
+      </Navigation>
+    </StoryItem>
+    <StoryItem
+      title="Tabs"
+      description="A tabbed navigation."
+    >
+      <Navigation tabs>
         <MenuItem href="#" active>
           Items
         </MenuItem>
