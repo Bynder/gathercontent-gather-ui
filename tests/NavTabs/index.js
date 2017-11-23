@@ -1,5 +1,5 @@
-import { React, expect, jsDomGlobal, mount } from '../setup';
-import { MenuItem } from 'react-bootstrap/lib';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
+import { React, expect, mount } from '../setup';
 import NavTabs from '../../lib/NavTabs';
 
 describe('NavTabs', () => {
