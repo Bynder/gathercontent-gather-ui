@@ -55,6 +55,9 @@ $icon-active-color: $color-brand-blue !default;
   stroke: $icon-active-color;
 }
 
+.icon--keyboard rect {
+  stroke: $icon-default-color;
+}
 .is-active .icon--keyboard rect {
   stroke: $icon-active-color;
 }

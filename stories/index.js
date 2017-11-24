@@ -32,3 +32,4 @@ import TopBar from './components/TopBar';
 import ParticipantInfo from './components/ParticipantInfo';
 import Logo from './components/Logo';
 import Navigation from './components/Navigation';
+import Shortcut from './components/Shortcut';
