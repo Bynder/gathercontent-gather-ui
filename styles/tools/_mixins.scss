@@ -105,3 +105,17 @@
     @media only screen and (min-width: $screen-lg-min) { @content; }
   }
 }
+
+
+/**
+ * Font smoothing
+ */
+@mixin applyFontSmoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin removeFontSmoothing() {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
