@@ -29,5 +29,6 @@ import PageInformation from './components/PageInformation';
 import EditableTextWrapper from './components/EditableTextWrapper';
 import Guideline from './components/Guideline';
 import TopBar from './components/TopBar';
-import NavTabs from './components/NavTabs';
 import ParticipantInfo from './components/ParticipantInfo';
+import Logo from './components/Logo';
+import Navigation from './components/Navigation';
