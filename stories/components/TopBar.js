@@ -103,7 +103,7 @@ storiesOf('Components', module).add('TopBar', () => (
               name="Angus Edwardson"
               initials="AE"
               email="example@gmail.com"
-              triggerEvent={['click']}
+              triggerEvent="click"
               popoverClass="popover-dropdown"
               caret
             >
