@@ -1,6 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Avatar, AvatarGroup, AvatarWithPopover } from '../../lib';
+import {
+  Avatar,
+  AvatarGroup,
+  AvatarWithPopover,
+  ParticipantInfo
+} from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Avatar', () => (
@@ -40,6 +45,28 @@ storiesOf('Components', module).add('Avatar', () => (
     </StoryItem>
 
     <StoryItem
+      title="Avatar - with popover using a dropdown menu"
+      description="An avatar can show a popover on focus or hover."
+    >
+      <AvatarWithPopover
+        name="Angus Edwardson"
+        initials="AE"
+        email="example@gmail.com"
+        triggerEvent={['focus']}
+        popoverClass="popover-dropdown"
+        caret
+      >
+        <ul className="dropdown-menu">
+          <li className="dropdown__item">
+            <a href="#test" className="dropdown__link">
+              Personal Settings
+            </a>
+          </li>
+        </ul>
+      </AvatarWithPopover>
+    </StoryItem>
+
+    <StoryItem
       title="Avatar - with popover"
       description="An avatar can show a popover on focus or hover."
     >
@@ -47,8 +74,13 @@ storiesOf('Components', module).add('Avatar', () => (
         name="Angus Edwardson"
         initials="AE"
         email="example@gmail.com"
-        pillboxText="Assigned"
-      />
+      >
+        <ParticipantInfo
+          name="Angus Edwardson"
+          email="example@gmail.com"
+          pillboxText="Assigned"
+        />
+      </AvatarWithPopover>
     </StoryItem>
 
     <StoryItem

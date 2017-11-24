@@ -1,0 +1,12 @@
+.expanding-textarea {
+  border: 1px solid $color-border-base;
+  border-radius: 5px;
+  padding: $layout-spacing-base/2;
+  width: 100%;
+  resize: none;
+  outline: none;
+  &:focus {
+    outline: none;
+    border: 1px solid $primary-blue;
+  }
+}

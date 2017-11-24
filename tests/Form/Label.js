@@ -30,7 +30,7 @@ describe('Label', () => {
     wrapper.setProps({ highlight: true });
     const hasHighlightClass = wrapper
       .find('.form-input__text')
-      .hasClass('form__input-text--highlight');
+      .hasClass('is-highlight');
     expect(hasHighlightClass).to.equal(true);
   });
 
@@ -40,5 +40,13 @@ describe('Label', () => {
       .find('.form-input__text')
       .hasClass('is-active');
     expect(hasActiveClass).to.equal(true);
+  });
+
+  it('adds a highlight-active state class to the text', () => {
+    wrapper.setProps({ highlightHover: true });
+    const hasHighlightActiveClass = wrapper
+      .find('.form-input__text')
+      .hasClass('is-highlight--active');
+    expect(hasHighlightActiveClass).to.equal(true);
   });
 });
