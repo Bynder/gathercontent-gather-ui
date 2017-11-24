@@ -12,7 +12,7 @@ import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
 import AvatarGroup from '../../lib/AvatarGroup';
 import Navigation from '../../lib/Navigation';
 import Logo from '../../lib/Logo';
-import ProjectSwitcher from '../../lib/ProjectSwitcher';
+import DropdownSwitcher from '../../lib/DropdownSwitcher';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
@@ -78,7 +78,7 @@ storiesOf('Components', module).add('TopBar', () => (
             <Logo />
           </TopBarCell>
           <TopBarCell>
-            <ProjectSwitcher name="Project Name">
+            <DropdownSwitcher title="Project Name">
               <ul className="dropdown-menu">
                 <li className="dropdown__item">
                   <a href="#test" className="dropdown__link">
@@ -86,7 +86,7 @@ storiesOf('Components', module).add('TopBar', () => (
                   </a>
                 </li>
               </ul>
-            </ProjectSwitcher>
+            </DropdownSwitcher>
           </TopBarCell>
           <TopBarCell bordered>
             <Navigation>
