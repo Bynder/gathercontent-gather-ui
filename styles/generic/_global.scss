@@ -11,4 +11,9 @@ body {
     line-height: $typo-line-height-base;
     font-size: $typo-size-base;
     color: $neutral-darkest;
+
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
