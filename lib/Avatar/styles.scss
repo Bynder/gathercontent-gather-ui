@@ -81,3 +81,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   top: 10px;
   margin-left: 10px;
 }
+
+.avatar__target {
+  display: inline-block;
+}
