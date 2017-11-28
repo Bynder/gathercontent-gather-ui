@@ -23,5 +23,27 @@ $dropdown-switcher-title-margin-bottom: $layout-spacing-base/2 !default;
 .dropdown-switcher__title {
   display: inline-block;
   margin-bottom: $dropdown-switcher-title-margin-bottom;
-  font-weight: $typo-weight-roman;
+  font-weight: $typo-weight-semi-bold;
+  line-height: $typo-line-height-base * 1.4;
+  margin: 0;
+}
+
+.dropdown-switcher__caret {
+  margin-left: $layout-spacing-base;
+  position: relative;
+  opacity: .4;
+  top: 0px;
+  display: inline-block;
+  padding: 0 $layout-spacing-base / 2;
+  border-radius: 2px;
+}
+
+.dropdown-switcher .is-active .dropdown-switcher__caret {
+  background-color: $neutral-lightest;
+  opacity: 1;
+}
+
+.dropdown-switcher__caret .icon {
+  position: relative;
+  top: -1px;
 }

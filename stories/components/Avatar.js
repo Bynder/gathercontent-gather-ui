@@ -52,7 +52,7 @@ storiesOf('Components', module).add('Avatar', () => (
         name="Angus Edwardson"
         initials="AE"
         email="example@gmail.com"
-        triggerEvent={['focus']}
+        triggerEvent="onClick"
         popoverClass="popover-dropdown"
         caret
       >
