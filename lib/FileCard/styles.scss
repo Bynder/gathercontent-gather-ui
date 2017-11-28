@@ -53,7 +53,8 @@ $file-card-border-radius: 3px !default;
 
 .file-card--highlighted {
   background: $file-card-highlight-color;
-  .file-card__thumbnail {
+  .file-card__thumbnail,
+  .file-card__title {
     &:before {
       content: ' ';
       width: 100%;
