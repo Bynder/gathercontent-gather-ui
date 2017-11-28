@@ -29,21 +29,13 @@ $dropdown-switcher-title-margin-bottom: $layout-spacing-base/2 !default;
 }
 
 .dropdown-switcher__caret {
-  margin-left: $layout-spacing-base;
   position: relative;
   opacity: .4;
-  top: 0px;
+  top: -2px;
   display: inline-block;
-  padding: 0 $layout-spacing-base / 2;
-  border-radius: 2px;
+  margin-left: $layout-spacing-base/4;
 }
 
 .dropdown-switcher .is-active .dropdown-switcher__caret {
-  background-color: $neutral-lightest;
   opacity: 1;
-}
-
-.dropdown-switcher__caret .icon {
-  position: relative;
-  top: -1px;
 }
