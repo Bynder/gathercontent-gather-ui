@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, expect, shallow, sinon } from '../setup';
 import Label from '../../lib/Form/Label';
 
 describe('Label', () => {
@@ -48,5 +48,12 @@ describe('Label', () => {
       .find('.form-input__text')
       .hasClass('is-highlight--active');
     expect(hasHighlightActiveClass).to.equal(true);
+  });
+
+  it('fires the labelClick function', () => {
+    const labelClickSpy = sinon.spy();
+    wrapper.setProps({ labelClick: labelClickSpy });
+    wrapper.simulate('click');
+    expect(labelClickSpy.called).to.equal(true);
   });
 });
