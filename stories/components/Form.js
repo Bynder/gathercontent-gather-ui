@@ -71,6 +71,25 @@ storiesOf('Components', module)
           onChangeHandler={action('hello')}
         />
       </StoryItem>
+
+      <StoryItem
+        title="Checkboxes: input only"
+        description="Checkboxes where the label does not trigger onChange"
+      >
+        <CheckboxGroup
+          choices={[
+            {
+              name: 'ch4',
+              id: 'id41',
+              checked: true,
+              label: 'Ethiopian roast',
+            },
+            { name: 'ch4', id: 'id42', checked: true, label: 'Guatemala roast'}
+          ]}
+          onChangeHandler={action('hello')}
+          overwriteLabelDefault={action('label click wow')}
+        />
+      </StoryItem>
       <StoryItem title="Checkboxes: highlighted">
         <Checkbox
           name="checkbox-highlight"
@@ -205,14 +224,32 @@ storiesOf('Components', module)
               value: 'value 2',
               label: 'Guatemala roast'
             },
-            {
-              name: 'ch7',
-              id: 'id73',
-              value: '',
-              label: 'Or enter your own',
-              other_option: true
-            }
           ]}
+          onChangeHandler={selected => action('onChangeHandler')(selected)}
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Radio Input Group input only"
+        description="A group of radio buttons where the label does not trigger onChange"
+      >
+        <RadioButtonGroup
+          choices={[
+            {
+              name: 'ch8',
+              id: 'id81',
+              value: 'value 1',
+              label: 'Ethiopian roast',
+              checked: true
+            },
+            {
+              name: 'ch8',
+              id: 'id82',
+              value: 'value 2',
+              label: 'Guatemala roast'
+            },
+          ]}
+          overwriteLabelDefault={action('label click wow')}
           onChangeHandler={selected => action('onChangeHandler')(selected)}
         />
       </StoryItem>

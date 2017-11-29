@@ -50,9 +50,21 @@ describe('Label', () => {
     expect(hasHighlightActiveClass).to.equal(true);
   });
 
-  it('fires the labelClick function', () => {
+  it('is passed overwriteLabelDefault as false, it renders a label and not a button', () => {
+    wrapper.setProps({ overwriteLabelDefault: false });
+    expect(wrapper.find('.form-checkbox__label')).to.have.length(1);
+    expect(wrapper.find('.form-checkbox__label--button')).to.have.length(0);
+  });
+
+  it('is passed overwriteLabelDefault as true, it renders a button instead of a label', () => {
+    wrapper.setProps({ overwriteLabelDefault: true });
+    expect(wrapper.find('.form-checkbox__label--button')).to.have.length(1);
+  });
+
+  it('is passed overwriteLabelDefault as a function, it fires on click', () => {
     const labelClickSpy = sinon.spy();
-    wrapper.setProps({ labelClick: labelClickSpy });
+    wrapper.setProps({ overwriteLabelDefault: labelClickSpy });
+    expect(wrapper.find('.form-checkbox__label--button')).to.have.length(1);
     wrapper.simulate('click');
     expect(labelClickSpy.called).to.equal(true);
   });
