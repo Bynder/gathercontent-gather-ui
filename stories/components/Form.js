@@ -87,7 +87,7 @@ storiesOf('Components', module)
             { name: 'ch4', id: 'id42', checked: true, label: 'Guatemala roast'}
           ]}
           onChangeHandler={action('hello')}
-          overwriteLabelDefault={action('label click wow')}
+          overrideLabelDefault={action('label click wow')}
         />
       </StoryItem>
       <StoryItem title="Checkboxes: highlighted">
@@ -106,13 +106,13 @@ storiesOf('Components', module)
         <CheckboxGroup
           choices={[
             {
-              name: 'ch3',
-              id: 'id31',
+              name: 'ch9',
+              id: 'id91',
               checked: true,
               label: 'Ethiopian roast',
               highlight: true
             },
-            { name: 'ch3', id: 'id32', checked: true, label: 'Guatemala roast', highlight: true }
+            { name: 'ch9', id: 'id92', checked: true, label: 'Guatemala roast', highlight: true }
           ]}
           onChangeHandler={action('hello')}
         />
@@ -249,7 +249,7 @@ storiesOf('Components', module)
               label: 'Guatemala roast'
             },
           ]}
-          overwriteLabelDefault={action('label click wow')}
+          overrideLabelDefault={action('label click wow')}
           onChangeHandler={selected => action('onChangeHandler')(selected)}
         />
       </StoryItem>
