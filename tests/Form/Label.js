@@ -35,7 +35,7 @@ describe('Label', () => {
   });
 
   it('adds an active state class to the text', () => {
-    wrapper.setProps({ active: true });
+    wrapper.setProps({ highlightActive: true });
     const hasActiveClass = wrapper
       .find('.form-input__text')
       .hasClass('is-active');
@@ -67,5 +67,20 @@ describe('Label', () => {
     expect(wrapper.find('.form-checkbox__label--button')).to.have.length(1);
     wrapper.simulate('click');
     expect(labelClickSpy.called).to.equal(true);
+  });
+
+  it('sets highlightHover prop functions are called on mouseEnter and mouseLeave', () => {
+    const highlightIsHoveredSpy = sinon.spy();
+    const highlightIsNotHoveredSpy = sinon.spy();
+    wrapper.setProps({
+      overrideLabelDefault: true,
+      highlight: true,
+      highlightIsHovered: highlightIsHoveredSpy,
+      highlightIsNotHovered: highlightIsNotHoveredSpy
+    });
+    wrapper.simulate('mouseEnter');
+    expect(highlightIsHoveredSpy.called).to.equal(true);
+    wrapper.simulate('mouseLeave');
+    expect(highlightIsNotHoveredSpy.called).to.equal(true);
   });
 });

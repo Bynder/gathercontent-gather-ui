@@ -75,10 +75,10 @@ describe('RadioButtonGroup', () => {
     expect(onChangeSpy).to.have.been.calledWith([expectedOptionChoice]);
   });
 
-  it('sets a highlightHover state on mouseEnter and sets it to false on mouseLeave', () => {
-    wrapper.simulate('mouseEnter');
+  it('sets a highlightHover state when highlightIsHovered and highlightIsNotHovered are called', () => {
+    wrapper.instance().highlightIsHovered();
     expect(wrapper.state().highlightHover).to.equal(true);
-    wrapper.simulate('mouseLeave');
+    wrapper.instance().highlightIsNotHovered();
     expect(wrapper.state().highlightHover).to.equal(false);
   });
 });

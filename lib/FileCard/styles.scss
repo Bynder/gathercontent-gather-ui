@@ -62,9 +62,20 @@ $file-card-border-radius: 3px !default;
       position: absolute;
       display: block;
       transition: border .1s ease-in;
+      top: 0;
+      left: 0;
       border: $file-card-border-style $file-card-highlight-color;
     }
-    &:hover {
+    &:hover
+     {
+      &:before {
+        border: $file-card-border-style-hover $file-card-highlight-color;
+      }
+    }
+  }
+  &__active {
+    .file-card__thumbnail,
+    .file-card__title {
       &:before {
         border: $file-card-border-style-hover $file-card-highlight-color;
       }
