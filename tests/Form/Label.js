@@ -35,19 +35,11 @@ describe('Label', () => {
   });
 
   it('adds an active state class to the text', () => {
-    wrapper.setProps({ highlightActive: true });
+    wrapper.setProps({ active: true });
     const hasActiveClass = wrapper
       .find('.form-input__text')
       .hasClass('is-active');
     expect(hasActiveClass).to.equal(true);
-  });
-
-  it('adds a highlight-active state class to the text', () => {
-    wrapper.setProps({ highlightHover: true });
-    const hasHighlightActiveClass = wrapper
-      .find('.form-input__text')
-      .hasClass('is-highlight--active');
-    expect(hasHighlightActiveClass).to.equal(true);
   });
 
   it('is passed overrideLabelDefault as false, it renders a label and not a button', () => {
@@ -69,18 +61,17 @@ describe('Label', () => {
     expect(labelClickSpy.called).to.equal(true);
   });
 
-  it('sets highlightHover prop functions are called on mouseEnter and mouseLeave', () => {
-    const highlightIsHoveredSpy = sinon.spy();
-    const highlightIsNotHoveredSpy = sinon.spy();
+  it('labelMouseEnter and labelMouseLeave prop functions are called on mouseEnter and mouseLeave', () => {
+    const labelMouseEnterSpy = sinon.spy();
+    const labelMouseLeaveSpy = sinon.spy();
     wrapper.setProps({
       overrideLabelDefault: true,
-      highlight: true,
-      highlightIsHovered: highlightIsHoveredSpy,
-      highlightIsNotHovered: highlightIsNotHoveredSpy
+      labelMouseEnter: labelMouseEnterSpy,
+      labelMouseLeave: labelMouseLeaveSpy
     });
     wrapper.simulate('mouseEnter');
-    expect(highlightIsHoveredSpy.called).to.equal(true);
+    expect(labelMouseEnterSpy.called).to.equal(true);
     wrapper.simulate('mouseLeave');
-    expect(highlightIsNotHoveredSpy.called).to.equal(true);
+    expect(labelMouseLeaveSpy.called).to.equal(true);
   });
 });
