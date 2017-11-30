@@ -51,7 +51,8 @@ $file-card-border-radius: 3px !default;
   border-radius: $file-card-border-radius;
 }
 
-.file-card--highlighted {
+.file-card--highlighted,
+.file-card--active {
   background: $file-card-highlight-color;
   .file-card__thumbnail,
   .file-card__title {
@@ -73,12 +74,13 @@ $file-card-border-radius: 3px !default;
       }
     }
   }
-  &__active {
-    .file-card__thumbnail,
-    .file-card__title {
-      &:before {
-        border: $file-card-border-style-hover $file-card-highlight-color;
-      }
+}
+
+.file-card--active {
+  .file-card__thumbnail,
+  .file-card__title {
+    &:before {
+      border: $file-card-border-style-hover $file-card-highlight-color;
     }
   }
 }
