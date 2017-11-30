@@ -2,10 +2,13 @@
   box-shadow: $shadow-deep;
 }
 
-.dropdown-menu > li > a {
+.dropdown-menu > li > a,
+.dropdown-menu .dropdown__link,
+.dropdown-menu .dropdown__item .dropdown__link{
   color: $color-text-base;
-  font-weight: $typo-weight-semi-bold;
   padding: $layout-spacing-base/4 $layout-spacing-base/1.5;
+  font-size: 13px;
+  font-weight: $typo-weight-semi-bold;
 }
 
 .dropdown-menu .divider {
