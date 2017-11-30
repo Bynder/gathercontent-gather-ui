@@ -238,3 +238,15 @@ $color-btn-contained--bg: white !default;
     transform: scale(1.1);
   }
 }
+
+.button--plain {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  transition: transform $animation-time-micro $animation-curve;
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -29,13 +29,28 @@ $dropdown-switcher-title-margin-bottom: $layout-spacing-base/2 !default;
 }
 
 .dropdown-switcher__caret {
-  position: relative;
   opacity: .4;
-  top: -2px;
   display: inline-block;
   margin-left: $layout-spacing-base/4;
 }
 
-.dropdown-switcher .is-active .dropdown-switcher__caret {
+.dropdown-switcher__caret .icon {
+  vertical-align: middle;
+}
+
+.dropdown-switcher__title {
+  svg path {
+    fill: $icon-default-color;
+  }
+}
+
+.open .dropdown-switcher__title {
+  svg path {
+    fill: $icon-active-color;
+  }
+}
+
+.dropdown-switcher .is-active .dropdown-switcher__caret,
+.open .dropdown-switcher__title .dropdown-switcher__caret {
   opacity: 1;
 }
