@@ -38,19 +38,19 @@ $dropdown-switcher-title-margin-bottom: $layout-spacing-base/2 !default;
   vertical-align: middle;
 }
 
-.dropdown-switcher__title {
+.dropdown-switcher__caret {
   svg path {
     fill: $icon-default-color;
   }
 }
 
-.open .dropdown-switcher__title {
+.open .dropdown-switcher__caret {
   svg path {
     fill: $icon-active-color;
   }
 }
 
 .dropdown-switcher .is-active .dropdown-switcher__caret,
-.open .dropdown-switcher__title .dropdown-switcher__caret {
+.dropdown-switcher.open .dropdown-switcher__caret {
   opacity: 1;
 }
