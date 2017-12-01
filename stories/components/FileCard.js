@@ -76,6 +76,19 @@ storiesOf('Components', module).add('FileCard', () => (
     </StoryItem>
 
     <StoryItem
+      title="File Card (without preview)"
+      description="A highlighted file card without a preview image"
+    >
+      <Row>
+        <Col xs={4}>
+          <FileCard filename="field_notes.txt" label="Field notes" isHighlighted>
+            {actions}
+          </FileCard>
+        </Col>
+      </Row>
+    </StoryItem>
+
+    <StoryItem
       title="Multiple File Cards"
       description="Multiple file cards side by side"
     >
@@ -85,7 +98,6 @@ storiesOf('Components', module).add('FileCard', () => (
             filename="sheep_in_iceland.jpg"
             label="Sheep in Iceland"
             previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
-            isHighlighted
           >
             {actions}
           </FileCard>
