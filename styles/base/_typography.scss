@@ -4,6 +4,54 @@ h3 {
     font-weight: $typo-weight-semi-bold;
 }
 
+h1 {
+  font-size: $typo-size-lead * 2.5;
+  line-height: $typo-line-height-base * 2.4;
+  font-weight: $typo-weight-roman;
+  margin-top: $layout-spacing-base * 1.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
+h2 {
+  font-size: $typo-size-lead * 2;
+  line-height: $typo-line-height-base * 1.9;
+  font-weight: $typo-weight-roman;
+  margin-top: $layout-spacing-base * 1.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
+h3 {
+  font-size: $typo-size-lead * 1.75;
+  line-height: $typo-line-height-base * 1.7;
+  font-weight: $typo-weight-roman;
+  margin-top: $layout-spacing-base * 1.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
+h4 {
+  font-size: $typo-size-lead * 1.5;
+  line-height: $typo-line-height-base * 1.5;
+  font-weight: $typo-weight-roman;
+  margin-top: $layout-spacing-base * 0.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
+h5 {
+  font-size: $typo-size-lead * 1.25;
+  line-height: $typo-line-height-base * 1.3;
+  font-weight: $typo-weight-semi-bold;
+  margin-top: $layout-spacing-base * 0.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
+h6 {
+  font-size: $typo-size-lead;
+  line-height: $typo-line-height-base * 1.2;
+  font-weight: $typo-weight-bold;
+  margin-top: $layout-spacing-base * 0.5;
+  margin-bottom: $layout-spacing-base * 0.5;
+}
+
 blockquote {
   border-left: 2px solid $neutral-darkest;
   margin: $layout-spacing-base+$layout-spacing-base/2 0;
@@ -18,4 +66,8 @@ mark {
   &:hover {
     background-color: $primary-yellow-lighter;
   }
+}
+
+a {
+  color: $primary-blue;
 }
