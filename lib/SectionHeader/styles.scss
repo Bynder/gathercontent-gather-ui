@@ -29,7 +29,7 @@ $section-header-inner-height: 42px; // accounts for CTA button height
 
 .section-header__title {
   font-size: $typo-size-header;
-  display: inline-block;
+  display: inline-flex;
   margin: 0;
   font-weight: $typo-weight-semi-bold;
   line-height: $typo-size-header;
