@@ -170,9 +170,14 @@ $color-btn-contained--bg: white !default;
 
 .button--clear {
   background: none;
+  padding: 0;
 
   &:hover {
     background: none;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -236,17 +241,5 @@ $color-btn-contained--bg: white !default;
 .button--hover-transform {
   &:hover {
     transform: scale(1.1);
-  }
-}
-
-.button--plain {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  transition: transform $animation-time-micro $animation-curve;
-
-  &:focus {
-    outline: none;
   }
 }
