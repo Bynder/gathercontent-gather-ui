@@ -3,7 +3,6 @@ import { storiesOf, action } from '@storybook/react';
 import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import {
   FontAwesomeIcon,
-  DropdownSwitcher,
   SectionHeader,
   Button
 } from '../../lib';
@@ -21,14 +20,6 @@ const menu = (
   </Dropdown.Menu>
 );
 
-const customTitle = (
-  <DropdownSwitcher
-    title={<h1 className="section-header__title">Archived Items</h1>}
-  >
-    {menu}
-  </DropdownSwitcher>
-);
-
 storiesOf('Components', module).add('Section Header', () => (
   <div>
     <StoryItem
@@ -41,14 +32,16 @@ storiesOf('Components', module).add('Section Header', () => (
       title="Header with custom title"
       description="Custom header node passed as title (e.g. DropDownSwitcher)."
     >
-      <SectionHeader title={customTitle} />
+      <SectionHeader title="Archived Items" id="ai">
+        {menu}
+      </SectionHeader>
     </StoryItem>
     <StoryItem
       title="Header with CTA button"
       description="Header with a button passed as a CTA."
     >
       <SectionHeader
-        title="Archived Items"
+        title="Templates"
         cta={
           <Button className="section-header--right" clickHandler={() => {}}>
             Create new project

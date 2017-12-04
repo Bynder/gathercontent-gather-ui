@@ -1,15 +1,24 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$section-header-inner-height: 42px; // accounts for CTA button height
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .section-header {
   padding-top: $layout-spacing-base;
   margin-bottom: $layout-spacing-base * 2;
   padding-bottom: $layout-spacing-base * 2;
   border-bottom: 1px solid $color-border-base;
-  height: 85px;
   position: relative;
 }
 
 .section-header__inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: $section-header-inner-height;
 }
 
 .section-header__inner > * {
@@ -18,16 +27,10 @@
   align-items: center;
 }
 
-.section-header--right {
-  justify-content: flex-end;
-  position: absolute;
-  right: 0;
-  order: 2;
-}
-
 .section-header__title {
   font-size: $typo-size-header;
   display: inline-block;
+  margin: 0;
   font-weight: $typo-weight-semi-bold;
   line-height: $typo-size-header;
 }
