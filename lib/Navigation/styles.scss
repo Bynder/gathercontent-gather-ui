@@ -16,6 +16,8 @@
   text-decoration: none;
   padding: $layout-spacing-base / 2 0;
   font-weight: $typo-weight-semi-bold;
+  outline: none;
+  -webkit-appearance: none;
 }
 
 .navigation__item > *:hover {

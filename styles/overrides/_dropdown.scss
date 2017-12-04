@@ -16,6 +16,10 @@
   background-color: $color-background-light;
 }
 
+.dropdown-menu .disabled > * {
+  opacity: .4;
+}
+
 .popover-dropdown .popover-content {
   box-shadow: none;
   padding: 0;
