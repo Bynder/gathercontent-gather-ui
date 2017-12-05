@@ -53,11 +53,4 @@ describe('CheckboxGroup', () => {
 
     expect(onChangeSpy).to.have.been.calledWith([choices[2]]);
   });
-
-  it('sets a highlightHover state on mouseEnter and sets it to false on mouseLeave', () => {
-    wrapper.simulate('mouseEnter');
-    expect(wrapper.state().highlightHover).to.equal(true);
-    wrapper.simulate('mouseLeave');
-    expect(wrapper.state().highlightHover).to.equal(false);
-  });
 });

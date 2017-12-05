@@ -14,12 +14,26 @@ $form-checkbox-label-size: $typo-size-lead !default;
   align-items: baseline;
 }
 
-.form-checkbox__label {
+.form-checkbox__label,
+.form-checkbox__label--button {
   cursor: pointer;
   margin-left: $form-checkbox-margin;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
   display: block;
+}
+
+.form-checkbox__label--button {
+  cursor: default;
+  padding: 0;
+  border: none;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+  &.is-highlight {
+    cursor: pointer;
+  }
 }
 
 .form-input__text {
@@ -42,6 +56,11 @@ $form-checkbox-label-size: $typo-size-lead !default;
   display: block;
   font-size: $typo-size-small;
   color: $color-text-light;
+}
+
+.form-checkbox__input,
+.form-radio__input  {
+  cursor: pointer;
 }
 
 .form-radiobutton__other {
