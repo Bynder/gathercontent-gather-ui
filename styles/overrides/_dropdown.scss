@@ -2,9 +2,7 @@
   box-shadow: $shadow-deep;
 }
 
-.dropdown-menu > li > a,
-.dropdown-menu .dropdown__link,
-.dropdown-menu .dropdown__item .dropdown__link{
+.dropdown-menu > li > a {
   color: $color-text-base;
   padding: $layout-spacing-base/4 $layout-spacing-base/1.5;
   font-size: 13px;
