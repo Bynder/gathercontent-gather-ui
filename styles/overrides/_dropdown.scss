@@ -30,3 +30,8 @@
   float: inherit;
   border: 0 none;
 }
+.popover-dropdown .dropdown__link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
