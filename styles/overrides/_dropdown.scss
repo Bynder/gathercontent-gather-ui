@@ -3,10 +3,10 @@
 }
 
 .dropdown-menu > li > a {
-  color: $color-text-base;
-  padding: $layout-spacing-base/4 $layout-spacing-base/1.5;
-  font-size: 13px;
-  font-weight: $typo-weight-semi-bold;
+  color: $dropdown-menu-font-color;
+  padding: $dropdown-menu-link-padding;
+  font-size: $dropdown-menu-font-size;
+  font-weight: $dropdown-menu-font-weight;
 }
 
 .dropdown-menu .divider {

@@ -4,7 +4,9 @@
 $dropdown-menu-caret-margin: $layout-spacing-base/2 !default;
 $dropdown-menu-icon-size: $typo-size-small !default;
 $dropdown-menu-link-padding: $layout-spacing-base/4 $layout-spacing-base/1.5 !default;
-$dropdown-menu-font-size: 13px !default;
+$dropdown-menu-font-size: $typo-size-small * 1.1 !default;
+$dropdown-menu-font-weight: $typo-weight-semi-bold !default;
+$dropdown-menu-font-color: $color-text-base !default;
 
 /* ==========================================================================
    Styles
@@ -72,8 +74,8 @@ $dropdown-menu-font-size: 13px !default;
   padding: $dropdown-menu-link-padding;
   text-decoration: none;
   cursor: pointer;
-  color: $color-text-base;
-  font-weight: $typo-weight-semi-bold;
+  color: $dropdown-menu-font-color;
+  font-weight: $dropdown-menu-font-weight;
   font-size: $dropdown-menu-font-size;
   background: none;
   border: 0;
