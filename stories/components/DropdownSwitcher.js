@@ -16,6 +16,8 @@ const menu = (
   </Dropdown.Menu>
 );
 
+const customTitle = <h1 className="page__title">Project Name</h1>;
+
 storiesOf('Components', module).add('Dropdown Switcher', () => (
   <div>
     <StoryItem
@@ -28,7 +30,7 @@ storiesOf('Components', module).add('Dropdown Switcher', () => (
       title="Popover Switcher"
       description="An inline popover component. Receives a `children` containing the dropdown menu."
     >
-      <DropdownSwitcher title="Project Name">{menu}</DropdownSwitcher>
+      <DropdownSwitcher title={customTitle}>{menu}</DropdownSwitcher>
     </StoryItem>
     <StoryItem
       title="Custom Dropdown HTML"
