@@ -3,14 +3,19 @@
 }
 
 .dropdown-menu > li > a {
-  color: $color-text-base;
-  font-weight: $typo-weight-semi-bold;
-  padding: $layout-spacing-base/4 $layout-spacing-base/1.5;
+  color: $dropdown-menu-font-color;
+  padding: $dropdown-menu-link-padding;
+  font-size: $dropdown-menu-font-size;
+  font-weight: $dropdown-menu-font-weight;
 }
 
 .dropdown-menu .divider {
   margin: 3px 0;
   background-color: $color-background-light;
+}
+
+.dropdown-menu .disabled > * {
+  opacity: .4;
 }
 
 .popover-dropdown .popover-content {

@@ -26,7 +26,8 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 }
 
 .avatar__wrapper {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .avatar--highlighted {
@@ -77,9 +78,12 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 }
 
 .avatar__caret {
-  position: relative;
-  top: 10px;
-  margin-left: 10px;
+  margin-left: $layout-spacing-base / 4;
+  opacity: .4;
+}
+
+.is-active .avatar__caret {
+  opacity: 1;
 }
 
 .avatar__target {

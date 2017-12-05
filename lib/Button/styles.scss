@@ -170,9 +170,14 @@ $color-btn-contained--bg: white !default;
 
 .button--clear {
   background: none;
+  padding: 0;
 
   &:hover {
     background: none;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
