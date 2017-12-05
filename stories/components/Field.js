@@ -34,6 +34,7 @@ storiesOf('Components', module)
           instructions="Instruction text to help inform the user of what they are mean't to add into this field."
         >
           <div>
+            <h1>Heading content</h1>
             <p>Hello world...</p>
             <FieldAside>
               <div className="field__aside-action">
