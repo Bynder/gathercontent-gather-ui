@@ -34,3 +34,4 @@ import Logo from './components/Logo';
 import Navigation from './components/Navigation';
 import Shortcut from './components/Shortcut';
 import SectionHeader from './components/SectionHeader';
+import ShortcutTrigger from './components/ShortcutTrigger';
