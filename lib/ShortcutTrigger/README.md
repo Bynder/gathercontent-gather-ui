@@ -5,7 +5,7 @@ A component which executes a function when a combination of keys are pressed at 
 ## Usage
 
 ```
-<ShortcutTrigger onHotKeyPress={func} withMetaKey />
+<ShortcutTrigger shortcutKey="enter" onShortcutTrigger={func} withMetaKey />
 ```
 
 ### Props
