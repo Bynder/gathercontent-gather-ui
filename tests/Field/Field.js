@@ -63,4 +63,9 @@ describe('Field', () => {
 
     expect(wrapper.contains('Instructions test text')).to.be.false();
   });
+
+  it('adds conditional classes for formatting', () => {
+    wrapper.setProps({ hasFormatting: true });
+    expect(wrapper.hasClass('has-formatting')).to.equal(true);
+  });
 });

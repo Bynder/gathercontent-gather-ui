@@ -12,7 +12,6 @@ describe('SectionHeader', () => {
   afterEach(() => {});
 
   it('renders its title', () => {
-    console.log(wrapper.debug());
     expect(wrapper.find('.section-header__title').text()).to.have.equal(
       'Test Title'
     );
