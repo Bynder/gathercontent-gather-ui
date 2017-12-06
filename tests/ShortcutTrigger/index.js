@@ -33,66 +33,68 @@ describe('Shortcut Trigger', () => {
     expect(wrapper.isEmptyRender()).to.equal(true);
   });
 
-  it('adds and removes event listeners for keypress', () => {
+  it('adds and removes event listeners for keydown', () => {
     expect(documentAddEventStub).to.be.calledOnce();
     expect(documentAddEventStub).to.be.calledWithExactly(
-      'keypress',
-      wrapper.instance().onKeyPress
+      'keydown',
+      wrapper.instance().onKeyDown
     );
     wrapper.instance().componentWillUnmount();
     expect(documentRemoveEventStub).to.be.calledWithExactly(
-      'keypress',
-      wrapper.instance().onKeyPress
+      'keydown',
+      wrapper.instance().onKeyDown
     );
   });
 
   it('triggers the function when the shortcut is pressed', () => {
-    wrapper.instance().onKeyPress({ repeat: false, key: 'enter' });
+    wrapper.instance().onKeyDown({ repeat: false, key: 'enter' });
     expect(spy).to.be.calledOnce();
 
     wrapper.setProps({ withCtrlKey: true });
     wrapper
       .instance()
-      .onKeyPress({ repeat: false, key: 'enter', ctrlKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
     expect(spy).to.be.calledTwice();
 
     wrapper.setProps({
       withCtrlKey: true,
       withMetaKey: true,
-      withShiftKey: true
+      withShiftKey: true,
+      withAltKey: true
     });
-    wrapper.instance().onKeyPress({
+    wrapper.instance().onKeyDown({
       repeat: false,
       key: 'enter',
       ctrlKey: true,
       metaKey: true,
-      shiftKey: true
+      shiftKey: true,
+      altKey: true
     });
     expect(spy).to.be.calledThrice();
   });
 
   it('does not trigger the function when the shortcut is not pressed', () => {
-    wrapper.instance().onKeyPress({ repeat: false, key: 'a' });
+    wrapper.instance().onKeyDown({ repeat: false, key: 'a' });
     expect(spy).to.not.be.called();
 
     wrapper
       .instance()
-      .onKeyPress({ repeat: false, key: 'enter', ctrlKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
     expect(spy).to.not.be.called();
 
     wrapper
       .instance()
-      .onKeyPress({ repeat: false, key: 'enter', metaKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', metaKey: true });
     expect(spy).to.not.be.called();
 
     wrapper
       .instance()
-      .onKeyPress({ repeat: false, key: 'enter', shiftKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', shiftKey: true });
     expect(spy).to.not.be.called();
   });
 
   it('does not trigger the function when the event is repeating', () => {
-    wrapper.instance().onKeyPress({ repeat: true });
+    wrapper.instance().onKeyDown({ repeat: true });
     expect(spy).to.not.be.called();
   });
 });
