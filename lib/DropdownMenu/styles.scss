@@ -89,6 +89,14 @@ $dropdown-menu-font-color: $color-text-base !default;
   }
 }
 
+.dropdown-menu .active .dropdown__link {
+  color: $color-link-base;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
 .dropdown__separator {
   background-color: rgba($color-border-base, .5);
   height: 1px;
