@@ -3,10 +3,11 @@ import { ExpandingTextArea } from '../../lib';
 
 describe('EditableTextWrapper', () => {
   jsDomGlobal();
+  const sandbox = sinon.sandbox.create();
 
   let wrapper;
-  let sandbox;
   let handleOnChangeSpy;
+  let handleOnFocusSpy;
   let setInitialRowsSpy;
   let handleChangeSpy;
   let resizeTextAreaSpy;
@@ -18,33 +19,33 @@ describe('EditableTextWrapper', () => {
       lineHeight: '20px',
       padding: '10px 0 10px'
     };
-    handleOnChangeSpy = sinon.spy();
-    setInitialRowsSpy = sinon.spy(
+    handleOnChangeSpy = sandbox.spy();
+    handleOnFocusSpy = sandbox.spy();
+    setInitialRowsSpy = sandbox.spy(
       ExpandingTextArea.prototype,
       'setInitialRows'
     );
-    handleChangeSpy = sinon.spy(ExpandingTextArea.prototype, 'handleChange');
-    resizeTextAreaSpy = sinon.spy(
+    handleChangeSpy = sandbox.spy(ExpandingTextArea.prototype, 'handleChange');
+    resizeTextAreaSpy = sandbox.spy(
       ExpandingTextArea.prototype,
       'resizeTextArea'
     );
-    calculateRowsSpy = sinon.spy(ExpandingTextArea.prototype, 'calculateRows');
-    sandbox = sinon.sandbox.create();
+    calculateRowsSpy = sandbox.spy(
+      ExpandingTextArea.prototype,
+      'calculateRows'
+    );
     wrapper = mount(
       <ExpandingTextArea
         style={style}
         placeholder="Placeholder..."
         handleOnChange={handleOnChangeSpy}
+        handleOnFocus={handleOnFocusSpy}
       />
     );
   });
 
   afterEach(() => {
     sandbox.restore();
-    ExpandingTextArea.prototype.setInitialRows.restore();
-    ExpandingTextArea.prototype.handleChange.restore();
-    ExpandingTextArea.prototype.resizeTextArea.restore();
-    ExpandingTextArea.prototype.calculateRows.restore();
   });
 
   it('sets initial rows on render', () => {
@@ -75,6 +76,14 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.state('rowCount')).to.equal(
       calculateRowsSpy.lastCall.returnValue
     );
+  });
+
+  it('calls a prop function when focus and blue', () => {
+    wrapper.simulate('focus', {});
+    expect(handleOnFocusSpy).to.be.calledOnce();
+
+    wrapper.simulate('blur', {});
+    expect(handleOnFocusSpy).to.be.calledTwice();
   });
 
   it('sets the value state if the setValue prop is false', () => {
