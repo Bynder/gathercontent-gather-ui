@@ -1,6 +1,6 @@
 {
   "name": "gather-content-ui",
-  "version": "0.3.51",
+  "version": "0.3.52",
   "description": "GatherContent UI Library",
   "main": "dist/lib/index.js",
   "repository": {
