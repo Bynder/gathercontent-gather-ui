@@ -12,8 +12,8 @@ A component which executes a function when a combination of keys are pressed at 
 
 | Name                  | Type          | Default       | Required | Description                                         |
 | --------------------- |-------------- | ------------- | -------- |---------------------------------------------------- |
-| onShortcutTrigger    | Function      | ``      | Yes       | Executes when combination of keys are pressed.  |
-| shortcutKey   | string      | ``      | Yes       | Chosen key for the shortcut.  |
+| onShortcutTrigger    | Function      | N/A      | Yes       | Executes when combination of keys are pressed.  |
+| shortcutKey   | string      | N/A      | Yes       | Chosen key for the shortcut.  |
 | withCtrlKey   | bool      | `false`      | No       | Chosen key needs to be combined with the ctrl key  |
 | withShiftKey   | bool      | `false`      | No       | Chosen key needs to be combined with the shift key  |
 | withAltKey   | bool      | `false`      | No       | Chosen key needs to be combined with the alt key  |
