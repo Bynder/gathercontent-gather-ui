@@ -3,6 +3,7 @@ import CommentForm from '../../../lib/Conversation/CommentForm';
 import ExpandingTextArea from '../../../lib/ExpandingTextArea';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
+import ShortcutTrigger from '../../../lib/ShortcutTrigger/index';
 
 describe('Comment Form', () => {
   let wrapper;
@@ -75,6 +76,10 @@ describe('Comment Form', () => {
 
     wrapper.setProps({ value: 'test' });
     expect(input.prop('value')).to.equal('test');
+
+    expect(input.prop('handleOnFocus')).to.deep.equal(
+      wrapper.instance().toggleInputHasFocus
+    );
   });
 
   it('renders CommentFormActions (with correct props)', () => {
@@ -95,5 +100,32 @@ describe('Comment Form', () => {
   it('updates the input value', () => {
     wrapper.instance().updateInputValue({ target: { value: 'test 2' } });
     expect(wrapper.state('inputValue')).to.equal('test 2');
+  });
+
+  it('toggles the focus state for the input', () => {
+    wrapper.instance().toggleInputHasFocus();
+    expect(wrapper.state('inputHasFocused')).to.equal(true);
+
+    wrapper.instance().toggleInputHasFocus();
+    expect(wrapper.state('inputHasFocused')).to.equal(false);
+  });
+
+  it('renders ShortcutTriggers', () => {
+    expect(wrapper.find(ShortcutTrigger)).to.have.length(0);
+    wrapper.setState({ inputHasFocused: true });
+    const shortcutTriggers = wrapper.find(ShortcutTrigger);
+    expect(shortcutTriggers).to.have.length(2);
+
+    expect(shortcutTriggers.first().prop('shortcutKey')).to.equal('Enter');
+    expect(shortcutTriggers.first().prop('onShortcutTrigger')).to.deep.equal(
+      wrapper.instance().onSubmit
+    );
+    expect(shortcutTriggers.first().prop('withCtrlKey')).to.equal(true);
+
+    expect(shortcutTriggers.last().prop('shortcutKey')).to.equal('Enter');
+    expect(shortcutTriggers.last().prop('onShortcutTrigger')).to.deep.equal(
+      wrapper.instance().onSubmit
+    );
+    expect(shortcutTriggers.last().prop('withMetaKey')).to.equal(true);
   });
 });
