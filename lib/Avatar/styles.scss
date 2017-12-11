@@ -30,6 +30,11 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   align-items: center;
 }
 
+.avatar__popover {
+  display: flex;
+  align-items: center;
+}
+
 .avatar--highlighted {
   background-color: $avatar-highlighted-background;
   color: $avatar-highlighted-color;
