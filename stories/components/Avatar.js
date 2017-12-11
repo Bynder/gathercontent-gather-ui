@@ -136,20 +136,14 @@ storiesOf('Components', module).add('Avatar', () => (
           initials="JD"
           colour="rgb(61, 138, 235)"
         >
-          <ParticipantInfo
-            name="James Darracott"
-            email="example@gmail.com"
-          />
+          <ParticipantInfo name="James Darracott" email="example@gmail.com" />
         </AvatarWithPopover>
         <AvatarWithPopover
           name="Richard Swagshaw"
           initials="RS"
           colour="rgb(252, 92, 84)"
         >
-          <ParticipantInfo
-            name="Richard Swagshaw"
-            email="example@gmail.com"
-          />
+          <ParticipantInfo name="Richard Swagshaw" email="example@gmail.com" />
         </AvatarWithPopover>
       </AvatarGroup>
     </StoryItem>
