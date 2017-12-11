@@ -114,5 +114,44 @@ storiesOf('Components', module).add('Avatar', () => (
         <Avatar initials="PR" name="Pickle Rik" colour="rgb(147, 114, 79)" />
       </AvatarGroup>
     </StoryItem>
+
+    <StoryItem
+      title="Avatar Group - with popover"
+      description="An avatar can show a popover on focus or hover."
+    >
+      <AvatarGroup maximum={2}>
+        <AvatarWithPopover
+          name="Angus Edwardson"
+          initials="AE"
+          colour="rgb(95, 207, 128)"
+        >
+          <ParticipantInfo
+            name="Angus Edwardson"
+            email="example@gmail.com"
+            pillboxText="Assigned"
+          />
+        </AvatarWithPopover>
+        <AvatarWithPopover
+          name="James Darracott"
+          initials="JD"
+          colour="rgb(61, 138, 235)"
+        >
+          <ParticipantInfo
+            name="James Darracott"
+            email="example@gmail.com"
+          />
+        </AvatarWithPopover>
+        <AvatarWithPopover
+          name="Richard Swagshaw"
+          initials="RS"
+          colour="rgb(252, 92, 84)"
+        >
+          <ParticipantInfo
+            name="Richard Swagshaw"
+            email="example@gmail.com"
+          />
+        </AvatarWithPopover>
+      </AvatarGroup>
+    </StoryItem>
   </div>
 ));
