@@ -7,9 +7,9 @@ storiesOf('Components', module).add('Shortcut', () => (
   <div>
     <StoryItem
       title="Shortcut"
-      description="A group of components describing keyboard shortcuts"
+      description="A mix of Mac and Windows"
     >
-      <Shortcut name="Bold" styleClass="shortcut__bold">
+      <Shortcut name="Bold" styleClass="shortcut__bold" mac>
         <ShortcutCommandKey />
         <ShortcutIcon>b</ShortcutIcon>
       </Shortcut>
@@ -17,7 +17,7 @@ storiesOf('Components', module).add('Shortcut', () => (
         <ShortcutCommandKey />
         <ShortcutIcon>i</ShortcutIcon>
       </Shortcut>
-      <Shortcut name="Underline" styleClass="shortcut__underline">
+      <Shortcut name="Underline" styleClass="shortcut__underline" mac>
         <ShortcutCommandKey />
         <ShortcutIcon>u</ShortcutIcon>
       </Shortcut>
@@ -25,6 +25,11 @@ storiesOf('Components', module).add('Shortcut', () => (
         <ShortcutCommandKey />
         <ShortcutOptionKey />
         <ShortcutIcon>1-6</ShortcutIcon>
+      </Shortcut>
+      <Shortcut name="A shortcut" mac>
+        <ShortcutCommandKey />
+        <ShortcutOptionKey />
+        <ShortcutIcon>G</ShortcutIcon>
       </Shortcut>
     </StoryItem>
   </div>
