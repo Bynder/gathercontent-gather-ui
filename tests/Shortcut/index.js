@@ -1,10 +1,5 @@
 import { React, expect, mount } from '../setup';
-import {
-  Shortcut,
-  ShortcutCommandKey,
-  ShortcutOptionKey,
-  ShortcutIcon
-} from '../../lib';
+import { Shortcut, ShortcutIcon } from '../../lib';
 
 describe('Shortcut', () => {
   let wrapper;
@@ -12,8 +7,8 @@ describe('Shortcut', () => {
   beforeEach(() => {
     wrapper = mount(
       <Shortcut name="Bold" styleClass="shortcut__bold">
-        <ShortcutCommandKey />
-        <ShortcutOptionKey />
+        <ShortcutIcon>⌘</ShortcutIcon>
+        <ShortcutIcon>Option</ShortcutIcon>
         <ShortcutIcon>b</ShortcutIcon>
       </Shortcut>
     );
@@ -23,18 +18,10 @@ describe('Shortcut', () => {
     expect(wrapper.find('.shortcut__bold')).to.have.length(1);
   });
 
-  it('renders a ShortcutCommandKey', () => {
-    expect(wrapper.find(ShortcutCommandKey)).to.have.length(1);
-  });
-
-  it('renders a ShortcutOptionKey', () => {
-    expect(wrapper.find(ShortcutOptionKey)).to.have.length(1);
-  });
-
-  it('renders a ShortcutIcon', () => {
+  it('renders 3 a ShortcutIcons', () => {
     const icon = wrapper.find(ShortcutIcon);
-    expect(icon).to.have.length(1);
-    expect(icon.text()).to.equal('b');
+    expect(icon).to.have.length(3);
+    expect(icon.first().text()).to.equal('⌘');
   });
 
   it('renders 2 shortcut__plus divs', () => {

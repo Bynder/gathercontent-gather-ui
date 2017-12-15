@@ -1,30 +1,32 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Shortcut, ShortcutIcon, ShortcutCommandKey, ShortcutOptionKey } from '../../lib/index';
+import { Shortcut, ShortcutIcon } from '../../lib/index';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Shortcut', () => (
   <div>
-    <StoryItem
-      title="Shortcut"
-      description="A group of components describing keyboard shortcuts"
-    >
-      <Shortcut name="Bold" styleClass="shortcut__bold">
-        <ShortcutCommandKey />
+    <StoryItem title="Shortcut" description="A mix of Mac and Windows">
+      <Shortcut name="Bold" styleClass="shortcut__bold" mac>
+        <ShortcutIcon>⌘</ShortcutIcon>
         <ShortcutIcon>b</ShortcutIcon>
       </Shortcut>
       <Shortcut name="Italicize" styleClass="shortcut__italic">
-        <ShortcutCommandKey />
+        <ShortcutIcon>Ctrl</ShortcutIcon>
         <ShortcutIcon>i</ShortcutIcon>
       </Shortcut>
-      <Shortcut name="Underline" styleClass="shortcut__underline">
-        <ShortcutCommandKey />
+      <Shortcut name="Underline" styleClass="shortcut__underline" mac>
+        <ShortcutIcon>⌘</ShortcutIcon>
         <ShortcutIcon>u</ShortcutIcon>
       </Shortcut>
       <Shortcut name="Apply Heading style [1-6]">
-        <ShortcutCommandKey />
-        <ShortcutOptionKey />
+        <ShortcutIcon>Ctrl</ShortcutIcon>
+        <ShortcutIcon>Alt</ShortcutIcon>
         <ShortcutIcon>1-6</ShortcutIcon>
+      </Shortcut>
+      <Shortcut name="A shortcut" mac>
+        <ShortcutIcon>⌘</ShortcutIcon>
+        <ShortcutIcon>Option</ShortcutIcon>
+        <ShortcutIcon>G</ShortcutIcon>
       </Shortcut>
     </StoryItem>
   </div>
