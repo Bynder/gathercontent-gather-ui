@@ -10,7 +10,7 @@ describe('Comment Form', () => {
   const sandbox = sinon.sandbox.create();
   let onSubmitSpy;
   let onCancelSpy;
-  let onEditSpy;
+  let onCommentChangeSpy;
 
   const props = {
     id: '123',
@@ -25,13 +25,13 @@ describe('Comment Form', () => {
   beforeEach(() => {
     onSubmitSpy = sandbox.spy();
     onCancelSpy = sandbox.spy();
-    onEditSpy = sandbox.spy();
+    onCommentChangeSpy = sandbox.spy();
     wrapper = mount(
       <CommentForm
         {...props}
         onSubmit={onSubmitSpy}
         onCancel={onCancelSpy}
-        onEdit={onEditSpy}
+        onCommentChange={onCommentChangeSpy}
       />
     );
   });
@@ -107,7 +107,7 @@ describe('Comment Form', () => {
   it('updates the input value', () => {
     wrapper.instance().updateInputValue({ target: { value: 'test 2' } });
     expect(wrapper.state('inputValue')).to.equal('test 2');
-    expect(onEditSpy).to.be.calledWithExactly('123', 'test 2');
+    expect(onCommentChangeSpy).to.be.calledWithExactly('123', 'test 2');
   });
 
   it('toggles the focus state for the input', () => {

@@ -17,7 +17,7 @@ describe('Conversation', () => {
       { person: { name: 'Toyah' }, id: 123 },
       { person: { name: 'Sapphire' }, id: 321 }
     ],
-    onConversationEdit() {}
+    onCommentChange() {}
   };
 
   beforeEach(() => {
@@ -86,7 +86,7 @@ describe('Conversation', () => {
     expect(commentList.prop('focusFallback')).to.deep.equal(
       props.focusFallback
     );
-    expect(commentList.prop('onEdit')).to.equal(props.onConversationEdit);
+    expect(commentList.prop('onCommentChange')).to.equal(props.onCommentChange);
   });
 
   it('does not render the reply count text', () => {
@@ -130,8 +130,8 @@ describe('Conversation', () => {
     const addComment = wrapper.instance().addComment;
     expect(wrapper.find(CommentForm).prop('onSubmit')).to.equal(addComment);
     expect(wrapper.find(CommentForm).prop('id')).to.equal('123');
-    expect(wrapper.find(CommentForm).prop('onEdit')).to.equal(
-      props.onConversationEdit
+    expect(wrapper.find(CommentForm).prop('onCommentChange')).to.equal(
+      props.onCommentChange
     );
     addComment('test');
     expect(addCommentSpy.getCall(0).args[0]).to.equal('test');

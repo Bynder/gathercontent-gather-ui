@@ -22,7 +22,7 @@ describe('Comment', () => {
     conversationId: '123',
     editComment: editCommentSpy,
     removeComment: removeCommentSpy,
-    onEdit() {},
+    onCommentChange() {},
     focusFallback: document.createElement('input')
   };
 
@@ -80,7 +80,7 @@ describe('Comment', () => {
     expect(commentForm.prop('author')).to.equal(props.author);
     expect(commentForm.prop('value')).to.equal(props.body);
     expect(commentForm.prop('focusOnMount')).to.equal(true);
-    expect(commentForm.prop('onEdit')).to.equal(props.onEdit);
+    expect(commentForm.prop('onCommentChange')).to.equal(props.onCommentChange);
     expect(commentForm.prop('id')).to.equal(props.id);
   });
 
