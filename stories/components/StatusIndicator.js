@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import StatusIndicator from '../../lib/StatusIndicator/';
+import StatusIndicator from '../../lib/StatusIndicator';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
