@@ -50,9 +50,15 @@ $field-data-color: $neutral-base !default;
 }
 
 .field__content {
+  background: grey;
   padding-left: $field-spacing-base;
   font-size: $typo-size-lead;
   margin-right: $field-aside-width;
+
+  &:hover,
+  .is-active & {
+    background: white;
+  }
 }
 
 .field__aside {
