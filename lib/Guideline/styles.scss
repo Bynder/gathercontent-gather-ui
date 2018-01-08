@@ -34,6 +34,8 @@ $guideline-title-size: $typo-size-large !default;
 .guideline__body {
   transition: max-height $animation-time-micro ease-out;
   max-height: 0;
+  font-size: $typo-size-lead;
+  line-height: $typo-line-height-base * 1.2;
   overflow: hidden;
 
   > *:last-child,
