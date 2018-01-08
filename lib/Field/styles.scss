@@ -49,14 +49,14 @@ $field-data-color: $neutral-base !default;
   margin: $field-spacing-base 0 0;
   padding: $field-spacing-base 0 0 0;
   border-top: 1px solid $neutral-light;
-  transition: all 0.2s ease; // Does this go here?
+  transition: all $animation-time-micro ease;
 }
 
 .field__content {
-  background: #F7F9FA;
+  background: $neutral-lightest;
   border:1px solid transparent;
   border-radius: 4px;
-  padding: 30px; // Should be a variable?
+  padding: $layout-spacing-base*1.5;
   font-size: $typo-size-lead;
   margin-right: $field-aside-width/4;
   transition: all 0.2s ease;
