@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $person-name-weight: $typo-weight-semi-bold !default;
-$person-avatar-size: 40px !default;
+$person-avatar-size: 30px !default;
 $person-avatar-border-radius: 40px !default;
 
 /* ==========================================================================
@@ -16,6 +16,7 @@ $person-avatar-border-radius: 40px !default;
 .person__name {
   display: block;
   font-weight: $person-name-weight;
+  font-size: $typo-size-slight;
 }
 
 .person__avatar {
