@@ -48,7 +48,7 @@ $field-data-color: $neutral-base !default;
   font-style: italic;
   margin: $field-spacing-base 0 0;
   padding: $field-spacing-base 0 0 0;
-  border-top: 1px solid #E6EAED;
+  border-top: 1px solid $neutral-light;
   transition: all 0.2s ease; // Does this go here?
 }
 
@@ -64,7 +64,7 @@ $field-data-color: $neutral-base !default;
   &:hover,
   .is-active & {
     background: #FFFFFF;
-    border: 1px solid #E6EAED;
+    border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
   }
 
