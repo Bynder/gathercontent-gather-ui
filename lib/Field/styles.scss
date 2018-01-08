@@ -47,17 +47,31 @@ $field-data-color: $neutral-base !default;
 .field__instructions {
   font-style: italic;
   margin: $field-spacing-base 0 0;
+  padding: $field-spacing-base 0 0 0;
+  border-top: 1px solid #E6EAED;
+  transition: all 0.2s ease; // Does this go here?
 }
 
 .field__content {
-  background: grey;
-  padding-left: $field-spacing-base;
+  background: #F7F9FA;
+  border:1px solid transparent;
+  border-radius: 4px;
+  padding: 30px; // Should be a variable?
   font-size: $typo-size-lead;
-  margin-right: $field-aside-width;
+  margin-right: $field-aside-width/4;
+  transition: all 0.2s ease;
 
   &:hover,
   .is-active & {
-    background: white;
+    background: #FFFFFF;
+    border: 1px solid #E6EAED;
+    box-shadow: $shadow-shallow;
+  }
+
+  &:hover {
+    .field__instructions {
+      color: $neutral-dark;
+    }
   }
 }
 
