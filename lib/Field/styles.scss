@@ -47,12 +47,32 @@ $field-data-color: $neutral-base !default;
 .field__instructions {
   font-style: italic;
   margin: $field-spacing-base 0 0;
+  padding: $field-spacing-base 0 0 0;
+  border-top: 1px solid $neutral-light;
+  transition: all $animation-time-micro ease;
 }
 
 .field__content {
-  padding-left: $field-spacing-base;
+  background: $neutral-lightest;
+  border:1px solid transparent;
+  border-radius: 4px;
+  padding: $layout-spacing-base*1.5;
   font-size: $typo-size-lead;
-  margin-right: $field-aside-width;
+  margin-right: $field-aside-width/4;
+  transition: all 0.2s ease;
+
+  &:hover,
+  .is-active & {
+    background: #FFFFFF;
+    border: 1px solid $neutral-light;
+    box-shadow: $shadow-shallow;
+  }
+
+  &:hover {
+    .field__instructions {
+      color: $neutral-dark;
+    }
+  }
 }
 
 .field__aside {
