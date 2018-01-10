@@ -53,6 +53,9 @@ $top-bar-box-shadow: 0 0 6px 0 rgba(230,234,237,0.29);
       top: 0;
       bottom: 0;
     }
+    .top-bar__cell:last-child {
+      flex-grow: 1;
+    }
   }
 
   .top-bar__content--center {
