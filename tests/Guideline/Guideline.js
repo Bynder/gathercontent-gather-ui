@@ -12,9 +12,13 @@ describe('Guideline', () => {
     );
   });
 
-  it('adds an active class', () => {
-    wrapper.setState({ showContent: true });
+  it('defaults to open', () => {
     expect(wrapper.hasClass('is-active')).to.be.true();
+  });
+
+  it('toggles an active class', () => {
+    wrapper.setState({ showContent: false });
+    expect(wrapper.hasClass('is-active')).to.be.false();
   });
 
   it('sets the showContent state to true', () => {
@@ -23,8 +27,8 @@ describe('Guideline', () => {
   });
 
   it('switches the text for the show toggle', () => {
-    expect(wrapper.find(Button).prop('children')).to.equal('Show details');
-    wrapper.setState({ showContent: true });
     expect(wrapper.find(Button).prop('children')).to.equal('Hide details');
+    wrapper.setState({ showContent: false });
+    expect(wrapper.find(Button).prop('children')).to.equal('Show details');
   });
 });
