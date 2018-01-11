@@ -18,6 +18,7 @@ $field-data-color: $neutral-base !default;
 }
 
 .field__data {
+  padding-top: $field-spacing-base*1.5;
   text-align: right;
 }
 
