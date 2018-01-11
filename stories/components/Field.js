@@ -31,12 +31,12 @@ storiesOf('Components', module)
           label="Field label text"
           actions={mockActions}
           validations={mockValidations}
-          instructions="Instruction text to help inform the user of what they are mean't to add into this field."
+          instructions="Instruction text to help inform the user of what they're meant to write in this field."
           hasFormatting
         >
           <div>
             <h1>Heading content</h1>
-            <p>Hello world...</p>
+            <p>The fossil record indicates that birds evolved from feathered ancestors within the theropod group, which are traditionally placed within the saurischian dinosaurs, though a 2017 paper[4] has put them in a proposed clade Ornithoscelida, along with the Ornithischia.</p>
             <FieldAside>
               <div className="field__aside-action">
                 <Button

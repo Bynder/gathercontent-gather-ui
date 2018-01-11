@@ -9,7 +9,7 @@ $layout-spacing-base: 20px;
    Shadows
    ========================================================================== */
 $shadow-deep: 0 $layout-spacing-base/4 $layout-spacing-base/2 $neutral-light;
-$shadow-shallow: 0px 0px 6px 0px transparentize($neutral-light, 0.3);
+$shadow-shallow: 0px 0px 6px 0px transparentize($neutral-light, 0.7);
 
 /* ==========================================================================
    Breakpoints
