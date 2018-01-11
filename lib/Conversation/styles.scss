@@ -117,6 +117,10 @@ $conversation-meta-text-color: $neutral-base !default;
   color: $conversation-meta-text-color;
 }
 
+.conversation__meta-wrapper {
+  margin-bottom: $conversation-padding;
+}
+
 /* ==========================================================================
    State Styles
    ========================================================================== */
