@@ -12,8 +12,7 @@ describe('Tabs', () => {
       <Tabs onTabChange={onTabChangeSpy}>
         <Tabs.Item id="tabId-1">Tab 1</Tabs.Item>
         <Tabs.Item id="tabId-2">Tab 2</Tabs.Item>
-      </Tabs>,
-      { context: { [GATHER_UI_TABS]: { activeTabItem: null } } }
+      </Tabs>
     );
   });
 
