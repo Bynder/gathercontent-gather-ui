@@ -23,6 +23,11 @@ const allIcons = additionalProps => (
     <Icon name="download" {...additionalProps} />
     <Icon name="person" {...additionalProps} />
     <Icon name="keyboard" {...additionalProps} />
+    <Icon name="attachment" {...additionalProps} />
+    <Icon name="checkbox" {...additionalProps} />
+    <Icon name="guideline" {...additionalProps} />
+    <Icon name="radio" {...additionalProps} />
+    <Icon name="text" {...additionalProps} />
   </div>
 );
 
