@@ -11,7 +11,7 @@ storiesOf('Components', module)
           title="Tabs"
           description="Components that renders a both the tabs container and each individual tab"
         >
-          <Tabs onTabChange={(id) => console.log(`tab changed to ${id}`)}>
+          <Tabs activeTabId="123" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
             <Tabs.Item id="123">Tab 1</Tabs.Item>
             <Tabs.Item id="321">Tab 2</Tabs.Item>
           </Tabs>
