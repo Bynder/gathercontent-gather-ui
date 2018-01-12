@@ -3,6 +3,7 @@ import { Field } from '../../lib';
 import FieldActions from '../../lib/Field/FieldActions';
 import FieldValidations from '../../lib/Field/FieldValidations';
 import Button from '../../lib/Button';
+import ExpandingTextArea from '../../lib/ExpandingTextArea';
 
 describe('Field', () => {
   let wrapper;
@@ -34,7 +35,7 @@ describe('Field', () => {
   it('renders an editing state', () => {
     wrapper.setProps({ canEdit: true });
     expect(wrapper.find('.field__label').type()).to.equal('input');
-    expect(wrapper.find('.field__instructions').type()).to.equal('input');
+    expect(wrapper.find(ExpandingTextArea)).to.have.length(1);
   });
 
   it('renders a label', () => {
