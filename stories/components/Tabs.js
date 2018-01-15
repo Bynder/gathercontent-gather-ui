@@ -14,6 +14,7 @@ storiesOf('Components', module)
           <Tabs activeTabId="123" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
             <Tabs.Item id="123">Tab 1</Tabs.Item>
             <Tabs.Item id="321">Tab 2</Tabs.Item>
+            <Tabs.Button id="321" onClick={() => console.log('Tab button clicked')}>+</Tabs.Button>
           </Tabs>
         </StoryItem>
       </div>

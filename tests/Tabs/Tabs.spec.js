@@ -2,6 +2,7 @@ import { React, expect, shallow, sinon } from '../setup';
 import { Tabs } from '../../lib';
 import { GATHER_UI_TABS } from '../../lib/Tabs';
 import TabItem from '../../lib/Tabs/TabsItem';
+import TabButton from '../../lib/Tabs/TabsButton';
 
 describe('Tabs', () => {
   const onTabChangeSpy = sinon.spy();
@@ -30,8 +31,9 @@ describe('Tabs', () => {
     });
   });
 
-  it('sets the Item static prop to the Item component', () => {
+  it('sets the Item/Button static prop to the Item/Button component', () => {
     expect(Tabs.Item).to.deep.equal(TabItem);
+    expect(Tabs.Button).to.deep.equal(TabButton);
   });
 
   it('sets an active tab and calls props.onTabChange', () => {

@@ -7,11 +7,13 @@
    ========================================================================== */
 .tabs {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   border-bottom: 1px solid $neutral-light;
 }
 
-.tabs__item {
+.tabs__item,
+.tabs__button {
   background: none;
   border: 0;
   padding: 0;
@@ -22,4 +24,12 @@
   &.is-active {
     border-bottom-color: $primary-blue;
   }
+
+  &:first-child {
+    margin-left: auto;
+  }
+}
+
+.tabs__button:last-child {
+  margin-left: auto;
 }
