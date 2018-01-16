@@ -117,7 +117,6 @@ $field-data-color: $neutral-base !default;
 
   .field__label,
   .field__instructions {
-    border: 0;
     resize: none;
     overflow: auto;
     outline: none;
@@ -128,12 +127,16 @@ $field-data-color: $neutral-base !default;
   }
   .field__instructions {
     font-size: $typo-size-small;
+    font-style: italic;
     text-decoration: none;
-    font-style: normal;
     padding: $field-spacing-base/2;
     margin: 0;
+    border: 1px solid transparent;
     border-top: 1px solid $neutral-light;
     border-radius: 0 0 $field-spacing-base/4 $field-spacing-base/4;
+    &::placeholder {
+      color: $neutral-base;
+    }
   }
   .field__label {
     text-align: right;
