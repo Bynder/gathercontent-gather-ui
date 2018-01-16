@@ -32,10 +32,12 @@ describe('Field', () => {
     expect(wrapper.text()).to.equal('READ ONLY!');
   });
 
-  it('renders an editing state', () => {
-    wrapper.setProps({ canEdit: true });
+  it('renders an editing state and passes the relevant props', () => {
+    wrapper.setProps({ canEdit: true, instructionsMinRows: 3, instructionsPlaceholder: 'some text' });
     expect(wrapper.find('.field__label').type()).to.equal('input');
     expect(wrapper.find(ExpandingTextArea)).to.have.length(1);
+    expect(wrapper.find(ExpandingTextArea).prop('minRows')).to.equal(3);
+    expect(wrapper.find(ExpandingTextArea).prop('placeholder')).to.equal('some text');
   });
 
   it('renders a label', () => {
