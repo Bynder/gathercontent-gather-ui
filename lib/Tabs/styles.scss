@@ -1,6 +1,22 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$tabs-border-thickness: 1px !default;
+$tabs-border-type: solid !default;
+$tabs-border-color: transparent !default;
+$tabs-border-color-hover: $neutral-base !default;
+$tabs-editable-border-color: $neutral-light !default;
+$tabs-editable-border-color-hover: $tabs-border-color-hover !default;
+
+$tabs-background-color: transparent !default;
+$tabs-active-background-color: $primary-blue !default;
+$tabs-active-text-color: white !default;
+$tabs-active-border-color: transparent !default;
+
+$tabs-margin: $layout-spacing-base/4 !default;
+$tabs-padding: $layout-spacing-base/6 $layout-spacing-base/2.5 !default;
+
+$tabs-border-radius: $layout-spacing-base !default;
 
 /* ==========================================================================
    Styles
@@ -11,27 +27,27 @@
   justify-content: center;
 }
 
-.tabs__item,
-.tabs--editable .tabs__item {
+.tabs__item {
+  background: $tabs-background-color;
+  border: $tabs-border-thickness $tabs-border-type $tabs-border-color;
+  padding: $tabs-padding;
+  margin: $tabs-margin;
+  border-radius: $tabs-border-radius;
   display: flex;
   align-items: center;
-  border: 1px solid transparent;
-  padding: $layout-spacing-base/6 $layout-spacing-base/2.5;
-  margin: $layout-spacing-base/4;
   line-height: 1;
-  border-radius: $layout-spacing-base;
   white-space: nowrap;
   cursor: pointer;
   outline: none;
 
   &:hover {
-    border-color: $neutral-base;
+    border-color: $tabs-border-color-hover;
   }
 
   &.is-active {
-    color: white;
-    background: $primary-blue;
-    border-color: transparent;
+    color: $tabs-active-text-color;
+    background: $tabs-active-background-color;
+    border-color: $tabs-active-border-color;
 
     path {
       fill: white;
@@ -40,10 +56,18 @@
 }
 
 .tabs--editable .tabs__item {
-  border-color: $neutral-light;
+  border-color: $tabs-editable-border-color;
+
+  &:hover {
+    border-color: $tabs-editable-border-color-hover;
+  }
+
+  &.is-active {
+    border-color: transparent;
+  }
 }
 
 .tabs__options {
   display: flex;
-  margin: 0 0 0 $layout-spacing-base/4;
+  margin: 0 0 0 $tabs-margin;
 }
