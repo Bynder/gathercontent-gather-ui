@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import Tabs from '../../lib/Tabs';
+import { Tabs } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import Icon from '../../lib/Icon';
 
@@ -78,6 +78,19 @@ storiesOf('Components', module)
             <Tabs.Button onClick={() => console.log('Tab button clicked')}>
               <Icon name="plus" className="fill-primary-blue" />
             </Tabs.Button>
+          </Tabs>
+        </StoryItem>
+
+        <StoryItem
+          title="Tabs: Forms"
+          description="Tabs can contain form elements, useful when a tab becomes editable."
+        >
+          <Tabs onTabChange={(id) => console.log(`tab changed to ${id}`)} editable>
+            <Tabs.Item id="content">Content</Tabs.Item>
+            <Tabs.Form
+              onSubmit={(value) => console.log(`The value is ${value}`)}
+              onCancel={() => console.log('Run cancel function')}
+            />
           </Tabs>
         </StoryItem>
       </div>

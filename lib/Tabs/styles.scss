@@ -3,15 +3,17 @@
    ========================================================================== */
 $tabs-border-thickness: 1px !default;
 $tabs-border-type: solid !default;
+
 $tabs-border-color: transparent !default;
 $tabs-border-color-hover: $neutral-base !default;
+$tabs-active-border-color: transparent !default;
 $tabs-editable-border-color: $neutral-light !default;
 $tabs-editable-border-color-hover: $tabs-border-color-hover !default;
 
 $tabs-background-color: transparent !default;
 $tabs-active-background-color: $primary-blue !default;
+
 $tabs-active-text-color: white !default;
-$tabs-active-border-color: transparent !default;
 
 $tabs-margin: $layout-spacing-base/4 !default;
 $tabs-padding: $layout-spacing-base/6 $layout-spacing-base/2.5 !default;
@@ -27,7 +29,8 @@ $tabs-border-radius: $layout-spacing-base !default;
   justify-content: center;
 }
 
-.tabs__item {
+.tabs__item,
+.tabs__button {
   background: $tabs-background-color;
   border: $tabs-border-thickness $tabs-border-type $tabs-border-color;
   padding: $tabs-padding;
@@ -44,6 +47,7 @@ $tabs-border-radius: $layout-spacing-base !default;
     border-color: $tabs-border-color-hover;
   }
 
+  input,
   &.is-active {
     color: $tabs-active-text-color;
     background: $tabs-active-background-color;
@@ -53,6 +57,23 @@ $tabs-border-radius: $layout-spacing-base !default;
       fill: white;
     }
   }
+
+  &.is-editing {
+    padding: 0;
+    border: 0;
+  }
+
+  input {
+    border-radius: $tabs-border-radius;
+    padding: $tabs-padding;
+    outline: none;
+    border: 0;
+  }
+}
+
+.tabs__button,
+.tabs__button:hover {
+  border-color: transparent;
 }
 
 .tabs--editable .tabs__item {
@@ -63,7 +84,7 @@ $tabs-border-radius: $layout-spacing-base !default;
   }
 
   &.is-active {
-    border-color: transparent;
+    border-color: $tabs-active-border-color;
   }
 }
 

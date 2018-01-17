@@ -4,6 +4,7 @@ import { GATHER_UI_TABS } from '../../lib/Tabs';
 import TabItem from '../../lib/Tabs/TabsItem';
 import TabButton from '../../lib/Tabs/TabsButton';
 import TabOptions from '../../lib/Tabs/TabsOptions';
+import TabForm from '../../lib/Tabs/TabsForm';
 
 describe('Tabs', () => {
   const onTabChangeSpy = sinon.spy();
@@ -32,10 +33,11 @@ describe('Tabs', () => {
     });
   });
 
-  it('sets the Item/Button static prop to the Item/Button/Options component', () => {
+  it('sets the Item/Button static prop to the Item/Button/Options/Form component', () => {
     expect(Tabs.Item).to.deep.equal(TabItem);
     expect(Tabs.Button).to.deep.equal(TabButton);
     expect(Tabs.Options).to.deep.equal(TabOptions);
+    expect(Tabs.Form).to.deep.equal(TabForm);
   });
 
   it('sets an active tab and calls props.onTabChange when the active tab changes', () => {
