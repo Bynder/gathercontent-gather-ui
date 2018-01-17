@@ -1,11 +1,13 @@
 import { React, expect, shallow } from '../setup';
-import { Tabs, Icon, DropdownMenu } from '../../lib';
+import { Tabs, Icon } from '../../lib';
 
 describe('Tabs Options', () => {
-  const mockOptions = [{
-    name: 'Edit',
-    action: () => {},
-  }];
+  const mockOptions = [
+    {
+      name: 'Edit',
+      action: () => {}
+    }
+  ];
   let wrapper;
 
   beforeEach(() => {
