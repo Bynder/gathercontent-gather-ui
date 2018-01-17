@@ -9,10 +9,7 @@ describe('FormInput', () => {
   beforeEach(() => {
     onChangeSpy = sandbox.spy();
     wrapper = shallow(
-      <FormInput
-        onChange={onChangeSpy}
-        value="test value"
-      >
+      <FormInput onChange={onChangeSpy} value="test value">
         <input />
       </FormInput>
     );
@@ -29,7 +26,7 @@ describe('FormInput', () => {
       type: 'text',
       value: 'test value',
       onChange: wrapper.instance().handleOnChange,
-      autoFocus: false,
+      autoFocus: false
     });
   });
 

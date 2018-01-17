@@ -11,10 +11,7 @@ describe('Tabs Form', () => {
     onSubmitSpy = sandbox.spy();
     onCancelSpy = sandbox.spy();
     wrapper = shallow(
-      <Tabs.Form
-        onSubmit={onSubmitSpy}
-        onCancel={onCancelSpy}
-      />
+      <Tabs.Form onSubmit={onSubmitSpy} onCancel={onCancelSpy} />
     );
   });
 

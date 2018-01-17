@@ -11,11 +11,7 @@ describe('Form', () => {
     onSubmitSpy = sandbox.spy();
     onCancelSpy = sandbox.spy();
     wrapper = shallow(
-      <Form
-        onSubmit={onSubmitSpy}
-        onCancel={onCancelSpy}
-        className="test"
-      >
+      <Form onSubmit={onSubmitSpy} onCancel={onCancelSpy} className="test">
         <input />
       </Form>
     );
