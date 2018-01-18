@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $tabs-margin: $layout-spacing-base/4 !default;
-$tabs-padding: $layout-spacing-base/6 $layout-spacing-base/2.5 !default;
+$tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
 
 /* ==========================================================================
    Styles
@@ -67,4 +67,8 @@ $tabs-padding: $layout-spacing-base/6 $layout-spacing-base/2.5 !default;
 .tabs__options {
   display: flex;
   margin: 0 0 0 $tabs-margin;
+}
+
+.tabs__dropdown {
+  margin-top: $layout-spacing-base/2;
 }
