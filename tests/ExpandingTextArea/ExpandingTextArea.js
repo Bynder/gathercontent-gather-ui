@@ -57,6 +57,13 @@ describe('EditableTextWrapper', () => {
     );
   });
 
+  it('respects the minRows prop', () => {
+    expect(wrapper.state('rowCount')).to.equal(1);
+    wrapper.setProps({ minRows: 4 });
+    wrapper.instance().resizeTextArea();
+    expect(wrapper.state('rowCount')).to.equal(4);
+  });
+
   it('sets the input value as the value prop', () => {
     wrapper.setProps({ value: 'New Value' });
     expect(wrapper.text()).to.equal(wrapper.prop('value'));
