@@ -28,6 +28,7 @@ describe('FormInput', () => {
     expect(input).to.have.length(1);
     expect(input.props()).to.deep.equal({
       type: 'text',
+      className: 'form__input test-class',
       value: 'test value',
       onChange: wrapper.instance().handleOnChange,
       autoFocus: false

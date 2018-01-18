@@ -44,3 +44,16 @@ A button which does not set the active tab when clicked. Handy for when you want
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | onClick             | Function      | `false`   | No       | Add left hand side border.                                                    |
 | children            | Node or String  | N/A       | Yes      | The content of the button.
+
+# TabsForm
+A form which can be used when editing or creating a new tab.
+
+## Usage
+
+### Props
+
+| Name               | Type          | Default   | Required | Description                                                                   |
+| ------------------ |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
+| value              | String        | ''        | No       | The initial value of the input.                                               |
+| onCancel           | Function      | () {}     | No       | A function which is called when pressing the Esc key.                         |
+| onSubmit           | Function      | N/A       | Yes      | A function which is called when the user submits the form.                    |

@@ -15,7 +15,7 @@ describe('Tabs Options', () => {
   });
 
   it('renders a DropdownMenu component', () => {
-    expect(wrapper.prop('type')).to.deep.equal(['icon-only']);
+    expect(wrapper.prop('type')).to.equal('icon-only');
     expect(wrapper.prop('items')).to.deep.equal(mockOptions);
   });
 
