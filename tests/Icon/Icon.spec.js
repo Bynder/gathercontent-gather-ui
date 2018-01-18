@@ -8,6 +8,7 @@ import downloadSVG from '../../assets/icons/download.svg';
 import fullScreenSVG from '../../assets/icons/fullscreen.svg';
 import personSVG from '../../assets/icons/person.svg';
 import keyboardSVG from '../../assets/icons/keyboard.svg';
+import cogSvg from '../../assets/icons/cog.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -65,6 +66,11 @@ describe('Icon', () => {
   it('should render the keyboard icon', () => {
     wrapper.setProps({ name: 'keyboard' });
     expect(wrapper.find('svg').props()).to.deep.equal(keyboardSVG().props);
+  });
+
+  it('should render the cog icon', () => {
+    wrapper.setProps({ name: 'cog' });
+    expect(wrapper.find('svg').props()).to.deep.equal(cogSvg().props);
   });
 
   it('adds a modifier class of icon--hide-text', () => {
