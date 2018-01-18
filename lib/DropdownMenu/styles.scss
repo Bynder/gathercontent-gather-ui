@@ -29,6 +29,8 @@ $dropdown-menu-font-color: $color-text-base !default;
 }
 
 .dropdown-menu {
+  line-height: $typo-line-height-base;
+
   .open & {
     display: block;
     opacity: 1;
