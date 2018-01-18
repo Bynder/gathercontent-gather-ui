@@ -11,7 +11,7 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -$tabs-item-margin $layout-spacing-base $layout-spacing-base;
+  margin: ($layout-spacing-base - $tabs-item-margin) $layout-spacing-base;
 }
 
 .tabs--editable .tabs__item {
