@@ -9,7 +9,11 @@ describe('FormInput', () => {
   beforeEach(() => {
     onChangeSpy = sandbox.spy();
     wrapper = shallow(
-      <FormInput onChange={onChangeSpy} value="test value">
+      <FormInput
+        onChange={onChangeSpy}
+        value="test value"
+        className="test-class"
+      >
         <input />
       </FormInput>
     );
@@ -37,5 +41,9 @@ describe('FormInput', () => {
   it('sets the current value to the targets value', () => {
     wrapper.instance().handleOnChange({ target: { value: 'value 1' } });
     expect(wrapper.state('value')).to.equal('value 1');
+  });
+
+  it('sets the correct className', () => {
+    expect(wrapper.hasClass('test-class')).to.equal(true);
   });
 });
