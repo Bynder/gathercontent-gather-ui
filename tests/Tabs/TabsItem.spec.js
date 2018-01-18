@@ -30,7 +30,13 @@ describe('Tabs Item', () => {
   });
 
   it('calls the setActiveTab function from context', () => {
-    wrapper.find('button').simulate('click');
+    wrapper.find('.tabs__item').simulate('click');
     expect(setActiveTabSpy).to.be.calledWithExactly('123');
+  });
+
+  it('renders options when active', () => {
+    expect(wrapper.find(Tabs.Options)).to.have.length(0);
+    wrapper.setProps({ options: [{}] });
+    expect(wrapper.find(Tabs.Options)).to.have.length(1);
   });
 });

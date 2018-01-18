@@ -1,7 +1,22 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import Tabs from '../../lib/Tabs';
+import { Tabs } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
+import Icon from '../../lib/Icon';
+
+const options = [{
+  name: 'Edit',
+  action: () => {},
+}, {
+  name: 'Delete',
+  action: () => {},
+}, {
+  name: 'Move Left',
+  action: () => {},
+}, {
+  name: 'Move Right',
+  action: () => {},
+}];
 
 storiesOf('Components', module)
   .add('Tabs', () => {
@@ -9,12 +24,73 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Tabs"
-          description="Components that renders a both the tabs container and each individual tab"
+          description="Components that renders a both the tabs container and individual tabs."
         >
-          <Tabs activeTabId="123" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
-            <Tabs.Item id="123">Tab 1</Tabs.Item>
-            <Tabs.Item id="321">Tab 2</Tabs.Item>
-            <Tabs.Button id="321" onClick={() => console.log('Tab button clicked')}>+</Tabs.Button>
+          <Tabs activeTabId="content" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
+            <Tabs.Item id="content">Content</Tabs.Item>
+            <Tabs.Item id="meta">Meta</Tabs.Item>
+            <Tabs.Item id="english">English</Tabs.Item>
+            <Tabs.Item id="french">French</Tabs.Item>
+            <Tabs.Item id="german">German</Tabs.Item>
+          </Tabs>
+        </StoryItem>
+
+        <StoryItem
+          title="Tabs: Outlined"
+          description="Tabs can be outlined, which is helpful when the text inside are editable."
+        >
+          <Tabs
+            activeTabId="meta"
+            onTabChange={(id) => console.log(`tab changed to ${id}`)}
+            editable
+          >
+            <Tabs.Item id="content">Content</Tabs.Item>
+            <Tabs.Item id="meta">Meta</Tabs.Item>
+            <Tabs.Item id="english">English</Tabs.Item>
+            <Tabs.Item id="french">French</Tabs.Item>
+            <Tabs.Item id="german">German</Tabs.Item>
+          </Tabs>
+        </StoryItem>
+
+        <StoryItem
+          title="Tabs: With Options"
+          description="Tabs can show options per tab in a drop down."
+        >
+          <Tabs activeTabId="english" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
+            <Tabs.Item id="content" options={options}>Content</Tabs.Item>
+            <Tabs.Item id="meta" options={options}>Meta</Tabs.Item>
+            <Tabs.Item id="english" options={options}>English</Tabs.Item>
+            <Tabs.Item id="french" options={options}>French</Tabs.Item>
+            <Tabs.Item id="german" options={options}>German</Tabs.Item>
+          </Tabs>
+        </StoryItem>
+
+        <StoryItem
+          title="Tabs: Buttons"
+          description="Tabs can be buttons, which do not change the active tab but instead fire a function."
+        >
+          <Tabs activeTabId="french" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
+            <Tabs.Item id="content">Content</Tabs.Item>
+            <Tabs.Item id="meta">Meta</Tabs.Item>
+            <Tabs.Item id="english">English</Tabs.Item>
+            <Tabs.Item id="french">French</Tabs.Item>
+            <Tabs.Item id="german">German</Tabs.Item>
+            <Tabs.Button onClick={() => console.log('Tab button clicked')}>
+              <Icon name="plus" className="fill-primary-blue" />
+            </Tabs.Button>
+          </Tabs>
+        </StoryItem>
+
+        <StoryItem
+          title="Tabs: Forms"
+          description="Tabs can contain form elements, useful when a tab becomes editable."
+        >
+          <Tabs onTabChange={(id) => console.log(`tab changed to ${id}`)} editable>
+            <Tabs.Item id="content">Content</Tabs.Item>
+            <Tabs.Form
+              onSubmit={(value) => console.log(`The value is ${value}`)}
+              onCancel={() => console.log('Run cancel function')}
+            />
           </Tabs>
         </StoryItem>
       </div>
