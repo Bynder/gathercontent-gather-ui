@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Field } from '../../lib';
 import FieldActions from '../../lib/Field/FieldActions';
 import FieldValidations from '../../lib/Field/FieldValidations';
@@ -22,59 +22,59 @@ describe('Field', () => {
 
   afterEach(() => {});
 
-  it('renders loading state', () => {
+  test('renders loading state', () => {
     wrapper.setProps({ isLoading: true });
-    expect(wrapper.text()).to.equal('LOADING!');
+    expect(wrapper.text()).toEqual('LOADING!');
   });
 
-  it('renders read only state', () => {
+  test('renders read only state', () => {
     wrapper.setProps({ isReadOnly: true });
-    expect(wrapper.text()).to.equal('READ ONLY!');
+    expect(wrapper.text()).toEqual('READ ONLY!');
   });
 
-  it('renders an editing state and passes the relevant props', () => {
+  test('renders an editing state and passes the relevant props', () => {
     wrapper.setProps({
       canEdit: true,
       instructionsMinRows: 3,
       instructionsPlaceholder: 'some text'
     });
-    expect(wrapper.find('.field__label').type()).to.equal('input');
-    expect(wrapper.find(ExpandingTextArea)).to.have.length(1);
-    expect(wrapper.find(ExpandingTextArea).prop('minRows')).to.equal(3);
-    expect(wrapper.find(ExpandingTextArea).prop('placeholder')).to.equal(
+    expect(wrapper.find('.field__label').type()).toEqual('input');
+    expect(wrapper.find(ExpandingTextArea)).toHaveLength(1);
+    expect(wrapper.find(ExpandingTextArea).prop('minRows')).toEqual(3);
+    expect(wrapper.find(ExpandingTextArea).prop('placeholder')).toEqual(
       'some text'
     );
   });
 
-  it('renders a label', () => {
-    expect(wrapper.contains('Test label')).to.be.true();
+  test('renders a label', () => {
+    expect(wrapper.contains('Test label')).toBe(true);
   });
 
-  it('renders actions', () => {
-    expect(wrapper.find(FieldActions)).to.have.length(1);
+  test('renders actions', () => {
+    expect(wrapper.find(FieldActions)).toHaveLength(1);
   });
 
-  it('renders validations', () => {
-    expect(wrapper.find(FieldValidations)).to.have.length(1);
+  test('renders validations', () => {
+    expect(wrapper.find(FieldValidations)).toHaveLength(1);
   });
 
-  it('renders its children', () => {
+  test('renders its children', () => {
     const children = wrapper.children();
-    expect(children.find(Button)).to.have.length(1);
+    expect(children.find(Button)).toHaveLength(1);
   });
 
-  it('renders instructions', () => {
-    expect(wrapper.contains('Instructions test text')).to.be.true();
+  test('renders instructions', () => {
+    expect(wrapper.contains('Instructions test text')).toBe(true);
 
     wrapper.setProps({
       instructions: ''
     });
 
-    expect(wrapper.contains('Instructions test text')).to.be.false();
+    expect(wrapper.contains('Instructions test text')).toBe(false);
   });
 
-  it('adds conditional classes for formatting', () => {
+  test('adds conditional classes for formatting', () => {
     wrapper.setProps({ hasFormatting: true });
-    expect(wrapper.hasClass('has-formatting')).to.equal(true);
+    expect(wrapper.hasClass('has-formatting')).toEqual(true);
   });
 });

@@ -1,7 +1,5 @@
-import { React, expect, jsDomGlobal, mount } from '../setup';
+import { React, mount } from '../setup';
 import StatusIndicator from '../../lib/StatusIndicator';
-
-jsDomGlobal();
 
 describe('StatusIndicator', () => {
   let wrapper;
@@ -14,58 +12,57 @@ describe('StatusIndicator', () => {
     );
   });
 
-  it('should have a circle with a backgroundColor of #00ff00', () => {
-    expect(wrapper.find('.status-indicator__circle')).to.have.style(
-      'backgroundColor',
-      'rgb(0, 255, 0)'
-    );
+  test('should have a circle with a backgroundColor of #00ff00', () => {
+    expect(wrapper.find('.status-indicator__circle').prop('style')).toEqual({
+      backgroundColor: '#00ff00'
+    });
   });
 
-  it('should have a label of "Review"', () => {
-    expect(wrapper.find('.status-indicator__label')).to.have.text('Review');
+  test('should have a label of "Review"', () => {
+    expect(wrapper.find('.status-indicator__label').text()).toBe('Review');
   });
 
-  it('should have a child', () => {
-    expect(wrapper.find('.status-indicator__children')).to.include.text(
+  test('should have a child', () => {
+    expect(wrapper.find('.status-indicator__children').text()).toBe(
       'due Tommorrow at 12:00pm'
     );
   });
 
-  it('can be a current status, with a description', () => {
+  test('can be a current status, with a description', () => {
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--current')
-    ).to.equal(false);
-    expect(wrapper.find('.status-indicator__description')).to.have.length(0);
+    ).toEqual(false);
+    expect(wrapper.find('.status-indicator__description')).toHaveLength(0);
 
     wrapper.setProps({ current: true });
 
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--current')
-    ).to.equal(true);
-    expect(wrapper.find('.status-indicator__description')).to.have.length(1);
+    ).toEqual(true);
+    expect(wrapper.find('.status-indicator__description')).toHaveLength(1);
   });
 
-  it('can be a completed status', () => {
+  test('can be a completed status', () => {
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--completed')
-    ).to.equal(false);
+    ).toEqual(false);
 
     wrapper.setProps({ completed: true });
 
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--completed')
-    ).to.equal(true);
+    ).toEqual(true);
   });
 
-  it('can be bordered', () => {
+  test('can be bordered', () => {
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--bordered')
-    ).to.equal(false);
+    ).toEqual(false);
 
     wrapper.setProps({ bordered: true });
 
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--bordered')
-    ).to.equal(true);
+    ).toEqual(true);
   });
 });

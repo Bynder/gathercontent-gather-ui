@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { FieldAside, Button } from '../../lib';
 
 describe('Field aside', () => {
@@ -14,11 +14,11 @@ describe('Field aside', () => {
 
   afterEach(() => {});
 
-  it('shares props with field__aside div', () => {
-    expect(wrapper.find('.field__aside').prop('label')).to.equal('Test label');
+  test('shares props with field__aside div', () => {
+    expect(wrapper.find('.field__aside').prop('label')).toEqual('Test label');
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find(Button)).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find(Button)).toHaveLength(1);
   });
 });

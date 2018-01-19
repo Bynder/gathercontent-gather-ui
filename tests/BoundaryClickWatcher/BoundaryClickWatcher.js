@@ -1,26 +1,14 @@
-import { React, expect, shallow, jsDomGlobal, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { BoundaryClickWatcher } from '../../lib';
 
-let sandbox;
-
 describe('BoundaryClickWatcher', () => {
-  jsDomGlobal();
-
-  beforeEach(() => {
-    sandbox = sinon.sandbox.create();
-  });
-
-  afterEach(() => {
-    sandbox.restore();
-  });
-
-  it('renders when its child is a node', () => {
+  test('renders when its child is a node', () => {
     const wrapper = shallow(
       <BoundaryClickWatcher>
         <div className="child" />;
       </BoundaryClickWatcher>
     );
-    expect(wrapper.find('div.child')).to.have.length(1);
+    expect(wrapper.find('div.child')).toHaveLength(1);
   });
 
   const wrapper = shallow(
@@ -31,18 +19,18 @@ describe('BoundaryClickWatcher', () => {
     </BoundaryClickWatcher>
   );
 
-  it('renders when its child is a function', () => {
-    expect(wrapper.find('div.child')).to.have.length(1);
+  test('renders when its child is a function', () => {
+    expect(wrapper.find('div.child')).toHaveLength(1);
   });
 
-  it('boundaryIsActive is true on click and passes the value onto its child', () => {
-    expect(wrapper.state('boundaryIsActive')).to.equal(false);
-    expect(wrapper.state('boundaryIsActive')).to.equal(
+  test('boundaryIsActive is true on click and passes the value onto its child', () => {
+    expect(wrapper.state('boundaryIsActive')).toEqual(false);
+    expect(wrapper.state('boundaryIsActive')).toEqual(
       wrapper.prop('children').props.isActive
     );
     wrapper.simulate('click');
-    expect(wrapper.state('boundaryIsActive')).to.equal(true);
-    expect(wrapper.state('boundaryIsActive')).to.equal(
+    expect(wrapper.state('boundaryIsActive')).toEqual(true);
+    expect(wrapper.state('boundaryIsActive')).toEqual(
       wrapper.prop('children').props.isActive
     );
   });

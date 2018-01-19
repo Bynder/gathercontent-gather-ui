@@ -1,4 +1,4 @@
-import { React, expect, shallow, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { Tabs } from '../../lib';
 import { GATHER_UI_TABS } from '../../lib/Tabs';
 import TabItem from '../../lib/Tabs/TabsItem';
@@ -7,7 +7,7 @@ import TabOptions from '../../lib/Tabs/TabsOptions';
 import TabForm from '../../lib/Tabs/TabsForm';
 
 describe('Tabs', () => {
-  const onTabChangeSpy = sinon.spy();
+  const onTabChangeSpy = jest.fn();
   let wrapper;
 
   beforeEach(() => {
@@ -19,13 +19,13 @@ describe('Tabs', () => {
     );
   });
 
-  it('renders children', () => {
-    expect(wrapper.find(Tabs.Item)).to.have.length(2);
+  test('renders children', () => {
+    expect(wrapper.find(Tabs.Item)).toHaveLength(2);
   });
 
-  it('shares context', () => {
+  test('shares context', () => {
     wrapper.setState({ activeTabId: '123' });
-    expect(wrapper.instance().getChildContext()).to.deep.equal({
+    expect(wrapper.instance().getChildContext()).toEqual({
       [GATHER_UI_TABS]: {
         activeTabId: '123',
         setActiveTab: wrapper.instance().setActiveTab
@@ -33,31 +33,31 @@ describe('Tabs', () => {
     });
   });
 
-  it('sets the Item/Button static prop to the Item/Button/Options/Form component', () => {
-    expect(Tabs.Item).to.deep.equal(TabItem);
-    expect(Tabs.Button).to.deep.equal(TabButton);
-    expect(Tabs.Options).to.deep.equal(TabOptions);
-    expect(Tabs.Form).to.deep.equal(TabForm);
+  test('sets the Item/Button static prop to the Item/Button/Options/Form component', () => {
+    expect(Tabs.Item).toEqual(TabItem);
+    expect(Tabs.Button).toEqual(TabButton);
+    expect(Tabs.Options).toEqual(TabOptions);
+    expect(Tabs.Form).toEqual(TabForm);
   });
 
-  it('sets an active tab and calls props.onTabChange when the active tab changes', () => {
+  test('sets an active tab and calls props.onTabChange when the active tab changes', () => {
     wrapper.instance().setActiveTab('123');
-    expect(wrapper.state('activeTabId')).to.equal('123');
-    expect(onTabChangeSpy).to.be.calledWithExactly('123');
+    expect(wrapper.state('activeTabId')).toEqual('123');
+    expect(onTabChangeSpy).toHaveBeenCalledWith('123');
 
     wrapper.instance().setActiveTab('123');
-    expect(onTabChangeSpy).to.be.calledOnce();
+    expect(onTabChangeSpy).toHaveBeenCalledTimes(1);
 
     wrapper.instance().setActiveTab('321');
-    expect(onTabChangeSpy).to.be.calledTwice();
+    expect(onTabChangeSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('sets the initial active tab', () => {
-    expect(wrapper.state('activeTabId')).to.equal('tabId-2');
+  test('sets the initial active tab', () => {
+    expect(wrapper.state('activeTabId')).toEqual('tabId-2');
   });
 
-  it('adds an editable class', () => {
+  test('adds an editable class', () => {
     wrapper.setProps({ editable: true });
-    expect(wrapper.hasClass('tabs--editable')).to.equal(true);
+    expect(wrapper.hasClass('tabs--editable')).toEqual(true);
   });
 });

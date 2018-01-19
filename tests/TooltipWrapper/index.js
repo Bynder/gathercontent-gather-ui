@@ -1,5 +1,5 @@
 import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { TooltipWrapper } from '../../lib';
 
 describe('Tooltip Wrapper', () => {
@@ -20,20 +20,20 @@ describe('Tooltip Wrapper', () => {
 
   afterEach(() => {});
 
-  it('renders an OverlayTrigger component', () => {
-    expect(wrapper.find(OverlayTrigger)).to.have.length(1);
+  test('renders an OverlayTrigger component', () => {
+    expect(wrapper.find(OverlayTrigger)).toHaveLength(1);
   });
 
-  it('sets a Tooltip component as the overlay', () => {
+  test('sets a Tooltip component as the overlay', () => {
     const overlayComponent = shallow(
       wrapper.find(OverlayTrigger).prop('overlay')
     );
-    expect(overlayComponent.hasClass('tooltip')).to.equal(true);
-    expect(overlayComponent.prop('id')).to.equal('id-1');
-    expect(overlayComponent.contains('test text')).to.equal(true);
+    expect(overlayComponent.hasClass('tooltip')).toEqual(true);
+    expect(overlayComponent.prop('id')).toEqual('id-1');
+    expect(overlayComponent.contains('test text')).toEqual(true);
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('.test')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('.test')).toHaveLength(1);
   });
 });

@@ -1,47 +1,32 @@
-import { React, expect, sinon, jsDomGlobal, shallow } from './setup';
+import { React, shallow } from './setup';
 import FontAwesomeIcon from '../lib/FontAwesomeIcon/';
 
-jsDomGlobal();
-
 describe('FontAwesomeIcon', () => {
-  let sandbox;
-
-  beforeEach(() => {
-    sandbox = sinon.sandbox.create();
-  });
-
-  afterEach(() => {
-    sandbox.restore();
-  });
-
-  it('renders an <i> element', () => {
+  test('renders an <i> element', () => {
     const Element = shallow(<FontAwesomeIcon name="fa-cog" />);
     const el = Element.find('i');
 
-    expect(el).to.have.length(1);
+    expect(el).toHaveLength(1);
   });
 
-  it('renders the right class names', () => {
+  test('renders the right class names', () => {
     const Element = shallow(<FontAwesomeIcon name="fa-cog" />);
-
-    expect(Element.find('i').props().className).to.contain('fa fa-cog');
+    expect(Element.find('i').hasClass('fa fa-cog')).toBe(true);
   });
 
-  it('renders a custom class name', () => {
+  test('renders a custom class name', () => {
     const Element = shallow(
       <FontAwesomeIcon name="fa-cog" className="banana-bread" />
     );
-    expect(Element.find('i').props().className).to.contain(
-      'fa fa-cog banana-bread'
-    );
+    expect(Element.find('i').hasClass('fa fa-cog banana-bread')).toBe(true);
   });
 
-  it('renders child elements', () => {
+  test('renders child elements', () => {
     const Element = shallow(
       <FontAwesomeIcon name="fa-cog">
         <span>Hello</span>
       </FontAwesomeIcon>
     );
-    expect(Element.find('span').text()).to.contain('Hello');
+    expect(Element.find('span').text()).toBe('Hello');
   });
 });

@@ -1,5 +1,5 @@
 import assign from 'object-assign';
-import { React, expect, sinon, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
 import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
@@ -26,7 +26,7 @@ describe('RadioButtonGroup', () => {
     other_option: true
   };
   const choicesWithOtherChoice = choices.concat(otherChoice);
-  const onChangeSpy = sinon.spy();
+  const onChangeSpy = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
@@ -34,11 +34,11 @@ describe('RadioButtonGroup', () => {
     );
   });
 
-  it('can render a list of choices as a radio button group', () => {
-    expect(wrapper.find(RadioButton)).to.have.length(2);
+  test('can render a list of choices as a radio button group', () => {
+    expect(wrapper.find(RadioButton)).toHaveLength(2);
   });
 
-  it('can have an other option', () => {
+  test('can have an other option', () => {
     wrapper = shallow(
       <RadioButtonGroup
         choices={choicesWithOtherChoice}
@@ -46,21 +46,21 @@ describe('RadioButtonGroup', () => {
       />
     );
 
-    expect(wrapper.find(RadioButtonOther)).to.have.length(1);
+    expect(wrapper.find(RadioButtonOther)).toHaveLength(1);
   });
 
-  it('returns the selected options onChange', () => {
+  test('returns the selected options onChange', () => {
     const firstOption = wrapper.find(RadioButton).at(0);
     const secondOption = wrapper.find(RadioButton).at(1);
 
     firstOption.prop('onChangeHandler')({ target: { id: '123' } });
-    expect(onChangeSpy).to.have.been.calledWith([choices[0]]);
+    expect(onChangeSpy).toHaveBeenCalledWith([choices[0]]);
 
     secondOption.prop('onChangeHandler')({ target: { id: '456' } });
-    expect(onChangeSpy).to.have.been.calledWith([choices[1]]);
+    expect(onChangeSpy).toHaveBeenCalledWith([choices[1]]);
   });
 
-  it('returns the selected options when the other option value changes', () => {
+  test('returns the selected options when the other option value changes', () => {
     wrapper = shallow(
       <RadioButtonGroup
         choices={choicesWithOtherChoice}
@@ -72,6 +72,6 @@ describe('RadioButtonGroup', () => {
 
     const expectedOptionChoice = assign({}, otherChoice, { value: 'Hello' });
 
-    expect(onChangeSpy).to.have.been.calledWith([expectedOptionChoice]);
+    expect(onChangeSpy).toHaveBeenCalledWith([expectedOptionChoice]);
   });
 });

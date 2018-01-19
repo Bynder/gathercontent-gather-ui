@@ -1,7 +1,5 @@
-import { React, expect, jsDomGlobal, shallow, mount } from '../setup';
+import { React, shallow, mount } from '../setup';
 import PlanBoxAllowanceDetails from '../../lib/PlanBox/AllowanceDetails';
-
-jsDomGlobal();
 
 describe('PlanBox/AllowanceDetails', () => {
   const props = {
@@ -20,17 +18,17 @@ describe('PlanBox/AllowanceDetails', () => {
     shallowWrapper = null;
   });
 
-  it('renders 4 allowance detail list items', () => {
-    expect(shallowWrapper.find('li')).to.have.length(4);
+  test('renders 4 allowance detail list items', () => {
+    expect(shallowWrapper.find('li')).toHaveLength(4);
   });
 
-  it('renders 4 icons', () => {
+  test('renders 4 icons', () => {
     const mountedWrapper = mount(<PlanBoxAllowanceDetails {...props} />);
-    expect(mountedWrapper.find('img')).to.have.length(4);
+    expect(mountedWrapper.find('img')).toHaveLength(4);
   });
 
-  it('does not render any icons', () => {
+  test('does not render any icons', () => {
     shallowWrapper.setProps({ iconElement: null });
-    expect(shallowWrapper.find('img')).to.have.length(0);
+    expect(shallowWrapper.find('img')).toHaveLength(0);
   });
 });

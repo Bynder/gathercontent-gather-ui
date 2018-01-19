@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Guideline, Button } from '../../lib';
 
 describe('Guideline', () => {
@@ -12,23 +12,23 @@ describe('Guideline', () => {
     );
   });
 
-  it('defaults to open', () => {
-    expect(wrapper.hasClass('is-active')).to.be.true();
+  test('defaults to open', () => {
+    expect(wrapper.hasClass('is-active')).toBe(true);
   });
 
-  it('toggles an active class', () => {
+  test('toggles an active class', () => {
     wrapper.setState({ showContent: false });
-    expect(wrapper.hasClass('is-active')).to.be.false();
+    expect(wrapper.hasClass('is-active')).toBe(false);
   });
 
-  it('sets the showContent state to true', () => {
+  test('sets the showContent state to true', () => {
     wrapper.find(Button).prop('clickHandler')();
-    expect(wrapper.find('p')).to.have.length(1);
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('switches the text for the show toggle', () => {
-    expect(wrapper.find(Button).prop('children')).to.equal('Hide details');
+  test('switches the text for the show toggle', () => {
+    expect(wrapper.find(Button).prop('children')).toEqual('Hide details');
     wrapper.setState({ showContent: false });
-    expect(wrapper.find(Button).prop('children')).to.equal('Show details');
+    expect(wrapper.find(Button).prop('children')).toEqual('Show details');
   });
 });

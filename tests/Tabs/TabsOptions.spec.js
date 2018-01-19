@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Tabs, Icon } from '../../lib';
 
 describe('Tabs Options', () => {
@@ -14,13 +14,13 @@ describe('Tabs Options', () => {
     wrapper = shallow(<Tabs.Options options={mockOptions} />);
   });
 
-  it('renders a DropdownMenu component', () => {
-    expect(wrapper.prop('type')).to.equal('icon-only');
-    expect(wrapper.prop('items')).to.deep.equal(mockOptions);
+  test('renders a DropdownMenu component', () => {
+    expect(wrapper.prop('type')).toEqual('icon-only');
+    expect(wrapper.prop('items')).toEqual(mockOptions);
   });
 
-  it('renders an Icon and a container span component', () => {
-    expect(wrapper.find('.tabs__options')).to.have.length(1);
-    expect(wrapper.find(Icon)).to.have.length(1);
+  test('renders an Icon and a container span component', () => {
+    expect(wrapper.find('.tabs__options')).toHaveLength(1);
+    expect(wrapper.find(Icon)).toHaveLength(1);
   });
 });

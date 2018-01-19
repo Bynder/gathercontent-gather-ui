@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import CommentList from '../../lib/Conversation/CommentList';
 import Comment from '../../lib/Conversation/Comment';
 
@@ -30,15 +30,13 @@ describe('Comment List', () => {
     wrapper = shallow(<CommentList {...props} />);
   });
 
-  it('renders 2 comments (with correct props)', () => {
+  test('renders 2 comments (with correct props)', () => {
     const childComments = wrapper.find(Comment);
-    expect(childComments).to.have.length(2);
-    expect(childComments.first().prop('conversationId')).to.equal(
+    expect(childComments).toHaveLength(2);
+    expect(childComments.first().prop('conversationId')).toEqual(
       props.conversationId
     );
-    expect(childComments.first().prop('comments')).to.not.deep.equal(
-      props.comments
-    );
-    expect(childComments.first().prop('id')).to.equal(2);
+    expect(childComments.first().prop('comments')).not.toEqual(props.comments);
+    expect(childComments.first().prop('id')).toEqual(2);
   });
 });

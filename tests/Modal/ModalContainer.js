@@ -1,5 +1,5 @@
 import BootstrapModal from 'react-bootstrap/lib/Modal';
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Modal } from '../../lib';
 
 describe('Modal Container', () => {
@@ -13,27 +13,27 @@ describe('Modal Container', () => {
     );
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('p')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('shares props with Bootstrap component', () => {
-    expect(wrapper.type()).to.deep.equal(BootstrapModal);
-    expect(wrapper.prop('testProp')).to.equal('test');
+  test('shares props with Bootstrap component', () => {
+    expect(wrapper.type()).toEqual(BootstrapModal);
+    expect(wrapper.prop('testProp')).toEqual('test');
   });
 
-  it('extends the className prop with the size', () => {
+  test('extends the className prop with the size', () => {
     wrapper.setProps({ size: 'small' });
-    expect(wrapper.prop('className')).to.equal('test-class modal--small');
+    expect(wrapper.prop('className')).toEqual('test-class modal--small');
 
     wrapper.setProps({ size: 'large' });
-    expect(wrapper.prop('className')).to.equal('test-class modal--large');
+    expect(wrapper.prop('className')).toEqual('test-class modal--large');
 
     wrapper.setProps({ size: 'x-large' });
-    expect(wrapper.prop('className')).to.equal('test-class modal--x-large');
+    expect(wrapper.prop('className')).toEqual('test-class modal--x-large');
   });
 
-  it('sets the keyboard prop to true by default', () => {
-    expect(wrapper.prop('keyboard')).to.equal(true);
+  test('sets the keyboard prop to true by default', () => {
+    expect(wrapper.prop('keyboard')).toEqual(true);
   });
 });

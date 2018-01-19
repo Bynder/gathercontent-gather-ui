@@ -1,13 +1,12 @@
-import { React, expect, shallow, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { FormInput } from '../../lib';
 
 describe('FormInput', () => {
-  const sandbox = sinon.sandbox.create();
   let wrapper;
   let onChangeSpy;
 
   beforeEach(() => {
-    onChangeSpy = sandbox.spy();
+    onChangeSpy = jest.fn();
     wrapper = shallow(
       <FormInput
         onChange={onChangeSpy}
@@ -19,14 +18,10 @@ describe('FormInput', () => {
     );
   });
 
-  beforeEach(() => {
-    sandbox.restore();
-  });
-
-  it('renders an input', () => {
+  test('renders an input', () => {
     const input = wrapper.find('input');
-    expect(input).to.have.length(1);
-    expect(input.props()).to.deep.equal({
+    expect(input).toHaveLength(1);
+    expect(input.props()).toEqual({
       type: 'text',
       className: 'form__input test-class',
       value: 'test value',
@@ -35,16 +30,16 @@ describe('FormInput', () => {
     });
   });
 
-  it('sets the initial value state to props.value', () => {
-    expect(wrapper.state('value')).to.equal('test value');
+  test('sets the initial value state to props.value', () => {
+    expect(wrapper.state('value')).toEqual('test value');
   });
 
-  it('sets the current value to the targets value', () => {
+  test('sets the current value to the targets value', () => {
     wrapper.instance().handleOnChange({ target: { value: 'value 1' } });
-    expect(wrapper.state('value')).to.equal('value 1');
+    expect(wrapper.state('value')).toEqual('value 1');
   });
 
-  it('sets the correct className', () => {
-    expect(wrapper.hasClass('test-class')).to.equal(true);
+  test('sets the correct className', () => {
+    expect(wrapper.hasClass('test-class')).toEqual(true);
   });
 });

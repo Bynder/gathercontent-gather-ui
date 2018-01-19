@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
 
 describe('FileCard', () => {
@@ -19,34 +19,34 @@ describe('FileCard', () => {
     );
   });
 
-  it('renders a file card component', () => {
-    expect(wrapper.find('.file-card__wrapper')).to.have.length(1);
+  test('renders a file card component', () => {
+    expect(wrapper.find('.file-card__wrapper')).toHaveLength(1);
   });
 
-  it('renders an element with the correct background-image', () => {
+  test('renders an element with the correct background-image', () => {
     expect(
       wrapper.find('.file-card__thumbnail').props().style.backgroundImage
-    ).to.equal(`url(${props.previewSrc})`);
+    ).toEqual(`url(${props.previewSrc})`);
   });
 
-  it('renders the correct filename and label for a thumbnail', () => {
-    expect(wrapper.find('.file-card__label').contains(props.label)).to.equal(
+  test('renders the correct filename and label for a thumbnail', () => {
+    expect(wrapper.find('.file-card__label').contains(props.label)).toEqual(
       true
     );
   });
 
-  it('renders 1 action from props.children', () => {
+  test('renders 1 action from props.children', () => {
     const actions = wrapper.find('.file-card__action');
-    expect(actions.length).to.equal(1);
+    expect(actions.length).toEqual(1);
   });
 
-  it('adds a highlighted modifier class', () => {
+  test('adds a highlighted modifier class', () => {
     wrapper.setProps({ isHighlighted: true });
-    expect(wrapper.hasClass('file-card--highlighted')).to.equal(true);
+    expect(wrapper.hasClass('file-card--highlighted')).toEqual(true);
   });
 
-  it('renders the file format extension as the title and adds a modifier', () => {
+  test('renders the file format extension as the title and adds a modifier', () => {
     wrapper.setProps({ previewSrc: '' });
-    expect(wrapper.find('.file-card__title').contains('txt')).to.equal(true);
+    expect(wrapper.find('.file-card__title').contains('txt')).toEqual(true);
   });
 });

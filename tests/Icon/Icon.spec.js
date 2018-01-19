@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import Icon from '../../lib/Icon';
 import commentSVG from '../../assets/icons/comment.svg';
 import plusCircleSVG from '../../assets/icons/plus-circle.svg';
@@ -19,69 +19,69 @@ describe('Icon', () => {
 
   afterEach(() => {});
 
-  it('adds a className prop to classNames', () => {
-    expect(wrapper.hasClass('custom-icon-class')).to.equal(true);
+  test('adds a className prop to classNames', () => {
+    expect(wrapper.hasClass('custom-icon-class')).toEqual(true);
   });
 
-  it('adds a BEM modifier with the name prop', () => {
+  test('adds a BEM modifier with the name prop', () => {
     wrapper.setProps({ name: 'comment' });
-    expect(wrapper.hasClass('icon--comment')).to.equal(true);
+    expect(wrapper.hasClass('icon--comment')).toEqual(true);
   });
 
-  it('should render the comment icon', () => {
+  test('should render the comment icon', () => {
     wrapper.setProps({ name: 'comment' });
-    expect(wrapper.find('svg').props()).to.deep.equal(commentSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(commentSVG().props);
   });
 
-  it('should render the plus icon', () => {
+  test('should render the plus icon', () => {
     wrapper.setProps({ name: 'plusCircle' });
-    expect(wrapper.find('svg').props()).to.deep.equal(plusCircleSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(plusCircleSVG().props);
   });
 
-  it('should render the tick icon', () => {
+  test('should render the tick icon', () => {
     wrapper.setProps({ name: 'tick' });
-    expect(wrapper.find('svg').props()).to.deep.equal(tickSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(tickSVG().props);
   });
 
-  it('should render the trash icon', () => {
+  test('should render the trash icon', () => {
     wrapper.setProps({ name: 'trash' });
-    expect(wrapper.find('svg').props()).to.deep.equal(trashSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(trashSVG().props);
   });
 
-  it('should render the download icon', () => {
+  test('should render the download icon', () => {
     wrapper.setProps({ name: 'download' });
-    expect(wrapper.find('svg').props()).to.deep.equal(downloadSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(downloadSVG().props);
   });
 
-  it('should render the full screen icon', () => {
+  test('should render the full screen icon', () => {
     wrapper.setProps({ name: 'fullScreen' });
-    expect(wrapper.find('svg').props()).to.deep.equal(fullScreenSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(fullScreenSVG().props);
   });
 
-  it('should render the person icon', () => {
+  test('should render the person icon', () => {
     wrapper.setProps({ name: 'person' });
-    expect(wrapper.find('svg').props()).to.deep.equal(personSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(personSVG().props);
   });
 
-  it('should render the keyboard icon', () => {
+  test('should render the keyboard icon', () => {
     wrapper.setProps({ name: 'keyboard' });
-    expect(wrapper.find('svg').props()).to.deep.equal(keyboardSVG().props);
+    expect(wrapper.find('svg').props()).toEqual(keyboardSVG().props);
   });
 
-  it('should render the cog icon', () => {
+  test('should render the cog icon', () => {
     wrapper.setProps({ name: 'cog' });
-    expect(wrapper.find('svg').props()).to.deep.equal(cogSvg().props);
+    expect(wrapper.find('svg').props()).toEqual(cogSvg().props);
   });
 
-  it('adds a modifier class of icon--hide-text', () => {
+  test('adds a modifier class of icon--hide-text', () => {
     wrapper.setProps({ hideText: true });
-    expect(wrapper.hasClass('icon--hide-text')).to.equal(true);
+    expect(wrapper.hasClass('icon--hide-text')).toEqual(true);
   });
 
-  it('only renders icon__text when props.text has been set', () => {
-    expect(wrapper.find('.icon__text')).to.have.length(0);
+  test('only renders icon__text when props.text has been set', () => {
+    expect(wrapper.find('.icon__text')).toHaveLength(0);
     wrapper.setProps({ text: 'hello world' });
-    expect(wrapper.find('.icon__text')).to.have.length(1);
-    expect(wrapper.find('.icon__text').text()).equal('hello world');
+    expect(wrapper.find('.icon__text')).toHaveLength(1);
+    expect(wrapper.find('.icon__text').text()).toBe('hello world');
   });
 });

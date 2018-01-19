@@ -1,9 +1,9 @@
-import { React, expect, shallow, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { Tabs } from '../../lib';
 import { GATHER_UI_TABS } from '../../lib/Tabs';
 
 describe('Tabs Item', () => {
-  const setActiveTabSpy = sinon.spy();
+  const setActiveTabSpy = jest.fn();
   let wrapper;
 
   beforeEach(() => {
@@ -17,26 +17,26 @@ describe('Tabs Item', () => {
     });
   });
 
-  it('renders children', () => {
-    expect(wrapper.text()).to.equal('Tab 1');
+  test('renders children', () => {
+    expect(wrapper.text()).toEqual('Tab 1');
   });
 
-  it('sets an active class', () => {
-    expect(wrapper.hasClass('is-active')).to.equal(true);
+  test('sets an active class', () => {
+    expect(wrapper.hasClass('is-active')).toEqual(true);
     wrapper.setContext({
       [GATHER_UI_TABS]: { activeTabId: '321' }
     });
-    expect(wrapper.hasClass('is-active')).to.equal(false);
+    expect(wrapper.hasClass('is-active')).toEqual(false);
   });
 
-  it('calls the setActiveTab function from context', () => {
+  test('calls the setActiveTab function from context', () => {
     wrapper.find('.tabs__item').simulate('click');
-    expect(setActiveTabSpy).to.be.calledWithExactly('123');
+    expect(setActiveTabSpy).toHaveBeenCalledWith('123');
   });
 
-  it('renders options when active', () => {
-    expect(wrapper.find(Tabs.Options)).to.have.length(0);
+  test('renders options when active', () => {
+    expect(wrapper.find(Tabs.Options)).toHaveLength(0);
     wrapper.setProps({ options: [{}] });
-    expect(wrapper.find(Tabs.Options)).to.have.length(1);
+    expect(wrapper.find(Tabs.Options)).toHaveLength(1);
   });
 });

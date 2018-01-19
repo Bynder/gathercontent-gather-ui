@@ -1,5 +1,5 @@
 import MenuItem from 'react-bootstrap/lib/MenuItem';
-import { React, expect, mount } from '../setup';
+import { React, mount } from '../setup';
 import Navigation from '../../lib/Navigation';
 
 describe('Navigation', () => {
@@ -16,22 +16,22 @@ describe('Navigation', () => {
     );
   });
 
-  it('renders 2 MenuItems', () => {
-    expect(wrapper.find(MenuItem)).to.have.length(2);
+  test('renders 2 MenuItems', () => {
+    expect(wrapper.find(MenuItem)).toHaveLength(2);
   });
 
-  it('adds the tabs modifier class', () => {
+  test('adds the tabs modifier class', () => {
     wrapper.setProps({
       tabs: true
     });
-    expect(wrapper.find('.navigation--tabs')).to.have.length(1);
+    expect(wrapper.find('.navigation--tabs')).toHaveLength(1);
   });
 
-  it('applies navigation__item to both MenuItems', () => {
-    expect(wrapper.find('.navigation__item')).to.have.length(2);
+  test('applies navigation__item to both MenuItems', () => {
+    expect(wrapper.find('.navigation__item')).toHaveLength(2);
   });
 
-  it('applies navigation__item--active to both 1 MenuItems', () => {
-    expect(wrapper.find('.navigation__item--active')).to.have.length(1);
+  test('applies navigation__item--active to both 1 MenuItems', () => {
+    expect(wrapper.find('.navigation__item--active')).toHaveLength(1);
   });
 });

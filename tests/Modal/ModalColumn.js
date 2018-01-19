@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Modal } from '../../lib';
 
 describe('Modal Column', () => {
@@ -12,11 +12,11 @@ describe('Modal Column', () => {
     );
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('p')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('renders the className prop', () => {
-    expect(wrapper.hasClass('test')).to.equal(true);
+  test('renders the className prop', () => {
+    expect(wrapper.hasClass('test')).toEqual(true);
   });
 });

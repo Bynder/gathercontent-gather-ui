@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Avatar } from '../../lib';
 
 describe('AvatarGroup', () => {
@@ -18,32 +18,32 @@ describe('AvatarGroup', () => {
 
   afterEach(() => {});
 
-  it('renders the className prop', () => {
-    expect(wrapper.hasClass('avatar--has-toggle')).to.be.true();
+  test('renders the className prop', () => {
+    expect(wrapper.hasClass('avatar--has-toggle')).toBe(true);
   });
 
-  it('adds a highlighted BEM modifier', () => {
-    expect(wrapper.hasClass('avatar--highlighted')).to.be.true();
+  test('adds a highlighted BEM modifier', () => {
+    expect(wrapper.hasClass('avatar--highlighted')).toBe(true);
   });
 
-  it('adds an offline BEM modifier', () => {
-    expect(wrapper.hasClass('avatar--offline')).to.be.true();
+  test('adds an offline BEM modifier', () => {
+    expect(wrapper.hasClass('avatar--offline')).toBe(true);
   });
 
-  it('renders an avatar image', () => {
-    expect(wrapper.find('img')).to.have.length(0);
+  test('renders an avatar image', () => {
+    expect(wrapper.find('img')).toHaveLength(0);
     wrapper.setProps({ url: 'url/to/avatar' });
-    expect(wrapper.find('img')).to.have.length(1);
+    expect(wrapper.find('img')).toHaveLength(1);
   });
 
-  it('renders the users initials', () => {
-    expect(wrapper.text()).to.equal('AE');
+  test('renders the users initials', () => {
+    expect(wrapper.text()).toEqual('AE');
   });
 
-  it('adds a box shadow based on the colour prop', () => {
-    expect(wrapper.prop('style')).to.deep.equal({});
+  test('adds a box shadow based on the colour prop', () => {
+    expect(wrapper.prop('style')).toEqual({});
     wrapper.setProps({ colour: 'red' });
-    expect(wrapper.prop('style')).to.deep.equal({
+    expect(wrapper.prop('style')).toEqual({
       boxShadow: `0 0 0 2px white, 0 0 0 3px red, 0 0 0 5px white`
     });
   });

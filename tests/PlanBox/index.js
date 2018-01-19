@@ -1,8 +1,6 @@
-import { React, expect, jsDomGlobal, shallow, mount } from '../setup';
+import { React, shallow, mount } from '../setup';
 import PlanBox from '../../lib/PlanBox';
 import PlanBoxButton from '../../lib/PlanBox/Button';
-
-jsDomGlobal();
 
 describe('PlanBox', () => {
   const props = {
@@ -24,39 +22,39 @@ describe('PlanBox', () => {
     );
   });
 
-  it('renders the correct plan name and description', () => {
-    expect(shallowWrapper.find('.plan-box__title').text()).to.equal(props.name);
-    expect(shallowWrapper.find('.plan-box__description').text()).to.equal(
+  test('renders the correct plan name and description', () => {
+    expect(shallowWrapper.find('.plan-box__title').text()).toEqual(props.name);
+    expect(shallowWrapper.find('.plan-box__description').text()).toEqual(
       props.description
     );
   });
 
-  it('renders children', () => {
-    expect(shallowWrapper.find('.child-node')).to.have.length(1);
+  test('renders children', () => {
+    expect(shallowWrapper.find('.child-node')).toHaveLength(1);
   });
 
-  it('renders a PlanBoxButton UI component', () => {
-    expect(shallowWrapper.find(PlanBoxButton)).to.have.length(1);
+  test('renders a PlanBoxButton UI component', () => {
+    expect(shallowWrapper.find(PlanBoxButton)).toHaveLength(1);
   });
 
-  it('passes the correct props to the PlanBoxButton UI component', () => {
+  test('passes the correct props to the PlanBoxButton UI component', () => {
     const mountedWrapper = mount(
       <PlanBox {...props}>Children content</PlanBox>
     );
     const planBoxButtonComponent = mountedWrapper.find(PlanBoxButton);
-    expect(planBoxButtonComponent.prop('recommended')).to.equal(false);
-    expect(planBoxButtonComponent.prop('href')).to.equal('test/url/here');
-    expect(planBoxButtonComponent.prop('buttonText')).to.equal('Switch');
-    expect(planBoxButtonComponent.prop('disabled')).to.equal(false);
+    expect(planBoxButtonComponent.prop('recommended')).toEqual(false);
+    expect(planBoxButtonComponent.prop('href')).toEqual('test/url/here');
+    expect(planBoxButtonComponent.prop('buttonText')).toEqual('Switch');
+    expect(planBoxButtonComponent.prop('disabled')).toEqual(false);
   });
 
-  it('has a disabled state class', () => {
+  test('has a disabled state class', () => {
     shallowWrapper.setProps({ disabled: true });
-    expect(shallowWrapper.hasClass('is-disabled')).to.equal(true);
+    expect(shallowWrapper.hasClass('is-disabled')).toEqual(true);
   });
 
-  it('has a recommended state class', () => {
+  test('has a recommended state class', () => {
     shallowWrapper.setProps({ recommended: true });
-    expect(shallowWrapper.hasClass('plan-box--recommended')).to.equal(true);
+    expect(shallowWrapper.hasClass('plan-box--recommended')).toEqual(true);
   });
 });

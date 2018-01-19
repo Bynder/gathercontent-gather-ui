@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { TopBar } from '../../lib';
 
 describe('TopBar', () => {
@@ -14,14 +14,14 @@ describe('TopBar', () => {
 
   afterEach(() => {});
 
-  it('renders its children', () => {
-    expect(wrapper.find('.test')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('.test')).toHaveLength(1);
   });
 
-  it('adds a fixed class when fixed prop is there', () => {
+  test('adds a fixed class when fixed prop is there', () => {
     wrapper.setProps({
       fixed: true
     });
-    expect(wrapper.find('.top-bar__wrapper--fixed')).to.have.length(1);
+    expect(wrapper.find('.top-bar__wrapper--fixed')).toHaveLength(1);
   });
 });

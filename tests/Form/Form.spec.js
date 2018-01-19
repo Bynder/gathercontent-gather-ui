@@ -1,15 +1,14 @@
-import { React, expect, shallow, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { Form } from '../../lib';
 
 describe('Form', () => {
-  const sandbox = sinon.sandbox.create();
   let onSubmitSpy;
   let onCancelSpy;
   let wrapper;
 
   beforeEach(() => {
-    onSubmitSpy = sandbox.spy();
-    onCancelSpy = sandbox.spy();
+    onSubmitSpy = jest.fn();
+    onCancelSpy = jest.fn();
     wrapper = shallow(
       <Form onSubmit={onSubmitSpy} onCancel={onCancelSpy} className="test">
         <input />
@@ -17,32 +16,28 @@ describe('Form', () => {
     );
   });
 
-  beforeEach(() => {
-    sandbox.restore();
+  test('renders children', () => {
+    expect(wrapper.find('input')).toHaveLength(1);
   });
 
-  it('renders children', () => {
-    expect(wrapper.find('input')).to.have.length(1);
-  });
-
-  it('calls props.onSubmit when submitting', () => {
-    const preventDefaultSpy = sandbox.spy();
+  test('calls props.onSubmit when submitting', () => {
+    const preventDefaultSpy = jest.fn();
     const event = { preventDefault: preventDefaultSpy };
     wrapper.find('form').prop('onSubmit')(event);
-    expect(onSubmitSpy).to.be.calledWithExactly(event);
-    expect(preventDefaultSpy).to.be.calledOnce();
+    expect(onSubmitSpy).toHaveBeenCalledWith(event);
+    expect(preventDefaultSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('calls onCancel with the esc key', () => {
+  test('calls onCancel with the esc key', () => {
     wrapper.instance().handleKeyDown({ keyCode: 27 });
-    expect(onCancelSpy).to.not.be.called();
+    expect(onCancelSpy).not.toHaveBeenCalled();
 
     wrapper.setProps({ escToClose: true });
     wrapper.instance().handleKeyDown({ keyCode: 27 });
-    expect(onCancelSpy).to.be.calledOnce();
+    expect(onCancelSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('renders the classNames', () => {
-    expect(wrapper.hasClass('test')).to.equal(true);
+  test('renders the classNames', () => {
+    expect(wrapper.hasClass('test')).toEqual(true);
   });
 });

@@ -1,4 +1,4 @@
-import { React, expect, sinon, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import Comment from '../../lib/Conversation/Comment';
 import CommentForm from '../../lib/Conversation/CommentForm';
 import Person from '../../lib/Person';
@@ -6,8 +6,8 @@ import Button from '../../lib/Button';
 
 describe('Comment', () => {
   let wrapper;
-  const editCommentSpy = sinon.spy();
-  const removeCommentSpy = sinon.spy();
+  const editCommentSpy = jest.fn();
+  const removeCommentSpy = jest.fn();
 
   const props = {
     id: '123',
@@ -30,88 +30,88 @@ describe('Comment', () => {
     wrapper = shallow(<Comment {...props} />);
   });
 
-  it('renders a person component', () => {
-    expect(wrapper.find(Person)).to.have.length(1);
-    expect(wrapper.find(Person).prop('person')).to.deep.equal(props.author);
+  test('renders a person component', () => {
+    expect(wrapper.find(Person)).toHaveLength(1);
+    expect(wrapper.find(Person).prop('person')).toEqual(props.author);
   });
 
-  it('renders the comment body text', () => {
-    expect(wrapper.find('.conversation__text').text()).to.equal(props.body);
+  test('renders the comment body text', () => {
+    expect(wrapper.find('.conversation__text').text()).toEqual(props.body);
   });
 
-  it('renders the comment created at text', () => {
-    expect(wrapper.find('.conversation__date-text').text()).to.equal(
+  test('renders the comment created at text', () => {
+    expect(wrapper.find('.conversation__date-text').text()).toEqual(
       props.createdAt
     );
   });
 
-  it('does not render the edit controls', () => {
+  test('does not render the edit controls', () => {
     wrapper.setProps({ user: { id: 1 } });
-    expect(wrapper.find('.conversation__actions')).to.have.length(0);
+    expect(wrapper.find('.conversation__actions')).toHaveLength(0);
   });
 
-  it('renders the edit comment controls (when a user can edit)', () => {
+  test('renders the edit comment controls (when a user can edit)', () => {
     const actions = wrapper.find('.conversation__actions');
-    expect(actions.find(Button)).to.have.length(2);
+    expect(actions.find(Button)).toHaveLength(2);
     expect(
       actions
         .find(Button)
         .first()
         .prop('clickHandler')
-    ).to.deep.equal(wrapper.instance().showEditForm);
+    ).toEqual(wrapper.instance().showEditForm);
     expect(
       actions
         .find(Button)
         .last()
         .prop('clickHandler')
-    ).to.deep.equal(wrapper.instance().removeComment);
+    ).toEqual(wrapper.instance().removeComment);
   });
 
-  it('renders the edit comment form (with correct props)', () => {
+  test('renders the edit comment form (with correct props)', () => {
     wrapper.instance().showEditForm();
     const commentForm = wrapper.find(CommentForm);
-    expect(commentForm).to.have.length(1);
-    expect(commentForm.prop('onSubmit')).to.deep.equal(
+    expect(commentForm).toHaveLength(1);
+    expect(commentForm.prop('onSubmit')).toEqual(
       wrapper.instance().editComment
     );
-    expect(commentForm.prop('onCancel')).to.deep.equal(
+    expect(commentForm.prop('onCancel')).toEqual(
       wrapper.instance().hideEditForm
     );
-    expect(commentForm.prop('author')).to.equal(props.author);
-    expect(commentForm.prop('value')).to.equal(props.body);
-    expect(commentForm.prop('focusOnMount')).to.equal(true);
-    expect(commentForm.prop('onCommentChange')).to.equal(props.onCommentChange);
-    expect(commentForm.prop('id')).to.equal(props.id);
+    expect(commentForm.prop('author')).toBe(props.author);
+    expect(commentForm.prop('value')).toBe(props.body);
+    expect(commentForm.prop('focusOnMount')).toBe(true);
+    expect(commentForm.prop('onCommentChange')).toEqual(props.onCommentChange);
+    expect(commentForm.prop('id')).toBe(props.id);
   });
 
-  it('calls the edit comment action', () => {
+  test('calls the edit comment action', () => {
     wrapper.instance().showEditForm();
     const editComment = wrapper.instance().editComment;
     editComment('test');
-    expect(editCommentSpy).to.be.calledOnce();
-    expect(editCommentSpy.getCall(0).args[0]).to.equal(props.id);
-    expect(editCommentSpy.getCall(0).args[1]).to.equal('test');
-    expect(wrapper.state('showEditForm')).to.equal(false);
+    expect(editCommentSpy).toHaveBeenCalledTimes(1);
+    expect(editCommentSpy.mock.calls[0][0]).toEqual(props.id);
+    expect(editCommentSpy.mock.calls[0][1]).toEqual('test');
+    expect(wrapper.state('showEditForm')).toBe(false);
   });
 
-  it('calls the remove comment actions', () => {
+  test('calls the remove comment actions', () => {
     wrapper.instance().showEditForm();
     const removeComment = wrapper.instance().removeComment;
     removeComment();
-    expect(removeCommentSpy).to.be.calledOnce();
-    expect(removeCommentSpy.getCall(0).args[0]).to.equal(props.id);
-    expect(removeCommentSpy.getCall(0).args[1]).to.equal(props.conversationId);
-    expect(wrapper.state('showEditForm')).to.equal(false);
+    expect(removeCommentSpy).toHaveBeenCalledTimes(1);
+    expect(removeCommentSpy.mock.calls[0][0]).toEqual(props.id);
+    expect(removeCommentSpy.mock.calls[0][1]).toEqual(props.conversationId);
+    expect(wrapper.state('showEditForm')).toBe(false);
   });
 
-  it('shows the edit form', () => {
+  test('shows the edit form', () => {
     wrapper.instance().showEditForm();
-    expect(wrapper.state('showEditForm')).to.equal(true);
+    expect(wrapper.state('showEditForm')).toBe(true);
   });
 
-  it('hides the edit form', () => {
+  test('hides the edit form', () => {
     wrapper.instance().showEditForm();
     wrapper.instance().hideEditForm();
-    expect(wrapper.state('showEditForm')).to.equal(false);
+    expect(wrapper.state('showEditForm')).toBe(false);
   });
 });
