@@ -1,8 +1,6 @@
 import { Footer } from 'react-bootstrap/lib/Modal';
-import { React, expect, jsDomGlobal, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Modal } from '../../lib';
-
-jsDomGlobal();
 
 describe('Modal Footer', () => {
   let wrapper;
@@ -15,12 +13,12 @@ describe('Modal Footer', () => {
     );
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('p')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('shares props with Bootstrap component', () => {
-    expect(wrapper.type()).to.deep.equal(Footer);
-    expect(wrapper.prop('testProp')).to.equal('test');
+  test('shares props with Bootstrap component', () => {
+    expect(wrapper.type()).toEqual(Footer);
+    expect(wrapper.prop('testProp')).toEqual('test');
   });
 });

@@ -1,4 +1,4 @@
-import { React, expect, sinon, mount } from '../../setup';
+import { React, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
 import ExpandingTextArea from '../../../lib/ExpandingTextArea';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
@@ -7,7 +7,6 @@ import ShortcutTrigger from '../../../lib/ShortcutTrigger/index';
 
 describe('Comment Form', () => {
   let wrapper;
-  const sandbox = sinon.sandbox.create();
   let onSubmitSpy;
   let onCancelSpy;
   let onCommentChangeSpy;
@@ -23,9 +22,9 @@ describe('Comment Form', () => {
   };
 
   beforeEach(() => {
-    onSubmitSpy = sandbox.spy();
-    onCancelSpy = sandbox.spy();
-    onCommentChangeSpy = sandbox.spy();
+    onSubmitSpy = jest.fn();
+    onCancelSpy = jest.fn();
+    onCommentChangeSpy = jest.fn();
     wrapper = mount(
       <CommentForm
         {...props}
@@ -36,104 +35,98 @@ describe('Comment Form', () => {
     );
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('sets the initial state', () => {
+    expect(wrapper.state('inputValue')).toEqual('');
   });
 
-  it('sets the initial state', () => {
-    expect(wrapper.state('inputValue')).to.equal('');
-  });
-
-  it('adds a state class of has-value', () => {
+  test('adds a state class of has-value', () => {
     wrapper.setState({ inputValue: 'test' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.true();
+    expect(wrapper.find('form').hasClass('has-value')).toBe(true);
 
     wrapper.setState({ inputValue: '' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.false();
+    expect(wrapper.find('form').hasClass('has-value')).toBe(false);
 
     wrapper.setProps({ value: 'test' });
-    expect(wrapper.find('form').hasClass('has-value')).to.be.true();
+    expect(wrapper.find('form').hasClass('has-value')).toBe(true);
   });
 
-  it('calls props.onSubmit', () => {
+  test('calls props.onSubmit', () => {
     wrapper.find('form').simulate('submit');
-    expect(onSubmitSpy).to.be.calledOnce();
+    expect(onSubmitSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('calls props.onCancel', () => {
+  test('calls props.onCancel', () => {
     wrapper.instance().cancelComment();
-    expect(onCancelSpy).to.be.calledOnce();
+    expect(onCancelSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('renders an avatar (with the correct props)', () => {
+  test('renders an avatar (with the correct props)', () => {
     const avatar = wrapper.find(Avatar);
-    expect(avatar).to.have.length(1);
-    expect(avatar.prop('url')).to.equal(props.author.avatar);
-    expect(avatar.prop('initials')).to.equal(props.author.initials);
+    expect(avatar).toHaveLength(1);
+    expect(avatar.prop('url')).toEqual(props.author.avatar);
+    expect(avatar.prop('initials')).toEqual(props.author.initials);
   });
 
-  it('renders ExpandingTextArea (with correct props)', () => {
+  test('renders ExpandingTextArea (with correct props)', () => {
     const input = wrapper.find(ExpandingTextArea);
-    expect(input).to.have.length(1);
-    expect(input.prop('handleOnChange')).to.deep.equal(
+    expect(input).toHaveLength(1);
+    expect(input.prop('handleOnChange')).toEqual(
       wrapper.instance().updateInputValue
     );
-    expect(input.prop('focusOnMount')).to.equal(false);
-    expect(input.prop('value')).to.equal('');
+    expect(input.prop('focusOnMount')).toEqual(false);
+    expect(input.prop('value')).toEqual('');
 
     wrapper.setProps({ value: 'test' });
-    expect(input.prop('value')).to.equal('test');
+    expect(input.prop('value')).toEqual('test');
 
-    expect(input.prop('handleOnFocus')).to.deep.equal(
+    expect(input.prop('handleOnFocus')).toEqual(
       wrapper.instance().toggleInputHasFocus
     );
   });
 
-  it('renders CommentFormActions (with correct props)', () => {
+  test('renders CommentFormActions (with correct props)', () => {
     wrapper.setProps({ value: 'test' });
     let actions = wrapper.find(CommentFormActions);
-    expect(actions).to.have.length(1);
-    expect(actions.prop('onSubmit')).to.deep.equal(wrapper.instance().onSubmit);
-    expect(actions.prop('onCancel')).to.deep.equal(
-      wrapper.instance().cancelComment
-    );
-    expect(actions.prop('isSubmitting')).to.equal(false);
+    expect(actions).toHaveLength(1);
+    expect(actions.prop('onSubmit')).toEqual(wrapper.instance().onSubmit);
+    expect(actions.prop('onCancel')).toEqual(wrapper.instance().cancelComment);
+    expect(actions.prop('isSubmitting')).toEqual(false);
 
     wrapper.setProps({ isSubmitting: true });
     actions = wrapper.find(CommentFormActions);
-    expect(actions.prop('isSubmitting')).to.equal(true);
+    expect(actions.prop('isSubmitting')).toEqual(true);
   });
 
-  it('updates the input value', () => {
+  test('updates the input value', () => {
     wrapper.instance().updateInputValue({ target: { value: 'test 2' } });
-    expect(wrapper.state('inputValue')).to.equal('test 2');
-    expect(onCommentChangeSpy).to.be.calledWithExactly('123', 'test 2');
+    expect(wrapper.state('inputValue')).toEqual('test 2');
+    expect(onCommentChangeSpy).toHaveBeenCalledWith('123', 'test 2');
   });
 
-  it('toggles the focus state for the input', () => {
+  test('toggles the focus state for the input', () => {
     wrapper.instance().toggleInputHasFocus();
-    expect(wrapper.state('inputHasFocused')).to.equal(true);
+    expect(wrapper.state('inputHasFocused')).toEqual(true);
 
     wrapper.instance().toggleInputHasFocus();
-    expect(wrapper.state('inputHasFocused')).to.equal(false);
+    expect(wrapper.state('inputHasFocused')).toEqual(false);
   });
 
-  it('renders ShortcutTriggers', () => {
-    expect(wrapper.find(ShortcutTrigger)).to.have.length(0);
+  test('renders ShortcutTriggers', () => {
+    expect(wrapper.find(ShortcutTrigger)).toHaveLength(0);
     wrapper.setState({ inputHasFocused: true });
     const shortcutTriggers = wrapper.find(ShortcutTrigger);
-    expect(shortcutTriggers).to.have.length(2);
+    expect(shortcutTriggers).toHaveLength(2);
 
-    expect(shortcutTriggers.first().prop('shortcutKey')).to.equal('Enter');
-    expect(shortcutTriggers.first().prop('onShortcutTrigger')).to.deep.equal(
+    expect(shortcutTriggers.first().prop('shortcutKey')).toEqual('Enter');
+    expect(shortcutTriggers.first().prop('onShortcutTrigger')).toEqual(
       wrapper.instance().onSubmit
     );
-    expect(shortcutTriggers.first().prop('withCtrlKey')).to.equal(true);
+    expect(shortcutTriggers.first().prop('withCtrlKey')).toEqual(true);
 
-    expect(shortcutTriggers.last().prop('shortcutKey')).to.equal('Enter');
-    expect(shortcutTriggers.last().prop('onShortcutTrigger')).to.deep.equal(
+    expect(shortcutTriggers.last().prop('shortcutKey')).toEqual('Enter');
+    expect(shortcutTriggers.last().prop('onShortcutTrigger')).toEqual(
       wrapper.instance().onSubmit
     );
-    expect(shortcutTriggers.last().prop('withMetaKey')).to.equal(true);
+    expect(shortcutTriggers.last().prop('withMetaKey')).toEqual(true);
   });
 });

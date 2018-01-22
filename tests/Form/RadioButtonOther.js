@@ -1,9 +1,7 @@
-import { React, expect, sinon, jsDomGlobal, shallow, mount } from '../setup';
+import { React, shallow, mount } from '../setup';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 import RadioButtonInput from '../../lib/Form/RadioButton/Input';
 import Label from '../../lib/Form/Label';
-
-jsDomGlobal();
 
 describe('RadioButtonOther', () => {
   let Other;
@@ -21,41 +19,41 @@ describe('RadioButtonOther', () => {
     );
   });
 
-  it('has a radio button input', () => {
+  test('has a radio button input', () => {
     let Input = Other.find(RadioButtonInput);
-    expect(Input.prop('name')).to.equal('foo');
-    expect(Input.prop('id')).to.equal('4');
-    expect(Input.prop('onChangeHandler')).to.deep.equal(onChangeHandler);
+    expect(Input.prop('name')).toEqual('foo');
+    expect(Input.prop('id')).toEqual('4');
+    expect(Input.prop('onChangeHandler')).toEqual(onChangeHandler);
 
     Other.setProps({ checked: true });
 
     Input = Other.find(RadioButtonInput);
-    expect(Input.prop('name')).to.equal('foo');
-    expect(Input.prop('id')).to.equal('4');
-    expect(Input.prop('onChangeHandler')).to.deep.equal(onChangeHandler);
+    expect(Input.prop('name')).toEqual('foo');
+    expect(Input.prop('id')).toEqual('4');
+    expect(Input.prop('onChangeHandler')).toEqual(onChangeHandler);
   });
 
-  it('has a label', () => {
+  test('has a label', () => {
     const label = Other.find(Label);
-    expect(label.prop('label')).to.equal('Something else');
-    expect(label.prop('id')).to.equal('4');
+    expect(label.prop('label')).toEqual('Something else');
+    expect(label.prop('id')).toEqual('4');
   });
 
-  it('does not render the label', () => {
+  test('does not render the label', () => {
     Other.setProps({ checked: true });
-    expect(Other.find(Label)).to.have.length(0);
+    expect(Other.find(Label)).toHaveLength(0);
   });
 
-  it('has a text input, if it is checked', () => {
+  test('has a text input, if it is checked', () => {
     Other.setProps({ checked: true });
-    expect(Other.find('input[type="text"]')).to.have.length(1);
+    expect(Other.find('input[type="text"]')).toHaveLength(1);
   });
 
-  it('hides the user input field if it is not checked', () => {
-    expect(Other.find('input[type="text"]')).to.have.length(0);
+  test('hides the user input field if it is not checked', () => {
+    expect(Other.find('input[type="text"]')).toHaveLength(0);
   });
 
-  it('uses the "value" prop to set the initial value of the user input field', () => {
+  test('uses the "value" prop to set the initial value of the user input field', () => {
     Other = shallow(
       <RadioButtonOther
         name="foo"
@@ -68,13 +66,13 @@ describe('RadioButtonOther', () => {
       />
     );
 
-    expect(Other.find('input[type="text"]').props().value).to.equal(
+    expect(Other.find('input[type="text"]').props().value).toEqual(
       'the initial value'
     );
   });
 
-  it('returns the id to the onChangeHandler when it is checked', () => {
-    const onChangeSpy = sinon.spy();
+  test('returns the id to the onChangeHandler when it is checked', () => {
+    const onChangeSpy = jest.fn();
     const e = { target: { id: 4 } };
 
     Other = shallow(
@@ -89,11 +87,11 @@ describe('RadioButtonOther', () => {
     );
 
     Other.find(RadioButtonInput).prop('onChangeHandler')(e);
-    expect(onChangeSpy).to.have.been.calledWith(e);
+    expect(onChangeSpy).toHaveBeenCalledWith(e);
   });
 
-  it('returns the user input value to the onTextChange handler', () => {
-    const onTextChangeSpy = sinon.spy();
+  test('returns the user input value to the onTextChange handler', () => {
+    const onTextChangeSpy = jest.fn();
 
     Other = shallow(
       <RadioButtonOther
@@ -110,12 +108,12 @@ describe('RadioButtonOther', () => {
     Other.find('input[type="text"]').simulate('change', {
       target: { value: 'new input' }
     });
-    expect(onTextChangeSpy).to.have.been.calledWith({
+    expect(onTextChangeSpy).toHaveBeenCalledWith({
       target: { value: 'new input' }
     });
   });
 
-  it('focuses the input element', () => {
+  test('focuses the input element', () => {
     const mountedWrapper = mount(
       <RadioButtonOther
         name="foo"
@@ -127,12 +125,8 @@ describe('RadioButtonOther', () => {
       />
     );
 
-    expect(mountedWrapper.instance().input).to.not.equal(
-      document.activeElement
-    );
+    expect(mountedWrapper.instance().input).not.toEqual(document.activeElement);
     mountedWrapper.setProps({ checked: true });
-    expect(mountedWrapper.instance().input).to.deep.equal(
-      document.activeElement
-    );
+    expect(mountedWrapper.instance().input).toEqual(document.activeElement);
   });
 });

@@ -1,17 +1,10 @@
-import { React, expect, mount, jsDomGlobal, sinon } from '../setup';
+import { React, mount } from '../setup';
 import { ExpandingTextArea } from '../../lib';
 
 describe('EditableTextWrapper', () => {
-  jsDomGlobal();
-  const sandbox = sinon.sandbox.create();
-
   let wrapper;
   let handleOnChangeSpy;
   let handleOnFocusSpy;
-  let setInitialRowsSpy;
-  let handleChangeSpy;
-  let resizeTextAreaSpy;
-  let calculateRowsSpy;
   let style;
 
   beforeEach(() => {
@@ -19,21 +12,8 @@ describe('EditableTextWrapper', () => {
       lineHeight: '20px',
       padding: '10px 0 10px'
     };
-    handleOnChangeSpy = sandbox.spy();
-    handleOnFocusSpy = sandbox.spy();
-    setInitialRowsSpy = sandbox.spy(
-      ExpandingTextArea.prototype,
-      'setInitialRows'
-    );
-    handleChangeSpy = sandbox.spy(ExpandingTextArea.prototype, 'handleChange');
-    resizeTextAreaSpy = sandbox.spy(
-      ExpandingTextArea.prototype,
-      'resizeTextArea'
-    );
-    calculateRowsSpy = sandbox.spy(
-      ExpandingTextArea.prototype,
-      'calculateRows'
-    );
+    handleOnChangeSpy = jest.fn();
+    handleOnFocusSpy = jest.fn();
     wrapper = mount(
       <ExpandingTextArea
         style={style}
@@ -44,64 +24,51 @@ describe('EditableTextWrapper', () => {
     );
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('sets initial rows on render', () => {
+    expect(wrapper.find('.expanding-textarea')).toHaveLength(1);
+    expect(wrapper.state('rowCount')).toEqual(1);
   });
 
-  it('sets initial rows on render', () => {
-    expect(wrapper.find('.expanding-textarea')).to.have.length(1);
-    expect(setInitialRowsSpy.calledOnce).to.equal(true);
-    expect(calculateRowsSpy.calledOnce).to.equal(true);
-    expect(wrapper.state('rowCount')).to.equal(
-      calculateRowsSpy.lastCall.returnValue
-    );
-  });
-
-  it('respects the minRows prop', () => {
-    expect(wrapper.state('rowCount')).to.equal(1);
+  test('respects the minRows prop', () => {
+    expect(wrapper.state('rowCount')).toEqual(1);
     wrapper.setProps({ minRows: 4 });
     wrapper.instance().resizeTextArea();
-    expect(wrapper.state('rowCount')).to.equal(4);
+    expect(wrapper.state('rowCount')).toEqual(4);
   });
 
-  it('sets the input value as the value prop', () => {
+  test('sets the input value as the value prop', () => {
     wrapper.setProps({ value: 'New Value' });
-    expect(wrapper.text()).to.equal(wrapper.prop('value'));
+    expect(wrapper.text()).toEqual(wrapper.prop('value'));
   });
 
-  it('calls the handleOnChange prop on change', () => {
+  test('calls the handleOnChange prop on change', () => {
     wrapper.simulate('change', { target: { value: 'Changed value' } });
-    expect(handleOnChangeSpy.called).to.equal(true);
+    expect(handleOnChangeSpy).toHaveBeenCalled();
   });
 
-  it('sets the row state on change', () => {
+  test('sets the row state on change', () => {
     wrapper.simulate('change', { target: { value: 'Changed value' } });
     wrapper.simulate('keyDown', { keyCode: 13 });
-    expect(handleChangeSpy.called).to.equal(true);
-    expect(resizeTextAreaSpy.called).to.equal(true);
-    expect(calculateRowsSpy.called).to.equal(true);
-    expect(wrapper.state('rowCount')).to.equal(
-      calculateRowsSpy.lastCall.returnValue
-    );
+    expect(wrapper.state('rowCount')).toEqual(1);
   });
 
-  it('calls a prop function when focus and blue', () => {
+  test('calls a prop function when focus and blue', () => {
     wrapper.simulate('focus', {});
-    expect(handleOnFocusSpy).to.be.calledOnce();
+    expect(handleOnFocusSpy).toHaveBeenCalledTimes(1);
 
     wrapper.simulate('blur', {});
-    expect(handleOnFocusSpy).to.be.calledTwice();
+    expect(handleOnFocusSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('sets the value state if the setValue prop is false', () => {
+  test('sets the value state if the setValue prop is false', () => {
     wrapper.simulate('change', { target: { value: 'Changed value' } });
-    expect(wrapper.state('inputValue')).to.equal('Changed value');
+    expect(wrapper.state('inputValue')).toEqual('Changed value');
   });
 
-  it('does not set the value state if the setValue prop is true', () => {
+  test('does not set the value state if the setValue prop is true', () => {
     wrapper
       .setProps({ setValue: true })
       .simulate('change', { target: { value: 'Changed value' } });
-    expect(wrapper.state('inputValue')).to.equal('');
+    expect(wrapper.state('inputValue')).toEqual('');
   });
 });

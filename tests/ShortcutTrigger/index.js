@@ -1,60 +1,46 @@
-import { React, expect, mount, sinon, jsDomGlobal } from '../setup';
+import { React, mount } from '../setup';
 import { ShortcutTrigger } from '../../lib';
 
-describe('Shortcut Trigger', () => {
-  jsDomGlobal();
-
+describe.only('Shortcut Trigger', () => {
   let wrapper;
   let spy;
-  let documentAddEventStub;
-  let documentRemoveEventStub;
-
-  const sandbox = sinon.sandbox.create();
 
   beforeEach(() => {
-    spy = sandbox.spy();
-    documentAddEventStub = sandbox.stub(document, 'addEventListener', () => {});
-    documentRemoveEventStub = sandbox.stub(
-      document,
-      'removeEventListener',
-      () => {}
-    );
+    spy = jest.fn();
+    document.addEventListener = jest.fn();
+    document.removeEventListener = jest.fn();
 
     wrapper = mount(
       <ShortcutTrigger shortcutKey="enter" onShortcutTrigger={spy} />
     );
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('renders nothing', () => {
+    expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
-  it('renders nothing', () => {
-    expect(wrapper.isEmptyRender()).to.equal(true);
-  });
-
-  it('adds and removes event listeners for keydown', () => {
-    expect(documentAddEventStub).to.be.calledOnce();
-    expect(documentAddEventStub).to.be.calledWithExactly(
+  test('adds and removes event listeners for keydown', () => {
+    expect(document.addEventListener).toHaveBeenCalledTimes(1);
+    expect(document.addEventListener).toHaveBeenCalledWith(
       'keydown',
       wrapper.instance().onKeyDown
     );
     wrapper.instance().componentWillUnmount();
-    expect(documentRemoveEventStub).to.be.calledWithExactly(
+    expect(document.removeEventListener).toHaveBeenCalledWith(
       'keydown',
       wrapper.instance().onKeyDown
     );
   });
 
-  it('triggers the function when the shortcut is pressed', () => {
+  test('triggers the function when the shortcut is pressed', () => {
     wrapper.instance().onKeyDown({ repeat: false, key: 'enter' });
-    expect(spy).to.be.calledOnce();
+    expect(spy).toHaveBeenCalledTimes(1);
 
     wrapper.setProps({ withCtrlKey: true });
     wrapper
       .instance()
       .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
-    expect(spy).to.be.calledTwice();
+    expect(spy).toHaveBeenCalledTimes(2);
 
     wrapper.setProps({
       withCtrlKey: true,
@@ -70,31 +56,31 @@ describe('Shortcut Trigger', () => {
       shiftKey: true,
       altKey: true
     });
-    expect(spy).to.be.calledThrice();
+    expect(spy).toHaveBeenCalledTimes(3);
   });
 
-  it('does not trigger the function when the shortcut is not pressed', () => {
+  test('does not trigger the function when the shortcut is not pressed', () => {
     wrapper.instance().onKeyDown({ repeat: false, key: 'a' });
-    expect(spy).to.not.be.called();
+    expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
       .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
-    expect(spy).to.not.be.called();
+    expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
       .onKeyDown({ repeat: false, key: 'enter', metaKey: true });
-    expect(spy).to.not.be.called();
+    expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
       .onKeyDown({ repeat: false, key: 'enter', shiftKey: true });
-    expect(spy).to.not.be.called();
+    expect(spy).not.toHaveBeenCalled();
   });
 
-  it('does not trigger the function when the event is repeating', () => {
+  test('does not trigger the function when the event is repeating', () => {
     wrapper.instance().onKeyDown({ repeat: true });
-    expect(spy).to.not.be.called();
+    expect(spy).not.toHaveBeenCalled();
   });
 });

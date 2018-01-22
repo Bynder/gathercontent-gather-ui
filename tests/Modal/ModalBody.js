@@ -1,5 +1,5 @@
 import { Body } from 'react-bootstrap/lib/Modal';
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Modal } from '../../lib';
 
 describe('Modal Body', () => {
@@ -13,12 +13,12 @@ describe('Modal Body', () => {
     );
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('p')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('shares props with Bootstrap component', () => {
-    expect(wrapper.type()).to.deep.equal(Body);
-    expect(wrapper.prop('testProp')).to.equal('test');
+  test('shares props with Bootstrap component', () => {
+    expect(wrapper.type()).toEqual(Body);
+    expect(wrapper.prop('testProp')).toEqual('test');
   });
 });

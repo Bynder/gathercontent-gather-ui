@@ -1,7 +1,5 @@
-import { React, expect, jsDomGlobal, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { withModalTrigger, Button, Modal } from '../../lib';
-
-jsDomGlobal();
 
 describe('Modal Body', () => {
   let wrapper;
@@ -18,24 +16,24 @@ describe('Modal Body', () => {
 
   afterEach(() => {});
 
-  it('renders the trigger Button component (and props)', () => {
-    expect(wrapper.find(Button)).to.have.length(1);
-    expect(wrapper.find(Button).prop('className')).to.equal('test-class');
+  test('renders the trigger Button component (and props)', () => {
+    expect(wrapper.find(Button)).toHaveLength(1);
+    expect(wrapper.find(Button).prop('className')).toEqual('test-class');
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find(Modal.Container)).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find(Modal.Container)).toHaveLength(1);
   });
 
-  it('updates the show state to its children', () => {
+  test('updates the show state to its children', () => {
     wrapper.find(Button).prop('clickHandler')();
-    expect(wrapper.state('show')).to.equal(true);
-    expect(wrapper.find(Modal.Container).prop('show')).to.equal(true);
+    expect(wrapper.state('show')).toEqual(true);
+    expect(wrapper.find(Modal.Container).prop('show')).toEqual(true);
   });
 
-  it('passes onHide to its children', () => {
+  test('passes onHide to its children', () => {
     wrapper.setState({ show: true });
     wrapper.find(Modal.Container).prop('onHide')();
-    expect(wrapper.state('show')).to.equal(false);
+    expect(wrapper.state('show')).toEqual(false);
   });
 });

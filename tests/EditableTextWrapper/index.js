@@ -1,15 +1,13 @@
-import { React, expect, shallow, sinon } from '../setup';
+import { React, shallow } from '../setup';
 import { EditableTextWrapper } from '../../lib';
 import Button from '../../lib/Button';
 
 describe('EditableTextWrapper', () => {
   let wrapper;
-  let sandbox;
   let onChangeSpy;
 
   beforeEach(() => {
-    sandbox = sinon.sandbox.create();
-    onChangeSpy = sinon.spy();
+    onChangeSpy = jest.fn();
     wrapper = shallow(
       <EditableTextWrapper value="Hello" onChange={onChangeSpy}>
         Hello
@@ -17,35 +15,29 @@ describe('EditableTextWrapper', () => {
     );
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('shows the default text initially', () => {
+    expect(wrapper.find('.editable-text__text').text()).toEqual('Hello');
   });
 
-  it('shows the default text initially', () => {
-    expect(wrapper.find('.editable-text__text').text()).to.equal('Hello');
+  test('has an editable icon button initially', () => {
+    expect(wrapper.find('.editable-text__button')).toHaveLength(1);
   });
 
-  it('has an editable icon button initially', () => {
-    expect(wrapper.find('.editable-text__button')).to.have.length(1);
-  });
-
-  it('shows the editing view after clicking the .editable-text__button', () => {
+  test('shows the editing view after clicking the .editable-text__button', () => {
     wrapper.find('.editable-text__button').prop('clickHandler')();
 
-    expect(wrapper.find('.editable-text__button')).to.have.length(0);
+    expect(wrapper.find('.editable-text__button')).toHaveLength(0);
   });
 
-  it('shows the editing view after clicking the .editable-text__button', () => {
+  test('shows the editing view after clicking the .editable-text__button', () => {
     wrapper.find('.editable-text__button').prop('clickHandler')();
 
-    expect(wrapper.find('.editable-text__button')).to.have.length(0);
-    expect(wrapper.find('.editable-text__wrapper--editing')).to.have.length(1);
-    expect(
-      wrapper.find('.editable-text__input').prop('autoFocus')
-    ).to.be.true();
+    expect(wrapper.find('.editable-text__button')).toHaveLength(0);
+    expect(wrapper.find('.editable-text__wrapper--editing')).toHaveLength(1);
+    expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
   });
 
-  it('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
+  test('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper
@@ -53,11 +45,11 @@ describe('EditableTextWrapper', () => {
       .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 13 });
 
-    expect(onChangeSpy).to.have.been.calledWith('hey');
-    expect(wrapper.find('.editable-text__button')).to.have.length(1);
+    expect(onChangeSpy).toHaveBeenCalledWith('hey');
+    expect(wrapper.find('.editable-text__button')).toHaveLength(1);
   });
 
-  it('fires the onChangeHandler when when the text input looses focus', () => {
+  test('fires the onChangeHandler when when the text input looses focus', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper
@@ -65,11 +57,11 @@ describe('EditableTextWrapper', () => {
       .simulate('change', { target: { value: 'yo' } });
     wrapper.find('.editable-text__input').simulate('blur');
 
-    expect(onChangeSpy).to.have.been.calledWith('yo');
-    expect(wrapper.find('.editable-text__button')).to.have.length(1);
+    expect(onChangeSpy).toHaveBeenCalledWith('yo');
+    expect(wrapper.find('.editable-text__button')).toHaveLength(1);
   });
 
-  it('returns the input to the non editing state when the esc key is pressed', () => {
+  test('returns the input to the non editing state when the esc key is pressed', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 
     wrapper
@@ -77,15 +69,15 @@ describe('EditableTextWrapper', () => {
       .simulate('change', { target: { value: 'hey' } });
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 27 });
 
-    expect(onChangeSpy).not.to.have.been.called();
-    expect(wrapper.find('.editable-text__button')).to.have.length(1);
+    expect(onChangeSpy).not.toHaveBeenCalled();
+    expect(wrapper.find('.editable-text__button')).toHaveLength(1);
   });
 
-  it('updates the value stored in the state, when the value prop is updated by the parent', () => {
-    expect(wrapper.state('value')).to.equal('Hello');
+  test('updates the value stored in the state, when the value prop is updated by the parent', () => {
+    expect(wrapper.state('value')).toEqual('Hello');
 
     wrapper.setProps({ value: 'New Value' });
 
-    expect(wrapper.state('value')).to.equal('New Value');
+    expect(wrapper.state('value')).toEqual('New Value');
   });
 });

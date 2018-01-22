@@ -1,8 +1,6 @@
 import { Header } from 'react-bootstrap/lib/Modal';
-import { React, expect, jsDomGlobal, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { Modal } from '../../lib';
-
-jsDomGlobal();
 
 describe('Modal Header', () => {
   let wrapper;
@@ -15,16 +13,16 @@ describe('Modal Header', () => {
     );
   });
 
-  it('renders its children', () => {
-    expect(wrapper.find('p')).to.have.length(1);
+  test('renders its children', () => {
+    expect(wrapper.find('p')).toHaveLength(1);
   });
 
-  it('shares props with Bootstrap component', () => {
-    expect(wrapper.type()).to.deep.equal(Header);
-    expect(wrapper.prop('testProp')).to.equal('test');
+  test('shares props with Bootstrap component', () => {
+    expect(wrapper.type()).toEqual(Header);
+    expect(wrapper.prop('testProp')).toEqual('test');
   });
 
-  it('sets the closeButton prop to true by default', () => {
-    expect(wrapper.prop('closeButton')).to.equal(true);
+  test('sets the closeButton prop to true by default', () => {
+    expect(wrapper.prop('closeButton')).toEqual(true);
   });
 });

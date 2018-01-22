@@ -1,4 +1,4 @@
-import { React, expect, sinon, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import Conversation from '../../lib/Conversation';
 import CommentList from '../../lib/Conversation/CommentList';
 import CommentForm from '../../lib/Conversation/CommentForm';
@@ -6,7 +6,6 @@ import Button from '../../lib/Button';
 
 describe('Conversation', () => {
   let wrapper;
-  const sandbox = sinon.sandbox.create();
   let resolveConversationSpy;
   let addCommentSpy;
 
@@ -21,8 +20,8 @@ describe('Conversation', () => {
   };
 
   beforeEach(() => {
-    resolveConversationSpy = sandbox.spy();
-    addCommentSpy = sandbox.spy();
+    resolveConversationSpy = jest.fn();
+    addCommentSpy = jest.fn();
     wrapper = shallow(
       <Conversation
         {...props}
@@ -33,78 +32,72 @@ describe('Conversation', () => {
     );
   });
 
-  beforeEach(() => {
-    sandbox.restore();
-  });
-
-  it('renders an error notification', () => {
-    expect(wrapper.find('Notification')).to.have.length(0);
+  test('renders an error notification', () => {
+    expect(wrapper.find('Notification')).toHaveLength(0);
     wrapper.setProps({ hasError: true });
-    expect(wrapper.find('Notification')).to.have.length(1);
+    expect(wrapper.find('Notification')).toHaveLength(1);
   });
 
-  it('renders the resolve conversation Button', () => {
+  test('renders the resolve conversation Button', () => {
     const resolveButton = wrapper.find(Button).first();
-    expect(resolveButton.prop('clickHandler')).to.deep.equal(
+    expect(resolveButton.prop('clickHandler')).toEqual(
       wrapper.instance().resolveConversation
     );
   });
 
-  it('calls the resolveConversation action', () => {
+  test('calls the resolveConversation action', () => {
     const resolveConversation = wrapper.instance().resolveConversation;
     expect(
       wrapper
         .find(Button)
         .first()
         .prop('clickHandler')
-    ).to.equal(resolveConversation);
+    ).toEqual(resolveConversation);
     resolveConversation();
-    expect(resolveConversationSpy.getCall(0).args[0]).to.equal(props.id);
+    expect(resolveConversationSpy.mock.calls[0][0]).toEqual(props.id);
   });
 
-  it('adds a state class of is-active', () => {
-    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
+  test('adds a state class of is-active', () => {
+    expect(wrapper.find('.conversation').hasClass('is-active')).toBe(true);
 
     wrapper.setProps({ showComments: false });
-    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.false();
+    expect(wrapper.find('.conversation').hasClass('is-active')).toEqual(false);
 
     wrapper.setProps({ showComments: true });
-    expect(wrapper.find('.conversation').hasClass('is-active')).to.be.true();
+    expect(wrapper.find('.conversation').hasClass('is-active')).toBe(true);
   });
 
-  it('renders a list of comments (with correct props)', () => {
+  test('renders a list of comments (with correct props)', () => {
     const commentList = wrapper.find(CommentList);
-    expect(commentList).to.have.length(1);
-    expect(commentList.prop('conversationId')).to.equal(props.id);
-    expect(commentList.prop('comments')).to.equal(props.comments);
-    expect(commentList.prop('resolveConversation')).to.equal(
+    expect(commentList).toHaveLength(1);
+    expect(commentList.prop('conversationId')).toEqual(props.id);
+    expect(commentList.prop('comments')).toEqual(props.comments);
+    expect(commentList.prop('resolveConversation')).toEqual(
       resolveConversationSpy
     );
-    expect(commentList.prop('addComment')).to.equal(addCommentSpy);
-    expect(commentList.prop('userCanComment')).to.equal(true);
-    expect(commentList.prop('id')).to.not.equal(props.id);
-    expect(commentList.prop('focusFallback')).to.deep.equal(
-      props.focusFallback
-    );
-    expect(commentList.prop('onCommentChange')).to.equal(props.onCommentChange);
+    expect(commentList.prop('addComment')).toEqual(addCommentSpy);
+    expect(commentList.prop('userCanComment')).toEqual(true);
+    expect(commentList.prop('id')).not.toBe(props.id);
+    expect(commentList.prop('focusFallback')).toEqual(props.focusFallback);
+    expect(commentList.prop('onCommentChange')).toEqual(props.onCommentChange);
   });
 
-  it('does not render the reply count text', () => {
-    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
+  test('does not render the reply count text', () => {
+    expect(wrapper.find('.conversation__reply-count')).toHaveLength(0);
   });
 
-  it('does not render the reply count text (when there is only 1 comment)', () => {
+  test('does not render the reply count text (when there is only 1 comment)', () => {
     wrapper.setProps({ showComments: false });
     wrapper.setProps({ comments: [props.comments[0]] });
-    expect(wrapper.find('.conversation__reply-count')).to.have.length(0);
+    expect(wrapper.find('.conversation__reply-count')).toHaveLength(0);
   });
 
-  it('does render the reply count text', () => {
+  test('does render the reply count text', () => {
     wrapper.setProps({ showComments: false });
-    expect(wrapper.find('.conversation__reply-count')).to.have.length(1);
+    expect(wrapper.find('.conversation__reply-count')).toHaveLength(1);
   });
 
-  it('pluralises the reply count text ', () => {
+  test('pluralises the reply count text ', () => {
     wrapper.setProps({ showComments: false });
     expect(
       wrapper
@@ -112,7 +105,7 @@ describe('Conversation', () => {
         .last()
         .children()
         .text()
-    ).to.equal('View 1 reply');
+    ).toEqual('View 1 reply');
 
     wrapper.setProps({
       comments: [...props.comments, { person: { name: 'Corinne' }, id: 567 }]
@@ -123,37 +116,35 @@ describe('Conversation', () => {
         .last()
         .children()
         .text()
-    ).to.equal('View 2 replies');
+    ).toEqual('View 2 replies');
   });
 
-  it('calls the addComment action', () => {
+  test('calls the addComment action', () => {
     const addComment = wrapper.instance().addComment;
-    expect(wrapper.find(CommentForm).prop('onSubmit')).to.equal(addComment);
-    expect(wrapper.find(CommentForm).prop('id')).to.equal('123');
-    expect(wrapper.find(CommentForm).prop('onCommentChange')).to.equal(
+    expect(wrapper.find(CommentForm).prop('onSubmit')).toEqual(addComment);
+    expect(wrapper.find(CommentForm).prop('id')).toEqual('123');
+    expect(wrapper.find(CommentForm).prop('onCommentChange')).toEqual(
       props.onCommentChange
     );
     addComment('test');
-    expect(addCommentSpy.getCall(0).args[0]).to.equal('test');
+    expect(addCommentSpy.mock.calls[0][0]).toEqual('test');
   });
 
-  it('renders a comment form (with correct props)', () => {
+  test('renders a comment form (with correct props)', () => {
     const commentForm = wrapper.find(CommentForm);
-    expect(commentForm).to.have.length(1);
-    expect(commentForm.prop('author')).to.equal(props.user);
-    expect(commentForm.prop('onSubmit')).to.equal(
-      wrapper.instance().addComment
-    );
+    expect(commentForm).toHaveLength(1);
+    expect(commentForm.prop('author')).toEqual(props.user);
+    expect(commentForm.prop('onSubmit')).toEqual(wrapper.instance().addComment);
   });
 
-  it('does not render a comment form', () => {
+  test('does not render a comment form', () => {
     wrapper.setProps({ userCanComment: false });
-    expect(wrapper.find(CommentForm)).to.have.length(0);
+    expect(wrapper.find(CommentForm)).toHaveLength(0);
   });
 
-  it('does not render a resolveConversation button or a CommentList', () => {
+  test('does not render a resolveConversation button or a CommentList', () => {
     wrapper.setProps({ comments: [] });
-    expect(wrapper.find('.conversation__resolve')).to.have.length(0);
-    expect(wrapper.find(CommentList)).to.have.length(0);
+    expect(wrapper.find('.conversation__resolve')).toHaveLength(0);
+    expect(wrapper.find(CommentList)).toHaveLength(0);
   });
 });

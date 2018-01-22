@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import PlanBoxPricing from '../../lib/PlanBox/Pricing';
 
 describe('PlanBox/Pricing', () => {
@@ -17,12 +17,12 @@ describe('PlanBox/Pricing', () => {
     shallowWrapper = null;
   });
 
-  it('renders the correct text', () => {
-    expect(shallowWrapper.text()).to.equal('$200/mo');
+  test('renders the correct text', () => {
+    expect(shallowWrapper.text()).toEqual('$200/mo');
   });
 
-  it('includes the additional billing information', () => {
+  test('includes the additional billing information', () => {
     shallowWrapper.setProps({ priceType: 'priceYearly' });
-    expect(shallowWrapper.text().includes('Billed annually')).to.equal(true);
+    expect(shallowWrapper.text().includes('Billed annually')).toEqual(true);
   });
 });

@@ -1,4 +1,4 @@
-import { React, expect, mount } from '../setup';
+import { React, mount } from '../setup';
 import { ShortcutIcon } from '../../lib';
 
 describe('Shortcut/ShortcutIcon', () => {
@@ -8,7 +8,7 @@ describe('Shortcut/ShortcutIcon', () => {
     wrapper = mount(<ShortcutIcon>i</ShortcutIcon>);
   });
 
-  it('renders a the icon children', () => {
-    expect(wrapper.text()).to.equal('i');
+  test('renders a the icon children', () => {
+    expect(wrapper.text()).toEqual('i');
   });
 });

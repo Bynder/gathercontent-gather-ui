@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { List, ListItem } from '../../lib';
 import ListHead from '../../lib/List/ListHead';
 
@@ -18,19 +18,19 @@ describe('List', () => {
 
   afterEach(() => {});
 
-  it('renders a ListHead component', () => {
+  test('renders a ListHead component', () => {
     const component = wrapper.find(ListHead);
-    expect(component).to.have.length(1);
-    expect(component.prop('title')).to.equal('Project name');
-    expect(component.prop('action')).to.deep.equal(mockAction);
+    expect(component).toHaveLength(1);
+    expect(component.prop('title')).toEqual('Project name');
+    expect(component.prop('action')).toEqual(mockAction);
   });
 
-  it('renders 2 children and surrounds them with a list__row div', () => {
-    expect(wrapper.find('.list__row')).to.have.length(2);
+  test('renders 2 children and surrounds them with a list__row div', () => {
+    expect(wrapper.find('.list__row')).toHaveLength(2);
   });
 
-  it('renders a modifier class of "--bordered-right"', () => {
+  test('renders a modifier class of "--bordered-right"', () => {
     wrapper.setProps({ borderedRight: true });
-    expect(wrapper.hasClass('list--bordered-right')).to.equal(true);
+    expect(wrapper.hasClass('list--bordered-right')).toEqual(true);
   });
 });

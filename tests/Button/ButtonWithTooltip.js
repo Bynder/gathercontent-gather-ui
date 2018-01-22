@@ -1,15 +1,11 @@
 import { Tooltip, OverlayTrigger } from 'react-bootstrap/lib';
-import { React, expect, sinon, jsDomGlobal, mount } from '../setup';
+import { React, mount } from '../setup';
 import { Button, ButtonWithTooltip } from '../../lib';
 
 describe('ButtonWithTooltip', () => {
-  let sandbox;
   let wrapper;
 
-  jsDomGlobal();
-
   beforeEach(() => {
-    sandbox = sinon.sandbox.create();
     wrapper = mount(
       <ButtonWithTooltip clickHandler={() => {}} tooltipText="tooltip text">
         Botão
@@ -17,30 +13,26 @@ describe('ButtonWithTooltip', () => {
     );
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('should render a Button component', () => {
+    expect(wrapper.find(Button)).toHaveLength(1);
   });
 
-  it('should render a Button component', () => {
-    expect(wrapper.find(Button)).to.have.length(1);
+  test('should render a OverlayTrigger component', () => {
+    expect(wrapper.find(OverlayTrigger)).toHaveLength(1);
   });
 
-  it('should render a OverlayTrigger component', () => {
-    expect(wrapper.find(OverlayTrigger)).to.have.length(1);
-  });
-
-  it('should pass its children to the Button component', () => {
+  test('should pass its children to the Button component', () => {
     const sharedChildren = wrapper.find(Button).prop('children');
-    expect(sharedChildren[0]).to.equal(wrapper.prop('children'));
+    expect(sharedChildren[0]).toEqual(wrapper.prop('children'));
   });
 
-  it('should set the overlay as a Tooltip component', () => {
+  test('should set the overlay as a Tooltip component', () => {
     const tooltip = mount(wrapper.find(OverlayTrigger).prop('overlay'));
-    expect(tooltip.instance()).to.be.instanceOf(Tooltip);
-    expect(tooltip.text()).to.equal('tooltip text');
+    expect(tooltip.instance()).toBeInstanceOf(Tooltip);
+    expect(tooltip.text()).toEqual('tooltip text');
   });
 
-  it('should set the tooltip size, text and position', () => {
+  test('should set the tooltip size, text and position', () => {
     wrapper.setProps({
       tooltipPosition: 'top',
       tooltipSize: 'large',
@@ -48,14 +40,14 @@ describe('ButtonWithTooltip', () => {
     });
     const tooltip = mount(wrapper.find(OverlayTrigger).prop('overlay'));
 
-    expect(wrapper.find(OverlayTrigger).prop('placement')).to.equal('top');
-    expect(tooltip.find('.tooltip--large')).to.have.length(1);
-    expect(tooltip.find('.tooltip--large').prop('children')).to.equal(
+    expect(wrapper.find(OverlayTrigger).prop('placement')).toEqual('top');
+    expect(tooltip.find('.tooltip--large')).toHaveLength(1);
+    expect(tooltip.find('.tooltip--large').prop('children')).toEqual(
       'tooltip text'
     );
   });
 
-  it('should render tooltip helper HTML element', () => {
-    expect(wrapper.find('.button--has-tooltip')).to.have.length(1);
+  test('should render tooltip helper HTML element', () => {
+    expect(wrapper.find('.button--has-tooltip')).toHaveLength(1);
   });
 });

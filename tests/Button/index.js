@@ -1,77 +1,69 @@
-import { React, expect, sinon, jsDomGlobal, mount } from '../setup';
+import { React, mount } from '../setup';
 import { Button } from '../../lib';
 
-jsDomGlobal();
-
 describe('Button', () => {
-  let sandbox;
   let wrapper;
   let button;
   let clickHandlerSpy;
 
   beforeEach(() => {
-    sandbox = sinon.sandbox.create();
-    clickHandlerSpy = sandbox.spy();
+    clickHandlerSpy = jest.fn();
     wrapper = mount(<Button clickHandler={clickHandlerSpy}>Botão</Button>);
     button = wrapper.find('button');
   });
 
-  afterEach(() => {
-    sandbox.restore();
+  test('should render text passed on children', () => {
+    expect(button.prop('children')).toEqual('Botão');
   });
 
-  it('should render text passed on children', () => {
-    expect(button.prop('children')).to.equal('Botão');
+  test('should render a primary button by default', () => {
+    expect(button.prop('className')).toContain('button button--primary');
   });
 
-  it('should render a primary button by default', () => {
-    expect(button.prop('className')).contains('button button--primary');
+  test('should not be a submit button by default', () => {
+    expect(button.prop('type')).toEqual('button');
   });
 
-  it('should not be a submit button by default', () => {
-    expect(button.prop('type')).to.equal('button');
-  });
-
-  it('can be a submit button', () => {
+  test('can be a submit button', () => {
     wrapper.setProps({
       isSubmit: true
     });
 
-    expect(button.prop('type')).to.equal('submit');
+    expect(button.prop('type')).toEqual('submit');
   });
 
-  it('should render a button with multiple type classes', () => {
+  test('should render a button with multiple type classes', () => {
     wrapper.setProps({
       types: ['clear', 'collapsed']
     });
-    expect(button.prop('className')).contains(
+    expect(button.prop('className')).toContain(
       'button button--clear button--collapsed'
     );
   });
 
-  it('should render custom classes', () => {
+  test('should render custom classes', () => {
     wrapper.setProps({
       className: 'custom-class'
     });
-    expect(button.prop('className')).contains('custom-class');
+    expect(button.prop('className')).toContain('custom-class');
   });
 
-  it('should call props.clickHandler when clicked', () => {
+  test('should call props.clickHandler when clicked', () => {
     wrapper.simulate('click', { target: { value: 'foo' } });
-    expect(clickHandlerSpy.calledOnce).to.equal(true);
-    expect(clickHandlerSpy.firstCall.args[0].target.value).to.equal('foo');
+    expect(clickHandlerSpy).toHaveBeenCalledTimes(1);
+    expect(clickHandlerSpy.mock.calls[0][0].target.value).toEqual('foo');
   });
 
-  it('should set state.disabled to true when clicked if props.disableOnClick is true', () => {
+  test('should set state.disabled to true when clicked if props.disableOnClick is true', () => {
     wrapper.setProps({
       disableOnClick: true
     });
     wrapper.simulate('click');
-    expect(wrapper.state('disabled')).to.equal(true);
+    expect(wrapper.state('disabled')).toEqual(true);
   });
 
-  it('should not set state.disabled to true when clicked if props.disableOnClick is false', () => {
+  test('should not set state.disabled to true when clicked if props.disableOnClick is false', () => {
     wrapper.simulate('click');
-    expect(wrapper.state('disabled')).to.equal(false);
+    expect(wrapper.state('disabled')).toEqual(false);
   });
 });

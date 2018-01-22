@@ -1,12 +1,10 @@
-import { React, expect, sinon, mount } from '../setup';
+import { React, mount } from '../setup';
 import { Avatar, AvatarGroup } from '../../lib';
 
 describe('AvatarGroup', () => {
   let wrapper;
-  let showMoreSpy;
 
   beforeEach(() => {
-    showMoreSpy = sinon.spy(AvatarGroup.prototype, 'showMore');
     wrapper = mount(
       <AvatarGroup maximum={3}>
         <Avatar
@@ -42,11 +40,7 @@ describe('AvatarGroup', () => {
     );
   });
 
-  afterEach(() => {
-    showMoreSpy.restore();
-  });
-
-  it('renders a single Avatar', () => {
+  test('renders a single Avatar', () => {
     const mountedWrapper = mount(
       <AvatarGroup maximum={3}>
         <Avatar
@@ -60,18 +54,18 @@ describe('AvatarGroup', () => {
       </AvatarGroup>
     );
 
-    expect(mountedWrapper.find(Avatar).length).to.equal(1);
+    expect(mountedWrapper.find(Avatar).length).toEqual(1);
   });
 
-  it('renders an AvatarGroup component', () => {
-    expect(wrapper.find('[data-component="avatar-group"]')).to.have.length(1);
+  test('renders an AvatarGroup component', () => {
+    expect(wrapper.find('[data-component="avatar-group"]')).toHaveLength(1);
   });
 
-  it('renders the maximum specified size of individual Avatar components', () => {
-    expect(wrapper.find(Avatar).length).to.equal(3);
+  test('renders the maximum specified size of individual Avatar components', () => {
+    expect(wrapper.find(Avatar).length).toEqual(3);
   });
 
-  it('renders a custom maximum specified size of individual Avatar components', () => {
+  test('renders a custom maximum specified size of individual Avatar components', () => {
     const customWrapper = mount(
       <AvatarGroup maximum={1}>
         <Avatar
@@ -106,30 +100,29 @@ describe('AvatarGroup', () => {
       </AvatarGroup>
     );
 
-    expect(customWrapper.find(Avatar).length).to.equal(1);
+    expect(customWrapper.find(Avatar).length).toEqual(1);
   });
 
-  it('renders an extra component displaying the amount of people not shown', () => {
+  test('renders an extra component displaying the amount of people not shown', () => {
     const showMore = wrapper.find('[data-component="show-more-avatar"]');
-    expect(showMore).to.have.length(1);
-    expect(showMore.text()).to.equal('+1');
-    expect(showMore.hasClass('avatar--with-toggle')).to.be.true();
+    expect(showMore).toHaveLength(1);
+    expect(showMore.text()).toEqual('+1');
+    expect(showMore.hasClass('avatar--with-toggle')).toBe(true);
   });
 
-  it('renders the remaining avatars once clicked on "Show more"', () => {
+  test('renders the remaining avatars once clicked on "Show more"', () => {
     const showMore = wrapper.find('[data-component="show-more-avatar"]');
     showMore.simulate('click');
-    expect(wrapper.state().showExtra).to.equal(true);
-    expect(showMoreSpy).to.have.been.called();
+    expect(wrapper.state().showExtra).toBe(true);
   });
 
-  it('renders the initials for an Avatar when the prop is enabled', () => {
+  test('renders the initials for an Avatar when the prop is enabled', () => {
     const first = wrapper.find(Avatar).first();
-    expect(first.find('.avatar__initials').length).to.equal(1);
-    expect(first.find('.avatar__initials').text()).to.equal('MR');
+    expect(first.find('.avatar__initials').length).toEqual(1);
+    expect(first.find('.avatar__initials').text()).toEqual('MR');
   });
 
-  it('sets the correct zindex style for the first and last item', () => {
+  test('sets the correct zindex style for the first and last item', () => {
     const customWrapper = mount(
       <AvatarGroup maximum={4}>
         <Avatar
@@ -165,9 +158,9 @@ describe('AvatarGroup', () => {
     );
 
     const first = customWrapper.find('.avatar-group__item').first();
-    expect(first.prop('style')).to.deep.equal({ zIndex: 4 });
+    expect(first.prop('style')).toEqual({ zIndex: 4 });
 
     const last = customWrapper.find('.avatar-group__item').last();
-    expect(last.prop('style')).to.deep.equal({ zIndex: 1 });
+    expect(last.prop('style')).toEqual({ zIndex: 1 });
   });
 });

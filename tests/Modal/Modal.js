@@ -1,4 +1,3 @@
-import { expect } from '../setup';
 import { Modal } from '../../lib';
 import ModalContainer from '../../lib/Modal/Modal';
 import ModalHeader from '../../lib/Modal/ModalHeader';
@@ -7,23 +6,23 @@ import ModalBody from '../../lib/Modal/ModalBody';
 import ModalColumn from '../../lib/Modal/ModalColumn';
 
 describe('Modal', () => {
-  it('exposes a Modal.Container component', () => {
-    expect(Modal.Container).to.deep.equal(ModalContainer);
+  test('exposes a Modal.Container component', () => {
+    expect(Modal.Container).toEqual(ModalContainer);
   });
 
-  it('exposes a Modal.Header component', () => {
-    expect(Modal.Header).to.deep.equal(ModalHeader);
+  test('exposes a Modal.Header component', () => {
+    expect(Modal.Header).toEqual(ModalHeader);
   });
 
-  it('exposes a Modal.Body component', () => {
-    expect(Modal.Body).to.deep.equal(ModalBody);
+  test('exposes a Modal.Body component', () => {
+    expect(Modal.Body).toEqual(ModalBody);
   });
 
-  it('exposes a Modal.Column component', () => {
-    expect(Modal.Column).to.deep.equal(ModalColumn);
+  test('exposes a Modal.Column component', () => {
+    expect(Modal.Column).toEqual(ModalColumn);
   });
 
-  it('exposes a Modal.Footer component', () => {
-    expect(Modal.Footer).to.deep.equal(ModalFooter);
+  test('exposes a Modal.Footer component', () => {
+    expect(Modal.Footer).toEqual(ModalFooter);
   });
 });

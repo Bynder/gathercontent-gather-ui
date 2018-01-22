@@ -1,4 +1,4 @@
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import ListHead from '../../lib/List/ListHead';
 
 describe('List Head', () => {
@@ -12,11 +12,11 @@ describe('List Head', () => {
 
   afterEach(() => {});
 
-  it('renders the title', () => {
-    expect(wrapper.contains('Project name')).to.equal(true);
+  test('renders the title', () => {
+    expect(wrapper.contains('Project name')).toEqual(true);
   });
 
-  it('renders the action', () => {
-    expect(wrapper.contains(mockAction)).to.equal(true);
+  test('renders the action', () => {
+    expect(wrapper.contains(mockAction)).toEqual(true);
   });
 });

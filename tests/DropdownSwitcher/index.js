@@ -1,5 +1,5 @@
 import { MenuItem, Dropdown } from 'react-bootstrap/lib';
-import { React, expect, shallow } from '../setup';
+import { React, shallow } from '../setup';
 import { DropdownSwitcher } from '../../lib';
 
 describe('DropdownSwitcher', () => {
@@ -11,20 +11,20 @@ describe('DropdownSwitcher', () => {
 
   afterEach(() => {});
 
-  it('renders its title', () => {
-    expect(wrapper.find('.dropdown-switcher__header').text()).to.have.equal(
+  test('renders its title', () => {
+    expect(wrapper.find('.dropdown-switcher__header').text()).toBe(
       'Test Title<Icon />'
     );
   });
 
-  it('renders a custom element title', () => {
+  test('renders a custom element title', () => {
     const title = <h1 className="page__title">Project Name</h1>;
     wrapper.setProps({
       title
     });
   });
 
-  it('renders a dropdown when a menu is supplied', () => {
+  test('renders a dropdown when a menu is supplied', () => {
     const menu = (
       <Dropdown.Menu className="dropdown__menu dropdown-menu--arrowed">
         <MenuItem href="#" eventKey="1">
@@ -41,7 +41,7 @@ describe('DropdownSwitcher', () => {
       children: menu
     });
 
-    expect(wrapper.find(Dropdown.Menu)).to.have.length(1);
-    expect(wrapper.find(MenuItem)).to.have.length(3);
+    expect(wrapper.find(Dropdown.Menu)).toHaveLength(1);
+    expect(wrapper.find(MenuItem)).toHaveLength(3);
   });
 });
