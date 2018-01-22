@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Loading } from '../../lib';
+import { LoadingOverlay } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Loading', () => (
+storiesOf('Components', module).add('Loading Overlay', () => (
   <div>
     <StoryItem
-      title="Loading Logo"
+      title="Loading Overlay Component"
       description=""
     >
-      <Loading />
+      <LoadingOverlay fixed />
     </StoryItem>
   </div>
 ));

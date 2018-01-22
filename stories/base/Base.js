@@ -71,6 +71,11 @@ const tints = [
     name: '$neutral-base-lighter'
   },
   {
+    rgbValue: 'rgb(253, 253, 253)',
+    hexValue: '#FDFDFD',
+    name: '$neutral-base-lightest'
+  },
+  {
     rgbValue: 'rgb(38, 46, 51)',
     hexValue: '#262E33',
     name: '$primary-blue-darkest'

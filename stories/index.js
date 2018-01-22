@@ -36,4 +36,4 @@ import Shortcut from './components/Shortcut';
 import SectionHeader from './components/SectionHeader';
 import ShortcutTrigger from './components/ShortcutTrigger';
 import Tabs from './components/Tabs';
-import Loading from './components/Loading';
+import LoadingOverlay from './components/LoadingOverlay';
