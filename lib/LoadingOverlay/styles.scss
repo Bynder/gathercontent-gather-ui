@@ -17,6 +17,7 @@ $loading-line-width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 
   .line {
     animation-duration: 2s;
