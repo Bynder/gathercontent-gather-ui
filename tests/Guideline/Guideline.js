@@ -27,8 +27,8 @@ describe('Guideline', () => {
   });
 
   test('switches the text for the show toggle', () => {
-    expect(wrapper.find(Button).prop('children')).toEqual('Hide details');
+    expect(wrapper.find(Button).prop('children')).toEqual('Hide guidelines');
     wrapper.setState({ showContent: false });
-    expect(wrapper.find(Button).prop('children')).toEqual('Show details');
+    expect(wrapper.find(Button).prop('children')).toEqual('Show guidelines');
   });
 });
