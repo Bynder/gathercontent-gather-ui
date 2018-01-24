@@ -12,7 +12,7 @@ describe('BoundaryClickWatcher', () => {
   });
 
   const wrapper = shallow(
-    <BoundaryClickWatcher>
+    <BoundaryClickWatcher className="test">
       {boundaryIsActive => (
         <div className="child" isActive={boundaryIsActive} />
       )}
@@ -33,5 +33,9 @@ describe('BoundaryClickWatcher', () => {
     expect(wrapper.state('boundaryIsActive')).toEqual(
       wrapper.prop('children').props.isActive
     );
+  });
+
+  test('adds the className prop', () => {
+    expect(wrapper.hasClass('test')).toBe(true);
   });
 });
