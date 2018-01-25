@@ -138,9 +138,26 @@ $field-data-color: $neutral-base !default;
       color: $neutral-base;
     }
   }
+  .field__actions,
+  .field__validations {
+    padding-right: $field-spacing-base;
+  }
   .field__label {
     text-align: right;
     background: transparent;
+    display:flex;
+    &--editing {
+      padding-right: $field-spacing-base;
+    }
+    .editable-text__text {
+      margin-left: auto;
+    }
+    input {
+      text-align: right;
+    }
+    .editable-text__button {
+      margin-left: $field-spacing-base/4;
+    }
   }
 }
 

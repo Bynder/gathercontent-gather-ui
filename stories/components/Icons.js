@@ -29,6 +29,9 @@ const allIcons = additionalProps => (
     <Icon name="guideline" {...additionalProps} />
     <Icon name="radio" {...additionalProps} />
     <Icon name="text" {...additionalProps} />
+    <Icon name="up" {...additionalProps} />
+    <Icon name="down" {...additionalProps} />
+    <Icon name="cross" {...additionalProps} />
   </div>
 );
 
