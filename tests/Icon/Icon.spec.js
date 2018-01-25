@@ -9,6 +9,14 @@ import fullScreenSVG from '../../assets/icons/fullscreen.svg';
 import personSVG from '../../assets/icons/person.svg';
 import keyboardSVG from '../../assets/icons/keyboard.svg';
 import cogSvg from '../../assets/icons/cog.svg';
+import attachmentSVG from './../../assets/icons/attachment.svg';
+import checkboxSVG from './../../assets/icons/checkbox.svg';
+import guidelineSVG from './../../assets/icons/guideline.svg';
+import radioSVG from './../../assets/icons/radio.svg';
+import textSVG from './../../assets/icons/text.svg';
+import upSVG from './../../assets/icons/up.svg';
+import downSVG from './../../assets/icons/down.svg';
+import crossSVG from './../../assets/icons/cross.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -71,6 +79,46 @@ describe('Icon', () => {
   test('should render the cog icon', () => {
     wrapper.setProps({ name: 'cog' });
     expect(wrapper.find('svg').props()).toEqual(cogSvg().props);
+  });
+
+  test('should render the attachment icon', () => {
+    wrapper.setProps({ name: 'attachment' });
+    expect(wrapper.find('svg').props()).toEqual(attachmentSVG().props);
+  });
+
+  test('should render the checkbox icon', () => {
+    wrapper.setProps({ name: 'checkbox' });
+    expect(wrapper.find('svg').props()).toEqual(checkboxSVG().props);
+  });
+
+  test('should render the guideline icon', () => {
+    wrapper.setProps({ name: 'guideline' });
+    expect(wrapper.find('svg').props()).toEqual(guidelineSVG().props);
+  });
+
+  test('should render the radio icon', () => {
+    wrapper.setProps({ name: 'radio' });
+    expect(wrapper.find('svg').props()).toEqual(radioSVG().props);
+  });
+
+  test('should render the text icon', () => {
+    wrapper.setProps({ name: 'text' });
+    expect(wrapper.find('svg').props()).toEqual(textSVG().props);
+  });
+
+  test('should render the up icon', () => {
+    wrapper.setProps({ name: 'up' });
+    expect(wrapper.find('svg').props()).toEqual(upSVG().props);
+  });
+
+  test('should render the down icon', () => {
+    wrapper.setProps({ name: 'down' });
+    expect(wrapper.find('svg').props()).toEqual(downSVG().props);
+  });
+
+  test('should render the cross icon', () => {
+    wrapper.setProps({ name: 'cross' });
+    expect(wrapper.find('svg').props()).toEqual(crossSVG().props);
   });
 
   test('adds a modifier class of icon--hide-text', () => {

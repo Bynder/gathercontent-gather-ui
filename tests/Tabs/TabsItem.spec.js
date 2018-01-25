@@ -29,6 +29,12 @@ describe('Tabs Item', () => {
     expect(wrapper.hasClass('is-active')).toEqual(false);
   });
 
+  test('sets a has options class', () => {
+    expect(wrapper.hasClass('has-options')).toEqual(false);
+    wrapper.setProps({options: [{name: 'friendly Option', action: () => {}}] });
+    expect(wrapper.hasClass('has-options')).toEqual(true);
+  });
+
   test('calls the setActiveTab function from context', () => {
     wrapper.find('.tabs__item').simulate('click');
     expect(setActiveTabSpy).toHaveBeenCalledWith('123');

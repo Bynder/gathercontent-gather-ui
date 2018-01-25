@@ -80,4 +80,11 @@ describe('EditableTextWrapper', () => {
 
     expect(wrapper.state('value')).toEqual('New Value');
   });
+
+  test('renders the classNames', () => {
+    wrapper.setProps({ className: 'lovely-class' });
+    expect(wrapper.hasClass('lovely-class')).toEqual(true);
+    wrapper.find('.editable-text__button').prop('clickHandler')();
+    expect(wrapper.hasClass('lovely-class--editing')).toEqual(true);
+  });
 });

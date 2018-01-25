@@ -4,6 +4,7 @@ import FieldActions from '../../lib/Field/FieldActions';
 import FieldValidations from '../../lib/Field/FieldValidations';
 import Button from '../../lib/Button';
 import ExpandingTextArea from '../../lib/ExpandingTextArea';
+import EditableTextWrapper from '../../lib/EditableTextWrapper';
 
 describe('Field', () => {
   let wrapper;
@@ -38,7 +39,8 @@ describe('Field', () => {
       instructionsMinRows: 3,
       instructionsPlaceholder: 'some text'
     });
-    expect(wrapper.find('.field__label').type()).toEqual('input');
+    expect(wrapper.find(EditableTextWrapper)).toHaveLength(1);
+    expect(wrapper.find(EditableTextWrapper).prop('value')).toEqual('Test label');
     expect(wrapper.find(ExpandingTextArea)).toHaveLength(1);
     expect(wrapper.find(ExpandingTextArea).prop('minRows')).toEqual(3);
     expect(wrapper.find(ExpandingTextArea).prop('placeholder')).toEqual(
