@@ -16,6 +16,9 @@
   text-decoration: none;
   padding: $layout-spacing-base / 2 0;
   font-weight: $typo-weight-semi-bold;
+  [class*="--dark"] & {
+    color: $neutral-light;
+  }
 
   &:focus {
     outline: none;
@@ -24,11 +27,17 @@
   &:hover {
     text-decoration: none;
     color: $primary-blue;
+    [class*="--dark"] & {
+      color: white;
+    }
   }
 }
 
 .navigation__item--active > * {
   color: $primary-blue;
+  [class*="--dark"] & {
+    color: white;
+  }
 }
 
 /* ==========================================================================

@@ -130,4 +130,20 @@ $top-bar-box-shadow: 0 0 6px 0 rgba(230,234,237,0.29);
       top: $top-bar-height-medium;
     }
   }
+  &--dark {
+    .top-bar__wrapper {
+      background: $neutral-dark;
+      color: white;
+    }
+    .top-bar__action,
+    .icon path {
+      fill: white;
+    }
+    .top-bar__cell--bordered {
+      border-color: $neutral-base;
+    }
+    .avatar__initials {
+      color: black;
+    }
+  }
 }
