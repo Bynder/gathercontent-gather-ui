@@ -40,7 +40,9 @@ describe('Field', () => {
       instructionsPlaceholder: 'some text'
     });
     expect(wrapper.find(EditableTextWrapper)).toHaveLength(1);
-    expect(wrapper.find(EditableTextWrapper).prop('value')).toEqual('Test label');
+    expect(wrapper.find(EditableTextWrapper).prop('value')).toEqual(
+      'Test label'
+    );
     expect(wrapper.find(ExpandingTextArea)).toHaveLength(1);
     expect(wrapper.find(ExpandingTextArea).prop('minRows')).toEqual(3);
     expect(wrapper.find(ExpandingTextArea).prop('placeholder')).toEqual(
