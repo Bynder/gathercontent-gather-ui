@@ -24,4 +24,12 @@ describe('TopBar', () => {
     });
     expect(wrapper.find('.top-bar__wrapper--fixed')).toHaveLength(1);
   });
+
+  test('adds a dark class when useDarkTheme prop is true', () => {
+    expect(wrapper.find('.top-bar--dark')).toHaveLength(0);
+    wrapper.setProps({
+      useDarkTheme: true
+    });
+    expect(wrapper.find('.top-bar--dark')).toHaveLength(1);
+  });
 });
