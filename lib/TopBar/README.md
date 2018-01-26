@@ -8,7 +8,7 @@ A collection of components used to render conversations
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | fixed               | Boolean       | `false`   | No       | The fixed option.                                                          |
-| useDarkTheme        | Boolean       | ''         | No       | applies a dark theme |
+| useDarkTheme        | Boolean       | `false`         | No       | applies a dark theme |
 
 ```
 <TopBar />
