@@ -19,6 +19,14 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
+          title="Dropdown Menu"
+          description="A dropdown menu with an outline button and full width">
+          <DropdownMenu fullWidth type="outline" value="Actions" downIcon shouldDisplay items={assets.getDropdownItems()}>
+            Actions
+          </DropdownMenu>
+        </StoryItem>
+
+        <StoryItem
           title="Dropdown without a button"
           description="A link that opens a dropdown.">
           <DropdownMenu type="link" caret shouldDisplay items={assets.getDropdownItemsWithSeparator()}>

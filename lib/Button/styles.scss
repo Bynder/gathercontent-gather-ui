@@ -243,3 +243,11 @@ $color-btn-contained--bg: white !default;
     transform: scale(1.1);
   }
 }
+
+.button--outline {
+  border: 1px solid $color-border-base;
+  outline: none;
+  &:hover, &:focus, &.is-active {
+    border-color:  $primary-blue;
+  }
+}

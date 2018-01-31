@@ -31,6 +31,13 @@ const button = storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
+        title="Outline button"
+        description="A button with an outline style"
+      >
+        <Button types={['outline']} clickHandler={action('clickedHandler')}>Outline button</Button>
+      </StoryItem>
+
+      <StoryItem
         title="Loading button"
         description="A button that generates a spinner when pressed. It is of type `button` by default but can also be a `submit` button by setting the `isSubmit` prop to `true`."
       >
