@@ -30,8 +30,8 @@ $dropdown-menu-font-color: $color-text-base !default;
   }
 }
 
-.button--outline,
-.button--link {
+.dropdown-menu__button--outline,
+.dropdown-menu__button--link {
   svg path {
     .dropdown & {
       fill: $neutral-dark;
@@ -43,10 +43,13 @@ $dropdown-menu-font-color: $color-text-base !default;
 }
 
 .dropdown .dropdown-item__tick {
+  span {
+    vertical-align: middle;
+  }
   svg path {
     fill: $primary-blue;
   }
-  & + .item-name {
+  & + .dropdown__item--name {
     color: $primary-blue;
   }
 }
@@ -54,12 +57,6 @@ $dropdown-menu-font-color: $color-text-base !default;
 .dropdown-menu__button {
   display: flex;
   align-items: center;
-  &.button--outline,
-  &.button--link {
-    path fill {
-
-    }
-  }
 }
 
 .dropdown-menu__caret,
@@ -163,14 +160,14 @@ $dropdown-menu-font-color: $color-text-base !default;
 
 .dropdown__additional {
   display: flex;
-  .item-name {
+  .dropdown__item--name {
     display: block;
     width: 65%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .item-additional {
+  .dropdown__item--additional {
     display: block;
     margin-left: auto;
     color: $neutral-base;

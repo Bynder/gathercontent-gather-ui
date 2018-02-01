@@ -131,6 +131,6 @@ describe('DropdownMenu', () => {
       items: mockAdditionalItems
     });
     expect(wrapper.find('.dropdown__additional').length).toEqual(2);
-    expect(wrapper.find('.item-additional').length).toEqual(2);
+    expect(wrapper.find('.dropdown__item--additional').length).toEqual(2);
   });
 });
