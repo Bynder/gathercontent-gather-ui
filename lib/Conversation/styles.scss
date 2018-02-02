@@ -78,6 +78,8 @@ $conversation-meta-text-color: $neutral-base !default;
   font-size: $typo-size-slight;
   padding-right: $layout-spacing-base/2;
   color: $neutral-dark;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .conversation__actions {
