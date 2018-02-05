@@ -6,7 +6,11 @@ describe('StatusIndicator', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <StatusIndicator color="#00ff00" label="Review" actions={(<div>Test Actions</div>)}>
+      <StatusIndicator
+        color="#00ff00"
+        label="Review"
+        actions={<div>Test Actions</div>}
+      >
         due <span>Tommorrow at 12:00pm</span>
       </StatusIndicator>
     );
