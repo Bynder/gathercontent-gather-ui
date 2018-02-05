@@ -1,5 +1,6 @@
 .popover {
   font-family: $typo-stack-base;
-  box-shadow: $shadow-deep;
+  box-shadow: $shadow-base;
+  border-color: $neutral-light;
   @include font-smoothing;
 }
