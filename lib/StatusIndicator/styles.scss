@@ -1,12 +1,12 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$status-indicator-label-color--text: rgb(111, 121, 129) !default;
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-size--current: $typo-size-base !default;
 $status-indicator-horizontal-margin: .5rem !default;
-$status-indicator-bordered-border: 2px solid $color-background-light !default;
+$status-indicator-bordered-border: 1px solid $color-background-light !default;
 $status-indicator-bordered-radius: .25rem !default;
+$status-indicator-margin-left: 1.3rem !default;
 
 /* ==========================================================================
    Styles
@@ -17,8 +17,11 @@ $status-indicator-bordered-radius: .25rem !default;
   white-space: nowrap;
 
   .status-indicator__children {
-    color: $color-brand-dark;
-    font-size: $typo-size-small;
+    color: $color-text-light;
+    font-size: $typo-size-slight;
+    margin-left: $status-indicator-margin-left;
+    font-weight: $typo-weight-semi-bold;
+    margin-top: $layout-spacing-base / 2;
   }
 
   .status-indicator--flex {
@@ -38,15 +41,22 @@ $status-indicator-bordered-radius: .25rem !default;
   margin-left: $status-indicator-horizontal-margin;
   font-size: $typo-size-base;
   font-weight: $typo-weight-semi-bold;
-}
-
-.status-indicator__children {
-  margin-left: $status-indicator-horizontal-margin;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  line-height: normal;
 }
 
 .status-indicator--completed {
-  .status-indicator__label {
+  .status-indicator__label, .status-indicator__children {
     text-decoration: line-through;
+    font-style: italic;
+    color: $color-text-light;
+  }
+
+  .status-indicator__circle {
+    background-color: $color-text-light;
   }
 }
 
@@ -61,11 +71,14 @@ $status-indicator-bordered-radius: .25rem !default;
 }
 
 .status-indicator--bordered {
-  border: $status-indicator-bordered-border;
-  border-radius: $status-indicator-bordered-radius;
-  padding: $layout-spacing-base/2;
+  border-bottom: $status-indicator-bordered-border;
+  padding-bottom: $layout-spacing-base/1.3;
 }
 
 .status-indicator__description {
+  white-space: initial;
   color: $color-brand-dark;
+  margin-top: $layout-spacing-base / 4;
+  margin-left: $status-indicator-margin-left;
+  margin-bottom: 0;
 }

@@ -6,7 +6,7 @@ describe('StatusIndicator', () => {
 
   beforeEach(() => {
     wrapper = mount(
-      <StatusIndicator color="#00ff00" label="Review">
+      <StatusIndicator color="#00ff00" label="Review" actions={(<div>Test Actions</div>)}>
         due <span>Tommorrow at 12:00pm</span>
       </StatusIndicator>
     );
@@ -20,6 +20,12 @@ describe('StatusIndicator', () => {
 
   test('should have a label of "Review"', () => {
     expect(wrapper.find('.status-indicator__label').text()).toBe('Review');
+  });
+
+  test('should have actions area', () => {
+    expect(wrapper.find('.status-indicator__actions').text()).toBe(
+      'Test Actions'
+    );
   });
 
   test('should have a child', () => {
