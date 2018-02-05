@@ -20,8 +20,8 @@ $status-indicator-margin-left: 1.3rem !default;
     color: $color-text-light;
     font-size: $typo-size-slight;
     margin-left: $status-indicator-margin-left;
-    font-weight: 500;
-    margin-top: 8px;
+    font-weight: $typo-weight-semi-bold;
+    margin-top: $layout-spacing-base / 2;
   }
 
   .status-indicator--flex {
@@ -78,7 +78,7 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator__description {
   white-space: initial;
   color: $color-brand-dark;
-  margin-top: 5px;
+  margin-top: $layout-spacing-base / 4;
   margin-left: $status-indicator-margin-left;
   margin-bottom: 0;
 }
