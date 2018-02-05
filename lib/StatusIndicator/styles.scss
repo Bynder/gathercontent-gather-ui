@@ -55,6 +55,8 @@ $status-indicator-margin-left: 1.3rem !default;
     color: $color-text-light;
   }
 
+  .status-indicator__circle {
+    background-color: $color-text-light;
   }
 }
 
