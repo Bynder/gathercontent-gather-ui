@@ -1,11 +1,9 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$status-indicator-circle-size: $typo-size-small !default;
-$status-indicator-circle-size--current: $typo-size-base !default;
+$status-indicator-circle-size: $typo-size-base !default;
 $status-indicator-horizontal-margin: .5rem !default;
 $status-indicator-bordered-border: 1px solid $color-background-light !default;
-$status-indicator-bordered-radius: .25rem !default;
 $status-indicator-margin-left: 1.3rem !default;
 
 /* ==========================================================================
@@ -39,7 +37,7 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .status-indicator__label {
   margin-left: $status-indicator-horizontal-margin;
-  font-size: $typo-size-base;
+  font-size: $typo-size-lead;
   font-weight: $typo-weight-semi-bold;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -63,10 +61,6 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator--current {
   .status-indicator__label {
     font-size: $typo-size-lead;
-  }
-  .status-indicator__circle {
-    height: $status-indicator-circle-size--current;
-    width: $status-indicator-circle-size--current;
   }
 }
 
