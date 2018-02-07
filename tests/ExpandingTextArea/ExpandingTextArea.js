@@ -5,6 +5,7 @@ describe('EditableTextWrapper', () => {
   let wrapper;
   let handleOnChangeSpy;
   let handleOnFocusSpy;
+  let onRowCountChangeSpy;
   let style;
 
   beforeEach(() => {
@@ -14,12 +15,14 @@ describe('EditableTextWrapper', () => {
     };
     handleOnChangeSpy = jest.fn();
     handleOnFocusSpy = jest.fn();
+    onRowCountChangeSpy = jest.fn();
     wrapper = mount(
       <ExpandingTextArea
         style={style}
         placeholder="Placeholder..."
         handleOnChange={handleOnChangeSpy}
         handleOnFocus={handleOnFocusSpy}
+        onRowCountChange={onRowCountChangeSpy}
       />
     );
   });
@@ -34,6 +37,13 @@ describe('EditableTextWrapper', () => {
     wrapper.setProps({ minRows: 4 });
     wrapper.instance().resizeTextArea();
     expect(wrapper.state('rowCount')).toEqual(4);
+  });
+
+  test('calls the onRowCountChange prop function when the row count changes', () => {
+    expect(wrapper.state('rowCount')).toEqual(1);
+    wrapper.setProps({ minRows: 4 });
+    wrapper.instance().resizeTextArea();
+    expect(onRowCountChangeSpy).toHaveBeenCalled();
   });
 
   test('sets the input value as the value prop', () => {
