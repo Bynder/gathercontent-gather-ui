@@ -15,6 +15,7 @@ mark {
   background-color: transparent;
   border-bottom: 2px solid $primary-yellow-lighter;
   &.active,
+  &.hover,
   &:hover {
     background-color: $primary-yellow-lighter;
   }
