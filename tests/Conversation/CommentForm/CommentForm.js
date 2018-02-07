@@ -10,6 +10,7 @@ describe('Comment Form', () => {
   let onSubmitSpy;
   let onCancelSpy;
   let onCommentChangeSpy;
+  let onRowCountChange = () => {};
 
   const props = {
     id: '123',
@@ -31,6 +32,7 @@ describe('Comment Form', () => {
         onSubmit={onSubmitSpy}
         onCancel={onCancelSpy}
         onCommentChange={onCommentChangeSpy}
+        onRowCountChange={onRowCountChange}
       />
     );
   });
@@ -73,6 +75,7 @@ describe('Comment Form', () => {
     expect(input.prop('handleOnChange')).toEqual(
       wrapper.instance().updateInputValue
     );
+    expect(input.prop('onRowCountChange')).toEqual(onRowCountChange);
     expect(input.prop('focusOnMount')).toEqual(false);
     expect(input.prop('value')).toEqual('');
 

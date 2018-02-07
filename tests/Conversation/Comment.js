@@ -23,6 +23,7 @@ describe('Comment', () => {
     editComment: editCommentSpy,
     removeComment: removeCommentSpy,
     onCommentChange() {},
+    onRowCountChange() {},
     focusFallback: document.createElement('input')
   };
 
@@ -81,6 +82,7 @@ describe('Comment', () => {
     expect(commentForm.prop('value')).toBe(props.body);
     expect(commentForm.prop('focusOnMount')).toBe(true);
     expect(commentForm.prop('onCommentChange')).toEqual(props.onCommentChange);
+    expect(commentForm.prop('onRowCountChange')).toEqual(props.onRowCountChange);
     expect(commentForm.prop('id')).toBe(props.id);
   });
 
