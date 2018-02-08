@@ -16,7 +16,8 @@ describe('Conversation', () => {
       { person: { name: 'Toyah' }, id: 123 },
       { person: { name: 'Sapphire' }, id: 321 }
     ],
-    onCommentChange() {}
+    onCommentChange() {},
+    onRowCountChange() {}
   };
 
   beforeEach(() => {
@@ -80,6 +81,7 @@ describe('Conversation', () => {
     expect(commentList.prop('id')).not.toBe(props.id);
     expect(commentList.prop('focusFallback')).toEqual(props.focusFallback);
     expect(commentList.prop('onCommentChange')).toEqual(props.onCommentChange);
+    expect(commentList.prop('onRowCountChange')).toEqual(props.onRowCountChange);
   });
 
   test('does not render the reply count text', () => {

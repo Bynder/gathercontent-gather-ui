@@ -14,6 +14,7 @@ A collection of components used to render conversations
 | removeComment       | Function      | `() {}`   | No       | Executes when the comment is removed.                                         |
 | editComment         | Function      | `() {}`   | No       | Executes when the comment is edited.                                          |
 | onCommentChange     | Function      | `() {}`   | No       | Executes when a comments value changes.                                       |
+| onRowCountChange    | Function      | `() {}`   | No       | Executes when a the number of rows in the comment form changes.               |
 | resolveConversation | Function      | `() {}`   | No       | Executes when the add resolve conversation button is clicked.                 |
 | onCancel            | Function      | `() {}`   | No       | Executes when the cancel button is clicked.                                   |
 | placeholder         | String        | `Reply...`| No       | Placeholder text to display in the conversation form input.                   |
