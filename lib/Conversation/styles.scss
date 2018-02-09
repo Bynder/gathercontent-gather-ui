@@ -180,9 +180,22 @@ $conversation-meta-text-color: $neutral-base !default;
   left: $conversation-comment-body-indentation;
   right: 0;
   bottom: 0;
+  z-index: 1;
+}
+
+.conversation__confirmation,
+.conversation__confirmation-inner {
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.conversation__confirmation-inner {
+  display: flex;
+}
+
+.conversation__confirmation-button {
+  margin: $layout-spacing-base/4;
 }
 
 .is-disabled .conversation__confirmation {
