@@ -11,7 +11,8 @@ $conversation-padding: $layout-spacing-base/2 !default;
 $conversation-border-width: 1px !default;
 $conversation-border-color: $color-border-base !default;
 
-$conversation-comment-body-padding: 0 0 0 ($person-avatar-size + $layout-spacing-base/2) !default;
+$conversation-comment-body-indentation: ($person-avatar-size + $layout-spacing-base/2);
+$conversation-comment-body-padding: 0 0 0 $conversation-comment-body-indentation !default;
 
 $conversation-meta-bullet-size: 4px !default;
 $conversation-meta-text-size: $typo-size-small !default;
@@ -159,4 +160,44 @@ $conversation-meta-text-color: $neutral-base !default;
       content: none;
     }
   }
+}
+
+.is-disabled .conversation__person-name,
+.is-disabled .conversation__comment-body {
+  background: rgba(255, 255, 255, .75);
+
+  @supports (filter: blur()) {
+    transition: filter $animation-time-micro/2;
+    filter: blur(4px);
+    background: none;
+  }
+}
+
+.conversation__confirmation {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: $conversation-comment-body-indentation;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.conversation__confirmation,
+.conversation__confirmation-inner {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.conversation__confirmation-inner {
+  display: flex;
+}
+
+.conversation__confirmation-button {
+  margin: $layout-spacing-base/4;
+}
+
+.is-disabled .conversation__confirmation {
+  display: flex;
 }

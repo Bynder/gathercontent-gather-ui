@@ -31,6 +31,11 @@ describe('Comment', () => {
     wrapper = shallow(<Comment {...props} />);
   });
 
+  afterEach(() => {
+    editCommentSpy.mockReset();
+    removeCommentSpy.mockReset();
+  });
+
   test('renders a person component', () => {
     expect(wrapper.find(Person)).toHaveLength(1);
     expect(wrapper.find(Person).prop('person')).toEqual(props.author);
@@ -60,12 +65,8 @@ describe('Comment', () => {
         .first()
         .prop('clickHandler')
     ).toEqual(wrapper.instance().showEditForm);
-    expect(
-      actions
-        .find(Button)
-        .last()
-        .prop('clickHandler')
-    ).toEqual(wrapper.instance().removeComment);
+    actions.find(Button).last().prop('clickHandler')();
+    expect(wrapper.state('confirmRemoval')).toEqual(true);
   });
 
   test('renders the edit comment form (with correct props)', () => {
@@ -98,8 +99,7 @@ describe('Comment', () => {
 
   test('calls the remove comment actions', () => {
     wrapper.instance().showEditForm();
-    const removeComment = wrapper.instance().removeComment;
-    removeComment();
+    wrapper.instance().removeComment(true);
     expect(removeCommentSpy).toHaveBeenCalledTimes(1);
     expect(removeCommentSpy.mock.calls[0][0]).toEqual(props.id);
     expect(removeCommentSpy.mock.calls[0][1]).toEqual(props.conversationId);
@@ -115,5 +115,14 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     wrapper.instance().hideEditForm();
     expect(wrapper.state('showEditForm')).toBe(false);
+  });
+
+  test('renders the removal confirmation', () => {
+    const container = wrapper.find('.conversation__confirmation');
+    const buttons = container.find(Button);
+    expect(buttons).toHaveLength(2);
+    expect(buttons.first().prop('clickHandler')).toEqual(wrapper.instance().toggleRemovalConfirmation);
+    buttons.last().prop('clickHandler')();
+    expect(removeCommentSpy).toHaveBeenCalledTimes(1);
   });
 });
