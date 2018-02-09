@@ -38,5 +38,6 @@ describe('Comment List', () => {
     );
     expect(childComments.first().prop('comments')).not.toEqual(props.comments);
     expect(childComments.first().prop('id')).toEqual(2);
+    expect(childComments.first().prop('index')).toEqual(0);
   });
 });

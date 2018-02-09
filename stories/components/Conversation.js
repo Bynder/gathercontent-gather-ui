@@ -22,6 +22,7 @@ const mockComments = [{
   body: 'Here is a decent size comment that was created by someone who wanted to comment.',
   createdAt: '2017-06-08 09:56:41',
   author: mockUser,
+  createdBy: 2
 }, {
   id: 12,
   body: 'Comment body...',
@@ -30,7 +31,8 @@ const mockComments = [{
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
     name: 'Ricardo',
     initials: 'RB',
-  }
+  },
+  createdBy: 2
 }];
 
 const mockConversation = {
