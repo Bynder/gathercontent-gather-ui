@@ -6,6 +6,7 @@ import Button from '../../lib/Button';
 
 describe('Comment', () => {
   let wrapper;
+  const onCommentCancelSpy = jest.fn();
   const editCommentSpy = jest.fn();
   const removeCommentSpy = jest.fn();
 
@@ -23,6 +24,7 @@ describe('Comment', () => {
     editComment: editCommentSpy,
     removeComment: removeCommentSpy,
     onCommentChange() {},
+    onCommentCancel: onCommentCancelSpy,
     onRowCountChange() {},
     focusFallback: document.createElement('input')
   };
@@ -115,6 +117,7 @@ describe('Comment', () => {
     wrapper.instance().showEditForm();
     wrapper.instance().hideEditForm();
     expect(wrapper.state('showEditForm')).toBe(false);
+    expect(onCommentCancelSpy).toBeCalled();
   });
 
   test('renders the removal confirmation', () => {

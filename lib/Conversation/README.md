@@ -13,7 +13,8 @@ A collection of components used to render conversations
 | comments            | Array         | `[]`      | No       | An array of comments that are in the conversation.                            |
 | removeComment       | Function      | `() {}`   | No       | Executes when the comment is removed.                                         |
 | editComment         | Function      | `() {}`   | No       | Executes when the comment is edited.                                          |
-| onCommentChange     | Function      | `() {}`   | No       | Executes when a comments value changes.                                       |
+| onCommentChange     | Function      | `() {}`   | No       | Executes when a comment value changes.                                        |
+| onCommentCancel     | Function      | `() {}`   | No       | Executes when a comment edit has been canceled.                               |
 | onRowCountChange    | Function      | `() {}`   | No       | Executes when a the number of rows in the comment form changes.               |
 | resolveConversation | Function      | `() {}`   | No       | Executes when the add resolve conversation button is clicked.                 |
 | onCancel            | Function      | `() {}`   | No       | Executes when the cancel button is clicked.                                   |
