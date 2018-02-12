@@ -81,7 +81,9 @@ describe('Conversation', () => {
     expect(commentList.prop('id')).not.toBe(props.id);
     expect(commentList.prop('focusFallback')).toEqual(props.focusFallback);
     expect(commentList.prop('onCommentChange')).toEqual(props.onCommentChange);
-    expect(commentList.prop('onRowCountChange')).toEqual(props.onRowCountChange);
+    expect(commentList.prop('onRowCountChange')).toEqual(
+      props.onRowCountChange
+    );
   });
 
   test('does not render the reply count text', () => {

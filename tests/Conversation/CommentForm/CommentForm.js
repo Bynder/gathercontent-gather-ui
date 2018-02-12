@@ -10,7 +10,7 @@ describe('Comment Form', () => {
   let onSubmitSpy;
   let onCancelSpy;
   let onCommentChangeSpy;
-  let onRowCountChange = () => {};
+  const onRowCountChange = () => {};
 
   const props = {
     id: '123',

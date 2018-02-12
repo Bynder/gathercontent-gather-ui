@@ -67,7 +67,10 @@ describe('Comment', () => {
         .first()
         .prop('clickHandler')
     ).toEqual(wrapper.instance().showEditForm);
-    actions.find(Button).last().prop('clickHandler')();
+    actions
+      .find(Button)
+      .last()
+      .prop('clickHandler')();
     expect(wrapper.state('confirmRemoval')).toEqual(true);
   });
 
@@ -85,7 +88,9 @@ describe('Comment', () => {
     expect(commentForm.prop('value')).toBe(props.body);
     expect(commentForm.prop('focusOnMount')).toBe(true);
     expect(commentForm.prop('onCommentChange')).toEqual(props.onCommentChange);
-    expect(commentForm.prop('onRowCountChange')).toEqual(props.onRowCountChange);
+    expect(commentForm.prop('onRowCountChange')).toEqual(
+      props.onRowCountChange
+    );
     expect(commentForm.prop('id')).toBe(props.id);
   });
 
@@ -124,7 +129,9 @@ describe('Comment', () => {
     const container = wrapper.find('.conversation__confirmation');
     const buttons = container.find(Button);
     expect(buttons).toHaveLength(2);
-    expect(buttons.first().prop('clickHandler')).toEqual(wrapper.instance().toggleRemovalConfirmation);
+    expect(buttons.first().prop('clickHandler')).toEqual(
+      wrapper.instance().toggleRemovalConfirmation
+    );
     buttons.last().prop('clickHandler')();
     expect(removeCommentSpy).toHaveBeenCalledTimes(1);
   });
