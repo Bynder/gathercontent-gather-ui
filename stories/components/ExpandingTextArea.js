@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
-import ExpandingTextArea from '../../lib/ExpandingTextArea';
+import { ExpandingTextArea } from '../../lib';
 
 storiesOf('Components', module)
   .add('ExpandingTextArea', () => {
