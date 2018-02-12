@@ -17,6 +17,7 @@ describe('Conversation', () => {
       { person: { name: 'Sapphire' }, id: 321 }
     ],
     onCommentChange() {},
+    onCommentCancel() {},
     onRowCountChange() {}
   };
 
@@ -84,6 +85,7 @@ describe('Conversation', () => {
     expect(commentList.prop('onRowCountChange')).toEqual(
       props.onRowCountChange
     );
+    expect(commentList.prop('onCommentCancel')).toEqual(props.onCommentCancel);
   });
 
   test('does not render the reply count text', () => {
