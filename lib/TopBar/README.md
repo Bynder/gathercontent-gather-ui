@@ -7,8 +7,9 @@ A collection of components used to render conversations
 
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
-| fixed               | Boolean       | `false`   | No       | The fixed option.                                                          |
-| useDarkTheme        | Boolean       | `false`         | No       | applies a dark theme |
+| fixed               | Boolean       | `false`   | No       | The fixed option.                               |
+| scrollToFixed       | Boolean       | `false`   | No       | Will fix the TopBar when the user scrolls to it |
+| useDarkTheme        | Boolean       | `false`   | No       | applies a dark theme                            |
 
 ```
 <TopBar />

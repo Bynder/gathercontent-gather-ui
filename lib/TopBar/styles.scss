@@ -118,16 +118,17 @@ $top-bar-box-shadow: $shadow-base;
   .top-bar__drop-down {
     background: #fff;
     overflow: scroll;
-    position: fixed;
-    top: $top-bar-height;
-    bottom: 0;
+    position: absolute;
+    height: 100vh;
+    top: $top-bar-height - ($layout-spacing-base / 2);
+    bottom: auto;
     left: 0;
     right: 0;
     z-index: 999;
 
     @include respond-to($top-bar-main-breakpoint) {
       max-width: 400px;
-      top: $top-bar-height-medium;
+      top: $top-bar-height-medium - ($layout-spacing-base / 2);
     }
   }
   &--dark {
