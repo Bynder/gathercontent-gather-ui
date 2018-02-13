@@ -25,6 +25,14 @@ describe('TopBar', () => {
     expect(wrapper.find('.top-bar__wrapper--fixed')).toHaveLength(1);
   });
 
+  test('adds a fixed class when the scrollFixed state is true', () => {
+    expect(wrapper.find('.top-bar__wrapper--fixed')).toHaveLength(0);
+    wrapper.setState({
+      scrollFixed: true
+    });
+    expect(wrapper.find('.top-bar__wrapper--fixed')).toHaveLength(1);
+  });
+
   test('adds a dark class when useDarkTheme prop is true', () => {
     expect(wrapper.find('.top-bar--dark')).toHaveLength(0);
     wrapper.setProps({

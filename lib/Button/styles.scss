@@ -168,6 +168,22 @@ $color-btn-contained--bg: white !default;
   }
 }
 
+.button--purple-text {
+  background: white;
+  color: $primary-purple;
+  .icon path {
+    fill: $primary-purple;
+  }
+}
+
+.button--slim {
+  padding: $layout-spacing-base/10 $layout-spacing-base/2;
+  .icon {
+    margin-left: $layout-spacing-base/4;
+    vertical-align: text-bottom;
+  }
+}
+
 .button--clear {
   background: none;
   padding: 0;
