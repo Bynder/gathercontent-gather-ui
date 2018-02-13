@@ -5,10 +5,10 @@ A collection of components used to render a simple bar to display messages
 
 ### Props
 
-| Name                | Type          | Default   | Required | Description          |
-| ------------------- |-------------- | --------- | -------- |---------------------------------------------------------------------------------- |
-| fixed               | Boolean       | `false`   | No       | The fixed option.    |
-| type                | String        | ''        | No       | applies a dark theme |
+| Name                | Type          | Default   | Required | Description                                 |
+| ------------------- |-------------- | --------- | -------- |--------------------------------------------------------------------------------------------------------- |
+| fixed               | Boolean       | `false`   | No       | The fixed option.                           |
+| type                | String        | ''        | No       | Dictates what style the MessageBar will use |
 
 ```
 <MessageBar
