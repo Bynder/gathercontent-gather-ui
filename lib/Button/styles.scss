@@ -72,7 +72,7 @@ $color-btn-contained--bg: white !default;
 .button--secondary {
   background: $color-btn-secondary--bg;
   color: $color-btn-primary--text;
-
+  text-decoration: none;
   &:hover {
     background: $color-btn-secondary--hover;
     color: $color-btn-primary--text;

@@ -12,7 +12,8 @@ $top-bar-box-shadow: $shadow-base;
 .top-bar {
   height: $top-bar-height;
   padding: 0;
-
+  z-index: 1;
+  position: relative;
   @include respond-to($top-bar-main-breakpoint) {
     height: $top-bar-height-medium;
   }
