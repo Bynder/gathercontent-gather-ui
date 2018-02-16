@@ -22,10 +22,12 @@ $conversation-meta-text-color: $neutral-base !default;
    Styles
    ========================================================================== */
 .conversation {
+  position: relative;
   border-radius: $conversation-border-radius;
   border: $conversation-border-width solid transparent;
   margin: $layout-spacing-base/2;
-  max-width: 300px;
+  width: 100%;
+
   &:hover {
     border-color: $conversation-border-color;
     background-color: $neutral-lightest;
