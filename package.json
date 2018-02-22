@@ -54,6 +54,7 @@
     "bootstrap": "3.3.6",
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
+    "debounce": "^1.1.0",
     "eslint-config-prettier": "^2.6.0",
     "font-awesome": "^4.7.0",
     "normalize-scss": "^6.0.0",
