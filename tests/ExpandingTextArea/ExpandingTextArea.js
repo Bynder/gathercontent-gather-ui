@@ -2,6 +2,7 @@ import { React, mount } from '../setup';
 import { ExpandingTextArea } from '../../lib';
 
 describe('EditableTextWrapper', () => {
+  jest.useFakeTimers();
   let wrapper;
   let handleOnChangeSpy;
   let handleOnFocusSpy;
@@ -36,6 +37,7 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.state('rowCount')).toEqual(1);
     wrapper.setProps({ minRows: 4 });
     wrapper.instance().resizeTextArea();
+    jest.runAllTimers();
     expect(wrapper.state('rowCount')).toEqual(4);
   });
 
@@ -43,6 +45,7 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.state('rowCount')).toEqual(1);
     wrapper.setProps({ minRows: 4 });
     wrapper.instance().resizeTextArea();
+    jest.runAllTimers();
     expect(onRowCountChangeSpy).toHaveBeenCalled();
   });
 
