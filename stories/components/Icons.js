@@ -34,6 +34,7 @@ const allIcons = additionalProps => (
     <Icon name="cross" {...additionalProps} />
     <Icon name="clock" {...additionalProps} />
     <Icon name="warning" {...additionalProps} />
+    <Icon name="dragHandle" {...additionalProps} />
   </div>
 );
 
