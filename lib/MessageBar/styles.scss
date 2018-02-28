@@ -9,6 +9,9 @@
   a {
     color: white;
     text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
   &__inner {
     display: flex;
