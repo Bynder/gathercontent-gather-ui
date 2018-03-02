@@ -120,16 +120,17 @@ $top-bar-box-shadow: $shadow-base;
     background: #fff;
     overflow: scroll;
     position: absolute;
-    height: 100vh;
+    height: calc(100vh - #{$top-bar-height});
     top: $top-bar-height - ($layout-spacing-base / 2);
     bottom: auto;
     left: 0;
     right: 0;
     z-index: 999;
-
+    padding-bottom: $layout-spacing-base;
     @include respond-to($top-bar-main-breakpoint) {
       max-width: 400px;
       top: $top-bar-height-medium - ($layout-spacing-base / 2);
+      height: calc(100vh - #{$top-bar-height-medium});
     }
   }
   &--dark {
