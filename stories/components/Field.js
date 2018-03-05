@@ -52,20 +52,6 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
-        title="Field (loading)"
-        description="A field component when loading"
-      >
-        <Field isLoading fieldId="321" />
-      </StoryItem>
-
-      <StoryItem
-        title="Field (read only)"
-        description="A field component when it's read only"
-      >
-        <Field isReadOnly fieldId="987" />
-      </StoryItem>
-
-      <StoryItem
         title="Field (Editing)"
         description="A field component when in an editing state"
       >
@@ -104,6 +90,20 @@ storiesOf('Components', module)
           </FieldAside>
           </div>
          </Field>
+      </StoryItem>
+
+      <StoryItem title="Field (Disabled)">
+        <Field
+          fieldId="123"
+          label="Field label text"
+          actions={mockActions}
+          validations={mockValidations}
+          instructions="Instruction text to help inform the user of what they're meant to write in this field."
+          hasFormatting
+          disabled
+        >
+          <div>Hello world...</div>
+        </Field>
       </StoryItem>
     </div>
   ));
