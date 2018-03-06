@@ -31,4 +31,10 @@ describe('Guideline', () => {
     wrapper.setState({ showContent: false });
     expect(wrapper.find(Button).prop('children')).toEqual('Show guidelines');
   });
+
+  test('that the body is not rendered when no children is set', () => {
+    wrapper.setProps({ children: null });
+    expect(wrapper.find('.guideline__body')).toHaveLength(0);
+    expect(wrapper.find('.guideline__button')).toHaveLength(0);
+  });
 });
