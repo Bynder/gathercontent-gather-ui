@@ -18,6 +18,11 @@
   opacity: .4;
 }
 
+.popover-dropdown {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
 .popover-dropdown .popover-content {
   box-shadow: none;
   padding: 0;

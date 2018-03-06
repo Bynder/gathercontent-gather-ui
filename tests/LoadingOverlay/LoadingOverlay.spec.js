@@ -10,7 +10,13 @@ describe('Loading Overlay', () => {
   });
 
   test('renders a Loading SVG', () => {
+    expect(wrapper.find('svg')).toHaveLength(1);
     expect(wrapper.find('svg').props()).toEqual(loadingSVG().props);
+  });
+
+  test('deosnt render a Loading SVG if hideSVG is true', () => {
+    wrapper.setProps({ hideSVG: true });
+    expect(wrapper.find('svg')).toHaveLength(0);
   });
 
   test('adds a fixed modifier', () => {
