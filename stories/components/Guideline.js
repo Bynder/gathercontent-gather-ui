@@ -21,5 +21,9 @@ storiesOf('Components', module).add('Guideline', () => (
         </span>
       </Guideline>
     </StoryItem>
+
+    <StoryItem title="Guideline (title only)">
+      <Guideline title="Guideline title" />
+    </StoryItem>
   </div>
 ));
