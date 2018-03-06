@@ -18,6 +18,7 @@ describe('Tabs Form', () => {
     expect(wrapper.find(Form).prop('escToClose')).toEqual(true);
     expect(wrapper.find(Form).prop('onCancel')).toEqual(onCancelSpy);
     expect(wrapper.find(FormInput).prop('value')).toEqual('');
+    expect(wrapper.find(FormInput).prop('placeholder')).toEqual('');
     expect(wrapper.find(FormInput).prop('focusOnMount')).toEqual(true);
   });
 

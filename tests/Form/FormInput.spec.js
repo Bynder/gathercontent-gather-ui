@@ -11,6 +11,7 @@ describe('FormInput', () => {
       <FormInput
         onChange={onChangeSpy}
         value="test value"
+        placeholder="test placeholder"
         className="test-class"
       >
         <input />
@@ -25,6 +26,7 @@ describe('FormInput', () => {
       type: 'text',
       className: 'form__input test-class',
       value: 'test value',
+      placeholder: 'test placeholder',
       onChange: wrapper.instance().handleOnChange,
       autoFocus: false
     });

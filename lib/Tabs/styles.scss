@@ -58,6 +58,10 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
   }
 }
 
+.tabs__input::placeholder {
+  color: $neutral-base-lighter;
+}
+
 //make tabs with option cog the same width active and non active to prevent shifting
 .tabs__item.has-options {
   padding: $layout-spacing-base/4 14px;
