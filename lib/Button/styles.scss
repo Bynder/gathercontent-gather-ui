@@ -38,6 +38,9 @@ $color-btn-contained--bg: white !default;
   &:hover {
     text-decoration: none;
   }
+  &:focus {
+    outline: 0;
+    }
 
   & + &,
   & + .dropdown {
