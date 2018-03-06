@@ -74,6 +74,14 @@ $conversation-meta-text-color: $neutral-base !default;
 .conversation__comment-body {
   margin: -$typo-size-base/2 0 0;
   padding: $conversation-comment-body-padding;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .conversation__text {

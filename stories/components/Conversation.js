@@ -25,7 +25,7 @@ const mockComments = [{
   createdBy: 2
 }, {
   id: 12,
-  body: 'Comment body...',
+  body: 'Comment body and a link to http://google.com',
   createdAt: 'Less than a minute ago',
   author: {
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
