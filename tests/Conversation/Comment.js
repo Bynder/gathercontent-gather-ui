@@ -1,3 +1,4 @@
+import Linkify from 'linkifyjs/react';
 import { React, shallow } from '../setup';
 import Comment from '../../lib/Conversation/Comment';
 import CommentForm from '../../lib/Conversation/CommentForm';
@@ -43,8 +44,8 @@ describe('Comment', () => {
     expect(wrapper.find(Person).prop('person')).toEqual(props.author);
   });
 
-  test('renders the comment body text', () => {
-    expect(wrapper.find('.conversation__text').text()).toEqual(props.body);
+  test('renders the comment body text and passes it through the Linkify component', () => {
+    expect(wrapper.find(Linkify).contains(props.body)).toBe(true);
   });
 
   test('renders the comment created at text', () => {

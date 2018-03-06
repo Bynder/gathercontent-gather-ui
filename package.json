@@ -57,6 +57,7 @@
     "debounce": "^1.1.0",
     "eslint-config-prettier": "^2.6.0",
     "font-awesome": "^4.7.0",
+    "linkifyjs": "^2.1.6",
     "normalize-scss": "^6.0.0",
     "object-assign": "^4.1.1",
     "pluralize": "^5.0.0",
