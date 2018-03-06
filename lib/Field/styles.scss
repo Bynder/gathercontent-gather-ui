@@ -62,17 +62,21 @@ $field-data-color: $neutral-base !default;
   margin-right: $field-aside-width/4;
   transition: all 0.2s ease;
 
-  &:hover,
+  .field:not(.is-disabled) &:hover,
   .is-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
   }
 
-  &:hover {
+  .field:not(.is-disabled) &:hover {
     .field__instructions {
       color: $neutral-dark;
     }
+  }
+
+  .is-disabled & {
+    cursor: not-allowed;
   }
 }
 

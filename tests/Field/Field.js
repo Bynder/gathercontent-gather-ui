@@ -23,16 +23,6 @@ describe('Field', () => {
 
   afterEach(() => {});
 
-  test('renders loading state', () => {
-    wrapper.setProps({ isLoading: true });
-    expect(wrapper.text()).toEqual('LOADING!');
-  });
-
-  test('renders read only state', () => {
-    wrapper.setProps({ isReadOnly: true });
-    expect(wrapper.text()).toEqual('READ ONLY!');
-  });
-
   test('renders an editing state and passes the relevant props', () => {
     wrapper.setProps({
       canEdit: true,
@@ -78,7 +68,11 @@ describe('Field', () => {
   });
 
   test('adds conditional classes for formatting', () => {
-    wrapper.setProps({ hasFormatting: true });
+    wrapper.setProps({
+      hasFormatting: true,
+      disabled: true
+    });
     expect(wrapper.hasClass('has-formatting')).toEqual(true);
+    expect(wrapper.hasClass('is-disabled')).toEqual(true);
   });
 });
