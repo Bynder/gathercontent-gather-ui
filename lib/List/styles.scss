@@ -48,7 +48,7 @@ $list-border: 1px solid $color-border-base;
     padding-left: $layout-spacing-base*3.5;
   }
 
-  .is-current & {
+  .is-current > & {
     background: #f9f9f9;
   }
 }
