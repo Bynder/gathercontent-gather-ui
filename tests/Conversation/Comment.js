@@ -61,12 +61,13 @@ describe('Comment', () => {
 
   test('renders the edit comment controls (when a user can edit)', () => {
     const actions = wrapper.find('.conversation__actions');
-    expect(actions.find(Button)).toHaveLength(2);
+    expect(actions.find('.button')).toHaveLength(1);
+    expect(actions.find(Button)).toHaveLength(1);
     expect(
       actions
-        .find(Button)
+        .find('.button')
         .first()
-        .prop('clickHandler')
+        .prop('onClick')
     ).toEqual(wrapper.instance().showEditForm);
     actions
       .find(Button)
