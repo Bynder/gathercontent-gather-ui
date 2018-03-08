@@ -121,7 +121,7 @@ $conversation-meta-text-color: $neutral-base !default;
 }
 
 .conversation__focus-fallback {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: -999em;
 }
