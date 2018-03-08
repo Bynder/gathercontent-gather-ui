@@ -40,6 +40,7 @@
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest tests/**/** --notify || exit 0",
+    "test:travis": "jest tests/**/** --runInBand || exit 0",
     "test:watch": "jest tests/**/** --notify --watch || exit 0",
     "tdd": "yarn run test:watch",
     "lint": "eslint -c .eslintrc.json lib/* tests/* || exit 0",
