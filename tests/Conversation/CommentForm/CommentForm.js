@@ -79,7 +79,7 @@ describe('Comment Form', () => {
     expect(input.prop('focusOnMount')).toEqual(false);
     expect(input.prop('value')).toEqual('');
 
-    wrapper.setProps({ value: 'test' });
+    wrapper.setState({ inputValue: 'test' });
     expect(input.prop('value')).toEqual('test');
 
     expect(input.prop('handleOnFocus')).toEqual(

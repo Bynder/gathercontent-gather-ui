@@ -43,7 +43,7 @@
     "test:watch": "jest tests/**/** --notify --watch",
     "test:ci": "jest tests/**/** --runInBand",
     "tdd": "yarn run test:watch",
-    "lint": "eslint -c .eslintrc.json lib/* tests/* || exit 0",
+    "lint": "eslint -c .eslintrc.json lib/* tests/*",
     "lint:fix": "eslint -c .eslintrc.json --fix lib/* tests/*"
   },
   "keywords": [
