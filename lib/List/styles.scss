@@ -9,9 +9,8 @@ $list-border: 1px solid $color-border-base;
 .list__head {
   display: flex;
   align-items: center;
-  padding: $layout-spacing-base;
+  padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
   border-top: $list-border;
-  border-bottom: $list-border;
 }
 
 .list__title {
