@@ -119,14 +119,14 @@ storiesOf('Components', module)
       <StoryItem title="List: Full Example">
         <List
           title="Example Project Title"
-          action={addNewItemButton('minor', 'bottom', 'id-3', 'Add new item')}
+          action={addNewItemButton('minor-2', 'bottom', 'id-3', 'Add new item')}
           borderedRight
         >
           <ListItem
             indicator={statusWithTooltip('green', 'bottom', 'id-7', 'Research')}
             title={<a href="/#">Row title 1</a>}
             label="entry parent"
-            action={addNewItemButton('small', 'bottom', 'id-4', 'Add entry item')}
+            action={addNewItemButton('small-2', 'bottom', 'id-4', 'Add entry item')}
           >
             <ListItem
               indicator={statusWithTooltip('blue', 'bottom', 'id-6', 'Review')}
@@ -135,7 +135,7 @@ storiesOf('Components', module)
             />
             <ListItem
               indicator={statusWithTooltip('orange', 'bottom', 'id-8', 'Publish')}
-              title={overdueTitle('Row title 3')}
+              title={overdueTitle('Row title 3', 'id-920')}
               label="entry"
             />
           </ListItem>

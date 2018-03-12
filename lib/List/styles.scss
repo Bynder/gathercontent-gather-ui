@@ -9,9 +9,8 @@ $list-border: 1px solid $color-border-base;
 .list__head {
   display: flex;
   align-items: center;
-  padding: $layout-spacing-base;
+  padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
   border-top: $list-border;
-  border-bottom: $list-border;
 }
 
 .list__title {
@@ -19,7 +18,7 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list__body {
-  margin-left: $layout-spacing-base;
+  margin: $layout-spacing-base/2;
 
   .list__body {
     margin: 0;
@@ -32,7 +31,6 @@ $list-border: 1px solid $color-border-base;
 
 .list__item-content {
   padding: $layout-spacing-base/2;
-  border-bottom: $list-border;
   display: flex;
   align-items: center;
 
@@ -49,7 +47,18 @@ $list-border: 1px solid $color-border-base;
   }
 
   .is-current > & {
-    background: #f9f9f9;
+    background: #EBF5FD;
+    border-radius: 4px;
+
+    & .list__item-title,
+    & .list__item-title a {
+      font-weight: 500;
+      color: $primary-blue;
+    }
+
+    & .color-overdue a {
+    color: $primary-red;
+    }
   }
 }
 
@@ -100,6 +109,10 @@ $list-border: 1px solid $color-border-base;
   .is-active svg {
     transform: rotate(0deg);
   }
+}
+
+.list__button {
+  padding: $layout-spacing-base/2 ($layout-spacing-base/2 - 2px);
 }
 
 .list--bordered-right {
