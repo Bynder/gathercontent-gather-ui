@@ -100,10 +100,10 @@ $list-border: 1px solid $color-border-base;
   .is-active svg {
     transform: rotate(0deg);
   }
+}
 
-  .button--icon-only-cover {
-  padding: 10px 8px;
-  }
+.list__button {
+  padding: $layout-spacing-base/2 ($layout-spacing-base/2 - 2px);
 }
 
 .list--bordered-right {
