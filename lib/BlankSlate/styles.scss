@@ -11,12 +11,16 @@
   }
   &__content {
     padding: $layout-spacing-base/2;
-    font-size: $typo-size-large;
+    font-size: $typo-size-base;
     color: $neutral-base;
   }
   &__heading {
-    font-size: $typo-size-xlarge;
+    font-size: $typo-size-large;
     color: $neutral-darkest;
     font-weight: normal;
+  }
+  &__svg {
+    width: 250px;
+    height: 200px;
   }
 }
