@@ -83,6 +83,10 @@ const tints = [
   {
     rgbValue: 'rgba(249, 223, 110, 0.7)',
     name: '$primary-yellow-lighter'
+  },
+  {
+    rgbValue: 'rgba(235, 245, 253, 1)',
+    name: '$primary-blue-lightest'
   }
 ];
 
