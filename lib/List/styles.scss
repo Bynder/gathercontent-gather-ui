@@ -47,7 +47,7 @@ $list-border: 1px solid $color-border-base;
   }
 
   .is-current > & {
-    background: #EBF5FD;
+    background: $primary-blue-lightest;
     border-radius: 4px;
 
     & .list__item-title,
