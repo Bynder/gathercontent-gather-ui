@@ -34,8 +34,9 @@ $duedate-timepicker-height: 220px !default;
 
   .icon {
     margin-right: $layout-spacing-base / 4;
-    top: $layout-spacing-base / 10;
+    top: -2px;
     position: relative;
+    vertical-align: middle;
   }
 
   .icon path {
@@ -75,7 +76,19 @@ $duedate-timepicker-height: 220px !default;
   }
 
   .icon {
-    top: $layout-spacing-base / 6.6;
+    top: -1px;
+  }
+}
+
+.duedate__container--completed {
+  .duedate__link, .duedate__toggle {
+    text-decoration: line-through;
+    font-style: italic;
+    color: $color-text-light;
+  }
+
+  .icon path, &:hover .icon path {
+    fill: $color-text-light;
   }
 }
 
