@@ -338,3 +338,10 @@ $duedate-timepicker-height: 220px !default;
   text-decoration: underline;
 }
 
+
+/* DueDate remove date dropdown */
+.duedate__remove {
+  position: absolute;
+  top: $layout-spacing-base / 2;
+  right: 0;
+}
