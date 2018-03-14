@@ -307,3 +307,34 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
+
+
+/* DueDate Label */
+.duedate__label, .duedate__label--button, .duedate__label--button:hover {
+  color: $neutral-base;
+  font-size: $typo-size-small;
+
+  .icon {
+    margin-right: $layout-spacing-base / 4;
+    top: -2px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .icon path {
+    fill: $neutral-base;
+  }
+}
+
+.duedate__label--overdue, .duedate__label--overdue .duedate__label--button {
+  color: $primary-red;
+
+  .icon path {
+    fill: $primary-red;
+  }
+}
+
+.duedate__label--button {
+  text-decoration: underline;
+}
+
