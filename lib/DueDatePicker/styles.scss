@@ -7,24 +7,26 @@ $duedate-timepicker-height: 220px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.duedate__popover {
+.duedate__popover.duedate__popover {
   max-width: $duedate-popover-width;
   width: $duedate-popover-width;
+  margin-top: $layout-spacing-base / -2;
 
   .arrow {
     display: none;
   }
 
-  .popover-content {
+  &.duedate__popover .popover-content {
     padding: 0;
   }
 }
 
 .duedate__container {
   font-size: $typo-size-slight;
+  position: relative;
 }
 
-.duedate__link {
+.duedate__button {
   color: $color-text-light;
 
   .button {
@@ -52,11 +54,11 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.duedate__link--set-duedate {
+.duedate__button--set-duedate {
   color: $color-link-base;
 }
 
-.duedate__link--overdue {
+.duedate__button--overdue {
   color: $primary-red;
 
   .button {
@@ -81,7 +83,7 @@ $duedate-timepicker-height: 220px !default;
 }
 
 .duedate__container--completed {
-  .duedate__link, .duedate__toggle {
+  .duedate__button, .duedate__toggle {
     text-decoration: line-through;
     font-style: italic;
     color: $color-text-light;
@@ -277,7 +279,7 @@ $duedate-timepicker-height: 220px !default;
 
 /* DueDate Time picker dropdown */
 
-.duedate__popover .dropdown-menu {
+.duedate__popover .duedate__header--time-picker {
   min-width: $duedate-timepicker-width;
   max-height: $duedate-timepicker-height;
   overflow: auto;
