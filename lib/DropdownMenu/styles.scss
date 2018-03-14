@@ -173,3 +173,12 @@ $dropdown-menu-font-color: $color-text-base !default;
     color: $neutral-base;
   }
 }
+
+.dropdown__item--danger .dropdown__link {
+  color: $primary-red;
+
+  &:hover {
+    background-color: $primary-red;
+    color: white;
+  }
+}
