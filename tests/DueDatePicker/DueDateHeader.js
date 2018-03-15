@@ -56,7 +56,9 @@ describe('DueDateHeader', () => {
   test('adds overdue with a date in the past', () => {
     wrapper.setProps({ dueDate: moment().subtract(5, 'day') });
     console.log(wrapper.debug());
-    expect(wrapper.find('.duedate__header--date').hasClass('color-overdue')).toBe(true);
+    expect(
+      wrapper.find('.duedate__header--date').hasClass('color-overdue')
+    ).toBe(true);
   });
 
   test('should show no due date set', () => {
