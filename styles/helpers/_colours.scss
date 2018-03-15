@@ -4,4 +4,8 @@
   a {
     color: inherit;
   }
+
+  .icon path, &:hover .icon path {
+    fill: $color-text-danger;
+  }
 }

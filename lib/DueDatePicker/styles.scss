@@ -58,31 +58,11 @@ $duedate-timepicker-height: 220px !default;
   color: $color-link-base;
 }
 
-.duedate__button--overdue {
-  color: $primary-red;
-
-  .button {
-    color: $primary-red;
-  }
-
-  &:hover {
-    color: $primary-red;
-
-    .icon path {
-      fill: $primary-red;
-    }
-  }
-
-  .icon path {
-    fill: $primary-red;
-  }
-
-  .icon {
-    top: -1px;
-  }
+.duedate__button.color-overdue .button {
+  color: $color-text-danger;
 }
 
-.duedate__container--completed {
+.duedate__container--completed.duedate__container--completed {
   .duedate__button, .duedate__toggle {
     text-decoration: line-through;
     font-style: italic;
@@ -192,12 +172,8 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.duedate__label--overdue, .duedate__label--overdue .duedate__label--button {
+.duedate__label.color-overdue .duedate__label--button {
   color: $primary-red;
-
-  .icon path {
-    fill: $primary-red;
-  }
 }
 
 .duedate__label--button {
