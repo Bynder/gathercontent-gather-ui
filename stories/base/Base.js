@@ -99,6 +99,11 @@ const tints = [
   {
     rgbValue: 'rgb(227, 82, 75)',
     name: '$primary-red-darker'
+  },
+  {
+    rgbValue: 'rgb(235, 245, 253)',
+    name: '$primary-blue-lightest'
+
   }
 ];
 
