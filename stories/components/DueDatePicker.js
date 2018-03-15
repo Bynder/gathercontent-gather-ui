@@ -28,6 +28,13 @@ storiesOf('Components', module).add('DueDatePicker', () => (
         setDueDate={action('setDueDate')}
       />
     </StoryItem>
+    <StoryItem title="Due date picker" description="-1 hour">
+      <DueDatePicker
+        label="Due Tommorrow at 12:00pm"
+        dueDate={moment().subtract(1, 'hour')}
+        setDueDate={action('setDueDate')}
+      />
+    </StoryItem>
     <StoryItem title="Due date picker" description="-4 Days">
       <DueDatePicker
         label="Due Tommorrow at 12:00pm"
