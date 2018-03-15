@@ -38,7 +38,7 @@ describe('DueDateLabel', () => {
     wrapper.setProps({
       dueDate: { date: moment().subtract(3, 'day'), overdue: true }
     });
-    expect(wrapper.hasClass('duedate__label--overdue')).toBe(true);
+    expect(wrapper.hasClass('color-overdue')).toBe(true);
     expect(wrapper.find(Icon)).toHaveLength(1);
     expect(wrapper.find(Icon).prop('name')).toEqual('warning');
     expect(wrapper.find(Button).contains('3 days ago')).toBe(true);
