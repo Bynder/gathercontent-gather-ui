@@ -1,15 +1,11 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$color-btn-primary--bg: rgb(74, 181, 69) !default;
+$color-btn-primary--bg: $primary-blue !default;
 $color-btn-primary--text: white !default;
-$color-btn-primary--hover: rgb(73, 171, 0) !default;
+$color-btn-primary--hover: darken($primary-blue, 6%) !default;
 $color-btn-primary--disabled: $neutral-light !default;
 $color-btn-primary--disabled-text: $neutral-base !default;
-
-
-$color-btn-secondary--bg: $primary-blue !default;
-$color-btn-secondary--hover: darken($color-btn-secondary--bg, 6%) !default;
 
 $color-btn-warning--bg: #da4f49 !default;
 $color-btn-warning--hover: #bd362f !default;
@@ -87,40 +83,6 @@ $color-btn-contained--bg: white !default;
   }
 }
 
-.button--secondary {
-  background: $primary-blue;
-  color: $color-btn-primary--text;
-  text-decoration: none;
-  &:hover {
-    background: $primary-blue-lighter;
-    color: $color-btn-primary--text;
-    box-shadow: 0 3px 4px -2px rgba(61,138,235,0.50),
-                inset 0 -2px 0 0 $primary-blue;
-    -webkit-box-shadow: 0 3px 4px -2px rgba(61,138,235,0.50),
-                        inset 0 -2px 0 0 $primary-blue;
-    -moz-box-shadow: 0 3px 4px -2px rgba(61,138,235,0.50),
-                     inset 0 -2px 0 0 $primary-blue;
-  }
-
-  &:active {
-    transition: none;
-    background: $primary-blue-darker;
-    box-shadow: inset 0 2px 0 0 #2662AB;
-    -webkit-box-shadow: inset 0 2px 0 0 #2662AB;
-    -moz-box-shadow: inset 0 2px 0 0 #2662AB;
-  }
-
-  &:focus {
-    color: $color-btn-primary--text;
-  }
-
-  &:disabled {
-    background: $color-btn-primary--disabled;
-    color: $color-btn-primary--disabled-text;
-    box-shadow:none;
-  }
-}
-
 .button--link,
 .button--link-default {
   background: transparent;
@@ -132,7 +94,7 @@ $color-btn-contained--bg: white !default;
 
   &:hover {
     background: transparent;
-    color: $color-btn-secondary--hover;
+    color: $color-btn-primary--hover;
   }
 }
 
