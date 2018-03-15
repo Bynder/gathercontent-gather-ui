@@ -22,6 +22,12 @@ describe('Blank Slate', () => {
     expect(wrapper.hasClass('blank-slate--fixed')).toBe(true);
   });
 
+  test('adds a style modifer', () => {
+    expect(wrapper.hasClass('blank-slate--arrow')).toBe(false);
+    wrapper.setProps({ slateStyle: 'arrow' });
+    expect(wrapper.hasClass('blank-slate--arrow')).toBe(true);
+  });
+
   test('renders its children', () => {
     expect(wrapper.find('.blank-slate__content')).toHaveLength(1);
     expect(wrapper.find('.child')).toHaveLength(1);
