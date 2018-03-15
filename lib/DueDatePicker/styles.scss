@@ -93,11 +93,8 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.duedate__header--overdue .duedate__header--date {
+.color-overdue .duedate__time {
   color: $primary-red;
-  .duedate__time {
-    color: $primary-red;
-  }
 }
 
 .duedate__submit {
