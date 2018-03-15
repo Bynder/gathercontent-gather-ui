@@ -25,7 +25,7 @@ storiesOf('Components', module).add('Blank Slate', () => (
       description="BlankSlate with the arrow style"
     >
       <BlankSlate
-        style="arrow"
+        slateStyle="arrow"
       >
         <h2 className="blank-slate__heading">Hey do something on the left</h2>
         <p>Then put it over here.</p>

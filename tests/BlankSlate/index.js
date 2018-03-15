@@ -24,7 +24,7 @@ describe('Blank Slate', () => {
 
   test('adds a style modifer', () => {
     expect(wrapper.hasClass('blank-slate--arrow')).toBe(false);
-    wrapper.setProps({ style: 'arrow' });
+    wrapper.setProps({ slateStyle: 'arrow' });
     expect(wrapper.hasClass('blank-slate--arrow')).toBe(true);
   });
 
