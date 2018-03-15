@@ -5,6 +5,7 @@ $field-spacing-base: $layout-spacing-base !default;
 $field-aside-width: 40px !default;
 
 $field-label-size: $typo-size-lead !default;
+$field-data-size: $typo-size-base !default;
 $field-label-weight: $typo-weight-semi-bold !default;
 
 $field-data-size: $typo-size-small !default;
@@ -18,8 +19,11 @@ $field-data-color: $neutral-base !default;
 }
 
 .field__data {
+  display: flex;
+  flex-flow: column;
   padding-top: $field-spacing-base*1.5;
   text-align: right;
+  font-size: $field-data-size;
 }
 
 .field__label {
@@ -37,6 +41,16 @@ $field-data-color: $neutral-base !default;
 .field__validation {
   clear: both;
   float: right;
+}
+
+.field__actions {
+  opacity: 0;
+  transition: opacity $animation-time-micro $animation-curve;
+
+  .field:hover &,
+  .field.is-active & {
+    opacity: 1;
+  }
 }
 
 .field__instructions,
@@ -222,6 +236,14 @@ $field-data-color: $neutral-base !default;
     .editable-text__button {
       margin-left: $field-spacing-base/4;
     }
+  }
+
+  .field__actions {
+    opacity: 1;
+    order: 2;
+  }
+  .field__validations {
+    order: 3;
   }
 }
 

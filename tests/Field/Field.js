@@ -75,4 +75,12 @@ describe('Field', () => {
     expect(wrapper.hasClass('has-formatting')).toEqual(true);
     expect(wrapper.hasClass('is-disabled')).toEqual(true);
   });
+
+  test('that fields do not render instructions when none are set', () => {
+    expect(wrapper.find('.field__instructions')).toHaveLength(1);
+    wrapper.setProps({
+      instructions: ''
+    });
+    expect(wrapper.find('.field__instructions')).toHaveLength(0);
+  });
 });

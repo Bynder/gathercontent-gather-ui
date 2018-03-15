@@ -37,6 +37,14 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
   });
 
+  test('shows the editing view after clicking .editable-text_text', () => {
+    wrapper.find('.editable-text__text').prop('onClick')();
+
+    expect(wrapper.find('.editable-text__button')).toHaveLength(0);
+    expect(wrapper.find('.editable-text__wrapper--editing')).toHaveLength(1);
+    expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
+  });
+
   test('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
 

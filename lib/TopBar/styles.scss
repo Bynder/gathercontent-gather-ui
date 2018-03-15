@@ -69,8 +69,8 @@ $top-bar-box-shadow: $shadow-base;
 
   .top-bar__content--right {
     justify-content: flex-end;
-
     @include respond-to($top-bar-main-breakpoint) {
+      padding-right: $layout-spacing-base;
       position: absolute;
       top: 0;
       bottom: 0;
