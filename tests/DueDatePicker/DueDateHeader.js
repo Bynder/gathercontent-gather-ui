@@ -1,17 +1,18 @@
-import { Popover, Overlay } from 'react-bootstrap/lib';
+import moment from 'moment';
 import { React, shallow } from '../setup';
 import DueDateHeader from '../../lib/DueDatePicker/DueDateHeader';
 import DueDateTime from '../../lib/DueDatePicker/DueDateTime';
 import DropdownMenu from '../../lib/DropdownMenu';
 import Icon from '../../lib/Icon';
-import moment from 'moment';
 
 describe('DueDateHeader', () => {
   let wrapper;
   let clickHandlerRemoveSpy;
   let clickHandlerSetSpy;
 
-  let dueDate = moment().add(3, 'day').set({hours: 14, minutes: 15});
+  const dueDate = moment()
+    .add(3, 'day')
+    .set({ hours: 14, minutes: 15 });
 
   beforeEach(() => {
     clickHandlerRemoveSpy = jest.fn();
@@ -22,7 +23,8 @@ describe('DueDateHeader', () => {
         dueTime={dueDate}
         setTime={clickHandlerSetSpy}
         removeDueDate={clickHandlerRemoveSpy}
-      />);
+      />
+    );
   });
 
   test('should render <DueDateTime />', () => {
@@ -37,14 +39,18 @@ describe('DueDateHeader', () => {
   });
 
   test('should render due date', () => {
-    expect(wrapper.find('.duedate__header--date').text()).toEqual(expect.stringContaining(dueDate.calendar(null, {
-      sameDay: '[Today at]',
-      nextDay: '[Tomorrow at]',
-      nextWeek: 'dddd [at]',
-      lastDay: '[Yesterday at]',
-      lastWeek: '[Last] dddd [at]',
-      sameElse: 'MMMM Do YYYY [at]'
-    })))
+    expect(wrapper.find('.duedate__header--date').text()).toEqual(
+      expect.stringContaining(
+        dueDate.calendar(null, {
+          sameDay: '[Today at]',
+          nextDay: '[Tomorrow at]',
+          nextWeek: 'dddd [at]',
+          lastDay: '[Yesterday at]',
+          lastWeek: '[Last] dddd [at]',
+          sameElse: 'MMMM Do YYYY [at]'
+        })
+      )
+    );
   });
 
   test('adds overdue with a date in the past', () => {
@@ -54,7 +60,9 @@ describe('DueDateHeader', () => {
 
   test('should show no due date set', () => {
     wrapper.setProps({ dueDate: null });
-    expect(wrapper.find('.duedate__header--date').text()).toEqual('No due date set');
+    expect(wrapper.find('.duedate__header--date').text()).toEqual(
+      'No due date set'
+    );
   });
 
   test('setTime should be passed to DueDateTime', () => {
@@ -71,7 +79,10 @@ describe('DueDateHeader', () => {
       }
     ];
     expect(wrapper.find(DropdownMenu).prop('items')).toEqual(expected);
-    wrapper.find(DropdownMenu).prop('items')[0].action()
+    wrapper
+      .find(DropdownMenu)
+      .prop('items')[0]
+      .action();
     expect(clickHandlerRemoveSpy).toHaveBeenCalled();
   });
 });

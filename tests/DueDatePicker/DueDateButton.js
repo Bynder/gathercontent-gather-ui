@@ -1,9 +1,8 @@
-import { Popover, Overlay } from 'react-bootstrap/lib';
+import moment from 'moment';
 import { React, shallow } from '../setup';
 import DueDateButton from '../../lib/DueDatePicker/DueDateButton';
 import Button from '../../lib/Button';
 import Icon from '../../lib/Icon';
-import moment from 'moment';
 
 describe('DueDateButton', () => {
   let wrapper;
@@ -16,7 +15,8 @@ describe('DueDateButton', () => {
         dueDate={moment().add(2, 'day')}
         toggle={clickHandlerSpy}
         today={moment()}
-      />);
+      />
+    );
   });
 
   test('should render <Button /> component', () => {
@@ -25,12 +25,16 @@ describe('DueDateButton', () => {
 
   test('should contain the due date', () => {
     expect(wrapper.find(Button).contains('in 2 days')).toBe(true);
-    expect(wrapper.text()).toEqual(expect.stringContaining('Due to be completed'));
+    expect(wrapper.text()).toEqual(
+      expect.stringContaining('Due to be completed')
+    );
   });
 
   test('should not display date when not provided', () => {
     wrapper.setProps({ dueDate: null });
-    expect(wrapper.find('span').text()).toEqual(expect.stringContaining('Set due date'));
+    expect(wrapper.find('span').text()).toEqual(
+      expect.stringContaining('Set due date')
+    );
   });
 
   test('should show icon when date not provided', () => {

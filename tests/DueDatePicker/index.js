@@ -1,10 +1,10 @@
+import DayPicker from 'react-day-picker';
+import moment from 'moment';
 import { Popover, Overlay } from 'react-bootstrap/lib';
 import { React, shallow } from '../setup';
 import DueDatePicker from '../../lib/DueDatePicker';
 import DueDateButton from '../../lib/DueDatePicker/DueDateButton';
 import DueDateHeader from '../../lib/DueDatePicker/DueDateHeader';
-import DayPicker from 'react-day-picker';
-import moment from 'moment';
 
 describe('DueDatePicker', () => {
   let wrapper;
@@ -16,10 +16,13 @@ describe('DueDatePicker', () => {
     removeClickHandlerSpy = jest.fn();
     wrapper = shallow(
       <DueDatePicker
-        dueDate={moment().add(1, 'day').set({hours:14,minutes:15})}
+        dueDate={moment()
+          .add(1, 'day')
+          .set({ hours: 14, minutes: 15 })}
         applyDueDate={applyClickHandlerSpy}
         removeDueDate={removeClickHandlerSpy}
-      />);
+      />
+    );
   });
 
   test('should render all components', () => {
@@ -31,9 +34,17 @@ describe('DueDatePicker', () => {
   });
 
   test('container has completed class when prop passed', () => {
-    expect(wrapper.find('.duedate__container').hasClass('duedate__container--completed')).toBe(false);
-    wrapper.setProps({completed: true})
-    expect(wrapper.find('.duedate__container').hasClass('duedate__container--completed')).toBe(true);
+    expect(
+      wrapper
+        .find('.duedate__container')
+        .hasClass('duedate__container--completed')
+    ).toBe(false);
+    wrapper.setProps({ completed: true });
+    expect(
+      wrapper
+        .find('.duedate__container')
+        .hasClass('duedate__container--completed')
+    ).toBe(true);
   });
 
   test('displays set due date buttons when changed state is true', () => {

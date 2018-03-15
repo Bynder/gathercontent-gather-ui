@@ -1,10 +1,8 @@
-import { Popover, Overlay } from 'react-bootstrap/lib';
+import moment from 'moment';
 import { React, shallow } from '../setup';
 import DueDateLabel from '../../lib/DueDatePicker/DueDateLabel';
 import Button from '../../lib/Button';
 import Icon from '../../lib/Icon';
-import DayPicker from 'react-day-picker';
-import moment from 'moment';
 
 describe('DueDateLabel', () => {
   let wrapper;
@@ -14,9 +12,10 @@ describe('DueDateLabel', () => {
     clickHandlerSpy = jest.fn();
     wrapper = shallow(
       <DueDateLabel
-        dueDate={{date: moment().add(2, 'day'), overdue: false}}
+        dueDate={{ date: moment().add(2, 'day'), overdue: false }}
         clickHandler={clickHandlerSpy}
-      />);
+      />
+    );
   });
 
   test('should render <Button /> component', () => {
@@ -25,7 +24,9 @@ describe('DueDateLabel', () => {
 
   test('should contain the due date', () => {
     expect(wrapper.find(Button).contains('in 2 days')).toBe(true);
-    expect(wrapper.text()).toEqual(expect.stringContaining('Due to be completed'));
+    expect(wrapper.text()).toEqual(
+      expect.stringContaining('Due to be completed')
+    );
   });
 
   test('should not display date when not provided', () => {
@@ -34,7 +35,9 @@ describe('DueDateLabel', () => {
   });
 
   test('should add class and icon when date is overdue', () => {
-    wrapper.setProps({ dueDate: { date: moment().subtract(3, 'day'), overdue: true } });
+    wrapper.setProps({
+      dueDate: { date: moment().subtract(3, 'day'), overdue: true }
+    });
     expect(wrapper.hasClass('duedate__label--overdue')).toBe(true);
     expect(wrapper.find(Icon)).toHaveLength(1);
     expect(wrapper.find(Icon).prop('name')).toEqual('warning');
