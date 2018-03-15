@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ColourPalette = props => (
   <div className="sg__base">
     { props.colours.map(colour => (
-      <div className="sg__colour">
+      <div className="sg__colour" key={colour.name}>
         <div
           style={{ backgroundColor: colour.rgbValue }}
           className="sg__colour-block"
