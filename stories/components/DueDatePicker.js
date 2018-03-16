@@ -14,49 +14,56 @@ storiesOf('Components', module)
           dueDate={moment()
             .add(1, 'day')
             .set({ hours: 14, minutes: 15 })}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="None set">
         <DueDatePicker
           label="Due Tommorrow at 2:15pm"
           dueDate={null}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="+2 Months">
         <DueDatePicker
           label="Due Tommorrow at 12:00pm"
           dueDate={moment().add(2, 'months')}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="-1 hour">
         <DueDatePicker
           label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(1, 'hour')}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Days">
         <DueDatePicker
           label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'day')}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Months">
         <DueDatePicker
           label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'months')}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
         />
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Months (Completed)">
         <DueDatePicker
           label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'months')}
-          setDueDate={action('setDueDate')}
+          applyDueDate={action('applyDueDate')}
+          removeDueDate={action('removeDueDate')}
           completed
         />
       </StoryItem>
