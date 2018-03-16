@@ -35,6 +35,19 @@ describe('BoundaryClickWatcher', () => {
     );
   });
 
+  test('boundaryMouseEnter and boundaryMouseLeave prop functions are called on mouseEnter and mouseLeave', () => {
+    const boundaryMouseEnterSpy = jest.fn();
+    const boundaryMouseLeaveSpy = jest.fn();
+    wrapper.setProps({
+      boundaryMouseEnter: boundaryMouseEnterSpy,
+      boundaryMouseLeave: boundaryMouseLeaveSpy
+    });
+    wrapper.simulate('mouseEnter');
+    expect(boundaryMouseEnterSpy).toHaveBeenCalled();
+    wrapper.simulate('mouseLeave');
+    expect(boundaryMouseLeaveSpy).toHaveBeenCalled();
+  });
+
   test('adds the className prop', () => {
     expect(wrapper.hasClass('test')).toBe(true);
   });

@@ -76,11 +76,14 @@ $file-card-border-radius: 3px !default;
   }
 }
 
-.file-card--active {
-  .file-card__thumbnail,
-  .file-card__title {
-    &:before {
-      border: $file-card-border-style-hover $file-card-highlight-color;
+.file-card--highlighted {
+  .file-list__item.hover &,
+  &.file-card--active {
+    .file-card__thumbnail,
+    .file-card__title {
+      &:before {
+        border: $file-card-border-style-hover $file-card-highlight-color;
+      }
     }
   }
 }
