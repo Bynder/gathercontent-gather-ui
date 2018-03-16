@@ -23,4 +23,22 @@
     width: 250px;
     height: 200px;
   }
+  &--arrow {
+    display: flex;
+    align-items: center;
+    @include respond-to(small) {
+      display: block;
+    }
+    .blank-slate__svg {
+      max-width: 170px;
+      height: auto;
+      @include respond-to(medium) {
+        left: $layout-spacing-base;
+        position: absolute;
+      }
+    }
+    .blank-slate__content {
+      margin: 0 auto;
+    }
+  }
 }
