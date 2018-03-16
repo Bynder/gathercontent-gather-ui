@@ -17,13 +17,6 @@ const button = storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
-        title="Secondary button"
-        description="The secondary action button for secondary actions"
-      >
-        <Button types={['secondary']} clickHandler={action('clickedHandler')}>Secondary button</Button>
-      </StoryItem>
-
-      <StoryItem
         title="Button with link style"
         description="A button which looks like a regular link"
       >
