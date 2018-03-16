@@ -1,7 +1,7 @@
 import { React, mount } from '../setup';
 import { ShortcutTrigger } from '../../lib';
 
-describe.only('Shortcut Trigger', () => {
+describe('Shortcut Trigger', () => {
   let wrapper;
   let spy;
 

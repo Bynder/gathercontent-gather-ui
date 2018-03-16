@@ -1,5 +1,6 @@
 .dropdown-menu {
-  box-shadow: $shadow-deep;
+  box-shadow: $shadow-base;
+  border-color: $neutral-light;
 }
 
 .dropdown-menu > li > a {
