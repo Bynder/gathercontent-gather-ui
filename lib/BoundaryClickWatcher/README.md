@@ -12,6 +12,8 @@ BoundaryClickWatcher uses the render callback pattern and returns a boolean.
 | insideClickHandler    | Function      | `() {};`      | No       | Executes when the user clicks inside the boundary.  |
 | outsideClickHandler   | Function      | `() {};`      | No       | Executes when the user clicks Outside the boundary. |
 | alwaysListen          | bool          | `false`       | No       | If true the click event listener is added on mount instead of being added when handleInnerClick is called. |
+| boundaryMouseEnter    | Function      | `() {};`      | No       | Executes when the user's mouse enters the boundary. |
+| boundaryMouseLeave    | Function      | `() {};`      | No       | Executes when the user's leaves the boundary.       |
 
 ```
 <BoundaryClickWatcher insideClickHandler={someFunc} outsideClickHandler={someOtherFunc} alwaysListen={false}>
