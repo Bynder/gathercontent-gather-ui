@@ -42,3 +42,24 @@ export function getDropdownItemsWithSeparator() {
     }
   }];
 }
+
+export function getDropdownAvatar() {
+  return [{
+    type: 'avatar',
+    name: 'Mr Ben',
+    email: 'hey@heythere.com',
+    url: 'https://d3iw72m71ie81c.cloudfront.net/female-83.jpg',
+    initials: 'MB',
+    action() {
+      console.log('sup');
+    }
+  }, {
+    type: 'avatar',
+    name: 'Harold Ramis',
+    email: 'nicescottie@bopper.com',
+    initials: 'HR',
+    action() {
+      console.log('sup');
+    }
+  }];
+}

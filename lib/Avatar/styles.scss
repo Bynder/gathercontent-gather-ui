@@ -25,6 +25,25 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   transition: transform 0.5s;
 }
 
+.avatar__information {
+  margin-left: $layout-spacing-base/2;
+  .avatar__name,
+  .avatar__email {
+    display: block;
+    color: $neutral-darkest;
+  }
+  .avatar__name + .avatar__email {
+    color: $neutral-base;
+    font-size: $typo-size-slight;
+  }
+  .avatar--offline {
+    .avatar__name,
+    .avatar__email {
+      color: $neutral-base;
+    }
+  }
+}
+
 .avatar__wrapper {
   display: inline-flex;
   align-items: center;

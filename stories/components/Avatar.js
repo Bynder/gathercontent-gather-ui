@@ -4,7 +4,8 @@ import {
   Avatar,
   AvatarGroup,
   AvatarWithPopover,
-  ParticipantInfo
+  ParticipantInfo,
+  AvatarWithInformation
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -90,6 +91,37 @@ storiesOf('Components', module).add('Avatar', () => (
       <Avatar
         url="https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg"
         colour="red"
+      />
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with name"
+      description="An avatar can display the users name."
+    >
+      <AvatarWithInformation
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+        name="Mr Ben"
+      />
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with email"
+      description="An avatar can display the users email."
+    >
+      <AvatarWithInformation
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+        email="heythere@lol.com"
+      />
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with name and email"
+      description="An avatar can display the users email."
+    >
+      <AvatarWithInformation
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+        email="heythere@lol.com"
+        name="Mr Ben"
       />
     </StoryItem>
 
