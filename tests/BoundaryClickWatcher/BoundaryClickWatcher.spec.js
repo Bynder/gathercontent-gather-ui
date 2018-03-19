@@ -39,8 +39,8 @@ describe('BoundaryClickWatcher', () => {
     const boundaryMouseEnterSpy = jest.fn();
     const boundaryMouseLeaveSpy = jest.fn();
     wrapper.setProps({
-      boundaryMouseEnter: boundaryMouseEnterSpy,
-      boundaryMouseLeave: boundaryMouseLeaveSpy
+      onMouseEnter: boundaryMouseEnterSpy,
+      onMouseLeave: boundaryMouseLeaveSpy
     });
     wrapper.simulate('mouseEnter');
     expect(boundaryMouseEnterSpy).toHaveBeenCalled();
