@@ -42,6 +42,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
     &:hover,
     &.is-active,
+    .hover &,
     &--active {
       background: $primary-yellow-lighter;
     }
