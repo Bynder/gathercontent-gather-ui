@@ -60,9 +60,8 @@ storiesOf('Components', module)
           title="Dropdown link"
           description="A dropdown menu from a link style, without a caret">
           <SearchDropdown
-            shouldDisplay
-            searchableProperties={['name', 'email']}
-            items={assets.getDropdownAvatar()}>
+            resultsTitle="Results"
+            results={assets.getDropdownAvatar()}>
               <FontAwesomeIcon style={{ fontSize: '18px' }} name="fa-cog"/>
           </SearchDropdown>
         </StoryItem>

@@ -1,3 +1,6 @@
+import React from 'react';
+import { Icon } from '../lib';
+
 export function getDropdownItems() {
   return [{
     name: 'Restore Items',
@@ -45,6 +48,11 @@ export function getDropdownItemsWithSeparator() {
 
 export function getDropdownAvatar() {
   return [{
+    name: 'Results',
+    action: () => {},
+    additional: <Icon name="cross" text="close" hideText />,
+    type: 'title',
+  }, {
     type: 'avatar',
     name: 'Mr Ben',
     email: 'hey@heythere.com',

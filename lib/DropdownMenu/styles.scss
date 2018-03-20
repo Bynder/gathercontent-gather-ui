@@ -16,6 +16,9 @@ $dropdown-menu-font-color: $color-text-base !default;
   svg path {
     fill: white;
   }
+  button {
+    outline: none;
+  }
 }
 
 .dropdown.full-width {
@@ -67,7 +70,10 @@ $dropdown-menu-font-color: $color-text-base !default;
 
 .dropdown-menu {
   line-height: $typo-line-height-base;
-
+  &.align-right {
+    left: auto;
+    right: 0;
+  }
   .open & {
     display: block;
     opacity: 1;
@@ -158,7 +164,8 @@ $dropdown-menu-font-color: $color-text-base !default;
   }
 }
 
-.dropdown__additional {
+.dropdown__additional,
+.dropdown__title {
   display: flex;
   .dropdown__item--name {
     display: block;
@@ -181,4 +188,20 @@ $dropdown-menu-font-color: $color-text-base !default;
     background-color: $primary-red;
     color: white;
   }
+}
+
+.dropdown__title.dropdown__link {
+  &:hover {
+    background: white;
+    svg path {
+      fill: $primary-blue;
+    }
+  }
+  svg path {
+    fill: $neutral-dark;
+  }
+}
+
+.dropdown__avatar {
+  border-top: 1px solid $color-border-base;
 }
