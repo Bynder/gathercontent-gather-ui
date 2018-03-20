@@ -33,6 +33,12 @@ $comment-form-padding: $layout-spacing-base/2;
   margin: 0 0 0 $comment-form-padding;
 }
 
+.comment-form__cancel {
+  color: $neutral-base;
+  &:hover {
+    color: $neutral-dark;
+  }
+}
 
 .comment-form__button {
   svg {
