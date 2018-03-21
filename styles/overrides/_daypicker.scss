@@ -13,7 +13,7 @@
 
   .DayPicker-Caption {
     text-align: center;
-    font-size: $typo-size-lead;
+    font-size: $typo-size-base;
     font-weight: $typo-weight-semi-bold;
     padding: $layout-spacing-base / 4 0 $layout-spacing-base / 2;
     color: $neutral-dark;
@@ -84,6 +84,7 @@
     margin: 0;
     width: $layout-spacing-base * 2;
     color: $neutral-base;
+    font-weight: $typo-weight-semi-bold;
   }
 
   abbr {
@@ -98,7 +99,8 @@
     color: $neutral-dark;
 
     &.DayPicker-Day--today {
-      background-color: $neutral-lightest;
+      background-color: $primary-blue-lightest;
+      font-weight: $typo-weight-semi-bold;
     }
 
     &.DayPicker-Day--selected {
