@@ -13,9 +13,10 @@
 
   .DayPicker-Caption {
     text-align: center;
-    font-size: $typo-size-lead;
+    font-size: $typo-size-base;
     font-weight: $typo-weight-semi-bold;
     padding: $layout-spacing-base / 4 0 $layout-spacing-base / 2;
+    color: $neutral-dark;
   }
 
   .DayPicker-NavBar {
@@ -82,7 +83,8 @@
   .DayPicker-Weekday {
     margin: 0;
     width: $layout-spacing-base * 2;
-    color: $neutral-dark;
+    color: $neutral-base;
+    font-weight: $typo-weight-semi-bold;
   }
 
   abbr {
@@ -94,9 +96,11 @@
     border: 1px solid transparent;
     border-radius: 100%;
     outline: none;
+    color: $neutral-dark;
 
     &.DayPicker-Day--today {
-      background-color: $neutral-lightest;
+      background-color: $primary-blue-lightest;
+      font-weight: $typo-weight-semi-bold;
     }
 
     &.DayPicker-Day--selected {

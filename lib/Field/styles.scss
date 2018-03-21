@@ -100,6 +100,12 @@ $field-data-color: $neutral-base !default;
   right: 0;
   top: 0;
   width: $field-aside-width;
+  opacity: 0;
+  transition: opacity $animation-curve ease-in;
+}
+
+.field:not(.field__editor):hover .field__aside {
+  opacity: 1;
 }
 
 .field__aside-action {
@@ -244,6 +250,9 @@ $field-data-color: $neutral-base !default;
   }
   .field__validations {
     order: 3;
+  }
+  .field__aside {
+    opacity: 1;
   }
 }
 
