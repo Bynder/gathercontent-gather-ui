@@ -5,7 +5,8 @@ import {
   AvatarGroup,
   AvatarWithPopover,
   ParticipantInfo,
-  AvatarWithInformation
+  AvatarWithInformation,
+  Button
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -101,6 +102,7 @@ storiesOf('Components', module).add('Avatar', () => (
       <AvatarWithInformation
         url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
         name="Mr Ben"
+        additional={<Button types={['link-danger', 'size-sm']} clickHandler={() => {}}>Link type</Button>}
       />
     </StoryItem>
 

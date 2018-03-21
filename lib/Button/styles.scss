@@ -84,7 +84,8 @@ $color-btn-contained--bg: white !default;
 }
 
 .button--link,
-.button--link-default {
+.button--link-default,
+.button--link-danger {
   background: transparent;
 
   &:focus {

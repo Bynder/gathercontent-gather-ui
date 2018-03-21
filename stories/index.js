@@ -40,3 +40,4 @@ import LoadingOverlay from './components/LoadingOverlay';
 import MessageBar from './components/MessageBar';
 import BlankSlate from './components/BlankSlate';
 import DueDatePicker from './components/DueDatePicker';
+import Contributors from './components/Contributors';

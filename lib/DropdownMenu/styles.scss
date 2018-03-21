@@ -132,6 +132,9 @@ $dropdown-menu-font-color: $color-text-base !default;
     color: #111823;
     background: #f9f9f9;
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 .dropdown-menu .active .dropdown__link {
@@ -199,6 +202,9 @@ $dropdown-menu-font-color: $color-text-base !default;
   }
   svg path {
     fill: $neutral-dark;
+  }
+  .dropdown__item--name {
+    color: $neutral-base;
   }
 }
 

@@ -4,6 +4,8 @@
 $avatar-size: 30px !default;
 $avatar-border-radius: $avatar-size !default;
 
+$avatar-size-small: $layout-spacing-base !default;
+
 $avatar-highlighted-background: $neutral-base !default;
 $avatar-highlighted-color: white !default;
 
@@ -23,6 +25,10 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   vertical-align: top;
   outline: none;
   transition: transform 0.5s;
+  &--size-sm {
+    width: $avatar-size-small;
+    height: $avatar-size-small;
+  }
 }
 
 .avatar__information {
@@ -47,6 +53,13 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 .avatar__wrapper {
   display: inline-flex;
   align-items: center;
+  &.avatar__with-text {
+    width: 100%;
+    padding: $layout-spacing-base/4 0;
+    &--size-sm {
+      font-size: $typo-size-slight;
+    }
+  }
 }
 
 .avatar__popover {
@@ -82,6 +95,11 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   justify-content: center;
   text-transform: uppercase;
   font-size: $typo-size-small;
+  .avatar--size-sm & {
+    width: $avatar-size-small;
+    height: $avatar-size-small;
+    font-size: $typo-size-micro;
+  }
 }
 
 .avatar__image {
@@ -113,4 +131,24 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 
 .avatar__target {
   display: inline-block;
+}
+
+.avatar--additional-visible {
+  .avatar__information {
+    max-width: 45%;
+    overflow: hidden;
+  }
+  .avatar__name,
+  .avatar__email {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .avatar__additional {
+    button[class*="button--link"] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
 }

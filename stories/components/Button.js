@@ -24,6 +24,13 @@ const button = storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
+        title="Button with link danger style"
+        description="A button which looks like a regular link"
+      >
+        <Button types={['link-danger']} clickHandler={action('clickedHandler')}>Link type</Button>
+      </StoryItem>
+
+      <StoryItem
         title="Outline button"
         description="A button with an outline style"
       >
