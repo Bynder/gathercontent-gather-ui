@@ -61,9 +61,8 @@ storiesOf('Components', module)
           description="A dropdown menu from a link style, without a caret">
           <SearchDropdown
             resultsTitle="Results"
-            results={assets.getDropdownAvatar()}>
-              <FontAwesomeIcon style={{ fontSize: '18px' }} name="fa-cog"/>
-          </SearchDropdown>
+            results={assets.getDropdownAvatar()}
+          />
         </StoryItem>
       </div>
     );

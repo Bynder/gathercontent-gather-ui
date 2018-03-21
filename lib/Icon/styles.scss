@@ -43,6 +43,28 @@ $icon-active-color: $color-brand-blue !default;
   display: none;
 }
 
+.icon--has-notification {
+  position: relative;
+  padding-right: $layout-spacing-base/2;
+}
+
+.icon__notification {
+  font-size: $typo-size-micro;
+  color: white;
+  background: $primary-blue;
+  border-radius: $layout-spacing-base/2;
+  display: block;
+  min-width: 17px;
+  height: $layout-spacing-base;
+  padding: 0 $layout-spacing-base/4;
+  position: absolute;
+  right: -$layout-spacing-base/4;
+  top: -7px;
+  border: 2px solid white;
+  text-align: center;
+  line-height: $layout-spacing-base/2 + $layout-spacing-base/4;
+}
+
 /* ==========================================================================
    SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */

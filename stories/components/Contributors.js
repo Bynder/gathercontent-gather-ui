@@ -10,7 +10,7 @@ const mockActions = {
   handleClearResults: action('handleClearResults'),
 };
 
-const mockContributor = {
+const mockAssignee = {
   id: 2,
   name: 'Bruce Banner',
   avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
@@ -19,7 +19,7 @@ const mockContributor = {
   isPresent: true
 };
 
-const mockContributorNoAvatar = {
+const mockAssigneeNoAvatar = {
   id: 5,
   name: 'Lynda Carter',
   initials: 'LC',
@@ -62,7 +62,6 @@ storiesOf('Components', module)
         <Contributors
           currentViewers={[mockViewer]}
           searchResults={mockResults}
-          addAssignee={mockActions.addAssignee}
           removeAssignee={mockActions.removeAssignee}
           handleSearchChange={mockActions.handleSearchChange}
           handleClearResults={mockActions.handleClearResults}
@@ -75,10 +74,9 @@ storiesOf('Components', module)
           description="Contributors with userCanAddAssignee set to true"
         >
           <Contributors
-            currentContributors={[mockContributor, mockContributorNoAvatar]}
+            currentAssignees={[mockAssignee, mockAssigneeNoAvatar]}
             currentViewers={[mockViewer]}
             searchResults={mockResults}
-            addAssignee={mockActions.addAssignee}
             removeAssignee={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
@@ -91,10 +89,9 @@ storiesOf('Components', module)
           description="Contributors with userCanAddAssignee set to false"
         >
           <Contributors
-            currentContributors={[mockContributor, mockContributorNoAvatar]}
+            currentAssignees={[mockAssignee, mockAssigneeNoAvatar]}
             currentViewers={[mockViewer]}
             searchResults={mockResults}
-            addAssignee={mockActions.addAssignee}
             removeAssignee={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}

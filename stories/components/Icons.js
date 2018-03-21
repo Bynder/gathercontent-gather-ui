@@ -57,14 +57,5 @@ storiesOf('Components', module)
       >
         {allIcons()}
       </StoryItem>
-
-      <StoryItem
-        title="Active SVG Icons"
-        description="Active icons become a specific colour."
-      >
-        <div className="is-active">
-          {allIcons()}
-        </div>
-      </StoryItem>
     </div>
   ));
