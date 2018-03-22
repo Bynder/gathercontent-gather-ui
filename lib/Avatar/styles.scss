@@ -53,12 +53,12 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 .avatar__wrapper {
   display: inline-flex;
   align-items: center;
-  &.avatar__with-text {
-    width: 100%;
-    padding: $layout-spacing-base/4 0;
-    &--size-sm {
-      font-size: $typo-size-slight;
-    }
+  width: 100%;
+  &--size-sm {
+    font-size: $typo-size-slight;
+  }
+  .avatar__additional {
+    display: none;
   }
 }
 
@@ -133,7 +133,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   display: inline-block;
 }
 
-.avatar--additional-visible {
+.avatar__wrapper--additional-visible {
   .avatar__information {
     max-width: 45%;
     overflow: hidden;
@@ -146,6 +146,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     white-space: nowrap;
   }
   .avatar__additional {
+    display: block;
     button[class*="button--link"] {
       padding-top: 0;
       padding-bottom: 0;

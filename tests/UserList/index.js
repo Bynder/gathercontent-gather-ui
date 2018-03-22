@@ -1,9 +1,10 @@
 import { React, mount } from '../setup';
-import Contributors from '../../lib/Contributors';
+import UserList from '../../lib/UserList';
 import SearchDropdown from '../../lib/SearchDropdown';
-import AvatarWithInformation from '../../lib/Avatar/AvatarWithInformation';
+import CurrentUserList from '../../lib/UserList/CurrentUserList';
+import OtherUserList from '../../lib/UserList/OtherUserList';
 
-describe('Contributors', () => {
+describe('UserList', () => {
   let wrapper;
   let mockAssignees;
   let mockResults;
@@ -61,29 +62,51 @@ describe('Contributors', () => {
     ];
 
     wrapper = mount(
-      <Contributors
-        currentAssignees={mockAssignees}
-        currentViewers={mockViewers}
+      <UserList
+        currentUsers={mockAssignees}
+        otherUsers={mockViewers}
         searchResults={mockResults}
-        removeAssignee={removeAssigneeSpy}
+        removeUser={removeAssigneeSpy}
         handleSearchChange={handleSearchChangeSpy}
         handleClearResults={handleClearResultsSpy}
-        userCanAddAssignee
+        showUserControls
       />
     );
   });
 
-  test('should render the assignees', () => {
-    expect(wrapper.find('.contributors__list-item')).toHaveLength(2);
+  test('should render CurrentUserList', () => {
+    expect(wrapper.find(CurrentUserList)).toHaveLength(1);
+    expect(wrapper.find(CurrentUserList).prop('currentUsers')).toEqual(
+      wrapper.prop('currentUsers')
+    );
+    expect(wrapper.find(CurrentUserList).prop('currentUsersHeading')).toEqual(
+      wrapper.prop('currentUsersHeading')
+    );
+    expect(wrapper.find(CurrentUserList).prop('showUserControls')).toEqual(
+      wrapper.prop('showUserControls')
+    );
+    expect(wrapper.find(CurrentUserList).prop('removeUser')).toEqual(
+      wrapper.prop('removeUser')
+    );
+    expect(wrapper.find(CurrentUserList).prop('removeUserText')).toEqual(
+      wrapper.prop('removeUserText')
+    );
+    expect(wrapper.find(CurrentUserList).prop('emptyText')).toEqual(
+      wrapper.prop('emptyText')
+    );
+    expect(wrapper.find(CurrentUserList).prop('emptyTextButton')).toEqual(
+      wrapper.prop('emptyTextButton')
+    );
   });
 
-  test('should render the empty text if there are no assignees', () => {
-    wrapper.setProps({ currentAssignees: [] });
-    expect(wrapper.find('.contributors__list-item')).toHaveLength(0);
-  });
-
-  test('should render the viewers', () => {
-    expect(wrapper.find('.viewing-list-item')).toHaveLength(1);
+  test('should render OtherUserList', () => {
+    expect(wrapper.find(OtherUserList)).toHaveLength(1);
+    expect(wrapper.find(OtherUserList).prop('otherUsers')).toEqual(
+      wrapper.prop('otherUsers')
+    );
+    expect(wrapper.find(OtherUserList).prop('otherUsersHeading')).toEqual(
+      wrapper.prop('otherUsersHeading')
+    );
   });
 
   test('should toggle showing the SearchDropdown', () => {
@@ -98,25 +121,9 @@ describe('Contributors', () => {
     );
   });
 
-  test('hides the correct parts of the UI if userCanAddAssignee is false', () => {
+  test('hides the correct parts of the UI if showUserControls is false', () => {
     expect(wrapper.find('.show-search')).toHaveLength(1);
-    expect(
-      wrapper
-        .find(AvatarWithInformation)
-        .first()
-        .prop('additional')
-    ).not.toEqual('');
-    wrapper.setProps({ currentAssignees: [] });
-    expect(wrapper.find('.contributors__empty-button')).toHaveLength(1);
-    wrapper.setProps({ userCanAddAssignee: false });
-    expect(wrapper.find('.contributors__empty-button')).toHaveLength(0);
-    wrapper.setProps({ currentAssignees: mockAssignees });
+    wrapper.setProps({ showUserControls: false });
     expect(wrapper.find('.show-search')).toHaveLength(0);
-    expect(
-      wrapper
-        .find(AvatarWithInformation)
-        .first()
-        .prop('additional')
-    ).toEqual('');
   });
 });

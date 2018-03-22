@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import Contributors from '../../lib/Contributors';
+import UserList from '../../lib/UserList';
 import StoryItem from '../styleguide/StoryItem';
 
 const mockActions = {
@@ -51,51 +51,51 @@ const mockResults = [{
 }]
 
 storiesOf('Components', module)
-  .add('Contributors', () => {
+  .add('UserList', () => {
     return (
       <div>
 
       <StoryItem
-        title="Contributors"
-        description="Contributors with no current assignees"
+        title="UserList"
+        description="UserList with no current assignees"
       >
-        <Contributors
-          currentViewers={[mockViewer]}
+        <UserList
+          otherUsers={[mockViewer]}
           searchResults={mockResults}
-          removeAssignee={mockActions.removeAssignee}
+          removeUser={mockActions.removeAssignee}
           handleSearchChange={mockActions.handleSearchChange}
           handleClearResults={mockActions.handleClearResults}
-          userCanAddAssignee
+          showUserControls
         />
       </StoryItem>
 
         <StoryItem
-          title="Contributors"
-          description="Contributors with userCanAddAssignee set to true"
+          title="UserList"
+          description="UserList with showUserControls set to true"
         >
-          <Contributors
-            currentAssignees={[mockAssignee, mockAssigneeNoAvatar]}
-            currentViewers={[mockViewer]}
+          <UserList
+            currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
+            otherUsers={[mockViewer]}
             searchResults={mockResults}
             removeAssignee={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
-            userCanAddAssignee
+            showUserControls
           />
         </StoryItem>
 
         <StoryItem
-          title="Contributors"
-          description="Contributors with userCanAddAssignee set to false"
+          title="UserList"
+          description="UserList with showUserControls set to false"
         >
-          <Contributors
-            currentAssignees={[mockAssignee, mockAssigneeNoAvatar]}
-            currentViewers={[mockViewer]}
+          <UserList
+            currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
+            otherUsers={[mockViewer]}
             searchResults={mockResults}
             removeAssignee={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
-            userCanAddAssignee={false}
+            showUserControls={false}
           />
         </StoryItem>
       </div>
