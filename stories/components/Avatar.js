@@ -4,7 +4,9 @@ import {
   Avatar,
   AvatarGroup,
   AvatarWithPopover,
-  ParticipantInfo
+  ParticipantInfo,
+  AvatarInformation,
+  Button
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -91,6 +93,48 @@ storiesOf('Components', module).add('Avatar', () => (
         url="https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg"
         colour="red"
       />
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with name"
+      description="An avatar can display the users name."
+    >
+    <Avatar
+      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      additional={<Button types={['link-danger', 'size-sm']} clickHandler={() => {}}>Link type</Button>}
+    >
+      <AvatarInformation
+        name="Mr Ben"
+      />
+
+    </Avatar>
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with email"
+      description="An avatar can display the users email."
+    >
+      <Avatar
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      >
+        <AvatarInformation
+          email="heythere@lol.com"
+        />
+      </Avatar>
+    </StoryItem>
+
+    <StoryItem
+      title="Avatar – with name and email"
+      description="An avatar can display the users email."
+    >
+      <Avatar
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      >
+        <AvatarInformation
+          email="heythere@lol.com"
+          name="Mr Ben"
+        />
+      </Avatar>
     </StoryItem>
 
     <StoryItem

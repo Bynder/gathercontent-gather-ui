@@ -144,4 +144,12 @@ describe('Icon', () => {
     expect(wrapper.find('.icon__text')).toHaveLength(1);
     expect(wrapper.find('.icon__text').text()).toBe('hello world');
   });
+
+  test('adds a notification', () => {
+    expect(wrapper.hasClass('icon--has-notification')).toEqual(false);
+    expect(wrapper.find('.icon__notification')).toHaveLength(0);
+    wrapper.setProps({ notification: 2 });
+    expect(wrapper.hasClass('icon--has-notification')).toEqual(true);
+    expect(wrapper.find('.icon__notification')).toHaveLength(1);
+  });
 });

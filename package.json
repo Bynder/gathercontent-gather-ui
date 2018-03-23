@@ -40,6 +40,7 @@
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest tests/**/** --notify || exit 0",
+    "test:cc": "jest --clearCache",
     "test:watch": "jest tests/**/** --notify --watch",
     "test:ci": "jest tests/**/** --runInBand",
     "tdd": "yarn run test:watch",

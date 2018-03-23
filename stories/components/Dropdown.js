@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import DropdownMenu from '../../lib/DropdownMenu/';
+import SearchDropdown from '../../lib/SearchDropdown';
 import FontAwesomeIcon from '../../lib/FontAwesomeIcon';
 import StoryItem from '../styleguide/StoryItem';
 import * as assets from '../../assets/data';
@@ -53,6 +54,15 @@ storiesOf('Components', module)
             items={assets.getDropdownItems()}>
               <FontAwesomeIcon style={{ fontSize: '18px' }} name="fa-cog"/>
           </DropdownMenu>
+        </StoryItem>
+
+        <StoryItem
+          title="Dropdown link"
+          description="A dropdown menu from a link style, without a caret">
+          <SearchDropdown
+            resultsTitle="Results"
+            results={assets.getDropdownAvatar()}
+          />
         </StoryItem>
       </div>
     );
