@@ -73,12 +73,16 @@ describe('Comment Form Actions', () => {
 
   test('adds an inline class modifier', () => {
     expect(
-      wrapper.find('div.comment-form__actions').hasClass('comment-form__actions--inline')
+      wrapper
+        .find('div.comment-form__actions')
+        .hasClass('comment-form__actions--inline')
     ).toBe(false);
 
     wrapper.setProps({ editing: true });
     expect(
-      wrapper.find('div.comment-form__actions').hasClass('comment-form__actions--inline')
+      wrapper
+        .find('div.comment-form__actions')
+        .hasClass('comment-form__actions--inline')
     ).toBe(true);
   });
 
@@ -95,11 +99,31 @@ describe('Comment Form Actions', () => {
   });
 
   test('adds the correct Button types when editing or not', () => {
-    expect(wrapper.find(Button).first().prop('types')).toEqual(['link', 'size-sm']);
-    expect(wrapper.find(Button).last().prop('types')).toEqual(['primary', 'size-sm']);
+    expect(
+      wrapper
+        .find(Button)
+        .first()
+        .prop('types')
+    ).toEqual(['link', 'size-sm']);
+    expect(
+      wrapper
+        .find(Button)
+        .last()
+        .prop('types')
+    ).toEqual(['primary', 'size-sm']);
 
     wrapper.setProps({ editing: true });
-    expect(wrapper.find(Button).first().prop('types')).toEqual(['collapse', 'link', 'size-sm']);
-    expect(wrapper.find(Button).last().prop('types')).toEqual(['collapse', 'link-default', 'size-sm']);
+    expect(
+      wrapper
+        .find(Button)
+        .first()
+        .prop('types')
+    ).toEqual(['collapse', 'link', 'size-sm']);
+    expect(
+      wrapper
+        .find(Button)
+        .last()
+        .prop('types')
+    ).toEqual(['collapse', 'link-default', 'size-sm']);
   });
 });

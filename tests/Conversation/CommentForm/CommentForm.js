@@ -141,5 +141,5 @@ describe('Comment Form', () => {
   test('adds a inline modifier when editing', () => {
     wrapper.setProps({ editing: true });
     expect(wrapper.hasClass('comment-form--inline')).toBe(true);
-  })
+  });
 });
