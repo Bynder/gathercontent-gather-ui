@@ -52,6 +52,8 @@ describe('Comment', () => {
     expect(wrapper.find('.conversation__date-text').text()).toEqual(
       props.createdAt
     );
+    wrapper.instance().showEditForm();
+    expect(wrapper.find('.conversation__date-text')).toHaveLength(0);
   });
 
   test('does not render the edit controls', () => {
@@ -61,12 +63,12 @@ describe('Comment', () => {
 
   test('renders the edit comment controls (when a user can edit)', () => {
     const actions = wrapper.find('.conversation__actions');
-    expect(actions.find('.button')).toHaveLength(2);
+    expect(actions.find(Button)).toHaveLength(2);
     expect(
       actions
-        .find('.button')
+        .find(Button)
         .first()
-        .prop('onClick')
+        .prop('clickHandler')
     ).toEqual(wrapper.instance().showEditForm);
     actions
       .find(Button)
@@ -86,8 +88,10 @@ describe('Comment', () => {
       wrapper.instance().hideEditForm
     );
     expect(commentForm.prop('author')).toBe(props.author);
+    expect(commentForm.prop('showAuthor')).toBe(false);
     expect(commentForm.prop('value')).toBe(props.body);
     expect(commentForm.prop('focusOnMount')).toBe(true);
+    expect(commentForm.prop('editing')).toBe(true);
     expect(commentForm.prop('onCommentChange')).toEqual(props.onCommentChange);
     expect(commentForm.prop('onRowCountChange')).toEqual(
       props.onRowCountChange
@@ -135,5 +139,14 @@ describe('Comment', () => {
     );
     buttons.last().prop('clickHandler')();
     expect(removeCommentSpy).toHaveBeenCalledTimes(1);
+  });
+
+  test('renders the form or content based on edit state', () => {
+    expect(wrapper.find(Linkify)).toHaveLength(1);
+    expect(wrapper.find(CommentForm)).toHaveLength(0);
+
+    wrapper.setState({ showEditForm: true });
+    expect(wrapper.find(Linkify)).toHaveLength(0);
+    expect(wrapper.find(CommentForm)).toHaveLength(1);
   });
 });

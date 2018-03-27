@@ -18,13 +18,13 @@ const mockUserNoAvatar = {
 };
 
 const mockComments = [{
-  id: 11,
+  id: 'comment-id-1',
   body: 'Here is a decent size comment that was created by someone who wanted to comment.',
   createdAt: '2017-06-08 09:56:41',
   author: mockUser,
   createdBy: 2
 }, {
-  id: 12,
+  id: 'comment-id-2',
   body: 'Comment body and a link to http://google.com',
   createdAt: 'Less than a minute ago',
   author: {
@@ -52,7 +52,6 @@ storiesOf('Components', module)
   .add('Conversation', () => {
     return (
       <div>
-
         <StoryItem
           title="Conversation"
           description="Starting a new conversation"
