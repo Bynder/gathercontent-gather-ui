@@ -3,4 +3,7 @@
   box-shadow: $shadow-base;
   border-color: $neutral-light;
   @include font-smoothing;
+  .arrow {
+    visibility:hidden;
+  }
 }
