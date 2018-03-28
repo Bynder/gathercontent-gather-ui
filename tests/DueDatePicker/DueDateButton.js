@@ -37,12 +37,6 @@ describe('DueDateButton', () => {
     );
   });
 
-  test('should show icon when date not provided', () => {
-    wrapper.setProps({ dueDate: null });
-    expect(wrapper.find(Icon)).toHaveLength(1);
-    expect(wrapper.find(Icon).prop('name')).toEqual('clock');
-  });
-
   test('should add class and icon when date is overdue', () => {
     wrapper.setProps({ dueDate: moment().subtract(3, 'day') });
     expect(wrapper.hasClass('color-overdue')).toBe(true);
