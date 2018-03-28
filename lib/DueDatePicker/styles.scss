@@ -41,16 +41,8 @@ $duedate-timepicker-height: 220px !default;
     vertical-align: middle;
   }
 
-  .icon path {
-    fill: $color-link-base;
-  }
-
   &:hover, &:active {
     text-decoration: none;
-
-    .icon path {
-      fill: $color-link-hover;
-    }
   }
 }
 
