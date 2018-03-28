@@ -69,6 +69,11 @@ describe('Comment Form', () => {
     expect(avatar.prop('initials')).toEqual(props.author.initials);
   });
 
+  test('does not render an avatar', () => {
+    wrapper.setProps({ showAuthor: false });
+    expect(wrapper.find(Avatar)).toHaveLength(0);
+  });
+
   test('renders ExpandingTextArea (with correct props)', () => {
     const input = wrapper.find(ExpandingTextArea);
     expect(input).toHaveLength(1);
@@ -131,5 +136,10 @@ describe('Comment Form', () => {
       wrapper.instance().onSubmit
     );
     expect(shortcutTriggers.last().prop('withMetaKey')).toEqual(true);
+  });
+
+  test('adds a inline modifier when editing', () => {
+    wrapper.setProps({ editing: true });
+    expect(wrapper.hasClass('comment-form--inline')).toBe(true);
   });
 });
