@@ -9,7 +9,7 @@ $comment-form-padding: $layout-spacing-base/2;
 .comment-form--inline {
   .comment-form__input,
   .comment-form__input:focus {
-    padding: 0;
+    padding: 0 $layout-spacing-base/2 0 0;
     border: 0;
   }
 
