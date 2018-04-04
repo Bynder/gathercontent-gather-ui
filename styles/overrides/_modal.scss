@@ -2,6 +2,12 @@
     overflow: hidden;
 }
 
+.modal--hide-close {
+  .modal-header .close {
+    display: none;
+  }
+}
+
 .modal-body {
     padding: $modal-padding;
     overflow: hidden;
