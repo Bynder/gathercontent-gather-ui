@@ -54,6 +54,11 @@ $file-card-border-radius: 3px !default;
 .file-card--highlighted,
 .file-card--active {
   background: $file-card-highlight-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+
   .file-card__thumbnail,
   .file-card__title {
     &:before {
@@ -97,10 +102,6 @@ $file-card-border-radius: 3px !default;
   height: 100%;
   z-index: 0;
   border-radius: $file-card-border-radius;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .file-card__title {
