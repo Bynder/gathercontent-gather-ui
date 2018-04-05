@@ -56,3 +56,19 @@ $shortcut-max-width: 400px !default;
 .shortcut__strikethrough {
   text-decoration: line-through;
 }
+
+.shortcut__superscript,
+.shortcut__subscript {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.shortcut__superscript {
+  top: -0.5em;
+}
+
+.shortcut__subscript {
+  bottom: -0.25em;
+}
