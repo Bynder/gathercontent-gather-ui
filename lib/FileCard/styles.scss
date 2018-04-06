@@ -41,6 +41,15 @@ $file-card-border-radius: 3px !default;
       }
     }
   }
+  &--disabled {
+    background: rgba(255, 255, 255, .75);
+
+    @supports (filter: blur()) {
+      transition: filter $animation-time-micro/2;
+      filter: blur(3px);
+      background: none;
+    }
+  }
 }
 
 .file-card__wrapper {

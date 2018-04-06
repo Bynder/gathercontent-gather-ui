@@ -139,6 +139,10 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $conversation-padding;
 }
 
+.conversation__confirmation-overlay {
+  left: $conversation-comment-body-indentation;
+}
+
 /* ==========================================================================
    State Styles
    ========================================================================== */
@@ -187,33 +191,5 @@ $conversation-meta-text-color: $neutral-base !default;
     filter: blur(4px);
     background: none;
   }
-}
 
-.conversation__confirmation {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: $conversation-comment-body-indentation;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.conversation__confirmation,
-.conversation__confirmation-inner {
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.conversation__confirmation-inner {
-  display: flex;
-}
-
-.conversation__confirmation-button {
-  margin: $layout-spacing-base/4;
-}
-
-.is-disabled .conversation__confirmation {
-  display: flex;
 }
