@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$dropdown-border: 1px solid $neutral-light !default;
+$dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.dropdown-gc,
+.dropdown__wrapper {
+  position: relative;
+  display: inline-flex;
+
+  + .dropdown-gc {
+    margin-left: $layout-spacing-base;
+  }
+}
+
+.dropdown__trigger,
+.dropdown__item-gc {
+  background: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  margin-top: $layout-spacing-base/4;
+  opacity: 0;
+  transition: opacity $animation-curve;
+
+  background: white;
+  border-radius: 4px;
+  box-shadow: $shadow-base;
+  border: $dropdown-border;
+  left: 0;
+}
+
+.dropdown__content.is-active {
+  opacity: 1;
+}
+
+.dropdown__item-gc {
+  display: block;
+  white-space: nowrap;
+  text-align: left;
+  padding: $dropdown-item-padding;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    color: #111823;
+    background: #f9f9f9;
+    outline: none;
+  }
+}
+
+.dropdown__item-group {
+  padding: $layout-spacing-base/4 0;
+
+  + .dropdown__item-group {
+    border-top: $dropdown-border;
+  }
+}
+
+.dropdown__item-gc--danger {
+  color: $primary-red;
+
+  &:hover,
+  &:focus {
+    background: $primary-red;
+    color: white;
+  }
+}
+

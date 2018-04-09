@@ -1,68 +1,71 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import DropdownMenu from '../../lib/DropdownMenu/';
-import SearchDropdown from '../../lib/SearchDropdown';
-import FontAwesomeIcon from '../../lib/FontAwesomeIcon';
+import { Dropdown, Button } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
-import * as assets from '../../assets/data';
+
+const dropdownContent = (
+  <Dropdown.Content>
+    <Dropdown.ItemGroup>
+      <Dropdown.Item action={() => action('action clicked')}>
+        Dropdown item 1
+      </Dropdown.Item>
+      <Dropdown.Item action={() => action('action clicked')}>
+        Dropdown item 2
+      </Dropdown.Item>
+    </Dropdown.ItemGroup>
+
+    <Dropdown.ItemGroup>
+      <Dropdown.Item action={() => action('action clicked')} danger>
+        Dropdown item 3
+      </Dropdown.Item>
+    </Dropdown.ItemGroup>
+  </Dropdown.Content>
+);
 
 storiesOf('Components', module)
-  .add('Dropdown Menu', () => {
-
+  .add('Dropdown', () => {
     return (
       <div>
         <StoryItem
-          title="Dropdown Menu"
-          description="A dropdown menu that accepts a list of menu items.">
-          <DropdownMenu value="Actions" caret shouldDisplay items={assets.getDropdownItems()}>
-            Actions
-          </DropdownMenu>
+          title="Dropdown"
+          description="..."
+        >
+          <Dropdown>
+            <Dropdown.Trigger>
+              Show content
+            </Dropdown.Trigger>
+
+            {dropdownContent}
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Trigger>
+              Show content
+            </Dropdown.Trigger>
+
+            {dropdownContent}
+          </Dropdown>
         </StoryItem>
 
         <StoryItem
-          title="Dropdown Menu"
-          description="A dropdown menu with an outline button and full width">
-          <DropdownMenu fullWidth type="outline" value="Actions" downIcon shouldDisplay items={assets.getDropdownItems()}>
-            Actions
-          </DropdownMenu>
-        </StoryItem>
+          title="Dropdown"
+          description="..."
+        >
+          <Dropdown>
+            <Dropdown.Trigger button>
+              Show content
+            </Dropdown.Trigger>
 
-        <StoryItem
-          title="Dropdown Menu"
-          description="A dropdown menu with an active item">
-          <DropdownMenu fullWidth type="outline" value="Actions" downIcon shouldDisplay items={assets.getDropdownItemsWithActive()}>
-            Actions
-          </DropdownMenu>
-        </StoryItem>
+            {dropdownContent}
+          </Dropdown>
 
-        <StoryItem
-          title="Dropdown without a button"
-          description="A link that opens a dropdown.">
-          <DropdownMenu type="link" caret shouldDisplay items={assets.getDropdownItemsWithSeparator()}>
-            Actions
-          </DropdownMenu>
-        </StoryItem>
+          <Dropdown>
+            <Dropdown.Trigger button>
+              Show content
+            </Dropdown.Trigger>
 
-        <StoryItem
-          title="Dropdown link"
-          description="A dropdown menu from a link style, without a caret">
-          <DropdownMenu
-            caret={false}
-            type="link"
-            direction="up"
-            shouldDisplay
-            items={assets.getDropdownItems()}>
-              <FontAwesomeIcon style={{ fontSize: '18px' }} name="fa-cog"/>
-          </DropdownMenu>
-        </StoryItem>
-
-        <StoryItem
-          title="Dropdown link"
-          description="A dropdown menu from a link style, without a caret">
-          <SearchDropdown
-            resultsTitle="Results"
-            results={assets.getDropdownAvatar()}
-          />
+            {dropdownContent}
+          </Dropdown>
         </StoryItem>
       </div>
     );
