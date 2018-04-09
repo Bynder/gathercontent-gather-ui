@@ -1,0 +1,25 @@
+.confirmation-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  &__inner {
+    display: flex;
+  }
+  &__button {
+    margin: $layout-spacing-base/4;
+  }
+  &--show {
+    display: flex;
+  }
+}
+
+.confirmation-overlay,
+.confirmation-overlay__inner {
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}

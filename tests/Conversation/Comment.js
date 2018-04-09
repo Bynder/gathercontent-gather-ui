@@ -4,6 +4,7 @@ import Comment from '../../lib/Conversation/Comment';
 import CommentForm from '../../lib/Conversation/CommentForm';
 import Person from '../../lib/Person';
 import Button from '../../lib/Button';
+import ConfirmationOverlay from '../../lib/ConfirmationOverlay';
 
 describe('Comment', () => {
   let wrapper;
@@ -131,13 +132,10 @@ describe('Comment', () => {
   });
 
   test('renders the removal confirmation', () => {
-    const container = wrapper.find('.conversation__confirmation');
-    const buttons = container.find(Button);
-    expect(buttons).toHaveLength(2);
-    expect(buttons.first().prop('clickHandler')).toEqual(
+    expect(wrapper.find(ConfirmationOverlay).prop('cancel')).toEqual(
       wrapper.instance().toggleRemovalConfirmation
     );
-    buttons.last().prop('clickHandler')();
+    wrapper.find(ConfirmationOverlay).prop('confirm')();
     expect(removeCommentSpy).toHaveBeenCalledTimes(1);
   });
 
