@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import { Dropdown, Button } from '../../lib/';
+import { Dropdown, Avatar, AvatarInformation } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 
-const dropdownContent = (
-  <Dropdown.Content>
+const createContentWithItems = props => (
+  <Dropdown.Content {...props} hasItems>
     <Dropdown.ItemGroup>
       <Dropdown.Item action={() => action('action clicked')}>
         Dropdown item 1
@@ -12,11 +12,14 @@ const dropdownContent = (
       <Dropdown.Item action={() => action('action clicked')}>
         Dropdown item 2
       </Dropdown.Item>
+      <Dropdown.Item action={() => action('action clicked')}>
+        Dropdown item 3
+      </Dropdown.Item>
     </Dropdown.ItemGroup>
 
     <Dropdown.ItemGroup>
       <Dropdown.Item action={() => action('action clicked')} danger>
-        Dropdown item 3
+        Danger dropdown item
       </Dropdown.Item>
     </Dropdown.ItemGroup>
   </Dropdown.Content>
@@ -28,43 +31,98 @@ storiesOf('Components', module)
       <div>
         <StoryItem
           title="Dropdown"
-          description="..."
+          description="A dropdown contains a trigger and content. Both can be take any form."
         >
           <Dropdown>
             <Dropdown.Trigger>
-              Show content
+              <strong>Click on me to show the dropdown</strong>
             </Dropdown.Trigger>
 
-            {dropdownContent}
-          </Dropdown>
-
-          <Dropdown>
-            <Dropdown.Trigger>
-              Show content
-            </Dropdown.Trigger>
-
-            {dropdownContent}
+            <Dropdown.Content>
+              <Avatar
+                url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+              >
+                <AvatarInformation
+                  email="heythere@lol.com"
+                  name="Mr Ben"
+                />
+              </Avatar>
+            </Dropdown.Content>
           </Dropdown>
         </StoryItem>
 
         <StoryItem
-          title="Dropdown"
-          description="..."
+          title="Dropdown with Button triggers"
+          description="Triggers can also use the Button component, which is common."
         >
           <Dropdown>
-            <Dropdown.Trigger button>
+            <Dropdown.Trigger useButton>
               Show content
             </Dropdown.Trigger>
 
-            {dropdownContent}
+            <Dropdown.Content>
+              {(showContent) =>
+                <button tabIndex={showContent ? 0 : -1}>Focusable element</button>
+              }
+            </Dropdown.Content>
+          </Dropdown>
+        </StoryItem>
+
+        <StoryItem
+          title="Dropdown with different alignments"
+          description="The dropdown content can be aligned to different points of the trigger."
+        >
+          <Dropdown>
+            <Dropdown.Trigger useButton>
+              Left alignment
+            </Dropdown.Trigger>
+
+            {createContentWithItems()}
           </Dropdown>
 
           <Dropdown>
-            <Dropdown.Trigger button>
-              Show content
+            <Dropdown.Trigger useButton>
+              Centre alignment
             </Dropdown.Trigger>
 
-            {dropdownContent}
+            {createContentWithItems({ centre: true })}
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Trigger useButton>
+              Right alignment
+            </Dropdown.Trigger>
+
+            {createContentWithItems({ right: true })}
+          </Dropdown>
+        </StoryItem>
+
+        <StoryItem
+          title="Dropdown with top alignment"
+          description="The dropdown content can also be vertically aligned so it appears above the trigger."
+        >
+          <Dropdown>
+            <Dropdown.Trigger useButton>
+              Top & left alignment
+            </Dropdown.Trigger>
+
+            {createContentWithItems({ top: true })}
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Trigger useButton>
+              Top & centre alignment
+            </Dropdown.Trigger>
+
+            {createContentWithItems({ top: true, centre: true })}
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Trigger useButton>
+              Top & right alignment
+            </Dropdown.Trigger>
+
+            {createContentWithItems({ top: true, right: true })}
           </Dropdown>
         </StoryItem>
       </div>
