@@ -4,24 +4,24 @@ import { Dropdown, Avatar, AvatarInformation } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 
 const createContentWithItems = props => (
-  <Dropdown.Content {...props} hasItems>
-    <Dropdown.ItemGroup>
-      <Dropdown.Item action={() => action('action clicked')}>
+  <Dropdown.Content {...props} collapse>
+    <Dropdown.ActionGroup>
+      <Dropdown.Action action={() => action('action clicked')}>
         Dropdown item 1
-      </Dropdown.Item>
-      <Dropdown.Item action={() => action('action clicked')}>
+      </Dropdown.Action>
+      <Dropdown.Action action={() => action('action clicked')}>
         Dropdown item 2
-      </Dropdown.Item>
-      <Dropdown.Item action={() => action('action clicked')}>
+      </Dropdown.Action>
+      <Dropdown.Action action={() => action('action clicked')}>
         Dropdown item 3
-      </Dropdown.Item>
-    </Dropdown.ItemGroup>
+      </Dropdown.Action>
+    </Dropdown.ActionGroup>
 
-    <Dropdown.ItemGroup>
-      <Dropdown.Item action={() => action('action clicked')} danger>
+    <Dropdown.ActionGroup>
+      <Dropdown.Action action={() => action('action clicked')} danger>
         Danger dropdown item
-      </Dropdown.Item>
-    </Dropdown.ItemGroup>
+      </Dropdown.Action>
+    </Dropdown.ActionGroup>
   </Dropdown.Content>
 );
 
@@ -103,7 +103,7 @@ storiesOf('Components', module)
         >
           <Dropdown>
             <Dropdown.Trigger useButton>
-              Top & left alignment
+              Top left alignment
             </Dropdown.Trigger>
 
             {createContentWithItems({ top: true })}
@@ -111,7 +111,7 @@ storiesOf('Components', module)
 
           <Dropdown>
             <Dropdown.Trigger useButton>
-              Top & centre alignment
+              Top centre alignment
             </Dropdown.Trigger>
 
             {createContentWithItems({ top: true, centre: true })}
@@ -119,7 +119,7 @@ storiesOf('Components', module)
 
           <Dropdown>
             <Dropdown.Trigger useButton>
-              Top & right alignment
+              Top right alignment
             </Dropdown.Trigger>
 
             {createContentWithItems({ top: true, right: true })}

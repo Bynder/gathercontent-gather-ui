@@ -23,7 +23,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 }
 
 .dropdown__trigger,
-.dropdown__item-gc {
+.dropdown__action {
   background: none;
   padding: 0;
   border: 0;
@@ -75,7 +75,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   bottom: 100%;
 }
 
-.dropdown__item-gc {
+.dropdown__action {
   display: block;
   white-space: nowrap;
   text-align: left;
@@ -90,15 +90,15 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   }
 }
 
-.dropdown__item-group {
+.dropdown__action-group {
   padding: $layout-spacing-base/4 0;
 
-  + .dropdown__item-group {
+  + .dropdown__action-group {
     border-top: $dropdown-border;
   }
 }
 
-.dropdown__item-gc--danger {
+.dropdown__action--danger {
   color: $primary-red;
 
   &:hover,
@@ -107,4 +107,3 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
     color: white;
   }
 }
-
