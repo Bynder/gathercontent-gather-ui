@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$dropdown-border: 1px solid $neutral-light !default;
+$dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.dropdown-gc,
+.dropdown__wrapper {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+
+  + .dropdown-gc {
+    margin-left: $layout-spacing-base;
+  }
+}
+
+.dropdown-gc.is-active {
+  overflow: visible;
+}
+
+.dropdown__trigger,
+.dropdown__action {
+  background: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.dropdown__content {
+  position: absolute;
+  top: -999em;
+  left: 0;
+  margin: $layout-spacing-base/4 0;
+  opacity: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: $shadow-base;
+  border: $dropdown-border;
+  transition: opacity $animation-time-micro;
+  transition-timing-function: $animation-curve;
+  z-index: 2;
+  padding: $layout-spacing-base/2;
+}
+
+.dropdown__content--collapse {
+  padding: 0;
+}
+
+.dropdown__content--centre {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown__content--right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown__content--top {
+  top: auto;
+  bottom: -999em;
+}
+
+.dropdown__content.is-active {
+  opacity: 1;
+  top: 100%;
+}
+
+.dropdown__content--top.is-active {
+  top: auto;
+  bottom: 100%;
+}
+
+.dropdown__action {
+  display: block;
+  white-space: nowrap;
+  text-align: left;
+  padding: $dropdown-item-padding;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    color: $neutral-darkest;
+    background: $neutral-lightest;
+    outline: none;
+  }
+}
+
+.dropdown__action-group {
+  padding: $layout-spacing-base/4 0;
+
+  + .dropdown__action-group {
+    border-top: $dropdown-border;
+  }
+}
+
+.dropdown__action--danger {
+  color: $primary-red;
+
+  &:hover,
+  &:focus {
+    background: $primary-red;
+    color: white;
+  }
+}
