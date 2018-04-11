@@ -92,6 +92,10 @@ $conversation-meta-text-color: $neutral-base !default;
   color: $neutral-dark;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  .mention {
+    background: rgba( $primary-purple, .3 );
+    padding: $layout-spacing-base/10;
+  }
 }
 
 .conversation__actions {

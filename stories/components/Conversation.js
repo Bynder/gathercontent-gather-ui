@@ -19,7 +19,7 @@ const mockUserNoAvatar = {
 
 const mockComments = [{
   id: 'comment-id-1',
-  body: 'Here is a decent size comment that was created by someone who wanted to comment.',
+  body: 'Here is a decent size comment that was @waffle created by someone @hey123 who wanted to comment. @hey dont highlight@thisemail.com',
   createdAt: '2017-06-08 09:56:41',
   author: mockUser,
   createdBy: 2

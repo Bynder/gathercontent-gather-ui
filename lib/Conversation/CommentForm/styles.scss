@@ -7,7 +7,11 @@ $comment-form-padding: $layout-spacing-base/2;
    Styles
    ========================================================================== */
 .comment-form--inline {
+  .comment-form__input-wrapper {
+    padding: 0;
+  }
   .comment-form__input,
+  .comment-form__input__input,
   .comment-form__input:focus {
     padding: 0 $layout-spacing-base/2 0 0;
     border: 0;
@@ -26,19 +30,31 @@ $comment-form-padding: $layout-spacing-base/2;
 .comment-form__input {
   border: 1px solid $color-border-base;
   border-radius: 5px;
-  padding: $comment-form-padding;
+  padding: $comment-form-padding 0;
   width: 100%;
   font-size: $typo-size-slight;
   color: $neutral-dark;
+  &__input {
+    border: none;
+    padding: $comment-form-padding;
+    &:focus {
+      outline: none;
+    }
+  }
   &:focus {
     outline-color: $primary-blue;
   }
 }
 
 .comment-form__body {
-  display: flex;
-  align-items: flex-start;
   margin: 0 0 $comment-form-padding;
+  .comment-form__avatar {
+    position: absolute;
+  }
+}
+.comment-form__input-wrapper {
+  width: 100%;
+  padding-left: $layout-spacing-base * 2;
 }
 
 .comment-form__actions {
@@ -87,3 +103,32 @@ $comment-form-padding: $layout-spacing-base/2;
     padding-bottom: 0;
   }
  }
+
+.comment-form__input__suggestions {
+  &__list {
+    position: absolute;
+    top: 15px;
+    background-color: white;
+    border: 1px solid $color-border-base;
+    &:before {
+      content: 'Mention...';
+      width: 100%;
+      padding:  $layout-spacing-base / 4;
+      display: block;
+    }
+  }
+  &__item {
+    &--focused,
+    &:focus,
+    &:hover {
+      background: $neutral-lightest;
+    }
+  }
+  .avatar__wrapper {
+    cursor: pointer;
+    padding: $layout-spacing-base / 4;
+    border-top: 1px solid $color-border-base;
+
+  }
+
+}
