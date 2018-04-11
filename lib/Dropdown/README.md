@@ -8,6 +8,7 @@ A dropdown component with compounded components to render triggers and the conte
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | children            | Node          | N/A       | Yes      | A child node                                                                  |
+| onToggle            | Func          | () => {}  | No       | A function which is called each time the visibility is toggled.               |
 
 ### Context (GATHER_UI_DROPDOWN)
 
