@@ -33,7 +33,7 @@ storiesOf('Components', module)
           title="Dropdown"
           description="A dropdown contains a trigger and content. Both can be take any form."
         >
-          <Dropdown>
+          <Dropdown id="id-1">
             <Dropdown.Trigger>
               <strong>Click on me to show the dropdown</strong>
             </Dropdown.Trigger>
@@ -55,7 +55,7 @@ storiesOf('Components', module)
           title="Dropdown with Button triggers"
           description="Triggers can also use the Button component, which is common."
         >
-          <Dropdown>
+          <Dropdown id="id-2">
             <Dropdown.Trigger useButton>
               Show content
             </Dropdown.Trigger>
@@ -72,7 +72,7 @@ storiesOf('Components', module)
           title="Dropdown with different alignments"
           description="The dropdown content can be aligned to different points of the trigger."
         >
-          <Dropdown>
+          <Dropdown id="id-3">
             <Dropdown.Trigger useButton>
               Left alignment
             </Dropdown.Trigger>
@@ -80,7 +80,7 @@ storiesOf('Components', module)
             {createContentWithItems()}
           </Dropdown>
 
-          <Dropdown>
+          <Dropdown id="id-4">
             <Dropdown.Trigger useButton>
               Centre alignment
             </Dropdown.Trigger>
@@ -88,7 +88,7 @@ storiesOf('Components', module)
             {createContentWithItems({ centre: true })}
           </Dropdown>
 
-          <Dropdown>
+          <Dropdown id="id-5">
             <Dropdown.Trigger useButton>
               Right alignment
             </Dropdown.Trigger>
@@ -101,7 +101,7 @@ storiesOf('Components', module)
           title="Dropdown with top alignment"
           description="The dropdown content can also be vertically aligned so it appears above the trigger."
         >
-          <Dropdown>
+          <Dropdown id="id-6">
             <Dropdown.Trigger useButton>
               Top left alignment
             </Dropdown.Trigger>
@@ -109,7 +109,7 @@ storiesOf('Components', module)
             {createContentWithItems({ top: true })}
           </Dropdown>
 
-          <Dropdown>
+          <Dropdown id="id-7">
             <Dropdown.Trigger useButton>
               Top centre alignment
             </Dropdown.Trigger>
@@ -117,7 +117,7 @@ storiesOf('Components', module)
             {createContentWithItems({ top: true, centre: true })}
           </Dropdown>
 
-          <Dropdown>
+          <Dropdown id="id-8">
             <Dropdown.Trigger useButton>
               Top right alignment
             </Dropdown.Trigger>
