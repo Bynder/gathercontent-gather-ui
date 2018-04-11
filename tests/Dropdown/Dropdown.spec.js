@@ -9,13 +9,18 @@ import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 describe('Dropdown', () => {
   let wrapper;
+  const onToggleMock = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
-      <Dropdown>
+      <Dropdown onToggle={onToggleMock}>
         <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
       </Dropdown>
     );
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks()
   });
 
   test('renders children', () => {
@@ -64,5 +69,11 @@ describe('Dropdown', () => {
     expect(wrapper.hasClass('is-active')).toBe(false);
     wrapper.instance().toggleShowContent();
     expect(wrapper.hasClass('is-active')).toBe(true);
+  });
+
+  test('firing the onToggle prop when toggling', () => {
+    expect(onToggleMock).toHaveBeenCalledTimes(0);
+    wrapper.instance().toggleShowContent();
+    expect(onToggleMock).toHaveBeenCalledTimes(1);
   });
 });
