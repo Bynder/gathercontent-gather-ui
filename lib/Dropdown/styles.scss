@@ -1,7 +1,6 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$dropdown-border: 1px solid $neutral-light !default;
 $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 
 /* ==========================================================================
@@ -39,7 +38,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   background: white;
   border-radius: 4px;
   box-shadow: $shadow-base;
-  border: $dropdown-border;
+  border: 1px solid $neutral-light;
   transition: opacity $animation-time-micro;
   transition-timing-function: $animation-curve;
   z-index: 2;
@@ -94,7 +93,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   padding: $layout-spacing-base/4 0;
 
   + .dropdown__action-group {
-    border-top: $dropdown-border;
+    border-top: 1px solid $neutral-light;
   }
 }
 

@@ -11,9 +11,12 @@ describe('Dropdown Content', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Dropdown.Content>Content text</Dropdown.Content>, {
-      context
-    });
+    wrapper = shallow(
+      <Dropdown.Content className="test">Content text</Dropdown.Content>,
+      {
+        context
+      }
+    );
   });
 
   test('rendering children', () => {
@@ -21,6 +24,8 @@ describe('Dropdown Content', () => {
   });
 
   test('rendering all modifiers', () => {
+    expect(wrapper.hasClass('test')).toBe(true);
+
     wrapper.setContext({
       [GATHER_UI_DROPDOWN]: {
         showContent: true
