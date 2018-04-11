@@ -84,8 +84,8 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 
   &:hover,
   &:focus {
-    color: #111823;
-    background: #f9f9f9;
+    color: $neutral-darkest;
+    background: $neutral-lightest;
     outline: none;
   }
 }

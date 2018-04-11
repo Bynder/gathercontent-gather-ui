@@ -13,14 +13,14 @@ describe('Dropdown', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Dropdown onToggle={onToggleMock}>
+      <Dropdown onToggle={onToggleMock} id="id-1">
         <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
       </Dropdown>
     );
   });
 
   afterEach(() => {
-    jest.resetAllMocks()
+    jest.resetAllMocks();
   });
 
   test('renders children', () => {
@@ -32,8 +32,7 @@ describe('Dropdown', () => {
     expect(wrapper.instance().getChildContext()).toEqual({
       [GATHER_UI_DROPDOWN]: {
         showContent: true,
-        toggleShowContent: wrapper.instance().toggleShowContent,
-        setShowContent: wrapper.instance().setShowContent
+        toggleShowContent: wrapper.instance().toggleShowContent
       }
     });
   });
@@ -73,7 +72,41 @@ describe('Dropdown', () => {
 
   test('firing the onToggle prop when toggling', () => {
     expect(onToggleMock).toHaveBeenCalledTimes(0);
+
     wrapper.instance().toggleShowContent();
     expect(onToggleMock).toHaveBeenCalledTimes(1);
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'ACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
+
+    wrapper.instance().toggleShowContent();
+    expect(onToggleMock).toHaveBeenCalledTimes(2);
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'UNACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
+
+    wrapper.instance().setShowContent(true);
+    expect(onToggleMock).toHaveBeenCalledTimes(3);
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'ACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
+
+    wrapper.instance().setShowContent(false);
+    expect(onToggleMock).toHaveBeenCalledTimes(4);
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'UNACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
   });
 });
