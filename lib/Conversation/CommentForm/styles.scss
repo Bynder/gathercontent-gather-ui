@@ -106,14 +106,17 @@ $comment-form-padding: $layout-spacing-base/2;
 
 .comment-form__input__suggestions {
   &__list {
+    min-width: 250px;
     position: absolute;
     top: 15px;
+    border-radius: 4px;
     background-color: white;
     border: 1px solid $color-border-base;
     &:before {
+      color: $neutral-base;
       content: 'Mention...';
       width: 100%;
-      padding:  $layout-spacing-base / 4;
+      padding:  $layout-spacing-base / 3;
       display: block;
     }
   }
@@ -126,9 +129,19 @@ $comment-form-padding: $layout-spacing-base/2;
   }
   .avatar__wrapper {
     cursor: pointer;
-    padding: $layout-spacing-base / 4;
+    padding: $layout-spacing-base / 3;
     border-top: 1px solid $color-border-base;
+  }
 
+  .avatar__name {
+    color: $neutral-dark;
+    font-size: $typo-size-slight;
+    font-weight: $typo-weight-semi-bold;
+  }
+
+  .avatar__email {
+    color: $neutral-base;
+    font-size: $typo-size-small;
   }
 
 }

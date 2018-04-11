@@ -93,8 +93,11 @@ $conversation-meta-text-color: $neutral-base !default;
   overflow-wrap: break-word;
   word-wrap: break-word;
   .mention {
-    background: rgba( $primary-purple, .3 );
+    background: rgba( $primary-purple, .1 );
     padding: $layout-spacing-base/10;
+    color: $primary-purple;
+    font-weight: $typo-weight-semi-bold;
+    border-radius: $conversation-border-radius;
   }
 }
 
