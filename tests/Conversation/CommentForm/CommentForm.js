@@ -1,6 +1,6 @@
+import { MentionsInput, Mention } from 'react-mentions';
 import { React, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
-import ExpandingTextArea from '../../../lib/ExpandingTextArea';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
 import ShortcutTrigger from '../../../lib/ShortcutTrigger/index';
@@ -74,20 +74,19 @@ describe('Comment Form', () => {
     expect(wrapper.find(Avatar)).toHaveLength(0);
   });
 
-  test('renders ExpandingTextArea (with correct props)', () => {
-    const input = wrapper.find(ExpandingTextArea);
+  test('renders MentionsInput (with correct props)', () => {
+    const input = wrapper.find(MentionsInput);
     expect(input).toHaveLength(1);
-    expect(input.prop('handleOnChange')).toEqual(
+    expect(input.prop('onChange')).toEqual(
       wrapper.instance().updateInputValue
     );
-    expect(input.prop('onRowCountChange')).toEqual(onRowCountChange);
-    expect(input.prop('focusOnMount')).toEqual(false);
+    expect(input.prop('autoFocus')).toEqual(false);
     expect(input.prop('value')).toEqual('');
 
     wrapper.setState({ inputValue: 'test' });
     expect(input.prop('value')).toEqual('test');
 
-    expect(input.prop('handleOnFocus')).toEqual(
+    expect(input.prop('onFocus')).toEqual(
       wrapper.instance().toggleInputHasFocus
     );
   });

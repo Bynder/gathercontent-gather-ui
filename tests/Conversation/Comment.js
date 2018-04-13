@@ -46,7 +46,7 @@ describe('Comment', () => {
   });
 
   test('renders the comment body text and passes it through the Linkify component', () => {
-    expect(wrapper.find(Linkify).prop('children')).toEqual(props.body);
+    expect(wrapper.find(Linkify).prop('children')).toEqual([props.body]);
   });
 
   test('renders the comment created at text', () => {
