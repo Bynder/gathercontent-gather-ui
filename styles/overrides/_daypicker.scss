@@ -117,13 +117,13 @@
     color: $neutral-base;
   }
 
-  .DayPicker-Day:hover {
+  .DayPicker-Day:not(.DayPicker-Day--outside):hover {
     border-color: $color-link-base;
     color: $color-link-base;
     cursor: pointer;
   }
 
-  .DayPicker-Day--past {
+  .DayPicker-Day--past:not(.DayPicker-Day--outside) {
     &:hover {
       border-color: $primary-red;
       color: $primary-red;
