@@ -1,30 +1,28 @@
 import moment from 'moment';
 import { React, shallow } from '../setup';
 import DueDateButton from '../../lib/DueDatePicker/DueDateButton';
-import Button from '../../lib/Button';
+import DropdownTrigger from '../../lib/Dropdown/DropdownTrigger';
 import Icon from '../../lib/Icon';
 
 describe('DueDateButton', () => {
   let wrapper;
-  let clickHandlerSpy;
 
   beforeEach(() => {
-    clickHandlerSpy = jest.fn();
     wrapper = shallow(
-      <DueDateButton
-        dueDate={moment().add(2, 'day')}
-        toggle={clickHandlerSpy}
-        today={moment()}
-      />
+      <DueDateButton dueDate={moment().add(2, 'day')} today={moment()} />
     );
   });
 
-  test('should render <Button /> component', () => {
-    expect(wrapper.find(Button)).toHaveLength(1);
+  test('should render <span /> component', () => {
+    expect(wrapper.find('span')).toHaveLength(1);
+  });
+
+  test('should render <DropdownTrigger /> component', () => {
+    expect(wrapper.find(DropdownTrigger)).toHaveLength(1);
   });
 
   test('should contain the due date', () => {
-    expect(wrapper.find(Button).contains('in 2 days')).toBe(true);
+    expect(wrapper.find(DropdownTrigger).contains('in 2 days')).toBe(true);
     expect(wrapper.text()).toEqual(
       expect.stringContaining('Due to be completed')
     );
@@ -42,13 +40,6 @@ describe('DueDateButton', () => {
     expect(wrapper.hasClass('color-overdue')).toBe(true);
     expect(wrapper.find(Icon)).toHaveLength(1);
     expect(wrapper.find(Icon).prop('name')).toEqual('warning');
-    expect(wrapper.find(Button).contains('3 days ago')).toBe(true);
-  });
-
-  test('clickHandler should get called on click', () => {
-    wrapper.find(Button).prop('clickHandler')();
-    wrapper.setProps({ dueDate: null });
-    wrapper.find(Button).prop('clickHandler')();
-    expect(clickHandlerSpy).toHaveBeenCalledTimes(2);
+    expect(wrapper.find(DropdownTrigger).contains('3 days ago')).toBe(true);
   });
 });
