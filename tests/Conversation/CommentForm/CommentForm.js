@@ -1,9 +1,9 @@
-import { MentionsInput, Mention } from 'react-mentions';
 import { React, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
 import ShortcutTrigger from '../../../lib/ShortcutTrigger/index';
+import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
 
 describe('Comment Form', () => {
   let wrapper;
@@ -33,6 +33,7 @@ describe('Comment Form', () => {
         onCancel={onCancelSpy}
         onCommentChange={onCommentChangeSpy}
         onRowCountChange={onRowCountChange}
+        users={[]}
       />
     );
   });
@@ -57,6 +58,14 @@ describe('Comment Form', () => {
     expect(onSubmitSpy).toHaveBeenCalledTimes(1);
   });
 
+  test('removes mention markup onSubmit', () => {
+    wrapper.setState({ inputValue: 'testing testing @[waffles]' });
+    const preventDefaultSpy = jest.fn();
+    const event = { preventDefault: preventDefaultSpy };
+    wrapper.instance().onSubmit(event);
+    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles');
+  });
+
   test('calls props.onCancel', () => {
     wrapper.instance().cancelComment();
     expect(onCancelSpy).toHaveBeenCalledTimes(1);
@@ -74,21 +83,23 @@ describe('Comment Form', () => {
     expect(wrapper.find(Avatar)).toHaveLength(0);
   });
 
-  test('renders MentionsInput (with correct props)', () => {
-    const input = wrapper.find(MentionsInput);
+  test('renders CommentFormInput (with correct props)', () => {
+    const input = wrapper.find(CommentFormInput);
     expect(input).toHaveLength(1);
-    expect(input.prop('onChange')).toEqual(
+    expect(input.prop('handleOnChange')).toEqual(
       wrapper.instance().updateInputValue
     );
-    expect(input.prop('autoFocus')).toEqual(false);
-    expect(input.prop('value')).toEqual('');
+    expect(input.prop('focusOnMount')).toEqual(false);
+    expect(input.prop('inputValue')).toEqual('');
 
     wrapper.setState({ inputValue: 'test' });
-    expect(input.prop('value')).toEqual('test');
+    expect(input.prop('inputValue')).toEqual('test');
 
-    expect(input.prop('onFocus')).toEqual(
+    expect(input.prop('handleOnFocus')).toEqual(
       wrapper.instance().toggleInputHasFocus
     );
+
+    expect(input.prop('users')).toEqual([]);
   });
 
   test('renders CommentFormActions (with correct props)', () => {
