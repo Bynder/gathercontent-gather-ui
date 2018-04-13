@@ -32,6 +32,7 @@ describe('DueDatePicker', () => {
     expect(wrapper.find(DayPicker)).toHaveLength(1);
     expect(wrapper.find(Dropdown)).toHaveLength(1);
     expect(wrapper.find(DropdownContent)).toHaveLength(1);
+    expect(wrapper.find('.duedate__submit')).toHaveLength(1);
   });
 
   test('container has completed class when prop passed', () => {
@@ -46,12 +47,6 @@ describe('DueDatePicker', () => {
         .find('.duedate__container')
         .hasClass('duedate__container--completed')
     ).toBe(true);
-  });
-
-  test('displays set due date buttons when changed state is true', () => {
-    expect(wrapper.find('.duedate__submit')).toHaveLength(0);
-    wrapper.setState({ changed: true });
-    expect(wrapper.find('.duedate__submit')).toHaveLength(1);
   });
 
   test('click handlers should be called', () => {

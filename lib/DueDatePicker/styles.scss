@@ -111,6 +111,10 @@ $duedate-timepicker-height: 220px !default;
   padding: $layout-spacing-base / 4 $layout-spacing-base / 2.5;
 }
 
+.duedate__submit--hidden {
+  display: none;
+}
+
 /* DueDate Time picker dropdown */
 
 .duedate__dropdown .duedate__time-picker {
