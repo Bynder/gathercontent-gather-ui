@@ -73,7 +73,7 @@ $duedate-timepicker-height: 220px !default;
   color: $neutral-dark;
 }
 
-.duedate__header--not-set {
+.duedate__header--date-not-set {
   color: $neutral-base;
 }
 
@@ -176,6 +176,10 @@ $duedate-timepicker-height: 220px !default;
   position: absolute;
   top: $layout-spacing-base;
   right: 0;
+}
+
+.duedate__remove--not-set {
+  opacity: 0;
 }
 
 .duedate__remove .icon {
