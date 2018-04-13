@@ -1,10 +1,11 @@
 import DayPicker from 'react-day-picker';
 import moment from 'moment';
-import { Popover, Overlay } from 'react-bootstrap/lib';
 import { React, shallow } from '../setup';
 import DueDatePicker from '../../lib/DueDatePicker';
 import DueDateButton from '../../lib/DueDatePicker/DueDateButton';
 import DueDateHeader from '../../lib/DueDatePicker/DueDateHeader';
+import Dropdown from '../../lib/Dropdown';
+import DropdownContent from '../../lib/Dropdown/DropdownContent';
 
 describe('DueDatePicker', () => {
   let wrapper;
@@ -29,8 +30,8 @@ describe('DueDatePicker', () => {
     expect(wrapper.find(DueDateButton)).toHaveLength(1);
     expect(wrapper.find(DueDateHeader)).toHaveLength(1);
     expect(wrapper.find(DayPicker)).toHaveLength(1);
-    expect(wrapper.find(Popover)).toHaveLength(1);
-    expect(wrapper.find(Overlay)).toHaveLength(1);
+    expect(wrapper.find(Dropdown)).toHaveLength(1);
+    expect(wrapper.find(DropdownContent)).toHaveLength(1);
   });
 
   test('container has completed class when prop passed', () => {
