@@ -2,6 +2,8 @@
    Config
    ========================================================================== */
 $comment-form-padding: $layout-spacing-base/2;
+$mention-suggestions-min-width: 250px;
+$mention-suggestions-max-height: 500px;
 
 /* ==========================================================================
    Styles
@@ -106,10 +108,12 @@ $comment-form-padding: $layout-spacing-base/2;
 
 .comment-form__input__suggestions {
   &__list {
-    min-width: 250px;
+    min-width: $mention-suggestions-min-width;
     position: absolute;
-    top: 15px;
-    border-radius: 4px;
+    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    max-height: $mention-suggestions-max-height;
+    overflow-y: scroll;
+    border-radius: $conversation-border-radius;
     background-color: white;
     border: 1px solid $color-border-base;
     &:before {
