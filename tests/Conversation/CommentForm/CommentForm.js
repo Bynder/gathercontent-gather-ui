@@ -14,7 +14,6 @@ describe('Comment Form', () => {
 
   const props = {
     id: '123',
-    isSubmitting: false,
     author: {
       name: 'Bruce',
       avatar: 'url/of/image',
@@ -104,15 +103,10 @@ describe('Comment Form', () => {
 
   test('renders CommentFormActions (with correct props)', () => {
     wrapper.setProps({ value: 'test' });
-    let actions = wrapper.find(CommentFormActions);
+    const actions = wrapper.find(CommentFormActions);
     expect(actions).toHaveLength(1);
     expect(actions.prop('onSubmit')).toEqual(wrapper.instance().onSubmit);
     expect(actions.prop('onCancel')).toEqual(wrapper.instance().cancelComment);
-    expect(actions.prop('isSubmitting')).toEqual(false);
-
-    wrapper.setProps({ isSubmitting: true });
-    actions = wrapper.find(CommentFormActions);
-    expect(actions.prop('isSubmitting')).toEqual(true);
   });
 
   test('updates the input value', () => {

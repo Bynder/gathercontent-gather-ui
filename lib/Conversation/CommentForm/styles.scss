@@ -86,26 +86,6 @@ $mention-suggestions-max-height: 500px;
    State Styles
    ========================================================================== */
 
- .is-active .is-submitting {
-   .icon svg {
-     height:$layout-spacing-base;
-   }
-   .icon path {
-     fill: white;
-   }
- }
-
- .comment-form.is-submitting {
-  .comment-form__input {
-    background-color: $neutral-light;
-  }
-  .comment-form__button {
-    background: $color-btn-primary--bg;
-    vertical-align: bottom;
-    padding-bottom: 0;
-  }
- }
-
 .comment-form__input__suggestions {
   &__list {
     min-width: $mention-suggestions-min-width;

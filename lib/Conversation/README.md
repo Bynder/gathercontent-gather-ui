@@ -23,7 +23,6 @@ A collection of components used to render conversations
 | showComments        | Boolean       | `true`    | No       | Determines whether to show the conversation in the expanded format.           |
 | focusOnMount        | Boolean       | `true`    | No       | Determines whether to have the form in focus when the component mounts.       |
 | hasError            | Boolean       | `false`   | No       | Determines whether to show an error Notification.                             |
-| isSubmitting        | Boolean       | `false`   | No       | Determines whether to show a loading state.                                   |
 
 ```
 <Conversation
@@ -39,7 +38,6 @@ A collection of components used to render conversations
   showComments={someBool}
   focusOnMount={someBool}
   hasError={someBool}
-  isSubmitting={someBool}
   placeholder="some string"
 />
 ```
