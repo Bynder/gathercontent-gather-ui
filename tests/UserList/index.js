@@ -126,4 +126,12 @@ describe('UserList', () => {
     wrapper.setProps({ showUserControls: false });
     expect(wrapper.find('.show-search')).toHaveLength(0);
   });
+
+  test('calls props.handleClearResults when closing the SearchDropdown', () => {
+    expect(handleClearResultsSpy).not.toHaveBeenCalled();
+    wrapper.find('.show-search').simulate('click');
+    expect(handleClearResultsSpy).not.toHaveBeenCalled();
+    wrapper.find('.show-search').simulate('click');
+    expect(handleClearResultsSpy).toHaveBeenCalled();
+  });
 });
