@@ -342,7 +342,18 @@ $field-data-color: $neutral-base !default;
     margin-bottom: $layout-spacing-base * 0.25;
   }
 
-  *:last-of-type {
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    td {
+      border: 1px solid $neutral-dark;
+      padding: 2px;
+      width: 100%;
+    }
+  }
+
+  *:last-child {
     margin-bottom: 0;
   }
 
