@@ -92,3 +92,29 @@ $borderColour: #F8FBFC;
 .toggle-switch--inline + label {
   display: inline-block;
 }
+
+.size-small {
+  .toggle-switch + .toggle-switch__label {
+    width: 30px;
+    height: 20px;
+    &:after {
+      top: 2px;
+      left: 2px;
+      bottom: 4px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .toggle-switch:checked + .toggle-switch__label:after {
+    margin-left: 10px;
+  }
+  .toggle-wrapper__label {
+    margin-top: 1px;
+  }
+}
+
+.is-checked {
+  .toggle-switch + .toggle-switch__label {
+    background-color: $primary-green;
+  }
+}

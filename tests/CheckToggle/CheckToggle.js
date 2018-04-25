@@ -1,5 +1,5 @@
-import { React, shallow } from './setup';
-import CheckToggle from '../lib/CheckToggle/';
+import { React, shallow } from '../setup';
+import CheckToggle from '../../lib/CheckToggle/';
 
 describe('CheckToggle', () => {
   let props;
@@ -32,5 +32,20 @@ describe('CheckToggle', () => {
     const Element = shallow(<CheckToggle {...props} />);
     const label = Element.find('[data-label-id]');
     expect(label.props().htmlFor).toEqual(props.id);
+  });
+
+  test('adds a size small modifier', () => {
+    const Element = shallow(<CheckToggle {...props} />);
+    expect(Element.hasClass('size-small')).toBe(false);
+    Element.setProps({ displaySmall: true });
+    expect(Element.hasClass('size-small')).toBe(true);
+  });
+
+  test('adds a checked modifier', () => {
+    const Element = shallow(<CheckToggle {...props} />);
+    expect(Element.hasClass('is-checked')).toBe(false);
+    Element.setProps({ displayChecked: true });
+    Element.setState({ checked: true });
+    expect(Element.hasClass('is-checked')).toBe(true);
   });
 });
