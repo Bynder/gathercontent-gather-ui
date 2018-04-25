@@ -69,6 +69,13 @@ describe('Conversation', () => {
     expect(wrapper.find('.conversation').hasClass('is-active')).toBe(true);
   });
 
+  test('adds a state class of is-resolved', () => {
+    expect(wrapper.find('.conversation').hasClass('is-resolved')).toBe(false);
+
+    wrapper.setProps({ resolved: true });
+    expect(wrapper.find('.conversation').hasClass('is-resolved')).toEqual(true);
+  });
+
   test('renders a list of comments (with correct props)', () => {
     const commentList = wrapper.find(CommentList);
     expect(commentList).toHaveLength(1);
