@@ -21,6 +21,9 @@ $form-checkbox-label-size: $typo-size-lead !default;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
   display: block;
+  &.is-disabled {
+    cursor: default;
+  }
 }
 
 .form-checkbox__label--button {

@@ -1,11 +1,12 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { BlankSlate } from '../../lib';
+import keyboardSVG from '../../assets/icons/keyboard.svg';
 
 describe('Blank Slate', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <BlankSlate>
         <div className="child">I am a small child</div>
       </BlankSlate>
@@ -31,5 +32,11 @@ describe('Blank Slate', () => {
   test('renders its children', () => {
     expect(wrapper.find('.blank-slate__content')).toHaveLength(1);
     expect(wrapper.find('.child')).toHaveLength(1);
+  });
+
+  test('renders a customSVG', () => {
+    expect(wrapper.find('.blank-slate__svg--custom')).toHaveLength(0);
+    wrapper.setProps({ customSVG: keyboardSVG });
+    expect(wrapper.find('.blank-slate__svg--custom')).toHaveLength(1);
   });
 });
