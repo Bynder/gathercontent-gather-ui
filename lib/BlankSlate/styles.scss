@@ -20,18 +20,24 @@
     font-weight: normal;
   }
   &__svg {
-    width: 250px;
-    height: 200px;
+    svg {
+      width: 250px;
+      height: auto;
+    }
   }
   &--arrow {
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
     @include respond-to(small) {
       display: block;
     }
     .blank-slate__svg {
-      max-width: 170px;
-      height: auto;
+      svg {
+        max-width: 170px;
+        height: auto;
+      }
       @include respond-to(medium) {
         left: $layout-spacing-base;
         position: absolute;
