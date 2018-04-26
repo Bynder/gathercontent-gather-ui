@@ -18,6 +18,12 @@ storiesOf('Components', module)
         description="The toggle component should provide descriptive labels to indicate its current state.">
         <CheckToggle labelLeft="Label left" id="two" labelRight="Label right" />
       </StoryItem>
+
+      <StoryItem
+        title="Small Check Toggle with checked visuals"
+        description="The toggle component has a smaller size and changes once checked.">
+        <CheckToggle id="three" labelRight="Label right" displaySmall displayChecked checked />
+      </StoryItem>
       </div>
     );
   })
