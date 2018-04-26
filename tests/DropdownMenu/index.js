@@ -68,6 +68,22 @@ describe('DropdownMenu', () => {
     expect(wrapper.find('.dropup').length).toEqual(1);
   });
 
+  test('it adds a disabled class to the button when disabled prop passed', () => {
+    expect(
+      wrapper
+        .find('.dropdown-menu__button')
+        .hasClass('dropdown-menu__button-disabled')
+    ).toBe(false);
+    wrapper.setProps({
+      disabled: true
+    });
+    expect(
+      wrapper
+        .find('.dropdown-menu__button')
+        .hasClass('dropdown-menu__button-disabled')
+    ).toBe(true);
+  });
+
   test('items should default to a link type', () => {
     expect(wrapper.find('.dropdown__link').length).toEqual(2);
   });
