@@ -96,6 +96,10 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
     border-top: 1px solid $neutral-light;
   }
 }
+.dropdown__action-link {
+  color: $neutral-darkest;
+  text-decoration: none;
+}
 
 .dropdown__action--danger {
   color: $primary-red;
