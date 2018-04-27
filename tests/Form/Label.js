@@ -42,6 +42,14 @@ describe('Label', () => {
     expect(hasActiveClass).toEqual(true);
   });
 
+  test('adds an disabled state class to the label', () => {
+    wrapper.setProps({ disabled: true });
+    const hasActiveClass = wrapper
+      .find('.form-checkbox__label')
+      .hasClass('is-disabled');
+    expect(hasActiveClass).toEqual(true);
+  });
+
   test('is passed overrideLabelDefault as false, it renders a label and not a button', () => {
     wrapper.setProps({ overrideLabelDefault: false });
     expect(wrapper.find('.form-checkbox__label')).toHaveLength(1);

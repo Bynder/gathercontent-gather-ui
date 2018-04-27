@@ -129,4 +129,23 @@ describe('RadioButtonOther', () => {
     mountedWrapper.setProps({ checked: true });
     expect(mountedWrapper.instance().input).toEqual(document.activeElement);
   });
+
+  test('renders a span instead of input when disabled', () => {
+    Other = shallow(
+      <RadioButtonOther
+        name="foo"
+        id="4"
+        label="Something else"
+        value="the initial value"
+        checked
+        onTextChangeHandler={() => {}}
+        onChangeHandler={() => {}}
+      />
+    );
+
+    expect(Other.find('input[type="text"]')).toHaveLength(1);
+    Other.setProps({ disabled: true });
+    expect(Other.find('input[type="text"]')).toHaveLength(0);
+    expect(Other.find('span')).toHaveLength(1);
+  });
 });
