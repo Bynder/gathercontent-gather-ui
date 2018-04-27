@@ -35,8 +35,28 @@ storiesOf('Components', module)
           hasFormatting
         >
           <div>
-            <h1>Heading content</h1>
-            <p>The fossil record indicates that birds evolved from feathered ancestors within the theropod group, which are traditionally placed within the saurischian dinosaurs, though a 2017 paper[4] has put them in a proposed clade Ornithoscelida, along with the Ornithischia.</p>
+            <div>
+              <h1>Heading content</h1>
+              <p>The fossil record indicates that birds evolved from feathered ancestors within the theropod group, which are traditionally placed within the saurischian dinosaurs, though a 2017 paper[4] has put them in a proposed clade Ornithoscelida, along with the Ornithischia.</p>
+              <table>
+                <tr>
+                  <td>
+                    <p><strong>Heading 1</strong></p>
+                  </td>
+                  <td>
+                    <p><strong>Heading 2</strong></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Cell 1</p>
+                  </td>
+                  <td>
+                    <p>Cell 2</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
             <FieldAside>
               <div className="field__aside-action">
                 <Button
@@ -62,32 +82,35 @@ storiesOf('Components', module)
           canEdit
           actions={mockActions}
          >
-          <div>Hello world...
-          <FieldAside>
-            <div className="field__aside-action">
-              <Button
-                className="field-aside__button"
-                types={['icon-only', 'hover-transform']}
-                clickHandler={() => action('field aside action clicked')}
-              >
-                <Icon name="caretUp" size="small" />
-              </Button>
-              <Button
-                className="field-aside__button"
-                types={['icon-only', 'hover-transform']}
-                clickHandler={() => action('field aside action clicked')}
-              >
-                <Icon name="caret" size="small" />
-              </Button>
-              <Button
-                className="field-aside__button"
-                types={['icon-only', 'hover-transform']}
-                clickHandler={() => action('field aside action clicked')}
-              >
-                <Icon name="trash" size="small" />
-              </Button>
+          <div>
+            Hello world...
+            <div>
+              <FieldAside>
+                <div className="field__aside-action">
+                  <Button
+                    className="field-aside__button"
+                    types={['icon-only', 'hover-transform']}
+                    clickHandler={() => action('field aside action clicked')}
+                  >
+                    <Icon name="caretUp" size="small" />
+                  </Button>
+                  <Button
+                    className="field-aside__button"
+                    types={['icon-only', 'hover-transform']}
+                    clickHandler={() => action('field aside action clicked')}
+                  >
+                    <Icon name="caret" size="small" />
+                  </Button>
+                  <Button
+                    className="field-aside__button"
+                    types={['icon-only', 'hover-transform']}
+                    clickHandler={() => action('field aside action clicked')}
+                  >
+                    <Icon name="trash" size="small" />
+                  </Button>
+                </div>
+              </FieldAside>
             </div>
-          </FieldAside>
           </div>
          </Field>
       </StoryItem>

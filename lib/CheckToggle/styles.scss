@@ -92,3 +92,29 @@ $borderColour: #F8FBFC;
 .toggle-switch--inline + label {
   display: inline-block;
 }
+
+.size-small {
+  .toggle-switch + .toggle-switch__label {
+    width: $layout-spacing-base + $layout-spacing-base/2;
+    height: $layout-spacing-base;
+    &:after {
+      top: 2px;
+      left: 2px;
+      bottom: 4px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .toggle-switch:checked + .toggle-switch__label:after {
+    margin-left: $layout-spacing-base/2;
+  }
+  .toggle-wrapper__label {
+    margin-top: 1px;
+  }
+}
+
+.is-checked {
+  .toggle-switch + .toggle-switch__label {
+    background-color: $primary-green;
+  }
+}
