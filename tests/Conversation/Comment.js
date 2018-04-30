@@ -46,7 +46,14 @@ describe('Comment', () => {
   });
 
   test('renders the comment body text and passes it through the Linkify component', () => {
-    expect(wrapper.find(Linkify).prop('children')).toEqual(props.body);
+    expect(wrapper.find(Linkify).prop('children')).toEqual([props.body]);
+  });
+
+  test('renders the comment body with mentions highlighted', () => {
+    expect(wrapper.find('span.mention')).toHaveLength(0);
+    wrapper.setProps({ body: 'hey whats up @waffle' });
+    expect(wrapper.find('span.mention')).toHaveLength(1);
+    expect(wrapper.find('span.mention').text()).toEqual('@waffle');
   });
 
   test('renders the comment created at text', () => {

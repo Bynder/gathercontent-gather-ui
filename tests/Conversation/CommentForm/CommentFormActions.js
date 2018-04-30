@@ -60,17 +60,6 @@ describe('Comment Form Actions', () => {
     expect(onSubmitSpy).not.toHaveBeenCalled();
   });
 
-  test('adds a state class of is-submitted', () => {
-    expect(
-      wrapper.find('div.comment-form__actions').hasClass('is-submitting')
-    ).toBe(false);
-
-    wrapper.setProps({ isSubmitting: true });
-    expect(
-      wrapper.find('div.comment-form__actions').hasClass('is-submitting')
-    ).toBe(true);
-  });
-
   test('adds an inline class modifier', () => {
     expect(
       wrapper
@@ -84,12 +73,6 @@ describe('Comment Form Actions', () => {
         .find('div.comment-form__actions')
         .hasClass('comment-form__actions--inline')
     ).toBe(true);
-  });
-
-  test('adds a loading icon on submit of new conversation', () => {
-    expect(wrapper.find('Icon')).toHaveLength(0);
-    wrapper.setProps({ isSubmitting: true });
-    expect(wrapper.find('Icon')).toHaveLength(1);
   });
 
   test('adds a conversation meta element class to each action', () => {

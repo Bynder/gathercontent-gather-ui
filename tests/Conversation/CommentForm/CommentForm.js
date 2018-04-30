@@ -1,9 +1,9 @@
 import { React, mount } from '../../setup';
 import CommentForm from '../../../lib/Conversation/CommentForm';
-import ExpandingTextArea from '../../../lib/ExpandingTextArea';
 import CommentFormActions from '../../../lib/Conversation/CommentForm/CommentFormActions';
 import Avatar from '../../../lib/Avatar/index';
 import ShortcutTrigger from '../../../lib/ShortcutTrigger/index';
+import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
 
 describe('Comment Form', () => {
   let wrapper;
@@ -14,7 +14,6 @@ describe('Comment Form', () => {
 
   const props = {
     id: '123',
-    isSubmitting: false,
     author: {
       name: 'Bruce',
       avatar: 'url/of/image',
@@ -33,6 +32,7 @@ describe('Comment Form', () => {
         onCancel={onCancelSpy}
         onCommentChange={onCommentChangeSpy}
         onRowCountChange={onRowCountChange}
+        users={[]}
       />
     );
   });
@@ -57,6 +57,14 @@ describe('Comment Form', () => {
     expect(onSubmitSpy).toHaveBeenCalledTimes(1);
   });
 
+  test('removes mention markup onSubmit', () => {
+    wrapper.setState({ inputValue: 'testing testing @[waffles]' });
+    const preventDefaultSpy = jest.fn();
+    const event = { preventDefault: preventDefaultSpy };
+    wrapper.instance().onSubmit(event);
+    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles');
+  });
+
   test('calls props.onCancel', () => {
     wrapper.instance().cancelComment();
     expect(onCancelSpy).toHaveBeenCalledTimes(1);
@@ -74,35 +82,31 @@ describe('Comment Form', () => {
     expect(wrapper.find(Avatar)).toHaveLength(0);
   });
 
-  test('renders ExpandingTextArea (with correct props)', () => {
-    const input = wrapper.find(ExpandingTextArea);
+  test('renders CommentFormInput (with correct props)', () => {
+    const input = wrapper.find(CommentFormInput);
     expect(input).toHaveLength(1);
     expect(input.prop('handleOnChange')).toEqual(
       wrapper.instance().updateInputValue
     );
-    expect(input.prop('onRowCountChange')).toEqual(onRowCountChange);
     expect(input.prop('focusOnMount')).toEqual(false);
-    expect(input.prop('value')).toEqual('');
+    expect(input.prop('inputValue')).toEqual('');
 
     wrapper.setState({ inputValue: 'test' });
-    expect(input.prop('value')).toEqual('test');
+    expect(input.prop('inputValue')).toEqual('test');
 
     expect(input.prop('handleOnFocus')).toEqual(
       wrapper.instance().toggleInputHasFocus
     );
+
+    expect(input.prop('users')).toEqual([]);
   });
 
   test('renders CommentFormActions (with correct props)', () => {
     wrapper.setProps({ value: 'test' });
-    let actions = wrapper.find(CommentFormActions);
+    const actions = wrapper.find(CommentFormActions);
     expect(actions).toHaveLength(1);
     expect(actions.prop('onSubmit')).toEqual(wrapper.instance().onSubmit);
     expect(actions.prop('onCancel')).toEqual(wrapper.instance().cancelComment);
-    expect(actions.prop('isSubmitting')).toEqual(false);
-
-    wrapper.setProps({ isSubmitting: true });
-    actions = wrapper.find(CommentFormActions);
-    expect(actions.prop('isSubmitting')).toEqual(true);
   });
 
   test('updates the input value', () => {

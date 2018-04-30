@@ -2,12 +2,18 @@
    Config
    ========================================================================== */
 $comment-form-padding: $layout-spacing-base/2;
+$mention-suggestions-min-width: 250px;
+$mention-suggestions-max-height: 500px;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .comment-form--inline {
+  .comment-form__input-wrapper {
+    padding: 0;
+  }
   .comment-form__input,
+  .comment-form__input__input,
   .comment-form__input:focus {
     padding: 0 $layout-spacing-base/2 0 0;
     border: 0;
@@ -26,19 +32,31 @@ $comment-form-padding: $layout-spacing-base/2;
 .comment-form__input {
   border: 1px solid $color-border-base;
   border-radius: 5px;
-  padding: $comment-form-padding;
+  padding: $comment-form-padding 0;
   width: 100%;
   font-size: $typo-size-slight;
   color: $neutral-dark;
+  &__input {
+    border: none;
+    padding: $comment-form-padding;
+    &:focus {
+      outline: none;
+    }
+  }
   &:focus {
     outline-color: $primary-blue;
   }
 }
 
 .comment-form__body {
-  display: flex;
-  align-items: flex-start;
   margin: 0 0 $comment-form-padding;
+  .comment-form__avatar {
+    position: absolute;
+  }
+}
+.comment-form__input-wrapper {
+  width: 100%;
+  padding-left: $layout-spacing-base * 2;
 }
 
 .comment-form__actions {
@@ -68,22 +86,46 @@ $comment-form-padding: $layout-spacing-base/2;
    State Styles
    ========================================================================== */
 
- .is-active .is-submitting {
-   .icon svg {
-     height:$layout-spacing-base;
-   }
-   .icon path {
-     fill: white;
-   }
- }
+.comment-form__input__suggestions {
+  &__list {
+    min-width: $mention-suggestions-min-width;
+    position: absolute;
+    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    max-height: $mention-suggestions-max-height;
+    overflow-y: scroll;
+    border-radius: $conversation-border-radius;
+    background-color: white;
+    border: 1px solid $color-border-base;
+    &:before {
+      color: $neutral-base;
+      content: 'Mention...';
+      width: 100%;
+      padding:  $layout-spacing-base / 3;
+      display: block;
+    }
+  }
+  &__item {
+    &--focused,
+    &:focus,
+    &:hover {
+      background: $neutral-lightest;
+    }
+  }
+  .avatar__wrapper {
+    cursor: pointer;
+    padding: $layout-spacing-base / 3;
+    border-top: 1px solid $color-border-base;
+  }
 
- .comment-form.is-submitting {
-  .comment-form__input {
-    background-color: $neutral-light;
+  .avatar__name {
+    color: $neutral-dark;
+    font-size: $typo-size-slight;
+    font-weight: $typo-weight-semi-bold;
   }
-  .comment-form__button {
-    background: $color-btn-primary--bg;
-    vertical-align: bottom;
-    padding-bottom: 0;
+
+  .avatar__email {
+    color: $neutral-base;
+    font-size: $typo-size-small;
   }
- }
+
+}
