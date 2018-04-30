@@ -62,6 +62,21 @@ $dropdown-menu-font-color: $color-text-base !default;
   align-items: center;
 }
 
+.dropdown .dropdown-menu__button-disabled {
+  background: $neutral-lightest;
+  border: 1px solid $neutral-light;
+  color: $neutral-base;
+
+  &:hover {
+    text-decoration: none;
+    border: 1px solid $neutral-light;
+  }
+
+  svg path {
+    fill: $neutral-base;
+  }
+}
+
 .dropdown-menu__caret,
 .dropdown-menu__down {
   display: inline-flex;

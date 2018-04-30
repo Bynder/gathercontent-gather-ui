@@ -18,6 +18,13 @@ storiesOf('Components', module)
             Actions
           </DropdownMenu>
         </StoryItem>
+        <StoryItem
+          title="Dropdown Menu Disabled"
+          description="A dropdown menu that takes a disabled attribute">
+          <DropdownMenu value="Actions" type="outline" caret shouldDisplay items={assets.getDropdownItems()} disabled>
+            Actions
+          </DropdownMenu>
+        </StoryItem>
 
         <StoryItem
           title="Dropdown Menu"
