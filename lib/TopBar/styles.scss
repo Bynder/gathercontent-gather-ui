@@ -6,6 +6,7 @@ $top-bar-height-medium: 74px;
 $top-bar-main-breakpoint: medium;
 $top-bar-box-shadow: $shadow-base;
 $top-bar-dropdown-bottom-margin: 27px !default;
+$top-bar-zindex: 500 !default;
 
 /* ==========================================================================
    Styles
@@ -13,7 +14,7 @@ $top-bar-dropdown-bottom-margin: 27px !default;
 .top-bar {
   height: $top-bar-height;
   padding: 0;
-  z-index: 1;
+  z-index: $top-bar-zindex;
   position: relative;
   @include respond-to($top-bar-main-breakpoint) {
     height: $top-bar-height-medium;
