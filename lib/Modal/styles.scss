@@ -131,10 +131,7 @@ $modal-column-padding: $modal-padding !default;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}
-
-	.modal-header {
-		//display: block;
+		width: 100%;
 	}
 
 	.modal-body {
