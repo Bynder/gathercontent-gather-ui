@@ -26,14 +26,21 @@
 }
 
 .modal-header {
-    padding: $modal-padding;
-    display: flex;
-    align-items: baseline;
+  position: relative;
+  padding: 0;
 
   .close {
-    order: 2;
-    margin-left: auto;
+    position: absolute;
+    right: $layout-spacing-base;
+    top: 50%;
+    transform: translateY(-50%);
   }
+}
+
+.modal-header-inner {
+    padding: $modal-padding $modal-padding*2 $modal-padding $modal-padding;
+    display: inline-flex;
+    align-items: baseline;
 }
 
 .modal-content {

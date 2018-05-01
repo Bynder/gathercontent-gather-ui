@@ -79,15 +79,20 @@ $modal-column-padding: $modal-padding !default;
 .modal--center .modal-footer {
 	text-align: center;
 
+	.modal-header {
+		position: static;
+	}
+
 	.modal-title {
 		margin: 0 auto;
 	}
+}
 
-	.close {
-		position: absolute;
-		right: $modal-padding*1.5;
-		top: $modal-padding*1.5;
-	}
+.modal.modal--center .close {
+	position: absolute;
+	right: $modal-padding*1.5;
+	top: $modal-padding*1.5;
+	transform: none;
 }
 
 .modal--clear {
@@ -107,5 +112,37 @@ $modal-column-padding: $modal-padding !default;
 	.modal-footer {
 		background: none;
 		border: 0;
+	}
+}
+
+.modal--overflow {
+	.modal-dialog {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.modal-content {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.modal-header {
+		//display: block;
+	}
+
+	.modal-body {
+		flex-grow: 1;
+		overflow: scroll;
+	}
+
+	.modal-footer {
+		margin-top: auto;
 	}
 }
