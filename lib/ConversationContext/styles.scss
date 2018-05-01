@@ -26,6 +26,12 @@
       line-height: $typo-line-height-base * 1.2;
       font-weight: $typo-weight-roman;
     }
+    .file-card--highlighted,
+    .file-card--active {
+      &:hover {
+        cursor: default;
+      }
+    }
   }
   &__conversation {
     margin: $layout-spacing-base 0 0 0;
