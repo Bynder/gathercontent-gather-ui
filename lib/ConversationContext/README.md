@@ -14,7 +14,12 @@ A component which can be used to display a conversations context.
 | comments             | array         | n/a        | Yes       | The conversation comments.  |
 
 ```
-<BlankSlate fixed>
+<ConversationContext
+  label="a lovely label"
+  id="123"
+  resolved
+  comments={[{comment}, {comment}]}
+>
   <div>Some content</div>
-</BlankSlate>
+</ConversationContext>
 ```
