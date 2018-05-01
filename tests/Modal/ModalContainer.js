@@ -33,6 +33,11 @@ describe('Modal Container', () => {
     expect(wrapper.prop('className')).toEqual('test-class modal--x-large');
   });
 
+  test('extends the className prop with a overflow modifier', () => {
+    wrapper.setProps({ overflow: true });
+    expect(wrapper.prop('className')).toEqual('test-class modal--overflow');
+  });
+
   test('sets the keyboard prop to true by default', () => {
     expect(wrapper.prop('keyboard')).toEqual(true);
   });
