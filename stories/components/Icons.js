@@ -35,6 +35,7 @@ const allIcons = additionalProps => (
     <Icon name="clock" {...additionalProps} />
     <Icon name="warning" {...additionalProps} />
     <Icon name="dragHandle" {...additionalProps} />
+    <Icon name="help" {...additionalProps} />
   </div>
 );
 
