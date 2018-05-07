@@ -19,6 +19,7 @@ import downSVG from './../../assets/icons/down.svg';
 import crossSVG from './../../assets/icons/cross.svg';
 import clockSVG from './../../assets/icons/clock.svg';
 import warningSVG from './../../assets/icons/warning.svg';
+import helpSVG from './../../assets/icons/help.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -131,6 +132,11 @@ describe('Icon', () => {
   test('should render the waning icon', () => {
     wrapper.setProps({ name: 'warning' });
     expect(wrapper.find('svg').props()).toEqual(warningSVG().props);
+  });
+
+  test('should render the help icon', () => {
+    wrapper.setProps({ name: 'help' });
+    expect(wrapper.find('svg').props()).toEqual(helpSVG().props);
   });
 
   test('adds a modifier class of icon--hide-text', () => {
