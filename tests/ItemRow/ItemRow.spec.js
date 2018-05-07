@@ -20,19 +20,19 @@ describe('Item Row', () => {
   });
 
   test('renders children', () => {
-    expect(wrapper.find('.item-row-title').contains('Hello world')).toEqual(
+    expect(wrapper.find('.item-row__title').contains('Hello world')).toEqual(
       true
     );
   });
 
   test('renders an indicator', () => {
-    expect(wrapper.find('.item-row-indicator').contains('indicator')).toEqual(
+    expect(wrapper.find('.item-row__indicator').contains('indicator')).toEqual(
       true
     );
   });
 
   test('renders an label', () => {
-    expect(wrapper.find('.item-row-label').contains('label text')).toEqual(
+    expect(wrapper.find('.item-row__label').contains('label text')).toEqual(
       true
     );
   });

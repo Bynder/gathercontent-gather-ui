@@ -6,11 +6,11 @@
   padding: $layout-spacing-base/2;
 }
 
-.item-row-indicator {
+.item-row__indicator {
   display: inline-flex;
 }
 
-.item-row-title {
+.item-row__title {
   margin: $layout-spacing-base/2;
 
   a {
@@ -23,7 +23,7 @@
   }
 }
 
-.item-row-label {
+.item-row__label {
   font-size: $typo-size-small;
   text-transform: uppercase;
   margin-left: $layout-spacing-base/2;
