@@ -4,6 +4,8 @@ import StoryItem from '../styleguide/StoryItem';
 import {
   List,
   ListItem,
+  ListItemText,
+  ItemRow,
   StatusIndicator,
   Button,
   Icon,
@@ -58,86 +60,70 @@ storiesOf('Components', module)
           title="Project Name"
           action={addNewItemButton('minor', 'bottom', 'id-1', 'Add new item')}
         >
-          <ListItem title="Row title 1" />
-          <ListItem title="Row title 2" />
-          <ListItem title="Row title 3">
-            <ListItem title="Row title 4" />
-            <ListItem title="Row title 5">
-              <ListItem title="Row title 6" />
-              <ListItem title="Row title 7">
-                <ListItem title="Row title 8" />
-                <ListItem title="Row title 9">
-                  <ListItem title="Row title 10" />
-                  <ListItem title="Row title 11" />
-                  <ListItem title="Row title 12" />
-                </ListItem>
-              </ListItem>
-            </ListItem>
+          <ListItem isCurrent>
+            <ListItemText>List item text</ListItemText>
+          </ListItem>
+          <ListItem action={addNewItemButton('small', 'bottom', 'id-2', 'Add entry item')}>
+            <ListItemText>List item text</ListItemText>
+            <List>
+              <ListItemText>List item text</ListItemText>
+              <ListItemText>List item text</ListItemText>
+            </List>
           </ListItem>
         </List>
-      </StoryItem>
-
-      <StoryItem
-        title="ListItem: Indicator"
-        description="A list item can render a component as an indicator."
-      >
-        <ListItem
-          indicator={<StatusIndicator color="green" />}
-          title="Row title"
-        />
-      </StoryItem>
-
-      <StoryItem
-        title="ListItem: Title Component"
-        description="The title can be text or a component."
-      >
-        <ListItem title={overdueTitle('Row title 1', 'id-20')} />
-      </StoryItem>
-
-      <StoryItem
-        title="ListItem: Label & Action"
-        description="To support the title a label can be provided as well as a component to perform an action."
-      >
-        <ListItem
-          title="Row title"
-          label="entry parent"
-          action={addNewItemButton('small', 'bottom', 'id-2', 'Add entry item')}
-        />
-      </StoryItem>
-
-      <StoryItem
-        title="ListItem: Current"
-        description="You can highlight which item is the current one e.g. in a navigation list which link is the current page."
-      >
-        <ListItem
-          indicator={<StatusIndicator color="green" />}
-          title="Row title 1"
-          isCurrent
-        />
       </StoryItem>
 
       <StoryItem title="List: Full Example">
         <List
           title="Example Project Title"
-          action={addNewItemButton('minor-2', 'bottom', 'id-3', 'Add new item')}
+          action={addNewItemButton('minor-2', 'bottom', 'id-32365689', 'Add new item')}
           borderedRight
         >
-          <ListItem
-            indicator={statusWithTooltip('green', 'bottom', 'id-7', 'Research')}
-            title={<a href="/#">Row title 1</a>}
-            label="entry parent"
-            action={addNewItemButton('small-2', 'bottom', 'id-4', 'Add entry item')}
-          >
-            <ListItem
-              indicator={statusWithTooltip('blue', 'bottom', 'id-6', 'Review')}
-              title={<a href="/#">Row title 2</a>}
-              label="entry"
-            />
-            <ListItem
-              indicator={statusWithTooltip('orange', 'bottom', 'id-8', 'Publish')}
-              title={overdueTitle('Row title 3', 'id-920')}
-              label="entry"
-            />
+          <ListItem action={addNewItemButton('small-2', 'bottom', 'id-121212', 'Add entry item')}>
+            <ItemRow
+              indicator={statusWithTooltip('green', 'bottom', 'id-896727', 'Research')}
+              label="entry parent"
+            >
+              <a href="/#">Item name 1</a>
+            </ItemRow>
+
+            <List>
+              <ListItem>
+                <ItemRow
+                  indicator={statusWithTooltip('blue', 'bottom', 'id-12376887', 'Review')}
+                  label="entry"
+                >
+                  <a href="/#">Item name 2</a>
+                </ItemRow>
+              </ListItem>
+              <ListItem>
+                <ItemRow
+                  label="entry"
+                  indicator={statusWithTooltip('orange', 'bottom', 'id-9356342', 'Publish')}
+                >
+                  {overdueTitle('Item name 3', 'id-78978984224')}
+                </ItemRow>
+
+                <List>
+                  <ListItem>
+                    <ItemRow
+                      label="entry"
+                      indicator={statusWithTooltip('blue', 'bottom', 'id-7858757', 'Review')}
+                    >
+                      <a href="/#">Item name 4</a>
+                    </ItemRow>
+                  </ListItem>
+                  <ListItem>
+                    <ItemRow
+                      label="entry"
+                      indicator={statusWithTooltip('orange', 'bottom', 'id-4444234', 'Publish')}
+                    >
+                      {overdueTitle('Item name 5', 'id-24288448')}
+                    </ItemRow>
+                  </ListItem>
+                </List>
+              </ListItem>
+            </List>
           </ListItem>
         </List>
       </StoryItem>

@@ -1,22 +1,18 @@
 import { React, shallow } from '../setup';
-import { ListItem } from '../../lib';
+import { List, ListItem } from '../../lib';
 import Button from '../../lib/Button';
 
-describe('List Item', () => {
+describe.only('List Item', () => {
   let wrapper;
 
   const mockAction = <button>test button</button>;
 
   beforeEach(() => {
     wrapper = shallow(
-      <ListItem
-        title="title text"
-        indicator="indicator"
-        label="label text"
-        action={mockAction}
-        isCurrent
-      >
-        <ListItem title="title" />
+      <ListItem action={mockAction} isCurrent>
+        <List>
+          <ListItem>Hello world</ListItem>
+        </List>
       </ListItem>
     );
   });
@@ -24,16 +20,14 @@ describe('List Item', () => {
   afterEach(() => {});
 
   test('adds classes per prop', () => {
-    expect(wrapper.hasClass('has-indicator')).toEqual(true);
-    expect(wrapper.hasClass('has-label')).toEqual(true);
     expect(wrapper.hasClass('has-action')).toEqual(true);
-    expect(wrapper.hasClass('has-children')).toEqual(true);
+    expect(wrapper.hasClass('has-actions')).toEqual(true);
     expect(wrapper.hasClass('is-current')).toEqual(true);
   });
 
   test('adds a is-active class to the toggle children button', () => {
     expect(wrapper.find(Button).hasClass('is-active')).toEqual(false);
-    wrapper.setState({ showChildren: true });
+    wrapper.setState({ showSubList: true });
     expect(wrapper.find(Button).hasClass('is-active')).toEqual(true);
   });
 
@@ -41,30 +35,16 @@ describe('List Item', () => {
     expect(wrapper.find(Button)).toHaveLength(1);
 
     wrapper.find(Button).prop('clickHandler')();
-    expect(wrapper.state('showChildren')).toEqual(true);
+    expect(wrapper.state('showSubList')).toEqual(true);
     wrapper.find(Button).prop('clickHandler')();
-    expect(wrapper.state('showChildren')).toEqual(false);
+    expect(wrapper.state('showSubList')).toEqual(false);
 
     wrapper.setProps({ children: null });
     expect(wrapper.find(Button)).toHaveLength(0);
   });
 
-  test('renders the title', () => {
-    expect(wrapper.find('.list__item-title').contains('title text')).toEqual(
-      true
-    );
-  });
-
-  test('renders an indicator', () => {
-    expect(wrapper.find('.list__item-indicator').contains('indicator')).toEqual(
-      true
-    );
-  });
-
-  test('renders an label', () => {
-    expect(wrapper.find('.list__item-label').contains('label text')).toEqual(
-      true
-    );
+  test('renders children', () => {
+    expect(wrapper.contains('Hello world')).toEqual(true);
   });
 
   test('renders an action', () => {
