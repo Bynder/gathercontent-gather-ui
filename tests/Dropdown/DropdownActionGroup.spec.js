@@ -10,6 +10,11 @@ describe('Dropdown Action Group', () => {
     );
   });
 
+  test('rendering all modifiers', () => {
+    wrapper.setProps({ horizontal: true });
+    expect(wrapper.hasClass('dropdown__action-group--horizontal')).toBe(true);
+  });
+
   test('rendering children', () => {
     expect(wrapper.text()).toBe('Action group text');
   });
