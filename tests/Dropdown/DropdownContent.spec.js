@@ -44,6 +44,9 @@ describe('Dropdown Content', () => {
 
     wrapper.setProps({ top: true });
     expect(wrapper.hasClass('dropdown__content--top')).toBe(true);
+
+    wrapper.setProps({ fixRight: true });
+    expect(wrapper.hasClass('dropdown__content--fix-right')).toBe(true);
   });
 
   test('passing a function as a child to create a render prop', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import { Dropdown, Avatar, AvatarInformation } from '../../lib/';
+import { Dropdown, Avatar, AvatarInformation, Icon } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 
 const createContentWithItems = props => (
@@ -123,6 +123,34 @@ storiesOf('Components', module)
             </Dropdown.Trigger>
 
             {createContentWithItems({ top: true, right: true })}
+          </Dropdown>
+        </StoryItem>
+
+        <StoryItem
+          title="Dropdown with right alignment"
+          description="The dropdown content can also be horizontally aligned."
+        >
+          <Dropdown id="id-9">
+            <Dropdown.Trigger useButton>
+              fixRight alignment collapse
+            </Dropdown.Trigger>
+
+            <Dropdown.Content fixRight collapse noBackground>
+              <Dropdown.ActionGroup horizontal>
+                <Dropdown.Action action={() => action('action clicked')}>
+                  <Icon name="bulletList" />
+                </Dropdown.Action>
+                <Dropdown.Action action={() => action('action clicked')}>
+                  <Icon name="numberedList" />
+                </Dropdown.Action>
+                <Dropdown.Action action={() => action('action clicked')}>
+                  <Icon name="table" />
+                </Dropdown.Action>
+                <Dropdown.Action action={() => action('action clicked')}>
+                  <Icon name="quote" />
+                </Dropdown.Action>
+              </Dropdown.ActionGroup>
+            </Dropdown.Content>
           </Dropdown>
         </StoryItem>
       </div>

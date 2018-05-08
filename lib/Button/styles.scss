@@ -193,7 +193,8 @@ $color-btn-contained--bg: white !default;
   padding: $layout-spacing-base/4 $layout-spacing-base/2;
 }
 
-.button--icon-only {
+.button--icon-only,
+.button--icon-only-padding {
   background: none;
   border: none;
   box-shadow: none;
@@ -204,6 +205,10 @@ $color-btn-contained--bg: white !default;
   &:focus {
     outline: none;
   }
+}
+
+.button--icon-only-padding {
+  padding-left: $layout-spacing-base/4;
 }
 
 .button--icon-only-cover {
