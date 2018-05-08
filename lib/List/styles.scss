@@ -6,11 +6,24 @@ $list-border: 1px solid $color-border-base;
 /* ==========================================================================
    Styles
    ========================================================================== */
+.list {
+  width: 100%;
+
+  .list {
+    display: none;
+    order: 3;
+  }
+}
+
 .list__head {
-  display: flex;
-  align-items: center;
   padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
   border-top: $list-border;
+}
+
+.list__head-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .list__title {
@@ -27,12 +40,28 @@ $list-border: 1px solid $color-border-base;
 
 .list__item {
   position: relative;
+
+  &.has-action {
+    padding-right: $layout-spacing-base*1.5;
+
+    .list__actions {
+      margin-right: -$layout-spacing-base*1.5;
+    }
+  }
+
+  &.has-actions {
+    padding-right: $layout-spacing-base*3;
+
+    .list__actions {
+      margin-right: -$layout-spacing-base*3;
+    }
+  }
 }
 
 .list__item-content {
-  padding: $layout-spacing-base/2;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   .list .list & {
     padding-left: $layout-spacing-base*1.5;
@@ -44,6 +73,10 @@ $list-border: 1px solid $color-border-base;
 
   .list .list .list .list & {
     padding-left: $layout-spacing-base*3.5;
+  }
+
+  &.show-sub-list > .list {
+    display: block;
   }
 
   .is-current > & {
@@ -62,59 +95,34 @@ $list-border: 1px solid $color-border-base;
   }
 }
 
-.list__item-text {
-  display: flex;
-  align-items: baseline;
-}
-
-.list__item-indicator {
-  display: inline-flex;
-}
-
-.list__item-title {
-  margin-left: $layout-spacing-base/2;
-
-  a {
-    color: $color-text-base;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.list__item-label {
-  font-size: $typo-size-small;
-  text-transform: uppercase;
-  margin-left: $layout-spacing-base/2;
-}
-
 .list__actions {
   display: flex;
   align-items: center;
   margin-left: auto;
   line-height: 0;
+  order: 2;
 }
 
 .list__action {
   margin-left: $layout-spacing-base/2;
 }
 
-.list__toggle {
+.list__button {
+  padding: $layout-spacing-base/2 ($layout-spacing-base/2 - 2px);
+
   svg {
     transform: rotate(-90deg);
   }
 
-  .is-active svg {
+  &.is-active svg {
     transform: rotate(0deg);
   }
 }
 
-.list__button {
-  padding: $layout-spacing-base/2 ($layout-spacing-base/2 - 2px);
-}
-
 .list--bordered-right {
   border-right: 1px solid $color-border-base;
+}
+
+.list__item-text {
+  padding: $layout-spacing-base/2;
 }

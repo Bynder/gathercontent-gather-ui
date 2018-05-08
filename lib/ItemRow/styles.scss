@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+.item-row {
+  padding: $layout-spacing-base/2;
+}
+
+.item-row__indicator {
+  display: inline-flex;
+}
+
+.item-row__title {
+  margin: $layout-spacing-base/2;
+
+  a {
+    color: $color-text-base;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.item-row__label {
+  font-size: $typo-size-small;
+  text-transform: uppercase;
+  margin-left: $layout-spacing-base/2;
+}

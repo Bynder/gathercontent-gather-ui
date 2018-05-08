@@ -7,6 +7,7 @@ describe('StatusIndicator', () => {
   beforeEach(() => {
     wrapper = mount(
       <StatusIndicator
+        className="test"
         color="#00ff00"
         label="Review"
         actions={<div>Test Actions</div>}
@@ -74,5 +75,9 @@ describe('StatusIndicator', () => {
     expect(
       wrapper.find('.status-indicator').hasClass('status-indicator--bordered')
     ).toEqual(true);
+  });
+
+  test('adding a custom className', () => {
+    expect(wrapper.hasClass('test')).toBe(true);
   });
 });
