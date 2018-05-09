@@ -77,6 +77,21 @@ storiesOf('Components', module)
         </List>
       </StoryItem>
 
+      <StoryItem title="List (boarded)">
+        <List
+          title="Project Name"
+          action={addNewItemButton('minor', 'bottom', 'id-12312312', 'Add new item')}
+          bordered
+        >
+          <ListItem isCurrent>
+            <ListItemText>List item text</ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>List item text</ListItemText>
+          </ListItem>
+        </List>
+      </StoryItem>
+
       <StoryItem title="List: Full Example">
         <List
           title="Example Project Title"
@@ -140,6 +155,36 @@ storiesOf('Components', module)
                 </List>
               </ListItem>
             </List>
+          </ListItem>
+        </List>
+      </StoryItem>
+
+      <StoryItem title="Boarded List: Full Example">
+        <List
+          title="Project Name"
+          action={addNewItemButton('minor', 'bottom', 'id-12312312', 'Add new item')}
+          bordered
+          borderedLeft
+        >
+          <ListItem isCurrent>
+            <ListItemText>
+              <ItemRow
+                indicator={<StatusIndicator label="Approved" color="green" preText="Status:" small softLabel />}
+                stacked
+              >
+                1st August 2018, 10:32am
+              </ItemRow>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>
+              <ItemRow
+                indicator={<StatusIndicator label="Approved" color="green" preText="Status:" small softLabel />}
+                stacked
+              >
+                1st August 2018, 10:32am
+              </ItemRow>
+            </ListItemText>
           </ListItem>
         </List>
       </StoryItem>
