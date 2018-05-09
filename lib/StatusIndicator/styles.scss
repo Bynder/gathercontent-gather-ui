@@ -1,7 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$status-indicator-circle-size: $typo-size-base !default;
+$status-indicator-circle-size: $typo-size-small !default;
+$status-indicator-circle-small: $typo-size-micro !default;
 $status-indicator-horizontal-margin: .5rem !default;
 $status-indicator-bordered-border: 1px solid $color-background-light !default;
 $status-indicator-margin-left: 1.3rem !default;
@@ -13,19 +14,19 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator {
   color: $color-brand-dark;
   white-space: nowrap;
+}
 
-  .status-indicator__children {
-    color: $color-text-light;
-    font-size: $typo-size-slight;
-    margin-left: $status-indicator-margin-left;
-    font-weight: $typo-weight-semi-bold;
-    margin-top: $layout-spacing-base / 4;
-  }
+.status-indicator__label-row {
+  display: flex;
+  align-items: baseline;
+}
 
-  .status-indicator--flex {
-    display: flex;
-    align-items: center;
-  }
+.status-indicator__children {
+  color: $color-text-light;
+  font-size: $typo-size-slight;
+  margin-left: $status-indicator-margin-left;
+  font-weight: $typo-weight-semi-bold;
+  margin-top: $layout-spacing-base / 4;
 }
 
 .status-indicator__circle {
@@ -33,17 +34,14 @@ $status-indicator-margin-left: 1.3rem !default;
   border-radius: $status-indicator-circle-size;
   width: $status-indicator-circle-size;
   height: $status-indicator-circle-size;
+  margin-right: $status-indicator-horizontal-margin;
 }
 
 .status-indicator__label {
-  margin-left: $status-indicator-horizontal-margin;
-  font-size: $typo-size-lead;
-  font-weight: $typo-weight-semi-bold;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  line-height: normal;
 }
 
 .status-indicator--completed {
@@ -69,10 +67,28 @@ $status-indicator-margin-left: 1.3rem !default;
   padding-bottom: $layout-spacing-base/1.3;
 }
 
+.status-indicator__pre-text {
+  margin-right: $layout-spacing-base/3;
+}
+
 .status-indicator__description {
   white-space: initial;
   color: $color-brand-dark;
   margin-top: $layout-spacing-base / 4;
   margin-left: $status-indicator-margin-left;
   margin-bottom: $layout-spacing-base / 2.5;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+.status-indicator--small .status-indicator__circle {
+  width: $status-indicator-circle-small;
+  height: $status-indicator-circle-small;
+}
+
+.status-indicator--soft-label .status-indicator__label {
+  font-size: $typo-size-slight;
+  font-weight: $typo-weight-roman;
+  margin: 0;
 }

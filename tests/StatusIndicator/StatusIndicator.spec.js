@@ -80,4 +80,14 @@ describe('StatusIndicator', () => {
   test('adding a custom className', () => {
     expect(wrapper.hasClass('test')).toBe(true);
   });
+
+  test('adding the soft label modifier', () => {
+    wrapper.setProps({ softLabel: true });
+    expect(wrapper.hasClass('status-indicator--soft-label')).toBe(true);
+  });
+
+  test('adding the small modifier', () => {
+    wrapper.setProps({ small: true });
+    expect(wrapper.hasClass('status-indicator--small')).toBe(true);
+  });
 });
