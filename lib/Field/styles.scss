@@ -65,6 +65,7 @@ $field-data-color: $neutral-base !default;
   padding: $field-spacing-base 0 0 0;
   border-top: 1px solid $neutral-light;
   transition: all $animation-time-micro ease;
+  white-space: pre-line;
 }
 
 .field__content {
