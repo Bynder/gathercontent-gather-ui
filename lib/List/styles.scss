@@ -90,7 +90,7 @@ $list-border: 1px solid $color-border-base;
     }
 
     & .color-overdue a {
-    color: $primary-red;
+      color: $primary-red;
     }
   }
 }
@@ -119,10 +119,52 @@ $list-border: 1px solid $color-border-base;
   }
 }
 
-.list--bordered-right {
-  border-right: 1px solid $color-border-base;
+.list__item-text {
+  position: relative;
+  padding: $layout-spacing-base/2;
 }
 
-.list__item-text {
-  padding: $layout-spacing-base/2;
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+.list--bordered-right {
+  border-right: $list-border;
+}
+
+.list--bordered-left {
+  border-left: $list-border;
+}
+
+.list--bordered .list__head {
+  padding: $layout-spacing-base;
+  border-bottom: $list-border;
+}
+
+.list--bordered .list__body {
+  margin: 0;
+}
+
+.list--bordered .list__item-text {
+  border-bottom: $list-border;
+  width: 100%;
+}
+
+.list--bordered .is-current > .list__item-content > .list__item-text {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $primary-blue;
+  }
+}
+
+.list--bordered .list__item-content {
+  border-radius: 0;
+}
+
+.list--bordered .list__item-text {
+  padding: $layout-spacing-base/2 $layout-spacing-base;
 }

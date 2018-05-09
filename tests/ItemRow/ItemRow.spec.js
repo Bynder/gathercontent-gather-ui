@@ -1,12 +1,17 @@
 import { React, shallow } from '../setup';
 import { ItemRow } from '../../lib';
+import Avatar from '../../lib/Avatar';
 
 describe('Item Row', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <ItemRow indicator="indicator" label="label text">
+      <ItemRow
+        indicator="indicator"
+        label="label text"
+        participants={<Avatar />}
+      >
         Hello world
       </ItemRow>
     );
@@ -35,5 +40,11 @@ describe('Item Row', () => {
     expect(wrapper.find('.item-row__label').contains('label text')).toEqual(
       true
     );
+  });
+
+  test('rending participants', () => {
+    expect(
+      wrapper.find('.item-row__participants').contains(<Avatar />)
+    ).toEqual(true);
   });
 });

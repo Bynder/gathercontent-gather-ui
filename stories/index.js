@@ -43,3 +43,4 @@ import BlankSlate from './components/BlankSlate';
 import DueDatePicker from './components/DueDatePicker';
 import UserList from './components/UserList';
 import ConversationContext from './components/ConversationContext';
+import ItemRow from './components/ItemRow';

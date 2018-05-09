@@ -47,5 +47,14 @@ storiesOf('Components', module).add('StatusIndicator', () => (
     <StoryItem description="Optional children">
       <StatusIndicator color="#965de8" label="Approval" />
     </StoryItem>
+
+    <StoryItem title="Soft label & Small">
+      <StatusIndicator
+        color="rgb(250, 167, 50)"
+        label="Due Tommorrow at 12:00pm"
+        softLabel
+        small
+      />
+    </StoryItem>
   </div>
 ));

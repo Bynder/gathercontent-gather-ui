@@ -33,4 +33,14 @@ describe('List', () => {
     wrapper.setProps({ borderedRight: true });
     expect(wrapper.hasClass('list--bordered-right')).toEqual(true);
   });
+
+  test('rendering a modifier class of "--bordered-left"', () => {
+    wrapper.setProps({ borderedLeft: true });
+    expect(wrapper.hasClass('list--bordered-left')).toEqual(true);
+  });
+
+  test('rendering a modifier class of "--bordered"', () => {
+    wrapper.setProps({ bordered: true });
+    expect(wrapper.hasClass('list--bordered')).toEqual(true);
+  });
 });

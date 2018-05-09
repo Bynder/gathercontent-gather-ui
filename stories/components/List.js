@@ -66,9 +66,28 @@ storiesOf('Components', module)
           <ListItem action={addNewItemButton('small', 'bottom', 'id-2', 'Add entry item')}>
             <ListItemText>List item text</ListItemText>
             <List>
-              <ListItemText>List item text</ListItemText>
-              <ListItemText>List item text</ListItemText>
+              <ListItem>
+                <ListItemText>List item text</ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemText>List item text</ListItemText>
+              </ListItem>
             </List>
+          </ListItem>
+        </List>
+      </StoryItem>
+
+      <StoryItem title="List (boarded)">
+        <List
+          title="Project Name"
+          action={addNewItemButton('minor', 'bottom', 'id-12312312', 'Add new item')}
+          bordered
+        >
+          <ListItem isCurrent>
+            <ListItemText>List item text</ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>List item text</ListItemText>
           </ListItem>
         </List>
       </StoryItem>
@@ -80,50 +99,92 @@ storiesOf('Components', module)
           borderedRight
         >
           <ListItem action={addNewItemButton('small-2', 'bottom', 'id-121212', 'Add entry item')}>
-            <ItemRow
-              indicator={statusWithTooltip('green', 'bottom', 'id-896727', 'Research')}
-              label="entry parent"
-            >
-              <a href="/#">Item name 1</a>
-            </ItemRow>
+            <ListItemText>
+              <ItemRow
+                indicator={statusWithTooltip('green', 'bottom', 'id-896727', 'Research')}
+                label="entry parent"
+              >
+                <a href="/#">Item name 1</a>
+              </ItemRow>
+            </ListItemText>
 
             <List>
               <ListItem>
-                <ItemRow
-                  indicator={statusWithTooltip('blue', 'bottom', 'id-12376887', 'Review')}
-                  label="entry"
-                >
-                  <a href="/#">Item name 2</a>
-                </ItemRow>
+                <ListItemText>
+                  <ItemRow
+                    indicator={statusWithTooltip('blue', 'bottom', 'id-12376887', 'Review')}
+                    label="entry"
+                  >
+                    <a href="/#">Item name 2</a>
+                  </ItemRow>
+                </ListItemText>
               </ListItem>
+
               <ListItem>
-                <ItemRow
+                <ListItemText>
+                  <ItemRow
                   label="entry"
                   indicator={statusWithTooltip('orange', 'bottom', 'id-9356342', 'Publish')}
                 >
                   {overdueTitle('Item name 3', 'id-78978984224')}
                 </ItemRow>
+                </ListItemText>
 
                 <List>
                   <ListItem>
-                    <ItemRow
+                    <ListItemText>
+                      <ItemRow
                       label="entry"
                       indicator={statusWithTooltip('blue', 'bottom', 'id-7858757', 'Review')}
                     >
                       <a href="/#">Item name 4</a>
                     </ItemRow>
+                    </ListItemText>
                   </ListItem>
+
                   <ListItem>
-                    <ItemRow
+                    <ListItemText>
+                      <ItemRow
                       label="entry"
                       indicator={statusWithTooltip('orange', 'bottom', 'id-4444234', 'Publish')}
                     >
                       {overdueTitle('Item name 5', 'id-24288448')}
                     </ItemRow>
+                    </ListItemText>
                   </ListItem>
                 </List>
               </ListItem>
             </List>
+          </ListItem>
+        </List>
+      </StoryItem>
+
+      <StoryItem title="Bordered List: Full Example">
+        <List
+          title="Project Name"
+          action={addNewItemButton('minor', 'bottom', 'id-12312312', 'Add new item')}
+          bordered
+          borderedLeft
+        >
+          <ListItem isCurrent>
+            <ListItemText>
+              <ItemRow
+                indicator={<StatusIndicator label="Approved" color="green" preText="Status:" small softLabel />}
+                stacked
+              >
+                1st August 2018, 10:32am
+              </ItemRow>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>
+              <ItemRow
+                indicator={<StatusIndicator label="Approved" color="green" preText="Status:" small softLabel />}
+                stacked
+              >
+                1st August 2018, 10:32am
+              </ItemRow>
+            </ListItemText>
           </ListItem>
         </List>
       </StoryItem>
