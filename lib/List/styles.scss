@@ -13,6 +13,11 @@ $list-border: 1px solid $color-border-base;
     display: none;
     order: 3;
   }
+
+  &.is-active svg path,
+  .is-active & svg path {
+    fill: $color-text-base;
+  }
 }
 
 .list__head {
