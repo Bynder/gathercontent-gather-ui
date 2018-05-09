@@ -6,6 +6,10 @@ $item-row-stacked-margin: $typo-size-slight/3;
 /* ==========================================================================
    Styles
    ========================================================================== */
+.item-row {
+  padding: $layout-spacing-base/2;
+}
+
 .item-row__indicator {
   display: inline-flex;
   margin: 0 $layout-spacing-base/2 0 0;
@@ -37,6 +41,7 @@ $item-row-stacked-margin: $typo-size-slight/3;
   display: flex;
   flex-wrap: wrap;
   font-size: $typo-size-slight;
+  padding: 0;
 
   .item-row__indicator,
   .item-row__label,
