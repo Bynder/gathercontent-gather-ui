@@ -42,6 +42,7 @@ $status-indicator-margin-left: 1.3rem !default;
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
+  margin: 0;
 }
 
 .status-indicator--completed {
@@ -90,5 +91,4 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator--soft-label .status-indicator__label {
   font-size: $typo-size-slight;
   font-weight: $typo-weight-roman;
-  margin: 0;
 }
