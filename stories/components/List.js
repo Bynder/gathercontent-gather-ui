@@ -159,7 +159,7 @@ storiesOf('Components', module)
         </List>
       </StoryItem>
 
-      <StoryItem title="Boarded List: Full Example">
+      <StoryItem title="Bordered List: Full Example">
         <List
           title="Project Name"
           action={addNewItemButton('minor', 'bottom', 'id-12312312', 'Add new item')}
