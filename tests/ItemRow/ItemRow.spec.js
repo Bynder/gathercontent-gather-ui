@@ -10,7 +10,7 @@ describe('Item Row', () => {
       <ItemRow
         indicator="indicator"
         label="label text"
-        participants={<Avatar/>}
+        participants={<Avatar />}
       >
         Hello world
       </ItemRow>
@@ -43,8 +43,8 @@ describe('Item Row', () => {
   });
 
   test('rending participants', () => {
-    expect(wrapper.find('.item-row__participants').contains(<Avatar />)).toEqual(
-      true
-    );
-  })
+    expect(
+      wrapper.find('.item-row__participants').contains(<Avatar />)
+    ).toEqual(true);
+  });
 });
