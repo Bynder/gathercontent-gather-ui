@@ -46,27 +46,16 @@ $list-border: 1px solid $color-border-base;
 .list__item {
   position: relative;
 
-  &.has-action {
-    padding-right: $layout-spacing-base*1.5;
-
-    .list__actions {
-      margin-right: -$layout-spacing-base*1.5;
-    }
-  }
-
-  &.has-actions {
-    padding-right: $layout-spacing-base*3;
-
-    .list__actions {
-      margin-right: -$layout-spacing-base*3;
-    }
+  &.show-sub-list > .list {
+    display: block;
   }
 }
 
 .list__item-content {
+  position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  padding: $layout-spacing-base/2;
 
   .list .list & {
     padding-left: $layout-spacing-base*1.5;
@@ -78,10 +67,6 @@ $list-border: 1px solid $color-border-base;
 
   .list .list .list .list & {
     padding-left: $layout-spacing-base*3.5;
-  }
-
-  &.show-sub-list > .list {
-    display: block;
   }
 
   .is-current > & {
@@ -125,8 +110,7 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list__item-text {
-  position: relative;
-  padding: $layout-spacing-base/2;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -149,11 +133,6 @@ $list-border: 1px solid $color-border-base;
   margin: 0;
 }
 
-.list--bordered .list__item-text {
-  border-bottom: $list-border;
-  width: 100%;
-}
-
 .list--bordered .is-current > .list__item-content > .list__item-text {
   &:before {
     content: "";
@@ -168,8 +147,11 @@ $list-border: 1px solid $color-border-base;
 
 .list--bordered .list__item-content {
   border-radius: 0;
+  border-bottom: $list-border;
+  padding-left: $layout-spacing-base;
+  padding-right: $layout-spacing-base;
 }
 
-.list--bordered .list__item-text {
-  padding: $layout-spacing-base/2 $layout-spacing-base;
+.list__item--collapse .list__item-content {
+  padding: 0;
 }
