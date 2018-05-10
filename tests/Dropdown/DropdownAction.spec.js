@@ -34,10 +34,16 @@ describe('Dropdown Action', () => {
     expect(wrapper.prop('tabIndex')).toBe(0);
   });
 
-  test('rendering a danger modifier class', () => {
+  test('renders all the modifier classes', () => {
     expect(wrapper.hasClass('dropdown__action--danger')).toBe(false);
     wrapper.setProps({ danger: true });
     expect(wrapper.hasClass('dropdown__action--danger')).toBe(true);
+    expect(wrapper.hasClass('dropdown__action--noBg')).toBe(false);
+    wrapper.setProps({ noBackground: true });
+    expect(wrapper.hasClass('dropdown__action--noBg')).toBe(true);
+    expect(wrapper.hasClass('dropdown__action--icon-only')).toBe(false);
+    wrapper.setProps({ iconOnly: true });
+    expect(wrapper.hasClass('dropdown__action--icon-only')).toBe(true);
   });
 
   test('firing the action prop and toggle context function', () => {
