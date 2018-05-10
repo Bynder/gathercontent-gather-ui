@@ -135,18 +135,18 @@ storiesOf('Components', module)
               fixRight alignment collapse
             </Dropdown.Trigger>
 
-            <Dropdown.Content fixRight collapse noBackground>
+            <Dropdown.Content fixRight collapse noBorder>
               <Dropdown.ActionGroup horizontal>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} plain>
                   <Icon name="bulletList" />
                 </Dropdown.Action>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} plain>
                   <Icon name="numberedList" />
                 </Dropdown.Action>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} plain>
                   <Icon name="table" />
                 </Dropdown.Action>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} plain>
                   <Icon name="quote" />
                 </Dropdown.Action>
               </Dropdown.ActionGroup>
