@@ -90,6 +90,7 @@ storiesOf('Components', module)
           <ListItem
             action={addNewItemButton('small-2', 'bottom', 'id-121212', 'Add entry item')}
             collapse
+            isCurrent
           >
             <ItemRow
               indicator={statusWithTooltip('green', 'bottom', 'id-896727', 'Research')}

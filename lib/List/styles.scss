@@ -155,3 +155,7 @@ $list-border: 1px solid $color-border-base;
 .list__item--collapse .list__item-content {
   padding: 0;
 }
+
+.list__item--collapse .list__actions {
+  margin-right: $layout-spacing-base/2;
+}
