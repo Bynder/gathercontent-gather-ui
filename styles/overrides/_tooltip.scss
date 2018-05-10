@@ -2,7 +2,9 @@
     font-family: $typo-stack-base;
     @include font-smoothing;
 }
-
+.tooltip-arrow {
+  display: none;
+}
 .tooltip--large {
     padding: .5em .25em;
     font-size: $typo-size-lead;
