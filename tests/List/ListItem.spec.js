@@ -14,6 +14,8 @@ describe('List Item', () => {
         <List>
           <ListItem>This is bruce!</ListItem>
         </List>
+
+        {mockAction.mockProp}
       </ListItem>
     );
   });
