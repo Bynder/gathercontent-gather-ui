@@ -1,18 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18" viewBox="0 0 21 18">
-  <defs>
-    <path id="icon__bulleted-list-a" d="M2,0 C3.105,0 4,0.895 4,2 C4,3.105 3.105,4 2,4 C0.895,4 0,3.105 0,2 C0,0.895 0.895,0 2,0 L2,0 Z"/>
-    <path id="icon__bulleted-list-b" d="M2,7 C3.105,7 4,7.895 4,9 C4,10.105 3.105,11 2,11 C0.895,11 0,10.105 0,9 C0,7.895 0.895,7 2,7 L2,7 Z"/>
-    <path id="icon__bulleted-list-c" d="M2,14 C3.105,14 4,14.895 4,16 C4,17.105 3.105,18 2,18 C0.895,18 0,17.105 0,16 C0,14.895 0.895,14 2,14 L2,14 Z"/>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <use fill="#D8D8D8" xlink:href="#icon__bulleted-list-a"/>
-    <use fill="#8492A6" xlink:href="#icon__bulleted-list-a"/>
-    <use fill="#D8D8D8" xlink:href="#icon__bulleted-list-b"/>
-    <use fill="#8492A6" xlink:href="#icon__bulleted-list-b"/>
-    <use fill="#D8D8D8" xlink:href="#icon__bulleted-list-c"/>
-    <use fill="#8492A6" xlink:href="#icon__bulleted-list-c"/>
-    <polygon fill="#8492A6" fill-rule="nonzero" points="7 3 7 1 21 1 21 3"/>
-    <polygon fill="#8492A6" fill-rule="nonzero" points="7 10 7 8 21 8 21 10"/>
-    <polygon fill="#8492A6" fill-rule="nonzero" points="7 17 7 15 21 15 21 17"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18">
+  <g fill="#8492A6" fill-rule="evenodd">
+    <path d="M2 0C3.105 0 4 .895 4 2 4 3.105 3.105 4 2 4 .895 4 0 3.105 0 2 0 .895.895 0 2 0L2 0zM2 7C3.105 7 4 7.895 4 9 4 10.105 3.105 11 2 11 .895 11 0 10.105 0 9 0 7.895.895 7 2 7L2 7zM2 14C3.105 14 4 14.895 4 16 4 17.105 3.105 18 2 18 .895 18 0 17.105 0 16 0 14.895.895 14 2 14L2 14z"/>
+    <polygon fill-rule="nonzero" points="7 3 7 1 21 1 21 3"/>
+    <polygon fill-rule="nonzero" points="7 10 7 8 21 8 21 10"/>
+    <polygon fill-rule="nonzero" points="7 17 7 15 21 15 21 17"/>
   </g>
 </svg>
