@@ -97,6 +97,7 @@ $conversation-meta-text-color: $neutral-base !default;
   color: $neutral-dark;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  white-space: pre-line;
   .mention {
     background: rgba( $primary-purple, .1 );
     padding: $layout-spacing-base/10;
