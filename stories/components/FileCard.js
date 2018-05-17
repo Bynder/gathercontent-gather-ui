@@ -125,5 +125,52 @@ storiesOf('Components', module).add('FileCard', () => (
         </Col>
       </Row>
     </StoryItem>
+
+    <StoryItem
+      title="Added & Removed File Cards"
+    >
+      <Row>
+        <Col xs={12} sm={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            label="Sheep in Iceland"
+            previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+            removed
+          >
+            {actions}
+          </FileCard>
+        </Col>
+        <Col xs={12} sm={4}>
+          <FileCard
+            type="image"
+            filename="sunset_in_berlin_large_filename.jpg"
+            label="Large sunset in Berlin, Germany"
+            previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
+            added
+          >
+            {actions}
+          </FileCard>
+        </Col>
+        <Col xs={12} sm={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            label="Sheep in Iceland"
+            removed
+          >
+            {actions}
+          </FileCard>
+        </Col>
+        <Col xs={12} sm={4}>
+          <FileCard
+            type="image"
+            filename="sunset_in_berlin_large_filename.jpg"
+            label="Large sunset in Berlin, Germany"
+            added
+          >
+            {actions}
+          </FileCard>
+        </Col>
+      </Row>
+    </StoryItem>
   </div>
 ));

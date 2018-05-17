@@ -49,4 +49,14 @@ describe('FileCard', () => {
     wrapper.setProps({ previewSrc: '' });
     expect(wrapper.find('.file-card__title').contains('txt')).toEqual(true);
   });
+
+  test('adding a added or removed modifier class', () => {
+    wrapper.setProps({
+      added: true,
+      removed: true
+    });
+
+    expect(wrapper.hasClass('file-card--removed')).toBe(true);
+    expect(wrapper.hasClass('file-card--added')).toBe(true);
+  });
 });

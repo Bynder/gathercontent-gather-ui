@@ -61,7 +61,9 @@ $file-card-border-radius: 3px !default;
 }
 
 .file-card--highlighted,
-.file-card--active {
+.file-card--active,
+.file-card--removed,
+.file-card--added {
   background: $file-card-highlight-color;
 
   &:hover {
@@ -175,5 +177,19 @@ $file-card-border-radius: 3px !default;
 
   &:hover {
     background: $file-card-action-background-hover;
+  }
+}
+
+.file-card--removed .file-card__thumbnail,
+.file-card--removed .file-card__title {
+  &:before {
+    border-color: $primary-red;
+  }
+}
+
+.file-card--added .file-card__thumbnail,
+.file-card--added .file-card__title {
+  &:before {
+    border-color: $primary-green;
   }
 }
