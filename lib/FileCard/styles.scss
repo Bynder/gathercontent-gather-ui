@@ -61,7 +61,9 @@ $file-card-border-radius: 3px !default;
 }
 
 .file-card--highlighted,
-.file-card--active {
+.file-card--active,
+.file-card--removed,
+.file-card--added {
   background: $file-card-highlight-color;
 
   &:hover {
@@ -81,8 +83,8 @@ $file-card-border-radius: 3px !default;
       left: 0;
       border: $file-card-border-style $file-card-highlight-color;
     }
-    &:hover
-     {
+
+    &:hover {
       &:before {
         border: $file-card-border-style-hover $file-card-highlight-color;
       }
@@ -176,4 +178,45 @@ $file-card-border-radius: 3px !default;
   &:hover {
     background: $file-card-action-background-hover;
   }
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+.file-card--removed,
+.file-card--added {
+  border: $file-card-border-style transparent;
+  background: white;
+
+  .file-card__wrapper {
+    border: $file-card-border-style white;
+  }
+
+  .file-card__thumbnail,
+  .file-card__title {
+    &:before {
+      border: none;
+    }
+
+    &:hover {
+      &:before {
+        border: none;
+      }
+    }
+  }
+}
+
+.file-card--removed {
+  border-color: $primary-red;
+
+  .file-card__thumbnail {
+    &:before {
+      background: $primary-red;
+      opacity: .2;
+    }
+  }
+}
+
+.file-card--added {
+  border-color: $primary-green;
 }
