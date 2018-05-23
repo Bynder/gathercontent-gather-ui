@@ -82,4 +82,9 @@ describe('Label', () => {
     wrapper.simulate('mouseLeave');
     expect(labelMouseLeaveSpy).toHaveBeenCalled();
   });
+
+  test('adding a hinted modifier class', () => {
+    wrapper.setProps({ hinted: true });
+    expect(wrapper.hasClass('form-checkbox__label--hinted')).toBe(true);
+  });
 });
