@@ -90,6 +90,7 @@ storiesOf('Components', module)
           overrideLabelDefault={action('label click wow')}
         />
       </StoryItem>
+
       <StoryItem title="Checkboxes: highlighted">
         <Checkbox
           name="checkbox-highlight"
@@ -102,7 +103,6 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem title="Checkboxes in a group: highlighted">
-
         <CheckboxGroup
           choices={[
             {
@@ -117,8 +117,20 @@ storiesOf('Components', module)
           onChangeHandler={action('hello')}
         />
       </StoryItem>
+
+      <StoryItem title="Checkboxes (hinted)">
+        <Checkbox
+          name="checkbox-hinted"
+          id="checkbox-hinted"
+          onChangeHandler={action('hello')}
+          label="Ethiopian roast"
+          checked
+          hinted
+        />
+      </StoryItem>
     </div>
   ))
+
   .add('Form: Radios', () => (
     <div>
       <StoryItem
@@ -247,7 +259,7 @@ storiesOf('Components', module)
               id: 'id82',
               value: 'value 2',
               label: 'Guatemala roast'
-            },
+            }
           ]}
           overrideLabelDefault={action('label click wow')}
           onChangeHandler={selected => action('onChangeHandler')(selected)}
@@ -264,6 +276,17 @@ storiesOf('Components', module)
           subtitle="label subtext"
           checked
           highlight
+        />
+      </StoryItem>
+
+      <StoryItem title="Radio Input (hinted)">
+        <RadioButton
+          name="hinted"
+          id="id-hinted"
+          value="value 1"
+          onChangeHandler={e => action('onChangeHandler')(e)}
+          label="Option label 1"
+          hinted
         />
       </StoryItem>
     </div>

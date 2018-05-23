@@ -52,10 +52,6 @@ $form-checkbox-label-size: $typo-size-lead !default;
   }
 }
 
-.form-checkbox__label--other-option {
-  color: $primary-blue;
-}
-
 .form-checkbox__subtitle {
   display: block;
   font-size: $typo-size-small;
@@ -77,4 +73,15 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
 .form-radiobutton--invisible {
   visibility: hidden;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+.form-checkbox__label--hinted {
+  color: $primary-purple;
+}
+
+.form-checkbox__label--other-option {
+  color: $primary-blue;
 }
