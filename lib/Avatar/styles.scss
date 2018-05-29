@@ -140,9 +140,8 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   display: inline-block;
 }
 
-.avatar__wrapper--additional-visible {
+.avatar__wrapper--additional {
   .avatar__information {
-    max-width: 45%;
     overflow: hidden;
   }
 
@@ -153,7 +152,9 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+}
 
+.avatar__wrapper--additional-visible {
   .avatar__additional {
     display: block;
     margin-left: auto;
