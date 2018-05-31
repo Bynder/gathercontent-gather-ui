@@ -24,4 +24,11 @@ describe('TopBar', () => {
     });
     expect(wrapper.find('.top-bar__cell--bordered')).toHaveLength(1);
   });
+
+  test('adds a collapse class when collapse is passed', () => {
+    wrapper.setProps({
+      collapse: true
+    });
+    expect(wrapper.find('.top-bar__cell--collapse')).toHaveLength(1);
+  });
 });
