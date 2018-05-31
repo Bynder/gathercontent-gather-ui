@@ -93,6 +93,10 @@ $top-bar-zindex: 500 !default;
     }
   }
 
+  .top-bar__cell--collapsed {
+    padding: 0;
+  }
+
   .top-bar__cell--bordered {
     padding-left: $layout-spacing-base;
     border-left: 1px solid $color-border-base;
@@ -150,4 +154,11 @@ $top-bar-zindex: 500 !default;
       color: black;
     }
   }
+}
+
+.top-bar__content--right.top-bar__content--collapse {
+  padding-right: 0;
+}
+.top-bar__content--left.top-bar__content--collapse {
+  padding-left: 0;
 }
