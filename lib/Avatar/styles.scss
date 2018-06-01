@@ -152,16 +152,16 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-}
 
-.avatar__wrapper--additional-visible {
-  .avatar__additional {
-    display: block;
-    margin-left: auto;
+  &.is-visible {
+    .avatar__additional {
+      display: block;
+      margin-left: auto;
 
-    button[class*="button--link"] {
-      padding-top: 0;
-      padding-bottom: 0;
+      button[class*="button--link"] {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 }
