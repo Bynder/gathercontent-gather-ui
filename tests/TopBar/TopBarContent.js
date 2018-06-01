@@ -1,7 +1,7 @@
 import { React, shallow } from '../setup';
 import { TopBarContent } from '../../lib';
 
-describe('TopBar', () => {
+describe('TopBar/TopBarContent', () => {
   let wrapper;
 
   beforeEach(() => {
