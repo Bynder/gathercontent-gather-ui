@@ -44,6 +44,7 @@ describe('UserList', () => {
         id="123"
         resolved
         comments={mockComments}
+        resolveConversation={() => {}}
       >
         <span className="waffles">Waffles</span>
       </ConversationContext>
@@ -69,6 +70,9 @@ describe('UserList', () => {
     );
     expect(wrapper.find(Conversation).prop('comments')).toEqual(
       wrapper.prop('comments')
+    );
+    expect(wrapper.find(Conversation).prop('resolveConversation')).toEqual(
+      wrapper.prop('resolveConversation')
     );
     expect(wrapper.find(Conversation).prop('userCanComment')).toEqual(false);
     expect(wrapper.find(Conversation).prop('user')).toEqual({ id: null });

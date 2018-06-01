@@ -35,11 +35,5 @@
   }
   &__conversation {
     margin: $layout-spacing-base 0 0 0;
-    .conversation__resolve {
-      display: none;
-    }
-    &.is-resolved .conversation__resolve {
-      display: block;
-    }
   }
 }
