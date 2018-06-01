@@ -83,6 +83,7 @@ $top-bar-zindex: 500 !default;
 
   .top-bar__cell {
     padding: 0 $layout-spacing-base 0 0;
+    display: flex;
 
     img {
       display: block;
@@ -91,10 +92,6 @@ $top-bar-zindex: 500 !default;
     &:last-child {
       padding-right: 0;
     }
-  }
-
-  .top-bar__cell--collapse {
-    padding: 0;
   }
 
   .top-bar__cell--bordered {
@@ -116,8 +113,7 @@ $top-bar-zindex: 500 !default;
     margin-left: 0;
   }
 
-  .top-bar__action--collapse-right,
-  .item-settings .button {
+  .top-bar__action--collapse-right {
     margin-right: 0;
   }
 
@@ -161,4 +157,18 @@ $top-bar-zindex: 500 !default;
 }
 .top-bar__content--left.top-bar__content--collapse {
   padding-left: 0;
+}
+
+
+.top-bar__group {
+  display: flex;
+  margin: 0 $layout-spacing-base / 1.33;
+}
+
+.top-bar__group--collapse {
+  margin: 0;
+}
+
+.top-bar__group > * {
+  margin: 0 $layout-spacing-base / 4;
 }
