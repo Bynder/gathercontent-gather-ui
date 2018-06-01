@@ -1,7 +1,7 @@
 import { React, shallow } from '../setup';
 import { TopBarContent } from '../../lib';
 
-describe('TopBar', () => {
+describe('TopBar/TopBarContent', () => {
   let wrapper;
 
   beforeEach(() => {
@@ -37,5 +37,12 @@ describe('TopBar', () => {
       right: true
     });
     expect(wrapper.find('.top-bar__content--right')).toHaveLength(1);
+  });
+
+  test('adds a collapse class when collapse is passed', () => {
+    wrapper.setProps({
+      collapse: true
+    });
+    expect(wrapper.find('.top-bar__content--collapse')).toHaveLength(1);
   });
 });
