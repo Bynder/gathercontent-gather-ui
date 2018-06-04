@@ -111,6 +111,11 @@ $list-border: 1px solid $color-border-base;
 
 .list__item-text {
   width: 100%;
+
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 /* ==========================================================================
