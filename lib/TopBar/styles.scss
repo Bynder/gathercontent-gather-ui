@@ -103,7 +103,11 @@ $top-bar-zindex: 500 !default;
     fill: $neutral-dark;
   }
 
-  .top-bar__action,
+  .top-bar__action {
+    display: block;
+    padding: $layout-spacing-base/2.5;
+  }
+
   .item-settings .button {
     display: block;
     padding: $layout-spacing-base/2.5 $layout-spacing-base/1.55;
