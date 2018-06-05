@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { React, shallow } from '../setup';
 import DueDateLabel from '../../lib/DueDatePicker/DueDateLabel';
 import Icon from '../../lib/Icon';
