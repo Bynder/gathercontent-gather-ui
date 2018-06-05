@@ -10,7 +10,6 @@ storiesOf('Components', module)
     <div>
       <StoryItem title="Due date picker" description="+1 Day">
         <DueDatePicker
-          label="Due Tommorrow at 2:15pm"
           dueDate={moment()
             .add(1, 'day')
             .set({ hours: 14, minutes: 15 })}
@@ -20,7 +19,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="None set">
         <DueDatePicker
-          label="Due Tommorrow at 2:15pm"
           dueDate={null}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -28,7 +26,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="+2 Months">
         <DueDatePicker
-          label="Due Tommorrow at 12:00pm"
           dueDate={moment().add(2, 'months')}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -36,7 +33,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="-1 hour">
         <DueDatePicker
-          label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(1, 'hour')}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -44,7 +40,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Days">
         <DueDatePicker
-          label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'day')}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -52,7 +47,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Months">
         <DueDatePicker
-          label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'months')}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -60,7 +54,6 @@ storiesOf('Components', module)
       </StoryItem>
       <StoryItem title="Due date picker" description="-4 Months (Completed)">
         <DueDatePicker
-          label="Due Tommorrow at 12:00pm"
           dueDate={moment().subtract(4, 'months')}
           applyDueDate={action('applyDueDate')}
           removeDueDate={action('removeDueDate')}
@@ -71,24 +64,14 @@ storiesOf('Components', module)
   ))
   .add('DueDateLabel', () => (
     <div>
-      <StoryItem title="Due date label" description="No date">
-        <DueDateLabel clickHandler={() => {}} />
+      <StoryItem title="Due date label (no date)">
+        <DueDateLabel />
       </StoryItem>
-      <StoryItem title="Due date label" description="+1 Day">
-        <DueDateLabel
-          clickHandler={() => {}}
-          dueDate={{
-            date: moment()
-              .add(1, 'day')
-              .set({ hours: 14, minutes: 15 })
-          }}
-        />
+      <StoryItem title="Due date label (with date)">
+        <DueDateLabel>3 days ago</DueDateLabel>
       </StoryItem>
-      <StoryItem title="Due date label" description="-2 Days">
-        <DueDateLabel
-          clickHandler={() => {}}
-          dueDate={{ date: moment().subtract(2, 'day'), overdue: true }}
-        />
+      <StoryItem title="Due date label (overdue)">
+        <DueDateLabel overdue>2 days ago</DueDateLabel>
       </StoryItem>
     </div>
   ));
