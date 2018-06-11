@@ -80,10 +80,13 @@ describe('UserList CurrentUserList', () => {
         .prop('additional')
     ).not.toEqual('');
     wrapper.setProps({ currentUsers: [] });
-    expect(wrapper.find('.userlist__empty-button')).toHaveLength(1);
+    wrapper.update();
+    expect(wrapper.find('.userlist__empty-button').hostNodes()).toHaveLength(1);
     wrapper.setProps({ showUserControls: false });
-    expect(wrapper.find('.userlist__empty-button')).toHaveLength(0);
+    wrapper.update();
+    expect(wrapper.find('.userlist__empty-button').hostNodes()).toHaveLength(0);
     wrapper.setProps({ currentUsers: mockAssignees });
+    wrapper.update();
     expect(
       wrapper
         .find(Avatar)

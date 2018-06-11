@@ -20,13 +20,15 @@ describe('Blank Slate', () => {
   test('adds a fixed modifier', () => {
     expect(wrapper.hasClass('blank-slate--fixed')).toBe(false);
     wrapper.setProps({ fixed: true });
-    expect(wrapper.hasClass('blank-slate--fixed')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('blank-slate--fixed')).toBe(true);
   });
 
   test('adds a style modifer', () => {
     expect(wrapper.hasClass('blank-slate--arrow')).toBe(false);
     wrapper.setProps({ slateStyle: 'arrow' });
-    expect(wrapper.hasClass('blank-slate--arrow')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('blank-slate--arrow')).toBe(true);
   });
 
   test('renders its children', () => {
@@ -37,6 +39,9 @@ describe('Blank Slate', () => {
   test('renders a customSVG', () => {
     expect(wrapper.find('.blank-slate__svg--custom')).toHaveLength(0);
     wrapper.setProps({ customSVG: keyboardSVG });
-    expect(wrapper.find('.blank-slate__svg--custom')).toHaveLength(1);
+    wrapper.update();
+    expect(wrapper.find('.blank-slate__svg--custom').hostNodes()).toHaveLength(
+      1
+    );
   });
 });

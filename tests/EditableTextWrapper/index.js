@@ -25,13 +25,13 @@ describe('EditableTextWrapper', () => {
 
   test('shows the editing view after clicking the .editable-text__button', () => {
     wrapper.find('.editable-text__button').prop('clickHandler')();
-
+    wrapper.update();
     expect(wrapper.find('.editable-text__button')).toHaveLength(0);
   });
 
   test('shows the editing view after clicking the .editable-text__button', () => {
     wrapper.find('.editable-text__button').prop('clickHandler')();
-
+    wrapper.update();
     expect(wrapper.find('.editable-text__button')).toHaveLength(0);
     expect(wrapper.find('.editable-text__wrapper--editing')).toHaveLength(1);
     expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
@@ -39,7 +39,7 @@ describe('EditableTextWrapper', () => {
 
   test('shows the editing view after clicking .editable-text_text', () => {
     wrapper.find('.editable-text__text').prop('onClick')();
-
+    wrapper.update();
     expect(wrapper.find('.editable-text__button')).toHaveLength(0);
     expect(wrapper.find('.editable-text__wrapper--editing')).toHaveLength(1);
     expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
@@ -47,10 +47,12 @@ describe('EditableTextWrapper', () => {
 
   test('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
-
+    wrapper.update();
     wrapper
       .find('.editable-text__input')
+      .hostNodes()
       .simulate('change', { target: { value: 'hey' } });
+    wrapper.update();
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 13 });
 
     expect(onChangeSpy).toHaveBeenCalledWith('hey');
@@ -59,10 +61,13 @@ describe('EditableTextWrapper', () => {
 
   test('fires the onChangeHandler when when the text input looses focus', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
-
+    wrapper.update();
     wrapper
       .find('.editable-text__input')
+      .hostNodes()
       .simulate('change', { target: { value: 'yo' } });
+
+    wrapper.update();
     wrapper.find('.editable-text__input').simulate('blur');
 
     expect(onChangeSpy).toHaveBeenCalledWith('yo');
@@ -71,10 +76,12 @@ describe('EditableTextWrapper', () => {
 
   test('returns the input to the non editing state when the esc key is pressed', () => {
     wrapper.find(Button).prop('clickHandler')(); // edit mode
-
+    wrapper.update();
     wrapper
       .find('.editable-text__input')
+      .hostNodes()
       .simulate('change', { target: { value: 'hey' } });
+    wrapper.update();
     wrapper.find('.editable-text__input').simulate('keyDown', { keyCode: 27 });
 
     expect(onChangeSpy).not.toHaveBeenCalled();
@@ -93,6 +100,7 @@ describe('EditableTextWrapper', () => {
     wrapper.setProps({ className: 'lovely-class' });
     expect(wrapper.hasClass('lovely-class')).toEqual(true);
     wrapper.find('.editable-text__button').prop('clickHandler')();
+    wrapper.update();
     expect(wrapper.hasClass('lovely-class--editing')).toEqual(true);
   });
 });
