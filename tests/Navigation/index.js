@@ -28,10 +28,12 @@ describe('Navigation', () => {
   });
 
   test('applies navigation__item to both MenuItems', () => {
-    expect(wrapper.find('.navigation__item')).toHaveLength(2);
+    expect(wrapper.find('.navigation__item').hostNodes()).toHaveLength(2);
   });
 
   test('applies navigation__item--active to both 1 MenuItems', () => {
-    expect(wrapper.find('.navigation__item--active')).toHaveLength(1);
+    expect(wrapper.find('.navigation__item--active').hostNodes()).toHaveLength(
+      1
+    );
   });
 });

@@ -28,7 +28,8 @@ describe('Button', () => {
     wrapper.setProps({
       isSubmit: true
     });
-
+    wrapper.update();
+    button = wrapper.find('button');
     expect(button.prop('type')).toEqual('submit');
   });
 
@@ -36,6 +37,8 @@ describe('Button', () => {
     wrapper.setProps({
       types: ['clear', 'collapsed']
     });
+    wrapper.update();
+    button = wrapper.find('button');
     expect(button.prop('className')).toContain(
       'button button--clear button--collapsed'
     );
@@ -45,6 +48,8 @@ describe('Button', () => {
     wrapper.setProps({
       className: 'custom-class'
     });
+    wrapper.update();
+    button = wrapper.find('button');
     expect(button.prop('className')).toContain('custom-class');
   });
 

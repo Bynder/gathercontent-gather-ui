@@ -1,6 +1,7 @@
-import { React, shallow, mount } from '../../setup';
+import { React, mount } from '../../setup';
 import TableHeading from '../../../lib/Table/Heading';
 import Column from '../../../lib/Table/Column';
+import TableHeadingTitle from '../../../lib/Table/Heading/Title';
 import Icon from '../../../lib/FontAwesomeIcon';
 
 describe('Table/Heading', () => {
@@ -36,21 +37,24 @@ describe('Table/Heading', () => {
   });
 
   test('contains an input with the ref of "toggleAll"', () => {
-    const toggleAllCheckbox = shallow(mountedWrapper.get(0).toggleAll);
+    const toggleAllCheckbox = mount(mountedWrapper.instance().toggleAll);
     expect(toggleAllCheckbox).toHaveLength(1);
     expect(toggleAllCheckbox.type()).toEqual('checkbox');
   });
 
   test('passes the checked attribute from "toggleAll" to the this.props.toggleHandler', () => {
-    const toggleAllCheckbox = shallow(mountedWrapper.get(0).toggleAll);
-    toggleAllCheckbox.get(0).checked = true;
-    toggleAllCheckbox.simulate('click');
+    const toggleAllCheckbox = mount(mountedWrapper.instance().toggleAll);
+    toggleAllCheckbox.checked = true;
+    mountedWrapper.find('.table-heading__checkbox__input').simulate('click');
+    toggleAllCheckbox.update();
+    mountedWrapper.update();
     expect(toggleSpy).toHaveBeenCalled();
   });
 
   test('passes the column text to this.props.sortHandler', () => {
     const lastSortingColumn = mountedWrapper.find(Column).last();
-    lastSortingColumn.children().simulate('click');
+    lastSortingColumn.find(TableHeadingTitle).simulate('click');
+    mountedWrapper.update();
     expect(sortingSpy).toHaveBeenCalled();
   });
 

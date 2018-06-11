@@ -27,6 +27,7 @@ describe('Modal Body', () => {
 
   test('updates the show state to its children', () => {
     wrapper.find(Button).prop('clickHandler')();
+    wrapper.update();
     expect(wrapper.state('show')).toEqual(true);
     expect(wrapper.find(Modal.Container).prop('show')).toEqual(true);
   });
