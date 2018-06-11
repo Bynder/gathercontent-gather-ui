@@ -83,7 +83,7 @@ describe('Comment Form', () => {
   });
 
   test('renders CommentFormInput (with correct props)', () => {
-    const input = wrapper.find(CommentFormInput);
+    let input = wrapper.find(CommentFormInput);
     expect(input).toHaveLength(1);
     expect(input.prop('handleOnChange')).toEqual(
       wrapper.instance().updateInputValue
@@ -92,6 +92,8 @@ describe('Comment Form', () => {
     expect(input.prop('inputValue')).toEqual('');
 
     wrapper.setState({ inputValue: 'test' });
+    wrapper.update();
+    input = wrapper.find(CommentFormInput);
     expect(input.prop('inputValue')).toEqual('test');
 
     expect(input.prop('handleOnFocus')).toEqual(
@@ -142,8 +144,9 @@ describe('Comment Form', () => {
     expect(shortcutTriggers.last().prop('withMetaKey')).toEqual(true);
   });
 
-  test('adds a inline modifier when editing', () => {
+  test('adds an inline modifier when editing', () => {
     wrapper.setProps({ editing: true });
-    expect(wrapper.hasClass('comment-form--inline')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('comment-form--inline')).toBe(true);
   });
 });

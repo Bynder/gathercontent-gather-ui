@@ -8,7 +8,7 @@ describe('RadioButtonOther', () => {
   const onChangeHandler = () => 'onChangeHandler';
 
   beforeEach(() => {
-    Other = shallow(
+    Other = mount(
       <RadioButtonOther
         name="foo"
         id="4"

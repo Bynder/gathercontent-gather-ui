@@ -61,7 +61,10 @@ describe('Comment', () => {
       props.createdAt
     );
     wrapper.instance().showEditForm();
-    expect(wrapper.find('.conversation__date-text')).toHaveLength(0);
+    wrapper.update();
+    expect(wrapper.find('.conversation__date-text').hostNodes()).toHaveLength(
+      0
+    );
   });
 
   test('does not render the edit controls', () => {
@@ -87,6 +90,7 @@ describe('Comment', () => {
 
   test('renders the edit comment form (with correct props)', () => {
     wrapper.instance().showEditForm();
+    wrapper.update();
     const commentForm = wrapper.find(CommentForm);
     expect(commentForm).toHaveLength(1);
     expect(commentForm.prop('onSubmit')).toEqual(

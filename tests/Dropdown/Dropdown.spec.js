@@ -67,6 +67,7 @@ describe('Dropdown', () => {
   test('rendering an active class', () => {
     expect(wrapper.hasClass('is-active')).toBe(false);
     wrapper.instance().toggleShowContent();
+    wrapper.update();
     expect(wrapper.hasClass('is-active')).toBe(true);
   });
 

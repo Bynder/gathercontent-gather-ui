@@ -28,12 +28,20 @@ describe('DropdownMenu', () => {
   });
 
   test('clicking the dropdown menu button should toggle the menu', () => {
-    wrapper.find('.dropdown-menu__button').simulate('click');
-    expect(wrapper.hasClass('open')).toEqual(true);
-    expect(wrapper.hasClass('is-active')).toEqual(true);
-    wrapper.find('.dropdown-menu__button').simulate('click');
-    expect(wrapper.hasClass('open')).toEqual(false);
-    expect(wrapper.hasClass('is-active')).toEqual(false);
+    wrapper
+      .find('.dropdown-menu__button')
+      .hostNodes()
+      .simulate('click');
+    wrapper.update();
+    expect(wrapper.render().hasClass('open')).toEqual(true);
+    expect(wrapper.render().hasClass('is-active')).toEqual(true);
+    wrapper
+      .find('.dropdown-menu__button')
+      .hostNodes()
+      .simulate('click');
+    wrapper.update();
+    expect(wrapper.render().hasClass('open')).toEqual(false);
+    expect(wrapper.render().hasClass('is-active')).toEqual(false);
   });
 
   test('setting the caret prop to true should render a caret icon', () => {
@@ -72,14 +80,17 @@ describe('DropdownMenu', () => {
     expect(
       wrapper
         .find('.dropdown-menu__button')
+        .hostNodes()
         .hasClass('dropdown-menu__button-disabled')
     ).toBe(false);
     wrapper.setProps({
       disabled: true
     });
+    wrapper.update();
     expect(
       wrapper
         .find('.dropdown-menu__button')
+        .hostNodes()
         .hasClass('dropdown-menu__button-disabled')
     ).toBe(true);
   });
