@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
 import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
