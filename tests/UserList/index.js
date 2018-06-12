@@ -111,7 +111,10 @@ describe('UserList', () => {
 
   test('should toggle showing the SearchDropdown', () => {
     expect(wrapper.find(SearchDropdown)).toHaveLength(0);
-    wrapper.find('.show-search').simulate('click');
+    wrapper
+      .find('.show-search')
+      .hostNodes()
+      .simulate('click');
     const assingeeSearch = wrapper.find(SearchDropdown);
     expect(assingeeSearch).toHaveLength(1);
     expect(assingeeSearch.prop('results')).toEqual(mockResults);
@@ -122,16 +125,22 @@ describe('UserList', () => {
   });
 
   test('hides the correct parts of the UI if showUserControls is false', () => {
-    expect(wrapper.find('.show-search')).toHaveLength(1);
+    expect(wrapper.find('.show-search').hostNodes()).toHaveLength(1);
     wrapper.setProps({ showUserControls: false });
-    expect(wrapper.find('.show-search')).toHaveLength(0);
+    expect(wrapper.find('.show-search').hostNodes()).toHaveLength(0);
   });
 
   test('calls props.handleClearResults when closing the SearchDropdown', () => {
     expect(handleClearResultsSpy).not.toHaveBeenCalled();
-    wrapper.find('.show-search').simulate('click');
+    wrapper
+      .find('.show-search')
+      .hostNodes()
+      .simulate('click');
     expect(handleClearResultsSpy).not.toHaveBeenCalled();
-    wrapper.find('.show-search').simulate('click');
+    wrapper
+      .find('.show-search')
+      .hostNodes()
+      .simulate('click');
     expect(handleClearResultsSpy).toHaveBeenCalled();
   });
 });

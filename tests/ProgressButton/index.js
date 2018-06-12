@@ -18,6 +18,7 @@ describe('ProgressButton', () => {
     expect(wrapper.state().showSpinner).toBe(false);
     expect(wrapper.find('.progress-button__icon')).toHaveLength(0);
     wrapper.instance().clickHandler();
+    wrapper.update();
     expect(wrapper.state().showSpinner).toBe(true);
     expect(wrapper.find('.progress-button__icon')).toHaveLength(1);
   });

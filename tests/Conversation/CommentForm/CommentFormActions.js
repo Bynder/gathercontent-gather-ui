@@ -78,7 +78,8 @@ describe('Comment Form Actions', () => {
   test('adds a conversation meta element class to each action', () => {
     expect(wrapper.find('.conversation__meta')).toHaveLength(0);
     wrapper.setProps({ editing: true });
-    expect(wrapper.find('.conversation__meta')).toHaveLength(2);
+    wrapper.update();
+    expect(wrapper.find('.conversation__meta').hostNodes()).toHaveLength(2);
   });
 
   test('adds the correct Button types when editing or not', () => {

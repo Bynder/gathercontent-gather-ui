@@ -83,11 +83,15 @@ describe('StatusIndicator', () => {
 
   test('adding the soft label modifier', () => {
     wrapper.setProps({ softLabel: true });
-    expect(wrapper.hasClass('status-indicator--soft-label')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('status-indicator--soft-label')).toBe(
+      true
+    );
   });
 
   test('adding the small modifier', () => {
     wrapper.setProps({ small: true });
-    expect(wrapper.hasClass('status-indicator--small')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('status-indicator--small')).toBe(true);
   });
 });
