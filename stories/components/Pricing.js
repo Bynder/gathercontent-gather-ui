@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import PlanBox from '../../lib/PlanBox';
 import PlanBoxPricing from '../../lib/PlanBox/Pricing';
 import PlanBoxWrapper from '../../lib/PlanBox/Wrapper';

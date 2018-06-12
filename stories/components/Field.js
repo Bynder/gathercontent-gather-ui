@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { Field, FieldAside, Button, Icon } from '../../lib/index';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -39,22 +40,24 @@ storiesOf('Components', module)
               <h1>Heading content</h1>
               <p>The fossil record indicates that birds evolved from feathered ancestors within the theropod group, which are traditionally placed within the saurischian dinosaurs, though a 2017 paper[4] has put them in a proposed clade Ornithoscelida, along with the Ornithischia.</p>
               <table>
-                <tr>
-                  <td>
-                    <p><strong>Heading 1</strong></p>
-                  </td>
-                  <td>
-                    <p><strong>Heading 2</strong></p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Cell 1</p>
-                  </td>
-                  <td>
-                    <p>Cell 2</p>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p><strong>Heading 1</strong></p>
+                    </td>
+                    <td>
+                      <p><strong>Heading 2</strong></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Cell 1</p>
+                    </td>
+                    <td>
+                      <p>Cell 2</p>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <FieldAside>

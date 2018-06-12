@@ -167,6 +167,7 @@ storiesOf('Components', module).add('Avatar', () => (
         <AvatarWithPopover
           name="Angus Edwardson"
           initials="AE"
+          email="example@gmail.com"
           bordered
         >
           <ParticipantInfo
@@ -178,6 +179,7 @@ storiesOf('Components', module).add('Avatar', () => (
         <AvatarWithPopover
           name="James Darracott"
           initials="JD"
+          email="example@gmail.com"
           bordered
         >
           <ParticipantInfo name="James Darracott" email="example@gmail.com" />
@@ -185,6 +187,7 @@ storiesOf('Components', module).add('Avatar', () => (
         <AvatarWithPopover
           name="Richard Swagshaw"
           initials="RS"
+          email="example@gmail.com"
           bordered
         >
           <ParticipantInfo name="Richard Swagshaw" email="example@gmail.com" />

@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import UserList from '../../lib/UserList';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -77,7 +78,7 @@ storiesOf('Components', module)
             currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
             otherUsers={[mockViewer]}
             searchResults={mockResults}
-            removeAssignee={mockActions.removeAssignee}
+            removeUser={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
             showUserControls
@@ -92,7 +93,7 @@ storiesOf('Components', module)
             currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
             otherUsers={[mockViewer]}
             searchResults={mockResults}
-            removeAssignee={mockActions.removeAssignee}
+            removeUser={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
             showUserControls={false}

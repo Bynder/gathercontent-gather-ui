@@ -1,5 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import { Modal, Button, ConfirmationModal, withModalTrigger } from '../../lib';
@@ -134,6 +135,7 @@ storiesOf('Components', module)
             submitText="Hell yes"
             cancelText="Meow no"
             type="primary"
+            onHide={() => {}}
             submitCallback={(e) => {
               action(e);
               e.preventDefault();

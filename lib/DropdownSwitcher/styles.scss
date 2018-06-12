@@ -14,6 +14,9 @@ $dropdown-switcher-title-margin-bottom: $layout-spacing-base/2 !default;
   &:hover .dropdown-switcher__arrow {
     color: $dropdown-switcher-hover-color;
   }
+  &__toggle:focus {
+    outline: none;
+  }
 }
 
 .dropdown-switcher__arrow {
