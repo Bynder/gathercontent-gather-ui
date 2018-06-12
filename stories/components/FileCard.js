@@ -3,8 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import { FileCard, Icon } from '../../lib';
+import { FileCard, Icon, TooltipWrapper } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
+import BoundaryClickWatcher from "../../lib/BoundaryClickWatcher";
 
 const trashButton = <a key="hello"><Icon name="trash" /></a>;
 const commentButton = <button onClick={action('test')} key="hello2"><Icon name="comment" /></button>;
@@ -127,26 +128,38 @@ storiesOf('Components', module).add('FileCard', () => (
       </Row>
     </StoryItem>
 
-    <StoryItem
-      title="Added & Removed File Cards"
-    >
+    <StoryItem title="Added & Removed File Cards">
       <Row>
         <Col xs={12} sm={4}>
-          <FileCard
-            filename="sheep_in_iceland.jpg"
-            label="Sheep in Iceland"
-            previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
-            removed
-          />
+          <TooltipWrapper
+            id="id-1"
+            tooltipText="removed by Bruce"
+            placement="top"
+            className="file-card__tooltip file-card__tooltip--removed"
+          >
+            <FileCard
+              filename="sheep_in_iceland.jpg"
+              label="Sheep in Iceland"
+              previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+              removed
+            />
+          </TooltipWrapper>
         </Col>
         <Col xs={12} sm={4}>
-          <FileCard
-            type="image"
-            filename="sunset_in_berlin_large_filename.jpg"
-            label="Large sunset in Berlin, Germany"
-            previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
-            added
-          />
+          <TooltipWrapper
+            id="id-2"
+            tooltipText="added by Gill"
+            placement="top"
+            className="file-card__tooltip file-card__tooltip--added"
+          >
+            <FileCard
+              type="image"
+              filename="sunset_in_berlin_large_filename.jpg"
+              label="Large sunset in Berlin, Germany"
+              previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
+              added
+            />
+          </TooltipWrapper>
         </Col>
         <Col xs={12} sm={4}>
           <FileCard

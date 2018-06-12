@@ -2,10 +2,31 @@
     font-family: $typo-stack-base;
     @include font-smoothing;
 }
+
 .tooltip-arrow {
   display: none;
 }
+
 .tooltip--large {
     padding: .5em .25em;
     font-size: $typo-size-lead;
+}
+
+/* ==========================================================================
+   <FileCard />
+   ========================================================================== */
+.file-card > span {
+  flex-grow: 1;
+}
+
+.file-card__tooltip.tooltip {
+  opacity: 1;
+}
+
+.file-card__tooltip--added .tooltip-inner {
+  background: $primary-green;
+}
+
+.file-card__tooltip--removed .tooltip-inner {
+  background: $primary-red;
 }
