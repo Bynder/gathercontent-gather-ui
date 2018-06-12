@@ -40,6 +40,7 @@ storiesOf('Components', module).add('Conversation Context', () => (
         id="123"
         resolved={true}
         comments={mockComments}
+        resolveConversation={()=>{}}
       >
         <span>Hello!</span>
       </ConversationContext>
@@ -53,6 +54,7 @@ storiesOf('Components', module).add('Conversation Context', () => (
         id="123"
         resolved={true}
         comments={mockComments}
+        resolveConversation={()=>{}}
       >
         {null}
       </ConversationContext>

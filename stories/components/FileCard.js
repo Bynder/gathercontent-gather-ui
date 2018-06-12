@@ -5,10 +5,10 @@ import Col from 'react-bootstrap/lib/Col';
 import { FileCard, Icon } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-const trashButton = <a><Icon name="trash" /></a>;
-const commentButton = <button onClick={action('test')}><Icon name="comment" /></button>;
-const fullScreenButton = <button onClick={action('test')}><Icon name="fullScreen" /></button>;
-const downloadButton = <button onClick={action('test')}>{<Icon name="download" />}</button>;
+const trashButton = <a key="hello"><Icon name="trash" /></a>;
+const commentButton = <button onClick={action('test')} key="hello2"><Icon name="comment" /></button>;
+const fullScreenButton = <button onClick={action('test')} key="hello3"><Icon name="fullScreen" /></button>;
+const downloadButton = <button onClick={action('test')} key="hello4">{<Icon name="download" />}</button>;
 const actions = [trashButton, commentButton, fullScreenButton, downloadButton];
 
 storiesOf('Components', module).add('FileCard', () => (

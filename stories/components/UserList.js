@@ -77,7 +77,7 @@ storiesOf('Components', module)
             currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
             otherUsers={[mockViewer]}
             searchResults={mockResults}
-            removeAssignee={mockActions.removeAssignee}
+            removeUser={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
             showUserControls
@@ -92,7 +92,7 @@ storiesOf('Components', module)
             currentUsers={[mockAssignee, mockAssigneeNoAvatar]}
             otherUsers={[mockViewer]}
             searchResults={mockResults}
-            removeAssignee={mockActions.removeAssignee}
+            removeUser={mockActions.removeAssignee}
             handleSearchChange={mockActions.handleSearchChange}
             handleClearResults={mockActions.handleClearResults}
             showUserControls={false}

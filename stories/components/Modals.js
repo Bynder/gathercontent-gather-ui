@@ -134,6 +134,7 @@ storiesOf('Components', module)
             submitText="Hell yes"
             cancelText="Meow no"
             type="primary"
+            onHide={() => {}}
             submitCallback={(e) => {
               action(e);
               e.preventDefault();

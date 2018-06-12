@@ -32,6 +32,7 @@ storiesOf('Components', module).add('MessageBar', () => (
       <MessageBarContent right xs={4} md={2}>
         <Button
           types={['purple-text', 'slim']}
+          clickHandler={()=>{}}
         >
           hello
           <Icon name="comment" />

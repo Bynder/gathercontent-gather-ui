@@ -22,6 +22,7 @@ storiesOf('Components', module)
           name="ch1"
           onChangeHandler={e => action(e.target.value)()}
           id="id2"
+          checked={false}
           label="Guatemala roast"
         />
         <Checkbox
@@ -50,6 +51,7 @@ storiesOf('Components', module)
           disabled
           onChangeHandler={action('hello')}
           id="id22"
+          checked={false}
           label="Guatemala roast"
         />
       </StoryItem>
@@ -141,6 +143,7 @@ storiesOf('Components', module)
           name="ch1"
           id="id1"
           value="value 1"
+          checked={false}
           onChangeHandler={e => action('onChangeHandler')(e)}
           label="Option label"
         />
@@ -170,6 +173,7 @@ storiesOf('Components', module)
           value="value 3"
           onChangeHandler={e => action('onChangeHandler')(e)}
           label="Option label"
+          checked={false}
           disabled
         />
       </StoryItem>
@@ -198,6 +202,7 @@ storiesOf('Components', module)
           id="id5"
           label="Option label"
           value="5"
+          checked={false}
           onChangeHandler={e => action('onChangeHandler')(e)}
           onTextChangeHandler={e => action('onTextChangeHandler')(e)}
           other_option
@@ -234,7 +239,8 @@ storiesOf('Components', module)
               name: 'ch7',
               id: 'id72',
               value: 'value 2',
-              label: 'Guatemala roast'
+              label: 'Guatemala roast',
+              checked: false
             },
           ]}
           onChangeHandler={selected => action('onChangeHandler')(selected)}
@@ -258,7 +264,8 @@ storiesOf('Components', module)
               name: 'ch8',
               id: 'id82',
               value: 'value 2',
-              label: 'Guatemala roast'
+              label: 'Guatemala roast',
+              checked: false
             }
           ]}
           overrideLabelDefault={action('label click wow')}
@@ -286,6 +293,7 @@ storiesOf('Components', module)
           value="value 1"
           onChangeHandler={e => action('onChangeHandler')(e)}
           label="Option label 1"
+          checked={false}
           hinted
         />
       </StoryItem>
