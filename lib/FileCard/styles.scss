@@ -25,12 +25,13 @@ $file-card-border-radius: 3px !default;
    Styles
    ========================================================================== */
 .file-card {
-  display: inline-flex;
+  display: flex;
   border-radius: $file-card-border-radius;
   width: $file-card-size;
   height: 0;
   padding-bottom: $file-card-size;
   position: relative;
+  margin: 0 0 $layout-spacing-base/2;
 
   &:hover,
   .file-card__action:focus {

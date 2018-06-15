@@ -74,7 +74,6 @@ $field-data-color: $neutral-base !default;
   border-radius: 4px;
   padding: $layout-spacing-base*1.5;
   font-size: $typo-size-lead;
-  margin-right: $field-aside-width/4;
   transition: all 0.2s ease;
 
   .field:not(.is-disabled) &:hover,
