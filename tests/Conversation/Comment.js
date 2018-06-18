@@ -11,6 +11,22 @@ describe('Comment', () => {
   const onCommentCancelSpy = jest.fn();
   const editCommentSpy = jest.fn();
   const removeCommentSpy = jest.fn();
+  const mockUsers = [
+    {
+      id: 2,
+      name: 'Bruce',
+      avatar:
+        'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+      initials: 'BB',
+      display: 'brucebanner'
+    },
+    {
+      id: 5,
+      name: 'Lynda',
+      initials: 'LC',
+      display: 'lyndacarter'
+    }
+  ];
 
   const props = {
     id: '123',
@@ -28,7 +44,8 @@ describe('Comment', () => {
     onCommentChange() {},
     onCommentCancel: onCommentCancelSpy,
     onRowCountChange() {},
-    focusFallback: document.createElement('input')
+    focusFallback: document.createElement('input'),
+    users: mockUsers
   };
 
   beforeEach(() => {
@@ -49,11 +66,13 @@ describe('Comment', () => {
     expect(wrapper.find(Linkify).prop('children')).toEqual([props.body]);
   });
 
-  test('renders the comment body with mentions highlighted', () => {
+  test('renders the comment body with mentions highlighted if there is a matching user', () => {
     expect(wrapper.find('span.mention')).toHaveLength(0);
     wrapper.setProps({ body: 'hey whats up @waffle' });
-    expect(wrapper.find('span.mention')).toHaveLength(1);
-    expect(wrapper.find('span.mention').text()).toEqual('@waffle');
+    expect(wrapper.find('span.mention')).toHaveLength(0);
+    wrapper.setProps({ body: 'hey whats up @waffle @lyndacarter' });
+    expect(wrapper.find('span.mention').text()).toEqual('@lyndacarter');
+    expect(wrapper.find('span.mention').prop('title')).toEqual('Lynda');
   });
 
   test('renders the comment created at text', () => {
