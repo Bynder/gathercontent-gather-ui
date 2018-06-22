@@ -9,7 +9,11 @@ describe('DueDateButton', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <DueDateButton dueDate={moment().add(2, 'day')} today={moment()} />
+      <DueDateButton
+        dueDate={moment().add(2, 'day')}
+        today={moment()}
+        userCanSetDueDate
+      />
     );
   });
 
@@ -19,6 +23,11 @@ describe('DueDateButton', () => {
 
   test('should render <DropdownTrigger /> component', () => {
     expect(wrapper.find(DropdownTrigger)).toHaveLength(1);
+  });
+
+  test('should not render a <DropdownTrigger /> component if userCanSetDueDate is false', () => {
+    wrapper.setProps({ userCanSetDueDate: false });
+    expect(wrapper.find(DropdownTrigger)).toHaveLength(0);
   });
 
   test('should contain the due date', () => {

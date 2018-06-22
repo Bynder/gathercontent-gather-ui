@@ -35,6 +35,11 @@ describe('DueDatePicker', () => {
     expect(wrapper.find('.duedate__submit')).toHaveLength(1);
   });
 
+  test('shouldnt render a Dropdown.Content if userCanSetDueDate is false', () => {
+    wrapper.setProps({ userCanSetDueDate: false });
+    expect(wrapper.find(DropdownContent)).toHaveLength(0);
+  });
+
   test('container has completed class when prop passed', () => {
     expect(
       wrapper
