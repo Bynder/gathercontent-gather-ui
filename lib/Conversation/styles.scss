@@ -206,7 +206,7 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.is-non-interactive.conversation {
+.is-read-only.conversation {
   .conversation__resolve,
   .conversation__comment:last-child {
     border-bottom: none;

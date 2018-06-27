@@ -70,15 +70,13 @@ describe('Conversation', () => {
     expect(wrapper.find('.conversation').hasClass('is-active')).toBe(true);
   });
 
-  test('adds a state class of is-non-interactive', () => {
-    expect(wrapper.find('.conversation').hasClass('is-non-interactive')).toBe(
-      false
-    );
+  test('adds a state class of is-read-only', () => {
+    expect(wrapper.find('.conversation').hasClass('is-read-only')).toBe(false);
 
     wrapper.setProps({ userCanComment: false, userCanResolve: false });
-    expect(
-      wrapper.find('.conversation').hasClass('is-non-interactive')
-    ).toEqual(true);
+    expect(wrapper.find('.conversation').hasClass('is-read-only')).toEqual(
+      true
+    );
   });
 
   test('renders a list of comments (with correct props)', () => {
