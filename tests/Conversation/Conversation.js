@@ -30,6 +30,7 @@ describe('Conversation', () => {
         userCanComment
         resolveConversation={resolveConversationSpy}
         addComment={addCommentSpy}
+        userCanResolve
       />
     );
   });
@@ -69,11 +70,13 @@ describe('Conversation', () => {
     expect(wrapper.find('.conversation').hasClass('is-active')).toBe(true);
   });
 
-  test('adds a state class of is-resolved', () => {
-    expect(wrapper.find('.conversation').hasClass('is-resolved')).toBe(false);
+  test('adds a state class of is-read-only', () => {
+    expect(wrapper.find('.conversation').hasClass('is-read-only')).toBe(false);
 
-    wrapper.setProps({ resolved: true });
-    expect(wrapper.find('.conversation').hasClass('is-resolved')).toEqual(true);
+    wrapper.setProps({ userCanComment: false, userCanResolve: false });
+    expect(wrapper.find('.conversation').hasClass('is-read-only')).toEqual(
+      true
+    );
   });
 
   test('renders a list of comments (with correct props)', () => {
@@ -153,6 +156,12 @@ describe('Conversation', () => {
   test('does not render a comment form', () => {
     wrapper.setProps({ userCanComment: false });
     expect(wrapper.find(CommentForm)).toHaveLength(0);
+  });
+
+  test('does not render the resolve button', () => {
+    expect(wrapper.find(Button)).toHaveLength(1);
+    wrapper.setProps({ userCanResolve: false });
+    expect(wrapper.find(Button)).toHaveLength(0);
   });
 
   test('does not render a resolveConversation button or a CommentList', () => {

@@ -170,6 +170,27 @@ storiesOf('Components', module)
             )}
           </BoundaryClickWatcher>
         </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Conversation with userCanComment set to false"
+        >
+          <Conversation
+            id="1234567"
+            comments={mockConversation.comments}
+            resolveConversation={mockActions.resolveConversation}
+            unresolveConversation={mockActions.unresolveConversation}
+            removeComment={mockActions.removeComment}
+            addComment={mockActions.addComment}
+            editComment={mockActions.editComment}
+            user={mockUser}
+            users={mockUsers}
+            userCanComment={false}
+            focusOnMount={false}
+            resolved={false}
+            userCanResolve={false}
+          />
+        </StoryItem>
       </div>
     );
   });

@@ -45,7 +45,8 @@ describe('Comment', () => {
     onCommentCancel: onCommentCancelSpy,
     onRowCountChange() {},
     focusFallback: document.createElement('input'),
-    users: mockUsers
+    users: mockUsers,
+    userCanComment: true
   };
 
   beforeEach(() => {
@@ -105,6 +106,12 @@ describe('Comment', () => {
       .last()
       .prop('clickHandler')();
     expect(wrapper.state('confirmRemoval')).toEqual(true);
+  });
+
+  test('doesnt render the edit comment controls (when a user cant edit)', () => {
+    wrapper.setProps({ userCanComment: false });
+    const actions = wrapper.find('.conversation__actions');
+    expect(actions.find(Button)).toHaveLength(0);
   });
 
   test('renders the edit comment form (with correct props)', () => {

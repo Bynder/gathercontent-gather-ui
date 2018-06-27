@@ -204,5 +204,11 @@ $conversation-meta-text-color: $neutral-base !default;
     filter: blur(4px);
     background: none;
   }
+}
 
+.is-read-only.conversation {
+  .conversation__resolve,
+  .conversation__comment:last-child {
+    border-bottom: none;
+  }
 }
