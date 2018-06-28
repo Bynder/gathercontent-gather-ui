@@ -56,12 +56,12 @@ storiesOf('Components', module)
           <Modal.Container>
             <Modal.Body className="has-columns">
               <Row className="modal__row">
-                <Col xs={6} className="modal__column-wrapper modal__column-wrapper--highlight">
+                <Col xs={12} sm={6} className="modal__column-wrapper modal__column-wrapper--highlight">
                   <div className="modal__column">
                     <h2 className="modal__body-title">Lorem ipsum dolor</h2>
                   </div>
                 </Col>
-                <Col xs={6} className="modal__column-wrapper">
+                <Col xs={12} sm={6} className="modal__column-wrapper">
                   <div className="modal__column">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div className="modal__illustration">

@@ -15,6 +15,10 @@ $modal-column-padding: $modal-padding !default;
    ========================================================================== */
 .modal__row {
 	display: flex;
+
+	@include respond-to(small) {
+		display: block;
+	}
 }
 
 .modal__column-wrapper {
@@ -53,25 +57,26 @@ $modal-column-padding: $modal-padding !default;
 
 .modal--large {
 	.modal-dialog {
-		width: $modal-large-width;
+		@include respond-to(medium) {
+			width: $modal-large-width;
+		}
 	}
 }
 
 .modal--x-large {
 	.modal-dialog {
-		width: $modal-large-width;
-	}
-}
-
-.modal--x-large {
-	.modal-dialog {
-		width: $modal-x-large-width;
+		display: block;
+		@include respond-to(medium) {
+			width: $modal-x-large-width;
+		}
 	}
 }
 
 .modal--small {
 	.modal-dialog {
-		width: $modal-small-width;
+		@include respond-to(medium) {
+			width: $modal-small-width;
+		}
 	}
 }
 
