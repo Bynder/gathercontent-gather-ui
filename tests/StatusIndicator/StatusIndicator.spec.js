@@ -1,5 +1,7 @@
 import { React, mount } from '../setup';
 import StatusIndicator from '../../lib/StatusIndicator';
+import Icon from '../../lib/Icon';
+import TooltipWrapper from '../../lib/TooltipWrapper';
 
 describe('StatusIndicator', () => {
   let wrapper;
@@ -93,5 +95,12 @@ describe('StatusIndicator', () => {
     wrapper.setProps({ small: true });
     wrapper.update();
     expect(wrapper.render().hasClass('status-indicator--small')).toBe(true);
+  });
+
+  test('displays information if read only', () => {
+    wrapper.setProps({ readOnly: true });
+    wrapper.update();
+    expect(wrapper.find(TooltipWrapper)).toHaveLength(1);
+    expect(wrapper.find(Icon)).toHaveLength(1);
   });
 });

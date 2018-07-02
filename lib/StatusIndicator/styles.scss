@@ -41,12 +41,17 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__label {
-  text-overflow: ellipsis;
-  overflow: hidden;
   white-space: nowrap;
-  width: 100%;
   margin-top: 0;
   margin-bottom: 0;
+  width: 100%;
+  span.status-indicator__labelspan {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: calc(100% - 20px);
+    vertical-align: bottom;
+  }
 }
 
 .status-indicator--completed {
@@ -82,6 +87,14 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-top: $layout-spacing-base / 4;
   margin-left: $status-indicator-margin-left;
   margin-bottom: $layout-spacing-base / 2.5;
+}
+
+.status-indicator__readonly {
+  margin-left: 5px;
+  vertical-align: middle;
+  &.icon path {
+    fill: $color-brand-dark;
+  }
 }
 
 /* ==========================================================================
