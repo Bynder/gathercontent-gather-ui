@@ -33,7 +33,7 @@ storiesOf('Components', module).add('StatusIndicator', () => (
     </StoryItem>
 
     <StoryItem description="Bordered">
-      <StatusIndicator color="#3d8aeb" label="Review longlonglonglong long lpng longlonglonglnongongkngkgngkjkjdhf" bordered readOnly>
+      <StatusIndicator color="#3d8aeb" label="Review and read only" bordered readOnly>
         Due Tommorrow at 12:00pm
       </StatusIndicator>
     </StoryItem>
