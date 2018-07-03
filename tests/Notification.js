@@ -25,6 +25,13 @@ describe('Notification', () => {
     ).toEqual(true);
   });
 
+  test('adds the className prop', () => {
+    wrapper.setProps({
+      className: 'waffles'
+    });
+    expect(wrapper.find(Alert).hasClass('waffles')).toEqual(true);
+  });
+
   test('passes the clickHandler prop to the Alert component and adds class', () => {
     wrapper.setProps({
       clickHandler: clickHandlerSpy
