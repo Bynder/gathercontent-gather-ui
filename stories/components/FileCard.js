@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import { FileCard, Icon, TooltipWrapper } from '../../lib';
+import { FileCard, Icon, TooltipWrapper, FileCardPlaceholder } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import BoundaryClickWatcher from "../../lib/BoundaryClickWatcher";
 
@@ -175,6 +175,15 @@ storiesOf('Components', module).add('FileCard', () => (
             label="Large sunset in Berlin, Germany"
             added
           />
+        </Col>
+      </Row>
+    </StoryItem>
+    <StoryItem
+      title="File Card Placeholder"
+    >
+      <Row>
+        <Col xs={4}>
+          <FileCardPlaceholder />
         </Col>
       </Row>
     </StoryItem>
