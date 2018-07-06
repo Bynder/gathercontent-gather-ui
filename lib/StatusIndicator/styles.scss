@@ -91,10 +91,10 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-bottom: $layout-spacing-base / 2.5;
 }
 
-.status-indicator__readonly {
-  margin-left: 5px;
-  vertical-align: middle;
-  &.icon path {
+.icon.status-indicator__readonly {
+  margin-left: $layout-spacing-base/4;
+  vertical-align: top;
+  path {
     fill: $color-brand-dark;
   }
 }
