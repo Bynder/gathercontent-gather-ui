@@ -45,12 +45,14 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-top: 0;
   margin-bottom: 0;
   width: 100%;
+  overflow: hidden;
   .status-indicator__label-text {
     display: inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: calc(100% - 20px);
     vertical-align: bottom;
+    text-align: left;
+    max-width: 100%;
   }
 }
 
@@ -112,4 +114,10 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator--soft-label .status-indicator__label {
   font-size: $typo-size-slight;
   font-weight: $typo-weight-roman;
+}
+
+.status-indicator--read-only .status-indicator__label {
+  .status-indicator__label-text {
+    max-width: calc(100% - 30px);
+  }
 }
