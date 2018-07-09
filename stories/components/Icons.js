@@ -41,6 +41,7 @@ const allIcons = additionalProps => (
     <Icon name="quote" {...additionalProps} />
     <Icon name="help" {...additionalProps} />
     <Icon name="lock" {...additionalProps} />
+    <Icon name="info" {...additionalProps} />
   </div>
 );
 
