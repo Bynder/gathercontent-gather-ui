@@ -97,10 +97,11 @@ describe('StatusIndicator', () => {
     expect(wrapper.render().hasClass('status-indicator--small')).toBe(true);
   });
 
-  test('displays information if read only', () => {
+  test('displays information if read only and adds a modifier', () => {
     wrapper.setProps({ readOnly: true });
     wrapper.update();
     expect(wrapper.find(TooltipWrapper)).toHaveLength(1);
     expect(wrapper.find(Icon)).toHaveLength(1);
+    expect(wrapper.render().hasClass('status-indicator--read-only')).toBe(true);
   });
 });
