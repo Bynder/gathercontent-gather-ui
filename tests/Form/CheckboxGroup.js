@@ -25,10 +25,17 @@ describe('CheckboxGroup', () => {
     }
   ];
   const onChangeSpy = jest.fn();
+  const onAddingChoiceSpy = jest.fn();
+  const onRemovingChoiceSpy = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
-      <CheckboxGroup choices={choices} onChangeHandler={onChangeSpy} />
+      <CheckboxGroup
+        choices={choices}
+        onChangeHandler={onChangeSpy}
+        onAddingChoice={onAddingChoiceSpy}
+        onRemovingChoice={onRemovingChoiceSpy}
+      />
     );
   });
 
@@ -36,21 +43,22 @@ describe('CheckboxGroup', () => {
     expect(wrapper.find(Checkbox)).toHaveLength(3);
   });
 
-  test('returns all the current selected choices to the onChangeHander when an extra choice is selected', () => {
+  test('adds a selected choice to internal state and calls onAddingChoice prop with added choice', () => {
     const secondOption = wrapper.find(Checkbox).at(1);
-    secondOption.prop('onChangeHandler')({ target: { id: '456' } });
-
-    expect(onChangeSpy).toHaveBeenCalledWith([
+    secondOption.prop('onChangeHandler')({ target: { id: choices[1].id } });
+    const {checked, ...addedChoice} = choices[1];
+    expect(onAddingChoiceSpy).toHaveBeenCalledWith(addedChoice);
+    expect(wrapper.state('selected')).toEqual([
       choices[0],
       choices[2],
       choices[1]
     ]);
   });
 
-  test('returns all the current selected choices to the onChangeHander when a choice is deselected', () => {
+  test('removes a selected choice from internal state and calls onRemovingChoice prop with removed choice', () => {
     const firstOption = wrapper.find(Checkbox).at(0);
-    firstOption.prop('onChangeHandler')({ target: { id: '123' } });
-
-    expect(onChangeSpy).toHaveBeenCalledWith([choices[2]]);
+    firstOption.prop('onChangeHandler')({ target: { id: choices[0].id } });
+    expect(onRemovingChoiceSpy).toHaveBeenCalledWith(choices[0]);
+    expect(wrapper.state('selected')).toEqual([choices[2]]);
   });
 });
