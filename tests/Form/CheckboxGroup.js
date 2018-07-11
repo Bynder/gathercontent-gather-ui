@@ -46,7 +46,7 @@ describe('CheckboxGroup', () => {
   test('adds a selected choice to internal state and calls onAddingChoice prop with added choice', () => {
     const secondOption = wrapper.find(Checkbox).at(1);
     secondOption.prop('onChangeHandler')({ target: { id: choices[1].id } });
-    const {checked, ...addedChoice} = choices[1];
+    const { checked, ...addedChoice } = choices[1];
     expect(onAddingChoiceSpy).toHaveBeenCalledWith(addedChoice);
     expect(wrapper.state('selected')).toEqual([
       choices[0],
