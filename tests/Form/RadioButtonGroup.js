@@ -72,6 +72,6 @@ describe('RadioButtonGroup', () => {
 
     const expectedOptionChoice = assign({}, otherChoice, { value: 'Hello' });
 
-    expect(onChangeSpy).toHaveBeenCalledWith([expectedOptionChoice]);
+    expect(onChangeSpy).toHaveBeenCalledWith(expectedOptionChoice);
   });
 });
