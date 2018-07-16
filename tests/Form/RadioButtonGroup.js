@@ -54,10 +54,10 @@ describe('RadioButtonGroup', () => {
     const secondOption = wrapper.find(RadioButton).at(1);
 
     firstOption.prop('onChangeHandler')({ target: { id: '123' } });
-    expect(onChangeSpy).toHaveBeenCalledWith([choices[0]]);
+    expect(onChangeSpy).toHaveBeenCalledWith(choices[0]);
 
     secondOption.prop('onChangeHandler')({ target: { id: '456' } });
-    expect(onChangeSpy).toHaveBeenCalledWith([choices[1]]);
+    expect(onChangeSpy).toHaveBeenCalledWith(choices[1]);
   });
 
   test('returns the selected options when the other option value changes', () => {
