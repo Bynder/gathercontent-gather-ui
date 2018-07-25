@@ -31,9 +31,12 @@ $form-checkbox-label-size: $typo-size-lead !default;
   padding: 0;
   border: none;
   background: transparent;
+  text-align: left;
+
   &:focus {
     outline: none;
   }
+
   &.is-highlight {
     cursor: pointer;
   }
