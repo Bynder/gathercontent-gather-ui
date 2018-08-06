@@ -181,9 +181,24 @@ $file-card-border-radius: 3px !default;
   }
 }
 
-.file-card__loader {
+.file-card__progress {
   position: absolute;
+}
+
+.file-card__loader-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $layout-spacing-base 0 0;
+}
+
+.file-card__loader {
   transform: scale(3);
+}
+
+.file-card__loader-text {
+  margin-top: $layout-spacing-base*2;
 }
 
 /* ==========================================================================
@@ -246,4 +261,13 @@ $file-card-border-radius: 3px !default;
 
 .file-card--loading .file-card__title {
   font-size: $typo-size-large;
+  flex-flow: column;
+}
+
+.file-card--loading .file-card__loader-text {
+  font-size: $typo-size-base;
+}
+
+.file-card--processing .file-card__progress {
+  opacity: 0;
 }
