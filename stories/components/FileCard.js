@@ -187,6 +187,13 @@ storiesOf('Components', module).add('FileCard', () => (
             loadingProgress={50}
           />
         </Col>
+        <Col xs={12} sm={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            label="Sheep in Iceland"
+            loadingProgress={100}
+          />
+        </Col>
       </Row>
     </StoryItem>
     <StoryItem title="File Card Placeholder">

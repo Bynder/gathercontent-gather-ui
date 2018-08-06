@@ -65,5 +65,10 @@ describe('FileCard', () => {
     wrapper.setProps({ loadingProgress: 10 });
     expect(wrapper.hasClass('file-card--loading')).toBe(true);
     expect(wrapper.find('.file-card__progress').text()).toBe('10%');
+    expect(wrapper.find('.file-card__loader-text').text()).toBe('Uploading...');
+    wrapper.setProps({ loadingProgress: 100 });
+    expect(wrapper.find('.file-card__loader-text').text()).toBe(
+      'Processing...'
+    );
   });
 });
