@@ -181,6 +181,11 @@ $file-card-border-radius: 3px !default;
   }
 }
 
+.file-card__loader {
+  position: absolute;
+  transform: scale(3);
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -237,4 +242,8 @@ $file-card-border-radius: 3px !default;
       margin:0;
     }
   }
+}
+
+.file-card--loading .file-card__title {
+  font-size: $typo-size-large;
 }

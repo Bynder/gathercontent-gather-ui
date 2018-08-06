@@ -178,14 +178,19 @@ storiesOf('Components', module).add('FileCard', () => (
         </Col>
       </Row>
     </StoryItem>
-    <StoryItem
-      title="File Card Placeholder"
-    >
+    <StoryItem>
       <Row>
-        <Col xs={4}>
-          <FileCardPlaceholder />
+        <Col xs={12} sm={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            label="Sheep in Iceland"
+            loadingProgress={50}
+          />
         </Col>
       </Row>
+    </StoryItem>
+    <StoryItem title="File Card Placeholder">
+      <FileCardPlaceholder />
     </StoryItem>
   </div>
 ));

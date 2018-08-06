@@ -59,4 +59,11 @@ describe('FileCard', () => {
     expect(wrapper.hasClass('file-card--removed')).toBe(true);
     expect(wrapper.hasClass('file-card--added')).toBe(true);
   });
+
+  test('adding a loading state', () => {
+    expect(wrapper.hasClass('file-card--loading')).toBe(false);
+    wrapper.setProps({ loadingProgress: 10 });
+    expect(wrapper.hasClass('file-card--loading')).toBe(true);
+    expect(wrapper.find('.file-card__progress').text()).toBe('10%');
+  });
 });
