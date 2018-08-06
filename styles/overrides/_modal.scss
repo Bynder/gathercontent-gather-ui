@@ -59,12 +59,12 @@
 }
 
 .modal-title {
-    display: flex;
-    align-content: center;
     font-size: $modal-heading-font-size;
     font-weight: $typo-weight-semi-bold;
 
     img {
+      position: relative;
+      top: 2px;
       margin: 0 0 0 $layout-spacing-base/2;
       width: $typo-size-large;
     }
