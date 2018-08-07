@@ -1,6 +1,6 @@
 import { React, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
-import FileCardPreview from "../../lib/FileCard/FileCardPreview";
+import FileCardPreview from '../../lib/FileCard/FileCardPreview';
 
 describe('FileCard', () => {
   let wrapper;
