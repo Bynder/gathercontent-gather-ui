@@ -1,5 +1,6 @@
 import { React, shallow } from '../setup';
 import FileCard from '../../lib/FileCard';
+import FileCardPreview from "../../lib/FileCard/FileCardPreview";
 
 describe('FileCard', () => {
   let wrapper;
@@ -7,8 +8,7 @@ describe('FileCard', () => {
   const props = {
     filename: 'field_notes.txt',
     label: 'Field notes',
-    previewSrc:
-      'https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922'
+    previewSrc: 'http://preview/src'
   };
 
   beforeEach(() => {
@@ -21,12 +21,6 @@ describe('FileCard', () => {
 
   test('renders a file card component', () => {
     expect(wrapper.find('.file-card__wrapper')).toHaveLength(1);
-  });
-
-  test('renders an element with the correct background-image', () => {
-    expect(
-      wrapper.find('.file-card__thumbnail').props().style.backgroundImage
-    ).toEqual(`url(${props.previewSrc})`);
   });
 
   test('renders the correct filename and label for a thumbnail', () => {
@@ -45,11 +39,6 @@ describe('FileCard', () => {
     expect(wrapper.hasClass('file-card--highlighted')).toEqual(true);
   });
 
-  test('renders the file format extension as the title and adds a modifier', () => {
-    wrapper.setProps({ previewSrc: '' });
-    expect(wrapper.find('.file-card__title').contains('txt')).toEqual(true);
-  });
-
   test('adding a added or removed modifier class', () => {
     wrapper.setProps({
       added: true,
@@ -60,15 +49,21 @@ describe('FileCard', () => {
     expect(wrapper.hasClass('file-card--added')).toBe(true);
   });
 
-  test('adding a loading state', () => {
+  test('adding loading state modifiers', () => {
     expect(wrapper.hasClass('file-card--loading')).toBe(false);
+
     wrapper.setProps({ loadingProgress: 10 });
     expect(wrapper.hasClass('file-card--loading')).toBe(true);
-    expect(wrapper.find('.file-card__progress').text()).toBe('10%');
-    expect(wrapper.find('.file-card__loader-text').text()).toBe('Uploading...');
-    wrapper.setProps({ loadingProgress: 100 });
-    expect(wrapper.find('.file-card__loader-text').text()).toBe(
-      'Processing...'
-    );
+  });
+
+  test('rendering a <FileCardPreview /> component', () => {
+    wrapper.setProps({ loadingProgress: 10 });
+    expect(wrapper.find(FileCardPreview).props()).toEqual({
+      label: props.label,
+      previewSrc: props.previewSrc,
+      progress: 10,
+      fileExtension: 'txt',
+      showPreview: false
+    });
   });
 });

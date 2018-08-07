@@ -190,7 +190,7 @@ $file-card-border-radius: 3px !default;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: $layout-spacing-base 0 0;
+  margin: $layout-spacing-base*3 0 0;
 }
 
 .file-card__loader {
@@ -198,6 +198,8 @@ $file-card-border-radius: 3px !default;
 }
 
 .file-card__loader-text {
+  text-transform: none;
+  font-weight: $typo-weight-roman;
   margin-top: $layout-spacing-base*2;
 }
 
