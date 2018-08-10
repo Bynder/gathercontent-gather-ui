@@ -12,6 +12,7 @@ A collection of components used to render conversations
 | user                | Object        | N/A       | Yes      | The user who is submitting the comment.                                       |
 | comments            | Array         | `[]`      | No       | An array of comments that are in the conversation.                            |
 | removeComment       | Function      | `() {}`   | No       | Executes when the comment is removed.                                         |
+| retryComment       | Function      | `() {}`   | No       | Executes when the "Retry" button is clicked on the comment failed state.                                         |
 | editComment         | Function      | `() {}`   | No       | Executes when the comment is edited.                                          |
 | onCommentChange     | Function      | `() {}`   | No       | Executes when a comment value changes.                                        |
 | onCommentCancel     | Function      | `() {}`   | No       | Executes when a comment edit has been canceled.                               |

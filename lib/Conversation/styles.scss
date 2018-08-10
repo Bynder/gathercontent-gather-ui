@@ -144,12 +144,26 @@ $conversation-meta-text-color: $neutral-base !default;
   left: -999em;
 }
 
-.conversation__date-text {
+.conversation__date-text,
+.conversation__failed-text {
   color: $conversation-meta-text-color;
+  font-size: $conversation-meta-text-size;
 }
 
 .conversation__meta-wrapper {
   margin-bottom: $conversation-padding;
+}
+
+.conversation__failed--icon,
+.is-active .conversation__failed--icon {
+  margin-right: 5px;
+  vertical-align: sub;
+  path {
+    fill: $primary-red;
+  }
+}
+.conversation__failed--button {
+  margin-left: $layout-spacing-base/4
 }
 
 .conversation__confirmation-overlay {

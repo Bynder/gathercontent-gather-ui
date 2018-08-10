@@ -11,6 +11,7 @@ describe('Comment', () => {
   const onCommentCancelSpy = jest.fn();
   const editCommentSpy = jest.fn();
   const removeCommentSpy = jest.fn();
+  const retryCommentSpy = jest.fn();
   const mockUsers = [
     {
       id: 2,
@@ -46,7 +47,8 @@ describe('Comment', () => {
     onRowCountChange() {},
     focusFallback: document.createElement('input'),
     users: mockUsers,
-    userCanComment: true
+    userCanComment: true,
+    retryComment: retryCommentSpy
   };
 
   beforeEach(() => {
@@ -183,5 +185,20 @@ describe('Comment', () => {
     wrapper.setState({ showEditForm: true });
     expect(wrapper.find(Linkify)).toHaveLength(0);
     expect(wrapper.find(CommentForm)).toHaveLength(1);
+  });
+
+  test('renders a failed state', () => {
+    wrapper.setProps({ hasFailed: true });
+    const failed = wrapper.find('.conversation__failed-text');
+    expect(failed).toHaveLength(1);
+    expect(failed.find(Button)).toHaveLength(1);
+    expect(failed.find(Button).prop('clickHandler')).toEqual(
+      wrapper.instance().retryComment
+    );
+  });
+
+  test('retryComment passes the comment id and body', () => {
+    wrapper.instance().retryComment();
+    expect(retryCommentSpy).toHaveBeenCalledWith('123', 'comment body text');
   });
 });
