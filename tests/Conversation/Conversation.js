@@ -98,10 +98,6 @@ describe('Conversation', () => {
     expect(commentList.prop('onCommentCancel')).toEqual(props.onCommentCancel);
   });
 
-  test('does not render the reply count text', () => {
-    expect(wrapper.find('.conversation__reply-count')).toHaveLength(0);
-  });
-
   test('does not render the reply count text (when there is only 1 comment)', () => {
     wrapper.setProps({ showComments: false });
     wrapper.setProps({ comments: [props.comments[0]] });
@@ -159,9 +155,9 @@ describe('Conversation', () => {
   });
 
   test('does not render the resolve button', () => {
-    expect(wrapper.find(Button)).toHaveLength(1);
+    expect(wrapper.find(Button)).toHaveLength(2);
     wrapper.setProps({ userCanResolve: false });
-    expect(wrapper.find(Button)).toHaveLength(0);
+    expect(wrapper.find(Button)).toHaveLength(1);
   });
 
   test('does not render a resolveConversation button or a CommentList', () => {
