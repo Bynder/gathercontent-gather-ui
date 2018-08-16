@@ -1,5 +1,5 @@
 import { MentionsInput } from 'react-mentions';
-import { React, shallow } from '../../setup';
+import { React, mount } from '../../setup';
 import CommentFormInput from '../../../lib/Conversation/CommentForm/CommentFormInput';
 
 describe('Comment Form Input', () => {
@@ -27,7 +27,7 @@ describe('Comment Form Input', () => {
 
   beforeEach(() => {
     handleOnFocusSpy = jest.fn();
-    wrapper = shallow(
+    wrapper = mount(
       <CommentFormInput
         inputValue="waffles"
         placeholder="wafflet"
