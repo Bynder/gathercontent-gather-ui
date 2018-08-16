@@ -6,6 +6,8 @@ import SearchList from '../../lib/Search/SearchList';
 import SearchListItem from '../../lib/Search/SearchListItem';
 import SearchOptions from '../../lib/Search/SearchOptions';
 import ToggleFilter from '../../lib/Search/ToggleFilter';
+import SearchInput from '../../lib/Search/SearchInput';
+import SearchBody from '../../lib/Search/SearchBody';
 
 describe('Search', () => {
   let wrapper;
@@ -35,5 +37,10 @@ describe('Search', () => {
     expect(Search.ListItem).toEqual(SearchListItem);
     expect(Search.Options).toEqual(SearchOptions);
     expect(Search.ToggleFilter).toEqual(ToggleFilter);
+
+    const input = shallow(<Search.Input />);
+    expect(input.prop('children')()).toEqual(<SearchInput />);
+    const body = shallow(<Search.Body />);
+    expect(body.prop('children')({ showBody: false })).toEqual(<SearchBody />);
   });
 });
