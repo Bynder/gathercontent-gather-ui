@@ -1,3 +1,6 @@
+$top-bar-height: 95px;
+$search-min-width: 250px !default;
+
 .search {
   position: relative;
 }
@@ -12,6 +15,8 @@
   background: white;
   margin-top: $layout-spacing-base/2;
   border-radius: $layout-spacing-base/4;
+  max-height: calc(100vh - #{$top-bar-height});
+  overflow: scroll;
 }
 
 .search-options {
@@ -24,7 +29,7 @@
 
 .search-list__heading {
   color: $neutral-base;
-  margin: $layout-spacing-base/4 0 $layout-spacing-base/2;
+  margin: $layout-spacing-base/4 $layout-spacing-base/2;
 }
 
 .search__body.display-results {
@@ -32,7 +37,7 @@
 }
 
 .search-list {
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base/2 0;
 }
 
 .search-list + .search-list {
@@ -40,10 +45,13 @@
 }
 
 .search-item {
-  margin: $layout-spacing-base/2 0;
+  padding: $layout-spacing-base/2;
   em {
     font-style: normal;
     color: $primary-purple;
+  }
+  &:hover {
+    background: $neutral-lightest;
   }
 }
 .search-item__title,
@@ -52,6 +60,7 @@
 }
 .search-item__subtext {
   color: $neutral-base;
+  font-size: $typo-size-small;
 }
 
 .search-item__content {
@@ -61,6 +70,9 @@
   }
 }
 
+.search-list a, .search-list a:hover {
+  text-decoration: none;
+}
 
 .search__input {
   &--input,
@@ -86,6 +98,7 @@
 
 
 .search__input.is-focus {
+  min-width: $search-min-width;
   background-color: $neutral-lightest;
   border-radius: $layout-spacing-base/4;
   display: flex;
