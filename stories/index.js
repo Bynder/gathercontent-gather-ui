@@ -46,3 +46,4 @@ import ConversationContext from './components/ConversationContext';
 import ItemRow from './components/ItemRow';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';
+import Collections from './components/Collections';

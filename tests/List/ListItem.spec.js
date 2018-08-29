@@ -4,12 +4,20 @@ import Button from '../../lib/Button';
 
 describe('List Item', () => {
   let wrapper;
+  let onToggleMock;
 
   const mockAction = <button>test button</button>;
+  const props = {
+    id: '123',
+    isCurrent: true,
+    collapse: true
+  };
 
   beforeEach(() => {
+    onToggleMock = jest.fn();
+
     wrapper = shallow(
-      <ListItem action={mockAction} isCurrent collapse>
+      <ListItem action={mockAction} onToggle={onToggleMock} {...props}>
         Hello world
         <List>
           <ListItem>This is bruce!</ListItem>
@@ -32,10 +40,11 @@ describe('List Item', () => {
     expect(wrapper.find(Button).hasClass('is-active')).toEqual(true);
   });
 
-  test('toggles state.shouldChildren from false to true', () => {
+  test('toggles state.showSubList from false to true', () => {
     expect(wrapper.find(Button)).toHaveLength(1);
 
     wrapper.find(Button).prop('clickHandler')();
+    expect(onToggleMock).toHaveBeenCalledWith(props.id);
     expect(wrapper.state('showSubList')).toEqual(true);
     wrapper.find(Button).prop('clickHandler')();
     expect(wrapper.state('showSubList')).toEqual(false);
@@ -59,7 +68,13 @@ describe('List Item', () => {
     );
   });
 
+  test('not rendering sub list', () => {
+    expect(wrapper.find('.list__item-content').find(List)).toHaveLength(0);
+    expect(wrapper.find(List)).toHaveLength(0);
+  });
+
   test('rendering sub lists outside of the content container', () => {
+    wrapper.setState({ showSubList: true });
     expect(wrapper.find('.list__item-content').find(List)).toHaveLength(0);
     expect(wrapper.find(List)).toHaveLength(1);
   });

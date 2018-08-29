@@ -111,6 +111,10 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 }
 
+.status-indicator--small .status-indicator__label {
+  font-size: $typo-size-slight;
+}
+
 .status-indicator--soft-label .status-indicator__label {
   font-size: $typo-size-slight;
   font-weight: $typo-weight-roman;
