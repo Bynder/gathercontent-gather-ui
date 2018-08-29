@@ -59,6 +59,15 @@ const mockComments = [{
   createdBy: 2
 }];
 
+const mockFailedComment = [{
+  id: 'comment-id-1',
+  body: 'Here is a decent size comment that was created by someone who wanted to comment.',
+  createdAt: '2017-06-08 09:56:41',
+  author: mockUser,
+  createdBy: 2,
+  hasFailed: true
+}];
+
 const mockConversation = {
   id: '1234567',
   comments: mockComments,
@@ -190,6 +199,30 @@ storiesOf('Components', module)
             resolved={false}
             userCanResolve={false}
           />
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="Conversation with failed comment"
+        >
+          <BoundaryClickWatcher>
+            {boundaryIsActive => (
+              <Conversation
+                id="1234567"
+                comments={mockFailedComment}
+                resolveConversation={mockActions.resolveConversation}
+                unresolveConversation={mockActions.unresolveConversation}
+                removeComment={mockActions.removeComment}
+                addComment={mockActions.addComment}
+                editComment={mockActions.editComment}
+                user={mockUser}
+                users={mockUsers}
+                userCanComment={false}
+                focusOnMount
+                showComments={boundaryIsActive}
+              />
+            )}
+          </BoundaryClickWatcher>
         </StoryItem>
       </div>
     );

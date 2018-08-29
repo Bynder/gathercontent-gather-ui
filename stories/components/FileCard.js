@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import { FileCard, Icon, TooltipWrapper, FileCardPlaceholder } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
-import BoundaryClickWatcher from "../../lib/BoundaryClickWatcher";
 
 const trashButton = <a key="hello"><Icon name="trash" /></a>;
 const commentButton = <button onClick={action('test')} key="hello2"><Icon name="comment" /></button>;
@@ -25,6 +24,7 @@ storiesOf('Components', module).add('FileCard', () => (
             filename="cute_sheep_in_iceland.jpg"
             label="Sheep in Iceland"
             previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+            showPreview
           >
             {actions}
           </FileCard>
@@ -39,10 +39,10 @@ storiesOf('Components', module).add('FileCard', () => (
       <Row>
         <Col xs={4}>
           <FileCard
-            filename="sheep_in_iceland.jpg"
-            label="Sheep in Iceland"
-            previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+            filename="notes.txt"
+            label="Field notes"
             isHighlighted
+            showPreview
           >
             {actions}
           </FileCard>
@@ -56,10 +56,7 @@ storiesOf('Components', module).add('FileCard', () => (
     >
       <Row>
         <Col xs={4}>
-          <FileCard
-            filename="sheep_in_iceland.jpg"
-            label="No children"
-          />
+          <FileCard filename="notes.txt" label="Field notes" />
         </Col>
       </Row>
     </StoryItem>
@@ -83,7 +80,11 @@ storiesOf('Components', module).add('FileCard', () => (
     >
       <Row>
         <Col xs={4}>
-          <FileCard filename="field_notes.txt" label="Field notes" isHighlighted>
+          <FileCard
+            filename="field_notes.txt"
+            label="Field notes"
+            isHighlighted
+          >
             {actions}
           </FileCard>
         </Col>
@@ -100,6 +101,7 @@ storiesOf('Components', module).add('FileCard', () => (
             filename="sheep_in_iceland.jpg"
             label="Sheep in Iceland"
             previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+            showPreview
           >
             {actions}
           </FileCard>
@@ -110,6 +112,7 @@ storiesOf('Components', module).add('FileCard', () => (
             filename="sunset_in_berlin_large_filename.jpg"
             label="Large sunset in Berlin, Germany"
             previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
+            showPreview
             isHighlighted
           >
             {actions}
@@ -120,6 +123,7 @@ storiesOf('Components', module).add('FileCard', () => (
             filename="sheep_in_iceland.jpg"
             label="Sheep in Iceland"
             previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+            showPreview
             isHighlighted
           >
             {actions}
@@ -141,6 +145,7 @@ storiesOf('Components', module).add('FileCard', () => (
               filename="sheep_in_iceland.jpg"
               label="Sheep in Iceland"
               previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
+              showPreview
               removed
             />
           </TooltipWrapper>
@@ -153,36 +158,50 @@ storiesOf('Components', module).add('FileCard', () => (
             className="file-card__tooltip file-card__tooltip--added"
           >
             <FileCard
-              type="image"
               filename="sunset_in_berlin_large_filename.jpg"
               label="Large sunset in Berlin, Germany"
               previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
+              showPreview
               added
             />
           </TooltipWrapper>
         </Col>
         <Col xs={12} sm={4}>
-          <FileCard
-            filename="sheep_in_iceland.jpg"
-            label="Sheep in Iceland"
-            removed
-          />
+          <TooltipWrapper
+            id="id-1"
+            tooltipText="removed by Bruce"
+            placement="top"
+            className="file-card__tooltip file-card__tooltip--removed"
+          >
+            <FileCard
+              filename="notes.txt"
+              label="Field notes"
+              removed
+            />
+          </TooltipWrapper>
         </Col>
         <Col xs={12} sm={4}>
-          <FileCard
-            type="image"
-            filename="sunset_in_berlin_large_filename.jpg"
-            label="Large sunset in Berlin, Germany"
-            added
-          />
+          <TooltipWrapper
+            id="id-2"
+            tooltipText="added by Gill"
+            placement="top"
+            className="file-card__tooltip file-card__tooltip--added"
+          >
+            <FileCard
+              filename="crazyspreadsheet.csv"
+              label="Crazy spreadsheet"
+              added
+            />
+          </TooltipWrapper>
         </Col>
       </Row>
     </StoryItem>
-    <StoryItem>
+    <StoryItem title="Uploading, Process and Loading States">
       <Row>
         <Col xs={12} sm={4}>
           <FileCard
             filename="sheep_in_iceland.jpg"
+            previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
             label="Sheep in Iceland"
             loadingProgress={50}
           />
@@ -190,8 +209,16 @@ storiesOf('Components', module).add('FileCard', () => (
         <Col xs={12} sm={4}>
           <FileCard
             filename="sheep_in_iceland.jpg"
+            previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
             label="Sheep in Iceland"
             loadingProgress={100}
+          />
+        </Col>
+        <Col xs={12} sm={4}>
+          <FileCard
+            filename="sheep_in_iceland.jpg"
+            previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
+            label="Sheep in Iceland"
           />
         </Col>
       </Row>
