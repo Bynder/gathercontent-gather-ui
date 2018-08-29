@@ -8,7 +8,11 @@ describe('SearchBoundaryListener', () => {
   beforeEach(() => {
     clickHandlerSpy = jest.fn();
     wrapper = shallow(
-      <ToggleFilter label="search toggle" clickHandler={clickHandlerSpy} />
+      <ToggleFilter
+        label="search toggle"
+        clickHandler={clickHandlerSpy}
+        displayChecked
+      />
     );
   });
 
