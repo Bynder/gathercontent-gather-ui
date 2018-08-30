@@ -17,6 +17,7 @@ $borderColour: #F8FBFC;
 .toggle-wrapper {
   display: block;
   overflow: hidden;
+  line-height: 0;
 }
 
 .toggle-wrapper--center {
@@ -31,6 +32,7 @@ $borderColour: #F8FBFC;
 
 .toggle-wrapper__label {
   font-size: 14px;
+  line-height: 20px;
   margin-top: 9px;
   vertical-align: top;
 
@@ -111,10 +113,15 @@ $borderColour: #F8FBFC;
   .toggle-wrapper__label {
     margin: 0 0 0 $layout-spacing-base/2;
   }
+  .toggle-wrapper__inner {
+    max-height: $layout-spacing-base;
+    overflow: hidden;
+  }
 }
 
 .is-checked {
   .toggle-switch + .toggle-switch__label {
     background-color: $primary-green;
   }
+
 }
