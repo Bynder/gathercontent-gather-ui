@@ -38,7 +38,6 @@ describe('SearchInput', () => {
   test('renders a start button', () => {
     const start = wrapper.find('.search__input--start');
     expect(start.hostNodes()).toHaveLength(1);
-    console.log(start);
     expect(start.at(0).prop('clickHandler')).toEqual(
       wrapper.instance().handleSearchClick
     );
