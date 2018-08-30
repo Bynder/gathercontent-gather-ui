@@ -1,4 +1,4 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import SearchInput from '../../lib/Search/SearchInput';
 
 describe('SearchInput', () => {
@@ -10,7 +10,7 @@ describe('SearchInput', () => {
     onChangeSpy = jest.fn();
     hideBodySpy = jest.fn();
     displayBodySpy = jest.fn();
-    wrapper = shallow(
+    wrapper = mount(
       <SearchInput
         onChange={onChangeSpy}
         hideBody={hideBodySpy}
@@ -22,21 +22,24 @@ describe('SearchInput', () => {
 
   test('renders an input', () => {
     const input = wrapper.find('.search__input--input');
-    expect(input).toHaveLength(1);
+    expect(input.hostNodes()).toHaveLength(1);
     expect(input.prop('onChange')).toEqual(wrapper.instance().handleChange);
     expect(input.prop('onFocus')).toEqual(wrapper.instance().handleFocus);
   });
 
   test('renders a clear button', () => {
     const clear = wrapper.find('.search__input--clear');
-    expect(clear).toHaveLength(1);
-    expect(clear.prop('clickHandler')).toEqual(wrapper.instance().clearInput);
+    expect(clear.hostNodes()).toHaveLength(1);
+    expect(clear.at(0).prop('clickHandler')).toEqual(
+      wrapper.instance().clearInput
+    );
   });
 
   test('renders a start button', () => {
     const start = wrapper.find('.search__input--start');
-    expect(start).toHaveLength(1);
-    expect(start.prop('clickHandler')).toEqual(
+    expect(start.hostNodes()).toHaveLength(1);
+    console.log(start);
+    expect(start.at(0).prop('clickHandler')).toEqual(
       wrapper.instance().handleSearchClick
     );
   });
@@ -44,7 +47,8 @@ describe('SearchInput', () => {
   test('adds a .is-focus class', () => {
     expect(wrapper.hasClass('is-focus')).toBe(false);
     wrapper.setProps({ showBody: true });
-    expect(wrapper.hasClass('is-focus')).toBe(true);
+    wrapper.update();
+    expect(wrapper.render().hasClass('is-focus')).toBe(true);
   });
 
   test('handles a change', () => {
