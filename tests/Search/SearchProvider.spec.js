@@ -18,7 +18,6 @@ describe('SearchProvider', () => {
       hideBody: wrapper.instance().hideBody
     };
     expect(wrapper.find(SearchContext.Provider)).toHaveLength(1);
-    console.log(wrapper.find(SearchContext.Provider).prop('value'));
     expect(wrapper.find(SearchContext.Provider).prop('value')).toEqual(
       mockValue
     );

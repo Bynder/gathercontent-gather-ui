@@ -47,3 +47,4 @@ import ItemRow from './components/ItemRow';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';
 import Collections from './components/Collections';
+import MentionsForm from './components/MentionsForm';
