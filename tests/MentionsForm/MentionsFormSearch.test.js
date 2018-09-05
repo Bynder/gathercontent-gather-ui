@@ -30,11 +30,20 @@ describe('Mentions Form Input', () => {
   beforeEach(() => {
     addMentionSpy = jest.fn();
     wrapper = shallow(
-      <MentionsFormSearch addMention={addMentionSpy} users={users} />
+      <MentionsFormSearch
+        addMention={addMentionSpy}
+        users={users}
+        displayEmail={false}
+      />
     );
   });
 
   test('renders a Dropdown and a the correct amount of users', () => {
+    expect(wrapper.find(Dropdown)).toHaveLength(1);
+    expect(wrapper.find(Dropdown).prop('onToggle')).toEqual(
+      wrapper.instance().focusSearch
+    );
+    expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
     expect(wrapper.find(Dropdown.ActionGroup)).toHaveLength(3);
     expect(wrapper.find('.mention-form__search-input')).toHaveLength(1);
     expect(
@@ -59,13 +68,23 @@ describe('Mentions Form Input', () => {
         .find(AvatarInformation)
         .last()
         .prop('email')
-    ).toEqual(users[1].email);
+    ).toEqual(`@${users[1].display}`);
     expect(
       wrapper
         .find(AvatarInformation)
         .last()
         .prop('name')
     ).toEqual(users[1].name);
+  });
+
+  test('displays the email instead of the users display if displayEmail is true', () => {
+    wrapper.setProps({ displayEmail: true });
+    expect(
+      wrapper
+        .find(AvatarInformation)
+        .last()
+        .prop('email')
+    ).toEqual(users[1].email);
   });
 
   test('returns the correct filtered users', () => {

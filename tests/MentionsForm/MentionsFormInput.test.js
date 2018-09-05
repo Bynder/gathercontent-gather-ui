@@ -2,7 +2,6 @@ import { MentionsInput } from 'react-mentions';
 import { React, mount } from '../setup';
 import MentionFormInput from '../../lib/MentionsForm/MentionsFormInput';
 import MentionsFormSearch from '../../lib/MentionsForm/MentionsFormSearch';
-import Dropdown from '../../lib/Dropdown';
 
 describe('Mentions Form Input', () => {
   let wrapper;
@@ -64,9 +63,7 @@ describe('Mentions Form Input', () => {
     expect(results).toEqual([]);
   });
 
-  test('renders a Dropdown and a MentionsFormSearch', () => {
-    expect(wrapper.find(Dropdown)).toHaveLength(1);
-    expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
+  test('renders a MentionsFormSearch', () => {
     expect(wrapper.find(MentionsFormSearch)).toHaveLength(1);
     expect(wrapper.find(MentionsFormSearch).prop('users')).toEqual(users);
     expect(wrapper.find(MentionsFormSearch).prop('addMention')).toEqual(

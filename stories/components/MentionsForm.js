@@ -61,6 +61,7 @@ storiesOf('Components', module)
             onCancel={action('onCancel')}
             users={mockUsers}
             placeholder="Try typing @ or hit the mention button"
+            displayEmail
           />
         </StoryItem>
       </div>
