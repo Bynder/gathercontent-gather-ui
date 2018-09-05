@@ -164,6 +164,10 @@ $mention-suggestions-max-height: 500px;
 
 }
 
+.mention-form__input__suggestions {
+  z-index: 2 !important;
+}
+
 .mention-form.hide-author {
   .mention-form__input-wrapper {
     padding-left: 0;
