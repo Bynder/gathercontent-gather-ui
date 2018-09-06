@@ -21,6 +21,7 @@ A component that renders a form with a text input that allows you to '@' users.
 | cancelText          | String        | 'Cancel'  | No       | The text to display for the cancel button                                              |
 | submitText          | String        | 'Submit'  | No       | The text to display for the submit button                                              |
 | displayEmail        | Bool          | false     | No       | Determines wether to show the email or username/display when displaying mentionable/@-able users |
+| disableUntilMention | Bool          | false     | No       | Disables the submit button until a mention is added                                    |
 
 ```
 <MentionsForm

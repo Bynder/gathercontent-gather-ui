@@ -5,6 +5,8 @@ $mention-form-padding: $layout-spacing-base/2;
 $mention-suggestions-min-width: 250px;
 $mention-suggestions-max-height: 500px;
 
+$mention-color: #f5effc;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -168,6 +170,18 @@ $mention-suggestions-max-height: 500px;
     font-size: $typo-size-small;
   }
 
+}
+
+.mention-form__input__highlighter {
+  padding: 0 $layout-spacing-base/2;
+  strong {
+    background: rgba( $primary-purple, .1 );
+    color: $primary-purple;
+    font-weight: $typo-weight-semi-bold;
+    border-radius: $conversation-border-radius;
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .mention-form__input__suggestions {
