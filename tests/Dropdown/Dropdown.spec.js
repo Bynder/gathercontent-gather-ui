@@ -32,7 +32,9 @@ describe('Dropdown', () => {
     expect(wrapper.instance().getChildContext()).toEqual({
       [GATHER_UI_DROPDOWN]: {
         showContent: true,
-        toggleShowContent: wrapper.instance().toggleShowContent
+        toggleShowContent: wrapper.instance().toggleShowContent,
+        bounds: { top: -9999 },
+        autoTopPosition: false
       }
     });
   });

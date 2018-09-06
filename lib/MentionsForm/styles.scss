@@ -84,13 +84,18 @@ $mention-color: #f5effc;
   }
 }
 
+.mention-form__actions {
+  overflow: hidden;
+  .mention-form__actions--submit {
+    float: right;
+  }
+}
+
 .mention-form__dropdown {
-  position: absolute;
-  z-index: 1;
+  float: left;
+  margin-top: $layout-spacing-base/4;
   padding: $layout-spacing-base/2;
   .dropdown__content--fix-right.is-active {
-    top: -100%;
-    padding: 0;
     min-width: 300px;
   }
 }
@@ -170,22 +175,6 @@ $mention-color: #f5effc;
     font-size: $typo-size-small;
   }
 
-}
-
-.mention-form__input__highlighter {
-  padding: 0 $layout-spacing-base/2;
-  strong {
-    background: rgba( $primary-purple, .1 );
-    color: $primary-purple;
-    font-weight: $typo-weight-semi-bold;
-    border-radius: $conversation-border-radius;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-.mention-form__input__suggestions {
-  z-index: 2 !important;
 }
 
 .mention-form.hide-author {
