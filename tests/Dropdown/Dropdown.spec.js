@@ -57,6 +57,9 @@ describe('Dropdown', () => {
     expect(wrapper.state('showContent')).toBe(true);
     wrapper.instance().toggleShowContent();
     expect(wrapper.state('showContent')).toBe(false);
+    wrapper.instance().toggleShowContent({ top: 240 });
+    expect(wrapper.state('showContent')).toBe(true);
+    expect(wrapper.state('bounds')).toEqual({ top: 240 });
   });
 
   test('clicking outside of the dropdown boundary hides the content', () => {
