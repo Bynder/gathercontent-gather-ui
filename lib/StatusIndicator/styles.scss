@@ -57,7 +57,7 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator--completed {
-  .status-indicator__label, .status-indicator__children .workflow-item__text, .status-indicator__children .duedate__button {
+  .status-indicator__label, .status-indicator__children .workflow-item__text, .status-indicator__children .duedate__button, .status-indicator__label-text {
     text-decoration: line-through;
     font-style: italic;
     color: $color-text-light;
