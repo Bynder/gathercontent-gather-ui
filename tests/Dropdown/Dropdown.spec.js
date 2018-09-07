@@ -34,7 +34,7 @@ describe('Dropdown', () => {
         showContent: true,
         toggleShowContent: wrapper.instance().toggleShowContent,
         bounds: { top: -9999 },
-        autoTopPosition: false
+        autoPosition: false
       }
     });
   });

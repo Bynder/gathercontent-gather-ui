@@ -154,6 +154,19 @@ storiesOf('Components', module)
             </Dropdown.Content>
           </Dropdown>
         </StoryItem>
+
+        <StoryItem
+          title="Dropdown with auto positioning"
+          description="The dropdown content have auto positioning based on where the trigger is."
+        >
+          <Dropdown id="id-3" autoPosition>
+            <Dropdown.Trigger useButton>
+              Auto Position
+            </Dropdown.Trigger>
+
+            {createContentWithItems()}
+          </Dropdown>
+        </StoryItem>
       </div>
     );
   });
