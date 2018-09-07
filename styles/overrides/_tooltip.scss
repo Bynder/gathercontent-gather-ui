@@ -1,6 +1,8 @@
 .tooltip {
     font-family: $typo-stack-base;
     @include font-smoothing;
+    animation: dropdownAnimation 750ms;
+    animation-fill-mode: forwards;
 }
 
 .tooltip-arrow {
