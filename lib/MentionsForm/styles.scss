@@ -5,6 +5,8 @@ $mention-form-padding: $layout-spacing-base/2;
 $mention-suggestions-min-width: 250px;
 $mention-suggestions-max-height: 500px;
 
+$mention-color: #f5effc;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -82,13 +84,18 @@ $mention-suggestions-max-height: 500px;
   }
 }
 
+.mention-form__actions {
+  overflow: hidden;
+  .mention-form__actions--submit {
+    float: right;
+  }
+}
+
 .mention-form__dropdown {
-  position: absolute;
-  z-index: 1;
+  float: left;
+  margin-top: $layout-spacing-base/4;
   padding: $layout-spacing-base/2;
   .dropdown__content--fix-right.is-active {
-    top: -100%;
-    padding: 0;
     min-width: 300px;
   }
 }
@@ -168,10 +175,6 @@ $mention-suggestions-max-height: 500px;
     font-size: $typo-size-small;
   }
 
-}
-
-.mention-form__input__suggestions {
-  z-index: 2 !important;
 }
 
 .mention-form.hide-author {

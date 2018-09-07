@@ -74,7 +74,7 @@
     "react-bootstrap": "0.32.1",
     "react-day-picker": "^7.1.1",
     "react-dom": "^16.0.0",
-    "react-mentions": "^2.0.1",
+    "react-mentions": "2.2.0",
     "react-svg-inline": "^1.2.0",
     "svg-url-loader": "^1.1.1"
   },

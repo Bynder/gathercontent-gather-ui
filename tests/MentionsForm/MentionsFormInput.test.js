@@ -37,6 +37,7 @@ describe('Mentions Form Input', () => {
         focusOnMount={false}
         onRowCountChange={() => {}}
         users={users}
+        dropdownAutoTopPosition={false}
       />
     );
   });
@@ -50,6 +51,7 @@ describe('Mentions Form Input', () => {
     expect(input.prop('placeholder')).toEqual('wafflet');
     expect(input.prop('onFocus')).toEqual(handleOnFocusSpy);
     expect(input.prop('onBlur')).toEqual(handleOnFocusSpy);
+    expect(input.prop('suggestionsPortalHost')).toEqual(null);
   });
 
   test('returns the correct filtered users', () => {

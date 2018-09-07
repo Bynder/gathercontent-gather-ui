@@ -50,6 +50,10 @@ describe('Mentions Form', () => {
 
     wrapper.setProps({ value: 'test' });
     expect(wrapper.find('form').hasClass('has-value')).toBe(true);
+
+    expect(wrapper.find(MentionsFormActions).prop('disableSubmit')).toEqual(
+      false
+    );
   });
 
   test('calls props.onSubmit', () => {
@@ -148,5 +152,21 @@ describe('Mentions Form', () => {
     wrapper.setProps({ editing: true });
     wrapper.update();
     expect(wrapper.render().hasClass('mention-form--inline')).toBe(true);
+  });
+
+  test('disables the input intil it contains a mention', () => {
+    wrapper.setProps({ disableUntilMention: true });
+    wrapper.setState({ inputValue: 'test' });
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.find(MentionsFormActions).prop('disableSubmit')).toEqual(
+      true
+    );
+    wrapper.setState({ inputValue: 'test @waffles' });
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    expect(wrapper.find(MentionsFormActions).prop('disableSubmit')).toEqual(
+      false
+    );
   });
 });

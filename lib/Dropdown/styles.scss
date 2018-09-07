@@ -7,7 +7,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
    Styles
    ========================================================================== */
 
-@keyframes dropdownAnimation { 
+@keyframes dropdownAnimation {
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -15, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -15, 0, 1); }
   5.81% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -7.748, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -7.748, 0, 1); }
   11.61% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.799, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.799, 0, 1); }
@@ -18,7 +18,21 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   44.54% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.094, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.094, 0, 1); }
   51.65% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.244, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.244, 0, 1); }
   80.28% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.028, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.028, 0, 1); }
-  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@keyframes dropdownCentreAnimation {
+  0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, -15, 0, 1); }
+  5.81% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, -7.748, 0, 1); }
+  11.61% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, -1.799, 0, 1); }
+  17.42% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 1.348, 0, 1); }
+  23.12% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 2.137, 0, 1); }
+  30.33% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 1.468, 0, 1); }
+  37.44% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0.489, 0, 1); }
+  44.54% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, -0.094, 0, 1); }
+  51.65% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, -0.244, 0, 1); }
+  80.28% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0.028, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 0, 1); }
 }
 
 .dropdown-gc,
@@ -30,6 +44,11 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   + .dropdown-gc {
     margin-left: $layout-spacing-base;
   }
+}
+
+.dropdown-gc.is-active.auto-top,
+.is-active.auto-top .dropdown__wrapper {
+  position: static;
 }
 
 .dropdown-gc.is-active {
@@ -64,10 +83,6 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   box-shadow: none;
 }
 
-.dropdown__content--collapse {
-  padding: 0;
-}
-
 .dropdown__content--centre {
   left: 50%;
   transform: translateX(-50%);
@@ -95,6 +110,10 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   top: 100%;
   animation: dropdownAnimation 750ms;
     animation-fill-mode: forwards;
+
+  .auto-top > & {
+    position: fixed;
+  }
 }
 
 .dropdown__content--top.is-active {
@@ -104,6 +123,10 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 
 .dropdown__content--fix-right.is-active {
   top: 50%;
+}
+
+.dropdown__content--centre.is-active {
+  animation: dropdownCentreAnimation 750ms;
 }
 
 .dropdown__action {
@@ -158,4 +181,12 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   .dropdown__action-group--horizontal & {
     padding: 0 $layout-spacing-base/2 0 $layout-spacing-base/4;
   }
+}
+
+.dropdown__content--collapse {
+  padding: 0;
+}
+
+.dropdown__trigger-wrapper {
+  display: inline-block;
 }

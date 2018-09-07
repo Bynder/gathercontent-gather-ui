@@ -6462,13 +6462,13 @@ react-lifecycles-compat@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-mentions@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-mentions/-/react-mentions-2.0.1.tgz#20fbdce39ffa5d3acbbcde6deeaf37e638ab89ad"
+react-mentions@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-mentions/-/react-mentions-2.2.0.tgz#602e51d85546f02b9f52345129fcf323275b8cdc"
   dependencies:
     lodash "^4.5.1"
     prop-types "^15.5.8"
-    substyle "^6.0.0"
+    substyle "^6.1.1"
 
 react-modal@^1.7.7:
   version "1.9.7"
@@ -7498,7 +7498,7 @@ style-loader@^0.17.0:
   dependencies:
     loader-utils "^1.0.2"
 
-substyle@^6.0.0:
+substyle@^6.1.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/substyle/-/substyle-6.2.1.tgz#5ac9d809dcddb0f9d287929e9dd46e6d596e31f3"
   dependencies:
