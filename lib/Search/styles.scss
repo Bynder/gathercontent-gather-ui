@@ -98,22 +98,12 @@ $search-min-width: 400px !default;
   }
   &--clear {
     padding-right: $layout-spacing-base/2;
-    &:hover {
-      .icon path {
-        fill: $primary-blue;
-      }
-    }
   }
   &--start {
     visibility: visible;
     opacity: 1;
     padding: $layout-spacing-base/2;
     transition: visibility 0.1s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0.1s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-    &:hover {
-      .icon path {
-        fill: $primary-blue;
-      }
-    }
   }
 }
 
