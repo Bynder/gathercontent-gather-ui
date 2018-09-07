@@ -111,7 +111,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   animation: dropdownAnimation 750ms;
     animation-fill-mode: forwards;
 
-  .auto-top & {
+  .auto-top > & {
     position: fixed;
   }
 }
