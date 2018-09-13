@@ -91,44 +91,6 @@ $mention-color: #f5effc;
   }
 }
 
-.mention-form__dropdown {
-  float: left;
-  margin-top: $layout-spacing-base/4;
-  padding: $layout-spacing-base/2;
-  .dropdown__content--fix-right.is-active {
-    min-width: 300px;
-  }
-}
-
-.mention-form__search-wrapper {
-  padding: $layout-spacing-base/2;
-}
-.mention-form__search-input {
-  width: 100%;
-  padding: $layout-spacing-base/4;
-  border-radius: 3px;
-  border: 1px solid $color-border-base;
-  &:focus {
-    outline: none;
-  }
-}
-
-.mention-form__search-heading {
-  font-weight: 500;
-  padding: $layout-spacing-base/2;
-}
-
-.mention-form__search-results {
-  max-height: 300px;
-  overflow-y: auto;
-  .no-results {
-    display: block;
-    padding: $layout-spacing-base/4 $layout-spacing-base/2;
-    color: $neutral-base;
-    font-style: italic;
-  }
-}
-
 /* ==========================================================================
    State Styles
    ========================================================================== */
@@ -175,6 +137,11 @@ $mention-color: #f5effc;
     font-size: $typo-size-small;
   }
 
+}
+
+.mention-form__search {
+  float: left;
+  margin-top: $layout-spacing-base/4;
 }
 
 .mention-form.hide-author {
