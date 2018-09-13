@@ -24,7 +24,7 @@
   float:left;
   margin-bottom: $layout-spacing-base/2;
   &-dropdown {
-    padding-bottom: 0;
+    padding: $layout-spacing-base/4 $layout-spacing-base/2 0;
   }
 }
 
@@ -36,7 +36,7 @@
   font-weight: $typo-weight-semi-bold;
   border-radius: $layout-spacing-base;
   font-size: $typo-size-slight;
-  margin: $layout-spacing-base/4 $layout-spacing-base/4 $layout-spacing-base/4 0;
+  margin: 0 $layout-spacing-base/4 $layout-spacing-base/4 0;
   vertical-align: sub;
   cursor: default;
   .button, & > .icon {
