@@ -9,6 +9,8 @@ describe('Tag User Form', () => {
   let onCancelSpy;
   let onInputChangeSpy;
 
+  jest.useFakeTimers();
+
   beforeEach(() => {
     onSubmitSpy = jest.fn();
     onCancelSpy = jest.fn();
@@ -113,6 +115,7 @@ describe('Tag User Form', () => {
   test('adds a user', () => {
     expect(wrapper.state('addedUsers')).toEqual([]);
     wrapper.instance().onAddUser({ name: 'mr waffle', display: 'waffle' });
+    jest.runOnlyPendingTimers();
     expect(wrapper.state('addedUsers')).toEqual([
       { name: 'mr waffle', display: 'waffle' }
     ]);
@@ -122,12 +125,15 @@ describe('Tag User Form', () => {
     wrapper
       .instance()
       .onAddUser({ name: 'mr waffle', display: 'waffle', id: 1 });
+    jest.runOnlyPendingTimers();
     expect(wrapper.state('addedUsers')).toEqual([
       { name: 'mr waffle', display: 'waffle', id: 1 }
     ]);
     wrapper
       .instance()
       .onRemoveUser({ name: 'mr waffle', display: 'waffle', id: 1 });
+
+    jest.runOnlyPendingTimers();
     expect(wrapper.state('addedUsers')).toEqual([]);
   });
 
@@ -141,7 +147,10 @@ describe('Tag User Form', () => {
     wrapper.setProps({ lockedUsers: [users[0]] });
     let usersComponent = wrapper.find(TagUserFormUsers);
     expect(usersComponent.prop('users')).toEqual([users[1], users[2]]);
-    wrapper.setState({ addedUsers: [users[2]] });
+    expect(wrapper.state('addedUsers')).toEqual([]);
+    wrapper.instance().onAddUser(users[2]);
+    jest.runOnlyPendingTimers();
+    wrapper.update();
     usersComponent = wrapper.find(TagUserFormUsers);
     expect(usersComponent.prop('users')).toEqual([users[1]]);
   });

@@ -1,3 +1,8 @@
+.taguser-form__input {
+  display: block;
+  margin-bottom: $layout-spacing-base/4;
+}
+
 .taguser-form__actions {
   position: relative;
   text-align: right;
@@ -15,14 +20,11 @@
   }
 }
 
-.taguser-form__cancel,
-.taguser-form__button {
-  font-size: $typo-size-slight;
+.taguser__users-wrapper {
+  display: flex;
 }
 
 .taguser__search {
-  float:left;
-  margin-bottom: $layout-spacing-base/2;
   &-dropdown {
     padding: $layout-spacing-base/4 $layout-spacing-base/2 0;
   }
