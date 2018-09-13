@@ -63,6 +63,7 @@ storiesOf('Components', module)
             author={mockUser}
             users={mockUsers}
             placeholder="Add a message..."
+            dropdownAutoPosition
           />
         </StoryItem>
 
@@ -77,6 +78,9 @@ storiesOf('Components', module)
             users={mockUsers}
             placeholder="Add a message..."
             lockedUsers={lockedUsers}
+            dropdownAutoPosition
+            lockedUserTooltip="Assignee"
+            submitText="Notify & complete"
           />
         </StoryItem>
       </div>

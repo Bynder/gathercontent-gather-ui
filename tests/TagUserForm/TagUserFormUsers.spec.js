@@ -35,12 +35,6 @@ describe('Tag User Form Users', () => {
     expect(wrapper.find(UserSearch).prop('displayEmail')).toEqual(true);
     expect(wrapper.find(UserSearch).prop('dropdownAutoPosition')).toEqual(true);
     expect(wrapper.find(UserSearch).prop('addUser')).toEqual(addUserSpy);
-    expect(wrapper.find(UserSearch).prop('triggerText')).toEqual(
-      'Add people to notify...'
-    );
-
-    wrapper.setProps({ lockedUsers: [users[0]] });
-    expect(wrapper.find(UserSearch).prop('triggerText')).toEqual('');
   });
 
   test('renders the correct amount of TagUserFormUser', () => {

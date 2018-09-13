@@ -24,7 +24,6 @@ describe('Tag User Form Users', () => {
     expect(wrapper.find(TooltipWrapper)).toHaveLength(0);
     expect(wrapper.find(Icon).prop('name')).toEqual('cross');
     expect(wrapper.find('.taguser-form__user')).toHaveLength(1);
-    console.log(wrapper.find('.taguser-form__user').text());
     expect(wrapper.find('.taguser-form__user').text()).toEqual(
       'mr doughnut<Button />'
     );

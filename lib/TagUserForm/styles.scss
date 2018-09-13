@@ -15,6 +15,11 @@
   }
 }
 
+.taguser-form__cancel,
+.taguser-form__button {
+  font-size: $typo-size-slight;
+}
+
 .taguser__search {
   float:left;
   margin-bottom: $layout-spacing-base/2;
@@ -25,14 +30,15 @@
 
 .taguser-form__user {
   display: inline-block;
-  padding: 0 $layout-spacing-base/2;
+  padding: 2px 8px;
   background: rgba( $primary-purple, .1 );
   color: $primary-purple;
   font-weight: $typo-weight-semi-bold;
   border-radius: $layout-spacing-base;
-  font-size: $typo-size-small;
-  margin: 0 $layout-spacing-base/4 $layout-spacing-base/4 0;
+  font-size: $typo-size-slight;
+  margin: $layout-spacing-base/4 $layout-spacing-base/4 $layout-spacing-base/4 0;
   vertical-align: sub;
+  cursor: default;
   .button, & > .icon {
     margin-left: $layout-spacing-base/4;
   }
