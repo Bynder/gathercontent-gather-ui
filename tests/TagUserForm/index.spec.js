@@ -36,7 +36,7 @@ describe('Tag User Form', () => {
   });
 
   test('calls props.onCancel', () => {
-    wrapper.instance().cancelComment();
+    wrapper.instance().onCancel();
     expect(onCancelSpy).toHaveBeenCalledTimes(1);
   });
 
@@ -85,7 +85,7 @@ describe('Tag User Form', () => {
     const actions = wrapper.find(TagUserFormActions);
     expect(actions).toHaveLength(1);
     expect(actions.prop('onSubmit')).toEqual(wrapper.instance().onSubmit);
-    expect(actions.prop('onCancel')).toEqual(wrapper.instance().cancelComment);
+    expect(actions.prop('onCancel')).toEqual(wrapper.instance().onCancel);
   });
 
   test('updates the input value', () => {
