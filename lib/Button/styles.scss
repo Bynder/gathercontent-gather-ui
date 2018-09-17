@@ -275,18 +275,18 @@ $btn-border-radius: 3px !default;
   }
 }
 
-.button-icon {
+.button__wrapper {
   .button {
     padding: $layout-spacing-base/4 $layout-spacing-base/2;
     margin: 0;
     vertical-align: middle;
   }
 }
-.button-icon__button {
+.button__wrapper--button {
   border-radius: $btn-border-radius 0 0 $btn-border-radius;
   border-right: $primary-blue-darker 1px solid;
 }
-.button-icon__icon {
+.button__wrapper--icon {
   height: $layout-spacing-base/2 + $layout-spacing-base;
   line-height: 0;
   border-radius: 0 $btn-border-radius $btn-border-radius 0;
