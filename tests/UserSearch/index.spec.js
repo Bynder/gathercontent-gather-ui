@@ -1,12 +1,9 @@
 import { React, shallow } from '../setup';
-import MentionsFormSearch from '../../lib/MentionsForm/MentionsFormSearch';
-import Dropdown from '../../lib/Dropdown';
-import Avatar from '../../lib/Avatar';
-import AvatarInformation from '../../lib/Avatar/AvatarInformation';
+import { UserSearch, Dropdown, Avatar, AvatarInformation } from '../../lib';
 
-describe('Mentions Form Input', () => {
+describe('User Search', () => {
   let wrapper;
-  let addMentionSpy;
+  let addUserSpy;
 
   const users = [
     {
@@ -28,13 +25,9 @@ describe('Mentions Form Input', () => {
   ];
 
   beforeEach(() => {
-    addMentionSpy = jest.fn();
+    addUserSpy = jest.fn();
     wrapper = shallow(
-      <MentionsFormSearch
-        addMention={addMentionSpy}
-        users={users}
-        displayEmail={false}
-      />
+      <UserSearch addUser={addUserSpy} users={users} displayEmail={false} />
     );
   });
 
@@ -45,16 +38,16 @@ describe('Mentions Form Input', () => {
     );
     expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
     expect(wrapper.find(Dropdown.ActionGroup)).toHaveLength(3);
-    expect(wrapper.find('.mention-form__search-input')).toHaveLength(1);
-    expect(
-      wrapper.find('.mention-form__search-input').prop('onChange')
-    ).toEqual(wrapper.instance().searchForUsers);
+    expect(wrapper.find('.user-search__search-input')).toHaveLength(1);
+    expect(wrapper.find('.user-search__search-input').prop('onChange')).toEqual(
+      wrapper.instance().searchForUsers
+    );
     expect(wrapper.find(Dropdown.Action)).toHaveLength(2);
     wrapper
       .find(Dropdown.Action)
       .first()
       .prop('action')();
-    expect(addMentionSpy).toHaveBeenCalledWith('saul', 'saulgoodman');
+    expect(addUserSpy).toHaveBeenCalledWith(users[0]);
     expect(wrapper.find(Avatar)).toHaveLength(2);
     expect(
       wrapper

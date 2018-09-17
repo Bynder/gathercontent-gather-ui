@@ -1,7 +1,7 @@
 import { MentionsInput } from 'react-mentions';
 import { React, mount } from '../setup';
 import MentionFormInput from '../../lib/MentionsForm/MentionsFormInput';
-import MentionsFormSearch from '../../lib/MentionsForm/MentionsFormSearch';
+import { UserSearch } from '../../lib';
 
 describe('Mentions Form Input', () => {
   let wrapper;
@@ -65,10 +65,10 @@ describe('Mentions Form Input', () => {
     expect(results).toEqual([]);
   });
 
-  test('renders a MentionsFormSearch', () => {
-    expect(wrapper.find(MentionsFormSearch)).toHaveLength(1);
-    expect(wrapper.find(MentionsFormSearch).prop('users')).toEqual(users);
-    expect(wrapper.find(MentionsFormSearch).prop('addMention')).toEqual(
+  test('renders a UserSearch', () => {
+    expect(wrapper.find(UserSearch)).toHaveLength(1);
+    expect(wrapper.find(UserSearch).prop('users')).toEqual(users);
+    expect(wrapper.find(UserSearch).prop('addUser')).toEqual(
       wrapper.instance().addMention
     );
   });

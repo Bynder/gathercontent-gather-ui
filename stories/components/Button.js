@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '../../lib/Button/';
 import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
+import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import ProgressButton from '../../lib/ProgressButton';
 import Icon from '../../lib/Icon';
 import StoryItem from '../styleguide/StoryItem';
@@ -128,6 +129,17 @@ const button = storiesOf('Components', module)
         >
           Hover me
         </Button>
+      </StoryItem>
+      <StoryItem
+        title="Button with icon"
+      >
+        <ButtonWithIcon
+          mainClickHandler={action('I was clicked')}
+          iconClickHandler={action('Icon was clicked')}
+          iconName="bell"
+        >
+          hello!
+        </ButtonWithIcon>
       </StoryItem>
     </div>
   ));
