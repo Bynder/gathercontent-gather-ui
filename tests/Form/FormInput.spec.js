@@ -9,7 +9,7 @@ describe('FormInput', () => {
     onChangeSpy = jest.fn();
     wrapper = shallow(
       <FormInput
-        onChange={onChangeSpy}
+        onInputChange={onChangeSpy}
         value="test value"
         placeholder="test placeholder"
         className="test-class"
@@ -39,6 +39,7 @@ describe('FormInput', () => {
   test('sets the current value to the targets value', () => {
     wrapper.instance().handleOnChange({ target: { value: 'value 1' } });
     expect(wrapper.state('value')).toEqual('value 1');
+    expect(onChangeSpy).toHaveBeenCalledWith('value 1');
   });
 
   test('sets the correct className', () => {
