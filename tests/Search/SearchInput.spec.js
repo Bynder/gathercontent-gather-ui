@@ -1,5 +1,6 @@
 import { React, mount } from '../setup';
 import SearchInput from '../../lib/Search/SearchInput';
+import { ShortcutTrigger } from '../../lib';
 
 describe('SearchInput', () => {
   let wrapper;
@@ -70,5 +71,16 @@ describe('SearchInput', () => {
   test('handles focus', () => {
     wrapper.instance().handleFocus();
     expect(wrapper.state('isFocussed')).toEqual(true);
+  });
+
+  test('renders a ShortcutTrigger', () => {
+    const trigger = wrapper.find(ShortcutTrigger);
+    expect(trigger.prop('onShortcutTrigger')).toEqual(
+      wrapper.instance().handleEscape
+    );
+    expect(trigger.prop('shortcutKey')).toEqual('Escape');
+    wrapper.instance().handleEscape();
+    expect(hideBodySpy).toHaveBeenCalled();
+    expect(wrapper.state('isFocussed')).toEqual(false);
   });
 });
