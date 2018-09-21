@@ -35,6 +35,7 @@ describe('Shortcut Trigger', () => {
   test('triggers the function when the shortcut is pressed', () => {
     wrapper.instance().onKeyDown({ repeat: false, key: 'enter' });
     expect(spy).toHaveBeenCalledTimes(1);
+    expect(spy).toHaveBeenCalledWith({ repeat: false, key: 'enter' });
 
     wrapper.setProps({ withCtrlKey: true });
     wrapper
