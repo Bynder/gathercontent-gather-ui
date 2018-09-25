@@ -30,6 +30,18 @@ describe('AvatarGroup', () => {
     expect(wrapper.hasClass('avatar--offline')).toBe(true);
   });
 
+  test('adds a has colour BEM modifier', () => {
+    expect(wrapper.hasClass('avatar--has-colour')).toBe(false);
+    wrapper.setProps({ colour: 'red' });
+    expect(wrapper.hasClass('avatar--has-colour')).toBe(true);
+  });
+
+  test('adds a has animate BEM modifier', () => {
+    expect(wrapper.hasClass('avatar--animated')).toBe(false);
+    wrapper.setProps({ animate: true });
+    expect(wrapper.hasClass('avatar--animated')).toBe(true);
+  });
+
   test('renders an avatar image', () => {
     expect(wrapper.find('img')).toHaveLength(0);
     wrapper.setProps({ url: 'url/to/avatar' });
@@ -40,11 +52,11 @@ describe('AvatarGroup', () => {
     expect(wrapper.text()).toEqual('AE');
   });
 
-  test('adds a box shadow based on the colour prop', () => {
+  test('adds a color styles based on the colour prop', () => {
     expect(wrapper.prop('style')).toEqual({});
     wrapper.setProps({ colour: 'red' });
     expect(wrapper.prop('style')).toEqual({
-      boxShadow: `0 0 0 2px white, 0 0 0 3px red, 0 0 0 5px white`
+      color: 'red'
     });
   });
 });

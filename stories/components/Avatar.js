@@ -13,16 +13,6 @@ import StoryItem from '../styleguide/StoryItem';
 storiesOf('Components', module).add('Avatar', () => (
   <div>
     <StoryItem
-      title="Avatar - custom border colour"
-      description="An avatar can have a custom border colour."
-    >
-      <Avatar
-        url="https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg"
-        colour="blue"
-        animate
-      />
-    </StoryItem>
-    <StoryItem
       title="Avatar – base"
       description="A base avatar will fall back to initials if no url prop is passed."
     >

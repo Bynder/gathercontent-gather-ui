@@ -44,9 +44,6 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     width: $avatar-size-small;
     height: $avatar-size-small;
   }
-  &.has-colour {
-    box-shadow: white 0px 0px 0px 2px, 0px 0px 0px 3px, white 0 0 0 5px;
-  }
 }
 
 .avatar__information {
@@ -185,12 +182,16 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   }
 }
 
+.avatar--has-colour {
+  box-shadow: white 0px 0px 0px 2px, 0px 0px 0px 3px, white 0 0 0 5px;
+}
+
 .avatar--bordered {
   box-shadow: 0 0 0 1px white, 0 0 0 1px transparent, 0 0 0 2px white;
 }
 
 .avatar--animated {
-  &.has-colour {
+  &.avatar--has-colour {
     box-shadow: none;
   }
   -webkit-animation: avatar 0.7s cubic-bezier(0.390, 0.575, 0.565, 1) forwards,
