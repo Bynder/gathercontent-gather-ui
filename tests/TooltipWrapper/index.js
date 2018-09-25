@@ -47,4 +47,9 @@ describe('Tooltip Wrapper', () => {
     expect(consoleSpy).toHaveBeenCalled();
     consoleSpy.mockRestore();
   });
+
+  test('adds a className to the wrapper', () => {
+    wrapper.setProps({ wrapperClassName: 'bloop' });
+    expect(wrapper.find('.tooltip-wrapper__child.bloop')).toHaveLength(1);
+  });
 });
