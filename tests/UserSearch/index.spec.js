@@ -11,7 +11,7 @@ describe('User Search', () => {
       display: 'saulgoodman',
       name: 'Saul Goodman',
       initials: 'SG',
-      email: 'heythere@lol.com'
+      email: 'hellothere@lol.com'
     },
     {
       id: '456',
@@ -83,10 +83,25 @@ describe('User Search', () => {
   test('returns the correct filtered users', () => {
     wrapper.instance().searchForUsers({ target: { value: 'saul' } });
     expect(wrapper.state('users')).toEqual([users[0]]);
-    wrapper.instance().searchForUsers({ target: { value: 'jesse' } });
+    wrapper.instance().searchForUsers({ target: { value: 'gOo' } });
+    expect(wrapper.state('users')).toEqual([users[0]]);
+    wrapper.instance().searchForUsers({ target: { value: 'jessepi' } });
     expect(wrapper.state('users')).toEqual([users[1]]);
     wrapper.instance().searchForUsers({ target: { value: ' ' } });
     expect(wrapper.state('users')).toEqual(users);
+    wrapper.instance().searchForUsers({ target: { value: 'Jesse' } });
+    expect(wrapper.state('users')).toEqual([users[1]]);
+    wrapper.instance().searchForUsers({ target: { value: 'Jesse Pin' } });
+    expect(wrapper.state('users')).toEqual([users[1]]);
+    wrapper.instance().searchForUsers({ target: { value: 'he' } });
+    expect(wrapper.state('users')).toEqual([]);
+    wrapper.instance().searchForUsers({ target: { value: 'HEythere@l' } });
+    expect(wrapper.state('users')).toEqual([]);
+    wrapper.setProps({ displayEmail: true });
+    wrapper.instance().searchForUsers({ target: { value: 'he' } });
+    expect(wrapper.state('users')).toEqual(users);
+    wrapper.instance().searchForUsers({ target: { value: 'HEythere@l' } });
+    expect(wrapper.state('users')).toEqual([users[1]]);
   });
 
   test('renders a no results message', () => {
