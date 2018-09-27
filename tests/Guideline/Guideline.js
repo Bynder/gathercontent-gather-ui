@@ -1,11 +1,14 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { Guideline, Button } from '../../lib';
 
 describe('Guideline', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(
+    Element.prototype.getBoundingClientRect = jest.fn(() => ({
+      height: 120
+    }));
+    wrapper = mount(
       <Guideline title="Guideline title">
         <p>Guideline content</p>
       </Guideline>
@@ -13,7 +16,7 @@ describe('Guideline', () => {
   });
 
   test('defaults to open', () => {
-    expect(wrapper.hasClass('is-active')).toBe(true);
+    expect(wrapper.find('.guideline').hasClass('is-active')).toBe(true);
   });
 
   test('toggles an active class', () => {
@@ -36,5 +39,13 @@ describe('Guideline', () => {
     wrapper.setProps({ children: null });
     expect(wrapper.find('.guideline__body')).toHaveLength(0);
     expect(wrapper.find('.guideline__button')).toHaveLength(0);
+  });
+
+  test('sets the max height', () => {
+    expect(wrapper.find('.guideline__body').prop('style')).toEqual({
+      maxHeight: 120
+    });
+    wrapper.setState({ showContent: false });
+    expect(wrapper.find('.guideline__body').prop('style')).toEqual(null);
   });
 });
