@@ -3,7 +3,8 @@
   "extends": ["airbnb", "prettier", "prettier/react", "plugin:jsx-a11y/recommended"],
   "globals": {
     "window": true,
-    "document": true
+    "document": true,
+    "Element": true
   },
   "plugins": ["prettier", "jsx-a11y"],
   "rules": {
