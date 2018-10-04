@@ -78,7 +78,9 @@ describe('SearchDropdown', () => {
 
   test('rendering the title of the dropdown', () => {
     const title = wrapper.find('.dropdown__item--title');
-    expect(title.find('button').prop('onClick')).toEqual(wrapper.instance().clearInputValue);
+    expect(title.find('button').prop('onClick')).toEqual(
+      wrapper.instance().clearInputValue
+    );
     expect(title.find('.dropdown__item--name').text()).toBe(resultsTitle);
     expect(title.find(Icon).prop('name')).toBe('cross');
   });

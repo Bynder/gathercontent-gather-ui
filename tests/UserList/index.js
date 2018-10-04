@@ -77,12 +77,18 @@ describe('UserList', () => {
 
   test('should render CurrentUserList', () => {
     expect(wrapper.find(CurrentUserList)).toHaveLength(1);
-    expect(wrapper.find(CurrentUserList).prop('currentUsers')).toEqual(mockAssignees);
+    expect(wrapper.find(CurrentUserList).prop('currentUsers')).toEqual(
+      mockAssignees
+    );
     expect(wrapper.find(CurrentUserList).prop('currentUsersHeading')).toEqual(
       UserList.defaultProps.currentUsersHeading
     );
-    expect(wrapper.find(CurrentUserList).prop('showUserControls')).toEqual(true);
-    expect(wrapper.find(CurrentUserList).prop('removeUser')).toEqual(removeAssigneeSpy);
+    expect(wrapper.find(CurrentUserList).prop('showUserControls')).toEqual(
+      true
+    );
+    expect(wrapper.find(CurrentUserList).prop('removeUser')).toEqual(
+      removeAssigneeSpy
+    );
     expect(wrapper.find(CurrentUserList).prop('removeUserText')).toEqual(
       UserList.defaultProps.removeUserText
     );
