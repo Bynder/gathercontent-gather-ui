@@ -37,6 +37,7 @@ describe('SearchDropdown', () => {
   });
 
   test('should render the results if they exist', () => {
+    wrapper.setState({ inputValue: 'test' });
     expect(wrapper.find('.dropdown-menu')).toHaveLength(1);
     wrapper.setProps({ results: [] });
     expect(wrapper.find('.dropdown-menu')).toHaveLength(0);
@@ -77,6 +78,7 @@ describe('SearchDropdown', () => {
   });
 
   test('rendering the title of the dropdown', () => {
+    wrapper.setState({ inputValue: 'test' });
     const title = wrapper.find('.dropdown__item--title');
     expect(title.find('button').prop('onClick')).toEqual(
       wrapper.instance().clearInputValue
@@ -86,9 +88,10 @@ describe('SearchDropdown', () => {
   });
 
   test('rendering <SearchResults />', () => {
+    wrapper.setState({ inputValue: 'test' });
     expect(wrapper.find(SearchResults).props()).toEqual({
       results: mockResults,
-      input: wrapper.instance().input
+      input: null
     });
   });
 });
