@@ -245,3 +245,7 @@ $dropdown-menu-font-color: $color-text-base !default;
 .dropdown__avatar {
   border-top: 1px solid $color-border-base;
 }
+
+.dropdown__link--highlighted {
+  background: $neutral-lightest;
+}

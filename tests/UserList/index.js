@@ -1,4 +1,5 @@
-import { React, mount } from '../setup';
+import { React, shallow } from '../setup';
+import { Button } from '../../lib';
 import UserList from '../../lib/UserList';
 import SearchDropdown from '../../lib/SearchDropdown';
 import CurrentUserList from '../../lib/UserList/CurrentUserList';
@@ -61,7 +62,7 @@ describe('UserList', () => {
       }
     ];
 
-    wrapper = mount(
+    wrapper = shallow(
       <UserList
         currentUsers={mockAssignees}
         otherUsers={mockViewers}
@@ -76,45 +77,34 @@ describe('UserList', () => {
 
   test('should render CurrentUserList', () => {
     expect(wrapper.find(CurrentUserList)).toHaveLength(1);
-    expect(wrapper.find(CurrentUserList).prop('currentUsers')).toEqual(
-      wrapper.prop('currentUsers')
-    );
+    expect(wrapper.find(CurrentUserList).prop('currentUsers')).toEqual(mockAssignees);
     expect(wrapper.find(CurrentUserList).prop('currentUsersHeading')).toEqual(
-      wrapper.prop('currentUsersHeading')
+      UserList.defaultProps.currentUsersHeading
     );
-    expect(wrapper.find(CurrentUserList).prop('showUserControls')).toEqual(
-      wrapper.prop('showUserControls')
-    );
-    expect(wrapper.find(CurrentUserList).prop('removeUser')).toEqual(
-      wrapper.prop('removeUser')
-    );
+    expect(wrapper.find(CurrentUserList).prop('showUserControls')).toEqual(true);
+    expect(wrapper.find(CurrentUserList).prop('removeUser')).toEqual(removeAssigneeSpy);
     expect(wrapper.find(CurrentUserList).prop('removeUserText')).toEqual(
-      wrapper.prop('removeUserText')
+      UserList.defaultProps.removeUserText
     );
     expect(wrapper.find(CurrentUserList).prop('emptyText')).toEqual(
-      wrapper.prop('emptyText')
+      UserList.defaultProps.emptyText
     );
     expect(wrapper.find(CurrentUserList).prop('emptyTextButton')).toEqual(
-      wrapper.prop('emptyTextButton')
+      UserList.defaultProps.emptyTextButton
     );
   });
 
   test('should render OtherUserList', () => {
     expect(wrapper.find(OtherUserList)).toHaveLength(1);
-    expect(wrapper.find(OtherUserList).prop('otherUsers')).toEqual(
-      wrapper.prop('otherUsers')
-    );
+    expect(wrapper.find(OtherUserList).prop('otherUsers')).toEqual(mockViewers);
     expect(wrapper.find(OtherUserList).prop('otherUsersHeading')).toEqual(
-      wrapper.prop('otherUsersHeading')
+      UserList.defaultProps.otherUsersHeading
     );
   });
 
   test('should toggle showing the SearchDropdown', () => {
     expect(wrapper.find(SearchDropdown)).toHaveLength(0);
-    wrapper
-      .find('.show-search')
-      .hostNodes()
-      .simulate('click');
+    wrapper.find(Button).prop('clickHandler')();
     const assingeeSearch = wrapper.find(SearchDropdown);
     expect(assingeeSearch).toHaveLength(1);
     expect(assingeeSearch.prop('results')).toEqual(mockResults);
@@ -125,22 +115,16 @@ describe('UserList', () => {
   });
 
   test('hides the correct parts of the UI if showUserControls is false', () => {
-    expect(wrapper.find('.show-search').hostNodes()).toHaveLength(1);
+    expect(wrapper.find(Button)).toHaveLength(1);
     wrapper.setProps({ showUserControls: false });
-    expect(wrapper.find('.show-search').hostNodes()).toHaveLength(0);
+    expect(wrapper.find(Button)).toHaveLength(0);
   });
 
   test('calls props.handleClearResults when closing the SearchDropdown', () => {
     expect(handleClearResultsSpy).not.toHaveBeenCalled();
-    wrapper
-      .find('.show-search')
-      .hostNodes()
-      .simulate('click');
+    wrapper.find(Button).prop('clickHandler')();
     expect(handleClearResultsSpy).not.toHaveBeenCalled();
-    wrapper
-      .find('.show-search')
-      .hostNodes()
-      .simulate('click');
+    wrapper.find(Button).prop('clickHandler')();
     expect(handleClearResultsSpy).toHaveBeenCalled();
   });
 });
