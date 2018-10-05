@@ -37,19 +37,25 @@ const mockViewer = {
 };
 
 const mockResults = [{
-  name: 'Clark Kent',
-  email: 'clarkkent@waffles.com',
-  avatar: 'https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg',
-  initials: 'CK',
-  action: mockActions.addAssignee,
-  type: 'avatar',
+    name: 'Clark Kent',
+    email: 'clarkkent@waffles.com',
+    avatar: 'https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg',
+    initials: 'CK',
+    action: mockActions.addAssignee,
+    type: 'avatar',
 },{
-  name: 'Bruce Wayne',
-  email: 'brucewayne@waffles.com',
-  initials: 'BW',
-  action: mockActions.addAssignee,
-  type: 'avatar',
-}]
+    name: 'Bruce Wayne',
+    email: 'brucewayne@waffles.com',
+    initials: 'BW',
+    action: mockActions.addAssignee,
+    type: 'avatar',
+},{
+    name: 'Bruce Wayne',
+    email: 'brucewayne@waffles.com',
+    initials: 'BW',
+    action: mockActions.addAssignee,
+    type: 'avatar',
+}];
 
 storiesOf('Components', module)
   .add('UserList', () => {

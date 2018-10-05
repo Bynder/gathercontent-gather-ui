@@ -45,7 +45,7 @@ describe('SearchResults', () => {
     const watcher = wrapper.find(EventCodeWatcher).first();
     expect(watcher.props()).toEqual({
       element: mockInput,
-      keyCode: 38,
+      keyCode: 40,
       eventName: 'keydown',
       onKeyCodePress: wrapper.instance().highlightNextResult,
       preventDefault: true
@@ -68,7 +68,7 @@ describe('SearchResults', () => {
     const watcher = wrapper.find(EventCodeWatcher).at(1);
     expect(watcher.props()).toEqual({
       element: mockInput,
-      keyCode: 40,
+      keyCode: 38,
       eventName: 'keydown',
       onKeyCodePress: wrapper.instance().highlightPrevResult,
       preventDefault: true
