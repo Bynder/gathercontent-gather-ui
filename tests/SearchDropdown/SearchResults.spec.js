@@ -27,7 +27,11 @@ describe('SearchResults', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <SearchResults results={mockResults} input={mockInput} hideResults={hideResults} />
+      <SearchResults
+        results={mockResults}
+        input={mockInput}
+        hideResults={hideResults}
+      />
     );
   });
 
@@ -115,7 +119,11 @@ describe('SearchResults', () => {
   });
 
   test('hovering over results sets a specific highlighted index', () => {
-    wrapper.find('.dropdown__item').last().find('button').prop('onMouseOver')();
+    wrapper
+      .find('.dropdown__item')
+      .last()
+      .find('button')
+      .prop('onMouseOver')();
     expect(wrapper.state('highlightedIndex')).toBe(mockResults.length - 1);
   });
 });
