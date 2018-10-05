@@ -1,11 +1,15 @@
-import { React, mount } from '../setup';
+import { React, shallow } from '../setup';
+import { Icon } from '../../lib';
 import SearchDropdown from '../../lib/SearchDropdown';
+import SearchResults from '../../lib/SearchDropdown/SearchResults';
 
 describe('SearchDropdown', () => {
   let wrapper;
   let mockResults;
   let handleOnChangeSpy;
   let onInputClearSpy;
+
+  const resultsTitle = 'title';
 
   beforeEach(() => {
     handleOnChangeSpy = jest.fn();
@@ -22,9 +26,10 @@ describe('SearchDropdown', () => {
       }
     ];
 
-    wrapper = mount(
+    wrapper = shallow(
       <SearchDropdown
         results={mockResults}
+        resultsTitle={resultsTitle}
         handleOnChange={handleOnChangeSpy}
         onInputClear={onInputClearSpy}
       />
@@ -32,6 +37,7 @@ describe('SearchDropdown', () => {
   });
 
   test('should render the results if they exist', () => {
+    wrapper.setState({ inputValue: 'test' });
     expect(wrapper.find('.dropdown-menu')).toHaveLength(1);
     wrapper.setProps({ results: [] });
     expect(wrapper.find('.dropdown-menu')).toHaveLength(0);
@@ -69,5 +75,24 @@ describe('SearchDropdown', () => {
       direction: 'up'
     });
     expect(wrapper.find('.dropup').length).toEqual(1);
+  });
+
+  test('rendering the title of the dropdown', () => {
+    wrapper.setState({ inputValue: 'test' });
+    const title = wrapper.find('.dropdown__item--title');
+    expect(title.find('button').prop('onClick')).toEqual(
+      wrapper.instance().clearInputValue
+    );
+    expect(title.find('.dropdown__item--name').text()).toBe(resultsTitle);
+    expect(title.find(Icon).prop('name')).toBe('cross');
+  });
+
+  test('rendering <SearchResults />', () => {
+    wrapper.setState({ inputValue: 'test' });
+    expect(wrapper.find(SearchResults).props()).toEqual({
+      results: mockResults,
+      input: null,
+      hideResults: wrapper.instance().clearInputValue
+    });
   });
 });
