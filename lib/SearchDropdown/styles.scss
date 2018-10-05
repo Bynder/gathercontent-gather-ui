@@ -1,14 +1,17 @@
 .search-dropdown {
   position: relative;
+
   &.full-width {
     .dropdown-search__input {
       width: 100%;
     }
   }
+
   .dropdown-menu {
-    min-width: 90%;
+    width: 100%;
   }
 }
+
 .dropdown-search__input {
   border: 1px solid $color-border-base;
   font-size: $typo-size-slight;
