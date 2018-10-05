@@ -61,7 +61,6 @@ storiesOf('Components', module)
   .add('UserList', () => {
     return (
       <div>
-
       <StoryItem
         title="UserList"
         description="UserList with no current assignees"
