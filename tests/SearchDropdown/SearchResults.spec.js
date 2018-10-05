@@ -23,14 +23,16 @@ describe('SearchResults', () => {
 
   const mockInput = React.createRef();
 
+  const hideResults = () => {};
+
   beforeEach(() => {
     wrapper = shallow(
-      <SearchResults results={mockResults} input={mockInput} />
+      <SearchResults results={mockResults} input={mockInput} hideResults={hideResults} />
     );
   });
 
   test('not rendering anything when the input is not set', () => {
-    expect(wrapper.find(EventCodeWatcher)).toHaveLength(3);
+    expect(wrapper.find(EventCodeWatcher)).toHaveLength(4);
     wrapper.setProps({ input: null });
     expect(wrapper.find(EventCodeWatcher)).toHaveLength(0);
   });
@@ -76,7 +78,7 @@ describe('SearchResults', () => {
   });
 
   test('triggering the action on the highlighted result', () => {
-    const watcher = wrapper.find(EventCodeWatcher).last();
+    const watcher = wrapper.find(EventCodeWatcher).at(2);
     expect(watcher.props()).toEqual({
       element: mockInput,
       keyCode: 13,
@@ -97,5 +99,23 @@ describe('SearchResults', () => {
         .find('button')
         .hasClass('dropdown__link--highlighted')
     ).toBe(true);
+  });
+
+  test('calling props.hideResults when the esc key is pressed', () => {
+    const watcher = wrapper.find(EventCodeWatcher).last();
+    expect(watcher.props()).toEqual({
+      element: mockInput,
+      keyCode: 27,
+      eventName: 'keydown',
+      onKeyCodePress: hideResults,
+      preventDefault: false
+    });
+    watcher.prop('onKeyCodePress')();
+    expect(actionSpy).toHaveBeenCalledTimes(1);
+  });
+
+  test('hovering over results sets a specific highlighted index', () => {
+    wrapper.find('.dropdown__item').last().find('button').prop('onMouseOver')();
+    expect(wrapper.state('highlightedIndex')).toBe(mockResults.length - 1);
   });
 });

@@ -91,7 +91,8 @@ describe('SearchDropdown', () => {
     wrapper.setState({ inputValue: 'test' });
     expect(wrapper.find(SearchResults).props()).toEqual({
       results: mockResults,
-      input: null
+      input: null,
+      hideResults: wrapper.instance().clearInputValue
     });
   });
 });
