@@ -6,22 +6,22 @@ $typo-stack-base: 'Whitney SSm A', 'Whitney SSm B', sans-serif !default;
 /* ==========================================================================
    Sizes
    ========================================================================== */
-$typo-size-xlarge: 1.5rem;
-$typo-size-large: 1.125rem;
-$typo-size-lead: 1rem;
-$typo-size-base: .875rem;
-$typo-size-slight: .8125rem;
-$typo-size-small: .75rem;
-$typo-size-micro: .625rem;
+$typo-size-xlarge: 1.5rem !default;
+$typo-size-large: 1.125rem !default;
+$typo-size-lead: 1rem !default;
+$typo-size-base: .875rem !default;
+$typo-size-slight: .8125rem !default;
+$typo-size-small: .75rem !default;
+$typo-size-micro: .625rem !default;
 
 /* ==========================================================================
    Line Heights
    ========================================================================== */
-$typo-line-height-base: 1.25rem;
+$typo-line-height-base: 1.25rem !default;
 
 /* ==========================================================================
    Weights
    ========================================================================== */
-$typo-weight-roman: 400;
-$typo-weight-semi-bold: 500;
-$typo-weight-bold: 600;
+$typo-weight-roman: 400 !default;
+$typo-weight-semi-bold: 500 !default;
+$typo-weight-bold: 600 !default;
