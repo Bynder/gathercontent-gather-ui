@@ -24,4 +24,11 @@ describe('TopBar/TopBarCell', () => {
     });
     expect(wrapper.find('.top-bar__cell--bordered')).toHaveLength(1);
   });
+
+  test('adds a className', () => {
+    wrapper.setProps({
+      className: 'waffles'
+    });
+    expect(wrapper.find('.waffles')).toHaveLength(1);
+  });
 });
