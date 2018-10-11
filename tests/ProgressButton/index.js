@@ -31,4 +31,9 @@ describe('ProgressButton', () => {
     expect(wrapper.state().showSpinner).toBe(false);
     expect(wrapper.find('.progress-button__icon')).toHaveLength(1);
   });
+
+  test('sets a disabled state', () => {
+    wrapper.setProps({ disabled: true });
+    expect(wrapper.find(Button).prop('disabled')).toEqual(true);
+  });
 });
