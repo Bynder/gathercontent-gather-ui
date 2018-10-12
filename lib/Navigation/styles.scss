@@ -56,13 +56,16 @@
 
 .navigation--tabs .navigation__item > * {
   padding: $layout-spacing-base;
+  color: $neutral-base;
+  &:hover {
+    color: $primary-blue;
+  }
 }
 
-.navigation--tabs .navigation__item--active, .navigation--tabs .navigation__item:hover {
+.navigation--tabs .navigation__item--active {
   border-bottom: 2px solid $primary-blue;
 }
 
 .navigation--tabs .navigation__item--active > * {
   color: $primary-blue;
-  font-weight: $typo-weight-roman;
 }
