@@ -43,6 +43,7 @@ const allIcons = additionalProps => (
     <Icon name="lock" {...additionalProps} />
     <Icon name="info" {...additionalProps} />
     <Icon name="search" {...additionalProps} />
+    <Icon name="save" {...additionalProps} />
   </div>
 );
 
