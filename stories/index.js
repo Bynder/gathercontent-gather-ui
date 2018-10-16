@@ -49,3 +49,4 @@ import Search from './components/Search';
 import Collections from './components/Collections';
 import MentionsForm from './components/MentionsForm';
 import TagUserForm from './components/TagUserForm';
+import Card from './components/Card';
