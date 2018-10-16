@@ -106,6 +106,17 @@
   }
 }
 
+@mixin respond-to-min($width) {
+  @media only screen and (min-width: $width) { @content; }
+}
+
+@mixin respond-to-max($width) {
+  @media only screen and (max-width: $width) { @content; }
+}
+
+@mixin respond-to-between($min, $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) { @content; }
+}
 
 /**
  * Font smoothing

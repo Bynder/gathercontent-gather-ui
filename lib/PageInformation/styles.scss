@@ -1,19 +1,16 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$page-info-content-max-width: 350px !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
-
 .page-information__title,
 .page-information__subtitle {
   display: block;
   text-align: left;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  max-width: $page-info-content-max-width;
   white-space: nowrap;
   color: $neutral-dark;
 }
