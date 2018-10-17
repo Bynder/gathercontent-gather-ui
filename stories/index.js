@@ -46,6 +46,6 @@ import ConversationContext from './components/ConversationContext';
 import ItemRow from './components/ItemRow';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';
-import Collections from './components/Collections';
+import CollectionsTable from './components/CollectionsTable/CollectionsTable';
 import MentionsForm from './components/MentionsForm';
 import TagUserForm from './components/TagUserForm';

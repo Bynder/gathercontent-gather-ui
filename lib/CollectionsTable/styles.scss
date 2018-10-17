@@ -2,35 +2,45 @@
    Config
    ========================================================================== */
 $collections-spacing: $layout-spacing-base/2;
-$collections-padding: $layout-spacing-base/1.5 $layout-spacing-base/2;
+$collections-padding: $layout-spacing-base/4 $layout-spacing-base/2;
 $collections-border: 1px solid $color-border-base;
 $collections-border-radius: 4px;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
-.collections table {
+.collections-table {
+  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
+  font-size: $typo-size-slight;
+  color: $neutral-base;
 
   @include respond-to(medium) {
     border-spacing: 0 $collections-spacing;
   }
 }
 
-.collections thead {
+.collections-table .collections-table {
+  margin-top: -$layout-spacing-base/2;
+}
+
+.collections-table__head {
   @include respond-to(small) {
     display: none;
   }
 }
 
-.collections td,
-.collections th {
+.collections-table__cell,
+.collections-table__heading {
   width: 100%;
   display: block;
   text-align: left;
   padding: $collections-padding;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @include respond-to(medium) {
     display: table-cell;
@@ -38,14 +48,23 @@ $collections-border-radius: 4px;
   }
 }
 
-.collections tbody tr {
+.collections-table__heading {
+  padding-bottom: 0;
+}
+
+.collections-table__row {
   @include respond-to(small) {
     display: block;
     margin-bottom: $collections-spacing;
   }
 }
 
-.collections tbody td {
+.collections-table__heading:first-child,
+.collections-table__cell:first-child {
+  width: 35%;
+}
+
+.collections-table__cell {
   border-left: $collections-border;
   border-right: $collections-border;
 
@@ -74,4 +93,13 @@ $collections-border-radius: 4px;
       border-right: $collections-border;
     }
   }
+}
+
+.collections-table__cell--collapse {
+  border: 0;
+  padding: 0;
+}
+
+.collections-table__cell-icon {
+  display: block; // override the inline-block set by default
 }
