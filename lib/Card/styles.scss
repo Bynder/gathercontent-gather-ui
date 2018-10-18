@@ -5,6 +5,7 @@
   flex-direction: column;
   font-size: $typo-size-small;
   color: $neutral-base;
+  box-shadow: $shadow-shallow;
   &--selected {
     border: 2px solid $primary-blue;
   }
@@ -41,6 +42,7 @@
 .card__footer {
   margin-top: auto;
   display: flex;
+  align-items: center;
 }
 
 .card__footer-right {
