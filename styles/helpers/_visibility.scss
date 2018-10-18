@@ -2,3 +2,9 @@
   position: absolute;
   left: -999em;
 }
+
+.hide-small {
+  @include respond-to-max($screen-sm) {
+    display: none;
+  }
+}

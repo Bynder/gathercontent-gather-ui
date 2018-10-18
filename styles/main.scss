@@ -37,17 +37,18 @@
 @import 'objects/grid';
 
 /* ==========================================================================
-   @ Components
-   The cosmetic and functional layer for all the components
-   ========================================================================== */
-@import 'components/ui';
-
-/* ==========================================================================
    @ Helpers
    ========================================================================== */
 @import "helpers/colours";
 @import "helpers/fills";
 @import "helpers/visibility";
+@import "helpers/text";
+
+/* ==========================================================================
+   @ Components
+   The cosmetic and functional layer for all the components
+   ========================================================================== */
+@import 'components/ui';
 
 /* ==========================================================================
    @ Overrides

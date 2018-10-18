@@ -2,104 +2,129 @@
    Config
    ========================================================================== */
 $collections-spacing: $layout-spacing-base/2;
-$collections-padding: $layout-spacing-base/4 $layout-spacing-base/2;
+$collections-content-padding: $layout-spacing-base/4 $layout-spacing-base/2;
 $collections-border: 1px solid $color-border-base;
 $collections-border-radius: 4px;
+$table-collections-indent-level-support: 10;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .collections-table {
-  table-layout: fixed;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 0 $collections-spacing;
   width: 100%;
   font-size: $typo-size-slight;
   color: $neutral-base;
 
-  @include respond-to(medium) {
-    border-spacing: 0 $collections-spacing;
+  @include respond-to-min($screen-md) {
+    table-layout: fixed;
   }
 }
 
 .collections-table .collections-table {
-  margin-top: -$layout-spacing-base/2;
+  margin-top: -$collections-spacing;
 }
 
-.collections-table__head {
-  @include respond-to(small) {
-    display: none;
-  }
-}
-
-.collections-table__cell,
-.collections-table__heading {
-  width: 100%;
-  display: block;
+.collections-table__heading,
+.collections-table__cell {
   text-align: left;
-  padding: $collections-padding;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  @include respond-to(medium) {
-    display: table-cell;
-    width: auto;
-  }
+  padding: $collections-content-padding;
 }
 
 .collections-table__heading {
   padding-bottom: 0;
 }
 
-.collections-table__row {
-  @include respond-to(small) {
-    display: block;
-    margin-bottom: $collections-spacing;
-  }
-}
-
 .collections-table__heading:first-child,
 .collections-table__cell:first-child {
-  width: 35%;
+  max-width: 200px;
+
+  @include respond-to-min($screen-md) {
+    width: 40%;
+  }
 }
 
 .collections-table__cell {
-  border-left: $collections-border;
-  border-right: $collections-border;
+  border-top: $collections-border;
+  border-bottom: $collections-border;
 
   &:first-child {
-    border-radius: $collections-border-radius $collections-border-radius 0 0;
+    padding: 0;
+    border: 0;
+  }
+
+  &:first-child > .collections-table__cell-content {
+    padding: $collections-spacing;
+    border-radius: $collections-border-radius 0 0 $collections-border-radius;
+    border-left: $collections-border;
     border-top: $collections-border;
+    border-bottom: $collections-border;
   }
 
   &:last-child {
-    border-radius: 0 0 $collections-border-radius $collections-border-radius;
-    border-bottom: $collections-border;
-  }
-
-  @include respond-to(medium) {
-    border: 0;
-    border-top: $collections-border;
-    border-bottom: $collections-border;
-
-    &:first-child {
-      border-radius: $collections-border-radius 0 0 $collections-border-radius;
-      border-left: $collections-border;
-    }
-
-    &:last-child {
-      border-radius: 0 $collections-border-radius $collections-border-radius 0;
-      border-right: $collections-border;
-    }
+    border-radius: 0 $collections-border-radius $collections-border-radius 0;
+    border-right: $collections-border;
   }
 }
 
-.collections-table__cell--collapse {
-  border: 0;
-  padding: 0;
+.collections-table__cell-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 0;
 }
 
-.collections-table__cell-icon {
+.collections-table__status-indicator {
+  margin: 0 $collections-spacing 0 0;
+}
+
+.collections-table__row-title {
+  margin: 0;
+  font-size: $typo-size-base;
+
+  a {
+    color: $neutral-dark;
+    text-decoration: none;
+  }
+}
+
+.collections-table__cell[colspan],
+.collections-table__cell[colspan] > .collections-table__cell-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+.collections-table__icon {
   display: block; // override the inline-block set by default
+}
+
+.collections-table__action {
+  position: absolute;
+  left: -$layout-spacing-base*1.5;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.collections-table__cell-content--allow-overflow {
+  overflow: visible;
+}
+
+/* ==========================================================================
+   Indentation
+   ========================================================================== */
+
+@for $i from 1 through $table-collections-indent-level-support {
+  $tableSelector: '.collections-table';
+
+  @for $l from 1 through $i {
+    $tableSelector: '#{$tableSelector} .collections-table';
+  }
+
+  #{$tableSelector} .collections-table__cell:first-child > .collections-table__cell-content {
+    margin-left: $layout-spacing-base*$i;
+  }
 }
