@@ -11,21 +11,30 @@ const card = storiesOf('Components', module)
     <div>
       <StoryItem
         title="Basic card"
-        description="The primary action button for creation activities"
+        description="A simple card"
       >
-        <Card>
-          <Card.Content>
-            hi
-          </Card.Content>
-          <Card.Footer>
-            hi
-          </Card.Footer>
-        </Card>
+        <Row>
+          <Col xs={2}>
+            <Card>
+              <Card.Content bordered>
+                <Card.SubHeading>
+                  Some subheading text
+                </Card.SubHeading>
+              </Card.Content>
+              <Card.Content>
+                some normal text, hello!
+              </Card.Content>
+              <Card.Footer>
+                I'm a footer
+              </Card.Footer>
+            </Card>
+          </Col>
+        </Row>
       </StoryItem>
 
       <StoryItem
         title="Image card"
-        description="The primary action button for creation activities"
+        description="A Card with a FileCard inside"
       >
       <Row>
         <Col xs={2}>
@@ -60,11 +69,19 @@ const card = storiesOf('Components', module)
                   showPreview
                 />
               </Card.Content>
-              <Card.Content bordered>
-                hello!
+              <Card.Content>
+                <Card.SubHeading truncate>
+                  A lovely skyline
+                </Card.SubHeading>
+                Uploaded 2 months ago
               </Card.Content>
-              <Card.Footer>
-                hi
+              <Card.Footer collapse>
+                <Card.FooterLeft>
+                  <Icon name="cog" />
+                </Card.FooterLeft>
+                <Card.FooterRight>
+                  info
+                </Card.FooterRight>
               </Card.Footer>
             </Card>
             </Col>
