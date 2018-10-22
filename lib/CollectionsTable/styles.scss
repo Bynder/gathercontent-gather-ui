@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$collections-table-spacing: $layout-spacing-base/2;
+$collections-table-content-padding: $layout-spacing-base/4 $layout-spacing-base/2;
+$collections-table-border: 1px solid $color-border-base;
+$collections-table-border-radius: 4px;
+$collections-table-indent-level-support: 10;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.collections-table {
+  border-collapse: separate;
+  border-spacing: 0 $collections-table-spacing;
+  width: 100%;
+  font-size: $typo-size-slight;
+  color: $neutral-base;
+
+  @include respond-to-min($screen-md) {
+    table-layout: fixed;
+  }
+}
+
+.collections-table .collections-table {
+  margin-top: -$collections-table-spacing;
+}
+
+.collections-table__heading,
+.collections-table__cell {
+  text-align: left;
+  padding: $collections-table-content-padding;
+}
+
+.collections-table__heading {
+  padding-bottom: 0;
+}
+
+.collections-table__heading:first-child,
+.collections-table__cell:first-child {
+  max-width: 200px;
+
+  @include respond-to-min($screen-md) {
+    width: 40%;
+  }
+}
+
+.collections-table__cell {
+  border-top: $collections-table-border;
+  border-bottom: $collections-table-border;
+
+  &:first-child {
+    padding: 0;
+    border: 0;
+  }
+
+  &:first-child > .collections-table__cell-content {
+    padding: $collections-table-spacing;
+    border-radius: $collections-table-border-radius 0 0 $collections-table-border-radius;
+    border-left: $collections-table-border;
+    border-top: $collections-table-border;
+    border-bottom: $collections-table-border;
+  }
+
+  &:last-child {
+    border-radius: 0 $collections-table-border-radius $collections-table-border-radius 0;
+    border-right: $collections-table-border;
+  }
+}
+
+.collections-table__cell-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+}
+
+.collections-table__status-indicator {
+  margin: 0 $collections-table-spacing 0 0;
+}
+
+.collections-table__row-title {
+  margin: 0;
+  font-size: $typo-size-base;
+
+  a {
+    color: $neutral-dark;
+    text-decoration: none;
+  }
+}
+
+.collections-table__cell[colspan],
+.collections-table__cell[colspan] > .collections-table__cell-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+.collections-table__icon {
+  display: block; // override the inline-block set by default
+}
+
+.collections-table__action {
+  position: absolute;
+  left: -$layout-spacing-base*1.5;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.collections-table__cell-content--allow-overflow {
+  overflow: visible;
+}
+
+/* ==========================================================================
+   Indentation
+   ========================================================================== */
+
+@for $i from 1 through $collections-table-indent-level-support {
+  $tableSelector: '.collections-table';
+
+  @for $l from 1 through $i {
+    $tableSelector: '#{$tableSelector} .collections-table';
+  }
+
+  #{$tableSelector} .collections-table__cell:first-child > .collections-table__cell-content {
+    margin-left: $layout-spacing-base*$i;
+  }
+}
