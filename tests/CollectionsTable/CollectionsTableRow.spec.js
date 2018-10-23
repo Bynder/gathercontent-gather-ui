@@ -18,4 +18,9 @@ describe('Collections table row', () => {
   test('sharing props', () => {
     expect(wrapper.prop('onClick')).toEqual(onClick);
   });
+
+  test('adds selected modifier', () => {
+    wrapper.setProps({ selected: true });
+    expect(wrapper.hasClass('collections-table__row--selected')).toBe(true);
+  });
 });

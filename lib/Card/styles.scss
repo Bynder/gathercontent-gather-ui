@@ -1,4 +1,10 @@
 .card {
+  padding: 1px;
+  &--selected {
+    padding: 0;
+  }
+}
+.card__inner {
   border: 1px solid $color-border-base;
   border-radius: $layout-spacing-base/4;
   display: flex;
@@ -6,10 +12,10 @@
   font-size: $typo-size-small;
   color: $neutral-base;
   box-shadow: $shadow-shallow;
-  &--selected {
+  .card--selected & {
     border: 2px solid $primary-blue;
   }
-  &--interactive {
+  .card--interactive & {
     cursor: pointer;
   }
   img {
@@ -51,7 +57,7 @@
 }
 
 .card__content {
-  .file-card, .file-card__wrapper, .file-card__thumbnail {
+  .file-card, .file-card__wrapper, .file-card__thumbnail, .file-card__title {
     border-radius: 3px 3px 0 0;
     margin-bottom: 0;
   }
