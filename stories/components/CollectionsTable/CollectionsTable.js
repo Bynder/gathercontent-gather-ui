@@ -2,9 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { CollectionsTable, Icon } from '../../../lib';
 import BodyRowExample from './BodyRowExample';
+import OtherBodyRowExample from './OtherBodyRowExample';
 import StoryItem from '../../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Collections Table', () => (
+  <div>
   <StoryItem
     title="Collections Table"
     description="A wrapper around tables to provide enhanced styling."
@@ -50,4 +52,33 @@ storiesOf('Components', module).add('Collections Table', () => (
       </CollectionsTable>
     </div>
   </StoryItem>
+
+  <StoryItem
+    title="Collections Table"
+    description="A wrapper around tables to provide enhanced styling."
+  >
+    <div style={{ paddingLeft: '20px' }}>
+      <CollectionsTable>
+        <CollectionsTable.Head>
+          <CollectionsTable.Row>
+            <CollectionsTable.Heading>Name</CollectionsTable.Heading>
+            <CollectionsTable.Heading className="hide-small">
+              Uploaded
+            </CollectionsTable.Heading>
+            <CollectionsTable.Heading className="hide-small">
+              Size
+            </CollectionsTable.Heading>
+            <CollectionsTable.Heading className="hide-small">
+              Uploaded by
+            </CollectionsTable.Heading>
+          </CollectionsTable.Row>
+        </CollectionsTable.Head>
+
+        <CollectionsTable.Body>
+          <OtherBodyRowExample />
+        </CollectionsTable.Body>
+      </CollectionsTable>
+    </div>
+  </StoryItem>
+  </div>
 ));

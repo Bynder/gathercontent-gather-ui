@@ -4,6 +4,7 @@
 $collections-table-spacing: $layout-spacing-base/2;
 $collections-table-content-padding: $layout-spacing-base/4 $layout-spacing-base/2;
 $collections-table-border: 1px solid $color-border-base;
+$collections-table-selected-border: 2px solid $primary-blue;
 $collections-table-border-radius: 4px;
 $collections-table-indent-level-support: 10;
 
@@ -48,24 +49,41 @@ $collections-table-indent-level-support: 10;
 .collections-table__cell {
   border-top: $collections-table-border;
   border-bottom: $collections-table-border;
-
+  padding: ($collections-table-content-padding + 1) $collections-table-content-padding;
+  .collections-table__row--selected & {
+    border-top: $collections-table-selected-border;
+    border-bottom: $collections-table-selected-border;
+    padding: $collections-table-content-padding;
+  }
   &:first-child {
     padding: 0;
     border: 0;
   }
 
   &:first-child > .collections-table__cell-content {
-    padding: $collections-table-spacing;
+    padding: ($collections-table-spacing + 1) $collections-table-spacing ($collections-table-spacing + 1) ($collections-table-spacing + 1);
     border-radius: $collections-table-border-radius 0 0 $collections-table-border-radius;
     border-left: $collections-table-border;
     border-top: $collections-table-border;
     border-bottom: $collections-table-border;
+    .collections-table__row--selected & {
+      border-top: $collections-table-selected-border;
+      border-bottom: $collections-table-selected-border;
+      border-left: $collections-table-selected-border;
+      padding: $collections-table-spacing;
+    }
   }
 
   &:last-child {
     border-radius: 0 $collections-table-border-radius $collections-table-border-radius 0;
     border-right: $collections-table-border;
+    .collections-table__row--selected & {
+      border-top: $collections-table-selected-border;
+      border-bottom: $collections-table-selected-border;
+      border-right: $collections-table-selected-border;
+    }
   }
+
 }
 
 .collections-table__cell-content {
@@ -73,6 +91,22 @@ $collections-table-indent-level-support: 10;
   align-items: center;
   position: relative;
   min-width: 0;
+  .file-card {
+    width: $layout-spacing-base*2;
+    height: $layout-spacing-base*2;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    &__loader {
+      transform: none;
+    }
+    &__title {
+      font-size: $typo-size-slight;
+    }
+    + .collections-table__row-title {
+      margin-left: $layout-spacing-base/2;
+    }
+  }
 }
 
 .collections-table__status-indicator {
