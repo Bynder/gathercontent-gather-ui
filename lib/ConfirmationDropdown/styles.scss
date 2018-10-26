@@ -1,0 +1,41 @@
+.confirmation-dropdown {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  &.is-active {
+    overflow: visible;
+  }
+}
+.confirmation-dropdown__content {
+  position: absolute;
+  top: auto;
+  bottom: -999em;
+  background: white;
+  box-shadow: $shadow-base;
+  border: 1px solid $neutral-light;
+  z-index: 2;
+  padding: $layout-spacing-base/2;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  margin-bottom: $layout-spacing-base/2;
+  min-width: $layout-spacing-base*10;
+  text-align: center;
+  .is-active & {
+    bottom: 100%;
+    animation: dropdownCentreAnimation 750ms;
+    animation-fill-mode: forwards;
+  }
+}
+.confirmation-dropdown__content-child {
+  margin-bottom: $layout-spacing-base/2;
+  color: $neutral-dark;
+}
+
+.confirmation-dropdown__trigger {
+  .is-active.is-danger & {
+    .icon path {
+      fill: $primary-red;
+    }
+  }
+}
