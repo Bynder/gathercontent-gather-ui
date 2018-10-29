@@ -1,0 +1,19 @@
+.breadcrumb,
+.breadcrumb__item,
+.breadcrumb a {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  @include link-hover-underline();
+  font-weight: $typo-weight-bold;
+}
+
+.breadcrumb__item {
+  padding: $layout-spacing-base/2 0;
+}
+
+.breadcrumb__separator {
+  margin: 0 $layout-spacing-base/2;
+}
