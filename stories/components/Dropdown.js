@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Dropdown, Avatar, AvatarInformation, Icon } from '../../lib/';
+import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 
 const createContentWithItems = props => (
@@ -166,6 +166,20 @@ storiesOf('Components', module)
 
             {createContentWithItems()}
           </Dropdown>
+        </StoryItem>
+        <StoryItem
+          title="Confirmation Dropdown"
+          description="A dropdown like component that renders a confirmation dropdown."
+        >
+          <div style={{marginLeft: '200px'}}>
+            <ConfirmationDropdown
+              iconName="trash"
+              onConfirm={() => action('action clicked')}
+              isDanger
+            >
+              Are you sure?
+            </ConfirmationDropdown>
+          </div>
         </StoryItem>
       </div>
     );
