@@ -24,7 +24,7 @@ const BodyRowExample = () => (
         </CollectionsTable.CellContent>
       </div>
       <CollectionsTable.Action onClick={action('Table action')}>
-        <Icon name="info" />
+        <Icon name="folder" />
       </CollectionsTable.Action>
     </CollectionsTable.Cell>
     <CollectionsTable.Cell className="hide-small">

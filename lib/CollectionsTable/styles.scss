@@ -21,6 +21,10 @@ $collections-table-indent-level-support: 10;
   @include respond-to-min($screen-md) {
     table-layout: fixed;
   }
+
+  a {
+    @include link-hover-underline();
+  }
 }
 
 .collections-table .collections-table {
@@ -136,7 +140,19 @@ $collections-table-indent-level-support: 10;
 
 .collections-table__action {
   position: absolute;
-  left: -$layout-spacing-base*1.5;
+  left: -$layout-spacing-base*2.25;
+  border: $collections-table-border;
+  top: 0;
+  bottom: 0;
+  padding: $layout-spacing-base/2;
+
+  &:hover {
+    border-color: $neutral-base;
+
+    .icon path {
+      fill: $neutral-base;
+    }
+  }
 }
 
 /* ==========================================================================

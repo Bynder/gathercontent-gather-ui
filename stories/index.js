@@ -50,4 +50,5 @@ import CollectionsTable from './components/CollectionsTable/CollectionsTable';
 import MentionsForm from './components/MentionsForm';
 import TagUserForm from './components/TagUserForm';
 import Card from './components/Card';
+import Breadcrumb from './components/Breadcrumb';
 import SelectionBar from './components/SelectionBar';

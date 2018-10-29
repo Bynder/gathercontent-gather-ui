@@ -20,6 +20,9 @@ import crossSVG from './../../assets/icons/cross.svg';
 import clockSVG from './../../assets/icons/clock.svg';
 import warningSVG from './../../assets/icons/warning.svg';
 import helpSVG from './../../assets/icons/help.svg';
+import homeSVG from './../../assets/icons/home.svg';
+import folderSVG from './../../assets/icons/folder.svg';
+import chevronRightSVG from './../../assets/icons/chevron-right.svg';
 
 describe('Icon', () => {
   let wrapper;
@@ -127,6 +130,21 @@ describe('Icon', () => {
   test('should render the clock icon', () => {
     wrapper.setProps({ name: 'clock' });
     expect(wrapper.find('svg').props()).toEqual(clockSVG().props);
+  });
+
+  test('should render the home icon', () => {
+    wrapper.setProps({ name: 'home' });
+    expect(wrapper.find('svg').props()).toEqual(homeSVG().props);
+  });
+
+  test('should render the folder icon', () => {
+    wrapper.setProps({ name: 'folder' });
+    expect(wrapper.find('svg').props()).toEqual(folderSVG().props);
+  });
+
+  test('should render the chevron right icon', () => {
+    wrapper.setProps({ name: 'chevronRight' });
+    expect(wrapper.find('svg').props()).toEqual(chevronRightSVG().props);
   });
 
   test('should render the waning icon', () => {
