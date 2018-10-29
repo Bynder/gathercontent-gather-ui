@@ -10,11 +10,23 @@ storiesOf('Components', module).add('Breadcrumb', () => (
       description="A base avatar will fall back to initials if no url prop is passed."
     >
       <Breadcrumb>
-        <a href="/">
-          <Icon name="home" />
-        </a>
-        <a href="/">Link 2</a>
-        <a href="/">Link 3</a>
+        <Breadcrumb.Item>
+          <a href="/">
+            <Icon name="home" />
+          </a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Icon name="chevronRight" />
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="/">Link 2</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <Icon name="chevronRight" />
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="/">Link 3</a>
+        </Breadcrumb.Item>
       </Breadcrumb>
     </StoryItem>
   </div>

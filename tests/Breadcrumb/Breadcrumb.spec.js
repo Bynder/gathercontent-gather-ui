@@ -15,7 +15,6 @@ describe('Breadcrumb', () => {
   });
 
   test('renders 3 links', () => {
-    expect(wrapper.find('.breadcrumb__item')).toHaveLength(3);
     expect(wrapper.find('a')).toHaveLength(3);
   });
 
