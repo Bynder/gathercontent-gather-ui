@@ -1,14 +1,14 @@
 import { React, shallow } from '../setup';
 import { ShortcutTrigger } from '../../lib';
-import SelectionBarRight from '../../lib/SelectionBar/SelectionBarRight';
+import SelectionBarCancel from '../../lib/SelectionBar/SelectionBarCancel';
 
-describe('SelectionBarRight', () => {
+describe('SelectionBarCancel', () => {
   let wrapper;
   let clearSelectionSpy;
   beforeEach(() => {
     clearSelectionSpy = jest.fn();
     wrapper = shallow(
-      <SelectionBarRight
+      <SelectionBarCancel
         type="files"
         length={4}
         clearSelection={clearSelectionSpy}

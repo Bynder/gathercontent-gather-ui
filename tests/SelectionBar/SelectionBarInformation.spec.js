@@ -1,14 +1,18 @@
 import { React, shallow } from '../setup';
 import { Button } from '../../lib';
-import SelectionBarLeft from '../../lib/SelectionBar/SelectionBarLeft';
+import SelectionBarInformation from '../../lib/SelectionBar/SelectionBarInformation';
 
-describe('SelectionBarLeft', () => {
+describe('SelectionBarInformation', () => {
   let wrapper;
   let selectAllSpy;
   beforeEach(() => {
     selectAllSpy = jest.fn();
     wrapper = shallow(
-      <SelectionBarLeft type="files" length={4} selectAll={selectAllSpy} />
+      <SelectionBarInformation
+        type="files"
+        length={4}
+        selectAll={selectAllSpy}
+      />
     );
   });
 
