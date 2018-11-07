@@ -95,7 +95,6 @@ storiesOf('Components', module).add('List', () => (
           <a href="/#">
             <ItemRow
               indicator={statusWithTooltip('green', 'bottom', 'id-896727', 'Research')}
-              label="entry parent"
             >
               Item name 1
             </ItemRow>
@@ -106,7 +105,6 @@ storiesOf('Components', module).add('List', () => (
               <a href="/#">
                 <ItemRow
                   indicator={statusWithTooltip('blue', 'bottom', 'id-12376887', 'Review')}
-                  label="entry"
                 >
                   Item name 2
                 </ItemRow>
@@ -116,7 +114,6 @@ storiesOf('Components', module).add('List', () => (
             <ListItem collapse>
               <a href="/#">
                 <ItemRow
-                  label="entry"
                   indicator={statusWithTooltip('orange', 'bottom', 'id-9356342', 'Publish')}
                 >
                   {overdueTitle('Item name 3', 'id-78978984224')}
@@ -127,7 +124,6 @@ storiesOf('Components', module).add('List', () => (
                 <ListItem collapse>
                   <a href="/#">
                     <ItemRow
-                      label="entry"
                       indicator={statusWithTooltip('blue', 'bottom', 'id-7858757', 'Review')}
                     >
                       Item name 4
@@ -138,7 +134,6 @@ storiesOf('Components', module).add('List', () => (
                 <ListItem collapse>
                   <a href="/#">
                     <ItemRow
-                      label="entry"
                       indicator={statusWithTooltip('orange', 'bottom', 'id-4444234', 'Publish')}
                     >
                       {overdueTitle('Item name 5', 'id-24288448')}
