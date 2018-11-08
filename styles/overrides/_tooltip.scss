@@ -1,8 +1,10 @@
 .tooltip {
     font-family: $typo-stack-base;
-    @include font-smoothing;
     animation: dropdownAnimation 750ms;
     animation-fill-mode: forwards;
+    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+        @include applyFontSmoothing();
+    }
 }
 
 .tooltip-arrow {
