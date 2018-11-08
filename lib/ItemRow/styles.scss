@@ -37,6 +37,17 @@ $item-row-stacked-margin: $typo-size-slight/3;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
+.item-row:not(item-row--stacked).has-indicator {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+
+  .item-row__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .item-row--stacked {
   display: flex;
   flex-wrap: wrap;
