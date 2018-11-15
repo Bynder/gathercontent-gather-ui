@@ -2,7 +2,6 @@
   font-family: $typo-stack-base;
   box-shadow: $shadow-base;
   border-color: $neutral-light;
-  @include font-smoothing;
   animation: dropdownAnimation 750ms;
   animation-fill-mode: forwards;
   .arrow {
