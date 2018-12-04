@@ -81,6 +81,19 @@ const mockActions = {
   editComment: action('editComment'),
 };
 
+const mockLongComments = [{
+  id: 'comment-id-long',
+  body: "Hey @lyndacarter here is a really long comment for you to read. Meow to be let in human is washing you why halp oh the horror flee scratch hiss bite annoy owner until he gives you food say meow repeatedly until belly rubs, feels good this human feeds me, i should be a god vommit food and eat it again for jump five feet high and sideways when a shadow moves climb a tree, wait for a fireman jump to fireman then scratch his face. Take a big fluffing crap 💩 kitten is playing with dead mouse pelt around the house and up and down stairs chasing phantoms but run around the house at 4 in the morning nap all day kitty kitty so check cat door for ambush 10 times before coming in. Leave fur on owners clothes. Hide when guests come over yowling nonstop the whole night and pose purrfectly to show my beauty and no, you can't close the door, i haven't decided whether or not i wanna go out. Hide at bottom of staircase to trip human cat fur is the new black , and it's 3am, time to create some chaos for jump around on couch, meow constantly until given food, why must they do that. Favor packaging over toy meow loudly just to annoy owners. Lie on your belly and purr when you are asleep spend all night ensuring people don't sleep sleep all day. Toilet paper attack claws fluff everywhere meow miao french ciao litterbox shove bum in owner's face like camera lens for caticus cuteicus yet lick face hiss at owner, pee a lot, and meow repeatedly scratch at fence purrrrrr eat muffins and poutine until owner comes back. Munch on tasty moths cats making all the muffins, so scamper. Weigh eight pounds but take up a full-size bed sleep everywhere, but not in my bed and meow walk on car leaving trail of paw prints on hood and windshield but eat from dog's food but meow meow and scratch the box. Chase ball of string the door is opening! how exciting oh, it's you, meh if human is on laptop sit on the keyboard or find empty spot in cupboard and sleep all day sleep on dog bed, force dog to sleep on floor. Lick the plastic bag mesmerizing birds why use post when this sofa is here purrrrrr. Roll on the floor purring your whiskers off find empty spot in cupboard and sleep all day attack feet, kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff but bleghbleghvomit my furball really tie the room together yet sleep everywhere, but not in my bed. Kitty scratches couch bad kitty stand in front of the computer screen, or pose purrfectly to show my beauty ask to be pet then attack owners hand you call this cat food. Annoy the old grumpy cat, start a fight and then retreat to wash when i lose sit by the fire so the door is opening!",
+  createdAt: '2017-06-08 09:56:41',
+  author: mockUser,
+  createdBy: 2
+}, mockComments[0]];
+
+const mockLongConversation = {
+  id: '7654321',
+  comments: mockLongComments,
+};
+
 storiesOf('Components', module)
   .add('Conversation', () => {
     return (
@@ -218,6 +231,30 @@ storiesOf('Components', module)
                 user={mockUser}
                 users={mockUsers}
                 userCanComment={false}
+                focusOnMount
+                showComments={boundaryIsActive}
+              />
+            )}
+          </BoundaryClickWatcher>
+        </StoryItem>
+
+        <StoryItem
+          title="Conversation"
+          description="A very long conversation"
+        >
+          <BoundaryClickWatcher>
+            {boundaryIsActive => (
+              <Conversation
+                id="1234567"
+                comments={mockLongConversation.comments}
+                resolveConversation={mockActions.resolveConversation}
+                unresolveConversation={mockActions.unresolveConversation}
+                removeComment={mockActions.removeComment}
+                addComment={mockActions.addComment}
+                editComment={mockActions.editComment}
+                user={mockUser}
+                users={mockUsers}
+                userCanComment
                 focusOnMount
                 showComments={boundaryIsActive}
               />
