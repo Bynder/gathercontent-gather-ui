@@ -65,7 +65,7 @@ $conversation-meta-text-color: $neutral-base !default;
   position: relative;
   display: none;
   padding: $conversation-padding $conversation-padding 0 $conversation-padding;
-
+  margin-bottom: $conversation-padding;
   &:first-child {
     display: block;
   }
@@ -178,6 +178,7 @@ $conversation-meta-text-color: $neutral-base !default;
 
 .conversation__meta-wrapper {
   margin-bottom: $conversation-padding;
+  display: none;
 }
 
 .conversation__failed--icon,
@@ -220,22 +221,8 @@ $conversation-meta-text-color: $neutral-base !default;
   display: block;
 }
 
-.conversation__reply-count + .conversation__comment-list {
-  background: red;
-  .conversation__comment {
-    &:before {
-      content: ' ';
-      border-left: $conversation-border-width solid $conversation-border-color;
-      position: absolute;
-      top: $conversation-padding+$avatar-size;
-      height: 100%;
-      left: ($avatar-size/2)+$conversation-padding - 1;
-    }
-  }
-}
-
-.show-reply-preview > .conversation__comment-list .conversation__comment {
-
+.is-active > .conversation__comment-list .conversation__comment {
+  margin-bottom: 0;
 }
 
 .is-active .conversation__comment,
@@ -243,7 +230,7 @@ $conversation-meta-text-color: $neutral-base !default;
   position: relative;
   &:before {
     content: ' ';
-    border-left: $conversation-border-width solid $conversation-border-color;
+    border-left: 2px solid $conversation-border-color;
     position: absolute;
     top: $conversation-padding+$avatar-size;
     height: 100%;
@@ -257,6 +244,11 @@ $conversation-meta-text-color: $neutral-base !default;
   &:before {
     content: none;
   }
+}
+
+.is-active .conversation__meta-wrapper {
+  display: block;
+  margin-bottom: $conversation-padding;
 }
 
 .is-disabled .conversation__person-name,
