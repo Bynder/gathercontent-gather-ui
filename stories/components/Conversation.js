@@ -48,6 +48,12 @@ const mockComments = [{
   author: mockUser,
   createdBy: 2
 }, {
+  id: 'comment-id-4',
+  body: 'Here is another comment in reply to the original.',
+  createdAt: '2017-06-08 09:56:41',
+  author: mockUser,
+  createdBy: 2
+}, {
   id: 'comment-id-2',
   body: 'Comment body and a link to http://google.com and a mention @lyndacarter',
   createdAt: 'Less than a minute ago',
@@ -56,7 +62,7 @@ const mockComments = [{
     name: 'Ricardo',
     initials: 'RB',
   },
-  createdBy: 2
+  createdBy: 4
 }];
 
 const mockFailedComment = [{
