@@ -171,7 +171,12 @@ describe('Conversation', () => {
     wrapper.setProps({ showComments: false });
     expect(wrapper.find('.conversation__latest-reply')).toHaveLength(1);
     expect(wrapper.find(CommentList)).toHaveLength(2);
-    expect(wrapper.find(CommentList).last().prop('comments')).toEqual([props.comments[2]]);
+    expect(
+      wrapper
+        .find(CommentList)
+        .last()
+        .prop('comments')
+    ).toEqual([props.comments[2]]);
   });
 
   test('doesnt render a preview of the most recent comment', () => {
