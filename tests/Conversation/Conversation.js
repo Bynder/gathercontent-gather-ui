@@ -14,7 +14,8 @@ describe('Conversation', () => {
     user: { name: 'kyle', id: '123' },
     comments: [
       { person: { name: 'Toyah' }, id: 123 },
-      { person: { name: 'Sapphire' }, id: 321 }
+      { person: { name: 'Sapphire' }, id: 321 },
+      { person: { name: 'Tonya' }, id: 456 }
     ],
     onCommentChange() {},
     onCommentCancel() {},
@@ -117,7 +118,7 @@ describe('Conversation', () => {
         .last()
         .children()
         .text()
-    ).toEqual('View 1 reply');
+    ).toEqual('1 more reply');
 
     wrapper.setProps({
       comments: [...props.comments, { person: { name: 'Corinne' }, id: 567 }]
@@ -128,7 +129,7 @@ describe('Conversation', () => {
         .last()
         .children()
         .text()
-    ).toEqual('View 2 replies');
+    ).toEqual('2 more replies');
   });
 
   test('calls the addComment action', () => {
@@ -164,5 +165,25 @@ describe('Conversation', () => {
     wrapper.setProps({ comments: [] });
     expect(wrapper.find('.conversation__resolve')).toHaveLength(0);
     expect(wrapper.find(CommentList)).toHaveLength(0);
+  });
+
+  test('renders a preview of the most recent comment', () => {
+    wrapper.setProps({ showComments: false });
+    expect(wrapper.find('.conversation__latest-reply')).toHaveLength(1);
+    expect(wrapper.find(CommentList)).toHaveLength(2);
+    expect(
+      wrapper
+        .find(CommentList)
+        .last()
+        .prop('comments')
+    ).toEqual([props.comments[2]]);
+  });
+
+  test('doesnt render a preview of the most recent comment', () => {
+    expect(wrapper.find('.conversation__latest-reply')).toHaveLength(0);
+    expect(wrapper.find(CommentList)).toHaveLength(1);
+    wrapper.setProps({ showComments: false, comments: [props.comments[0]] });
+    expect(wrapper.find('.conversation__latest-reply')).toHaveLength(0);
+    expect(wrapper.find(CommentList)).toHaveLength(1);
   });
 });
