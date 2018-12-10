@@ -1,6 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+$conversation-background-color: $neutral-base-lightest !default;
 $conversation-active-background-color: #fff !default;
 $conversation-active-shadow-color: rgba(158, 158, 158, 0.17) !default;
 $conversation-active-shadow-size: 0px 0px 5px 0px !default;
@@ -28,6 +29,7 @@ $conversation-meta-text-color: $neutral-base !default;
   margin: $layout-spacing-base/2;
   width: 100%;
   cursor: pointer;
+  background: $conversation-background-color;
   &.hover,
   &:hover {
     border-color: $conversation-border-color;
@@ -109,7 +111,7 @@ $conversation-meta-text-color: $neutral-base !default;
     position: absolute;
     left: 0;
     top: 87px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, transparentize(white, 0.5) 50%, white 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, transparentize($conversation-background-color, 0.5) 50%, $conversation-background-color 100%);
     width: 100%;
     height: 30px;
   }
