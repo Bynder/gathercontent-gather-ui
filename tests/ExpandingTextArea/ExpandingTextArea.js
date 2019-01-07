@@ -1,12 +1,13 @@
 import { React, mount } from '../setup';
 import { ExpandingTextArea } from '../../lib';
 
-describe('EditableTextWrapper', () => {
+describe('ExpandingTextArea', () => {
   jest.useFakeTimers();
   let wrapper;
   let handleOnChangeSpy;
   let handleOnFocusSpy;
   let onRowCountChangeSpy;
+  let handleOnBlurSpy;
   let style;
 
   beforeEach(() => {
@@ -17,12 +18,14 @@ describe('EditableTextWrapper', () => {
     handleOnChangeSpy = jest.fn();
     handleOnFocusSpy = jest.fn();
     onRowCountChangeSpy = jest.fn();
+    handleOnBlurSpy = jest.fn();
     wrapper = mount(
       <ExpandingTextArea
         style={style}
         placeholder="Placeholder..."
         handleOnChange={handleOnChangeSpy}
         handleOnFocus={handleOnFocusSpy}
+        handleOnBlur={handleOnBlurSpy}
         onRowCountChange={onRowCountChangeSpy}
       />
     );
@@ -65,12 +68,12 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.state('rowCount')).toEqual(1);
   });
 
-  test('calls a prop function when focus and blue', () => {
+  test('calls a prop function when focus and blur', () => {
     wrapper.simulate('focus', {});
     expect(handleOnFocusSpy).toHaveBeenCalledTimes(1);
 
     wrapper.simulate('blur', {});
-    expect(handleOnFocusSpy).toHaveBeenCalledTimes(2);
+    expect(handleOnBlurSpy).toHaveBeenCalledTimes(1);
   });
 
   test('sets the value state if the setValue prop is false', () => {

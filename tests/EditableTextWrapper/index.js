@@ -1,6 +1,5 @@
 import { React, shallow } from '../setup';
-import { EditableTextWrapper } from '../../lib';
-import Button from '../../lib/Button';
+import { EditableTextWrapper, Button, ExpandingTextArea } from '../../lib';
 
 describe('EditableTextWrapper', () => {
   let wrapper;
@@ -43,6 +42,19 @@ describe('EditableTextWrapper', () => {
     expect(wrapper.find('.editable-text__button')).toHaveLength(0);
     expect(wrapper.find('.editable-text__wrapper--editing')).toHaveLength(1);
     expect(wrapper.find('.editable-text__input').prop('autoFocus')).toBe(true);
+  });
+
+  test('doesnt show the editing view after clicking .editable-text_text', () => {
+    expect(wrapper.find('.editable-text__text').prop('onClick')).toEqual(
+      wrapper.instance().startEditing
+    );
+    expect(wrapper.find('.editable-text__text').prop('onKeyUp')).toEqual(
+      wrapper.instance().handleEditKeyPress
+    );
+    wrapper.setProps({ pencilEditOnly: true });
+    wrapper.update();
+    expect(wrapper.find('.editable-text__text').prop('onClick')).toEqual(null);
+    expect(wrapper.find('.editable-text__text').prop('onKeyUp')).toEqual(null);
   });
 
   test('fires the onChangedHandler when the return key is pressed, returning the new value', () => {
@@ -102,5 +114,13 @@ describe('EditableTextWrapper', () => {
     wrapper.find('.editable-text__button').prop('clickHandler')();
     wrapper.update();
     expect(wrapper.hasClass('lovely-class--editing')).toEqual(true);
+  });
+
+  test('renders an ExpandingTextArea if multiline is true', () => {
+    wrapper.setProps({ multiline: true });
+    expect(wrapper.find(ExpandingTextArea)).toHaveLength(0);
+    wrapper.find('.editable-text__text').prop('onClick')();
+    wrapper.update();
+    expect(wrapper.find(ExpandingTextArea)).toHaveLength(1);
   });
 });

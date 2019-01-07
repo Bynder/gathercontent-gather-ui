@@ -16,6 +16,7 @@ storiesOf('Components', module)
             placeholder='Add some text...'
           />
         </StoryItem>
+
       </div>
     );
   });
