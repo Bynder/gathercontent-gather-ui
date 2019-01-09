@@ -243,6 +243,10 @@ $field-data-color: $neutral-base !default;
     .editable-text__text {
       margin-left: auto;
     }
+    .expanding-textarea {
+      text-align: right;
+      line-height: $typo-line-height-base * 1.2;
+    }
     input {
       text-align: right;
       background: $neutral-base-lightest;
