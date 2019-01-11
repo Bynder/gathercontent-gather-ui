@@ -51,4 +51,10 @@ describe('BoundaryClickWatcher', () => {
   test('adds the className prop', () => {
     expect(wrapper.hasClass('test')).toBe(true);
   });
+
+  test('changes the element type', () => {
+    expect(wrapper.find('div.boundary-click-watcher')).toHaveLength(1);
+    wrapper.setProps({ BoundaryElement: 'tr' });
+    expect(wrapper.find('tr.boundary-click-watcher')).toHaveLength(1);
+  });
 });

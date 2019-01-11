@@ -163,6 +163,10 @@ $collections-table-indent-level-support: 10;
   overflow: visible;
 }
 
+.collections-table__row--disabled {
+  opacity: 0.5;
+}
+
 /* ==========================================================================
    Indentation
    ========================================================================== */

@@ -23,4 +23,9 @@ describe('Collections table row', () => {
     wrapper.setProps({ selected: true });
     expect(wrapper.hasClass('collections-table__row--selected')).toBe(true);
   });
+
+  test('adds disabled modifier', () => {
+    wrapper.setProps({ disabled: true });
+    expect(wrapper.hasClass('collections-table__row--disabled')).toBe(true);
+  });
 });
