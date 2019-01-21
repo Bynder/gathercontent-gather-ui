@@ -3,16 +3,13 @@
    ========================================================================== */
 .progress-button__wrapper {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .progress-button__icon {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 32px;
-  width: 100%;
 
   path {
     fill: white;

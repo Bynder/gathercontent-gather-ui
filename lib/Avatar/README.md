@@ -12,7 +12,7 @@ An avatar component displays a circled avatar or initials
 | isOffline           | Boolean       | `false`   | No       | The fixed option.                                                             |
 | isHighlighted       | Boolean       | `false`   | No       | The fixed option.                                                             |
 
-###Usage
+### Usage
 ```
 <Avatar initials="AE" name="Angus Edwardson" color="green" url="img/url" isOffline isHighlighted />
 ```
@@ -28,7 +28,7 @@ An avatar component which displays a dropdown menu or a tooltip. All above props
 | popoverClass        | String         | ''                       | No       | Classes to be passed down to the popover wrapper                              |
 | caret               | Boolean        | `false`                  | No       | Add caret to the avatar                                                       |
 
-###Usage
+### Usage
 ```
 <AvatarWithPopover
   name="Angus Edwardson"
