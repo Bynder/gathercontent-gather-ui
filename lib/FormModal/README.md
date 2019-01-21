@@ -18,7 +18,7 @@ A form within a modal
 <FormModal
   title="FormModal example"
   submitText="Submit"
-  submitHandler="Submit"
+  submitHandler={action('handle')}
   cancelText="Cancel"
   cancelHandler={action('cancel')}
 >
