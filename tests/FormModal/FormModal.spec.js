@@ -12,6 +12,7 @@ describe('FormModal', () => {
         submitText="Go"
         cancelText="Stop"
         submitHandler={handleSubmitSpy}
+        show
       >
         <input />
       </FormModal>
@@ -24,21 +25,36 @@ describe('FormModal', () => {
         .find(Modal.Container)
         .find('form')
         .find(Modal.Header)
+        .find('.modal-title')
         .text()
     ).toEqual('Foo');
   });
 
   test('has a submit button', () => {
-    expect(modal.find(ProgressButton).text()).toEqual('Go');
+    expect(
+      modal
+        .find(ProgressButton)
+        .render()
+        .text()
+    ).toEqual('Go');
   });
 
   test('has a cancel button', () => {
-    expect(modal.find(Button).text()).toEqual('Stop');
+    expect(
+      modal
+        .find(Button)
+        .first()
+        .render()
+        .text()
+    ).toEqual('Stop');
   });
 
   test('it renders the child form elements', () => {
     expect(modal.find('input').length).toEqual(1);
   });
 
-  test('shows a progress button with a spinner when formIsSubmitting is true', () => {});
+  test('shows a progress button with a spinner when formIsSubmitting is true', () => {
+    modal.setProps({ formIsSubmitting: true });
+    expect(modal.find(ProgressButton).prop('showSpinner')).toEqual(true);
+  });
 });
