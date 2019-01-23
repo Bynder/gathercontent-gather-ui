@@ -314,7 +314,6 @@ storiesOf('Components', module).add('Modals', () => (
           title="FormModal example"
           submitText="Submit"
           cancelText="Cancel"
-          cancelHandler={action('cancel')}
         >
           <FormGroup>
             <ControlLabel>Field A</ControlLabel>
