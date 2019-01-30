@@ -13,9 +13,7 @@ describe('FormInput', () => {
         value="test value"
         placeholder="test placeholder"
         className="test-class"
-      >
-        <input />
-      </FormInput>
+      />
     );
   });
 
