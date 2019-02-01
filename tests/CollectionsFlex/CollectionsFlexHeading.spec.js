@@ -14,7 +14,12 @@ describe('Collections table heading', () => {
   });
 
   test('renders children', () => {
-    expect(wrapper.find(CollectionsFlex.CellContent).render().text()).toEqual('Hello world');
+    expect(
+      wrapper
+        .find(CollectionsFlex.CellContent)
+        .render()
+        .text()
+    ).toEqual('Hello world');
   });
 
   test('adding an additional className', () => {
