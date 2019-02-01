@@ -14,9 +14,6 @@ $collections-flex-border-radius: $collections-table-border-radius;
 .collections-flex {
   display: flex;
   flex-flow: column nowrap;
-  font-size: .8rem;
-  margin: 0.5rem;
-  line-height: 1.5;
   flex: 1 1 auto;
   color: $neutral-base;
   a {
@@ -58,6 +55,7 @@ $collections-flex-border-radius: $collections-table-border-radius;
 .collections-flex__cell {
   border: $collections-flex-border;
   border-width: 1px 0;
+  padding: $collections-flex-spacing;
   &:first-child {
     border-width: 1px 0 1px 1px;
     border-radius: $collections-flex-border-radius 0 0 $collections-flex-border-radius;
