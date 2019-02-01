@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { CollectionsTable, Icon } from '../../../lib';
-import BodyRowExample from './BodyRowExample';
+import { CollectionsTable, Icon, CollectionsFlex } from '../../../lib';
+import BodyRowExample, { FlexBodyRowExample } from './BodyRowExample';
 import OtherBodyRowExample from './OtherBodyRowExample';
 import StoryItem from '../../styleguide/StoryItem';
 
@@ -79,6 +79,36 @@ storiesOf('Components', module).add('Collections Table', () => (
         </CollectionsTable.Body>
       </CollectionsTable>
     </div>
+    </StoryItem>
+  <StoryItem
+    title="flex table"
+    description="bla"
+  >
+    <CollectionsFlex>
+      <CollectionsFlex.Row>
+        <CollectionsFlex.Heading>Name</CollectionsFlex.Heading>
+        <CollectionsFlex.Heading className="hide-small">
+          Template
+        </CollectionsFlex.Heading>
+        <CollectionsFlex.Heading className="hide-small">
+          Due Date
+        </CollectionsFlex.Heading>
+        <CollectionsFlex.Heading className="hide-small">
+          Updated
+        </CollectionsFlex.Heading>
+        <CollectionsFlex.Heading className="hide-small">
+          Assignees
+        </CollectionsFlex.Heading>
+        <CollectionsFlex.Heading>
+          <Icon className="collections__icon" name="comment" />
+        </CollectionsFlex.Heading>
+      </CollectionsFlex.Row>
+      <FlexBodyRowExample />
+      <FlexBodyRowExample />
+      <FlexBodyRowExample />
+      <FlexBodyRowExample />
+      <FlexBodyRowExample />
+    </CollectionsFlex>
   </StoryItem>
   </div>
 ));
