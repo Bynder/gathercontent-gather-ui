@@ -1,5 +1,5 @@
 # CollectionsFlex
-Similar to CollectionsFlex, except the table layout is provided by flex box
+Similar to CollectionsTable, except the table layout is provided by flex box
 
 ## Usage
 
