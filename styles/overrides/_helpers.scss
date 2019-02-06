@@ -9,3 +9,14 @@
 .no-wrap {
 	white-space: nowrap !important;
 }
+
+.hide-small {
+  @include respond-to-max($screen-sm) {
+    display: none !important;
+  }
+}
+
+.hide-off-page {
+  position: absolute;
+  left: -999em;
+}

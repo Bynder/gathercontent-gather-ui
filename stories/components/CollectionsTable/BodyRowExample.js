@@ -11,7 +11,7 @@ import {
 
 const BodyRowExample = () => (
   <CollectionsTable.Row>
-    <CollectionsTable.Cell allowOverflow>
+    <CollectionsTable.Cell>
       <div className="text-overflow-ellipsis">
         <CollectionsTable.CellContent>
           <StatusIndicator
@@ -23,9 +23,6 @@ const BodyRowExample = () => (
           </h3>
         </CollectionsTable.CellContent>
       </div>
-      <CollectionsTable.Action onClick={action('Table action')}>
-        <Icon name="folder" />
-      </CollectionsTable.Action>
     </CollectionsTable.Cell>
     <CollectionsTable.Cell className="hide-small">
       <div className="text-overflow-ellipsis">No template</div>

@@ -1,100 +1,76 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$collections-table-spacing: $layout-spacing-base/2;
+$collections-table-spacing: $layout-spacing-base/4 0;
 $collections-table-content-padding: $layout-spacing-base/4 $layout-spacing-base/2;
 $collections-table-border: 1px solid $color-border-base;
 $collections-table-selected-border: 2px solid $primary-blue;
 $collections-table-border-radius: 4px;
-$collections-table-indent-level-support: 10;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
+
 .collections-table {
-  border-collapse: separate;
-  border-spacing: 0 $collections-table-spacing;
-  width: 100%;
-  font-size: $typo-size-slight;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 auto;
   color: $neutral-base;
-
-  @include respond-to-min($screen-md) {
-    table-layout: fixed;
-  }
-
   a {
     @include link-hover-underline();
   }
 }
 
-.collections-table .collections-table {
-  margin-top: -$collections-table-spacing;
+.collections-table__row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: $collections-table-spacing;
 }
 
 .collections-table__heading,
 .collections-table__cell {
-  text-align: left;
-  padding: $collections-table-content-padding;
-}
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0px;
+  white-space: nowrap;
+  &:first-child {
+    flex-basis: 20%;
 
-.collections-table__heading {
-  padding-bottom: 0;
-}
-
-.collections-table__heading:first-child,
-.collections-table__cell:first-child {
-  max-width: 200px;
-
-  @include respond-to-min($screen-md) {
-    width: 40%;
+    @include respond-to-min($screen-lg) {
+      flex-basis: 30%;
+    }
   }
 }
 
 .collections-table__cell {
-  border-top: $collections-table-border;
-  border-bottom: $collections-table-border;
-  padding: ($collections-table-content-padding + 1) $collections-table-content-padding;
-  .collections-table__row--selected & {
-    border-top: $collections-table-selected-border;
-    border-bottom: $collections-table-selected-border;
-    padding: $collections-table-content-padding;
-  }
+  border: $collections-table-border;
+  border-width: 1px 0;
+  padding: $collections-table-spacing;
+  background: white;
   &:first-child {
-    padding: 0;
-    border: 0;
-  }
-
-  &:first-child > .collections-table__cell-content {
-    padding: ($collections-table-spacing + 1) $collections-table-spacing ($collections-table-spacing + 1) ($collections-table-spacing + 1);
+    border-width: 1px 0 1px 1px;
     border-radius: $collections-table-border-radius 0 0 $collections-table-border-radius;
-    border-left: $collections-table-border;
-    border-top: $collections-table-border;
-    border-bottom: $collections-table-border;
-    .collections-table__row--selected & {
-      border-top: $collections-table-selected-border;
-      border-bottom: $collections-table-selected-border;
-      border-left: $collections-table-selected-border;
-      padding: $collections-table-spacing;
-    }
   }
-
   &:last-child {
+    border-width: 1px 1px 1px 0;
     border-radius: 0 $collections-table-border-radius $collections-table-border-radius 0;
-    border-right: $collections-table-border;
-    .collections-table__row--selected & {
-      border-top: $collections-table-selected-border;
-      border-bottom: $collections-table-selected-border;
-      border-right: $collections-table-selected-border;
-    }
   }
-
 }
 
 .collections-table__cell-content {
+  overflow: hidden;
   display: flex;
   align-items: center;
-  position: relative;
-  min-width: 0;
+  padding: $collections-table-content-padding;
+  .collections-table__cell-content {
+    padding: 0;
+  }
   .file-card {
     width: $layout-spacing-base*2;
     height: $layout-spacing-base*2;
@@ -113,8 +89,13 @@ $collections-table-indent-level-support: 10;
   }
 }
 
+.collections-table__heading {
+  font-weight: bold;
+  padding: $collections-table-content-padding 0 $collections-table-spacing;
+}
+
 .collections-table__status-indicator {
-  margin: 0 $collections-table-spacing 0 0;
+  margin: 0 $collections-table-spacing 0;
 }
 
 .collections-table__row-title {
@@ -127,37 +108,23 @@ $collections-table-indent-level-support: 10;
   }
 }
 
-.collections-table__cell[colspan],
-.collections-table__cell[colspan] > .collections-table__cell-content {
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-}
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
 
-.collections-table__icon {
-  display: block; // override the inline-block set by default
-}
-
-.collections-table__action {
-  position: absolute;
-  left: -$layout-spacing-base*2.25;
-  border: $collections-table-border;
-  top: 0;
-  bottom: 0;
-  padding: $layout-spacing-base/2;
-
-  &:hover {
-    border-color: $neutral-base;
-
-    .icon path {
-      fill: $neutral-base;
+.collections-table__row--selected {
+  .collections-table__cell {
+    border: $collections-table-selected-border;
+    border-width: 2px 0;
+    &:first-child {
+      border-width: 2px 0 2px 2px;
+    }
+    &:last-child {
+      border-width: 2px 2px 2px 0;
     }
   }
 }
 
-/* ==========================================================================
-   Modifiers
-   ========================================================================== */
 
 .collections-table__cell-content--allow-overflow {
   overflow: visible;
@@ -167,18 +134,57 @@ $collections-table-indent-level-support: 10;
   opacity: 0.5;
 }
 
-/* ==========================================================================
-   Indentation
-   ========================================================================== */
-
-@for $i from 1 through $collections-table-indent-level-support {
-  $tableSelector: '.collections-table';
-
-  @for $l from 1 through $i {
-    $tableSelector: '#{$tableSelector} .collections-table';
+.collections-table__row--is-over.dragged-top,
+.collections-table__row--is-over.dragged-below {
+  position: relative;
+  .collections-table__cell:first-child {
+    &:before {
+      content: ' ';
+      border-bottom: 2px solid $primary-blue;
+      left: 0;
+      width: 100%;
+      position: absolute;
+    }
   }
+  &:before,
+  &:after {
+    content: ' ';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: $primary-blue;
+    border-radius: $layout-spacing-base;
+    left:0;
+  }
+  &:after {
+    right: 0;
+    margin-left: auto;
+  }
+}
+.collections-table__row--is-over {
+  &.dragged-top {
+    .collections-table__cell:first-child:before {
+      top: -1px;
+    }
+    &:before,
+    &:after {
+      top: -3px
+    }
+  }
+  &.dragged-below {
+    .collections-table__cell:first-child:before {
+      bottom: -1px;
+    }
+    &:before,
+    &:after {
+      bottom: -3px
+    }
+  }
+}
 
-  #{$tableSelector} .collections-table__cell:first-child > .collections-table__cell-content {
-    margin-left: $layout-spacing-base*$i;
+.drag-preview {
+  .collections-table__cell {
+    border: $collections-table-border;
+    border-radius: $collections-table-border-radius;
   }
 }
