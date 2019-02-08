@@ -116,6 +116,7 @@ $collections-table-border-radius: 4px;
   .collections-table__cell {
     border: $collections-table-selected-border;
     border-width: 2px 0;
+    padding: ($layout-spacing-base/4 - 1) 0;
     &:first-child {
       border-width: 2px 0 2px 2px;
     }
