@@ -199,6 +199,24 @@ storiesOf('Components', module).add('Modals', () => (
     </StoryItem>
 
     <StoryItem
+      title="Full Screen"
+      description="Modals can take up the screen"
+    >
+      <ModalTrigger>
+        <Modal.Container size="full-screen">
+          <Modal.Body>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident
+          </Modal.Body>
+        </Modal.Container>
+      </ModalTrigger>
+    </StoryItem>
+
+    <StoryItem
       title="Confirmation Modal"
       description="A toggle component that can be used to toggle options on and off."
     >
