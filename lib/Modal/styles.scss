@@ -80,6 +80,12 @@ $modal-column-padding: $modal-padding !default;
 	}
 }
 
+.modal--full-screen {
+	.modal-dialog {
+		width: calc(100vw - #{$layout-spacing-base*2});
+	}
+}
+
 .modal--center,
 .modal--center .modal-footer {
 	text-align: center;
