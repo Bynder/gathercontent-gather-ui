@@ -44,7 +44,7 @@ describe('Tabs Form', () => {
   });
 
   test('submits onBlur', () => {
-    wrapper.find(FormInput).prop('onBlur')({
+    wrapper.find(Form).prop('onBlur')({
       target: { value: 'woofle waffle' }
     });
     expect(onSubmitSpy).toHaveBeenCalledWith('woofle waffle');
@@ -52,7 +52,7 @@ describe('Tabs Form', () => {
 
   test('doesnt submit onBlur', () => {
     wrapper.setProps({ submitOnBlur: false });
-    wrapper.find(FormInput).prop('onBlur')({
+    wrapper.find(Form).prop('onBlur')({
       target: { value: 'woofle waffle' }
     });
     expect(onSubmitSpy).not.toHaveBeenCalled();
