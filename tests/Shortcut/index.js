@@ -24,6 +24,17 @@ describe('Shortcut', () => {
     expect(icon.first().text()).toEqual('⌘');
   });
 
+  test('can render a single icon', () => {
+    const shortcut = mount(
+      <Shortcut name="Bold" styleClass="shortcut__bold">
+        <ShortcutIcon>⌘</ShortcutIcon>
+      </Shortcut>
+    );
+    const icon = shortcut.find(ShortcutIcon);
+    expect(icon).toHaveLength(1);
+    expect(icon.first().text()).toEqual('⌘');
+  });
+
   test('renders 2 shortcut__plus divs', () => {
     expect(wrapper.find('.shortcut__plus')).toHaveLength(2);
   });

@@ -28,6 +28,9 @@ storiesOf('Components', module).add('Shortcut', () => (
         <ShortcutIcon>Option</ShortcutIcon>
         <ShortcutIcon>G</ShortcutIcon>
       </Shortcut>
+      <Shortcut name="A single button!" mac>
+        <ShortcutIcon>⇥</ShortcutIcon>
+      </Shortcut>
     </StoryItem>
   </div>
 ));
