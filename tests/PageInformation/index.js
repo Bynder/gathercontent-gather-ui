@@ -39,4 +39,9 @@ describe('PageInformation', () => {
     wrapper.find(EditableTextWrapper).prop('onChange')('foo');
     expect(renameSpy).toHaveBeenCalledWith('foo');
   });
+
+  test('adds a title tag', () => {
+    wrapper = shallow(<PageInformation title="Foo" subtitle="bar" />);
+    expect(wrapper.find('.page-information__title').prop('title')).toEqual('Foo');
+  });
 });
