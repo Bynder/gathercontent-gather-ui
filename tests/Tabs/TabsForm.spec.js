@@ -42,4 +42,19 @@ describe('Tabs Form', () => {
     wrapper.find(Form).prop('onSubmit')({ target: [{ value: 'test value' }] });
     expect(onSubmitSpy).toHaveBeenCalledWith('test value');
   });
+
+  test('submits onBlur', () => {
+    wrapper.find(Form).prop('onBlur')({
+      target: { value: 'woofle waffle' }
+    });
+    expect(onSubmitSpy).toHaveBeenCalledWith('woofle waffle');
+  });
+
+  test('doesnt submit onBlur', () => {
+    wrapper.setProps({ submitOnBlur: false });
+    wrapper.find(Form).prop('onBlur')({
+      target: { value: 'woofle waffle' }
+    });
+    expect(onSubmitSpy).not.toHaveBeenCalled();
+  });
 });

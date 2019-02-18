@@ -57,3 +57,4 @@ A form which can be used when editing or creating a new tab.
 | value              | String        | ''        | No       | The initial value of the input.                                               |
 | onCancel           | Function      | () {}     | No       | A function which is called when pressing the Esc key.                         |
 | onSubmit           | Function      | N/A       | Yes      | A function which is called when the user submits the form.                    |
+| submitOnBlur       | bool          | true      | No       | Dictates whether to submit the form on blur.                    |

@@ -63,6 +63,8 @@ const allIcons = additionalProps => (
     <Icon name="image" {...additionalProps} />
     <Icon name="status" {...additionalProps} />
     <Icon name="user" {...additionalProps} />
+    <Icon name="eye" {...additionalProps} />
+    <Icon name="newWindow" {...additionalProps} />
   </div>
 );
 
