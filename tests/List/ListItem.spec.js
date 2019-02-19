@@ -60,6 +60,8 @@ describe('List Item', () => {
         .first()
         .contains('test button')
     ).toEqual(true);
+
+    expect(wrapper.hasClass('has-action')).toEqual(true);
   });
 
   test('rendering children within the text container', () => {
