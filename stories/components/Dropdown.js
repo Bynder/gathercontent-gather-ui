@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Fragment } from "react";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
+import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown, Button } from "../../lib/";
 import StoryItem from '../styleguide/StoryItem';
+
+const createDelayedPromise = (timeout = 2000) =>
+  new Promise(resolve => setTimeout(resolve, timeout));
 
 const createContentWithItems = props => (
   <Dropdown.Content {...props} collapse>
@@ -171,13 +174,19 @@ storiesOf('Components', module)
           title="Confirmation Dropdown"
           description="A dropdown like component that renders a confirmation dropdown."
         >
-          <div style={{marginLeft: '200px'}}>
+          <div style={{marginLeft: '100px'}}>
             <ConfirmationDropdown
-              iconName="trash"
-              onConfirm={() => action('action clicked')}
-              isDanger
+              confirmText="Archive"
+              confirmationPromise={createDelayedPromise}
+              dropdownContent={(
+                <Fragment>
+                  <h3>Archive 1 item</h3>
+                  <p>The selected item(s) will be moved to your project's archived items section.</p>
+                  <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
+                </Fragment>
+              )}
             >
-              Are you sure?
+              <Button>Test button</Button>
             </ConfirmationDropdown>
           </div>
         </StoryItem>

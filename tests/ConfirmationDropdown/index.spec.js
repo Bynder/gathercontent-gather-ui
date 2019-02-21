@@ -10,22 +10,38 @@ describe('Confirmation Dropdown', () => {
   let wrapper;
   let onConfirmSpy;
   let onCancelSpy;
+
+  const dropdownContent = (
+    <div className="dropdown-content">Dropdown content!</div>
+  );
+
+  const mockPromise = () =>
+    new Promise(resolve => {
+      resolve();
+      onConfirmSpy();
+    });
+
   beforeEach(() => {
     onConfirmSpy = jest.fn();
     onCancelSpy = jest.fn();
+
     wrapper = shallow(
       <ConfirmationDropdown
-        iconName="trash"
-        onConfirm={onConfirmSpy}
+        confirmationPromise={mockPromise}
         onCancel={onCancelSpy}
+        dropdownContent={dropdownContent}
       >
-        <div className="child" />
+        <button>open confirmation</button>
       </ConfirmationDropdown>
     );
   });
 
   test('renders children', () => {
-    expect(wrapper.find('.child')).toHaveLength(1);
+    expect(wrapper.contains('open confirmation')).toEqual(true);
+  });
+
+  test('rendering dropdown content', () => {
+    expect(wrapper.find('.confirmation-dropdown__content-child').find('.dropdown-content')).toHaveLength(1);
   });
 
   test('adds an is-danger class', () => {
@@ -41,58 +57,45 @@ describe('Confirmation Dropdown', () => {
     ).toEqual(wrapper.instance().onCancel);
   });
 
-  test('renders a cancel button', () => {
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .prop('types')
-    ).toEqual(['link-default', 'slim']);
-    expect(
-      wrapper
-        .find(Button)
-        .first()
-        .prop('clickHandler')
-    ).toEqual(wrapper.instance().onCancel);
-  });
-
   test('renders a confirmation button', () => {
     expect(
       wrapper
         .find(Button)
-        .at(1)
         .prop('types')
     ).toEqual(['link-danger', 'slim']);
+
     expect(
       wrapper
         .find(Button)
-        .at(1)
         .prop('clickHandler')
     ).toEqual(wrapper.instance().onConfirm);
   });
 
-  test('renders a trigger button', () => {
+  test('wraps children with the trigger props', () => {
     expect(
       wrapper
-        .find(Button)
+        .find('button')
         .last()
-        .prop('types')
-    ).toEqual(['icon-only']);
-    expect(
-      wrapper
-        .find(Button)
-        .last()
-        .prop('clickHandler')
+        .prop('onClick')
     ).toEqual(wrapper.instance().toggleConfirmation);
   });
 
-  test('renders the correct Icon', () => {
-    expect(wrapper.find(Icon).prop('name')).toEqual('trash');
+  test('calls the confirmation promise and sets the correct state whilst pending', () => {
+    const promise = wrapper.instance().onConfirm();
+    expect(wrapper.state('promiseIsPending')).toEqual(true);
+    return promise.then(() => {
+      expect(onConfirmSpy).toHaveBeenCalledTimes(1);
+      expect(wrapper.state()).toEqual({
+        showConfirmation: false,
+        promiseIsPending: false
+      });
+    });
   });
 
-  test('calls the onConfirm prop', () => {
-    wrapper.instance().onConfirm();
-    expect(onConfirmSpy).toHaveBeenCalledTimes(1);
+  test('renders a loader whilst the promise is pending', () => {
+    expect(wrapper.find(Icon)).toHaveLength(0);
+    wrapper.setState({ promiseIsPending: true });
+    expect(wrapper.find(Icon).prop('name')).toEqual('loader');
   });
 
   test('calls the onCancel prop', () => {
