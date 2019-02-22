@@ -5,8 +5,14 @@
 /* ==========================================================================
    Styles
    ========================================================================== */
+.confirmation-dropdown__footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .confirmation-dropdown__confirm-trigger {
-  margin: 0 0 $layout-spacing-base/2;
   position: relative;
   z-index: 1;
 }
