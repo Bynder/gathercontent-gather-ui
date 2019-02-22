@@ -1,41 +1,27 @@
-.confirmation-dropdown {
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.confirmation-dropdown__confirm-trigger {
+  margin: 0 0 $layout-spacing-base/2;
   position: relative;
-  display: inline-flex;
-  overflow: hidden;
-  &.is-active {
-    overflow: visible;
-  }
-}
-.confirmation-dropdown__content {
-  position: absolute;
-  top: auto;
-  bottom: -999em;
-  background: white;
-  box-shadow: $shadow-base;
-  border: 1px solid $neutral-light;
-  z-index: 2;
-  padding: $layout-spacing-base/2;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 4px;
-  margin-bottom: $layout-spacing-base/2;
-  min-width: $layout-spacing-base*10;
-  text-align: center;
-  .is-active & {
-    bottom: 100%;
-    animation: dropdownCentreAnimation 750ms;
-    animation-fill-mode: forwards;
-  }
-}
-.confirmation-dropdown__content-child {
-  margin-bottom: $layout-spacing-base/2;
-  color: $neutral-dark;
+  z-index: 1;
 }
 
-.confirmation-dropdown__trigger {
-  .is-active.is-danger & {
-    .icon path {
-      fill: $primary-red;
-    }
-  }
+.confirmation-dropdown__loader {
+  position: absolute;
+  transform: scale(.5);
+  transition: opacity $animation-time-micro ease-in $animation-time-micro;
+}
+
+.confirmation-dropdown__loader,
+.confirmation-dropdown.is-pending .confirmation-dropdown__confirm-trigger {
+  opacity: 0;
+}
+
+.confirmation-dropdown.is-pending .confirmation-dropdown__loader {
+  opacity: 1;
 }

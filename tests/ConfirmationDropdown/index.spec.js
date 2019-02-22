@@ -3,7 +3,7 @@ import {
   ConfirmationDropdown,
   Button,
   Icon,
-  BoundaryClickWatcher
+  Dropdown,
 } from '../../lib';
 
 describe('Confirmation Dropdown', () => {
@@ -27,6 +27,7 @@ describe('Confirmation Dropdown', () => {
 
     wrapper = shallow(
       <ConfirmationDropdown
+        id="id"
         confirmationPromise={mockPromise}
         onCancel={onCancelSpy}
         dropdownContent={dropdownContent}
@@ -40,74 +41,57 @@ describe('Confirmation Dropdown', () => {
     expect(wrapper.contains('open confirmation')).toEqual(true);
   });
 
+  test('rendering a <Dropdown> component', () => {
+    const { id, className, show, autoPosition } = wrapper.find(Dropdown).props();
+    expect(id).toBe('id');
+    expect(className).toBe('confirmation-dropdown ');
+    expect(show).toBe(false);
+    expect(autoPosition).toBe(true);
+  });
+
   test('rendering dropdown content', () => {
-    expect(wrapper.find('.confirmation-dropdown__content-child').find('.dropdown-content')).toHaveLength(1);
+    expect(wrapper.find(Dropdown.Content).find('.dropdown-content')).toHaveLength(1);
   });
 
-  test('adds an is-danger class', () => {
-    expect(wrapper.hasClass('is-danger')).toBe(false);
+  test('adds an is-danger type to the confirm button', () => {
+    expect(wrapper.find(Dropdown.Content).find(Button).prop('types')).toEqual(['slim', 'collapse']);
     wrapper.setProps({ isDanger: true });
-    expect(wrapper.hasClass('is-danger')).toBe(true);
-  });
-
-  test('renders a BoundaryClickWatcher', () => {
-    expect(wrapper.find(BoundaryClickWatcher)).toHaveLength(1);
-    expect(
-      wrapper.find(BoundaryClickWatcher).prop('outsideClickHandler')
-    ).toEqual(wrapper.instance().onCancel);
+    expect(wrapper.find(Dropdown.Content).find(Button).prop('types')).toEqual(['link-danger', 'slim', 'collapse']);
   });
 
   test('renders a confirmation button', () => {
-    expect(
-      wrapper
-        .find(Button)
-        .prop('types')
-    ).toEqual(['link-danger', 'slim']);
-
-    expect(
-      wrapper
-        .find(Button)
-        .prop('clickHandler')
-    ).toEqual(wrapper.instance().onConfirm);
+    const { clickHandler, children } = wrapper.find(Button).props();
+    expect(clickHandler).toEqual(wrapper.instance().onConfirm);
+    expect(children).toEqual('Confirm');
   });
 
   test('wraps children with the trigger props', () => {
-    expect(
-      wrapper
-        .find('button')
-        .last()
-        .prop('onClick')
-    ).toEqual(wrapper.instance().toggleConfirmation);
+    const { onClick } = wrapper.find('button').props();
+    expect(onClick).toEqual(wrapper.instance().toggleConfirmation);
   });
 
   test('calls the confirmation promise and sets the correct state whilst pending', () => {
     const promise = wrapper.instance().onConfirm();
+    wrapper.instance().onConfirm();
+    wrapper.instance().onConfirm();
     expect(wrapper.state('promiseIsPending')).toEqual(true);
     return promise.then(() => {
       expect(onConfirmSpy).toHaveBeenCalledTimes(1);
       expect(wrapper.state()).toEqual({
-        showConfirmation: false,
         promiseIsPending: false
       });
     });
   });
 
   test('renders a loader whilst the promise is pending', () => {
-    expect(wrapper.find(Icon)).toHaveLength(0);
+    expect(wrapper.find(Icon).prop('name')).toEqual('loader');
     wrapper.setState({ promiseIsPending: true });
     expect(wrapper.find(Icon).prop('name')).toEqual('loader');
   });
 
-  test('calls the onCancel prop', () => {
-    wrapper.instance().onCancel();
-    expect(onCancelSpy).toHaveBeenCalledTimes(1);
-  });
-
-  test('toggles the confirmation', () => {
-    expect(wrapper.state('showConfirmation')).toEqual(false);
-    expect(wrapper.hasClass('is-active')).toBe(false);
-    wrapper.instance().toggleConfirmation();
-    expect(wrapper.state('showConfirmation')).toEqual(true);
-    expect(wrapper.hasClass('is-active')).toBe(true);
+  test('adds props to components when promise is pending', () => {
+    wrapper.setState({ promiseIsPending: true });
+    expect(wrapper.find(Dropdown).prop('show')).toBe(true);
+    expect(wrapper.hasClass('is-pending')).toBe(true);
   });
 });

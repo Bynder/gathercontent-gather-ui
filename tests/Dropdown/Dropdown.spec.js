@@ -115,4 +115,16 @@ describe('Dropdown', () => {
       }
     });
   });
+
+  test('persists the active state when the external show prop is true', () => {
+    wrapper.setProps({ show: true });
+    wrapper.instance().setShowContent(false);
+
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'ACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
+  });
 });

@@ -174,21 +174,21 @@ storiesOf('Components', module)
           title="Confirmation Dropdown"
           description="A dropdown like component that renders a confirmation dropdown."
         >
-          <div style={{marginLeft: '100px'}}>
-            <ConfirmationDropdown
-              confirmText="Archive"
-              confirmationPromise={createDelayedPromise}
-              dropdownContent={(
-                <Fragment>
-                  <h3>Archive 1 item</h3>
-                  <p>The selected item(s) will be moved to your project's archived items section.</p>
-                  <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
-                </Fragment>
-              )}
-            >
-              <Button>Test button</Button>
-            </ConfirmationDropdown>
-          </div>
+          <ConfirmationDropdown
+            id="confirm-dropdown"
+            confirmationText="Archive"
+            confirmationPromise={createDelayedPromise}
+            dropdownContent={(
+              <div style={{ maxWidth: '300px' }}>
+                <h3>Archive 1 item</h3>
+                <p>The selected item(s) will be moved to your project's archived items section.</p>
+                <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
+              </div>
+            )}
+            isDanger
+          >
+            <Icon name="trash" />
+          </ConfirmationDropdown>
         </StoryItem>
       </div>
     );
