@@ -1,10 +1,5 @@
 import { React, shallow } from '../setup';
-import {
-  ConfirmationDropdown,
-  Button,
-  Icon,
-  Dropdown,
-} from '../../lib';
+import { ConfirmationDropdown, Button, Icon, Dropdown } from '../../lib';
 
 describe('Confirmation Dropdown', () => {
   let wrapper;
@@ -42,7 +37,9 @@ describe('Confirmation Dropdown', () => {
   });
 
   test('rendering a <Dropdown> component', () => {
-    const { id, className, show, autoPosition } = wrapper.find(Dropdown).props();
+    const { id, className, show, autoPosition } = wrapper
+      .find(Dropdown)
+      .props();
     expect(id).toBe('id');
     expect(className).toBe('confirmation-dropdown ');
     expect(show).toBe(false);
@@ -50,13 +47,25 @@ describe('Confirmation Dropdown', () => {
   });
 
   test('rendering dropdown content', () => {
-    expect(wrapper.find(Dropdown.Content).find('.dropdown-content')).toHaveLength(1);
+    expect(
+      wrapper.find(Dropdown.Content).find('.dropdown-content')
+    ).toHaveLength(1);
   });
 
   test('adds an is-danger type to the confirm button', () => {
-    expect(wrapper.find(Dropdown.Content).find(Button).prop('types')).toEqual(['slim', 'collapse']);
+    expect(
+      wrapper
+        .find(Dropdown.Content)
+        .find(Button)
+        .prop('types')
+    ).toEqual(['slim', 'collapse']);
     wrapper.setProps({ isDanger: true });
-    expect(wrapper.find(Dropdown.Content).find(Button).prop('types')).toEqual(['link-danger', 'slim', 'collapse']);
+    expect(
+      wrapper
+        .find(Dropdown.Content)
+        .find(Button)
+        .prop('types')
+    ).toEqual(['link-danger', 'slim', 'collapse']);
   });
 
   test('renders a confirmation button', () => {
