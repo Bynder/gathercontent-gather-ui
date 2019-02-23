@@ -51,7 +51,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   box-shadow: $shadow-base;
   border: 1px solid $neutral-light;
   z-index: 2;
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base * .75;
 }
 
 .dropdown__content--noborder {

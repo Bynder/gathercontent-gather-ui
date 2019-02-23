@@ -127,4 +127,15 @@ describe('Dropdown', () => {
       }
     });
   });
+
+  test('hiding the content when the external hide prop is set', () => {
+    wrapper.setProps({ hide: true });
+
+    expect(onToggleMock).toHaveBeenLastCalledWith({
+      type: 'UNACTIVE',
+      payload: {
+        id: 'id-1'
+      }
+    });
+  });
 });

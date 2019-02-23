@@ -9,7 +9,16 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.confirmation-dropdown__cancel {
+  color: $neutral-base;
+
+  &:hover {
+    color: $neutral-dark;
+  }
 }
 
 .confirmation-dropdown__confirm-trigger {
