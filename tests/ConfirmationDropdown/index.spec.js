@@ -73,13 +73,19 @@ describe('Confirmation Dropdown', () => {
   });
 
   test('rendering a confirmation button', () => {
-    const { clickHandler, children } = wrapper.find(Button).first().props();
+    const { clickHandler, children } = wrapper
+      .find(Button)
+      .first()
+      .props();
     expect(clickHandler).toEqual(wrapper.instance().onConfirm);
     expect(children).toEqual('Confirm');
   });
 
   test('rendering a cancel button', () => {
-    const { types, clickHandler, children } = wrapper.find(Button).last().props();
+    const { types, clickHandler, children } = wrapper
+      .find(Button)
+      .last()
+      .props();
     expect(types).toEqual(['slim', 'collapse']);
     expect(clickHandler).toEqual(wrapper.instance().onCancel);
     expect(children).toEqual('Cancel');
