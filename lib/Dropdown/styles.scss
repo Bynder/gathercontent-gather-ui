@@ -20,6 +20,10 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
     &:first-child {
       margin-top: 0;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
