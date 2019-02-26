@@ -6,7 +6,6 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-
 .dropdown-gc,
 .dropdown__wrapper {
   position: relative;
@@ -15,6 +14,16 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 
   + .dropdown-gc {
     margin-left: $layout-spacing-base;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -46,7 +55,7 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   box-shadow: $shadow-base;
   border: 1px solid $neutral-light;
   z-index: 2;
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base * .75;
 }
 
 .dropdown__content--noborder {

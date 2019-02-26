@@ -7,21 +7,23 @@ A component which renders a confirmation dropdown.
 
 | Name                  | Type          | Default       | Required | Description                                         |
 | --------------------- |-------------- | ------------- | -------- |---------------------------------------------------- |
-| iconName              | string        | n/a           | Yes      | The icon to display in the trigger.                 |
-| children              | node          | n/a           | Yes      | What will display above the confirmation buttons.   |
-| onConfirm             | func          | n/a           | Yes      | The function that will fire when the confirm button is clicked.  |
-| onCancel              | func          | () => {}      | No       | The function that will fire when the cancel button is clicked.  |
-| isDanger              | bool          | false         | No       | Gives the icon trigger danger styling.              |
-| confirmText           | string        | 'Delete'      | No       | Text to display in confirmation button.  |
+| id                    | string        | n/a           | Yes      | The ID for the dropdown.   |
+| children              | node/string   | n/a           | Yes      | The trigger for showing the confirmation dropdown.   |
+| confirmationPromise   | func          | n/a           | Yes      | The function that will fire when the confirm button is clicked. Must be a promise.  |
+| dropdownContent       | node          | n/a           | Yes      | The contents of the dropdown itself.  |
+| isDanger              | bool          | false         | No       | Gives the confirmation button a danger style.              |
+| confirmationText      | string        | 'Confirm'     | No       | Text to display in confirmation button.  |
+| className             | string        | ''            | No       | Additional classes for the container.  |
 
 ```
 <ConfirmationDropdown
-  iconName="string"
-  onConfirm={() => {}}
-  onCancel={() => {}}
-  isDanger={false}
-  confirmText="string"
+  id="id-1"
+  confirmationPromise={() => new Promise(resolve => resolve('complete'))}
+  confirmationText="Archive"
+  dropdownContent={(<div>Some content</div>)}
+  className="class-for-content"
+  isDanger
 >
-  <div>Some content</div>
+  Click me to show dropdown
 </ConfirmationDropdown>
 ```

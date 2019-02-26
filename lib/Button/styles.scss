@@ -313,10 +313,23 @@ $btn-border-radius: 3px !default;
   background: $color-btn-primary--disabled;
   color: $color-btn-primary--disabled-text;
   box-shadow: none;
+
   .icon path {
     fill: $color-btn-primary--disabled-text;
   }
+
   &:hover {
     text-decoration: none;
+  }
+
+  &.button--link,
+  &.button--link-danger {
+    cursor: not-allowed;
+    background: transparent;
+    color: $color-btn-primary--disabled;
+
+    &:hover {
+      color: $color-btn-primary--disabled;
+    }
   }
 }
