@@ -14,8 +14,13 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item--content {
-  padding: ($layout-spacing-base/4 + $layout-spacing-base/10) $layout-spacing-base/2;
+  padding: 0 $layout-spacing-base/2;
   display: flex;
+}
+
+.finder__item--content-inner {
+  width: 100%;
+  padding: ($layout-spacing-base/4 + $layout-spacing-base/10) 0;
 }
 
 .finder__item--settings {
@@ -74,7 +79,7 @@ $finder-indent-level-support: 10 !default;
   & > .finder__item--content {
     background: white;
     border-radius: $layout-spacing-base/4;
-    & > .finder__item--link {
+    .finder__item--link {
       color: $primary-blue;
     }
   }
@@ -96,10 +101,58 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
+.finder__item.is-over.dragged-insert > .finder__item--content,
 .finder__item--selected > .finder__item--content {
   border: 2px solid $primary-blue;
-  padding: ($layout-spacing-base/4 + $layout-spacing-base/10 - 2) $layout-spacing-base/2 - 2;
+  padding: 0 $layout-spacing-base/2 - 2;
   border-radius: 3px;
+  .finder__item--content-inner {
+    width: 100%;
+    padding: ($layout-spacing-base/4 + $layout-spacing-base/10 - 2) 0;
+  }
+}
+
+.finder__item.is-over.dragged-top > .finder__item--content,
+.finder__item.is-over.dragged-below > .finder__item--content {
+  border: none;
+  border-radius: 0px;
+  padding: 0 $layout-spacing-base/2;
+  position: relative;
+  .finder__item--content-inner {
+    position: relative;
+    padding: ($layout-spacing-base/4 + $layout-spacing-base/10) 0 ($layout-spacing-base/4 + $layout-spacing-base/10 - 2);
+    &:before,
+    &:after {
+      content: ' ';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: $primary-blue;
+      border-radius: $layout-spacing-base;
+      left:0;
+    }
+    &:after {
+      right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+.finder__item.is-over.dragged-top > .finder__item--content .finder__item--content-inner {
+  border-top: 2px solid $primary-blue;
+  top: -2px;
+  &:before,
+  &:after {
+    top: -4px
+  }
+}
+
+.finder__item.is-over.dragged-below > .finder__item--content .finder__item--content-inner {
+  border-bottom: 2px solid $primary-blue;
+  &:before,
+  &:after {
+    bottom: -4px
+  }
 }
 
 /* ==========================================================================
@@ -113,11 +166,14 @@ $finder-indent-level-support: 10 !default;
     $finderItemSelector: '#{$finderItemSelector} .finder__item';
   }
 
-  #{$finderItemSelector} > .finder__item--content {
-    padding-left: ($layout-spacing-base*$i) + $layout-spacing-base/2;
+  #{$finderItemSelector}.finder__item.is-over.dragged-insert > .finder__item--content,
+  #{$finderItemSelector}.finder__item--selected > .finder__item--content {
+    padding-left: ($layout-spacing-base*$i) + ($layout-spacing-base/2 - 2);
   }
 
-  #{$finderItemSelector}.finder__item--selected > .finder__item--content {
-    padding-left: ($layout-spacing-base*$i) + $layout-spacing-base/2 - 2;
+  #{$finderItemSelector} > .finder__item--content,
+  #{$finderItemSelector}.finder__item.is-over.dragged-top > .finder__item--content,
+  #{$finderItemSelector}.finder__item.is-over.dragged-below > .finder__item--content {
+    padding-left: ($layout-spacing-base*$i) + $layout-spacing-base/2;
   }
 }
