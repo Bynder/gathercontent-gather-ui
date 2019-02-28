@@ -17,18 +17,22 @@ storiesOf('Components', module)
             clearSelection={() => {}}
             selectAll={() => {}}
           >
-            <Button
-              clickHandler={() => {}}
-              types={['icon-only']}
-            >
-              <Icon name="download" />
-            </Button>
-            <Button
-              clickHandler={() => {}}
-              types={['icon-only']}
-            >
-              <Icon name="trash" />
-            </Button>
+            <SelectionBar.Action>
+              <Button
+                clickHandler={() => {}}
+                types={['icon-only']}
+              >
+                <Icon name="download" />
+              </Button>
+            </SelectionBar.Action>
+            <SelectionBar.Action>
+              <Button
+                clickHandler={() => {}}
+                types={['icon-only']}
+              >
+                <Icon name="trash" />
+              </Button>
+            </SelectionBar.Action>
           </SelectionBar>
         </StoryItem>
 
@@ -43,24 +47,30 @@ storiesOf('Components', module)
             selectAll={() => {}}
             fixed
           >
-            <Button
-              clickHandler={() => {}}
-              types={['icon-only']}
-            >
-              <Icon name="files" />
-            </Button>
-            <Button
-              clickHandler={() => {}}
-              types={['icon-only']}
-            >
-              <Icon name="save" />
-            </Button>
-            <Button
-              clickHandler={() => {}}
-              types={['icon-only']}
-            >
-              <Icon name="export" />
-            </Button>
+            <SelectionBar.Action>
+              <Button
+                clickHandler={() => {}}
+                types={['icon-only']}
+              >
+                <Icon name="files" />
+              </Button>
+            </SelectionBar.Action>
+            <SelectionBar.Action>
+              <Button
+                clickHandler={() => {}}
+                types={['icon-only']}
+              >
+                <Icon name="save" />
+              </Button>
+            </SelectionBar.Action>
+            <SelectionBar.Action>
+              <Button
+                clickHandler={() => {}}
+                types={['icon-only']}
+              >
+                <Icon name="export" />
+              </Button>
+            </SelectionBar.Action>
           </SelectionBar>
         </StoryItem>
       </div>
