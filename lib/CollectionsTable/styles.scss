@@ -111,7 +111,6 @@ $collections-table-border-radius: 4px;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-
 .collections-table__row--selected {
   .collections-table__cell {
     border: $collections-table-selected-border;
@@ -130,7 +129,7 @@ $collections-table-border-radius: 4px;
 .collections-table__cell-content--allow-overflow {
   overflow: visible;
 }
-
+.content-items__table--disable-selected .collections-table__row--selected,
 .collections-table__row--disabled {
   opacity: 0.5;
 }
