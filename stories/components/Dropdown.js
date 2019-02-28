@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown, Button } from "../../lib/";
+import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 
 const createDelayedPromise = (timeout = 2000) =>
