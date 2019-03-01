@@ -1,28 +1,24 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+$selection-bar-border: 1px solid $color-border-base !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 .selection-bar {
   left: 0;
   width: 100%;
   background: white;
-  border-top: 1px solid $color-border-base;
-  border-bottom: 1px solid $color-border-base;
+  border-top: $selection-bar-border;
+  border-bottom: $selection-bar-border;
   min-height: 50px;
   margin: 0;
 }
 
-.selection-bar--fixed {
-  position: fixed;
-  bottom: 0px;
-  box-shadow: $shadow-base;
-}
-
-.selection-bar--auto-hide {
-  bottom: -50px;
-  opacity: 0;
-  transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0.2s;
-  &.has-selected {
-    bottom: 0px;
-    opacity: 1;
-    transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0s;
-  }
+.selection-bar__action {
+  display: flex;
+  margin: 0 $layout-spacing-base/4;
 }
 
 .selection-bar__section {
@@ -51,4 +47,25 @@
   padding: ($layout-spacing-base/4 - 1px) $layout-spacing-base/2;
   margin: 0 $layout-spacing-base/4 0 $layout-spacing-base/2;
   border-radius: $layout-spacing-base*2;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+.selection-bar--fixed {
+  position: fixed;
+  bottom: 0;
+  box-shadow: $shadow-base;
+}
+
+.selection-bar--auto-hide {
+  bottom: -50px;
+  opacity: 0;
+  transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0.2s;
+
+  &.has-selected {
+    bottom: 0;
+    opacity: 1;
+    transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0s;
+  }
 }
