@@ -2,6 +2,12 @@
   padding: $layout-spacing-base $layout-spacing-base/2;
   width: 100%;
   text-align: center;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &--fixed {
     padding: 0;
     position: absolute;
