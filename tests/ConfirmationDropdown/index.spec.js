@@ -5,6 +5,7 @@ describe('Confirmation Dropdown', () => {
   let wrapper;
   let onConfirmSpy;
   let onCancelSpy;
+  let onHideSpy;
 
   const dropdownContent = (
     <div className="dropdown-content">Dropdown content!</div>
@@ -19,12 +20,14 @@ describe('Confirmation Dropdown', () => {
   beforeEach(() => {
     onConfirmSpy = jest.fn();
     onCancelSpy = jest.fn();
+    onHideSpy = jest.fn();
 
     wrapper = shallow(
       <ConfirmationDropdown
         id="id"
         confirmationPromise={mockPromise}
         onCancel={onCancelSpy}
+        onHide={onHideSpy}
         dropdownContent={dropdownContent}
       >
         <button>open confirmation</button>
@@ -137,5 +140,6 @@ describe('Confirmation Dropdown', () => {
       promiseIsPending: false,
       forceHide: false
     });
+    expect(onHideSpy).toHaveBeenCalledTimes(1);
   });
 });
