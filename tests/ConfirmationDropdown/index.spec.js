@@ -1,11 +1,14 @@
 import { React, shallow } from '../setup';
-import { ConfirmationDropdown, Button, Icon, Dropdown } from '../../lib';
+import { ConfirmationDropdown, Dropdown } from '../../lib';
+import ConfirmationDropdownContent from '../../lib/ConfirmationDropdown/ConfirmationDropdownContent';
 
 describe('Confirmation Dropdown', () => {
   let wrapper;
-  let onConfirmSpy;
-  let onCancelSpy;
-  let onHideSpy;
+  const onConfirmSpy = jest.fn();
+  const onCancelSpy = jest.fn();
+  const onHideSpy = jest.fn();
+  const onPromiseResolveSpy = jest.fn();
+  const onPromiseRejectSpy = jest.fn();
 
   const dropdownContent = (
     <div className="dropdown-content">Dropdown content!</div>
@@ -18,14 +21,12 @@ describe('Confirmation Dropdown', () => {
     });
 
   beforeEach(() => {
-    onConfirmSpy = jest.fn();
-    onCancelSpy = jest.fn();
-    onHideSpy = jest.fn();
-
     wrapper = shallow(
       <ConfirmationDropdown
         id="id"
         confirmationPromise={mockPromise}
+        onPromiseResolve={onPromiseResolveSpy}
+        onPromiseReject={onPromiseRejectSpy}
         onCancel={onCancelSpy}
         onHide={onHideSpy}
         dropdownContent={dropdownContent}
@@ -40,58 +41,17 @@ describe('Confirmation Dropdown', () => {
   });
 
   test('rendering a <Dropdown> component', () => {
-    const { id, className, show, hide, autoPosition } = wrapper
+    const { id, className, persistShow, autoPosition } = wrapper
       .find(Dropdown)
       .props();
     expect(id).toBe('id');
     expect(className).toBe('confirmation-dropdown ');
-    expect(show).toBe(false);
-    expect(hide).toBe(false);
+    expect(persistShow).toBe(false);
     expect(autoPosition).toBe(true);
   });
 
   test('rendering dropdown content', () => {
-    expect(
-      wrapper.find(Dropdown.Content).find('.dropdown-content')
-    ).toHaveLength(1);
-  });
-
-  test('adds an is-danger type to the confirm button', () => {
-    expect(
-      wrapper
-        .find(Dropdown.Content)
-        .find(Button)
-        .first()
-        .prop('types')
-    ).toEqual(['slim', 'collapse', 'link']);
-    wrapper.setProps({ isDanger: true });
-
-    expect(
-      wrapper
-        .find(Dropdown.Content)
-        .find(Button)
-        .first()
-        .prop('types')
-    ).toEqual(['slim', 'collapse', 'link-danger']);
-  });
-
-  test('rendering a confirmation button', () => {
-    const { clickHandler, children } = wrapper
-      .find(Button)
-      .first()
-      .props();
-    expect(clickHandler).toEqual(wrapper.instance().onConfirm);
-    expect(children).toEqual('Confirm');
-  });
-
-  test('rendering a cancel button', () => {
-    const { types, clickHandler, children } = wrapper
-      .find(Button)
-      .last()
-      .props();
-    expect(types).toEqual(['slim', 'collapse']);
-    expect(clickHandler).toEqual(wrapper.instance().onCancel);
-    expect(children).toEqual('Cancel');
+    expect(wrapper.find(ConfirmationDropdownContent)).toHaveLength(1);
   });
 
   test('wraps children with the trigger props', () => {
@@ -106,40 +66,13 @@ describe('Confirmation Dropdown', () => {
     expect(wrapper.state('promiseIsPending')).toEqual(true);
     return promise.then(() => {
       expect(onConfirmSpy).toHaveBeenCalledTimes(1);
-      expect(wrapper.state()).toEqual({
-        promiseIsPending: false,
-        forceHide: false
-      });
+      expect(wrapper.state()).toEqual({ promiseIsPending: false });
     });
-  });
-
-  test('renders a loader whilst the promise is pending', () => {
-    expect(wrapper.find(Icon).prop('name')).toEqual('loader');
-    wrapper.setState({ promiseIsPending: true });
-    expect(wrapper.find(Icon).prop('name')).toEqual('loader');
   });
 
   test('adds props to components when promise is pending', () => {
     wrapper.setState({ promiseIsPending: true });
-    expect(wrapper.find(Dropdown).prop('show')).toBe(true);
+    expect(wrapper.find(Dropdown).prop('persistShow')).toBe(true);
     expect(wrapper.hasClass('is-pending')).toBe(true);
-  });
-
-  test('adds props to components when canceling', () => {
-    wrapper.setState({ forceHide: true });
-    expect(wrapper.find(Dropdown).prop('hide')).toBe(true);
-  });
-
-  test('resetting state when canceling', () => {
-    wrapper.setState({
-      promiseIsPending: true,
-      forceHide: true
-    });
-    wrapper.instance().onCancel();
-    expect(wrapper.state()).toEqual({
-      promiseIsPending: false,
-      forceHide: false
-    });
-    expect(onHideSpy).toHaveBeenCalledTimes(1);
   });
 });
