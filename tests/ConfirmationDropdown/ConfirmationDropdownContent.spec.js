@@ -21,7 +21,10 @@ describe('Confirmation Dropdown Content', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <ConfirmationDropdownContent onConfirm={mockConfirmPromise} onHide={onHideSpy}>
+      <ConfirmationDropdownContent
+        onConfirm={mockConfirmPromise}
+        onHide={onHideSpy}
+      >
         {dropdownContent}
       </ConfirmationDropdownContent>,
       {
