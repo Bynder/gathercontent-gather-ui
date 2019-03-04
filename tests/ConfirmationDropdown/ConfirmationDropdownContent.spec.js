@@ -5,8 +5,9 @@ import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown';
 
 describe('Confirmation Dropdown Content', () => {
   let wrapper;
-  let onConfirmSpy;
-  let setShowContentSpy;
+  const onConfirmSpy = jest.fn();
+  const setShowContentSpy = jest.fn();
+  const onHideSpy = jest.fn();
 
   const dropdownContent = (
     <div className="dropdown-content">Dropdown content!</div>
@@ -19,11 +20,8 @@ describe('Confirmation Dropdown Content', () => {
     });
 
   beforeEach(() => {
-    onConfirmSpy = jest.fn();
-    setShowContentSpy = jest.fn();
-
     wrapper = shallow(
-      <ConfirmationDropdownContent onConfirm={mockConfirmPromise}>
+      <ConfirmationDropdownContent onConfirm={mockConfirmPromise} onHide={onHideSpy}>
         {dropdownContent}
       </ConfirmationDropdownContent>,
       {
@@ -82,6 +80,7 @@ describe('Confirmation Dropdown Content', () => {
     expect(children).toEqual('Cancel');
     clickHandler();
     expect(setShowContentSpy).toHaveBeenCalledWith(false);
+    expect(onHideSpy).toHaveBeenCalledTimes(1);
   });
 
   test('renders a loader whilst the promise is pending', () => {

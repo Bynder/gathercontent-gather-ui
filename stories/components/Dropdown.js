@@ -162,7 +162,7 @@ storiesOf('Components', module)
           title="Dropdown with auto positioning"
           description="The dropdown content have auto positioning based on where the trigger is."
         >
-          <Dropdown id="id-3" autoPosition persistShow>
+          <Dropdown id="id-3" autoPosition>
             <Dropdown.Trigger useButton>
               Auto Position
             </Dropdown.Trigger>

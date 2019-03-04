@@ -10,10 +10,11 @@ import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 describe('Dropdown', () => {
   let wrapper;
   const onToggleMock = jest.fn();
+  const onHideMock = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
-      <Dropdown onToggle={onToggleMock} id="id-1">
+      <Dropdown onToggle={onToggleMock} onHide={onHideMock} id="id-1">
         <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
       </Dropdown>
     );
@@ -68,6 +69,7 @@ describe('Dropdown', () => {
     expect(wrapper.state('showContent')).toBe(true);
     wrapper.find(BoundaryClickWatcher).prop('outsideClickHandler')();
     expect(wrapper.state('showContent')).toBe(false);
+    expect(onHideMock).toHaveBeenCalledTimes(1);
   });
 
   test('rendering an active class', () => {
