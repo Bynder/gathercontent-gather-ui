@@ -67,7 +67,6 @@ describe('Confirmation Dropdown', () => {
     return promise.then(() => {
       expect(onConfirmSpy).toHaveBeenCalledTimes(1);
       expect(wrapper.state()).toEqual({ promiseIsPending: false });
-      expect(onPromiseResolveSpy).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -75,25 +74,5 @@ describe('Confirmation Dropdown', () => {
     wrapper.setState({ promiseIsPending: true });
     expect(wrapper.find(Dropdown).prop('persistShow')).toBe(true);
     expect(wrapper.hasClass('is-pending')).toBe(true);
-  });
-
-  test('calling onPromiseReject when the confirmation promise has resolved', () => {
-    const rejectedPromise = () =>
-      new Promise((resolve, reject) => {
-        reject();
-      });
-
-    wrapper.setProps({
-      confirmationPromise: rejectedPromise
-    });
-
-    wrapper
-      .instance()
-      .onConfirm()
-      .then(() => {
-        expect(onConfirmSpy).toHaveBeenCalledTimes(1);
-        expect(wrapper.state()).toEqual({ promiseIsPending: false });
-        expect(onPromiseRejectSpy).toHaveBeenCalledTimes(1);
-      });
   });
 });
