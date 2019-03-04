@@ -33,6 +33,7 @@ describe('Dropdown', () => {
       [GATHER_UI_DROPDOWN]: {
         showContent: true,
         toggleShowContent: wrapper.instance().toggleShowContent,
+        setShowContent: wrapper.instance().setShowContent,
         bounds: { top: -9999 },
         autoPosition: false
       }
@@ -117,22 +118,11 @@ describe('Dropdown', () => {
   });
 
   test('persists the active state when the external show prop is true', () => {
-    wrapper.setProps({ show: true });
+    wrapper.setProps({ persistShow: true });
     wrapper.instance().setShowContent(false);
 
     expect(onToggleMock).toHaveBeenLastCalledWith({
       type: 'ACTIVE',
-      payload: {
-        id: 'id-1'
-      }
-    });
-  });
-
-  test('hiding the content when the external hide prop is set', () => {
-    wrapper.setProps({ hide: true });
-
-    expect(onToggleMock).toHaveBeenLastCalledWith({
-      type: 'UNACTIVE',
       payload: {
         id: 'id-1'
       }
