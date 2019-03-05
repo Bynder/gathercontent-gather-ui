@@ -1,7 +1,16 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
 $finder-indent-level-support: 10 !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
 
 .finder__group {
   margin: $layout-spacing-base $layout-spacing-base/2;
+
   &--title {
     display: block;
     text-transform: uppercase;
@@ -19,6 +28,7 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item--content-inner {
+  display: flex;
   width: 100%;
   padding: ($layout-spacing-base/4 + $layout-spacing-base/10) 0;
 }
@@ -95,7 +105,8 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item--hover-settings:hover,
-.finder__item--hover-settings .finder__item--content:hover {
+.finder__item--hover-settings .finder__item--content:hover,
+.finder__item--hover-settings .finder__item--content-inner:hover {
   & > .finder__item--settings {
     display: block;
   }
