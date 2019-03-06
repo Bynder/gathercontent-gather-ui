@@ -17,7 +17,7 @@ describe('FinderNavigation Group', () => {
   });
 
   test('displays the title', () => {
-    expect(wrapper.find('.finder__group--title')).toHaveLength(1);
-    expect(wrapper.find('.finder__group--title').text()).toEqual('waffles');
+    expect(wrapper.find('.finder__group-title')).toHaveLength(1);
+    expect(wrapper.find('.finder__group-title').text()).toEqual('waffles');
   });
 });
