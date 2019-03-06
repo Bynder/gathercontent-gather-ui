@@ -98,18 +98,12 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.finder__item--hover-settings {
-  .finder__item--settings {
-    display: none;
-  }
+.finder__item--hover-settings .finder__item--content .finder__item--settings {
+  display: none;
 }
 
-.finder__item--hover-settings:hover,
-.finder__item--hover-settings .finder__item--content:hover,
-.finder__item--hover-settings .finder__item--content-inner:hover {
-  & > .finder__item--settings {
-    display: block;
-  }
+.finder__item--hover-settings .finder__item--content:hover .finder__item--settings {
+  display: block;
 }
 
 .finder__item.is-over.dragged-insert > .finder__item--content,
@@ -126,7 +120,7 @@ $finder-indent-level-support: 10 !default;
 .finder__item.is-over.dragged-top > .finder__item--content,
 .finder__item.is-over.dragged-below > .finder__item--content {
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 0 $layout-spacing-base/2;
   position: relative;
   .finder__item--content-inner {
