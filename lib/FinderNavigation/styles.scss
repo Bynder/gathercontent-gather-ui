@@ -11,7 +11,7 @@ $finder-indent-level-support: 10 !default;
 .finder__group {
   margin: $layout-spacing-base $layout-spacing-base/2;
 
-  &--title {
+  &__title {
     display: block;
     text-transform: uppercase;
     color: $neutral-base;
@@ -22,39 +22,42 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.finder__item--content {
+.finder__item-content {
   padding: 0 $layout-spacing-base/2;
   display: flex;
+
+  .icon path {
+    fill: $neutral-darkest;
+  }
+
+  .button:hover path,
+  .dropdown-gc.is-active path,
+  &.is-active .finder__item-link path {
+    fill: $primary-blue;
+  }
 }
 
-.finder__item--content-inner {
+.finder__item-content-inner {
   display: flex;
   width: 100%;
   padding: ($layout-spacing-base/4 + $layout-spacing-base/10) 0;
 }
 
-.finder__item--settings {
+.finder__item-settings {
   margin-left: auto;
   flex-shrink: 0;
   padding-left: $layout-spacing-base/4;
-  .icon path {
-    fill: $neutral-darkest;
-  }
-  .is-active {
-    .icon path {
-      fill: $primary-blue;
-    }
-  }
+
   .button + .dropdown-gc {
     margin-left: $layout-spacing-base/2;
   }
 }
 
-.finder__settings--dropdown {
+.finder__settings-dropdown {
   top: - $layout-spacing-base/2
 }
 
-.finder__item--link {
+.finder__item-link {
   @include text-overflow-ellipsis();
   flex-shrink: 1;
 }
@@ -62,22 +65,22 @@ $finder-indent-level-support: 10 !default;
 .finder__item {
   color: $neutral-dark;
   font-size: $typo-size-lead;
-  &--link {
+
+  &-link {
     color: $neutral-dark;
     text-decoration: none;
     display: block;
+
     &:hover {
       color: $primary-blue;
     }
   }
-  &--link-icon {
+
+  &-link-icon {
     margin-right: $layout-spacing-base/4 + $layout-spacing-base/2;
     vertical-align: text-top;
     height: $icon-height;
     width: $icon-width;
-    path {
-      fill: $neutral-darkest;
-    }
   }
 }
 
@@ -85,53 +88,46 @@ $finder-indent-level-support: 10 !default;
    Modifiers
    ========================================================================== */
 
-.finder__item.is-active {
-  & > .finder__item--content {
-    background: white;
-    border-radius: $layout-spacing-base/4;
-    .finder__item--link {
-      color: $primary-blue;
-    }
-  }
-  .finder__item .icon path {
-    fill: $neutral-darkest;
+.finder__item.is-active > .finder__item-content {
+  background: white;
+  border-radius: $layout-spacing-base/4;
+
+  .finder__item-link {
+    color: $primary-blue;
   }
 }
 
-.finder__item--hover-settings {
-  .finder__item--settings {
-    display: none;
-  }
+.finder__item--hover-settings .finder__item-content .finder__item-settings {
+  display: none;
 }
 
-.finder__item--hover-settings:hover,
-.finder__item--hover-settings .finder__item--content:hover,
-.finder__item--hover-settings .finder__item--content-inner:hover {
-  & > .finder__item--settings {
-    display: block;
-  }
+.finder__item--hover-settings .finder__item-content:hover .finder__item-settings {
+  display: block;
 }
 
-.finder__item.is-over.dragged-insert > .finder__item--content,
-.finder__item--selected > .finder__item--content {
+.finder__item.is-over.dragged-insert > .finder__item-content,
+.finder__item--selected > .finder__item-content {
   border: 2px solid $primary-blue;
   padding: 0 $layout-spacing-base/2 - 2;
   border-radius: 3px;
-  .finder__item--content-inner {
+
+  .finder__item-content-inner {
     width: 100%;
     padding: ($layout-spacing-base/4 + $layout-spacing-base/10 - 2) 0;
   }
 }
 
-.finder__item.is-over.dragged-top > .finder__item--content,
-.finder__item.is-over.dragged-below > .finder__item--content {
+.finder__item.is-over.dragged-top > .finder__item-content,
+.finder__item.is-over.dragged-below > .finder__item-content {
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 0 $layout-spacing-base/2;
   position: relative;
-  .finder__item--content-inner {
+
+  .finder__item-content-inner {
     position: relative;
     padding: ($layout-spacing-base/4 + $layout-spacing-base/10) 0 ($layout-spacing-base/4 + $layout-spacing-base/10 - 2);
+
     &:before,
     &:after {
       content: ' ';
@@ -142,6 +138,7 @@ $finder-indent-level-support: 10 !default;
       border-radius: $layout-spacing-base;
       left:0;
     }
+
     &:after {
       right: 0;
       margin-left: auto;
@@ -149,7 +146,7 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.finder__item.is-over.dragged-top > .finder__item--content .finder__item--content-inner {
+.finder__item.is-over.dragged-top > .finder__item-content .finder__item-content-inner {
   border-top: 2px solid $primary-blue;
   top: -2px;
   &:before,
@@ -158,7 +155,7 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.finder__item.is-over.dragged-below > .finder__item--content .finder__item--content-inner {
+.finder__item.is-over.dragged-below > .finder__item-content .finder__item-content-inner {
   border-bottom: 2px solid $primary-blue;
   &:before,
   &:after {
@@ -177,14 +174,14 @@ $finder-indent-level-support: 10 !default;
     $finderItemSelector: '#{$finderItemSelector} .finder__item';
   }
 
-  #{$finderItemSelector}.finder__item.is-over.dragged-insert > .finder__item--content,
-  #{$finderItemSelector}.finder__item--selected > .finder__item--content {
+  #{$finderItemSelector}.finder__item.is-over.dragged-insert > .finder__item-content,
+  #{$finderItemSelector}.finder__item--selected > .finder__item-content {
     padding-left: ($layout-spacing-base*$i) + ($layout-spacing-base/2 - 2);
   }
 
-  #{$finderItemSelector} > .finder__item--content,
-  #{$finderItemSelector}.finder__item.is-over.dragged-top > .finder__item--content,
-  #{$finderItemSelector}.finder__item.is-over.dragged-below > .finder__item--content {
+  #{$finderItemSelector} > .finder__item-content,
+  #{$finderItemSelector}.finder__item.is-over.dragged-top > .finder__item-content,
+  #{$finderItemSelector}.finder__item.is-over.dragged-below > .finder__item-content {
     padding-left: ($layout-spacing-base*$i) + $layout-spacing-base/2;
   }
 }
