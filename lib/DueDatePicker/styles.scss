@@ -108,7 +108,6 @@ $duedate-timepicker-height: 220px !default;
 }
 
 .duedate__submit--save {
-  font-size: $typo-size-slight;
   padding: $layout-spacing-base / 4 $layout-spacing-base / 2.5;
 }
 
@@ -153,7 +152,7 @@ $duedate-timepicker-height: 220px !default;
 /* DueDate Label */
 .duedate__label, .duedate__label--button, .duedate__label--button:hover {
   color: $neutral-base;
-  font-size: $typo-size-small;
+  font-size: $typo-size-slight;
 
   .icon {
     margin-right: $layout-spacing-base / 4;
