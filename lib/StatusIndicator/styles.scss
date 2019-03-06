@@ -56,6 +56,10 @@ $status-indicator-margin-left: 1.3rem !default;
     text-align: left;
     max-width: 100%;
   }
+
+  .tooltip-wrapper__child {
+    display: inline-flex;
+  }
 }
 
 .status-indicator--completed {
