@@ -187,23 +187,7 @@ storiesOf('Components', module)
             )}
             isDanger
           >
-            <Icon name="trash" />
-          </ConfirmationDropdown>
-          <ConfirmationDropdown
-            id="confirm-dropdown"
-            confirmationText="Archive"
-            confirmationPromise={createDelayedPromise}
-            dropdownContent={(
-              <div style={{ maxWidth: '300px' }}>
-                <h3>Archive 1 item</h3>
-                <p>The selected item(s) will be moved to your project's archived items section.</p>
-                <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
-              </div>
-            )}
-            disabled
-            isDanger
-          >
-            <Icon name="trash" />
+            <Icon name="archive" />
           </ConfirmationDropdown>
         </StoryItem>
       </div>

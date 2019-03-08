@@ -14,7 +14,8 @@ A component which renders a confirmation dropdown.
 | isDanger              | bool          | false         | No       | Gives the confirmation button a danger style.              |
 | confirmationText      | string        | 'Confirm'     | No       | Text to display in confirmation button.  |
 | className             | string        | ''            | No       | Additional classes for the container.  |
-| onHide                | func          | () => {}      | No       | Trigger each time the dropdown is canceled or the confirmation promise resolves.  |
+| onHide                | func          | () => {}      | No       | Function that triggers each time the dropdown is canceled or closed.  |
+| hideOnCompletion      | bool          | true          | No       | Hides the dropdown when the promise has completed.  |
 
 ```
 <ConfirmationDropdown
