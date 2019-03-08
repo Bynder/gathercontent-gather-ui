@@ -352,7 +352,7 @@ $field-data-p-line-height: 1.688rem !default;
   h5 {
     font-size: $field-data-h5-size;
     line-height: $field-data-h5-line-height;
-    font-weight: $typo-weight-semi-bold;
+    font-weight: $typo-weight-roman;
     margin-top: $layout-spacing-base * 0.5;
     margin-bottom: $layout-spacing-base * 0.5;
   }
@@ -360,7 +360,7 @@ $field-data-p-line-height: 1.688rem !default;
   h6 {
     font-size: $field-data-h6-size;
     line-height: $field-data-h6-line-height;
-    font-weight: $typo-weight-bold;
+    font-weight: $typo-weight-roman;
     margin-top: $layout-spacing-base * 0.5;
     margin-bottom: $layout-spacing-base * 0.5;
   }
