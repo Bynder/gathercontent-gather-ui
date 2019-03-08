@@ -64,9 +64,8 @@ $finder-indent-level-support: 10 !default;
 
 .finder__item {
   color: $neutral-dark;
-  font-size: $typo-size-lead;
-
-  &-link {
+  font-size: $typo-size-base;
+  &--link {
     color: $neutral-dark;
     text-decoration: none;
     display: block;

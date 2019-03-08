@@ -1,14 +1,11 @@
 import { configure } from '@storybook/react';
 import { addCSS } from './utils';
 
-const FONTS_CSS = 'https://cloud.typography.com/6854674/6820952/css/fonts.css';
-
+import './IBM-Plex/font.css';
 require('../styles/bootstrap/_bootstrap.scss');
 require('../styles/styleguide/main.scss');
 require('../styles/main.scss');
 require('font-awesome/css/font-awesome.css');
-
-addCSS(FONTS_CSS);
 
 function loadStories() {
   require('../stories/index.js');

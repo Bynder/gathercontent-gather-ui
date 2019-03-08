@@ -213,7 +213,7 @@ $field-data-color: $neutral-base !default;
     color: $neutral-dark;
   }
   .field__instructions {
-    font-size: $typo-size-small;
+    font-size: $typo-size-slight;
     font-style: italic;
     text-decoration: none;
     padding: $field-spacing-base/2;
@@ -238,7 +238,7 @@ $field-data-color: $neutral-base !default;
     background: transparent;
     display:flex;
     &--editing {
-      padding-right: $field-spacing-base + 1;
+      padding-right: $field-spacing-base + 3;
     }
     .editable-text__text {
       margin-left: auto;
@@ -246,6 +246,8 @@ $field-data-color: $neutral-base !default;
     .expanding-textarea {
       text-align: right;
       line-height: $typo-line-height-base * 1.2;
+      font-size: $typo-size-lead;
+      background-color: transparent;
     }
     input {
       text-align: right;
@@ -299,7 +301,7 @@ $field-data-color: $neutral-base !default;
     line-height: $typo-line-height-base * 2.4;
     font-weight: $typo-weight-roman;
     margin-top: $layout-spacing-base * 1.5;
-    margin-bottom: $layout-spacing-base * 0.5;
+    margin-bottom: $layout-spacing-base;
   }
 
   h2 {
@@ -344,7 +346,7 @@ $field-data-color: $neutral-base !default;
 
   p {
     font-size: $typo-size-lead;
-    line-height: $typo-line-height-base * 1.2;
+    line-height: $typo-line-height-base * 1.35;
     font-weight: $typo-weight-roman;
     margin-top: $layout-spacing-base * 0.5;
     margin-bottom: $layout-spacing-base;

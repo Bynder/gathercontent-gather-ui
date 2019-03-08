@@ -15,7 +15,7 @@
   color: $neutral-darkest;
   text-decoration: none;
   padding: $layout-spacing-base / 2 0;
-  font-weight: $typo-weight-semi-bold;
+  font-weight: $typo-weight-roman;
   [class*="--dark"] & {
     color: $neutral-light;
   }

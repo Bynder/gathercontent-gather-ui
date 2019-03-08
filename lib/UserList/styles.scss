@@ -3,13 +3,14 @@
     font-weight: $typo-weight-semi-bold;
     display: flex;
     align-items: stretch;
+    font-size: $typo-size-base;
     .show-search {
       margin-left: auto;
     }
   }
   .userlist__subheading {
     color: $neutral-base;
-    font-size: $typo-size-small;
+    font-size: $typo-size-slight;
     margin-bottom: $layout-spacing-base/4;
   }
   .userlist__list {
@@ -18,9 +19,10 @@
   .userlist__empty {
     color: $neutral-base;
     font-style: italic;
-    font-size: $typo-size-small;
+    font-size: $typo-size-slight;
     &-button {
       padding: $layout-spacing-base/4 0;
+      font-style: normal;
     }
   }
   .userlist__search {

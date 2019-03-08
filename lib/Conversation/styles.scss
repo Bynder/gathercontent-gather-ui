@@ -45,7 +45,10 @@ $conversation-meta-text-color: $neutral-base !default;
 .conversation__resolve {
   display: none;
   text-align: right;
-  font-size: $typo-size-small;
+
+  .button {
+    font-size: $typo-size-slight;
+  }
 
   svg {
     position: relative;

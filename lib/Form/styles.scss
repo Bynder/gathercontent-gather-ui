@@ -66,12 +66,13 @@ $form-checkbox-label-size: $typo-size-lead !default;
   cursor: pointer;
 }
 
-.form-radiobutton__other {
+.form__choice-element-wrapper .form-radiobutton__other {
   margin-left: $form-checkbox-margin;
   border: none;
   outline: none;
   font-size: $form-checkbox-label-size;
   padding: 0;
+  background-color: transparent;
 }
 
 .form-radiobutton--invisible {
