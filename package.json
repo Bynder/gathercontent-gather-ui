@@ -46,7 +46,8 @@
     "tdd": "yarn run test:watch",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js'",
-    "lint:check": "eslint --print-config . | eslint-config-prettier-check"
+    "lint:check": "eslint --print-config . | eslint-config-prettier-check",
+    "prettier": "pretty-quick --staged"
   },
   "husky": {
     "hooks": {
