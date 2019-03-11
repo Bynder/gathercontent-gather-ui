@@ -1,10 +1,10 @@
-import { React, shallow } from '../setup';
-import ListHead from '../../lib/List/ListHead';
+import { React, shallow } from "../setup";
+import ListHead from "../../lib/List/ListHead";
 
-describe('List Head', () => {
+describe("List Head", () => {
   let wrapper;
 
-  const mockAction = <button>test button</button>;
+  const mockAction = <button type="button">test button</button>;
 
   beforeEach(() => {
     wrapper = shallow(<ListHead title="Project name" action={mockAction} />);
@@ -12,11 +12,11 @@ describe('List Head', () => {
 
   afterEach(() => {});
 
-  test('renders the title', () => {
-    expect(wrapper.contains('Project name')).toEqual(true);
+  test("renders the title", () => {
+    expect(wrapper.contains("Project name")).toEqual(true);
   });
 
-  test('renders the action', () => {
+  test("renders the action", () => {
     expect(wrapper.contains(mockAction)).toEqual(true);
   });
 });

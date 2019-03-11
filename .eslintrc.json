@@ -1,27 +1,29 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:jsx-a11y/recommended"],
+  "extends": [
+    "airbnb",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
+  ],
   "globals": {
     "window": true,
     "document": true,
     "Element": true
   },
-  "plugins": ["jsx-a11y"],
+  "plugins": ["jsx-a11y", "prettier"],
   "rules": {
+    "import/no-cycle": [0],
+    "no-bitwise": ["error", { "allow": ["~"] }],
+    "react/destructuring-assignment": [0],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-unused-prop-types": [
       "error",
       { "customValidators": [], "skipShapeProps": true }
     ],
     "new-cap": ["error", { "capIsNewExceptions": ["Intercom"] }],
-    "no-underscore-dangle": [
-      "error",
-      { "allow": ["_account", "_user", "_userPermissions", "_FluxActions"] }
-    ],
-    "max-len": [0],
     "react/no-danger": [0],
     "react/no-unescaped-entities": [0],
-    "no-bitwise": ["error", { "allow": ["~"] }],
     "react/sort-comp": [
       2,
       {
