@@ -1,14 +1,14 @@
-import { React, shallow } from '../setup';
-import { List, ListItem } from '../../lib';
-import Button from '../../lib/Button';
+import { React, shallow } from "../setup";
+import { List, ListItem } from "../../lib";
+import Button from "../../lib/Button";
 
-describe('List Item', () => {
+describe("List Item", () => {
   let wrapper;
   let onToggleMock;
 
-  const mockAction = <button>test button</button>;
+  const mockAction = <button type="button">test button</button>;
   const props = {
-    id: '123',
+    id: "123",
     isCurrent: true,
     collapse: true
   };
@@ -29,50 +29,50 @@ describe('List Item', () => {
 
   afterEach(() => {});
 
-  test('adds classes per prop', () => {
-    expect(wrapper.hasClass('is-current')).toEqual(true);
-    expect(wrapper.hasClass('list__item--collapse')).toEqual(true);
+  test("adds classes per prop", () => {
+    expect(wrapper.hasClass("is-current")).toEqual(true);
+    expect(wrapper.hasClass("list__item--collapse")).toEqual(true);
   });
 
-  test('adds a is-active class to the toggle children button', () => {
-    expect(wrapper.find(Button).hasClass('is-active')).toEqual(false);
+  test("adds a is-active class to the toggle children button", () => {
+    expect(wrapper.find(Button).hasClass("is-active")).toEqual(false);
     wrapper.setState({ showSubList: true });
-    expect(wrapper.find(Button).hasClass('is-active')).toEqual(true);
+    expect(wrapper.find(Button).hasClass("is-active")).toEqual(true);
   });
 
-  test('toggles state.showSubList from false to true', () => {
+  test("toggles state.showSubList from false to true", () => {
     expect(wrapper.find(Button)).toHaveLength(1);
 
-    wrapper.find(Button).prop('clickHandler')();
+    wrapper.find(Button).prop("clickHandler")();
     expect(onToggleMock).toHaveBeenCalledWith(props.id);
-    expect(wrapper.state('showSubList')).toEqual(true);
-    wrapper.find(Button).prop('clickHandler')();
-    expect(wrapper.state('showSubList')).toEqual(false);
+    expect(wrapper.state("showSubList")).toEqual(true);
+    wrapper.find(Button).prop("clickHandler")();
+    expect(wrapper.state("showSubList")).toEqual(false);
 
     wrapper.setProps({ children: null });
     expect(wrapper.find(Button)).toHaveLength(0);
   });
 
-  test('renders an action', () => {
+  test("renders an action", () => {
     expect(
       wrapper
-        .find('.list__action')
+        .find(".list__action")
         .first()
-        .contains('test button')
+        .contains("test button")
     ).toEqual(true);
 
-    expect(wrapper.hasClass('has-action')).toEqual(true);
+    expect(wrapper.hasClass("has-action")).toEqual(true);
   });
 
-  test('rendering children within the text container', () => {
-    expect(wrapper.find('.list__item-text').contains('Hello world')).toEqual(
+  test("rendering children within the text container", () => {
+    expect(wrapper.find(".list__item-text").contains("Hello world")).toEqual(
       true
     );
   });
 
-  test('rendering sub lists outside of the content container', () => {
+  test("rendering sub lists outside of the content container", () => {
     wrapper.setState({ showSubList: true });
-    expect(wrapper.find('.list__item-content').find(List)).toHaveLength(0);
+    expect(wrapper.find(".list__item-content").find(List)).toHaveLength(0);
     expect(wrapper.find(List)).toHaveLength(1);
   });
 });
