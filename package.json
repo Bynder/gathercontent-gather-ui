@@ -44,6 +44,7 @@
     "test:watch": "jest tests/**/** --notify --watch",
     "test:ci": "jest tests/**/** --runInBand",
     "tdd": "yarn run test:watch",
+    "format:js": "prettier --write \"{lib,tests}/**/*.js\"",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check"
@@ -55,7 +56,7 @@
     }
   },
   "lint-staged": {
-    "{lib,stories,tests}/**/*.js": [
+    "{lib,tests}/**/*.js": [
       "yarn run prettier --write",
       "eslint -c .eslintrc.json --fix",
       "git add"
