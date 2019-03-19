@@ -44,20 +44,20 @@
     "test:watch": "jest tests/**/** --notify --watch",
     "test:ci": "jest tests/**/** --runInBand",
     "tdd": "yarn run test:watch",
-    "format:js": "prettier --write \"{lib,stories,tests}/**/*.js\"",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run test"
     }
   },
   "lint-staged": {
     "{lib,stories,tests}/**/*.js": [
       "yarn run prettier --write",
-      "yarn run lint:fix",
+      "eslint -c .eslintrc.json --fix",
       "git add"
     ]
   },
