@@ -123,7 +123,6 @@
     "postcss-load-config": "^1.1.0",
     "postcss-loader": "^1.2.2",
     "prettier": "1.16.4",
-    "pretty-quick": "^1.10.0",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.4.2",
     "sass-loader": "^4.1.1",
