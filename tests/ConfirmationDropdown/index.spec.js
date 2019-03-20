@@ -1,8 +1,8 @@
-import { React, shallow } from "../setup";
-import { ConfirmationDropdown, Dropdown } from "../../lib";
-import ConfirmationDropdownContent from "../../lib/ConfirmationDropdown/ConfirmationDropdownContent";
+import { React, shallow } from '../setup';
+import { ConfirmationDropdown, Dropdown } from '../../lib';
+import ConfirmationDropdownContent from '../../lib/ConfirmationDropdown/ConfirmationDropdownContent';
 
-describe("Confirmation Dropdown", () => {
+describe('Confirmation Dropdown', () => {
   let wrapper;
   const onConfirmSpy = jest.fn();
   const onCancelSpy = jest.fn();
@@ -36,43 +36,43 @@ describe("Confirmation Dropdown", () => {
     );
   });
 
-  test("renders children", () => {
-    expect(wrapper.contains("open confirmation")).toEqual(true);
+  test('renders children', () => {
+    expect(wrapper.contains('open confirmation')).toEqual(true);
   });
 
-  test("rendering a <Dropdown> component", () => {
+  test('rendering a <Dropdown> component', () => {
     const { id, className, persistShow, autoPosition } = wrapper
       .find(Dropdown)
       .props();
-    expect(id).toBe("id");
-    expect(className).toBe("confirmation-dropdown ");
+    expect(id).toBe('id');
+    expect(className).toBe('confirmation-dropdown ');
     expect(persistShow).toBe(false);
     expect(autoPosition).toBe(true);
   });
 
-  test("rendering dropdown content", () => {
+  test('rendering dropdown content', () => {
     expect(wrapper.find(ConfirmationDropdownContent)).toHaveLength(1);
   });
 
-  test("wraps children with the trigger props", () => {
-    const { onClick } = wrapper.find("button").props();
+  test('wraps children with the trigger props', () => {
+    const { onClick } = wrapper.find('button').props();
     expect(onClick).toEqual(wrapper.instance().toggleConfirmation);
   });
 
-  test("calls the confirmation promise and sets the correct state whilst pending", () => {
+  test('calls the confirmation promise and sets the correct state whilst pending', () => {
     const promise = wrapper.instance().onConfirm();
     wrapper.instance().onConfirm();
     wrapper.instance().onConfirm();
-    expect(wrapper.state("promiseIsPending")).toEqual(true);
+    expect(wrapper.state('promiseIsPending')).toEqual(true);
     return promise.then(() => {
       expect(onConfirmSpy).toHaveBeenCalledTimes(1);
       expect(wrapper.state()).toEqual({ promiseIsPending: false });
     });
   });
 
-  test("adds props to components when promise is pending", () => {
+  test('adds props to components when promise is pending', () => {
     wrapper.setState({ promiseIsPending: true });
-    expect(wrapper.find(Dropdown).prop("persistShow")).toBe(true);
-    expect(wrapper.hasClass("is-pending")).toBe(true);
+    expect(wrapper.find(Dropdown).prop('persistShow')).toBe(true);
+    expect(wrapper.hasClass('is-pending')).toBe(true);
   });
 });
