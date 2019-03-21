@@ -16,6 +16,7 @@ A component which renders a confirmation dropdown.
 | className             | string        | ''            | No       | Additional classes for the container.  |
 | onHide                | func          | () => {}      | No       | Function that triggers each time the dropdown is canceled or closed.  |
 | hideOnCompletion      | bool          | true          | No       | Hides the dropdown when the promise has completed.  |
+| position              | object        | `{ autoPosition: true }` | No       | An object containing dropdown positions. Look at Dropdown docs for more information.  |
 
 ```
 <ConfirmationDropdown
@@ -24,6 +25,10 @@ A component which renders a confirmation dropdown.
   confirmationText="Archive"
   dropdownContent={(<div>Some content</div>)}
   className="class-for-content"
+  position={{
+    top: true,
+    right: true,
+  }}
   isDanger
 >
   Click me to show dropdown

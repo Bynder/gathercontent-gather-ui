@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from "react";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
@@ -179,11 +179,31 @@ storiesOf('Components', module)
             confirmationText="Archive"
             confirmationPromise={createDelayedPromise}
             dropdownContent={(
-              <div style={{ maxWidth: '300px' }}>
-                <h3>Archive 1 item</h3>
+              <Fragment>
+                <Dropdown.Header>
+                  <h3>Archive 1 item</h3>
+                  <ConfirmationDropdown
+                    id="confirm-sub-dropdown"
+                    confirmationText="Archive all"
+                    dropdownContent={(
+                      <div>
+                        <h3>Remove all items</h3>
+                        <p>Do you wish to archive all items?</p>
+                      </div>
+                    )}
+                    confirmationPromise={createDelayedPromise}
+                    position={{
+                      bottom: true,
+                      left: true,
+                    }}
+                    isDanger
+                  >
+                    Archive all items
+                  </ConfirmationDropdown>
+                </Dropdown.Header>
                 <p>The selected item(s) will be moved to your project's archived items section.</p>
                 <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
-              </div>
+              </Fragment>
             )}
             isDanger
           >

@@ -44,6 +44,15 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   outline: none;
 }
 
+.dropdown__header {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0 auto 0 0;
+  }
+}
+
 .dropdown__content {
   position: absolute;
   top: -999em;
