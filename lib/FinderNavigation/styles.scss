@@ -65,6 +65,11 @@ $finder-indent-level-support: 10 !default;
 .finder__item-link {
   @include text-overflow-ellipsis();
   flex-shrink: 1;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .finder__item {
