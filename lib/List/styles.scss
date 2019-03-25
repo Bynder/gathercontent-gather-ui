@@ -25,6 +25,13 @@ $list-border: 1px solid $color-border-base;
   border-top: $list-border;
 }
 
+.list__subtitle {
+  font-size: $typo-size-small;
+  text-transform: uppercase;
+  color: $neutral-base;
+  padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
+}
+
 .list__head-inner {
   position: relative;
   display: flex;

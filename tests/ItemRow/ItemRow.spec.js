@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { ItemRow } from '../../lib';
+import { ItemRow, Icon } from '../../lib';
 import Avatar from '../../lib/Avatar';
 
 describe('Item Row', () => {
@@ -46,5 +46,14 @@ describe('Item Row', () => {
     expect(
       wrapper.find('.item-row__participants').contains(<Avatar />)
     ).toEqual(true);
+  });
+
+  test('renders a comment count', () => {
+    expect(wrapper.find('.item-row__comments')).toHaveLength(0);
+    wrapper.setProps({ commentCount: '5' });
+    expect(wrapper.find('.item-row__comments')).toHaveLength(1);
+    expect(wrapper.find(Icon)).toHaveLength(1);
+    expect(wrapper.find(Icon).prop('name')).toEqual('commentFill');
+    expect(wrapper.find('.item-row__comments-count').text()).toEqual('5');
   });
 });
