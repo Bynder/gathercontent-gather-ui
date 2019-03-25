@@ -24,6 +24,7 @@ describe('Confirmation Dropdown Content', () => {
       <ConfirmationDropdownContent
         onConfirm={mockConfirmPromise}
         onHide={onHideSpy}
+        top
       >
         {dropdownContent}
       </ConfirmationDropdownContent>,
@@ -90,5 +91,9 @@ describe('Confirmation Dropdown Content', () => {
     expect(wrapper.find(Icon).prop('name')).toEqual('loader');
     wrapper.setProps({ promiseIsPending: true });
     expect(wrapper.find(Icon).prop('name')).toEqual('loader');
+  });
+
+  test('spreading props over the content', () => {
+    expect(wrapper.find(Dropdown.Content).prop('top')).toEqual(true);
   });
 });

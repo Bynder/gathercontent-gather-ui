@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from "react";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
@@ -179,15 +179,64 @@ storiesOf('Components', module)
             confirmationText="Archive"
             confirmationPromise={createDelayedPromise}
             dropdownContent={(
-              <div style={{ maxWidth: '300px' }}>
-                <h3>Archive 1 item</h3>
-                <p>The selected item(s) will be moved to your project's archived items section.</p>
-                <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
-              </div>
+              <Fragment>
+                <Dropdown.Header>
+                  <h3>Archive 1 item</h3>
+                </Dropdown.Header>
+                <Dropdown.Section>
+                  <p>The selected item(s) will be moved to your project's archived items section.</p>
+                  <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
+                </Dropdown.Section>
+              </Fragment>
             )}
             isDanger
+            collapse
           >
             <Icon name="archive" />
+          </ConfirmationDropdown>
+
+          <ConfirmationDropdown
+            id="trash-dropdown-2"
+            confirmationText="Archive"
+            confirmationPromise={createDelayedPromise}
+            dropdownContent={(
+              <Fragment>
+                <Dropdown.Header>
+                  <h3>Archive 1 item</h3>
+                  <ConfirmationDropdown
+                    id="confirm-sub-dropdown"
+                    confirmationText="Archive all"
+                    dropdownContent={(
+                      <Fragment>
+                        <Dropdown.Header>
+                          <h3>Remove all items</h3>
+                        </Dropdown.Header>
+                        <Dropdown.Section>
+                          <p>Do you wish to archive all items?</p>
+                        </Dropdown.Section>
+                      </Fragment>
+                    )}
+                    confirmationPromise={createDelayedPromise}
+                    position={{
+                      bottom: true,
+                      left: true,
+                    }}
+                    isDanger
+                    collapse
+                  >
+                    Archive all items
+                  </ConfirmationDropdown>
+                </Dropdown.Header>
+                <Dropdown.Section>
+                  <p>The selected item(s) will be moved to your project's archived items section.</p>
+                  <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
+                </Dropdown.Section>
+              </Fragment>
+            )}
+            isDanger
+            collapse
+          >
+            <Icon name="trash" />
           </ConfirmationDropdown>
         </StoryItem>
       </div>
