@@ -50,6 +50,22 @@ describe('Confirmation Dropdown', () => {
     expect(autoPosition).toBe(true);
   });
 
+  test('spreading position props', () => {
+    const { autoPosition } = wrapper.find(Dropdown).props();
+    expect(autoPosition).toBe(true);
+
+    wrapper.setProps({
+      position: {
+        right: true,
+        top: true
+      }
+    });
+    const { top, right } = wrapper.find(ConfirmationDropdownContent).props();
+    expect(wrapper.find(Dropdown).prop('autoPosition')).toBe(false);
+    expect(top).toBe(true);
+    expect(right).toBe(true);
+  });
+
   test('rendering dropdown content', () => {
     expect(wrapper.find(ConfirmationDropdownContent)).toHaveLength(1);
   });

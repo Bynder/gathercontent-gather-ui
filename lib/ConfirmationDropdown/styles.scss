@@ -5,7 +5,12 @@
 /* ==========================================================================
    Styles
    ========================================================================== */
-.confirmation-dropdown__footer {
+
+.confirmation-dropdown .dropdown__content {
+  width: 300px;
+}
+
+.confirmation-dropdown .dropdown__footer {
   position: relative;
   display: flex;
   align-items: center;
@@ -39,4 +44,12 @@
 
 .confirmation-dropdown.is-pending .confirmation-dropdown__loader {
   opacity: 1;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.confirmation-dropdown--is-dangerous > .dropdown__trigger {
+  @extend .button--link-danger;
 }

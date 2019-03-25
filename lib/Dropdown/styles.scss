@@ -1,7 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
+$dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base !default;
+$dropdown-section-padding: $layout-spacing-base * .75 !default;
 
 /* ==========================================================================
    Styles
@@ -16,14 +17,12 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
     margin-left: $layout-spacing-base;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    &:first-child {
-      margin-top: 0;
-    }
+  *:first-child {
+    margin-top: 0;
+  }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  *:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -42,6 +41,15 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
   padding: 0;
   border: 0;
   outline: none;
+}
+
+.dropdown__header {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0 auto 0 0;
+  }
 }
 
 .dropdown__content {
@@ -165,6 +173,18 @@ $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
 
 .dropdown__content--collapse {
   padding: 0;
+
+  .dropdown__header,
+  .dropdown__section,
+  .dropdown__footer {
+    padding: $dropdown-section-padding;
+
+    + .dropdown__header,
+    + .dropdown__section,
+    + .dropdown__footer {
+      padding-top: 0;
+    }
+  }
 }
 
 .dropdown__trigger-wrapper {
