@@ -34,6 +34,15 @@ storiesOf('Components', module)
         </ItemRow>
       </StoryItem>
 
+      <StoryItem title="Item Row with comment count">
+        <ItemRow
+          indicator={<StatusIndicator color="green" />}
+          commentCount={5}
+        >
+          <a href="/#">Item name 2</a>
+        </ItemRow>
+      </StoryItem>
+
       <StoryItem title="Stacked item row">
         <ItemRow
           indicator={<StatusIndicator label="Approved" color="green" preText="Status:" small softLabel />}

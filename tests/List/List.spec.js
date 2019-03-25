@@ -43,4 +43,11 @@ describe('List', () => {
     wrapper.setProps({ bordered: true });
     expect(wrapper.hasClass('list--bordered')).toEqual(true);
   });
+
+  test('rends a list subtitle', () => {
+    expect(wrapper.find('.list__subtitle')).toHaveLength(0);
+    wrapper.setProps({ subtitle: 'Waffles' });
+    expect(wrapper.find('.list__subtitle')).toHaveLength(1);
+    expect(wrapper.find('.list__subtitle').text()).toEqual('Waffles');
+  });
 });
