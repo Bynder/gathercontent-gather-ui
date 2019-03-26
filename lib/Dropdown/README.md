@@ -36,6 +36,7 @@ A dropdown component with compounded components to render triggers and the conte
 | action              | Func             | N/A       | Yes      | An action which is executed on click.                        |
 | children            | Node or String   | N/A       | Yes      | The child content.                                           |
 | danger              | Bool             | false     | No       | A modifier for highlighting the action as dangerous.               |
+| hideAfterPerformingAction  | Bool      | true      | No       | A bool to define if the dropdown should close after clicking an action.                |
 
 # Dropdown.ActionGroup
 
@@ -46,6 +47,9 @@ A dropdown component with compounded components to render triggers and the conte
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | children            | Node or String  | N/A     | Yes      | The content of the group.
+| bordered            | bool          | false     | No       | Adds a border styling to the actions.
+| collapse            | bool          | false     | No       | Collapses all of the padding around the group.
+| horizontal          | bool          | false     | No       | Styles the actions to be horizontal (vertical by default).
 
 # Dropdown.Trigger
 
