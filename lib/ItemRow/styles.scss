@@ -38,6 +38,15 @@ $item-row-stacked-margin: $typo-size-slight/3;
   margin-left: $layout-spacing-base/2;
 }
 
+.item-row__comments {
+  margin-left: auto;
+  color: $neutral-base;
+  font-size: $typo-size-slight;
+  .icon {
+    margin-right: $layout-spacing-base/4;
+  }
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -81,4 +90,8 @@ $item-row-stacked-margin: $typo-size-slight/3;
   .item-row__participants {
     order: 3;
   }
+}
+
+.is-active .list .item-row__comments svg path {
+  fill: $neutral-base;
 }

@@ -30,8 +30,8 @@ This component is a work in progress and subject to change.
 
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
-| title               | String        | ''        | No       | The title/heading to display at the top of the group.                        |
-| children            | Node          | N/A       | Yes      | The child node.                                           |
+| title               | String        | ''        | No       | The title/heading to display at the top of the group.                         |
+| children            | Node          | N/A       | Yes      | The child node.                                                               |
 
 # FinderNavigation.Item
 
@@ -41,5 +41,17 @@ This component is a work in progress and subject to change.
 
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
-| active              | Bool          | false     | No       | Renders active styles for the item.                                         |
-| children            | Node          | N/A       | Yes      | The child node.                                           |
+| active              | Bool          | false     | No       | Renders active styles for the item.                                           |
+| children            | Node          | N/A       | Yes      | The child node.                                                               |
+
+# FinderNavigation.ItemContent
+
+## Usage
+
+### Props
+
+| Name                | Type          | Default   | Required | Description                                                                   |
+| ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
+| active              | Bool          | false     | No       | Renders active styles for the item.                                           |
+| hidden              | Bool          | false     | No       | Hides the item content.                                                       |
+| children            | Node          | N/A       | Yes      | The child node.                                                               |
