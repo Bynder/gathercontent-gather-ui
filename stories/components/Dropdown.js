@@ -190,7 +190,6 @@ storiesOf('Components', module)
               </Fragment>
             )}
             isDanger
-            collapse
           >
             <Icon name="archive" />
           </ConfirmationDropdown>
@@ -227,10 +226,38 @@ storiesOf('Components', module)
                     Archive all items
                   </ConfirmationDropdown>
                 </Dropdown.Header>
-                <Dropdown.Section>
-                  <p>The selected item(s) will be moved to your project's archived items section.</p>
-                  <p>Arching items will disconnect any applied templates, and also remove assignees and due-dates.</p>
-                </Dropdown.Section>
+                <Dropdown.ActionGroup bordered collapse>
+                  <Dropdown.Action action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                  <Dropdown.Action action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                  <Dropdown.Action selected action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                </Dropdown.ActionGroup>
               </Fragment>
             )}
             isDanger

@@ -3,6 +3,7 @@
    ========================================================================== */
 $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base !default;
 $dropdown-section-padding: $layout-spacing-base * .75 !default;
+$dropdown-hover-background: $neutral-lightest !default;
 
 /* ==========================================================================
    Styles
@@ -52,6 +53,12 @@ $dropdown-section-padding: $layout-spacing-base * .75 !default;
   }
 }
 
+.dropdown__header,
+.dropdown__section,
+.dropdown__footer {
+  margin-bottom: $dropdown-section-padding;
+}
+
 .dropdown__content {
   position: absolute;
   top: -999em;
@@ -64,6 +71,83 @@ $dropdown-section-padding: $layout-spacing-base * .75 !default;
   border: 1px solid $neutral-light;
   z-index: 2;
   padding: $layout-spacing-base * .75;
+}
+
+.dropdown__content.is-active {
+  opacity: 1;
+  top: 100%;
+  animation: dropdownAnimation 750ms;
+    animation-fill-mode: forwards;
+
+  .auto-top > & {
+    position: fixed;
+  }
+}
+
+.dropdown__action {
+  display: block;
+  white-space: nowrap;
+  text-align: left;
+  padding: $dropdown-item-padding;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    color: $neutral-darkest;
+    background: $dropdown-hover-background;
+    outline: none;
+  }
+}
+
+.dropdown__action-group {
+  padding: $layout-spacing-base/4 0;
+
+  + .dropdown__action-group {
+    border-top: 1px solid $neutral-light;
+  }
+}
+
+.dropdown__action-link {
+  color: $neutral-darkest;
+  text-decoration: none;
+}
+
+.dropdown__trigger-wrapper {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.dropdown__content--collapse {
+  padding: 0;
+
+  .dropdown__header,
+  .dropdown__section,
+  .dropdown__footer {
+    margin: 0;
+    padding: $dropdown-section-padding;
+
+    + .dropdown__header,
+    + .dropdown__section,
+    + .dropdown__footer {
+      padding-top: 0;
+    }
+  }
+}
+
+.dropdown__content--top.is-active {
+  top: auto;
+  bottom: 100%;
+}
+
+.dropdown__content--fix-right.is-active {
+  top: 0;
+}
+
+.dropdown__content--centre.is-active {
+  animation: dropdownCentreAnimation 750ms;
 }
 
 .dropdown__content--noborder {
@@ -93,58 +177,12 @@ $dropdown-section-padding: $layout-spacing-base * .75 !default;
   bottom: -999em;
 }
 
-.dropdown__content.is-active {
-  opacity: 1;
-  top: 100%;
-  animation: dropdownAnimation 750ms;
-    animation-fill-mode: forwards;
-
-  .auto-top > & {
-    position: fixed;
-  }
+.dropdown__action-group--horizontal {
+  display: flex;
 }
 
-.dropdown__content--top.is-active {
-  top: auto;
-  bottom: 100%;
-}
-
-.dropdown__content--fix-right.is-active {
-  top: 0;
-}
-
-.dropdown__content--centre.is-active {
-  animation: dropdownCentreAnimation 750ms;
-}
-
-.dropdown__action {
-  display: block;
-  white-space: nowrap;
-  text-align: left;
-  padding: $dropdown-item-padding;
-  width: 100%;
-
-  &:hover,
-  &:focus {
-    color: $neutral-darkest;
-    background: $neutral-lightest;
-    outline: none;
-  }
-}
-
-.dropdown__action-group {
-  padding: $layout-spacing-base/4 0;
-
-  + .dropdown__action-group {
-    border-top: 1px solid $neutral-light;
-  }
-  &--horizontal {
-    display: flex;
-  }
-}
-.dropdown__action-link {
-  color: $neutral-darkest;
-  text-decoration: none;
+.dropdown__action-group--collapse {
+  padding: 0;
 }
 
 .dropdown__action--danger {
@@ -166,27 +204,21 @@ $dropdown-section-padding: $layout-spacing-base * .75 !default;
 
 .dropdown__action--icon-only {
   line-height: 0;
+
   .dropdown__action-group--horizontal & {
     padding: 0 $layout-spacing-base/2 0 $layout-spacing-base/4;
   }
 }
 
-.dropdown__content--collapse {
-  padding: 0;
+.dropdown__action-group--bordered .dropdown__action {
+  border-bottom: 1px solid $neutral-light;
+  border-top: 1px solid $neutral-light;
 
-  .dropdown__header,
-  .dropdown__section,
-  .dropdown__footer {
-    padding: $dropdown-section-padding;
-
-    + .dropdown__header,
-    + .dropdown__section,
-    + .dropdown__footer {
-      padding-top: 0;
-    }
+  + .dropdown__action {
+    border-top: 0;
   }
 }
 
-.dropdown__trigger-wrapper {
-  display: inline-block;
+.dropdown__action--selected {
+  background: $dropdown-hover-background;
 }
