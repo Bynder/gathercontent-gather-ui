@@ -68,6 +68,7 @@ $collections-table-border-radius: 4px;
   display: flex;
   align-items: center;
   padding: $collections-table-content-padding;
+  width: 100%;
   .collections-table__cell-content {
     padding: 0;
   }
@@ -86,6 +87,13 @@ $collections-table-border-radius: 4px;
     + .collections-table__row-title {
       margin-left: $layout-spacing-base/2;
     }
+  }
+  .editable-text__wrapper,
+  .editable-text__text  {
+    width: 100%;
+  }
+  .editable-text__wrapper {
+    padding-right: $layout-spacing-base * 2 - $layout-spacing-base/4;
   }
 }
 
