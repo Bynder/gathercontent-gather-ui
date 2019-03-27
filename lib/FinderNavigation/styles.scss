@@ -72,7 +72,7 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.finder__item {
+.finder__item-no-indentation, .finder__item {
   color: $neutral-dark;
   font-size: $typo-size-base;
   &-link {
