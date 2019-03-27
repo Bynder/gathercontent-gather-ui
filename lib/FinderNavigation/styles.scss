@@ -11,7 +11,7 @@ $finder-indent-level-support: 10 !default;
 .finder__group {
   margin: $layout-spacing-base $layout-spacing-base/2;
 
-  &__title {
+  &--title {
     display: block;
     text-transform: uppercase;
     color: $neutral-base;
