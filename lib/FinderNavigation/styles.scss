@@ -28,9 +28,9 @@ $finder-indent-level-support: 10 !default;
   
   height: 34px;
   transition: height 200ms;
-  
+
   .icon path {
-    fill: $neutral-darkest;
+    fill: $neutral-base;
   }
 
   .button:hover path,
@@ -103,6 +103,10 @@ $finder-indent-level-support: 10 !default;
 
   .finder__item-link {
     color: $primary-blue;
+  }
+
+  path {
+    fill: $primary-blue;
   }
 }
 
@@ -190,12 +194,12 @@ $finder-indent-level-support: 10 !default;
 
   #{$finderItemSelector}.finder__item.is-over.dragged-insert > .finder__item-content,
   #{$finderItemSelector}.finder__item--selected > .finder__item-content {
-    padding-left: ($layout-spacing-base*$i) + ($layout-spacing-base/2 - 2);
+    padding-left: ($layout-spacing-base * 1.5 * $i) + ($layout-spacing-base/2 + $i*1) - 2;
   }
 
   #{$finderItemSelector} > .finder__item-content,
   #{$finderItemSelector}.finder__item.is-over.dragged-top > .finder__item-content,
   #{$finderItemSelector}.finder__item.is-over.dragged-below > .finder__item-content {
-    padding-left: ($layout-spacing-base*$i) + $layout-spacing-base/2;
+    padding-left: ($layout-spacing-base * 1.5 * $i) + $layout-spacing-base/2 + $i*1;
   }
 }
