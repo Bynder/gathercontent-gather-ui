@@ -13,19 +13,12 @@ $modal-column-padding: $modal-padding !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
+
 .modal__row {
 	display: flex;
 
 	@include respond-to(small) {
 		display: block;
-	}
-}
-
-.modal__column-wrapper {
-	&--highlight {
-		background: $neutral-base-lighter;
-		color: rgb(76, 88, 96);
-		border-right: 1px solid rgb(229, 233, 238);
 	}
 }
 
@@ -54,6 +47,10 @@ $modal-column-padding: $modal-padding !default;
 	bottom: $layout-spacing-base;
 	right: 30px;
 }
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
 
 .modal--large {
 	.modal-dialog {
@@ -153,4 +150,11 @@ $modal-column-padding: $modal-padding !default;
 	.modal-footer {
 		margin-top: auto;
 	}
+}
+
+.modal--highlight .modal-body,
+.modal__column-wrapper--highlight {
+	background: $neutral-base-lighter;
+	color: rgb(76, 88, 96);
+	border-right: 1px solid rgb(229, 233, 238);
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import ReactDom from 'react-dom';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import FormControl from 'react-bootstrap/lib/FormControl';
@@ -11,8 +12,8 @@ import {
   Button,
   ConfirmationModal,
   withModalTrigger,
-  FormModal
-} from '../../lib';
+  FormModal, StatusIndicator, DueDatePicker
+} from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
 
 const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
@@ -232,7 +233,26 @@ storiesOf('Components', module).add('Modals', () => (
             e.preventDefault();
           }}
         >
-          That kittens are just as awesome as dogs?
+          <StatusIndicator color="#93724f" label="Draft" row softLabel>
+            <DueDatePicker
+              applyDueDate={() => {}}
+              removeDueDate={() => {}}
+              autoPosition
+              row
+            >
+              20th Feb 2019
+            </DueDatePicker>
+          </StatusIndicator>
+          <StatusIndicator color="green" label="Publishing" row softLabel>
+            <DueDatePicker
+              applyDueDate={() => {}}
+              removeDueDate={() => {}}
+              autoPosition
+              row
+            >
+              20th Feb 2019
+            </DueDatePicker>
+          </StatusIndicator>
         </ConfirmationModal>
       </ModalTrigger>
     </StoryItem>
@@ -332,6 +352,7 @@ storiesOf('Components', module).add('Modals', () => (
           title="FormModal example"
           submitText="Submit"
           cancelText="Cancel"
+          highlight
         >
           <FormGroup>
             <ControlLabel>Field A</ControlLabel>
