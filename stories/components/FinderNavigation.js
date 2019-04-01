@@ -35,10 +35,10 @@ storiesOf('Components', module).add('FinderNavigation', () => (
                 <span className="finder__item-link-text">Another Folder</span>
               </a>
             </FinderNavigation.ItemContent>
-            <FinderNavigation.Item>
-              <FinderNavigation.ItemContent>
+            <FinderNavigation.Item active>
+              <FinderNavigation.ItemContent active>
                 <a className="finder__item-link" href="google.com">
-                  <Icon name="folder" className="finder__item-link-icon" />
+                  <Icon name="folderOpen" className="finder__item-link-icon" />
                   <span className="finder__item-link-text">Another Folder</span>
                 </a>
               </FinderNavigation.ItemContent>
@@ -49,6 +49,38 @@ storiesOf('Components', module).add('FinderNavigation', () => (
                     <span className="finder__item-link-text">Another Folder</span>
                   </a>
                 </FinderNavigation.ItemContent>
+                <FinderNavigation.Item>
+                  <FinderNavigation.ItemContent>
+                    <a className="finder__item-link" href="google.com">
+                      <Icon name="folder" className="finder__item-link-icon" />
+                      <span className="finder__item-link-text">Another Folder</span>
+                    </a>
+                  </FinderNavigation.ItemContent>
+                  <FinderNavigation.Item>
+                    <FinderNavigation.ItemContent>
+                      <a className="finder__item-link" href="google.com">
+                        <Icon name="folder" className="finder__item-link-icon" />
+                        <span className="finder__item-link-text">Another Folder</span>
+                      </a>
+                    </FinderNavigation.ItemContent>
+                    <FinderNavigation.Item>
+                      <FinderNavigation.ItemContent>
+                        <a className="finder__item-link" href="google.com">
+                          <Icon name="folder" className="finder__item-link-icon" />
+                          <span className="finder__item-link-text">Another Folder</span>
+                        </a>
+                      </FinderNavigation.ItemContent>
+                      <FinderNavigation.Item>
+                        <FinderNavigation.ItemContent>
+                          <a className="finder__item-link" href="google.com">
+                            <Icon name="folder" className="finder__item-link-icon" />
+                            <span className="finder__item-link-text">Another Folder</span>
+                          </a>
+                        </FinderNavigation.ItemContent>
+                      </FinderNavigation.Item>
+                    </FinderNavigation.Item>
+                  </FinderNavigation.Item>
+                </FinderNavigation.Item>
               </FinderNavigation.Item>
               <FinderNavigation.Item>
                 <FinderNavigation.ItemContent>
