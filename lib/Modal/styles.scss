@@ -48,6 +48,14 @@ $modal-column-padding: $modal-padding !default;
 	right: 30px;
 }
 
+.modal__header-intro {
+	margin-bottom: 0;
+}
+
+.modal__footer-text {
+	margin-right: auto;
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from "react";
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
@@ -223,6 +223,7 @@ storiesOf('Components', module).add('Modals', () => (
       <ModalTrigger>
         <ConfirmationModal
           title="Are you sure?"
+          introText="Are you really sure?"
           submitText="Hell yes"
           cancelText="Meow no"
           type="primary"
@@ -231,6 +232,10 @@ storiesOf('Components', module).add('Modals', () => (
             action(e);
             e.preventDefault();
           }}
+          highlight
+          footerContent={(
+            <Fragment>Changes will be made to <strong>2 items.</strong></Fragment>
+          )}
         >
           <StatusIndicator color="#93724f" label="Draft" row softLabel>
             <DueDatePicker
