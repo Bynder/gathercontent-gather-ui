@@ -55,7 +55,7 @@
 }
 
 .modal-dialog {
-    position: relative;
+  position: relative;
 }
 
 .modal-title {
@@ -71,9 +71,9 @@
 }
 
 .modal.fade .modal-dialog {
-    transition: transform .3s ease-out;
+  transition: transform .3s ease-out;
 }
 
 .modal.in .modal-dialog {
-    transform: translate(0, 0);
+  transform: none;
 }
