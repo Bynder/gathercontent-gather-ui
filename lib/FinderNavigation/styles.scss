@@ -7,9 +7,12 @@ $finder-indent-level-support: 10 !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
+.finder {
+  padding-top: $layout-spacing-base;
+}
 
 .finder__group {
-  margin: $layout-spacing-base/2;
+  margin: 0 $layout-spacing-base/2 $layout-spacing-base / 1.5;
 
   &-title {
     display: block;
@@ -17,7 +20,7 @@ $finder-indent-level-support: 10 !default;
     color: $neutral-base;
     font-weight: $typo-weight-semi-bold;
     font-size: $typo-size-small;
-    margin-bottom: $layout-spacing-base/1.3;
+    margin-bottom: $layout-spacing-base / 1.6;
     padding-left: $layout-spacing-base/2;
   }
 }
@@ -51,7 +54,7 @@ $finder-indent-level-support: 10 !default;
   flex-shrink: 0;
   padding-left: $layout-spacing-base/4;
   .button, .dropdown-gc {
-    vertical-align: bottom;
+    vertical-align: text-bottom;
   }
   .button + .dropdown-gc {
     margin-left: $layout-spacing-base/2;
@@ -76,22 +79,31 @@ $finder-indent-level-support: 10 !default;
   color: $neutral-dark;
   font-size: $typo-size-base;
   margin: $layout-spacing-base / 4 0;
+
   &-link {
     color: $neutral-dark;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
     .finder__group-title
     &:hover {
       color: $primary-blue;
     }
   }
 
+  .finder__group > div:last-child > .finder__item {
+    margin-bottom: 0;
+  }
+
   &-link-icon {
     margin-right: $layout-spacing-base/4 + $layout-spacing-base/2;
-    vertical-align: text-top;
     height: $icon-height;
     width: $icon-width;
+    display: flex;
   }
+}
+.finder__item-no-indentation {
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -116,7 +128,7 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item--hover-settings .finder__item-content:hover .finder__item-settings {
-  display: block;
+  display: flex;
 }
 
 .finder__item.is-over.dragged-insert > .finder__item-content,
