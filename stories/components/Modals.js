@@ -232,12 +232,33 @@ storiesOf('Components', module).add('Modals', () => (
             action(e);
             e.preventDefault();
           }}
-          highlight
           footerContent={(
             <Fragment>Changes will be made to <strong>2 items.</strong></Fragment>
           )}
+          highlight
+          overflowHalf
         >
           <StatusIndicator color="#93724f" label="Draft" row softLabel>
+            <DueDatePicker
+              applyDueDate={() => {}}
+              removeDueDate={() => {}}
+              autoPosition
+              row
+            >
+              20th Feb 2019
+            </DueDatePicker>
+          </StatusIndicator>
+          <StatusIndicator color="green" label="Publishing" row softLabel>
+            <DueDatePicker
+              applyDueDate={() => {}}
+              removeDueDate={() => {}}
+              autoPosition
+              row
+            >
+              20th Feb 2019
+            </DueDatePicker>
+          </StatusIndicator>
+          <StatusIndicator color="green" label="Publishing" row softLabel>
             <DueDatePicker
               applyDueDate={() => {}}
               removeDueDate={() => {}}
