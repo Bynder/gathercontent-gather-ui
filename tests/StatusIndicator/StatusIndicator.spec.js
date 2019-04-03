@@ -79,6 +79,18 @@ describe('StatusIndicator', () => {
     ).toEqual(true);
   });
 
+  test('can be rowed', () => {
+    expect(
+      wrapper.find('.status-indicator').hasClass('status-indicator--row')
+    ).toEqual(false);
+
+    wrapper.setProps({ row: true });
+
+    expect(
+      wrapper.find('.status-indicator').hasClass('status-indicator--row')
+    ).toEqual(true);
+  });
+
   test('adding a custom className', () => {
     expect(wrapper.hasClass('test')).toBe(true);
   });

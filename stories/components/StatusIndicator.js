@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import StatusIndicator from '../../lib/StatusIndicator';
+import { StatusIndicator, DueDatePicker } from '../../lib';
 import Button from '../../lib/Button';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -38,6 +38,29 @@ storiesOf('Components', module).add('StatusIndicator', () => (
       </StatusIndicator>
     </StoryItem>
 
+    <StoryItem description="Rowed and soft labeled">
+      <StatusIndicator color="#93724f" label="Draft" row softLabel>
+        <DueDatePicker
+          applyDueDate={() => {}}
+          removeDueDate={() => {}}
+          autoPosition
+          row
+        >
+          20th Feb 2019
+        </DueDatePicker>
+      </StatusIndicator>
+      <StatusIndicator color="green" label="Publishing" row softLabel>
+        <DueDatePicker
+          applyDueDate={() => {}}
+          removeDueDate={() => {}}
+          autoPosition
+          row
+        >
+          20th Feb 2019
+        </DueDatePicker>
+      </StatusIndicator>
+    </StoryItem>
+
     <StoryItem description="Consists of a color and a label to express a status.">
       <StatusIndicator color="#ff6300" label="Draft">
         Due Tommorrow at 12:00pm
@@ -46,7 +69,12 @@ storiesOf('Components', module).add('StatusIndicator', () => (
 
     <StoryItem description="">
       <StatusIndicator color="#93724f" label="Publishing">
-        set a due date
+        <DueDatePicker
+          applyDueDate={() => {}}
+          removeDueDate={() => {}}
+        >
+          {null}
+        </DueDatePicker>
       </StatusIndicator>
     </StoryItem>
 
