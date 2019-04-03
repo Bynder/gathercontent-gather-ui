@@ -222,3 +222,7 @@ $dropdown-hover-background: $neutral-lightest !default;
 .dropdown__action--selected {
   background: $dropdown-hover-background;
 }
+
+.dropdown__action--disabled {
+  opacity: 0.5;
+}
