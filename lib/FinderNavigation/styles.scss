@@ -28,6 +28,7 @@ $finder-indent-level-support: 10 !default;
 .finder__item-content {
   padding: 0 $layout-spacing-base/2;
   display: flex;
+  cursor: default;
   height: 30px;
   line-height: 30px;
   transition: height 200ms;
@@ -35,9 +36,12 @@ $finder-indent-level-support: 10 !default;
   .icon path {
     fill: $neutral-base;
   }
+  .button:disabled {
+    opacity: 0.5;
+  }
 
-  .button:hover path,
-  .dropdown-gc.is-active path,
+  .button:hover:not([disabled]) path,
+  .dropdown-gc.is-active .icon:not(.icon--lock) path,
   &.is-active .finder__item-link path {
     fill: $primary-blue;
   }
@@ -114,10 +118,6 @@ $finder-indent-level-support: 10 !default;
 
   .finder__item-link {
     color: $primary-blue;
-  }
-
-  path {
-    fill: $primary-blue;
   }
 }
 

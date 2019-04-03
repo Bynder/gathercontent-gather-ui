@@ -44,6 +44,8 @@ describe('Dropdown Action', () => {
     expect(wrapper.hasClass('dropdown__action--icon-only')).toBe(false);
     wrapper.setProps({ iconOnly: true });
     expect(wrapper.hasClass('dropdown__action--icon-only')).toBe(true);
+    wrapper.setProps({ disabled: true });
+    expect(wrapper.hasClass('dropdown__action--disabled')).toBe(true);
   });
 
   test('firing the action prop and toggle context function', () => {
