@@ -135,3 +135,17 @@ $status-indicator-margin-left: 1.3rem !default;
     max-width: calc(100% - 30px);
   }
 }
+
+.status-indicator--row {
+  display: flex;
+  align-items: baseline;
+  background: white;
+  border: $status-indicator-bordered-border;
+  padding: $layout-spacing-base/2;
+  border-radius: 4px;
+  margin: 0 0 $layout-spacing-base/2;
+
+  .status-indicator__children {
+    margin: 0 0 0 auto;
+  }
+}
