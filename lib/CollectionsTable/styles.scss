@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $collections-table-spacing: $layout-spacing-base/4 0;
+$collections-table-status-spacing: $layout-spacing-base / 2;
 $collections-table-content-padding: $layout-spacing-base/4 $layout-spacing-base/2;
 $collections-table-border: 1px solid $color-border-base;
 $collections-table-selected-border: 2px solid $primary-blue;
@@ -103,7 +104,7 @@ $collections-table-border-radius: 4px;
 }
 
 .collections-table__status-indicator {
-  margin: 0 $collections-table-spacing 0;
+  margin: 0 $collections-table-status-spacing 0 0;
 }
 
 .collections-table__row-title {
