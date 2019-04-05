@@ -119,6 +119,9 @@ $dropdown-hover-background: $neutral-lightest !default;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
+.dropdown-gc--block {
+  width: 100%;
+}
 
 .dropdown__content--collapse {
   padding: 0;
@@ -225,4 +228,22 @@ $dropdown-hover-background: $neutral-lightest !default;
 
 .dropdown__action--disabled {
   opacity: 0.5;
+}
+
+.dropdown__trigger-wrapper--select {
+  width: 100%;
+
+  .button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon {
+    margin-left: auto;
+  }
+
+  .is-active & .icon {
+    transform: rotateX(180deg);
+  }
 }

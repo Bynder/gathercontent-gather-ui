@@ -10,6 +10,7 @@ A dropdown component with compounded components to render triggers and the conte
 | id                  | String        | N/A       | Yes      | ID of the dropdown.                                                                  |
 | children            | Node          | N/A       | Yes      | A child node.                                                           |
 | onToggle            | Func          | () => {}  | No       | A function which is called each time the visibility is toggled.               |
+| block                | Bool          | false     | No       | Makes the dropdown container block like.                                                                  |
 
 ### Context (GATHER_UI_DROPDOWN)
 
@@ -61,6 +62,7 @@ A dropdown component with compounded components to render triggers and the conte
 | Name               | Type          | Default   | Required | Description                                                                   |
 | ------------------ |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | useButton          | String        | false        | No       | Use a Button component as the trigger.                                            |
+| useSelect          | String        | false        | No       | Enables the look of a dropdown menu to simulate a select.                                            |
 | children           | Node or String or Function | N/A     | Yes       | The content of the trigger.                         |
 
 # Dropdown.Content
