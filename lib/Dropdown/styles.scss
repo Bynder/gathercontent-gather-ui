@@ -96,7 +96,7 @@ $dropdown-hover-background: $neutral-lightest !default;
   padding: $dropdown-item-padding;
   width: 100%;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow-x: hidden;
 
   &:hover,
   &:focus {
@@ -237,6 +237,10 @@ $dropdown-hover-background: $neutral-lightest !default;
   &:focus {
     background: none;
   }
+}
+
+.dropdown__action--overflow {
+  overflow: visible;
 }
 
 .dropdown__action--icon-only {

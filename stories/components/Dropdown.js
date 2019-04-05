@@ -294,13 +294,13 @@ storiesOf('Components', module)
               </Dropdown.Trigger>
 
               <Dropdown.Content collapse top left full>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} overflow>
                   <StatusIndicator color="red" label="Status 1" medium softLabel />
                 </Dropdown.Action>
-                <Dropdown.Action action={() => action('action clicked')} selected>
+                <Dropdown.Action action={() => action('action clicked')} overflow selected>
                   <StatusIndicator color="green" label="Status 2" medium softLabel />
                 </Dropdown.Action>
-                <Dropdown.Action action={() => action('action clicked')}>
+                <Dropdown.Action action={() => action('action clicked')} overflow>
                   <StatusIndicator color="purple" label="Status 3" medium softLabel />
                 </Dropdown.Action>
               </Dropdown.Content>
