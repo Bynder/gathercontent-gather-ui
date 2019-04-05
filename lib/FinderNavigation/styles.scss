@@ -29,8 +29,8 @@ $finder-indent-level-support: 10 !default;
   padding: 0 $layout-spacing-base/2;
   display: flex;
   cursor: default;
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
   transition: height 200ms;
 
   .icon path {
@@ -81,7 +81,6 @@ $finder-indent-level-support: 10 !default;
 .finder__item-no-indentation, .finder__item {
   color: $neutral-dark;
   font-size: $typo-size-base;
-  margin: $layout-spacing-base / 4 0;
 
   &-link {
     color: $neutral-dark;
