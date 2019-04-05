@@ -266,6 +266,21 @@ storiesOf('Components', module)
             <Icon name="trash" />
           </ConfirmationDropdown>
         </StoryItem>
+
+        <StoryItem
+          title="Dropdown Menu"
+          description="DropdownMenu is being phased out. You can achieve the same outcome by composing Dropdown components."
+        >
+          <div style={{ maxWidth: '300px' }}>
+            <Dropdown id="dropdown-menu" autoPosition block>
+              <Dropdown.Trigger useSelect>
+                Select an option...
+              </Dropdown.Trigger>
+
+              {createContentWithItems()}
+            </Dropdown>
+          </div>
+        </StoryItem>
       </div>
     );
   });
