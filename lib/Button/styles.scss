@@ -261,9 +261,20 @@ $btn-border-radius: 3px !default;
 .button--outline {
   border: 1px solid $color-border-base;
   outline: none;
-  &:hover, &:focus, &.is-active {
+
+  &:focus {
+    background: $neutral-lightest;
+    border-color: $neutral-base;
+  }
+
+  &:hover, &.is-active {
+    background: none;
     border-color:  $primary-blue;
     color: $primary-blue;
+
+    path {
+      fill: $primary-blue;
+    }
   }
 }
 
