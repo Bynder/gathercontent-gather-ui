@@ -95,6 +95,8 @@ $dropdown-hover-background: $neutral-lightest !default;
   text-align: left;
   padding: $dropdown-item-padding;
   width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   &:hover,
   &:focus {
