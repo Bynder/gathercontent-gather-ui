@@ -3,15 +3,17 @@ import { Dropdown, Button } from '../../lib';
 import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown';
 
 describe('Dropdown Trigger', () => {
-  const toggleShowContentMock = jest.fn();
-  const context = {
-    [GATHER_UI_DROPDOWN]: {
-      toggleShowContent: toggleShowContentMock
-    }
-  };
+  let toggleShowContentMock;
   let wrapper;
 
   beforeEach(() => {
+    toggleShowContentMock = jest.fn();
+    const context = {
+      [GATHER_UI_DROPDOWN]: {
+        toggleShowContent: toggleShowContentMock
+      }
+    };
+
     wrapper = shallow(<Dropdown.Trigger>Trigger text</Dropdown.Trigger>, {
       context
     });
@@ -26,9 +28,15 @@ describe('Dropdown Trigger', () => {
 
   test('rendering a Button component as the trigger', () => {
     wrapper.setProps({ useButton: true });
-    const button = wrapper.find(Button);
-    expect(button).toHaveLength(1);
-    button.prop('clickHandler')();
-    expect(toggleShowContentMock).toBeCalled();
+    const { types, onClick } = wrapper.find(Button).props();
+    onClick();
+    expect(types).toEqual(['primary']);
+    expect(toggleShowContentMock).toHaveBeenCalledTimes(1);
+  });
+
+  test('rendering a select like trigger', () => {
+    wrapper.setProps({ useSelect: true });
+    const { types } = wrapper.find(Button).props();
+    expect(types).toEqual(['outline']);
   });
 });
