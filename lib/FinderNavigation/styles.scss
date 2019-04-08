@@ -56,8 +56,10 @@ $finder-indent-level-support: 10 !default;
   margin-left: auto;
   flex-shrink: 0;
   padding-left: $layout-spacing-base/4;
+  color: $neutral-base;
   .button, .dropdown-gc {
     vertical-align: text-bottom;
+    color: $neutral-dark;
   }
   .button + .dropdown-gc {
     margin-left: $layout-spacing-base/2;
