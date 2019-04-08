@@ -89,13 +89,19 @@ $collections-table-border-radius: 4px;
       margin-left: $layout-spacing-base/2;
     }
   }
-  .editable-text__wrapper,
+  .editable-text__wrapper--editing,
   .editable-text__text  {
     width: 100%;
   }
   .editable-text__wrapper {
-    padding-right: $layout-spacing-base * 2 - $layout-spacing-base/4;
+    max-width: 100%;
+    padding-right: $layout-spacing-base * 2 + $layout-spacing-base/4;
   }
+}
+
+.collections-table__input {
+  width: 100%;
+  border: none;
 }
 
 .collections-table__heading {
