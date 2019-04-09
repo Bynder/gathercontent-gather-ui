@@ -6,6 +6,7 @@ input[type='email'],
 input[type='search'] {
     height: auto;
     font-size: $typo-size-base;
+    outline: none;
 }
 input, textarea {
   &::placeholder {

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
+import StatusIndicator from "../../lib/StatusIndicator";
 
 const createDelayedPromise = (timeout = 2000) =>
   new Promise(resolve => setTimeout(resolve, timeout));
@@ -10,7 +11,7 @@ const createDelayedPromise = (timeout = 2000) =>
 const createContentWithItems = props => (
   <Dropdown.Content {...props} collapse>
     <Dropdown.ActionGroup>
-      <Dropdown.Action action={() => action('action clicked')}>
+      <Dropdown.Action action={() => action('action clicked')} selected>
         Dropdown item 1
       </Dropdown.Action>
       <Dropdown.Action action={() => action('action clicked')}>
@@ -278,6 +279,31 @@ storiesOf('Components', module)
               </Dropdown.Trigger>
 
               {createContentWithItems()}
+            </Dropdown>
+          </div>
+        </StoryItem>
+
+        <StoryItem
+          title="Dropdown (with other components as content)"
+          description="We can compose dropdowns with various components."
+        >
+          <div style={{ maxWidth: '300px' }}>
+            <Dropdown id="dropdown-menu" block>
+              <Dropdown.Trigger useSelect>
+                <StatusIndicator color="green" label="Status 2" medium />
+              </Dropdown.Trigger>
+
+              <Dropdown.Content collapse top left full>
+                <Dropdown.Action action={() => action('action clicked')} overflow>
+                  <StatusIndicator color="red" label="Status 1" medium softLabel />
+                </Dropdown.Action>
+                <Dropdown.Action action={() => action('action clicked')} overflow selected>
+                  <StatusIndicator color="green" label="Status 2" medium softLabel />
+                </Dropdown.Action>
+                <Dropdown.Action action={() => action('action clicked')} overflow>
+                  <StatusIndicator color="purple" label="Status 3" medium softLabel />
+                </Dropdown.Action>
+              </Dropdown.Content>
             </Dropdown>
           </div>
         </StoryItem>
