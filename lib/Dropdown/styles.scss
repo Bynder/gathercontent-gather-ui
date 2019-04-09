@@ -17,7 +17,12 @@ $dropdown-hover-background: $neutral-lightest !default;
   + .dropdown-gc {
     margin-left: $layout-spacing-base;
   }
+}
 
+.dropdown__content,
+.dropdown__section,
+.dropdown__header,
+.dropdown__footer {
   *:first-child {
     margin-top: 0;
   }
@@ -90,12 +95,40 @@ $dropdown-hover-background: $neutral-lightest !default;
   text-align: left;
   padding: $dropdown-item-padding;
   width: 100%;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
 
   &:hover,
   &:focus {
     color: $neutral-darkest;
     background: $dropdown-hover-background;
     outline: none;
+  }
+
+  .status-indicator {
+    position: relative;
+
+    .status-indicator__circle {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 2px;
+      bottom: -$layout-spacing-base;
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      background: #e6eaed;
+    }
+  }
+
+  &:last-child {
+    .status-indicator:after {
+      display: none;
+    }
   }
 }
 
@@ -119,7 +152,8 @@ $dropdown-hover-background: $neutral-lightest !default;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-.dropdown-gc--block {
+.dropdown-gc--block,
+.dropdown__content--full {
   width: 100%;
 }
 
@@ -205,6 +239,10 @@ $dropdown-hover-background: $neutral-lightest !default;
   }
 }
 
+.dropdown__action--overflow {
+  overflow: visible;
+}
+
 .dropdown__action--icon-only {
   line-height: 0;
 
@@ -222,8 +260,14 @@ $dropdown-hover-background: $neutral-lightest !default;
   }
 }
 
-.dropdown__action--selected {
+.dropdown__action--selected,
+.dropdown__action--selected:hover {
   background: $dropdown-hover-background;
+  color: $primary-blue;
+
+  .status-indicator {
+    color: $primary-blue;
+  }
 }
 
 .dropdown__action--disabled {
