@@ -214,6 +214,7 @@ $conversation-meta-text-color: $neutral-base !default;
   background-color: $conversation-active-background-color;
   box-shadow: $shadow-shallow;
   cursor: default;
+  margin-bottom: $layout-spacing-base*3;
 }
 
 .is-active .conversation__resolve {

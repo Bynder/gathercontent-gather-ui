@@ -96,6 +96,7 @@ $mention-suggestions-max-height: 500px;
     border-radius: $conversation-border-radius;
     background-color: white;
     border: 1px solid $color-border-base;
+    margin-bottom: $layout-spacing-base*3 !important; // have to override inline styles from react-mentions package :(
     &:before {
       color: $neutral-base;
       content: 'Mention...';
