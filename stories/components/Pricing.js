@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import StoryItem from '../styleguide/StoryItem';
-import { PricingWrapper, PricingPlan, FeatureList, FeatureListItem, Icon, TooltipWrapper } from "../../lib";
+import { PricingWrapper, PricingPlan, FeatureList, FeatureListItem, PricingToggle, SectionFeature, PricingToggleItem, Icon, TooltipWrapper } from "../../lib";
 import PersonSVG from '../../assets/person.svg';
 
 const features = [{
@@ -74,32 +74,52 @@ storiesOf('Components', module)
           title="Pricing"
           description="..."
         >
-          <PricingWrapper>
-            {featureListHeadings}
-            {featureListHeadings}
-            {featureListHeadings}
+          <Fragment>
+            <form action="">
+              <SectionFeature>
+                I would like to purchase <input className="form__input form-input__text" type="text" value="7" onChange={() => {}} /> seats for my account.
+                <small>Seats can be added at any time. <a href="/">Find out more.</a></small>
+              </SectionFeature>
+            </form>
 
-            <Row>
-              <Col xs={12} md={6}>
-                <PricingPlan price="$15" smallPrint="$750 per month" priceDesc="per seat per month" title="Standard" upgradeButton={upgradeButton} savings="Save $360">
-                  {featureListStandard}
-                  {featureListStandard}
-                  {featureListStandard}
-                </PricingPlan>
-              </Col>
+            <PricingWrapper smallPrint="Minimum of 7 seats for all plans">
+              <PricingToggle>
+                <PricingToggleItem
+                  onClick={() => {}}
+                  savings="Save 20%"
+                  isActive
+                >
+                  Pay annually
+                </PricingToggleItem>
+                <PricingToggleItem onClick={() => {}}>Pay monthly</PricingToggleItem>
+              </PricingToggle>
 
-              <Col xs={12} md={6}>
-                <PricingPlan price="$25" smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
-                  <div className="pricing__plan-person">
-                    <PersonSVG />
-                  </div>
-                  {featureListAdvanced}
-                  {featureListAdvanced}
-                  {featureListAdvanced}
-                </PricingPlan>
-              </Col>
-            </Row>
-          </PricingWrapper>
+              {featureListHeadings}
+              {featureListHeadings}
+              {featureListHeadings}
+
+              <Row>
+                <Col xs={12} md={6}>
+                  <PricingPlan price="$15" smallPrint="$750 per month" priceDesc="per seat per month" title="Standard" upgradeButton={upgradeButton} savings="Save $360">
+                    {featureListStandard}
+                    {featureListStandard}
+                    {featureListStandard}
+                  </PricingPlan>
+                </Col>
+
+                <Col xs={12} md={6}>
+                  <PricingPlan price="$25" smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
+                    <div className="pricing__plan-person">
+                      <PersonSVG />
+                    </div>
+                    {featureListAdvanced}
+                    {featureListAdvanced}
+                    {featureListAdvanced}
+                  </PricingPlan>
+                </Col>
+              </Row>
+            </PricingWrapper>
+          </Fragment>
         </StoryItem>
       </div>
     );
