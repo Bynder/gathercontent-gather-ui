@@ -1,5 +1,11 @@
 .fill-primary-blue {
   path {
-    fill: $primary-blue;
+    fill: $primary-blue !important;
+  }
+}
+
+.fill-primary-green {
+  path {
+    fill: $primary-green !important;
   }
 }
