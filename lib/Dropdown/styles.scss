@@ -4,6 +4,7 @@
 $dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base !default;
 $dropdown-section-padding: $layout-spacing-base * .75 !default;
 $dropdown-hover-background: $neutral-lightest !default;
+$dropdown-status-circle-width-height: 15px !default;
 
 /* ==========================================================================
    Styles
@@ -111,6 +112,8 @@ $dropdown-hover-background: $neutral-lightest !default;
     .status-indicator__circle {
       position: relative;
       z-index: 2;
+      width: $dropdown-status-circle-width-height;
+      height: $dropdown-status-circle-width-height;
     }
 
     &:after {
@@ -120,7 +123,7 @@ $dropdown-hover-background: $neutral-lightest !default;
       bottom: -$layout-spacing-base;
       position: absolute;
       top: 10px;
-      left: 5px;
+      left: 6px;
       background: #e6eaed;
     }
   }
