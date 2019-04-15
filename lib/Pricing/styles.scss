@@ -18,6 +18,7 @@ $pricing-feature-item-height: 50px;
   margin: 0 auto;
   position: relative;
   border: 1px solid $color-border-base;
+  text-align: left;
 
   ul {
     margin: 0;
@@ -119,15 +120,5 @@ $pricing-feature-item-height: 50px;
       left: 0;
       width: 100%;
     }
-
-    //// debugging layout
-    //.feature-list__item {
-    //  background: green;
-    //}
-    //
-    //// debugging layout
-    //> .feature-list .feature-list__item {
-    //  background: blue;
-    //}
   }
 }

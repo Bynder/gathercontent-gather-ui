@@ -21,6 +21,12 @@
 
 .pricing__plan-header {
   margin: 0 0 $layout-spacing-base*1.5;
+  padding: 0 $layout-spacing-base;
+  min-height: 232px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .pricing__plan-title {
@@ -43,16 +49,20 @@
   }
 }
 
+.pricing__plan-contact-button {
+  font-size: $typo-size-large;
+  margin: $layout-spacing-base 0;
+}
+
 .pricing__plan-description {
   font-weight: $typo-weight-semi-bold;
   color: $neutral-base;
-  margin: 0 0 $layout-spacing-base*2;
 }
 
 .pricing__plan-small-print {
   font-style: italic;
   color: $neutral-base;
-  margin: 0 0 $layout-spacing-base/2;
+  margin: $layout-spacing-base*2 0 $layout-spacing-base/2;
   font-size: $typo-size-slight;
 }
 

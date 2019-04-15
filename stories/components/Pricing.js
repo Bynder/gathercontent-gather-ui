@@ -33,7 +33,7 @@ const upgradeButton = (
 );
 
 const featureListHeadings = (
-  <FeatureList title="Features" row>
+  <FeatureList title="Features">
     {features.map(({ name }) => (
       <FeatureListItem key={name}>
         <TooltipWrapper id={name} tooltipText="Tooltip text here..." placement="top">
@@ -77,7 +77,7 @@ storiesOf('Components', module)
           <Fragment>
             <form action="">
               <SectionFeature>
-                I would like to purchase <input className="form__input form-input__text" type="text" value="7" onChange={() => {}} /> seats for my account.
+                I would like to purchase <input className="form__input form-input__text" type="number" value="7" onChange={() => {}} /> seats for my account.
                 <small>Seats can be added at any time. <a href="/">Find out more.</a></small>
               </SectionFeature>
             </form>
@@ -100,7 +100,10 @@ storiesOf('Components', module)
 
               <Row>
                 <Col xs={12} md={6}>
-                  <PricingPlan price="$15" smallPrint="$750 per month" priceDesc="per seat per month" title="Standard" upgradeButton={upgradeButton} savings="Save $360">
+                  <PricingPlan
+                    contactButton={<a href="/" className="button button--outline">Get in touch</a>}
+                    priceDesc={<Fragment>We offer increased discounts <br/>for 20+ seats</Fragment>}
+                  >
                     {featureListStandard}
                     {featureListStandard}
                     {featureListStandard}
