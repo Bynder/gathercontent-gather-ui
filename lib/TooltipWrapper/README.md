@@ -14,7 +14,7 @@ A wrapper component that renders a tooltip over its children
 | hide                  | boolean       | false         | No       | Hides the tooltip                                   |
 | tooltipText           | string \|\| object (wTF?)| ''   | No       | The text to display above the tooltip               |
 | clickable             | boolean       | false         | No       | Displays the cursor as a pointer over the tooltips child  |
-| children              | ReactNode     | N/A           | Yes      | The elements to displat the tooltip over  |
+| children              | ReactNode     | N/A           | Yes      | The elements to display the tooltip over  |
 
 ```
  <TooltipWrapper 
