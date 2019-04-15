@@ -16,9 +16,15 @@ $selection-bar-border: 1px solid $color-border-base !default;
   margin: 0;
 }
 
+.selection-bar__divider {
+  background-color: $color-border-base;
+  width: 1px;
+  height: 20px;
+}
+
 .selection-bar__action {
   display: flex;
-  margin: 0 $layout-spacing-base/4;
+  margin: 0 $layout-spacing-base / 2;
 }
 
 .selection-bar__section {

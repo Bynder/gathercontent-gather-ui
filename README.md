@@ -46,3 +46,11 @@ require('gather-ui/dist/styles.css');
 
 This particular version of the Styleguide depends on the Bootstrap and FontAwesome libraries. These do not ship with the components' CSS and should be included separately wherever they are consumed.
 
+## Deploying the Library
+ You will need to login with an NPM account that has access to the package
+```
+npm version  <major | minor | patch> // We usually go with patch, but minor or major may be required
+git push --tags
+git push
+npm publish
+```
