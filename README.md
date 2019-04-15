@@ -51,6 +51,6 @@ This particular version of the Styleguide depends on the Bootstrap and FontAweso
 ```
 npm version  <major | minor | patch> // We usually go with patch, but minor or major may be required
 git push --tags
-git push
+git push origin <branch-name>
 npm publish
 ```
