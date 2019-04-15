@@ -49,7 +49,7 @@ This particular version of the Styleguide depends on the Bootstrap and FontAweso
 ## Deploying the Library
 
 ```
-npm version patch 
+npm version  <major | minor | patch> // We usually go with patch, but minor or major may be required
 git push --tags
 git push
 npm publish
