@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+.section-feature {
+  font-size: $typo-size-xlarge*1.5;
+  text-align: center;
+  padding: 0 0 $layout-spacing-base;
+  line-height: 1;
+
+  small {
+    display: block;
+    font-size: $typo-size-base;
+    color: $neutral-base;
+    margin: $layout-spacing-base 0 0;
+  }
+
+  input {
+    display: inline-block;
+    width: 50px;
+    transform: translateY(-.25em);
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+}
