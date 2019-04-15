@@ -52,4 +52,11 @@ describe('Tooltip Wrapper', () => {
     wrapper.setProps({ wrapperClassName: 'bloop' });
     expect(wrapper.find('.tooltip-wrapper__child.bloop')).toHaveLength(1);
   });
+
+  test('applies the correct classname when clickable', () => {
+    expect(wrapper.find('.tooltip-wrapper__child--clickable')).toHaveLength(0);
+
+    wrapper.setProps({ clickable: true });
+    expect(wrapper.find('.tooltip-wrapper__child--clickable')).toHaveLength(1);
+  });
 });
