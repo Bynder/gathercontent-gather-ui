@@ -1,8 +1,7 @@
-# SelectionBar Dropdown
+# SelectionBar
 A component which renders a bar with selection information
 
 ## Usage
-
 ### Props
 
 | Name                  | Type          | Default       | Required | Description                                         |
@@ -25,4 +24,28 @@ A component which renders a bar with selection information
 >
   <div>Some content</div>
 </SelectionBar>
+```
+
+# Selection Bar Action
+A component to wrap actions in the selection bar
+## Usage
+```
+<SelectionBar.Action>
+  <Tooltip icon="some-icon">
+</SelectionBar.Action>
+```
+
+## Selection Bar Divider
+A line to divide Selection Bar Actions
+## Usage
+```
+<SelectionBar.Action>
+  <Tooltip icon="some-icon">
+</SelectionBar.Action>
+
+<SelectionBar.Divider />
+
+<SelectionBar.Action>
+  <Tooltip icon="some-other-icon">
+</SelectionBar.Action>
 ```
