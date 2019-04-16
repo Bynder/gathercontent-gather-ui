@@ -41,10 +41,10 @@ $collections-table-border-radius: 4px;
   min-width: 0px;
   white-space: nowrap;
   &:first-child {
-    flex-basis: 20%;
+    flex-basis: 10%;
 
-    @include respond-to-min($screen-lg) {
-      flex-basis: 30%;
+    @include respond-to-min($screen-md) {
+      flex-basis: 20%;
     }
   }
 }
