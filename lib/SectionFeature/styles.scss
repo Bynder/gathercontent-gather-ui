@@ -8,7 +8,7 @@
    ========================================================================== */
 
 .section-feature {
-  font-size: $typo-size-xlarge*1.5;
+  font-size: $typo-size-xlarge;
   text-align: center;
   padding: 0 0 $layout-spacing-base;
   line-height: 1;
@@ -23,10 +23,17 @@
   input {
     display: inline-block;
     width: 50px;
-    transform: translateY(-.25em);
+    height: 35px;
+    transform: translateY(-.1em);
   }
   
   a:hover {
     text-decoration: none;
+  }
+
+  + .section-feature {
+    border-top: 1px solid $color-border-base;
+    padding-top: $layout-spacing-base*2;
+    margin-top: $layout-spacing-base*2;
   }
 }
