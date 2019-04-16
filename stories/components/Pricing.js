@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import StoryItem from '../styleguide/StoryItem';
-import { PricingWrapper, PricingPlan, FeatureList, FeatureListItem, PricingToggle, SectionFeature, PricingToggleItem, Icon, TooltipWrapper } from "../../lib";
+import { PricingWrapper, PricingPlan, FeatureList, FeatureListItem, PricingToggle, SectionFeature, PricingToggleItem, Icon, TooltipWrapper, PricingText } from "../../lib";
 import PersonSVG from '../../assets/person.svg';
 
 const features = [{
@@ -31,6 +31,8 @@ const features = [{
 const upgradeButton = (
   <a className="button button--primary" href="/">Upgrade</a>
 );
+
+const price = 2500;
 
 const featureListHeadings = (
   <FeatureList title="Features">
@@ -128,7 +130,7 @@ storiesOf('Components', module)
                 </Col>
 
                 <Col xs={12} md={6}>
-                  <PricingPlan price="$25" smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
+                  <PricingPlan price={<PricingText>{price}</PricingText>} smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
                     <div className="pricing__plan-person">
                       <PersonSVG />
                     </div>
