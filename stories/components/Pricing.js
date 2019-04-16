@@ -71,16 +71,33 @@ storiesOf('Components', module)
     return (
       <div>
         <StoryItem
-          title="Pricing"
-          description="..."
+          title="Pricing Plan"
+          description="Pricing plans can be standalone components or a part of the pricing wrapper."
+        >
+          <div style={{ maxWidth: '300px' }}>
+            <PricingPlan price="$300" smallPrint="$1,250 per month" priceDesc="per seat per month" />
+          </div>
+        </StoryItem>
+
+        <StoryItem
+          title="Pricing Wrapper"
+          description="The pricing wrapper provides the means to show 2 plans in an ideal UI."
         >
           <Fragment>
-            <form action="">
-              <SectionFeature>
-                I would like to purchase <input className="form__input form-input__text" type="number" value="7" onChange={() => {}} /> seats for my account.
-                <small>Seats can be added at any time. <a href="/">Find out more.</a></small>
-              </SectionFeature>
-            </form>
+            <Row>
+              <Col xs={2} />
+              <Col xs={8}>
+                <SectionFeature bordered>
+                  <h1>Upgrade your GatherContent account!</h1>
+                  <small>You're currently using <strong>6</strong> seats on your trial.</small>
+                </SectionFeature>
+
+                <SectionFeature>
+                  I would like to purchase <input className="form__input form-input__text" type="number" value="7" onChange={() => {}} /> seats for my account.
+                  <small>Seats can be added at any time. <a href="/">Find out more.</a></small>
+                </SectionFeature>
+              </Col>
+            </Row>
 
             <PricingWrapper smallPrint="Minimum of 7 seats for all plans">
               <PricingToggle>

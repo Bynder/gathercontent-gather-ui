@@ -107,6 +107,14 @@ $pricing-feature-item-height: 50px;
       padding-bottom: $pricing-vertical-overlapping-spacing/2;
     }
 
+    .pricing__plan-header {
+      margin: 0 0 $layout-spacing-base*1.5;
+    }
+
+    .pricing__plan-price {
+      margin-top: $layout-spacing-base;
+    }
+
     .pricing__plan-title {
       position: absolute;
       top: -$typo-size-xlarge*2;

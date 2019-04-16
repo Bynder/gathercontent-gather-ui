@@ -11,16 +11,17 @@
   position: relative;
   text-align: center;
   width: 100%;
-  padding: $layout-spacing-base/2;
   border: 1px solid $color-border-base;
   background: white;
   border-radius: 4px;
   padding: $layout-spacing-base/2 0;
-  margin: 0 0 $layout-spacing-base;
+
+  + .pricing__plan {
+    margin: $layout-spacing-base 0 0;
+  }
 }
 
 .pricing__plan-header {
-  margin: 0 0 $layout-spacing-base*1.5;
   padding: 0 $layout-spacing-base;
   min-height: 232px;
   display: flex;
@@ -39,7 +40,6 @@
   font-size: $typo-size-large*4;
   line-height: 1em;
   position: relative;
-  margin-top: $layout-spacing-base;
 
   &::first-letter {
     font-size: $typo-size-large*2;
