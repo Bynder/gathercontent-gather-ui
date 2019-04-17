@@ -89,7 +89,7 @@ storiesOf('Components', module)
             <Row>
               <Col xs={2} />
               <Col xs={8}>
-                <SectionFeature bordered>
+                <SectionFeature extendTop>
                   <h1>Upgrade your GatherContent account!</h1>
                   <small>You're currently using <strong>6</strong> seats on your trial.</small>
                 </SectionFeature>
