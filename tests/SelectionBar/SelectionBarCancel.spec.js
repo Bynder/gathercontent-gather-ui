@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { ShortcutTrigger } from '../../lib';
+import { ShortcutTrigger, Button } from '../../lib';
 import SelectionBarCancel from '../../lib/SelectionBar/SelectionBarCancel';
 
 describe('SelectionBarCancel', () => {
@@ -24,7 +24,10 @@ describe('SelectionBarCancel', () => {
     );
   });
 
-  test('renders the correct text', () => {
-    expect(wrapper.find('.cancel-text').text()).toEqual('Esc to cancel');
+  test('renders a cancel Button', () => {
+    expect(wrapper.find(Button)).toHaveLength(1);
+    expect(wrapper.find(Button).prop('clickHandler')).toEqual(
+      clearSelectionSpy
+    );
   });
 });

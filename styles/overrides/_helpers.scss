@@ -16,6 +16,12 @@
   }
 }
 
+.hide-medium {
+  @include respond-to-max($screen-md) {
+    display: none !important;
+  }
+}
+
 .hide-off-page {
   position: absolute;
   left: -999em;

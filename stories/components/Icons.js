@@ -16,6 +16,8 @@ const allIcons = additionalProps => (
     <Icon name="menuDotted" {...additionalProps} />
     <Icon name="loader" {...additionalProps} />
     <Icon name="tick" {...additionalProps} />
+    <Icon name="tickCircle" {...additionalProps} />
+    <Icon name="emptyCircle" {...additionalProps} />
     <Icon name="backArrow" {...additionalProps} />
     <Icon name="pencil" {...additionalProps} />
     <Icon name="upload" {...additionalProps} />
