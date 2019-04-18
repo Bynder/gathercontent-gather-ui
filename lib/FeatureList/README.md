@@ -1,8 +1,6 @@
 # FeatureList
 A list of features.
 
-## Usage
-
 ### Props
 
 | Name                | Type          | Default   | Required | Description                                |
