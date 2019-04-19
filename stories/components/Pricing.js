@@ -120,8 +120,12 @@ storiesOf('Components', module)
               <Row>
                 <Col xs={12} md={6}>
                   <PricingPlan
-                    contactButton={<a href="/" className="button button--outline">Get in touch</a>}
-                    priceDesc={<Fragment>We offer increased discounts <br/>for 20+ seats</Fragment>}
+                    price={`$${price / 2}`}
+                    smallPrint="$1,250 per month"
+                    priceDesc="per seat, per month"
+                    title="Standard"
+                    upgradeButton={<button className="button button--light-grey" disabled>Current plan</button>}
+                    current
                   >
                     {featureListStandard}
                     {featureListStandard}
@@ -130,7 +134,14 @@ storiesOf('Components', module)
                 </Col>
 
                 <Col xs={12} md={6}>
-                  <PricingPlan price={`$${price}`} smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
+                  <PricingPlan
+                    price={`$${price}`}
+                    smallPrint="$1,250 per month"
+                    priceDesc="per seat, per month"
+                    title="Advanced"
+                    upgradeButton={upgradeButton}
+                    savings="Save $360"
+                  >
                     <div className="pricing__plan-person">
                       <PersonSVG />
                     </div>

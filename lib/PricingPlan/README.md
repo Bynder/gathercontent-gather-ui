@@ -22,6 +22,7 @@ A component for sharing account plan details.
 | upgradeButton       | Node     | null   | No      | A button or link for navigating the user through the upgrade process. |
 | contactButton       | Node     | null   | No      | A button or link for navigating the user through the upgrade process. |
 | savings             | String   | null   | No      | Text promoting any saving to user may be making on this plan. |
+| current             | Bool     | false  | No      | Provides the plan with a highlighted appearance indicating it is the current plan. |
 
 ###Usage
 ```
