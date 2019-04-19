@@ -130,7 +130,7 @@ storiesOf('Components', module)
                 </Col>
 
                 <Col xs={12} md={6}>
-                  <PricingPlan price={<PricingText>{price}</PricingText>} smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
+                  <PricingPlan price={`$${price}`} smallPrint="$1,250 per month" priceDesc="per seat per month" title="Advanced" upgradeButton={upgradeButton} savings="Save $360">
                     <div className="pricing__plan-person">
                       <PersonSVG />
                     </div>
