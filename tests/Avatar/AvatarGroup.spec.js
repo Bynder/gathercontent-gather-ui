@@ -165,8 +165,13 @@ describe('AvatarGroup', () => {
   });
 
   test('adds a small modifier', () => {
-    expect(wrapper.hasClass('avatar-group--small')).toBe(false);
+    expect(wrapper.find('.avatar-group').hasClass('avatar-group--small')).toBe(
+      false
+    );
     wrapper.setProps({ small: true });
-    expect(wrapper.hasClass('avatar-group--small')).toBe(true);
+    wrapper.update();
+    expect(wrapper.find('.avatar-group').hasClass('avatar-group--small')).toBe(
+      true
+    );
   });
 });
