@@ -53,7 +53,7 @@ describe('Confirmation Dropdown Content', () => {
         .find(Button)
         .first()
         .prop('types')
-    ).toEqual(['slim', 'collapse', 'link']);
+    ).toEqual(['slim', 'collapse', 'link-default']);
     wrapper.setProps({ isDanger: true });
 
     expect(
