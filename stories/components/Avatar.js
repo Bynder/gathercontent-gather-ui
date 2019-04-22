@@ -194,5 +194,41 @@ storiesOf('Components', module).add('Avatar', () => (
         </AvatarWithPopover>
       </AvatarGroup>
     </StoryItem>
+    <StoryItem
+      title="Avatar – small"
+      description="An avatar can be rendered slightly smaller"
+    >
+      <AvatarGroup maximum={2} small>
+        <AvatarWithPopover
+          name="Angus Edwardson"
+          initials="AE"
+          email="example@gmail.com"
+          bordered
+
+        >
+          <ParticipantInfo
+            name="Angus Edwardson"
+            email="example@gmail.com"
+            pillboxText="Assigned"
+          />
+        </AvatarWithPopover>
+        <AvatarWithPopover
+          name="James Darracott"
+          initials="JD"
+          email="example@gmail.com"
+          bordered
+        >
+          <ParticipantInfo name="James Darracott" email="example@gmail.com" />
+        </AvatarWithPopover>
+        <AvatarWithPopover
+          name="Richard Swagshaw"
+          initials="RS"
+          email="example@gmail.com"
+          bordered
+        >
+          <ParticipantInfo name="Richard Swagshaw" email="example@gmail.com" />
+        </AvatarWithPopover>
+      </AvatarGroup>
+    </StoryItem>
   </div>
 ));

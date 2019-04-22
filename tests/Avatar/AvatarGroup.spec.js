@@ -163,4 +163,10 @@ describe('AvatarGroup', () => {
     const last = customWrapper.find('.avatar-group__item').last();
     expect(last.prop('style')).toEqual({ zIndex: 1 });
   });
+
+  test('adds a small modifier', () => {
+    expect(wrapper.hasClass('avatar-group--small')).toBe(false);
+    wrapper.setProps({ small: true });
+    expect(wrapper.hasClass('avatar-group--small')).toBe(true);
+  });
 });
