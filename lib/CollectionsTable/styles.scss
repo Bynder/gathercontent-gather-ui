@@ -57,10 +57,12 @@ $collections-table-cell-min-height: 40px !default;
   background: white;
   min-height: $collections-table-cell-min-height;
   &:first-child {
+    padding-left: 1px;
     border-width: 1px 0 1px 1px;
     border-radius: $collections-table-border-radius 0 0 $collections-table-border-radius;
   }
   &:last-child {
+    padding-right: 1px;
     border-width: 1px 1px 1px 0;
     border-radius: 0 $collections-table-border-radius $collections-table-border-radius 0;
   }
@@ -134,9 +136,11 @@ $collections-table-cell-min-height: 40px !default;
     border-width: 2px 0;
     padding: ($layout-spacing-base/4 - 1) 0;
     &:first-child {
+      padding-left: 0;
       border-width: 2px 0 2px 2px;
     }
     &:last-child {
+      padding-right: 0;
       border-width: 2px 2px 2px 0;
     }
   }
