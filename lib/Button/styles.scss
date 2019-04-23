@@ -32,13 +32,15 @@ $btn-border-radius: 3px !default;
   font-weight: $typo-weight-roman;
   padding: ($layout-spacing-base/2 + 1px) ($layout-spacing-base - 2px);
   transition: all $animation-time-micro ease, padding 0s;
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
   }
+
   &:focus {
     outline: 0;
-    }
+  }
 
   & + &,
   & + .dropdown {

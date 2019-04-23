@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $avatar-group-item-spacing: .115em;
+$avatar-goup-size-small: 24px !default;
 
 /* ==========================================================================
    Styles
@@ -14,4 +15,16 @@ $avatar-group-item-spacing: .115em;
 .avatar-group__item {
   margin-right: -$avatar-group-item-spacing;
   z-index: 1;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.avatar-group--small {
+  .avatar,
+  .avatar__initials {
+    width: $avatar-goup-size-small;
+    height: $avatar-goup-size-small;
+  }
 }

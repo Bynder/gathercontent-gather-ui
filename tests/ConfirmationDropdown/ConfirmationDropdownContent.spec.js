@@ -8,6 +8,7 @@ describe('Confirmation Dropdown Content', () => {
   const onConfirmSpy = jest.fn();
   const setShowContentSpy = jest.fn();
   const onHideSpy = jest.fn();
+  const onCancelSpy = jest.fn();
 
   const dropdownContent = (
     <div className="dropdown-content">Dropdown content!</div>
@@ -24,6 +25,7 @@ describe('Confirmation Dropdown Content', () => {
       <ConfirmationDropdownContent
         onConfirm={mockConfirmPromise}
         onHide={onHideSpy}
+        onCancel={onCancelSpy}
         top
       >
         {dropdownContent}
@@ -51,7 +53,7 @@ describe('Confirmation Dropdown Content', () => {
         .find(Button)
         .first()
         .prop('types')
-    ).toEqual(['slim', 'collapse', 'link']);
+    ).toEqual(['slim', 'collapse', 'link-default']);
     wrapper.setProps({ isDanger: true });
 
     expect(
@@ -85,6 +87,7 @@ describe('Confirmation Dropdown Content', () => {
     clickHandler();
     expect(setShowContentSpy).toHaveBeenCalledWith(false);
     expect(onHideSpy).toHaveBeenCalledTimes(1);
+    expect(onCancelSpy).toHaveBeenCalledTimes(1);
   });
 
   test('renders a loader whilst the promise is pending', () => {
