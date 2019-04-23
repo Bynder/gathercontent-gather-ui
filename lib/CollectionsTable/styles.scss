@@ -110,7 +110,13 @@ $collections-table-cell-min-height: 40px !default;
 
 .collections-table__heading {
   font-weight: bold;
-  padding: $collections-table-content-padding 0 $collections-table-spacing;
+  padding-top: $layout-spacing-base/4;
+  &:first-child {
+    padding-left: 1px;
+  }
+  &:last-child {
+    padding-right: 1px;
+  }
 }
 
 .collections-table__status-indicator {
