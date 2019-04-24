@@ -91,12 +91,12 @@ storiesOf('Components', module)
               <Col xs={8}>
                 <SectionFeature extendTop>
                   <h1>Upgrade your GatherContent account!</h1>
-                  <small>You're currently using <strong>6</strong> seats on your trial.</small>
+                  <p>You're currently using <strong>6</strong> seats on your trial.</p>
                 </SectionFeature>
 
                 <SectionFeature>
-                  I would like to purchase <input className="form__input form-input__text" type="number" value="7" onChange={() => {}} /> seats for my account.
-                  <small>Seats can be added at any time. <a href="/">Find out more.</a></small>
+                  <p>I would like to purchase <input className="form__input form-input__text" type="number" value="7" onChange={() => {}} /> seats for my account.</p>
+                  <p>Seats can be added at any time. <a href="/">Find out more.</a></p>
                 </SectionFeature>
               </Col>
             </Row>

@@ -9,16 +9,21 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
    ========================================================================== */
 
 .section-feature {
-  font-size: $typo-size-xlarge;
   text-align: center;
   line-height: 1;
   margin: 0 0 $section-feature-vertical-spacing;
 
-  small {
+  p {
     display: block;
-    font-size: $typo-size-base;
     color: $neutral-base;
-    margin: $layout-spacing-base 0 0;
+    font-size: $typo-size-base;
+    margin-top: $layout-spacing-base;
+
+    &:first-child {
+      color: $neutral-dark;
+      font-size: $typo-size-xlarge;
+      margin-top: 0;
+    }
   }
 
   input {
