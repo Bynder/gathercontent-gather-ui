@@ -53,3 +53,4 @@ import Card from './components/Card';
 import Breadcrumb from './components/Breadcrumb';
 import SelectionBar from './components/SelectionBar';
 import FinderNavigation from './components/FinderNavigation';
+import UserSearch from './components/UserSearch';

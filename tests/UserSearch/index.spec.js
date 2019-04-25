@@ -1,9 +1,12 @@
 import { React, shallow } from '../setup';
-import { UserSearch, Dropdown, Avatar, AvatarInformation } from '../../lib';
+import { PureUserSearch } from '../../lib/UserSearch';
+import UserSearchHead from '../../lib/UserSearch/UserSearchHead';
+import UserSearchList from '../../lib/UserSearch/UserSearchList';
 
 describe('User Search', () => {
   let wrapper;
   let addUserSpy;
+  let onToggleSpy;
 
   const users = [
     {
@@ -23,61 +26,52 @@ describe('User Search', () => {
         'https://d3iw72m71ie81c.cloudfront.net/2eae47ef-6f37-46fe-a02b-52cff401a8f9-me.jpg'
     }
   ];
+  const props = {
+    users,
+    displayEmail: true,
+    searchHeading: 'Search me!',
+    subheading: 'please search i have kids to feed',
+    useDisplayToggle: true
+  };
 
   beforeEach(() => {
     addUserSpy = jest.fn();
+    onToggleSpy = jest.fn();
+    const ref = React.createRef();
     wrapper = shallow(
-      <UserSearch addUser={addUserSpy} users={users} displayEmail={false} />
+      <PureUserSearch
+        addUser={addUserSpy}
+        ref={ref}
+        onToggle={onToggleSpy}
+        {...props}
+      />
     );
   });
 
-  test('renders a Dropdown and a the correct amount of users', () => {
-    expect(wrapper.find(Dropdown)).toHaveLength(1);
-    expect(wrapper.find(Dropdown).prop('onToggle')).toEqual(
-      wrapper.instance().focusSearch
+  test('renders a UserSearchHead', () => {
+    expect(wrapper.find(UserSearchHead)).toHaveLength(1);
+    expect(wrapper.find(UserSearchHead).prop('searchHeading')).toEqual(
+      props.searchHeading
     );
-    expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
-    expect(wrapper.find(Dropdown.ActionGroup)).toHaveLength(3);
+    expect(wrapper.find(UserSearchHead).prop('subheading')).toEqual(
+      props.subheading
+    );
+    expect(wrapper.find(UserSearchHead).prop('useDisplayToggle')).toEqual(
+      props.useDisplayToggle
+    );
+    expect(wrapper.find(UserSearchHead).prop('toggleListDisplay')).toEqual(
+      wrapper.instance().toggleListDisplay
+    );
+    expect(wrapper.find(UserSearchHead).prop('toggleActive')).toEqual(
+      wrapper.state('displayList')
+    );
+  });
+
+  test('renders an input to search', () => {
     expect(wrapper.find('.user-search__search-input')).toHaveLength(1);
     expect(wrapper.find('.user-search__search-input').prop('onChange')).toEqual(
       wrapper.instance().searchForUsers
     );
-    expect(wrapper.find(Dropdown.Action)).toHaveLength(2);
-    wrapper
-      .find(Dropdown.Action)
-      .first()
-      .prop('action')();
-    expect(addUserSpy).toHaveBeenCalledWith(users[0]);
-    expect(wrapper.find(Avatar)).toHaveLength(2);
-    expect(
-      wrapper
-        .find(Avatar)
-        .last()
-        .prop('url')
-    ).toEqual(users[1].avatar);
-    expect(wrapper.find(AvatarInformation)).toHaveLength(2);
-    expect(
-      wrapper
-        .find(AvatarInformation)
-        .last()
-        .prop('email')
-    ).toEqual(`@${users[1].display}`);
-    expect(
-      wrapper
-        .find(AvatarInformation)
-        .last()
-        .prop('name')
-    ).toEqual(users[1].name);
-  });
-
-  test('displays the email instead of the users display if displayEmail is true', () => {
-    wrapper.setProps({ displayEmail: true });
-    expect(
-      wrapper
-        .find(AvatarInformation)
-        .last()
-        .prop('email')
-    ).toEqual(users[1].email);
   });
 
   test('returns the correct filtered users', () => {
@@ -93,9 +87,7 @@ describe('User Search', () => {
     expect(wrapper.state('users')).toEqual([users[1]]);
     wrapper.instance().searchForUsers({ target: { value: 'Jesse Pin' } });
     expect(wrapper.state('users')).toEqual([users[1]]);
-    wrapper.instance().searchForUsers({ target: { value: 'he' } });
-    expect(wrapper.state('users')).toEqual([]);
-    wrapper.instance().searchForUsers({ target: { value: 'HEythere@l' } });
+    wrapper.instance().searchForUsers({ target: { value: 'floop' } });
     expect(wrapper.state('users')).toEqual([]);
     wrapper.setProps({ displayEmail: true });
     wrapper.instance().searchForUsers({ target: { value: 'he' } });
@@ -104,8 +96,19 @@ describe('User Search', () => {
     expect(wrapper.state('users')).toEqual([users[1]]);
   });
 
-  test('renders a no results message', () => {
-    wrapper.setState({ users: [] });
-    expect(wrapper.find('.no-results')).toHaveLength(1);
+  test('renders a UserSearchList', () => {
+    expect(wrapper.find(UserSearchList)).toHaveLength(1);
+    expect(wrapper.find(UserSearchList).prop('users')).toEqual(
+      wrapper.state('users')
+    );
+    expect(wrapper.find(UserSearchList).prop('noUsers')).toEqual(false);
+    expect(wrapper.find(UserSearchList).prop('addUser')).toEqual(addUserSpy);
+  });
+
+  test('hides the input and UserSearchList', () => {
+    wrapper.instance().toggleListDisplay();
+    expect(wrapper.find(UserSearchList)).toHaveLength(0);
+    expect(wrapper.find('.user-search__search-input')).toHaveLength(0);
+    expect(onToggleSpy).toHaveBeenCalled();
   });
 });
