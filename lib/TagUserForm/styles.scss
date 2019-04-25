@@ -31,8 +31,12 @@
   }
 }
 
+.taguser__users .tooltip-wrapper__child,
 .taguser-form__user {
   display: inline-block;
+}
+
+.taguser-form__user {
   padding: 2px 8px;
   background: rgba( $primary-purple, .1 );
   color: $primary-purple;

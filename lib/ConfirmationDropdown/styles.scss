@@ -29,6 +29,10 @@
 .confirmation-dropdown__confirm-trigger {
   position: relative;
   z-index: 1;
+  &:disabled {
+    background: none;
+    opacity: 0.5;
+  }
 }
 
 .confirmation-dropdown__loader {

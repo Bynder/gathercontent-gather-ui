@@ -36,17 +36,8 @@ describe('Table/Heading', () => {
     expect(mountedWrapper.find(Icon)).toHaveLength(3);
   });
 
-  test('contains an input with the ref of "toggleAll"', () => {
-    const toggleAllCheckbox = mount(mountedWrapper.instance().toggleAll);
-    expect(toggleAllCheckbox).toHaveLength(1);
-    expect(toggleAllCheckbox.type()).toEqual('checkbox');
-  });
-
   test('passes the checked attribute from "toggleAll" to the this.props.toggleHandler', () => {
-    const toggleAllCheckbox = mount(mountedWrapper.instance().toggleAll);
-    toggleAllCheckbox.checked = true;
     mountedWrapper.find('.table-heading__checkbox__input').simulate('click');
-    toggleAllCheckbox.update();
     mountedWrapper.update();
     expect(toggleSpy).toHaveBeenCalled();
   });

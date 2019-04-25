@@ -16,6 +16,7 @@ A component that renders a textarea that automatically resizes depending on its 
 | setValue            | Boolean       | `false`   | No       | If false the component will handle input changes and assign the value to its own state |
 | className           | String        | ''        | No       | Sets the component className                                                           |
 | minRows             | Number        | 1         | No       | Sets the minimum amount of rows for the textArea                                       |
+| maxRows             | Number        | 1         | No       | Sets the maximum amount of rows for the textArea                                       |
 
 ```
 <ExpandingTextArea

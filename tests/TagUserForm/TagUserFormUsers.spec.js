@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { UserSearch } from '../../lib';
+import { UserSearchDropdown } from '../../lib';
 import TagUserFormUsers from '../../lib/TagUserForm/Users/TagUserFormUsers';
 import TagUserFormUser from '../../lib/TagUserForm/Users/TagUserFormUser';
 
@@ -30,11 +30,15 @@ describe('Tag User Form Users', () => {
     );
   });
 
-  test('renders a UserSearch (with correct props)', () => {
-    expect(wrapper.find(UserSearch).prop('users')).toEqual(users);
-    expect(wrapper.find(UserSearch).prop('displayEmail')).toEqual(true);
-    expect(wrapper.find(UserSearch).prop('dropdownAutoPosition')).toEqual(true);
-    expect(wrapper.find(UserSearch).prop('addUser')).toEqual(addUserSpy);
+  test('renders a UserSearchDropdown (with correct props)', () => {
+    expect(wrapper.find(UserSearchDropdown).prop('users')).toEqual(users);
+    expect(wrapper.find(UserSearchDropdown).prop('displayEmail')).toEqual(true);
+    expect(
+      wrapper.find(UserSearchDropdown).prop('dropdownAutoPosition')
+    ).toEqual(true);
+    expect(wrapper.find(UserSearchDropdown).prop('addUser')).toEqual(
+      addUserSpy
+    );
   });
 
   test('renders the correct amount of TagUserFormUser', () => {
