@@ -1,5 +1,5 @@
 # TagUserForm
-A component that renders an ExpandingTextArea and an UserSearch allowing you to 'tag' users with a custom message
+A component that renders an ExpandingTextArea and an UserSearchDropdown allowing you to 'tag' users with a custom message
 
 ## Usage
 

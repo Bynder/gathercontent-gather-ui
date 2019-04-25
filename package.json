@@ -109,7 +109,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.26.1",
-    "enzyme": "^3.4.2",
+    "enzyme": "^3.5.0",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",

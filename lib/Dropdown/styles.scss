@@ -289,8 +289,10 @@ $dropdown-status-circle-width-height: 15px !default;
   .icon {
     margin-left: auto;
   }
-
-  .is-active & .icon {
-    transform: rotateX(180deg);
+  &.dropdown__trigger-wrapper--top {
+    .is-active & .icon {
+      transform: rotateX(180deg);
+    }
   }
+
 }

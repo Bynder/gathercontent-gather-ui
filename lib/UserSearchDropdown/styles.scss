@@ -1,0 +1,7 @@
+.user-search__dropdown {
+  padding: $layout-spacing-base/2;
+  .dropdown__content--fix-right.is-active {
+    min-width: 300px;
+    padding: $layout-spacing-base/2 0 0 0;
+  }
+}
