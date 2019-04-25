@@ -11,6 +11,7 @@ This uses [React Storybook](https://github.com/storybooks/react-storybook) to sh
 1. Download the repository and run `yarn install`
 2. Make changes to the components living on the `/lib` folder
 3. Preview changes by running the live style guide, using `yarn storybook` and pointing your browser to `http://localhost:6006/`
+4. Watch for file changes and rebuild with `yarn build:watch` (useful when you link your local version of `gather-ui` in the app)
 
 ## Running the test suite
 

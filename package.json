@@ -39,8 +39,9 @@
   ],
   "scripts": {
     "copy-styles": "echo Copying Sass settings... && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
-    "build": "babel lib/ --out-dir dist/lib && yarn run copy-styles",
-    "prepublish": "yarn run build",
+    "build": "babel lib/ --out-dir dist/lib",
+    "build:with:styles": "yarn build && yarn run copy-styles",
+    "prepublish": "yarn run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest tests/**/** --notify || exit 0",
@@ -51,7 +52,9 @@
     "format:js": "prettier --write \"{lib,tests}/**/*.js\"",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js'",
-    "lint:check": "eslint --print-config . | eslint-config-prettier-check"
+    "lint:check": "eslint --print-config . | eslint-config-prettier-check",
+    "copy:styles:watch": "nodemon --exec \"yarn copy-styles\" --watch lib --watch styles -e scss",
+    "build:watch": "concurrently \"yarn copy:styles:watch\" \"yarn build --watch\""
   },
   "husky": {
     "hooks": {
@@ -107,6 +110,7 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "concurrently": "^4.1.0",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.26.1",
     "enzyme": "^3.5.0",
@@ -123,6 +127,7 @@
     "less": "^2.7.2",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.3.0",
+    "nodemon": "^1.18.11",
     "pixrem": "^3.0.2",
     "postcss-cli-simple": "^1.0.3",
     "postcss-load-config": "^1.1.0",
