@@ -28,9 +28,8 @@ describe('Dropdown Trigger', () => {
 
   test('rendering a Button component as the trigger', () => {
     wrapper.setProps({ useButton: true });
-    const { types, onClick } = wrapper.find(Button).props();
+    const { onClick } = wrapper.find(Button).props();
     onClick();
-    expect(types).toEqual(['primary']);
     expect(toggleShowContentMock).toHaveBeenCalledTimes(1);
   });
 
