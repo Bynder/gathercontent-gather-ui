@@ -15,7 +15,7 @@ $pricing-feature-item-height: 50px;
   background: $neutral-lightest;
   padding: 10px;
   border-radius: 4px;
-  margin: 0 auto;
+  margin: 0 auto $layout-spacing-base;
   position: relative;
   border: 1px solid $color-border-base;
   text-align: left;
@@ -39,7 +39,7 @@ $pricing-feature-item-height: 50px;
   .pricing__wrapper {
     padding: $layout-spacing-base*2 $layout-spacing-base*1.5;
     margin-top: $pricing-vertical-spacing;
-    margin-bottom: $layout-spacing-base*4;
+    margin-bottom: $layout-spacing-base*6;
 
     .pricing__small-print {
       position: absolute;
