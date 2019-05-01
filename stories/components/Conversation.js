@@ -264,6 +264,8 @@ storiesOf('Components', module)
                 userCanComment
                 focusOnMount
                 showComments={boundaryIsActive}
+                resolved
+                handleUndoResolve={() => {}}
               />
             )}
           </BoundaryClickWatcher>
