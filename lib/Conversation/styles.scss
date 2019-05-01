@@ -65,7 +65,7 @@ $conversation-meta-text-color: $neutral-base !default;
 
   .button {
     position: relative;
-    margin-left: $layout-spacing-base;
+    margin-left: $layout-spacing-base*.75;
 
     &:before {
       content: "";
