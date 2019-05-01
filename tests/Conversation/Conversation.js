@@ -197,6 +197,6 @@ describe('Conversation', () => {
       .find('.conversation__resolve')
       .find(Button)
       .simulate('click');
-    expect(spy).toHaveBeenCalledOnce();
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
