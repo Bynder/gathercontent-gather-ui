@@ -20,7 +20,7 @@
 
 .confirmation-dropdown__cancel {
   color: $neutral-base;
-
+  background: none;
   &:hover {
     color: $neutral-dark;
   }
@@ -28,6 +28,7 @@
 
 .confirmation-dropdown__confirm-trigger {
   position: relative;
+  background: none;
   z-index: 1;
   &:disabled {
     background: none;
