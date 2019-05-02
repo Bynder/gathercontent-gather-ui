@@ -186,4 +186,17 @@ describe('Conversation', () => {
     expect(wrapper.find('.conversation__latest-reply')).toHaveLength(0);
     expect(wrapper.find(CommentList)).toHaveLength(1);
   });
+
+  test('un-resolving a resolved conversation', () => {
+    wrapper.setProps({ resolved: true });
+    expect(wrapper.find('.conversation__resolve').find(Button)).toHaveLength(0);
+
+    const spy = jest.fn();
+    wrapper.setProps({ handleUndoResolve: spy });
+    wrapper
+      .find('.conversation__resolve')
+      .find(Button)
+      .simulate('click');
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
 });
