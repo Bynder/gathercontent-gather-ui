@@ -263,7 +263,7 @@ $btn-border-radius: 3px !default;
 .button--outline {
   border: 1px solid $color-border-base;
   outline: none;
-
+  background: none;
   &:focus {
     background: $neutral-lightest;
     border-color: $neutral-base;
