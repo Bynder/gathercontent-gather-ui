@@ -22,6 +22,12 @@
   }
 }
 
+.hide-large {
+  @include respond-to-max($screen-lg) {
+    display: none !important;
+  }
+}
+
 .hide-off-page {
   position: absolute;
   left: -999em;
