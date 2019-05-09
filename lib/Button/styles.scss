@@ -82,7 +82,8 @@ $btn-border-radius: 3px !default;
 
 .button--link,
 .button--link-default,
-.button--link-danger {
+.button--link-danger,
+.button--link-white {
   background: transparent;
 
   &:focus {
@@ -110,6 +111,14 @@ $btn-border-radius: 3px !default;
 
   &:hover {
     color: $color-text-danger;
+    text-decoration: underline;
+  }
+}
+
+.button--link-white {
+  color: white;
+  &:hover {
+    color: white;
     text-decoration: underline;
   }
 }
