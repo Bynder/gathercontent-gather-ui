@@ -53,7 +53,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   .avatar__name,
   .avatar__email {
     display: block;
-    color: $neutral-darkest;
+    color: $neutral-dark;
   }
 
   .avatar__name + .avatar__email {
@@ -109,7 +109,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   justify-content: center;
   text-transform: uppercase;
   font-size: $typo-size-small;
-  color: $neutral-darkest;
+  color: $neutral-dark;
   .avatar--highlighted & {
     color: white;
   }
