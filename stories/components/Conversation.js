@@ -85,6 +85,7 @@ const mockActions = {
   removeComment: action('removeComment'),
   addComment: action('addComment'),
   editComment: action('editComment'),
+  onSubscribeChange: action('onSubscriptionChange'),
 };
 
 const mockLongComments = [{
@@ -115,6 +116,7 @@ storiesOf('Components', module)
             addComment={mockActions.addComment}
             showComments
             userCanComment
+            onSubscribeChange={mockActions.onSubscribeChange}
           />
         </StoryItem>
 
@@ -125,8 +127,6 @@ storiesOf('Components', module)
           <Conversation
             id="1234567"
             comments={[mockConversation.comments[0]]}
-            resolveConversation={mockActions.resolveConversation}
-            unresolveConversation={mockActions.unresolveConversation}
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
@@ -134,6 +134,7 @@ storiesOf('Components', module)
             users={mockUsers}
             userCanComment
             focusOnMount={false}
+            onSubscribeChange={mockActions.onSubscribeChange}
           />
         </StoryItem>
 
@@ -144,8 +145,6 @@ storiesOf('Components', module)
           <Conversation
             id="1234567"
             comments={mockConversation.comments}
-            resolveConversation={mockActions.resolveConversation}
-            unresolveConversation={mockActions.unresolveConversation}
             removeComment={mockActions.removeComment}
             addComment={mockActions.addComment}
             editComment={mockActions.editComment}
@@ -172,6 +171,7 @@ storiesOf('Components', module)
             users={mockUsers}
             userCanComment
             showComments={false}
+            onSubscribeChange={mockActions.onSubscribeChange}
           />
         </StoryItem>
 
@@ -195,6 +195,8 @@ storiesOf('Components', module)
                 focusOnMount
                 showComments={boundaryIsActive}
                 userCanResolve
+                onSubscribeChange={mockActions.onSubscribeChange}
+                isSubscribed
               />
             )}
           </BoundaryClickWatcher>
@@ -218,6 +220,7 @@ storiesOf('Components', module)
             focusOnMount={false}
             resolved={false}
             userCanResolve={false}
+            onSubscribeChange={mockActions.onSubscribeChange}
           />
         </StoryItem>
 
@@ -240,6 +243,7 @@ storiesOf('Components', module)
                 userCanComment={false}
                 focusOnMount
                 showComments={boundaryIsActive}
+                onSubscribeChange={mockActions.onSubscribeChange}
               />
             )}
           </BoundaryClickWatcher>
@@ -266,6 +270,7 @@ storiesOf('Components', module)
                 showComments={boundaryIsActive}
                 resolved
                 handleUndoResolve={() => {}}
+                onSubscribeChange={mockActions.onSubscribeChange}
               />
             )}
           </BoundaryClickWatcher>
