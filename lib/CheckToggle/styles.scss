@@ -15,7 +15,8 @@ $borderColour: #F8FBFC;
 }
 
 .toggle-wrapper {
-  display: block;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   line-height: 0;
 }
@@ -32,9 +33,6 @@ $borderColour: #F8FBFC;
 
 .toggle-wrapper__label {
   font-size: 14px;
-  line-height: 20px;
-  margin-top: 9px;
-  vertical-align: top;
 
   &:first-of-type { margin-right: 10px; }
   &:last-of-type { margin-left: 10px; }

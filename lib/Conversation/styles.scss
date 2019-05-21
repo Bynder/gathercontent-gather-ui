@@ -42,8 +42,16 @@ $conversation-meta-text-color: $neutral-base !default;
   padding: $conversation-padding;
 }
 
+.conversation__header {
+  display: none; 
+
+  .toggle-wrapper {
+    padding: $layout-spacing-base/2;
+    margin-right: auto;
+  }
+}
+
 .conversation__resolve {
-  display: none;
   text-align: right;
   font-size: $typo-size-slight;
 
@@ -237,14 +245,17 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $layout-spacing-base*3;
 }
 
-.is-active .conversation__resolve {
+.is-active .conversation__header {
   border-bottom: $conversation-border-width solid $conversation-border-color;
 }
 
 .is-active .conversation__foot,
-.is-active .conversation__resolve,
 .is-active .conversation__comment {
   display: block;
+}
+
+.is-active .conversation__header {
+  display: flex;
 }
 
 .is-active > .conversation__comment-list .conversation__comment {
