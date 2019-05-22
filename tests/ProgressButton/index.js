@@ -32,6 +32,14 @@ describe('ProgressButton', () => {
     expect(wrapper.find('.progress-button__icon')).toHaveLength(1);
   });
 
+  test('sets the showSpinner state back to false if autoSpinner is true', async () => {
+    const clickHandlerSpy = jest.fn();
+    wrapper.setProps({ clickHandler: clickHandlerSpy, autoSpinner: true });
+    await wrapper.instance().clickHandler();
+    wrapper.update();
+    expect(wrapper.state().showSpinner).toBe(false);
+  });
+
   test('sets a disabled state', () => {
     wrapper.setProps({ disabled: true });
     expect(wrapper.find(Button).prop('disabled')).toEqual(true);

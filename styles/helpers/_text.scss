@@ -15,3 +15,29 @@
     text-decoration: underline;
   }
 }
+
+.danger-text {
+  color: $primary-red-darker;
+}
+
+.typo-size-xlarge {
+  font-size: $typo-size-xlarge;
+}
+.typo-size-large {
+  font-size: $typo-size-large;
+}
+.typo-size-lead {
+  font-size: $typo-size-lead;
+}
+.typo-size-base {
+  font-size: $typo-size-base;
+}
+.typo-size-slight {
+  font-size: $typo-size-slight;
+}
+.typo-size-small {
+  font-size: $typo-size-small;
+}
+.typo-size-micro {
+  font-size: $typo-size-micro;
+}
