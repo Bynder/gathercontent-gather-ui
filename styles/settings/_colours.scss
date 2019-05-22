@@ -1,21 +1,20 @@
 /* ==========================================================================
    Neutral
    ========================================================================== */
-$neutral-dark: rgb(75, 87, 97);
-$neutral-darkest: rgb(56, 64, 71);
-$neutral-base: rgb(132, 146, 166);
-$neutral-light: rgb(230, 234, 237);
-$neutral-lightest: rgb(247, 249, 250);
+$neutral-dark: rgb(41, 51, 61);
+$neutral-base: rgb(133, 153, 173);
+$neutral-light: rgb(224, 229, 234);
+$neutral-lightest: rgb(249, 250, 251);
 
 /* ==========================================================================
    Primary
    ========================================================================== */
-$primary-blue: rgb(61, 138, 235);
-$primary-red: rgb(252, 92, 84);
-$primary-green: rgb(95, 207, 128);
-$primary-yellow: rgb(249, 223, 110);
-$primary-purple: rgb(150, 93, 232);
-$primary-brown: rgb(147, 114, 79);
+$primary-blue: rgb(0, 110, 255);
+$primary-red: rgb(235, 85, 71);
+$primary-green: rgb(51, 204, 102);
+$primary-yellow: rgb(245, 214, 61);
+$primary-purple: rgb(139, 71, 235);
+$primary-brown: rgb(138, 108, 66);
 
 /* ==========================================================================
    Tints
@@ -24,7 +23,7 @@ $neutral-base-lighter: rgb(247, 250, 253);
 $neutral-base-lightest: rgb(253, 253, 253);
 $primary-blue-darkest: rgb(38, 46, 51);
 $primary-yellow-lighter: rgba(249, 223, 110, 0.7);
-$primary-blue-lighter: rgb(79, 158, 255);
+$primary-blue-lighter: rgb(26, 125, 255);
 $primary-blue-darker: rgb(54, 124, 209);
 $primary-red-lighter: rgb(255, 117, 110);
 $primary-red-darker: rgb(227, 82, 75);

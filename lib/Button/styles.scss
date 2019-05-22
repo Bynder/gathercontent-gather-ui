@@ -273,6 +273,7 @@ $btn-border-radius: 3px !default;
   border: 1px solid $color-border-base;
   outline: none;
   background: none;
+
   &:focus {
     background: $neutral-lightest;
     border-color: $neutral-base;
@@ -280,7 +281,7 @@ $btn-border-radius: 3px !default;
 
   &:hover, &.is-active {
     background: none;
-    border-color:  $primary-blue;
+    border-color: $primary-blue;
     color: $primary-blue;
 
     path {

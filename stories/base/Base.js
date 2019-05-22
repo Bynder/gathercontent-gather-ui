@@ -10,11 +10,6 @@ const neutralColours = [
     name: '$neutral-dark'
   },
   {
-    rgbValue: 'rgb(56, 64, 71)',
-    hexValue: '#384047',
-    name: '$neutral-darkest'
-  },
-  {
     rgbValue: 'rgb(132, 146, 166)',
     hexValue: '#8492A6',
     name: '$neutral-base'
