@@ -101,7 +101,7 @@ $dropdown-status-circle-width-height: 15px !default;
 
   &:hover,
   &:focus {
-    color: $neutral-darkest;
+    color: $neutral-dark;
     background: $dropdown-hover-background;
     outline: none;
   }
@@ -144,7 +144,7 @@ $dropdown-status-circle-width-height: 15px !default;
 }
 
 .dropdown__action-link {
-  color: $neutral-darkest;
+  color: $neutral-dark;
   text-decoration: none;
 }
 
