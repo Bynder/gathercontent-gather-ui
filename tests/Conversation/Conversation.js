@@ -2,11 +2,13 @@ import { React, shallow } from '../setup';
 import Conversation from '../../lib/Conversation';
 import CommentList from '../../lib/Conversation/CommentList';
 import CommentForm from '../../lib/Conversation/CommentForm';
+import CheckToggle from '../../lib/CheckToggle';
 import Button from '../../lib/Button';
 
 describe('Conversation', () => {
   let wrapper;
   let resolveConversationSpy;
+  let onSubscribeChangeSpy;
   let addCommentSpy;
 
   const props = {
@@ -25,6 +27,7 @@ describe('Conversation', () => {
   beforeEach(() => {
     resolveConversationSpy = jest.fn();
     addCommentSpy = jest.fn();
+    onSubscribeChangeSpy = jest.fn();
     wrapper = shallow(
       <Conversation
         {...props}
@@ -32,6 +35,7 @@ describe('Conversation', () => {
         resolveConversation={resolveConversationSpy}
         addComment={addCommentSpy}
         userCanResolve
+        onSubscribeChange={onSubscribeChangeSpy}
       />
     );
   });
@@ -59,6 +63,17 @@ describe('Conversation', () => {
     ).toEqual(resolveConversation);
     resolveConversation();
     expect(resolveConversationSpy.mock.calls[0][0]).toEqual(props.id);
+  });
+
+  test('calls the onSubscribeChange action', () => {
+    wrapper.find(CheckToggle).prop('clickHandler')();
+    expect(onSubscribeChangeSpy).toHaveBeenCalled();
+  });
+
+  test('should not display subscribe toggle when no handler provided', () => {
+    wrapper.setProps({ onSubscribeChange: null });
+
+    expect(wrapper.find(CheckToggle)).toHaveLength(0);
   });
 
   test('adds a state class of is-active', () => {
