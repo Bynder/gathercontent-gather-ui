@@ -17,12 +17,12 @@ blockquote {
 
 mark {
   background-color: transparent;
-  border-bottom: 2px solid $primary-yellow-lighter;
+  border-bottom: 2px solid $primary-yellow;
 
   &.active,
   &.hover,
   &:hover {
-    background-color: $primary-yellow-lighter;
+    background-color: $primary-yellow;
   }
 }
 
