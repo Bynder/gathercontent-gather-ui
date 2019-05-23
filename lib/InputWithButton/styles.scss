@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 
-.input-with-button--input {
+.input-with-button__input {
   width: 220px;
   height: 30px;
   background: #FFFFFF;
@@ -12,4 +12,9 @@
   font-size: 12px;
   padding: 5px 10px;
   text-overflow: ellipsis;
+}
+
+.input-with-button__input--disabled {
+  pointer-events: none;
+  color: #8599AD;      
 }
