@@ -2,3 +2,14 @@
   display: flex;
   flex-direction: row;
 }
+
+.input-with-button--input {
+  width: 220px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #E6EAED;
+  border-radius: 4px 0px 0px 4px;
+  font-size: 12px;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+}
