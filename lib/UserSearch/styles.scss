@@ -2,10 +2,15 @@
   .dropdown__action-group + .dropdown__action-group {
     border: none;
   }
+
+  .dropdown__action {
+    padding-left: $layout-spacing-base * .75;
+    padding-right: $layout-spacing-base * .75;
+  }
 }
 
 .user-search__search-wrapper {
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base * .5 $layout-spacing-base * .75;
 }
 .user-search__search-input {
   width: 100%;
@@ -24,14 +29,14 @@
   .toggle-wrapper {
     margin-left: auto;
     flex-shrink: 0;
-    padding-right: $layout-spacing-base/4;
+    padding-right: $layout-spacing-base * .75;
   }
 }
 
 .user-search__search-heading,
 .user-search__search-subheading {
   display: block;
-  padding: 0 $layout-spacing-base/2;
+  padding: 0 $layout-spacing-base * .75;
 }
 .user-search__search-heading {
   font-weight: 500;
