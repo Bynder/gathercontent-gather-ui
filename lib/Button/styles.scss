@@ -366,3 +366,11 @@ $btn-border-radius: 3px !default;
 .button--medium {
   font-size: $typo-size-base;
 }
+
+.button--input-appendage {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;  
+}

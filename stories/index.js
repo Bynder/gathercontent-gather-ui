@@ -54,3 +54,4 @@ import Breadcrumb from './components/Breadcrumb';
 import SelectionBar from './components/SelectionBar';
 import FinderNavigation from './components/FinderNavigation';
 import UserSearch from './components/UserSearch';
+import InputWithButton from './components/InputWithButton';
