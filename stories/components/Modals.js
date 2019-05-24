@@ -8,10 +8,10 @@ import FormGroup from 'react-bootstrap/lib/FormGroup';
 import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 import {
   Modal,
-  Button,
+  Button, ButtonGroup,
   ConfirmationModal,
   withModalTrigger,
-  FormModal, StatusIndicator, DueDatePicker
+  FormModal, StatusIndicator, DueDatePicker, Icon
 } from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
 
@@ -388,6 +388,30 @@ storiesOf('Components', module).add('Modals', () => (
             <FormControl />
           </FormGroup>
         </StatefulFormModal>
+      </ModalTrigger>
+    </StoryItem>
+
+    <StoryItem
+      title="Media only modal"
+      description="A modal which is used for displaying larger formats of files such as images."
+    >
+      <ModalTrigger>
+        <Modal.Container collapse mediaOnly size="full-screen">
+          <Modal.Header />
+          <Modal.Body>
+            <img src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922" alt="A lovely pic!" />
+          </Modal.Body>
+          <Modal.Footer>
+            <ButtonGroup>
+              <Button onClick={() => {}} types={['icon-only']}>
+                <Icon name="download" />
+              </Button>
+              <Button onClick={() => {}} types={['icon-only']}>
+                <Icon name="trash" />
+              </Button>
+            </ButtonGroup>
+          </Modal.Footer>
+        </Modal.Container>
       </ModalTrigger>
     </StoryItem>
   </div>

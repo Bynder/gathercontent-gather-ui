@@ -188,3 +188,72 @@ $modal-column-padding: $modal-padding !default;
 	color: rgb(76, 88, 96);
 	border-right: 1px solid rgb(229, 233, 238);
 }
+
+.modal--collapse {
+	.modal-body {
+		padding: 0;
+	}
+}
+
+.modal--media-only {
+	.modal-dialog {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		margin: 0;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.modal-header {
+		position: absolute;
+		right: 0;
+		border: 0;
+		background: $neutral-lightest;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 4px 0 4px;
+
+		.close {
+			position: relative;
+			top: 0;
+			right: 0;
+			transform: none;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				color: $neutral-dark;
+				opacity: 1;
+				outline: 0;
+			}
+		}
+
+		.modal-header-inner {
+			display: none;
+		}
+	}
+
+	.modal-footer {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		background: none;
+		border: 0;
+	}
+
+	.modal-content,
+	.modal-body {
+		background: none;
+	}
+
+	img {
+		display: block;
+	}
+}
