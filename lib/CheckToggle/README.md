@@ -3,26 +3,6 @@ Represents a toggle, can be true or false.
 
 ## Usage
 
-
-    className: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    checked: PropTypes.bool,
-    clickHandler: PropTypes.func,
-    labelLeft: PropTypes.string,
-    labelRight: PropTypes.string,
-    displaySmall: PropTypes.bool,
-    displayChecked: PropTypes.bool,
-    autoToggle: PropTypes.bool
-
-    labelLeft: null,
-    labelRight: null,
-    clickHandler() {},
-    checked: false,
-    className: '',
-    displaySmall: false,
-    displayChecked: false,
-    autoToggle: true
-
 ### Props
 
 | Name                  | Type          | Default       | Required | Description                                         |
