@@ -47,7 +47,10 @@ $conversation-meta-text-color: $neutral-base !default;
 
   .toggle-wrapper {
     padding: $layout-spacing-base/2;
-    margin-right: auto;
+  }
+
+  .conversation__resolve {
+    margin-left: auto;
   }
 }
 
