@@ -10,6 +10,8 @@ $modal-padding: $layout-spacing-base !default;
 $modal-heading-font-size: $typo-size-large !default;
 $modal-column-padding: $modal-padding !default;
 
+$modal-media-close-dimensions: 30px;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -221,8 +223,8 @@ $modal-column-padding: $modal-padding !default;
 			top: 0;
 			right: 0;
 			transform: none;
-			width: 30px;
-			height: 30px;
+			width: $modal-media-close-dimensions;
+			height: $modal-media-close-dimensions;
 			display: flex;
 			align-items: center;
 			justify-content: center;
