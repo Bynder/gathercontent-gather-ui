@@ -23,6 +23,11 @@ $borderColour: #F8FBFC;
   &.space-between {
     justify-content: space-between;
   }
+
+  &.disabled {
+   opacity: 0.5;
+   pointer-events: none; 
+  }
 }
 
 .toggle-wrapper--center {
