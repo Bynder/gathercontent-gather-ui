@@ -19,6 +19,10 @@ $borderColour: #F8FBFC;
   align-items: center;
   overflow: hidden;
   line-height: 0;
+
+  &.space-between {
+    justify-content: space-between;
+  }
 }
 
 .toggle-wrapper--center {
@@ -121,5 +125,4 @@ $borderColour: #F8FBFC;
   .toggle-switch + .toggle-switch__label {
     background-color: $primary-green;
   }
-
 }
