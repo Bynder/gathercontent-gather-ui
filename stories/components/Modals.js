@@ -11,7 +11,7 @@ import {
   Button, ButtonGroup,
   ConfirmationModal,
   withModalTrigger,
-  FormModal, StatusIndicator, DueDatePicker, Icon
+  FormModal, StatusIndicator, DueDatePicker, Icon, ImageLoader
 } from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
 
@@ -399,7 +399,14 @@ storiesOf('Components', module).add('Modals', () => (
         <Modal.Container collapse mediaOnly size="full-screen">
           <Modal.Header />
           <Modal.Body>
-            <img src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922" alt="A lovely pic!" />
+            <ImageLoader
+              src="https://fillmurray.com/g/500/500"
+              alt="A lovely pic!"
+              loadingStyle={{
+                width: 400,
+                height: 400
+              }}
+            />
           </Modal.Body>
           <Modal.Footer>
             <ButtonGroup>
