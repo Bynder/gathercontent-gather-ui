@@ -55,3 +55,4 @@ import SelectionBar from './components/SelectionBar';
 import FinderNavigation from './components/FinderNavigation';
 import UserSearch from './components/UserSearch';
 import ImageLoader from './components/images/ImageLoader';
+import InputWithButton from './components/InputWithButton';
