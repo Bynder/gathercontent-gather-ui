@@ -41,10 +41,4 @@ describe('ImageLoader', () => {
   test('spreads the rest of the props onto the image', () => {
     expect(wrapper.find('img').prop('title')).toBe('hello world');
   });
-
-  test('shows the image', () => {
-    wrapper.find('img').prop('onLoad')();
-    wrapper.update();
-    expect(wrapper.state('showImage')).toBe(true);
-  });
 });
