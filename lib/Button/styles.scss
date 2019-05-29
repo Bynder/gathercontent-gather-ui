@@ -377,3 +377,7 @@ $btn-border-radius: 3px !default;
   white-space: nowrap;
   background-color: #006FFF;
 }
+
+.button--padding-small {
+  padding: $layout-spacing-base/3 $layout-spacing-base/2;
+}
