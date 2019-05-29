@@ -107,6 +107,13 @@ $form-checkbox-label-size: $typo-size-lead !default;
   padding: 0;
   background: transparent;
   border: none;
-  font-size: inherit;
-  
+  font-size: inherit;  
+}
+
+.form__input--full-width {
+  width: 100%;
+}
+
+.form__input--padding-small {
+  padding: $layout-spacing-base/4;
 }
