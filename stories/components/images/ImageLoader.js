@@ -12,10 +12,10 @@ storiesOf('Components', module).add('ImageLoader', () => (
     >
       <Row>
         <Col xs={6}>
-          <ImageLoader src="https://fillmurray.com/g/400/400" alt="Fill Murray" preLoadStyles={{ minHeight: '400px' }} />
+          <ImageLoader src="https://fillmurray.com/g/400/400" alt="Fill Murray" preLoadedStyles={{ minHeight: '400px' }} />
         </Col>
         <Col xs={6}>
-          <ImageLoader src="" alt="a failed image" preLoadStyles={{ minHeight: '400px' }} />
+          <ImageLoader src="" alt="a failed image" preLoadedStyles={{ minHeight: '400px' }} />
         </Col>
       </Row>
     </StoryItem>
