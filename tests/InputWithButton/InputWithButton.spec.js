@@ -1,0 +1,35 @@
+import { React, shallow } from '../setup';
+import { InputWithButton, Button } from '../../lib';
+
+describe('InputWithButton', () => {
+  let wrapper;
+  let onClickSpy = jest.fn();
+  let props;
+
+  beforeEach(() => {
+    onClickSpy = jest.fn();
+
+    props = {
+      value: 'A value',
+      buttonText: 'Button Text',
+      onClick: onClickSpy,
+      id: '123'
+    };
+
+    wrapper = shallow(<InputWithButton {...props} />);
+  });
+
+  test('passes the value prop to the input', () => {
+    expect(wrapper.find('input').prop('value')).toEqual(props.value);
+  });
+
+  test('passes button text prop to button', () => {
+    expect(wrapper.find(Button).prop('children')).toEqual(props.buttonText);
+  });
+
+  test('calls onClick when the button is pressed', () => {
+    wrapper.find(Button).simulate('click');
+
+    expect(onClickSpy).toBeCalled();
+  });
+});
