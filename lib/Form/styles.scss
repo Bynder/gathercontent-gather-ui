@@ -117,3 +117,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form__input--padding-small {
   padding: $layout-spacing-base/4;
 }
+
+.form-group {
+  margin-top: $layout-spacing-base/2;
+}

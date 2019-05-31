@@ -37,3 +37,14 @@ An input component used to compose a form.
 | focusOnMount        | Bool          | false     | No       | Focuses the input when mounted. |
 | value               | String        | ''        | No       | The initial value of the input. |
 | className           | String        | ''        | No       | Adds additional classes to the input. |
+
+# FormGroup
+A wrapper to group form elements.
+
+## Usage
+```
+<FormGroup>
+  <Button types={['padding-small', 'primary']} isSubmit>Save</Button>
+  <Button types={['padding-small', 'clear']} onClick={onCancel}>Cancel</Button>
+</FormGroup>
+```
