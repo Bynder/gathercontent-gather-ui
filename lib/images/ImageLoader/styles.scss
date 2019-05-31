@@ -16,7 +16,7 @@
   overflow: hidden;
 
   img {
-    transition: all $animation-time-micro;
+    transition: opacity $animation-time-micro;
     opacity: 0;
   }
 
