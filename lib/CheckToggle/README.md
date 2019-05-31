@@ -16,7 +16,9 @@ Represents a toggle, can be true or false.
 | displaySmall          | bool          | false         | No       | Whether to use the small version of the toggle      |
 | displayChecked        | bool          | false         | No       | Whether to apply the green styling when checked     |
 | autoToggle            | bool          | true          | No       | True for controlled component, false to use props   |
-| disbaled              | bool          | false         | No       | Disables the toggle                                 |
+| disabled              | bool          | false         | No       | Disables the toggle                                 |
+| labelSizeLarge        | bool          | false         | No       | Displays the label at a large size                  |
+| marginSizeLarge       | bool          | false         | No       | Adds a large margin                                 |
 
 ```
 <CheckToggle 

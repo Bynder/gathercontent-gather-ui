@@ -20,6 +20,10 @@ $borderColour: #F8FBFC;
   overflow: hidden;
   line-height: 0;
 
+  &.margin-large {
+    margin: $layout-spacing-base/2 0;
+  }
+
   &.space-between {
     justify-content: space-between;
   }
@@ -130,4 +134,14 @@ $borderColour: #F8FBFC;
   .toggle-switch + .toggle-switch__label {
     background-color: $primary-green;
   }
+}
+
+.toggle-switch__label.label-size-large {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.toggle-wrapper__label.label-size-large {
+  font-size: 1rem;
+  margin: 0;
 }
