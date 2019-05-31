@@ -111,7 +111,10 @@ $field-data-p-line-height: 1.688rem !default;
   }
 
   .is-disabled & {
-    cursor: not-allowed;
+    cursor: default;
+    mark.conversation-format {
+      cursor: pointer;
+    }
   }
 }
 
