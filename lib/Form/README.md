@@ -12,6 +12,7 @@ Components for creating Forms.
 | onCancel            | Function      | (){}      | No      | A function which is called when the form is canceled.                              |
 | className           | String        | ``        | No       | Additional classes for the form.                                                  |
 | escToClose          | Bool          | false     | No       | Setting this to true will enable the ability to cancel the form with the esc key. |
+| disabled          | Bool          | false     | No       | Disables the form. |
 
 ```
 <Form

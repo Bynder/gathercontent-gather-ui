@@ -121,3 +121,8 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form-group {
   margin-top: $layout-spacing-base/2;
 }
+
+.form--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
