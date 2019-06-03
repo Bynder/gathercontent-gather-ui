@@ -403,10 +403,10 @@ storiesOf('Components', module).add('Modals', () => (
               src="https://fillmurray.com/g/500/500"
               alt="A lovely pic!"
               preLoadedStyles={{
-                width: '500px',
-                height: '500px'
+                width: '300px',
+                height: '300px'
               }}
-              setContainerToImageSize
+              loadTransition
             />
           </Modal.Body>
           <Modal.Footer>
