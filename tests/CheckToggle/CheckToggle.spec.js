@@ -49,11 +49,17 @@ describe('CheckToggle', () => {
     expect(Element.hasClass('is-checked')).toBe(true);
   });
 
-  test('adds a checked modifier', () => {
+  test('adds a disabled modifier', () => {
     const Element = shallow(<CheckToggle {...props} />);
-    expect(Element.hasClass('is-checked')).toBe(false);
-    Element.setProps({ displayChecked: true });
-    Element.setState({ checked: true });
-    expect(Element.hasClass('is-checked')).toBe(true);
+    expect(Element.hasClass('disabled')).toBe(false);
+    Element.setProps({ disabled: true });
+    expect(Element.hasClass('disabled')).toBe(true);
+  });
+
+  test('adds margin large modifier', () => {
+    const Element = shallow(<CheckToggle {...props} />);
+    expect(Element.hasClass('margin-large')).toBe(false);
+    Element.setProps({ marginSizeLarge: true });
+    expect(Element.hasClass('margin-large')).toBe(true);
   });
 });
