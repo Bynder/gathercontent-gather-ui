@@ -48,4 +48,12 @@ describe('CheckToggle', () => {
     Element.setState({ checked: true });
     expect(Element.hasClass('is-checked')).toBe(true);
   });
+
+  test('adds a checked modifier', () => {
+    const Element = shallow(<CheckToggle {...props} />);
+    expect(Element.hasClass('is-checked')).toBe(false);
+    Element.setProps({ displayChecked: true });
+    Element.setState({ checked: true });
+    expect(Element.hasClass('is-checked')).toBe(true);
+  });
 });
