@@ -24,10 +24,6 @@ $borderColour: #F8FBFC;
     margin: $layout-spacing-base/2 0;
   }
 
-  &.space-between {
-    justify-content: space-between;
-  }
-
   &.disabled {
    opacity: 0.5;
    pointer-events: none; 
