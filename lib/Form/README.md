@@ -38,6 +38,8 @@ An input component used to compose a form.
 | focusOnMount        | Bool          | false     | No       | Focuses the input when mounted. |
 | value               | String        | ''        | No       | The initial value of the input. |
 | className           | String        | ''        | No       | Adds additional classes to the input. |
+| fullWidth               | Boolean        | false        | No       | Gives the input 100% width |
+| paddingSmall               | Boolean        | false        | No       | Gives the input small padding |
 
 # FormGroup
 A wrapper to group form elements.
