@@ -19,6 +19,7 @@ Represents a toggle, can be true or false.
 | disabled              | bool          | false         | No       | Disables the toggle                                 |
 | labelSizeLarge        | bool          | false         | No       | Displays the label at a large size                  |
 | marginSizeLarge       | bool          | false         | No       | Adds a large margin                                 |
+| spaceBetween       | bool          | false         | No       | toggle and label spread to fill container (create space between)                                 |
 
 ```
 <CheckToggle 
