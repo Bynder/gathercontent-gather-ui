@@ -19,6 +19,15 @@ $borderColour: #F8FBFC;
   align-items: center;
   overflow: hidden;
   line-height: 0;
+
+  &.margin-large {
+    margin: $layout-spacing-base/2 0;
+  }
+
+  &.disabled {
+   opacity: 0.5;
+   pointer-events: none; 
+  }
 }
 
 .toggle-wrapper--center {
@@ -57,8 +66,8 @@ $borderColour: #F8FBFC;
 /*  New switch */
 .toggle-switch + .toggle-switch__label {
   padding: 2px;
-  width: 53px;
-  height: 33px;
+  width: 34px;
+  height: 22px;
   border: 2px solid $borderColour;
   background-color: $backgroundColour;
   border-radius: 60px;
@@ -74,11 +83,11 @@ $borderColour: #F8FBFC;
 }
 
 .toggle-switch + .toggle-switch__label:after {
-  top: 3px;
+  top: 2px;
   left: 3px;
-  bottom: 4px;
-  width: 23px;
-  height: 23px;
+  bottom: 2px;
+  width: 14px;
+  height: 14px;
   background-color: #fff;
   border-radius: 52px;
   transition: margin 0.2s cubic-bezier(0.4, 0, 1, 1),
@@ -86,7 +95,7 @@ $borderColour: #F8FBFC;
 }
 
 .toggle-switch:checked + .toggle-switch__label:after {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .toggle-switch--inline + label {
@@ -121,5 +130,14 @@ $borderColour: #F8FBFC;
   .toggle-switch + .toggle-switch__label {
     background-color: $primary-green;
   }
+}
 
+.toggle-switch__label.label-size-large {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.toggle-wrapper__label.label-size-large {
+  font-size: 1rem;
+  margin: 0;
 }

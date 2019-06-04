@@ -12,6 +12,7 @@ Components for creating Forms.
 | onCancel            | Function      | (){}      | No      | A function which is called when the form is canceled.                              |
 | className           | String        | ``        | No       | Additional classes for the form.                                                  |
 | escToClose          | Bool          | false     | No       | Setting this to true will enable the ability to cancel the form with the esc key. |
+| disabled          | Bool          | false     | No       | Disables the form. |
 
 ```
 <Form
@@ -37,3 +38,16 @@ An input component used to compose a form.
 | focusOnMount        | Bool          | false     | No       | Focuses the input when mounted. |
 | value               | String        | ''        | No       | The initial value of the input. |
 | className           | String        | ''        | No       | Adds additional classes to the input. |
+| fullWidth               | Boolean        | false        | No       | Gives the input 100% width |
+| paddingSmall               | Boolean        | false        | No       | Gives the input small padding |
+
+# FormGroup
+A wrapper to group form elements.
+
+## Usage
+```
+<FormGroup>
+  <Button types={['padding-small', 'primary']} isSubmit>Save</Button>
+  <Button types={['padding-small', 'clear']} onClick={onCancel}>Cancel</Button>
+</FormGroup>
+```

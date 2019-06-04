@@ -107,6 +107,22 @@ $form-checkbox-label-size: $typo-size-lead !default;
   padding: 0;
   background: transparent;
   border: none;
-  font-size: inherit;
-  
+  font-size: inherit;  
+}
+
+.form__input--full-width {
+  width: 100%;
+}
+
+.form__input--padding-small {
+  padding: $layout-spacing-base/4;
+}
+
+.form-group {
+  margin-top: $layout-spacing-base/2;
+}
+
+.form--disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
