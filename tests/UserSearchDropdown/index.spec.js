@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { UserSearchDropdown, Dropdown, UserSearch } from '../../lib';
+import { UserSearchDropdown, Dropdown, UserSearch, Icon } from '../../lib';
 
 describe('User Search Dropdown', () => {
   let wrapper;
@@ -46,5 +46,11 @@ describe('User Search Dropdown', () => {
     expect(wrapper.find(UserSearch).prop('users')).toEqual(users);
     expect(wrapper.find(UserSearch).prop('addUser')).toEqual(addUserSpy);
     expect(wrapper.find(UserSearch).prop('displayEmail')).toEqual(false);
+  });
+
+  test('uses the addPerson icon by default but uses the at icon if useAtIcon is true', () => {
+    expect(wrapper.find(Icon).prop('name')).toEqual('addPerson');
+    wrapper.setProps({ useAtIcon: true });
+    expect(wrapper.find(Icon).prop('name')).toEqual('at');
   });
 });
