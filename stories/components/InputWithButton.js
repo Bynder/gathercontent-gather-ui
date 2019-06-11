@@ -19,5 +19,15 @@ storiesOf('Components', module).add('InputWithButton', () => (
         />
       </div>
     </StoryItem>
+    <StoryItem title="InputWithButton with button text that changes on click" description="Button text changes to buttonTextAfterClick prop onClick">
+      <div>
+        <InputWithButton 
+          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello" 
+          onClick={value => {}}
+          buttonText="Click Me"             
+          buttonTextAfterClick="I've been clicked!"
+        />
+      </div>
+    </StoryItem>
   </div>
 ));

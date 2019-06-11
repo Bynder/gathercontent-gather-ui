@@ -12,4 +12,5 @@ Displays a string in a input with a button
 | value               | string        | N/A       | Yes      | the string value to display in the input                                      |
 | onClick             | function      | N/A       | Yes      | the function to execute when the button is pressed. The input element is passed (this is useful for copying to clipboard) |
 | buttonText          | string        | N/A       | Yes      | text to display in the button                                                 |
+| buttonTextAfterClick          | string        | null       | No      | text to display in the button after it has been clicked                                                 |
 | disabled            | boolean        | false     | No      | disables the component                                         |
