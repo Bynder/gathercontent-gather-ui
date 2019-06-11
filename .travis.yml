@@ -6,6 +6,7 @@ script:
 - yarn lint
 cache: yarn
 deploy:
+  skip_cleanup: true
   provider: npm
   email: dev@gathercontent.com
   api_key:
