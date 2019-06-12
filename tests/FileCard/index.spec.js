@@ -7,7 +7,7 @@ describe('FileCard', () => {
 
   const props = {
     filename: 'field_notes.txt',
-    label: 'Field notes',
+    caption: 'Field notes',
     previewSrc: 'http://preview/src'
   };
 
@@ -23,8 +23,8 @@ describe('FileCard', () => {
     expect(wrapper.find('.figure__wrapper')).toHaveLength(1);
   });
 
-  test('renders the correct filename and label for a thumbnail', () => {
-    expect(wrapper.find('.figure__caption').contains(props.label)).toEqual(
+  test('renders the correct filename and caption for a thumbnail', () => {
+    expect(wrapper.find('.figure__caption').contains(props.caption)).toEqual(
       true
     );
   });
@@ -59,7 +59,7 @@ describe('FileCard', () => {
   test('rendering a <FileCardPreview /> component', () => {
     wrapper.setProps({ loadingProgress: 10 });
     expect(wrapper.find(FileCardPreview).props()).toEqual({
-      label: props.label,
+      caption: props.caption,
       previewSrc: props.previewSrc,
       progress: 10,
       fileExtension: 'txt',
