@@ -16,7 +16,7 @@ describe('FileCardPreview', () => {
 
   test('renders the file format extension as the title and adds a modifier', () => {
     wrapper.setProps({ previewSrc: '' });
-    expect(wrapper.find('.file-card__title').contains('txt')).toEqual(true);
+    expect(wrapper.find('.figure__title').contains('txt')).toEqual(true);
   });
 
   test('rendering the processing state (uploading & processing)', () => {
@@ -25,11 +25,11 @@ describe('FileCardPreview', () => {
       progress: 10
     });
 
-    expect(wrapper.find('.file-card__progress').text()).toBe('10%');
-    expect(wrapper.find('.file-card__loader-text').text()).toBe('Uploading');
+    expect(wrapper.find('.figure__progress').text()).toBe('10%');
+    expect(wrapper.find('.figure__loader-text').text()).toBe('Uploading');
 
     wrapper.setProps({ progress: 100 });
-    expect(wrapper.find('.file-card__loader-text').text()).toBe('Processing');
+    expect(wrapper.find('.figure__loader-text').text()).toBe('Processing');
   });
 
   test('rendering the loading state', () => {
@@ -43,7 +43,7 @@ describe('FileCardPreview', () => {
       showPreview: true
     });
     expect(
-      wrapper.find('.file-card__thumbnail').props().style.backgroundImage
+      wrapper.find('.figure__thumbnail').props().style.backgroundImage
     ).toEqual(`url(http)`);
   });
 });

@@ -26,8 +26,8 @@
       line-height: $typo-line-height-base * 1.2;
       font-weight: $typo-weight-roman;
     }
-    .file-card--highlighted,
-    .file-card--active {
+    .figure--highlighted,
+    .figure--active {
       &:hover {
         cursor: default;
       }

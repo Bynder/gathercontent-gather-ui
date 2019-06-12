@@ -139,7 +139,7 @@ storiesOf('Components', module).add('FileCard', () => (
             id="id-1"
             tooltipText="removed by Bruce"
             placement="top"
-            className="file-card__tooltip file-card__tooltip--removed"
+            className="figure__tooltip figure__tooltip--removed"
           >
             <FileCard
               filename="sheep_in_iceland.jpg"
@@ -155,7 +155,7 @@ storiesOf('Components', module).add('FileCard', () => (
             id="id-2"
             tooltipText="added by Gill"
             placement="top"
-            className="file-card__tooltip file-card__tooltip--added"
+            className="figure__tooltip figure__tooltip--added"
           >
             <FileCard
               filename="sunset_in_berlin_large_filename.jpg"
@@ -171,7 +171,7 @@ storiesOf('Components', module).add('FileCard', () => (
             id="id-1"
             tooltipText="removed by Bruce"
             placement="top"
-            className="file-card__tooltip file-card__tooltip--removed"
+            className="figure__tooltip figure__tooltip--removed"
           >
             <FileCard
               filename="notes.txt"
@@ -185,7 +185,7 @@ storiesOf('Components', module).add('FileCard', () => (
             id="id-2"
             tooltipText="added by Gill"
             placement="top"
-            className="file-card__tooltip file-card__tooltip--added"
+            className="figure__tooltip figure__tooltip--added"
           >
             <FileCard
               filename="crazyspreadsheet.csv"
