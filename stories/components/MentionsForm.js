@@ -53,7 +53,7 @@ storiesOf('Components', module)
 
         <StoryItem
           title="Mentions Form"
-          description="Form without an author"
+          description="Form without an author and defaultUsers"
         >
           <MentionsForm
             onInputChange={action('onInputChange')}
@@ -62,6 +62,7 @@ storiesOf('Components', module)
             users={mockUsers}
             placeholder="Try typing @ or hit the mention button"
             displayEmail
+            defaultUsers={[mockUser, mockUsers[1]]}
           />
         </StoryItem>
       </div>

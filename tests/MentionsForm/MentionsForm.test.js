@@ -105,6 +105,7 @@ describe('Mentions Form', () => {
     );
 
     expect(input.prop('users')).toEqual([]);
+    expect(input.prop('defaultUsers')).toEqual([]);
   });
 
   test('renders MentionsFormActions (with correct props)', () => {

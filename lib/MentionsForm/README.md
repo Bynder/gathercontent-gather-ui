@@ -22,6 +22,7 @@ A component that renders a form with a text input that allows you to '@' users.
 | submitText          | String        | 'Submit'  | No       | The text to display for the submit button                                              |
 | displayEmail        | Bool          | false     | No       | Determines wether to show the email or username/display when displaying mentionable/@-able users |
 | disableUntilMention | Bool          | false     | No       | Disables the submit button until a mention is added                                    |
+| defaultUsers        | Array         | []        | No       | users that are mentioned by default when the form is rendered                                    |
 
 ```
 <MentionsForm
@@ -43,5 +44,12 @@ A component that renders a form with a text input that allows you to '@' users.
   onCancel={() => {}}
   onRowCountChange={() => {}}
   placeholder="Type @ or click the mention button!"
+  defaultUsers={[{
+    id: 1,
+    display: 'mrman',
+    name: 'Mr Man',
+    email: 'mrman@man.com',
+    url: 'path/to/avatar'
+  }]}
 />
 ```

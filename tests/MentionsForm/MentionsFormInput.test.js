@@ -4,8 +4,10 @@ import MentionFormInput from '../../lib/MentionsForm/MentionsFormInput';
 import { UserSearchDropdown } from '../../lib';
 
 describe('Mentions Form Input', () => {
+  jest.useFakeTimers();
   let wrapper;
   let handleOnFocusSpy;
+  let handleOnChangeSpy;
 
   const users = [
     {
@@ -28,11 +30,12 @@ describe('Mentions Form Input', () => {
 
   beforeEach(() => {
     handleOnFocusSpy = jest.fn();
+    handleOnChangeSpy = jest.fn();
     wrapper = mount(
       <MentionFormInput
         inputValue="waffles"
         placeholder="wafflet"
-        handleOnChange={() => {}}
+        handleOnChange={handleOnChangeSpy}
         handleOnFocus={handleOnFocusSpy}
         focusOnMount={false}
         onRowCountChange={() => {}}
@@ -71,5 +74,16 @@ describe('Mentions Form Input', () => {
     expect(wrapper.find(UserSearchDropdown).prop('addUser')).toEqual(
       wrapper.instance().addMention
     );
+  });
+
+  test('adds default users', () => {
+    wrapper.setProps({ defaultUsers: users, inputValue: '' });
+    wrapper.instance().addDefaultUsers();
+    jest.runAllTimers();
+    expect(handleOnChangeSpy).toHaveBeenCalledTimes(2);
+    expect(handleOnChangeSpy.mock.calls).toEqual([
+      [{ target: { value: '@[saulgoodman] ' } }],
+      [{ target: { value: '@[jessepinkman] ' } }]
+    ]);
   });
 });
