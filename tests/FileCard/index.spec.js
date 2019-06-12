@@ -24,7 +24,9 @@ describe('FileCard', () => {
   });
 
   test('renders the correct filename and label for a thumbnail', () => {
-    expect(wrapper.find('.figure__label').contains(props.label)).toEqual(true);
+    expect(wrapper.find('.figure__caption').contains(props.label)).toEqual(
+      true
+    );
   });
 
   test('renders 1 action from props.children', () => {
