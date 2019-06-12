@@ -37,13 +37,11 @@ describe('FileCardPreview', () => {
     expect(wrapper.find(Icon)).toHaveLength(1);
   });
 
-  test('renders an element with the correct background-image', () => {
+  test('renders an element with the correct src', () => {
     wrapper.setProps({
       previewSrc: 'http',
       showPreview: true
     });
-    expect(
-      wrapper.find('.figure__thumbnail').props().style.backgroundImage
-    ).toEqual(`url(http)`);
+    expect(wrapper.find('.figure__thumbnail').props().src).toEqual(`http`);
   });
 });
