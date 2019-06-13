@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import {Card, FileCard, Icon} from '../../lib';
+import {Card, Figure, Icon} from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 const card = storiesOf('Components', module)
@@ -34,13 +34,13 @@ const card = storiesOf('Components', module)
 
       <StoryItem
         title="Image card"
-        description="A Card with a FileCard inside"
+        description="A Card with a Figure inside"
       >
       <Row>
         <Col xs={2}>
           <Card>
             <Card.Content collapse bordered>
-              <FileCard
+              <Figure
                 previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
                 showPreview
               />
@@ -64,7 +64,7 @@ const card = storiesOf('Components', module)
           <Col xs={2}>
             <Card>
               <Card.Content collapse>
-                <FileCard
+                <Figure
                   previewSrc="http://www.sdpsnet.org/sdps/images/conference/2012/hotel/mod_galleries_53.jpeg"
                   showPreview
                 />

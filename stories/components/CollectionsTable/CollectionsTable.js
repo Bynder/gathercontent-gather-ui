@@ -40,7 +40,7 @@ storiesOf('Components', module).add('Collections Table', () => (
 
   <StoryItem
     title="Collections Table"
-    description="CollectionTable with FileCard content."
+    description="CollectionTable with Figure content."
   >
     <CollectionsTable>
       <CollectionsTable.Row>

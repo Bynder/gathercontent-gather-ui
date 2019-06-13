@@ -1,8 +1,8 @@
 import { React, shallow } from '../setup';
 import { Icon } from '../../lib/index';
-import FileCardPreview from '../../lib/FileCard/FileCardPreview';
+import FigurePreview from '../../lib/Figure/FigurePreview';
 
-describe('FileCardPreview', () => {
+describe('FigurePreview', () => {
   let wrapper;
 
   const props = {
@@ -11,7 +11,7 @@ describe('FileCardPreview', () => {
   };
 
   beforeEach(() => {
-    wrapper = shallow(<FileCardPreview {...props} />);
+    wrapper = shallow(<FigurePreview {...props} />);
   });
 
   test('renders the file format extension as the title and adds a modifier', () => {

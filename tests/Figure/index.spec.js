@@ -1,8 +1,8 @@
 import { React, shallow } from '../setup';
-import FileCard from '../../lib/FileCard';
-import FileCardPreview from '../../lib/FileCard/FileCardPreview';
+import Figure from '../../lib/Figure';
+import FigurePreview from '../../lib/Figure/FigurePreview';
 
-describe('FileCard', () => {
+describe('Figure', () => {
   let wrapper;
 
   const props = {
@@ -13,9 +13,9 @@ describe('FileCard', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <FileCard {...props}>
+      <Figure {...props}>
         <button type="button">Test action</button>
-      </FileCard>
+      </Figure>
     );
   });
 
@@ -56,9 +56,9 @@ describe('FileCard', () => {
     expect(wrapper.hasClass('figure--loading')).toBe(true);
   });
 
-  test('rendering a <FileCardPreview /> component', () => {
+  test('rendering a <FigurePreview /> component', () => {
     wrapper.setProps({ loadingProgress: 10 });
-    expect(wrapper.find(FileCardPreview).props()).toEqual({
+    expect(wrapper.find(FigurePreview).props()).toEqual({
       caption: props.caption,
       previewSrc: props.previewSrc,
       progress: 10,

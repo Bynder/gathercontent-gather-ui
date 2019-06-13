@@ -1,14 +1,14 @@
 import { React, shallow } from '../setup';
-import { FileCardPlaceholder } from '../../lib';
+import { FigurePlaceholder } from '../../lib';
 
-describe('FileCard Placeholder', () => {
+describe('Figure Placeholder', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <FileCardPlaceholder>
+      <FigurePlaceholder>
         <span className="waffles">waffles!</span>
-      </FileCardPlaceholder>
+      </FigurePlaceholder>
     );
   });
 
@@ -17,6 +17,6 @@ describe('FileCard Placeholder', () => {
   });
 
   test('renders the svgs', () => {
-    expect(wrapper.find('.filecard__placeholder__svg')).toHaveLength(3);
+    expect(wrapper.find('.figure__placeholder__svg')).toHaveLength(3);
   });
 });
