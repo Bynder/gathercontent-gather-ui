@@ -63,7 +63,8 @@ describe('Figure', () => {
       previewSrc: props.previewSrc,
       progress: 10,
       fileExtension: 'txt',
-      showPreview: false
+      showPreview: false,
+      altText: ''
     });
   });
 });
