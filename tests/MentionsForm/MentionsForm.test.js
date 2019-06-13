@@ -117,6 +117,14 @@ describe('Mentions Form', () => {
   });
 
   test('updates the input value', () => {
+    expect(wrapper.state('mentionCount')).toEqual(0);
+    wrapper
+      .instance()
+      .updateInputValue({ target: { value: '@waffle @[plop]' } });
+    expect(wrapper.state('mentionCount')).toEqual(2);
+  });
+
+  test('updates the mentionCount', () => {
     wrapper.instance().updateInputValue({ target: { value: 'test 2' } });
     expect(wrapper.state('inputValue')).toEqual('test 2');
     expect(onInputChangeSpy).toHaveBeenCalledWith('test 2');
@@ -157,13 +165,14 @@ describe('Mentions Form', () => {
 
   test('disables the input intil it contains a mention', () => {
     wrapper.setProps({ disableUntilMention: true });
-    wrapper.setState({ inputValue: 'test' });
+    wrapper.setState({ mentionCount: 0 });
     wrapper.instance().forceUpdate();
     wrapper.update();
     expect(wrapper.find(MentionsFormActions).prop('disableSubmit')).toEqual(
       true
     );
     wrapper.setState({ inputValue: 'test @waffles' });
+    wrapper.setState({ mentionCount: 1 });
     wrapper.instance().forceUpdate();
     wrapper.update();
     expect(wrapper.find(MentionsFormActions).prop('disableSubmit')).toEqual(
