@@ -7,7 +7,13 @@ describe('Mention Form Actions', () => {
   let onSubmitSpy;
   let onCancelSpy;
 
-  const props = {};
+  const props = {
+    disableSubmit: false,
+    cancelText: 'Cancel',
+    submitText: 'Submit',
+    mentionCount: 0,
+    displayMentionCount: false
+  };
 
   beforeEach(() => {
     onSubmitSpy = jest.fn();
@@ -109,5 +115,31 @@ describe('Mention Form Actions', () => {
         .last()
         .prop('types')
     ).toEqual(['collapse', 'link-default', 'size-sm']);
+  });
+
+  test('displays the mention count', () => {
+    expect(
+      wrapper
+        .find(Button)
+        .last()
+        .render()
+        .text()
+    ).toEqual('Submit');
+    wrapper.setProps({ displayMentionCount: true, mentionCount: 4 });
+    expect(
+      wrapper
+        .find(Button)
+        .last()
+        .render()
+        .text()
+    ).toEqual('Submit & notify 4 people');
+    wrapper.setProps({ mentionCount: 1 });
+    expect(
+      wrapper
+        .find(Button)
+        .last()
+        .render()
+        .text()
+    ).toEqual('Submit & notify 1 person');
   });
 });
