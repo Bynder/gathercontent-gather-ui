@@ -48,4 +48,4 @@ require('gather-ui/dist/styles.css');
 This particular version of the Styleguide depends on the Bootstrap and FontAwesome libraries. These do not ship with the components' CSS and should be included separately wherever they are consumed.
 
 ## Deploying the Library
-The library will automatically deploy when a new tag is pushed to the master branch. You can create a tag using the web interface, using the command line with [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging), or running `npm version  <major | minor | patch>` will also create a tag for you. Just ensure when pushing you use `git push --tags`.
+The library will automatically deploy when a new tag is pushed to the master branch. The easiest way to do this is to run `npm version  <major | minor | patch>` followed by `git push origin --tags`.
