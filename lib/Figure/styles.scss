@@ -33,15 +33,7 @@ $figure-border-radius: 3px !default;
   position: relative;
   margin: 0 0 $layout-spacing-base/2;
 
-  &:hover,
-  .figure__action:focus {
-    @for $i from 1 through 4 {
-      .figure__action:nth-child(#{$i}) {
-        transform: translateY(0);
-        transition-delay: #{$i/20}s;
-      }
-    }
-  }
+  
   &--disabled {
     background: rgba(255, 255, 255, .75);
 
@@ -49,6 +41,16 @@ $figure-border-radius: 3px !default;
       transition: filter $animation-time-micro/2;
       filter: blur(3px);
       background: none;
+    }
+  }
+}
+
+.figure:hover,
+.figure__actions.is-active {
+  @for $i from 1 through 4 {
+    .figure__action:nth-child(#{$i}) {
+      transform: translateY(0);
+      transition-delay: #{$i/20}s;
     }
   }
 }
@@ -145,6 +147,9 @@ $figure-border-radius: 3px !default;
   display: flex;
   justify-content: flex-start;
   padding: $figure-actions-padding;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
 
   > .figure__action {
     @for $i from 1 through 4 {
@@ -154,6 +159,14 @@ $figure-border-radius: 3px !default;
       }
     }
   }
+
+  &.is-active .icon path {
+    fill: white;
+  }
+}
+
+.figure__actions--absolute {
+  position: absolute;
 }
 
 .figure__action {
@@ -168,6 +181,7 @@ $figure-border-radius: 3px !default;
   background: $figure-action-background;
   border-radius: $figure-border-radius;
   transition: .2s all ease-in-out;
+  pointer-events: auto;
 
   path {
     fill: white;
