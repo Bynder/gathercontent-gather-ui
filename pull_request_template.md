@@ -8,7 +8,7 @@ _Links that relate to the PR (Trello, Figma etc.)_
 _A short GIF of the changes in action._
 ### 🚪 Start Points
 _Where is a good place to start the review? If there are multiple changes it may be worth listing multiple files._
-### 🚪 Related PRs (optional)
+### 👫 Related PRs (optional)
 _Any PRs that relate to the changes._
 
 ### ✅ Checklist
