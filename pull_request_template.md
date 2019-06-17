@@ -1,10 +1,9 @@
-## [PR Title](link_to_trello_card)
 ### 👀 Overview
 _A short description of what the changes in the PR do._
 ### 💬 Description
 _More detail on what the PR does with as much context as possible. All the changes in your PR should be described here._
-### 🎨 Designs (optional)
-_Any design files that relate to the changes._
+### 🔗 Links
+_Links that relate to the PR (Trello, Figma etc.)_
 ### 📹 GIF (optional)
 _A short GIF of the changes in action._
 ### 🚪 Start Points
