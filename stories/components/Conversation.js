@@ -135,6 +135,7 @@ storiesOf('Components', module)
             userCanComment
             focusOnMount={false}
             onSubscribeChange={mockActions.onSubscribeChange}
+            cornerIcon='template'
           />
         </StoryItem>
 

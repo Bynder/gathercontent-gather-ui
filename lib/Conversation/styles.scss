@@ -248,10 +248,6 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $layout-spacing-base*3;
 }
 
-.is-active .conversation__header {
-  border-bottom: $conversation-border-width solid $conversation-border-color;
-}
-
 .is-active .conversation__foot,
 .is-active .conversation__comment {
   display: block;
@@ -259,6 +255,19 @@ $conversation-meta-text-color: $neutral-base !default;
 
 .is-active .conversation__header {
   display: flex;
+  border-bottom: $conversation-border-width solid $conversation-border-color;
+
+  .conversation__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-right: $conversation-border-width solid $conversation-border-color;
+
+    path {
+      fill: $neutral-base;
+    }
+  }
 }
 
 .is-active > .conversation__comment-list .conversation__comment {
