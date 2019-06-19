@@ -214,4 +214,12 @@ describe('Conversation', () => {
       .simulate('click');
     expect(spy).toHaveBeenCalledTimes(1);
   });
+
+  it('renders a corner icon when passed in from props', () => {
+    wrapper.setProps({ cornerIcon: 'template' });
+
+    const iconDiv = wrapper.find('.conversation__icon');
+
+    expect(iconDiv.exists()).toBe(true);
+  });
 });
