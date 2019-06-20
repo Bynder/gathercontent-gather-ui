@@ -13,6 +13,7 @@ Renders the UserSearch component in a handy Dropdown
 | dropdownAutoPosition  | bool                 | n/a           | Yes      | Dictates whether the dropdown should use auto positioning.    |
 | searchHeading         | string               | 'Search...'   | No       | Heading text to display.                            |
 | tooltipText           | string               | ''            | No       | Tooltip text for the DropdownTrigger.               |
+| useAtIcon             | bool                 | false         | No       | Use the `at` icon instead of `addPerson`              |
 
 
 ```

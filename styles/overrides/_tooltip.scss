@@ -14,20 +14,20 @@
 }
 
 /* ==========================================================================
-   <FileCard />
+   <Figure />
    ========================================================================== */
-.file-card > span {
+.figure > span {
   flex-grow: 1;
 }
 
-.file-card__tooltip.tooltip {
+.figure__tooltip.tooltip {
   opacity: 1;
 }
 
-.file-card__tooltip--added .tooltip-inner {
+.figure__tooltip--added .tooltip-inner {
   background: $primary-green;
 }
 
-.file-card__tooltip--removed .tooltip-inner {
+.figure__tooltip--removed .tooltip-inner {
   background: $primary-red;
 }

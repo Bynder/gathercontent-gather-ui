@@ -7,7 +7,7 @@ import {
   ParticipantInfo,
   StatusIndicator,
   CollectionsTable,
-  FileCard,
+  Figure,
   Avatar,
 } from '../../../lib';
 
@@ -16,7 +16,7 @@ const OtherBodyRowExample = () => (
     <CollectionsTable.Cell allowOverflow>
       <div className="text-overflow-ellipsis">
         <CollectionsTable.CellContent>
-          <FileCard
+          <Figure
             previewSrc="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922"
             showPreview
           />
