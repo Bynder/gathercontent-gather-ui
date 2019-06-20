@@ -130,4 +130,28 @@ describe('Dropdown', () => {
       }
     });
   });
+
+  test('passing a function as a child shares the ability to set the showing state', () => {
+    const newWrapper = shallow(
+      <Dropdown id="render-prop-test">
+        {({ setShowContent }) => (
+          <Dropdown.Content>
+            <input onChange={() => setShowContent(true)} />
+            <input onChange={() => setShowContent(false)} />
+          </Dropdown.Content>
+        )}
+      </Dropdown>
+    );
+
+    newWrapper
+      .find('input')
+      .first()
+      .simulate('change');
+    expect(newWrapper.find('.is-active')).toHaveLength(1);
+    newWrapper
+      .find('input')
+      .last()
+      .simulate('change');
+    expect(newWrapper.find('.is-active')).toHaveLength(0);
+  });
 });
