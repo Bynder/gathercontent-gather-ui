@@ -8,6 +8,22 @@ $form-checkbox-label-size: $typo-size-lead !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
+.form {
+  display: flex;
+  flex-direction: column;
+
+  input,
+  textarea {
+    width: 100%;
+    margin: 0 0 $layout-spacing-base/2;
+  }
+}
+
+.form__footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .form__choice-element-wrapper {
   margin: $form-checkbox-label-size/2;
   display: flex;

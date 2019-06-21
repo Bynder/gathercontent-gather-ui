@@ -8,9 +8,9 @@ A dropdown component with compounded components to render triggers and the conte
 | Name                | Type          | Default   | Required | Description                                                                   |
 | ------------------- |-------------- | --------- | -------- |------------------------------------------------------------------------------ |
 | id                  | String        | N/A       | Yes      | ID of the dropdown.                                                                  |
-| children            | Node          | N/A       | Yes      | A child node.                                                           |
+| children            | Node || Func  | N/A       | Yes      | A child node or function. The function shares setShowContent.                                                           |
 | onToggle            | Func          | () => {}  | No       | A function which is called each time the visibility is toggled.               |
-| block                | Bool          | false     | No       | Makes the dropdown container block like.                                                                  |
+| block                | Bool         | false     | No       | Makes the dropdown container block like.                                                                  |
 
 ### Context (GATHER_UI_DROPDOWN)
 
