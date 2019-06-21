@@ -42,6 +42,8 @@ describe('FigurePreview', () => {
       previewSrc: 'http',
       showPreview: true
     });
-    expect(wrapper.find('.figure__thumbnail').props().src).toEqual(`http`);
+    expect(wrapper.find('.figure__thumbnail').props().style).toEqual({
+      backgroundImage: `url("http")`
+    });
   });
 });
