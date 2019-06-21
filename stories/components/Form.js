@@ -7,8 +7,35 @@ import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
 import Checkbox from '../../lib/Form/Checkbox';
 import CheckboxGroup from '../../lib/Form/Checkbox/Group';
 import StoryItem from '../styleguide/StoryItem';
+import Form from "../../lib/Form";
+import Button from "../../lib/Button";
+import FormInput from "../../lib/Form/FormInput";
+import FormFooter from "../../lib/Form/FormFooter";
 
 storiesOf('Components', module)
+  .add('Form', () => (
+    <StoryItem title="Form" description="Form with a textarea.">
+      <Form onSubmit={() => {}} className="form">
+        <FormInput type="textarea" placeholder="Enter text here!" />
+
+        <FormFooter>
+          <Button
+            types={['link', 'size-sm']}
+            onClick={() => {}}
+          >
+            Cancel
+          </Button>
+          <Button
+            types={['primary', 'size-sm']}
+            isSubmit
+          >
+            Submit
+          </Button>
+        </FormFooter>
+      </Form>
+    </StoryItem>
+  ))
+
   .add('Form: Checkboxes', () => (
     <div>
       <StoryItem title="Checkboxes" description="Checkbox input choices">

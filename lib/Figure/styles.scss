@@ -48,9 +48,24 @@ $figure-border-radius: 3px !default;
 .figure:hover,
 .figure__actions.is-active {
   @for $i from 1 through 4 {
-    .figure__action:nth-child(#{$i}) {
+    .figure__action:nth-child(#{$i}),
+    .figure__action-wrapper:nth-child(#{$i}) {
       transform: translateY(0);
       transition-delay: #{$i/20}s;
+    }
+  }
+}
+
+.figure__actions {
+  > .figure__action,
+  > .figure__action-wrapper {
+    transition: .2s all ease-in-out;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transform: translateY(-3rem);
+        transition-delay: #{$i/20}s;
+      }
     }
   }
 }
@@ -151,13 +166,8 @@ $figure-border-radius: 3px !default;
   overflow: hidden;
   pointer-events: none;
 
-  > .figure__action {
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        transform: translateY(-3rem);
-        transition-delay: #{$i/20}s;
-      }
-    }
+  * {
+    pointer-events: auto;
   }
 
   &.is-active .icon path {
@@ -180,7 +190,6 @@ $figure-border-radius: 3px !default;
   height: $figure-action-button-size;
   background: $figure-action-background;
   border-radius: $figure-border-radius;
-  transition: .2s all ease-in-out;
   pointer-events: auto;
 
   path {
