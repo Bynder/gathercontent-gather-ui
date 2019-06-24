@@ -9,7 +9,7 @@ import StoryItem from '../styleguide/StoryItem';
 const trashButton = <a key="hello"><Icon name="trash" /></a>;
 const commentButton = <button onClick={action('test')} key="hello2"><Icon name="comment" /></button>;
 const fullScreenButton = <button onClick={action('test')} key="hello3"><Icon name="fullScreen" /></button>;
-const downloadButton = <button onClick={action('test')} key="hello4">{<Icon name="download" />}</button>;
+const downloadButton = <button onClick={action('test')} key="hello4">{<Icon name="quoteStart" />}</button>;
 const actions = [trashButton, commentButton, fullScreenButton, downloadButton];
 
 storiesOf('Components', module).add('Figure', () => (
