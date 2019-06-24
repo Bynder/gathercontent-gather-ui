@@ -15,8 +15,8 @@ const actions = [trashButton, commentButton, fullScreenButton, downloadButton];
 storiesOf('Components', module).add('Figure', () => (
   <div>
     <StoryItem
-      title="File Card"
-      description="A file card showing a preview of the file."
+      title="Figure"
+      description="A Figure showing a preview of the file."
     >
       <Row>
         <Col xs={4}>
@@ -33,8 +33,8 @@ storiesOf('Components', module).add('Figure', () => (
     </StoryItem>
 
     <StoryItem
-      title="File Card (highlighted)"
-      description="A file card can have a highlighted state."
+      title="Figure (highlighted)"
+      description="A Figure can have a highlighted state."
     >
       <Row>
         <Col xs={4}>
@@ -51,8 +51,8 @@ storiesOf('Components', module).add('Figure', () => (
     </StoryItem>
 
     <StoryItem
-      title="File Card Without Children"
-      description="A file card can have no children passed to it."
+      title="Figure Without Children"
+      description="A Figure can have no children passed to it."
     >
       <Row>
         <Col xs={4}>
@@ -62,8 +62,8 @@ storiesOf('Components', module).add('Figure', () => (
     </StoryItem>
 
     <StoryItem
-      title="File Card (without preview)"
-      description="A file card without a preview image"
+      title="Figure (without preview)"
+      description="A Figure without a preview image"
     >
       <Row>
         <Col xs={4}>
@@ -75,8 +75,8 @@ storiesOf('Components', module).add('Figure', () => (
     </StoryItem>
 
     <StoryItem
-      title="File Card (without preview)"
-      description="A highlighted file card without a preview image"
+      title="Figure (without preview)"
+      description="A highlighted Figure without a preview image"
     >
       <Row>
         <Col xs={4}>
@@ -84,6 +84,7 @@ storiesOf('Components', module).add('Figure', () => (
             filename="field_notes.txt"
             label="Field notes"
             isHighlighted
+            alignActionsRight
           >
             {actions}
           </Figure>
@@ -92,8 +93,8 @@ storiesOf('Components', module).add('Figure', () => (
     </StoryItem>
 
     <StoryItem
-      title="Multiple File Cards"
-      description="Multiple file cards side by side"
+      title="Multiple Figures"
+      description="Multiple Figures side by side"
     >
       <Row>
         <Col xs={12} sm={4}>
@@ -132,7 +133,7 @@ storiesOf('Components', module).add('Figure', () => (
       </Row>
     </StoryItem>
 
-    <StoryItem title="Added & Removed File Cards">
+    <StoryItem title="Added & Removed Figures">
       <Row>
         <Col xs={12} sm={4}>
           <TooltipWrapper
@@ -223,7 +224,7 @@ storiesOf('Components', module).add('Figure', () => (
         </Col>
       </Row>
     </StoryItem>
-    <StoryItem title="File Card Placeholder">
+    <StoryItem title="Figure Placeholder">
       <FigurePlaceholder />
     </StoryItem>
   </div>
