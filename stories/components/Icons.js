@@ -70,6 +70,7 @@ const allIcons = additionalProps => (
     <Icon name="commentFill" {...additionalProps} />
     <Icon name="copyFill" {...additionalProps} />
     <Icon name="at" {...additionalProps} />
+    <Icon name="quoteStart" {...additionalProps} />
   </div>
 );
 

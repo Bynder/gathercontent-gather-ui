@@ -52,7 +52,7 @@ $figure-border-radius: 3px !default;
 .figure__actions {
   > .figure__action,
   > .figure__action-wrapper {
-    transition: .2s all ease-in-out;
+    transition: .2s transform ease-in-out;
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
@@ -195,6 +195,14 @@ $figure-border-radius: 3px !default;
 
   &:hover {
     background: $figure-action-background-hover;
+  }
+
+  &.is-active {
+    background: $primary-blue;
+
+    path {
+      fill: white;
+    }
   }
 }
 
