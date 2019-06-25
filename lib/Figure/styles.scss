@@ -311,4 +311,9 @@ $figure-border-radius: 3px !default;
 
 .figure__actions--right {
   justify-content: flex-end;
+
+  .figure__action {
+    margin-right: 0;
+    margin-left: $figure-actions-padding;
+  }
 }
