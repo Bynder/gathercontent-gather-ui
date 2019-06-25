@@ -134,10 +134,10 @@ describe('Dropdown', () => {
   test('passing a function as a child shares the ability to set the showing state', () => {
     const newWrapper = shallow(
       <Dropdown id="render-prop-test">
-        {({ setShowContent }) => (
+        {({ setShowContent, showContent }) => (
           <Dropdown.Content>
-            <input onChange={() => setShowContent(true)} />
-            <input onChange={() => setShowContent(false)} />
+            <input onChange={() => setShowContent(!showContent)} />
+            <input onChange={() => setShowContent(!showContent)} />
           </Dropdown.Content>
         )}
       </Dropdown>

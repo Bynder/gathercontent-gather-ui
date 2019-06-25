@@ -26,22 +26,15 @@ $figure-border-radius: 3px !default;
    ========================================================================== */
 .figure {
   display: flex;
-  border-radius: $figure-border-radius;
-  width: $figure-size;
-  height: 0;
-  padding-bottom: $figure-size;
   position: relative;
+  border-radius: $figure-border-radius;
+  max-width: $figure-size;
+  padding-bottom: $figure-size;
   margin: 0 0 $layout-spacing-base/2;
+  height: 0;
 
-  
-  &--disabled {
-    background: rgba(255, 255, 255, .75);
-
-    @supports (filter: blur()) {
-      transition: filter $animation-time-micro/2;
-      filter: blur(3px);
-      background: none;
-    }
+  img {
+    max-width: $figure-size;
   }
 }
 
@@ -59,7 +52,7 @@ $figure-border-radius: 3px !default;
 .figure__actions {
   > .figure__action,
   > .figure__action-wrapper {
-    transition: .2s all ease-in-out;
+    transition: .2s transform ease-in-out;
 
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
@@ -203,6 +196,14 @@ $figure-border-radius: 3px !default;
   &:hover {
     background: $figure-action-background-hover;
   }
+
+  &.is-active {
+    background: $primary-blue;
+
+    path {
+      fill: white;
+    }
+  }
 }
 
 .figure__progress {
@@ -230,6 +231,16 @@ $figure-border-radius: 3px !default;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
+.figure--disabled {
+  background: rgba(255, 255, 255, .75);
+
+  @supports (filter: blur()) {
+    transition: filter $animation-time-micro/2;
+    filter: blur(3px);
+    background: none;
+  }
+}
+
 .figure--removed,
 .figure--added {
   border: $figure-border-style transparent;
@@ -296,4 +307,13 @@ $figure-border-radius: 3px !default;
 
 .figure--processing .figure__progress {
   opacity: 0;
+}
+
+.figure__actions--right {
+  justify-content: flex-end;
+
+  .figure__action {
+    margin-right: 0;
+    margin-left: $figure-actions-padding;
+  }
 }
