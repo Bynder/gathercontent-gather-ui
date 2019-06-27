@@ -21,6 +21,7 @@
 
     .dropdown__action {
       @include text-overflow-ellipsis();
+      text-decoration: none;
       max-width: 250px;
     }
   }
@@ -72,6 +73,14 @@
 
     &:after {
       content: '';
+    }
+
+    .dropdown-gc {
+      opacity: none;
+    }
+
+    &:hover .dropdown-gc {
+      display: block;
     }
   }
 
