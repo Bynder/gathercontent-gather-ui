@@ -1,23 +1,26 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-
+$breadcrumb-inactive-color: $neutral-base !default;
+$breadcrumb-font-size: $typo-size-large !default;
+$breadcrumb-font-weight: $typo-weight-bold !default;
+$breadcrumb-line-height: $typo-line-height-lead !default;
+$breadcrumb-active-color: $neutral-dark !default;
+$breadcrumb-spacing: $layout-spacing-base !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .breadcrumb,
 .breadcrumb {
-  font-size: $typo-size-large;
-  font-weight: $typo-weight-bold;
-  line-height: $typo-line-height-lead;
-  margin: 0 0 $layout-spacing-base;
+  font-size: $breadcrumb-font-size;
+  font-weight: $breadcrumb-font-weight;
+  line-height: $breadcrumb-line-height;
+  margin-bottom: $breadcrumb-spacing;
 
   .dropdown-gc {
-    color: $neutral-dark;
-    font-size: $typo-size-base;
-    font-weight: $typo-weight-roman;
-    line-height: $typo-line-height-base;
+    color: $breadcrumb-active-color;
+    @include default-font-styles();
 
     .dropdown__action {
       @include text-overflow-ellipsis();
@@ -27,9 +30,9 @@
   }
 
   .dropdown__trigger {
-    color: $neutral-base;
-    font-size: $typo-size-large;
-    font-weight: $typo-weight-bold;
+    color: $breadcrumb-inactive-color;
+    font-size: $breadcrumb-font-size;
+    font-weight: $breadcrumb-font-weight;
     @include link-hover-underline();
 
     &.is-active {
@@ -40,8 +43,7 @@
 
 .breadcrumb,
 .breadcrumb__item,
-.breadcrumb__item > *,
-.breadcrumb .dropdown__trigger {
+.breadcrumb__item > * {
   display: flex;
   align-items: center;
 }
@@ -53,38 +55,22 @@
 .breadcrumb a {
   @include link-hover-underline();
   color: inherit;
-
-  &:hover .icon path {
-    fill: $color-brand-blue;
-  }
 }
 
 .breadcrumb__item {
-  color: $neutral-base;
+  color: $breadcrumb-inactive-color;
   text-overflow: ellipsis;
 
   &:after {
     content: '/';
-    margin: 0 $layout-spacing-base/4;
+    margin: 0 $breadcrumb-spacing/4;
   }
 
   &:last-child {
-    color: $neutral-dark;
+    color: $breadcrumb-active-color;
 
     &:after {
       content: '';
     }
-
-    .dropdown-gc {
-      opacity: none;
-    }
-
-    &:hover .dropdown-gc {
-      display: block;
-    }
-  }
-
-  .icon {
-    margin-left: $layout-spacing-base/2;
   }
 }
