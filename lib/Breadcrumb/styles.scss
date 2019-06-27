@@ -1,13 +1,57 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.breadcrumb,
+.breadcrumb {
+  font-size: $typo-size-large;
+  font-weight: $typo-weight-bold;
+  line-height: $typo-line-height-lead;
+  margin: 0 0 $layout-spacing-base;
+
+  .dropdown-gc {
+    color: $neutral-dark;
+    font-size: $typo-size-base;
+    font-weight: $typo-weight-roman;
+    line-height: $typo-line-height-base;
+
+    .dropdown__action {
+      @include text-overflow-ellipsis();
+      max-width: 250px;
+    }
+  }
+
+  .dropdown__trigger {
+    color: $neutral-base;
+    font-size: $typo-size-large;
+    font-weight: $typo-weight-bold;
+    @include link-hover-underline();
+
+    &.is-active {
+      text-decoration: underline;
+    }
+  }
+}
+
 .breadcrumb,
 .breadcrumb__item,
-.breadcrumb a {
+.breadcrumb__item > *,
+.breadcrumb .dropdown__trigger {
   display: flex;
   align-items: center;
 }
 
+.breadcrumb .text-overflow-ellipsis {
+  display: block;
+}
+
 .breadcrumb a {
   @include link-hover-underline();
-  font-weight: $typo-weight-bold;
+  color: inherit;
 
   &:hover .icon path {
     fill: $color-brand-blue;
@@ -15,6 +59,23 @@
 }
 
 .breadcrumb__item {
-  padding: $layout-spacing-base/2 0;
-  margin: 0 $layout-spacing-base/2 0 0;
+  color: $neutral-base;
+  text-overflow: ellipsis;
+
+  &:after {
+    content: '/';
+    margin: 0 $layout-spacing-base/4;
+  }
+
+  &:last-child {
+    color: $neutral-dark;
+
+    &:after {
+      content: '';
+    }
+  }
+
+  .icon {
+    margin-left: $layout-spacing-base/2;
+  }
 }
