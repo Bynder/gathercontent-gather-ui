@@ -19,6 +19,9 @@
     padding: $layout-spacing-base/2;
     font-size: $typo-size-base;
     color: $neutral-base;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__heading {
     font-size: $typo-size-large;
