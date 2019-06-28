@@ -109,6 +109,15 @@ $finder-indent-level-support: 10 !default;
   margin: 0;
 }
 
+.finder__separator {
+  height: 2px;
+  color: $neutral-light;
+  background-color: $neutral-light;
+  border-bottom: none;
+  border: none;
+  margin: $layout-spacing-base/2;
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
