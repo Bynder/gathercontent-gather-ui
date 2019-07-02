@@ -126,6 +126,9 @@ $btn-border-radius: 3px !default;
 .button--danger {
   background: $primary-red;
   color: $color-btn-warning--text;
+  .icon path {
+    fill: $color-btn-warning--text;
+  }
 
   &:hover {
     color: $color-btn-warning--text;
@@ -211,7 +214,9 @@ $btn-border-radius: 3px !default;
 
 .button--icon-only,
 .button--icon-only-padding {
-  background: none;
+  &:not(.button--danger) {
+    background: none;
+  }
   border: none;
   box-shadow: none;
   padding: 0;
