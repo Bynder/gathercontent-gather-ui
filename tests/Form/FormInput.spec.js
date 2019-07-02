@@ -41,6 +41,25 @@ describe('FormInput', () => {
   });
 
   test('sets the correct className', () => {
-    expect(wrapper.hasClass('test-class')).toEqual(true);
+    expect(wrapper.find('input').hasClass('test-class')).toEqual(true);
+  });
+
+  test('adds the has-error class and displays the error message', () => {
+    expect(wrapper.find('input').hasClass('form__input--has-error')).toEqual(
+      false
+    );
+    wrapper.setProps({ hasError: true });
+    expect(wrapper.find('input').hasClass('form__input--has-error')).toEqual(
+      true
+    );
+    expect(wrapper.find('.form-input__error-message')).toHaveLength(0);
+    expect(
+      wrapper.find('input').hasClass('form__input--display-error')
+    ).toEqual(false);
+    wrapper.setProps({ errorMessage: 'oooooops' });
+    expect(
+      wrapper.find('input').hasClass('form__input--display-error')
+    ).toEqual(true);
+    expect(wrapper.find('.form-input__error-message')).toHaveLength(1);
   });
 });

@@ -123,7 +123,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   padding: 0;
   background: transparent;
   border: none;
-  font-size: inherit;  
+  font-size: inherit;
 }
 
 .form__input--full-width {
@@ -141,4 +141,17 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form--disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.form__input.form__input--has-error {
+  border-color: $primary-red;
+}
+
+input.form__input--display-error {
+  margin-bottom: 0;
+}
+
+.form-input__error-message {
+  color: $primary-red;
+  font-size: $typo-size-small;
 }
