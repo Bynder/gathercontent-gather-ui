@@ -58,7 +58,10 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 
 .breadcrumb__item {
   color: $breadcrumb-inactive-color;
-  text-overflow: ellipsis;
+
+  @include respond-to(small) {
+    display: none;
+  }
 
   &:after {
     content: '/';
@@ -67,6 +70,10 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 
   &:last-child {
     color: $breadcrumb-active-color;
+
+    @include respond-to(small) {
+      display: block;
+    }
 
     &:after {
       content: '';
