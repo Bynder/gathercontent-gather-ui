@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Dropdown, Breadcrumb, Icon } from '../../lib';
+import { Dropdown, Breadcrumb } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Breadcrumb', () => (
@@ -17,17 +17,17 @@ storiesOf('Components', module).add('Breadcrumb', () => (
 
     <StoryItem title="Breadcrumb">
       <Breadcrumb>
-        <Breadcrumb.Item>
-          <div className="text-overflow-ellipsis" style={{ width: '100px' }} title="Energy Co. Redesign">
+        <Breadcrumb.Item style={{ maxWidth: '20%' }}>
+          <div className="text-overflow-ellipsis" title="Energy Co. Redesign">
             <a href="/">Energy Co. Redesign</a>
           </div>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
+        <Breadcrumb.Item style={{ maxWidth: '20%' }}>
           <div className="text-overflow-ellipsis" title="About">
             <a href="/">About</a>
           </div>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
+        <Breadcrumb.Item style={{ maxWidth: '50%' }}>
           <div className="text-overflow-ellipsis" title="History">
             History
           </div>
