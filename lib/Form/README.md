@@ -40,6 +40,8 @@ An input component used to compose a form.
 | className           | String        | ''        | No       | Adds additional classes to the input. |
 | fullWidth               | Boolean        | false        | No       | Gives the input 100% width |
 | paddingSmall               | Boolean        | false        | No       | Gives the input small padding |
+| hasError            | Boolean        | false        | No       | Toggles error styling for the input |
+| errorMessage        | String         | ''        | No       | display an error message under the input |
 
 # FormGroup
 A wrapper to group form elements.
