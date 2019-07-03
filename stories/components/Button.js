@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Button from '../../lib/Button/';
+import Button from "../../lib/Button";
 import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import ProgressButton from '../../lib/ProgressButton';
@@ -101,6 +101,13 @@ const button = storiesOf('Components', module)
             hideText
           />
         </Button>
+      </StoryItem>
+
+      <StoryItem
+        title="Danger button, Icon only"
+        description="A button with an icon and a red background"
+      >
+        <Button types={['danger', 'icon-only']} clickHandler={action('clickedHandler')}><Icon name="clock" /></Button>
       </StoryItem>
 
       <StoryItem

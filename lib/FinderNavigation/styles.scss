@@ -209,6 +209,22 @@ $finder-indent-level-support: 10 !default;
   height: 0px;
 }
 
+.finder__item-new__folder {
+  .finder__item-link-icon {
+    opacity: 0;
+  }
+
+  .finder__item-content {
+    padding: 0;
+    color: $primary-blue;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
 /* ==========================================================================
    Indentation
    ========================================================================== */
