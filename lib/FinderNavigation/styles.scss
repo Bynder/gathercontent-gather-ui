@@ -26,7 +26,6 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item-content {
-  padding: 0 $layout-spacing-base/2;
   display: flex;
   cursor: default;
   height: 35px;
@@ -69,6 +68,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder__settings-dropdown {
   right: -$layout-spacing-base/2;
+  line-height: 20px;
 }
 
 .finder__item-link {
@@ -222,6 +222,40 @@ $finder-indent-level-support: 10 !default;
       cursor: pointer;
       text-decoration: underline;
     }
+  }
+}
+
+.finder__item-link-icon.is-active svg path {
+  fill: $primary-blue;
+}
+
+.finder__item-link {
+  width: 100%;
+  padding: 0 $layout-spacing-base/2;
+
+  &:hover {
+    color: $neutral-dark;
+    background-color: rgba(#ffffff, .3);
+    border-radius: $layout-spacing-base/4;
+    
+    &.finder__item-new__folder-link{
+      text-decoration: underline;
+    }
+  }
+}
+
+.finder__item-folders {
+  padding: 0 $layout-spacing-base/2;
+
+  &:hover {
+    color: $neutral-dark;
+    background-color: rgba(#ffffff, .3);
+    border-radius: $layout-spacing-base/4;
+  }
+
+  .finder__item-link {
+    padding: 0;
+    width: 100%;
   }
 }
 
