@@ -27,7 +27,8 @@ describe('FormInput', () => {
       placeholder: 'test placeholder',
       onChange: wrapper.instance().handleOnChange,
       autoFocus: false,
-      'aria-invalid': false
+      'aria-invalid': false,
+      disabled: false
     });
   });
 

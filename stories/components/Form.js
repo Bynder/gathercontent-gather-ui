@@ -326,4 +326,29 @@ storiesOf('Components', module)
         />
       </StoryItem>
     </div>
+  ))
+  .add('Form: Input', () => (
+    <div>
+      <StoryItem title="FormInput">
+        <FormInput
+          id="form-input"
+          placeholder="Add some text~"
+        />
+      </StoryItem>
+      <StoryItem title="FormInput full width">
+        <FormInput
+          id="form-input"
+          placeholder="Loooong"
+          fullWidth
+        />
+      </StoryItem>
+      <StoryItem title="FormInput with error">
+        <FormInput
+          id="form-input"
+          placeholder="Uh oh"
+          hasError
+          errorMessage="Something went wrong"
+        />
+      </StoryItem>
+    </div>
   ));
