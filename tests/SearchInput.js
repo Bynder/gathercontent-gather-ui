@@ -6,7 +6,6 @@ describe('SearchInput', () => {
 
   test('should render an input component', () => {
     props = {
-      value: 'Botão',
       type: 'primary',
       onChangeHandler() {}
     };
@@ -16,6 +15,19 @@ describe('SearchInput', () => {
 
     expect(input).toHaveLength(1);
     expect(input.props().className).toEqual('search-input__input');
+  });
+
+  test('can have an initial value', () => {
+    props = {
+      initialValue: 'foo bar',
+      type: 'primary',
+      onChangeHandler() {}
+    };
+
+    const Element = shallow(<SearchInput {...props} />);
+    const input = Element.find('input');
+
+    expect(input.props().value).toEqual('foo bar');
   });
 
   test('should run a callback when the query changes', () => {
