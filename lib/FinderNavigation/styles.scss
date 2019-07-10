@@ -26,13 +26,12 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder__item-content {
-  padding-right: $layout-spacing-base/2;
   display: flex;
   cursor: default;
   height: 35px;
   line-height: 35px;
   transition: height 200ms;
-  padding-left: $layout-spacing-base/2;
+  padding: 0 $layout-spacing-base/2;
   .icon path {
     fill: $neutral-base;
   }
