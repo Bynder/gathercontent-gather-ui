@@ -5,16 +5,35 @@
 
 .input-with-button__input {
   width: 220px;
-  height: 30px;
   background: #FFFFFF;
   border: 1px solid #E6EAED;
   border-radius: 4px 0px 0px 4px;
-  font-size: 12px;
-  padding: 5px 10px;
+  font-size: $typo-size-base;
+  line-height: $typo-line-height-base;
+  padding: $layout-spacing-base/2;
   text-overflow: ellipsis;
 }
 
 .input-with-button__input--disabled {
   pointer-events: none;
-  color: #8599AD;      
+  color: #8599AD;
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.input-with-button--padding-small {
+  .input-with-button__input {
+    height: $layout-spacing-base + $layout-spacing-base/2;
+    font-size: $typo-size-small;
+    padding: $layout-spacing-base/4 $layout-spacing-base/2;
+  }
+  .button--input-appendage {
+    font-size: $typo-size-slight;
+    padding-top: $layout-spacing-base/4;
+    padding-bottom: $layout-spacing-base/4;
+    height: $layout-spacing-base + $layout-spacing-base/2;
+    width: 95px;
+  }
 }

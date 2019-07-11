@@ -12,20 +12,31 @@ storiesOf('Components', module).add('InputWithButton', () => (
     </StoryItem>
     <StoryItem title="InputWithButton Long Text" description="InputWithButton long text value">
       <div>
-        <InputWithButton 
-          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello" 
-          onClick={value => alert(value)} 
-          buttonText="Click Me"             
+        <InputWithButton
+          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
+          onClick={value => alert(value)}
+          buttonText="Click Me"
         />
       </div>
     </StoryItem>
     <StoryItem title="InputWithButton with button text that changes on click" description="Button text changes to buttonTextAfterClick prop onClick">
       <div>
-        <InputWithButton 
-          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello" 
+        <InputWithButton
+          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
           onClick={value => {}}
-          buttonText="Click Me"             
+          buttonText="Click Me"
           buttonTextAfterClick="I've been clicked!"
+        />
+      </div>
+    </StoryItem>
+    <StoryItem title="InputWithButton padding small">
+      <div>
+        <InputWithButton
+          value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
+          onClick={value => {}}
+          buttonText="Click Me"
+          buttonTextAfterClick="I've been clicked!"
+          paddingSmall
         />
       </div>
     </StoryItem>

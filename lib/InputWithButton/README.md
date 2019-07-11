@@ -14,3 +14,4 @@ Displays a string in a input with a button
 | buttonText          | string        | N/A       | Yes      | text to display in the button                                                 |
 | buttonTextAfterClick          | string        | null       | No      | text to display in the button after it has been clicked                                                 |
 | disabled            | boolean        | false     | No      | disables the component                                         |
+| paddingSmall        | boolean        | false     | No      | renders a smaller version of the component                                        |
