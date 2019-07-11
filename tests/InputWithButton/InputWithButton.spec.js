@@ -32,4 +32,10 @@ describe('InputWithButton', () => {
 
     expect(onClickSpy).toBeCalled();
   });
+
+  test('adds a padding-small modifier', () => {
+    expect(wrapper.hasClass('input-with-button--padding-small')).toBe(false);
+    wrapper.setProps({ paddingSmall: true });
+    expect(wrapper.hasClass('input-with-button--padding-small')).toBe(true);
+  });
 });
