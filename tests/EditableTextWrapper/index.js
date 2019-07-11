@@ -4,11 +4,21 @@ import { EditableTextWrapper, Button, ExpandingTextArea } from '../../lib';
 describe('EditableTextWrapper', () => {
   let wrapper;
   let onChangeSpy;
+  let onStartEditingSpy;
+  let onStopEditingSpy;
 
   beforeEach(() => {
     onChangeSpy = jest.fn();
+    onStartEditingSpy = jest.fn();
+    onStopEditingSpy = jest.fn();
+
     wrapper = shallow(
-      <EditableTextWrapper value="Hello" onChange={onChangeSpy}>
+      <EditableTextWrapper
+        value="Hello"
+        onStopEditing={onStopEditingSpy}
+        onStartEditing={onStartEditingSpy}
+        onChange={onChangeSpy}
+      >
         Hello
       </EditableTextWrapper>
     );
