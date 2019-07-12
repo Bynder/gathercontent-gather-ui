@@ -43,10 +43,12 @@ $search-input-padding: $layout-spacing-base/2 !default;
     line-height: 1;
     transition: all $animation-time-micro ease-in-out;
     cursor: pointer;
+    pointer-events: none;
 
   &.is-visible {
     opacity: 1;
     transform: translateY(-50%) translateX(-33px);
+    pointer-events: initial;
 
         &:hover {
             background: $search-input-clear-hover-bg;
