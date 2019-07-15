@@ -71,4 +71,10 @@ describe('Button', () => {
     wrapper.simulate('click');
     expect(wrapper.state('disabled')).toEqual(false);
   });
+
+  test('it can pass an id prop down to button attribute', () => {
+    wrapper.setProps({ id: 'my-id' });
+    button = wrapper.find('button');
+    expect(button.prop('id')).toEqual('my-id');
+  });
 });
