@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+$folder-row-spacing: $layout-spacing-base/2 !default;
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+
+.folder-row,
+.folder-row > *,
+.folder-row__meta > * {
+  display: flex;
+  align-items: center;
+}
+
+.folder-row {
+  padding: $folder-row-spacing;
+  background: $neutral-lightest;
+  border-radius: 4px;
+
+  + .folder-row {
+    margin-top: $folder-row-spacing;
+  }
+}
+
+.folder-row__name {
+  max-width: 70%;
+  white-space: nowrap;
+  font-weight: $typo-weight-semi-bold;
+
+  .icon {
+    margin-right: $folder-row-spacing;
+  }
+}
+
+.folder-row__meta {
+  margin-left: auto;
+}
+
+.folder-row__action {
+  padding: 0 0 0 $folder-row-spacing;
+}
+
+.folder-row__meta-text {
+  font-size: $typo-size-slight;
+  margin-left: $folder-row-spacing*1.5;
+  color: $neutral-base;
+  white-space: nowrap;
+
+  @include respond-to-max($screen-xs-min) {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Modifiers
+   ========================================================================== */
+
+.folder-row--open {
+  background: $neutral-light;
+}

@@ -15,6 +15,9 @@ $shadow-base: 0 0 6px 0 transparentize($neutral-light, 0.29);
 /* ==========================================================================
    Breakpoints
    ========================================================================== */
+$screen-xs-min: 480px;
+$screen-xs: 480px;
+
 $screen-sm-min: 680px;
 $screen-sm: 680px;
 
