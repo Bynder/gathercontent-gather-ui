@@ -57,6 +57,17 @@ const button = storiesOf('Components', module).add('Buttons', () => (
     </StoryItem>
 
     <StoryItem
+      description="loading buttons can use button types and display text when the spinner is active"
+    >
+      <ProgressButton
+        clickHandler={action('clickedHandler')}
+        value="Click to load"
+        buttonType="outline-default"
+        spinnerText="I'm loading!"
+      />
+    </StoryItem>
+
+    <StoryItem
       title="Danger button"
       description="A button that generates a dangerous action"
     >

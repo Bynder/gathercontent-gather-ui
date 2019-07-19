@@ -83,7 +83,8 @@ $btn-border-radius: 3px !default;
 .button--link,
 .button--link-default,
 .button--link-danger,
-.button--link-white {
+.button--link-white,
+.button--link-underline {
   background: transparent;
 
   &:focus {
@@ -121,6 +122,10 @@ $btn-border-radius: 3px !default;
     color: white;
     text-decoration: underline;
   }
+}
+
+.button--link-underline {
+  text-decoration: underline;
 }
 
 .button--danger {
@@ -295,6 +300,24 @@ $btn-border-radius: 3px !default;
   }
 }
 
+.button--outline-default {
+  border: 2px solid $primary-blue;
+  background: none;
+  color: $primary-blue;
+  &:hover {
+    color: lighten($primary-blue, 20%);
+    border-color: lighten($primary-blue, 10%);
+  }
+  &:active {
+    color: $primary-blue-darker;
+    border-color: $primary-blue-darker;
+  }
+  &:focus {
+    outline: lighten($primary-blue, 20%) $layout-spacing-base/4 auto;
+    outline-offset: -2px;
+  }
+}
+
 .button--collapse {
   padding: 0;
 
@@ -350,6 +373,7 @@ $btn-border-radius: 3px !default;
     text-decoration: none;
   }
   &.button--link,
+  &.button--link-underline,
   &.button--link-danger,
   &.button--icon-only {
     background: transparent;

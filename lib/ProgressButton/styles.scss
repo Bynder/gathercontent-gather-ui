@@ -15,3 +15,24 @@
     fill: white;
   }
 }
+
+.progress-button__spinner-text + .progress-button__icon {
+  position: relative;
+  order: 1;
+  margin-right: $layout-spacing-base/4;
+  svg {
+    height: $layout-spacing-base;
+    width: $layout-spacing-base;
+  }
+}
+
+.progress-button__spinner-text {
+  order: 2;
+}
+
+
+.button--outline-default {
+  .progress-button__icon path {
+    fill: $primary-blue-darker;
+  }
+}
