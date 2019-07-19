@@ -238,8 +238,6 @@ $btn-border-radius: 3px !default;
 }
 
 .button--icon-only-cover {
-  padding: $layout-spacing-base/4;
-
   &:hover {
     background: $color-background-light;
   }
