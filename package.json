@@ -101,14 +101,16 @@
     "svg-url-loader": "^1.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/react": "3.0.0",
-    "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
     "babel-plugin-inline-react-svg": "^0.2.0",
     "concurrently": "^4.1.0",
     "copyfiles": "^1.2.0",
