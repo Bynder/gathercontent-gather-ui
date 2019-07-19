@@ -44,6 +44,7 @@ import DueDatePicker from './components/DueDatePicker';
 import UserList from './components/UserList';
 import ConversationContext from './components/ConversationContext';
 import ItemRow from './components/ItemRow';
+import FolderRow from './components/FolderRow';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';
 import CollectionsTable from './components/CollectionsTable/CollectionsTable';

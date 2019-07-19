@@ -127,7 +127,8 @@ form .dropdown-gc .button--outline,
   color: $primary-blue;
 }
 
-.form__input--noborder {
+.form__input--noborder,
+.form__input--noborder:focus {
   padding: 0;
   background: transparent;
   border: none;
