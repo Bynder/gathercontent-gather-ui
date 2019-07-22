@@ -7,6 +7,7 @@ $top-bar-main-breakpoint: medium;
 $top-bar-box-shadow: $shadow-base;
 $top-bar-dropdown-bottom-margin: 27px !default;
 $top-bar-zindex: 500 !default;
+$top-bar-notification-height: 42px;
 
 /* ==========================================================================
    Styles
@@ -175,4 +176,25 @@ $top-bar-zindex: 500 !default;
 
 .top-bar__group > * {
   margin: 0 $layout-spacing-base / 4;
+}
+
+.top-bar--has-notification,
+.top-bar--has-notification .top-bar__wrapper {
+  height: $top-bar-height + $top-bar-notification-height;
+  @include respond-to($top-bar-main-breakpoint) {
+    height: $top-bar-height-medium + $top-bar-notification-height;
+  }
+}
+
+.top-bar--has-notification {
+  .notification {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .top-bar__inner {
+    width: 100%;
+    top: $top-bar-notification-height;
+  }
 }

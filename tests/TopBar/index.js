@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { TopBar } from '../../lib';
+import { TopBar, Notification } from '../../lib';
 
 describe('TopBar', () => {
   let wrapper;
@@ -39,5 +39,13 @@ describe('TopBar', () => {
       useDarkTheme: true
     });
     expect(wrapper.find('.top-bar--dark')).toHaveLength(1);
+  });
+
+  test('renders a notification', () => {
+    expect(wrapper.find(Notification)).toHaveLength(0);
+    wrapper.setProps({
+      notification: <Notification level="danger">Hello!!!</Notification>
+    });
+    expect(wrapper.find(Notification)).toHaveLength(1);
   });
 });

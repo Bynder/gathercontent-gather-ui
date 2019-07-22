@@ -39,4 +39,9 @@ describe('Notification', () => {
     expect(wrapper.find(Alert).prop('onClick')).toEqual(clickHandlerSpy);
     expect(wrapper.find(Alert).hasClass('has-click-handler')).toEqual(true);
   });
+
+  test('adds a centred modifier', () => {
+    wrapper.setProps({ center: true });
+    expect(wrapper.find(Alert).hasClass('notification--centred')).toEqual(true);
+  });
 });

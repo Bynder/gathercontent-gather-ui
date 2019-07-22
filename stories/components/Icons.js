@@ -72,6 +72,8 @@ const allIcons = additionalProps => (
     <Icon name="at" {...additionalProps} />
     <Icon name="quoteStart" {...additionalProps} />
     <Icon name="embed" {...additionalProps} />
+    <Icon name="people" {...additionalProps} />
+    <Icon name="item" {...additionalProps} />
   </div>
 );
 
