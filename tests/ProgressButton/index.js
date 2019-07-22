@@ -44,4 +44,15 @@ describe('ProgressButton', () => {
     wrapper.setProps({ disabled: true });
     expect(wrapper.find(Button).prop('disabled')).toEqual(true);
   });
+
+  test('displays text when spinning', () => {
+    wrapper.setProps({
+      spinnerText: 'i get motion sick',
+      useShowSpinnerProp: true,
+      showSpinner: true
+    });
+    expect(wrapper.find('.progress-button__spinner-text').text()).toEqual(
+      'i get motion sick'
+    );
+  });
 });

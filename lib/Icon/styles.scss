@@ -87,3 +87,7 @@ $icon-active-color: $color-brand-blue !default;
 .is-active .icon--keyboard rect {
   stroke: $icon-active-color;
 }
+
+.icon--dark path {
+  fill: $neutral-dark;
+}
