@@ -57,4 +57,7 @@ $notification-info-border: #EDEEEF !default;
 	&.has-click-handler {
 		cursor: pointer;
 	}
+	&--centred {
+		text-align: center;
+	}
 }
