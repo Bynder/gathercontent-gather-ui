@@ -1,6 +1,6 @@
 import { React, shallow } from '../setup';
 import { Dropdown } from '../../lib';
-import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown';
+import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown/consts';
 
 describe('Dropdown Content', () => {
   const context = {
