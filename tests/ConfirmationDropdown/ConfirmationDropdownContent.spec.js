@@ -1,7 +1,7 @@
 import { React, shallow } from '../setup';
 import { Button, Icon, Dropdown } from '../../lib';
 import ConfirmationDropdownContent from '../../lib/ConfirmationDropdown/ConfirmationDropdownContent';
-import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown';
+import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown/consts';
 
 describe('Confirmation Dropdown Content', () => {
   let wrapper;

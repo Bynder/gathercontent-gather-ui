@@ -1,6 +1,6 @@
 import { React, shallow } from '../setup';
 import { Tabs } from '../../lib';
-import { GATHER_UI_TABS } from '../../lib/Tabs';
+import { GATHER_UI_TABS } from '../../lib/Tabs/consts';
 
 describe('Tabs Item', () => {
   const setActiveTabSpy = jest.fn();

@@ -1,6 +1,6 @@
 import { React, shallow } from '../setup';
 import { Dropdown, Button } from '../../lib';
-import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown';
+import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown/consts';
 
 describe('Dropdown Trigger', () => {
   let toggleShowContentMock;
