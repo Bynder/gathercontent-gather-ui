@@ -5,7 +5,6 @@ Displays a pill component
 
 | Name                | Type          | Default   | Required | Description                                              |
 | ------------------- |-------------- | --------- | -------- |--------------------------------------------------------- |
-| onClearClick        | Function      | Null       | No       | Function that gets called when the cross is clicked     |
 | className           | String        | ""         | No       | Additional classes for the pill                         | 
 
 ###Usage
