@@ -140,9 +140,9 @@ $top-bar-notification-height: 42px;
     }
     .top-bar--has-notification & {
       height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height});
-    }
-    @include respond-to($top-bar-main-breakpoint) {
-      height: calc(100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin+$top-bar-notification-height});
+      @include respond-to($top-bar-main-breakpoint) {
+        height: calc(100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin+$top-bar-notification-height});
+      }
     }
   }
   &--dark {
