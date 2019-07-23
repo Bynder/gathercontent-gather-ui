@@ -5,11 +5,4 @@
   border-radius: $btn-border-radius;
   background-color: $neutral-light;
   color: $neutral-dark;
-
-  button {
-    padding-left: $layout-spacing-base/2;
-    .icon svg path {
-      fill: $primary-blue;
-    }
-  }
 }
