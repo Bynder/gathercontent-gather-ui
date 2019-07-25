@@ -49,7 +49,7 @@
     "test:watch": "jest --notify --watch",
     "test:ci": "jest --runInBand",
     "tdd": "yarn run test:watch",
-    "format:js": "prettier --write \"{lib,tests}/**/*.js\"",
+    "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check",
@@ -63,7 +63,7 @@
     }
   },
   "lint-staged": {
-    "{lib,tests}/**/*.js": [
+    "{lib,tests,stories/webapp}/**/*.js": [
       "yarn run prettier --write",
       "eslint -c .eslintrc.json --fix",
       "git add"
@@ -87,6 +87,7 @@
     "enzyme-adapter-react-16.2": "^1.0.0",
     "enzyme-adapter-react-16.3": "^1.0.0",
     "enzyme-adapter-utils": "^1.5.0",
+    "faker": "^4.1.0",
     "font-awesome": "^4.7.0",
     "linkifyjs": "^2.1.6",
     "moment": "^2.21.0",

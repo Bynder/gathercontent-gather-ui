@@ -58,4 +58,5 @@ import UserSearch from './components/UserSearch';
 import ImageLoader from './components/images/ImageLoader';
 import InputWithButton from './components/InputWithButton';
 import Pill from './components/Pill';
-import HierarchyCollection from '../lib/HierarchyCollection/HierarchyCollectionStory';
+
+import Hierarchy from './webapp/hierarchy/HierarchyStory';

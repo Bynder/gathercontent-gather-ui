@@ -95,3 +95,8 @@ $item-row-stacked-margin: $typo-size-slight/3;
 .is-active .list .item-row__comments svg path {
   fill: $neutral-base;
 }
+
+.item-row--bordered {
+  border: 1px solid $color-border-base;
+  border-radius: $border-radius-base;
+}
