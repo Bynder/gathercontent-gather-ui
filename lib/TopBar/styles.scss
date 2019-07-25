@@ -139,6 +139,15 @@ $top-bar-notification-height: 42px;
       height: calc(100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin});
     }
   }
+
+  &.top-bar--has-notification {
+    .top-bar__drop-down {
+      height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height});
+      @include respond-to($top-bar-main-breakpoint) {
+        height: calc(100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin+$top-bar-notification-height});
+      }
+    }
+  }
   &--dark {
     .top-bar__wrapper {
       background: $neutral-dark;
