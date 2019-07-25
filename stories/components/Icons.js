@@ -74,7 +74,6 @@ const allIcons = additionalProps => (
     <Icon name="embed" {...additionalProps} />
     <Icon name="people" {...additionalProps} />
     <Icon name="item" {...additionalProps} />
-    <Icon name="clockWithoutPadding" {...additionalProps} />
   </div>
 );
 
