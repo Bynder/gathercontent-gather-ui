@@ -7,22 +7,22 @@ import { createItemRow } from './createItemRow';
 const stories = storiesOf('Web app', module);
 stories.addDecorator(withKnobs);
 
-const createKnobCollection = (levelCount, maxItemCount, index) =>
+const createCollection = (levelCount, maxItemCount, index) =>
   levelCount ? (
     <div className="h-margin-left">
       {createFolderRow()}
-      {[...Array(Math.floor(Math.random() * maxItemCount) + 0).keys()].map(() =>
-        createItemRow()
+      {[...Array(Math.floor(Math.random() * maxItemCount || 0)).keys()].map(
+        () => createItemRow()
       )}
       {index + 1 !== levelCount &&
-        createKnobCollection(levelCount, maxItemCount, index + 1)}
+        createCollection(levelCount, maxItemCount, index + 1)}
     </div>
   ) : null;
 
 stories.add('Hierarchy', () => (
   <div>
     {createFolderRow()}
-    {createKnobCollection(
+    {createCollection(
       number('# of levels', 4),
       number('max # of items', 10),
       0
