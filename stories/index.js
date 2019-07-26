@@ -59,3 +59,4 @@ import ImageLoader from './components/images/ImageLoader';
 import InputWithButton from './components/InputWithButton';
 import Pill from './components/Pill';
 import HierarchyCollection from '../lib/HierarchyCollection/HierarchyCollectionStory';
+import GuideCard from './components/GuideCard';
