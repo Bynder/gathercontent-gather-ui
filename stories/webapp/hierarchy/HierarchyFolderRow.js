@@ -1,24 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import faker from 'faker';
-import { FolderRow, Button, Icon } from '../../../lib';
+import { FolderRow } from '../../../lib';
 
-export const HierarchyFolderRow = ({ childCount, open }) => (
+export const HierarchyFolderRow = ({ childCount, children, open }) => (
   <FolderRow
     className="h-margin-bottom-half"
-    toggleAction={
-      <Button types={['icon-only']} onClick={() => {}}>
-        <Icon name="caret" />
-      </Button>
-    }
     metaText={`${childCount} items`}
+    name={faker.commerce.department()}
     open={open}
+    showToggle={childCount !== 0}
   >
-    {faker.commerce.department()}
+    {children}
   </FolderRow>
 );
 
 HierarchyFolderRow.propTypes = {
   childCount: PropTypes.number.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
+  ]),
   open: PropTypes.bool.isRequired
+};
+
+HierarchyFolderRow.defaultProps = {
+  children: null
 };
