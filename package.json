@@ -98,6 +98,7 @@
     "react-dom": "^16.0.0",
     "react-mentions": "2.2.0",
     "react-svg-inline": "^1.2.0",
+    "styled-components": "^4.3.2",
     "svg-url-loader": "^3.0.0"
   },
   "devDependencies": {
@@ -128,6 +129,7 @@
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
     "babel-plugin-inline-react-svg": "^0.2.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "circular-dependency-plugin": "^5.0.2",
     "concurrently": "^4.1.0",
     "copyfiles": "^1.2.0",
