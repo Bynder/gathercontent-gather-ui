@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
 import { ItemRow, StatusIndicator } from '../../lib';
-import AvatarGroup from '../../lib/AvatarGroup';
+import AvatarGroup from '../../lib/Avatar/AvatarGroup';
 import Avatar from '../../lib/Avatar';
 
 const createAvatarGroup = () => (

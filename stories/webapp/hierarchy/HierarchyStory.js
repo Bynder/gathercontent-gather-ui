@@ -1,31 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number } from '@storybook/addon-knobs';
-import { createFolderRow } from './createFolderRow';
-import { createItemRow } from './createItemRow';
+import { withKnobs, number, boolean } from '@storybook/addon-knobs';
+import { HierarchyFolderRow } from './HierarchyFolderRow';
+import { HierarchyCollection } from './HierarchyCollection';
 
 const stories = storiesOf('Web app', module);
 stories.addDecorator(withKnobs);
 
-const createCollection = (levelCount, maxItemCount, index) =>
-  levelCount ? (
-    <div className="h-margin-left">
-      {createFolderRow()}
-      {[...Array(Math.floor(Math.random() * maxItemCount || 0)).keys()].map(
-        () => createItemRow()
-      )}
-      {index + 1 !== levelCount &&
-        createCollection(levelCount, maxItemCount, index + 1)}
-    </div>
-  ) : null;
+stories.add('Hierarchy', () => {
+  const openFolders = boolean('Open all folders by default', true);
 
-stories.add('Hierarchy', () => (
-  <div>
-    {createFolderRow()}
-    {createCollection(
-      number('# of levels', 4),
-      number('max # of items', 10),
-      0
-    )}
-  </div>
-));
+  return (
+    <div>
+      <HierarchyFolderRow childCount={0} open={openFolders} />
+      <HierarchyCollection
+        levelCount={number('Total number of levels', 4)}
+        maxItemCount={number('Max number of items', 10)}
+        index={0}
+        open={openFolders}
+      />
+    </div>
+  );
+});

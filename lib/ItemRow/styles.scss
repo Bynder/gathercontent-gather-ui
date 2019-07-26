@@ -47,12 +47,16 @@ $item-row-stacked-margin: $typo-size-slight/3;
   }
 }
 
+.item-row__participants {
+  margin-left: auto;
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
 .item-row:not(item-row--stacked).has-indicator {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   white-space: nowrap;
 
   .item-row__title {
