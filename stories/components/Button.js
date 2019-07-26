@@ -7,6 +7,7 @@ import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import ProgressButton from '../../lib/ProgressButton';
 import Icon from '../../lib/Icon';
 import StoryItem from '../styleguide/StoryItem';
+import Dropdown from '../../lib/Dropdown';
 
 const button = storiesOf('Components', module).add('Buttons', () => (
   <div>
@@ -164,6 +165,36 @@ const button = storiesOf('Components', module).add('Buttons', () => (
         mainClickHandler={action('I was clicked')}
         iconClickHandler={action('Icon was clicked')}
         iconName="bell"
+      >
+        hello!
+      </ButtonWithIcon>
+    </StoryItem>
+
+    <StoryItem title="Button with icon (small)">
+      <ButtonWithIcon
+        mainClickHandler={action('I was clicked')}
+        iconClickHandler={action('Icon was clicked')}
+        iconName="commentFill"
+        sizeSm
+      >
+        I'm tiny!
+      </ButtonWithIcon>
+    </StoryItem>
+
+    <StoryItem title="Button with icon (dropdown)">
+      <ButtonWithIcon
+        mainClickHandler={action('I was clicked')}
+        iconName="down"
+        dropdownContent={
+          <Dropdown.Content collapse right>
+            <Dropdown.Action action={() => action('action clicked')}>
+              Do this
+            </Dropdown.Action>
+            <Dropdown.Action action={() => action('action clicked')}>
+              or this!
+            </Dropdown.Action>
+          </Dropdown.Content>
+        }
       >
         hello!
       </ButtonWithIcon>
