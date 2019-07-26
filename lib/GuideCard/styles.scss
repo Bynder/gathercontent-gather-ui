@@ -8,3 +8,11 @@
   font-size: $typo-size-base;
   padding: ($layout-spacing-base/2 + $layout-spacing-base/4) $layout-spacing-base;
 }
+
+.guide-card__body {
+  margin: 0 $typo-size-base;
+  line-height: 150%;
+  button {
+    margin-left: 5px;
+  }
+}
