@@ -18,7 +18,7 @@ storiesOf('Components', module).add('GuideCard', () => (
     <StoryItem title="GuideCard">
 	{guideCardsData.map(({icon, title, description, cta}, index) => (
 	  <GuideCard.Container icon={icon}>
-	      <GuideCard.Body stepNumber={index} title={title} description={description} cta={cta} />
+	      <GuideCard.Body stepNumber={index + 1} title={title} description={description} cta={cta} />
 	  </GuideCard.Container>
 	))}
     </StoryItem>
