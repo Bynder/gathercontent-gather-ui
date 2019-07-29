@@ -14,7 +14,7 @@ The main body of the card
 | stepNumber | number | null | false | The number of the card in a sequence (displayed next to the title) |
 | title | string | null | true | The title of the card |
 | description | string | null | true | The description of the card |
-| cta | object { title: string, cta: function } | null | false | A link that launches an AppCues flow. Displayed at the bottom of the card |
+| cta | object { title: string, cta: function } | null | false | Call to action. Displayed at the bottom of the card |
 # GuideCard.CTA
 The call to action for the card. Renders a button.
 
