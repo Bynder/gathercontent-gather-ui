@@ -10,7 +10,7 @@ const guideCardsData = [
     icon: 'template',
     description: 'Content templates make it easy for people to provide any type of content in the correct format, and style. Whether it’s blog articles, website pages or email newsletter content.',
     cta: { title: '📹 How to use content templates (2:01)', onClick: 
-      () => console.log('clicked')}
+      () => alert('clicked')}
   }
 ]
 storiesOf('Components', module).add('GuideCard', () => (
