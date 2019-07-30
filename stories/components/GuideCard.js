@@ -1,26 +1,39 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
 import StoryItem from '../styleguide/StoryItem';
 import GuideCard from '../../lib/GuideCard';
 
-const guideCardsData = [
-  {
-    title: 'Create the first template',
-    icon: 'template',
-    description: 'Content templates make it easy for people to provide any type of content in the correct format, and style. Whether it’s blog articles, website pages or email newsletter content.',
-    cta: { title: '📹 How to use content templates (2:01)', onClick: 
-      () => alert('clicked')}
-  }
-]
-storiesOf('Components', module).add('GuideCard', () => (
+const stories = storiesOf('Components', module);
+
+stories.addDecorator(withKnobs);
+
+stories.add('GuideCard', () => (
   <div>
     <StoryItem title="GuideCard">
-	{guideCardsData.map(({icon, title, description, cta}, index) => (
-	  <GuideCard icon={icon}>
-	      <GuideCard.Body stepNumber={index + 1} title={title} description={description} cta={cta} />
-	      <GuideCard.CTA text="Create a template" loadingText="Creating a template..." onClick={async () => console.log('hey')} isAsync />
-	  </GuideCard>
-	))}
+      <GuideCard icon={text('Icon Name', 'template')}>
+        <GuideCard.Body
+          stepNumber={number('Step Number', 1)}
+          title={text('Title', 'Create the first template')}
+          description={text(
+            'Description',
+            'Content templates make it easy for people to provide any type of content in the correct format, and style. Whether it’s blog articles, website pages or email newsletter content.'
+          )}
+          cta={{
+            title: text(
+              'Body CTA Title',
+              '📹 How to use content templates (2:01)'
+            ),
+            onClick: () => alert('clicked')
+          }}
+        />
+        <GuideCard.CTA
+          text={text('CTA Text', 'Create a template')}
+          loadingText={text('CTA Loading Text', 'Creating a template...')}
+          onClick={() => console.log('hey')}
+          isAsync={boolean('CTA isAsync', true)}
+        />
+      </GuideCard>
     </StoryItem>
   </div>
 ));
