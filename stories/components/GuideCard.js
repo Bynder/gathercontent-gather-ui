@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
-import Container from '../../lib/GuideCard/Container';
 import GuideCard from '../../lib/GuideCard';
 
 const guideCardsData = [
@@ -17,10 +16,10 @@ storiesOf('Components', module).add('GuideCard', () => (
   <div>
     <StoryItem title="GuideCard">
 	{guideCardsData.map(({icon, title, description, cta}, index) => (
-	  <GuideCard.Container icon={icon}>
+	  <GuideCard icon={icon}>
 	      <GuideCard.Body stepNumber={index + 1} title={title} description={description} cta={cta} />
 	      <GuideCard.CTA text="Create a template" loadingText="Creating a template..." onClick={async () => console.log('hey')} isAsync />
-	  </GuideCard.Container>
+	  </GuideCard>
 	))}
     </StoryItem>
   </div>
