@@ -15,13 +15,15 @@ describe('FolderRow', () => {
   test('rendering meta', () => {
     const wrapper = shallow(<FolderRow {...props} metaText={<p>meta</p>} />);
 
-    expect(wrapper.find('p').text()).toEqual('meta');
+    expect(wrapper.find('.folder-row__meta-text').text()).toEqual('meta');
   });
 
   test('rendering actions', () => {
-    const wrapper = shallow(<FolderRow {...props} actions={<p>actions</p>} />);
+    const wrapper = shallow(
+      <FolderRow {...props} actions={<p className="actions">actions</p>} />
+    );
 
-    expect(wrapper.find('p').text()).toEqual('actions');
+    expect(wrapper.find('.actions').text()).toEqual('actions');
   });
 
   test('showing the toggle action', () => {
@@ -35,11 +37,11 @@ describe('FolderRow', () => {
   test('rendering the folder contents', () => {
     const wrapper = shallow(
       <FolderRow {...props} showToggle>
-        <p>Hello world</p>
+        <p className="content">Hello world</p>
       </FolderRow>
     );
-    expect(wrapper.find('p')).toHaveLength(0);
+    expect(wrapper.find('.content')).toHaveLength(0);
     wrapper.find(Button).simulate('click');
-    expect(wrapper.find('p')).toHaveLength(1);
+    expect(wrapper.find('.content')).toHaveLength(1);
   });
 });
