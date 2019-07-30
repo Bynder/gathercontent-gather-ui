@@ -9,7 +9,7 @@ export const HierarchyFolderRow = ({ childCount, children, open }) => (
     metaText={`${childCount} items`}
     name={faker.commerce.department()}
     open={open}
-    showToggle={childCount !== 0}
+    showToggle
   >
     {children}
   </FolderRow>

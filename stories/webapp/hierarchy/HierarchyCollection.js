@@ -15,23 +15,23 @@ export const HierarchyCollection = ({
   const itemCount = Math.floor(Math.random() * maxItemCount || 0);
 
   return (
-    <div className="h-margin-left">
+    <>
       <HierarchyFolderRow childCount={itemCount} open={open}>
         {[...Array(itemCount).keys()].map(() => (
           <HierarchyItemRow key={uuid()} statusColor={statusColor} />
         ))}
-      </HierarchyFolderRow>
 
-      {index + 1 !== levelCount && (
-        <HierarchyCollection
-          levelCount={levelCount}
-          maxItemCount={maxItemCount}
-          index={index + 1}
-          statusColor={statusColor}
-          open={open}
-        />
-      )}
-    </div>
+        {index + 1 !== levelCount && (
+          <HierarchyCollection
+            levelCount={levelCount}
+            maxItemCount={maxItemCount}
+            index={index + 1}
+            statusColor={statusColor}
+            open={open}
+          />
+        )}
+      </HierarchyFolderRow>
+    </>
   );
 };
 

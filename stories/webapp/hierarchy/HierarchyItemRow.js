@@ -16,7 +16,7 @@ const createAvatarGroup = () => {
   );
 
   return (
-    <AvatarGroup maximum={10}>
+    <AvatarGroup maximum={3}>
       {[...Array(count).keys()].map(() => {
         const name = faker.name.findName();
         const initials = `${[...name][0]}${[...name][1]}`;
