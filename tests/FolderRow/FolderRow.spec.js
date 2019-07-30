@@ -9,7 +9,9 @@ describe('FolderRow', () => {
   test('rendering folder name', () => {
     const wrapper = shallow(<FolderRow {...props} />);
 
-    expect(wrapper.text()).toEqual('folder name');
+    expect(wrapper.find('.text-overflow-ellipsis').text()).toEqual(
+      'folder name'
+    );
   });
 
   test('rendering meta', () => {
