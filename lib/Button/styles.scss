@@ -325,12 +325,13 @@ $btn-border-radius: 3px !default;
 }
 
 .button__wrapper {
+  display: flex;
   .button {
     margin: 0;
     vertical-align: middle;
   }
   .button__wrapper--icon {
-
+    height: 100%;
   }
   &--size-sm {
     .button__wrapper--icon {
