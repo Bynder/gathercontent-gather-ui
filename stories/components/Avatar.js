@@ -7,8 +7,8 @@ import {
   ParticipantInfo,
   AvatarInformation,
   Button
-} from '../index';
-import StoryItem from '../../stories/styleguide/StoryItem';
+} from '../../lib';
+import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Avatar', () => (
   <div>
@@ -99,24 +99,27 @@ storiesOf('Components', module).add('Avatar', () => (
       title="Avatar – with name"
       description="An avatar can display the users name."
     >
-      <Avatar
-        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
-        additional={
-          <Button types={['link-danger', 'size-sm']} clickHandler={() => {}}>
-            Link type
-          </Button>
-        }
-      >
-        <AvatarInformation name="Mr Ben" />
-      </Avatar>
+    <Avatar
+      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      additional={<Button types={['link-danger', 'size-sm']} clickHandler={() => {}}>Link type</Button>}
+    >
+      <AvatarInformation
+        name="Mr Ben"
+      />
+
+    </Avatar>
     </StoryItem>
 
     <StoryItem
       title="Avatar – with email"
       description="An avatar can display the users email."
     >
-      <Avatar url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg">
-        <AvatarInformation email="heythere@lol.com" />
+      <Avatar
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      >
+        <AvatarInformation
+          email="heythere@lol.com"
+        />
       </Avatar>
     </StoryItem>
 
@@ -124,8 +127,13 @@ storiesOf('Components', module).add('Avatar', () => (
       title="Avatar – with name and email"
       description="An avatar can display the users email."
     >
-      <Avatar url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg">
-        <AvatarInformation email="heythere@lol.com" name="Mr Ben" />
+      <Avatar
+        url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+      >
+        <AvatarInformation
+          email="heythere@lol.com"
+          name="Mr Ben"
+        />
       </Avatar>
     </StoryItem>
 
@@ -196,6 +204,7 @@ storiesOf('Components', module).add('Avatar', () => (
           initials="AE"
           email="example@gmail.com"
           bordered
+
         >
           <ParticipantInfo
             name="Angus Edwardson"

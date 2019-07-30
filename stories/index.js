@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
-import Avatar from '../lib/Avatar/AvatarStory';
+import Avatar from './components/Avatar';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';
@@ -44,7 +44,7 @@ import DueDatePicker from './components/DueDatePicker';
 import UserList from './components/UserList';
 import ConversationContext from './components/ConversationContext';
 import ItemRow from './components/ItemRow';
-import FolderRow from '../lib/FolderRow/stories/FolderRowStory';
+import FolderRow from './components/FolderRow';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';
 import CollectionsTable from './components/CollectionsTable/CollectionsTable';
@@ -58,5 +58,4 @@ import UserSearch from './components/UserSearch';
 import ImageLoader from './components/images/ImageLoader';
 import InputWithButton from './components/InputWithButton';
 import Pill from './components/Pill';
-
-import Hierarchy from './webapp/hierarchy/HierarchyStory';
+import HierarchyCollection from '../lib/HierarchyCollection/HierarchyCollectionStory';

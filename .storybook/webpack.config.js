@@ -1,6 +1,5 @@
 const path = require('path');
-const CircularDependencyPlugin = require('circular-dependency-plugin');
-const Fiber = require('fibers');
+const CircularDependencyPlugin = require('circular-dependency-plugin')
 
 module.exports = {
   plugins: [
@@ -39,11 +38,7 @@ module.exports = {
             }
           }
         }, {
-          loader: 'sass-loader',
-          options: {
-            implementation: require("sass"),
-            fiber: Fiber
-          }
+          loader: 'sass-loader'
         }],
         include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
       },
