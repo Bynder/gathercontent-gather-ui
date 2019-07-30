@@ -3,7 +3,7 @@
    ========================================================================== */
 
 $props: ('margin', 'padding');
-$subProps: ('left', 'right', 'top', 'bottom');
+$subProps: ('*', 'left', 'right', 'top', 'bottom');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
@@ -27,7 +27,7 @@ $props: ('display');
 $subProps: ('none', 'block', 'inline-block', 'flex', 'inline-flex', 'inline');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
-  @if($style == "none") {
+  @if($selector == "none") {
     #{$selector} {
       display: none;
     }
