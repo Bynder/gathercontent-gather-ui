@@ -5,7 +5,7 @@ The containing card
 ### Props
 | Name | Type | Default | Required | Description |
 | ---- | ---- | ------- | -------- | ----------- |
-| icon | string | null | false | Icon to display on the left hand side of the card |
+| iconName | string | null | false | Icon to display on the left hand side of the card |
 # GuideCard.Body
 The main body of the card
 
@@ -27,7 +27,7 @@ The call to action for the card. Renders a button.
 
 ## Useage
 ```
-<GuideCard icon="template">
+<GuideCard iconName="template">
   <GuideCard.Body
     stepNumber={1}
     title={'Create the first template'}

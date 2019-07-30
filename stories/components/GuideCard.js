@@ -11,7 +11,7 @@ stories.addDecorator(withKnobs);
 stories.add('GuideCard', () => (
   <div>
     <StoryItem title="GuideCard">
-      <GuideCard icon={text('Icon Name', 'template')}>
+      <GuideCard iconName={text('Icon Name', 'template')}>
         <GuideCard.Body
           stepNumber={number('Step Number', 1)}
           title={text('Title', 'Create the first template')}
