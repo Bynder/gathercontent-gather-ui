@@ -29,6 +29,16 @@ module.exports = {
         }, {
           loader: 'css-loader'
         }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: function () {
+              return [
+                require('autoprefixer'),
+                require('pixrem'),
+              ]
+            }
+          }
+        }, {
           loader: 'sass-loader',
           options: {
             implementation: require("sass"),
