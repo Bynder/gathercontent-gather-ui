@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { Button, Icon, ButtonWithIcon } from '../../lib';
+import { Button, Icon, ButtonWithIcon, Dropdown } from '../../lib';
 
 describe('UserList', () => {
   let wrapper;
@@ -104,5 +104,19 @@ describe('UserList', () => {
         .last()
         .prop('disabled')
     ).toEqual(true);
+  });
+
+  test('can render a dropdown', () => {
+    wrapper.setProps({
+      dropdownContent: (
+        <Dropdown.Content collapse right>
+          <Dropdown.Action action={() => {}}>Do this</Dropdown.Action>
+          <Dropdown.Action action={() => {}}>or this!</Dropdown.Action>
+        </Dropdown.Content>
+      )
+    });
+    expect(wrapper.find(Dropdown)).toHaveLength(1);
+    expect(wrapper.find(Dropdown.Content)).toHaveLength(1);
+    expect(wrapper.find(Dropdown.Action)).toHaveLength(2);
   });
 });
