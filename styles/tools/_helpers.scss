@@ -1,0 +1,14 @@
+/**
+ * Generate a helper
+ */
+@mixin generate-helper($list, $subList) {
+  @each $l in $list {
+    @each $sl in $subList {
+      $selector: '.h-#{$l}-#{$sl}';
+      $property: '#{$l}-#{$sl}';
+      $style: '#{$sl}';
+
+      @content($selector, $property, $style);
+    }
+  }
+}

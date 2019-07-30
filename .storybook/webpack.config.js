@@ -1,5 +1,6 @@
 const path = require('path');
-const CircularDependencyPlugin = require('circular-dependency-plugin')
+const CircularDependencyPlugin = require('circular-dependency-plugin');
+const Fiber = require('fibers');
 
 module.exports = {
   plugins: [
@@ -28,17 +29,11 @@ module.exports = {
         }, {
           loader: 'css-loader'
         }, {
-          loader: 'postcss-loader',
+          loader: 'sass-loader',
           options: {
-            plugins: function () {
-              return [
-                require('autoprefixer'),
-                require('pixrem'),
-              ]
-            }
+            implementation: require("sass"),
+            fiber: Fiber
           }
-        }, {
-          loader: 'sass-loader'
         }],
         include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
       },
