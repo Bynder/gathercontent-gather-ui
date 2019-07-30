@@ -1,6 +1,6 @@
 # GuideCard
 several components that can be combined to create a setup guide card
-# GuideCard.Container
+# GuideCard
 The containing card
 ### Props
 | Name | Type | Default | Required | Description |
@@ -27,7 +27,7 @@ The call to action for the card. Renders a button.
 
 ## Useage
 ```
-<GuideCard.Container icon="template">
+<GuideCard icon="template">
   <GuideCard.Body
     stepNumber={1}
     title={'Create the first template'}
@@ -40,6 +40,6 @@ The call to action for the card. Renders a button.
     onClick={async () => await doSomethingAsynchronously()}
     isAsync
   />
-</GuideCard.Container>
+</GuideCard>
 
 ```
