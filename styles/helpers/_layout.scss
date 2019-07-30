@@ -3,7 +3,7 @@
    ========================================================================== */
 
 $props: ('margin', 'padding');
-$subProps: ('*', 'left', 'right', 'top', 'bottom');
+$subProps: ('', 'left', 'right', 'top', 'bottom');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
