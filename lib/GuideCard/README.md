@@ -1,5 +1,5 @@
 # GuideCard
-Several components that can be combined to create a setup guide card
+several components that can be combined to create a setup guide card
 # GuideCard.Container
 The containing card
 ### Props
@@ -21,8 +21,9 @@ The call to action for the card. Renders a button.
 | Name | Type | Default | Required | Description |
 | ---- | ---- | ------- | -------- | ----------- |
 | text | string | null | true | Text to be displayed in the CTA button |
-| loadingText | string | null | false | Text to be displayed in the CTA button when it is loading (async value only) |
-| value | string || function | null | true | Either a URL to be redirected to, or an async action to be called when the CTA button is clicked |
+| loadingText | string | null | false | Text to be displayed in the CTA button when it is loading (async function only) |
+| isAsync | bool | false | false | whether or not the passed onClick function is an async function |
+| onClick | function || async function | null | true | A function to be called when the button is clicked |
 
 ## Useage
 ```
@@ -31,12 +32,13 @@ The call to action for the card. Renders a button.
     stepNumber={1}
     title={'Create the first template'}
     description={'Content templates make it easy for people to provide any type of content in the correct format, and style. Whether it’s blog articles, website pages or email newsletter content.  '}
-    appCuesCTA={{ title: '📹How to use content templates (1:40)', appCuesId: '-LimByBoy12345' }}
+    cta={{ title: '📹How to use content templates (1:40)', onClick: () => console.log('jello') }}
   />
   <GuideCard.CTA 
     text="Create a template"
     loadingText="Creating a template..."
-    value="/projects/23/templates/350"
+    onClick={async () => await doSomethingAsynchronously()}
+    isAsync
   />
 </GuideCard.Container>
 

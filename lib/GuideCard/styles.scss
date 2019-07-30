@@ -24,3 +24,10 @@
 .guide-card__container__icon {
   margin-top: 4px;
 }
+
+.guide-card__cta__container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-left: $layout-spacing-base*3;
+}

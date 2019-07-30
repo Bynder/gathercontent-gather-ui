@@ -19,6 +19,7 @@ storiesOf('Components', module).add('GuideCard', () => (
 	{guideCardsData.map(({icon, title, description, cta}, index) => (
 	  <GuideCard.Container icon={icon}>
 	      <GuideCard.Body stepNumber={index + 1} title={title} description={description} cta={cta} />
+	      <GuideCard.CTA text="Create a template" loadingText="Creating a template..." onClick={async () => console.log('hey')} isAsync />
 	  </GuideCard.Container>
 	))}
     </StoryItem>
