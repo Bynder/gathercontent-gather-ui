@@ -54,6 +54,26 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
+.folder-row__toggle {
+  display: inline-flex;
+  padding: $layout-spacing-base/4;
+}
+
+.folder-row__contents {
+  position: relative;
+  padding-left: $layout-spacing-base*2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: $layout-spacing-base - 1px;
+    bottom: 0;
+    width: 2px;
+    background: $neutral-light;
+  }
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
