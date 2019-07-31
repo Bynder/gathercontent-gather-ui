@@ -10,10 +10,6 @@ $item-row-stacked-margin: $typo-size-slight/3;
   display: flex;
   align-items: center;
   white-space: nowrap;
-
-  .has-action & {
-    padding-right: 0;
-  }
 }
 
 .item-row__name {
@@ -37,18 +33,15 @@ $item-row-stacked-margin: $typo-size-slight/3;
   }
 }
 
-.item-row__comments {
+.item-row__aside {
+  display: flex;
   margin-left: auto;
   color: $neutral-base;
   font-size: $typo-size-slight;
-
-  .icon {
-    margin-right: $layout-spacing-base/4;
-  }
 }
 
-.item-row__aside {
-  margin-left: auto;
+.item-row__data {
+  margin-left: $layout-spacing-base;
 }
 
 /* ==========================================================================
