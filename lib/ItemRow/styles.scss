@@ -26,7 +26,8 @@ $item-row-stacked-margin: $typo-size-slight/3;
     color: $color-text-base;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
   }
@@ -47,12 +48,16 @@ $item-row-stacked-margin: $typo-size-slight/3;
   }
 }
 
+.item-row__participants {
+  margin-left: auto;
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
 .item-row:not(item-row--stacked).has-indicator {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   white-space: nowrap;
 
   .item-row__title {
@@ -94,4 +99,9 @@ $item-row-stacked-margin: $typo-size-slight/3;
 
 .is-active .list .item-row__comments svg path {
   fill: $neutral-base;
+}
+
+.item-row--bordered {
+  border: 1px solid $color-border-base;
+  border-radius: $border-radius-base;
 }
