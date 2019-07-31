@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, number, boolean, text } from '@storybook/addon-knobs';
+import { number, boolean, text } from '@storybook/addon-knobs';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyCollection } from './HierarchyCollection';
 
 const stories = storiesOf('Web app', module);
-stories.addDecorator(withKnobs);
 
 stories.add('Hierarchy', () => {
   const open = boolean('Open all folders by default', true);
