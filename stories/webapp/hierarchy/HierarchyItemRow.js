@@ -8,7 +8,11 @@ const createStatusIndicator = statusColor => (
 );
 
 export const HierarchyItemRow = ({ statusColor }) => (
-  <ItemRow className="h-margin-bottom-half" bordered>
+  <ItemRow
+    className="h-margin-bottom-half"
+    bordered
+    style={{ minWidth: '320px' }}
+  >
     <ItemRow.Name>
       {createStatusIndicator(statusColor)}
       <a href="/">{faker.commerce.productName()}</a>
