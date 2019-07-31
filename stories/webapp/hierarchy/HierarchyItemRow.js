@@ -52,7 +52,7 @@ export const HierarchyItemRow = ({ statusColor }) => (
     participants={createAvatarGroup()}
     bordered
   >
-    {faker.commerce.productName()}
+    <a href="/">{faker.commerce.productName()}</a>
   </ItemRow>
 );
 

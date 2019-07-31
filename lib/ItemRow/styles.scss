@@ -26,7 +26,8 @@ $item-row-stacked-margin: $typo-size-slight/3;
     color: $color-text-base;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
   }
