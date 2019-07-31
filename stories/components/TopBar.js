@@ -9,7 +9,7 @@ import Button from '../../lib/Button';
 import Icon from '../../lib/Icon';
 import Avatar from '../../lib/Avatar';
 import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
-import AvatarGroup from '../../lib/AvatarGroup';
+import AvatarGroup from '../../lib/Avatar/AvatarGroup';
 import Navigation from '../../lib/Navigation';
 import Logo from '../../lib/Logo';
 import DropdownSwitcher from '../../lib/DropdownSwitcher';
