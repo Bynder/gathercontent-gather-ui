@@ -40,6 +40,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   transition: transform 0.5s;
   flex-shrink: 0;
   color: white;
+  overflow: hidden;
 
   &--size-sm {
     width: $avatar-size-small;
@@ -92,10 +93,13 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   margin: 0 $layout-spacing-base/2 0 0;
 }
 
+.avatar__wrapper:focus,
 .avatar--with-toggle {
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  .avatar {
     transform: scale3d(1.1, 1.1, 1);
     transition: transform $animation-time-micro;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);

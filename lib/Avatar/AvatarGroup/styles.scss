@@ -10,10 +10,6 @@ $avatar-group-size-small: 24px !default;
 .avatar-group {
   display: flex;
   margin-right: $avatar-group-item-spacing;
-
-  .dropdown {
-    z-index: 9999;
-  }
 }
 
 .avatar-group__item {
@@ -25,7 +21,12 @@ $avatar-group-size-small: 24px !default;
   cursor: pointer;
   border-radius: $avatar-border-radius;
 
+  .avatar {
+    background: none;
+  }
+
   &:hover .avatar,
+  &:focus .avatar,
   &.is-active .avatar {
     background: $avatar-highlighted-background;
 
@@ -33,6 +34,11 @@ $avatar-group-size-small: 24px !default;
       color: $avatar-highlighted-color;
     }
   }
+}
+
+.avatar-group .dropdown__content {
+  z-index: 9999;
+  max-width: 300px;
 }
 
 /* ==========================================================================

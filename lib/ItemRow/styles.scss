@@ -38,6 +38,10 @@ $item-row-stacked-margin: $typo-size-slight/3;
   margin-left: auto;
   color: $neutral-base;
   font-size: $typo-size-slight;
+
+  .avatar__initials {
+    color: $neutral-base;
+  }
 }
 
 .item-row__data {
