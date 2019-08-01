@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
-import Avatar from '../lib/Avatar/AvatarStory';
+import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';

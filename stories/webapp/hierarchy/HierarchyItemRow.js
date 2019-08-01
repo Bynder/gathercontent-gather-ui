@@ -21,7 +21,7 @@ export const HierarchyItemRow = ({ statusColor }) => (
     <ItemRow.Aside>
       <ItemRow.Data>No template</ItemRow.Data>
 
-      <AvatarGroupMock defaultValue={3}>
+      <AvatarGroupMock defaultValue={3} avatarProps={{ smallSize: true }}>
         {({ ui, count }) => (count ? <ItemRow.Data>{ui}</ItemRow.Data> : null)}
       </AvatarGroupMock>
     </ItemRow.Aside>

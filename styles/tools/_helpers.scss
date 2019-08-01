@@ -15,7 +15,7 @@
         $property: '#{$l}-#{$sl}';
       }
 
-      $style: '#{$sl}';
+      $style: $sl;
 
       @content($selector, $property, $style);
     }

@@ -28,17 +28,11 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
    ========================================================================== */
 
 $props: ('display');
-$subProps: ('none', 'block', 'inline-block', 'flex', 'inline-flex', 'inline');
+$subProps: (none, block, inline-block, flex, inline-flex, inline);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
-  @if($selector == "none") {
-    #{$selector} {
-      display: none;
-    }
-  } @else {
-    #{$selector} {
-      display: $style;
-    }
+  #{$selector} {
+    display: $style;
   }
 };
 
