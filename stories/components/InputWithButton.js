@@ -3,11 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import InputWithButton from '../../lib/InputWithButton';
 import StoryItem from '../styleguide/StoryItem';
-import mainTheme from '../../styles/themes/main';
+import theme from '../../lib/styles/theme';
 
 
 storiesOf('Components', module).add('InputWithButton', () => (
-  <ThemeProvider theme={mainTheme}>
+  <ThemeProvider theme={theme}>
     <div>
       <StoryItem title="InputWithButton" description="A component to display some text and a button">
 	<div>
