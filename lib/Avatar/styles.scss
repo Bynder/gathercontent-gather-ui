@@ -40,6 +40,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   transition: transform 0.5s;
   flex-shrink: 0;
   color: white;
+
   &--size-sm {
     width: $avatar-size-small;
     height: $avatar-size-small;
@@ -110,9 +111,11 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   text-transform: uppercase;
   font-size: $typo-size-small;
   color: $neutral-dark;
+
   .avatar--highlighted & {
     color: white;
   }
+
   .avatar--size-sm & {
     width: $avatar-size-small;
     height: $avatar-size-small;
