@@ -38,7 +38,7 @@
     }
   ],
   "scripts": {
-    "copy-styles": "echo Copying Sass settings... && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
+    "copy-styles": "echo Copying Sass settings... && copyfiles \"{styles,lib}/**/*.scss\" dist/",
     "build": "babel lib/ --out-dir dist/lib",
     "build:with:styles": "yarn build && yarn run copy-styles",
     "prepublish": "yarn run build:with:styles",
