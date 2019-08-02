@@ -162,6 +162,7 @@
     "prettier": "1.16.4",
     "raw-loader": "^3.1.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-dnd-test-backend": "^9.3.2",
     "sass": "^1.22.7",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
