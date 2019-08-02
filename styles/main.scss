@@ -31,11 +31,16 @@
 
 /* ==========================================================================
    @ Objects
-   Mostly layout-driven
    ========================================================================== */
 @import 'objects/animations';
 @import 'objects/media';
 @import 'objects/grid';
+
+/* ==========================================================================
+   @ Components
+   The cosmetic and functional layer for all the components
+   ========================================================================== */
+@import 'components/ui';
 
 /* ==========================================================================
    @ Helpers
@@ -45,12 +50,6 @@
 @import "helpers/text";
 @import "helpers/interactive";
 @import "helpers/layout";
-
-/* ==========================================================================
-   @ Components
-   The cosmetic and functional layer for all the components
-   ========================================================================== */
-@import 'components/ui';
 
 /* ==========================================================================
    @ Overrides

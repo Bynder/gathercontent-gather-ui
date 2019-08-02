@@ -19,10 +19,8 @@ $list-border: 1px solid $color-border-base;
     fill: $color-text-base;
   }
 
-  &.is-active {
-    .item-row svg path {
-      fill: $neutral-base;
-    }
+  .is-active & .item-row svg path {
+    fill: $neutral-base;
   }
 }
 
