@@ -22,7 +22,7 @@ export const HierarchyItemRow = ({ statusColor }) => (
       <ItemRow.Data>No template</ItemRow.Data>
 
       <AvatarGroupMock
-        defaultValue={3}
+        defaultMaxCount={8}
         avatarProps={{ smallSize: true, bordered: true }}
         avatarGroupProps={{ small: true }}
       >
