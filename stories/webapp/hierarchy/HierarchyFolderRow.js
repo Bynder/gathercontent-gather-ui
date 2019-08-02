@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number, oneOfType, node, arrayOf, bool } from 'prop-types';
 import faker from 'faker';
 import { FolderRow } from '../../../lib';
 
@@ -10,18 +10,16 @@ export const HierarchyFolderRow = ({ childCount, children, open }) => (
     name={faker.commerce.department()}
     open={open}
     showToggle
+    style={{ minWidth: '320px' }}
   >
     {children}
   </FolderRow>
 );
 
 HierarchyFolderRow.propTypes = {
-  childCount: PropTypes.number.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ]),
-  open: PropTypes.bool.isRequired
+  childCount: number.isRequired,
+  children: oneOfType([node, arrayOf(node)]),
+  open: bool.isRequired
 };
 
 HierarchyFolderRow.defaultProps = {

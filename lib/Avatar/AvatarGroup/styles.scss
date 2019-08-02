@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $avatar-group-item-spacing: .115em;
-$avatar-goup-size-small: 24px !default;
+$avatar-group-size-small: 24px !default;
 
 /* ==========================================================================
    Styles
@@ -17,6 +17,30 @@ $avatar-goup-size-small: 24px !default;
   z-index: 1;
 }
 
+.avatar-group .dropdown__trigger {
+  cursor: pointer;
+  border-radius: $avatar-border-radius;
+
+  .avatar {
+    background: none;
+  }
+
+  &:hover .avatar,
+  &:focus .avatar,
+  &.is-active .avatar {
+    background: $avatar-highlighted-background;
+
+    .avatar__initials {
+      color: $avatar-highlighted-color;
+    }
+  }
+}
+
+.avatar-group .dropdown__content {
+  z-index: 9999;
+  max-width: 300px;
+}
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -24,7 +48,7 @@ $avatar-goup-size-small: 24px !default;
 .avatar-group--small {
   .avatar,
   .avatar__initials {
-    width: $avatar-goup-size-small;
-    height: $avatar-goup-size-small;
+    width: $avatar-group-size-small;
+    height: $avatar-group-size-small;
   }
 }

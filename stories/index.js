@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
-import Avatar from '../lib/Avatar/AvatarStory';
+import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';
@@ -43,7 +43,7 @@ import BlankSlate from './components/BlankSlate';
 import DueDatePicker from './components/DueDatePicker';
 import UserList from './components/UserList';
 import ConversationContext from './components/ConversationContext';
-import ItemRow from './components/ItemRow';
+import ItemRow from '../lib/ItemRow/stories/ItemRowStory';
 import FolderRow from '../lib/FolderRow/stories/FolderRowStory';
 import HTMLTable from './components/HTMLTable';
 import Search from './components/Search';

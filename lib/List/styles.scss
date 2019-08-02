@@ -18,6 +18,10 @@ $list-border: 1px solid $color-border-base;
   .is-active & svg path {
     fill: $color-text-base;
   }
+
+  .is-active & .item-row svg path {
+    fill: $neutral-base;
+  }
 }
 
 .list__head {

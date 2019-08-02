@@ -1,19 +1,5 @@
-@mixin text-overflow-ellipsis() {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .text-overflow-ellipsis {
   @include text-overflow-ellipsis();
-}
-
-@mixin link-hover-underline() {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .black-text {

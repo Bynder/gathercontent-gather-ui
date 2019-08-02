@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { number, bool } from 'prop-types';
 import uuid from 'uuid/v1';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyItemRow } from './HierarchyItemRow';
@@ -36,9 +36,9 @@ export const HierarchyCollection = ({
 };
 
 HierarchyCollection.propTypes = {
-  levelCount: PropTypes.number.isRequired,
-  maxItemCount: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired,
-  open: PropTypes.bool.isRequired,
+  levelCount: number.isRequired,
+  maxItemCount: number.isRequired,
+  index: number.isRequired,
+  open: bool.isRequired,
   statusColor: StatusIndicator.propTypes.color.isRequired
 };
