@@ -2,13 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { UserSearch } from '../../lib'
+import { UserSearch } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 const mockUser = {
   id: 2,
   name: 'Bruce',
-  avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+  avatar:
+    'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
   initials: 'BB',
   display: 'brucebanner',
   email: 'bruce@bruce.com'
@@ -37,25 +38,28 @@ const mockUsers = [
 const stories = storiesOf('Components', module);
 stories.addDecorator(withKnobs);
 
-stories
-  .add('UserSearch', () => {
-    return (
-      <div>
-        <StoryItem
-          title="User search"
-          description="A list of users with a search!"
-        >
-          <UserSearch
-            users={mockUsers}
-            addUser={(user) => action(`user ${user.name} was clicked!`)}
-            displayEmail={boolean('display email', true)}
-            useDisplayToggle={boolean('display toggle', false)}
-            subheading={text('subheading', '')}
-            minUserLength={number('minimum user length', 0)}
-            noUserDisplay={text('no users display text', 'Looks like there are no people!')}
-            searchHeading={text('heading', 'Search...')}
-          />
-        </StoryItem>
-      </div>
-    );
-  });
+stories.add('UserSearch', () => {
+  return (
+    <div>
+      <StoryItem
+        title="User search"
+        description="A list of users with a search!"
+      >
+        <UserSearch
+          users={mockUsers}
+          addUser={user => action(`user ${user.name} was clicked!`)}
+          displayEmail={boolean('display email', true)}
+          useDisplayToggle={boolean('display toggle', false)}
+          subheading={text('subheading', '')}
+          minUserLength={number('minimum user length', 0)}
+          noUserDisplay={text(
+            'no users display text',
+            'Looks like there are no people!'
+          )}
+          searchHeading={text('heading', 'Search...')}
+          selectedUserIds={['456']}
+        />
+      </StoryItem>
+    </div>
+  );
+});
