@@ -54,6 +54,7 @@ stories
             minUserLength={number('minimum user length', 0)}
             noUserDisplay={text('no users display text', 'Looks like there are no people!')}
             searchHeading={text('heading', 'Search...')}
+            selectedUserIds={['456']}
           />
         </StoryItem>
       </div>
