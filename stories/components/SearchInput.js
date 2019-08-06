@@ -11,7 +11,7 @@ storiesOf('Components', module).add('SearchInput', () => {
         title="Search field"
         description="An input that contains behaviour for live search capabilities."
       >
-        <SearchInput onChangeHandler={action('change')} />
+        <SearchInput onChangeHandler={action('change')} id="search-input" label="Search"/>
       </StoryItem>
       <StoryItem
         title="Search field with an initial value"
