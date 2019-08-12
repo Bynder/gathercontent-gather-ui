@@ -26,6 +26,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 }
 
 .folder-row__name {
+  width: 100%;
   max-width: 70%;
   white-space: nowrap;
   font-weight: $typo-weight-semi-bold;
