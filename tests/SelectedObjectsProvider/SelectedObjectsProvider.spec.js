@@ -1,54 +1,56 @@
-import { mount } from 'enzyme';
-import { React, TestUtils } from '../setup';
+import { render, fireEvent } from '@testing-library/react';
+import { React } from '../setup';
 import { SelectedObjectsProvider, SelectedObjectsContext } from '../../lib';
 
 describe('SelectedObjectsProvider', () => {
-  let wrapper;
-  let childSpy;
+  it('appends a selected id', () => {
+    const childSpy = jest.fn();
 
-  beforeEach(() => {
-    childSpy = jest.fn();
-    wrapper = mount(
+    const { getByText } = render(
       <SelectedObjectsProvider>
         <SelectedObjectsContext.Consumer>
-          {context => childSpy(context)}
+          {context => (
+            <React.Fragment>
+              <button type="button" onClick={() => context.updateSelected('7')}>
+                Click me!
+              </button>
+              {childSpy(context)}
+            </React.Fragment>
+          )}
         </SelectedObjectsContext.Consumer>
       </SelectedObjectsProvider>
     );
-  });
 
-  it('appends a selected id', () => {
-    const context = childSpy.mock.calls[0][0];
-
-    TestUtils.act(() => {
-      context.updateSelected('7');
-    });
+    fireEvent.click(getByText('Click me!'));
 
     const resultingContext = childSpy.mock.calls[1][0];
 
     expect(resultingContext.selected).toEqual(['7']);
     expect(resultingContext.lastInteracted).toEqual('7');
-
-    // context.updateSelected('7');
-    // context = childSpy.mock.calls[2][0];
-    // expect(context.selected).toEqual([]);
-    // expect(context.lastInteracted).toEqual('7');
   });
 
   it('removes a selected id if it is already selected', () => {
-    const context = childSpy.mock.calls[0][0];
+    const childSpy = jest.fn();
 
-    TestUtils.act(() => {
-      context.updateSelected('7');
-    });
+    const { getByText } = render(
+      <SelectedObjectsProvider>
+        <SelectedObjectsContext.Consumer>
+          {context => (
+            <React.Fragment>
+              <button type="button" onClick={() => context.updateSelected('7')}>
+                Click me!
+              </button>
+              {childSpy(context)}
+            </React.Fragment>
+          )}
+        </SelectedObjectsContext.Consumer>
+      </SelectedObjectsProvider>
+    );
 
-    TestUtils.act(() => {
-      context.updateSelected('7');
-    });
+    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(getByText('Click me!'));
 
     const resultingContext = childSpy.mock.calls[2][0];
-
-    console.log(childSpy.mock.calls);
 
     expect(resultingContext.selected).toEqual([]);
     expect(resultingContext.lastInteracted).toEqual('7');
@@ -56,47 +58,104 @@ describe('SelectedObjectsProvider', () => {
 
   //
   it('sets multiple selected ids', () => {
-    const context = childSpy.mock.calls[0][0];
+    const childSpy = jest.fn();
 
-    TestUtils.act(() => {
-      context.selectMultiple(['7', '8', '9', '10']);
-    });
+    const { getByText } = render(
+      <SelectedObjectsProvider>
+        <SelectedObjectsContext.Consumer>
+          {context => (
+            <React.Fragment>
+              <button
+                type="button"
+                onClick={() => context.selectMultiple(['7', '8', '9', '10'])}
+              >
+                Click me!
+              </button>
+              {childSpy(context)}
+            </React.Fragment>
+          )}
+        </SelectedObjectsContext.Consumer>
+      </SelectedObjectsProvider>
+    );
+
+    fireEvent.click(getByText('Click me!'));
 
     const resultingContext = childSpy.mock.calls[1][0];
 
     expect(resultingContext.selected).toEqual(['7', '8', '9', '10']);
+  });
 
-    // expect(wrapper.state('selected')).to.deep.equal([]);
-    // expect(wrapper.state('lastInteracted')).to.deep.equal(null);
-    // wrapper.instance().selectMultiple(['7', '8', '9', '10']);
-    // expect(wrapper.state('selected')).to.deep.equal(['7', '8', '9', '10']);
-    // expect(wrapper.state('lastInteracted')).to.deep.equal(null);
-    // wrapper.instance().selectMultiple(['7', '5', '3', '1'], '3');
-    // expect(wrapper.state('selected')).to.deep.equal([
-    //   '7',
-    //   '8',
-    //   '9',
-    //   '10',
-    //   '5',
-    //   '3',
-    //   '1'
-    // ]);
-    // expect(wrapper.state('lastInteracted')).to.deep.equal('3');
+  it('deselects multiple ids', () => {
+    const childSpy = jest.fn();
+
+    const { getByText } = render(
+      <SelectedObjectsProvider>
+        <SelectedObjectsContext.Consumer>
+          {context => (
+            <React.Fragment>
+              <button
+                type="button"
+                onClick={() =>
+                  context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
+                }
+              >
+                Select Multiple
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  context.deselectMultiple(['8', '9', '10', '1'], '1')
+                }
+              >
+                Deselect Multiple
+              </button>
+              {childSpy(context)}
+            </React.Fragment>
+          )}
+        </SelectedObjectsContext.Consumer>
+      </SelectedObjectsProvider>
+    );
+
+    fireEvent.click(getByText('Select Multiple'));
+    fireEvent.click(getByText('Deselect Multiple'));
+
+    const resultingContext = childSpy.mock.calls[2][0];
+
+    expect(resultingContext.selected).toEqual(['7', '5', '3']);
+    expect(resultingContext.lastInteracted).toEqual('1');
   });
   //
-  // it('deselects multiple ids', () => {
-  //   wrapper.instance().selectMultiple(['7', '8', '9', '10', '5', '3', '1']);
-  //   wrapper.instance().deselectMultiple(['8', '9', '10', '1'], '1');
-  //   expect(wrapper.state('selected')).to.deep.equal(['7', '5', '3']);
-  //   expect(wrapper.state('lastInteracted')).to.deep.equal('1');
-  // });
-  //
-  // it('clears everything', () => {
-  //   wrapper
-  //     .instance()
-  //     .selectMultiple(['7', '8', '9', '10', '5', '3', '1'], '10');
-  //   wrapper.instance().clear();
-  //   expect(wrapper.state('selected')).to.deep.equal([]);
-  //   expect(wrapper.state('lastInteracted')).to.deep.equal(null);
-  // });
+  it('clears everything', () => {
+    const childSpy = jest.fn();
+
+    const { getByText } = render(
+      <SelectedObjectsProvider>
+        <SelectedObjectsContext.Consumer>
+          {context => (
+            <React.Fragment>
+              <button
+                type="button"
+                onClick={() =>
+                  context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
+                }
+              >
+                Select Multiple
+              </button>
+              <button type="button" onClick={() => context.clear()}>
+                Clear
+              </button>
+              {childSpy(context)}
+            </React.Fragment>
+          )}
+        </SelectedObjectsContext.Consumer>
+      </SelectedObjectsProvider>
+    );
+
+    fireEvent.click(getByText('Select Multiple'));
+    fireEvent.click(getByText('Clear'));
+
+    const resultingContext = childSpy.mock.calls[2][0];
+    expect(resultingContext.selected).toEqual([]);
+    expect(resultingContext.lastInteracted).toEqual(null);
+  });
 });
