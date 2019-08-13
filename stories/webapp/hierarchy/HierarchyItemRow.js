@@ -21,7 +21,7 @@ export const HierarchyItemRow = ({ statusColor }) => {
         {createStatusIndicator(statusColor)}
         <EditableTextWrapper
           value={name}
-          className="h-margin-clear h-width-100"
+          className="h-margin-clear"
           onChange={action('Item name changed.')}
         >
           <a href="/">{name}</a>

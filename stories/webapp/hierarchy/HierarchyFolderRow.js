@@ -15,7 +15,7 @@ export const HierarchyFolderRow = ({ childCount, children, open }) => {
       name={
         <EditableTextWrapper
           value={name}
-          className="h-margin-clear h-width-100"
+          className="h-margin-clear"
           onChange={action('Folder name changed.')}
         >
           {name}
