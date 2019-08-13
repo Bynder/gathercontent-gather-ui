@@ -3,25 +3,27 @@ import { React } from '../setup';
 import { SelectedObjectsProvider, SelectedObjectsContext } from '../../lib';
 
 describe('SelectedObjectsProvider', () => {
+  const createWrapper = child => (
+    <SelectedObjectsProvider>
+      <SelectedObjectsContext.Consumer>{child}</SelectedObjectsContext.Consumer>
+    </SelectedObjectsProvider>
+  );
+
   it('appends a selected id', () => {
     const childSpy = jest.fn();
 
     const { getByText } = render(
-      <SelectedObjectsProvider>
-        <SelectedObjectsContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <button type="button" onClick={() => context.updateSelected('7')}>
-                Click me!
-              </button>
-              {childSpy(context)}
-            </React.Fragment>
-          )}
-        </SelectedObjectsContext.Consumer>
-      </SelectedObjectsProvider>
+      createWrapper(context => (
+        <React.Fragment>
+          <button type="button" onClick={() => context.updateSelected('7')}>
+            Append Id
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
     );
 
-    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(getByText('Append Id'));
 
     const resultingContext = childSpy.mock.calls[1][0];
 
@@ -33,22 +35,18 @@ describe('SelectedObjectsProvider', () => {
     const childSpy = jest.fn();
 
     const { getByText } = render(
-      <SelectedObjectsProvider>
-        <SelectedObjectsContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <button type="button" onClick={() => context.updateSelected('7')}>
-                Click me!
-              </button>
-              {childSpy(context)}
-            </React.Fragment>
-          )}
-        </SelectedObjectsContext.Consumer>
-      </SelectedObjectsProvider>
+      createWrapper(context => (
+        <React.Fragment>
+          <button type="button" onClick={() => context.updateSelected('7')}>
+            Click with Id
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
     );
 
-    fireEvent.click(getByText('Click me!'));
-    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(getByText('Click with Id'));
+    fireEvent.click(getByText('Click with Id'));
 
     const resultingContext = childSpy.mock.calls[2][0];
 
@@ -61,24 +59,20 @@ describe('SelectedObjectsProvider', () => {
     const childSpy = jest.fn();
 
     const { getByText } = render(
-      <SelectedObjectsProvider>
-        <SelectedObjectsContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <button
-                type="button"
-                onClick={() => context.selectMultiple(['7', '8', '9', '10'])}
-              >
-                Click me!
-              </button>
-              {childSpy(context)}
-            </React.Fragment>
-          )}
-        </SelectedObjectsContext.Consumer>
-      </SelectedObjectsProvider>
+      createWrapper(context => (
+        <React.Fragment>
+          <button
+            type="button"
+            onClick={() => context.selectMultiple(['7', '8', '9', '10'])}
+          >
+            Select Multiple
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
     );
 
-    fireEvent.click(getByText('Click me!'));
+    fireEvent.click(getByText('Select Multiple'));
 
     const resultingContext = childSpy.mock.calls[1][0];
 
@@ -89,31 +83,25 @@ describe('SelectedObjectsProvider', () => {
     const childSpy = jest.fn();
 
     const { getByText } = render(
-      <SelectedObjectsProvider>
-        <SelectedObjectsContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <button
-                type="button"
-                onClick={() =>
-                  context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
-                }
-              >
-                Select Multiple
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  context.deselectMultiple(['8', '9', '10', '1'], '1')
-                }
-              >
-                Deselect Multiple
-              </button>
-              {childSpy(context)}
-            </React.Fragment>
-          )}
-        </SelectedObjectsContext.Consumer>
-      </SelectedObjectsProvider>
+      createWrapper(context => (
+        <React.Fragment>
+          <button
+            type="button"
+            onClick={() =>
+              context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
+            }
+          >
+            Select Multiple
+          </button>
+          <button
+            type="button"
+            onClick={() => context.deselectMultiple(['8', '9', '10', '1'], '1')}
+          >
+            Deselect Multiple
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
     );
 
     fireEvent.click(getByText('Select Multiple'));
@@ -129,26 +117,22 @@ describe('SelectedObjectsProvider', () => {
     const childSpy = jest.fn();
 
     const { getByText } = render(
-      <SelectedObjectsProvider>
-        <SelectedObjectsContext.Consumer>
-          {context => (
-            <React.Fragment>
-              <button
-                type="button"
-                onClick={() =>
-                  context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
-                }
-              >
-                Select Multiple
-              </button>
-              <button type="button" onClick={() => context.clear()}>
-                Clear
-              </button>
-              {childSpy(context)}
-            </React.Fragment>
-          )}
-        </SelectedObjectsContext.Consumer>
-      </SelectedObjectsProvider>
+      createWrapper(context => (
+        <React.Fragment>
+          <button
+            type="button"
+            onClick={() =>
+              context.selectMultiple(['7', '8', '9', '10', '5', '3', '1'])
+            }
+          >
+            Select Multiple
+          </button>
+          <button type="button" onClick={() => context.clear()}>
+            Clear
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
     );
 
     fireEvent.click(getByText('Select Multiple'));
