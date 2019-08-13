@@ -27,6 +27,7 @@ $item-row-stacked-margin: $typo-size-slight/3;
   margin-right: $layout-spacing-base/2;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
 
   a {
     color: $color-text-base;
