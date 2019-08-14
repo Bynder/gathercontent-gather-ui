@@ -60,5 +60,6 @@ import InputWithButton from './components/InputWithButton';
 import Pill from './components/Pill';
 import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
+import SelectedObjects from '../lib/SelectedObjectsProvider/stories/SelectedObjectsStory'
 
 import Hierarchy from './webapp/hierarchy/HierarchyStory';
