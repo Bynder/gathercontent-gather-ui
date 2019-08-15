@@ -4,15 +4,8 @@ import { FolderRow, SelectedObjectsContext } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-function HierarchyFolderRow({
-  id,
-  name,
-  nameForm,
-  childCount,
-  children,
-  open
-}) {
-  const [folderName, setFolderName] = useState(name);
+function HierarchyFolderRow({ data, nameForm, children, open }) {
+  const [folderName, setFolderName] = useState(data.name);
   const [newFolderId, setNewFolderId] = useState(false);
 
   const {
@@ -22,10 +15,8 @@ function HierarchyFolderRow({
     currentSelectedType
   } = useContext(SelectedObjectsContext);
 
-  const childIds = [...Array(childCount).keys()].map(
-    child => `child-${child}-${id}`
-  );
-  const isLevelSelected = selected.indexOf(id) !== -1;
+  const childIds = data.children.map(child => child.id);
+  const isLevelSelected = selected.indexOf(data.id) !== -1;
   const isDisabled =
     currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
 
@@ -35,13 +26,13 @@ function HierarchyFolderRow({
   });
 
   useEffect(() => {
-    setFolderName(name);
-  }, [name]);
+    setFolderName(data.name);
+  }, [data.name]);
 
   return (
     <FolderRow
       className={classNames}
-      metaText={`${childCount} items`}
+      metaText={`${data.children.length} items`}
       name={
         nameForm || (
           <HierarchyNameInput
@@ -52,7 +43,7 @@ function HierarchyFolderRow({
       }
       actions={
         <HierarchyFolderRowActions
-          startCreatingFolder={() => setNewFolderId(`${id}-new-folder`)}
+          startCreatingFolder={() => setNewFolderId(`${data.id}-new-folder`)}
         />
       }
       style={{ minWidth: '320px' }}
@@ -61,8 +52,8 @@ function HierarchyFolderRow({
       onClick={() => {
         if (!isDisabled) {
           return isLevelSelected
-            ? deselectMultiple([id, ...childIds], 'folder')
-            : selectMultiple([id, ...childIds], 'folder');
+            ? deselectMultiple([data.id, ...childIds], 'folder')
+            : selectMultiple([data.id, ...childIds], 'folder');
         }
         return null;
       }}
