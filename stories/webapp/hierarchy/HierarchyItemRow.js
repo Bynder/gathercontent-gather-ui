@@ -26,7 +26,7 @@ export const HierarchyItemRow = ({ statusColor, id }) => {
     currentSelectedType && currentSelectedType !== 'item' && !isSelected;
 
   const classNames = cx('h-margin-bottom-half', {
-    'item-row--selected': selected.indexOf(id) !== -1,
+    'is-selected': selected.indexOf(id) !== -1,
     'is-disabled': isDisabled
   });
 

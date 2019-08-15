@@ -22,7 +22,7 @@ export const HierarchyFolderRow = ({ childCount, children, open, id }) => {
     currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
 
   const classNames = cx('h-margin-bottom-half', {
-    'item-row--selected': isLevelSelected,
+    'is-selected': isLevelSelected,
     'is-disabled': isDisabled
   });
 
