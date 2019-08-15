@@ -11,17 +11,18 @@ const createStatusIndicator = status => (
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
-  const { isSelected, isDisabled, handleClick } = useObjectSelector(
+  const { isSelected, isDisabled, handleClick, isHovered } = useObjectSelector(
     id,
     'item',
-    [],
+    null,
     (currentSelectedType, isChildSelected) =>
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
 
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
-    'is-disabled': isDisabled
+    'is-disabled': isDisabled,
+    'is-hovered': isHovered
   });
 
   return (

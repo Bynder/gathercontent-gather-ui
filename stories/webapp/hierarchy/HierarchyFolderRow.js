@@ -9,7 +9,14 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(data.name);
   const [newFolderId, setNewFolderId] = useState(false);
   const childIds = data.children.map(child => child.id);
-  const { isSelected, isDisabled, handleClick } = useObjectSelector(
+  const {
+    isSelected,
+    isDisabled,
+    handleClick,
+    isHovered,
+    handleMouseEnter,
+    handleMouseLeave
+  } = useObjectSelector(
     data.id,
     'folder',
     [data.id, ...childIds],
@@ -21,7 +28,8 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
 
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
-    'is-disabled': isDisabled
+    'is-disabled': isDisabled,
+    'is-hovered': isHovered
   });
 
   useEffect(() => {
@@ -49,6 +57,8 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       open={open}
       showToggle
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {children(newFolderId, setNewFolderId)}
     </FolderRow>
