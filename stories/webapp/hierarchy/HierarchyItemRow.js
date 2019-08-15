@@ -11,10 +11,16 @@ const createStatusIndicator = status => (
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
-  const { isSelected, isDisabled, handleClick, isHovered } = useObjectSelector(
+  const {
+    isSelected,
+    isDisabled,
+    handleClick,
+    isHovered,
+    handleMouseEnter
+  } = useObjectSelector(
     id,
     'item',
-    null,
+    [id],
     (currentSelectedType, isChildSelected) =>
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
@@ -31,6 +37,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       bordered
       style={{ minWidth: '320px' }}
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
     >
       <ItemRow.Name>
         {createStatusIndicator(status)}
