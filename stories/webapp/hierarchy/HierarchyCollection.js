@@ -1,9 +1,11 @@
 import React from 'react';
 import { number, bool } from 'prop-types';
 import uuid from 'uuid/v1';
+import faker from 'faker';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyItemRow } from './HierarchyItemRow';
 import { StatusIndicator } from '../../../lib';
+import { NewHierarchyFolderRow } from './FolderRow/NewHierarchyFolderRow';
 
 export const HierarchyCollection = ({
   levelCount,
@@ -16,19 +18,33 @@ export const HierarchyCollection = ({
 
   return (
     <>
-      <HierarchyFolderRow childCount={itemCount} open={open}>
-        {[...Array(itemCount).keys()].map(() => (
-          <HierarchyItemRow key={uuid()} statusColor={statusColor} />
-        ))}
+      <HierarchyFolderRow
+        childCount={itemCount}
+        open={open}
+        name={faker.commerce.department()}
+      >
+        {(showNewFolder, setShowNewFolder) => (
+          <>
+            {[...Array(itemCount).keys()].map(() => (
+              <HierarchyItemRow key={uuid()} statusColor={statusColor} />
+            ))}
 
-        {index + 1 !== levelCount && (
-          <HierarchyCollection
-            levelCount={levelCount}
-            maxItemCount={maxItemCount}
-            index={index + 1}
-            statusColor={statusColor}
-            open={open}
-          />
+            {showNewFolder && (
+              <NewHierarchyFolderRow
+                removeFolder={() => setShowNewFolder(false)}
+              />
+            )}
+
+            {index + 1 !== levelCount && (
+              <HierarchyCollection
+                levelCount={levelCount}
+                maxItemCount={maxItemCount}
+                index={index + 1}
+                statusColor={statusColor}
+                open={open}
+              />
+            )}
+          </>
         )}
       </HierarchyFolderRow>
     </>
