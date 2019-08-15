@@ -1,16 +1,34 @@
-import React from 'react';
-import { number, oneOfType, node, arrayOf, bool } from 'prop-types';
+import React, { useContext } from 'react';
+import { number, oneOfType, node, arrayOf, bool, string } from 'prop-types';
 import faker from 'faker';
+import cx from 'classnames';
 import { action } from '@storybook/addon-actions';
-import { FolderRow } from '../../../lib';
+import { FolderRow, SelectedObjectsContext } from '../../../lib';
 import EditableTextWrapper from '../../../lib/EditableTextWrapper';
 
-export const HierarchyFolderRow = ({ childCount, children, open }) => {
+export const HierarchyFolderRow = ({ childCount, children, open, id }) => {
   const name = faker.commerce.department();
+  const {
+    selected,
+    selectMultiple,
+    deselectMultiple,
+    currentSelectedType
+  } = useContext(SelectedObjectsContext);
+  const childIds = [...Array(childCount).keys()].map(
+    child => `child-${child}-${id}`
+  );
+  const isLevelSelected = selected.indexOf(id) !== -1;
+  const isDisabled =
+    currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
+
+  const classNames = cx('h-margin-bottom-half', {
+    'item-row--selected': isLevelSelected,
+    'is-disabled': isDisabled
+  });
 
   return (
     <FolderRow
-      className="h-margin-bottom-half"
+      className={classNames}
       metaText={`${childCount} items`}
       name={
         <EditableTextWrapper
@@ -24,6 +42,14 @@ export const HierarchyFolderRow = ({ childCount, children, open }) => {
       open={open}
       showToggle
       style={{ minWidth: '320px' }}
+      onClick={() => {
+        if (!isDisabled) {
+          return isLevelSelected
+            ? deselectMultiple([id, ...childIds], 'folder')
+            : selectMultiple([id, ...childIds], 'folder');
+        }
+        return null;
+      }}
     >
       {children}
     </FolderRow>
@@ -33,7 +59,8 @@ export const HierarchyFolderRow = ({ childCount, children, open }) => {
 HierarchyFolderRow.propTypes = {
   childCount: number.isRequired,
   children: oneOfType([node, arrayOf(node)]),
-  open: bool.isRequired
+  open: bool.isRequired,
+  id: string.isRequired
 };
 
 HierarchyFolderRow.defaultProps = {

@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { string } from 'prop-types';
 import faker from 'faker';
 import { action } from '@storybook/addon-actions';
-import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
+import cx from 'classnames';
+import {
+  ItemRow,
+  StatusIndicator,
+  EditableTextWrapper,
+  SelectedObjectsContext
+} from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
 
 const createStatusIndicator = statusColor => (
   <StatusIndicator color={statusColor} className="h-margin-right-half" />
 );
 
-export const HierarchyItemRow = ({ statusColor }) => {
+export const HierarchyItemRow = ({ statusColor, id }) => {
   const name = faker.commerce.productName();
+  const { selected, updateSelected, currentSelectedType } = useContext(
+    SelectedObjectsContext
+  );
+
+  const isSelected = selected.indexOf(id) !== -1;
+  const isDisabled =
+    currentSelectedType && currentSelectedType !== 'item' && !isSelected;
+
+  const classNames = cx('h-margin-bottom-half', {
+    'item-row--selected': selected.indexOf(id) !== -1,
+    'is-disabled': isDisabled
+  });
 
   return (
     <ItemRow
-      className="h-margin-bottom-half"
+      className={classNames}
       bordered
       style={{ minWidth: '320px' }}
+      onClick={() => !isDisabled && updateSelected(id, 'item')}
     >
       <ItemRow.Name>
         {createStatusIndicator(statusColor)}
@@ -46,5 +66,6 @@ export const HierarchyItemRow = ({ statusColor }) => {
 };
 
 HierarchyItemRow.propTypes = {
-  statusColor: StatusIndicator.propTypes.color.isRequired
+  statusColor: StatusIndicator.propTypes.color.isRequired,
+  id: string.isRequired
 };

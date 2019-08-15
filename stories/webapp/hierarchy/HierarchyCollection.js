@@ -16,9 +16,17 @@ export const HierarchyCollection = ({
 
   return (
     <>
-      <HierarchyFolderRow childCount={itemCount} open={open}>
-        {[...Array(itemCount).keys()].map(() => (
-          <HierarchyItemRow key={uuid()} statusColor={statusColor} />
+      <HierarchyFolderRow
+        childCount={itemCount}
+        open={open}
+        id={`level-${index}`}
+      >
+        {[...Array(itemCount).keys()].map((_, childIndex) => (
+          <HierarchyItemRow
+            key={uuid()}
+            statusColor={statusColor}
+            id={`child-${childIndex}-level-${index}`}
+          />
         ))}
 
         {index + 1 !== levelCount && (

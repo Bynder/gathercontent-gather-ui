@@ -108,3 +108,11 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
     background: $primary-blue;
   }
 }
+
+.folder-row--selected {
+  border: 2px solid $primary-blue;
+}
+
+.folder-row--selected {
+  opacity: 0.5;
+}
