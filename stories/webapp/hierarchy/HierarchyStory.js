@@ -18,7 +18,9 @@ stories.add('Hierarchy', () => {
       ...acc,
       [value]: {
         name: faker.commerce.department(),
-        children: [...Array(maxItemCount).keys()].map(() => ({
+        children: [
+          ...Array(Math.floor(Math.random() * maxItemCount || 0)).keys()
+        ].map(() => ({
           id: uuid(),
           name: faker.commerce.productName(),
           status: {
