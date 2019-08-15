@@ -15,12 +15,7 @@ export const HierarchyCollection = ({
   const data = hierarchyData[thisIndex];
 
   return !data ? null : (
-    <HierarchyFolderRow
-      id={data.id}
-      childCount={data.children.length}
-      name={data.name}
-      open={open}
-    >
+    <HierarchyFolderRow data={data} open={open}>
       {(newFolderId, setNewFolderId) => (
         <>
           {data.children.map(d => (
