@@ -4,6 +4,7 @@ import uuid from 'uuid/v1';
 import { storiesOf } from '@storybook/react';
 import { number, boolean, text } from '@storybook/addon-knobs';
 import { HierarchyCollection } from './HierarchyCollection';
+import { SelectedObjectsProvider } from '../../../lib/SelectedObjectsProvider';
 
 const stories = storiesOf('Web app', module);
 
@@ -33,11 +34,13 @@ stories.add('Hierarchy', () => {
   }, {});
 
   return (
-    <HierarchyCollection
-      hierarchyData={hierarchyData}
-      statusColor={statusColor}
-      index={-1}
-      open={open}
-    />
+    <SelectedObjectsProvider>
+      <HierarchyCollection
+        hierarchyData={hierarchyData}
+        statusColor={statusColor}
+        index={-1}
+        open={open}
+      />
+    </SelectedObjectsProvider>
   );
 });

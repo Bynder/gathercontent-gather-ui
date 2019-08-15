@@ -15,7 +15,10 @@ describe('SelectedObjectsProvider', () => {
     const { getByText } = render(
       createWrapper(context => (
         <React.Fragment>
-          <button type="button" onClick={() => context.updateSelected('7')}>
+          <button
+            type="button"
+            onClick={() => context.updateSelected('7', 'testType')}
+          >
             Append Id
           </button>
           {childSpy(context)}
@@ -29,6 +32,7 @@ describe('SelectedObjectsProvider', () => {
 
     expect(resultingContext.selected).toEqual(['7']);
     expect(resultingContext.lastInteracted).toEqual('7');
+    expect(resultingContext.currentSelectedType).toEqual('testType');
   });
 
   it('removes a selected id if it is already selected', () => {
@@ -37,7 +41,10 @@ describe('SelectedObjectsProvider', () => {
     const { getByText } = render(
       createWrapper(context => (
         <React.Fragment>
-          <button type="button" onClick={() => context.updateSelected('7')}>
+          <button
+            type="button"
+            onClick={() => context.updateSelected('7', 'anotherTestType')}
+          >
             Click with Id
           </button>
           {childSpy(context)}
@@ -52,6 +59,7 @@ describe('SelectedObjectsProvider', () => {
 
     expect(resultingContext.selected).toEqual([]);
     expect(resultingContext.lastInteracted).toEqual('7');
+    expect(resultingContext.currentSelectedType).toEqual(null);
   });
 
   //
@@ -63,7 +71,9 @@ describe('SelectedObjectsProvider', () => {
         <React.Fragment>
           <button
             type="button"
-            onClick={() => context.selectMultiple(['7', '8', '9', '10'])}
+            onClick={() =>
+              context.selectMultiple(['7', '8', '9', '10'], 'testType')
+            }
           >
             Select Multiple
           </button>
@@ -77,6 +87,7 @@ describe('SelectedObjectsProvider', () => {
     const resultingContext = childSpy.mock.calls[1][0];
 
     expect(resultingContext.selected).toEqual(['7', '8', '9', '10']);
+    expect(resultingContext.currentSelectedType).toEqual('testType');
   });
 
   it('deselects multiple ids', () => {
@@ -95,7 +106,12 @@ describe('SelectedObjectsProvider', () => {
           </button>
           <button
             type="button"
-            onClick={() => context.deselectMultiple(['8', '9', '10', '1'], '1')}
+            onClick={() =>
+              context.deselectMultiple(
+                ['7', '8', '9', '10', '5', '3', '1'],
+                '1'
+              )
+            }
           >
             Deselect Multiple
           </button>
@@ -109,8 +125,9 @@ describe('SelectedObjectsProvider', () => {
 
     const resultingContext = childSpy.mock.calls[2][0];
 
-    expect(resultingContext.selected).toEqual(['7', '5', '3']);
+    expect(resultingContext.selected).toEqual([]);
     expect(resultingContext.lastInteracted).toEqual('1');
+    expect(resultingContext.currentSelectedType).toEqual(null);
   });
   //
   it('clears everything', () => {
@@ -141,5 +158,6 @@ describe('SelectedObjectsProvider', () => {
     const resultingContext = childSpy.mock.calls[2][0];
     expect(resultingContext.selected).toEqual([]);
     expect(resultingContext.lastInteracted).toEqual(null);
+    expect(resultingContext.currentSelectedType).toEqual(null);
   });
 });
