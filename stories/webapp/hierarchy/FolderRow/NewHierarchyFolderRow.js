@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 import { Icon } from '../../../../lib';
 import { HierarchyFolderRowForm } from './HierarchyFolderRowForm';
 import { HierarchyFolderRow } from '../HierarchyFolderRow';
 
-const NewHierarchyFolderRow = ({ removeFolder }) => {
+const NewHierarchyFolderRow = ({ id, removeFolder }) => {
   const [folderName, setFolderName] = useState(null);
   const [isSaving, setIsSaving] = useState(false);
   const [hasSaved, setHasSaved] = useState(false);
@@ -24,6 +24,7 @@ const NewHierarchyFolderRow = ({ removeFolder }) => {
   return (
     <>
       <HierarchyFolderRow
+        id={id}
         childCount={0}
         name={folderName}
         nameForm={
@@ -41,6 +42,7 @@ const NewHierarchyFolderRow = ({ removeFolder }) => {
         {(showNewFolder, setShowNewFolderForNewFolder) =>
           showNewFolder && (
             <NewHierarchyFolderRow
+              id={`${id}-new-folder`}
               removeFolder={() => setShowNewFolderForNewFolder(false)}
             />
           )
@@ -53,6 +55,7 @@ const NewHierarchyFolderRow = ({ removeFolder }) => {
 };
 
 NewHierarchyFolderRow.propTypes = {
+  id: string.isRequired,
   removeFolder: func.isRequired
 };
 

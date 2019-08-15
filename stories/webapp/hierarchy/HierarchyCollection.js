@@ -15,34 +15,34 @@ export const HierarchyCollection = ({
   const data = hierarchyData[thisIndex];
 
   return !data ? null : (
-    <>
-      <HierarchyFolderRow
-        childCount={data.children.length}
-        name={data.name}
-        open={open}
-      >
-        {(showNewFolder, setShowNewFolder) => (
-          <>
-            {data.children.map(d => (
-              <HierarchyItemRow key={d.id} {...d} />
-            ))}
+    <HierarchyFolderRow
+      id={data.id}
+      childCount={data.children.length}
+      name={data.name}
+      open={open}
+    >
+      {(newFolderId, setNewFolderId) => (
+        <>
+          {data.children.map(d => (
+            <HierarchyItemRow key={d.id} {...d} />
+          ))}
 
-            {showNewFolder && (
-              <NewHierarchyFolderRow
-                removeFolder={() => setShowNewFolder(false)}
-              />
-            )}
-
-            <HierarchyCollection
-              hierarchyData={hierarchyData}
-              index={thisIndex}
-              statusColor={statusColor}
-              open={open}
+          {newFolderId && (
+            <NewHierarchyFolderRow
+              id={newFolderId}
+              removeFolder={() => setNewFolderId(false)}
             />
-          </>
-        )}
-      </HierarchyFolderRow>
-    </>
+          )}
+
+          <HierarchyCollection
+            hierarchyData={hierarchyData}
+            index={thisIndex}
+            statusColor={statusColor}
+            open={open}
+          />
+        </>
+      )}
+    </HierarchyFolderRow>
   );
 };
 

@@ -3,9 +3,16 @@ import { FolderRow } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-function HierarchyFolderRow({ name, nameForm, childCount, children, open }) {
+function HierarchyFolderRow({
+  id,
+  name,
+  nameForm,
+  childCount,
+  children,
+  open
+}) {
   const [folderName, setFolderName] = useState(name);
-  const [showNewFolder, setShowNewFolder] = useState(false);
+  const [newFolderId, setNewFolderId] = useState(false);
 
   useEffect(() => {
     setFolderName(name);
@@ -25,14 +32,14 @@ function HierarchyFolderRow({ name, nameForm, childCount, children, open }) {
       }
       actions={
         <HierarchyFolderRowActions
-          startCreatingFolder={() => setShowNewFolder(true)}
+          startCreatingFolder={() => setNewFolderId(`${id}-new-folder`)}
         />
       }
       style={{ minWidth: '320px' }}
       open={open}
       showToggle
     >
-      {children(showNewFolder, setShowNewFolder)}
+      {children(newFolderId, setNewFolderId)}
     </FolderRow>
   );
 }
