@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { number, boolean, text } from '@storybook/addon-knobs';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyCollection } from './HierarchyCollection';
+import { SelectedObjectsProvider } from '../../../lib/SelectedObjectsProvider';
 
 const stories = storiesOf('Web app', module);
 
@@ -11,8 +12,8 @@ stories.add('Hierarchy', () => {
   const statusColor = text('Status colour', 'green');
 
   return (
-    <div>
-      <HierarchyFolderRow childCount={1000} open={open}>
+    <SelectedObjectsProvider>
+      <HierarchyFolderRow childCount={1000} open={open} id="level-root">
         <HierarchyCollection
           levelCount={number('Total number of levels', 4)}
           maxItemCount={number('Max number of items', 10)}
@@ -21,6 +22,6 @@ stories.add('Hierarchy', () => {
           statusColor={statusColor}
         />
       </HierarchyFolderRow>
-    </div>
+    </SelectedObjectsProvider>
   );
 });
