@@ -4,5 +4,6 @@
 }
 
 .is-hovered {
-  background-color: red;
+  border: 1px solid $primary-blue-lighter;
+  box-shadow: inset 0 0 0 1px $primary-blue-lighter;
 }

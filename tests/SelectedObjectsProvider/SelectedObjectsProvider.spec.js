@@ -62,7 +62,6 @@ describe('SelectedObjectsProvider', () => {
     expect(resultingContext.currentSelectedType).toEqual(null);
   });
 
-  //
   it('sets multiple selected ids', () => {
     const childSpy = jest.fn();
 
@@ -129,7 +128,7 @@ describe('SelectedObjectsProvider', () => {
     expect(resultingContext.lastInteracted).toEqual('1');
     expect(resultingContext.currentSelectedType).toEqual(null);
   });
-  //
+
   it('clears everything', () => {
     const childSpy = jest.fn();
 
@@ -159,5 +158,43 @@ describe('SelectedObjectsProvider', () => {
     expect(resultingContext.selected).toEqual([]);
     expect(resultingContext.lastInteracted).toEqual(null);
     expect(resultingContext.currentSelectedType).toEqual(null);
+  });
+
+  it('handles intendedToSelect', () => {
+    const childSpy = jest.fn();
+
+    const { getByText } = render(
+      createWrapper(context => (
+        <React.Fragment>
+          <button
+            type="button"
+            onMouseEnter={() =>
+              context.setIntendedToSelect(['7', '8', '9', '10', '5', '3', '1'])
+            }
+            onMouseLeave={() => context.setIntendedToSelect([])}
+          >
+            IntendedToSelect
+          </button>
+          {childSpy(context)}
+        </React.Fragment>
+      ))
+    );
+
+    fireEvent.mouseEnter(getByText('IntendedToSelect'));
+    fireEvent.mouseLeave(getByText('IntendedToSelect'));
+
+    const mouseEnterContext = childSpy.mock.calls[1][0];
+    expect(mouseEnterContext.intendedToSelect).toEqual([
+      '7',
+      '8',
+      '9',
+      '10',
+      '5',
+      '3',
+      '1'
+    ]);
+
+    const mouseLeaveContext = childSpy.mock.calls[2][0];
+    expect(mouseLeaveContext.intendedToSelect).toEqual([]);
   });
 });
