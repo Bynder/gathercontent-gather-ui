@@ -1,41 +1,70 @@
-import React from 'react';
-import { number, oneOfType, node, arrayOf, bool } from 'prop-types';
-import faker from 'faker';
-import { action } from '@storybook/addon-actions';
-import { FolderRow } from '../../../lib';
-import EditableTextWrapper from '../../../lib/EditableTextWrapper';
+import React, { useEffect, useState, useContext } from 'react';
+import cx from 'classnames';
+import { FolderRow, SelectedObjectsContext } from '../../../lib';
+import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
+import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-export const HierarchyFolderRow = ({ childCount, children, open }) => {
-  const name = faker.commerce.department();
+function HierarchyFolderRow({ data, nameForm, children, open }) {
+  const [folderName, setFolderName] = useState(data.name);
+  const [newFolderId, setNewFolderId] = useState(false);
+
+  const {
+    selected,
+    selectMultiple,
+    deselectMultiple,
+    currentSelectedType
+  } = useContext(SelectedObjectsContext);
+
+  const childIds = data.children.map(child => child.id);
+  const isLevelSelected = selected.indexOf(data.id) !== -1;
+  const isDisabled =
+    currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
+
+  const classNames = cx('h-margin-bottom-half', {
+    'is-selected': isLevelSelected,
+    'is-disabled': isDisabled
+  });
+
+  useEffect(() => {
+    setFolderName(data.name);
+  }, [data.name]);
 
   return (
     <FolderRow
-      className="h-margin-bottom-half"
-      metaText={`${childCount} items`}
+      className={classNames}
+      metaText={`${data.children.length} items`}
       name={
-        <EditableTextWrapper
-          value={name}
-          className="h-margin-clear"
-          onChange={action('Folder name changed.')}
-        >
-          {name}
-        </EditableTextWrapper>
+        nameForm || (
+          <HierarchyNameInput
+            name={folderName}
+            onChange={value => setFolderName(value)}
+          />
+        )
       }
+      actions={
+        <HierarchyFolderRowActions
+          startCreatingFolder={() => setNewFolderId(`${data.id}-new-folder`)}
+        />
+      }
+      style={{ minWidth: '320px' }}
       open={open}
       showToggle
-      style={{ minWidth: '320px' }}
+      onClick={() => {
+        if (!isDisabled) {
+          return isLevelSelected
+            ? deselectMultiple([data.id, ...childIds], 'folder')
+            : selectMultiple([data.id, ...childIds], 'folder');
+        }
+        return null;
+      }}
     >
-      {children}
+      {children(newFolderId, setNewFolderId)}
     </FolderRow>
   );
-};
+}
 
-HierarchyFolderRow.propTypes = {
-  childCount: number.isRequired,
-  children: oneOfType([node, arrayOf(node)]),
-  open: bool.isRequired
-};
+HierarchyFolderRow.propTypes = FolderRow.propTypes;
 
-HierarchyFolderRow.defaultProps = {
-  children: null
-};
+HierarchyFolderRow.defaultProps = FolderRow.defaultProps;
+
+export { HierarchyFolderRow };

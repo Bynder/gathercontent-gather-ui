@@ -1,24 +1,42 @@
-import React from 'react';
-import faker from 'faker';
+import React, { useContext } from 'react';
 import { action } from '@storybook/addon-actions';
-import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
+import { string } from 'prop-types';
+import cx from 'classnames';
+import {
+  ItemRow,
+  StatusIndicator,
+  EditableTextWrapper,
+  SelectedObjectsContext
+} from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
 
-const createStatusIndicator = statusColor => (
-  <StatusIndicator color={statusColor} className="h-margin-right-half" />
+const createStatusIndicator = status => (
+  <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
-export const HierarchyItemRow = ({ statusColor }) => {
-  const name = faker.commerce.productName();
+export const HierarchyItemRow = ({ id, name, status }) => {
+  const { selected, updateSelected, currentSelectedType } = useContext(
+    SelectedObjectsContext
+  );
+
+  const isSelected = selected.indexOf(id) !== -1;
+  const isDisabled =
+    currentSelectedType && currentSelectedType !== 'item' && !isSelected;
+
+  const classNames = cx('h-margin-bottom-half', {
+    'is-selected': selected.indexOf(id) !== -1,
+    'is-disabled': isDisabled
+  });
 
   return (
     <ItemRow
-      className="h-margin-bottom-half"
+      className={classNames}
       bordered
       style={{ minWidth: '320px' }}
+      onClick={() => !isDisabled && updateSelected(id, 'item')}
     >
       <ItemRow.Name>
-        {createStatusIndicator(statusColor)}
+        {createStatusIndicator(status)}
         <EditableTextWrapper
           value={name}
           className="h-margin-clear"
@@ -46,5 +64,7 @@ export const HierarchyItemRow = ({ statusColor }) => {
 };
 
 HierarchyItemRow.propTypes = {
-  statusColor: StatusIndicator.propTypes.color.isRequired
+  id: string.isRequired,
+  name: string.isRequired,
+  status: StatusIndicator.propTypes.isRequired
 };
