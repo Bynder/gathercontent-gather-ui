@@ -1,51 +1,53 @@
 import React from 'react';
-import { number, bool } from 'prop-types';
-import uuid from 'uuid/v1';
+import { number, bool, shape } from 'prop-types';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyItemRow } from './HierarchyItemRow';
 import { StatusIndicator } from '../../../lib';
+import { NewHierarchyFolderRow } from './FolderRow/NewHierarchyFolderRow';
 
 export const HierarchyCollection = ({
-  levelCount,
-  maxItemCount,
+  hierarchyData,
   index,
   open,
   statusColor
 }) => {
-  const itemCount = Math.floor(Math.random() * maxItemCount || 0);
+  const thisIndex = index + 1;
+  const data = hierarchyData[thisIndex];
 
-  return (
-    <>
-      <HierarchyFolderRow
-        childCount={itemCount}
-        open={open}
-        id={`level-${index}`}
-      >
-        {[...Array(itemCount).keys()].map((_, childIndex) => (
-          <HierarchyItemRow
-            key={uuid()}
-            statusColor={statusColor}
-            id={`child-${childIndex}-level-${index}`}
-          />
-        ))}
+  return !data ? null : (
+    <HierarchyFolderRow
+      id={data.id}
+      childCount={data.children.length}
+      name={data.name}
+      open={open}
+    >
+      {(newFolderId, setNewFolderId) => (
+        <>
+          {data.children.map(d => (
+            <HierarchyItemRow key={d.id} {...d} />
+          ))}
 
-        {index + 1 !== levelCount && (
+          {newFolderId && (
+            <NewHierarchyFolderRow
+              id={newFolderId}
+              removeFolder={() => setNewFolderId(false)}
+            />
+          )}
+
           <HierarchyCollection
-            levelCount={levelCount}
-            maxItemCount={maxItemCount}
-            index={index + 1}
+            hierarchyData={hierarchyData}
+            index={thisIndex}
             statusColor={statusColor}
             open={open}
           />
-        )}
-      </HierarchyFolderRow>
-    </>
+        </>
+      )}
+    </HierarchyFolderRow>
   );
 };
 
 HierarchyCollection.propTypes = {
-  levelCount: number.isRequired,
-  maxItemCount: number.isRequired,
+  hierarchyData: shape({}).isRequired,
   index: number.isRequired,
   open: bool.isRequired,
   statusColor: StatusIndicator.propTypes.color.isRequired

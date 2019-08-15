@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { string } from 'prop-types';
-import faker from 'faker';
 import { action } from '@storybook/addon-actions';
+import { string } from 'prop-types';
 import cx from 'classnames';
 import {
   ItemRow,
@@ -11,12 +10,11 @@ import {
 } from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
 
-const createStatusIndicator = statusColor => (
-  <StatusIndicator color={statusColor} className="h-margin-right-half" />
+const createStatusIndicator = status => (
+  <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
-export const HierarchyItemRow = ({ statusColor, id }) => {
-  const name = faker.commerce.productName();
+export const HierarchyItemRow = ({ id, name, status }) => {
   const { selected, updateSelected, currentSelectedType } = useContext(
     SelectedObjectsContext
   );
@@ -38,7 +36,7 @@ export const HierarchyItemRow = ({ statusColor, id }) => {
       onClick={() => !isDisabled && updateSelected(id, 'item')}
     >
       <ItemRow.Name>
-        {createStatusIndicator(statusColor)}
+        {createStatusIndicator(status)}
         <EditableTextWrapper
           value={name}
           className="h-margin-clear"
@@ -66,6 +64,7 @@ export const HierarchyItemRow = ({ statusColor, id }) => {
 };
 
 HierarchyItemRow.propTypes = {
-  statusColor: StatusIndicator.propTypes.color.isRequired,
-  id: string.isRequired
+  id: string.isRequired,
+  name: string.isRequired,
+  status: StatusIndicator.propTypes.isRequired
 };

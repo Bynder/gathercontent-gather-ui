@@ -1,19 +1,27 @@
-import React, { useContext } from 'react';
-import { number, oneOfType, node, arrayOf, bool, string } from 'prop-types';
-import faker from 'faker';
+import React, { useEffect, useState, useContext } from 'react';
 import cx from 'classnames';
-import { action } from '@storybook/addon-actions';
 import { FolderRow, SelectedObjectsContext } from '../../../lib';
-import EditableTextWrapper from '../../../lib/EditableTextWrapper';
+import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
+import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-export const HierarchyFolderRow = ({ childCount, children, open, id }) => {
-  const name = faker.commerce.department();
+function HierarchyFolderRow({
+  id,
+  name,
+  nameForm,
+  childCount,
+  children,
+  open
+}) {
+  const [folderName, setFolderName] = useState(name);
+  const [newFolderId, setNewFolderId] = useState(false);
+
   const {
     selected,
     selectMultiple,
     deselectMultiple,
     currentSelectedType
   } = useContext(SelectedObjectsContext);
+
   const childIds = [...Array(childCount).keys()].map(
     child => `child-${child}-${id}`
   );
@@ -26,22 +34,30 @@ export const HierarchyFolderRow = ({ childCount, children, open, id }) => {
     'is-disabled': isDisabled
   });
 
+  useEffect(() => {
+    setFolderName(name);
+  }, [name]);
+
   return (
     <FolderRow
       className={classNames}
       metaText={`${childCount} items`}
       name={
-        <EditableTextWrapper
-          value={name}
-          className="h-margin-clear"
-          onChange={action('Folder name changed.')}
-        >
-          {name}
-        </EditableTextWrapper>
+        nameForm || (
+          <HierarchyNameInput
+            name={folderName}
+            onChange={value => setFolderName(value)}
+          />
+        )
       }
+      actions={
+        <HierarchyFolderRowActions
+          startCreatingFolder={() => setNewFolderId(`${id}-new-folder`)}
+        />
+      }
+      style={{ minWidth: '320px' }}
       open={open}
       showToggle
-      style={{ minWidth: '320px' }}
       onClick={() => {
         if (!isDisabled) {
           return isLevelSelected
@@ -51,18 +67,13 @@ export const HierarchyFolderRow = ({ childCount, children, open, id }) => {
         return null;
       }}
     >
-      {children}
+      {children(newFolderId, setNewFolderId)}
     </FolderRow>
   );
-};
+}
 
-HierarchyFolderRow.propTypes = {
-  childCount: number.isRequired,
-  children: oneOfType([node, arrayOf(node)]),
-  open: bool.isRequired,
-  id: string.isRequired
-};
+HierarchyFolderRow.propTypes = FolderRow.propTypes;
 
-HierarchyFolderRow.defaultProps = {
-  children: null
-};
+HierarchyFolderRow.defaultProps = FolderRow.defaultProps;
+
+export { HierarchyFolderRow };
