@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { action } from '@storybook/addon-actions';
-import { string } from 'prop-types';
+import { shape, string } from 'prop-types';
 import cx from 'classnames';
 import {
   ItemRow,
@@ -66,5 +66,5 @@ export const HierarchyItemRow = ({ id, name, status }) => {
 HierarchyItemRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
-  status: StatusIndicator.propTypes.isRequired
+  status: shape({}).isRequired
 };

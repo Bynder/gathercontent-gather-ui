@@ -1,11 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { arrayOf, shape, node, func, bool } from 'prop-types';
+import { FolderRow, SelectedObjectsContext } from 'lib';
 import cx from 'classnames';
-import { FolderRow, SelectedObjectsContext } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-function HierarchyFolderRow({ data, nameForm, children, open }) {
-  const [folderName, setFolderName] = useState(data.name);
+function HierarchyFolderRow({
+  parentData,
+  childIds,
+  nameForm,
+  children,
+  open
+}) {
+  const [folderName, setFolderName] = useState(parentData.name);
   const [newFolderId, setNewFolderId] = useState(false);
 
   const {
@@ -15,8 +22,7 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
     currentSelectedType
   } = useContext(SelectedObjectsContext);
 
-  const childIds = data.children.map(child => child.id);
-  const isLevelSelected = selected.indexOf(data.id) !== -1;
+  const isLevelSelected = selected.indexOf(parentData.id) !== -1;
   const isDisabled =
     currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
 
@@ -26,13 +32,13 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
   });
 
   useEffect(() => {
-    setFolderName(data.name);
-  }, [data.name]);
+    setFolderName(parentData.name);
+  }, [parentData.name]);
 
   return (
     <FolderRow
       className={classNames}
-      metaText={`${data.children.length} items`}
+      metaText={`${childIds.length} items`}
       name={
         nameForm || (
           <HierarchyNameInput
@@ -43,7 +49,9 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       }
       actions={
         <HierarchyFolderRowActions
-          startCreatingFolder={() => setNewFolderId(`${data.id}-new-folder`)}
+          startCreatingFolder={() =>
+            setNewFolderId(`${parentData.id}-new-folder`)
+          }
         />
       }
       style={{ minWidth: '320px' }}
@@ -52,8 +60,8 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       onClick={() => {
         if (!isDisabled) {
           return isLevelSelected
-            ? deselectMultiple([data.id, ...childIds], 'folder')
-            : selectMultiple([data.id, ...childIds], 'folder');
+            ? deselectMultiple([parentData.id, ...childIds], 'folder')
+            : selectMultiple([parentData.id, ...childIds], 'folder');
         }
         return null;
       }}
@@ -63,8 +71,17 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
   );
 }
 
-HierarchyFolderRow.propTypes = FolderRow.propTypes;
+HierarchyFolderRow.propTypes = {
+  parentData: shape({}).isRequired,
+  childIds: arrayOf(node).isRequired,
+  children: func.isRequired,
+  nameForm: node,
+  open: bool
+};
 
-HierarchyFolderRow.defaultProps = FolderRow.defaultProps;
+HierarchyFolderRow.defaultProps = {
+  nameForm: null,
+  open: true
+};
 
 export { HierarchyFolderRow };

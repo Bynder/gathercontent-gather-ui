@@ -12,14 +12,20 @@ export const HierarchyCollection = ({
   statusColor
 }) => {
   const thisIndex = index + 1;
-  const data = hierarchyData[thisIndex];
+  const folderId = hierarchyData.allFolderIds[thisIndex];
+  const parentData = hierarchyData.foldersById[folderId];
+  const childData = hierarchyData.itemsByParent[folderId];
 
-  return !data ? null : (
-    <HierarchyFolderRow data={data} open={open}>
+  return !parentData ? null : (
+    <HierarchyFolderRow
+      parentData={parentData}
+      childIds={childData}
+      open={open}
+    >
       {(newFolderId, setNewFolderId) => (
         <>
-          {data.children.map(d => (
-            <HierarchyItemRow key={d.id} {...d} />
+          {childData.map(d => (
+            <HierarchyItemRow key={d} {...hierarchyData.itemsById[d]} />
           ))}
 
           {newFolderId && (
