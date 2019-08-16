@@ -8,14 +8,14 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Styles
    ========================================================================== */
 
-.folder-row,
-.folder-row > *,
-.folder-row__meta > * {
+.folder-row__inner,
+.folder-row__inner > *,
+.folder-row__aside > * {
   display: flex;
   align-items: center;
 }
 
-.folder-row {
+.folder-row__inner {
   padding: $folder-row-spacing;
   background: $neutral-lightest;
   border-radius: 4px;
@@ -33,8 +33,16 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   font-weight: $typo-weight-semi-bold;
 }
 
-.folder-row__meta {
+.folder-row__aside {
   margin-left: auto;
+}
+
+.folder-row__cell {
+  margin-left: $folder-row-spacing*1.5;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .folder-row__actions {
@@ -45,16 +53,6 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   padding: 0 0 0 $folder-row-spacing;
 }
 
-.folder-row__meta-text {
-  font-size: $typo-size-slight;
-  margin-left: $folder-row-spacing*1.5;
-  color: $neutral-base;
-  white-space: nowrap;
-
-  @include respond-to-max($screen-xs-min) {
-    display: none;
-  }
-}
 
 .folder-row__toggle {
   display: inline-flex;
@@ -93,7 +91,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Modifiers
    ========================================================================== */
 
-.folder-row--open {
+.folder-row--open .folder-row__inner {
   background: $neutral-light;
 }
 
@@ -108,7 +106,17 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
-.folder-row--highlight + .folder-row__contents {
+.folder-row__cell--meta {
+  font-size: $typo-size-slight;
+  color: $neutral-base;
+  white-space: nowrap;
+
+  @include respond-to-max($screen-xs-min) {
+    display: none;
+  }
+}
+
+.folder-row__contents--highlight {
   &:before {
     background: $primary-blue;
   }
