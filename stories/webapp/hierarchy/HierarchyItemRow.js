@@ -29,7 +29,8 @@ export const HierarchyItemRow = ({ id, name, status }) => {
     isDisabled,
     handleClick,
     isHovered,
-    handleMouseEnter
+    handleMouseEnter,
+    handleMouseLeave
   } = useObjectSelector(
     id,
     'item',
@@ -51,6 +52,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       style={{ minWidth: '320px' }}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <ItemRow.Name>
         {createStatusIndicator(status)}
