@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
 import { string } from 'prop-types';
 import cx from 'classnames';
@@ -11,6 +11,19 @@ const createStatusIndicator = status => (
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
+  const avatars = useMemo(
+    () => (
+      <AvatarGroupMock
+        defaultMaxCount={8}
+        avatarProps={{ microSize: true, bordered: true }}
+        avatarGroupProps={{ micro: true }}
+      >
+        {({ ui, count }) => (count ? ui : null)}
+      </AvatarGroupMock>
+    ),
+    []
+  );
+
   const {
     isSelected,
     isDisabled,
@@ -53,15 +66,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       <ItemRow.Aside>
         <ItemRow.Data>No template</ItemRow.Data>
 
-        <AvatarGroupMock
-          defaultMaxCount={8}
-          avatarProps={{ smallSize: true, bordered: true }}
-          avatarGroupProps={{ small: true }}
-        >
-          {({ ui, count }) =>
-            count ? <ItemRow.Data>{ui}</ItemRow.Data> : null
-          }
-        </AvatarGroupMock>
+        <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
       </ItemRow.Aside>
     </ItemRow>
   );
