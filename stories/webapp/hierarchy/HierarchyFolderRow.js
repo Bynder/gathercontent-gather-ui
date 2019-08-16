@@ -8,7 +8,9 @@ import { useObjectSelector } from '../../../lib/SelectedObjectsProvider/useObjec
 function HierarchyFolderRow({ data, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(data.name);
   const [newFolderId, setNewFolderId] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const childIds = data.children.map(child => child.id);
+
   const {
     isSelected,
     isDisabled,
@@ -25,7 +27,6 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       currentSelectedType !== 'folder' &&
       !isParentSelected
   );
-
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
@@ -45,6 +46,8 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
           <HierarchyNameInput
             name={folderName}
             onChange={value => setFolderName(value)}
+            onStartEditing={() => setIsEditing(true)}
+            onStopEditing={() => setIsEditing(false)}
           />
         )
       }
@@ -56,9 +59,16 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       style={{ minWidth: '320px' }}
       open={open}
       showToggle
-      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      backdrop={
+        <button
+          type="button"
+          className="h-button-clear"
+          onClick={handleClick}
+        />
+      }
+      isEditing={isEditing}
     >
       {children(newFolderId, setNewFolderId)}
     </FolderRow>
