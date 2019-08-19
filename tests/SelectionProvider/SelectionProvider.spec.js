@@ -1,12 +1,12 @@
 import { render, fireEvent } from '@testing-library/react';
 import { React } from '../setup';
-import { SelectedObjectsProvider, SelectedObjectsContext } from '../../lib';
+import { SelectionProvider, SelectionContext } from '../../lib';
 
-describe('SelectedObjectsProvider', () => {
+describe('SelectionProvider', () => {
   const createWrapper = child => (
-    <SelectedObjectsProvider>
-      <SelectedObjectsContext.Consumer>{child}</SelectedObjectsContext.Consumer>
-    </SelectedObjectsProvider>
+    <SelectionProvider>
+      <SelectionContext.Consumer>{child}</SelectionContext.Consumer>
+    </SelectionProvider>
   );
 
   it('appends a selected id', () => {

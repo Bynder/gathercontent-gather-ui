@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { FolderRow } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
-import { useObjectSelector } from '../../../lib/SelectedObjectsProvider/useObjectSelector';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 function HierarchyFolderRow({ data, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(data.name);

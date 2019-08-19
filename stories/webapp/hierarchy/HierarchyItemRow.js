@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 import cx from 'classnames';
 import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
-import { useObjectSelector } from '../../../lib/SelectedObjectsProvider/useObjectSelector';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 const createStatusIndicator = status => (
   <StatusIndicator color={status.color} className="h-margin-right-half" />
