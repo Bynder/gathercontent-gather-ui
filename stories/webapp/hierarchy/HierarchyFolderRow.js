@@ -1,27 +1,26 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
-import { FolderRow, SelectedObjectsContext } from '../../../lib';
+import { FolderRow } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 function HierarchyFolderRow({ data, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(data.name);
   const [newFolderId, setNewFolderId] = useState(false);
-
-  const {
-    selected,
-    selectMultiple,
-    deselectMultiple,
-    currentSelectedType
-  } = useContext(SelectedObjectsContext);
-
   const childIds = data.children.map(child => child.id);
-  const isLevelSelected = selected.indexOf(data.id) !== -1;
-  const isDisabled =
-    currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
+  const { isSelected, isDisabled, handleClick } = useObjectSelector(
+    data.id,
+    'folder',
+    [data.id, ...childIds],
+    (currentSelectedType, isParentSelected) =>
+      currentSelectedType &&
+      currentSelectedType !== 'folder' &&
+      !isParentSelected
+  );
 
   const classNames = cx('h-margin-bottom-half', {
-    'is-selected': isLevelSelected,
+    'is-selected': isSelected,
     'is-disabled': isDisabled
   });
 
@@ -49,14 +48,7 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
       style={{ minWidth: '320px' }}
       open={open}
       showToggle
-      onClick={() => {
-        if (!isDisabled) {
-          return isLevelSelected
-            ? deselectMultiple([data.id, ...childIds], 'folder')
-            : selectMultiple([data.id, ...childIds], 'folder');
-        }
-        return null;
-      }}
+      onClick={handleClick}
     >
       {children(newFolderId, setNewFolderId)}
     </FolderRow>
