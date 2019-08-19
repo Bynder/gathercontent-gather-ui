@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
-import { string } from 'prop-types';
+import { shape, string } from 'prop-types';
 import cx from 'classnames';
 import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
@@ -11,19 +11,6 @@ const createStatusIndicator = status => (
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
-  const avatars = useMemo(
-    () => (
-      <AvatarGroupMock
-        defaultMaxCount={8}
-        avatarProps={{ microSize: true, bordered: true }}
-        avatarGroupProps={{ micro: true }}
-      >
-        {({ ui, count }) => (count ? ui : null)}
-      </AvatarGroupMock>
-    ),
-    []
-  );
-
   const {
     isSelected,
     isDisabled,
@@ -44,6 +31,19 @@ export const HierarchyItemRow = ({ id, name, status }) => {
     'is-disabled': isDisabled,
     'is-hovered': isHovered
   });
+
+  const avatars = useMemo(
+    () => (
+      <AvatarGroupMock
+        defaultMaxCount={8}
+        avatarProps={{ smallSize: true, bordered: true }}
+        avatarGroupProps={{ small: true }}
+      >
+        {({ ui, count }) => (count ? <ItemRow.Data>{ui}</ItemRow.Data> : null)}
+      </AvatarGroupMock>
+    ),
+    []
+  );
 
   return (
     <ItemRow
@@ -77,5 +77,5 @@ export const HierarchyItemRow = ({ id, name, status }) => {
 HierarchyItemRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
-  status: StatusIndicator.propTypes.isRequired
+  status: shape({}).isRequired
 };

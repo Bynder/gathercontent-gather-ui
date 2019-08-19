@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { arrayOf, string, node, func, bool } from 'prop-types';
+import { FolderRow } from 'lib';
 import cx from 'classnames';
-import { FolderRow } from '../../../lib';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
-function HierarchyFolderRow({ data, nameForm, children, open }) {
-  const [folderName, setFolderName] = useState(data.name);
+function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
+  const [folderName, setFolderName] = useState(name);
   const [newFolderId, setNewFolderId] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const childIds = data.children.map(child => child.id);
 
   const {
     isSelected,
@@ -19,14 +18,15 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
     handleMouseEnter,
     handleMouseLeave
   } = useObjectSelector(
-    data.id,
+    id,
     'folder',
-    [data.id, ...childIds],
+    [id, ...childIds],
     (currentSelectedType, isParentSelected) =>
       currentSelectedType &&
       currentSelectedType !== 'folder' &&
       !isParentSelected
   );
+
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
@@ -34,31 +34,13 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
   });
 
   useEffect(() => {
-    setFolderName(data.name);
-  }, [data.name]);
+    setFolderName(name);
+  }, [name]);
 
   return (
     <FolderRow
       className={classNames}
-      metaText={`${data.children.length} items`}
-      name={
-        nameForm || (
-          <HierarchyNameInput
-            name={folderName}
-            onChange={value => setFolderName(value)}
-            onStartEditing={() => setIsEditing(true)}
-            onStopEditing={() => setIsEditing(false)}
-          />
-        )
-      }
-      actions={
-        <HierarchyFolderRowActions
-          startCreatingFolder={() => setNewFolderId(`${data.id}-new-folder`)}
-        />
-      }
-      style={{ minWidth: '320px' }}
       open={open}
-      showToggle
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       backdrop={
@@ -68,15 +50,51 @@ function HierarchyFolderRow({ data, nameForm, children, open }) {
           onClick={handleClick}
         />
       }
-      isEditing={isEditing}
     >
-      {children(newFolderId, setNewFolderId)}
+      {(show, setShow) => (
+        <>
+          <FolderRow.Inner style={{ minWidth: '320px' }}>
+            <FolderRow.Name setShow={setShow} show={show} showToggle>
+              {nameForm || (
+                <HierarchyNameInput
+                  name={folderName}
+                  onChange={value => setFolderName(value)}
+                />
+              )}
+            </FolderRow.Name>
+
+            <FolderRow.Aside>
+              <FolderRow.Cell>
+                <HierarchyFolderRowActions
+                  startCreatingFolder={() => setNewFolderId(`${id}-new-folder`)}
+                />
+              </FolderRow.Cell>
+
+              <FolderRow.Cell meta>{`${childIds.length} items`}</FolderRow.Cell>
+            </FolderRow.Aside>
+          </FolderRow.Inner>
+
+          <FolderRow.Contents>
+            {children(newFolderId, setNewFolderId)}
+          </FolderRow.Contents>
+        </>
+      )}
     </FolderRow>
   );
 }
 
-HierarchyFolderRow.propTypes = FolderRow.propTypes;
+HierarchyFolderRow.propTypes = {
+  id: string.isRequired,
+  name: string.isRequired,
+  childIds: arrayOf(node).isRequired,
+  children: func.isRequired,
+  nameForm: node,
+  open: bool
+};
 
-HierarchyFolderRow.defaultProps = FolderRow.defaultProps;
+HierarchyFolderRow.defaultProps = {
+  nameForm: null,
+  open: true
+};
 
 export { HierarchyFolderRow };
