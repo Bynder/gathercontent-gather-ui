@@ -1,28 +1,36 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { arrayOf, string, node, func, bool } from 'prop-types';
-import { FolderRow, SelectedObjectsContext } from 'lib';
+import { FolderRow } from 'lib';
 import cx from 'classnames';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(name);
   const [newFolderId, setNewFolderId] = useState(false);
 
   const {
-    selected,
-    selectMultiple,
-    deselectMultiple,
-    currentSelectedType
-  } = useContext(SelectedObjectsContext);
+    isSelected,
+    isDisabled,
+    handleClick,
+    isHovered,
+    handleMouseEnter,
+    handleMouseLeave
+  } = useObjectSelector(
+    id,
+    'folder',
+    [id, ...childIds],
+    (currentSelectedType, isParentSelected) =>
+      currentSelectedType &&
+      currentSelectedType !== 'folder' &&
+      !isParentSelected
+  );
 
-  const isLevelSelected = selected.indexOf(id) !== -1;
-  const isDisabled =
-    currentSelectedType && currentSelectedType !== 'folder' && !isLevelSelected;
-
-  const classNames = cx({
-    'is-selected': isLevelSelected,
-    'is-disabled': isDisabled
+  const classNames = cx('h-margin-bottom-half', {
+    'is-selected': isSelected,
+    'is-disabled': isDisabled,
+    'is-hovered': isHovered
   });
 
   useEffect(() => {
@@ -33,14 +41,15 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
     <FolderRow
       className={classNames}
       open={open}
-      onClick={() => {
-        if (!isDisabled) {
-          return isLevelSelected
-            ? deselectMultiple([id, ...childIds], 'folder')
-            : selectMultiple([id, ...childIds], 'folder');
-        }
-        return null;
-      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      backdrop={
+        <button
+          type="button"
+          className="h-button-clear"
+          onClick={handleClick}
+        />
+      }
     >
       {(show, setShow) => (
         <>

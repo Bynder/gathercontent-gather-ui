@@ -1,31 +1,35 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
 import { shape, string } from 'prop-types';
 import cx from 'classnames';
-import {
-  ItemRow,
-  StatusIndicator,
-  EditableTextWrapper,
-  SelectedObjectsContext
-} from '../../../lib';
+import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 const createStatusIndicator = status => (
   <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
-  const { selected, updateSelected, currentSelectedType } = useContext(
-    SelectedObjectsContext
+  const {
+    isSelected,
+    isDisabled,
+    handleClick,
+    isHovered,
+    handleMouseEnter,
+    handleMouseLeave
+  } = useObjectSelector(
+    id,
+    'item',
+    [id],
+    (currentSelectedType, isChildSelected) =>
+      currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
 
-  const isSelected = selected.indexOf(id) !== -1;
-  const isDisabled =
-    currentSelectedType && currentSelectedType !== 'item' && !isSelected;
-
   const classNames = cx('h-margin-bottom-half', {
-    'is-selected': selected.indexOf(id) !== -1,
-    'is-disabled': isDisabled
+    'is-selected': isSelected,
+    'is-disabled': isDisabled,
+    'is-hovered': isHovered
   });
 
   const avatars = useMemo(
@@ -46,7 +50,9 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       className={classNames}
       bordered
       style={{ minWidth: '320px' }}
-      onClick={() => !isDisabled && updateSelected(id, 'item')}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <ItemRow.Name>
         {createStatusIndicator(status)}
@@ -62,7 +68,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       <ItemRow.Aside>
         <ItemRow.Data>No template</ItemRow.Data>
 
-        {avatars}
+        <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
       </ItemRow.Aside>
     </ItemRow>
   );
