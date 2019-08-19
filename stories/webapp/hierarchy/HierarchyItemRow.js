@@ -14,7 +14,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
   const { isSelected, isDisabled, handleClick } = useObjectSelector(
     id,
     'item',
-    [],
+    [id],
     (currentSelectedType, isChildSelected) =>
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
