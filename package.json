@@ -139,6 +139,7 @@
     "babel-jest": "^23.4.2",
     "babel-loader": "^8.0.0",
     "babel-plugin-inline-react-svg": "^0.2.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "circular-dependency-plugin": "^5.0.2",
     "concurrently": "^4.1.0",
     "copyfiles": "^1.2.0",
