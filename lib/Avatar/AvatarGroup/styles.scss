@@ -3,6 +3,7 @@
    ========================================================================== */
 $avatar-group-item-spacing: .115em;
 $avatar-group-size-small: 24px !default;
+$avatar-group-size-micro: 20px !default;
 
 /* ==========================================================================
    Styles
@@ -50,5 +51,13 @@ $avatar-group-size-small: 24px !default;
   .avatar__initials {
     width: $avatar-group-size-small;
     height: $avatar-group-size-small;
+  }
+}
+
+.avatar-group--micro {
+  .avatar,
+  .avatar__initials {
+    width: $avatar-group-size-micro;
+    height: $avatar-group-size-micro;
   }
 }
