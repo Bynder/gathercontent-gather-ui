@@ -1,49 +1,57 @@
-import { React, shallow } from '../setup';
-import { FolderRow, Button } from '../../lib';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { React } from '../setup';
+import { FolderRow } from '../../lib';
+import { FolderRowName } from '../../lib/FolderRow/FolderRowName';
 
-describe.skip('FolderRow', () => {
-  const props = {
-    name: 'folder name'
-  };
+describe('FolderRow', () => {
+  const renderWrapper = (ui, props = {}) =>
+    render(<FolderRow {...props}>{ui}</FolderRow>);
+
+  afterEach(() => {
+    cleanup();
+  });
 
   test('rendering folder name', () => {
-    const wrapper = shallow(<FolderRow {...props} />);
+    const { getByText } = renderWrapper(() => (
+      <FolderRow.Name>Folder name</FolderRow.Name>
+    ));
 
-    expect(wrapper.find('.text-overflow-ellipsis').text()).toEqual(
-      'folder name'
-    );
-  });
-
-  test('rendering meta', () => {
-    const wrapper = shallow(<FolderRow {...props} metaText={<p>meta</p>} />);
-
-    expect(wrapper.find('.folder-row__meta-text').text()).toEqual('meta');
-  });
-
-  test('rendering actions', () => {
-    const wrapper = shallow(
-      <FolderRow {...props} actions={<p className="actions">actions</p>} />
-    );
-
-    expect(wrapper.find('.actions').text()).toEqual('actions');
+    expect(getByText(/folder name/i)).toBeInTheDocument();
   });
 
   test('showing the toggle action', () => {
-    const wrapper = shallow(<FolderRow {...props} />);
+    const { getByTitle } = renderWrapper(() => (
+      <FolderRow.Name>Folder name</FolderRow.Name>
+    ));
 
-    expect(wrapper.find(Button)).toHaveLength(0);
-    wrapper.setProps({ showToggle: true });
-    expect(wrapper.find(Button)).toHaveLength(1);
+    expect(
+      getByTitle(FolderRowName.defaultProps.toggleTitle)
+    ).toBeInTheDocument();
+  });
+
+  test('hiding the toggle action', () => {
+    const { queryByTitle } = renderWrapper(() => (
+      <FolderRow.Name showToggle={false}>Folder name</FolderRow.Name>
+    ));
+
+    expect(queryByTitle(FolderRowName.defaultProps.toggleTitle)).toBeNull();
   });
 
   test('rendering the folder contents', () => {
-    const wrapper = shallow(
-      <FolderRow {...props} showToggle>
-        <p className="content">Hello world</p>
-      </FolderRow>
+    const { getByText, queryByText, getByTitle } = renderWrapper(
+      (show, setShow) => (
+        <FolderRow.Inner>
+          <FolderRow.Name show={show} setShow={setShow}>
+            folder name
+          </FolderRow.Name>
+
+          <FolderRow.Contents show={show}>contents</FolderRow.Contents>
+        </FolderRow.Inner>
+      )
     );
-    expect(wrapper.find('.content')).toHaveLength(0);
-    wrapper.find(Button).simulate('click');
-    expect(wrapper.find('.content')).toHaveLength(1);
+
+    expect(queryByText(/contents/i)).toBeNull();
+    fireEvent.click(getByTitle(FolderRowName.defaultProps.toggleTitle));
+    expect(getByText(/contents/i)).toBeInTheDocument();
   });
 });
