@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
 import { shape, string } from 'prop-types';
 import cx from 'classnames';
@@ -28,6 +28,19 @@ export const HierarchyItemRow = ({ id, name, status }) => {
     'is-disabled': isDisabled
   });
 
+  const avatars = useMemo(
+    () => (
+      <AvatarGroupMock
+        defaultMaxCount={8}
+        avatarProps={{ smallSize: true, bordered: true }}
+        avatarGroupProps={{ small: true }}
+      >
+        {({ ui, count }) => (count ? <ItemRow.Data>{ui}</ItemRow.Data> : null)}
+      </AvatarGroupMock>
+    ),
+    []
+  );
+
   return (
     <ItemRow
       className={classNames}
@@ -49,15 +62,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       <ItemRow.Aside>
         <ItemRow.Data>No template</ItemRow.Data>
 
-        <AvatarGroupMock
-          defaultMaxCount={8}
-          avatarProps={{ smallSize: true, bordered: true }}
-          avatarGroupProps={{ small: true }}
-        >
-          {({ ui, count }) =>
-            count ? <ItemRow.Data>{ui}</ItemRow.Data> : null
-          }
-        </AvatarGroupMock>
+        {avatars}
       </ItemRow.Aside>
     </ItemRow>
   );

@@ -17,11 +17,7 @@ export const HierarchyCollection = ({
   const childData = hierarchyData.itemsByParent[folderId];
 
   return !parentData ? null : (
-    <HierarchyFolderRow
-      parentData={parentData}
-      childIds={childData}
-      open={open}
-    >
+    <HierarchyFolderRow {...parentData} childIds={childData} open={open}>
       {(newFolderId, setNewFolderId) => (
         <>
           {childData.map(d => (
