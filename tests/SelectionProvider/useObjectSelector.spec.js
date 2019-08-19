@@ -1,14 +1,14 @@
 import React from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useObjectSelector } from '../../lib/SelectedObjectsProvider/useObjectSelector';
-import { SelectedObjectsProvider } from '../../lib/SelectedObjectsProvider';
+import { useObjectSelector } from '../../lib/SelectionProvider/useObjectSelector';
+import { SelectionProvider } from '../../lib/SelectionProvider';
 
 describe('useObjectSelector', () => {
   it('should select the given ids', () => {
     const id = 1;
     // eslint-disable-next-line react/prop-types
     const wrapper = ({ children }) => (
-      <SelectedObjectsProvider>{children}</SelectedObjectsProvider>
+      <SelectionProvider>{children}</SelectionProvider>
     );
     const { result } = renderHook(
       () => useObjectSelector(id, 'type', [id, 2], () => false),
@@ -26,7 +26,7 @@ describe('useObjectSelector', () => {
     const id = 1;
     // eslint-disable-next-line react/prop-types
     const wrapper = ({ children }) => (
-      <SelectedObjectsProvider>{children}</SelectedObjectsProvider>
+      <SelectionProvider>{children}</SelectionProvider>
     );
     const { result } = renderHook(
       () => useObjectSelector(id, 'folder', [id], () => true),
@@ -45,7 +45,7 @@ describe('useObjectSelector', () => {
     const id = 1;
     // eslint-disable-next-line react/prop-types
     const wrapper = ({ children }) => (
-      <SelectedObjectsProvider>{children}</SelectedObjectsProvider>
+      <SelectionProvider>{children}</SelectionProvider>
     );
     const { result } = renderHook(
       () => useObjectSelector(id, 'folder', [id], () => true),
@@ -64,7 +64,7 @@ describe('useObjectSelector', () => {
     const id = 1;
     // eslint-disable-next-line react/prop-types
     const wrapper = ({ children }) => (
-      <SelectedObjectsProvider>{children}</SelectedObjectsProvider>
+      <SelectionProvider>{children}</SelectionProvider>
     );
     const { result } = renderHook(
       () => useObjectSelector(id, 'folder', [id], () => true),

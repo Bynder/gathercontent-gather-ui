@@ -3,7 +3,7 @@ import faker from 'faker';
 import uuid from 'uuid/v1';
 import { storiesOf } from '@storybook/react';
 import { number, boolean, text } from '@storybook/addon-knobs';
-import { SelectedObjectsProvider } from 'lib';
+import { SelectionProvider } from 'lib';
 import { HierarchyCollection } from './HierarchyCollection';
 
 const stories = storiesOf('Web app', module);
@@ -34,13 +34,13 @@ stories.add('Hierarchy', () => {
   }, {});
 
   return (
-    <SelectedObjectsProvider>
+    <SelectionProvider>
       <HierarchyCollection
         hierarchyData={hierarchyData}
         statusColor={statusColor}
         index={-1}
         open={open}
       />
-    </SelectedObjectsProvider>
+    </SelectionProvider>
   );
 });
