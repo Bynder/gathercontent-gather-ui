@@ -1,39 +1,58 @@
-import React, { useContext } from 'react';
+import React, { useMemo } from 'react';
 import { action } from '@storybook/addon-actions';
-import { string } from 'prop-types';
+import { shape, string } from 'prop-types';
 import cx from 'classnames';
-import {
-  ItemRow,
-  StatusIndicator,
-  EditableTextWrapper,
-  SelectedObjectsContext
-} from '../../../lib';
+import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
 import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
+import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
 const createStatusIndicator = status => (
   <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
 export const HierarchyItemRow = ({ id, name, status }) => {
-  const { selected, updateSelected, currentSelectedType } = useContext(
-    SelectedObjectsContext
+  const {
+    isSelected,
+    isDisabled,
+    handleClick,
+    isHovered,
+    handleMouseEnter,
+    handleMouseLeave
+  } = useObjectSelector(
+    id,
+    'item',
+    [id],
+    (currentSelectedType, isChildSelected) =>
+      currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
 
-  const isSelected = selected.indexOf(id) !== -1;
-  const isDisabled =
-    currentSelectedType && currentSelectedType !== 'item' && !isSelected;
-
   const classNames = cx('h-margin-bottom-half', {
-    'is-selected': selected.indexOf(id) !== -1,
-    'is-disabled': isDisabled
+    'is-selected': isSelected,
+    'is-disabled': isDisabled,
+    'is-hovered': isHovered
   });
+
+  const avatars = useMemo(
+    () => (
+      <AvatarGroupMock
+        defaultMaxCount={8}
+        avatarProps={{ smallSize: true, bordered: true }}
+        avatarGroupProps={{ small: true }}
+      >
+        {({ ui, count }) => (count ? <ItemRow.Data>{ui}</ItemRow.Data> : null)}
+      </AvatarGroupMock>
+    ),
+    []
+  );
 
   return (
     <ItemRow
       className={classNames}
       bordered
       style={{ minWidth: '320px' }}
-      onClick={() => !isDisabled && updateSelected(id, 'item')}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <ItemRow.Name>
         {createStatusIndicator(status)}
@@ -49,15 +68,7 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       <ItemRow.Aside>
         <ItemRow.Data>No template</ItemRow.Data>
 
-        <AvatarGroupMock
-          defaultMaxCount={8}
-          avatarProps={{ smallSize: true, bordered: true }}
-          avatarGroupProps={{ small: true }}
-        >
-          {({ ui, count }) =>
-            count ? <ItemRow.Data>{ui}</ItemRow.Data> : null
-          }
-        </AvatarGroupMock>
+        <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
       </ItemRow.Aside>
     </ItemRow>
   );
@@ -66,5 +77,5 @@ export const HierarchyItemRow = ({ id, name, status }) => {
 HierarchyItemRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
-  status: StatusIndicator.propTypes.isRequired
+  status: shape({}).isRequired
 };

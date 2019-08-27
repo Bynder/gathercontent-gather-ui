@@ -18,7 +18,7 @@ import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
-import Field from './components/Field';
+import Field from '../lib/Field/stories/FieldStory';
 import Figure from './components/Figure';
 import Conversation from './components/Conversation';
 import Form from './components/Form';
@@ -61,6 +61,6 @@ import Pill from './components/Pill';
 import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
 import Windowing from '../lib/Windowing/stories/WindowingStory';
-import SelectedObjects from '../lib/SelectedObjectsProvider/stories/SelectedObjectsStory'
+import Selection from '../lib/SelectionProvider/stories/SelectionStory';
 
 import Hierarchy from './webapp/hierarchy/HierarchyStory';

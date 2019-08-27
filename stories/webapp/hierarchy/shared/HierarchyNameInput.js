@@ -2,12 +2,14 @@ import React from 'react';
 import { func, string } from 'prop-types';
 import EditableTextWrapper from '../../../../lib/EditableTextWrapper';
 
-function HierarchyNameInput({ name, onChange }) {
+function HierarchyNameInput({ name, onChange, onStartEditing, onStopEditing }) {
   return (
     <EditableTextWrapper
       value={name}
       className="h-margin-clear"
       onChange={onChange}
+      onStartEditing={onStartEditing}
+      onStopEditing={onStopEditing}
     >
       {name}
     </EditableTextWrapper>
@@ -16,7 +18,9 @@ function HierarchyNameInput({ name, onChange }) {
 
 HierarchyNameInput.propTypes = {
   name: string.isRequired,
-  onChange: func.isRequired
+  onChange: func.isRequired,
+  onStartEditing: func.isRequired,
+  onStopEditing: func.isRequired
 };
 
 export { HierarchyNameInput };
