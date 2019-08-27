@@ -45,9 +45,14 @@ $status-indicator-margin-left: 1.3rem !default;
   white-space: nowrap;
   margin-top: 0;
   margin-bottom: 0;
-  width: 100%;
-  overflow: hidden;
   line-height: 1.5rem;
+  overflow: hidden;
+  &-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    margin-left: $layout-spacing-base/2;
+  }
   .status-indicator__label-text {
     display: inline-block;
     text-overflow: ellipsis;
@@ -105,6 +110,9 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 }
 
+.status-indicator__actions {
+  margin-left: $layout-spacing-base/2;
+}
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -128,12 +136,6 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .status-indicator--medium .status-indicator__label {
   font-size: $typo-size-base;
-}
-
-.status-indicator--read-only .status-indicator__label {
-  .status-indicator__label-text {
-    max-width: calc(100% - 30px);
-  }
 }
 
 .status-indicator--row {

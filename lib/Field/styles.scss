@@ -41,6 +41,9 @@ $field-data-p-line-height: 1.688rem !default;
   img {
     max-width: 100%;
   }
+  &.is-disabled {
+    opacity: 1;
+  }
 }
 
 .field__data {
