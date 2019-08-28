@@ -29,6 +29,7 @@ $notification-info-border: #EDEEEF !default;
 	font-size: $notification-font-size;
 	padding: $notification-padding;
 	border: $notification-border-width $notification-border-style transparent;
+	border-radius: $border-radius-base;
 
 	&--danger {
 		background-color: $notification-danger-bg;
