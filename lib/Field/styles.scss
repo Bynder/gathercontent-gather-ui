@@ -126,7 +126,6 @@ $field-data-p-line-height: 1.688rem !default;
 .field__aside {
   position: absolute;
   height: 100%;
-  right: 0;
   top: 0;
   width: $field-aside-width;
   opacity: 0;
@@ -422,6 +421,10 @@ $field-data-p-line-height: 1.688rem !default;
     text-align: right;
     align-items: flex-end;
   }
+
+  .field__aside {
+    right: 0;
+  }
 }
 
 .field--rtl {
@@ -430,5 +433,9 @@ $field-data-p-line-height: 1.688rem !default;
   .field__actions {
     text-align: left;
     align-items: flex-end;
+  }
+
+  .field__aside {
+    left: 0;
   }
 }
