@@ -18,7 +18,7 @@ import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
-import Field from './components/Field';
+import Field from '../lib/Field/stories/FieldStory';
 import Figure from './components/Figure';
 import Conversation from './components/Conversation';
 import Form from './components/Form';

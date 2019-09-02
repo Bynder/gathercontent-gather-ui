@@ -41,6 +41,15 @@ $field-data-p-line-height: 1.688rem !default;
   img {
     max-width: 100%;
   }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.is-disabled {
+    opacity: 1;
+  }
 }
 
 .field__data {
@@ -59,13 +68,8 @@ $field-data-p-line-height: 1.688rem !default;
 
 .field__actions,
 .field__validations {
-  overflow: hidden;
-}
-
-.field__action,
-.field__validation {
-  clear: both;
-  float: right;
+  display: flex;
+  flex-flow: column;
 }
 
 .field__actions {
@@ -125,7 +129,6 @@ $field-data-p-line-height: 1.688rem !default;
 .field__aside {
   position: absolute;
   height: 100%;
-  right: 0;
   top: 0;
   width: $field-aside-width;
   opacity: 0;
@@ -411,5 +414,31 @@ $field-data-p-line-height: 1.688rem !default;
         margin-top: 10px;
       }
     }
+  }
+}
+
+.field--ltr {
+  .field__label,
+  .field__validation,
+  .field__actions {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .field__aside {
+    right: 0;
+  }
+}
+
+.field--rtl {
+  .field__label,
+  .field__validation,
+  .field__actions {
+    text-align: left;
+    align-items: flex-end;
+  }
+
+  .field__aside {
+    left: 0;
   }
 }
