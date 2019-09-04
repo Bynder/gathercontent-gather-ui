@@ -1,7 +1,9 @@
 import { configure, addDecorator } from '@storybook/react';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import './IBM-Plex/font.css';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from "@storybook/addon-knobs";
+import theme from '../lib/styles/theme';
 
 require('../styles/bootstrap/_bootstrap.scss');
 require('../styles/styleguide/main.scss');
@@ -14,5 +16,6 @@ function loadStories() {
 
 addDecorator(withA11y);
 addDecorator(withKnobs);
+addDecorator(withThemesProvider([theme]));
 
 configure(loadStories, module);
