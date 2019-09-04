@@ -18,5 +18,10 @@ $participant-info-name-size: $typo-size-lead !default;
 }
 
 .participant_info__email {
-  margin: $typo-size-lead/5 0 $typo-size-lead/2 0;
+  margin: $typo-size-lead/5 0;
+}
+
+.participant_info__name + .participant_info__email {
+  color: $neutral-base;
+  font-size: $typo-size-slight;
 }

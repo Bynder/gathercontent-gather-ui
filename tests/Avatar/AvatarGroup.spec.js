@@ -61,11 +61,7 @@ describe('AvatarGroup', () => {
     expect(wrapper.find('[data-component="avatar-group"]')).toHaveLength(1);
   });
 
-  test('renders the maximum specified size of individual Avatar components', () => {
-    expect(wrapper.find(Avatar).length).toEqual(3);
-  });
-
-  test('renders a custom maximum specified size of individual Avatar components', () => {
+  test('renders an additional avatar for toggling', () => {
     const customWrapper = mount(
       <AvatarGroup maximum={1}>
         <Avatar
@@ -100,20 +96,7 @@ describe('AvatarGroup', () => {
       </AvatarGroup>
     );
 
-    expect(customWrapper.find(Avatar).length).toEqual(1);
-  });
-
-  test('renders an extra component displaying the amount of people not shown', () => {
-    const showMore = wrapper.find('[data-component="show-more-avatar"]');
-    expect(showMore).toHaveLength(1);
-    expect(showMore.text()).toEqual('+1');
-    expect(showMore.hasClass('avatar--with-toggle')).toBe(true);
-  });
-
-  test('renders the remaining avatars once clicked on "Show more"', () => {
-    const showMore = wrapper.find('[data-component="show-more-avatar"]');
-    showMore.simulate('click');
-    expect(wrapper.state().showExtra).toBe(true);
+    expect(customWrapper.find(Avatar).length).toEqual(5);
   });
 
   test('renders the initials for an Avatar when the prop is enabled', () => {

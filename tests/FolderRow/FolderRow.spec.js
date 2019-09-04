@@ -1,26 +1,57 @@
-import { React, shallow } from '../setup';
-import { FolderRow } from '../../lib/FolderRow';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { React } from '../setup';
+import { FolderRow } from '../../lib';
+import { FolderRowName } from '../../lib/FolderRow/FolderRowName';
 
 describe('FolderRow', () => {
+  const renderWrapper = (ui, props = {}) =>
+    render(<FolderRow {...props}>{ui}</FolderRow>);
+
+  afterEach(() => {
+    cleanup();
+  });
+
   test('rendering folder name', () => {
-    const wrapper = shallow(<FolderRow>folder name</FolderRow>);
+    const { getByText } = renderWrapper(() => (
+      <FolderRow.Name>Folder name</FolderRow.Name>
+    ));
 
-    expect(wrapper.text()).toEqual('folder name');
+    expect(getByText(/folder name/i)).toBeInTheDocument();
   });
 
-  test('rendering meta', () => {
-    const wrapper = shallow(
-      <FolderRow metaText={<p>meta</p>}>folder name</FolderRow>
-    );
+  test('showing the toggle action', () => {
+    const { getByTitle } = renderWrapper(() => (
+      <FolderRow.Name>Folder name</FolderRow.Name>
+    ));
 
-    expect(wrapper.find('p').text()).toEqual('meta');
+    expect(
+      getByTitle(FolderRowName.defaultProps.toggleTitle)
+    ).toBeInTheDocument();
   });
 
-  test('rendering actions', () => {
-    const wrapper = shallow(
-      <FolderRow actions={<p>actions</p>}>folder name</FolderRow>
+  test('hiding the toggle action', () => {
+    const { queryByTitle } = renderWrapper(() => (
+      <FolderRow.Name showToggle={false}>Folder name</FolderRow.Name>
+    ));
+
+    expect(queryByTitle(FolderRowName.defaultProps.toggleTitle)).toBeNull();
+  });
+
+  test('rendering the folder contents', () => {
+    const { getByText, queryByText, getByTitle } = renderWrapper(
+      (show, setShow) => (
+        <FolderRow.Inner>
+          <FolderRow.Name show={show} setShow={setShow}>
+            folder name
+          </FolderRow.Name>
+
+          <FolderRow.Contents show={show}>contents</FolderRow.Contents>
+        </FolderRow.Inner>
+      )
     );
 
-    expect(wrapper.find('p').text()).toEqual('actions');
+    expect(queryByText(/contents/i)).toBeNull();
+    fireEvent.click(getByTitle(FolderRowName.defaultProps.toggleTitle));
+    expect(getByText(/contents/i)).toBeInTheDocument();
   });
 });

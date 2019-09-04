@@ -1,5 +1,5 @@
 # ItemRow
-A component that renders a row for content Items showing the title, status and a label (if required).
+A compound component that renders a row for content Items.
 
 ## Usage
 
@@ -7,16 +7,26 @@ A component that renders a row for content Items showing the title, status and a
 
 | Name                | Type          | Default   | Required | Description                                                                            |
 | ------------------- |-------------- | --------- | -------- |--------------------------------------------------------------------------------------- |
-| children            | Node          | N/A       | Yes      | A node which renders inside a row. Mostly likely a text and a link.                    |
-| indicator           | Node          | null      | No       | A StatusIndicator component.                                                           |
-| label               | String        | null      | No       | A label which renders next to the child contents.                                      |
-| commentCount        | String        | "0"      | No       | Displays the passed comment count                                      |
+| children            | Node          | N/A       | Yes      | 
+| stacked             | Bool          | N/A       | Yes      | Adds a stacked modifier to apply stacked style. |
+| bordered            | Bool          | N/A       | Yes      | Adds a bordered modifier to apply padding and boarders.                    |
+| *                   | N/a           | N/A       | No       | Spreads the remaining props onto the root component.                    |
 
 ```
-<ItemRow
-  indicator={<StatusIndicator color="red" />}
-  label="Entry"
->
- Item title
+<ItemRow>
+    <ItemRow.Name>
+        <StatusIndicator color="red" className="h-margin-right-half" />
+        Item name
+    </ItemRow.Name>
+
+    <ItemRow.Aside>
+        <ItemRow.Data>
+            Additional data.
+        </ItemRow.Data>
+
+        <ItemRow.Data>
+            More additional data.
+        </ItemRow.Data>
+    </ItemRow.Aside>
 </ItemRow>
 ```

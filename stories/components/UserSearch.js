@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { UserSearch } from '../../lib'
 import StoryItem from '../styleguide/StoryItem';
 
@@ -33,7 +34,10 @@ const mockUsers = [
   }
 ];
 
-storiesOf('Components', module)
+const stories = storiesOf('Components', module);
+stories.addDecorator(withKnobs);
+
+stories
   .add('UserSearch', () => {
     return (
       <div>
@@ -44,22 +48,14 @@ storiesOf('Components', module)
           <UserSearch
             users={mockUsers}
             addUser={(user) => action(`user ${user.name} was clicked!`)}
-            displayEmail
+            displayEmail={boolean('display email', true)}
+            useDisplayToggle={boolean('display toggle', false)}
+            subheading={text('subheading', '')}
+            minUserLength={number('minimum user length', 0)}
+            noUserDisplay={text('no users display text', 'Looks like there are no people!')}
+            searchHeading={text('heading', 'Search...')}
+            selectedUserIds={['456']}
           />
-        </StoryItem>
-
-        <StoryItem
-          title="User search"
-          description="You can toggle if you want to see the search list"
-        >
-        <UserSearch
-          users={mockUsers}
-          addUser={(user) => action(`user ${user.name} was clicked!`)}
-          displayEmail
-          useDisplayToggle
-          subheading="Would you like to search for users?"
-          displayList={false}
-        />
         </StoryItem>
       </div>
     );
