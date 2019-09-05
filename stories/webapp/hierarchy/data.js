@@ -1,4 +1,4 @@
-import uuid from 'uuid/v1';
+import uuid from 'uuid/v4';
 import faker from 'faker';
 import { boolean, number, text } from '@storybook/addon-knobs';
 

@@ -38,22 +38,21 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
   }, [name]);
 
   return (
-    <FolderRow
-      className={classNames}
-      open={open}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      backdrop={
-        <button
-          type="button"
-          className="h-button-clear"
-          onClick={handleClick}
-        />
-      }
-    >
+    <FolderRow open={open}>
       {(show, setShow) => (
         <>
-          <FolderRow.Inner style={{ minWidth: '320px' }}>
+          <FolderRow.Inner className={classNames} style={{ minWidth: '320px' }}>
+            <div
+              className="folder-row__backdrop"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button
+                type="button"
+                className="h-button-clear"
+                onClick={handleClick}
+              />
+            </div>
             <FolderRow.Name setShow={setShow} show={show} showToggle>
               {nameForm || (
                 <HierarchyNameInput
