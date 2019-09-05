@@ -44,6 +44,12 @@ $field-data-p-line-height: 1.688rem !default;
 
   .row {
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row:after,
+  .row:before {
+    display: flex;
   }
 
   &.is-disabled {
