@@ -94,6 +94,8 @@
     "faker": "^4.1.0",
     "font-awesome": "^4.7.0",
     "linkifyjs": "^2.1.6",
+    "lodash.intersection": "^4.4.0",
+    "lodash.range": "^3.2.0",
     "moment": "^2.21.0",
     "normalize-scss": "^7.0.1",
     "object-assign": "^4.1.1",
