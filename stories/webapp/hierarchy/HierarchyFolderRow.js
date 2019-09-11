@@ -9,6 +9,7 @@ import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelec
 function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
   const [folderName, setFolderName] = useState(name);
   const [newFolderId, setNewFolderId] = useState(false);
+  const [newItemId, setNewItemId] = useState(false);
 
   const {
     isSelected,
@@ -66,6 +67,7 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
               <FolderRow.Cell>
                 <HierarchyFolderRowActions
                   startCreatingFolder={() => setNewFolderId(`${id}-new-folder`)}
+                  startCreatingItem={() => setNewItemId(`${id}-new-item`)}
                 />
               </FolderRow.Cell>
 
@@ -74,7 +76,7 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
           </FolderRow.Inner>
 
           <FolderRow.Contents>
-            {children(newFolderId, setNewFolderId)}
+            {children(newFolderId, setNewFolderId, newItemId, setNewItemId)}
           </FolderRow.Contents>
         </>
       )}
