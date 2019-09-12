@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { func, string } from 'prop-types';
 import { Icon } from '../../../../lib';
-import { HierarchyFolderRowForm } from './HierarchyFolderRowForm';
+import { HierarchyRowForm } from '../HierarchyRowForm';
 import { HierarchyFolderRow } from '../HierarchyFolderRow';
 
 const NewHierarchyFolderRow = ({ id, removeFolder }) => {
@@ -29,7 +29,7 @@ const NewHierarchyFolderRow = ({ id, removeFolder }) => {
         name={folderName}
         nameForm={
           !hasSaved && (
-            <HierarchyFolderRowForm
+            <HierarchyRowForm
               onSubmit={submitForm}
               onBlur={submitForm}
               onCancel={removeFolder}
@@ -37,6 +37,7 @@ const NewHierarchyFolderRow = ({ id, removeFolder }) => {
             />
           )
         }
+        childIds={[]}
         open
       >
         {(showNewFolder, setShowNewFolderForNewFolder) =>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { number, bool, shape } from 'prop-types';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
-import { HierarchyItemRow } from './HierarchyItemRow';
 import { StatusIndicator } from '../../../lib';
 import { NewHierarchyFolderRow } from './FolderRow/NewHierarchyFolderRow';
+import { NewHierarchyItemRow } from './ItemRow/NewHierarchyItemRow';
+import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
 
 export const HierarchyCollection = ({
   hierarchyData,
@@ -18,8 +19,11 @@ export const HierarchyCollection = ({
 
   return !parentData ? null : (
     <HierarchyFolderRow {...parentData} childIds={childData} open={open}>
-      {(newFolderId, setNewFolderId) => (
+      {(newFolderId, setNewFolderId, newItemId, setNewItemId) => (
         <>
+          {newItemId && (
+            <NewHierarchyItemRow id={newItemId} removeItem={setNewItemId} />
+          )}
           {childData.map(d => (
             <HierarchyItemRow key={d} {...hierarchyData.itemsById[d]} />
           ))}
