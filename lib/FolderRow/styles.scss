@@ -55,7 +55,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 }
 
 .folder-row__cell {
-  margin-left: $folder-row-spacing*1.5;
+  margin-left: $folder-row-spacing * 1.5;
 
   &:first-child {
     margin-left: 0;
@@ -92,15 +92,26 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   position: relative;
   padding-left: $layout-spacing-base * 2;
 
-  &:before {
+  .folder-row__contents__line {
     content: '';
     position: absolute;
-    top: 0;
     left: $layout-spacing-base - 1px;
     bottom: 0;
     width: 2px;
     background: $neutral-light;
   }
+
+  .windowing-list {
+    width: calc(100% - 40px);
+
+    > .windowing-item {
+      width: 100%;
+    }
+  }
+}
+
+.folder-row > .windowing-item {
+  width: calc(100% - 40px);
 }
 
 /* ==========================================================================
