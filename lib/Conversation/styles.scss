@@ -43,7 +43,7 @@ $conversation-meta-text-color: $neutral-base !default;
 }
 
 .conversation__header {
-  display: none; 
+  display: none;
 
   .toggle-wrapper {
     padding: $layout-spacing-base/2;
@@ -237,6 +237,10 @@ $conversation-meta-text-color: $neutral-base !default;
   padding-top: 0;
 }
 
+.conversation__person-subheading {
+  color: $primary-purple;
+}
+
 /* ==========================================================================
    State Styles
    ========================================================================== */
@@ -300,6 +304,7 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $conversation-padding;
 }
 
+.is-disabled .conversation__person-subheading,
 .is-disabled .conversation__person-name,
 .is-disabled .conversation__comment-body {
   background: rgba(255, 255, 255, .75);
@@ -315,5 +320,13 @@ $conversation-meta-text-color: $neutral-base !default;
   .conversation__resolve,
   .conversation__comment:last-child {
     border-bottom: none;
+  }
+}
+.has-subheading.conversation__comment {
+  .conversation__comment-body {
+    margin: -0.1rem 0 0;
+  }
+  &:before {
+    margin-top: $layout-spacing-base/4;
   }
 }

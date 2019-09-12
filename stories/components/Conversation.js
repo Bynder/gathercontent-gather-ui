@@ -198,6 +198,7 @@ storiesOf('Components', module)
                 userCanResolve
                 onSubscribeChange={mockActions.onSubscribeChange}
                 isSubscribed
+                conversationSubheading="This is a special comment"
               />
             )}
           </BoundaryClickWatcher>
