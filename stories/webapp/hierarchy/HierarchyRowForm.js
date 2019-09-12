@@ -1,8 +1,8 @@
 import React from 'react';
 import { func } from 'prop-types';
-import { Form, FormInput } from '../../../../lib';
+import { Form, FormInput } from 'lib';
 
-function HierarchyFolderRowForm({ onSubmit, onCancel, onChange }) {
+function HierarchyRowForm({ onSubmit, onCancel, onChange }) {
   return (
     <Form
       className="h-width-100"
@@ -22,10 +22,10 @@ function HierarchyFolderRowForm({ onSubmit, onCancel, onChange }) {
   );
 }
 
-HierarchyFolderRowForm.propTypes = {
+HierarchyRowForm.propTypes = {
   onSubmit: func.isRequired,
   onCancel: func.isRequired,
   onChange: func.isRequired
 };
 
-export { HierarchyFolderRowForm };
+export { HierarchyRowForm };

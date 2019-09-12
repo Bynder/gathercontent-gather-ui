@@ -1,16 +1,16 @@
-import React, { useMemo } from 'react';
-import { action } from '@storybook/addon-actions';
-import { shape, string } from 'prop-types';
+import React, { useEffect, useMemo, useState } from 'react';
+import { node, shape, string } from 'prop-types';
 import cx from 'classnames';
-import { ItemRow, StatusIndicator, EditableTextWrapper } from '../../../lib';
-import { AvatarGroupMock } from '../../../lib/Avatar/stories/AvatarGroupMock';
-import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
+import { ItemRow, StatusIndicator } from 'lib';
+import { AvatarGroupMock } from 'lib/Avatar/stories/AvatarGroupMock';
+import { useObjectSelector } from 'lib/SelectionProvider/useObjectSelector';
+import { HierarchyNameInput } from '../shared/HierarchyNameInput';
 
 const createStatusIndicator = status => (
   <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
-export const HierarchyItemRow = ({ id, name, status }) => {
+export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
   const {
     isSelected,
     isDisabled,
@@ -25,6 +25,12 @@ export const HierarchyItemRow = ({ id, name, status }) => {
     (currentSelectedType, isChildSelected) =>
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
+
+  const [itemName, setItemName] = useState(name);
+
+  useEffect(() => {
+    setItemName(name);
+  }, [name]);
 
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
@@ -54,22 +60,21 @@ export const HierarchyItemRow = ({ id, name, status }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <ItemRow.Name>
-        {createStatusIndicator(status)}
-        <EditableTextWrapper
-          value={name}
-          className="h-margin-clear"
-          onChange={action('Item name changed.')}
-        >
-          <a href="/">{name}</a>
-        </EditableTextWrapper>
-      </ItemRow.Name>
-
-      <ItemRow.Aside>
-        <ItemRow.Data>No template</ItemRow.Data>
-
-        <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
-      </ItemRow.Aside>
+      {nameForm || (
+        <>
+          <ItemRow.Name>
+            {status && createStatusIndicator(status)}
+            <HierarchyNameInput
+              name={itemName}
+              onChange={value => setItemName(value)}
+            />
+          </ItemRow.Name>
+          <ItemRow.Aside>
+            <ItemRow.Data>No template</ItemRow.Data>
+            <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
+          </ItemRow.Aside>{' '}
+        </>
+      )}
     </ItemRow>
   );
 };
@@ -77,5 +82,11 @@ export const HierarchyItemRow = ({ id, name, status }) => {
 HierarchyItemRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
-  status: shape({}).isRequired
+  status: shape({}),
+  nameForm: node
+};
+
+HierarchyItemRow.defaultProps = {
+  status: null,
+  nameForm: null
 };
