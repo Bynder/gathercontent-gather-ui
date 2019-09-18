@@ -100,18 +100,6 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
     width: 2px;
     background: $neutral-light;
   }
-
-  .windowing-list {
-    width: calc(100% - 40px);
-
-    > .windowing-item {
-      width: 100%;
-    }
-  }
-}
-
-.folder-row > .windowing-item {
-  width: calc(100% - 40px);
 }
 
 /* ==========================================================================
