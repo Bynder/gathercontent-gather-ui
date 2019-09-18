@@ -72,7 +72,7 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
           <ItemRow.Aside>
             <ItemRow.Data>No template</ItemRow.Data>
             <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
-          </ItemRow.Aside>{' '}
+          </ItemRow.Aside>
         </>
       )}
     </ItemRow>

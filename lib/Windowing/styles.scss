@@ -1,8 +1,10 @@
 .windowing-list {
   position: absolute;
+  width: calc(100% - 40px);
 }
 
 .windowing-item {
   float: left;
   position: absolute;
+  width: 100%;
 }
