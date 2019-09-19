@@ -48,8 +48,7 @@ describe('Comment', () => {
     focusFallback: document.createElement('input'),
     users: mockUsers,
     userCanComment: true,
-    retryComment: retryCommentSpy,
-    conversationSubheading: ''
+    retryComment: retryCommentSpy
   };
 
   beforeEach(() => {
@@ -201,14 +200,5 @@ describe('Comment', () => {
   test('retryComment passes the comment id and body', () => {
     wrapper.instance().retryComment();
     expect(retryCommentSpy).toHaveBeenCalledWith('123', 'comment body text');
-  });
-
-  test('shows a sub heading', () => {
-    wrapper.setProps({ conversationSubheading: 'hello!', index: 0 });
-    expect(wrapper.find(Person).prop('personSubheading')).toEqual('hello!');
-    wrapper.setProps({ index: 3 });
-    expect(wrapper.find(Person).prop('personSubheading')).toEqual('');
-    wrapper.setProps({ index: 0, isLatestReply: true });
-    expect(wrapper.find(Person).prop('personSubheading')).toEqual('');
   });
 });

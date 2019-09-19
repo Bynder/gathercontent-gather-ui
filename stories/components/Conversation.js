@@ -10,7 +10,7 @@ const mockUser = {
   name: 'Bruce',
   avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
   initials: 'BB',
-  display: 'brucebanner'
+  display: 'brucebanner',
 };
 
 const mockUserNoAvatar = {
@@ -28,7 +28,7 @@ const mockUsers = [
     display: 'saulgoodman',
     name: 'Saul Goodman',
     initials: 'SG',
-    email: 'heythere@lol.com'
+    email: 'heythere@lol.com',
   },
   {
     id: '456',
@@ -61,6 +61,7 @@ const mockComments = [{
     avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
     name: 'Ricardo',
     initials: 'RB',
+    type: 'Guest user'
   },
   createdBy: 4
 }];
@@ -198,7 +199,6 @@ storiesOf('Components', module)
                 userCanResolve
                 onSubscribeChange={mockActions.onSubscribeChange}
                 isSubscribed
-                conversationSubheading="This is a special comment"
               />
             )}
           </BoundaryClickWatcher>
