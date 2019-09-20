@@ -24,8 +24,8 @@ $person-avatar-border-radius: 40px !default;
   width: $person-avatar-size;
   margin: 0 $layout-spacing-base/2 0 0;
 }
-.person__subheading {
-  margin: 0;
+.person__type {
+  margin: (-$layout-spacing-base/10) 0 0 0;
   font-size: $typo-size-slight;
-  font-weight: $person-name-weight;
+  color: $neutral-base;
 }
