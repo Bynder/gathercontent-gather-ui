@@ -13,6 +13,13 @@ This uses [React Storybook](https://github.com/storybooks/react-storybook) to sh
 3. Preview changes by running the live style guide, using `yarn storybook` and pointing your browser to `http://localhost:6006/`
 4. Watch for file changes and rebuild with `yarn build:watch` (useful when you link your local version of `gather-ui` in the app)
 
+## Linking the library
+
+[You can use `yarn link` to link your local version of this library to the `node_modules` in your app.](https://github.com/gathercontent/app/blob/master/webapp/README.md#linking-gather-content-ui)
+
+For this to work, you also need to run `yarn link react` in this repository. 
+[Original issue here](https://github.com/facebook/react/issues/15315#issuecomment-479802153)
+
 ## Running the test suite
 
 Tests live under the `tests` folder and should be ran using `yarn test`.
