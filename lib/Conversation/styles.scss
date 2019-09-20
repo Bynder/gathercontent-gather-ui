@@ -237,9 +237,6 @@ $conversation-meta-text-color: $neutral-base !default;
   padding-top: 0;
 }
 
-.conversation__person-subheading {
-  color: $primary-purple;
-}
 
 /* ==========================================================================
    State Styles
@@ -304,7 +301,7 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $conversation-padding;
 }
 
-.is-disabled .conversation__person-subheading,
+.is-disabled .conversation__person-type,
 .is-disabled .conversation__person-name,
 .is-disabled .conversation__comment-body {
   background: rgba(255, 255, 255, .75);
@@ -322,11 +319,13 @@ $conversation-meta-text-color: $neutral-base !default;
     border-bottom: none;
   }
 }
-.has-subheading.conversation__comment {
+.is-active .has-author-type.conversation__comment:before,
+.show-reply-preview > .conversation__comment-list .has-author-type.conversation__comment:before {
+  margin-top: $layout-spacing-base/4 - 1;
+  height: calc(100% - #{$layout-spacing-base/4 - 1});
+}
+.has-author-type.conversation__comment {
   .conversation__comment-body {
     margin: -0.1rem 0 0;
-  }
-  &:before {
-    margin-top: $layout-spacing-base/4;
   }
 }
