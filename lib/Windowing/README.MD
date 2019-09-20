@@ -80,8 +80,6 @@ This component holds the context for Windowing, it is consumed by the other comp
 
 ##### Provides
 
-setInViewWindowingIds
-
 | Name                  | Type        | Description                                                            |
 | --------------------- | ----------- | ---------------------------------------------------------------------- |
 | scrollTop             | number      | The number of pixels that have been scrolled                           |
