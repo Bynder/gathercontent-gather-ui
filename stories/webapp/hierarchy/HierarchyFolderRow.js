@@ -6,10 +6,8 @@ import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
 
-function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
+function HierarchyFolderRow({ id, name, open }) {
   const [folderName, setFolderName] = useState(name);
-  const [newFolderId, setNewFolderId] = useState(false);
-  const [newItemId, setNewItemId] = useState(false);
 
   const {
     isSelected,
@@ -21,17 +19,17 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
   } = useObjectSelector(
     id,
     'folder',
-    [id, ...childIds],
+    [id, []], //TO FIX
     (currentSelectedType, isParentSelected) =>
       currentSelectedType &&
       currentSelectedType !== 'folder' &&
       !isParentSelected
   );
 
-  const classNames = cx('h-margin-bottom-half', {
+  const classNames = cx('h-margin-bottom-half folder-row__inner', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
-    'is-hovered': isHovered
+    'is-hovered': isHovered,
   });
 
   useEffect(() => {
@@ -55,12 +53,10 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
               />
             </div>
             <FolderRow.Name setShow={setShow} show={show} showToggle>
-              {nameForm || (
-                <HierarchyNameInput
-                  name={folderName}
-                  onChange={value => setFolderName(value)}
-                />
-              )}
+              <HierarchyNameInput
+                name={folderName}
+                onChange={value => setFolderName(value)}
+              />
             </FolderRow.Name>
 
             <FolderRow.Aside>
@@ -70,14 +66,9 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
                   startCreatingItem={() => setNewItemId(`${id}-new-item`)}
                 />
               </FolderRow.Cell>
-
-              <FolderRow.Cell meta>{`${childIds.length} items`}</FolderRow.Cell>
+              <FolderRow.Cell meta>{`${0} items`}</FolderRow.Cell> {/*TO FIX*/}
             </FolderRow.Aside>
           </FolderRow.Inner>
-
-          <FolderRow.Contents>
-            {children(newFolderId, setNewFolderId, newItemId, setNewItemId)}
-          </FolderRow.Contents>
         </>
       )}
     </FolderRow>
@@ -87,14 +78,10 @@ function HierarchyFolderRow({ id, name, childIds, nameForm, children, open }) {
 HierarchyFolderRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
-  childIds: arrayOf(node).isRequired,
-  children: func.isRequired,
-  nameForm: node,
   open: bool
 };
 
 HierarchyFolderRow.defaultProps = {
-  nameForm: null,
   open: true
 };
 
