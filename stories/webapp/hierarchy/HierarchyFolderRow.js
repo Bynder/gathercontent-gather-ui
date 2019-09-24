@@ -10,7 +10,7 @@ import { WindowingContext } from '../../../lib/Windowing/Windowing';
 function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
   const [folderName, setFolderName] = useState(name);
 
-  const { addIds, allWindowingIds } = useContext(WindowingContext);
+  const { addIds, allWindowingIds, removeIds } = useContext(WindowingContext);
 
   const {
     isSelected,
@@ -51,7 +51,19 @@ function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
                 onClick={handleClick}
               />
             </div>
-            <FolderRow.Name setShow={setShow} show={show} showToggle>
+            <FolderRow.Name
+              setShow={newShow => {
+                if (!newShow) {
+                  removeIds(allWindowingIds.indexOf(id) + 1, childIds.length);
+                } else {
+                  addIds(childIds, allWindowingIds.indexOf(id) + 1);
+                }
+
+                setShow(newShow);
+              }}
+              show={show}
+              showToggle
+            >
               <HierarchyNameInput
                 name={folderName}
                 onChange={value => setFolderName(value)}
@@ -68,7 +80,6 @@ function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
                 />
               </FolderRow.Cell>
               <FolderRow.Cell meta>{`${childIds.length} items`}</FolderRow.Cell>
-              q
             </FolderRow.Aside>
           </FolderRow.Inner>
         </>

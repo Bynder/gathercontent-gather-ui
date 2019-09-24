@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Windowing } from 'lib';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
+import { WindowingContext } from '../../../lib/Windowing/Windowing';
 
 export const HierarchyCollection = ({
   inViewWindowingIds,
   data,
   statusColor
 }) => {
+  const { allWindowingIds } = useContext(WindowingContext);
   const [newItemParentId, setNewItemParentId] = useState('');
   const newTempItemName = 'New Item';
 
@@ -16,7 +18,7 @@ export const HierarchyCollection = ({
       return (
         <Windowing.Item
           key={id}
-          index={data.allIds.indexOf(id)}
+          index={allWindowingIds.indexOf(id)}
           style={{
             paddingLeft: `${data.foldersById[id].depth * 40}px`
           }}
@@ -42,7 +44,7 @@ export const HierarchyCollection = ({
     return (
       <Windowing.Item
         key={id}
-        index={data.allIds.indexOf(id)}
+        index={allWindowingIds.indexOf(id)}
         style={{
           paddingLeft: `${(data.foldersById[parentId].depth + 1) * 40}px`
         }}
