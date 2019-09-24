@@ -17,6 +17,7 @@ A component that renders a textarea that automatically resizes depending on its 
 | className           | String        | ''        | No       | Sets the component className                                                           |
 | minRows             | Number        | 1         | No       | Sets the minimum amount of rows for the textArea                                       |
 | maxRows             | Number        | 1         | No       | Sets the maximum amount of rows for the textArea                                       |
+| widthMedium             | Boolean        | false         | No       | Sets a fixed medium width                                       |
 
 ```
 <ExpandingTextArea
@@ -26,5 +27,6 @@ A component that renders a textarea that automatically resizes depending on its 
   placeholder="some string"
   setValue={someBool}
   className="some string"
+  widthMedium={someBool}
 />
 ```

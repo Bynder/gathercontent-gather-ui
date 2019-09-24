@@ -6,8 +6,13 @@
   resize: none;
   outline: none;
   transition: border .1s ease;
+
   &:focus {
     outline: none;
     border: 1px solid $color-border-base-hover;
+  }
+
+  &--width-medium {
+    width: $layout-spacing-base * 10;
   }
 }
