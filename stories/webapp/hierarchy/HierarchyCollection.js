@@ -1,55 +1,56 @@
-import React from 'react';
-import { number, bool, shape } from 'prop-types';
+import React, { useState } from 'react';
+import { Windowing } from 'lib';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
-import { StatusIndicator } from '../../../lib';
-import { NewHierarchyFolderRow } from './FolderRow/NewHierarchyFolderRow';
-import { NewHierarchyItemRow } from './ItemRow/NewHierarchyItemRow';
 import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
 
 export const HierarchyCollection = ({
-  hierarchyData,
-  index,
-  open,
+  inViewWindowingIds,
+  data,
   statusColor
 }) => {
-  const thisIndex = index + 1;
-  const folderId = hierarchyData.allFolderIds[thisIndex];
-  const parentData = hierarchyData.foldersById[folderId];
-  const childData = hierarchyData.itemsByParent[folderId];
+  const [newItemParentId, setNewItemParentId] = useState('');
+  const newTempItemName = 'New Item';
 
-  return !parentData ? null : (
-    <HierarchyFolderRow {...parentData} childIds={childData} open={open}>
-      {(newFolderId, setNewFolderId, newItemId, setNewItemId) => (
-        <>
-          {newItemId && (
-            <NewHierarchyItemRow id={newItemId} removeItem={setNewItemId} />
-          )}
-          {childData.map(d => (
-            <HierarchyItemRow key={d} {...hierarchyData.itemsById[d]} />
-          ))}
-
-          {newFolderId && (
-            <NewHierarchyFolderRow
-              id={newFolderId}
-              removeFolder={() => setNewFolderId(false)}
-            />
-          )}
-
-          <HierarchyCollection
-            hierarchyData={hierarchyData}
-            index={thisIndex}
-            statusColor={statusColor}
-            open={open}
+  return inViewWindowingIds.map(id => {
+    if (data.allFolderIds.indexOf(id) > -1) {
+      return (
+        <Windowing.Item
+          key={id}
+          index={data.allIds.indexOf(id)}
+          style={{
+            paddingLeft: `${data.foldersById[id].depth * 40}px`
+          }}
+        >
+          <HierarchyFolderRow
+            id={id}
+            name={data.foldersById[id].name}
+            onNewItem={() => {
+              setNewItemParentId(id);
+            }}
+            childIds={data.itemsByParent[id]}
           />
-        </>
-      )}
-    </HierarchyFolderRow>
-  );
+        </Windowing.Item>
+      );
+    }
+
+    const parentId = data.itemsById[id]
+      ? data.itemsById[id].parentFolderId
+      : newItemParentId;
+
+    const name = data.itemsById[id] ? data.itemsById[id].name : newTempItemName;
+
+    return (
+      <Windowing.Item
+        key={id}
+        index={data.allIds.indexOf(id)}
+        style={{
+          paddingLeft: `${(data.foldersById[parentId].depth + 1) * 40}px`
+        }}
+      >
+        <HierarchyItemRow id={id} name={name} status={{ color: statusColor }} />
+      </Windowing.Item>
+    );
+  });
 };
 
-HierarchyCollection.propTypes = {
-  hierarchyData: shape({}).isRequired,
-  index: number.isRequired,
-  open: bool.isRequired,
-  statusColor: StatusIndicator.propTypes.color.isRequired
-};
+HierarchyCollection.propTypes = {};

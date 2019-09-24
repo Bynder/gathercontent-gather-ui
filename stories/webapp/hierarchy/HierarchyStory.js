@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { number, text } from '@storybook/addon-knobs';
-import { ItemRow, SelectionProvider, Windowing } from 'lib';
-import { HierarchyFolderRow } from './HierarchyFolderRow';
+import { SelectionProvider, Windowing } from 'lib';
 import { createData } from './data';
-import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
+import { HierarchyCollection } from './HierarchyCollection';
 
 const stories = storiesOf('Web app', module);
 
@@ -19,42 +18,13 @@ stories.add('Hierarchy', () => {
       <Windowing itemHeight={52} allIds={data.allIds} containerHeight={500}>
         <Windowing.Scroller>
           <Windowing.List>
-            {({ inViewWindowingIds }) =>
-              inViewWindowingIds.map(i =>
-                data.allFolderIds.indexOf(i) > -1 ? (
-                  <Windowing.Item
-                    key={i.id}
-                    index={data.allIds.indexOf(i)}
-                    style={{
-                      paddingLeft: `${data.foldersById[i].depth * 40}px`
-                    }}
-                  >
-                    <HierarchyFolderRow
-                      id={i}
-                      name={data.foldersById[i].name}
-                    />
-                  </Windowing.Item>
-                ) : (
-                  <Windowing.Item
-                    key={i.id}
-                    index={data.allIds.indexOf(i)}
-                    style={{
-                      paddingLeft: `${(data.foldersById[
-                        data.itemsById[i].parentFolderId
-                      ].depth +
-                        1) *
-                        40}px`
-                    }}
-                  >
-                    <HierarchyItemRow
-                      id={i}
-                      name={data.itemsById[i].name}
-                      status={statusColor}
-                    />
-                  </Windowing.Item>
-                )
-              )
-            }
+            {({ inViewWindowingIds }) => (
+              <HierarchyCollection
+                data={data}
+                inViewWindowingIds={inViewWindowingIds}
+                statusColor={statusColor}
+              />
+            )}
           </Windowing.List>
         </Windowing.Scroller>
       </Windowing>
