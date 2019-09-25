@@ -67,6 +67,8 @@ function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
               <HierarchyNameInput
                 name={folderName}
                 onChange={value => setFolderName(value)}
+                onStartEditing={() => {}}
+                onStopEditing={() => {}}
               />
             </FolderRow.Name>
 

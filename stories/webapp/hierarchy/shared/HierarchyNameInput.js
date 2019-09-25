@@ -10,6 +10,7 @@ function HierarchyNameInput({ name, onChange, onStartEditing, onStopEditing }) {
       onChange={onChange}
       onStartEditing={onStartEditing}
       onStopEditing={onStopEditing}
+      inputLabel="Item name"
     >
       {name}
     </EditableTextWrapper>
