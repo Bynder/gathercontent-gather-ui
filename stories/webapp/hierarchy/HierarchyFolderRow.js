@@ -1,17 +1,15 @@
 import React, { useState, useContext } from 'react';
 import { arrayOf, string, node, func, bool } from 'prop-types';
 import uuid from 'uuid/v4';
-import { FolderRow } from 'lib';
+import { FolderRow, Windowing, useObjectSelector } from 'lib';
 import cx from 'classnames';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
-import { useObjectSelector } from '../../../lib/SelectionProvider/useObjectSelector';
-import { WindowingContext } from '../../../lib/Windowing/Windowing';
 
 function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
   const [folderName, setFolderName] = useState(name);
 
-  const { addIds, allWindowingIds, removeIds } = useContext(WindowingContext);
+  const { addIds, allWindowingIds, removeIds } = useContext(Windowing.Context);
 
   const {
     isSelected,

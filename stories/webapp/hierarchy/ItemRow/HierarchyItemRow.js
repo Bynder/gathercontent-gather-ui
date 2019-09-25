@@ -2,9 +2,8 @@ import React, { useMemo, useState } from 'react';
 import { node, shape, string } from 'prop-types';
 import faker from 'faker';
 import cx from 'classnames';
-import { ItemRow, StatusIndicator } from 'lib';
+import { ItemRow, StatusIndicator, useObjectSelector } from 'lib';
 import { AvatarGroupMock } from 'lib/Avatar/stories/AvatarGroupMock';
-import { useObjectSelector } from 'lib/SelectionProvider/useObjectSelector';
 import { HierarchyNameInput } from '../shared/HierarchyNameInput';
 
 const createStatusIndicator = status => (

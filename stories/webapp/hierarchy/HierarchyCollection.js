@@ -2,14 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Windowing } from 'lib';
 import { HierarchyFolderRow } from './HierarchyFolderRow';
 import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
-import { WindowingContext } from '../../../lib/Windowing/Windowing';
 
 export const HierarchyCollection = ({
   inViewWindowingIds,
   data,
   statusColor
 }) => {
-  const { allWindowingIds } = useContext(WindowingContext);
+  const { allWindowingIds } = useContext(Windowing.Context);
   const [newItemParentId, setNewItemParentId] = useState('');
 
   return inViewWindowingIds.map(id => {
