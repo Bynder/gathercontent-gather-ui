@@ -15,7 +15,7 @@ stories.add('Hierarchy', () => {
   const data = createData({ levelCount, maxItemCount, statusColor });
   return (
     <SelectionProvider>
-      <Windowing itemHeight={52} allIds={data.allIds} containerHeight={500}>
+      <Windowing itemHeight={52} allIds={data.allIds} containerHeight="500px">
         <Windowing.Scroller>
           <Windowing.List>
             {({ inViewWindowingIds }) => (
