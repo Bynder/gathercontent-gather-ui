@@ -65,6 +65,8 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
             <HierarchyNameInput
               name={itemName}
               onChange={value => setItemName(value)}
+              onStartEditing={() => {}}
+              onStopEditing={() => {}}
             />
           </ItemRow.Name>
           <ItemRow.Aside>
