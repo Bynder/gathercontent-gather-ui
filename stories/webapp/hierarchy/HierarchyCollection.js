@@ -11,7 +11,6 @@ export const HierarchyCollection = ({
 }) => {
   const { allWindowingIds } = useContext(WindowingContext);
   const [newItemParentId, setNewItemParentId] = useState('');
-  const newTempItemName = 'New Item';
 
   return inViewWindowingIds.map(id => {
     if (data.allFolderIds.indexOf(id) > -1) {
@@ -39,7 +38,7 @@ export const HierarchyCollection = ({
       ? data.itemsById[id].parentFolderId
       : newItemParentId;
 
-    const name = data.itemsById[id] ? data.itemsById[id].name : newTempItemName;
+    const name = data.itemsById[id] ? data.itemsById[id].name : '';
 
     return (
       <Windowing.Item

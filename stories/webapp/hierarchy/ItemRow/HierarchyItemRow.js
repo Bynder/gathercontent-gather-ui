@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { node, shape, string } from 'prop-types';
+import faker from 'faker';
 import cx from 'classnames';
 import { ItemRow, StatusIndicator } from 'lib';
 import { AvatarGroupMock } from 'lib/Avatar/stories/AvatarGroupMock';
@@ -26,11 +27,9 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
 
-  const [itemName, setItemName] = useState(name);
-
-  useEffect(() => {
-    setItemName(name);
-  }, [name]);
+  const [itemName, setItemName] = useState(
+    name || faker.commerce.productName()
+  );
 
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,

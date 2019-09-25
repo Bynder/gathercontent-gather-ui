@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { arrayOf, string, node, func, bool } from 'prop-types';
+import uuid from 'uuid/v4';
 import { FolderRow } from 'lib';
 import cx from 'classnames';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
@@ -76,7 +77,7 @@ function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
                 <HierarchyFolderRowActions
                   startCreatingItem={() => {
                     onNewItem(id);
-                    addIds([`${id}-new-item`], allWindowingIds.indexOf(id) + 1);
+                    addIds([uuid()], allWindowingIds.indexOf(id) + 1);
                   }}
                 />
               </FolderRow.Cell>
