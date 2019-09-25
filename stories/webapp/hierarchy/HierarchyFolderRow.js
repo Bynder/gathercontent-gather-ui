@@ -52,17 +52,18 @@ function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
               />
             </div>
             <FolderRow.Name
-              setShow={newShow => {
-                if (!newShow) {
-                  removeIds(allWindowingIds.indexOf(id) + 1, childIds.length);
-                } else {
-                  addIds(childIds, allWindowingIds.indexOf(id) + 1);
-                }
-
-                setShow(newShow);
-              }}
+              setShow={setShow}
               show={show}
               showToggle
+              handleOnClick={
+                show
+                  ? () =>
+                      removeIds(
+                        allWindowingIds.indexOf(id) + 1,
+                        childIds.length
+                      )
+                  : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
+              }
             >
               <HierarchyNameInput
                 name={folderName}
