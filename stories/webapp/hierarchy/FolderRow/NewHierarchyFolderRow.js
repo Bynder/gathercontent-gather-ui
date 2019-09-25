@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { func, string } from 'prop-types';
-import { Icon } from '../../../../lib';
+import { Icon } from 'lib';
 import { HierarchyRowForm } from '../HierarchyRowForm';
 import { HierarchyFolderRow } from '../HierarchyFolderRow';
 

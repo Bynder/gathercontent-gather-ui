@@ -1,6 +1,6 @@
 import React from 'react';
 import { func, string } from 'prop-types';
-import EditableTextWrapper from '../../../../lib/EditableTextWrapper';
+import { EditableTextWrapper } from 'lib';
 
 function HierarchyNameInput({ name, onChange, onStartEditing, onStopEditing }) {
   return (
@@ -10,6 +10,7 @@ function HierarchyNameInput({ name, onChange, onStartEditing, onStopEditing }) {
       onChange={onChange}
       onStartEditing={onStartEditing}
       onStopEditing={onStopEditing}
+      inputLabel="Item name"
     >
       {name}
     </EditableTextWrapper>
