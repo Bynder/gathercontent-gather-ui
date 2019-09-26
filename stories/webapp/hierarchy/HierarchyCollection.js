@@ -6,7 +6,9 @@ import { HierarchyItemRow } from './ItemRow/HierarchyItemRow';
 export const HierarchyCollection = ({
   inViewWindowingIds,
   data,
-  statusColor
+  statusColor,
+  addIds,
+  removeIds
 }) => {
   const { allWindowingIds } = useContext(Windowing.Context);
   const [newItemParentId, setNewItemParentId] = useState('');
@@ -28,6 +30,8 @@ export const HierarchyCollection = ({
               setNewItemParentId(id);
             }}
             childIds={data.itemsByParent[id]}
+            addIds={addIds}
+            removeIds={removeIds}
           />
         </Windowing.Item>
       );

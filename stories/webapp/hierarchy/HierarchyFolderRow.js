@@ -6,10 +6,18 @@ import cx from 'classnames';
 import { HierarchyFolderRowActions } from './FolderRow/HierarchyFolderRowActions';
 import { HierarchyNameInput } from './shared/HierarchyNameInput';
 
-function HierarchyFolderRow({ id, name, open, onNewItem, childIds }) {
+function HierarchyFolderRow({
+  id,
+  name,
+  open,
+  onNewItem,
+  childIds,
+  addIds,
+  removeIds
+}) {
   const [folderName, setFolderName] = useState(name);
 
-  const { addIds, allWindowingIds, removeIds } = useContext(Windowing.Context);
+  const { allWindowingIds } = useContext(Windowing.Context);
 
   const {
     isSelected,
@@ -95,7 +103,9 @@ HierarchyFolderRow.propTypes = {
   name: string.isRequired,
   open: bool,
   onNewItem: func,
-  childIds: arrayOf(node)
+  childIds: arrayOf(node),
+  addIds: func.isRequired,
+  removeIds: func.isRequired
 };
 
 HierarchyFolderRow.defaultProps = {
