@@ -22,7 +22,7 @@ stories.add('Hierarchy', () => {
           <Windowing
             itemHeight={52}
             allIds={allWindowingIds}
-            containerHeight="100%"
+            containerHeight="500px"
           >
             <Windowing.Scroller>
               <Windowing.List>

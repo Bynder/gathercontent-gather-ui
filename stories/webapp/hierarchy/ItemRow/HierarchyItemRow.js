@@ -49,33 +49,38 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
     []
   );
 
-  return (
-    <ItemRow
-      className={classNames}
-      bordered
-      style={{ minWidth: '320px' }}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {nameForm || (
-        <>
-          <ItemRow.Name>
-            {status && createStatusIndicator(status)}
-            <HierarchyNameInput
-              name={itemName}
-              onChange={value => setItemName(value)}
-              onStartEditing={() => {}}
-              onStopEditing={() => {}}
-            />
-          </ItemRow.Name>
-          <ItemRow.Aside>
-            <ItemRow.Data>No template</ItemRow.Data>
-            <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
-          </ItemRow.Aside>
-        </>
-      )}
-    </ItemRow>
+  return useMemo(
+    () => (
+      <ItemRow
+        className={classNames}
+        bordered
+        style={{ minWidth: '320px' }}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {nameForm || (
+          <>
+            <ItemRow.Name>
+              {status && createStatusIndicator(status)}
+              <HierarchyNameInput
+                name={itemName}
+                onChange={value => setItemName(value)}
+                onStartEditing={() => {}}
+                onStopEditing={() => {}}
+              />
+            </ItemRow.Name>
+            <ItemRow.Aside>
+              <ItemRow.Data>No template</ItemRow.Data>
+              <ItemRow.Data style={{ minWidth: '75px' }}>
+                {avatars}
+              </ItemRow.Data>
+            </ItemRow.Aside>
+          </>
+        )}
+      </ItemRow>
+    ),
+    []
   );
 };
 
