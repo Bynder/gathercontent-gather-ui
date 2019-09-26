@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { arrayOf, string, node, func, bool } from 'prop-types';
 import uuid from 'uuid/v4';
 import { FolderRow, Windowing, useObjectSelector } from 'lib';
@@ -42,59 +42,67 @@ function HierarchyFolderRow({
     'is-hovered': isHovered
   });
 
-  return (
-    <FolderRow open={open}>
-      {(show, setShow) => (
-        <>
-          <FolderRow.Inner className={classNames} style={{ minWidth: '320px' }}>
-            <div
-              className="folder-row__backdrop"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+  return useMemo(
+    () => (
+      <FolderRow open={open}>
+        {(show, setShow) => (
+          <>
+            <FolderRow.Inner
+              className={classNames}
+              style={{ minWidth: '320px' }}
             >
-              <button
-                type="button"
-                className="h-button-clear"
-                onClick={handleClick}
-              />
-            </div>
-            <FolderRow.Name
-              setShow={setShow}
-              show={show}
-              showToggle
-              handleOnClick={
-                show
-                  ? () =>
-                      removeIds(
-                        allWindowingIds.indexOf(id) + 1,
-                        childIds.length
-                      )
-                  : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
-              }
-            >
-              <HierarchyNameInput
-                name={folderName}
-                onChange={value => setFolderName(value)}
-                onStartEditing={() => {}}
-                onStopEditing={() => {}}
-              />
-            </FolderRow.Name>
-
-            <FolderRow.Aside>
-              <FolderRow.Cell>
-                <HierarchyFolderRowActions
-                  startCreatingItem={() => {
-                    onNewItem(id);
-                    addIds([uuid()], allWindowingIds.indexOf(id) + 1);
-                  }}
+              <div
+                className="folder-row__backdrop"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  className="h-button-clear"
+                  onClick={handleClick}
                 />
-              </FolderRow.Cell>
-              <FolderRow.Cell meta>{`${childIds.length} items`}</FolderRow.Cell>
-            </FolderRow.Aside>
-          </FolderRow.Inner>
-        </>
-      )}
-    </FolderRow>
+              </div>
+              <FolderRow.Name
+                setShow={setShow}
+                show={show}
+                showToggle
+                handleOnClick={
+                  show
+                    ? () =>
+                        removeIds(
+                          allWindowingIds.indexOf(id) + 1,
+                          childIds.length
+                        )
+                    : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
+                }
+              >
+                <HierarchyNameInput
+                  name={folderName}
+                  onChange={value => setFolderName(value)}
+                  onStartEditing={() => {}}
+                  onStopEditing={() => {}}
+                />
+              </FolderRow.Name>
+
+              <FolderRow.Aside>
+                <FolderRow.Cell>
+                  <HierarchyFolderRowActions
+                    startCreatingItem={() => {
+                      onNewItem(id);
+                      addIds([uuid()], allWindowingIds.indexOf(id) + 1);
+                    }}
+                  />
+                </FolderRow.Cell>
+                <FolderRow.Cell meta>{`${
+                  childIds.length
+                } items`}</FolderRow.Cell>
+              </FolderRow.Aside>
+            </FolderRow.Inner>
+          </>
+        )}
+      </FolderRow>
+    ),
+    []
   );
 }
 
