@@ -46,4 +46,25 @@ describe('PageInformation', () => {
       'Foo'
     );
   });
+
+  test('adds an inputLabel', () => {
+    wrapper = shallow(
+      <PageInformation title="Foo" subtitle="bar" editable contextName="bla" />
+    );
+    expect(wrapper.find(EditableTextWrapper).prop('inputLabel')).toEqual(
+      'Rename bla'
+    );
+
+    wrapper = shallow(
+      <PageInformation
+        title="Foo"
+        subtitle="bar"
+        editable
+        inputLabel="hello!"
+      />
+    );
+    expect(wrapper.find(EditableTextWrapper).prop('inputLabel')).toEqual(
+      'hello!'
+    );
+  });
 });
