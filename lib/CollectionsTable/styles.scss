@@ -152,7 +152,7 @@ $collections-table-cell-min-height: 40px !default;
   }
 }
 
-
+.collections-table__cell--allow-overflow,
 .collections-table__cell-content--allow-overflow {
   overflow: visible;
 }

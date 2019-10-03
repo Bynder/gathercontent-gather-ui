@@ -1,0 +1,22 @@
+$finder-panel-left-bg: rgba($neutral-light, 0.5) !default;
+$finder-panel-left-width: 350px !default;
+$finder-panel-left-height: 100% !default;
+
+.finder-panel-layout {
+  display: flex;
+  flex: 2;
+  &__left {
+    background: $finder-panel-left-bg;
+    width: $finder-panel-left-width;
+    flex-shrink: 0;
+    position: fixed;
+    overflow: auto;
+    height: $finder-panel-left-height;
+  }
+  &__right {
+    padding: $layout-spacing-base;
+    width: 100%;
+    min-width: 0;
+    margin-left: $finder-panel-left-width;
+  }
+}
