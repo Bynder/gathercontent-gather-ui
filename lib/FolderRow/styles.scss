@@ -8,6 +8,10 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Styles
    ========================================================================== */
 
+.folder-row {
+  overflow: hidden;
+}
+
 .folder-row__inner,
 .folder-row__inner > *,
 .folder-row__aside > * {
@@ -62,8 +66,23 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
+.folder-row:hover {
+  .folder-row__action {
+    .button {
+      transform: translateY(0);
+      transition-delay: 0.05s;
+    }
+  }
+}
+
 .folder-row__actions {
   margin: 0 $layout-spacing-base/2 0 0;
+
+  .button {
+    transition: 0.2s transform ease-in-out;
+    transform: translateY(-3rem);
+    transition-delay: 0.05s;
+  }
 }
 
 .folder-row__action {
