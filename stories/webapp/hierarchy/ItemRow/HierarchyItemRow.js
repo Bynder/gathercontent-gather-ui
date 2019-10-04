@@ -68,11 +68,14 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
                 onChange={value => setItemName(value)}
                 onStartEditing={() => {}}
                 onStopEditing={() => {}}
+                useLink
               />
             </ItemRow.Name>
             <ItemRow.Aside>
-              <ItemRow.Data>No template</ItemRow.Data>
-              <ItemRow.Data style={{ minWidth: '75px' }}>
+              <ItemRow.Data style={{ maxWidth: '100px' }}>
+                <span className="text-overflow-ellipsis">No template</span>
+              </ItemRow.Data>
+              <ItemRow.Data style={{ minWidth: '100px' }}>
                 {avatars}
               </ItemRow.Data>
             </ItemRow.Aside>
