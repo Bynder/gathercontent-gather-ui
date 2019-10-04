@@ -4,7 +4,7 @@ import { Button, Icon, TooltipWrapper, FolderRow } from 'lib';
 
 function HierarchyFolderRowActions({ startCreatingItem }) {
   return (
-    <div className="folder-row__actions">
+    <FolderRow.Actions>
       <FolderRow.Action>
         <TooltipWrapper
           id="new-item"
@@ -17,7 +17,7 @@ function HierarchyFolderRowActions({ startCreatingItem }) {
           </Button>
         </TooltipWrapper>
       </FolderRow.Action>
-    </div>
+    </FolderRow.Actions>
   );
 }
 
