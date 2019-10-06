@@ -111,10 +111,6 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Modifiers
    ========================================================================== */
 
-.folder-row--open .folder-row__inner {
-  background: $neutral-light;
-}
-
 .folder-row--open .folder-row__toggle {
   button .icon {
     transform: rotate(0deg);
