@@ -21,6 +21,10 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
   #{$selector}-clear {
     #{$property}: 0;
   }
+
+  #{$selector}-auto {
+    #{$property}: auto;
+  }
 };
 
 /* ==========================================================================
@@ -50,10 +54,22 @@ $subProps: ('50', '100');
 };
 
 /* ==========================================================================
+   Overflow
+   ========================================================================== */
+
+$props: ('overflow');
+$subProps: (visible, hidden);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    overflow: $style;
+  }
+};
+
+/* ==========================================================================
    Legibility
    ========================================================================== */
 
 .space-between {
   justify-content: space-between;
 }
-

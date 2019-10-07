@@ -2,33 +2,44 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 import {
-  CollectionsTable,
-  Button,
-  Avatar,
-  AvatarInformation,
-  FinderNavigation,
-  FinderPanelLayout
-} from 'lib';
-import createData from './data';
-import GroupsCol from './GroupsCol/GroupsCol';
-import UsersCol from './UsersCol/UsersCol';
+  createData,
+  getUsers,
+  getGuestUsers,
+  getPendingUsers,
+  getAllProjects
+} from './data';
+import PeopleGroups from './PeopleGroups';
 
 const stories = storiesOf('Web app', module);
 
 const userCount = number('Total number of users', 20);
+const guestUserCount = number('Total number of guest users', 4);
+const pendingUserCount = number('Total number of pending users', 2);
 const groupCount = number('Total number of groups', 8);
 const roleCount = number('Total number of roles', 6);
 
 stories.add('PeopleAndGroups', () => {
-  const data = createData({ userCount, groupCount, roleCount });
+  const data = createData(
+    userCount,
+    guestUserCount,
+    pendingUserCount,
+    groupCount,
+    roleCount
+  );
+
+  const users = getUsers(data);
+  const guestUsers = getGuestUsers(data);
+  const pendingUsers = getPendingUsers(data);
+  const projects = getAllProjects(data);
   return (
-    <FinderPanelLayout>
-      <FinderPanelLayout.Left>
-        <GroupsCol groups={data.groups} />
-      </FinderPanelLayout.Left>
-      <FinderPanelLayout.Right>
-        <UsersCol users={data.users} roles={data.roles} />
-      </FinderPanelLayout.Right>
-    </FinderPanelLayout>
+    <PeopleGroups
+      groups={data.groups}
+      roles={data.roles}
+      users={users}
+      data={data}
+      guestUsers={guestUsers}
+      pendingUsers={pendingUsers}
+      projects={projects}
+    />
   );
 });

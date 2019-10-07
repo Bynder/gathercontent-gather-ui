@@ -1,20 +1,24 @@
 import React from 'react';
-import { FinderNavigation } from 'lib';
+import { shape, arrayOf } from 'prop-types';
+import { FinderNavigation, Icon } from 'lib';
 
 const GroupsCol = ({ groups }) => (
   <FinderNavigation>
     <FinderNavigation.Group>
-      <FinderNavigation.Item>
-        <FinderNavigation.ItemContent>
+      <FinderNavigation.Item active>
+        <FinderNavigation.ItemContent active>
           <a className="finder__item-link" href="google.com">
-            <span className="finder__item-link-text">All users</span>
+            <Icon name="user" />
+            <span className="finder__item-link-text h-margin-left-half">
+              All users
+            </span>
           </a>
         </FinderNavigation.ItemContent>
       </FinderNavigation.Item>
     </FinderNavigation.Group>
     <FinderNavigation.Group title="Groups">
       {groups.map(group => (
-        <FinderNavigation.Item>
+        <FinderNavigation.Item key={group.id}>
           <FinderNavigation.ItemContent>
             <a className="finder__item-link" href="google.com">
               <span className="finder__item-link-text">{group.name}</span>
@@ -25,5 +29,9 @@ const GroupsCol = ({ groups }) => (
     </FinderNavigation.Group>
   </FinderNavigation>
 );
+
+GroupsCol.propTypes = {
+  groups: arrayOf(shape()).isRequired
+};
 
 export default GroupsCol;

@@ -1,55 +1,55 @@
 import React from 'react';
-import {
-  CollectionsTable,
-  Button,
-  Avatar,
-  AvatarInformation,
-  Dropdown,
-  Icon
-} from 'lib';
+import { shape, arrayOf, string, func } from 'prop-types';
+import UsersHeader from './UsersHeader';
+import UsersTable from './UsersTable';
+import { ALL_USERS, PENDING_USERS } from '../consts';
 
-const UsersCol = ({ users, roles }) => (
-  <CollectionsTable>
-    <CollectionsTable.Row>
-      <CollectionsTable.Heading>Name</CollectionsTable.Heading>
-      <CollectionsTable.Heading className="hide-small">
-        Role
-      </CollectionsTable.Heading>
-      <CollectionsTable.Heading className="hide-small">
-        Authentication
-      </CollectionsTable.Heading>
-      <CollectionsTable.Heading className="hide-small" />
-    </CollectionsTable.Row>
-    {users.map(user => (
-      <CollectionsTable.Row key={user.id}>
-        <CollectionsTable.Cell>
-          <Avatar name={user.name} url={user.url}>
-            <AvatarInformation name={user.name} email={user.email} />
-          </Avatar>
-        </CollectionsTable.Cell>
-        <CollectionsTable.Cell allowOverflow>
-          <Dropdown id={`user-role-dropown-${user.id}`}>
-            <Dropdown.Trigger>
-              {user.role} <Icon name="caret" />
-              <Dropdown.Content collapse>
-                {roles.map(role => (
-                  <Dropdown.Action action={() => {}}>
-                    {role.name}
-                  </Dropdown.Action>
-                ))}
-              </Dropdown.Content>
-            </Dropdown.Trigger>
-          </Dropdown>
-        </CollectionsTable.Cell>
-        <CollectionsTable.Cell>{user.authentication}</CollectionsTable.Cell>
-        <CollectionsTable.Cell>
-          <Button types={['link-default', 'collapse']} clickHandler={() => {}}>
-            Manage
-          </Button>
-        </CollectionsTable.Cell>
-      </CollectionsTable.Row>
-    ))}
-  </CollectionsTable>
-);
+const UsersCol = ({
+  users,
+  guestUsers,
+  pendingUsers,
+  roles,
+  activeState,
+  setActiveState,
+  setActiveUser
+}) => {
+  const activeUsers = () => {
+    if (activeState === ALL_USERS) {
+      return users;
+    }
+    if (activeState === PENDING_USERS) {
+      return pendingUsers;
+    }
+    return guestUsers;
+  };
+  return (
+    <>
+      <UsersHeader
+        userCount={users.length}
+        guestCount={guestUsers.length}
+        pendingCount={pendingUsers.length}
+        setActiveState={setActiveState}
+        activeState={activeState}
+      />
+      <UsersTable
+        users={activeUsers()}
+        activeState={activeState}
+        roles={roles}
+        setActiveState={setActiveState}
+        setActiveUser={setActiveUser}
+      />
+    </>
+  );
+};
+
+UsersCol.propTypes = {
+  roles: arrayOf(shape()).isRequired,
+  users: arrayOf(shape()).isRequired,
+  guestUsers: arrayOf(shape()).isRequired,
+  pendingUsers: arrayOf(shape()).isRequired,
+  activeState: string.isRequired,
+  setActiveState: func.isRequired,
+  setActiveUser: func.isRequired
+};
 
 export default UsersCol;
