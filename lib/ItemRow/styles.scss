@@ -38,6 +38,15 @@ $item-row-stacked-margin: $typo-size-slight/3;
       text-decoration: underline;
     }
   }
+
+  .editable-text__wrapper {
+    width: calc(100% - 25px);
+  }
+
+  .editable-text__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .item-row__aside {
