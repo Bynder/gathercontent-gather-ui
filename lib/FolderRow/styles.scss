@@ -48,9 +48,19 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row__name {
   z-index: 1;
-  max-width: 70%;
+  width: 100%;
   white-space: nowrap;
   font-weight: $typo-weight-semi-bold;
+  overflow: hidden;
+
+  .editable-text__wrapper {
+    width: calc(100% - #{$editable-text-wrapper-icon-width});
+  }
+
+  .editable-text__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .folder-row__aside {
