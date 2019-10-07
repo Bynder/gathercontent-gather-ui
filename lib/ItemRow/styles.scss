@@ -40,7 +40,7 @@ $item-row-stacked-margin: $typo-size-slight/3;
   }
 
   .editable-text__wrapper {
-    width: calc(100% - 25px);
+    width: calc(100% - $editable-text-wrapper-icon-width);
   }
 
   .editable-text__text {
