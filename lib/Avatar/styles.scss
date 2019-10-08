@@ -5,7 +5,8 @@ $avatar-size: 30px !default;
 $avatar-border-radius: $avatar-size !default;
 
 $avatar-size-small: $layout-spacing-base !default;
-$avatar-size-large: $layout-spacing-base*4 !default;
+$avatar-size-large: $layout-spacing-base*2 !default;
+$avatar-size-extra-large: $layout-spacing-base*4 !default;
 
 $avatar-highlighted-background: $neutral-base !default;
 $avatar-highlighted-color: white !default;
@@ -52,6 +53,12 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
     width: $avatar-size-large;
     height: $avatar-size-large;
     border-radius: $avatar-size-large;
+  }
+
+  &--size-xlrg {
+    width: $avatar-size-extra-large;
+    height: $avatar-size-extra-large;
+    border-radius: $avatar-size-extra-large;
   }
 }
 

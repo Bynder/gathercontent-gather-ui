@@ -16,9 +16,10 @@ const UsersHeader = ({
       <h2 className="h-margin-clear">All users</h2>
       <div className="h-margin-left-auto">
         <Button onClick={() => {}}>
-          <Icon name="userInvite" /> Invite users
+          <Icon name="userInvite" className="h-padding-right-quarter" /> Invite
+          users
         </Button>
-        <p className="h-margin-top-quarter h-margin-bottom-clear neutral-base-text typo-size-slight text-align-right">
+        <p className="h-margin-top-half h-margin-bottom-clear neutral-base-text typo-size-slight text-align-right">
           ({userCount}/{userCount + 5} seats used)
         </p>
       </div>

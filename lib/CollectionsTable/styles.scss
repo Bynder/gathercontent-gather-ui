@@ -21,6 +21,9 @@ $collections-table-cell-min-height: 40px !default;
   a {
     @include link-hover-underline();
   }
+  .dropdown__content {
+    color: $neutral-dark;
+  }
 }
 
 .collections-table__row {
@@ -109,6 +112,7 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .collections-table__heading {
+  font-size: $typo-size-slight;
   font-weight: bold;
   padding-top: $layout-spacing-base/4;
   &:first-child {

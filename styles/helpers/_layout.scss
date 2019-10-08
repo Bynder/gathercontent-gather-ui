@@ -66,6 +66,20 @@ $subProps: (visible, hidden);
   }
 };
 
+
+/* ==========================================================================
+   Vertical align
+   ========================================================================== */
+
+$props: ('vertical-align');
+$subProps: (baseline, inherit, top, bottom, middle, text-top, text-bottom, sub, super, length);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    vertical-align: $style;
+  }
+};
+
 /* ==========================================================================
    Legibility
    ========================================================================== */

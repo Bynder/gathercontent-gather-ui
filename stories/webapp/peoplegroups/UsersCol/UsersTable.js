@@ -38,7 +38,7 @@ const UsersTable = ({
     {users.map(user => (
       <CollectionsTable.Row key={user.id}>
         <CollectionsTable.Cell>
-          <Avatar name={user.name} url={user.url}>
+          <Avatar name={user.name} url={user.url} largeSize>
             <AvatarInformation
               name={
                 <Button

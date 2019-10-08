@@ -19,7 +19,7 @@ const IndividualUserHead = ({
   activeState
 }) => (
   <FinderPanelLayout.Header>
-    <Avatar url={activeUser.url} name={activeUser.name} largeSize>
+    <Avatar url={activeUser.url} name={activeUser.name} extraLargeSize>
       <AvatarInformation
         className="h-overflow-visible"
         name={
