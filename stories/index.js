@@ -23,7 +23,7 @@ import Figure from './components/Figure';
 import Conversation from './components/Conversation';
 import Form from './components/Form';
 import PopoverWrapper from './components/PopoverWrapper';
-import StatusIndicator from './components/StatusIndicator';
+import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
 import List from './components/List';
 import TooltipWrapper from './components/TooltipWrapper';
 import PageInformation from './components/PageInformation';
