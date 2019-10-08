@@ -8,6 +8,10 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Styles
    ========================================================================== */
 
+.folder-row {
+  overflow: hidden;
+}
+
 .folder-row__inner,
 .folder-row__inner > *,
 .folder-row__aside > * {
@@ -17,9 +21,9 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row__inner {
   padding: $folder-row-spacing;
-  background: $neutral-lightest;
+  background: $neutral-light;
   border-radius: 4px;
-  border: 1px solid $neutral-lightest;
+  border: 1px solid $neutral-light;
   position: relative;
   margin: 0 0 $layout-spacing-base/2;
 
@@ -44,9 +48,19 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row__name {
   z-index: 1;
-  max-width: 70%;
+  width: 100%;
   white-space: nowrap;
   font-weight: $typo-weight-semi-bold;
+  overflow: hidden;
+
+  .editable-text__wrapper {
+    width: calc(100% - #{$editable-text-wrapper-icon-width});
+  }
+
+  .editable-text__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .folder-row__aside {
@@ -55,15 +69,30 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 }
 
 .folder-row__cell {
-  margin-left: $folder-row-spacing * 1.5;
+  margin-left: $folder-row-spacing * 2;
 
   &:first-child {
     margin-left: 0;
   }
 }
 
+.folder-row:hover {
+  .folder-row__action {
+    .button {
+      transform: translateY(0);
+      transition-delay: 0.05s;
+    }
+  }
+}
+
 .folder-row__actions {
   margin: 0 $layout-spacing-base/2 0 0;
+
+  .button {
+    transition: 0.2s transform ease-in-out;
+    transform: translateY(-3rem);
+    transition-delay: 0.05s;
+  }
 }
 
 .folder-row__action {
@@ -88,27 +117,9 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
-.folder-row__contents {
-  position: relative;
-  padding-left: $layout-spacing-base * 2;
-
-  .folder-row__contents__line {
-    content: '';
-    position: absolute;
-    left: $layout-spacing-base - 1px;
-    bottom: 0;
-    width: 2px;
-    background: $neutral-light;
-  }
-}
-
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-
-.folder-row--open .folder-row__inner {
-  background: $neutral-light;
-}
 
 .folder-row--open .folder-row__toggle {
   button .icon {

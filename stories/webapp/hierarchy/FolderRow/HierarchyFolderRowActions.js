@@ -4,18 +4,20 @@ import { Button, Icon, TooltipWrapper, FolderRow } from 'lib';
 
 function HierarchyFolderRowActions({ startCreatingItem }) {
   return (
-    <FolderRow.Action>
-      <TooltipWrapper
-        id="new-item"
-        tooltipText="New item"
-        className="folder-row__action"
-        placement="top"
-      >
-        <Button types={['icon-only']} onClick={startCreatingItem}>
-          <Icon name="item" />
-        </Button>
-      </TooltipWrapper>
-    </FolderRow.Action>
+    <FolderRow.Actions>
+      <FolderRow.Action>
+        <TooltipWrapper
+          id="new-item"
+          tooltipText="New item"
+          className="folder-row__action"
+          placement="top"
+        >
+          <Button types={['icon-only']} onClick={startCreatingItem}>
+            <Icon name="item" />
+          </Button>
+        </TooltipWrapper>
+      </FolderRow.Action>
+    </FolderRow.Actions>
   );
 }
 
