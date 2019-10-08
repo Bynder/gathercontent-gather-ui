@@ -46,6 +46,10 @@ $icon-active-color: $color-brand-blue !default;
   &--danger {
     color: $color-text-danger;
   }
+
+  &--green {
+    color: $color-brand-green;
+  }
 }
 
 .icon--hide-text .icon__text {
@@ -110,4 +114,8 @@ $icon-active-color: $color-brand-blue !default;
 
 .icon--danger path {
   fill: $color-text-danger;
+}
+
+.icon--green path {
+  fill: $color-brand-green;
 }
