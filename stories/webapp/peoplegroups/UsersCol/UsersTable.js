@@ -11,6 +11,8 @@ import {
 import { ALL_USERS, GUEST_USERS, USER_PROJECTS } from '../consts';
 import UserRoleDropdown from './UserRoleDropdown';
 
+const cellClasses = 'h-padding-top-half h-padding-bottom-half';
+
 const UsersTable = ({
   users,
   roles,
@@ -37,7 +39,7 @@ const UsersTable = ({
     </CollectionsTable.Row>
     {users.map(user => (
       <CollectionsTable.Row key={user.id}>
-        <CollectionsTable.Cell>
+        <CollectionsTable.Cell className={cellClasses}>
           <Avatar name={user.name} url={user.url} largeSize>
             <AvatarInformation
               name={
@@ -56,14 +58,16 @@ const UsersTable = ({
           </Avatar>
         </CollectionsTable.Cell>
         {activeState !== GUEST_USERS && (
-          <CollectionsTable.Cell allowOverflow>
+          <CollectionsTable.Cell allowOverflow className={cellClasses}>
             <UserRoleDropdown roles={roles} user={user} />
           </CollectionsTable.Cell>
         )}
         {activeState === ALL_USERS && (
-          <CollectionsTable.Cell>{user.authentication}</CollectionsTable.Cell>
+          <CollectionsTable.Cell className={`${cellClasses} typo-size-slight`}>
+            {user.authentication}
+          </CollectionsTable.Cell>
         )}
-        <CollectionsTable.Cell allowOverflow alignRight>
+        <CollectionsTable.Cell allowOverflow alignRight className={cellClasses}>
           <Dropdown id={`user-manage-dropdown-${user.id}`}>
             <Dropdown.Trigger
               types={['icon-only']}

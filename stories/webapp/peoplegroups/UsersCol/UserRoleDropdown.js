@@ -4,7 +4,7 @@ import { Dropdown, Icon } from 'lib';
 
 const UserRoleDropdown = ({ user, roles }) => (
   <Dropdown id={`user-role-dropown-${user.id}`}>
-    <Dropdown.Trigger>
+    <Dropdown.Trigger blueOnActive triggerClassName="typo-size-slight">
       {user.role} <Icon name="down" className="h-vertical-align-middle" />
       <Dropdown.Content
         collapse

@@ -14,6 +14,10 @@
   font-weight: $typo-weight-roman;
 }
 
+.primary-blue-text {
+  color: $primary-blue;
+}
+
 .black-text {
   color: black;
 }
@@ -38,6 +42,9 @@
 }
 .typo-size-lead {
   font-size: $typo-size-lead;
+}
+.typo-size-larger {
+  font-size: $typo-size-larger;
 }
 .typo-size-base {
   font-size: $typo-size-base;

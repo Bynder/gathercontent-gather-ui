@@ -24,10 +24,12 @@ const IndividualUserProjects = ({ projects }) => (
             label={project.name}
           />
         </CollectionsTable.Cell>
-        <CollectionsTable.Cell allowOverflow>
+        <CollectionsTable.Cell allowOverflow className="typo-size-slight">
           {project.itemCount} items
         </CollectionsTable.Cell>
-        <CollectionsTable.Cell>{project.projectType}</CollectionsTable.Cell>
+        <CollectionsTable.Cell className="typo-size-slight">
+          {project.projectType}
+        </CollectionsTable.Cell>
       </CollectionsTable.Row>
     ))}
   </CollectionsTable>

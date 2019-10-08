@@ -227,3 +227,16 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   -webkit-animation: avatar 0.7s cubic-bezier(0.390, 0.575, 0.565, 1) forwards,
                      ring 0.5s 0.4s ease-out forwards;
 }
+
+.avatar__wrapper--size-xlrg {
+  .avatar__name {
+    font-size: $typo-size-larger;
+    font-weight: $typo-weight-bold;
+    margin-bottom: $layout-spacing-base/4;
+  }
+  .avatar__information .avatar__name + .avatar__email,
+  .avatar__email {
+    font-size: $typo-size-base;
+    color: $neutral-dark;
+  }
+}
