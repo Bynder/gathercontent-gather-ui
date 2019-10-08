@@ -31,6 +31,7 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__circle {
+  text-align: center;
   flex-shrink: 0;
   border-radius: $status-indicator-circle-size;
   width: $status-indicator-circle-size;
