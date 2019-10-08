@@ -36,6 +36,11 @@ $status-indicator-margin-left: 1.3rem !default;
   width: $status-indicator-circle-size;
   height: $status-indicator-circle-size;
 
+  &--large {
+    height: 16px;
+    width: 16px;
+  }
+
   + .status-indicator__label {
     margin-left: $layout-spacing-base/2;
   }
