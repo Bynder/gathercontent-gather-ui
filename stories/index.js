@@ -62,10 +62,6 @@ import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
 import Windowing from '../lib/Windowing/stories/WindowingStory';
 import Selection from '../lib/SelectionProvider/stories/SelectionStory';
-
 import Hierarchy from './webapp/hierarchy/HierarchyStory';
-<<<<<<< HEAD
 import ApprovedLabel from '../lib/ApprovedLabel/stories/ApprovedLabelStory';
-=======
 import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';
->>>>>>> 4038b2c2880696883bab89b7d7b71213989d234a
