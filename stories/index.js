@@ -64,3 +64,4 @@ import Windowing from '../lib/Windowing/stories/WindowingStory';
 import Selection from '../lib/SelectionProvider/stories/SelectionStory';
 
 import Hierarchy from './webapp/hierarchy/HierarchyStory';
+import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';
