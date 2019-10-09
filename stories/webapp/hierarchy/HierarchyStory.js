@@ -1,20 +1,45 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { SelectionProvider } from 'lib';
+import { number, text } from '@storybook/addon-knobs';
+import { SelectionProvider, Windowing } from 'lib';
+import { createData } from './data';
 import { HierarchyCollection } from './HierarchyCollection';
-import { data, open, statusColor } from './data';
+import { WindowingIdsMock } from '../../../lib/Windowing/stories/WindowingIdsMock';
 
 const stories = storiesOf('Web app', module);
 
+const statusColor = text('Status colour', 'green');
+const levelCount = number('Total number of levels', 10);
+const maxItemCount = number('Max number of items', 10);
+
 stories.add('Hierarchy', () => {
+  const data = createData({ levelCount, maxItemCount, statusColor });
+
   return (
     <SelectionProvider>
-      <HierarchyCollection
-        hierarchyData={data}
-        statusColor={statusColor}
-        index={-1}
-        open={open}
-      />
+      <WindowingIdsMock allWindowingIds={data.allIds}>
+        {({ allWindowingIds, addIds, removeIds }) => (
+          <Windowing
+            itemHeight={52}
+            allIds={allWindowingIds}
+            containerHeight="500px"
+          >
+            <Windowing.Scroller>
+              <Windowing.List>
+                {({ inViewWindowingIds }) => (
+                  <HierarchyCollection
+                    data={data}
+                    inViewWindowingIds={inViewWindowingIds}
+                    statusColor={statusColor}
+                    addIds={addIds}
+                    removeIds={removeIds}
+                  />
+                )}
+              </Windowing.List>
+            </Windowing.Scroller>
+          </Windowing>
+        )}
+      </WindowingIdsMock>
     </SelectionProvider>
   );
 });

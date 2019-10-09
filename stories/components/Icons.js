@@ -74,27 +74,25 @@ const allIcons = additionalProps => (
     <Icon name="embed" {...additionalProps} />
     <Icon name="people" {...additionalProps} />
     <Icon name="item" {...additionalProps} />
+    <Icon name="hierarchy" {...additionalProps} />
+    <Icon name="question" {...additionalProps} />
   </div>
 );
 
-storiesOf('Components', module)
-  .add('Icons', () => (
-    <div>
-      <StoryItem
-        title="FontAwesome Icons"
-        description="A wrapper around FontAwesome icons."
-      >
-        <div>
-          <FontAwesomeIcon name="fa-cog" style={{ marginRight: '10px' }} />
-          <FontAwesomeIcon name="fa-file" style={{ color: 'red' }} />
-        </div>
-      </StoryItem>
+storiesOf('Components', module).add('Icons', () => (
+  <div>
+    <StoryItem
+      title="FontAwesome Icons"
+      description="A wrapper around FontAwesome icons."
+    >
+      <div>
+        <FontAwesomeIcon name="fa-cog" style={{ marginRight: '10px' }} />
+        <FontAwesomeIcon name="fa-file" style={{ color: 'red' }} />
+      </div>
+    </StoryItem>
 
-      <StoryItem
-        title="SVG Icons"
-        description=""
-      >
-        {allIcons()}
-      </StoryItem>
-    </div>
-  ));
+    <StoryItem title="SVG Icons" description="">
+      {allIcons()}
+    </StoryItem>
+  </div>
+));

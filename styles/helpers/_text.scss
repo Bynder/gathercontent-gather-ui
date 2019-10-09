@@ -2,6 +2,22 @@
   @include text-overflow-ellipsis();
 }
 
+.weight-bold {
+  font-weight: $typo-weight-bold;
+}
+
+.weight-semi-bold {
+  font-weight: $typo-weight-semi-bold;
+}
+
+.weight-roman {
+  font-weight: $typo-weight-roman;
+}
+
+.primary-blue-text {
+  color: $primary-blue;
+}
+
 .black-text {
   color: black;
 }
@@ -27,6 +43,9 @@
 .typo-size-lead {
   font-size: $typo-size-lead;
 }
+.typo-size-larger {
+  font-size: $typo-size-larger;
+}
 .typo-size-base {
   font-size: $typo-size-base;
 }
@@ -39,3 +58,19 @@
 .typo-size-micro {
   font-size: $typo-size-micro;
 }
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+$props: ('text-decoration');
+$subProps: (underline, none);
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    text-decoration: $style;
+  }
+};

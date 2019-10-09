@@ -2,21 +2,9 @@ import React from 'react';
 import { func } from 'prop-types';
 import { Button, Icon, TooltipWrapper, FolderRow } from 'lib';
 
-function HierarchyFolderRowActions({ startCreatingFolder, startCreatingItem }) {
+function HierarchyFolderRowActions({ startCreatingItem }) {
   return (
-    <>
-      <FolderRow.Action>
-        <TooltipWrapper
-          id="new-folder"
-          tooltipText="New folder"
-          className="folder-row__action"
-          placement="top"
-        >
-          <Button types={['icon-only']} onClick={startCreatingFolder}>
-            <Icon name="folderNew" />
-          </Button>
-        </TooltipWrapper>
-      </FolderRow.Action>
+    <FolderRow.Actions>
       <FolderRow.Action>
         <TooltipWrapper
           id="new-item"
@@ -29,12 +17,11 @@ function HierarchyFolderRowActions({ startCreatingFolder, startCreatingItem }) {
           </Button>
         </TooltipWrapper>
       </FolderRow.Action>
-    </>
+    </FolderRow.Actions>
   );
 }
 
 HierarchyFolderRowActions.propTypes = {
-  startCreatingFolder: func.isRequired,
   startCreatingItem: func.isRequired
 };
 

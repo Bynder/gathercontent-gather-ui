@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { node, shape, string } from 'prop-types';
+import faker from 'faker';
 import cx from 'classnames';
-import { ItemRow, StatusIndicator } from 'lib';
+import { ItemRow, StatusIndicator, useObjectSelector } from 'lib';
 import { AvatarGroupMock } from 'lib/Avatar/stories/AvatarGroupMock';
-import { useObjectSelector } from 'lib/SelectionProvider/useObjectSelector';
 import { HierarchyNameInput } from '../shared/HierarchyNameInput';
 
 const createStatusIndicator = status => (
@@ -26,11 +26,9 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
       currentSelectedType && currentSelectedType !== 'item' && !isChildSelected
   );
 
-  const [itemName, setItemName] = useState(name);
-
-  useEffect(() => {
-    setItemName(name);
-  }, [name]);
+  const [itemName, setItemName] = useState(
+    name || faker.commerce.productName()
+  );
 
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
@@ -51,31 +49,41 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
     []
   );
 
-  return (
-    <ItemRow
-      className={classNames}
-      bordered
-      style={{ minWidth: '320px' }}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {nameForm || (
-        <>
-          <ItemRow.Name>
-            {status && createStatusIndicator(status)}
-            <HierarchyNameInput
-              name={itemName}
-              onChange={value => setItemName(value)}
-            />
-          </ItemRow.Name>
-          <ItemRow.Aside>
-            <ItemRow.Data>No template</ItemRow.Data>
-            <ItemRow.Data style={{ minWidth: '75px' }}>{avatars}</ItemRow.Data>
-          </ItemRow.Aside>
-        </>
-      )}
-    </ItemRow>
+  return useMemo(
+    () => (
+      <ItemRow
+        className={classNames}
+        bordered
+        style={{ minWidth: '320px' }}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {nameForm || (
+          <>
+            <ItemRow.Name>
+              {status && createStatusIndicator(status)}
+              <HierarchyNameInput
+                name={itemName}
+                onChange={value => setItemName(value)}
+                onStartEditing={() => {}}
+                onStopEditing={() => {}}
+                useLink
+              />
+            </ItemRow.Name>
+            <ItemRow.Aside>
+              <ItemRow.Data style={{ maxWidth: '100px' }}>
+                <span className="text-overflow-ellipsis">No template</span>
+              </ItemRow.Data>
+              <ItemRow.Data style={{ minWidth: '100px' }}>
+                {avatars}
+              </ItemRow.Data>
+            </ItemRow.Aside>
+          </>
+        )}
+      </ItemRow>
+    ),
+    []
   );
 };
 
