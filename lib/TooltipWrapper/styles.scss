@@ -2,6 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--align-left {
+      justify-content: start;
+    }
 }
 
 .tooltip-wrapper__child--clickable {
