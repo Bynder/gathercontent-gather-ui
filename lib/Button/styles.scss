@@ -3,7 +3,7 @@
    ========================================================================== */
 $color-btn-primary--bg: $primary-blue !default;
 $color-btn-primary--text: white !default;
-$color-btn-primary--hover: darken($primary-blue, 6%) !default;
+$color-btn-primary--hover: $primary-blue !default;
 $color-btn-primary--disabled: $neutral-light !default;
 $color-btn-primary--disabled-text: $neutral-base !default;
 
