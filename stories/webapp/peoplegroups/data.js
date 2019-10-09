@@ -1,5 +1,5 @@
-import uuid from 'uuid/v4';
 import faker from 'faker';
+import { generateIdsArray } from '../../helpers/data';
 
 export const createData = (
   userCount,
@@ -8,20 +8,20 @@ export const createData = (
   groupCount,
   roleCount
 ) => {
-  const users = [...Array(userCount).keys()].map(() => uuid());
-  const guestUsers = [...Array(guestUserCount).keys()].map(() => uuid());
-  const pendingUsers = [...Array(pendingUserCount).keys()].map(() => uuid());
-  const projectIds = [...Array(8).keys()].map(() => uuid());
-  const groups = [...Array(groupCount)];
-  const roles = [...Array(roleCount)].map(() => ({
-    id: uuid(),
+  const users = generateIdsArray(userCount);
+  const guestUsers = generateIdsArray(guestUserCount);
+  const pendingUsers = generateIdsArray(pendingUserCount);
+  const projectIds = generateIdsArray(8);
+  const groups = generateIdsArray(groupCount);
+  const roles = generateIdsArray(roleCount).map(id => ({
+    id,
     name: faker.commerce.productAdjective()
   }));
 
   const userMapper = (id, isGuest, pending) => ({
     name: faker.name.findName(),
     email: faker.internet.email(),
-    role: roles[Math.floor(Math.random() * Math.floor(roleCount))].name,
+    role: roles[Math.floor(Math.random() * roleCount)].name,
     url: faker.image.cats(),
     authentication: 'Email & password',
     id,
@@ -38,7 +38,7 @@ export const createData = (
   });
 
   const allUserIds = users.concat(guestUsers.concat(pendingUsers));
-  // console.log(allUserIds, 'all ids KLJKSJDFLSJL');
+
   return {
     users: {
       byId: allUserIds.reduce((acc, id) => {
@@ -52,8 +52,8 @@ export const createData = (
       allIds: allUserIds
     },
     roles,
-    groups: groups.map(() => ({
-      id: uuid(),
+    groups: groups.map(id => ({
+      id,
       name: faker.name.jobType()
     })),
     projects: {
