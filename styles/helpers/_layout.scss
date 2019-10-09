@@ -80,6 +80,20 @@ $subProps: (baseline, inherit, top, bottom, middle, text-top, text-bottom, sub, 
   }
 };
 
+
+/* ==========================================================================
+   Align items
+   ========================================================================== */
+
+$props: ('align-items');
+$subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    align-items: $style;
+  }
+};
+
 /* ==========================================================================
    Legibility
    ========================================================================== */

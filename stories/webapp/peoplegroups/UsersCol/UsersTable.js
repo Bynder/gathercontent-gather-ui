@@ -44,7 +44,7 @@ const UsersTable = ({
             <AvatarInformation
               name={
                 <Button
-                  types={['link', 'collapse']}
+                  types={['link-no-underline', 'collapse']}
                   clickHandler={() => {
                     setActiveUser(user.id);
                     setActiveState(USER_PROJECTS);

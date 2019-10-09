@@ -84,7 +84,8 @@ $btn-border-radius: 3px !default;
 .button--link-default,
 .button--link-danger,
 .button--link-white,
-.button--link-underline {
+.button--link-underline,
+.button--link-no-underline {
   background: transparent;
 
   &:focus {
@@ -97,6 +98,10 @@ $btn-border-radius: 3px !default;
     color: $color-btn-primary--hover;
     text-decoration: underline;
   }
+}
+
+.button--link-no-underline:hover {
+  text-decoration: none;
 }
 
 .button--link-default {
