@@ -21,6 +21,9 @@ $collections-table-cell-min-height: 40px !default;
   a {
     @include link-hover-underline();
   }
+  .dropdown__content {
+    color: $neutral-dark;
+  }
 }
 
 .collections-table__row {
@@ -41,6 +44,7 @@ $collections-table-cell-min-height: 40px !default;
   text-overflow: ellipsis;
   min-width: 0px;
   white-space: nowrap;
+  background: white;
   &:first-child {
     flex-basis: 10%;
 
@@ -109,6 +113,7 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .collections-table__heading {
+  font-size: $typo-size-slight;
   font-weight: bold;
   padding-top: $layout-spacing-base/4;
   &:first-child {
@@ -152,7 +157,11 @@ $collections-table-cell-min-height: 40px !default;
   }
 }
 
+.collections-table__cell--align-right .collections-table__cell-content {
+  justify-content: flex-end;
+}
 
+.collections-table__cell--allow-overflow,
 .collections-table__cell-content--allow-overflow {
   overflow: visible;
 }
