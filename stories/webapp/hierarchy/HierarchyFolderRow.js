@@ -16,7 +16,6 @@ function HierarchyFolderRow({
   removeIds
 }) {
   const [folderName, setFolderName] = useState(name);
-
   const { allWindowingIds } = useContext(Windowing.Context);
 
   const {
@@ -102,7 +101,7 @@ function HierarchyFolderRow({
         )}
       </FolderRow>
     ),
-    []
+    [isSelected, isHovered, isDisabled]
   );
 }
 
