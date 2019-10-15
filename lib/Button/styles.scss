@@ -35,7 +35,7 @@ $btn-border-radius: 6px !default;
   border-radius: $btn-border-radius;
   display: inline-block;
   font-weight: $typo-weight-bold;
-  padding: ($layout-spacing-base/2 + 3px) ($layout-spacing-base - 2px);
+  padding: ($layout-spacing-base/2 + 2px) ($layout-spacing-base - 1px);
   transition: all $animation-time-micro ease, padding 0s;
   text-decoration: none;
 
@@ -49,7 +49,7 @@ $btn-border-radius: 6px !default;
 
   & + &,
   & + .dropdown {
-  	margin-left: $layout-spacing-base/2;
+    margin-left: $layout-spacing-base/2;
   }
 }
 
@@ -92,16 +92,17 @@ $btn-border-radius: 6px !default;
 .button--link-underline,
 .button--link-no-underline {
   background: transparent;
+  font-weight: normal;
 
   &:focus {
     outline: none;
-    text-decoration: none;
+    text-decoration: underline;
   }
 
   &:hover {
-    background: $color-bg-default;
-    color: inherit;
-    text-decoration: none;
+    background: transparent;
+    color: $color-btn-primary--hover;
+    text-decoration: underline;
   }
 }
 
@@ -122,8 +123,7 @@ $btn-border-radius: 6px !default;
 
   &:hover {
     color: $color-text-danger;
-    text-decoration: none;
-    background-color: $color-bg-danger;
+    text-decoration: underline;
   }
 }
 
