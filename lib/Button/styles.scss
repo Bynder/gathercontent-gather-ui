@@ -35,7 +35,7 @@ $btn-border-radius: 6px !default;
   border-radius: $btn-border-radius;
   display: inline-block;
   font-weight: $typo-weight-bold;
-  padding: ($layout-spacing-base/2 + 2px) ($layout-spacing-base - 1px);
+  padding: ($layout-spacing-base/2 + 3px) ($layout-spacing-base - 2px);
   transition: all $animation-time-micro ease, padding 0s;
   text-decoration: none;
 
