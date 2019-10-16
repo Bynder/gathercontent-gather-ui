@@ -17,7 +17,7 @@ describe('Button', () => {
   });
 
   test('should render a primary button by default', () => {
-    expect(button.prop('className')).toContain('button button--primary');
+    expect(button.prop('className')).toContain('button  button--primary');
   });
 
   test('should not be a submit button by default', () => {
@@ -40,7 +40,7 @@ describe('Button', () => {
     wrapper.update();
     button = wrapper.find('button');
     expect(button.prop('className')).toContain(
-      'button button--clear button--collapsed'
+      'button  button--clear button--collapsed'
     );
   });
 

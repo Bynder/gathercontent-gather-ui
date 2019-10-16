@@ -23,7 +23,7 @@ import Figure from './components/Figure';
 import Conversation from './components/Conversation';
 import Form from './components/Form';
 import PopoverWrapper from './components/PopoverWrapper';
-import StatusIndicator from './components/StatusIndicator';
+import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
 import List from './components/List';
 import TooltipWrapper from './components/TooltipWrapper';
 import PageInformation from './components/PageInformation';
@@ -62,6 +62,6 @@ import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
 import Windowing from '../lib/Windowing/stories/WindowingStory';
 import Selection from '../lib/SelectionProvider/stories/SelectionStory';
-
 import Hierarchy from './webapp/hierarchy/HierarchyStory';
+import ApprovedLabel from '../lib/ApprovedLabel/stories/ApprovedLabelStory';
 import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';

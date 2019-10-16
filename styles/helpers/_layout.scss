@@ -53,6 +53,25 @@ $subProps: ('50', '100');
   }
 };
 
+$props: ('width-spacing-base');
+$subProps: ('quarter', 'half', '1', '2','3','4','5','6','7','8','9','10');
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  @if $style == 'half' {
+    #{$selector} {
+      width: calc(0.5 * #{$layout-spacing-base})
+    }
+  } @else if $style == 'quarter' {
+    #{$selector} {
+      width: calc(0.25 *  #{$layout-spacing-base})
+    }
+  } @else {
+    #{$selector} {
+      width: calc(#{$style} * #{$layout-spacing-base})
+    }
+  }
+};
+
 /* ==========================================================================
    Overflow
    ========================================================================== */

@@ -83,7 +83,7 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
         )}
       </ItemRow>
     ),
-    []
+    [isSelected, isHovered, isDisabled]
   );
 };
 
