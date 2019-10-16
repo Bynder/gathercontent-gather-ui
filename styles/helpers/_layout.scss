@@ -120,3 +120,14 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
 .space-between {
   justify-content: space-between;
 }
+
+/* ==========================================================================
+   Heights
+   ========================================================================== */
+
+.full-height-minus-topbar {
+  height: calc(100vh - #{$top-bar-height-medium});
+  @include respond-to-max($screen-md) {
+    height: calc(100vh - #{$top-bar-height});
+  }
+}
