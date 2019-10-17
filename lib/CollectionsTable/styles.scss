@@ -20,6 +20,9 @@ $collections-table-cell-min-height: 40px !default;
   color: $neutral-base;
   a {
     @include link-hover-underline();
+    &.text-decoration-hover-none {
+      text-decoration: none;
+    }
   }
   .dropdown__content {
     color: $neutral-dark;
