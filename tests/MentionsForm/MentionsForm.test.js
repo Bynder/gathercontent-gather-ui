@@ -66,7 +66,10 @@ describe('Mentions Form', () => {
     const preventDefaultSpy = jest.fn();
     const event = { preventDefault: preventDefaultSpy };
     wrapper.instance().onSubmit(event);
-    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles');
+    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles', [
+      'testing testing',
+      'waffles'
+    ]);
   });
 
   test('calls props.onCancel', () => {
