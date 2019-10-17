@@ -14,9 +14,10 @@ BoundaryClickWatcher uses the render callback pattern and returns a boolean.
 | alwaysListen          | bool          | `false`       | No       | If true the click event listener is added on mount instead of being added when handleInnerClick is called. |
 | onMouseEnter          | Function      | `() {};`      | No       | Executes when the user's mouse enters the boundary. |
 | onMouseLeave          | Function      | `() {};`      | No       | Executes when the user's leaves the boundary.       |
+| ignoreClass           | string        | `""`          | No       | Classes for elements that should not trigger the boundary click watcher logic when clicked.  This is to get round a bug where clicking certain elements *inside* the boundary cause the `outsideClickHandler` to be triggered     |
 
 ```
-<BoundaryClickWatcher insideClickHandler={someFunc} outsideClickHandler={someOtherFunc} alwaysListen={false}>
+<BoundaryClickWatcher insideClickHandler={someFunc} outsideClickHandler={someOtherFunc} alwaysListen={false} ignoreClass="button shared-item__dropdown__cancel-button">
   {(boundaryIsActive) => {
     return (
       <MyComponent
