@@ -48,12 +48,11 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row__name {
   z-index: 1;
-  width: 100%;
   white-space: nowrap;
   font-weight: $typo-weight-semi-bold;
   overflow: hidden;
 
-  .editable-text__wrapper {
+  .editable-text__wrapper--editing {
     width: calc(100% - #{$editable-text-wrapper-icon-width});
   }
 

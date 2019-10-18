@@ -41,6 +41,8 @@ function HierarchyFolderRow({
     'is-hovered': isHovered
   });
 
+  const [isEditing, setIsEditing] = useState(false);
+
   return useMemo(
     () => (
       <FolderRow open={open}>
@@ -74,12 +76,19 @@ function HierarchyFolderRow({
                         )
                     : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
                 }
+                style={{
+                  width: isEditing ? '100%' : 'initial'
+                }}
               >
                 <HierarchyNameInput
                   name={folderName}
                   onChange={value => setFolderName(value)}
-                  onStartEditing={() => {}}
-                  onStopEditing={() => {}}
+                  onStartEditing={() => {
+                    setIsEditing(true);
+                  }}
+                  onStopEditing={() => {
+                    setIsEditing(false);
+                  }}
                 />
               </FolderRow.Name>
 
@@ -101,7 +110,7 @@ function HierarchyFolderRow({
         )}
       </FolderRow>
     ),
-    [isSelected, isHovered, isDisabled]
+    [isSelected, isHovered, isDisabled, isEditing]
   );
 }
 
