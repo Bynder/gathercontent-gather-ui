@@ -34,6 +34,7 @@ function HierarchyFolderRow({
       currentSelectedType !== 'folder' &&
       !isParentSelected
   );
+  const [isEditing, setIsEditing] = useState(false);
 
   const classNames = cx('h-margin-bottom-half folder-row__inner', {
     'is-selected': isSelected,
@@ -41,7 +42,12 @@ function HierarchyFolderRow({
     'is-hovered': isHovered
   });
 
-  const [isEditing, setIsEditing] = useState(false);
+  const widthClassName = cx(
+    {
+      'h-width-100': isEditing
+    },
+    'folder-row__name'
+  );
 
   return useMemo(
     () => (
@@ -76,9 +82,7 @@ function HierarchyFolderRow({
                         )
                     : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
                 }
-                style={{
-                  width: isEditing ? '100%' : 'initial'
-                }}
+                className={widthClassName}
               >
                 <HierarchyNameInput
                   name={folderName}
