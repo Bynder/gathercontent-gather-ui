@@ -34,12 +34,20 @@ function HierarchyFolderRow({
       currentSelectedType !== 'folder' &&
       !isParentSelected
   );
+  const [isEditing, setIsEditing] = useState(false);
 
   const classNames = cx('h-margin-bottom-half folder-row__inner', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
     'is-hovered': isHovered
   });
+
+  const folderRowNameClass = cx(
+    {
+      'h-width-100': isEditing
+    },
+    'folder-row__name'
+  );
 
   return useMemo(
     () => (
@@ -65,6 +73,7 @@ function HierarchyFolderRow({
                 setShow={setShow}
                 show={show}
                 showToggle
+                className={folderRowNameClass}
                 handleOnClick={
                   show
                     ? () =>
@@ -78,8 +87,12 @@ function HierarchyFolderRow({
                 <HierarchyNameInput
                   name={folderName}
                   onChange={value => setFolderName(value)}
-                  onStartEditing={() => {}}
-                  onStopEditing={() => {}}
+                  onStartEditing={() => {
+                    setIsEditing(true);
+                  }}
+                  onStopEditing={() => {
+                    setIsEditing(false);
+                  }}
                 />
               </FolderRow.Name>
 
@@ -101,7 +114,7 @@ function HierarchyFolderRow({
         )}
       </FolderRow>
     ),
-    [isSelected, isHovered, isDisabled]
+    [isSelected, isHovered, isDisabled, isEditing]
   );
 }
 
