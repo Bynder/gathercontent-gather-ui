@@ -42,7 +42,7 @@ function HierarchyFolderRow({
     'is-hovered': isHovered
   });
 
-  const widthClassName = cx(
+  const folderRowNameClass = cx(
     {
       'h-width-100': isEditing
     },
@@ -73,6 +73,7 @@ function HierarchyFolderRow({
                 setShow={setShow}
                 show={show}
                 showToggle
+                className={folderRowNameClass}
                 handleOnClick={
                   show
                     ? () =>
@@ -82,7 +83,6 @@ function HierarchyFolderRow({
                         )
                     : () => addIds(childIds, allWindowingIds.indexOf(id) + 1)
                 }
-                className={widthClassName}
               >
                 <HierarchyNameInput
                   name={folderName}
