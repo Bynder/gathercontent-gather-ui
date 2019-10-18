@@ -74,3 +74,11 @@ $subProps: (underline, none);
     text-decoration: $style;
   }
 };
+
+$props: ('text-decoration-hover');
+$subProps: (underline, none);
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector}:hover {
+    text-decoration: $style;
+  }
+};
