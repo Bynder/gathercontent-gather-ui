@@ -136,6 +136,11 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
   }
 }
 
+.dropdown-max-height {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
 /* ==========================================================================
    Borders
    ========================================================================== */
