@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 import { Dropdown, Avatar, AvatarInformation, Icon, ConfirmationDropdown } from '../../lib/';
 import StoryItem from '../styleguide/StoryItem';
 import StatusIndicator from "../../lib/StatusIndicator";
+import Form from "../../lib/Form";
+import FormInput from "../../lib/Form/FormInput";
 
 const createDelayedPromise = (timeout = 2000) =>
   new Promise(resolve => setTimeout(resolve, timeout));
@@ -265,6 +267,58 @@ storiesOf('Components', module)
             collapse
           >
             <Icon name="trash" />
+          </ConfirmationDropdown>
+
+          <ConfirmationDropdown
+            id="trash-dropdown-3"
+            confirmationText="Do a thing"
+            confirmationPromise={createDelayedPromise}
+            dropdownContent={(
+              <Fragment>
+                <Dropdown.Header collapse>
+                  <Form onSubmit={() => {}} className="form h-width-100">
+                    <FormInput noBorder className="h-width-100" placeholder="Search for users" />
+                  </Form>
+
+                </Dropdown.Header>
+                <Dropdown.ActionGroup bordered collapse>
+                  <Dropdown.Action action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                  <Dropdown.Action action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                  <Dropdown.Action selected action={() => action('action clicked')}>
+                    <Avatar
+                      url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg"
+                    >
+                      <AvatarInformation
+                        email="heythere@lol.com"
+                        name="Mr Ben"
+                      />
+                    </Avatar>
+                  </Dropdown.Action>
+                </Dropdown.ActionGroup>
+              </Fragment>
+            )}
+            isDanger
+            collapse
+          >
+            <Icon name="userEdit" />
           </ConfirmationDropdown>
         </StoryItem>
 

@@ -135,3 +135,18 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
     height: calc(100vh - #{$top-bar-height});
   }
 }
+
+/* ==========================================================================
+   Borders
+   ========================================================================== */
+
+ $props: ('border-default');
+ $subProps: (top, bottom, left, right);
+ @include generate-helper($props, $subProps) using ($selector, $property, $style) {
+   #{$selector} {
+     border: $color-border-base 1px solid;
+   }
+   #{$selector}-#{$style} {
+     border-#{$style}: $color-border-base 1px solid;
+   }
+ };

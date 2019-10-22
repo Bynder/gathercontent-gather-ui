@@ -221,6 +221,8 @@ $dropdown-status-circle-width-height: 15px !default;
   display: flex;
 }
 
+.dropdown__content--collapse .dropdown__header--collapse,
+.dropdown__header--collapse,
 .dropdown__action-group--collapse {
   padding: 0;
 }
