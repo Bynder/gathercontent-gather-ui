@@ -77,6 +77,8 @@ const allIcons = additionalProps => (
     <Icon name="hierarchy" {...additionalProps} />
     <Icon name="question" {...additionalProps} />
     <Icon name="book" {...additionalProps} />
+    <Icon name="userEdit" {...additionalProps} />
+    <Icon name="key" {...additionalProps} />
   </div>
 );
 
