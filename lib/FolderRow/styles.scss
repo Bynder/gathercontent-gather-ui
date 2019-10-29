@@ -21,7 +21,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row__inner {
   padding: $folder-row-spacing;
-  background: $neutral-light;
+  background: $neutral-lightest;
   border-radius: 4px;
   border: 1px solid $neutral-light;
   position: relative;
@@ -75,23 +75,8 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
-.folder-row:hover {
-  .folder-row__action {
-    .button {
-      transform: translateY(0);
-      transition-delay: 0.05s;
-    }
-  }
-}
-
 .folder-row__actions {
   margin: 0 $layout-spacing-base/2 0 0;
-
-  .button {
-    transition: 0.2s transform ease-in-out;
-    transform: translateY(-3rem);
-    transition-delay: 0.05s;
-  }
 }
 
 .folder-row__action {
@@ -102,7 +87,8 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   display: inline-flex;
 
   button {
-    padding: $layout-spacing-base/4;
+    height: $layout-spacing-base;
+    width: $layout-spacing-base;
     border-radius: $border-radius-base;
 
     .icon {
@@ -112,7 +98,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
   button:hover,
   button:focus {
-    background: $neutral-light;
+    background: rgba($primary-blue, .05);
   }
 }
 
@@ -120,14 +106,17 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
    Modifiers
    ========================================================================== */
 
+.folder-row--open .folder-row__backdrop {
+  box-shadow: $shadow-base-offset;
+}
+
 .folder-row--open .folder-row__toggle {
   button .icon {
     transform: rotate(0deg);
   }
 
-  button:hover,
-  button:focus {
-    background: $neutral-lightest;
+  path {
+    fill: $primary-blue;
   }
 }
 
