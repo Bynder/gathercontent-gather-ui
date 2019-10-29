@@ -54,6 +54,16 @@ $finder-indent-level-support: 10 !default;
   width: 100%;
 }
 
+.finder__item-content--drag-wrapper {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  line-height: 35px;
+  border-radius: $layout-spacing-base / 4;
+  border: 1px solid $color-border-base;
+}
+
 .finder__item-settings {
   margin-left: auto;
   flex-shrink: 0;
@@ -241,7 +251,7 @@ $finder-indent-level-support: 10 !default;
   &:hover {
     color: $neutral-dark;
 
-    &.finder__item-new__folder-link{
+    &.finder__item-new__folder-link {
       text-decoration: underline;
     }
   }
@@ -252,7 +262,7 @@ $finder-indent-level-support: 10 !default;
 
   &:hover {
     color: $neutral-dark;
-    background-color: rgba(#ffffff, .3);
+    background-color: rgba(#ffffff, 0.3);
     border-radius: $layout-spacing-base/4;
   }
 
@@ -276,7 +286,9 @@ $finder-indent-level-support: 10 !default;
   #{$finderItemSelector}.finder__item.is-over.dragged-insert
     > .finder__item-content,
   #{$finderItemSelector}.finder__item--selected > .finder__item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base/2 * ($i - 1)) - 2;
+    padding-left: ($layout-spacing-base * 1.5 * $i) -
+      ($layout-spacing-base/2 * ($i - 1)) -
+      2;
   }
 
   #{$finderItemSelector} > .finder__item-content,
@@ -284,6 +296,7 @@ $finder-indent-level-support: 10 !default;
     > .finder__item-content,
   #{$finderItemSelector}.finder__item.is-over.dragged-below
     > .finder__item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base/2 * ($i - 1));
+    padding-left: ($layout-spacing-base * 1.5 * $i) -
+      ($layout-spacing-base/2 * ($i - 1));
   }
 }
