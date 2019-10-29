@@ -129,10 +129,15 @@ form .dropdown-gc .button--outline,
 
 .form__input--noborder,
 .form__input--noborder:focus {
-  padding: 0;
+  padding: $layout-spacing-base/2;
   background: transparent;
   border: none;
   font-size: inherit;
+}
+
+.form__input--collapse,
+.form__input--collapse:focus {
+  padding: 0;
 }
 
 .form__input--full-width {
