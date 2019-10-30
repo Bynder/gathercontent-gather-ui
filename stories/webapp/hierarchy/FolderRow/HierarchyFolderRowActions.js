@@ -8,12 +8,12 @@ function HierarchyFolderRowActions({ startCreatingItem }) {
       <FolderRow.Action>
         <TooltipWrapper
           id="new-item"
-          tooltipText="New item"
+          tooltipText="Add a new item"
           className="folder-row__action"
           placement="top"
         >
           <Button types={['icon-only']} onClick={startCreatingItem}>
-            <Icon name="item" />
+            <Icon name="addItem" />
           </Button>
         </TooltipWrapper>
       </FolderRow.Action>
