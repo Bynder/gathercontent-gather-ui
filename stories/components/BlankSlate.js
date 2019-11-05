@@ -31,5 +31,17 @@ storiesOf('Components', module).add('Blank Slate', () => (
         <p>Then put it over here.</p>
       </BlankSlate>
     </StoryItem>
+    <StoryItem
+      title="BlankSlate Component"
+      description="BlankSlate with an emoji"
+    >
+      <BlankSlate
+        emoji="🔎"
+        emojiLabel="Magnifying glass"
+      >
+        <h2 className="blank-slate__heading">Look an emoji!</h2>
+        <p>How wonderful.</p>
+      </BlankSlate>
+    </StoryItem>
   </div>
 ));

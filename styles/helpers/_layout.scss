@@ -6,6 +6,10 @@ $props: ('margin', 'padding');
 $subProps: ('', 'left', 'right', 'top', 'bottom');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector}-double {
+    #{$property}: $layout-spacing-base*2;
+  }
+
   #{$selector} {
     #{$property}: $layout-spacing-base;
   }
@@ -131,3 +135,23 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
     height: calc(100vh - #{$top-bar-height});
   }
 }
+
+.dropdown-max-height {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   Borders
+   ========================================================================== */
+
+ $props: ('border-default');
+ $subProps: (top, bottom, left, right);
+ @include generate-helper($props, $subProps) using ($selector, $property, $style) {
+   #{$selector} {
+     border: $color-border-base 1px solid;
+   }
+   #{$selector}-#{$style} {
+     border-#{$style}: $color-border-base 1px solid;
+   }
+ };

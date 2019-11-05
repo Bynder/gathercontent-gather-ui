@@ -54,6 +54,7 @@ const allIcons = additionalProps => (
     <Icon name="grid" {...additionalProps} />
     <Icon name="list" {...additionalProps} />
     <Icon name="items" {...additionalProps} />
+    <Icon name="addItem" {...additionalProps} />
     <Icon name="template" {...additionalProps} />
     <Icon name="home" {...additionalProps} />
     <Icon name="chevronRight" {...additionalProps} />
@@ -76,6 +77,9 @@ const allIcons = additionalProps => (
     <Icon name="item" {...additionalProps} />
     <Icon name="hierarchy" {...additionalProps} />
     <Icon name="question" {...additionalProps} />
+    <Icon name="book" {...additionalProps} />
+    <Icon name="userEdit" {...additionalProps} />
+    <Icon name="key" {...additionalProps} />
   </div>
 );
 
