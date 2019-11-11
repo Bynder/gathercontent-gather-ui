@@ -66,7 +66,9 @@ describe('Mentions Form', () => {
     const preventDefaultSpy = jest.fn();
     const event = { preventDefault: preventDefaultSpy };
     wrapper.instance().onSubmit(event);
-    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles');
+    expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles', [
+      'waffles'
+    ]);
   });
 
   test('calls props.onCancel', () => {
@@ -116,18 +118,12 @@ describe('Mentions Form', () => {
     expect(actions.prop('onCancel')).toEqual(wrapper.instance().cancelComment);
   });
 
-  test('updates the input value', () => {
+  test('updates the mention count', () => {
     expect(wrapper.state('mentionCount')).toEqual(0);
     wrapper
       .instance()
       .updateInputValue({ target: { value: '@waffle @[plop]' } });
     expect(wrapper.state('mentionCount')).toEqual(2);
-  });
-
-  test('updates the mentionCount', () => {
-    wrapper.instance().updateInputValue({ target: { value: 'test 2' } });
-    expect(wrapper.state('inputValue')).toEqual('test 2');
-    expect(onInputChangeSpy).toHaveBeenCalledWith('test 2');
   });
 
   test('toggles the focus state for the input', () => {

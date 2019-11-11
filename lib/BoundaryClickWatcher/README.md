@@ -17,7 +17,7 @@ BoundaryClickWatcher uses the render callback pattern and returns a boolean.
 | ignoreClass          | String      | `submit-button cancel-button`      | No       | Class of element to ignore if clicked. Used to stop outsideClickHandler being triggered when clicking an element that is immediately removed from the DOM after being clicked. Multiple classes can be added in the same string.       |
 
 ```
-<BoundaryClickWatcher insideClickHandler={someFunc} outsideClickHandler={someOtherFunc} alwaysListen={false}>
+<BoundaryClickWatcher insideClickHandler={someFunc} outsideClickHandler={someOtherFunc} alwaysListen={false} ignoreClass="button shared-item__dropdown__cancel-button">
   {(boundaryIsActive) => {
     return (
       <MyComponent
