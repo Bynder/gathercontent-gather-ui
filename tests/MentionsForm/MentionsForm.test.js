@@ -67,7 +67,6 @@ describe('Mentions Form', () => {
     const event = { preventDefault: preventDefaultSpy };
     wrapper.instance().onSubmit(event);
     expect(onSubmitSpy).toHaveBeenCalledWith('testing testing @waffles', [
-      'testing testing',
       'waffles'
     ]);
   });
