@@ -16,7 +16,16 @@ storiesOf('Components', module)
             placeholder='Add some text...'
           />
         </StoryItem>
-
+        <StoryItem
+          title="Expanding TextArea with error"
+          description="an ExpandingTextArea can have an error state and display a error message"
+        >
+          <ExpandingTextArea
+            placeholder='Add some text...'
+            hasError
+            errorMessage="Something is oops"
+          />
+        </StoryItem>
       </div>
     );
   });
