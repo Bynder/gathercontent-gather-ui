@@ -146,12 +146,15 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
    ========================================================================== */
 
  $props: ('border-default');
- $subProps: (top, bottom, left, right);
+ $subProps: (top, bottom, left, right, full);
  @include generate-helper($props, $subProps) using ($selector, $property, $style) {
-   #{$selector} {
-     border: $color-border-base 1px solid;
-   }
-   #{$selector}-#{$style} {
-     border-#{$style}: $color-border-base 1px solid;
+   @if $style == 'full' {
+     #{$selector} {
+       border: $color-border-base 1px solid;
+     }
+   } @else {
+     #{$selector} {
+       border-#{$style}: $color-border-base 1px solid;
+     }
    }
  };
