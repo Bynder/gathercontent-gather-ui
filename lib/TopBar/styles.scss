@@ -85,6 +85,7 @@ $top-bar-notification-height: 42px;
   .top-bar__cell {
     padding: 0 $layout-spacing-base 0 0;
     display: flex;
+    align-items: center;
 
     img {
       display: block;
