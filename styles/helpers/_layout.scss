@@ -45,6 +45,19 @@ $subProps: (none, block, inline-block, flex, inline-flex, inline);
 };
 
 /* ==========================================================================
+   Position
+   ========================================================================== */
+
+$props: ('position');
+$subProps: (absolute, relative, fixed, initial, inherit, sticky, static, unset);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    position: $style;
+  }
+};
+
+/* ==========================================================================
    Widths
    ========================================================================== */
 
