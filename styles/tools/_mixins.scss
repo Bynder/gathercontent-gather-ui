@@ -144,5 +144,6 @@
     height: 100%;
     border: $pixelSize $style $colour;
     border-radius: $radius;
+    pointer-events: none;
   }
 }
