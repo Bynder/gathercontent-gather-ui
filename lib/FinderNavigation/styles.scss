@@ -47,6 +47,10 @@ $finder-indent-level-support: 10 !default;
   .form__input:disabled {
     background: none;
   }
+
+  .form__input:focus {
+    padding: 0;
+  }
 }
 
 .finder__item-content-inner {
