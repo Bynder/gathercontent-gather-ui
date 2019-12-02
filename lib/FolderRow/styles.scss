@@ -31,6 +31,10 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   }
 }
 
+.folder-row__inner-dragged-insert {
+  @include before-border(2px, solid, $primary-blue, 4px);
+}
+
 .folder-row__backdrop {
   position: absolute;
   display: block;
@@ -97,7 +101,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
   button:hover,
   button:focus {
-    background: rgba($primary-blue, .05);
+    background: rgba($primary-blue, 0.05);
   }
 }
 
