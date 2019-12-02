@@ -26,6 +26,12 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
+        title="Notification Tease"
+        description="A notification box with the tease level.">
+        <Notification level="tease">Did you know Nirvana started in <a href="/">Aberdeen</a>?</Notification>
+      </StoryItem>
+
+      <StoryItem
         title="Notification (with a click handler)"
         description="A notification can handle click interactions.">
         <Notification level="warning" clickHandler={action('clickHandler')}><strong>You have overdue projects.</strong></Notification>
