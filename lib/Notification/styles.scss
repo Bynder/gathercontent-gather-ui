@@ -22,6 +22,10 @@ $notification-info-bg: #F7F9FA !default;
 $notification-info-text: #4B5761 !default;
 $notification-info-border: #EDEEEF !default;
 
+$notification-tease-bg: #E2D2F9 !default;
+$notification-tease-text: $color-text-base !default;
+$notification-tease-border: transparent !default;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -30,6 +34,11 @@ $notification-info-border: #EDEEEF !default;
 	padding: $notification-padding;
 	border: $notification-border-width $notification-border-style transparent;
 	border-radius: $border-radius-base;
+
+	a {
+		color: inherit;
+		font-weight: $typo-weight-bold;
+	}
 
 	&--danger {
 		background-color: $notification-danger-bg;
@@ -55,9 +64,16 @@ $notification-info-border: #EDEEEF !default;
 		border-color: $notification-success-border;
 	}
 
+	&--tease {
+		background-color: $notification-tease-bg;
+		color: $notification-tease-text;
+		border-color: $notification-tease-border;
+	}
+
 	&.has-click-handler {
 		cursor: pointer;
 	}
+	
 	&--centred {
 		text-align: center;
 	}
