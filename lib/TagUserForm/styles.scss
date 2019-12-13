@@ -61,9 +61,17 @@
     background: $neutral-lightest;
     color: $neutral-base;
     .icon {
+      path {
+	fill: $neutral-base;
+      }
       vertical-align: text-bottom;
       svg {
         height: 13px;
+      }
+    }
+    &.is-active {
+      .icon path {
+	fill: $primary-blue;
       }
     }
   }
