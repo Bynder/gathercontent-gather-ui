@@ -62,7 +62,7 @@
     color: $neutral-base;
     .icon {
       path {
-	fill: $neutral-base;
+	  fill: $neutral-base;
       }
       vertical-align: text-bottom;
       svg {
@@ -71,7 +71,7 @@
     }
     &.is-active {
       .icon path {
-	fill: $primary-blue;
+	  fill: $primary-blue;
       }
     }
   }
