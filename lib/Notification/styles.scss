@@ -23,7 +23,7 @@ $notification-info-text: #4B5761 !default;
 $notification-info-border: #EDEEEF !default;
 
 $notification-tease-bg: #E2D2F9 !default;
-$notification-tease-text: $color-text-base !default;
+$notification-tease-text: $primary-purple !default;
 $notification-tease-border: transparent !default;
 
 /* ==========================================================================
@@ -37,7 +37,7 @@ $notification-tease-border: transparent !default;
 
 	a {
 		color: inherit;
-		font-weight: $typo-weight-bold;
+		font-weight: $typo-weight-semi-bold;
 	}
 
 	&--danger {
@@ -73,7 +73,7 @@ $notification-tease-border: transparent !default;
 	&.has-click-handler {
 		cursor: pointer;
 	}
-	
+
 	&--centred {
 		text-align: center;
 	}
