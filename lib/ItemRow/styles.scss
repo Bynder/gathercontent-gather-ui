@@ -11,6 +11,8 @@ $item-row-stacked-margin: $typo-size-slight/3;
   cursor: pointer;
   background-color: white;
   position: relative;
+  margin: 6px 0 6px;
+  width: 100%;
 
   .status-indicator {
     display: inline-flex;
