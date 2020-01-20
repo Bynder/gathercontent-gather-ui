@@ -2,6 +2,7 @@
    Config
    ========================================================================== */
 $item-row-stacked-margin: $typo-size-slight/3;
+$item-row-gap: 6px;
 
 /* ==========================================================================
    Styles
@@ -11,7 +12,7 @@ $item-row-stacked-margin: $typo-size-slight/3;
   cursor: pointer;
   background-color: white;
   position: relative;
-  margin: 6px 0 6px;
+  margin: $item-row-gap 0 $item-row-gap;
   width: 100%;
 
   .status-indicator {
