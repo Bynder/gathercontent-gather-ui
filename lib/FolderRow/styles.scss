@@ -3,6 +3,7 @@
    ========================================================================== */
 
 $folder-row-spacing: $layout-spacing-base/2 !default;
+$folder-row-gap: 6px;
 
 /* ==========================================================================
    Styles
@@ -24,7 +25,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   padding: $folder-row-spacing;
   background: $neutral-lightest;
   position: relative;
-  margin: 6px 0 6px;
+  margin: $folder-row-gap 0 $folder-row-gap;
   @include before-border(1px, solid, $neutral-light, 4px);
 
   + .folder-row {
