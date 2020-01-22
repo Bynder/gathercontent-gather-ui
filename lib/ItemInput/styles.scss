@@ -15,3 +15,11 @@
   flex: 1;
   min-width: 150px;
 }
+
+.item-input__item--warning {
+  background-color: $primary-red;
+  color: white;
+  & path {
+    fill: white;
+  }
+}
