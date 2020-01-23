@@ -11,5 +11,5 @@
 }
 
 .is-parent-selected {
-  @include before-border(2px, dashed, $primary-blue, 4px);
+  @include before-border(1px, dashed, $primary-blue, 4px);
 }
