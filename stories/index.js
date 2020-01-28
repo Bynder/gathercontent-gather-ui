@@ -65,4 +65,4 @@ import Selection from '../lib/SelectionProvider/stories/SelectionStory';
 import Hierarchy from './webapp/hierarchy/HierarchyStory';
 import ApprovedLabel from '../lib/ApprovedLabel/stories/ApprovedLabelStory';
 import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';
-import { ItemInputStory } from '../lib/ItemInput/stories/story'
+import { PillInputStory } from '../lib/PillInput/stories/story'
