@@ -1,71 +1,48 @@
-import { React, shallow } from '../setup';
-import { SelectionBar } from '../../lib';
-import SelectionBarInformation from '../../lib/SelectionBar/SelectionBarInformation';
-import SelectionBarCancel from '../../lib/SelectionBar/SelectionBarCancel';
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { React } from '../setup';
+import SelectionBar from '../../lib/SelectionBar';
 
 describe('SelectionBar', () => {
-  let wrapper;
-  let clearSelectionSpy;
-  let selectAllSpy;
-  beforeEach(() => {
-    clearSelectionSpy = jest.fn();
-    selectAllSpy = jest.fn();
-    wrapper = shallow(
-      <SelectionBar
-        type="files"
-        selectedIds={[1, 2, 3]}
-        clearSelection={clearSelectionSpy}
-        selectAll={selectAllSpy}
-      >
-        <div className="child" />
+  const renderWrapper = (ui, props = {}) =>
+    render(
+      <SelectionBar hasSelected onCancel={() => {}} {...props}>
+        {ui}
       </SelectionBar>
     );
+
+  afterEach(() => {
+    cleanup();
   });
 
-  test('renders children', () => {
-    expect(wrapper.find('.child')).toHaveLength(1);
-  });
-
-  test('renders a SelectionBarInformation', () => {
-    expect(wrapper.find(SelectionBarInformation)).toHaveLength(1);
-    expect(wrapper.find(SelectionBarInformation).prop('length')).toEqual(3);
-    expect(wrapper.find(SelectionBarInformation).prop('type')).toEqual('files');
-    expect(wrapper.find(SelectionBarInformation).prop('selectAll')).toEqual(
-      selectAllSpy
+  test('rendering children', () => {
+    const { getByText } = renderWrapper(
+      <SelectionBar.Actions>Actions</SelectionBar.Actions>
     );
+
+    expect(getByText(/Actions/i)).toBeInTheDocument();
   });
 
-  test('renders a SelectionBarCancel', () => {
-    expect(wrapper.find(SelectionBarCancel)).toHaveLength(1);
-    expect(wrapper.find(SelectionBarCancel).prop('hasSelected')).toEqual(true);
-    expect(wrapper.find(SelectionBarCancel).prop('clearSelection')).toEqual(
-      clearSelectionSpy
+  test('rendering cancel button if prop provided', () => {
+    const { getByTitle } = renderWrapper(
+      <SelectionBar.Actions>Actions</SelectionBar.Actions>
     );
+
+    expect(getByTitle('Cancel Selection')).toBeInTheDocument();
   });
 
-  test('adds an has-selected class', () => {
-    expect(wrapper.hasClass('has-selected')).toBe(true);
-    wrapper.setProps({ selectedIds: [] });
-    expect(wrapper.hasClass('has-selected')).toBe(false);
-  });
+  test('Clicking cancel should call provided callback', () => {
+    const cancelMock = jest.fn();
+    const { getByTitle } = renderWrapper(
+      <SelectionBar.Actions>Actions</SelectionBar.Actions>,
+      {
+        onCancel: cancelMock
+      }
+    );
 
-  test('adds an fixed modifier', () => {
-    expect(wrapper.hasClass('selection-bar--fixed')).toBe(false);
-    wrapper.setProps({ fixed: true });
-    expect(wrapper.hasClass('selection-bar--fixed')).toBe(true);
-  });
+    const cancelButton = getByTitle('Cancel Selection');
 
-  test('adds an fixed modifier', () => {
-    expect(wrapper.hasClass('selection-bar--auto-hide')).toBe(false);
-    wrapper.setProps({ autoHide: true });
-    expect(wrapper.hasClass('selection-bar--auto-hide')).toBe(true);
-  });
+    fireEvent.click(cancelButton);
 
-  test('hides elements if there are no selected ids', () => {
-    expect(wrapper.find(SelectionBarCancel)).toHaveLength(1);
-    expect(wrapper.find('.selection-bar__actions')).toHaveLength(1);
-    wrapper.setProps({ selectedIds: [] });
-    expect(wrapper.find(SelectionBarCancel)).toHaveLength(0);
-    expect(wrapper.find('.selection-bar__actions')).toHaveLength(0);
+    expect(cancelMock).toHaveBeenCalled();
   });
 });
