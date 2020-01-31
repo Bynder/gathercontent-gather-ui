@@ -65,6 +65,10 @@ $folder-row-gap: 6px;
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  .editable-text__wrapper {
+    cursor: text;
+  }
 }
 
 .folder-row__aside {
