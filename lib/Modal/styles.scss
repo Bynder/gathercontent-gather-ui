@@ -58,6 +58,16 @@ $modal-media-close-dimensions: 30px;
 	margin-right: auto;
 }
 
+.modal-footer.modal-footer--space-between {
+  justify-content: space-between;
+  &::before {
+    content: none;
+  }
+  &::after {
+    content: none;
+  }
+
+}
 /* ==========================================================================
    Modifiers
    ========================================================================== */
