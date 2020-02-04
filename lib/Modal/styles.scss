@@ -16,6 +16,10 @@ $modal-media-close-dimensions: 30px;
    Styles
    ========================================================================== */
 
+.modal-header button.close  {
+  top: 54%;
+}
+
 .modal-header {
   display: flex;
 }
