@@ -1,4 +1,10 @@
+$disabled-opacity: 0.5;
+
 .is-disabled {
-  opacity: 0.5;
+  opacity: $disabled-opacity;
   pointer-events: none;
+}
+
+.is-visually-disabled {
+  opacity: $disabled-opacity;
 }
