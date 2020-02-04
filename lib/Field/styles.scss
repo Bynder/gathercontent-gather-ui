@@ -56,7 +56,7 @@ $field-data-p-line-height: 1.688rem !default;
     display: flex;
   }
 
-  &.is-disabled {
+  &.is-visually-disabled {
     opacity: 1;
   }
 }
@@ -114,21 +114,22 @@ $field-data-p-line-height: 1.688rem !default;
   font-size: $typo-size-lead;
   transition: all 0.2s ease;
 
-  .field:not(.is-disabled):not(.field__editor) &:hover,
+  .field:not(.is-visually-disabled):not(.field__editor) &:hover,
   .is-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
   }
 
-  .field:not(.is-disabled) &:hover {
+  .field:not(.is-visually-disabled) &:hover {
     .field__instructions {
       color: $neutral-dark;
     }
   }
 
-  .is-disabled & {
+  .is-visually-disabled & {
     cursor: default;
+
     mark.conversation-format {
       cursor: pointer;
     }
