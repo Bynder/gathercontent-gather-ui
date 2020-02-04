@@ -20,6 +20,15 @@ $modal-media-close-dimensions: 30px;
   display: flex;
 }
 
+.modal-header__action-button {
+  display: flex;
+  align-items: center;
+
+  path {
+    fill: $color-brand-blue;
+  }
+}
+
 .modal-header .modal-header-inner {
   flex: 1;
   flex-direction: column;
