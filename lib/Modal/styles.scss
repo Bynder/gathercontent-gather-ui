@@ -16,37 +16,6 @@ $modal-media-close-dimensions: 30px;
    Styles
    ========================================================================== */
 
-.modal-header button.close  {
-  top: 54%;
-}
-
-.modal-header {
-  display: flex;
-}
-
-.modal-header__action-button {
-  display: flex;
-  align-items: center;
-
-  path {
-    fill: $color-brand-blue;
-  }
-}
-
-.modal-header .modal-header-inner {
-  flex: 1;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.modal-header-inner__title-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .modal__row {
 	display: flex;
 
@@ -88,6 +57,7 @@ $modal-media-close-dimensions: 30px;
 .modal__footer-text {
 	margin-right: auto;
 }
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
