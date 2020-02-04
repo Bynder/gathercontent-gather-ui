@@ -50,6 +50,7 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__label {
+  font-size: $typo-size-base;
   white-space: nowrap;
   margin-top: 0;
   margin-bottom: 0;
