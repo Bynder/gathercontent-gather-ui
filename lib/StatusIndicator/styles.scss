@@ -87,12 +87,6 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 }
 
-.status-indicator--current {
-  .status-indicator__label {
-    font-size: $typo-size-lead;
-  }
-}
-
 .status-indicator--bordered {
   border-bottom: $status-indicator-bordered-border;
   padding-bottom: $layout-spacing-base/1.3;
