@@ -73,7 +73,7 @@ describe('Field', () => {
       disabled: true
     });
     expect(wrapper.hasClass('has-formatting')).toEqual(true);
-    expect(wrapper.hasClass('is-disabled')).toEqual(true);
+    expect(wrapper.hasClass('is-visually-disabled')).toEqual(true);
   });
 
   test('that fields do not render instructions when none are set', () => {

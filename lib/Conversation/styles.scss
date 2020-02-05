@@ -301,9 +301,9 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $conversation-padding;
 }
 
-.is-disabled .conversation__person-type,
-.is-disabled .conversation__person-name,
-.is-disabled .conversation__comment-body {
+.is-visually-disabled .conversation__person-type,
+.is-visually-disabled .conversation__person-name,
+.is-visually-disabled .conversation__comment-body {
   background: rgba(255, 255, 255, .75);
 
   @supports (filter: blur()) {
