@@ -133,7 +133,7 @@ $collections-table-cell-min-height: 40px !default;
 .collections-table__row-title {
   margin: 0;
   font-size: $typo-size-base;
-  font-weight: 400;
+  font-weight: $typo-weight-roman;
 
   a {
     color: $neutral-dark;
