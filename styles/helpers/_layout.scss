@@ -202,3 +202,27 @@ $subProps: (top, bottom, left, right, full);
     }
   }
 }
+
+/* ==========================================================================
+   Transform - Rotate
+   ========================================================================== */
+
+$props: ('transform-rotate');
+$subProps: ('');
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector}{
+    transform: rotate(0turn);
+  }
+
+  #{$selector}-quarter {
+    transform: rotate(0.25turn);
+  }
+
+  #{$selector}-half {
+    transform: rotate(0.5turn);
+  }
+
+  #{$selector}-three-quarters {
+    transform: rotate(0.75turn);
+  }
+}
