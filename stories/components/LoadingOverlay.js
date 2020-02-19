@@ -6,7 +6,7 @@ import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Loading Overlay', () => {
   const percentageText = text('Percentage text', '50%');
-  
+
   return (
     <div>
       <StoryItem
