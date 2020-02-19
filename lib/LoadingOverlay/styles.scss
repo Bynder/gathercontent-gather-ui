@@ -51,6 +51,15 @@ $loading-line-width: 32px;
   }
 }
 
+.loading-overlay__content {
+  text-align: center;
+  font-weight: $typo-weight-semi-bold;
+
+  p:last-child {
+    color: $neutral-base;
+  }
+}
+
 @keyframes line1 {
   16.666666667% {
     transform: translateY(-$loading-line-height*2); opacity: 0;
