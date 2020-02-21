@@ -18,6 +18,7 @@ A component which renders a confirmation dropdown.
 | hideOnCompletion      | bool          | true          | No       | Hides the dropdown when the promise has completed.  |
 | position              | object        | `{ autoPosition: true }` | No       | An object containing dropdown positions. Look at Dropdown docs for more information.  |
 | onCancel              | func          | () => {}      | No       | Function that triggers when the cancel button is clicked.  |
+| actionTooltip            | string     | ''      | No       | A tooltip to be displayed over the primary action button  |
 ```
 <ConfirmationDropdown
   id="id-1"
