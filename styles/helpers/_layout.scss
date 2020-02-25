@@ -162,6 +162,19 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
 }
 
 /* ==========================================================================
+   Flex direction
+   ========================================================================== */
+
+$props: ('flex-direction');
+$subProps: (row, column);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    flex-direction: $style;
+  }
+}
+
+/* ==========================================================================
    Legibility
    ========================================================================== */
 
