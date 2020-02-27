@@ -7,6 +7,6 @@ $subProps: (none, auto, all);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
-    display: $style;
+    pointer-events: $style;
   }
 }
