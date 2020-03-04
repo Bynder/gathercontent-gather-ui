@@ -12,13 +12,13 @@ import PeopleGroups from './PeopleGroups';
 
 const stories = storiesOf('Web app', module);
 
-const userCount = number('Total number of users', 20);
-const guestUserCount = number('Total number of guest users', 4);
-const pendingUserCount = number('Total number of pending users', 2);
-const groupCount = number('Total number of groups', 8);
-const roleCount = number('Total number of roles', 6);
-
 stories.add('PeopleAndGroups', () => {
+  const userCount = number('Total number of users', 20);
+  const guestUserCount = number('Total number of guest users', 4);
+  const pendingUserCount = number('Total number of pending users', 2);
+  const groupCount = number('Total number of groups', 8);
+  const roleCount = number('Total number of roles', 6);
+
   const data = createData(
     userCount,
     guestUserCount,
