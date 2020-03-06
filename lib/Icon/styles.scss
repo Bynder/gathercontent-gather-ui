@@ -21,7 +21,7 @@ $icon-active-color: $color-brand-blue !default;
   fill: $icon-default-color;
 }
 
-.is-active .icon path {
+.is-active .icon.icon--default-active-color path {
   fill: $icon-active-color;
 }
 
