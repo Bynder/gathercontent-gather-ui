@@ -162,6 +162,19 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
 }
 
 /* ==========================================================================
+   justify-content
+   ========================================================================== */
+
+$props: ('justify-content');
+$subProps: (baseline, center, end, flex-end, flex-start, initial, inherit, space-around, space-between, space-evenly, stretch);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    justify-content: $style;
+  }
+}
+
+/* ==========================================================================
    Flex direction
    ========================================================================== */
 
@@ -172,14 +185,6 @@ $subProps: (row, column);
   #{$selector} {
     flex-direction: $style;
   }
-}
-
-/* ==========================================================================
-   Legibility
-   ========================================================================== */
-
-.space-between {
-  justify-content: space-between;
 }
 
 /* ==========================================================================
