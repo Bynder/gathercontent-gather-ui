@@ -7,27 +7,27 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector}-double {
-    #{$property}: $layout-spacing-base * 2;
+    #{$property}: $layout-spacing-base * 2 !important;
   }
 
   #{$selector} {
-    #{$property}: $layout-spacing-base;
+    #{$property}: $layout-spacing-base !important;
   }
 
   #{$selector}-half {
-    #{$property}: $layout-spacing-base/2;
+    #{$property}: $layout-spacing-base/2 !important;
   }
 
   #{$selector}-quarter {
-    #{$property}: $layout-spacing-base/4;
+    #{$property}: $layout-spacing-base/4 !important;
   }
 
   #{$selector}-clear {
-    #{$property}: 0;
+    #{$property}: 0 !important;
   }
 
   #{$selector}-auto {
-    #{$property}: auto;
+    #{$property}: auto !important;
   }
 }
 
@@ -162,6 +162,19 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
 }
 
 /* ==========================================================================
+   justify-content
+   ========================================================================== */
+
+$props: ('justify-content');
+$subProps: (baseline, center, end, flex-end, flex-start, initial, inherit, space-around, space-between, space-evenly, stretch);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    justify-content: $style;
+  }
+}
+
+/* ==========================================================================
    Flex direction
    ========================================================================== */
 
@@ -172,14 +185,6 @@ $subProps: (row, column);
   #{$selector} {
     flex-direction: $style;
   }
-}
-
-/* ==========================================================================
-   Legibility
-   ========================================================================== */
-
-.space-between {
-  justify-content: space-between;
 }
 
 /* ==========================================================================
@@ -203,11 +208,15 @@ $subProps: (row, column);
    ========================================================================== */
 
 $props: ('border-default');
-$subProps: (top, bottom, left, right, full);
+$subProps: (top, bottom, left, right, full, clear);
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   @if $style == 'full' {
     #{$selector} {
       border: $color-border-base 1px solid;
+    }
+  } @else if $style == 'clear' {
+    #{$selector} {
+      border: none;
     }
   } @else {
     #{$selector} {
