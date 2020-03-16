@@ -80,6 +80,7 @@ const allIcons = additionalProps => (
     <Icon name="book" {...additionalProps} />
     <Icon name="userEdit" {...additionalProps} />
     <Icon name="key" {...additionalProps} />
+    <Icon name="warningTriangle" {...additionalProps} />
   </div>
 );
 
