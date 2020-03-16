@@ -40,7 +40,7 @@ $subProps: (none, block, inline-block, flex, inline-flex, inline);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
-    display: $style;
+    display: $style !important;
   }
 }
 
