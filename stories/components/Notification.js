@@ -10,7 +10,7 @@ storiesOf('Components', module)
       <StoryItem
         title="Notification Warning"
         description="A notification box with the warning level.">
-        <Notification level="warning" onClose={() => {}} className="h-border-radius-clear">Warning, I am too sexy for this notification.</Notification>
+        <Notification level="warning">Warning, I am too sexy for this notification.</Notification>
       </StoryItem>
 
       <StoryItem

@@ -35,6 +35,10 @@ $notification-tease-border: transparent !default;
 	border: $notification-border-width $notification-border-style transparent;
 	border-radius: $border-radius-base;
 
+	&__content {
+		width: 100%;
+	}
+
 	a {
 		color: inherit;
 		font-weight: $typo-weight-semi-bold;
