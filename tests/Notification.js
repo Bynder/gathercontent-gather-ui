@@ -1,13 +1,17 @@
 import { Alert } from 'react-bootstrap/lib';
 import { React, shallow } from './setup';
 import Notification from '../lib/Notification';
+import Button from '../lib/Button';
+import Icon from '../lib/Icon';
 
 describe('Notification', () => {
   let wrapper;
   let clickHandlerSpy;
+  let onCloseSpy;
 
   beforeEach(() => {
     clickHandlerSpy = jest.fn();
+    onCloseSpy = jest.fn();
     wrapper = shallow(<Notification level="warning">Dummy</Notification>);
   });
 
@@ -43,5 +47,14 @@ describe('Notification', () => {
   test('adds a centred modifier', () => {
     wrapper.setProps({ center: true });
     expect(wrapper.find(Alert).hasClass('notification--centred')).toEqual(true);
+  });
+
+  test('adds a close button', () => {
+    expect(wrapper.find(Button)).toHaveLength(0);
+    expect(wrapper.find(Icon)).toHaveLength(0);
+    wrapper.setProps({ onClose: onCloseSpy });
+    expect(wrapper.find(Button)).toHaveLength(1);
+    expect(wrapper.find(Button).prop('onClick')).toEqual(onCloseSpy);
+    expect(wrapper.find(Icon)).toHaveLength(1);
   });
 });
