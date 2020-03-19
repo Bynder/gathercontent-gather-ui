@@ -26,6 +26,8 @@ $notification-tease-bg: #E2D2F9 !default;
 $notification-tease-text: $primary-purple !default;
 $notification-tease-border: transparent !default;
 
+$notification-primary-text: white !default;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -72,6 +74,15 @@ $notification-tease-border: transparent !default;
 		background-color: $notification-tease-bg;
 		color: $notification-tease-text;
 		border-color: $notification-tease-border;
+	}
+
+	&--primary {
+		background-color: $primary-blue;
+		border-color: $primary-blue;
+		color: $notification-primary-text;
+		.notification__close .icon path {
+			fill: $notification-primary-text;
+		}
 	}
 
 	&.has-click-handler {
