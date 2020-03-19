@@ -26,6 +26,8 @@ $notification-tease-bg: #E2D2F9 !default;
 $notification-tease-text: $primary-purple !default;
 $notification-tease-border: transparent !default;
 
+$notification-primary-text: white !default;
+
 /* ==========================================================================
    Styles
    ========================================================================== */
@@ -34,6 +36,10 @@ $notification-tease-border: transparent !default;
 	padding: $notification-padding;
 	border: $notification-border-width $notification-border-style transparent;
 	border-radius: $border-radius-base;
+
+	&__content {
+		width: 100%;
+	}
 
 	a {
 		color: inherit;
@@ -70,11 +76,39 @@ $notification-tease-border: transparent !default;
 		border-color: $notification-tease-border;
 	}
 
+	&--primary {
+		background-color: $primary-blue;
+		border-color: $primary-blue;
+		color: $notification-primary-text;
+		.notification__close .icon path {
+			fill: $notification-primary-text;
+		}
+	}
+
 	&.has-click-handler {
 		cursor: pointer;
 	}
 
+	&--has-close {
+		display: flex;
+	}
+	&__close {
+		margin-left: auto;
+		.icon path {
+			fill: $neutral-dark;
+		}
+	}
 	&--centred {
 		text-align: center;
+	}
+}
+
+.notification--centred.notification--has-close {
+	justify-content: flex-end;
+	.notification__close {
+		margin-left: $layout-spacing-base/2;
+	}
+	.notification__content {
+		margin: auto;
 	}
 }
