@@ -32,9 +32,28 @@ storiesOf('Components', module)
       </StoryItem>
 
       <StoryItem
+        title="Notification Primary"
+        description="A notification box with the primary level.">
+        <Notification level="primary" onClose={() => {}}>Hello, look at me! I'm a notification.</Notification>
+      </StoryItem>
+
+      <StoryItem
         title="Notification (with a click handler)"
         description="A notification can handle click interactions.">
         <Notification level="warning" clickHandler={action('clickHandler')}><strong>You have overdue projects.</strong></Notification>
       </StoryItem>
+
+      <StoryItem
+        title="Notification with close button"
+        description="A notification box with an optional close button.">
+        <Notification level="warning" onClose={() => {}}>Warning, I am too sexy for this notification.</Notification>
+      </StoryItem>
+
+      <StoryItem
+        title="Centered Notification with close button"
+        description="A centered notification box with an optional close button.">
+        <Notification level="warning" center onClose={() => {}}>Warning, I am too sexy for this notification.</Notification>
+      </StoryItem>
+
     </div>
   ));
