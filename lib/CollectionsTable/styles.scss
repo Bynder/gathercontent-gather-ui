@@ -33,6 +33,7 @@ $collections-table-cell-min-height: 40px !default;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  flex-shrink: 0;
   padding: $collections-table-spacing;
 }
 
