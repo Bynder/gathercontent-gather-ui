@@ -6,11 +6,9 @@ import Icon from '../lib/Icon';
 
 describe('Notification', () => {
   let wrapper;
-  let clickHandlerSpy;
   let onCloseSpy;
 
   beforeEach(() => {
-    clickHandlerSpy = jest.fn();
     onCloseSpy = jest.fn();
     wrapper = shallow(<Notification level="warning">Dummy</Notification>);
   });
@@ -24,9 +22,7 @@ describe('Notification', () => {
   });
 
   test('renders the correct level class', () => {
-    expect(
-      wrapper.find(Alert).hasClass('notification notification--warning')
-    ).toEqual(true);
+    expect(wrapper.find(Alert).hasClass('notification--warning')).toEqual(true);
   });
 
   test('adds the className prop', () => {
@@ -34,19 +30,6 @@ describe('Notification', () => {
       className: 'waffles'
     });
     expect(wrapper.find(Alert).hasClass('waffles')).toEqual(true);
-  });
-
-  test('passes the clickHandler prop to the Alert component and adds class', () => {
-    wrapper.setProps({
-      clickHandler: clickHandlerSpy
-    });
-    expect(wrapper.find(Alert).prop('onClick')).toEqual(clickHandlerSpy);
-    expect(wrapper.find(Alert).hasClass('has-click-handler')).toEqual(true);
-  });
-
-  test('adds a centred modifier', () => {
-    wrapper.setProps({ center: true });
-    expect(wrapper.find(Alert).hasClass('notification--centred')).toEqual(true);
   });
 
   test('adds a close button', () => {
