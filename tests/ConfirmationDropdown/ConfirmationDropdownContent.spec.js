@@ -27,6 +27,7 @@ describe('Confirmation Dropdown Content', () => {
         onHide={onHideSpy}
         onCancel={onCancelSpy}
         top
+        onCompletion={() => {}}
       >
         {dropdownContent}
       </ConfirmationDropdownContent>,
