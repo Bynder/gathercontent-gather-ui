@@ -1,12 +1,114 @@
 /* ==========================================================================
+   Config
+   ========================================================================== */
+$notification-font-size: $typo-size-base !default;
+$notification-padding: $layout-spacing-base/2 !default;
+$notification-border-width: 1px !default;
+$notification-border-style: solid !default;
+
+$notification-danger-bg: #FEEEEE !default;
+$notification-danger-text: #B33D37 !default;
+$notification-danger-border: #FCCECB !default;
+
+$notification-warning-bg: #FFFCEF !default;
+$notification-warning-text: #71591C !default;
+$notification-warning-border: #FCF5D2 !default;
+
+$notification-success-bg: #EFFAF2 !default;
+$notification-success-text: #206B17 !default;
+$notification-success-border: #CFF1D8 !default;
+
+$notification-info-bg: #F7F9FA !default;
+$notification-info-text: #4B5761 !default;
+$notification-info-border: #EDEEEF !default;
+
+$notification-tease-bg: #E2D2F9 !default;
+$notification-tease-text: $primary-purple !default;
+$notification-tease-border: transparent !default;
+
+$notification-primary-text: white !default;
+
+/* ==========================================================================
    Styles
    ========================================================================== */
 .notification {
-	text-shadow: none;
-	a {
-		@apply text-current;
+	font-size: $notification-font-size;
+	padding: $notification-padding;
+	border: $notification-border-width $notification-border-style transparent;
+	border-radius: $border-radius-base;
+
+	&__content {
+		width: 100%;
 	}
-	.notification__close .icon path {
-		@apply fill-current;
+
+	a {
+		color: inherit;
+		font-weight: $typo-weight-semi-bold;
+	}
+
+	&--danger {
+		background-color: $notification-danger-bg;
+		color: $notification-danger-text;
+		border-color: $notification-danger-border;
+	}
+
+	&--warning {
+		background-color: $notification-warning-bg;
+		color: $notification-warning-text;
+		border-color: $notification-warning-border;
+	}
+
+	&--info {
+		background-color: $notification-info-bg;
+		color: $notification-info-text;
+		border-color: $notification-info-border;
+	}
+
+	&--success {
+		background-color: $notification-success-bg;
+		color: $notification-success-text;
+		border-color: $notification-success-border;
+	}
+
+	&--tease {
+		background-color: $notification-tease-bg;
+		color: $notification-tease-text;
+		border-color: $notification-tease-border;
+	}
+
+	&--primary {
+		background-color: $primary-blue;
+		border-color: $primary-blue;
+		color: $notification-primary-text;
+		.notification__close .icon path {
+			fill: $notification-primary-text;
+		}
+	}
+
+	&.has-click-handler {
+		cursor: pointer;
+	}
+
+	&--has-close {
+		display: flex;
+	}
+	&__close {
+		margin-left: auto;
+		.icon path {
+			fill: $neutral-dark;
+		}
+	}
+	&--centred {
+		text-align: center;
+	}
+}
+
+.notification--centred.notification--has-close {
+	justify-content: flex-end;
+	.notification__close {
+		margin-left: $layout-spacing-base/2;
+	}
+	.notification__content {
+		margin: auto;
 	}
 }
