@@ -38,7 +38,8 @@
     }
   ],
   "scripts": {
-    "copy-styles": "echo Copying Sass settings... && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
+    "copy-tailwind": "tailwind build styles/tailwind.css -o dist/styles/tailwind.css",
+    "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
     "build": "babel lib/ --out-dir dist/lib",
     "build:with:styles": "yarn build && yarn run copy-styles",
     "prepublish": "yarn run build:with:styles",
@@ -113,6 +114,7 @@
     "react-mentions": "2.2.0",
     "react-svg-inline": "^1.2.0",
     "svg-url-loader": "^3.0.0",
+    "tailwindcss": "^1.2.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
