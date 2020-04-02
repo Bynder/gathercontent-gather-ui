@@ -22,19 +22,13 @@ storiesOf('Components', module)
       <StoryItem
         title="Notification Information"
         description="A notification box with the information level.">
-        <Notification level="info">Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</Notification>
+        <Notification level="information">Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</Notification>
       </StoryItem>
 
       <StoryItem
-        title="Notification Tease"
-        description="A notification box with the tease level.">
-        <Notification level="tease">Did you know Nirvana started in <a href="/">Aberdeen</a>?</Notification>
-      </StoryItem>
-
-      <StoryItem
-        title="Notification Primary"
-        description="A notification box with the primary level.">
-        <Notification level="primary" onClose={() => {}}>Hello, look at me! I'm a notification.</Notification>
+        title="Notification Promo"
+        description="A notification box with the promo level.">
+        <Notification level="promo">Did you know Nirvana started in <a href="/">Aberdeen</a>?</Notification>
       </StoryItem>
 
       <StoryItem
