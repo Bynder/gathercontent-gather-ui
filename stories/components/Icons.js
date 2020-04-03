@@ -81,6 +81,8 @@ const allIcons = additionalProps => (
     <Icon name="userEdit" {...additionalProps} />
     <Icon name="key" {...additionalProps} />
     <Icon name="warningTriangle" {...additionalProps} />
+    <Icon name="warningOctogon" {...additionalProps} />
+    <Icon name="infoSquare" {...additionalProps} />
   </div>
 );
 

@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { TopBar, Notification } from '../../lib';
+import { TopBar, NotificationBar } from '../../lib';
 
 describe('TopBar', () => {
   let wrapper;
@@ -42,10 +42,10 @@ describe('TopBar', () => {
   });
 
   test('renders a notification', () => {
-    expect(wrapper.find(Notification)).toHaveLength(0);
+    expect(wrapper.find(NotificationBar)).toHaveLength(0);
     wrapper.setProps({
-      notification: <Notification level="danger">Hello!!!</Notification>
+      notification: <NotificationBar level="danger">Hello!!!</NotificationBar>
     });
-    expect(wrapper.find(Notification)).toHaveLength(1);
+    expect(wrapper.find(NotificationBar)).toHaveLength(1);
   });
 });

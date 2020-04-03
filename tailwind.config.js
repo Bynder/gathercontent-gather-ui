@@ -12,8 +12,12 @@ module.exports = {
     spacing: {
       quarter: '5px',
       half: '10px',
+      threeQuarter: '15px',
       base: '20px',
       double: '40px',
+    },
+    borderRadius: {
+      default: '6px',
     },
     extend: {
       colors: {

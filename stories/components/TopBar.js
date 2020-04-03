@@ -14,7 +14,7 @@ import Navigation from '../../lib/Navigation';
 import Logo from '../../lib/Logo';
 import DropdownSwitcher from '../../lib/DropdownSwitcher';
 import Search from '../../lib/Search';
-import Notification from '../../lib/Notification';
+import NotificationBar from '../../lib/Notification/bar';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
@@ -219,7 +219,7 @@ storiesOf('Components', module).add('TopBar', () => (
       title="TopBar with notification"
       description="The topbar can display a notification"
     >
-      <TopBar notification={<Notification level="warning" center>Important information here!</Notification>}>
+      <TopBar notification={<NotificationBar level="warning" center>Important information here!</NotificationBar>}>
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
