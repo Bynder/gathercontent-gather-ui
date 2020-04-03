@@ -19,6 +19,12 @@ module.exports = {
     borderRadius: {
       default: '6px',
     },
+    boxShadow: {
+      small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
+      default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
+      large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
+      xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
+    },
     extend: {
       colors: {
         current: 'currentColor',
