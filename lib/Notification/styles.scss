@@ -6,8 +6,7 @@
 	a {
 		@apply text-current;
 	}
-	.icon path,
-	.notification__close .icon path {
+	.icon path {
 		@apply fill-current;
 	}
 }
