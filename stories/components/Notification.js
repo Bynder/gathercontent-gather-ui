@@ -69,7 +69,7 @@ storiesOf('Components', module)
       <StoryItem
         title="NotificationInline Information"
         description="A notification box with the information level.">
-        <NotificationInline level="information">Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</NotificationInline>
+        <NotificationInline level="information" showShadow={false}>Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</NotificationInline>
       </StoryItem>
 
       <StoryItem
