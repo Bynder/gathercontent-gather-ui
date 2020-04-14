@@ -15,11 +15,3 @@
   flex: 1;
   min-width: 150px;
 }
-
-.pill-input__pill--warning {
-  background-color: $primary-red;
-  color: white;
-  & path {
-    fill: white;
-  }
-}

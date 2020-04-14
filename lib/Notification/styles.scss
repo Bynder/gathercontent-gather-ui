@@ -3,10 +3,4 @@
    ========================================================================== */
 .notification {
 	text-shadow: none;
-	a {
-		@apply text-current;
-	}
-	.icon path {
-		@apply fill-current;
-	}
 }
