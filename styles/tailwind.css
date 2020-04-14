@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-.icon-inherit-color .icon path {
+.inherit-color-icon .icon path {
   @apply fill-current;
 }
-.link-inherit-color a {
+.inherit-color-link a {
   @apply text-current;
 }
