@@ -32,8 +32,7 @@
   .close {
     position: absolute;
     right: $layout-spacing-base;
-    top: 50%;
-    transform: translateY(-50%);
+    top: $layout-spacing-base;
   }
 }
 
