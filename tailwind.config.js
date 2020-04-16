@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   theme: {
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
@@ -15,6 +16,7 @@ module.exports = {
       threeQuarter: '15px',
       base: '20px',
       double: '40px',
+      triple: '60px',
     },
     borderRadius: {
       default: '6px',
