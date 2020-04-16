@@ -56,7 +56,7 @@
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js' 'stories/webapp/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check",
-    "copy:styles:watch": "nodemon --exec \"yarn copy-styles\" --watch lib --watch styles -e scss",
+    "copy:styles:watch": "nodemon --exec \"yarn copy-styles\" --watch lib --watch styles -e scss --watch tailwind.config.js",
     "build:watch": "concurrently \"yarn copy:styles:watch\" \"yarn build --watch\""
   },
   "husky": {
