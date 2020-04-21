@@ -18,7 +18,8 @@ module.exports = {
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
-      blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)'
+      blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      'none': 'none'
     },
     extend: {
       colors: {
@@ -93,7 +94,10 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active']
+  },
   plugins: [],
   corePlugins: {
     preflight: false,
