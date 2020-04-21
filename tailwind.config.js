@@ -10,6 +10,7 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
+      none: 0,
       default: '6px',
     },
     boxShadow: {
