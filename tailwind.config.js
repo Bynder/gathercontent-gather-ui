@@ -19,6 +19,7 @@ module.exports = {
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
       blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'none': 'none'
     },
     extend: {
