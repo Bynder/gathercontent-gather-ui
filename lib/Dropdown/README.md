@@ -39,6 +39,7 @@ A dropdown component with compounded components to render triggers and the conte
 | danger              | Bool             | false     | No       | A modifier for highlighting the action as dangerous.               |
 | hideAfterPerformingAction  | Bool      | true      | No       | A bool to define if the dropdown should close after clicking an action.                |
 | disabled  | Bool      | true      | No       | disables the action                |
+| value  | string      | null      | No       | the action button value                |
 
 # Dropdown.ActionGroup
 

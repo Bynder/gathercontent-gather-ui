@@ -9,13 +9,6 @@ module.exports = {
       'semi-bold': 500,
       bold: 600
     },
-    spacing: {
-      quarter: '5px',
-      half: '10px',
-      threeQuarter: '15px',
-      base: '20px',
-      double: '40px',
-    },
     borderRadius: {
       default: '6px',
     },
