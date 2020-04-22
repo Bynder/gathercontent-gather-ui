@@ -1,5 +1,4 @@
 module.exports = {
-  important: true,
   theme: {
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
