@@ -70,3 +70,4 @@ import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromp
 import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimary'
 import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDanger'
 import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiary'
+import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDanger'
