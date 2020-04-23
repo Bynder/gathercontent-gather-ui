@@ -1,4 +1,6 @@
+const bluePrimary = '#006EFF'
 const blue80 = '#99C5FF'
+
 const red80 = '#F5A3AA'
 
 module.exports = {
@@ -25,6 +27,7 @@ module.exports = {
       'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
       red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+      'blue-focus': `inset 0px 0px 0px 3px ${bluePrimary}`,
       'blue-80-focus': `inset 0px 0px 0px 3px ${blue80}`,
       'red-80-focus': `inset 0px 0px 0px 3px ${red80}`,
       none: 'none'
@@ -38,7 +41,7 @@ module.exports = {
           '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
-          primary: '#006EFF',
+          primary: bluePrimary,
           '40': '#0058CC',
           '30': '#004299',
           '20': '#002C66'
