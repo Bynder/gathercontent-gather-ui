@@ -67,5 +67,6 @@ import ApprovedLabel from '../lib/ApprovedLabel/stories/ApprovedLabelStory';
 import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';
 import { PillInputStory } from '../lib/PillInput/stories/story';
 import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromptStory';
-import '../lib/ButtonNew/stories/ButtonPrimary'
+import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimary'
+import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDanger'
 import '../lib/ButtonNew/stories/ButtonTertiary'
