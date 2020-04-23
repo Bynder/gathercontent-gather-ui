@@ -34,6 +34,7 @@ module.exports = {
       'blue-80-focus': `0px 0px 0px 3px ${blue80}`,
       'red-focus': `0px 0px 0px 3px ${redPrimary}`,
       'red-80-focus': `0px 0px 0px 3px ${red80}`,
+      
       none: 'none'
     },
     extend: {
