@@ -30,10 +30,10 @@ module.exports = {
       red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
 
-      'blue-focus': `inset 0px 0px 0px 3px ${bluePrimary}`,
-      'blue-80-focus': `inset 0px 0px 0px 3px ${blue80}`,
-      'red-focus': `inset 0px 0px 0px 3px ${redPrimary}`,
-      'red-80-focus': `inset 0px 0px 0px 3px ${red80}`,
+      'blue-focus': `0px 0px 0px 3px ${bluePrimary}`,
+      'blue-80-focus': `0px 0px 0px 3px ${blue80}`,
+      'red-focus': `0px 0px 0px 3px ${redPrimary}`,
+      'red-80-focus': `0px 0px 0px 3px ${red80}`,
       none: 'none'
     },
     extend: {
