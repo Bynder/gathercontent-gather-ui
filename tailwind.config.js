@@ -1,3 +1,5 @@
+const blue80 = '#99C5FF'
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -22,6 +24,7 @@ module.exports = {
       'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
       red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+      'blue-focus': `inset 0px 0px 0px 3px ${blue80}`,
       none: 'none'
     },
     extend: {
@@ -30,7 +33,7 @@ module.exports = {
         blue: {
           '95': '#E6F1FF',
           '90': '#CCE2FF',
-          '80': '#99C5FF',
+          '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
           primary: '#006EFF',
