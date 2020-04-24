@@ -94,7 +94,9 @@ module.exports = {
       '32': '8rem'
     }
   },
-  variants: {},
+  variants: {
+    padding: ['last']
+  },
   plugins: [],
   corePlugins: {
     preflight: false,
