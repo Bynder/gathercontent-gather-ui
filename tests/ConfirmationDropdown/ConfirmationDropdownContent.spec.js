@@ -1,4 +1,4 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { Button, Icon, Dropdown } from '../../lib';
 import ConfirmationDropdownContent from '../../lib/ConfirmationDropdown/ConfirmationDropdownContent';
 import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown/consts';
@@ -21,7 +21,7 @@ describe('Confirmation Dropdown Content', () => {
     });
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <ConfirmationDropdownContent
         onConfirm={mockConfirmPromise}
         onHide={onHideSpy}
@@ -34,7 +34,8 @@ describe('Confirmation Dropdown Content', () => {
       {
         context: {
           [GATHER_UI_DROPDOWN]: {
-            setShowContent: setShowContentSpy
+            setShowContent: setShowContentSpy,
+            showContent: true
           }
         }
       }
