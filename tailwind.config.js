@@ -1,3 +1,9 @@
+const bluePrimary = '#006EFF'
+const blue80 = '#99C5FF'
+
+const redPrimary = '#E51A2B'
+const red80 = '#F5A3AA'
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -18,10 +24,17 @@ module.exports = {
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
+
       blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
       red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+
+      'blue-focus': `0px 0px 0px 3px ${bluePrimary}`,
+      'blue-80-focus': `0px 0px 0px 3px ${blue80}`,
+      'red-focus': `0px 0px 0px 3px ${redPrimary}`,
+      'red-80-focus': `0px 0px 0px 3px ${red80}`,
+      
       none: 'none'
     },
     extend: {
@@ -30,10 +43,10 @@ module.exports = {
         blue: {
           '95': '#E6F1FF',
           '90': '#CCE2FF',
-          '80': '#99C5FF',
+          '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
-          primary: '#006EFF',
+          primary: bluePrimary,
           '40': '#0058CC',
           '30': '#004299',
           '20': '#002C66'
@@ -41,10 +54,10 @@ module.exports = {
         red: {
           '95': '#FFE8E6',
           '90': '#FFD0CC',
-          '80': '#F5A3AA',
+          '80': red80,
           '70': '#F07580',
           '60': '#EB4755',
-          primary: '#E51A2B',
+          primary: redPrimary,
           '40': '#B81422',
           '30': '#8A0F1A',
           '20': '#5C0A11'

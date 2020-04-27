@@ -119,3 +119,7 @@ $icon-active-color: $color-brand-blue !default;
 .icon.icon--green path {
   fill: $color-brand-green;
 }
+
+button:active .icon--blue-on-button-parent-active path  {
+  fill: $primary-blue;
+}
