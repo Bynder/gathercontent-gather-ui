@@ -8,7 +8,7 @@ A component that renders a form with a text input that allows you to '@' users.
 | Name                | Type          | Default   | Required | Description                                                                            |
 | ------------------- |-------------- | --------- | -------- |--------------------------------------------------------------------------------------- |
 | users               | Array         | N/A       | Yes      | An array of mentionable/@-able users                                                   |
-| onSubmit            | Func          | N/A       | Yes      | Executes when the form is submitted                                                    |
+| onSubmit            | Func          | N/A       | Yes      | Executes when the form is submitted. Passes the mentions and an array of displayNames as arguments                                                    |
 | onInputChange       | Func          | N/A       | Yes      | Executes when the input has changed                                                    |
 | onCancel            | Func          | N/A       | Yes      | Executes when the user clicks the cancel button                                        |
 | onRowCountChange    | Func          | N/A       | Yes      | Executes when the input height changes                                                 |

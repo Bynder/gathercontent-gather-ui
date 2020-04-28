@@ -4,4 +4,8 @@
   bottom: 0;
   width: 2px;
   background: $neutral-light;
+
+  &.dragged-insert {
+    background: $primary-blue;
+  }
 }

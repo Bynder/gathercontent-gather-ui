@@ -4,4 +4,13 @@
     min-width: 300px;
     padding: $layout-spacing-base/2 0 0 0;
   }
+
+  .icon path {
+    fill: $neutral-base;
+  }
+  .is-active {
+    .icon path {
+      fill: $primary-blue;
+    }
+  }
 }

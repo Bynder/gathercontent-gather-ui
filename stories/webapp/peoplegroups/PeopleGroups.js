@@ -21,7 +21,7 @@ const PeopleGroups = ({
   return (
     <>
       <PeopleGroupTopbar />
-      <FinderPanelLayout>
+      <FinderPanelLayout fixed>
         <FinderPanelLayout.Left
           style={{
             top: '74px'

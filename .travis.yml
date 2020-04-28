@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-- '10'
+  - '10'
 script:
-- yarn test:ci
-- yarn lint
+  - yarn test:ci
+  - yarn lint
 cache: yarn
 deploy:
+  edge: true
   skip_cleanup: true
   provider: npm
   email: dev@gathercontent.com

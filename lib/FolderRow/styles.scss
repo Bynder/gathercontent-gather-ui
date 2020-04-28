@@ -3,6 +3,7 @@
    ========================================================================== */
 
 $folder-row-spacing: $layout-spacing-base/2 !default;
+$folder-row-gap: 6px;
 
 /* ==========================================================================
    Styles
@@ -10,6 +11,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
 .folder-row {
   overflow: hidden;
+  width: 100%;
 }
 
 .folder-row__inner,
@@ -22,14 +24,17 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 .folder-row__inner {
   padding: $folder-row-spacing;
   background: $neutral-lightest;
-  border-radius: 4px;
-  border: 1px solid $neutral-light;
   position: relative;
-  margin: 0 0 $layout-spacing-base/2;
+  margin: $folder-row-gap 0 $folder-row-gap;
+  @include before-border(1px, solid, $neutral-light, 4px);
 
   + .folder-row {
     margin-top: $folder-row-spacing;
   }
+}
+
+.folder-row__inner-dragged-insert {
+  @include before-border(2px, solid, $primary-blue, 4px);
 }
 
 .folder-row__backdrop {
@@ -59,6 +64,10 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
   .editable-text__text {
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  .editable-text__wrapper {
+    cursor: text;
   }
 }
 
@@ -98,7 +107,7 @@ $folder-row-spacing: $layout-spacing-base/2 !default;
 
   button:hover,
   button:focus {
-    background: rgba($primary-blue, .05);
+    background: rgba($primary-blue, 0.05);
   }
 }
 

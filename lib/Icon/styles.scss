@@ -17,11 +17,11 @@ $icon-active-color: $color-brand-blue !default;
   display: block;
 }
 
-.icon path {
+.icon--default-fill-color path {
   fill: $icon-default-color;
 }
 
-.is-active .icon path {
+.is-active .icon.icon--default-active-color path {
   fill: $icon-active-color;
 }
 
@@ -118,4 +118,8 @@ $icon-active-color: $color-brand-blue !default;
 
 .icon.icon--green path {
   fill: $color-brand-green;
+}
+
+button:active .icon--blue-on-button-parent-active path  {
+  fill: $primary-blue;
 }

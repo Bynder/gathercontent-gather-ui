@@ -1,34 +1,82 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Notification from '../../lib/Notification';
+import NotificationBar from '../../lib/Notification/bar';
+import NotificationInline from '../../lib/Notification/inline';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
-  .add('Notifications', () => (
+  .add('NotificationBars', () => (
     <div>
       <StoryItem
-        title="Notification Warning"
+        title="NotificationBar Warning"
         description="A notification box with the warning level.">
-        <Notification level="warning">Warning, I am too sexy for this notification.</Notification>
+        <NotificationBar level="warning">Warning, I am too sexy for this notification.</NotificationBar>
       </StoryItem>
 
       <StoryItem
-        title="Notification Danger"
+        title="NotificationBar Danger"
         description="A notification box with the danger level.">
-        <Notification level="danger">You're about to delete your whole life.</Notification>
+        <NotificationBar level="danger">You're about to delete your whole life.</NotificationBar>
       </StoryItem>
 
       <StoryItem
-        title="Notification Information"
+        title="NotificationBar Information"
         description="A notification box with the information level.">
-        <Notification level="info">Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</Notification>
+        <NotificationBar level="information">Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</NotificationBar>
       </StoryItem>
 
       <StoryItem
-        title="Notification (with a click handler)"
-        description="A notification can handle click interactions.">
-        <Notification level="warning" clickHandler={action('clickHandler')}><strong>You have overdue projects.</strong></Notification>
+        title="NotificationBar Promo"
+        description="A notification box with the promo level.">
+        <NotificationBar level="promo">Did you know Nirvana started in <a href="/">Aberdeen</a>?</NotificationBar>
       </StoryItem>
+
+      <StoryItem
+        title="NotificationBar (with a click handler)"
+        description="A notification can handle click interactions.">
+        <NotificationBar level="warning" clickHandler={action('clickHandler')}><strong>You have overdue projects.</strong></NotificationBar>
+      </StoryItem>
+
+      <StoryItem
+        title="NotificationBar with close button"
+        description="A notification box with an optional close button.">
+        <NotificationBar level="warning" onClose={() => {}}>Warning, I am too sexy for this notification.</NotificationBar>
+      </StoryItem>
+
+      <StoryItem
+        title="Centered NotificationBar with close button"
+        description="A centered notification box with an optional close button.">
+        <NotificationBar level="warning" center onClose={() => {}}>Warning, I am too sexy for this notification.</NotificationBar>
+      </StoryItem>
+
+    </div>
+  ))
+  .add('NotificationInline', () => (
+    <div>
+      <StoryItem
+        title="NotificationInline Warning"
+        description="A notification box with the warning level.">
+        <NotificationInline level="warning">Warning, I am too sexy for this notification.</NotificationInline>
+      </StoryItem>
+
+      <StoryItem
+        title="NotificationInline Danger"
+        description="A notification box with the danger level.">
+        <NotificationInline level="danger">You're about to delete your whole life.</NotificationInline>
+      </StoryItem>
+
+      <StoryItem
+        title="NotificationInline Information"
+        description="A notification box with the information level.">
+        <NotificationInline level="information" showShadow={false}>Did you know <strong>Nirvana</strong> started in <u>Aberdeen</u>?</NotificationInline>
+      </StoryItem>
+
+      <StoryItem
+        title="NotificationInline Success"
+        description="A notification box with the success level.">
+        <NotificationInline level="success">You did it! Great job!</NotificationInline>
+      </StoryItem>
+
     </div>
   ));

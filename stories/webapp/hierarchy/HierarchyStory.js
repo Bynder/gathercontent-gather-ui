@@ -8,11 +8,11 @@ import { WindowingIdsMock } from '../../../lib/Windowing/stories/WindowingIdsMoc
 
 const stories = storiesOf('Web app', module);
 
-const statusColor = text('Status colour', 'green');
-const levelCount = number('Total number of levels', 10);
-const maxItemCount = number('Max number of items', 10);
-
 stories.add('Hierarchy', () => {
+  const statusColor = text('Status colour', 'green');
+  const levelCount = number('Total number of levels', 10);
+  const maxItemCount = number('Max number of items', 10);
+
   const data = createData({ levelCount, maxItemCount, statusColor });
 
   return (

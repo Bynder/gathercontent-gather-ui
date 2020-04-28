@@ -8,6 +8,7 @@ describe('Guideline', () => {
     Element.prototype.getBoundingClientRect = jest.fn(() => ({
       height: 120
     }));
+
     wrapper = mount(
       <Guideline title="Guideline title">
         <p>Guideline content</p>
@@ -47,5 +48,16 @@ describe('Guideline', () => {
     });
     wrapper.setState({ showContent: false });
     expect(wrapper.find('.guideline__body').prop('style')).toEqual(null);
+  });
+
+  test('padding the correct state to the onToggle callback', () => {
+    const onToggleSpy = jest.fn();
+    wrapper.setProps({ onToggle: onToggleSpy });
+
+    wrapper.find(Button).simulate('click');
+    expect(onToggleSpy).toHaveBeenCalledWith(false);
+
+    wrapper.find(Button).simulate('click');
+    expect(onToggleSpy).toHaveBeenCalledWith(true);
   });
 });

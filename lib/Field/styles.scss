@@ -38,6 +38,10 @@ $field-data-p-line-height: 1.688rem !default;
 .field {
   margin: 0 0 $field-spacing-base*2;
 
+  .ql-editor {
+    overflow-x: auto;
+  }
+
   img {
     max-width: 100%;
   }
@@ -52,7 +56,7 @@ $field-data-p-line-height: 1.688rem !default;
     display: flex;
   }
 
-  &.is-disabled {
+  &.is-visually-disabled {
     opacity: 1;
   }
 }
@@ -94,7 +98,6 @@ $field-data-p-line-height: 1.688rem !default;
 }
 
 .field__instructions {
-  font-style: italic;
   margin: $field-spacing-base 0 0;
   padding: $field-spacing-base 0 0 0;
   border-top: 1px solid $neutral-light;
@@ -110,21 +113,22 @@ $field-data-p-line-height: 1.688rem !default;
   font-size: $typo-size-lead;
   transition: all 0.2s ease;
 
-  .field:not(.is-disabled):not(.field__editor) &:hover,
+  .field:not(.is-visually-disabled):not(.field__editor) &:hover,
   .is-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
   }
 
-  .field:not(.is-disabled) &:hover {
+  .field:not(.is-visually-disabled) &:hover {
     .field__instructions {
       color: $neutral-dark;
     }
   }
 
-  .is-disabled & {
+  .is-visually-disabled & {
     cursor: default;
+
     mark.conversation-format {
       cursor: pointer;
     }
@@ -250,7 +254,6 @@ $field-data-p-line-height: 1.688rem !default;
   }
   .field__instructions {
     font-size: $typo-size-slight;
-    font-style: italic;
     text-decoration: none;
     padding: $field-spacing-base/2;
     margin: 0;

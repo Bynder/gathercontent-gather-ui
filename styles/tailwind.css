@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.inherit-color-icon .icon path {
+  @apply fill-current;
+}
+.inherit-color-link a {
+  @apply text-current;
+}

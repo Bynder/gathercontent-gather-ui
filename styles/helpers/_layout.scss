@@ -7,29 +7,29 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector}-double {
-    #{$property}: $layout-spacing-base*2;
+    #{$property}: $layout-spacing-base * 2 !important;
   }
 
   #{$selector} {
-    #{$property}: $layout-spacing-base;
+    #{$property}: $layout-spacing-base !important;
   }
 
   #{$selector}-half {
-    #{$property}: $layout-spacing-base/2;
+    #{$property}: $layout-spacing-base/2 !important;
   }
 
   #{$selector}-quarter {
-    #{$property}: $layout-spacing-base/4;
+    #{$property}: $layout-spacing-base/4 !important;
   }
 
   #{$selector}-clear {
-    #{$property}: 0;
+    #{$property}: 0 !important;
   }
 
   #{$selector}-auto {
-    #{$property}: auto;
+    #{$property}: auto !important;
   }
-};
+}
 
 /* ==========================================================================
    Visibility
@@ -40,9 +40,31 @@ $subProps: (none, block, inline-block, flex, inline-flex, inline);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
-    display: $style;
+    display: $style !important;
   }
-};
+}
+
+$props: ('opacity');
+$subProps: ('50', '100');
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    opacity: #{$style + '%'};
+  }
+}
+
+/* ==========================================================================
+   Position
+   ========================================================================== */
+
+$props: ('position');
+$subProps: (absolute, relative, fixed, initial, inherit, sticky, static, unset);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    position: $style;
+  }
+}
 
 /* ==========================================================================
    Widths
@@ -53,28 +75,41 @@ $subProps: ('50', '100');
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
-    width: unquote("#{$style}%");
+    width: unquote('#{$style}%');
   }
-};
+}
 
 $props: ('width-spacing-base');
-$subProps: ('quarter', 'half', '1', '2','3','4','5','6','7','8','9','10');
+$subProps: (
+  'quarter',
+  'half',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10'
+);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   @if $style == 'half' {
     #{$selector} {
-      width: calc(0.5 * #{$layout-spacing-base})
+      width: calc(0.5 * #{$layout-spacing-base});
     }
   } @else if $style == 'quarter' {
     #{$selector} {
-      width: calc(0.25 *  #{$layout-spacing-base})
+      width: calc(0.25 * #{$layout-spacing-base});
     }
   } @else {
     #{$selector} {
-      width: calc(#{$style} * #{$layout-spacing-base})
+      width: calc(#{$style} * #{$layout-spacing-base});
     }
   }
-};
+}
 
 /* ==========================================================================
    Overflow
@@ -87,22 +122,31 @@ $subProps: (visible, hidden);
   #{$selector} {
     overflow: $style;
   }
-};
-
+}
 
 /* ==========================================================================
    Vertical align
    ========================================================================== */
 
 $props: ('vertical-align');
-$subProps: (baseline, inherit, top, bottom, middle, text-top, text-bottom, sub, super, length);
+$subProps: (
+  baseline,
+  inherit,
+  top,
+  bottom,
+  middle,
+  text-top,
+  text-bottom,
+  sub,
+  super,
+  length
+);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
     vertical-align: $style;
   }
-};
-
+}
 
 /* ==========================================================================
    Align items
@@ -115,14 +159,32 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
   #{$selector} {
     align-items: $style;
   }
-};
+}
 
 /* ==========================================================================
-   Legibility
+   justify-content
    ========================================================================== */
 
-.space-between {
-  justify-content: space-between;
+$props: ('justify-content');
+$subProps: (baseline, center, end, flex-end, flex-start, initial, inherit, space-around, space-between, space-evenly, stretch);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    justify-content: $style;
+  }
+}
+
+/* ==========================================================================
+   Flex direction
+   ========================================================================== */
+
+$props: ('flex-direction');
+$subProps: (row, column);
+
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector} {
+    flex-direction: $style;
+  }
 }
 
 /* ==========================================================================
@@ -145,13 +207,48 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
    Borders
    ========================================================================== */
 
- $props: ('border-default');
- $subProps: (top, bottom, left, right);
- @include generate-helper($props, $subProps) using ($selector, $property, $style) {
-   #{$selector} {
-     border: $color-border-base 1px solid;
-   }
-   #{$selector}-#{$style} {
-     border-#{$style}: $color-border-base 1px solid;
-   }
- };
+$props: ('border-default');
+$subProps: (top, bottom, left, right, full, clear);
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  @if $style == 'full' {
+    #{$selector} {
+      border: $color-border-base 1px solid;
+    }
+  } @else if $style == 'clear' {
+    #{$selector} {
+      border: none;
+    }
+  } @else {
+    #{$selector} {
+      border-#{$style}: $color-border-base 1px solid;
+    }
+  }
+}
+
+.h-border-radius-clear {
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   Transform - Rotate
+   ========================================================================== */
+
+$props: ('transform-rotate');
+$subProps: ('');
+@include generate-helper($props, $subProps) using ($selector, $property, $style) {
+  #{$selector}{
+    transform: rotate(0turn);
+  }
+
+  #{$selector}-quarter {
+    transform: rotate(0.25turn);
+  }
+
+  #{$selector}-half {
+    transform: rotate(0.5turn);
+  }
+
+  #{$selector}-three-quarters {
+    transform: rotate(0.75turn);
+  }
+}

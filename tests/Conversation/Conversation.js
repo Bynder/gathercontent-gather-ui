@@ -41,9 +41,9 @@ describe('Conversation', () => {
   });
 
   test('renders an error notification', () => {
-    expect(wrapper.find('Notification')).toHaveLength(0);
+    expect(wrapper.find('NotificationBar')).toHaveLength(0);
     wrapper.setProps({ hasError: true });
-    expect(wrapper.find('Notification')).toHaveLength(1);
+    expect(wrapper.find('NotificationBar')).toHaveLength(1);
   });
 
   test('renders the resolve conversation Button', () => {
