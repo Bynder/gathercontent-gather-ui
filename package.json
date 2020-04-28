@@ -177,6 +177,7 @@
     "sass": "^1.22.7",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "tailwindcss-plugins": "^0.3.0",
     "url-loader": "^2.1.0"
   }
 }
