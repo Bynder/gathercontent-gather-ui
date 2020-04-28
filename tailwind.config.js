@@ -1,3 +1,7 @@
+const blue80 = '#99C5FF'
+
+const red80 = '#F5A3AA'
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -10,13 +14,26 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
-      default: '6px'
+      none: 0,
+      default: '6px',
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-      xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)'
+      xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
+
+      blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
+      red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+
+      'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
+      'blue-focus-sm': `0px 0px 0px 2px ${blue80}`,
+      'red-focus-md': `0px 0px 0px 3px ${red80}`,
+      'red-focus-sm': `0px 0px 0px 2px ${red80}`,
+
+      none: 'none'
     },
     extend: {
       colors: {
@@ -24,7 +41,7 @@ module.exports = {
         blue: {
           '95': '#E6F1FF',
           '90': '#CCE2FF',
-          '80': '#99C5FF',
+          '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
           primary: '#006EFF',
@@ -35,7 +52,7 @@ module.exports = {
         red: {
           '95': '#FFE8E6',
           '90': '#FFD0CC',
-          '80': '#F5A3AA',
+          '80': red80,
           '70': '#F07580',
           '60': '#EB4755',
           primary: '#E51A2B',
@@ -128,7 +145,9 @@ module.exports = {
   },
   variants: {
     padding: ['last'],
-    gradients: ['responsive', 'hover']
+    gradients: ['responsive', 'hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
