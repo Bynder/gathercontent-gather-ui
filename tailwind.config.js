@@ -15,6 +15,7 @@ module.exports = {
     },
     borderRadius: {
       none: 0,
+      small: '4px',
       default: '6px',
     },
     boxShadow: {
