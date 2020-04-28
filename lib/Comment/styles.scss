@@ -1,0 +1,30 @@
+.conversation__inactive {
+  &:hover {
+    .conversation__text__cutoff {
+      @apply bg-blur-grey-bottom;
+    }
+  }
+}
+
+.new-comment__input {
+  @apply border-0 p-2;
+}
+
+.edit-comment__input {
+  @apply border-0 pr-2 py-0 pl-0;
+}
+
+.conversation-comment__line {
+  margin-left: 13px;
+  margin-top: 30px;
+}
+
+.blur-background {
+  background: rgba(255, 255, 255, 0.75);
+
+  @supports (filter: blur()) {
+    transition: filter $animation-time-micro/2;
+    filter: blur(4px);
+    background: none;
+  }
+}
