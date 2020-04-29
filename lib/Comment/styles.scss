@@ -7,7 +7,11 @@
 }
 
 .new-comment__input {
-  @apply border-0 p-2;
+  &:focus,
+  &:active {
+    @apply border-blue-primary border border-solid rounded;
+  }
+  @apply border border-solid border-transparent p-2;
 }
 
 .edit-comment__input {
