@@ -145,16 +145,16 @@ storiesOf('Components', module)
             <Dropdown.Content fixRight collapse noBorder>
               <Dropdown.ActionGroup horizontal>
                 <Dropdown.Action action={() => action('action clicked')} plain>
-                  <Icon name="bulletList" />
+                  <Icon name="bulletList" defaultActiveColor={false} />
                 </Dropdown.Action>
                 <Dropdown.Action action={() => action('action clicked')} plain>
-                  <Icon name="numberedList" />
+                  <Icon name="numberedList" defaultActiveColor={false} />
                 </Dropdown.Action>
                 <Dropdown.Action action={() => action('action clicked')} plain>
-                  <Icon name="table" />
+                  <Icon name="table" defaultActiveColor={false}/>
                 </Dropdown.Action>
                 <Dropdown.Action action={() => action('action clicked')} plain>
-                  <Icon name="quote" />
+                  <Icon name="quote" defaultActiveColor={false}/>
                 </Dropdown.Action>
               </Dropdown.ActionGroup>
             </Dropdown.Content>
