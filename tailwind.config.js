@@ -3,6 +3,7 @@ const blue80 = '#99C5FF'
 const red80 = '#F5A3AA'
 
 module.exports = {
+  important: true,
   theme: {
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
