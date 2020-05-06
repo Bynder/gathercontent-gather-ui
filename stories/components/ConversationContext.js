@@ -6,28 +6,34 @@ import StoryItem from '../styleguide/StoryItem';
 const mockUser = {
   id: 2,
   name: 'Bruce',
-  avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
+  avatar:
+    'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/208205_yHGd7vA5HRxsnMQpES4UzjJ7Yxgn6Bp54165gqksRXyDJhuOnW88H6djhLJeE2BZ.jpg',
   initials: 'BB',
   display: 'brucebanner'
 };
 
-const mockComments = [{
-  id: 'comment-id-1',
-  body: 'Here is a decent size comment that was created by someone who wanted to comment.',
-  createdAt: '2017-06-08 09:56:41',
-  author: mockUser,
-  createdBy: 2
-}, {
-  id: 'comment-id-2',
-  body: 'Comment body and a link to http://google.com and a @mention',
-  createdAt: 'Less than a minute ago',
-  author: {
-    avatar: 'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
-    name: 'Ricardo',
-    initials: 'RB',
+const mockComments = [
+  {
+    id: 'comment-id-1',
+    body:
+      'Here is a decent size comment that was created by someone who wanted to comment.',
+    createdAt: '2017-06-08 09:56:41',
+    author: mockUser,
+    createdBy: 2
   },
-  createdBy: 2
-}];
+  {
+    id: 'comment-id-2',
+    body: 'Comment body and a link to http://google.com and a @mention',
+    createdAt: 'Less than a minute ago',
+    author: {
+      avatar:
+        'https://gathercontent-production-avatars.s3-us-west-2.amazonaws.com/26263_nH1Vuciy3psgQEUCVXZPTVU2RzUyMJ2arUIH7le8U4RrJ9LjFrtvEmyzf2XFgnZ7.png',
+      name: 'Ricardo',
+      initials: 'RB'
+    },
+    createdBy: 2
+  }
+];
 
 storiesOf('Components', module).add('Conversation Context', () => (
   <div>
@@ -39,8 +45,9 @@ storiesOf('Components', module).add('Conversation Context', () => (
         label="A nice label"
         id="123"
         resolved={true}
+        userCanResolve
         comments={mockComments}
-        resolveConversation={()=>{}}
+        resolveConversation={() => {}}
       >
         <span>Hello!</span>
       </ConversationContext>
@@ -52,9 +59,10 @@ storiesOf('Components', module).add('Conversation Context', () => (
       <ConversationContext
         label="A nice label"
         id="123"
-        resolved={true}
+        resolved={false}
+        userCanResolve
         comments={mockComments}
-        resolveConversation={()=>{}}
+        resolveConversation={() => {}}
       >
         {null}
       </ConversationContext>
