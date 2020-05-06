@@ -40,6 +40,7 @@ module.exports = {
       colors: {
         current: 'currentColor',
         blue: {
+          '98': '#F5F9FF',
           '95': '#E6F1FF',
           '90': '#CCE2FF',
           '80': blue80,
