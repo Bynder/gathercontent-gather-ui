@@ -86,7 +86,7 @@ $field-data-p-line-height: 1.688rem !default;
   transition: opacity $animation-time-micro $animation-curve;
 
   .field:hover &,
-  .field.is-active & {
+  .field.field-active & {
     opacity: 1;
   }
 }
@@ -114,7 +114,7 @@ $field-data-p-line-height: 1.688rem !default;
   transition: all 0.2s ease;
 
   .field:not(.is-visually-disabled):not(.field__editor) &:hover,
-  .is-active & {
+  .field-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
@@ -412,7 +412,7 @@ $field-data-p-line-height: 1.688rem !default;
     }
   }
 
-  *:last-child {
+  *:last-child:not(button) {
     margin-bottom: 0;
   }
 
