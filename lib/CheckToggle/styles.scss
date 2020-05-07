@@ -123,6 +123,7 @@ $borderColour: #F8FBFC;
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;
     overflow: hidden;
+    min-width: 30px;
   }
 }
 
