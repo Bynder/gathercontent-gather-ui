@@ -1,6 +1,6 @@
-const blue80 = '#99C5FF'
+const blue80 = '#99C5FF';
 
-const red80 = '#F5A3AA'
+const red80 = '#F5A3AA';
 
 module.exports = {
   theme: {
@@ -24,9 +24,11 @@ module.exports = {
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
 
-      blue: '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      blue:
+        '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
-      red: '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      red:
+        '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
 
       'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
@@ -127,6 +129,31 @@ module.exports = {
       '48': ' 12rem',
       '56': ' 14rem',
       '64': ' 16rem',
+      '128': ' 32rem',
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh'
+    },
+    minWidth: {
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': ' 2.5rem',
+      '12': ' 3rem',
+      '16': ' 4rem',
+      '20': ' 5rem',
+      '24': ' 6rem',
+      '32': ' 8rem',
+      '40': ' 10rem',
+      '48': ' 12rem',
+      '56': ' 14rem',
+      '64': ' 16rem',
+      '128': ' 32rem',
       auto: 'auto',
       full: '100%',
       screen: '100vh'
