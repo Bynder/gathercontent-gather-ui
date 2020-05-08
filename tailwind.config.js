@@ -1,6 +1,8 @@
 const blue80 = '#99C5FF';
+const bluePrimary = '#006EFF';
 
 const red80 = '#F5A3AA';
+const redPrimary = '#E51A2B';
 
 module.exports = {
   theme: {
@@ -31,10 +33,10 @@ module.exports = {
         '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
 
-      'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
-      'blue-focus-sm': `0px 0px 0px 2px ${blue80}`,
-      'red-focus-md': `0px 0px 0px 3px ${red80}`,
-      'red-focus-sm': `0px 0px 0px 2px ${red80}`,
+      'blue-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${blue80}`,
+      'blue-focus-sm': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 4px ${blue80}`,
+      'red-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${red80}`,
+      'red-focus-sm': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 4px ${red80}`,
 
       none: 'none'
     },
@@ -48,7 +50,7 @@ module.exports = {
           '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
-          primary: '#006EFF',
+          primary: bluePrimary,
           '40': '#0058CC',
           '30': '#004299',
           '20': '#002C66'
@@ -59,7 +61,7 @@ module.exports = {
           '80': red80,
           '70': '#F07580',
           '60': '#EB4755',
-          primary: '#E51A2B',
+          primary: redPrimary,
           '40': '#B81422',
           '30': '#8A0F1A',
           '20': '#5C0A11'
