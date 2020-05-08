@@ -64,7 +64,6 @@ $field-data-p-line-height: 1.688rem !default;
 .field__data {
   display: flex;
   flex-flow: column;
-  padding-top: $field-spacing-base*1.5;
   text-align: right;
   font-size: $field-data-size;
 }
@@ -86,7 +85,7 @@ $field-data-p-line-height: 1.688rem !default;
   transition: opacity $animation-time-micro $animation-curve;
 
   .field:hover &,
-  .field.is-active & {
+  .field.field-is-active & {
     opacity: 1;
   }
 }
@@ -113,7 +112,7 @@ $field-data-p-line-height: 1.688rem !default;
   transition: all 0.2s ease;
 
   .field:not(.is-visually-disabled):not(.field__editor) &:hover,
-  .is-active & {
+  .field-is-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
@@ -314,7 +313,7 @@ $field-data-p-line-height: 1.688rem !default;
   }
 }
 
-.field.has-formatting {
+.has-formatting .field__content {
   *:nth-child(1) {
     margin-top: 0;
   }
