@@ -1,4 +1,4 @@
-$backgroundColour: #667386;
+$backgroundColour: #C2CCD6;
 $borderColour: #F8FBFC;
 
 .toggle-switch {
@@ -123,6 +123,7 @@ $borderColour: #F8FBFC;
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;
     overflow: hidden;
+    min-width: 30px;
   }
 }
 
