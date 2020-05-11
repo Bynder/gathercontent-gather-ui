@@ -80,7 +80,8 @@ $field-data-p-line-height: 1.688rem !default;
   flex-flow: column;
 }
 
-.field__actions {
+.field__actions,
+.field__repeatable-settings-controls {
   opacity: 0;
   transition: opacity $animation-time-micro $animation-curve;
 
@@ -434,6 +435,14 @@ $field-data-p-line-height: 1.688rem !default;
   .field__aside {
     right: 0;
   }
+
+  .field__repeatable-settings {
+    @apply ml-auto;
+  }
+
+  .field__repeatable-settings-label {
+    @apply ml-2;
+  }
 }
 
 .field--rtl {
@@ -446,5 +455,13 @@ $field-data-p-line-height: 1.688rem !default;
 
   .field__aside {
     left: 0;
+  }
+
+  .field__repeatable-settings {
+    @apply mr-auto;
+  }
+
+  .field__repeatable-settings-label {
+    @apply mr-2;
   }
 }
