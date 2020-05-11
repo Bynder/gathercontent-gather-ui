@@ -316,7 +316,7 @@ $field-data-p-line-height: 1.688rem !default;
 }
 
 .field.has-formatting {
-  *:nth-child(1) {
+  *:nth-child(1):not(button) {
     margin-top: 0;
   }
 
