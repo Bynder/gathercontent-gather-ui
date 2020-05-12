@@ -176,7 +176,7 @@ module.exports = {
     }
   },
   variants: {
-    padding: ['last'],
+    padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active']
