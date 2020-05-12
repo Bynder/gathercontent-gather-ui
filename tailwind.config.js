@@ -5,6 +5,7 @@ const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
 module.exports = {
+  important: true,
   theme: {
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
