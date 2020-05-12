@@ -86,7 +86,7 @@ $field-data-p-line-height: 1.688rem !default;
   transition: opacity $animation-time-micro $animation-curve;
 
   .field:hover &,
-  .field.is-active & {
+  .field.field-active & {
     opacity: 1;
   }
 }
@@ -107,14 +107,13 @@ $field-data-p-line-height: 1.688rem !default;
 
 .field__content {
   background: $neutral-lightest;
-  border:1px solid transparent;
   border-radius: 4px;
   padding: $layout-spacing-base*1.5;
   font-size: $typo-size-lead;
   transition: all 0.2s ease;
 
   .field:not(.is-visually-disabled):not(.field__editor) &:hover,
-  .is-active & {
+  .field-active & {
     background: #FFFFFF;
     border: 1px solid $neutral-light;
     box-shadow: $shadow-shallow;
@@ -316,7 +315,7 @@ $field-data-p-line-height: 1.688rem !default;
 }
 
 .field.has-formatting {
-  *:nth-child(1) {
+  *:nth-child(1):not(button) {
     margin-top: 0;
   }
 
@@ -412,7 +411,7 @@ $field-data-p-line-height: 1.688rem !default;
     }
   }
 
-  *:last-child {
+  *:last-child:not(button) {
     margin-bottom: 0;
   }
 
