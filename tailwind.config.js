@@ -6,6 +6,7 @@ const redPrimary = '#E51A2B';
 
 const neutral20 = '#29333D'
 const neutral80 = '#C2CCD6'
+const neutral90 = '#E1E6EB';
 
 module.exports = {
   important: true,
@@ -39,6 +40,8 @@ module.exports = {
 
       'blue-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${blue80}`,
       'blue-focus-sm': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 4px ${blue80}`,
+      'outline-blue-primary': `0px 0px 0px 1px ${bluePrimary}`,
+      'outline-neutral-90': `0px 0px 0px 1px ${neutral90}`,
       'red-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${red80}`,
       'red-focus-sm': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 4px ${red80}`,
       'neutral-focus-sm': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 4px ${neutral80}`,
@@ -107,7 +110,7 @@ module.exports = {
         neutral: {
           '98': '#F9FAFB',
           '95': '#F0F2F5',
-          '90': '#E1E6EB',
+          '90': neutral90,
           '80': neutral80,
           '70': '#A4B3C2',
           '60': '#8599AD',
