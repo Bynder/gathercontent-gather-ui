@@ -475,5 +475,26 @@ storiesOf('Components', module).add('Modals', () => (
       </ModalTrigger>
     </StoryItem>
 
+    <StoryItem
+      title="Modal with ImageHeader"
+      description="Modal with ImageHeader to display an image."
+    >
+      <ModalTrigger>
+        <Modal.Container>
+          <Modal.ImageHeader />
+          <Modal.Body>
+            Look at this lovely image ☝️
+          </Modal.Body>
+          <Modal.Footer spaceBetween>
+            <Button types={['link']} clickHandler={action('clickHandler')}>
+              Cancel
+            </Button>
+            <Button types={['primary']} clickHandler={action('clickHandler')}>
+              Confirm
+            </Button>
+          </Modal.Footer>
+        </Modal.Container>
+      </ModalTrigger>
+    </StoryItem>
   </div>
 ));
