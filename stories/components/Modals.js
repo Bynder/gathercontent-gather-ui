@@ -481,10 +481,8 @@ storiesOf('Components', module).add('Modals', () => (
     >
       <ModalTrigger>
         <Modal.Container>
-          <Modal.ImageHeader />
-          <Modal.Body>
-            Look at this lovely image ☝️
-          </Modal.Body>
+          <Modal.ImageHeader height={403} imageUrl="https://metro.co.uk/wp-content/uploads/2017/07/187144066.jpg?quality=90&strip=all" />
+          <Modal.Body>Look at this lovely image ☝️</Modal.Body>
           <Modal.Footer spaceBetween>
             <Button types={['link']} clickHandler={action('clickHandler')}>
               Cancel
