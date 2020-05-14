@@ -450,3 +450,18 @@ $field-data-p-line-height: 1.688rem !default;
     left: 0;
   }
 }
+
+.field-new {
+  .expanding-textarea {
+    line-height: $typo-line-height-base * 1.2;
+    font-size: $typo-size-lead;
+    background-color: transparent;
+
+    &.editable-text__input,
+    &.editable-text__input:focus {
+      text-align: right;
+      padding-right: 1.75rem;
+      display: flex;
+    }
+  }
+}
