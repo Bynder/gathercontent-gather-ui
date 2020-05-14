@@ -1,22 +1,24 @@
+const blue80 = '#99C5FF';
+const bluePrimary = '#006EFF';
+
+const red80 = '#F5A3AA';
+const redPrimary = '#E51A2B';
+
 module.exports = {
+  important: true,
   theme: {
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
-      body: ['IBM Plex Sans', 'sans-serif'],
+      body: ['IBM Plex Sans', 'sans-serif']
     },
     fontWeight: {
       roman: 400,
       'semi-bold': 500,
       bold: 600
     },
-    spacing: {
-      quarter: '5px',
-      half: '10px',
-      threeQuarter: '15px',
-      base: '20px',
-      double: '40px',
-    },
     borderRadius: {
+      none: 0,
+      small: '4px',
       default: '6px',
     },
     boxShadow: {
@@ -24,28 +26,43 @@ module.exports = {
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
+
+      blue:
+        '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
+      red:
+        '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
+      'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+
+      'blue-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${blue80}`,
+      'blue-focus-sm': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 4px ${blue80}`,
+      'red-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${red80}`,
+      'red-focus-sm': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 4px ${red80}`,
+
+      none: 'none'
     },
     extend: {
       colors: {
         current: 'currentColor',
         blue: {
+          '98': '#F5F9FF',
           '95': '#E6F1FF',
           '90': '#CCE2FF',
-          '80': '#99C5FF',
+          '80': blue80,
           '70': '#66A8FF',
           '60': '#338BFF',
-          primary: '#006EFF',
+          primary: bluePrimary,
           '40': '#0058CC',
           '30': '#004299',
           '20': '#002C66'
         },
         red: {
-          '95': '#FFE8E6',
+          '95': '#FCE8EA',
           '90': '#FFD0CC',
-          '80': '#F5A3AA',
+          '80': red80,
           '70': '#F07580',
           '60': '#EB4755',
-          primary: '#E51A2B',
+          primary: redPrimary,
           '40': '#B81422',
           '30': '#8A0F1A',
           '20': '#5C0A11'
@@ -97,11 +114,76 @@ module.exports = {
         }
       }
     },
+    maxHeight: {
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': ' 2.5rem',
+      '12': ' 3rem',
+      '16': ' 4rem',
+      '20': ' 5rem',
+      '24': ' 6rem',
+      '32': ' 8rem',
+      '40': ' 10rem',
+      '48': ' 12rem',
+      '56': ' 14rem',
+      '64': ' 16rem',
+      '128': ' 32rem',
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh'
+    },
+    minWidth: {
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': ' 2.5rem',
+      '12': ' 3rem',
+      '16': ' 4rem',
+      '20': ' 5rem',
+      '24': ' 6rem',
+      '32': ' 8rem',
+      '40': ' 10rem',
+      '48': ' 12rem',
+      '56': ' 14rem',
+      '64': ' 16rem',
+      '128': ' 32rem',
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh'
+    },
+    gradients: {
+      'blur-white-bottom': [
+        'rgba(255, 255, 255, 0) 0%',
+        'rgba(253, 253, 253, 0.5) 50%',
+        '#fff 100%'
+      ],
+      'blur-grey-bottom': [
+        'rgba(255, 255, 255, 0) 0%',
+        'rgba(253, 253, 253, 0.5) 50%',
+        '#f0f2f5 100%'
+      ]
+    }
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    padding: ['responsive', 'last'],
+    gradients: ['responsive', 'hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active']
+  },
+  plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
     preflight: false,
     container: false
   }
-}
+};

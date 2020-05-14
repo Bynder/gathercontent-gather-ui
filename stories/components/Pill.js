@@ -11,5 +11,10 @@ storiesOf('Components', module).add('Pill', () => (
           <Icon name="item" /> <span style={{paddingLeft: "10px"}}>Name is <b>David</b></span>
       </Pill>
     </StoryItem>
+    <StoryItem title="Pill error">
+      <Pill type="error">
+          <Icon name="item" /> <span style={{paddingLeft: "10px"}}>Name is <b>David</b></span>
+      </Pill>
+    </StoryItem>
   </div>
 ));

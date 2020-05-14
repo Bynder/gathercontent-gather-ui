@@ -72,9 +72,6 @@ $dropdown-status-circle-width-height: 15px !default;
   margin: $layout-spacing-base/4 0;
   opacity: 0;
   background: white;
-  border-radius: 4px;
-  box-shadow: $shadow-base;
-  border: 1px solid $neutral-light;
   z-index: 2;
   padding: $layout-spacing-base * .75;
 }

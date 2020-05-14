@@ -1,0 +1,66 @@
+.conversation__inactive {
+  &:hover {
+    .conversation__text__cutoff {
+      @apply bg-blur-grey-bottom;
+    }
+  }
+}
+
+.new-comment__input {
+  &:focus,
+  &:active {
+    @apply border-blue-primary border border-solid rounded;
+  }
+  @apply border border-solid border-transparent p-2;
+}
+
+.edit-comment__input {
+  @apply border-0 pr-2 py-0 pl-0;
+}
+
+.conversation-comment__line {
+  margin-left: 14px;
+  margin-top: 30px;
+}
+
+.blur-background {
+  background: rgba(255, 255, 255, 0.75);
+
+  @supports (filter: blur()) {
+    transition: filter $animation-time-micro/2;
+    filter: blur(4px);
+    background: none;
+  }
+}
+
+.new-comment__suggestions,
+.edit-comment__suggestions {
+  &__list {
+    @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
+    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
+
+    &:before {
+      content: 'Mention...';
+      @apply w-full block p-2 text-neutral-primary;
+    }
+  }
+  &__item {
+    &--focused,
+    &:focus,
+    &:hover {
+      @apply bg-neutral-95;
+    }
+  }
+  .avatar__wrapper {
+    @apply cursor-pointer p-2 border-t border-b-0 border-l-0 border-r-0 border-solid border-neutral-90;
+  }
+
+  .avatar__name {
+    @apply text-neutral-30 text-sm font-semi-bold;
+  }
+
+  .avatar__email {
+    @apply text-neutral-primary text-xs;
+  }
+}

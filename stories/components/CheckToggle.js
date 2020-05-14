@@ -25,6 +25,30 @@ storiesOf('Components', module)
         description="The toggle component has a smaller size and changes once checked.">
         <CheckToggle id="three" labelRight="Label right" displaySmall displayChecked checked />
       </StoryItem>
+
+      <StoryItem
+        title="Check Toggle with an input in the label"
+        description="This is used for our repeatable fields">
+
+        <CheckToggle
+            id="four"
+            labelRight={
+              <>
+                Limit to{' '}
+                <input
+                    type="number"
+                    min={2}
+                    onChange={action('input changed')}
+                    className='w-1/4 rounded border border-solid border-neutral-90 py-quarter px-half shadow'
+                />{' '}
+                fields
+              </>
+            }
+            displaySmall
+            displayChecked
+            checked
+        />
+      </StoryItem>
       </div>
     );
   })
