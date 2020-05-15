@@ -33,12 +33,11 @@ module.exports = {
 
       blue:
         '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
-      'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
       red:
         '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
       'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
 
-      'blue-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${blue80}`,
+      'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
       'blue-focus-sm': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 4px ${blue80}`,
       'outline-blue-primary': `0px 0px 0px 1px ${bluePrimary}`,
       'outline-neutral-90': `0px 0px 0px 1px ${neutral90}`,
@@ -186,7 +185,8 @@ module.exports = {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    boxShadow: ['responsive', 'hover', 'focus', 'active']
+    boxShadow: ['responsive', 'hover', 'focus', 'active'],
+    borderColor: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
