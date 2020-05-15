@@ -185,7 +185,7 @@ module.exports = {
   variants: {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     boxShadow: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
