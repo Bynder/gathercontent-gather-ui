@@ -61,6 +61,7 @@ module.exports = {
           '20': '#002C66'
         },
         red: {
+          '98': '#FFF6F5',
           '95': '#FCE8EA',
           '90': '#FFD0CC',
           '80': red80,
@@ -72,6 +73,7 @@ module.exports = {
           '20': '#5C0A11'
         },
         green: {
+          '98': '#F7FDF7',
           '95': '#EBF9EB',
           '90': '#D7F4D7',
           '80': '#B0E8B0',
@@ -94,6 +96,7 @@ module.exports = {
           '20': '#635303'
         },
         purple: {
+          '98': '#F9F6FE',
           '95': '#F1E8FC',
           '90': '#E2D1FA',
           '80': '#C5A3F5',
