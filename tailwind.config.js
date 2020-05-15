@@ -30,9 +30,7 @@ module.exports = {
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
-      'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
-      'red-focus-md': `0px 0px 0px 3px ${red80}`,
       'red-focus-sm': `0px 0px 0px 3px ${red80}`,
       'neutral-focus-sm': `0px 0px 0px 3px ${neutral80}`,
 
