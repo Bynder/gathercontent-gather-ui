@@ -33,7 +33,7 @@ module.exports = {
       'blue-focus-md': `0px 0px 0px 3px ${blue80}`,
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
       'red-focus-md': `0px 0px 0px 3px ${red80}`,
-      'red-focus-sm': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 4px ${red80}`,
+      'red-focus-sm': `0px 0px 0px 3px ${red80}`,
       'neutral-focus-sm': `0px 0px 0px 3px ${neutral80}`,
 
       none: 'none'
