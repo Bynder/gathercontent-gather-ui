@@ -47,6 +47,7 @@ module.exports = {
 
       'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
 
+      'button-tertiary-focus': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 3px ${neutral80}`,
 
       none: 'none'
     },
