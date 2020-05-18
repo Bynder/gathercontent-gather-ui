@@ -2,6 +2,7 @@ const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
 
+const red30 = '#8A0F1A'
 const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
@@ -39,6 +40,11 @@ module.exports = {
       'button-primary-active': `0px 0px 0px 1px ${blue30}`,
       'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
 
+      'button-secondary-hover': `0px 0px 0px 1px ${redPrimary}`,
+      'button-secondary-active': `0px 0px 0px 1px ${red30}`,
+      'button-secondary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+
+
       none: 'none'
     },
     extend: {
@@ -64,7 +70,7 @@ module.exports = {
           '60': '#EB4755',
           primary: redPrimary,
           '40': '#B81422',
-          '30': '#8A0F1A',
+          '30': red30,
           '20': '#5C0A11'
         },
         green: {
