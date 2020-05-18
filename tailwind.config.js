@@ -51,6 +51,8 @@ module.exports = {
 
       'button-tertiary-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
 
+      'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
+
       none: 'none'
     },
     extend: {
