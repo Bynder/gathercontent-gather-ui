@@ -1,11 +1,12 @@
+const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
 
 const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
-const neutral20 = '#29333D'
-const neutral80 = '#C2CCD6'
+const neutral20 = '#29333D';
+const neutral80 = '#C2CCD6';
 const neutral90 = '#E1E6EB';
 
 module.exports = {
@@ -23,7 +24,7 @@ module.exports = {
     borderRadius: {
       none: 0,
       small: '4px',
-      default: '6px',
+      default: '6px'
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
@@ -33,6 +34,10 @@ module.exports = {
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
       'red-focus-sm': `0px 0px 0px 3px ${red80}`,
       'neutral-focus-sm': `0px 0px 0px 3px ${neutral80}`,
+
+      'button-primary-hover': `0px 0px 0px 1px ${bluePrimary}`,
+      'button-primary-active': `0px 0px 0px 1px ${blue30}`,
+      'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
 
       none: 'none'
     },
@@ -48,7 +53,7 @@ module.exports = {
           '60': '#338BFF',
           primary: bluePrimary,
           '40': '#0058CC',
-          '30': '#004299',
+          '30': blue30,
           '20': '#002C66'
         },
         red: {
@@ -174,7 +179,8 @@ module.exports = {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    boxShadow: ['responsive', 'hover', 'focus', 'active'],
+    zIndex: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover',  'focus', 'active'],
     borderColor: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
