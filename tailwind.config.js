@@ -32,6 +32,7 @@ module.exports = {
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
+
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
       'red-focus-sm': `0px 0px 0px 3px ${red80}`,
       'neutral-focus-sm': `0px 0px 0px 3px ${neutral80}`,
@@ -40,9 +41,11 @@ module.exports = {
       'button-primary-active': `0px 0px 0px 1px ${blue30}`,
       'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
 
-      'button-secondary-hover': `0px 0px 0px 1px ${redPrimary}`,
-      'button-secondary-active': `0px 0px 0px 1px ${red30}`,
-      'button-secondary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+      'button-primary-danger-hover': `0px 0px 0px 1px ${redPrimary}`,
+      'button-primary-danger-active': `0px 0px 0px 1px ${red30}`,
+      'button-primary-danger-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+
+      'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
 
 
       none: 'none'
