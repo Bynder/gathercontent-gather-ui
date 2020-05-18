@@ -34,8 +34,6 @@ module.exports = {
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
 
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
-      'red-focus-sm': `0px 0px 0px 3px ${red80}`,
-      'neutral-focus-sm': `0px 0px 0px 3px ${neutral80}`,
 
       'button-primary-hover': `0px 0px 0px 1px ${bluePrimary}`,
       'button-primary-active': `0px 0px 0px 1px ${blue30}`,
