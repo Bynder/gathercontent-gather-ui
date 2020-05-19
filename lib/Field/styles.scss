@@ -268,7 +268,8 @@ $field-data-p-line-height: 1.688rem !default;
     transform: none;
   }
   .field__actions,
-  .field__validations {
+  .field__validations,
+  .editable-text__wrapper--editing {
     padding-right: $field-spacing-base;
   }
   .field__label {
@@ -447,5 +448,20 @@ $field-data-p-line-height: 1.688rem !default;
 
   .field__aside {
     left: 0;
+  }
+}
+
+.field-new {
+  .expanding-textarea {
+    line-height: $typo-line-height-base * 1.2;
+    font-size: $typo-size-lead;
+    background-color: transparent;
+
+    &.editable-text__input,
+    &.editable-text__input:focus {
+      text-align: right;
+      padding-right: 1.75rem;
+      display: flex;
+    }
   }
 }

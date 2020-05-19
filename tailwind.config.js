@@ -69,6 +69,7 @@ module.exports = {
           '20': '#002C66'
         },
         red: {
+          '98': '#FFF6F5',
           '95': '#FCE8EA',
           '90': '#FFD0CC',
           '80': red80,
@@ -80,6 +81,7 @@ module.exports = {
           '20': '#5C0A11'
         },
         green: {
+          '98': '#F7FDF7',
           '95': '#EBF9EB',
           '90': '#D7F4D7',
           '80': '#B0E8B0',
@@ -102,6 +104,7 @@ module.exports = {
           '20': '#635303'
         },
         purple: {
+          '98': '#F9F6FE',
           '95': '#F1E8FC',
           '90': '#E2D1FA',
           '80': '#C5A3F5',
@@ -124,6 +127,9 @@ module.exports = {
           '30': '#3E4D5C',
           '20': neutral20
         }
+      },
+      transitionTimingFunction: {
+        'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       }
     },
     maxHeight: {
@@ -190,10 +196,11 @@ module.exports = {
   variants: {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    zIndex: ['responsive', 'hover', 'focus', 'active'],
+    backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
+    borderColor: ['responsive', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover',  'focus', 'active'],
-    borderColor: ['responsive', 'hover', 'focus', 'active']
+    opacity: ['responsive', 'group-hover', 'hover', 'focus'],
+    zIndex: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
