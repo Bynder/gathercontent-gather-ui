@@ -119,6 +119,9 @@ module.exports = {
           '30': '#3E4D5C',
           '20': neutral20
         }
+      },
+      transitionTimingFunction: {
+        'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       }
     },
     maxHeight: {
@@ -185,7 +188,8 @@ module.exports = {
   variants: {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
+    opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     boxShadow: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],

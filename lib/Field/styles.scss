@@ -464,19 +464,4 @@ $field-data-p-line-height: 1.688rem !default;
       display: flex;
     }
   }
-
-  .repeat-icon {
-    opacity: 0;
-    transition: opacity $animation-time-micro $animation-curve;
-  }
-  &:hover {
-    .repeat-icon {
-      opacity: 1;
-    }
-  }
-  &.field-active {
-    .repeat-icon {
-      opacity: 1;
-    }
-  }
 }
