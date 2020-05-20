@@ -200,7 +200,8 @@ module.exports = {
     borderColor: ['responsive', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover',  'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
-    zIndex: ['responsive', 'hover', 'focus', 'active']
+    zIndex: ['responsive', 'hover', 'focus', 'active'],
+    textDecoration: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
