@@ -1,11 +1,14 @@
+const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
 
+const red30 = '#8A0F1A'
 const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
-const neutral20 = '#29333D'
-const neutral80 = '#C2CCD6'
+const neutral20 = '#29333D';
+const neutral80 = '#C2CCD6';
+const neutral90 = '#E1E6EB';
 
 module.exports = {
   important: true,
@@ -22,7 +25,7 @@ module.exports = {
     borderRadius: {
       none: 0,
       small: '4px',
-      default: '6px',
+      default: '6px'
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
@@ -30,18 +33,23 @@ module.exports = {
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
 
-      blue:
-        '0px 2px 2px rgba(0, 110, 255, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
-      'blue-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.1)',
-      red:
-        '0px 2px 2px rgba(235, 85, 71, 0.5), inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
-      'red-inset': 'inset 0px 2px 0px rgba(0, 0, 0, 0.2)',
+      'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
 
-      'blue-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${blue80}`,
-      'blue-focus-sm': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 4px ${blue80}`,
-      'red-focus-md': `0px 0px 0px 1px #ffffff, 0px 0px 0px 4px ${red80}`,
-      'red-focus-sm': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 4px ${red80}`,
-      'neutral-focus-sm': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 4px ${neutral80}`,
+      'button-primary-hover': `0px 0px 0px 1px ${bluePrimary}`,
+      'button-primary-active': `0px 0px 0px 1px ${blue30}`,
+      'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
+
+      'button-primary-danger-hover': `0px 0px 0px 1px ${redPrimary}`,
+      'button-primary-danger-active': `0px 0px 0px 1px ${red30}`,
+      'button-primary-danger-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+
+      'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
+
+      'button-tertiary-focus': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 3px ${neutral80}`,
+      'button-tertiary-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
+
+      'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
+      'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
 
       none: 'none'
     },
@@ -57,10 +65,11 @@ module.exports = {
           '60': '#338BFF',
           primary: bluePrimary,
           '40': '#0058CC',
-          '30': '#004299',
+          '30': blue30,
           '20': '#002C66'
         },
         red: {
+          '98': '#FFF6F5',
           '95': '#FCE8EA',
           '90': '#FFD0CC',
           '80': red80,
@@ -68,10 +77,11 @@ module.exports = {
           '60': '#EB4755',
           primary: redPrimary,
           '40': '#B81422',
-          '30': '#8A0F1A',
+          '30': red30,
           '20': '#5C0A11'
         },
         green: {
+          '98': '#F7FDF7',
           '95': '#EBF9EB',
           '90': '#D7F4D7',
           '80': '#B0E8B0',
@@ -94,6 +104,7 @@ module.exports = {
           '20': '#635303'
         },
         purple: {
+          '98': '#F9F6FE',
           '95': '#F1E8FC',
           '90': '#E2D1FA',
           '80': '#C5A3F5',
@@ -107,7 +118,7 @@ module.exports = {
         neutral: {
           '98': '#F9FAFB',
           '95': '#F0F2F5',
-          '90': '#E1E6EB',
+          '90': neutral90,
           '80': neutral80,
           '70': '#A4B3C2',
           '60': '#8599AD',
@@ -116,6 +127,9 @@ module.exports = {
           '30': '#3E4D5C',
           '20': neutral20
         }
+      },
+      transitionTimingFunction: {
+        'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       }
     },
     maxHeight: {
@@ -182,8 +196,11 @@ module.exports = {
   variants: {
     padding: ['responsive', 'last'],
     gradients: ['responsive', 'hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    boxShadow: ['responsive', 'hover', 'focus', 'active']
+    backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
+    borderColor: ['responsive', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover',  'focus', 'active'],
+    opacity: ['responsive', 'group-hover', 'hover', 'focus'],
+    zIndex: ['responsive', 'hover', 'focus', 'active']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
