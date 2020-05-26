@@ -45,7 +45,12 @@ function StretchTabs({ tabs }) {
           )}
         </Tabs.Item>
       ))}
-      <NewTabButton className="ml-auto" />
+      <NewTabButton
+        style={{
+          'min-width': '12.5%'
+        }}
+        className="ml-auto"
+      />
     </Tabs>
   );
 }
