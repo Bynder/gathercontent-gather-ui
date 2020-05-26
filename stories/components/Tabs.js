@@ -21,7 +21,7 @@ function StretchTabs({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <StoryItem title="Tabs" description="Full amount of tabs">
+    <StoryItem title="Tabs">
       <Tabs className="flex flex-wrap w-full">
         {tabs.map((t, index) => (
           <Tabs.Item isActive={activeTab === index}>
@@ -66,7 +66,8 @@ function FixedTabs({ tabs }) {
                 overflow: 'hidden',
                 'text-overflow': 'ellipsis',
                 'flex-basis': 0,
-                'min-width': '10%',
+                'min-width': '12.5%',
+                'max-width': '12.5%',
                 cursor: 'pointer'
               }}
               ref={ref}
@@ -77,7 +78,7 @@ function FixedTabs({ tabs }) {
           )}
         </Tabs.Item>
       ))}
-      <NewTabButton className="ml-auto" />
+      <NewTabButton />
     </Tabs>
   );
 }
@@ -92,7 +93,7 @@ function VariableTabs({ tabs }) {
         <Tabs.Item isActive={activeTab === index}>
           {(className, ref) => (
             <div
-              className={`no-underline text-center ${className}`}
+              className={`no-underline text-center justify-center ${className}`}
               style={{
                 'white-space': 'nowrap',
                 overflow: 'hidden',
@@ -108,7 +109,7 @@ function VariableTabs({ tabs }) {
           )}
         </Tabs.Item>
       ))}
-      <NewTabButton className="ml-auto" />
+      <NewTabButton />
     </Tabs>
   );
 }
