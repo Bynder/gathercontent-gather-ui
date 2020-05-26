@@ -33,7 +33,8 @@ function StretchTabs({ tabs }) {
                 overflow: 'hidden',
                 'text-overflow': 'ellipsis',
                 'flex-basis': 0,
-                'min-width': '12.5%',
+                'min-width': tabs.length >= 8 ? '12.5%' : 0,
+                'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
                 cursor: 'pointer'
               }}
               ref={ref}
