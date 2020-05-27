@@ -93,21 +93,35 @@ function FixedTabs({ tabs }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function VariableTabs({ tabs }) {
+function StretchTabsWithButtonAtStart({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Tabs className="flex-wrap w-full">
+    <Tabs
+      className="flex flex-wrap w-full"
+      style={{
+        'max-height': '120px',
+        'overflow-y': tabs.length + 1 > 24 ? 'scroll' : 'hidden'
+      }}
+    >
+      <NewTabButton
+        style={{
+          'min-width': '12.5%'
+        }}
+        className="ml-auto"
+      />
       {tabs.map((t, index) => (
         <Tabs.Item isActive={activeTab === index}>
           {(className, ref) => (
             <div
-              className={`no-underline text-center justify-center ${className}`}
+              className={`no-underline text-center flex-grow ${className}`}
               style={{
                 'white-space': 'nowrap',
                 overflow: 'hidden',
                 'text-overflow': 'ellipsis',
-                'min-width': '0',
+                'flex-basis': 0,
+                'min-width': tabs.length >= 8 ? '12.5%' : 0,
+                'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
                 cursor: 'pointer'
               }}
               ref={ref}
@@ -118,7 +132,6 @@ function VariableTabs({ tabs }) {
           )}
         </Tabs.Item>
       ))}
-      <NewTabButton />
     </Tabs>
   );
 }
@@ -131,14 +144,8 @@ storiesOf('Components', module).add('Tabs', () => {
 
   return (
     <Fragment>
-      <StoryItem title="Stretch">
-        <StretchTabs tabs={tabs} />
-      </StoryItem>
-      <StoryItem title="Fixed">
-        <FixedTabs tabs={tabs} />
-      </StoryItem>
-      <StoryItem title="Variable">
-        <VariableTabs tabs={tabs} />
+      <StoryItem title="Tabs">
+        <StretchTabsWithButtonAtStart tabs={tabs} />
       </StoryItem>
     </Fragment>
   );
