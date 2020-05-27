@@ -18,121 +18,48 @@ function NewTabButton({ className, style }) {
 }
 
 // eslint-disable-next-line react/prop-types
-function StretchTabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  return (
-    <Tabs className="flex flex-wrap w-full">
-      {tabs.map((t, index) => (
-        <Tabs.Item isActive={activeTab === index}>
-          {(className, ref) => (
-            <div
-              className={`no-underline text-center flex-grow ${className}`}
-              style={{
-                'white-space': 'nowrap',
-                overflow: 'hidden',
-                'text-overflow': 'ellipsis',
-                'flex-basis': 0,
-                'min-width': tabs.length >= 8 ? '12.5%' : 0,
-                'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
-                cursor: 'pointer'
-              }}
-              ref={ref}
-              onClick={() => setActiveTab(index)}
-            >
-              {t.name}
-            </div>
-          )}
-        </Tabs.Item>
-      ))}
-      <NewTabButton
-        style={{
-          'min-width': '12.5%'
-        }}
-        className="ml-auto"
-      />
-    </Tabs>
-  );
-}
-
-// eslint-disable-next-line react/prop-types
-function FixedTabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  return (
-    <Tabs className="flex-wrap w-full">
-      {tabs.map((t, index) => (
-        <Tabs.Item isActive={activeTab === index}>
-          {(className, ref) => (
-            <div
-              className={`no-underline text-center flex-grow ${className}`}
-              style={{
-                'white-space': 'nowrap',
-                overflow: 'hidden',
-                'text-overflow': 'ellipsis',
-                'flex-basis': 0,
-                'min-width': '12.5%',
-                'max-width': '12.5%',
-                cursor: 'pointer'
-              }}
-              ref={ref}
-              onClick={() => setActiveTab(index)}
-            >
-              {t.name}
-            </div>
-          )}
-        </Tabs.Item>
-      ))}
-      <NewTabButton
-        style={{
-          'min-width': '12.5%'
-        }}
-      />
-    </Tabs>
-  );
-}
-
-// eslint-disable-next-line react/prop-types
 function StretchTabsWithButtonAtStart({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Tabs
-      className="flex flex-wrap w-full"
-      style={{
-        'max-height': '120px',
-        'overflow-y': tabs.length + 1 > 24 ? 'scroll' : 'hidden'
-      }}
-    >
-      <NewTabButton
+    <div className="relative">
+      <Tabs
+        className="flex flex-wrap w-full relative"
         style={{
-          'min-width': '12.5%'
+          'max-height': '120px',
+          'overflow-y': tabs.length + 1 > 24 ? 'scroll' : 'hidden'
         }}
-        className="ml-auto"
+      >
+        {tabs.map((t, index) => (
+          <Tabs.Item isActive={activeTab === index}>
+            {(className, ref) => (
+              <div
+                className={`no-underline text-center flex-grow ${className}`}
+                style={{
+                  'white-space': 'nowrap',
+                  overflow: 'hidden',
+                  'text-overflow': 'ellipsis',
+                  'flex-basis': 0,
+                  'min-width': tabs.length >= 8 ? '12.5%' : 0,
+                  'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
+                  cursor: 'pointer'
+                }}
+                ref={ref}
+                onClick={() => setActiveTab(index)}
+              >
+                {t.name}
+              </div>
+            )}
+          </Tabs.Item>
+        ))}
+      </Tabs>
+      <NewTabButton
+        className="ml-auto absolute rounded-b border-t-0"
+        style={{
+          right: '16px'
+        }}
       />
-      {tabs.map((t, index) => (
-        <Tabs.Item isActive={activeTab === index}>
-          {(className, ref) => (
-            <div
-              className={`no-underline text-center flex-grow ${className}`}
-              style={{
-                'white-space': 'nowrap',
-                overflow: 'hidden',
-                'text-overflow': 'ellipsis',
-                'flex-basis': 0,
-                'min-width': tabs.length >= 8 ? '12.5%' : 0,
-                'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
-                cursor: 'pointer'
-              }}
-              ref={ref}
-              onClick={() => setActiveTab(index)}
-            >
-              {t.name}
-            </div>
-          )}
-        </Tabs.Item>
-      ))}
-    </Tabs>
+    </div>
   );
 }
 
@@ -142,11 +69,5 @@ storiesOf('Components', module).add('Tabs', () => {
     name: faker.commerce.productName()
   }));
 
-  return (
-    <Fragment>
-      <StoryItem title="Tabs">
-        <StretchTabsWithButtonAtStart tabs={tabs} />
-      </StoryItem>
-    </Fragment>
-  );
+  return <StretchTabsWithButtonAtStart tabs={tabs} />;
 });
