@@ -4,7 +4,6 @@
 $top-bar-height: 114px;
 $top-bar-height-medium: 74px;
 $top-bar-main-breakpoint: medium;
-$top-bar-box-shadow: $shadow-base;
 $top-bar-dropdown-bottom-margin: 27px !default;
 $top-bar-zindex: 500 !default;
 $top-bar-notification-height: 42px;
@@ -24,7 +23,6 @@ $top-bar-notification-height: 42px;
   .top-bar__wrapper {
     background: #fff;
     border-bottom: 1px solid $color-border-base;
-    box-shadow: $top-bar-box-shadow;
     padding: $layout-spacing-base/2 $layout-spacing-base/1.5;
     width: 100%;
   }

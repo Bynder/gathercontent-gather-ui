@@ -2,7 +2,6 @@
    Config
    ========================================================================== */
 $tabs-item-margin: $layout-spacing-base/4 !default;
-$tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
 
 /* ==========================================================================
    Styles
@@ -25,7 +24,6 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
 .tabs__button {
   background: transparent;
   border: 1px solid transparent;
-  padding: $tabs-padding;
   margin: $tabs-item-margin;
   border-radius: $layout-spacing-base;
   display: flex;
@@ -42,7 +40,6 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
 
 .tabs__item.is-editing {
   border-radius: $layout-spacing-base;
-  padding: 0 $layout-spacing-base/2;
   border: 0;
   background: $primary-blue;
 }
@@ -62,17 +59,7 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
   color: $neutral-base-lighter;
 }
 
-//make tabs with option cog the same width active and non active to prevent shifting
-.tabs__item.has-options {
-  padding: $layout-spacing-base/4 17px;
-}
-
-.tabs__item.has-options.is-active {
-  padding: $layout-spacing-base/4 8px;
-}
-
 .tabs__input.form__input {
-  padding: $tabs-padding;
   outline: none;
   border: 0;
 }
@@ -85,10 +72,8 @@ $tabs-padding: $layout-spacing-base/4 $layout-spacing-base/2.5 !default;
 
 .tabs__button {
   border-color: transparent;
-  padding: 0;
   color: $primary-blue;
   .tabs--editable & {
-    padding: $tabs-padding;
     &:hover {
       border-color: $primary-blue;
     }

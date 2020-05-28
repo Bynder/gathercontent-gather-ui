@@ -30,11 +30,11 @@ describe('Tabs Item', () => {
   });
 
   test('sets a has options class', () => {
-    expect(wrapper.hasClass('has-options')).toEqual(false);
+    expect(wrapper.hasClass('py-1 px-2')).toEqual(false);
     wrapper.setProps({
       options: [{ name: 'friendly Option', action: () => {} }]
     });
-    expect(wrapper.hasClass('has-options')).toEqual(true);
+    expect(wrapper.hasClass('py-1 px-2')).toEqual(true);
   });
 
   test('calls the setActiveTab function from context', () => {

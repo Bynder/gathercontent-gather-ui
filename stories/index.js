@@ -57,7 +57,7 @@ import FinderNavigation from './components/FinderNavigation';
 import UserSearch from './components/UserSearch';
 import ImageLoader from './components/images/ImageLoader';
 import InputWithButton from './components/InputWithButton';
-import Pill from './components/Pill';
+import Pill from '../lib/Pill/stories/Pill';
 import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
 import Windowing from '../lib/Windowing/stories/WindowingStory';
@@ -70,7 +70,12 @@ import { PillInputStory } from '../lib/PillInput/stories/story';
 import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromptStory';
 import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimary'
 import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDanger'
+import '../lib/ButtonNew/stories/ButtonSecondary/ButtonSecondary'
 import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiary'
 import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDanger'
-import '../lib/ButtonNew/stories/ButtonIcon'
+import '../lib/ButtonNew/stories/ButtonIcon/ButtonIcon'
+import '../lib/ButtonNew/stories/ButtonLink/ButtonLink'
+import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDanger'
 import '../lib/Toolbar/stories/Toolbar'
+import '../lib/OptionMenu/stories/OptionMenu'
+import Sidebar from './components/Sidebar';

@@ -120,6 +120,15 @@ $icon-active-color: $color-brand-blue !default;
   fill: $color-brand-green;
 }
 
+.icon.icon--neutral-20 path {
+  @apply text-neutral-20;
+  @apply fill-current;
+}
+
 button:active .icon--blue-on-button-parent-active path  {
   fill: $primary-blue;
+}
+
+button:active .icon--red-on-button-parent-active path  {
+  fill: $primary-red;
 }
