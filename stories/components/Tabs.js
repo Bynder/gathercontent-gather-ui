@@ -24,11 +24,15 @@ function StretchTabsWithButtonAtStart({ tabs }) {
       className="bg-neutral-95 border-neutral-90 border-t border-b-0 border-l-0 border-r border-solid"
     >
       {tabs.map((t, index) => (
-        <Tabs.Base isActive={activeTab === index} tabsLength={tabs.length}>
+        <Tabs.Base tabsLength={tabs.length}>
           {(className, style) => (
             <button
               type="button"
-              className={`relative border-neutral-90 border border-solid font-medium hover:bg-neutral-90 break-all h-10 items-center border-t-0 border-r-0 px-2 font-semi-bold ${className}`}
+              className={`relative border-neutral-90 border border-solid font-medium hover:bg-neutral-90 break-all h-10 items-center border-t-0 border-r-0 px-2 font-semi-bold ${className} ${
+                activeTab === index
+                  ? 'bg-white text-blue-primary'
+                  : 'bg-neutral-95 text-neutral-primary'
+              }`}
               onClick={e => {
                 e.preventDefault();
                 setActiveTab(index);
