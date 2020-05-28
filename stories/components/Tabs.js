@@ -7,7 +7,7 @@ import { ButtonSecondary, Tabs } from '../../lib';
 import Icon from '../../lib/Icon';
 
 // eslint-disable-next-line react/prop-types
-function StretchTabsWithButtonAtStart({ tabs }) {
+function TabsStory({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -69,5 +69,5 @@ storiesOf('Components', module).add('Tabs', () => {
     name: faker.commerce.productName()
   }));
 
-  return <StretchTabsWithButtonAtStart tabs={tabs} />;
+  return <TabsStory tabs={tabs} />;
 });
