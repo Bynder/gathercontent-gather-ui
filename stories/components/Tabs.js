@@ -1,64 +1,68 @@
 import React, { useState, Fragment } from 'react';
+import cx from 'classnames';
 import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 import faker from 'faker';
-import { Tabs } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
-
-// eslint-disable-next-line react/prop-types
-function NewTabButton({ className, style }) {
-  return (
-    <div
-      className={`self-center border-neutral-90 border border-solid px-2 font-medium hover:bg-neutral-90 break-all h-10 flex items-center justify-center bg-white text-blue-primary cursor-pointer ${className}`}
-      style={style}
-    >
-      + New Tab
-    </div>
-  );
-}
+import { ButtonSecondary, Tabs } from '../../lib';
+import Icon from '../../lib/Icon';
 
 // eslint-disable-next-line react/prop-types
 function StretchTabsWithButtonAtStart({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
+  const tabsClassName = cx('flex flex-wrap w-full relative', {
+    'overflow-y-hidden': tabs.length <= 24,
+    'overflow-y-scroll': tabs.length > 24
+  });
+
   return (
     <div className="relative">
       <Tabs
-        className="flex flex-wrap w-full relative"
+        className={tabsClassName}
         style={{
-          'max-height': '120px',
-          'overflow-y': tabs.length + 1 > 24 ? 'scroll' : 'hidden'
+          'max-height': '120px'
         }}
       >
         {tabs.map((t, index) => (
           <Tabs.Item isActive={activeTab === index}>
             {(className, ref) => (
               <div
-                className={`no-underline text-center flex-grow ${className}`}
+                className={`flex group no-underline justify-center text-center flex-grow cursor-pointer font-semi-bold relative ${className}`}
                 style={{
-                  'white-space': 'nowrap',
-                  overflow: 'hidden',
-                  'text-overflow': 'ellipsis',
                   'flex-basis': 0,
                   'min-width': tabs.length >= 8 ? '12.5%' : 0,
-                  'max-width': tabs.length >= 8 ? '12.5%' : 'initial',
-                  cursor: 'pointer'
+                  'max-width': tabs.length >= 8 ? '12.5%' : 'initial'
                 }}
                 ref={ref}
                 onClick={() => setActiveTab(index)}
               >
-                {t.name}
+                <div className="group overflow-hidden cursor-pointer w-full relative overflow-hidden whitespace-no-wrap">
+                  {t.name}
+                </div>
+                <div className="flex items-center absolute right-0 top-0 bottom-0 w-8 pr-2">
+                  <span
+                    className={`w-full h-full group-hover:bg-blur-grey-90-right ${
+                      activeTab === index
+                        ? 'bg-blur-white-right'
+                        : 'bg-blur-grey-95-right'
+                    }`}
+                  />
+                  <Icon
+                    className="group-hover:block group-hover:bg-neutral-90 hidden"
+                    name="cog"
+                  />
+                </div>
               </div>
             )}
           </Tabs.Item>
         ))}
       </Tabs>
-      <NewTabButton
-        className="ml-auto absolute rounded-b border-t-0"
-        style={{
-          right: '16px'
-        }}
-      />
+      <ButtonSecondary
+        className="absolute rounded-b border-t-0 rounded-t-none right-0 mr-4"
+        onClick={() => {}}
+      >
+        + New Tab
+      </ButtonSecondary>
     </div>
   );
 }

@@ -2,7 +2,7 @@ const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
 
-const red30 = '#8A0F1A'
+const red30 = '#8A0F1A';
 const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
@@ -190,18 +190,34 @@ module.exports = {
         'rgba(255, 255, 255, 0) 0%',
         'rgba(253, 253, 253, 0.5) 50%',
         '#f0f2f5 100%'
+      ],
+      'blur-white-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        'rgba(255,255,255,1) 100%'
+      ],
+      'blur-grey-90-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        '#E1E6EB 100%'
+      ],
+      'blur-grey-95-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        '#F0F2F5 100%'
       ]
     }
   },
   variants: {
     padding: ['responsive', 'last'],
-    gradients: ['responsive', 'hover'],
+    gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     borderColor: ['responsive', 'hover', 'focus', 'active'],
-    boxShadow: ['responsive', 'hover',  'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     zIndex: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
+    display: ['responsive', 'hover', 'group-hover']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
