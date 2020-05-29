@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import cx from 'classnames';
 import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 import faker from 'faker';
