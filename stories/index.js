@@ -79,3 +79,4 @@ import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDanger'
 import '../lib/Toolbar/stories/Toolbar'
 import '../lib/OptionMenu/stories/OptionMenu'
 import Sidebar from './components/Sidebar';
+import Layout from './components/Layout';
