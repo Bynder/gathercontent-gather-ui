@@ -1,99 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { Tabs } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+import { number } from '@storybook/addon-knobs';
+import faker from 'faker';
+import { ButtonSecondary, Tabs } from '../../lib';
 import Icon from '../../lib/Icon';
 
-const options = [{
-  name: 'Edit',
-  action: () => {},
-}, {
-  name: 'Delete',
-  action: () => {},
-}, {
-  name: 'Move Left',
-  action: () => {},
-}, {
-  name: 'Move Right',
-  action: () => {},
-}];
+// eslint-disable-next-line react/prop-types
+function TabsStory({ tabs }) {
+  const [activeTab, setActiveTab] = useState(0);
 
-storiesOf('Components', module)
-  .add('Tabs', () => {
-    return (
-      <div>
-        <StoryItem
-          title="Tabs"
-          description="Components that renders a both the tabs container and individual tabs."
+  return (
+    <Tabs>
+      <Tabs.Group
+        tabsLength={tabs.length}
+        className="bg-neutral-95 border-neutral-90 border-t border-b-0 border-l-0 border-r border-solid"
+      >
+        {tabs.map((t, index) => (
+          <Tabs.Base tabsLength={tabs.length}>
+            {(className, style) => (
+              <button
+                type="button"
+                className={`relative border-neutral-90 border border-solid font-medium hover:bg-neutral-90 break-all h-10 items-center border-t-0 border-r-0 px-2 font-semi-bold ${className} ${
+                  activeTab === index
+                    ? 'bg-white text-blue-primary'
+                    : 'bg-neutral-95 text-neutral-primary'
+                }`}
+                onClick={e => {
+                  e.preventDefault();
+                  setActiveTab(index);
+                }}
+                style={style}
+              >
+                <div className="group overflow-hidden w-full relative overflow-hidden whitespace-no-wrap">
+                  {t.name}
+                </div>
+                <div className="flex items-center absolute right-0 top-0 bottom-0 w-8 pr-2">
+                  <span
+                    className={`w-full h-full group-hover:bg-blur-grey-90-right ${
+                      activeTab === index
+                        ? 'bg-blur-white-right'
+                        : 'bg-blur-grey-95-right'
+                    }`}
+                  />
+                  <Icon
+                    className="group-hover:block group-hover:bg-neutral-90 hidden"
+                    name="cog"
+                  />
+                </div>
+              </button>
+            )}
+          </Tabs.Base>
+        ))}
+      </Tabs.Group>
+      <Tabs.ActionGroup>
+        <ButtonSecondary
+          className="rounded-b border-t-0 rounded-t-none"
+          onClick={() => {}}
         >
-          <Tabs activeTabId="content" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
-            <Tabs.Item id="content">Content</Tabs.Item>
-            <Tabs.Item id="meta">Meta</Tabs.Item>
-            <Tabs.Item id="english">English</Tabs.Item>
-            <Tabs.Item id="french">French</Tabs.Item>
-            <Tabs.Item id="german">German</Tabs.Item>
-          </Tabs>
-        </StoryItem>
+          + New Tab
+        </ButtonSecondary>
+      </Tabs.ActionGroup>
+    </Tabs>
+  );
+}
 
-        <StoryItem
-          title="Tabs: Outlined"
-          description="Tabs can be outlined, which is helpful when the text inside are editable."
-        >
-          <Tabs
-            activeTabId="meta"
-            onTabChange={(id) => console.log(`tab changed to ${id}`)}
-            editable
-          >
-            <Tabs.Item id="content">Content</Tabs.Item>
-            <Tabs.Item id="meta">Meta</Tabs.Item>
-            <Tabs.Item id="english">English</Tabs.Item>
-            <Tabs.Item id="french">French</Tabs.Item>
-            <Tabs.Item id="german">German</Tabs.Item>
-          </Tabs>
-        </StoryItem>
+storiesOf('Components', module).add('Tabs', () => {
+  const tabsNumber = number('Total number of tabs', 16);
+  const tabs = [...Array(tabsNumber).keys()].map(() => ({
+    name: faker.commerce.productName()
+  }));
 
-        <StoryItem
-          title="Tabs: With Options"
-          description="Tabs can show options per tab in a drop down."
-        >
-          <Tabs activeTabId="english" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
-            <Tabs.Item id="content" options={options}>Content</Tabs.Item>
-            <Tabs.Item id="meta" options={options}>Meta</Tabs.Item>
-            <Tabs.Item id="english" options={options}>English</Tabs.Item>
-            <Tabs.Item id="french" options={options}>French</Tabs.Item>
-            <Tabs.Item id="german" options={options}>German</Tabs.Item>
-          </Tabs>
-        </StoryItem>
-
-        <StoryItem
-          title="Tabs: Buttons"
-          description="Tabs can be buttons, which do not change the active tab but instead fire a function."
-        >
-          <Tabs activeTabId="french" onTabChange={(id) => console.log(`tab changed to ${id}`)}>
-            <Tabs.Item id="content">Content</Tabs.Item>
-            <Tabs.Item id="meta">Meta</Tabs.Item>
-            <Tabs.Item id="english">English</Tabs.Item>
-            <Tabs.Item id="french">French</Tabs.Item>
-            <Tabs.Item id="german">German</Tabs.Item>
-            <Tabs.Button onClick={() => console.log('Tab button clicked')}>
-              <Icon name="plus" className="fill-primary-blue" />
-            </Tabs.Button>
-          </Tabs>
-        </StoryItem>
-
-        <StoryItem
-          title="Tabs: Forms"
-          description="Tabs can contain form elements, useful when a tab becomes editable."
-        >
-          <Tabs onTabChange={(id) => console.log(`tab changed to ${id}`)} editable>
-            <Tabs.Item id="content">Content</Tabs.Item>
-            <Tabs.Form
-              onSubmit={(value) => console.log(`The value is ${value}`)}
-              onCancel={() => console.log('Run cancel function')}
-            />
-          </Tabs>
-        </StoryItem>
-      </div>
-    );
-  });
+  return <TabsStory tabs={tabs} />;
+});
