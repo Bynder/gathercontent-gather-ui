@@ -25,7 +25,8 @@ module.exports = {
     borderRadius: {
       none: 0,
       small: '4px',
-      default: '6px'
+      default: '6px',
+      full: '100%'
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
@@ -50,7 +51,7 @@ module.exports = {
 
       'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
-
+      'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
       none: 'none'
     },
     extend: {
@@ -219,7 +220,8 @@ module.exports = {
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     zIndex: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
-    display: ['responsive', 'hover', 'group-hover']
+    display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
