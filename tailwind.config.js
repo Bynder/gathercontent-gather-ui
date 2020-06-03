@@ -23,10 +23,10 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
-      none: 0,
-      small: '4px',
       default: '6px',
-      full: '100%'
+      small: '4px',
+      full: '100%',
+      none: 0
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
