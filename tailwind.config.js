@@ -23,10 +23,10 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
-      none: 0,
-      small: '4px',
       default: '6px',
-      full: '100%'
+      small: '4px',
+      full: '100%',
+      none: 0
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
@@ -131,6 +131,9 @@ module.exports = {
       },
       transitionTimingFunction: {
         'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+      },
+      opacity: {
+        '30': 0.3
       }
     },
     maxHeight: {
