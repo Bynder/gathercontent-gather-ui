@@ -134,7 +134,10 @@ module.exports = {
       },
       opacity: {
         '30': 0.3
-      }
+      },
+      width: {
+        '30': '7.5rem'
+      },
     },
     maxHeight: {
       '0': '0',
@@ -175,6 +178,7 @@ module.exports = {
       '16': ' 4rem',
       '20': ' 5rem',
       '24': ' 6rem',
+      '30': '7.5rem',
       '32': ' 8rem',
       '40': ' 10rem',
       '48': ' 12rem',
