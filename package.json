@@ -112,6 +112,7 @@
     "react-dnd-html5-backend": "^9.3.2",
     "react-dom": "^16.9.0",
     "react-mentions": "2.2.0",
+    "react-select": "^3.1.0",
     "react-spring": "^8.0.27",
     "react-svg-inline": "^1.2.0",
     "svg-url-loader": "^3.0.0",
