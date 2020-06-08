@@ -2,7 +2,7 @@ const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
 
-const red30 = '#8A0F1A'
+const red30 = '#8A0F1A';
 const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
@@ -23,9 +23,10 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
-      none: 0,
+      default: '6px',
       small: '4px',
-      default: '6px'
+      full: '100%',
+      none: 0
     },
     boxShadow: {
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
@@ -50,7 +51,7 @@ module.exports = {
 
       'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
-
+      'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
       none: 'none'
     },
     extend: {
@@ -130,7 +131,13 @@ module.exports = {
       },
       transitionTimingFunction: {
         'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-      }
+      },
+      opacity: {
+        '30': 0.3
+      },
+      width: {
+        '30': '7.5rem'
+      },
     },
     maxHeight: {
       '0': '0',
@@ -146,6 +153,7 @@ module.exports = {
       '16': ' 4rem',
       '20': ' 5rem',
       '24': ' 6rem',
+      '30': ' 7.5rem',
       '32': ' 8rem',
       '40': ' 10rem',
       '48': ' 12rem',
@@ -170,6 +178,7 @@ module.exports = {
       '16': ' 4rem',
       '20': ' 5rem',
       '24': ' 6rem',
+      '30': '7.5rem',
       '32': ' 8rem',
       '40': ' 10rem',
       '48': ' 12rem',
@@ -190,17 +199,36 @@ module.exports = {
         'rgba(255, 255, 255, 0) 0%',
         'rgba(253, 253, 253, 0.5) 50%',
         '#f0f2f5 100%'
+      ],
+      'blur-white-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        'rgba(255,255,255,1) 100%'
+      ],
+      'blur-grey-90-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        '#E1E6EB 100%'
+      ],
+      'blur-grey-95-right': [
+        'to right',
+        'rgba(255,255,255,0) 0%',
+        '#F0F2F5 100%'
       ]
     }
   },
   variants: {
     padding: ['responsive', 'last'],
-    gradients: ['responsive', 'hover'],
+    gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
-    borderColor: ['responsive', 'hover', 'focus', 'active'],
-    boxShadow: ['responsive', 'hover',  'focus', 'active'],
+    borderWidth: ['responsive', 'last'],
+    borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
-    zIndex: ['responsive', 'hover', 'focus', 'active']
+    zIndex: ['responsive', 'hover', 'focus', 'active'],
+    textDecoration: ['responsive', 'hover', 'focus', 'active'],
+    display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
+    textColor: ['responsive', 'group-hover', 'hover', 'focus']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
