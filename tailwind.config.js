@@ -222,7 +222,7 @@ module.exports = {
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     borderWidth: ['responsive', 'last'],
-    borderColor: ['responsive', 'hover', 'focus', 'active'],
+    borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     zIndex: ['responsive', 'hover', 'focus', 'active'],
