@@ -76,6 +76,9 @@
     "UI Library"
   ],
   "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss-plugins": "^0.3.0"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@storybook/addon-actions": "^5.1.9",
