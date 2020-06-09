@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { number } from '@storybook/addon-knobs';
+import { number, select } from '@storybook/addon-knobs';
 import faker from 'faker';
 import { ButtonSecondary, Tabs } from '../../lib';
 import Icon from '../../lib/Icon';
+import { TabsDragLine } from '../../lib/TabsNew/TabsDragLine';
 
 // eslint-disable-next-line react/prop-types
-function TabsStory({ tabs }) {
+function TabsStory({ tabs, dragSide, dragIndex }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -47,6 +48,9 @@ function TabsStory({ tabs }) {
                     name="cog"
                   />
                 </div>
+                {dragSide && dragIndex === index && (
+                  <TabsDragLine side={dragSide} />
+                )}
               </button>
             )}
           </Tabs.Base>
@@ -66,9 +70,22 @@ function TabsStory({ tabs }) {
 
 storiesOf('Components', module).add('Tabs', () => {
   const tabsNumber = number('Total number of tabs', 16);
+  const groupId = 'Drag And Drop';
+
+  const label = 'Drag Line';
+  const options = {
+    None: null,
+    Left: 'left',
+    Right: 'right',
+    Whole: 'whole'
+  };
+
+  const dragSide = select(label, options, 'right', groupId);
+  const dragIndex = number('Index of tab being dropped onto', 0, {}, groupId);
+
   const tabs = [...Array(tabsNumber).keys()].map(() => ({
     name: faker.commerce.productName()
   }));
 
-  return <TabsStory tabs={tabs} />;
+  return <TabsStory tabs={tabs} dragSide={dragSide} dragIndex={dragIndex} />;
 });
