@@ -40,7 +40,7 @@
   "scripts": {
     "copy-tailwind": "tailwind build styles/tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
-    "build": "babel lib/ --out-dir dist/lib",
+    "build": "babel lib/ --out-dir dist/lib && babel tailwind.config.js --out-dir dist",
     "build:with:styles": "yarn build && yarn run copy-styles",
     "prepublish": "yarn run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -112,6 +112,7 @@
     "react-dnd-html5-backend": "^9.3.2",
     "react-dom": "^16.9.0",
     "react-mentions": "2.2.0",
+    "react-select": "^3.1.0",
     "react-spring": "^8.0.27",
     "react-svg-inline": "^1.2.0",
     "svg-url-loader": "^3.0.0",
