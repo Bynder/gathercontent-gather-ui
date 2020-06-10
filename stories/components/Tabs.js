@@ -10,7 +10,7 @@ function TabsStory({ tabs }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Tabs>
+    <Tabs tabsLength={tabs.length}>
       <Tabs.Group
         tabsLength={tabs.length}
         className="bg-neutral-95 border-neutral-90 border-t border-b-0 border-l-0 border-r border-solid"
@@ -65,7 +65,7 @@ function TabsStory({ tabs }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
-  const tabsNumber = number('Total number of tabs', 16);
+  const tabsNumber = number('Total number of tabs', 34);
   const tabs = [...Array(tabsNumber).keys()].map(() => ({
     name: faker.commerce.productName()
   }));
