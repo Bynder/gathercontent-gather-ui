@@ -150,6 +150,7 @@ $top-bar-notification-height: 42px;
   &--dark {
     .top-bar__wrapper {
       background: $neutral-dark;
+      border-color: $neutral-dark;
       color: white;
     }
     .top-bar__action,
