@@ -11,7 +11,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Tabs>
+    <Tabs tabsLength={tabs.length}>
       <Tabs.Group
         tabsLength={tabs.length}
         className="bg-neutral-95 border-neutral-90 border-t border-b-0 border-l-0 border-r border-solid"
