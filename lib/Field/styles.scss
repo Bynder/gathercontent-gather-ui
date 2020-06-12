@@ -383,10 +383,13 @@ $field-data-p-line-height: 1.688rem !default;
     margin-bottom: $layout-spacing-base * 0.5;
   }
 
-  p {
+  p, li {
     font-size: $field-data-p-size;
     line-height: $field-data-p-line-height;
     font-weight: $typo-weight-roman;
+  }
+
+  p {
     margin-top: $layout-spacing-base * 0.5;
     margin-bottom: $layout-spacing-base;
   }
