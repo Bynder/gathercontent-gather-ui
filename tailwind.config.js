@@ -216,11 +216,12 @@ module.exports = {
         'to right',
         'rgba(255,255,255,0) 0%',
         '#F0F2F5 100%'
-      ]
+      ],
     }
   },
   variants: {
-    padding: ['responsive', 'last'],
+    padding: ['responsive', 'last', 'group-hover'],
+    width: ['group-hover'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     borderWidth: ['responsive', 'last'],
@@ -230,7 +231,8 @@ module.exports = {
     zIndex: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
-    textColor: ['responsive', 'group-hover', 'hover', 'focus']
+    textColor: ['responsive', 'group-hover', 'hover', 'focus'],
+    justifyContent: ['group-hover', 'focus-within'],
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {

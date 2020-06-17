@@ -1,13 +1,13 @@
 .grid {
     margin-left: -10px;
 
-    &:before,
-    &:after {
+    &:not(.tw):before,
+    &:not(.tw):after {
         display: table;
         content: "";
     }
 
-    &:after {
+    &:not(.tw):after {
         clear: both;
     }
 
