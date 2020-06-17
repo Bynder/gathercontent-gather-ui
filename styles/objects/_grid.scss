@@ -1,6 +1,8 @@
-.grid {
+.grid:not(.tw) {
     margin-left: -10px;
+}
 
+.grid {
     &:not(.tw):before,
     &:not(.tw):after {
         display: table;
