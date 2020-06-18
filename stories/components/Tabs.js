@@ -19,7 +19,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
     <Tabs tabsLength={tabs.length} activeTabId={activeTabId}>
       <Tabs.Group>
         {rows.map((r) => (
-          <Tabs.Row colCount={(rows.length > 1) ? 8 : r.length}>
+          <Tabs.Row>
             {r.map((t, index) => (
               <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
