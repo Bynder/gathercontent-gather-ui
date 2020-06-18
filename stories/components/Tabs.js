@@ -13,15 +13,15 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
   const rows = [...new Array(numberOfRows)].map((i, index) => {
     const start = index * 8;
     return tabs.slice(start, start + 8);
-  })
+  });
 
   return (
-    <Tabs tabs={tabs} activeTabId={activeTabId}>
+    <Tabs tabsLength={tabs.length} activeTabId={activeTabId}>
       <Tabs.Group>
-        {rows.map((r, i) => (
-          <Tabs.Row index={i}>
+        {rows.map((r) => (
+          <Tabs.Row colCount={(rows.length > 1) ? 8 : r.length}>
             {r.map((t, index) => (
-              <Tabs.TabBase id={t.id} index={index}>
+              <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
                   <div className={wrapperClasses}>
                     <button
@@ -38,8 +38,8 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
                       </Tabs.TabName>
                     </button>
 
-                    <Tabs.TabAside id={t.id}>
-                      <Tabs.TabOptions id={t.id}>
+                    <Tabs.TabAside>
+                      <Tabs.TabOptions>
                         <Dropdown.ActionGroup className="text-neutral-20 font-normal">
                           <Dropdown.Action
                             className="text-neutral-20 weight-roman"
@@ -56,7 +56,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
                     )}
                   </div>
                 )}
-              </Tabs.TabBase>
+              </Tabs.Tab>
             ))}
           </Tabs.Row>
         ))}
