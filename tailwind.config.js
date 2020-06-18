@@ -224,7 +224,7 @@ module.exports = {
     width: ['group-hover'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
-    borderWidth: ['responsive', 'last'],
+    borderWidth: ['responsive', 'last', 'first'],
     borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
@@ -232,7 +232,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
-    justifyContent: ['group-hover', 'focus-within'],
+    justifyContent: ['group-hover'],
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
