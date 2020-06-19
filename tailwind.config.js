@@ -54,6 +54,7 @@ module.exports = {
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
+      'inset-1px': 'inset 1px 1px 1px rgba(0, 0, 0, 0)',
       none: 'none'
     },
     extend: {
@@ -205,27 +206,29 @@ module.exports = {
       'blur-white-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        'rgba(255,255,255,1) 100%'
+        'rgba(255,255,255,1) 50%'
       ],
       'blur-grey-90-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        '#E1E6EB 100%'
+        '#E1E6EB 50%'
       ],
       'blur-grey-95-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        '#F0F2F5 100%'
+        '#F0F2F5 50%'
       ],
     }
   },
   variants: {
-    padding: ['responsive', 'last', 'group-hover', 'focus', 'hover', 'focus-within'],
-    margin: ['responsive', 'focus', 'hover'],
     width: ['group-hover'],
+    visibility: ['group-hover'],
+    padding: ['responsive', 'last', 'group-hover', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
-    borderWidth: ['responsive', 'last', 'first'],
+    border: ['focus'],
+    borderWidth: ['responsive', 'last', 'first', 'focus'],
     borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],

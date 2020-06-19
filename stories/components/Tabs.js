@@ -1,69 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { storiesOf } from '@storybook/react';
 import { v4 } from 'uuid';
 import cx from 'classnames';
-import { number, select } from '@storybook/addon-knobs';
+import { boolean, number, select } from "@storybook/addon-knobs";
 import faker from 'faker';
 import { ButtonSecondary, Tabs } from 'lib';
 import Dropdown from '../../lib/Dropdown';
 
-export function StructureTabForm({ className, tab }) {
-  const [tabName, setTabName] = useState(tab.name);
-
-  const contentRef = useRef(null);
-  const inputRef = useRef(null);
-  const [inputWidth, setInputWidth] = useState(null);
-  const placeholderWidth = 120;
-
-  useEffect(() => {
-    if (contentRef.current) {
-      const parentWidth = contentRef.current.parentNode.offsetWidth;
-      const newWidth = contentRef.current.offsetWidth;
-      const newInputWidth = newWidth >= parentWidth ? parentWidth : newWidth;
-
-      setInputWidth(`${tabName === '' ? placeholderWidth : newInputWidth}px`);
-    }
-  }, [tabName]);
-
-  const valueWithWhitespaceUnicode = tabName.replace(/ /g, '\u00a0');
-
-  const inputClassName = cx(
-    'border-solid border-transparent border-2 hover:border-blue-primary focus:border-blue-primary rounded outline-none'
-  );
-
-  return (
-    <form
-      className={className}
-      onSubmit={e => {
-        e.preventDefault();
-        inputRef.current.blur();
-      }}
-    >
-      <Tabs.TabName className="flex justify-center items-center w-full h-full">
-        <input
-          type="text"
-          value={tabName}
-          className={inputClassName}
-          onChange={e => setTabName(e.target.value)}
-          style={{
-            width: inputWidth
-          }}
-          ref={inputRef}
-          placeholder="Name this tab"
-        />
-        <div
-          ref={contentRef}
-          className={`${inputClassName} w-auto invisible inline-block fixed overflow-auto`}
-        >
-          {valueWithWhitespaceUnicode}
-        </div>
-      </Tabs.TabName>
-    </form>
-  );
-}
-
 // eslint-disable-next-line react/prop-types
-function TabsStory({ tabs, dragSide, dragIndex }) {
+function TabsStory({ tabs, dragSide, dragIndex, editable }) {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
   const numberOfRows = Math.ceil(tabs.length / 8);
   const rows = [...new Array(numberOfRows)].map((i, index) => {
@@ -80,33 +25,42 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
               <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
                   <div className={wrapperClasses}>
-                    {/*<button*/}
-                    {/*  type="button"*/}
-                    {/*  className={`${buttonClasses} group-hover:pr-6`}*/}
-                    {/*  onClick={e => {*/}
-                    {/*    e.preventDefault();*/}
-                    {/*    setActiveTabId(t.id);*/}
-                    {/*  }}*/}
-                    {/*  title={t.name}*/}
-                    {/*>*/}
-                    {/*  <Tabs.TabName>{t.name}</Tabs.TabName>*/}
-                    {/*</button>*/}
-                    <StructureTabForm
-                      className={`${buttonClasses} group-hover:pr-6`}
-                      tab={t}
-                    />
+                    {!editable ? (
+                      <button
+                        type="button"
+                        className={buttonClasses}
+                        onClick={e => {
+                          e.preventDefault();
+                          setActiveTabId(t.id);
+                        }}
+                        title={t.name}
+                      >
+                        <Tabs.TabName>{t.name}</Tabs.TabName>
+                      </button>
+                    ) : (
+                      <Tabs.TabNameForm
+                        tab={t}
+                        className={`${buttonClasses}`}
+                        setActiveTab={e => {
+                          e.preventDefault();
+                          setActiveTabId(t.id);
+                        }}
+                      />
+                    )}
 
                     <Tabs.TabAside>
-                      <Tabs.TabOptions>
-                        <Dropdown.ActionGroup className="text-neutral-20 font-normal">
-                          <Dropdown.Action
-                            className="text-neutral-20 weight-roman"
-                            action={() => {}}
-                          >
-                            Action text
-                          </Dropdown.Action>
-                        </Dropdown.ActionGroup>
-                      </Tabs.TabOptions>
+                      {editable && (
+                        <Tabs.TabOptions>
+                          <Dropdown.ActionGroup className="text-neutral-20 font-normal">
+                            <Dropdown.Action
+                              className="text-neutral-20 weight-roman"
+                              action={() => {}}
+                            >
+                              Action text
+                            </Dropdown.Action>
+                          </Dropdown.ActionGroup>
+                        </Tabs.TabOptions>
+                      )}
                     </Tabs.TabAside>
 
                     {dragSide && dragIndex === index && (
@@ -133,6 +87,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
+  const editable = boolean('EDIT DAT SHIT', false);
   const tabsNumber = number('Total number of tabs', 3);
   const groupId = 'Drag And Drop';
 
@@ -152,5 +107,5 @@ storiesOf('Components', module).add('Tabs', () => {
     name: faker.commerce.productName()
   }));
 
-  return <TabsStory tabs={tabs} dragSide={dragSide} dragIndex={dragIndex} />;
+  return <TabsStory tabs={tabs} dragSide={dragSide} dragIndex={dragIndex} editable={editable} />;
 });
