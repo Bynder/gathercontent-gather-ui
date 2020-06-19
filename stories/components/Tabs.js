@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { storiesOf } from '@storybook/react';
 import { v4 } from 'uuid';
-import cx from 'classnames';
 import { boolean, number, select } from "@storybook/addon-knobs";
 import faker from 'faker';
 import { ButtonSecondary, Tabs } from 'lib';
