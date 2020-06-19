@@ -80,7 +80,21 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
               <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
                   <div className={wrapperClasses}>
-                    <StructureTabForm className={buttonClasses} tab={t} />
+                    {/*<button*/}
+                    {/*  type="button"*/}
+                    {/*  className={`${buttonClasses} group-hover:pr-6`}*/}
+                    {/*  onClick={e => {*/}
+                    {/*    e.preventDefault();*/}
+                    {/*    setActiveTabId(t.id);*/}
+                    {/*  }}*/}
+                    {/*  title={t.name}*/}
+                    {/*>*/}
+                    {/*  <Tabs.TabName>{t.name}</Tabs.TabName>*/}
+                    {/*</button>*/}
+                    <StructureTabForm
+                      className={`${buttonClasses} group-hover:pr-6`}
+                      tab={t}
+                    />
 
                     <Tabs.TabAside>
                       <Tabs.TabOptions>
@@ -119,7 +133,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
-  const tabsNumber = number('Total number of tabs', 8);
+  const tabsNumber = number('Total number of tabs', 3);
   const groupId = 'Drag And Drop';
 
   const label = 'Drag Line';
