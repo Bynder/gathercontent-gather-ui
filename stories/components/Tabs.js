@@ -24,7 +24,8 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
               <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
                   <div className={wrapperClasses}>
-                    <button
+                    <a
+                      href="/"
                       type="button"
                       className={buttonClasses}
                       onClick={e => {
@@ -36,7 +37,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
                       <Tabs.TabName>
                         {t.name}
                       </Tabs.TabName>
-                    </button>
+                    </a>
 
                     <Tabs.TabAside>
                       <Tabs.TabOptions>
