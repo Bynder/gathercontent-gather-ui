@@ -220,7 +220,8 @@ module.exports = {
     }
   },
   variants: {
-    padding: ['responsive', 'last', 'group-hover'],
+    padding: ['responsive', 'last', 'group-hover', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'focus', 'hover'],
     width: ['group-hover'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
