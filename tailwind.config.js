@@ -54,7 +54,6 @@ module.exports = {
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
-      'inset-1px': 'inset 1px 1px 1px rgba(0, 0, 0, 0)',
       none: 'none'
     },
     extend: {
@@ -140,7 +139,7 @@ module.exports = {
       },
       width: {
         '30': '7.5rem'
-      },
+      }
     },
     maxHeight: {
       '0': '0',
@@ -217,13 +216,20 @@ module.exports = {
         'to right',
         'rgba(255,255,255,0) 0%',
         '#F0F2F5 50%'
-      ],
+      ]
     }
   },
   variants: {
     width: ['group-hover'],
     visibility: ['group-hover'],
-    padding: ['responsive', 'last', 'group-hover', 'focus', 'hover', 'focus-within'],
+    padding: [
+      'responsive',
+      'last',
+      'group-hover',
+      'focus',
+      'hover',
+      'focus-within'
+    ],
     margin: ['responsive', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
@@ -236,7 +242,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
-    justifyContent: ['group-hover'],
+    justifyContent: ['group-hover']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
