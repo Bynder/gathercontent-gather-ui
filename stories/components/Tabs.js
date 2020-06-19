@@ -1,61 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { storiesOf } from '@storybook/react';
-import { number, select } from '@storybook/addon-knobs';
+import { v4 } from 'uuid';
+import { boolean, number, select } from "@storybook/addon-knobs";
 import faker from 'faker';
-import { ButtonSecondary, Tabs } from '../../lib';
-import Icon from '../../lib/Icon';
-import { TabsDragLine } from '../../lib/TabsNew/TabsDragLine';
+import { ButtonSecondary, Tabs } from 'lib';
+import Dropdown from '../../lib/Dropdown';
 
 // eslint-disable-next-line react/prop-types
-function TabsStory({ tabs, dragSide, dragIndex }) {
-  const [activeTab, setActiveTab] = useState(0);
+function TabsStory({ tabs, dragSide, dragIndex, editable }) {
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
+  const numberOfRows = Math.ceil(tabs.length / 8);
+  const rows = [...new Array(numberOfRows)].map((i, index) => {
+    const start = index * 8;
+    return tabs.slice(start, start + 8);
+  });
 
   return (
-    <Tabs tabsLength={tabs.length}>
-      <Tabs.Group
-        tabsLength={tabs.length}
-        className="bg-neutral-95 border-neutral-90 border-t border-b-0 border-l-0 border-r border-solid"
-      >
-        {tabs.map((t, index) => (
-          <Tabs.Base tabsLength={tabs.length}>
-            {(className, style) => (
-              <button
-                type="button"
-                className={`relative border-neutral-90 border border-solid font-medium hover:bg-neutral-90 break-all h-10 items-center border-t-0 border-r-0 px-2 font-semi-bold ${className} ${
-                  activeTab === index
-                    ? 'bg-white text-blue-primary'
-                    : 'bg-neutral-95 text-neutral-primary'
-                }`}
-                onClick={e => {
-                  e.preventDefault();
-                  setActiveTab(index);
-                }}
-                style={style}
-              >
-                <div className="group overflow-hidden w-full relative overflow-hidden whitespace-no-wrap">
-                  {t.name}
-                </div>
-                <div className="flex items-center absolute right-0 top-0 bottom-0 w-8 pr-2">
-                  <span
-                    className={`w-full h-full group-hover:bg-blur-grey-90-right ${
-                      activeTab === index
-                        ? 'bg-blur-white-right'
-                        : 'bg-blur-grey-95-right'
-                    }`}
-                  />
-                  <Icon
-                    className="group-hover:block group-hover:bg-neutral-90 hidden"
-                    name="cog"
-                  />
-                </div>
-                {dragSide && dragIndex === index && (
-                  <TabsDragLine side={dragSide} />
+    <Tabs tabsLength={tabs.length} activeTabId={activeTabId}>
+      <Tabs.Group>
+        {rows.map(r => (
+          <Tabs.Row>
+            {r.map((t, index) => (
+              <Tabs.Tab id={t.id} index={index}>
+                {(wrapperClasses, buttonClasses) => (
+                  <div className={wrapperClasses}>
+                    {!editable ? (
+                      <button
+                        type="button"
+                        className={buttonClasses}
+                        onClick={e => {
+                          e.preventDefault();
+                          setActiveTabId(t.id);
+                        }}
+                        title={t.name}
+                      >
+                        <Tabs.TabName>{t.name}</Tabs.TabName>
+                      </button>
+                    ) : (
+                      <Tabs.TabNameForm
+                        tab={t}
+                        className={`${buttonClasses}`}
+                        setActiveTab={e => {
+                          e.preventDefault();
+                          setActiveTabId(t.id);
+                        }}
+                      />
+                    )}
+
+                    <Tabs.TabAside>
+                      {editable && (
+                        <Tabs.TabOptions>
+                          <Dropdown.ActionGroup className="text-neutral-20 font-normal">
+                            <Dropdown.Action
+                              className="text-neutral-20 weight-roman"
+                              action={() => {}}
+                            >
+                              Action text
+                            </Dropdown.Action>
+                          </Dropdown.ActionGroup>
+                        </Tabs.TabOptions>
+                      )}
+                    </Tabs.TabAside>
+
+                    {dragSide && dragIndex === index && (
+                      <Tabs.TabDragLine side={dragSide} />
+                    )}
+                  </div>
                 )}
-              </button>
-            )}
-          </Tabs.Base>
+              </Tabs.Tab>
+            ))}
+          </Tabs.Row>
         ))}
       </Tabs.Group>
+
       <Tabs.ActionGroup>
         <ButtonSecondary
           className="rounded-b border-t-0 rounded-t-none"
@@ -69,7 +86,8 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
-  const tabsNumber = number('Total number of tabs', 16);
+  const editable = boolean('EDIT DAT SHIT', false);
+  const tabsNumber = number('Total number of tabs', 3);
   const groupId = 'Drag And Drop';
 
   const label = 'Drag Line';
@@ -80,12 +98,13 @@ storiesOf('Components', module).add('Tabs', () => {
     Whole: 'whole'
   };
 
-  const dragSide = select(label, options, 'right', groupId);
+  const dragSide = select(label, options, 'none', groupId);
   const dragIndex = number('Index of tab being dropped onto', 0, {}, groupId);
 
   const tabs = [...Array(tabsNumber).keys()].map(() => ({
+    id: v4(),
     name: faker.commerce.productName()
   }));
 
-  return <TabsStory tabs={tabs} dragSide={dragSide} dragIndex={dragIndex} />;
+  return <TabsStory tabs={tabs} dragSide={dragSide} dragIndex={dragIndex} editable={editable} />;
 });

@@ -139,7 +139,7 @@ module.exports = {
       },
       width: {
         '30': '7.5rem'
-      },
+      }
     },
     maxHeight: {
       '0': '0',
@@ -205,32 +205,44 @@ module.exports = {
       'blur-white-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        'rgba(255,255,255,1) 100%'
+        'rgba(255,255,255,1) 50%'
       ],
       'blur-grey-90-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        '#E1E6EB 100%'
+        '#E1E6EB 50%'
       ],
       'blur-grey-95-right': [
         'to right',
         'rgba(255,255,255,0) 0%',
-        '#F0F2F5 100%'
+        '#F0F2F5 50%'
       ]
     }
   },
   variants: {
-    padding: ['responsive', 'last'],
+    width: ['group-hover'],
+    visibility: ['group-hover'],
+    padding: [
+      'responsive',
+      'last',
+      'group-hover',
+      'focus',
+      'hover',
+      'focus-within'
+    ],
+    margin: ['responsive', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
-    borderWidth: ['responsive', 'last'],
+    border: ['focus'],
+    borderWidth: ['responsive', 'last', 'first', 'focus'],
     borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     zIndex: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
-    textColor: ['responsive', 'group-hover', 'hover', 'focus']
+    textColor: ['responsive', 'group-hover', 'hover', 'focus'],
+    justifyContent: ['group-hover']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
