@@ -24,8 +24,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
               <Tabs.Tab id={t.id} index={index}>
                 {(wrapperClasses, buttonClasses) => (
                   <div className={wrapperClasses}>
-                    <a
-                      href="/"
+                    <button
                       type="button"
                       className={buttonClasses}
                       onClick={e => {
@@ -37,7 +36,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
                       <Tabs.TabName>
                         {t.name}
                       </Tabs.TabName>
-                    </a>
+                    </button>
 
                     <Tabs.TabAside>
                       <Tabs.TabOptions>
@@ -76,7 +75,7 @@ function TabsStory({ tabs, dragSide, dragIndex }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
-  const tabsNumber = number('Total number of tabs', 26);
+  const tabsNumber = number('Total number of tabs', 2);
   const groupId = 'Drag And Drop';
 
   const label = 'Drag Line';
