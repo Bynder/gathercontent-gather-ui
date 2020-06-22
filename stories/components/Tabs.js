@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { storiesOf } from '@storybook/react';
 import { v4 } from 'uuid';
 import { boolean, number, select } from "@storybook/addon-knobs";
 import faker from 'faker';
 import { ButtonSecondary, Tabs } from 'lib';
 import Dropdown from '../../lib/Dropdown';
+import { TabContext } from "../../lib/TabsNew/Tab";
+
+function RenameTabActionExample() {
+  const { formInputRef } = useContext(TabContext);
+
+  return (
+    <Dropdown.ActionGroup className="text-neutral-20 font-normal">
+      <Dropdown.Action
+        className="text-neutral-20 weight-roman"
+        action={() => formInputRef.current.focus()}
+      >
+        Action text
+      </Dropdown.Action>
+    </Dropdown.ActionGroup>
+  )
+}
 
 // eslint-disable-next-line react/prop-types
 function TabsStory({ tabs, dragSide, dragIndex, editable }) {
@@ -51,14 +67,7 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }) {
                     <Tabs.TabAside>
                       {editable && (
                         <Tabs.TabOptions>
-                          <Dropdown.ActionGroup className="text-neutral-20 font-normal">
-                            <Dropdown.Action
-                              className="text-neutral-20 weight-roman"
-                              action={() => {}}
-                            >
-                              Action text
-                            </Dropdown.Action>
-                          </Dropdown.ActionGroup>
+                          <RenameTabActionExample />
                         </Tabs.TabOptions>
                       )}
                     </Tabs.TabAside>
