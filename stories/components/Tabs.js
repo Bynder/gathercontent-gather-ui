@@ -44,6 +44,7 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }) {
                           e.preventDefault();
                           setActiveTabId(t.id);
                         }}
+                        submitTabForm={() => {}}
                       />
                     )}
 
@@ -86,7 +87,7 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }) {
 }
 
 storiesOf('Components', module).add('Tabs', () => {
-  const editable = boolean('EDIT DAT SHIT', false);
+  const editable = boolean('Is editable', true);
   const tabsNumber = number('Total number of tabs', 3);
   const groupId = 'Drag And Drop';
 
