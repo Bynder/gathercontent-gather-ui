@@ -79,5 +79,6 @@ import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDanger'
 import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconBubble'
 import '../lib/Toolbar/stories/Toolbar'
 import '../lib/OptionMenu/stories/OptionMenu'
+import '../lib/Select/stories/Select'
 import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';

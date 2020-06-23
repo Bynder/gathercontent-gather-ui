@@ -1,13 +1,15 @@
-.grid {
+.grid:not(.tw) {
     margin-left: -10px;
+}
 
-    &:before,
-    &:after {
+.grid {
+    &:not(.tw):before,
+    &:not(.tw):after {
         display: table;
         content: "";
     }
 
-    &:after {
+    &:not(.tw):after {
         clear: both;
     }
 

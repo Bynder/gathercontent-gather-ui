@@ -52,84 +52,9 @@ module.exports = {
       'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
+      'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
+      'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
       none: 'none'
-    },
-    maxHeight: {
-      '0': '0',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': ' 2.5rem',
-      '12': ' 3rem',
-      '16': ' 4rem',
-      '20': ' 5rem',
-      '24': ' 6rem',
-      '30': ' 7.5rem',
-      '32': ' 8rem',
-      '40': ' 10rem',
-      '48': ' 12rem',
-      '56': ' 14rem',
-      '64': ' 16rem',
-      '128': ' 32rem',
-      auto: 'auto',
-      full: '100%',
-      screen: '100vh'
-    },
-    minWidth: {
-      '0': '0',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '8': '2rem',
-      '10': ' 2.5rem',
-      '12': ' 3rem',
-      '16': ' 4rem',
-      '20': ' 5rem',
-      '24': ' 6rem',
-      '30': '7.5rem',
-      '32': ' 8rem',
-      '40': ' 10rem',
-      '48': ' 12rem',
-      '56': ' 14rem',
-      '64': ' 16rem',
-      '128': ' 32rem',
-      auto: 'auto',
-      full: '100%',
-      screen: '100vh'
-    },
-    gradients: {
-      'blur-white-bottom': [
-        'rgba(255, 255, 255, 0) 0%',
-        'rgba(253, 253, 253, 0.5) 50%',
-        '#fff 100%'
-      ],
-      'blur-grey-bottom': [
-        'rgba(255, 255, 255, 0) 0%',
-        'rgba(253, 253, 253, 0.5) 50%',
-        '#f0f2f5 100%'
-      ],
-      'blur-white-right': [
-        'to right',
-        'rgba(255,255,255,0) 0%',
-        'rgba(255,255,255,1) 100%'
-      ],
-      'blur-grey-90-right': [
-        'to right',
-        'rgba(255,255,255,0) 0%',
-        '#E1E6EB 100%'
-      ],
-      'blur-grey-95-right': [
-        'to right',
-        'rgba(255,255,255,0) 0%',
-        '#F0F2F5 100%'
-      ]
     },
     extend: {
       colors: {
@@ -219,19 +144,108 @@ module.exports = {
         '05': '0.375rem',
       },
     },
+    maxHeight: {
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': ' 2.5rem',
+      '12': ' 3rem',
+      '16': ' 4rem',
+      '20': ' 5rem',
+      '24': ' 6rem',
+      '30': ' 7.5rem',
+      '32': ' 8rem',
+      '40': ' 10rem',
+      '48': ' 12rem',
+      '56': ' 14rem',
+      '64': ' 16rem',
+      '128': ' 32rem',
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh'
+    },
+    minWidth: {
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': ' 2.5rem',
+      '12': ' 3rem',
+      '16': ' 4rem',
+      '20': ' 5rem',
+      '24': ' 6rem',
+      '30': '7.5rem',
+      '32': ' 8rem',
+      '40': ' 10rem',
+      '48': ' 12rem',
+      '56': ' 14rem',
+      '64': ' 16rem',
+      '128': ' 32rem',
+      auto: 'auto',
+      full: '100%',
+      screen: '100vh'
+    },
+    gradients: {
+      'blur-white-bottom': [
+        'rgba(255, 255, 255, 0) 0%',
+        'rgba(253, 253, 253, 0.5) 50%',
+        '#fff 100%'
+      ],
+      'blur-grey-bottom': [
+        'rgba(255, 255, 255, 0) 0%',
+        'rgba(253, 253, 253, 0.5) 50%',
+        '#f0f2f5 100%'
+      ],
+      'blur-white-right': [
+        'to right',
+        'rgba(#fff, 0) 0%',
+        'rgba(255,255,255,1) 50%'
+      ],
+      'blur-grey-90-right': [
+        'to right',
+        'rgba(#E1E6EB, 0)',
+        '#E1E6EB 50%'
+      ],
+      'blur-grey-95-right': [
+        'to right',
+        'rgba(#F0F2F5, 0)',
+        '#F0F2F5 50%'
+      ]
+    }
   },
   variants: {
-    padding: ['responsive', 'last'],
+    width: ['group-hover'],
+    visibility: ['group-hover'],
+    padding: [
+      'responsive',
+      'last',
+      'group-hover',
+      'focus',
+      'hover',
+      'focus-within'
+    ],
+    margin: ['responsive', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
-    borderWidth: ['responsive', 'last'],
+    border: ['focus'],
+    borderWidth: ['responsive', 'last', 'first', 'focus'],
     borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     boxShadow: ['responsive', 'hover', 'focus', 'active'],
     opacity: ['responsive', 'group-hover', 'hover', 'focus'],
     zIndex: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
-    textColor: ['responsive', 'group-hover', 'hover', 'focus']
+    textColor: ['responsive', 'group-hover', 'hover', 'focus'],
+    justifyContent: ['group-hover']
   },
   plugins: [require('tailwindcss-plugins/gradients')],
   corePlugins: {
