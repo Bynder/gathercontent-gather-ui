@@ -1,4 +1,4 @@
-.multiple-borders-blue-2px {
+.pseudo-border-blue-2px {
   @include before-border(
     2px,
     solid,
@@ -7,7 +7,16 @@
   );
 }
 
-.multiple-borders-grey-1px {
+.pseudo-border-red-2px {
+  @include before-border(
+    2px,
+    solid,
+    theme('colors.red.primary'),
+    theme('borderRadius.default')
+  );
+}
+
+.pseudo-border-grey-1px {
   @include before-border(
     1px,
     solid,
