@@ -1,0 +1,17 @@
+.multiple-borders-blue-2px {
+  @include before-border(
+    2px,
+    solid,
+    theme('colors.blue.primary'),
+    theme('borderRadius.default')
+  );
+}
+
+.multiple-borders-grey-1px {
+  @include before-border(
+    1px,
+    solid,
+    theme('colors.neutral.90'),
+    theme('borderRadius.default')
+  );
+}
