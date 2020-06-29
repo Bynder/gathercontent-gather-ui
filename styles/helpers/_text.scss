@@ -2,6 +2,10 @@
   @include text-overflow-ellipsis();
 }
 
+.text-overflow-ellipsis-only {
+  text-overflow: ellipsis;
+}
+
 .weight-bold {
   font-weight: $typo-weight-bold;
 }
