@@ -139,7 +139,10 @@ module.exports = {
       },
       width: {
         '30': '7.5rem'
-      }
+      },
+      spacing: {
+        '05': '0.375rem',
+      },
     },
     maxHeight: {
       '0': '0',
