@@ -48,6 +48,7 @@ storiesOf('Components', module).add('Conversation Context', () => (
         userCanResolve
         comments={mockComments}
         resolveConversation={() => {}}
+        users={[]}
       >
         <span>Hello!</span>
       </ConversationContext>
@@ -63,6 +64,7 @@ storiesOf('Components', module).add('Conversation Context', () => (
         userCanResolve
         comments={mockComments}
         resolveConversation={() => {}}
+        users={[]}
       >
         {null}
       </ConversationContext>
