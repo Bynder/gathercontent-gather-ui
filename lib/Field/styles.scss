@@ -397,6 +397,10 @@ $field-data-p-line-height: 1.688rem !default;
   ul, ol {
     margin-top: $layout-spacing-base;
     margin-bottom: $layout-spacing-base;
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   li {
