@@ -40,7 +40,6 @@ module.exports = {
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
 
       'button-primary-focus': `0px 0px 0px 3px ${blue80}`,
-
       'button-primary-danger-focus': `0px 0px 0px 3px ${red80}`,
 
       'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
