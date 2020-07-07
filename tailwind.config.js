@@ -36,8 +36,6 @@ module.exports = {
 
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
 
-      'button-primary-hover': `0px 0px 0px 1px ${bluePrimary}`,
-      'button-primary-active': `0px 0px 0px 1px ${blue30}`,
       'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
 
       'button-primary-danger-hover': `0px 0px 0px 1px ${redPrimary}`,
