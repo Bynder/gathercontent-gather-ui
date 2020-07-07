@@ -45,8 +45,8 @@ module.exports = {
 
       'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
 
-      'button-tertiary-focus': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 3px ${neutral80}`,
-      'button-tertiary-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
+      'button-tertiary-focus': `0px 0px 0px 3px ${neutral80}`,
+      'button-tertiary-danger-focus': `0px 0px 0px 3px ${red80}`,
 
       'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
