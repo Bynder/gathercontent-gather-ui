@@ -13,6 +13,9 @@ const neutral90 = '#E1E6EB';
 module.exports = {
   important: true,
   theme: {
+    borderStyles: {
+      colors: true
+    },
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
       body: ['IBM Plex Sans', 'sans-serif']
@@ -139,8 +142,8 @@ module.exports = {
         '30': '7.5rem'
       },
       spacing: {
-        '05': '0.375rem',
-      },
+        '05': '0.375rem'
+      }
     },
     maxHeight: {
       '0': '0',
@@ -208,16 +211,8 @@ module.exports = {
         'rgba(#fff, 0) 0%',
         'rgba(255,255,255,1) 50%'
       ],
-      'blur-grey-90-right': [
-        'to right',
-        'rgba(#E1E6EB, 0)',
-        '#E1E6EB 50%'
-      ],
-      'blur-grey-95-right': [
-        'to right',
-        'rgba(#F0F2F5, 0)',
-        '#F0F2F5 50%'
-      ]
+      'blur-grey-90-right': ['to right', 'rgba(#E1E6EB, 0)', '#E1E6EB 50%'],
+      'blur-grey-95-right': ['to right', 'rgba(#F0F2F5, 0)', '#F0F2F5 50%']
     }
   },
   variants: {
@@ -245,7 +240,10 @@ module.exports = {
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
     justifyContent: ['group-hover']
   },
-  plugins: [require('tailwindcss-plugins/gradients')],
+  plugins: [
+    require('tailwindcss-plugins/gradients'),
+    require('tailwindcss-border-styles')()
+  ],
   corePlugins: {
     preflight: false,
     container: false
