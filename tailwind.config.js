@@ -41,9 +41,7 @@ module.exports = {
 
       'button-primary-focus': `0px 0px 0px 3px ${blue80}`,
 
-      'button-primary-danger-hover': `0px 0px 0px 1px ${redPrimary}`,
-      'button-primary-danger-active': `0px 0px 0px 1px ${red30}`,
-      'button-primary-danger-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+      'button-primary-danger-focus': `0px 0px 0px 3px ${red80}`,
 
       'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
 
