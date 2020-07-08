@@ -1,9 +1,15 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { BoundaryClickWatcher } from '../../lib';
 
 describe('BoundaryClickWatcher', () => {
+  const childSpy = jest.fn();
+
+  afterEach(() => {
+    childSpy.mockReset();
+  });
+
   test('renders when its child is a node', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <BoundaryClickWatcher>
         <div className="child" />;
       </BoundaryClickWatcher>
@@ -11,28 +17,15 @@ describe('BoundaryClickWatcher', () => {
     expect(wrapper.find('div.child')).toHaveLength(1);
   });
 
-  const wrapper = shallow(
+  const wrapper = mount(
     <BoundaryClickWatcher className="test">
-      {boundaryIsActive => (
-        <div className="child" isActive={boundaryIsActive} />
-      )}
+      {boundaryIsActive => childSpy(boundaryIsActive)}
     </BoundaryClickWatcher>
   );
 
-  test('renders when its child is a function', () => {
-    expect(wrapper.find('div.child')).toHaveLength(1);
-  });
-
   test('boundaryIsActive is true on click and passes the value onto its child', () => {
-    expect(wrapper.state('boundaryIsActive')).toEqual(false);
-    expect(wrapper.state('boundaryIsActive')).toEqual(
-      wrapper.prop('children').props.isActive
-    );
     wrapper.simulate('click');
-    expect(wrapper.state('boundaryIsActive')).toEqual(true);
-    expect(wrapper.state('boundaryIsActive')).toEqual(
-      wrapper.prop('children').props.isActive
-    );
+    expect(childSpy).toBeCalledWith(true);
   });
 
   test('boundaryMouseEnter and boundaryMouseLeave prop functions are called on mouseEnter and mouseLeave', () => {
