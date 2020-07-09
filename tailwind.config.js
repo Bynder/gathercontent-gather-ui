@@ -207,18 +207,18 @@ module.exports = {
       ],
       'blur-white-right': [
         'to right',
-        'rgba(#fff, 0) 0%',
+        'rgba(255, 255, 255, 0)',
         'rgba(255,255,255,1) 50%'
       ],
       'blur-grey-90-right': [
         'to right',
-        'rgba(#E1E6EB, 0)',
-        '#E1E6EB 50%'
+        'rgba(225,230,235, 0)',
+        'rgba(225,230,235, 1) 50%'
       ],
       'blur-grey-95-right': [
         'to right',
-        'rgba(#F0F2F5, 0)',
-        '#F0F2F5 50%'
+        'rgba(240,242,245, 0)',
+        'rgba(240,242,245, 1) 50%'
       ]
     }
   },
