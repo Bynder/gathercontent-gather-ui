@@ -44,7 +44,9 @@
   "scripts": {
     "copy-tailwind": "tailwind build styles/tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
-    "build": "babel lib/ --out-dir dist/lib && babel tailwind.config.js --out-dir dist",
+    "build:lib": "babel lib/ --out-dir dist/lib",
+    "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
+    "build": "yarn build:lib && yarn build:tailwind:config",
     "build:with:styles": "yarn build && yarn run copy-styles",
     "prepublish": "yarn run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -61,7 +63,7 @@
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js' 'stories/webapp/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check",
     "copy:styles:watch": "nodemon --exec \"yarn copy-styles\" --watch lib --watch styles -e scss --watch tailwind.config.js",
-    "build:watch": "concurrently \"yarn copy:styles:watch\" \"yarn build --watch\""
+    "build:watch": "concurrently \"yarn copy:styles:watch\" \"yarn build:lib --watch --source-maps inline\" \"yarn build:tailwind:config --watch --source-maps inline\""
   },
   "husky": {
     "hooks": {
