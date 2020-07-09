@@ -35,6 +35,10 @@
     {
       "name": "Alex Smith",
       "email": "alex@gathercontent.com"
+    },
+    {
+      "name": "David Hollins",
+      "email": "david@gathercontent.com"
     }
   ],
   "scripts": {
