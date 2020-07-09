@@ -59,7 +59,7 @@
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js' 'stories/webapp/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check",
     "copy:styles:watch": "nodemon --exec \"yarn copy-styles\" --watch lib --watch styles -e scss --watch tailwind.config.js",
-    "dev": "concurrently \"yarn copy:styles:watch\" \"yarn build:lib --watch --source-maps inline\" \"yarn build:tailwind:config --watch --source-maps inline\""
+    "build:watch": "concurrently \"yarn copy:styles:watch\" \"yarn build:lib --watch --source-maps inline\" \"yarn build:tailwind:config --watch --source-maps inline\""
   },
   "husky": {
     "hooks": {
