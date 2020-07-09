@@ -13,6 +13,9 @@ const neutral90 = '#E1E6EB';
 module.exports = {
   important: true,
   theme: {
+    borderStyles: {
+      colors: true
+    },
     fontFamily: {
       display: ['IBM Plex Sans', 'sans-serif'],
       body: ['IBM Plex Sans', 'sans-serif']
@@ -36,22 +39,18 @@ module.exports = {
 
       'blue-focus-sm': `0px 0px 0px 3px ${blue80}`,
 
-      'button-primary-hover': `0px 0px 0px 1px ${bluePrimary}`,
-      'button-primary-active': `0px 0px 0px 1px ${blue30}`,
-      'button-primary-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${blue80}`,
-
-      'button-primary-danger-hover': `0px 0px 0px 1px ${redPrimary}`,
-      'button-primary-danger-active': `0px 0px 0px 1px ${red30}`,
-      'button-primary-danger-focus': `0px 0px 0px 1px white, 0px 0px 0px 3px ${red80}`,
+      'button-primary-focus': `0px 0px 0px 3px ${blue80}`,
+      'button-primary-danger-focus': `0px 0px 0px 3px ${red80}`,
 
       'button-secondary-focus': `0px 0px 0px 3px ${blue80}`,
 
-      'button-tertiary-focus': `0px 0px 0px 1px ${neutral20}, 0px 0px 0px 3px ${neutral80}`,
-      'button-tertiary-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
+      'button-tertiary-focus': `0px 0px 0px 3px ${neutral80}`,
+      'button-tertiary-danger-focus': `0px 0px 0px 3px ${red80}`,
 
-      'button-icon-focus': `0px 0px 0px 1px ${bluePrimary}, 0px 0px 0px 3px ${blue80}`,
-      'button-icon-danger-focus': `0px 0px 0px 1px ${redPrimary}, 0px 0px 0px 3px ${red80}`,
+      'button-icon-focus': `0px 0px 0px 3px ${blue80}`,
+      'button-icon-danger-focus': `0px 0px 0px 3px ${red80}`,
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
+
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
       none: 'none'
@@ -141,8 +140,8 @@ module.exports = {
         '30': '7.5rem'
       },
       spacing: {
-        '05': '0.375rem',
-      },
+        '05': '0.375rem'
+      }
     },
     maxHeight: {
       '0': '0',
@@ -247,7 +246,10 @@ module.exports = {
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
     justifyContent: ['group-hover']
   },
-  plugins: [require('tailwindcss-plugins/gradients')],
+  plugins: [
+    require('tailwindcss-plugins/gradients'),
+    require('tailwindcss-border-styles')()
+  ],
   corePlugins: {
     preflight: false,
     container: false
