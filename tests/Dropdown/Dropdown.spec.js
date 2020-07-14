@@ -1,21 +1,22 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { Dropdown } from '../../lib';
-import { GATHER_UI_DROPDOWN } from '../../lib/Dropdown/consts';
-import DropdownAction from '../../lib/Dropdown/DropdownAction';
-import DropdownActionGroup from '../../lib/Dropdown/DropdownActionGroup';
-import DropdownContent from '../../lib/Dropdown/DropdownContent';
-import DropdownTrigger from '../../lib/Dropdown/DropdownTrigger';
 import BoundaryClickWatcher from '../../lib/BoundaryClickWatcher';
 
 describe('Dropdown', () => {
   let wrapper;
   const onToggleMock = jest.fn();
   const onHideMock = jest.fn();
+  const actionMock = jest.fn();
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <Dropdown onToggle={onToggleMock} onHide={onHideMock} id="id-1">
         <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
+        <Dropdown.Content>
+          <Dropdown.ActionGroup>
+            <Dropdown.Action action={actionMock}>Howdy</Dropdown.Action>
+          </Dropdown.ActionGroup>
+        </Dropdown.Content>
       </Dropdown>
     );
   });
@@ -24,74 +25,25 @@ describe('Dropdown', () => {
     jest.resetAllMocks();
   });
 
-  test('renders children', () => {
+  test('displays the dropdown content', () => {
     expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
-  });
-
-  test('shares context', () => {
-    wrapper.setState({ showContent: true });
-    expect(wrapper.instance().getChildContext()).toEqual({
-      [GATHER_UI_DROPDOWN]: {
-        showContent: true,
-        toggleShowContent: wrapper.instance().toggleShowContent,
-        setShowContent: wrapper.instance().setShowContent,
-        bounds: { top: -9999 },
-        autoPosition: false
-      }
-    });
-  });
-
-  test('sets the compound static props', () => {
-    expect(Dropdown.Action).toEqual(DropdownAction);
-    expect(Dropdown.ActionGroup).toEqual(DropdownActionGroup);
-    expect(Dropdown.Content).toEqual(DropdownContent);
-    expect(Dropdown.Trigger).toEqual(DropdownTrigger);
-  });
-
-  test('setting the show content state', () => {
-    wrapper.instance().setShowContent(true);
-    expect(wrapper.state('showContent')).toBe(true);
-  });
-
-  test('toggling the show content state', () => {
-    expect(wrapper.state('showContent')).toBe(false);
-    wrapper.instance().toggleShowContent();
-    expect(wrapper.state('showContent')).toBe(true);
-    wrapper.instance().toggleShowContent();
-    expect(wrapper.state('showContent')).toBe(false);
-    wrapper.instance().toggleShowContent({ top: 240 });
-    expect(wrapper.state('showContent')).toBe(true);
-    expect(wrapper.state('bounds')).toEqual({ top: 240 });
-  });
-
-  test('clicking outside of the dropdown boundary hides the content', () => {
-    wrapper.instance().toggleShowContent();
-    expect(wrapper.state('showContent')).toBe(true);
-    wrapper.find(BoundaryClickWatcher).prop('outsideClickHandler')();
-    expect(wrapper.state('showContent')).toBe(false);
-    expect(onHideMock).toHaveBeenCalledTimes(1);
-  });
-
-  test('rendering an active class', () => {
-    expect(wrapper.hasClass('is-active')).toBe(false);
-    wrapper.instance().toggleShowContent();
-    wrapper.update();
-    expect(wrapper.hasClass('is-active')).toBe(true);
-  });
-
-  test('firing the onToggle prop when toggling', () => {
-    expect(onToggleMock).toHaveBeenCalledTimes(0);
-
-    wrapper.instance().toggleShowContent();
-    expect(onToggleMock).toHaveBeenCalledTimes(1);
+    expect(wrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      false
+    );
+    wrapper.find(Dropdown.Trigger).simulate('click');
+    expect(onToggleMock).toHaveBeenCalled();
     expect(onToggleMock).toHaveBeenLastCalledWith({
       type: 'ACTIVE',
       payload: {
         id: 'id-1'
       }
     });
-
-    wrapper.instance().toggleShowContent();
+    expect(wrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      true
+    );
+    wrapper.find(BoundaryClickWatcher).prop('outsideClickHandler')();
+    wrapper.update();
+    expect(onHideMock).toHaveBeenCalled();
     expect(onToggleMock).toHaveBeenCalledTimes(2);
     expect(onToggleMock).toHaveBeenLastCalledWith({
       type: 'UNACTIVE',
@@ -99,40 +51,26 @@ describe('Dropdown', () => {
         id: 'id-1'
       }
     });
-
-    wrapper.instance().setShowContent(true);
-    expect(onToggleMock).toHaveBeenCalledTimes(3);
-    expect(onToggleMock).toHaveBeenLastCalledWith({
-      type: 'ACTIVE',
-      payload: {
-        id: 'id-1'
-      }
-    });
-
-    wrapper.instance().setShowContent(false);
-    expect(onToggleMock).toHaveBeenCalledTimes(4);
-    expect(onToggleMock).toHaveBeenLastCalledWith({
-      type: 'UNACTIVE',
-      payload: {
-        id: 'id-1'
-      }
-    });
+    expect(wrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      false
+    );
   });
 
   test('persists the active state when the external show prop is true', () => {
     wrapper.setProps({ persistShow: true });
-    wrapper.instance().setShowContent(false);
-
-    expect(onToggleMock).toHaveBeenLastCalledWith({
-      type: 'ACTIVE',
-      payload: {
-        id: 'id-1'
-      }
-    });
+    wrapper.find(Dropdown.Trigger).simulate('click');
+    expect(wrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      true
+    );
+    wrapper.find(BoundaryClickWatcher).prop('outsideClickHandler')();
+    wrapper.update();
+    expect(wrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      true
+    );
   });
 
   test('passing a function as a child shares the ability to set the showing state', () => {
-    const newWrapper = shallow(
+    const newWrapper = mount(
       <Dropdown id="render-prop-test">
         {({ setShowContent, showContent }) => (
           <Dropdown.Content>
@@ -147,11 +85,21 @@ describe('Dropdown', () => {
       .find('input')
       .first()
       .simulate('change');
-    expect(newWrapper.find('.is-active')).toHaveLength(1);
+    expect(newWrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      true
+    );
     newWrapper
       .find('input')
       .last()
       .simulate('change');
-    expect(newWrapper.find('.is-active')).toHaveLength(0);
+    expect(newWrapper.find('.dropdown__content').hasClass('is-active')).toEqual(
+      false
+    );
+  });
+
+  test('fires the dropdown action', () => {
+    wrapper.find(Dropdown.Trigger).simulate('click');
+    wrapper.find(Dropdown.Action).simulate('click');
+    expect(actionMock).toHaveBeenCalled();
   });
 });

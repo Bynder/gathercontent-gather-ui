@@ -1,8 +1,8 @@
-import { React, shallow } from '../setup';
+import { React, mount } from '../setup';
 import { ConfirmationDropdown, Dropdown } from '../../lib';
 import ConfirmationDropdownContent from '../../lib/ConfirmationDropdown/ConfirmationDropdownContent';
 
-describe('Confirmation Dropdown', () => {
+describe('Confirmation Dropdown blabla', () => {
   let wrapper;
   const onConfirmSpy = jest.fn();
   const onCancelSpy = jest.fn();
@@ -21,7 +21,7 @@ describe('Confirmation Dropdown', () => {
     });
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <ConfirmationDropdown
         id="id"
         confirmationPromise={mockPromise}
@@ -31,7 +31,9 @@ describe('Confirmation Dropdown', () => {
         onHide={onHideSpy}
         dropdownContent={dropdownContent}
       >
-        <button type="button">open confirmation</button>
+        <button type="button" className="im-the-trigger">
+          open confirmation
+        </button>
       </ConfirmationDropdown>
     );
   });
@@ -71,7 +73,7 @@ describe('Confirmation Dropdown', () => {
   });
 
   test('wraps children with the trigger props', () => {
-    const { onClick } = wrapper.find('button').props();
+    const { onClick } = wrapper.find('.im-the-trigger').props();
     expect(onClick).toEqual(wrapper.instance().toggleConfirmation);
   });
 
@@ -85,10 +87,19 @@ describe('Confirmation Dropdown', () => {
       expect(wrapper.state()).toEqual({ promiseIsPending: false });
     });
   });
-
   test('adds props to components when promise is pending', () => {
     wrapper.setState({ promiseIsPending: true });
     expect(wrapper.find(Dropdown).prop('persistShow')).toBe(true);
-    expect(wrapper.hasClass('is-pending')).toBe(true);
+    expect(wrapper.find('.is-pending')).toHaveLength(4);
+  });
+
+  test('renders a cancel button', () => {
+    wrapper.find('.im-the-trigger').simulate('click');
+    wrapper
+      .find('.confirmation-dropdown__cancel')
+      .hostNodes()
+      .simulate('click');
+    expect(onHideSpy).toHaveBeenCalled();
+    expect(onCancelSpy).toHaveBeenCalled();
   });
 });
