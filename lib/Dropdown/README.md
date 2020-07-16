@@ -12,7 +12,7 @@ A dropdown component with compounded components to render triggers and the conte
 | onToggle            | Func          | () => {}  | No       | A function which is called each time the visibility is toggled.               |
 | block                | Bool         | false     | No       | Makes the dropdown container block like.                                                                  |
 
-### Context (GATHER_UI_DROPDOWN)
+### Context (DropdownContext)
 
 | Name                | Type          | Description                                                                   |
 | ------------------- |-------------- |------------------------------------------------------------------------------ |
