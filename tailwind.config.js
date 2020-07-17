@@ -204,6 +204,11 @@ module.exports = {
         'rgba(253, 253, 253, 0.5) 50%',
         '#f0f2f5 100%'
       ],
+      'blur-neutral-98-bottom': [
+        'rgba(245, 249, 255, 0) 0%',
+        'rgba(245, 249, 255, 0.5) 50%',
+        '#F5F9FF 100%'
+      ],
       'blur-white-right': [
         'to right',
         'rgba(255, 255, 255, 0)',
