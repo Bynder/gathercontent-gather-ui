@@ -270,7 +270,7 @@ $figure-border-radius: 3px !default;
   .figure__thumbnail {
     &:before {
       background: $primary-red;
-      opacity: .2;
+      opacity: 0.2;
     }
   }
 }
@@ -282,17 +282,8 @@ $figure-border-radius: 3px !default;
 .figure__placeholder {
   display: flex;
   &__svg {
-    flex-grow: 1;
-    padding: 10% 0;
-    text-align: center;
-    box-shadow: $shadow-shallow;
-    background-color: white;
-    border-radius: $layout-spacing-base/4;
-    border: 1px solid $neutral-light;
-    margin-right: $layout-spacing-base/2;
-    &:nth-child(3) {
-      margin:0;
-    }
+    @apply flex-grow text-center bg-white h-40 flex items-center justify-center;
+    @apply border-t border-l border-r border-b-0 border-solid border-neutral-90 rounded-t rounded-b-none;
   }
 }
 
