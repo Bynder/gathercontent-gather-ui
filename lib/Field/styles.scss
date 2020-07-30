@@ -244,12 +244,12 @@ $field-data-p-line-height: 1.688rem !default;
   .field__label,
   .field__instructions {
     resize: none;
-    overflow: auto;
     outline: none;
     display: block;
     width: 100%;
     height: auto;
     color: $neutral-dark;
+    word-break: break-all;
   }
   .field__instructions {
     font-size: $typo-size-slight;
