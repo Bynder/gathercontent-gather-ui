@@ -17,6 +17,6 @@ describe('Figure Placeholder', () => {
   });
 
   test('renders the svgs', () => {
-    expect(wrapper.find('.figure__placeholder__svg')).toHaveLength(3);
+    expect(wrapper.find('.figure__placeholder__svg')).toHaveLength(1);
   });
 });
