@@ -81,3 +81,4 @@ import '../lib/OptionMenu/stories/OptionMenu';
 import '../lib/Select/stories/Select';
 import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
+import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
