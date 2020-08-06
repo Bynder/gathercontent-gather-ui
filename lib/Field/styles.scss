@@ -459,7 +459,10 @@ $field-data-p-line-height: 1.688rem !default;
 }
 
 .field-new {
-  min-height: 200px;
+  .field-content,
+  .field-meta {
+    min-height: 200px;
+  }
 
   .expanding-textarea {
     line-height: $typo-line-height-base * 1.2;
