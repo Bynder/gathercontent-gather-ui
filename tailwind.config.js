@@ -137,10 +137,14 @@ module.exports = {
         '30': 0.3
       },
       width: {
-        '30': '7.5rem'
+        '30': '7.5rem',
+        '66': '17rem'
       },
       spacing: {
         '05': '0.375rem'
+      },
+      cursor: {
+        grab: 'grab'
       }
     },
     maxHeight: {
@@ -188,6 +192,7 @@ module.exports = {
       '48': ' 12rem',
       '56': ' 14rem',
       '64': ' 16rem',
+      '66': '17rem',
       '128': ' 32rem',
       auto: 'auto',
       full: '100%',
