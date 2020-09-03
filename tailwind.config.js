@@ -142,6 +142,9 @@ module.exports = {
       },
       spacing: {
         '05': '0.375rem'
+      },
+      cursor: {
+        grab: 'grab'
       }
     },
     maxHeight: {

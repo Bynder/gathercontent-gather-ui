@@ -92,6 +92,7 @@ const allIcons = additionalProps => (
     <Icon name="repeatable" {...additionalProps} />
     <Icon name="plaintext" {...additionalProps} />
     <Icon name="textlimit" {...additionalProps} />
+    <Icon name="otheroption" {...additionalProps} />
   </div>
 );
 
