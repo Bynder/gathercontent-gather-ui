@@ -148,6 +148,10 @@ module.exports = {
       },
       cursor: {
         grab: 'grab'
+      },
+      fontSize: {
+        '3-5xl': '2rem',
+        '1xl': '1.375rem'
       }
     },
     maxHeight: {
