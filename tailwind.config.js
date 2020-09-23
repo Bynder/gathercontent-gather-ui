@@ -10,6 +10,8 @@ const neutral20 = '#29333D';
 const neutral80 = '#C2CCD6';
 const neutral90 = '#E1E6EB';
 
+const green80 = '#B0E8B0';
+
 module.exports = {
   important: true,
   theme: {
@@ -50,6 +52,7 @@ module.exports = {
       'button-icon-focus': `0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 3px ${red80}`,
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
+      'button-icon-enabled-focus': `0px 0px 0px 3px ${green80}`,
 
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
@@ -86,7 +89,7 @@ module.exports = {
           '98': '#F7FDF7',
           '95': '#EBF9EB',
           '90': '#D7F4D7',
-          '80': '#B0E8B0',
+          '80': green80,
           '70': '#88DD88',
           '60': '#61D161',
           primary: '#39C639',
@@ -137,10 +140,18 @@ module.exports = {
         '30': 0.3
       },
       width: {
-        '30': '7.5rem'
+        '30': '7.5rem',
+        '66': '17rem'
       },
       spacing: {
         '05': '0.375rem'
+      },
+      cursor: {
+        grab: 'grab'
+      },
+      fontSize: {
+        '3-5xl': '2rem',
+        '1xl': '1.375rem'
       }
     },
     maxHeight: {
@@ -188,6 +199,7 @@ module.exports = {
       '48': ' 12rem',
       '56': ' 14rem',
       '64': ' 16rem',
+      '66': '17rem',
       '128': ' 32rem',
       auto: 'auto',
       full: '100%',

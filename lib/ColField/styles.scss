@@ -1,0 +1,88 @@
+.col-field__body .ql-editor {
+  @apply p-6;
+  *:nth-child(1) {
+    @apply mt-0;
+  }
+  h1:nth-child(1) {
+    @apply -mt-1;
+  }
+
+  h2:nth-child(1),
+  h3:nth-child(1) {
+    margin-top: -.1rem;
+  }
+
+  h4:nth-child(1),
+  h5:nth-child(1),
+  h6:nth-child(1) {
+    margin-top: -.06rem;
+  }
+  p {
+    @apply mt-3 mb-5;
+  }
+
+  ul, ol {
+    @apply my-5;
+    ul, ol {
+      @apply my-0;
+    }
+  }
+
+  li {
+    @apply my-1;
+  }
+
+  table {
+    @apply w-full my-8 table-fixed;
+    td {
+      @apply w-full border border-solid border-neutral-20 p-1;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li {
+    @apply font-roman;
+  }
+
+  h1 {
+    @apply text-4xl leading-10 mt-8 mb-5;
+  }
+
+  h2 {
+    @apply text-3-5xl leading-9 mt-6 mb-3;
+  }
+
+  h3 {
+    @apply text-3xl leading-8 mt-6 mb-3;
+  }
+
+  h4 {
+    @apply text-2xl leading-7 my-3;
+  }
+
+  h5 {
+    @apply text-1xl leading-6 my-3;
+  }
+
+  h6 {
+    @apply text-xl leading-5 my-3;
+  }
+
+  p, li {
+    @apply text-lg leading-6;
+  }
+
+  *:last-child {
+    @apply mb-0;
+  }
+  @for $a from 1 through 6 {
+    @for $b from 1 through 6 {
+      h#{$a} + h#{$b} {
+        @apply mt-3;
+      }
+    }
+  }
+  &.ql-blank::before {
+    @apply absolute inset-x-0 text-neutral-primary cursor-text text-lg leading-6 ml-6;
+    content: attr(data-placeholder);
+  }
+}
