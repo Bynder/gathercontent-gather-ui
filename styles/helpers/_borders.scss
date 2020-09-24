@@ -1,5 +1,5 @@
 .pseudo-border-blue-2px {
-  @include before-border(
+  @include after-border(
     2px,
     solid,
     theme('colors.blue.primary'),
