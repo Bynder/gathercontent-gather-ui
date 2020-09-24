@@ -516,13 +516,13 @@ storiesOf('Components', module).add('Modals', () => (
             <ModalTrigger>
                 <Modal.Container size="large">
                     <Modal.HeaderWithNavigation title="Title!">
-                        <MenuItem active onClick={action('clickHandler')}>
+                        <MenuItem style={{bottom: '-3px'}} active onClick={action('clickHandler')}>
                             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
                             <div className="h-full w-full" role="menuitem" tabIndex={0}>
                                 Tab 1
                             </div>
                         </MenuItem>
-                        <MenuItem onClick={action('clickHandler')}>
+                        <MenuItem style={{bottom: '-3px'}} onClick={action('clickHandler')}>
                             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
                             <div className="h-full w-full" role="menuitem" tabIndex={0}>
                                 Tab 2
