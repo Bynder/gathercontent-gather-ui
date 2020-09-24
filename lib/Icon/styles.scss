@@ -125,6 +125,10 @@ $icon-active-color: $color-brand-blue !default;
   @apply fill-current;
 }
 
+.icon.icon--purple path {
+  @apply text-purple-primary fill-current #{!important};
+}
+
 button:active .icon--blue-on-button-parent-active path  {
   fill: $primary-blue;
 }
