@@ -136,6 +136,9 @@ module.exports = {
       transitionTimingFunction: {
         'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       },
+      transitionProperty: {
+        'mb': 'margin-bottom',
+      },
       opacity: {
         '30': 0.3
       },
@@ -249,7 +252,7 @@ module.exports = {
       'hover',
       'focus-within'
     ],
-    margin: ['responsive', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],
