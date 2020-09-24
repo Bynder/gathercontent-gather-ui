@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/lib/Col';
 import FormControl from 'react-bootstrap/lib/FormControl';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
 import ControlLabel from 'react-bootstrap/lib/ControlLabel';
+import MenuItem from "react-bootstrap/lib/MenuItem";
 import {
   Modal,
   Button,
@@ -19,6 +20,7 @@ import {
   ImageLoader
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
+import Navigation from "../../lib/Navigation";
 
 const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
 
@@ -475,24 +477,62 @@ storiesOf('Components', module).add('Modals', () => (
       </ModalTrigger>
     </StoryItem>
 
-    <StoryItem
-      title="Modal with ImageHeader"
-      description="Modal with ImageHeader to display an image."
-    >
-      <ModalTrigger>
-        <Modal.Container>
-          <Modal.ImageHeader height={401} imageUrl="https://metro.co.uk/wp-content/uploads/2017/07/187144066.jpg?quality=90&strip=all" />
-          <Modal.Body>Look at this lovely image ☝️</Modal.Body>
-          <Modal.Footer spaceBetween>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
-              Cancel
-            </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
-              Confirm
-            </Button>
-          </Modal.Footer>
-        </Modal.Container>
-      </ModalTrigger>
-    </StoryItem>
-  </div>
+        <StoryItem
+            title="Modal with ImageHeader"
+            description="Modal with ImageHeader to display an image."
+        >
+            <ModalTrigger>
+                <Modal.Container>
+                    <Modal.ImageHeader height={401}
+                                       imageUrl="https://metro.co.uk/wp-content/uploads/2017/07/187144066.jpg?quality=90&strip=all"/>
+                    <Modal.Body>Look at this lovely image ☝️</Modal.Body>
+                    <Modal.Footer spaceBetween>
+                        <Button types={['link']} clickHandler={action('clickHandler')}>
+                            Cancel
+                        </Button>
+                        <Button types={['primary']} clickHandler={action('clickHandler')}>
+                            Confirm
+                        </Button>
+                    </Modal.Footer>
+                </Modal.Container>
+            </ModalTrigger>
+        </StoryItem>
+
+        <StoryItem
+            title="Modal with ModalHeaderNavigation"
+            description="Modal with tabs in the header."
+        >
+            <ModalTrigger>
+                <Modal.Container size="large">
+                    <Modal.HeaderNavigation title="Title!">
+                        <Navigation tabs>
+                            <MenuItem active onClick={action('clickHandler')}>
+                                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+                                <div className="h-full w-full" role="menuitem" tabIndex={0} >
+                                    Tab 1
+                                </div>
+                            </MenuItem>
+                            <MenuItem onClick={action('clickHandler')}>
+                                {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+                                <div className="h-full w-full" role="menuitem" tabIndex={0} >
+                                    Tab 2
+                                </div>
+                            </MenuItem>
+                        </Navigation>
+                    </Modal.HeaderNavigation>
+                    <Modal.Body>Here is some body️</Modal.Body>
+                    <Modal.Footer spaceBetween>
+                        <Button types={['link']} clickHandler={action('clickHandler')}>
+                            Cancel
+                        </Button>
+                        <Button types={['primary']} clickHandler={action('clickHandler')}>
+                            Confirm
+                        </Button>
+                    </Modal.Fo
+
+                  oter>
+                </Modal.Container>
+            </ModalTrigger>
+        </StoryItem>
+    </div>
 ));
