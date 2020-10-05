@@ -1,0 +1,4 @@
+.selection-modal .modal-content {
+  @apply overflow-hidden flex flex-col;
+  min-height: calc(100vh - 60px);
+};

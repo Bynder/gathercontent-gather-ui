@@ -17,7 +17,9 @@ import {
     StatusIndicator,
     DueDatePicker,
     Icon,
-    ImageLoader
+    ImageLoader,
+    SelectionModal,
+    Checkbox
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import Navigation from "../../lib/Navigation";
@@ -540,6 +542,79 @@ storiesOf('Components', module).add('Modals', () => (
                     </Modal.Footer>
                 </Modal.Container>
             </ModalTrigger>
+        </StoryItem>
+        <StoryItem
+          title="SelectionModal"
+          description="SelectionModal can be used with other Modal components to create a selection layout"
+        >
+          <ModalTrigger>
+            <SelectionModal size="large">
+              <Modal.Header useTitle={false}>
+                <h3 className="text-lg mt-2 mb-3">Import templates</h3>
+                <p className="m-0 leading-6">Imported templates will be duplicated, meaning changes made to the originals won’t be reflected here. Any components will also be imported in the process.</p>
+              </Modal.Header>
+              <SelectionModal.Body>
+                <SelectionModal.Column isHighlight className="w-3/6 flex-shrink-0 px-4 pb-8">
+                  <SelectionModal.ColumnHeader className="mb-3">PROJECTS</SelectionModal.ColumnHeader>
+                  <SelectionModal.Category
+                    name="Project 1"
+                    subText="3 templates"
+                    isSelected
+                    counter={2}
+                    className="mb-2"
+                  />
+                  <SelectionModal.Category
+                    name="Project 2"
+                    subText="7 templates"
+                    isSelected={false}
+                    className="mb-2"
+                  />
+                  <SelectionModal.Category
+                    name="Project 3"
+                    subText="56 templates"
+                    isSelected={false}
+                    counter={10}
+                    className="mb-2"
+                  />
+                </SelectionModal.Column>
+                <SelectionModal.Column className="px-1 pb-8">
+                  <SelectionModal.ColumnHeader className="ml-2">TEMPLATES</SelectionModal.ColumnHeader>
+                  <Checkbox
+                    id="template 1"
+                    label="template 1"
+                    name="template 1"
+                    className="text-base"
+                  />
+                  <Checkbox
+                    id="template 2"
+                    label="template 2"
+                    name="template 2"
+                    className="text-base"
+                  />
+                  <Checkbox
+                    id="template 3"
+                    label="template 3"
+                    name="template 3"
+                    className="text-base"
+                  />
+                  <Checkbox
+                    id="template 4"
+                    label="template 4"
+                    name="template 4"
+                    className="text-base"
+                  />
+                </SelectionModal.Column>
+              </SelectionModal.Body>
+              <Modal.Footer spaceBetween>
+                <Button types={['link']} clickHandler={action('clickHandler')}>
+                  Cancel
+                </Button>
+                <Button types={['primary']} clickHandler={action('clickHandler')}>
+                  Confirm
+                </Button>
+                </Modal.Footer>
+            </SelectionModal>
+          </ModalTrigger>
         </StoryItem>
     </div>
 ));
