@@ -19,7 +19,8 @@ import {
     Icon,
     ImageLoader,
     SelectionModal,
-    Checkbox
+    Checkbox,
+    InputConfirmationModal
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import Navigation from "../../lib/Navigation";
@@ -614,6 +615,20 @@ storiesOf('Components', module).add('Modals', () => (
                 </Button>
                 </Modal.Footer>
             </SelectionModal>
+          </ModalTrigger>
+        </StoryItem>
+        <StoryItem
+          title="InputConfirmationModal"
+          description="A modal to make sure you are really sure that you want to do something."
+        >
+          <ModalTrigger>
+            <InputConfirmationModal
+              introTitle="Delete templates"
+              confirmTitle="Confirm deletion"
+              introBody="This template is currently being used. Any items using this template will be converted to use a custom structure. Are you sure you want to continue?"
+              confirmBody="Template deletion is permanent and cannot be undone. Please confirm you want to delete this template by typing ‘DELETE’ in the box below."
+              onConfirm={() => {}}
+            />
           </ModalTrigger>
         </StoryItem>
     </div>
