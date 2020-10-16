@@ -85,3 +85,4 @@ import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/Editabl
 import ColField from '../lib/ColField/stories/ColFieldStory';
 import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
 import '../lib/useDeferredList/stories/useDeferredListStory'
+import 'components/files/fileCard/stories/FileCardStory';
