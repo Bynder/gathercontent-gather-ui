@@ -120,6 +120,7 @@
     "react-dnd": "^9.3.2",
     "react-dnd-html5-backend": "^9.3.2",
     "react-dom": "^16.9.0",
+    "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
     "react-resize-detector": "^5.0.7",
     "react-select": "^3.1.0",

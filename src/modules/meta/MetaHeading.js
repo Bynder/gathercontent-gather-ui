@@ -4,7 +4,7 @@ import { useClassNames } from "../../hooks/useClassNames";
 
 function MetaHeading({ children, ...props }) {
   const classNames = useClassNames(
-    'meta-heading text-base text-neutral-20 font-roman mb-2',
+    'meta-heading text-base text-neutral-20 font-semi-bold mb-1',
     props
   );
 

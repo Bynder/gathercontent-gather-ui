@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 
 import Base from './base/Base';
+import 'components/files/fileCard/stories/FileCardStory';
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
@@ -85,4 +86,3 @@ import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/Editabl
 import ColField from '../lib/ColField/stories/ColFieldStory';
 import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
 import '../lib/useDeferredList/stories/useDeferredListStory'
-import 'components/files/fileCard/stories/FileCardStory';

@@ -6,7 +6,7 @@
 }
 .card__inner {
   border: 1px solid $color-border-base;
-  border-radius: $layout-spacing-base/4;
+  border-radius: $border-radius-base;
   display: flex;
   flex-direction: column;
   font-size: $typo-size-small;

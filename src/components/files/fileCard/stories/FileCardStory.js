@@ -1,18 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pill, Meta, FileCard } from 'lib';
-import { boolean, text, withKnobs } from "@storybook/addon-knobs";
+import { Pill, Meta, FileCard, Thumb } from 'lib';
 import StoryItem from 'stories/styleguide/StoryItem';
+import { boolean, withKnobs } from "@storybook/addon-knobs";
 
 const stories = storiesOf('Components/Files', module);
 stories.addDecorator(withKnobs);
 
 stories.add('FileCard', () => {
-  // const label = text('Field label', 'Field label text');
-  // const isRepeatable = boolean('Is repeatable?', true);
+  const insetMeta = boolean(
+    'Inset meta',
+    false,
+    ''
+  );
 
   const thumb = (
-    <div>thumb</div>
+    <Thumb src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922&h=300" />
   );
 
   const meta = (
@@ -37,9 +40,17 @@ stories.add('FileCard', () => {
   return (
     <StoryItem
       title="FileCard"
-      description="..."
+      description="A card component which utilises the thumb, meta and control modules to display a file."
     >
-      <FileCard thumb={thumb} meta={meta} />
+      <ul className="list-none grid p-0 m-0 tw grid-cols-2 sm:grid-cols-4 gap-4">
+        <li>
+          <FileCard
+            thumb={thumb}
+            meta={meta}
+            insetMeta={insetMeta}
+          />
+        </li>
+      </ul>
     </StoryItem>
   );
 });
