@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pill, Meta, FileCard, Thumb, Controls, ButtonIcon } from "lib";
+import { Pill, Meta, FileCard, Thumb, Controls } from "lib";
 import StoryItem from 'stories/styleguide/StoryItem';
 import { boolean, withKnobs } from "@storybook/addon-knobs";
-import commentsMulti16 from "../../../../../assets/icons/commentsMulti-16.svg";
 
 const stories = storiesOf('Components/Files', module);
 stories.addDecorator(withKnobs);
