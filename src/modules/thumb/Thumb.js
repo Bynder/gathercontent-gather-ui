@@ -56,7 +56,9 @@ function Thumb({ src, altText, title, fallback, children, ...props }) {
           { imageHasFailed && fallback }
         </div>
 
-        {children}
+        <div className="thumb-children absolute top-0 m-2">
+          {children}
+        </div>
       </div>
     </div>
   );

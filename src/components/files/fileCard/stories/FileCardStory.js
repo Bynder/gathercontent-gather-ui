@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pill, Meta, FileCard, Thumb } from 'lib';
+import { Pill, Meta, FileCard, Thumb, Controls, ButtonIcon } from "lib";
 import StoryItem from 'stories/styleguide/StoryItem';
 import { boolean, withKnobs } from "@storybook/addon-knobs";
+import commentsMulti16 from "../../../../../assets/icons/commentsMulti-16.svg";
 
 const stories = storiesOf('Components/Files', module);
 stories.addDecorator(withKnobs);
@@ -14,8 +15,20 @@ stories.add('FileCard', () => {
     ''
   );
 
+  const controls = (
+    <Controls>
+      <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
+      <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
+      <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
+      <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
+      <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
+    </Controls>
+  );
+
   const thumb = (
-    <Thumb src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922&h=300" />
+    <Thumb src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922&h=300">
+      {controls}
+    </Thumb>
   );
 
   const meta = (
