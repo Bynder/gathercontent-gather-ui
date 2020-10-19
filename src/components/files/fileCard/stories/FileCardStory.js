@@ -54,7 +54,7 @@ stories.add('FileCard', () => {
       title="FileCard"
       description="A card component which utilises the thumb, meta and control modules to display a file."
     >
-      <ul className="list-none grid p-0 m-0 tw grid-cols-2 sm:grid-cols-4 gap-4">
+      <ul className="list-none grid p-0 m-0 tw grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         <li>
           <FileCard
             thumb={thumb}

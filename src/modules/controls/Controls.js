@@ -1,10 +1,12 @@
 import React from 'react';
-import { node } from "prop-types";
+import { bool, node } from "prop-types";
 import { createClassNames } from "helpers/createClassNames";
 import { Control } from "./Control";
 
-function Controls({ children, ...props }) {
-  const classNames = createClassNames('controls relative flex -mt-10 group-hover:mt-0 transition-mt duration-200', props);
+function Controls({ children, animateFromTop, ...props }) {
+  const classNames = createClassNames('controls relative flex', props, {
+    '-mt-10 group-hover:mt-0 transition-mt duration-200': animateFromTop,
+  });
 
   return (
     <div className={classNames}>
@@ -17,6 +19,11 @@ Controls.Control = Control;
 
 Controls.propTypes = {
   children: node.isRequired,
+  animateFromTop: bool,
 };
+
+Controls.defaultProps = {
+  animateFromTop: true,
+}
 
 export { Controls };
