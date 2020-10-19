@@ -15,7 +15,7 @@ stories.add('FileCard', () => {
   );
 
   const controls = (
-    <Controls>
+    <Controls animateFromTop>
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
@@ -47,7 +47,7 @@ stories.add('FileCard', () => {
         1.4 MB
       </Meta.Footer>
     </Meta>
-  )
+  );
 
   return (
     <StoryItem

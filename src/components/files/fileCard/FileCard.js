@@ -4,7 +4,7 @@ import Card from 'lib/Card';
 import { createClassNames } from "helpers/createClassNames";
 
 function FileCard({ thumb, meta, insetMeta, ...cardProps }) {
-  const cardClassNames = createClassNames('file-card group overflow-hidden', cardProps);
+  const cardClassNames = createClassNames('file-card group shadow-small', cardProps);
 
   const metaContainerClassNames = createClassNames('', {}, {
     'absolute bottom-0 w-full bg-white -mb-40 group-hover:mb-0 transition-mb duration-200': insetMeta,

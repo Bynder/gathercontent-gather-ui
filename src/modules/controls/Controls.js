@@ -23,7 +23,7 @@ Controls.propTypes = {
 };
 
 Controls.defaultProps = {
-  animateFromTop: true,
+  animateFromTop: false,
 }
 
 export { Controls };
