@@ -76,6 +76,7 @@ import '../lib/ButtonNew/stories/ButtonIcon/ButtonIcon';
 import '../lib/ButtonNew/stories/ButtonLink/ButtonLink';
 import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDanger';
 import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconBubble';
+import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDark';
 import '../lib/Toolbar/stories/Toolbar';
 import '../lib/OptionMenu/stories/OptionMenu';
 import '../lib/Select/stories/Select';
