@@ -6,7 +6,7 @@ import { createClassNames } from "helpers/createClassNames";
 function FileCard({ thumb, meta, insetMeta, ...cardProps }) {
   const cardClassNames = createClassNames('file-card group shadow-small', cardProps);
 
-  const metaContainerClassNames = createClassNames('', {}, {
+  const metaContainerClassNames = createClassNames('border border-neutral-90 border-solid border-b-0 border-l-0 border-r-0', {}, {
     'absolute bottom-0 w-full bg-white -mb-40 group-hover:mb-0 transition-mb duration-200': insetMeta,
   });
 
@@ -24,7 +24,7 @@ function FileCard({ thumb, meta, insetMeta, ...cardProps }) {
         {meta}
       </Card.Content>
     </Card>
-  )
+  );
 }
 
 FileCard.propTypes = {

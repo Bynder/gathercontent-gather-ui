@@ -1,7 +1,7 @@
 import React from 'react';
 import { func, string } from "prop-types";
+import { ButtonContainedIcon } from "lib";
 import { createClassNames } from "helpers/createClassNames";
-import { ButtonIcon } from "lib";
 
 function Control({ onClick, iconName, children, ...props }) {
   const classNames = createClassNames('control flex mr-2', props);
@@ -9,7 +9,7 @@ function Control({ onClick, iconName, children, ...props }) {
   return (
     <div className={classNames}>
       {children || (
-        <ButtonIcon name={iconName} onClick={onClick} size="sm" className="bg-white rounded-small" />
+        <ButtonContainedIcon name={iconName} onClick={onClick} size="sm" contained />
       )}
     </div>
   )

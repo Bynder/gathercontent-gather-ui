@@ -15,7 +15,7 @@ stories.add('FileCard', () => {
   );
 
   const controls = (
-    <Controls animateFromTop>
+    <Controls animateFromTopp>
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
       <Controls.Control iconName="commentsMulti16" onClick={() => {}} />
@@ -25,7 +25,7 @@ stories.add('FileCard', () => {
   );
 
   const thumb = (
-    <Thumb src="https://icelanddefrosted.files.wordpress.com/2013/09/20130926-144345.jpg?w=922&h=300">
+    <Thumb src="https://icelanddefrosted.files.wordpress.com/201asd3/09/20130926-144345.jpg?w=922&h=300">
       {controls}
     </Thumb>
   );
