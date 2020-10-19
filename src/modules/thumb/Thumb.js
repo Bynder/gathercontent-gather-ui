@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { node, string } from "prop-types";
 import { useImage } from 'react-image'
-import { useClassNames } from "src/hooks/useClassNames";
+import { createClassNames } from "helpers/createClassNames";
 import Icon from "lib/Icon";
 import bolt from "../../../assets/icons/bolt.svg";
 
@@ -20,11 +20,11 @@ function Thumb({ src, altText, title, fallback, children, ...props }) {
   const imageHasFailed = minimumLoadingTimeSurpassed && image.error && !image.isLoading;
 
   const commonAbsoluteLayoutClasses = 'absolute top-0 w-full h-full';
-  const classNames = useClassNames(
+  const classNames = createClassNames(
     'thumb relative flex overflow-hidden w-full h-full pb-100%',
     props
   );
-  const previewClassNames = useClassNames(
+  const previewClassNames = createClassNames(
     `${commonAbsoluteLayoutClasses} bg-cover bg-center pb-100% transition-opacity duration-300 opacity-0`,
     {}, {
       'opacity-100': imageHasSucceeded,

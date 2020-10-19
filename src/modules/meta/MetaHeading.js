@@ -1,9 +1,9 @@
 import React from 'react';
 import { node } from "prop-types";
-import { useClassNames } from "../../hooks/useClassNames";
+import { createClassNames } from "helpers/createClassNames";
 
 function MetaHeading({ children, ...props }) {
-  const classNames = useClassNames(
+  const classNames = createClassNames(
     'meta-heading text-base text-neutral-20 font-semi-bold mb-1',
     props
   );

@@ -1,12 +1,12 @@
 import React from 'react';
 import { node } from "prop-types";
-import { useClassNames } from "../../hooks/useClassNames";
+import { createClassNames } from "helpers/createClassNames";
 import { MetaHeading } from "./MetaHeading";
 import { MetaText } from "./MetaText";
 import { MetaFooter } from "./MetaFooter";
 
 function Meta({ children, ...props }) {
-  const classNames = useClassNames('meta', props);
+  const classNames = createClassNames('meta', props);
 
   return (
     <div className={classNames}>

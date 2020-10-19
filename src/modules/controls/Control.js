@@ -1,10 +1,10 @@
 import React from 'react';
 import { func, string } from "prop-types";
-import { useClassNames } from "src/hooks/useClassNames";
+import { createClassNames } from "helpers/createClassNames";
 import { ButtonIcon } from "lib";
 
 function Control({ onClick, iconName, children, ...props }) {
-  const classNames = useClassNames('control flex mr-2', props);
+  const classNames = createClassNames('control flex mr-2', props);
 
   return (
     <div className={classNames}>

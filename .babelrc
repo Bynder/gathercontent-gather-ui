@@ -47,7 +47,8 @@
           "stories": "./stories",
           "src": "./src",
           "components": "./src/components",
-          "modules": "./src/modules"
+          "modules": "./src/modules",
+          "helpers": "./src/helpers"
         }
       }
     ]

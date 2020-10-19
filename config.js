@@ -6,5 +6,6 @@ System.config({
     "src": "./src",
     "components": "./src/components",
     "modules": "./src/modules",
+    "helpers": "./src/helpers",
   }
 });
