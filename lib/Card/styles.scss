@@ -1,3 +1,9 @@
+.card {
+  padding: 1px;
+  &--selected {
+    padding: 0;
+  }
+}
 .card__inner {
   border: 1px solid $color-border-base;
   border-radius: $border-radius-base;
