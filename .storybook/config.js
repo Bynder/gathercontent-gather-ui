@@ -6,7 +6,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 require('../styles/bootstrap/_bootstrap.scss');
 require('../styles/styleguide/main.scss');
 require('../styles/dev.scss');
-require('../styles/dev-tailwind.css');
+require('../styles/dev-tailwind-utilities.css');
 require('font-awesome/css/font-awesome.css');
 
 function loadStories() {
