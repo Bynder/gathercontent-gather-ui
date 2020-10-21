@@ -42,7 +42,7 @@
     }
   ],
   "scripts": {
-    "copy-tailwind": "tailwind build styles/tailwind.css -o dist/styles/tailwind.css",
+    "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
