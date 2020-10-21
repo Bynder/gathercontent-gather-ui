@@ -1,9 +1,2 @@
 @tailwind base;
 @tailwind components;
-
-.inherit-color-icon .icon path {
-    @apply fill-current;
-}
-.inherit-color-link a {
-    @apply text-current;
-}
