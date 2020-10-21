@@ -1,0 +1,42 @@
+.button-icon {
+  @apply p-0 items-center justify-center bg-transparent border-transparent;
+
+  &:focus {
+    @apply border-blue-primary shadow-button-icon-focus;
+  }
+
+  &:hover {
+    @apply bg-neutral-95 border-neutral-95;
+  }
+
+  &:disabled {
+    @apply opacity-30 border-transparent bg-transparent;
+  }
+}
+
+.button-icon:active,
+.button-icon.button-icon-active, {
+  @apply bg-blue-90 border-blue-90 shadow-none;
+
+  &:hover {
+    @apply bg-blue-95;
+  }
+
+  path {
+    fill: theme('colors.blue.primary');
+  }
+}
+
+.button-icon-enabled {
+  &:hover {
+    @apply bg-green-95;
+  }
+
+  &:focus {
+    @apply border-green-primary shadow-button-icon-enabled-focus;
+  }
+
+  path {
+    fill: theme('colors.green.primary');
+  }
+}
