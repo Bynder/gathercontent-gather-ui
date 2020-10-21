@@ -42,20 +42,20 @@
     }
   ],
   "scripts": {
-    "copy-tailwind": "tailwind build styles/tailwind.css -o dist/styles/tailwind.css",
-    "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/ && copyfiles styles/main.scss dist/ && copyfiles styles/bootstrap.scss dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/",
+    "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
+    "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/**/* dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "yarn build:lib && yarn build:tailwind:config",
-    "build:with:styles": "yarn build && yarn run copy-styles",
-    "prepublish": "yarn run build:with:styles",
+    "build:with:styles": "yarn build && yarn copy-styles",
+    "prepublish": "yarn build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest --notify || exit 0",
     "test:cc": "jest --clearCache",
     "test:watch": "jest --notify --watch",
     "test:ci": "jest --runInBand",
-    "tdd": "yarn run test:watch",
+    "tdd": "yarn test:watch",
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
     "link:react": "cd ../app/webapp/node_modules/react && yarn link && cd ../../../../gather-ui && yarn link \"react\"",
     "unlink:react": "yarn unlink \"react\" && cd ../app/webapp/node_modules/react && yarn unlink && cd ../../../../gather-ui && yarn install --check-files",
@@ -72,7 +72,7 @@
   },
   "lint-staged": {
     "{lib,tests,stories/webapp}/**/*.js": [
-      "yarn run prettier --write",
+      "yarn prettier --write",
       "eslint -c .eslintrc.json --fix",
       "git add"
     ]
