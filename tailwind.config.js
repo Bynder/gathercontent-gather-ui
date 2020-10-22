@@ -147,7 +147,8 @@ module.exports = {
         '66': '17rem'
       },
       spacing: {
-        '05': '0.375rem'
+        '05': '0.375rem',
+        '100%': '100%',
       },
       cursor: {
         grab: 'grab'
@@ -265,7 +266,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
-    justifyContent: ['group-hover']
+    justifyContent: ['group-hover'],
   },
   plugins: [
     require('tailwindcss-plugins/gradients'),

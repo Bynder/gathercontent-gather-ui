@@ -43,7 +43,7 @@
   ],
   "scripts": {
     "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
-    "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/*/*.scss dist/",
+    "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "yarn build:lib && yarn build:tailwind:config",
@@ -120,6 +120,7 @@
     "react-dnd": "^9.3.2",
     "react-dnd-html5-backend": "^9.3.2",
     "react-dom": "^16.9.0",
+    "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
     "react-resize-detector": "^5.0.7",
     "react-select": "^3.1.0",
