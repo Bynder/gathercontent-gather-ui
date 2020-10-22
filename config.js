@@ -3,9 +3,10 @@ System.config({
     "lib": "./lib",
     "tests": "./tests",
     "stories": "./stories",
-    "src": "./src",
-    "components": "./src/components",
-    "modules": "./src/modules",
-    "helpers": "./src/helpers",
+    "src": "./lib/src",
+    "components": "./lib/src/components",
+    "modules": "./lib/src/modules",
+    "helpers": "./lib/src/helpers",
+    "assets": "./assets",
   }
 });
