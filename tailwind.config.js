@@ -7,6 +7,7 @@ const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
 const neutral20 = '#29333D';
+const neutral40 = '#52667A';
 const neutral80 = '#C2CCD6';
 const neutral90 = '#E1E6EB';
 
@@ -53,6 +54,7 @@ module.exports = {
       'button-icon-danger-focus': `0px 0px 0px 3px ${red80}`,
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
       'button-icon-enabled-focus': `0px 0px 0px 3px ${green80}`,
+      'button-icon-dark-focus': `0px 0px 0px 3px ${neutral40}`,
 
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
@@ -128,7 +130,7 @@ module.exports = {
           '70': '#A4B3C2',
           '60': '#8599AD',
           primary: '#678099',
-          '40': '#52667A',
+          '40': neutral40,
           '30': '#3E4D5C',
           '20': neutral20
         }
