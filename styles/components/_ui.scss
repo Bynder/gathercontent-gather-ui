@@ -1,6 +1,3 @@
-@import '../../lib/ButtonNew/ButtonIcon/styles/buttonIcon';
-@import '../../lib/src/modules/preview/styles/previewImage';
-
 @import '../../lib/Icon/styles.scss';
 @import '../../lib/BoundaryClickWatcher/styles.scss';
 @import '../../lib/Button/styles.scss';
@@ -80,3 +77,8 @@
 @import '../../lib/ColField/styles.scss';
 @import '../../lib/SelectionModal/styles.scss';
 @import '../../lib/InputConfirmationModal/styles.scss';
+
+@import '../../lib/ButtonNew/ButtonIcon/styles/buttonIcon';
+
+@import '../../lib/src/modules/preview/previewImage';
+@import '../../lib/src/modules/loader/loader';

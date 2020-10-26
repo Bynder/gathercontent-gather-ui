@@ -11,6 +11,8 @@ import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
 import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 
+import 'lib/src/modules/loader/LoaderStory';
+
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
