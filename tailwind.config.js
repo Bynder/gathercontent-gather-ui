@@ -129,7 +129,7 @@ module.exports = {
           '80': neutral80,
           '70': '#A4B3C2',
           '60': '#8599AD',
-          primary: '#678099',
+          primary: '#678098',
           '40': neutral40,
           '30': '#3E4D5C',
           '20': neutral20
