@@ -1,10 +1,6 @@
 .button-icon-contained {
   @apply border border-solid border-neutral-90 bg-white;
 
-  path {
-    fill: theme('colors.neutral.primary');
-  }
-
   &:hover:not([disabled]) {
     @apply bg-blue-90 border-blue-primary;
 
