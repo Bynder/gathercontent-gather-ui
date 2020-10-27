@@ -1,10 +1,10 @@
 import { React, shallow } from '../setup';
 import { Card } from '../../lib';
-import CardContent from '../../lib/Card/CardContent';
-import CardFooter from '../../lib/Card/CardFooter';
+import CardContent from '../../lib/src/components/card/CardContent';
+import CardFooter from '../../lib/src/components/card/CardFooter';
 import CardFooterLeft from '../../lib/Card/CardFooterLeft';
 import CardFooterRight from '../../lib/Card/CardFooterRight';
-import CardSubHeading from '../../lib/Card/CardSubHeading';
+import CardSubHeading from '../../lib/src/components/card/CardSubHeading';
 
 describe('Card', () => {
   let wrapper;

@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import CardSubHeading from '../../lib/Card/CardSubHeading';
+import CardSubHeading from '../../lib/src/components/card/CardSubHeading';
 
 describe('Card Sub Heading', () => {
   let wrapper;

@@ -51,7 +51,6 @@
 @import '../../lib/UserSearchDropdown/styles.scss';
 @import '../../lib/MentionsForm/styles.scss';
 @import '../../lib/TagUserForm/styles.scss';
-@import '../../lib/Card/styles.scss';
 @import '../../lib/Breadcrumb/styles.scss';
 @import '../../lib/ConfirmationDropdown/styles.scss';
 @import '../../lib/SelectionBar/styles.scss';
@@ -80,5 +79,8 @@
 
 @import '../../lib/ButtonNew/ButtonIcon/styles/buttonIcon';
 
+@import '../../lib/src/components/card/card';
+
 @import '../../lib/src/modules/preview/previewImage';
 @import '../../lib/src/modules/loader/loader';
+@import '../../lib/src/modules/meta/meta';

@@ -1,0 +1,65 @@
+.card {
+  @apply rounded-small shadow-small;
+}
+
+.card-inner {
+  @apply flex flex-col rounded-small bg-white;
+  @apply border border-solid border-neutral-90;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.card-content {
+  @apply p-2;
+}
+
+.card-interactive {
+  cursor: pointer;
+
+  &:focus .card-inner {
+    @apply shadow-button-primary-focus;
+  }
+}
+
+.card-selected {
+  .card-inner {
+    @apply shadow-blue-primary-2px border-blue-primary;
+  }
+
+  &:hover .card-inner {
+    @apply shadow-blue-primary-4px;
+  }
+}
+
+.card-highlighted {
+  .card-inner {
+    @apply shadow-yellow-primary-2px border-yellow-primary;
+  }
+
+  &:hover .card-inner {
+    @apply shadow-yellow-primary-4px;
+  }
+}
+
+.card-added {
+  .card-inner {
+    @apply bg-green-primary shadow-green-primary-2px border-green-primary;
+  }
+
+  .card-content {
+    @apply opacity-50;
+  }
+}
+
+.card-removed {
+  .card-inner {
+    @apply bg-red-primary shadow-red-primary-2px border-red-primary;
+  }
+
+  .card-content {
+    @apply opacity-50;
+  }
+}

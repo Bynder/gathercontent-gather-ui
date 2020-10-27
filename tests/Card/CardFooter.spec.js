@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import CardFooter from '../../lib/Card/CardFooter';
+import CardFooter from '../../lib/src/components/card/CardFooter';
 
 describe('Card Footer', () => {
   let wrapper;

@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import CardContent from '../../lib/Card/CardContent';
+import CardContent from '../../lib/src/components/card/CardContent';
 
 describe('Card Content', () => {
   let wrapper;
