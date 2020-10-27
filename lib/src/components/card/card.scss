@@ -29,7 +29,8 @@
     @apply shadow-blue-primary-2px border-blue-primary;
   }
 
-  &:hover .card-inner {
+  &:hover .card-inner,
+  &:focus .card-inner {
     @apply shadow-blue-primary-4px;
   }
 }
@@ -39,7 +40,8 @@
     @apply shadow-yellow-primary-2px border-yellow-primary;
   }
 
-  &:hover .card-inner {
+  &:hover .card-inner,
+  &:focus .card-inner {
     @apply shadow-yellow-primary-4px;
   }
 }
@@ -61,5 +63,27 @@
 
   .card-content {
     @apply opacity-50;
+  }
+}
+
+.card-disabled .card-content {
+  @supports (filter: blur()) {
+    @apply transition-all duration-200;
+    filter: blur(3px);
+  }
+}
+
+.card-controls {
+  @apply absolute top-0 p-2 -mt-10 transition-all duration-200;
+}
+
+.card:not(.card-disabled) {
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus-within {
+    .card-controls {
+      @apply mt-0;
+    }
   }
 }
