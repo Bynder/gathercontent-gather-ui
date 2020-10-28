@@ -147,3 +147,29 @@
     pointer-events: none;
   }
 }
+
+/**
+ * A border that appears in the `after` element - this may be useful if the content messes with z-indexes
+ */
+@mixin after-border($pixelSize, $style, $colour, $radius) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: $pixelSize $style $colour;
+    border-radius: $radius;
+    pointer-events: none;
+  }
+}
+
+@mixin gradient-overflow($toColour) {
+  @apply relative overflow-hidden whitespace-no-wrap;
+  &:before {
+    @apply absolute right-0 w-8 h-full;
+    background-image: linear-gradient(to right, rgba(255,255,255,0), $toColour 90%);
+    content: ' ';
+  }
+}

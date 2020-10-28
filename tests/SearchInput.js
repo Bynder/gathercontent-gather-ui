@@ -14,7 +14,6 @@ describe('SearchInput', () => {
     const input = wrapper.find('input');
 
     expect(input).toHaveLength(1);
-    expect(input.props().className).toEqual('search-input__input');
   });
 
   test('can have an initial value', () => {

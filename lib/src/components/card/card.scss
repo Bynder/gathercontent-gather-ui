@@ -1,0 +1,83 @@
+.card {
+  @apply rounded-small shadow-small;
+}
+
+.card-inner {
+  @apply flex flex-col rounded-small bg-white;
+  @apply border border-solid border-neutral-90;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.card-content {
+  @apply p-2;
+}
+
+.card-interactive {
+  cursor: pointer;
+
+  &:focus .card-inner {
+    @apply shadow-button-primary-focus;
+  }
+}
+
+.card-selected {
+  .card-inner {
+    @apply shadow-blue-primary-1px border-blue-primary;
+  }
+
+  &:hover .card-inner,
+  &:focus .card-inner,
+  &.card-active .card-inner {
+    @apply shadow-blue-primary-2px;
+  }
+}
+
+.card-highlighted {
+  .card-inner {
+    @apply shadow-yellow-primary-1px border-yellow-primary;
+  }
+
+  &:hover .card-inner,
+  &:focus .card-inner,
+  &.card-active .card-inner {
+    @apply shadow-yellow-primary-3px;
+  }
+}
+
+.card-added {
+  .card-inner {
+    @apply shadow-green-primary-1px border-green-primary;
+  }
+}
+
+.card-removed {
+  .card-inner {
+    @apply shadow-red-primary-1px border-red-primary;
+  }
+}
+
+.card-disabled .card-content {
+  @supports (filter: blur()) {
+    @apply transition-all duration-200;
+    filter: blur(3px);
+  }
+}
+
+.card-controls {
+  @apply absolute top-0 p-2 -mt-10 transition-all duration-200;
+}
+
+.card:not(.card-disabled) {
+  &:active,
+  &:hover,
+  &:focus,
+  &:focus-within {
+    .card-controls {
+      @apply mt-0;
+    }
+  }
+}

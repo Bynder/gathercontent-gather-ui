@@ -1,0 +1,15 @@
+.modal--input-confirm {
+  .modal-header-inner,
+  .modal-footer {
+    @apply p-0;
+  }
+  .modal-body {
+    @apply px-0 leading-6;
+  }
+  .modal-content {
+    @apply p-6;
+  }
+  .modal-header .close {
+    @apply static;
+  }
+}
