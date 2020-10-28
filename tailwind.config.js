@@ -62,17 +62,21 @@ module.exports = {
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
 
+      'yellow-primary-1px': `0px 0px 0px 1px ${yellowPrimary}`,
       'yellow-primary-2px': `0px 0px 0px 2px ${yellowPrimary}`,
-      'yellow-primary-4px': `0px 0px 0px 4px ${yellowPrimary}`,
+      'yellow-primary-3px': `0px 0px 0px 3px ${yellowPrimary}`,
 
+      'blue-primary-1px': `0px 0px 0px 1px ${bluePrimary}`,
       'blue-primary-2px': `0px 0px 0px 2px ${bluePrimary}`,
-      'blue-primary-4px': `0px 0px 0px 4px ${bluePrimary}`,
+      'blue-primary-3px': `0px 0px 0px 3px ${bluePrimary}`,
 
+      'green-primary-1px': `0px 0px 0px 1px ${greenPrimary}`,
       'green-primary-2px': `0px 0px 0px 2px ${greenPrimary}`,
-      'green-primary-4px': `0px 0px 0px 4px ${greenPrimary}`,
+      'green-primary-3px': `0px 0px 0px 3px ${greenPrimary}`,
 
+      'red-primary-1px': `0px 0px 0px 1px ${redPrimary}`,
       'red-primary-2px': `0px 0px 0px 2px ${redPrimary}`,
-      'red-primary-4px': `0px 0px 0px 4px ${redPrimary}`,
+      'red-primary-3px': `0px 0px 0px 3px ${redPrimary}`,
       none: 'none'
     },
     extend: {

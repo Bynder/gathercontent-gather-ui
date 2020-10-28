@@ -26,43 +26,37 @@
 
 .card-selected {
   .card-inner {
-    @apply shadow-blue-primary-2px border-blue-primary;
+    @apply shadow-blue-primary-1px border-blue-primary;
   }
 
   &:hover .card-inner,
-  &:focus .card-inner {
-    @apply shadow-blue-primary-4px;
+  &:focus .card-inner,
+  &.card-active .card-inner {
+    @apply shadow-blue-primary-2px;
   }
 }
 
 .card-highlighted {
   .card-inner {
-    @apply shadow-yellow-primary-2px border-yellow-primary;
+    @apply shadow-yellow-primary-1px border-yellow-primary;
   }
 
   &:hover .card-inner,
-  &:focus .card-inner {
-    @apply shadow-yellow-primary-4px;
+  &:focus .card-inner,
+  &.card-active .card-inner {
+    @apply shadow-yellow-primary-3px;
   }
 }
 
 .card-added {
   .card-inner {
-    @apply bg-green-primary shadow-green-primary-2px border-green-primary;
-  }
-
-  .card-content {
-    @apply opacity-50;
+    @apply shadow-green-primary-1px border-green-primary;
   }
 }
 
 .card-removed {
   .card-inner {
-    @apply bg-red-primary shadow-red-primary-2px border-red-primary;
-  }
-
-  .card-content {
-    @apply opacity-50;
+    @apply shadow-red-primary-1px border-red-primary;
   }
 }
 
