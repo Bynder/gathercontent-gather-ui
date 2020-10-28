@@ -1,0 +1,17 @@
+.file-card-meta {
+  @apply border border-neutral-90 border-solid border-b-0 border-l-0 border-r-0;
+}
+
+.file-card-inset-meta {
+  .file-card-meta {
+    @apply absolute bottom-0 w-full bg-white -mb-40;
+  }
+
+  &:not(.card-disabled) {
+    &:focus .file-card-meta,
+    &:hover .file-card-meta,
+    &:focus-within .file-card-meta, {
+      @apply mb-0 transition-mb duration-200;
+    }
+  }
+}

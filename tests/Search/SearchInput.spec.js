@@ -44,13 +44,6 @@ describe('SearchInput', () => {
     );
   });
 
-  test('adds a .is-focus class', () => {
-    expect(wrapper.hasClass('is-focus')).toBe(false);
-    wrapper.setProps({ showBody: true });
-    wrapper.update();
-    expect(wrapper.render().hasClass('is-focus')).toBe(true);
-  });
-
   test('handles a change', () => {
     let mockEvent = { target: { value: 'waff' } };
     wrapper.instance().handleChange(mockEvent);

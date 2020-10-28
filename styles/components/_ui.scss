@@ -14,7 +14,6 @@
 @import '../../lib/ProgressButton/styles.scss';
 @import '../../lib/PricingPlan/styles.scss';
 @import '../../lib/Table/Heading/styles.scss';
-@import '../../lib/SearchInput/styles.scss';
 @import '../../lib/Carousel/styles.scss';
 @import '../../lib/Modal/styles.scss';
 @import '../../lib/DropdownSwitcher/styles.scss';
@@ -52,7 +51,6 @@
 @import '../../lib/UserSearchDropdown/styles.scss';
 @import '../../lib/MentionsForm/styles.scss';
 @import '../../lib/TagUserForm/styles.scss';
-@import '../../lib/Card/styles.scss';
 @import '../../lib/Breadcrumb/styles.scss';
 @import '../../lib/ConfirmationDropdown/styles.scss';
 @import '../../lib/SelectionBar/styles.scss';
@@ -75,3 +73,14 @@
 @import '../../lib/Comment/styles.scss';
 @import '../../lib/TabsNew/styles.scss';
 @import '../../lib/Counter/styles.scss';
+@import '../../lib/ColField/styles.scss';
+@import '../../lib/SelectionModal/styles.scss';
+@import '../../lib/InputConfirmationModal/styles.scss';
+
+@import '../../lib/ButtonNew/styles/styles.scss';
+
+@import '../../lib/src/components/card/card';
+@import '../../lib/src/components/files/fileCard/fileCard';
+
+@import '../../lib/src/modules/preview/previewImage';
+@import '../../lib/src/modules/loader/loader';
