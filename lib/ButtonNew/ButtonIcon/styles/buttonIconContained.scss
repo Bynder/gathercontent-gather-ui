@@ -1,0 +1,16 @@
+.button-icon-contained {
+  @apply border border-solid border-neutral-90 bg-white;
+
+  &:hover:not([disabled]) {
+    @apply bg-blue-90 border-blue-primary;
+
+    path {
+      fill: theme('colors.blue.primary');
+    }
+  }
+}
+
+.button-icon-contained:active,
+.button-icon-contained.button-icon-active {
+  @apply border-blue-primary;
+}

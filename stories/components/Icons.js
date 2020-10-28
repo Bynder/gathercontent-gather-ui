@@ -89,6 +89,14 @@ const allIcons = additionalProps => (
     <Icon name="clipboard16" {...additionalProps} />
     <Icon name="item16" {...additionalProps} />
     <Icon name="newComment" {...additionalProps} />
+    <Icon name="repeatable" {...additionalProps} />
+    <Icon name="plaintext" {...additionalProps} />
+    <Icon name="textlimit" {...additionalProps} />
+    <Icon name="otheroption" {...additionalProps} />
+    <Icon name="template16" {...additionalProps} />
+    <Icon name="component16" {...additionalProps} />
+    <Icon name="bolt" {...additionalProps} />
+    <Icon name="unusedTemplate16" {...additionalProps} />
   </div>
 );
 

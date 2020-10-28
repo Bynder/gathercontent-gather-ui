@@ -24,6 +24,9 @@
       { "customValidators": [], "skipShapeProps": true }
     ],
     "new-cap": ["error", { "capIsNewExceptions": ["Intercom"] }],
+    "react/prop-types": [{
+      "expections": ["className", "children"]
+    }],
     "react/no-danger": [0],
     "react/no-unescaped-entities": [0],
     "react/sort-comp": [

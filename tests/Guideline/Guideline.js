@@ -21,7 +21,7 @@ describe('Guideline', () => {
   });
 
   test('toggles an active class', () => {
-    wrapper.setState({ showContent: false });
+    wrapper.find(Button).simulate('click');
     expect(wrapper.hasClass('is-active')).toBe(false);
   });
 
@@ -32,7 +32,7 @@ describe('Guideline', () => {
 
   test('switches the text for the show toggle', () => {
     expect(wrapper.find(Button).prop('children')).toEqual('Hide guidelines');
-    wrapper.setState({ showContent: false });
+    wrapper.find(Button).simulate('click');
     expect(wrapper.find(Button).prop('children')).toEqual('Show guidelines');
   });
 
@@ -46,7 +46,7 @@ describe('Guideline', () => {
     expect(wrapper.find('.guideline__body').prop('style')).toEqual({
       maxHeight: 120
     });
-    wrapper.setState({ showContent: false });
+    wrapper.find(Button).simulate('click');
     expect(wrapper.find('.guideline__body').prop('style')).toEqual(null);
   });
 

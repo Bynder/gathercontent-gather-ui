@@ -7,8 +7,14 @@ const red80 = '#F5A3AA';
 const redPrimary = '#E51A2B';
 
 const neutral20 = '#29333D';
+const neutral40 = '#52667A';
 const neutral80 = '#C2CCD6';
 const neutral90 = '#E1E6EB';
+
+const green80 = '#B0E8B0';
+const greenPrimary = '#39C639';
+
+const yellowPrimary = '#F9D006';
 
 module.exports = {
   important: true,
@@ -50,9 +56,27 @@ module.exports = {
       'button-icon-focus': `0px 0px 0px 3px ${blue80}`,
       'button-icon-danger-focus': `0px 0px 0px 3px ${red80}`,
       'button-icon-bubble-focus': `0px 0px 0px 3px ${blue80}`,
+      'button-icon-enabled-focus': `0px 0px 0px 3px ${green80}`,
+      'button-icon-dark-focus': `0px 0px 0px 3px ${neutral40}`,
 
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
+
+      'yellow-primary-1px': `0px 0px 0px 1px ${yellowPrimary}`,
+      'yellow-primary-2px': `0px 0px 0px 2px ${yellowPrimary}`,
+      'yellow-primary-3px': `0px 0px 0px 3px ${yellowPrimary}`,
+
+      'blue-primary-1px': `0px 0px 0px 1px ${bluePrimary}`,
+      'blue-primary-2px': `0px 0px 0px 2px ${bluePrimary}`,
+      'blue-primary-3px': `0px 0px 0px 3px ${bluePrimary}`,
+
+      'green-primary-1px': `0px 0px 0px 1px ${greenPrimary}`,
+      'green-primary-2px': `0px 0px 0px 2px ${greenPrimary}`,
+      'green-primary-3px': `0px 0px 0px 3px ${greenPrimary}`,
+
+      'red-primary-1px': `0px 0px 0px 1px ${redPrimary}`,
+      'red-primary-2px': `0px 0px 0px 2px ${redPrimary}`,
+      'red-primary-3px': `0px 0px 0px 3px ${redPrimary}`,
       none: 'none'
     },
     extend: {
@@ -86,7 +110,7 @@ module.exports = {
           '98': '#F7FDF7',
           '95': '#EBF9EB',
           '90': '#D7F4D7',
-          '80': '#B0E8B0',
+          '80': green80,
           '70': '#88DD88',
           '60': '#61D161',
           primary: '#39C639',
@@ -100,7 +124,7 @@ module.exports = {
           '80': '#FCEC9C',
           '70': '#FBE36A',
           '60': '#FADA38',
-          primary: '#F9D006',
+          primary: yellowPrimary,
           '40': '#C7A705',
           '30': '#957D04',
           '20': '#635303'
@@ -124,8 +148,8 @@ module.exports = {
           '80': neutral80,
           '70': '#A4B3C2',
           '60': '#8599AD',
-          primary: '#678099',
-          '40': '#52667A',
+          primary: '#678098',
+          '40': neutral40,
           '30': '#3E4D5C',
           '20': neutral20
         }
@@ -133,14 +157,27 @@ module.exports = {
       transitionTimingFunction: {
         'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       },
+      transitionProperty: {
+        'mb': 'margin-bottom',
+      },
       opacity: {
         '30': 0.3
       },
       width: {
-        '30': '7.5rem'
+        '30': '7.5rem',
+        '66': '17rem'
       },
       spacing: {
-        '05': '0.375rem'
+        '05': '0.375rem',
+        '100%': '100%',
+      },
+      cursor: {
+        grab: 'grab'
+      },
+      fontSize: {
+        '2-5xl': '1.75rem',
+        '3-5xl': '2rem',
+        '1xl': '1.375rem'
       }
     },
     maxHeight: {
@@ -188,6 +225,7 @@ module.exports = {
       '48': ' 12rem',
       '56': ' 14rem',
       '64': ' 16rem',
+      '66': '17rem',
       '128': ' 32rem',
       auto: 'auto',
       full: '100%',
@@ -237,7 +275,7 @@ module.exports = {
       'hover',
       'focus-within'
     ],
-    margin: ['responsive', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],
@@ -249,7 +287,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
-    justifyContent: ['group-hover']
+    justifyContent: ['group-hover'],
   },
   plugins: [
     require('tailwindcss-plugins/gradients'),
