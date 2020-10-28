@@ -244,12 +244,12 @@ $field-data-p-line-height: 1.688rem !default;
   .field__label,
   .field__instructions {
     resize: none;
-    overflow: auto;
     outline: none;
     display: block;
     width: 100%;
     height: auto;
     color: $neutral-dark;
+    word-break: break-all;
   }
   .field__instructions {
     font-size: $typo-size-slight;
@@ -383,10 +383,13 @@ $field-data-p-line-height: 1.688rem !default;
     margin-bottom: $layout-spacing-base * 0.5;
   }
 
-  p {
+  p, li {
     font-size: $field-data-p-size;
     line-height: $field-data-p-line-height;
     font-weight: $typo-weight-roman;
+  }
+
+  p {
     margin-top: $layout-spacing-base * 0.5;
     margin-bottom: $layout-spacing-base;
   }
@@ -394,6 +397,10 @@ $field-data-p-line-height: 1.688rem !default;
   ul, ol {
     margin-top: $layout-spacing-base;
     margin-bottom: $layout-spacing-base;
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   li {

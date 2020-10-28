@@ -1,0 +1,26 @@
+.pseudo-border-blue-2px {
+  @include after-border(
+    2px,
+    solid,
+    theme('colors.blue.primary'),
+    theme('borderRadius.default')
+  );
+}
+
+.pseudo-border-red-2px {
+  @include before-border(
+    2px,
+    solid,
+    theme('colors.red.primary'),
+    theme('borderRadius.default')
+  );
+}
+
+.pseudo-border-grey-1px {
+  @include before-border(
+    1px,
+    solid,
+    theme('colors.neutral.90'),
+    theme('borderRadius.default')
+  );
+}

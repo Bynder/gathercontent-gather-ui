@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/lib/Col';
 import { Figure, Icon, TooltipWrapper, FigurePlaceholder } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-const trashButton = <a key="hello"><Icon name="trash" /></a>;
+const trashButton = <a tabIndex={0} key="hello"><Icon name="trash" /></a>;
 const commentButton = <button onClick={action('test')} key="hello2"><Icon name="comment" /></button>;
 const fullScreenButton = <button onClick={action('test')} key="hello3"><Icon name="fullScreen" /></button>;
 const downloadButton = <button onClick={action('test')} key="hello4">{<Icon name="quoteStart" />}</button>;
@@ -19,7 +19,8 @@ storiesOf('Components', module).add('Figure', () => (
       description="A Figure showing a preview of the file."
     >
       <Row>
-        <Col xs={4}>
+        <button className='group relative w-64 h-64 overflow-hidden pseudo-border-blue-2px rounded
+          p-0 m-0 border-0 outline-none text-left focus:shadow-button-tertiary-focus '>
           <Figure
             filename="cute_sheep_in_iceland.jpg"
             label="Sheep in Iceland"
@@ -28,7 +29,13 @@ storiesOf('Components', module).add('Figure', () => (
           >
             {actions}
           </Figure>
-        </Col>
+          <span title='cute_sheep_in_iceland'
+                className="absolute bottom-0 bg-white text-neutral-20 w-full text-base leading-6 py-2 px-3 h-10 truncate
+                          -mb-10 group-hover:mb-0 transition-mb duration-200"
+          >
+            cute_sheep_in_iceland
+          </span>
+        </button>
       </Row>
     </StoryItem>
 

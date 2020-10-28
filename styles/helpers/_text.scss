@@ -1,5 +1,15 @@
+.text-inherit {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
 .text-overflow-ellipsis {
   @include text-overflow-ellipsis();
+}
+
+.text-overflow-ellipsis-only {
+  text-overflow: ellipsis;
 }
 
 .weight-bold {

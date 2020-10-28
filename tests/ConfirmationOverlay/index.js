@@ -1,5 +1,9 @@
 import { React, shallow } from '../setup';
-import { ConfirmationOverlay, Button } from '../../lib';
+import {
+  ConfirmationOverlay,
+  ButtonTertiary,
+  ButtonPrimaryDanger
+} from '../../lib';
 
 describe('Confirmation Overlay', () => {
   let wrapper;
@@ -30,17 +34,11 @@ describe('Confirmation Overlay', () => {
   });
 
   test('renders two Buttons', () => {
-    const buttons = wrapper.find(Button);
-    expect(buttons).toHaveLength(2);
-    buttons.first().prop('clickHandler')();
+    const cancelButton = wrapper.find(ButtonTertiary);
+    const submitButton = wrapper.find(ButtonPrimaryDanger);
+
+    cancelButton.prop('onClick')();
     expect(cancelSpy).toHaveBeenCalledTimes(1);
-    buttons.last().prop('clickHandler')();
-    expect(confirmSpy).toHaveBeenCalledTimes(1);
-    expect(
-      buttons
-        .last()
-        .render()
-        .text()
-    ).toEqual('dooo ittttt');
+    expect(submitButton.render().text()).toEqual('dooo ittttt');
   });
 });
