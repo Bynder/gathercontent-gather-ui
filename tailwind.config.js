@@ -12,6 +12,9 @@ const neutral80 = '#C2CCD6';
 const neutral90 = '#E1E6EB';
 
 const green80 = '#B0E8B0';
+const greenPrimary = '#39C639';
+
+const yellowPrimary = '#F9D006';
 
 module.exports = {
   important: true,
@@ -58,6 +61,22 @@ module.exports = {
 
       'bottom-inset': 'inset 0px -4px 4px rgba(0, 0, 0, 0.06)',
       'top-inset': 'inset 0px 4px 4px rgba(0, 0, 0, 0.06)',
+
+      'yellow-primary-1px': `0px 0px 0px 1px ${yellowPrimary}`,
+      'yellow-primary-2px': `0px 0px 0px 2px ${yellowPrimary}`,
+      'yellow-primary-3px': `0px 0px 0px 3px ${yellowPrimary}`,
+
+      'blue-primary-1px': `0px 0px 0px 1px ${bluePrimary}`,
+      'blue-primary-2px': `0px 0px 0px 2px ${bluePrimary}`,
+      'blue-primary-3px': `0px 0px 0px 3px ${bluePrimary}`,
+
+      'green-primary-1px': `0px 0px 0px 1px ${greenPrimary}`,
+      'green-primary-2px': `0px 0px 0px 2px ${greenPrimary}`,
+      'green-primary-3px': `0px 0px 0px 3px ${greenPrimary}`,
+
+      'red-primary-1px': `0px 0px 0px 1px ${redPrimary}`,
+      'red-primary-2px': `0px 0px 0px 2px ${redPrimary}`,
+      'red-primary-3px': `0px 0px 0px 3px ${redPrimary}`,
       none: 'none'
     },
     extend: {
@@ -105,7 +124,7 @@ module.exports = {
           '80': '#FCEC9C',
           '70': '#FBE36A',
           '60': '#FADA38',
-          primary: '#F9D006',
+          primary: yellowPrimary,
           '40': '#C7A705',
           '30': '#957D04',
           '20': '#635303'

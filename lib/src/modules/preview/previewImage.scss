@@ -7,17 +7,3 @@
 .preview-image-fallback {
   padding: 10%;
 }
-
-.preview-children {
-  @apply -mt-10 transition-all duration-200;
-}
-
-.preview-image {
-  &:active,
-  &:hover,
-  &:focus {
-    .preview-children {
-      @apply mt-0;
-    }
-  }
-}

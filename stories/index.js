@@ -1,8 +1,8 @@
-import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import './base/Base';
 
-import Base from './base/Base';
-import 'components/files/fileCard/stories/FileCardStory';
+import '../lib/src/components/files/fileCard/FileCardStory';
+import '../lib/src/components/card/CardStory';
+
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryStory';
@@ -60,7 +60,6 @@ import Search from './components/Search';
 import CollectionsTable from './components/CollectionsTable/CollectionsTable';
 import MentionsForm from './components/MentionsForm';
 import TagUserForm from './components/TagUserForm';
-import Card from './components/Card';
 import Breadcrumb from './components/Breadcrumb';
 import SelectionBar from './components/SelectionBar';
 import FinderNavigation from './components/FinderNavigation';
