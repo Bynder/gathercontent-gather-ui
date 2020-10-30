@@ -1,5 +1,7 @@
 .button-avatar {
   @apply rounded-full p-0 border-transparent relative;
+  width: 34px;
+  height: 34px;
 
   &.button-avatar-active,
   &:active {
