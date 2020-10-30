@@ -18,10 +18,10 @@
   }
 
   &:focus {
-    @apply border-white shadow-button-icon-focus;
+    @apply border-white shadow-button-icon-focus bg-white;
 
     &:hover {
-      @apply border-blue-primary;
+      @apply border-blue-primary bg-blue-primary;
     }
   }
 
