@@ -1,0 +1,29 @@
+.button-avatar {
+  @apply rounded-full p-0 border-transparent relative;
+
+  &.button-avatar-active,
+  &:active {
+    @apply border-blue-primary shadow-blue-primary-1px bg-blue-primary;
+
+    &:before {
+      @apply top-0 left-0 absolute opacity-30 bg-blue-primary h-full w-full rounded-full;
+      content: ' '
+    }
+  }
+
+  &:hover {
+    @apply border-white bg-white shadow-blue-primary-1px;
+  }
+
+  &:focus {
+    @apply border-white shadow-button-icon-focus;
+
+    &:hover {
+      @apply border-blue-primary;
+    }
+  }
+
+  &:disabled {
+    @apply opacity-50;
+  }
+}

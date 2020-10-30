@@ -10,6 +10,7 @@ import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryStory';
 import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
 import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
+import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
 
