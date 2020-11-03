@@ -1,7 +1,19 @@
-import React from 'react';
-import { storiesOf, action } from '@storybook/react';
+import './base/Base';
 
-import Base from './base/Base';
+import '../lib/src/components/files/fileCard/FileCardStory';
+import '../lib/src/components/card/CardStory';
+
+import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
+import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
+import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryStory';
+import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryStory';
+import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
+import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
+import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
+import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
+
+import 'lib/src/modules/loader/LoaderStory';
+
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
@@ -48,7 +60,6 @@ import Search from './components/Search';
 import CollectionsTable from './components/CollectionsTable/CollectionsTable';
 import MentionsForm from './components/MentionsForm';
 import TagUserForm from './components/TagUserForm';
-import Card from './components/Card';
 import Breadcrumb from './components/Breadcrumb';
 import SelectionBar from './components/SelectionBar';
 import FinderNavigation from './components/FinderNavigation';
@@ -66,15 +77,6 @@ import ApprovedLabel from '../lib/ApprovedLabel/stories/ApprovedLabelStory';
 import PeopleAndGroups from './webapp/peoplegroups/PeopleGroupsStory';
 import { PillInputStory } from '../lib/PillInput/stories/story';
 import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromptStory';
-import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimary';
-import '../lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDanger';
-import '../lib/ButtonNew/stories/ButtonSecondary/ButtonSecondary';
-import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiary';
-import '../lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDanger';
-import '../lib/ButtonNew/stories/ButtonIcon/ButtonIcon';
-import '../lib/ButtonNew/stories/ButtonLink/ButtonLink';
-import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconDanger';
-import '../lib/ButtonNew/stories/ButtonIcon/ButtonIconBubble';
 import '../lib/Toolbar/stories/Toolbar';
 import '../lib/OptionMenu/stories/OptionMenu';
 import '../lib/Select/stories/Select';
@@ -83,4 +85,3 @@ import Layout from './components/Layout';
 import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
 import ColField from '../lib/ColField/stories/ColFieldStory';
 import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
-import '../lib/useDeferredList/stories/useDeferredListStory'

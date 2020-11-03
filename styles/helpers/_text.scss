@@ -1,3 +1,9 @@
+.text-inherit {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
 .text-overflow-ellipsis {
   @include text-overflow-ellipsis();
 }
