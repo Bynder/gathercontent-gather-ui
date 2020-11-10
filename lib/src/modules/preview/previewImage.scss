@@ -1,9 +1,35 @@
 .preview-image {
+  @apply relative flex overflow-hidden w-full h-full pb-100%;
+
   svg {
     @apply w-full h-full;
   }
 }
 
 .preview-image-fallback {
+  @apply absolute;
   padding: 10%;
+}
+
+.preview-image-img {
+  @apply bg-cover bg-center pb-100% transition-opacity duration-300 opacity-0;
+}
+
+.preview-image-succeeded .preview-image-img {
+  @apply opacity-100;
+}
+
+.preview-image-show-loader {
+  &.preview-image-succeeded {
+    @apply bg-neutral-20;
+
+    path {
+      fill: white;
+    }
+  }
+
+  .preview-image-img,
+  .preview-image-fallback {
+    @apply opacity-25;
+  }
 }
