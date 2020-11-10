@@ -12,20 +12,26 @@ storiesOf('Components', module).add('FinderNavigation', () => (
       <Layout.InlineSidebar isFinder>
         <FinderNavigation>
           <FinderNavigation.Group>
-            <FinderNavigation.Item>
+            <FinderNavigation.Item hoverSettings={false}>
               <FinderNavigation.ItemContent>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="item" />
                   All items
+                  <FinderNavigation.ItemSettings>
+                    200
+                  </FinderNavigation.ItemSettings>
                 </a>
               </FinderNavigation.ItemContent>
             </FinderNavigation.Item>
 
-            <FinderNavigation.Item>
+            <FinderNavigation.Item hoverSettings={false}>
               <FinderNavigation.ItemContent>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="user" />
                   Assigned items
+                  <FinderNavigation.ItemSettings>
+                    40
+                  </FinderNavigation.ItemSettings>
                 </a>
               </FinderNavigation.ItemContent>
             </FinderNavigation.Item>

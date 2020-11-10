@@ -50,6 +50,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-content-inner {
   @apply flex w-full h-full items-center px-4 rounded;
+  min-width: 150px;
   &:hover {
     @apply bg-neutral-90;
   }
@@ -102,14 +103,10 @@ $finder-indent-level-support: 10 !default;
    border: 1px solid $color-border-base;
  }
 
-.finder-item.is-over.dragged-insert > .finder-item-content,
-.finder-item--selected > .finder-item-content {
+.finder-item.is-over.dragged-insert > .finder-item-content .finder-item-content-inner,
+.finder-item--selected > .finder-item-content .finder-item-content-inner {
   border: 2px solid $primary-blue;
   border-radius: 3px;
-
-  .finder-item-content-inner {
-    width: 100%;
-  }
 }
 
 .finder-item.is-over.dragged-top > .finder-item-content,
