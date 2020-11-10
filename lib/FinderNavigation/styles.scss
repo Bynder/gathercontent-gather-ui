@@ -30,11 +30,14 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder-item-active > .finder-item-content {
-  .finder-item-link {
-    @apply text-blue-primary bg-white text-blue-primary shadow-small;
+  .finder-item-content-inner {
+    @apply bg-white text-blue-primary shadow-small;
     &:hover {
       @apply bg-white;
     }
+  }
+  .finder-item-link {
+    @apply text-blue-primary;
     .icon path {
       fill: theme('colors.blue.primary');
     }
@@ -46,8 +49,10 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder-item-content-inner {
-  @apply flex w-full h-full items-center;
-
+  @apply flex w-full h-full items-center px-4 rounded;
+  &:hover {
+    @apply bg-neutral-90;
+  }
   .form__input {
     @apply py-0 pl-3 pr-0;
   }
@@ -72,10 +77,7 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder-item-link {
-  @apply no-underline text-neutral-20 flex-shrink w-full flex items-center cursor-pointer outline-none h-full truncate px-4 rounded;
-  &:hover {
-    @apply bg-neutral-90;
-  }
+  @apply no-underline text-neutral-20 flex-shrink w-full flex items-center cursor-pointer outline-none h-full truncate;
   .icon {
     @apply mr-3;
   }
