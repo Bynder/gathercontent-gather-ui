@@ -4,10 +4,6 @@
 
 $finder-indent-level-support: 10 !default;
 
-.finder {
-  @apply pt-4;
-}
-
 .finder-group {
   @apply mb-4 mx-2 mt-2;
 }
@@ -49,7 +45,7 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder-item-content-inner {
-  @apply flex w-full h-full items-center px-4 rounded;
+  @apply flex w-full h-full items-center pl-3 pr-2 rounded;
   min-width: 150px;
   &:hover {
     @apply bg-neutral-90;
