@@ -178,6 +178,13 @@ module.exports = {
         '2-5xl': '1.75rem',
         '3-5xl': '2rem',
         '1xl': '1.375rem'
+      },
+      height: {
+        screen50: '50vh',
+        screen60: '60vh',
+        screen70: '70vh',
+        screen80: '80vh',
+        screen90: '90vh',
       }
     },
     maxHeight: {
