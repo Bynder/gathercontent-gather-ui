@@ -17,14 +17,8 @@ describe('FinderNavigation Item', () => {
   });
 
   test('adds an active class', () => {
-    expect(wrapper.hasClass('is-active')).toBe(false);
+    expect(wrapper.hasClass('finder-item-active')).toBe(false);
     wrapper.setProps({ active: true });
-    expect(wrapper.hasClass('is-active')).toBe(true);
-  });
-
-  test('adds a selected modifier', () => {
-    expect(wrapper.hasClass('finder__item--selected')).toBe(false);
-    wrapper.setProps({ selected: true });
-    expect(wrapper.hasClass('finder__item--selected')).toBe(true);
+    expect(wrapper.hasClass('finder-item-active')).toBe(true);
   });
 });
