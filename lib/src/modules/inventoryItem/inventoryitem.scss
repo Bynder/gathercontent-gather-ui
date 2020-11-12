@@ -1,0 +1,12 @@
+.inventory-item {
+  @apply shadow-small bg-white;
+}
+
+.inventory-item-dragging {
+  @apply w-12 h-12 rounded border border-solid border-neutral-90 bg-neutral-98;
+}
+
+.inventory-item-preview {
+  @apply shadow-large;
+  transform: rotate(-12deg);
+}
