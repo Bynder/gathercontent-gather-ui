@@ -13,6 +13,7 @@ import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
+import '../lib/src/modules/inventoryItem/InventoryItemStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
