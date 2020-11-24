@@ -86,3 +86,7 @@
     content: attr(data-placeholder);
   }
 }
+
+.col-field-selected {
+  @include before-border(2px, solid, $primary-blue, 6px)
+}
