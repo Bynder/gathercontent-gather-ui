@@ -15,6 +15,7 @@ import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
 import '../lib/src/modules/inventoryItem/InventoryItemStory';
+import 'lib/src/modules/component/ComponentStory';
 
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
