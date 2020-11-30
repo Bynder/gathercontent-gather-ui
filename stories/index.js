@@ -3,6 +3,7 @@ import './base/Base';
 import '../lib/src/components/files/fileCard/FileCardStory';
 import '../lib/src/components/card/CardStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
+import 'lib/src/components/selectionControls/SelectionControlsStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
