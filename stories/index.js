@@ -33,7 +33,6 @@ import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
-import Figure from './components/Figure';
 import Form from './components/Form';
 import PopoverWrapper from './components/PopoverWrapper';
 import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
