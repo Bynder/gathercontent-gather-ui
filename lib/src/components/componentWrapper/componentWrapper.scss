@@ -3,7 +3,7 @@
 }
 
 .component-header-top {
-  @apply flex py-4 px-5 border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90 items-center;
+  @apply flex p-4 border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90 items-center;
 }
 
 .component-label {
@@ -29,14 +29,14 @@
 }
 
 .component-instructions {
-  @apply rounded-none border-0 border-b border-solid border-neutral-90 text-sm px-5 py-4 align-top;
+  @apply rounded-none border-0 border-b border-solid border-neutral-90 text-sm p-4 align-top;
   &:focus {
     @apply border-0 border-b border-solid border-neutral-90;
   }
 }
 
 .component-body, .component-footer {
-  @apply px-5 pt-4 border-0 border-l border-r border-solid border-neutral-90;
+  @apply px-4 pt-4 border-0 border-l border-r border-solid border-neutral-90;
 
   &-editable {
     @apply bg-neutral-95;
