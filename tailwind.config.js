@@ -282,9 +282,11 @@ module.exports = {
       'group-hover',
       'focus',
       'hover',
-      'focus-within'
+      'focus-within',
+      'first',
+      'last'
     ],
-    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within', 'first', 'last'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],
