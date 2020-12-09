@@ -129,6 +129,10 @@ $icon-active-color: $color-brand-blue !default;
   @apply text-purple-primary fill-current #{!important};
 }
 
+.icon.icon--warning path {
+  @apply text-yellow-primary fill-current;
+}
+
 button:active .icon--blue-on-button-parent-active path  {
   fill: $primary-blue;
 }
