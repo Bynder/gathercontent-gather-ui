@@ -34,6 +34,7 @@ module.exports = {
     borderRadius: {
       default: '6px',
       small: '4px',
+      xlarge: '16px',
       full: '100%',
       none: 0
     },
@@ -281,9 +282,11 @@ module.exports = {
       'group-hover',
       'focus',
       'hover',
-      'focus-within'
+      'focus-within',
+      'first',
+      'last'
     ],
-    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within', 'first', 'last'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],

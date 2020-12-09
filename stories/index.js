@@ -3,6 +3,7 @@ import './base/Base';
 import '../lib/src/components/files/fileCard/FileCardStory';
 import '../lib/src/components/card/CardStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
+import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
@@ -16,7 +17,6 @@ import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 import 'lib/src/modules/loader/LoaderStory';
 import '../lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
-
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
