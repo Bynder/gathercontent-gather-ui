@@ -1,5 +1,8 @@
 .component-header {
-  @apply rounded-t-xlarge border border-b-0 border-solid border-neutral-90;
+  @apply rounded-t-xlarge border border-b-0 border-solid border-neutral-90 relative;
+  &-selected {
+    @include before-border(2px 2px 0px 2px, solid, theme('colors.blue.primary'), theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0px 0px);
+  }
 }
 
 .component-header-top {
@@ -35,8 +38,14 @@
   }
 }
 
+.component-body {
+  &-selected {
+    @include before-border(0px 2px, solid, theme('colors.blue.primary'), 0);
+  }
+}
+
 .component-body, .component-footer {
-  @apply px-4 pt-4 border-0 border-l border-r border-solid border-neutral-90;
+  @apply px-4 pt-4 border-0 border-l border-r border-solid border-neutral-90 relative;
 
   &-editable {
     @apply bg-neutral-95;
@@ -45,4 +54,8 @@
 
 .component-footer {
   @apply border-b rounded-b-xlarge py-4;
+
+  &-selected {
+    @include before-border(0px 2px 2px 2px, solid, theme('colors.blue.primary'), 0px 0px theme('borderRadius.xlarge') theme('borderRadius.xlarge'));
+  }
 }
