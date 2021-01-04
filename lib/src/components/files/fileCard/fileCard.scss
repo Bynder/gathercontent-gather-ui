@@ -4,14 +4,14 @@
 
 .file-card-inset-meta {
   .file-card-meta {
-    @apply absolute bottom-0 w-full bg-white -mb-40;
+    @apply absolute bottom-0 w-full bg-white -mb-40 transition-mb duration-200;
   }
 
   &:not(.card-disabled) {
     &:focus .file-card-meta,
     &:hover .file-card-meta,
     &:focus-within .file-card-meta, {
-      @apply mb-0 transition-mb duration-200;
+      @apply mb-0;
     }
   }
 }

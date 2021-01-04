@@ -34,10 +34,12 @@ module.exports = {
     borderRadius: {
       default: '6px',
       small: '4px',
+      xlarge: '16px',
       full: '100%',
       none: 0
     },
     boxShadow: {
+      inner: 'inset 0px 2px 2px rgba(0, 0, 0, 0.06)',
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
       default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
@@ -280,9 +282,11 @@ module.exports = {
       'group-hover',
       'focus',
       'hover',
-      'focus-within'
+      'focus-within',
+      'first',
+      'last'
     ],
-    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within'],
+    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within', 'first', 'last'],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],
