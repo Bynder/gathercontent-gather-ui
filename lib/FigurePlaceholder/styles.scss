@@ -1,0 +1,8 @@
+.figure__placeholder {
+  display: flex;
+
+  &__svg {
+    @apply flex-grow text-center bg-white h-40 flex items-center justify-center;
+    @apply border-t border-l border-r border-b-0 border-solid border-neutral-90 rounded-t rounded-b-none;
+  }
+}
