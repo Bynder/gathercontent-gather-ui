@@ -1,0 +1,36 @@
+.rename-input-text {
+  @apply bg-transparent border-0 relative transition-none overflow-hidden resize-none;
+
+  &:hover {
+    @apply border border-solid border-neutral-90 rounded;
+  }
+  &:focus, &:active {
+    @apply border-2 border-solid border-blue-primary rounded;
+    outline:none;
+  }
+}
+
+input.rename-input-text,
+textarea.rename-input-text {
+  @apply w-0;
+}
+
+.rename-input-text-md {
+  @apply text-base p-05 leading-4;
+  &:hover {
+    padding: 5px;
+  }
+  &:focus, &:active {
+    padding: 4px;
+  }
+}
+
+.rename-input-text-lrg {
+  @apply text-lg p-2 leading-5;
+  &:hover {
+    padding: 7px;
+  }
+  &:focus, &:active {
+    padding: 6px;
+  }
+}
