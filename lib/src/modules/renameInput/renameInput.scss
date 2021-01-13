@@ -46,3 +46,9 @@ textarea.rename-input-text {
     padding: 6px;
   }
 }
+
+input.rename-input-text-lrg {
+  &:focus, &:active {
+    padding-top: 5px;
+  }
+}
