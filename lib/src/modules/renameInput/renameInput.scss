@@ -1,9 +1,9 @@
 .rename-input-form {
-  @apply inline-block relative whitespace-pre-wrap;
+  @apply inline-block relative whitespace-pre-wrap max-w-full;
 }
 
 .rename-input-text {
-  @apply bg-transparent border-0 relative transition-none overflow-hidden resize-none;
+  @apply bg-transparent border-0 relative transition-none overflow-hidden resize-none text-left;
 
   &:hover {
     @apply border border-solid border-neutral-90 rounded;
@@ -20,7 +20,11 @@ textarea.rename-input-text {
 }
 
 .rename-input-size-helper {
-  @apply invisible inline-block w-auto whitespace-pre-wrap max-w-full align-middle;
+  @apply invisible inline-block w-auto whitespace-pre max-w-full align-middle;
+}
+
+.rename-input-multiline.rename-input-size-helper {
+  @apply whitespace-pre-wrap;
 }
 
 .rename-input-text-md {
@@ -40,11 +44,5 @@ textarea.rename-input-text {
   }
   &:focus, &:active {
     padding: 6px;
-  }
-}
-
-input.rename-input-text-lrg {
-  &:focus, &:active {
-    padding-top: 5px;
   }
 }
