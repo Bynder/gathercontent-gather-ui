@@ -13,18 +13,12 @@
   @apply flex text-lg leading-6 w-full items-center;
 }
 
-.component-label-text,
-.component-label-text-input {
+.component-label-text {
   @apply font-semi-bold text-neutral-20 mb-0 text-lg leading-6 break-all;
 }
 
-.component-label-text-input,
-.component-label-text--editing {
-  @apply w-full;
-}
-
 .component-sublabel {
-  @apply text-neutral-primary;
+  @apply text-neutral-primary ml-1;
 }
 
 .component-header-aside {
