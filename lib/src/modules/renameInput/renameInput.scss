@@ -20,7 +20,7 @@ textarea.rename-input-text {
 }
 
 .rename-input-size-helper {
-  @apply invisible inline-block w-auto whitespace-pre max-w-full align-middle;
+  @apply opacity-0 inline-block w-auto whitespace-pre max-w-full align-middle;
 }
 
 .rename-input-multiline.rename-input-size-helper {
