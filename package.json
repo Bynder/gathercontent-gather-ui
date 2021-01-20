@@ -123,6 +123,7 @@
     "react-dom": "^16.9.0",
     "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
+    "react-modal": "^3.12.1",
     "react-resize-detector": "^5.0.7",
     "react-select": "^3.1.0",
     "react-spring": "^8.0.27",
