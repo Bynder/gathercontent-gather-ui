@@ -1,0 +1,19 @@
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translate(0, -25%);
+  transition: transform, opacity 0.3s ease-out;
+}
+
+.ReactModal__Overlay--after-open {
+  transform: none;
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  transform: translate(0, -25%);
+  opacity: 0;
+}
+
+.modal-inner {
+  @apply flex flex-col;
+}

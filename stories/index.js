@@ -1,6 +1,7 @@
 import './base/Base';
 
 import '../lib/src/prefabs/files/fileCard/FileCardStory';
+import '../lib/src/components/modal/ModalStory';
 import '../lib/src/components/card/CardStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
@@ -88,4 +89,4 @@ import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
 import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
 import ColField from '../lib/ColField/stories/ColFieldStory';
-import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
+import './experiments/virtualisedFields/dynamicHeightVirtualisedList';
