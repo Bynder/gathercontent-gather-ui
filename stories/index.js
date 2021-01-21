@@ -15,6 +15,7 @@ import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
+import 'lib/src/modules/cancelButton/CancelButtonStory';
 import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
