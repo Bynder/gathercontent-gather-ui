@@ -1,0 +1,24 @@
+.navigation--items {
+  @apply h-full;
+  ul {
+    @apply list-none flex flex-row h-full w-full m-0 p-0;
+  }
+}
+
+.navigation--item {
+  @apply h-full;
+  button {
+    @apply border-none bg-white h-full px-5 py-0;
+  }
+}
+
+.navigation--item {
+  &.active {
+    @apply text-blue-primary relative;
+  }
+}
+
+.navigation--active-border {
+  height: 2px;
+  @apply absolute w-full bottom-0 left-0 bg-blue-primary;
+}
