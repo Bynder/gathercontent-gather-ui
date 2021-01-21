@@ -1,6 +1,6 @@
 import './base/Base';
 
-import '../lib/src/components/files/fileCard/FileCardStory';
+import '../lib/src/prefabs/files/fileCard/FileCardStory';
 import '../lib/src/components/card/CardStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
