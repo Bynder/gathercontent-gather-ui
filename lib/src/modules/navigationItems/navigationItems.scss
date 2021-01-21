@@ -19,6 +19,5 @@
 }
 
 .navigation--active-border {
-  height: 2px;
-  @apply absolute w-full bottom-0 left-0 bg-blue-primary;
+  @apply absolute w-full bottom-0 left-0 bg-blue-primary h-0.5;
 }
