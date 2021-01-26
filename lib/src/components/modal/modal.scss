@@ -1,17 +1,30 @@
-.ReactModal__Overlay {
+.ReactModal__Content {
+  transform: translate(0, -25%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: none;
+}
+
+.ReactModal__Content--before-close {
   opacity: 0;
   transform: translate(0, -25%);
-  transition: transform, opacity 0.3s ease-out;
+}
+
+.ReactModal__Overlay {
+  background: rgb(41,51,61, 0) !important;
+  transition: background 0.3s ease-out;
 }
 
 .ReactModal__Overlay--after-open {
-  transform: none;
-  opacity: 1;
+  background: rgb(41,51,61, .2) !important;
 }
 
 .ReactModal__Overlay--before-close {
-  transform: translate(0, -25%);
-  opacity: 0;
+  background: rgb(41,51,61, 0) !important;
 }
 
 .modal-inner {
