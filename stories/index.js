@@ -3,6 +3,7 @@ import './base/Base';
 import '../lib/src/prefabs/files/fileCard/FileCardStory';
 import '../lib/src/components/modal/ModalStory';
 import '../lib/src/components/card/CardStory';
+import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 
@@ -16,6 +17,8 @@ import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
+import 'lib/src/modules/closeButton/CloseButtonStory';
+import 'lib/src/modules/navigationItems/NavigationItemsStory';
 import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
