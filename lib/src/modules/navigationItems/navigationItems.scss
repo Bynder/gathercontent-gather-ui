@@ -16,6 +16,10 @@
   &.active {
     @apply text-blue-primary relative;
   }
+
+  &.disabled {
+    @apply test-neutral-primary cursor-not-allowed;
+  }
 }
 
 .navigation--active-border {
