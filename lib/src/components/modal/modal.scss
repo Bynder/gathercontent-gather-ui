@@ -1,0 +1,32 @@
+.ReactModal__Content {
+  transform: translate(0, -25%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: none;
+}
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: translate(0, -25%);
+}
+
+.ReactModal__Overlay {
+  background: rgb(41,51,61, 0) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  transition: background 0.3s ease-out;
+}
+
+.ReactModal__Overlay--after-open {
+  background: rgb(41,51,61, .2) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+}
+
+.ReactModal__Overlay--before-close {
+  background: rgb(41,51,61, 0) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+}
+
+.modal-inner {
+  @apply flex flex-col;
+}
