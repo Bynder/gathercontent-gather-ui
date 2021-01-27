@@ -16,6 +16,8 @@ import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
+import 'lib/src/modules/closeButton/CloseButtonStory';
+import 'lib/src/modules/navigationItems/NavigationItemsStory';
 import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
@@ -89,4 +91,4 @@ import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
 import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
 import ColField from '../lib/ColField/stories/ColFieldStory';
-import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
+import './experiments/virtualisedFields/dynamicHeightVirtualisedList';

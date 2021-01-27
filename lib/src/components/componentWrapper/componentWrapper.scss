@@ -38,11 +38,16 @@
   }
 }
 
-.component-body, .component-footer {
+.component-body,
+.component-footer {
   @apply px-4 pt-4 border-0 border-l border-r border-solid border-neutral-90 relative;
 
   &-editable {
     @apply bg-neutral-95;
+  }
+
+  &-hovered {
+    @apply bg-neutral-90;
   }
 }
 
