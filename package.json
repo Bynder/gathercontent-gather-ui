@@ -121,6 +121,7 @@
     "react-dnd-html5-backend-cjs": "^9.5.1",
     "react-dnd-test-backend-cjs": "^9.5.1",
     "react-dom": "^16.9.0",
+    "react-dropzone": "^11.2.4",
     "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
     "react-resize-detector": "^5.0.7",
