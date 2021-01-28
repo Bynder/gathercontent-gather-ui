@@ -18,6 +18,7 @@ import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
 import 'lib/src/modules/closeButton/CloseButtonStory';
+import 'lib/src/modules/searchInput/SearchInputStory';
 import 'lib/src/modules/navigationItems/NavigationItemsStory';
 import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
