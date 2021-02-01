@@ -65,3 +65,13 @@ $modal-small-width: 400px !default;
 .modal-inner {
   @apply flex flex-col;
 }
+
+.modal-footer__confirm {
+  @apply flex flex-row w-full p-6 items-center;
+  .modal-footer__confirm-actions {
+    @apply ml-auto;
+  }
+  .modal-footer__confirm-text {
+    @apply text-neutral-primary;
+  }
+}
