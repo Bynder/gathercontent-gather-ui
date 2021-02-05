@@ -11,6 +11,7 @@ import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryStory';
+import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryStory';
 import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
