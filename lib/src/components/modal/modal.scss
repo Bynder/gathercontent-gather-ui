@@ -69,7 +69,8 @@ $modal-small-width: 400px !default;
 
 .react-modal-footer__confirm {
   @apply flex flex-row w-full p-6 items-center;
-  .modal-footer__confirm-actions {
+
+  .react-modal-footer__confirm-actions {
     @apply ml-auto;
   }
   .react-modal-footer__confirm-text {
