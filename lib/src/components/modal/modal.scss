@@ -32,6 +32,10 @@ $modal-small-width: 400px !default;
   &.x-large {
     width: $modal-x-large-width;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .ReactModal__Overlay {
