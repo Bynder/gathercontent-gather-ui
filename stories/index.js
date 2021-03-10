@@ -7,6 +7,7 @@ import '../lib/src/components/card/CardStory';
 import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
+import 'lib/src/components/sidebar/SidebarStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
@@ -91,7 +92,6 @@ import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromp
 import '../lib/Toolbar/stories/Toolbar';
 import '../lib/OptionMenu/stories/OptionMenu';
 import '../lib/Select/stories/Select';
-import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
 import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
 import ColField from '../lib/ColField/stories/ColFieldStory';

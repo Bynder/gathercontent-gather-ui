@@ -1,0 +1,25 @@
+.sidebar {
+  @apply py-4;
+}
+
+.sidebar-header {
+  @apply px-4 h-10 flex;
+}
+
+.sidebar-section {
+  @apply p-4 text-base text-neutral-20;
+}
+
+.sidebar-header,
+.sidebar-section {
+  @apply border-t-0 border-l-0 border-r-0 border-b border-solid border-neutral-90;
+}
+
+.sidebar-header,
+.sidebar-heading {
+  @apply m-0 font-semi-bold text-base text-neutral-20 leading-normal;
+}
+
+.sidebar-subheading {
+  @apply mb-1 text-xs text-neutral-primary uppercase leading-5 block font-semi-bold;
+}
