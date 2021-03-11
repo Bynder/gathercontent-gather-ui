@@ -1,18 +1,30 @@
 .sidebar {
-  @apply py-4;
+  @apply relative flex flex-col h-full;
 }
 
 .sidebar-header {
-  @apply px-4 h-10 flex;
+  @apply p-4 flex;
 }
 
-.sidebar-section {
-  @apply p-4 text-base text-neutral-20;
+.sidebar-footer {
+  @apply p-4 border-b-0 border-l-0 border-r-0 border-t border-solid border-neutral-90
+}
+
+.sidebar-body {
+  @apply flex-grow;
 }
 
 .sidebar-header,
 .sidebar-section {
   @apply border-t-0 border-l-0 border-r-0 border-b border-solid border-neutral-90;
+}
+
+.sidebar-section {
+  @apply p-4 text-base text-neutral-20;
+
+  &:last-child {
+    @apply border-0;
+  }
 }
 
 .sidebar-header,

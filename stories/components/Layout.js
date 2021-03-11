@@ -1,16 +1,21 @@
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { Layout } from '../../lib';
+import { Layout } from "../../lib";
+import { SidebarExample } from '../../lib/src/components/sidebar/SidebarStory';
 
 storiesOf('Components', module).add('Layout', () => {
   const isOpen = boolean('isOpen', false);
 
   return (
     <Layout>
+      <style>
+        {'#root { padding: 0 }'}
+      </style>
       <Layout.Header className="bg-red-primary h-20 border-8 border-solid border-red-30">
         Header
       </Layout.Header>
+
       <Layout.Section className="h-full flex flex-row">
         <Layout.Main className="w-3/4">
           <Layout.SubHeader
@@ -29,7 +34,7 @@ storiesOf('Components', module).add('Layout', () => {
             Footer
           </Layout.Footer>
           <Layout.OverlaySidebar className="top-0" isOpen={isOpen}>
-            Overlay Sidebar
+            <SidebarExample />
           </Layout.OverlaySidebar>
         </Layout.Main>
         <Layout.InlineSidebar className="w-1/4 bg-purple-primary border-8 border-solid border-purple-30">
