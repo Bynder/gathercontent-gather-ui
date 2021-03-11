@@ -1,0 +1,9 @@
+.input {
+  @apply border border-solid border-neutral-90 text-base rounded m-0 w-full p-2 outline-none transition-colors duration-200;
+
+  &:focus {
+    @apply border-blue-primary;
+  }
+}
+
+@import "inputIcon/inputIcon";
