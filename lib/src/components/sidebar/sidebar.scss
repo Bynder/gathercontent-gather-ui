@@ -7,7 +7,7 @@
 }
 
 .sidebar-footer {
-  @apply p-4 border-b-0 border-l-0 border-r-0 border-t border-solid border-neutral-90
+  @apply flex p-4 border-b-0 border-l-0 border-r-0 border-t border-solid border-neutral-90
 }
 
 .sidebar-body {
@@ -27,11 +27,28 @@
   }
 }
 
+.sidebar-heading,
+.sidebar-subsection {
+  @apply mb-4;
+
+  &:last-child {
+    @apply mb-0;
+  }
+}
+
 .sidebar-header,
 .sidebar-heading {
-  @apply m-0 font-semi-bold text-base text-neutral-20 leading-normal;
+  @apply font-semi-bold text-base text-neutral-20 leading-normal;
+
+  * {
+    @apply text-inherit m-0;
+  }
 }
 
 .sidebar-subheading {
   @apply mb-1 text-xs text-neutral-primary uppercase leading-5 block font-semi-bold;
+
+  * {
+    @apply text-inherit m-0;
+  }
 }
