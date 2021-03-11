@@ -98,6 +98,7 @@ const allIcons = additionalProps => (
     <Icon name="component16" {...additionalProps} />
     <Icon name="bolt" {...additionalProps} />
     <Icon name="unusedTemplate16" {...additionalProps} />
+    <Icon name="addProject16" {...additionalProps} />
   </div>
 );
 
