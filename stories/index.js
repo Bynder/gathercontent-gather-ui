@@ -1,11 +1,18 @@
 import './base/Base';
 
-import '../lib/src/components/files/fileCard/FileCardStory';
+import '../lib/src/prefabs/files/fileCard/FileCardStory';
+import '../lib/src/components/modal/ModalStory';
+import '../lib/src/components/viewOptions/ViewOptionsStory';
 import '../lib/src/components/card/CardStory';
+import '../lib/src/components/dropzone/DropzoneStory';
+import 'lib/src/components/animated/AnimatedWrapperStory';
+import 'lib/src/components/componentWrapper/ComponentWrapperStory';
+import 'lib/src/components/sidebar/SidebarStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryStory';
+import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryStory';
 import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
@@ -13,6 +20,12 @@ import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
 
 import 'lib/src/modules/loader/LoaderStory';
+import 'lib/src/modules/closeButton/CloseButtonStory';
+import 'lib/src/modules/input/InputStory';
+import 'lib/src/modules/navigationItems/NavigationItemsStory';
+import 'lib/src/modules/inventoryItem/InventoryItemStory';
+import 'lib/src/modules/selectionControls/SelectionControlsStory';
+import 'lib/src/modules/renameInput/RenameInputStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
@@ -30,8 +43,6 @@ import RadioButtons from './components/RadioButtonGroup';
 import DropdownSwitcher from './components/DropdownSwitcher';
 import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
-import Field from '../lib/Field/stories/FieldStory';
-import Figure from './components/Figure';
 import Form from './components/Form';
 import PopoverWrapper from './components/PopoverWrapper';
 import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
@@ -81,8 +92,7 @@ import DismissiblePrompt from '../lib/DismissiblePrompt/stories/DismissiblePromp
 import '../lib/Toolbar/stories/Toolbar';
 import '../lib/OptionMenu/stories/OptionMenu';
 import '../lib/Select/stories/Select';
-import Sidebar from './components/Sidebar';
 import Layout from './components/Layout';
 import EditableChoiceInputStory from '../lib/EditableChoiceInput/stories/EditableChoiceInput';
 import ColField from '../lib/ColField/stories/ColFieldStory';
-import './experiments/virtualisedFields/dynamicHeightVirtualisedList'
+import './experiments/virtualisedFields/dynamicHeightVirtualisedList';

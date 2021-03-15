@@ -31,6 +31,7 @@ const allIcons = additionalProps => (
     <Icon name="guideline" {...additionalProps} />
     <Icon name="radio" {...additionalProps} />
     <Icon name="text" {...additionalProps} />
+    <Icon name="componentField" {...additionalProps} />
     <Icon name="up" {...additionalProps} />
     <Icon name="down" {...additionalProps} />
     <Icon name="cross" {...additionalProps} />
@@ -97,6 +98,7 @@ const allIcons = additionalProps => (
     <Icon name="component16" {...additionalProps} />
     <Icon name="bolt" {...additionalProps} />
     <Icon name="unusedTemplate16" {...additionalProps} />
+    <Icon name="addProject16" {...additionalProps} />
   </div>
 );
 

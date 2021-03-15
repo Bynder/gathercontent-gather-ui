@@ -87,6 +87,11 @@ $dropdown-status-circle-width-height: 15px !default;
   }
 }
 
+.dropdown__content.is-active.dropdown__content--no-transform {
+  animation: dropdownAnimationNoTransform 750ms;
+    animation-fill-mode: forwards;
+}
+
 .dropdown__action {
   display: block;
   white-space: nowrap;

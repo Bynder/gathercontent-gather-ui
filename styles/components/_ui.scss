@@ -17,8 +17,7 @@
 @import '../../lib/Carousel/styles.scss';
 @import '../../lib/Modal/styles.scss';
 @import '../../lib/DropdownSwitcher/styles.scss';
-@import '../../lib/Field/styles.scss';
-@import '../../lib/Figure/styles.scss';
+@import '../../lib/FigurePlaceholder/styles.scss';
 @import '../../lib/Person/styles.scss';
 @import '../../lib/Conversation/styles.scss';
 @import '../../lib/Form/styles.scss';
@@ -76,11 +75,25 @@
 @import '../../lib/ColField/styles.scss';
 @import '../../lib/SelectionModal/styles.scss';
 @import '../../lib/InputConfirmationModal/styles.scss';
+@import '../../lib/Layout/styles.scss';
 
 @import '../../lib/ButtonNew/styles/styles.scss';
 
+@import '../../lib/src/prefabs/modalUpload/modalUpload';
+@import '../../lib/src/prefabs/files/fileCard/fileCard';
+
 @import '../../lib/src/components/card/card';
-@import '../../lib/src/components/files/fileCard/fileCard';
+@import '../../lib/src/components/modal/modal';
+@import '../../lib/src/components/viewOptions/viewOptions';
+@import '../../lib/src/components/componentWrapper/componentWrapper';
+@import '../../lib/src/components/sidebar/sidebar';
 
 @import '../../lib/src/modules/preview/previewImage';
 @import '../../lib/src/modules/loader/loader';
+@import '../../lib/src/modules/closeButton/closeButton';
+@import '../../lib/src/modules/navigationItems/navigationItems';
+@import '../../lib/src/modules/inventoryItem/inventoryitem';
+@import '../../lib/src/modules/selectionControls/selectionControls';
+@import '../../lib/src/modules/renameInput/renameInput';
+@import '../../lib/src/modules/input/input';
+@import '../../lib/src/modules/label/label';
