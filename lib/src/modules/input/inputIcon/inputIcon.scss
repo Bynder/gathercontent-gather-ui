@@ -1,0 +1,11 @@
+.input-icon {
+  @apply relative inline-flex items-center w-full;
+
+  .icon {
+    @apply absolute ml-3;
+  }
+
+  .input {
+    @apply pl-8;
+  }
+}
