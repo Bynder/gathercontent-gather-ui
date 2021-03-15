@@ -7,6 +7,7 @@ import '../lib/src/components/card/CardStory';
 import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
+import 'lib/src/components/form/FormStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
