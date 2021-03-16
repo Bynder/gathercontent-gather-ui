@@ -79,12 +79,14 @@
 
 @import '../../lib/ButtonNew/styles/styles.scss';
 
+@import '../../lib/src/prefabs/modalUpload/modalUpload';
+@import '../../lib/src/prefabs/files/fileCard/fileCard';
+
 @import '../../lib/src/components/card/card';
 @import '../../lib/src/components/modal/modal';
-@import '../../lib/src/prefabs/modalUpload/modalUpload';
 @import '../../lib/src/components/viewOptions/viewOptions';
-@import '../../lib/src/prefabs/files/fileCard/fileCard';
 @import '../../lib/src/components/componentWrapper/componentWrapper';
+@import '../../lib/src/components/sidebar/sidebar';
 
 @import '../../lib/src/modules/preview/previewImage';
 @import '../../lib/src/modules/loader/loader';
