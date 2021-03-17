@@ -1,13 +1,21 @@
 .input {
-  @apply p-2 m-0 border border-solid border-neutral-90 text-base rounded w-full outline-none transition-colors duration-200;
+  @apply m-0 border border-solid border-neutral-90 rounded w-full outline-none transition-colors duration-200;
 
-  &:hover {
+  &:hover:enabled {
     @apply border-transparent shadow-blue-primary-1px;
   }
 
   &:focus {
     @apply border-transparent shadow-blue-primary-2px;
   }
+}
+
+.input-md {
+  @apply p-2 text-base leading-6;
+}
+
+.input-sm {
+  @apply p-2 text-sm leading-4;
 }
 
 .input-invalid,

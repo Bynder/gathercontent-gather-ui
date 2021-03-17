@@ -19,6 +19,7 @@ import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
 import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
+import 'lib/ButtonNew/stories/ButtonSuccess/ButtonSuccessStory';
 
 import 'lib/src/modules/loader/LoaderStory';
 import 'lib/src/modules/closeButton/CloseButtonStory';
