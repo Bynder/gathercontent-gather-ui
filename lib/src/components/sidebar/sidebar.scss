@@ -36,6 +36,14 @@
   }
 }
 
+.sidebar-description {
+  @apply text-neutral-primary text-sm mb-4 -mt-2;
+}
+
+.sidebar-section-head {
+  @apply flex;
+}
+
 .sidebar-header,
 .sidebar-heading {
   @apply font-semi-bold text-base text-neutral-20 leading-normal;
