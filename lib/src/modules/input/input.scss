@@ -5,7 +5,7 @@
     @apply border-transparent shadow-blue-primary-1px;
   }
 
-  &:focus {
+  &:focus:enabled {
     @apply border-transparent shadow-blue-primary-2px;
   }
 }
