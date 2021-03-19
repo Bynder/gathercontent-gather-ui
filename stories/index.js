@@ -8,6 +8,7 @@ import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 import 'lib/src/components/sidebar/SidebarStory';
+import 'lib/src/components/form/FormStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
@@ -18,6 +19,7 @@ import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
 import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
 import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
 import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
+import 'lib/ButtonNew/stories/ButtonSuccess/ButtonSuccessStory';
 
 import 'lib/src/modules/loader/LoaderStory';
 import 'lib/src/modules/closeButton/CloseButtonStory';

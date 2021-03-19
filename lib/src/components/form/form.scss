@@ -1,0 +1,19 @@
+.form-body {
+  @apply w-full;
+}
+
+.form-inline {
+  @apply flex flex-row;
+}
+
+.form:not(.form-inline) .form-submission {
+  @apply flex justify-end;
+}
+
+.form-submit-button {
+  @apply ml-2;
+}
+
+.form-helper {
+  @apply text-sm text-red-primary;
+}
