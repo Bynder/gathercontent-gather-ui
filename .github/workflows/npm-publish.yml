@@ -1,8 +1,11 @@
 name: Publish to NPM
 
 on:
-  release:
-    types: [prereleased]
+  push:
+    branches: 
+      - main
+    tags:
+      - 'v*'
 
 jobs:
   publish-npm:
