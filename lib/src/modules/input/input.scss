@@ -21,11 +21,21 @@
 .input-invalid,
 .input-native:invalid {
   @apply border-transparent shadow-red-primary-2px;
+
+  &:hover:enabled,
+  &:focus:enabled {
+    @apply border-transparent shadow-red-primary-2px;
+  }
 }
 
 .input-valid,
 .input-native:valid {
   @apply border-transparent shadow-green-primary-2px;
+
+  &:hover:enabled,
+  &:focus:enabled {
+    @apply border-transparent shadow-green-primary-2px;
+  }
 }
 
 @import "inputIcon/inputIcon";
