@@ -30,10 +30,10 @@
 .sidebar-heading,
 .sidebar-subsection {
   @apply mb-4;
+}
 
-  &:last-child {
-    @apply mb-0;
-  }
+.sidebar-subsection:last-child {
+  @apply mb-0;
 }
 
 .sidebar-description {
