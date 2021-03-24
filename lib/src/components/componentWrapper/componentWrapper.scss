@@ -9,6 +9,10 @@
   @apply flex p-4 border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90 items-center;
 }
 
+.component-counter {
+  @apply text-neutral-primary mr-2 text-lg;
+}
+
 .component-label {
   @apply flex text-lg leading-6 w-full items-center;
 }
