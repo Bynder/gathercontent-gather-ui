@@ -3,7 +3,11 @@
 }
 
 .sidebar-header {
-  @apply p-4 flex;
+  @apply p-4 flex flex-row;
+
+  div {
+    @apply flex-grow self-center;
+  }
 }
 
 .sidebar-footer {
