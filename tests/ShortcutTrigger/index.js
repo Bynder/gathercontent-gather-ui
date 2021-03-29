@@ -33,14 +33,18 @@ describe('Shortcut Trigger', () => {
   });
 
   test('triggers the function when the shortcut is pressed', () => {
-    wrapper.instance().onKeyDown({ repeat: false, key: 'enter' });
+    wrapper.instance().onKeyDown({ repeat: false, key: 'enter', target: {} });
     expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenCalledWith({ repeat: false, key: 'enter' });
+    expect(spy).toHaveBeenCalledWith({
+      repeat: false,
+      key: 'enter',
+      target: {}
+    });
 
     wrapper.setProps({ withCtrlKey: true });
     wrapper
       .instance()
-      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true, target: {} });
     expect(spy).toHaveBeenCalledTimes(2);
 
     wrapper.setProps({
@@ -55,33 +59,34 @@ describe('Shortcut Trigger', () => {
       ctrlKey: true,
       metaKey: true,
       shiftKey: true,
-      altKey: true
+      altKey: true,
+      target: {}
     });
     expect(spy).toHaveBeenCalledTimes(3);
   });
 
   test('does not trigger the function when the shortcut is not pressed', () => {
-    wrapper.instance().onKeyDown({ repeat: false, key: 'a' });
+    wrapper.instance().onKeyDown({ repeat: false, key: 'a', target: {} });
     expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
-      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', ctrlKey: true, target: {} });
     expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
-      .onKeyDown({ repeat: false, key: 'enter', metaKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', metaKey: true, target: {} });
     expect(spy).not.toHaveBeenCalled();
 
     wrapper
       .instance()
-      .onKeyDown({ repeat: false, key: 'enter', shiftKey: true });
+      .onKeyDown({ repeat: false, key: 'enter', shiftKey: true, target: {} });
     expect(spy).not.toHaveBeenCalled();
   });
 
   test('does not trigger the function when the event is repeating', () => {
-    wrapper.instance().onKeyDown({ repeat: true });
+    wrapper.instance().onKeyDown({ repeat: true, target: {} });
     expect(spy).not.toHaveBeenCalled();
   });
 });
