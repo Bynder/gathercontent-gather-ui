@@ -3,6 +3,9 @@
   &-selected {
     @include before-border(2px 2px 0px 2px, solid, theme('colors.blue.primary'), theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0px 0px);
   }
+  &-hovered {
+    @apply border-blue-primary;
+  }
 }
 
 .component-header-top {
@@ -50,8 +53,11 @@
     @apply bg-neutral-95;
   }
 
-  &-hovered {
+  &-dragged-over {
     @apply bg-neutral-90;
+  }
+  &-hovered {
+    @apply border-blue-primary;
   }
 }
 
