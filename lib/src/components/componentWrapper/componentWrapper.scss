@@ -1,7 +1,12 @@
 .component-header {
   @apply rounded-t-xlarge border border-b-0 border-solid border-neutral-90 relative;
   &-selected {
-    @include before-border(2px 2px 0px 2px, solid, theme('colors.blue.primary'), theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0px 0px);
+    @include before-border(
+      2px 2px 0px 2px,
+      solid,
+      theme('colors.blue.primary'),
+      theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0px 0px
+    );
   }
   &-hovered {
     @apply border-blue-primary;
@@ -40,6 +45,7 @@
 }
 
 .component-body {
+  @apply border-b-0 border-t-0;
   &-selected {
     @include before-border(0px 2px, solid, theme('colors.blue.primary'), 0);
   }
@@ -65,6 +71,11 @@
   @apply border-b rounded-b-xlarge py-4;
 
   &-selected {
-    @include before-border(0px 2px 2px 2px, solid, theme('colors.blue.primary'), 0px 0px theme('borderRadius.xlarge') theme('borderRadius.xlarge'));
+    @include before-border(
+      0px 2px 2px 2px,
+      solid,
+      theme('colors.blue.primary'),
+      0px 0px theme('borderRadius.xlarge') theme('borderRadius.xlarge')
+    );
   }
 }
