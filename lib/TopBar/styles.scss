@@ -169,6 +169,15 @@ $top-bar-notification-height: 42px;
   }
 }
 
+.top-bar-light-grey {
+  .top-bar__wrapper {
+    @apply bg-neutral-98 border-neutral-90 text-neutral-20;
+  }
+  .top-bar__cell--bordered {
+    @apply border-neutral-90;
+  }
+}
+
 .top-bar__content--right.top-bar__content--collapse {
   padding-right: 0;
 }
