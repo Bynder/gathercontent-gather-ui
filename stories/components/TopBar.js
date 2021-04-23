@@ -122,6 +122,46 @@ storiesOf('Components', module).add('TopBar', () => (
         </TopBarContent>
       </TopBar>
     </StoryItem>
+
+    <StoryItem
+      title="TopBar light grey"
+      description="TopBar with the light grey theme."
+    >
+      <TopBar useLightGreyTheme>
+        <TopBarContent left xs={10} md={5}>
+          <TopBarCell>
+            <Icon
+              name="backArrow"
+              className="top-bar__action top-bar__action--collapse-left"
+            />
+          </TopBarCell>
+          <TopBarCell bordered>
+            <Button
+              types={['icon-only']}
+              clickHandler={() => {}}
+              className="top-bar__action"
+            >
+              <Icon name="menu" size="minor" />
+            </Button>
+          </TopBarCell>
+        </TopBarContent>
+        <TopBarContent right xs={2} md={4}>
+          <TopBarCell bordered>
+            <Button
+              types={['icon-only']}
+              className="top-bar__action"
+              clickHandler={() => {}}
+            >
+              <Icon name="menuDotted" />
+            </Button>
+          </TopBarCell>
+        </TopBarContent>
+        <TopBarContent center xs={12} md={3}>
+          Centered content
+        </TopBarContent>
+      </TopBar>
+    </StoryItem>
+
     <StoryItem
       title="TopBar App Example"
       description="Example of the TopBar used on the app."
