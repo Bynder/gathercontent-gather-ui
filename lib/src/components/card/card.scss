@@ -13,7 +13,21 @@
 }
 
 .card-content {
-  @apply p-6;
+  @apply p-4;
+
+  @include respond-to-min($screen-sm) {
+    @apply p-6;
+  }
+}
+
+.card-sm .card-content {
+  @apply p-4;
+}
+
+.card-md .card-content {
+  @include respond-to-min($screen-sm) {
+    @apply p-6;
+  }
 }
 
 .card-title {
