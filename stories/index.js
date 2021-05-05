@@ -1,9 +1,9 @@
 import './base/Base';
 
+import '../lib/src/components/card/CardStory';
 import '../lib/src/prefabs/files/fileCard/FileCardStory';
 import '../lib/src/components/modal/ModalStory';
 import '../lib/src/components/viewOptions/ViewOptionsStory';
-import '../lib/src/components/card/CardStory';
 import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
@@ -81,7 +81,6 @@ import UserSearch from './components/UserSearch';
 import ImageLoader from './components/images/ImageLoader';
 import InputWithButton from './components/InputWithButton';
 import Pill from '../lib/Pill/stories/Pill';
-import GuideCard from '../lib/GuideCard/stories/GuideCardStory';
 import DnD from '../lib/DnD/stories/DnDStory';
 import Windowing from '../lib/Windowing/stories/WindowingStory';
 import Conversations from '../lib/Conversation/stories/ConversationStory';

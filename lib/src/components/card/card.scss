@@ -13,7 +13,33 @@
 }
 
 .card-content {
-  @apply p-2;
+  @apply p-4;
+
+  @include respond-to-min($screen-sm) {
+    @apply p-6;
+  }
+}
+
+.card-sm .card-content {
+  @apply p-4;
+}
+
+.card-md .card-content {
+  @include respond-to-min($screen-sm) {
+    @apply p-6;
+  }
+}
+
+.card-title {
+  @apply text-lg font-semi-bold mb-4;
+}
+
+.card-description {
+  @apply text-neutral-primary leading-6 mb-4;
+}
+
+.card-footer {
+  @apply flex justify-end;
 }
 
 .card-interactive {
