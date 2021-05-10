@@ -1,5 +1,9 @@
 .inventory-item {
   @apply shadow-small bg-white;
+
+  &:disabled {
+    @apply bg-neutral-95 opacity-100 border-neutral-90;
+  }
 }
 
 .inventory-item-preview-active {
