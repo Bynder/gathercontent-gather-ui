@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 dist
 storybook-static/
+yarn-error.log
