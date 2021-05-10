@@ -15,6 +15,7 @@ import Logo from '../../lib/Logo';
 import DropdownSwitcher from '../../lib/DropdownSwitcher';
 import Search from '../../lib/Search';
 import NotificationBar from '../../lib/Notification/bar';
+import { ButtonIcon } from 'lib';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
@@ -56,13 +57,13 @@ storiesOf('Components', module).add('TopBar', () => (
             </AvatarGroup>
           </TopBarCell>
           <TopBarCell bordered>
-            <Button
-              types={['icon-only']}
+            <ButtonIcon
+              name="menuDotted"
+              size={ButtonIcon.sizes.md}
+              onClick={() => {}}
               className="top-bar__action"
-              clickHandler={() => {}}
-            >
-              <Icon name="menuDotted" />
-            </Button>
+              iconTitle="Open item settings"
+            />
           </TopBarCell>
         </TopBarContent>
         <TopBarContent center xs={12} md={3}>
@@ -108,13 +109,13 @@ storiesOf('Components', module).add('TopBar', () => (
             </AvatarGroup>
           </TopBarCell>
           <TopBarCell bordered>
-            <Button
-              types={['icon-only']}
+            <ButtonIcon
+              name="menuDotted"
+              size={ButtonIcon.sizes.md}
+              onClick={() => {}}
               className="top-bar__action"
-              clickHandler={() => {}}
-            >
-              <Icon name="menuDotted" />
-            </Button>
+              iconTitle="Open item settings"
+            />
           </TopBarCell>
         </TopBarContent>
         <TopBarContent center xs={12} md={3}>
@@ -147,13 +148,13 @@ storiesOf('Components', module).add('TopBar', () => (
         </TopBarContent>
         <TopBarContent right xs={2} md={4}>
           <TopBarCell bordered>
-            <Button
-              types={['icon-only']}
+            <ButtonIcon
+              name="menuDotted"
+              size={ButtonIcon.sizes.md}
+              onClick={() => {}}
               className="top-bar__action"
-              clickHandler={() => {}}
-            >
-              <Icon name="menuDotted" />
-            </Button>
+              iconTitle="Open item settings"
+            />
           </TopBarCell>
         </TopBarContent>
         <TopBarContent center xs={12} md={3}>
