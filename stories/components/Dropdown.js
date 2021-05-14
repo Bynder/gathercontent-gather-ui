@@ -173,6 +173,25 @@ storiesOf('Components', module)
             {createContentWithItems()}
           </Dropdown>
         </StoryItem>
+
+        <StoryItem
+          title="Dropdown with unrednered content and auto positioning"
+          description="A dropdown where we don't render the dropdown content until the dropdown is active"
+        >
+          <Dropdown id="id-3-b" autoPosition>
+            {({ showContent }) => (
+              <>
+                <Dropdown.Trigger useButton>
+                  Auto Position
+                </Dropdown.Trigger>
+
+                {showContent && (
+                  createContentWithItems()
+                )}
+              </>
+            )}
+          </Dropdown>
+        </StoryItem>
         <StoryItem
           title="Confirmation Dropdown"
           description="A dropdown like component that renders a confirmation dropdown."
