@@ -1,0 +1,20 @@
+.button-secondary {
+  @apply bg-white text-blue-primary border-neutral-90;
+
+  &:hover {
+    @apply bg-blue-95 border-blue-primary;
+  }
+
+  &:focus {
+    @apply border-blue-primary shadow-button-secondary-focus;
+  }
+
+  &:active,
+  .button-secondary-active {
+    @apply bg-blue-90 shadow-none;
+  }
+
+  &:disabled {
+    @apply bg-neutral-95 text-neutral-primary;
+  }
+}
