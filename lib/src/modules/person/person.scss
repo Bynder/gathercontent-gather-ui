@@ -1,0 +1,57 @@
+.person {
+  @apply flex py-2 px-4 overflow-hidden;
+
+  .person-right {
+    @apply ml-3 flex-shrink overflow-hidden w-full;
+    @include gradient-overflow(rgba(255,255,255,1));
+    white-space: nowrap;
+  }
+
+  .person-name {
+    @apply text-neutral-20 font-semi-bold;
+  }
+
+  .person-subtitle {
+    @apply text-neutral-primary text-sm;
+  }
+}
+
+.person-interactive {
+  @apply outline-none bg-transparent border-0 text-left w-full;
+
+  &:hover, &:focus {
+    @apply bg-neutral-95;
+
+    .person-right {
+      @include gradient-overflow(theme('colors.neutral.95'));
+    }
+  }
+
+  &:active {
+    @apply bg-blue-98;
+
+    .person-right {
+      @include gradient-overflow(theme('colors.blue.98'));
+    }
+  }
+}
+
+.person-selected {
+  @apply bg-blue-98;
+
+  .person-right {
+    @include gradient-overflow(theme('colors.blue.98'));
+  }
+
+  .person-name {
+    @apply text-blue-primary;
+  }
+
+  .person-tick {
+    @apply ml-auto;
+  }
+}
+
+.person-collapse {
+  @apply p-0;
+}
