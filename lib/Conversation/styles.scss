@@ -12,7 +12,7 @@ $conversation-padding: $layout-spacing-base/2 !default;
 $conversation-border-width: 1px !default;
 $conversation-border-color: $color-border-base !default;
 
-$conversation-comment-body-indentation: ($person-avatar-size + $layout-spacing-base/2);
+$conversation-comment-body-indentation: (30px + $layout-spacing-base/2);
 $conversation-comment-body-padding: 0 0 0 $conversation-comment-body-indentation !default;
 
 $conversation-meta-bullet-size: 4px !default;
