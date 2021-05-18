@@ -55,3 +55,7 @@
 .person-collapse {
   @apply p-0;
 }
+
+.person-bordered {
+  @apply border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90;
+}
