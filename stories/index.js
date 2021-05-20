@@ -30,6 +30,7 @@ import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
 import 'lib/src/modules/person/PersonStory';
+import 'lib/src/modules/calendar/CalendarStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
