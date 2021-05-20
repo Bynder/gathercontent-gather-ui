@@ -31,6 +31,7 @@ import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
 import 'lib/src/modules/person/PersonStory';
 import 'lib/src/modules/calendar/CalendarStory';
+import 'lib/src/modules/dateSet/DateSetStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
