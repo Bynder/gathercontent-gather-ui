@@ -4,6 +4,7 @@ import '../lib/src/components/card/CardStory';
 import '../lib/src/prefabs/files/fileCard/FileCardStory';
 import '../lib/src/components/modal/ModalStory';
 import '../lib/src/components/viewOptions/ViewOptionsStory';
+import '../lib/src/modules/statusIndicatorCircle/statusIndicatorCircleStory';
 import '../lib/src/components/workflowStep/WorkflowStepStory';
 import '../lib/src/components/dropzone/DropzoneStory';
 import 'lib/src/components/animated/AnimatedWrapperStory';
