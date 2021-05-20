@@ -1,0 +1,31 @@
+.workflow-step {
+  @apply h-full pb-4 overflow-y-hidden relative;
+}
+
+.workflow-step.is-active {
+  @apply bg-blue-98;
+}
+
+.workflow-step__meta {
+  @apply pr-4;
+}
+
+.workflow-step__header {
+  @apply w-full flex flex-row pt-4 overflow-x-hidden;
+}
+
+.workflow-step__title {
+  @apply pl-12 font-semi-bold text-lg leading-6 text-neutral-20;
+}
+
+.workflow-step__meta-container {
+  @apply flex flex-row ml-auto;
+}
+
+.workflow-step__actions {
+  @apply pr-4;
+}
+
+.workflow-step__body {
+  @apply pl-12;
+}

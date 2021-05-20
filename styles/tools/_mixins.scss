@@ -150,6 +150,23 @@
 }
 
 /**
+ * A border that appears in the `before` element
+ */
+@mixin before-left-border($pixelSize, $style, $colour) {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-left: $style $colour;
+    border-left-width: $pixelSize;
+    pointer-events: none;
+  }
+}
+
+/**
  * A border that appears in the `after` element - this may be useful if the content messes with z-indexes
  */
 @mixin after-border($pixelSize, $style, $colour, $radius) {
