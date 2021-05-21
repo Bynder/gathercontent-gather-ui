@@ -9,6 +9,7 @@ import 'lib/src/components/animated/AnimatedWrapperStory';
 import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 import 'lib/src/components/sidebar/SidebarStory';
 import 'lib/src/components/form/FormStory';
+import 'lib/src/components/dropdownContent/DropdownContentStory';
 
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
 import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
@@ -28,6 +29,7 @@ import 'lib/src/modules/navigationItems/NavigationItemsStory';
 import 'lib/src/modules/inventoryItem/InventoryItemStory';
 import 'lib/src/modules/selectionControls/SelectionControlsStory';
 import 'lib/src/modules/renameInput/RenameInputStory';
+import 'lib/src/modules/person/PersonStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';

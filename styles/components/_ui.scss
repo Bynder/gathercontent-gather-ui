@@ -18,7 +18,6 @@
 @import '../../lib/Modal/styles.scss';
 @import '../../lib/DropdownSwitcher/styles.scss';
 @import '../../lib/FigurePlaceholder/styles.scss';
-@import '../../lib/Person/styles.scss';
 @import '../../lib/Conversation/styles.scss';
 @import '../../lib/Form/styles.scss';
 @import '../../lib/StatusIndicator/styles.scss';
@@ -84,6 +83,7 @@
 @import '../../lib/src/components/componentWrapper/componentWrapper';
 @import '../../lib/src/components/sidebar/sidebar';
 @import '../../lib/src/components/form/form';
+@import '../../lib/src/components/dropdownContent/dropdownContent';
 
 @import '../../lib/src/modules/preview/previewImage';
 @import '../../lib/src/modules/loader/loader';
@@ -94,6 +94,7 @@
 @import '../../lib/src/modules/renameInput/renameInput';
 @import '../../lib/src/modules/input/input';
 @import '../../lib/src/modules/label/label';
+@import '../../lib/src/modules/person/person';
 
 @import '../../lib/src/prefabs/modalUpload/modalUpload';
 @import '../../lib/src/prefabs/files/fileCard/fileCard';
