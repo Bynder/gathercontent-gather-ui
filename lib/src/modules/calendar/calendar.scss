@@ -1,6 +1,8 @@
-.DayPicker {
+.calendar {
   @apply p-4;
+}
 
+.DayPicker {
   .DayPicker-wrapper {
     @apply relative;
   }
