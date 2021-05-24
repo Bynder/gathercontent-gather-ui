@@ -1,4 +1,13 @@
 .status-indicator-circle {
   border-radius: 50%;
-  @apply block w-4 h-4;
+  transition: border-width 300ms ease-in-out;
+  @apply block w-4 h-4 border-solid;
+
+  &.thick-border {
+    border-width: 4px;
+  }
+
+  &.thin-border {
+    border-width: 2px;
+  }
 }
