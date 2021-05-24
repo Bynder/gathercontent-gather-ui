@@ -1,0 +1,140 @@
+.calendar {
+  @apply p-4;
+}
+
+.DayPicker {
+  .DayPicker-wrapper {
+    @apply relative;
+  }
+
+  .DayPicker-Caption {
+    @apply text-center text-base font-semi-bold text-neutral-20 pb-3;
+  }
+
+  .DayPicker-NavBar {
+    @apply flex absolute w-full;
+  }
+
+  .DayPicker-NavButton {
+    @apply cursor-pointer mx-2;
+    width: 8px;
+    height: 8px;
+  }
+
+  .DayPicker-NavButton:before {
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    border-color: $neutral-base;
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    height: 11px;
+    width: 11px;
+  }
+
+  .DayPicker-NavButton--next {
+    @apply ml-auto;
+
+    &:before {
+      left: 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  .DayPicker-NavButton--prev {
+
+    &:before {
+      left: 4px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .DayPicker-WeekdaysRow,
+  .DayPicker-Week {
+    @apply flex justify-evenly;
+  }
+
+  .DayPicker-Weekday, .DayPicker-Day {
+    @apply text-center text-sm flex justify-center items-center;
+    flex: 1 1 0;
+    min-width: 28px;
+    height: 28px;
+  }
+
+  .DayPicker-Weekday {
+    @apply text-neutral-primary font-semi-bold text-xs uppercase;
+
+    &:nth-child(6),
+    &:nth-child(7) {
+      @apply bg-neutral-95;
+    }
+
+    abbr {
+      @apply no-underline border-0;
+    }
+
+  }
+
+  .DayPicker-Day {
+    @apply text-neutral-20 relative cursor-pointer;
+
+    &:after {
+      @apply border border-transparent border-solid rounded absolute;
+      z-index: -1;
+      width:28px;
+      height: 28px;
+      content: '';
+    }
+
+    &.DayPicker-Day--today:after {
+      @apply bg-blue-95 border-blue-primary;
+    }
+
+    &:hover {
+      @apply text-blue-primary;
+      &:after {
+        @apply border-blue-primary;
+      }
+    }
+  }
+
+  .DayPicker-Day.DayPicker-Day--selected {
+    @apply text-white;
+    &:after {
+      @apply bg-blue-primary;
+    }
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  .DayPicker-Day--past {
+    &:hover {
+      @apply text-red-primary;
+      &:after {
+        @apply border-red-primary;
+      }
+    }
+    &.DayPicker-Day--selected {
+      @apply text-white;
+      &:after {
+        @apply bg-red-primary;
+      }
+    }
+  }
+  .DayPicker-Day--outside {
+    @apply pointer-events-none;
+  }
+
+  .DayPicker-Day--weekend {
+    &:before {
+      @apply bg-neutral-95 absolute w-full h-full;
+      height: 29px;
+      z-index: -2;
+      content: '';
+    }
+  }
+}
