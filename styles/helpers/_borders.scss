@@ -7,6 +7,14 @@
   );
 }
 
+.pseudo-left-border-blue-2px {
+  @include before-left-border(
+    2px,
+    solid,
+    theme('colors.blue.primary')
+  );
+}
+
 .pseudo-border-red-2px {
   @include before-border(
     2px,
