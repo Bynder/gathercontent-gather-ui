@@ -11,11 +11,15 @@
 }
 
 .workflow-step__header {
-  @apply w-full flex flex-row pt-4 overflow-x-hidden;
+  @apply w-full flex flex-row pt-4 overflow-hidden;
 }
 
 .workflow-step__title {
-  @apply pl-12 font-semi-bold text-lg leading-6 text-neutral-20;
+  @apply font-semi-bold text-lg leading-6 text-neutral-20 flex flex-row;
+
+  .workflow-step__status {
+    @apply w-12 flex justify-center mt-1;
+  }
 }
 
 .workflow-step__meta-container {
