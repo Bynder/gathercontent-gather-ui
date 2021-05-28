@@ -1,5 +1,5 @@
 .workflow-step {
-  @apply h-full pb-4 overflow-y-hidden relative;
+  @apply h-full pb-4 relative;
 }
 
 .workflow-step.is-active {
@@ -11,7 +11,7 @@
 }
 
 .workflow-step__header {
-  @apply w-full flex flex-row pt-4 overflow-hidden;
+  @apply w-full flex flex-row pt-4;
 }
 
 .workflow-step__title {
@@ -31,5 +31,5 @@
 }
 
 .workflow-step__body {
-  @apply pl-12;
+  @apply pl-12 overflow-y-hidden;
 }
