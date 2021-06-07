@@ -1,0 +1,15 @@
+.button-colour {
+  @apply w-8 h-8;
+  background-color: currentColor;
+  box-shadow: rgb(0 0 0 / 15%) 0px 0px 0px 1px inset;
+  border:none;
+
+  &:hover {
+    box-shadow: none;
+    filter: brightness(90%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
