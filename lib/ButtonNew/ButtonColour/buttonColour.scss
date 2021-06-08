@@ -1,5 +1,5 @@
 .button-colour {
-  @apply w-8 h-8;
+  @apply w-8 h-8 rounded-small;
   background-color: currentColor;
   box-shadow: rgb(0 0 0 / 15%) 0px 0px 0px 1px inset;
   border:none;
