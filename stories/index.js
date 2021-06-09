@@ -12,6 +12,8 @@ import 'lib/src/components/componentWrapper/ComponentWrapperStory';
 import 'lib/src/components/sidebar/SidebarStory';
 import 'lib/src/components/form/FormStory';
 import 'lib/src/components/dropdownContent/DropdownContentStory';
+import 'lib/src/components/colourPicker/ColourPickerStory';
+
 import 'lib/src/prefabs/dueDateDropdown/DueDateDropdownStory';
 import 'lib/src/prefabs/assigneeDropdown/AssigneeDropdownStory';
 

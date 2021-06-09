@@ -12,4 +12,9 @@
   &:disabled {
     opacity: 0.5;
   }
+
+}
+
+.button-colour-active {
+  box-shadow: currentColor 0px 0px 4px;
 }
