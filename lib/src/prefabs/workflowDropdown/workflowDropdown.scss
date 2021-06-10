@@ -1,4 +1,11 @@
 .workflow-dropdown__content {
-  width: 30.75rem;
-  @apply p-0 text-left;
+  @apply p-0 text-left w-full border border-solid border-neutral-90 rounded;
+
+  .workflow-step {
+    @apply border-b border-t-0 border-l-0 border-r-0 border-solid border-neutral-90;
+  }
+
+  .workflow-step:last-of-type {
+    @apply border-0;
+  }
 }
