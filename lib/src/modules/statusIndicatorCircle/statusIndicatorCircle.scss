@@ -1,5 +1,6 @@
 .status-indicator-circle {
   border-radius: 50%;
-  transition: box-shadow 300ms ease-in-out;
+  transition-property: box-shadow;
+  transition-timing-function: ease-in-out;
   @apply block w-4 h-4;
 }
