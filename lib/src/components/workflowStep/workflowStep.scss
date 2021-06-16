@@ -7,7 +7,7 @@
 }
 
 .workflow-step__meta {
-  @apply pr-4;
+  @apply pr-4 flex flex-row items-center;
 }
 
 .workflow-step__header {
