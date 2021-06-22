@@ -1,6 +1,5 @@
+import { EditableTextWrapper, PageInformation } from 'lib';
 import { React, shallow } from '../setup';
-import PageInformation from '../../lib/PageInformation';
-import EditableTextWrapper from '../../lib/EditableTextWrapper';
 
 describe('PageInformation', () => {
   let wrapper;

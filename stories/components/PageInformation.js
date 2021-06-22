@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import PageInformation from '../../lib/PageInformation';
-import EditableTextWrapper from '../../lib/EditableTextWrapper';
+import { EditableTextWrapper, PageInformation } from 'lib';
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module)
