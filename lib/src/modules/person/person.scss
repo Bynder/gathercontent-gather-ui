@@ -4,12 +4,12 @@
 
 .person-right {
   @apply ml-3 flex-shrink overflow-hidden w-full flex flex-wrap items-center;
-  @include gradient-overflow(rgba(255,255,255,1));
+  @include gradient-overflow(rgba(255, 255, 255, 1));
   white-space: nowrap;
 }
 
 .person-name {
-  @apply text-neutral-20 font-semi-bold w-full flex-shrink-0;
+  @apply text-neutral-20 w-full flex-shrink-0;
 }
 
 .person-subtitle {
@@ -19,7 +19,8 @@
 .person-interactive {
   @apply outline-none bg-transparent border-0 text-left w-full cursor-pointer;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     @apply bg-neutral-95;
 
     .person-right {
