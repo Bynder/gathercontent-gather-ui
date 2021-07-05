@@ -87,6 +87,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "@react-hook/resize-observer": "^1.2.2",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/react": "5.1.9",

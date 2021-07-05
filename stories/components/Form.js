@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import RadioButton from '../../lib/Form/RadioButton';
 import RadioButtonOther from '../../lib/Form/RadioButton/Other';
-import RadioButtonGroup from '../../lib/Form/RadioButton/Group';
+import { RadioButtonGroup } from '../../lib/Form/RadioButton/Group';
 import Checkbox from '../../lib/Form/Checkbox';
-import CheckboxGroup from '../../lib/Form/Checkbox/Group';
+import { CheckboxGroup } from '../../lib/Form/Checkbox/Group';
 import StoryItem from '../styleguide/StoryItem';
 import Form from "../../lib/Form";
 import Button from "../../lib/Button";
@@ -294,6 +294,33 @@ storiesOf('Components', module)
               value: 'value 2',
               label: 'Guatemala roast',
               checked: false
+            }
+          ]}
+          overrideLabelDefault={action('label click wow')}
+          onChangeHandler={selected => action('onChangeHandler')(selected)}
+        />
+      </StoryItem>
+
+      <StoryItem
+        title="Radio Input Group with other option"
+        description="A group of radio buttons which also has an other option"
+      >
+        <RadioButtonGroup
+          choices={[
+            {
+              name: 'ch8',
+              id: '12434',
+              value: 'value 1',
+              label: 'Ethiopian roast',
+              checked: true
+            },
+            {
+              name: 'ch8',
+              id: '12432',
+              value: 'value 2',
+              label: 'Guatemala roast',
+              checked: false,
+              other_option: true
             }
           ]}
           overrideLabelDefault={action('label click wow')}
