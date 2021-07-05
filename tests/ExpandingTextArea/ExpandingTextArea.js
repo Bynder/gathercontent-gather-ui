@@ -36,21 +36,7 @@ describe('ExpandingTextArea', () => {
     expect(wrapper.state('rowCount')).toEqual(1);
   });
 
-  test('respects the minRows prop', () => {
-    expect(wrapper.state('rowCount')).toEqual(1);
-    wrapper.setProps({ minRows: 4 });
-    wrapper.instance().resizeTextArea();
-    jest.runAllTimers();
-    expect(wrapper.state('rowCount')).toEqual(4);
-  });
 
-  test('calls the onRowCountChange prop function when the row count changes', () => {
-    expect(wrapper.state('rowCount')).toEqual(1);
-    wrapper.setProps({ minRows: 4 });
-    wrapper.instance().resizeTextArea();
-    jest.runAllTimers();
-    expect(onRowCountChangeSpy).toHaveBeenCalled();
-  });
 
   test('sets the input value as the value prop', () => {
     wrapper.setProps({ value: 'New Value' });
@@ -62,11 +48,6 @@ describe('ExpandingTextArea', () => {
     expect(handleOnChangeSpy).toHaveBeenCalled();
   });
 
-  test('sets the row state on change', () => {
-    wrapper.simulate('change', { target: { value: 'Changed value' } });
-    wrapper.simulate('keyDown', { keyCode: 13 });
-    expect(wrapper.state('rowCount')).toEqual(1);
-  });
 
   test('calls a prop function when focus and blur', () => {
     wrapper.simulate('focus', {});
@@ -76,15 +57,4 @@ describe('ExpandingTextArea', () => {
     expect(handleOnBlurSpy).toHaveBeenCalledTimes(1);
   });
 
-  test('sets the value state if the setValue prop is false', () => {
-    wrapper.simulate('change', { target: { value: 'Changed value' } });
-    expect(wrapper.state('inputValue')).toEqual('Changed value');
-  });
-
-  test('does not set the value state if the setValue prop is true', () => {
-    wrapper
-      .setProps({ setValue: true })
-      .simulate('change', { target: { value: 'Changed value' } });
-    expect(wrapper.state('inputValue')).toEqual('');
-  });
 });
