@@ -7,7 +7,7 @@
 }
 
 .workflow-step__meta {
-  @apply pr-4 flex flex-row items-center;
+  @apply pr-4 flex flex-row items-center flex-shrink-0;
 }
 
 .workflow-step__header {
@@ -18,16 +18,16 @@
   @apply font-semi-bold text-lg leading-6 text-neutral-20 flex flex-row;
 
   .workflow-step__status {
-    @apply w-12 flex justify-center mt-1;
+    @apply w-12 flex justify-center mt-1 flex-shrink-0;
   }
 }
 
 .workflow-step__meta-container {
-  @apply flex flex-row ml-auto;
+  @apply flex flex-row ml-auto relative flex-shrink-0;
 }
 
 .workflow-step__actions {
-  @apply pr-4;
+  @apply pr-4 flex flex-row;
 }
 
 .workflow-step__body {
