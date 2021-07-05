@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import EditableTextWrapper from '../../lib/EditableTextWrapper';
+import { EditableTextWrapper } from 'lib';
 import StoryItem from '../styleguide/StoryItem';
 
 const longText =
