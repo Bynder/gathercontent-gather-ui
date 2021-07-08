@@ -31,13 +31,6 @@ describe('ExpandingTextArea', () => {
     );
   });
 
-  test('sets initial rows on render', () => {
-    expect(wrapper.find('.expanding-textarea')).toHaveLength(1);
-    expect(wrapper.state('rowCount')).toEqual(1);
-  });
-
-
-
   test('sets the input value as the value prop', () => {
     wrapper.setProps({ value: 'New Value' });
     expect(wrapper.text()).toEqual(wrapper.prop('value'));
