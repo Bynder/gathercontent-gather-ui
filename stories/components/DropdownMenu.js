@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import DropdownMenu from '../../lib/DropdownMenu/';
+import { DropdownMenu } from '../../lib/DropdownMenu/';
 import SearchDropdown from '../../lib/SearchDropdown';
 import FontAwesomeIcon from '../../lib/FontAwesomeIcon';
 import StoryItem from '../styleguide/StoryItem';

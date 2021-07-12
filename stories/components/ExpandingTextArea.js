@@ -14,6 +14,11 @@ storiesOf('Components', module)
         >
           <ExpandingTextArea
             placeholder='Add some text...'
+            value={`hey heres some stuff
+
+            and here hello!
+
+            wowza!`}
           />
         </StoryItem>
         <StoryItem
