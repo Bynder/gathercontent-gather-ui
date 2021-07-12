@@ -37,17 +37,6 @@ describe('Tooltip Wrapper', () => {
     expect(wrapper.find('.test')).toHaveLength(1);
   });
 
-  test('accepts tooltipText as an object and a string', () => {
-    const consoleSpy = jest.spyOn(console, 'error');
-    wrapper.setProps({ tooltipText: 'lovely string' });
-    expect(consoleSpy).not.toHaveBeenCalled();
-    wrapper.setProps({ tooltipText: <div className="waffles">hello~~!</div> });
-    expect(consoleSpy).not.toHaveBeenCalled();
-    wrapper.setProps({ tooltipText: false });
-    expect(consoleSpy).toHaveBeenCalled();
-    consoleSpy.mockRestore();
-  });
-
   test('adds a className to the wrapper', () => {
     wrapper.setProps({ wrapperClassName: 'bloop' });
     expect(wrapper.find('.tooltip-wrapper__child.bloop')).toHaveLength(1);
