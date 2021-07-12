@@ -1,6 +1,7 @@
 import './base/Base';
 
 import '../lib/src/components/card/CardStory';
+import '../lib/src/components/personSearch/PersonSearchStory';
 import '../lib/src/prefabs/files/fileCard/FileCardStory';
 import '../lib/src/components/modal/ModalStory';
 import '../lib/src/components/viewOptions/ViewOptionsStory';

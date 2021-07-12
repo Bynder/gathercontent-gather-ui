@@ -109,6 +109,11 @@
     &:hover {
       @apply text-white;
     }
+    &.DayPicker-Day--outside {
+      &:after {
+        @apply bg-transparent;
+      }
+    }
   }
 
   .DayPicker-Day--past {
@@ -122,6 +127,11 @@
       @apply text-white;
       &:after {
         @apply bg-red-primary;
+      }
+    }
+    &.DayPicker-Day--outside {
+      &:after {
+        @apply bg-transparent;
       }
     }
   }
