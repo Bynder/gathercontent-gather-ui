@@ -6,9 +6,9 @@ import {
   Logo,
   AvatarWithPopover,
   Search,
-  Navigation
+  Navigation,
+  MenuItem
 } from 'lib';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 const PeopleGroupTopbar = () => (
   <TopBar fixed>

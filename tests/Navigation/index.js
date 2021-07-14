@@ -1,6 +1,5 @@
-import MenuItem from 'react-bootstrap/lib/MenuItem';
+import { MenuItem, Navigation } from 'lib';
 import { React, mount } from '../setup';
-import Navigation from '../../lib/Navigation';
 
 describe('Navigation', () => {
   let wrapper;
