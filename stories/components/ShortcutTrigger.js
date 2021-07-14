@@ -12,7 +12,7 @@ storiesOf('Components', module).add('Shortcut Trigger', () => (
     >
       <ShortcutTrigger
         shortcutKey="Enter"
-        onShortcutTrigger={action('Test')}
+        onShortcutTrigger={() => alert('You did the shortcut!')}
         withAltKey
         withCtrlKey
       />
