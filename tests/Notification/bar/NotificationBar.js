@@ -1,4 +1,3 @@
-import { Alert } from 'react-bootstrap/lib';
 import { React, mount } from '../../setup';
 import NotificationBar from '../../../lib/Notification/bar';
 import Button from '../../../lib/Button';
@@ -13,29 +12,25 @@ describe('Notification', () => {
     wrapper = mount(<NotificationBar level="warning">Dummy</NotificationBar>);
   });
 
-  test('renders an Alert component', () => {
-    expect(wrapper.find(Alert)).toHaveLength(1);
-  });
-
   test('renders children', () => {
     expect(wrapper.contains('Dummy')).toEqual(true);
   });
 
   test('renders the correct level class', () => {
     expect(
-      wrapper.find(Alert).hasClass('bg-yellow-primary text-neutral-20')
+      wrapper.find('div').first().hasClass('bg-yellow-primary text-neutral-20')
     ).toEqual(true);
     wrapper.setProps({ level: 'danger' });
-    expect(wrapper.find(Alert).hasClass('bg-red-primary text-white')).toEqual(
+    expect(wrapper.find('div').first().hasClass('bg-red-primary text-white')).toEqual(
       true
     );
     wrapper.setProps({ level: 'information' });
-    expect(wrapper.find(Alert).hasClass('bg-blue-primary text-white')).toEqual(
+    expect(wrapper.find('div').first().hasClass('bg-blue-primary text-white')).toEqual(
       true
     );
     wrapper.setProps({ level: 'promo' });
     expect(
-      wrapper.find(Alert).hasClass('bg-purple-primary text-white')
+      wrapper.find('div').first().hasClass('bg-purple-primary text-white')
     ).toEqual(true);
   });
 
