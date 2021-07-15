@@ -72,7 +72,6 @@ import SectionHeader from './components/SectionHeader';
 import ShortcutTrigger from './components/ShortcutTrigger';
 import Tabs from './components/Tabs';
 import LoadingOverlay from './components/LoadingOverlay';
-import MessageBar from './components/MessageBar';
 import BlankSlate from './components/BlankSlate';
 import DueDatePicker from './components/DueDatePicker';
 import UserList from './components/UserList';
