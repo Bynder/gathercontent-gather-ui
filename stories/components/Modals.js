@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/lib/Col';
 import FormControl from 'react-bootstrap/lib/FormControl';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
 import ControlLabel from 'react-bootstrap/lib/ControlLabel';
-import MenuItem from "react-bootstrap/lib/MenuItem";
 import {
     Modal,
     Button,
@@ -20,7 +19,8 @@ import {
     ImageLoader,
     SelectionModal,
     Checkbox,
-    InputConfirmationModal
+    InputConfirmationModal,
+    MenuItem
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import Navigation from "../../lib/Navigation";

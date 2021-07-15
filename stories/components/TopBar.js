@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
 import StoryItem from '../styleguide/StoryItem';
 import TopBar from '../../lib/TopBar';
 import TopBarContent from '../../lib/TopBar/TopBarContent';
@@ -15,7 +14,7 @@ import Logo from '../../lib/Logo';
 import DropdownSwitcher from '../../lib/DropdownSwitcher';
 import Search from '../../lib/Search';
 import NotificationBar from '../../lib/Notification/bar';
-import { ButtonIcon } from 'lib';
+import { ButtonIcon, MenuItem } from 'lib';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
