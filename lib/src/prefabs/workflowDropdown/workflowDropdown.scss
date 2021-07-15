@@ -1,7 +1,7 @@
 .workflow-dropdown__content {
-  @apply p-0 text-left w-full border border-solid border-neutral-90 rounded overflow-y-auto;
+  @apply p-0 text-left w-full border border-solid border-neutral-90 rounded overflow-y-auto left-0 right-0 m-auto;
   max-height: 80vh;
-  min-width: 640px;
+  width: 640px;
 
   .workflow-step {
     @apply border-b border-t-0 border-l-0 border-r-0 border-solid border-neutral-90;
