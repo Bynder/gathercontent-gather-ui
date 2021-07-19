@@ -1,6 +1,5 @@
-import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import { React, shallow } from '../setup';
-import { SectionHeader, DropdownSwitcher } from '../../lib';
+import { SectionHeader, Dropdown, MenuItem } from '../../lib';
 
 describe('SectionHeader', () => {
   let wrapper;
@@ -17,7 +16,7 @@ describe('SectionHeader', () => {
 
   test('renders a dropdown when a menu is supplied', () => {
     const menu = (
-      <Dropdown.Menu className="dropdown__menu dropdown-menu--arrowed">
+      <>
         <MenuItem href="#" eventKey="1">
           Items
         </MenuItem>
@@ -25,15 +24,14 @@ describe('SectionHeader', () => {
         <MenuItem disabled eventKey="2">
           Archived Items
         </MenuItem>
-      </Dropdown.Menu>
+      </>
     );
 
     wrapper.setProps({
       children: menu
     });
 
-    expect(wrapper.find(DropdownSwitcher)).toHaveLength(1);
-    expect(wrapper.find(Dropdown.Menu)).toHaveLength(1);
+    expect(wrapper.find(Dropdown)).toHaveLength(1);
     expect(wrapper.find(MenuItem)).toHaveLength(3);
   });
 });
