@@ -10,10 +10,6 @@ describe('SectionHeader', () => {
 
   afterEach(() => {});
 
-  test('renders its title', () => {
-    expect(wrapper.find('.section-header__title').text()).toBe('Test Title');
-  });
-
   test('renders a dropdown when a menu is supplied', () => {
     const menu = (
       <>
@@ -31,7 +27,6 @@ describe('SectionHeader', () => {
       children: menu
     });
 
-    expect(wrapper.find(Dropdown)).toHaveLength(1);
     expect(wrapper.find(MenuItem)).toHaveLength(3);
   });
 });
