@@ -16,7 +16,6 @@
 @import '../../lib/Table/Heading/styles.scss';
 @import '../../lib/Carousel/styles.scss';
 @import '../../lib/Modal/styles.scss';
-@import '../../lib/DropdownSwitcher/styles.scss';
 @import '../../lib/FigurePlaceholder/styles.scss';
 @import '../../lib/Conversation/styles.scss';
 @import '../../lib/Form/styles.scss';
@@ -97,6 +96,7 @@
 @import '../../lib/src/modules/person/person';
 @import '../../lib/src/modules/calendar/calendar';
 @import '../../lib/src/modules/dateSet/dateSet';
+@import '../../lib/src/modules/menuItem/menu-item';
 
 @import '../../lib/src/prefabs/modalUpload/modalUpload';
 @import '../../lib/src/prefabs/files/fileCard/fileCard';
