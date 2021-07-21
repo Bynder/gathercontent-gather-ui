@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
 import StoryItem from '../styleguide/StoryItem';
 import TopBar from '../../lib/TopBar';
 import TopBarContent from '../../lib/TopBar/TopBarContent';
@@ -12,10 +11,10 @@ import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
 import AvatarGroup from '../../lib/Avatar/AvatarGroup';
 import Navigation from '../../lib/Navigation';
 import Logo from '../../lib/Logo';
-import DropdownSwitcher from '../../lib/DropdownSwitcher';
+import SectionHeader from '../../lib/SectionHeader';
 import Search from '../../lib/Search';
 import NotificationBar from '../../lib/Notification/bar';
-import { ButtonIcon } from 'lib';
+import { ButtonIcon, MenuItem } from 'lib';
 
 storiesOf('Components', module).add('TopBar', () => (
   <div>
@@ -173,15 +172,11 @@ storiesOf('Components', module).add('TopBar', () => (
             <Logo />
           </TopBarCell>
           <TopBarCell>
-            <DropdownSwitcher title="Project Name">
-              <ul className="dropdown-menu">
-                <li className="dropdown__item">
-                  <a href="#test" className="dropdown__link">
-                    Personal Settings
-                  </a>
-                </li>
-              </ul>
-            </DropdownSwitcher>
+            <SectionHeader title="Project name" id="sh-123432" collapse noBorder>
+              <MenuItem href="#test">
+                Personal Settings
+              </MenuItem>
+            </SectionHeader>
           </TopBarCell>
           <TopBarCell bordered>
             <Navigation>
@@ -266,15 +261,11 @@ storiesOf('Components', module).add('TopBar', () => (
             <Logo />
           </TopBarCell>
           <TopBarCell>
-            <DropdownSwitcher title="Project Name">
-              <ul className="dropdown-menu">
-                <li className="dropdown__item">
-                  <a href="#test" className="dropdown__link">
-                    Personal Settings
-                  </a>
-                </li>
-              </ul>
-            </DropdownSwitcher>
+            <SectionHeader title="Project name" id="sh-123432" collapse noBorder>
+              <MenuItem href="#test">
+                Personal Settings
+              </MenuItem>
+            </SectionHeader>
           </TopBarCell>
           <TopBarCell bordered>
             <Navigation>

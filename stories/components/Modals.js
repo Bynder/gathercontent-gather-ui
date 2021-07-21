@@ -3,10 +3,6 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import FormControl from 'react-bootstrap/lib/FormControl';
-import FormGroup from 'react-bootstrap/lib/FormGroup';
-import ControlLabel from 'react-bootstrap/lib/ControlLabel';
-import MenuItem from "react-bootstrap/lib/MenuItem";
 import {
     Modal,
     Button,
@@ -20,7 +16,10 @@ import {
     ImageLoader,
     SelectionModal,
     Checkbox,
-    InputConfirmationModal
+    InputConfirmationModal,
+    MenuItem,
+    Input,
+    Label
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 import Navigation from "../../lib/Navigation";
@@ -397,14 +396,20 @@ storiesOf('Components', module).add('Modals', () => (
                     cancelText="Cancel"
                     highlight
                 >
-                    <FormGroup>
-                        <ControlLabel>Field A</ControlLabel>
-                        <FormControl/>
-                    </FormGroup>
-                    <FormGroup>
-                        <ControlLabel>Field B</ControlLabel>
-                        <FormControl/>
-                    </FormGroup>
+                  <Label htmlFor="form-modal-field-a">
+                    Field A
+                  </Label>
+                  <Input
+                    id="form-modal-field-a"
+                    className="mb-3"
+                  />
+
+                  <Label htmlFor="form-modal-field-b">
+                    Field B
+                  </Label>
+                  <Input
+                    id="form-modal-field-b"
+                  />
                 </StatefulFormModal>
             </ModalTrigger>
         </StoryItem>

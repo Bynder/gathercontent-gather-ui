@@ -15,6 +15,15 @@ $section-header-title-font-size: 22px;
   position: relative;
 }
 
+.section-header-collapse {
+  margin:0;
+  padding: 0
+}
+
+.section-header-no-border {
+  border: none;
+}
+
 .section-header__inner {
   display: flex;
   align-items: center;
