@@ -7,12 +7,8 @@
   );
 }
 
-.pseudo-left-border-blue-2px {
-  @include before-left-border(
-    2px,
-    solid,
-    theme('colors.blue.primary')
-  );
+.pseudo-border-blue-2px-no-border-radius-on-focus {
+  @include after-border-focussed(2px, solid, theme('colors.blue.primary'), 0px);
 }
 
 .pseudo-border-red-2px {
