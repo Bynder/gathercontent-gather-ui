@@ -10950,6 +10950,11 @@ parcel-bundler@^1.12.5:
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
 
+parcel-plugin-externals@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-externals/-/parcel-plugin-externals-0.5.2.tgz#581402610746f1a60d0a4399328d4ad096db6348"
+  integrity sha512-ukXPrpkwwWpDu1M/gq31hYl08vGO5wwRk/SdeyKrZmU6AI0cR3OJtHbZ1SleJ34GjGXVzuejvJKTxl9grLGXsw==
+
 parent-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.0.tgz#df250bdc5391f4a085fb589dad761f5ad6b865b5"
