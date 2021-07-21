@@ -44,11 +44,12 @@
   "scripts": {
     "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && yarn copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/",
+    "copy-scss-vars": "copyfiles styles/settings/* dist/ && copyfiles styles/tools/* dist/ && copyfiles styles/sass-vars.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "yarn build:lib && yarn build:tailwind:config",
     "build:with:styles": "yarn build && yarn copy-styles",
-    "build:parcel": "parcel build lib/index.js",
+    "build:parcel": "parcel build lib/index.js && yarn copy-scss-vars",
     "prepublish": "yarn build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
