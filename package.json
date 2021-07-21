@@ -50,7 +50,7 @@
     "build": "yarn build:lib && yarn build:tailwind:config",
     "build:with:styles": "yarn build && yarn copy-styles",
     "build:parcel": "parcel build lib/index.js && yarn copy-scss-vars",
-    "prepublish": "yarn build:with:styles",
+    "prepublish": "yarn build:parcel",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest --notify || exit 0",
@@ -85,7 +85,6 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "react": "*",
     "tailwindcss-plugins": "^0.3.0"
   },
   "dependencies": {
@@ -117,7 +116,6 @@
     "moment": "^2.21.0",
     "normalize-scss": "^7.0.1",
     "object-assign": "^4.1.1",
-    "parcel-plugin-externals": "^0.5.2",
     "pluralize": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
