@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { UserSearchDropdown, Dropdown, UserSearch, Icon } from '../../lib';
+import { UserSearchDropdown, Icon } from '../../lib';
 
 describe('User Search Dropdown', () => {
   let wrapper;
@@ -34,18 +34,6 @@ describe('User Search Dropdown', () => {
         dropdownAutoPosition
       />
     );
-  });
-
-  test('renders a Dropdown and a UserSearch', () => {
-    expect(wrapper.find(Dropdown)).toHaveLength(1);
-    expect(wrapper.find(Dropdown).prop('onToggle')).toEqual(
-      wrapper.instance().focusSearch
-    );
-    expect(wrapper.find(Dropdown.Trigger)).toHaveLength(1);
-    expect(wrapper.find(UserSearch)).toHaveLength(1);
-    expect(wrapper.find(UserSearch).prop('users')).toEqual(users);
-    expect(wrapper.find(UserSearch).prop('addUser')).toEqual(addUserSpy);
-    expect(wrapper.find(UserSearch).prop('displayEmail')).toEqual(false);
   });
 
   test('uses the addPerson icon by default but uses the at icon if useAtIcon is true', () => {
