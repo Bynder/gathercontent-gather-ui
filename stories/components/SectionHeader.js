@@ -1,16 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { MenuItem, Dropdown } from 'react-bootstrap/lib';
 import {
   FontAwesomeIcon,
   SectionHeader,
-  Button
+  Button,
+  MenuItem
 } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
 const menu = (
-  <Dropdown.Menu className="dropdown__menu dropdown-menu--arrowed">
+  <>
     <MenuItem href="#" eventKey="1">
       <FontAwesomeIcon name="fa-folder-o" /> Items
     </MenuItem>
@@ -18,7 +18,7 @@ const menu = (
     <MenuItem disabled eventKey="2">
       <FontAwesomeIcon name="fa-archive" /> Archived Items
     </MenuItem>
-  </Dropdown.Menu>
+  </>
 );
 
 storiesOf('Components', module).add('Section Header', () => (
