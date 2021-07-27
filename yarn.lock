@@ -6819,10 +6819,6 @@ jest@^23.5.0:
     import-local "^1.0.0"
     jest-cli "^23.5.0"
 
-jquery@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-
 js-base64@^2.1.9:
   version "2.4.5"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.5.tgz#e293cd3c7c82f070d700fc7a1ca0a2e69f101f92"
@@ -7104,14 +7100,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-linkifyjs@^2.1.6:
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/linkifyjs/-/linkifyjs-2.1.6.tgz#f1cc88a86ff8863196615857fd47eb193c0a26cb"
-  optionalDependencies:
-    jquery "^3.3.1"
-    react "^16.2.0"
-    react-dom "^16.2.0"
 
 lint-staged@^8.1.5:
   version "8.1.5"
@@ -9405,15 +9393,6 @@ react-dnd-test-backend-cjs@^9.5.1:
   dependencies:
     dnd-core-cjs "^9.5.1"
 
-react-dom@^16.2.0:
-  version "16.4.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
 react-dom@^16.8.3:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
@@ -9692,15 +9671,6 @@ react-waypoint@^9.0.3:
     consolidated-events "^1.1.0 || ^2.0.0"
     prop-types "^15.0.0"
     react-is "^16.6.3"
-
-react@^16.2.0:
-  version "16.4.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
 
 react@^16.8.3:
   version "16.8.6"
