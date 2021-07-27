@@ -85,7 +85,8 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "tailwindcss-plugins": "^0.3.0"
+    "tailwindcss-plugins": "^0.3.0",
+    "react": "*"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -115,13 +116,11 @@
     "object-assign": "^4.1.1",
     "pluralize": "^5.0.0",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
     "react-bootstrap": "0.32.1",
     "react-day-picker": "^7.1.1",
     "react-dnd-cjs": "^9.5.1",
     "react-dnd-html5-backend-cjs": "^9.5.1",
     "react-dnd-test-backend-cjs": "^9.5.1",
-    "react-dom": "^16.9.0",
     "react-dropzone": "^11.2.4",
     "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
