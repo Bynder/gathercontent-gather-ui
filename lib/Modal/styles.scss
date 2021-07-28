@@ -31,6 +31,15 @@ $modal-media-close-dimensions: 30px;
 	&.modal--small {
 		width:400px;
 	}
+	&.modal--large {
+		width: 780px;
+	}
+	&.modal--x-large {
+		width: 900px;
+	}
+	&.modal--full-screen {
+		width: calc(100vw - 40px);
+	}
 }
 
 .modal__row {
