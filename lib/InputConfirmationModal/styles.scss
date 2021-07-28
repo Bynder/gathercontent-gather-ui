@@ -1,15 +1,21 @@
 .modal--input-confirm {
-  .modal-header-inner,
+  .modal-header {
+    min-height: 0;
+  }
+  .modal-footer {
+    justify-content: flex-end;
+  }
+  .modal-header,
   .modal-footer {
     @apply p-0;
   }
   .modal-body {
     @apply px-0 leading-6;
   }
-  .modal-content {
+  .react-modal-inner {
     @apply p-6;
   }
-  .modal-header .close {
-    @apply static;
+  .modal-header .close-button {
+    @apply static ml-auto;
   }
 }
