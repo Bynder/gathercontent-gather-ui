@@ -19,8 +19,17 @@ $modal-media-close-dimensions: 30px;
 .legacy-modal {
 	width: 600px;
 	margin: 30px auto;
+	.modal-header {
+		@apply border-0 border-b border-neutral-90 border-solid;
+	}
+	.modal-footer {
+		@apply border-0 border-t border-neutral-90 border-solid flex p-4;
+	}
 	.modal-body {
 		overflow: hidden;
+	}
+	&.modal--small {
+		width:400px;
 	}
 }
 
@@ -145,10 +154,16 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header {
 		padding-bottom: 0;
+		.react-modal-header__text {
+			padding:0;
+			left:0;
+			right:0;
+		}
 	}
 
 	.modal-footer {
 		padding-top: 0;
+		justify-content: center;
 	}
 
 	.modal-header,
