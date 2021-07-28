@@ -2,7 +2,7 @@
   "name": "gather-content-ui",
   "version": "1.0.0-alpha.3",
   "description": "GatherContent UI Library",
-  "main": "dist/index.js",
+  "main": "dist/index.bundle.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gathercontent/gather-ui"
@@ -50,7 +50,8 @@
     "build": "yarn build:lib && yarn build:tailwind:config",
     "build:with:styles": "yarn build && yarn copy-styles",
     "build:parcel": "parcel build lib/index.js && yarn copy-scss-vars",
-    "prepublish": "yarn build:parcel",
+    "build:webpack": "webpack && yarn copy-scss-vars",
+    "prepublish": "yarn build:webpack",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest --notify || exit 0",
@@ -60,7 +61,7 @@
     "tdd": "yarn test:watch",
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
     "link:react": "cd ../app/webapp/node_modules/react && yarn link && cd ../../../../gather-ui && yarn link \"react\"",
-    "unlink:react": "yarn unlink \"react\" && cd ../app/webapp/node_modules/react && yarn unlink && cd ../../../../gather-ui && yarn install --check-files",
+    "unlink:react": "yarn unlink \"react\" && cd ../app/webapp/node_modules/react && yarn unlink && cd ../../../../gather-ui && yarn =' --check-files",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js'",
     "lint:fix": "eslint -c .eslintrc.json --fix 'lib/**/*.js' 'tests/**/*.js' 'stories/webapp/**/*.js'",
     "lint:check": "eslint --print-config . | eslint-config-prettier-check",
@@ -85,8 +86,13 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "tailwindcss-plugins": "^0.3.0",
-    "react": "*"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "tailwindcss-plugins": "^0.3.0"
+  },
+  "externals": {
+    "react": "commonjs react",
+    "react-dom": "commonjs react-dom"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -133,11 +139,13 @@
     "svg-url-loader": "^3.0.0",
     "tailwindcss": "^1.9.0",
     "tailwindcss-border-styles": "^1.0.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "7.12.0",
+    "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -154,7 +162,7 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^5.1.9",
     "@storybook/addon-notes": "^5.1.9",
@@ -162,7 +170,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
-    "babel-loader": "^8.0.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^0.2.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "circular-dependency-plugin": "^5.0.2",
@@ -192,8 +200,8 @@
     "prettier": "1.16.4",
     "raw-loader": "^3.1.0",
     "react-addons-test-utils": "^15.4.2",
-    "sass": "^1.22.7",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.36.0",
+    "sass-loader": "^12.1.0",
     "style-loader": "^0.23.1",
     "tailwindcss-plugins": "^0.3.0",
     "url-loader": "^2.1.0"
