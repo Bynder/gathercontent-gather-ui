@@ -249,35 +249,44 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal--media-only {
-	.modal-dialog {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		margin: 0;
-		justify-content: center;
-		align-items: center;
-		pointer-events: none;
+.modal--media-only.Modal {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	background: none;
+	box-shadow: none;
+
+	.modal-body {
+		@apply shadow-small;
+	}
+
+	.react-modal-inner {
+		position: relative;
 	}
 
 	.modal-header {
+		@apply rounded;
+		background: none;
 		position: absolute;
 		right: 0;
 		border: 0;
-		background: $neutral-lightest;
 		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 0 4px 0 4px;
 
-		.close {
-			position: relative;
+		.close-button {
+			border-radius: 0 4px 0 4px;
 			top: 0;
 			right: 0;
 			transform: none;
 			width: $modal-media-close-dimensions;
 			height: $modal-media-close-dimensions;
+			background: $neutral-lightest;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -295,7 +304,6 @@ $modal-media-close-dimensions: 30px;
 	}
 
 	.modal-footer {
-		position: absolute;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -303,7 +311,7 @@ $modal-media-close-dimensions: 30px;
 		border: 0;
 	}
 
-	.modal-content,
+	.react-modal-inner,
 	.modal-body {
 		background: none;
 		pointer-events: auto;

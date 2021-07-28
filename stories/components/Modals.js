@@ -423,7 +423,7 @@ storiesOf('Components', module).add('Modals', () => (
                     <Modal.Header/>
                     <Modal.Body>
                         <ImageLoader
-                            src="https://fillmurray.com/g/500/500"
+                            src="https://placekitten.com/g/500/500"
                             alt="A lovely pic!"
                             preLoadedStyles={{
                                 width: '300px',
