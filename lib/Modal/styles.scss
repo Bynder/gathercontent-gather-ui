@@ -16,6 +16,14 @@ $modal-media-close-dimensions: 30px;
    Styles
    ========================================================================== */
 
+.legacy-modal {
+	width: 600px;
+	margin: 30px auto;
+	.modal-body {
+		overflow: hidden;
+	}
+}
+
 .modal__row {
 	display: flex;
 
@@ -52,6 +60,13 @@ $modal-media-close-dimensions: 30px;
 
 .modal__header-intro {
 	margin-bottom: 0;
+}
+
+.modal-footer {
+	display: flex;
+	align-items: baseline;
+	background: white;
+	border-radius: 0 0 6px 6px;
 }
 
 .modal__footer-text {
