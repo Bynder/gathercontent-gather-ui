@@ -323,3 +323,10 @@ $modal-media-close-dimensions: 30px;
 		max-height: 60vh;
 	}
 }
+
+.modal-header.modal-header-with-nav {
+	@apply pb-0;
+	.react-modal-header-inner {
+		@apply flex flex-row;
+	}
+}
