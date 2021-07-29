@@ -95,7 +95,6 @@
     "@testing-library/react": "^9.1.1",
     "@testing-library/react-hooks": "^2.0.1",
     "@tippyjs/react": "^4.2.5",
-    "bootstrap": "3.4.1",
     "bootstrap-sass": "^3.3.7",
     "classnames": "^2.2.5",
     "d3-ease": "^1.0.6",
