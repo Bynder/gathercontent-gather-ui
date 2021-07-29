@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '../../lib/Button';
-import ButtonWithTooltip from '../../lib/Button/ButtonWithTooltip';
 import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import ProgressButton from '../../lib/ProgressButton';
 import Icon from '../../lib/Icon';
@@ -99,21 +98,6 @@ const button = storiesOf('Components', module).add('Buttons', () => (
       <Button types={['link']} clickHandler={action('clickedHandler')}>
         Cancel
       </Button>
-    </StoryItem>
-
-    <StoryItem
-      title="Button with a tooltip"
-      description="Buttons can includes tooltips to provide context to the user."
-    >
-      <ButtonWithTooltip
-        types={['light-grey']}
-        clickHandler={action('clickedHandler')}
-        tooltipText="You may reverse this action at a later date"
-        tooltipSize="large"
-        tooltipPosition="right"
-      >
-        Archive Item
-      </ButtonWithTooltip>
     </StoryItem>
 
     <StoryItem
