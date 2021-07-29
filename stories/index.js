@@ -55,7 +55,6 @@ import RadioButtons from './components/RadioButtonGroup';
 import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
 import Form from './components/Form';
-import PopoverWrapper from './components/PopoverWrapper';
 import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
 import List from './components/List';
 import TooltipWrapper from './components/TooltipWrapper';

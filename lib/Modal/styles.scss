@@ -16,6 +16,36 @@ $modal-media-close-dimensions: 30px;
    Styles
    ========================================================================== */
 
+.legacy-modal {
+	width: 600px;
+	margin: 30px auto;
+	.modal-header {
+		@apply border-0 border-b border-neutral-90 border-solid p-3 min-h-16;
+		height: auto;
+		.react-modal-header__text {
+			@apply p-0;
+		}
+	}
+	.modal-footer {
+		@apply border-0 border-t border-neutral-90 border-solid flex p-4;
+	}
+	.modal-body {
+		overflow: hidden;
+	}
+	&.modal--small {
+		width:400px;
+	}
+	&.modal--large {
+		width: 780px;
+	}
+	&.modal--x-large {
+		width: 900px;
+	}
+	&.modal--full-screen {
+		width: calc(100vw - 40px);
+	}
+}
+
 .modal__row {
 	display: flex;
 
@@ -52,6 +82,13 @@ $modal-media-close-dimensions: 30px;
 
 .modal__header-intro {
 	margin-bottom: 0;
+}
+
+.modal-footer {
+	display: flex;
+	align-items: center;
+	background: white;
+	border-radius: 0 0 6px 6px;
 }
 
 .modal__footer-text {
@@ -109,6 +146,7 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header {
 		position: static;
+		justify-content: center;
 	}
 
 	.modal-title {
@@ -130,10 +168,16 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header {
 		padding-bottom: 0;
+		.react-modal-header__text {
+			padding:0;
+			left:0;
+			right:0;
+		}
 	}
 
 	.modal-footer {
 		padding-top: 0;
+		justify-content: center;
 	}
 
 	.modal-header,
@@ -144,15 +188,13 @@ $modal-media-close-dimensions: 30px;
 }
 
 .modal--overflow {
-	.modal-dialog {
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
-	}
 
-	.modal-content {
+	.react-modal-inner {
 		position: absolute;
 		bottom: 0;
 		top: 0;
@@ -207,35 +249,44 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal--media-only {
-	.modal-dialog {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		margin: 0;
-		justify-content: center;
-		align-items: center;
-		pointer-events: none;
+.modal--media-only.Modal {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	background: none;
+	box-shadow: none;
+
+	.modal-body {
+		@apply shadow-small;
+	}
+
+	.react-modal-inner {
+		position: relative;
 	}
 
 	.modal-header {
+		@apply rounded;
+		background: none;
 		position: absolute;
 		right: 0;
 		border: 0;
-		background: $neutral-lightest;
 		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 0 4px 0 4px;
 
-		.close {
-			position: relative;
+		.close-button {
+			border-radius: 0 4px 0 4px;
 			top: 0;
 			right: 0;
 			transform: none;
 			width: $modal-media-close-dimensions;
 			height: $modal-media-close-dimensions;
+			background: $neutral-lightest;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -253,7 +304,6 @@ $modal-media-close-dimensions: 30px;
 	}
 
 	.modal-footer {
-		position: absolute;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -261,7 +311,7 @@ $modal-media-close-dimensions: 30px;
 		border: 0;
 	}
 
-	.modal-content,
+	.react-modal-inner,
 	.modal-body {
 		background: none;
 		pointer-events: auto;
@@ -271,5 +321,12 @@ $modal-media-close-dimensions: 30px;
 		display: block;
 		max-width: 80vh;
 		max-height: 60vh;
+	}
+}
+
+.modal-header.modal-header-with-nav {
+	@apply pb-0;
+	.react-modal-header-inner {
+		@apply flex flex-row;
 	}
 }

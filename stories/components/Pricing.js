@@ -1,9 +1,19 @@
 import React, { Fragment } from "react";
 import { storiesOf } from '@storybook/react';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 import StoryItem from '../styleguide/StoryItem';
-import { PricingWrapper, PricingPlan, FeatureList, FeatureListItem, PricingToggle, SectionFeature, PricingToggleItem, Icon, TooltipWrapper, PricingText } from "../../lib";
+import {
+  PricingWrapper,
+  PricingPlan,
+  FeatureList,
+  FeatureListItem,
+  PricingToggle,
+  SectionFeature,
+  PricingToggleItem,
+  Icon,
+  TooltipWrapper,
+  PricingText,
+  Row, Col
+} from "../../lib";
 import PersonSVG from '../../assets/person.svg';
 
 const features = [{

@@ -1,3 +1,10 @@
+@import '~tippy.js/dist/tippy.css';
+@import '~tippy.js/animations/shift-toward.css';
+
+.tippy-box[data-theme~='dark'] {
+  @apply bg-neutral-20 text-white;
+}
+
 .tooltip-wrapper__child {
     display: flex;
     align-items: center;
