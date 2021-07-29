@@ -229,6 +229,8 @@ $dropdown-menu-font-color: $color-text-base !default;
     margin-left: auto;
     justify-self: end;
     color: $neutral-base;
+    flex-shrink: 0;
+    padding-left: 5px;
   }
 }
 
