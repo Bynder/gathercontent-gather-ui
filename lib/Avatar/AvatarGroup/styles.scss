@@ -22,7 +22,7 @@ $avatar-group-size-micro: 20px !default;
   cursor: pointer;
   border-radius: $avatar-border-radius;
 
-  .avatar {
+  &.avatar-plus-trigger .avatar {
     background: none;
   }
 
