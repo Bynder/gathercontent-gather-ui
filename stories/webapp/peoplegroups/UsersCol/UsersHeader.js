@@ -1,7 +1,13 @@
 import React from 'react';
 import { number, func, string } from 'prop-types';
-import { FinderPanelLayout, SearchInput, Navigation, Icon, Button } from 'lib';
-import { MenuItem } from 'react-bootstrap/lib';
+import {
+  FinderPanelLayout,
+  SearchInput,
+  Navigation,
+  Icon,
+  Button,
+  MenuItem
+} from 'lib';
 import { ALL_USERS, PENDING_USERS, GUEST_USERS } from '../consts';
 
 const UsersHeader = ({

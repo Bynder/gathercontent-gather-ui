@@ -5,9 +5,9 @@ import {
   AvatarInformation,
   FinderPanelLayout,
   Navigation,
-  Dropdown
+  Dropdown,
+  MenuItem
 } from 'lib';
-import { MenuItem } from 'react-bootstrap/lib';
 import { USER_PROJECTS, USER_ACTIVITY } from '../consts';
 
 const IndividualUserHead = ({ activeUser, setActiveState, activeState }) => (

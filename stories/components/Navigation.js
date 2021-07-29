@@ -1,8 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { MenuItem } from 'react-bootstrap/lib';
-import { Navigation } from '../../lib';
+import { MenuItem, Navigation } from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
 
 storiesOf('Components', module).add('Navigation', () => (

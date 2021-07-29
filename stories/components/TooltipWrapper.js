@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
-import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 import StoryItem from '../styleguide/StoryItem';
 import TooltipWrapper from '../../lib/TooltipWrapper/index';
 

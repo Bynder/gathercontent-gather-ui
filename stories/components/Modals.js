@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 import {
     Modal,
     Button,
@@ -19,10 +17,9 @@ import {
     InputConfirmationModal,
     MenuItem,
     Input,
-    Label
-} from '../../lib';
+    Label, Row, Col
+} from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
-import Navigation from "../../lib/Navigation";
 
 const ModalTrigger = withModalTrigger({children: 'Show Modal'});
 
