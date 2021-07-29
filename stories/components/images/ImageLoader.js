@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Col, Row } from "react-bootstrap";
-import { ImageLoader } from '../../../lib';
+import { Col, ImageLoader, Row } from "../../../lib";
 import StoryItem from '../../styleguide/StoryItem';
 
 storiesOf('Components', module).add('ImageLoader', () => (
