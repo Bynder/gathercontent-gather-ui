@@ -19,17 +19,6 @@ describe('FormModal', () => {
     );
   });
 
-  test('has a title', () => {
-    expect(
-      modal
-        .find(Modal.Container)
-        .find('form')
-        .find(Modal.Header)
-        .find('.modal-title')
-        .text()
-    ).toEqual('Foo');
-  });
-
   test('has a submit button', () => {
     expect(
       modal

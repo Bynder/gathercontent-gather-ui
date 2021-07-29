@@ -83,10 +83,10 @@ $modal-small-width: 400px !default;
 }
 
 .react-modal-header {
-  @apply flex flex-row w-full items-center relative justify-center h-16;
+  @apply flex flex-row w-full items-center relative h-16;
 
   .react-modal-header__text {
     font-size: 1.125em;
-    @apply font-semi-bold absolute left-0 pl-6;
+    @apply font-semi-bold pl-6 mr-auto;
   }
 }
