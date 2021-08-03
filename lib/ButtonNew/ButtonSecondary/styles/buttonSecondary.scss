@@ -1,8 +1,17 @@
 .button-secondary {
   @apply bg-white text-blue-primary border-neutral-90;
 
+  .button-secondary-text-overflow {
+    @include gradient-overflow(white);
+    @apply whitespace-no-wrap overflow-hidden;
+  }
+
   &:hover {
     @apply bg-blue-95 border-blue-primary;
+
+    .button-secondary-text-overflow {
+      @include gradient-overflow(theme('colors.blue.95'));
+    }
   }
 
   &:focus {
@@ -12,9 +21,17 @@
   &:active,
   .button-secondary-active {
     @apply bg-blue-90 shadow-none;
+
+    .button-secondary-text-overflow {
+      @include gradient-overflow(theme('colors.blue.90'));
+    }
   }
 
   &:disabled {
     @apply bg-neutral-95 text-neutral-primary;
+
+    .button-secondary-text-overflow {
+      @include gradient-overflow(theme('colors.neutral.95'));
+    }
   }
 }
