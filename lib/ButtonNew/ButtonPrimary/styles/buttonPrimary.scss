@@ -1,0 +1,27 @@
+.button-primary {
+  @apply text-white bg-blue-primary border-blue-primary relative;
+
+  &:hover {
+    @apply bg-blue-60 border-blue-primary;
+  }
+
+  &:active {
+    @apply bg-blue-40 border-blue-30 shadow-none;
+  }
+
+  &:focus {
+    @apply border-white shadow-button-primary-focus z-50;
+  }
+
+  &:disabled {
+    @apply text-neutral-primary bg-neutral-95 border-neutral-95;
+  }
+}
+
+.button-primary-connected-right {
+  @apply border-r-blue-40;
+
+  &:disabled {
+    @apply border-r-neutral-90;
+  }
+}
