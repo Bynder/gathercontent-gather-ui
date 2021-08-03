@@ -20,7 +20,7 @@
 }
 .option-menu-item-content {
   @include gradient-overflow(white);
-  width: 100%;
+  @apply pr-5;
   flex-shrink: 1;
   white-space: nowrap;
   min-width: 0;
@@ -40,17 +40,17 @@
 }
 
 .option-menu-item-meta {
-  @apply text-sm text-neutral-primary;
+  @apply text-sm text-neutral-primary pl-4;
 }
 
 .option-menu-item-meta,
 .option-menu-item-tick {
-  @apply ml-auto pl-4;
+  @apply ml-auto;
   flex-shrink: 0;
 }
 
 .option-menu-item-tick svg {
-  @apply w-4;
+  width: 9px;
 }
 
 .option-menu-item-has-meta {
