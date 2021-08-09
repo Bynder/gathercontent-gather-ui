@@ -85,6 +85,7 @@
   "peerDependencies": {
     "tailwindcss-plugins": "^0.3.0"
   },
+  "files": ["dist"],
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@react-hook/resize-observer": "^1.2.2",
