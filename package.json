@@ -89,6 +89,7 @@
     "dist"
   ],
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@react-hook/resize-observer": "^1.2.2",
     "@tippyjs/react": "^4.2.5",
     "bootstrap-sass": "^3.3.7",
@@ -140,7 +141,6 @@
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^9.1.1",
     "@testing-library/react-hooks": "^2.0.1",
-    "@babel/polyfill": "^7.0.0",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
