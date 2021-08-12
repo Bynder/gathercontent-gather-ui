@@ -1,5 +1,5 @@
 .workflow-dropdown__content {
-  @apply p-0 text-left w-full border border-solid border-neutral-90 rounded overflow-y-auto left-0 right-0 m-auto;
+  @apply p-0 text-left w-full border border-solid border-neutral-90 rounded overflow-visible left-0 right-0 m-auto;
   max-height: 80vh;
   width: 640px;
 
