@@ -36,16 +36,13 @@
 @import '../../lib/BlankSlate/styles.scss';
 @import '../../lib/DueDatePicker/styles.scss';
 @import '../../lib/SearchDropdown/styles.scss';
-@import '../../lib/UserList/styles.scss';
 @import '../../lib/ConversationContext/styles.scss';
 @import '../../lib/ItemRow/styles.scss';
 @import '../../lib/FolderRow/styles.scss';
-@import '../../lib/HTMLTable/styles.scss';
 @import '../../lib/Search/styles.scss';
 @import '../../lib/CollectionsTable/styles.scss';
 @import '../../lib/UserSearchDropdown/styles.scss';
 @import '../../lib/MentionsForm/styles.scss';
-@import '../../lib/TagUserForm/styles.scss';
 @import '../../lib/Breadcrumb/styles.scss';
 @import '../../lib/ConfirmationDropdown/styles.scss';
 @import '../../lib/SelectionBar/styles.scss';
@@ -76,7 +73,6 @@
 
 @import '../../lib/src/components/card/card';
 @import '../../lib/src/components/modal/modal';
-@import '../../lib/src/components/viewOptions/viewOptions';
 @import '../../lib/src/modules/statusIndicatorCircle/statusIndicatorCircle';
 @import '../../lib/src/components/workflowStep/workflowStep';
 @import '../../lib/src/components/componentWrapper/componentWrapper';
