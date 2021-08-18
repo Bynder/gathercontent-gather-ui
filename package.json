@@ -48,7 +48,7 @@
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "npm run build:lib && npm run build:tailwind:config",
     "build:with:styles": "npm run build && npm run copy-styles",
-    "prepublish": "npm run build:with:styles",
+    "prepare": "npm run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "test": "jest --notify || exit 0",
@@ -194,7 +194,6 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^3.0.0",
-    "tailwindcss-plugins": "^0.3.0",
     "url-loader": "^2.1.0"
   }
 }
