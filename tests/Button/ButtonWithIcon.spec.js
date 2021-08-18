@@ -1,7 +1,7 @@
 import { React, shallow } from '../setup';
 import { Button, Icon, ButtonWithIcon, Dropdown } from '../../lib';
 
-describe('UserList', () => {
+describe('ButtonWithIcon', () => {
   let wrapper;
   let mainClickHandlerSpy;
   let iconClickHandlerSpy;
