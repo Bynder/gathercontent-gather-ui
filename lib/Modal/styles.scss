@@ -18,10 +18,10 @@ $modal-media-close-dimensions: 30px;
 
 .legacy-modal {
 	width: 600px;
-	margin: 30px auto;
+
 	.modal-header {
 		@apply border-0 border-b border-neutral-90 border-solid p-3 min-h-16;
-		height: auto;
+
 		.react-modal-header__text {
 			@apply p-0;
 		}
