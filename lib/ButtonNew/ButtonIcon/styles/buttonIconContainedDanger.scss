@@ -1,0 +1,12 @@
+.button-icon-contained-danger {
+  @apply border border-solid border-neutral-90 bg-white;
+
+  &:hover {
+    @apply border-red-primary;
+  }
+}
+
+.button-icon-contained-danger:active,
+.button-icon-contained-danger.button-icon-active {
+  @apply border-red-primary;
+}
