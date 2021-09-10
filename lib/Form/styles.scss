@@ -12,7 +12,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   display: flex;
   flex-direction: column;
 
-  input,
+  input:not([type=checkbox]):not([type=radio]),
   textarea {
     width: 100%;
     margin: 0 0 $layout-spacing-base/2;
