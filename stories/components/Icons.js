@@ -101,6 +101,7 @@ const allIcons = additionalProps => (
     <Icon name="addProject16" {...additionalProps} />
     <Icon name="userGroup16" {...additionalProps} />
     <Icon name="todo16" {...additionalProps} />
+    <Icon name="colon" {...additionalProps} />
   </div>
 );
 
