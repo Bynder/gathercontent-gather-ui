@@ -41,7 +41,6 @@ describe('ExpandingTextArea', () => {
     expect(handleOnChangeSpy).toHaveBeenCalled();
   });
 
-
   test('calls a prop function when focus and blur', () => {
     wrapper.simulate('focus', {});
     expect(handleOnFocusSpy).toHaveBeenCalledTimes(1);
@@ -49,5 +48,4 @@ describe('ExpandingTextArea', () => {
     wrapper.simulate('blur', {});
     expect(handleOnBlurSpy).toHaveBeenCalledTimes(1);
   });
-
 });
