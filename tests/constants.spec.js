@@ -1,4 +1,4 @@
-import { constants } from '../lib';
+import * as constants from '../lib';
 
 describe('Constants', () => {
   test('exports animation constants', () => {

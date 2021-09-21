@@ -18,19 +18,31 @@ describe('Notification', () => {
 
   test('renders the correct level class', () => {
     expect(
-      wrapper.find('div').first().hasClass('bg-yellow-primary text-neutral-20')
+      wrapper
+        .find('div')
+        .first()
+        .hasClass('bg-yellow-primary text-neutral-20')
     ).toEqual(true);
     wrapper.setProps({ level: 'danger' });
-    expect(wrapper.find('div').first().hasClass('bg-red-primary text-white')).toEqual(
-      true
-    );
+    expect(
+      wrapper
+        .find('div')
+        .first()
+        .hasClass('bg-red-primary text-white')
+    ).toEqual(true);
     wrapper.setProps({ level: 'information' });
-    expect(wrapper.find('div').first().hasClass('bg-blue-primary text-white')).toEqual(
-      true
-    );
+    expect(
+      wrapper
+        .find('div')
+        .first()
+        .hasClass('bg-blue-primary text-white')
+    ).toEqual(true);
     wrapper.setProps({ level: 'promo' });
     expect(
-      wrapper.find('div').first().hasClass('bg-purple-primary text-white')
+      wrapper
+        .find('div')
+        .first()
+        .hasClass('bg-purple-primary text-white')
     ).toEqual(true);
   });
 
