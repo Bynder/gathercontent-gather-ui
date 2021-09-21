@@ -18,7 +18,7 @@
   @apply font-semi-bold text-lg leading-6 text-neutral-20 flex flex-row;
 
   .workflow-step__status {
-    @apply w-12 flex justify-center mt-1 flex-shrink-0;
+    @apply w-12 flex justify-center mt-1 flex-shrink-0 pointer-events-none;
   }
 }
 
