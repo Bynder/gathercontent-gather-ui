@@ -313,9 +313,12 @@ $modal-media-close-dimensions: 30px;
 		border: 0;
 	}
 
+	.react-modal-inner {
+		background:none;
+	}
+
 	.react-modal-inner,
 	.modal-body {
-		background: none;
 		pointer-events: auto;
 	}
 
