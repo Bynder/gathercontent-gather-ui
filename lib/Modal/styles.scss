@@ -262,6 +262,7 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-body {
 		@apply shadow-small;
+		@include file-backgound;
 		max-height: 100% !important;
 	}
 
