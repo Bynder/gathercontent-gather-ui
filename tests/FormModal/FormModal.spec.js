@@ -1,4 +1,4 @@
-import { FormModal, ProgressButton, Button } from '../../lib';
+import { FormModal, Modal, ProgressButton, Button } from '../../lib';
 import { React, mount } from '../setup';
 
 describe('FormModal', () => {

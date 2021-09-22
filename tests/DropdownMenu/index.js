@@ -1,5 +1,5 @@
 import { React, mount } from '../setup';
-import { DropdownMenu } from '../../lib/DropdownMenu';
+import {DropdownMenu} from '../../lib/DropdownMenu';
 
 describe('DropdownMenu', () => {
   let wrapper;
