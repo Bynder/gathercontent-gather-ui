@@ -1,5 +1,5 @@
 .file-card-meta {
-  @apply p-2 border border-neutral-90 border-solid border-b-0 border-l-0 border-r-0;
+  @apply p-2 border border-neutral-90 border-solid border-b-0 border-l-0 border-r-0 bg-white;
 }
 
 .file-card-inset-meta {
@@ -15,3 +15,7 @@
     }
   }
 }
+
+.file-card .card-inner {
+  @include file-backgound;
+};
