@@ -72,7 +72,7 @@
   },
   "lint-staged": {
     "{lib,tests,stories/webapp}/**/*.js": [
-      "npm run prettier --write",
+      "prettier --write",
       "eslint -c .eslintrc.json --fix",
       "git add"
     ]
