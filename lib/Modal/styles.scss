@@ -262,6 +262,8 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-body {
 		@apply shadow-small;
+		@include file-backgound;
+		max-height: 100% !important;
 	}
 
 	.react-modal-inner {
@@ -311,16 +313,19 @@ $modal-media-close-dimensions: 30px;
 		border: 0;
 	}
 
+	.react-modal-inner {
+		background:none;
+	}
+
 	.react-modal-inner,
 	.modal-body {
-		background: none;
 		pointer-events: auto;
 	}
 
 	img {
 		display: block;
-		max-width: 80vh;
-		max-height: 60vh;
+		max-width: 90vw;
+		max-height: 90vh;
 	}
 }
 

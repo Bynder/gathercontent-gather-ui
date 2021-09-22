@@ -17,3 +17,7 @@
 .form-helper {
   @apply text-sm text-red-primary;
 }
+
+.form-fieldset {
+  @apply border-0 w-full h-full p-0 m-0;
+}
