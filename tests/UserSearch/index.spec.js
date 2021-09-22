@@ -65,11 +65,9 @@ describe('User Search', () => {
     expect(wrapper.find('.user-search__search-input')).toHaveLength(1);
   });
 
-
   test('renders a UserSearchList', () => {
     expect(wrapper.find(UserSearchList)).toHaveLength(1);
     expect(wrapper.find(UserSearchList).prop('noUsers')).toEqual(false);
     expect(wrapper.find(UserSearchList).prop('addUser')).toEqual(addUserSpy);
   });
-
 });
