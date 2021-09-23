@@ -1,5 +1,5 @@
 import { React, shallow } from '../setup';
-import { SectionHeader, Dropdown, MenuItem } from '../../lib';
+import { MenuItem, SectionHeader } from '../../lib';
 
 describe('SectionHeader', () => {
   let wrapper;
