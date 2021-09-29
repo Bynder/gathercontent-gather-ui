@@ -140,8 +140,7 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal--center,
-.modal--center .modal-footer {
+.modal--center {
 	text-align: center;
 
 	.modal-header {
@@ -151,6 +150,10 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-title {
 		margin: 0 auto;
+	}
+
+	.modal-footer {
+		justify-content: center;
 	}
 }
 
@@ -177,7 +180,6 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-footer {
 		padding-top: 0;
-		justify-content: center;
 	}
 
 	.modal-header,
