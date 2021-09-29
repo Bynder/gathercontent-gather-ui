@@ -13,6 +13,6 @@
     @apply p-6;
   }
   .modal-header .close-button {
-    @apply static ml-auto;
+    @apply -mt-6 -mr-6 ml-auto;
   }
 }
