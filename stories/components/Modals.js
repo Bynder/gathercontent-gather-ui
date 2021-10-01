@@ -2,22 +2,27 @@ import React, {Component, Fragment} from 'react';
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {
-    Modal,
-    Button,
-    ButtonGroup,
-    ConfirmationModal,
-    withModalTrigger,
-    FormModal,
-    StatusIndicator,
-    DueDatePicker,
-    Icon,
-    ImageLoader,
-    SelectionModal,
-    Checkbox,
-    InputConfirmationModal,
-    MenuItem,
-    Input,
-    Label, Row, Col
+  Modal,
+  Button,
+  ButtonGroup,
+  ConfirmationModal,
+  withModalTrigger,
+  FormModal,
+  StatusIndicator,
+  DueDatePicker,
+  Icon,
+  ImageLoader,
+  SelectionModal,
+  Checkbox,
+  InputConfirmationModal,
+  MenuItem,
+  Input,
+  Label,
+  Row,
+  Col,
+  FormInput,
+  ButtonPrimaryDanger,
+  ButtonTertiary
 } from "../../lib";
 import StoryItem from '../styleguide/StoryItem';
 
@@ -142,6 +147,43 @@ storiesOf('Components', module).add('Modals', () => (
                     </Modal.Body>
                 </Modal.Container>
             </ModalTrigger>
+        </StoryItem>
+
+        <StoryItem
+            title="Cleared and input-confirm"
+            description="A modal that has the backgrounds/borders cleared and a slightly larger padding"
+        >
+          <ModalTrigger>
+            <Modal.Container className="modal--clear modal--input-confirm">
+              <Modal.Header>Confirm deletion</Modal.Header>
+              <Modal.Body>
+                File deletion is permanent and cannot be undone. Please confirm you want
+                to delete these files by typing
+                ‘DELETE’ in the box below.
+                <FormInput
+                  placeholder="Type ‘DELETE’ to confirm..."
+                  className="block w-64 mt-3"
+                  focusOnMount
+                />
+              </Modal.Body>
+              <Modal.Footer>
+                <ButtonTertiary
+                  size={ButtonTertiary.sizes.md}
+                  onClick={action("Cancel delete")}
+                  className="mr-2"
+                >
+                  Cancel
+                </ButtonTertiary>
+                <ButtonPrimaryDanger
+                  size={ButtonPrimaryDanger.sizes.md}
+                  onClick={action("Confirm delete")}
+                  loading={false}
+                >
+                  Delete
+                </ButtonPrimaryDanger>
+              </Modal.Footer>
+            </Modal.Container>
+          </ModalTrigger>
         </StoryItem>
 
         <StoryItem
