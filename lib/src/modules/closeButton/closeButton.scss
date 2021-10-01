@@ -1,6 +1,3 @@
 .close-button {
-  @apply absolute right-0 top-0;
-  button {
-    @apply rounded-tl-none rounded-br-none;
-  }
+  @apply absolute right-0 top-0 m-2;
 }

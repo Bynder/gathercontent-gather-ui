@@ -284,21 +284,10 @@ $modal-media-close-dimensions: 30px;
 		justify-content: center;
 
 		.close-button {
-			border-radius: 0 4px 0 4px;
-			top: 0;
-			right: 0;
-			transform: none;
-			width: $modal-media-close-dimensions;
-			height: $modal-media-close-dimensions;
-			background: $neutral-lightest;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			@apply rounded-tl-none rounded-br-none m-0 bg-white;
 
-			&:hover {
-				color: $neutral-dark;
-				opacity: 1;
-				outline: 0;
+			&:hover path {
+				fill: $neutral-dark;
 			}
 		}
 
