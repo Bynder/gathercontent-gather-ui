@@ -1,20 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
-    <title>0C6AFAEC-3D7B-4012-ACAA-1FF9304E73A6@1.00x</title>
-    <desc>Created with sketchtool.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="01.1-Annual-7" transform="translate(-655.000000, -767.000000)">
-            <g id="pricing-table" transform="translate(140.000000, 408.000000)">
-                <g id="standard" transform="translate(360.000000, 0.000000)">
-                    <g id="includes" transform="translate(155.000000, 359.000000)">
-                        <g id="tick">
-                            <polyline id="Fill-293" fill="#5FCF80" points="13.2 16.5 10.8 14.1 9 15.9 13.2 20.1 21 12.3 19.2 10.5 13.2 16.5"></polyline>
-                            <circle id="Oval" stroke="#5FCF80" stroke-width="2" cx="15" cy="15" r="14"></circle>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.586 12L11 15.414L16.414 10L15 8.586L11 12.586L9 10.586L7.586 12Z" fill="#A4B3C2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20C7.589 20 4 16.411 4 12ZM6 12C6 15.309 8.691 18 12 18C15.309 18 18 15.309 18 12C18 8.691 15.309 6 12 6C8.691 6 6 8.691 6 12Z" fill="#A4B3C2"/>
 </svg>
