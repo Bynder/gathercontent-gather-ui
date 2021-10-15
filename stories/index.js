@@ -51,7 +51,6 @@ import Pricing from './components/Pricing';
 import Tables from './components/Tables';
 import Modals from './components/Modals';
 import RadioButtons from './components/RadioButtonGroup';
-import Carousel from './components/Carousel';
 import ExpandingTextArea from './components/ExpandingTextArea';
 import Form from './components/Form';
 import StatusIndicator from '../lib/StatusIndicator/stories/StatusIndicatorStory';
