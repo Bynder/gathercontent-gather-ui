@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Button from '../../lib/Button';
-import ButtonWithIcon from '../../lib/Button/ButtonWithIcon';
 import ProgressButton from '../../lib/ProgressButton';
 import Icon from '../../lib/Icon';
 import StoryItem from '../styleguide/StoryItem';
@@ -143,45 +142,6 @@ const button = storiesOf('Components', module).add('Buttons', () => (
       >
         Hover me
       </Button>
-    </StoryItem>
-    <StoryItem title="Button with icon">
-      <ButtonWithIcon
-        mainClickHandler={action('I was clicked')}
-        iconClickHandler={action('Icon was clicked')}
-        iconName="bell"
-      >
-        hello!
-      </ButtonWithIcon>
-    </StoryItem>
-
-    <StoryItem title="Button with icon (small)">
-      <ButtonWithIcon
-        mainClickHandler={action('I was clicked')}
-        iconClickHandler={action('Icon was clicked')}
-        iconName="commentFill"
-        sizeSm
-      >
-        I'm tiny!
-      </ButtonWithIcon>
-    </StoryItem>
-
-    <StoryItem title="Button with icon (dropdown)">
-      <ButtonWithIcon
-        mainClickHandler={action('I was clicked')}
-        iconName="down"
-        dropdownContent={
-          <Dropdown.Content collapse right>
-            <Dropdown.Action action={() => action('action clicked')}>
-              Do this
-            </Dropdown.Action>
-            <Dropdown.Action action={() => action('action clicked')}>
-              or this!
-            </Dropdown.Action>
-          </Dropdown.Content>
-        }
-      >
-        hello!
-      </ButtonWithIcon>
     </StoryItem>
 
     <StoryItem
