@@ -7,7 +7,6 @@ require('../styles/bootstrap/_bootstrap.scss');
 require('../styles/styleguide/main.scss');
 require('../styles/dev.scss');
 require('../styles/dev-tailwind-utilities.css');
-require('font-awesome/css/font-awesome.css');
 
 function loadStories() {
   require('../stories/index.js');
