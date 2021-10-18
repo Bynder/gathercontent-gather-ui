@@ -20,7 +20,7 @@ module.exports = {
         use: [{
           loader: 'file-loader'
         }],
-        include: [path.resolve(__dirname, '../node_modules/font-awesome'), path.resolve(__dirname, './IBM-Plex')]
+        include: [path.resolve(__dirname, './IBM-Plex')]
       },
       {
         test: /\.s?css$/,
@@ -46,7 +46,7 @@ module.exports = {
             fiber: Fiber
           }
         }],
-        include: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../node_modules/font-awesome')]
+        include: [path.resolve(__dirname, '../')]
       },
       {
         test: /.less$/,
