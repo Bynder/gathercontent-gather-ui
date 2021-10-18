@@ -47,7 +47,6 @@ import Dropdown from './components/Dropdown';
 import DropdownMenu from './components/DropdownMenu';
 import Icons from './components/Icons';
 import ProgressUnit from './components/ProgressUnit';
-import Pricing from './components/Pricing';
 import Tables from './components/Tables';
 import Modals from './components/Modals';
 import RadioButtons from './components/RadioButtonGroup';
