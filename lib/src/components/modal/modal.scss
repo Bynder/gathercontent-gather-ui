@@ -46,7 +46,7 @@ $modal-small-width: 400px !default;
     0
   ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
   @apply flex justify-center items-center transition ease-out duration-300;
-  z-index: 501;
+  z-index: 1001;
 }
 
 .ReactModal__Overlay--after-open {
