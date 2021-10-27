@@ -175,7 +175,7 @@ storiesOf('Components', module)
         </StoryItem>
 
         <StoryItem
-          title="Dropdown with unrednered content and auto positioning"
+          title="Dropdown with un-rendered content and auto positioning"
           description="A dropdown where we don't render the dropdown content until the dropdown is active"
         >
           <Dropdown id="id-3-b" autoPosition>
