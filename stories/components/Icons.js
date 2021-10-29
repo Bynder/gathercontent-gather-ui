@@ -101,11 +101,12 @@ const allIcons = additionalProps => (
     <Icon name="userGroup16" {...additionalProps} />
     <Icon name="todo16" {...additionalProps} />
     <Icon name="settings16" {...additionalProps} />
+    <Icon name="goto" {...additionalProps} />
   </div>
 );
 
 storiesOf('Components', module).add('Icons', () => (
-    <StoryItem title="SVG Icons" description="">
-      {allIcons()}
-    </StoryItem>
+  <StoryItem title="SVG Icons" description="">
+    {allIcons()}
+  </StoryItem>
 ));
