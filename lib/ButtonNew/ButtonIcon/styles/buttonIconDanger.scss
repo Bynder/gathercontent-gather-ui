@@ -1,5 +1,5 @@
 .button-icon-danger {
-  @apply bg-white border-white text-red-primary p-0 items-center justify-center;
+  @apply border-white text-red-primary p-0 items-center justify-center;
   @extend .inherit-color-icon;
 
   &:hover {
@@ -8,7 +8,8 @@
   &:focus {
     @apply border-red-primary shadow-button-icon-danger-focus;
   }
-  &:active, &-active {
+  &:active,
+  &-active {
     @apply bg-red-90 border-red-90 shadow-none;
   }
 
