@@ -8,9 +8,3 @@ _A short GIF of the changes in action._
 _Where is a good place to start the review? If there are multiple changes it may be worth listing multiple files._
 ### 👫 Related PRs (optional)
 _Any PRs that relate to the changes._
-
-### ✅ Checklist
-- [ ] Tests written
-- [ ] Browser tested
-- [ ] Added to documentation
-- [ ] Added to storybook

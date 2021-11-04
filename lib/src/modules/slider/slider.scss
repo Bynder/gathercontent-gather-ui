@@ -1,0 +1,74 @@
+$track-w: 100%;
+$track-h: 8px;
+$track-r: 0.5 * $track-h;
+$thumb-d: 32px;
+$thumb-r: 0.5 * $thumb-d;
+
+@mixin slider-thumb {
+  border: 1px solid $neutral-light;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  height: $thumb-d;
+  width: $thumb-d;
+  border-radius: 50%;
+  background: #ffffff;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTAgMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0iIzg0OTJBNiIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxnIGlkPSJHcm91cC0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS4wMDAwMDAsIC0xLjAwMDAwMCkiIGZpbGw9IiM0QjU3NjAiPgogICAgICA8ZyBpZD0iR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMuMDAwMDAwLCA5LjAwMDAwMCkgcm90YXRlKC0yNzAuMDAwMDAwKSB0cmFuc2xhdGUoLTMuMDAwMDAwLCAtOS4wMDAwMDApIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIDYuMDAwMDAwKSI+CiAgICAgICAgICA8cGF0aCBkPSJNOSwxIEMxMC4xMDUsMSAxMSwxLjg5NSAxMSwzIEMxMSw0LjEwNSAxMC4xMDUsNSA5LDUgQzcuODk1LDUgNyw0LjEwNSA3LDMgQzcsMS44OTUgNy44OTUsMSA5LDEiIGlkPSJGaWxsLTYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5LjAwMDAwMCwgMy4wMDAwMDApIHJvdGF0ZSgtMjg1LjAwMDAwMCkgdHJhbnNsYXRlKC05LjAwMDAwMCwgLTMuMDAwMDAwKSAiPjwvcGF0aD4KICAgICAgICAgIDxwYXRoIGQ9Ik0zLDEgQzQuMTA1LDEgNSwxLjg5NSA1LDMgQzUsNC4xMDUgNC4xMDUsNSAzLDUgQzEuODk1LDUgMSw0LjEwNSAxLDMgQzEsMS44OTUgMS44OTUsMSAzLDEiIGlkPSJGaWxsLTY0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzLjAwMDAwMCwgMy4wMDAwMDApIHJvdGF0ZSgtMjg1LjAwMDAwMCkgdHJhbnNsYXRlKC0zLjAwMDAwMCwgLTMuMDAwMDAwKSAiPjwvcGF0aD4KICAgICAgICAgIDxwYXRoIGQ9Ik0xNSwxIEMxNi4xMDUsMSAxNywxLjg5NSAxNywzIEMxNyw0LjEwNSAxNi4xMDUsNSAxNSw1IEMxMy44OTUsNSAxMyw0LjEwNSAxMywzIEMxMywxLjg5NSAxMy44OTUsMSAxNSwxIiBpZD0iRmlsbC02NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUuMDAwMDAwLCAzLjAwMDAwMCkgcm90YXRlKC0yODUuMDAwMDAwKSB0cmFuc2xhdGUoLTE1LjAwMDAwMCwgLTMuMDAwMDAwKSAiPjwvcGF0aD4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkuMDAwMDAwLCA5LjAwMDAwMCkgcm90YXRlKC0yNzAuMDAwMDAwKSB0cmFuc2xhdGUoLTkuMDAwMDAwLCAtOS4wMDAwMDApIHRyYW5zbGF0ZSgwLjAwMDAwMCwgNi4wMDAwMDApIj4KICAgICAgICAgIDxwYXRoIGQ9Ik05LDEgQzEwLjEwNSwxIDExLDEuODk1IDExLDMgQzExLDQuMTA1IDEwLjEwNSw1IDksNSBDNy44OTUsNSA3LDQuMTA1IDcsMyBDNywxLjg5NSA3Ljg5NSwxIDksMSIgaWQ9IkZpbGwtNjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkuMDAwMDAwLCAzLjAwMDAwMCkgcm90YXRlKC0yODUuMDAwMDAwKSB0cmFuc2xhdGUoLTkuMDAwMDAwLCAtMy4wMDAwMDApICI+PC9wYXRoPgogICAgICAgICAgPHBhdGggZD0iTTMsMSBDNC4xMDUsMSA1LDEuODk1IDUsMyBDNSw0LjEwNSA0LjEwNSw1IDMsNSBDMS44OTUsNSAxLDQuMTA1IDEsMyBDMSwxLjg5NSAxLjg5NSwxIDMsMSIgaWQ9IkZpbGwtNjQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMuMDAwMDAwLCAzLjAwMDAwMCkgcm90YXRlKC0yODUuMDAwMDAwKSB0cmFuc2xhdGUoLTMuMDAwMDAwLCAtMy4wMDAwMDApICI+PC9wYXRoPgogICAgICAgICAgPHBhdGggZD0iTTE1LDEgQzE2LjEwNSwxIDE3LDEuODk1IDE3LDMgQzE3LDQuMTA1IDE2LjEwNSw1IDE1LDUgQzEzLjg5NSw1IDEzLDQuMTA1IDEzLDMgQzEzLDEuODk1IDEzLjg5NSwxIDE1LDEiIGlkPSJGaWxsLTY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNS4wMDAwMDAsIDMuMDAwMDAwKSByb3RhdGUoLTI4NS4wMDAwMDApIHRyYW5zbGF0ZSgtMTUuMDAwMDAwLCAtMy4wMDAwMDApICI+PC9wYXRoPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+@mixin slider-track($f: 0) {
+  width: $track-w;
+  height: $track-h;
+  cursor: pointer;
+  background: $neutral-light;
+  border-radius: 4px;
+
+  @if $f > 0 {
+    background: linear-gradient(
+      to right,
+      $primary-blue 0%,
+      $primary-blue var(--pos),
+      $neutral-light var(--pos),
+      $neutral-light 100%
+    );
+  }
+}
+
+.input-slider {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: $track-w;
+  --pos: calc(#{0.5 * $thumb-d} + 0.01 * var(--val) * (100% - #{$thumb-d}));
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track(1);
+  }
+
+  &::-moz-range-track {
+    @include slider-track;
+  }
+
+  &::-moz-range-progress {
+    @include slider-track;
+    background: $primary-blue;
+  }
+
+  &:focus::-webkit-slider-thumb {
+    border: 2px solid $primary-blue;
+  }
+
+  &:focus::-moz-range-thumb {
+    border: 2px solid $primary-blue;
+  }
+
+  &::-webkit-slider-thumb {
+    margin-top: -12px;
+    @include slider-thumb;
+  }
+
+  &::-moz-range-thumb {
+    @include slider-thumb;
+  }
+}
