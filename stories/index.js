@@ -38,6 +38,7 @@ import 'lib/src/modules/calendar/CalendarStory';
 import 'lib/src/modules/dateSet/DateSetStory';
 import 'lib/src/modules/optionMenuItem/OptionMenuItemStory';
 import 'lib/src/modules/slider/SliderStory';
+import 'lib/src/modules/grid/GridStory';
 
 import Avatar from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
