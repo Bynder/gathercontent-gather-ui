@@ -57,7 +57,7 @@
 .mentions-input__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
-    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
     margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
     max-height: 200px;
 

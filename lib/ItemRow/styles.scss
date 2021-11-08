@@ -1,14 +1,16 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$item-row-stacked-margin: $typo-size-slight/3;
+@use "sass:math";
+
+$item-row-stacked-margin: math.div($typo-size-slight, 3);
 $item-row-gap: 6px;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .item-row {
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base*0.5;
   cursor: pointer;
   background-color: white;
   position: relative;
@@ -30,7 +32,7 @@ $item-row-gap: 6px;
 }
 
 .item-row__name {
-  margin-right: $layout-spacing-base/2;
+  margin-right: $layout-spacing-base*0.5;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;

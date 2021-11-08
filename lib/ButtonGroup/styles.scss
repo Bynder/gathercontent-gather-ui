@@ -2,6 +2,8 @@
    Config
    ========================================================================== */
 
+@use "sass:math";
+
 $button-group-default-background: $neutral-lightest;
 
 /* ==========================================================================
@@ -10,7 +12,7 @@ $button-group-default-background: $neutral-lightest;
 
 .button-group {
   background: $button-group-default-background;
-  padding: 0 $layout-spacing-base/2;
+  padding: 0 $layout-spacing-base*0.5;
   border-radius: $btn-border-radius;
   display: flex;
   align-items: center;
@@ -18,7 +20,7 @@ $button-group-default-background: $neutral-lightest;
   .button {
     margin: 0;
     border-radius: 0;
-    padding: $layout-spacing-base/1.5;
+    padding: math.div($layout-spacing-base, 1.5);
   }
 
   .button--icon-only {

@@ -21,7 +21,7 @@
   background: rgba(255, 255, 255, 0.75);
 
   @supports (filter: blur()) {
-    transition: filter $animation-time-micro/2;
+    transition: filter $animation-time-micro*0.5;
     filter: blur(4px);
     background: none;
     opacity: .3;
@@ -32,7 +32,7 @@
 .edit-comment__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
-    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
     margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
 
     &:before {

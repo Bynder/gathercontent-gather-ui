@@ -1,6 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+@use "sass:math";
+
 $duedate-popover-width: 304px !default;
 $duedate-timepicker-width: 80px !default;
 $duedate-timepicker-height: 220px !default;
@@ -30,7 +32,7 @@ $duedate-timepicker-height: 220px !default;
   }
 
   .icon {
-    margin-right: $layout-spacing-base / 4;
+    margin-right: $layout-spacing-base * 0.25;
     top: -2px;
     position: relative;
     vertical-align: middle;
@@ -63,7 +65,7 @@ $duedate-timepicker-height: 220px !default;
 }
 
 .duedate__header {
-  padding: $layout-spacing-base / 2;
+  padding: $layout-spacing-base * 0.5;
   border-bottom: 1px solid $neutral-light;
   font-size: $typo-size-slight;
   color: $neutral-dark;
@@ -93,12 +95,12 @@ $duedate-timepicker-height: 220px !default;
 
 .duedate__submit {
   text-align: center;
-  padding: 0 0 $layout-spacing-base / 2;
+  padding: 0 0 $layout-spacing-base * 0.5;
 }
 
 .duedate__submit--cancel {
   font-size: $typo-size-slight;
-  margin-right: $layout-spacing-base / 2;
+  margin-right: $layout-spacing-base * 0.5;
   color: $neutral-base;
 
   &:hover {
@@ -108,7 +110,7 @@ $duedate-timepicker-height: 220px !default;
 }
 
 .duedate__submit--save {
-  padding: $layout-spacing-base / 4 $layout-spacing-base / 2.5;
+  padding: $layout-spacing-base * 0.25 math.div($layout-spacing-base, 2.5);
 }
 
 .duedate__submit--hidden {
@@ -127,7 +129,7 @@ $duedate-timepicker-height: 220px !default;
     border-bottom: 1px solid $color-border-base;
     > a {
       text-decoration: none;
-      padding: $layout-spacing-base / 2.5 $layout-spacing-base / 2;
+      padding: math.div($layout-spacing-base, 2.5) $layout-spacing-base * 0.5;
 
       &:hover {
         background-color: transparent;
@@ -155,7 +157,7 @@ $duedate-timepicker-height: 220px !default;
   font-size: $typo-size-slight;
 
   .icon {
-    margin-right: $layout-spacing-base / 4;
+    margin-right: $layout-spacing-base * 0.25;
     top: -2px;
     position: relative;
     vertical-align: middle;

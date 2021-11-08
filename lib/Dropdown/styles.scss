@@ -1,7 +1,9 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$dropdown-item-padding: $layout-spacing-base/3 $layout-spacing-base !default;
+@use "sass:math";
+
+$dropdown-item-padding: math.div($layout-spacing-base, 3) $layout-spacing-base !default;
 $dropdown-section-padding: $layout-spacing-base * .75 !default;
 $dropdown-hover-background: $neutral-lightest !default;
 $dropdown-status-circle-width-height: 15px !default;
@@ -69,7 +71,7 @@ $dropdown-status-circle-width-height: 15px !default;
   position: absolute;
   top: -999em;
   left: 0;
-  margin: $layout-spacing-base/4 0;
+  margin: $layout-spacing-base*0.25 0;
   opacity: 0;
   background: white;
   z-index: 2;
@@ -138,7 +140,7 @@ $dropdown-status-circle-width-height: 15px !default;
 }
 
 .dropdown__action-group {
-  padding: $layout-spacing-base/4 0;
+  padding: $layout-spacing-base*0.25 0;
 
   + .dropdown__action-group {
     border-top: 1px solid $neutral-light;
@@ -209,8 +211,8 @@ $dropdown-status-circle-width-height: 15px !default;
 }
 
 .dropdown__content--fix-right {
-  margin: 0 0 0 $layout-spacing-base/2;
-  padding: 0 $layout-spacing-base/2;
+  margin: 0 0 0 $layout-spacing-base*0.5;
+  padding: 0 $layout-spacing-base*0.5;
   left: 100%;
 }
 
@@ -254,7 +256,7 @@ $dropdown-status-circle-width-height: 15px !default;
   line-height: 0;
 
   .dropdown__action-group--horizontal & {
-    padding: 0 $layout-spacing-base/2 0 $layout-spacing-base/4;
+    padding: 0 $layout-spacing-base*0.5 0 $layout-spacing-base*0.25;
   }
 }
 

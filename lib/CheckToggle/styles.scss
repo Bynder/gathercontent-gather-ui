@@ -21,7 +21,7 @@ $borderColour: #F8FBFC;
   line-height: 0;
 
   &.margin-large {
-    margin: $layout-spacing-base/2 0;
+    margin: $layout-spacing-base*0.5 0;
   }
 
   &.disabled {
@@ -104,7 +104,7 @@ $borderColour: #F8FBFC;
 
 .size-small {
   .toggle-switch + .toggle-switch__label {
-    width: $layout-spacing-base + $layout-spacing-base/2;
+    width: $layout-spacing-base + $layout-spacing-base*0.5;
     height: $layout-spacing-base;
     &:after {
       top: 2px;
@@ -115,10 +115,10 @@ $borderColour: #F8FBFC;
     }
   }
   .toggle-switch:checked + .toggle-switch__label:after {
-    margin-left: $layout-spacing-base/2;
+    margin-left: $layout-spacing-base*0.5;
   }
   .toggle-wrapper__label {
-    margin: 0 0 0 $layout-spacing-base/4;
+    margin: 0 0 0 $layout-spacing-base*0.25;
   }
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;

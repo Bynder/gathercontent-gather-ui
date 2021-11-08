@@ -1,6 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+@use "sass:math";
+
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-small: $typo-size-micro !default;
 $status-indicator-horizontal-margin: .5rem !default;
@@ -27,7 +29,7 @@ $status-indicator-margin-left: 1.3rem !default;
   font-size: $typo-size-slight;
   margin-left: $status-indicator-margin-left;
   font-weight: $typo-weight-roman;
-  margin-top: $layout-spacing-base / 4;
+  margin-top: $layout-spacing-base * 0.25;
 }
 
 .status-indicator__circle {
@@ -45,7 +47,7 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 
   + .status-indicator__label {
-    margin-left: $layout-spacing-base/2;
+    margin-left: $layout-spacing-base*0.5;
   }
 }
 
@@ -59,7 +61,7 @@ $status-indicator-margin-left: 1.3rem !default;
     width: 100%;
     overflow: hidden;
     display: flex;
-    margin-left: $layout-spacing-base/2;
+    margin-left: $layout-spacing-base*0.5;
   }
   .status-indicator__label-text {
     display: inline-block;
@@ -89,23 +91,23 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .status-indicator--bordered {
   border-bottom: $status-indicator-bordered-border;
-  padding-bottom: $layout-spacing-base/1.3;
+  padding-bottom: math.div($layout-spacing-base, 1.3);
 }
 
 .status-indicator__pre-text {
-  margin-right: $layout-spacing-base/3;
+  margin-right: math.div($layout-spacing-base, 3);
 }
 
 .status-indicator__description {
   white-space: initial;
   color: $color-brand-dark;
-  margin-top: $layout-spacing-base / 4;
+  margin-top: $layout-spacing-base * 0.25;
   margin-left: $status-indicator-margin-left;
-  margin-bottom: $layout-spacing-base / 2.5;
+  margin-bottom: math.div($layout-spacing-base, 2.5);
 }
 
 .icon.status-indicator__readonly {
-  margin-left: $layout-spacing-base/4;
+  margin-left: $layout-spacing-base*0.25;
   vertical-align: top;
   path {
     fill: $color-brand-dark;
@@ -113,7 +115,7 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__actions {
-  margin-left: $layout-spacing-base/2;
+  margin-left: $layout-spacing-base*0.5;
 }
 /* ==========================================================================
    Modifiers
@@ -123,7 +125,7 @@ $status-indicator-margin-left: 1.3rem !default;
   height: $status-indicator-circle-small;
 
   + .status-indicator__label {
-    margin-left: $layout-spacing-base/3;
+    margin-left: math.div($layout-spacing-base, 3);
   }
 }
 
@@ -145,9 +147,9 @@ $status-indicator-margin-left: 1.3rem !default;
   align-items: baseline;
   background: white;
   border: $status-indicator-bordered-border;
-  padding: $layout-spacing-base/2;
+  padding: $layout-spacing-base*0.5;
   border-radius: 4px;
-  margin: 0 0 $layout-spacing-base/2;
+  margin: 0 0 $layout-spacing-base*0.5;
 
   .status-indicator__children {
     margin: 0 0 0 auto;
