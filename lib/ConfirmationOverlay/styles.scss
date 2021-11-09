@@ -10,7 +10,7 @@
     display: flex;
   }
   &__button {
-    margin: $layout-spacing-base/4;
+    margin: $layout-spacing-base*0.25;
   }
   &--show {
     display: flex;

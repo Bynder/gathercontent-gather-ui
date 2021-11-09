@@ -26,7 +26,7 @@ $icon-active-color: $color-brand-blue !default;
 }
 
 .icon + .icon {
-  margin-left: $layout-spacing-base/2;
+  margin-left: $layout-spacing-base*0.5;
 }
 
 .icon__body {
@@ -36,7 +36,7 @@ $icon-active-color: $color-brand-blue !default;
 }
 
 .icon__text {
-  margin: 0 0 0 $layout-spacing-base/2;
+  margin: 0 0 0 $layout-spacing-base*0.5;
   @include text-overflow-ellipsis();
 
   &--primary-blue {
@@ -58,24 +58,24 @@ $icon-active-color: $color-brand-blue !default;
 
 .icon--has-notification {
   position: relative;
-  padding-right: $layout-spacing-base/2;
+  padding-right: $layout-spacing-base*0.5;
 }
 
 .icon__notification {
   font-size: $typo-size-micro;
   color: white;
   background: $primary-blue;
-  border-radius: $layout-spacing-base/2;
+  border-radius: $layout-spacing-base*0.5;
   display: block;
   min-width: 17px;
   height: $layout-spacing-base;
-  padding: 0 $layout-spacing-base/4;
+  padding: 0 $layout-spacing-base*0.25;
   position: absolute;
-  right: -$layout-spacing-base/4;
+  right: -$layout-spacing-base*0.25;
   top: -7px;
   border: 2px solid white;
   text-align: center;
-  line-height: $layout-spacing-base/2 + 6;
+  line-height: $layout-spacing-base*0.5 + 6;
 }
 
 /* ==========================================================================

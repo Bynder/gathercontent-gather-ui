@@ -68,7 +68,7 @@
     img {
       position: relative;
       top: 2px;
-      margin: 0 0 0 $layout-spacing-base/2;
+      margin: 0 0 0 $layout-spacing-base*0.5;
       width: $typo-size-large;
     }
 }

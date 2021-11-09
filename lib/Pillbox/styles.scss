@@ -1,7 +1,9 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
+@use "sass:math";
+
+$pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !default;
 $pillbox-background: rgb(153, 166, 182) !default;
 $pillbox-color: #fff !default;
 $pillbox-border-radius: 1rem !default;
@@ -17,5 +19,5 @@ $pillbox-border-radius: 1rem !default;
   border-radius: $pillbox-border-radius;
   padding: $avatar-pillbox-padding;
   font-size: $typo-size-micro;
-  margin-bottom: $typo-size-lead/3;
+  margin-bottom: math.div($typo-size-lead, 3);
 }

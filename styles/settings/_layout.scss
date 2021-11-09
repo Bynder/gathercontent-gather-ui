@@ -9,7 +9,7 @@ $layout-spacing-base: 20px;
    Shadows
    ========================================================================== */
 $shadow-base-offset: 0 2px 4px rgba($neutral-light, 0.7);
-$shadow-deep: 0 $layout-spacing-base/4 $layout-spacing-base/2 $neutral-light;
+$shadow-deep: 0 $layout-spacing-base*0.25 $layout-spacing-base*0.5 $neutral-light;
 $shadow-shallow: 0px 0px 6px 0px transparentize($neutral-light, 0.7);
 $shadow-base: 0 0 6px 0 transparentize($neutral-light, 0.29);
 

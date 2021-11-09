@@ -65,7 +65,7 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 
   &:after {
     content: '/';
-    margin: 0 $breadcrumb-spacing/4;
+    margin: 0 $breadcrumb-spacing*0.25;
   }
 
   &:last-child {

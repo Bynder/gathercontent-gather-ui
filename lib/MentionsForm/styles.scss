@@ -1,7 +1,9 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$mention-form-padding: $layout-spacing-base/2;
+@use "sass:math";
+
+$mention-form-padding: $layout-spacing-base*0.5;
 $mention-suggestions-min-width: 250px;
 $mention-suggestions-max-height: 500px;
 
@@ -17,7 +19,7 @@ $mention-color: #f5effc;
   .mention-form__input,
   .mention-form__input__input,
   .mention-form__input:focus {
-    padding: 0 $layout-spacing-base/2 0 0;
+    padding: 0 $layout-spacing-base*0.5 0 0;
     border: 0;
   }
 
@@ -99,7 +101,7 @@ $mention-color: #f5effc;
   &__list {
     min-width: $mention-suggestions-min-width;
     position: absolute;
-    top: $layout-spacing-base / 2 + ($layout-spacing-base / 4);
+    top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
     max-height: $mention-suggestions-max-height;
     overflow-y: scroll;
     border-radius: $conversation-border-radius;
@@ -109,7 +111,7 @@ $mention-color: #f5effc;
       color: $neutral-base;
       content: 'Mention...';
       width: 100%;
-      padding:  $layout-spacing-base / 3;
+      padding:  math.div($layout-spacing-base, 3);
       display: block;
     }
   }
@@ -122,7 +124,7 @@ $mention-color: #f5effc;
   }
   .avatar__wrapper {
     cursor: pointer;
-    padding: $layout-spacing-base / 3;
+    padding: math.div($layout-spacing-base, 3);
     border-top: 1px solid $color-border-base;
   }
 
@@ -141,7 +143,7 @@ $mention-color: #f5effc;
 
 .mention-form__search {
   float: left;
-  margin-top: $layout-spacing-base/4;
+  margin-top: $layout-spacing-base*0.25;
 }
 
 .mention-form.hide-author {

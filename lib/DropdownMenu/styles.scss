@@ -1,9 +1,11 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$dropdown-menu-caret-margin: $layout-spacing-base/2 !default;
+@use "sass:math";
+
+$dropdown-menu-caret-margin: $layout-spacing-base*0.5 !default;
 $dropdown-menu-icon-size: $typo-size-small !default;
-$dropdown-menu-link-padding: $layout-spacing-base/3 $layout-spacing-base/1 !default;
+$dropdown-menu-link-padding: math.div($layout-spacing-base, 3) math.div($layout-spacing-base, 1) !default;
 $dropdown-menu-font-size: $typo-size-base !default;
 $dropdown-menu-font-weight: $typo-weight-roman !default;
 $dropdown-menu-font-color: $color-text-base !default;

@@ -8,7 +8,7 @@ $shortcut-max-width: 400px !default;
    ========================================================================== */
 .shortcut {
   border-bottom: 1px solid $color-border-base;
-  padding: $layout-spacing-base/2 0;
+  padding: $layout-spacing-base*0.5 0;
   max-width: $shortcut-max-width;
 
   &:last-child {
@@ -37,7 +37,7 @@ $shortcut-max-width: 400px !default;
 .shortcut__plus {
   font-weight: 500;
   color: $neutral-base;
-  margin: 0 $layout-spacing-base/4;
+  margin: 0 $layout-spacing-base*0.25;
 }
 
 

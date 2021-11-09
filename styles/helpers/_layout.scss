@@ -15,11 +15,11 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
   }
 
   #{$selector}-half {
-    #{$property}: $layout-spacing-base/2 !important;
+    #{$property}: $layout-spacing-base*0.5 !important;
   }
 
   #{$selector}-quarter {
-    #{$property}: $layout-spacing-base/4 !important;
+    #{$property}: $layout-spacing-base*0.25 !important;
   }
 
   #{$selector}-clear {

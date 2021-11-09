@@ -1,6 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+@use "sass:math";
+
 $top-bar-height: 114px;
 $top-bar-height-medium: 74px;
 $top-bar-main-breakpoint: medium;
@@ -23,7 +25,7 @@ $top-bar-notification-height: 42px;
   .top-bar__wrapper {
     background: #fff;
     border-bottom: 1px solid $color-border-base;
-    padding: $layout-spacing-base/2 $layout-spacing-base/1.5;
+    padding: $layout-spacing-base*0.5 math.div($layout-spacing-base, 1.5);
     width: 100%;
   }
 
@@ -101,12 +103,12 @@ $top-bar-notification-height: 42px;
 
   .top-bar__action {
     fill: $neutral-dark;
-    padding: $layout-spacing-base/2.5;
+    padding: math.div($layout-spacing-base, 2.5);
   }
 
   .item-settings .button {
     display: block;
-    padding: $layout-spacing-base/2.5 $layout-spacing-base/1.55;
+    padding: math.div($layout-spacing-base, 2.5) math.div($layout-spacing-base, 1.55);
   }
 
   .top-bar__action--collapse-left {
@@ -122,7 +124,7 @@ $top-bar-notification-height: 42px;
     overflow: scroll;
     position: absolute;
     height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin});
-    top: $top-bar-height - ($layout-spacing-base / 2);
+    top: $top-bar-height - ($layout-spacing-base * 0.5);
     bottom: auto;
     left: 0;
     right: 0;
@@ -130,7 +132,7 @@ $top-bar-notification-height: 42px;
     padding-bottom: $layout-spacing-base;
     @include respond-to($top-bar-main-breakpoint) {
       max-width: 400px;
-      top: $top-bar-height-medium - ($layout-spacing-base / 2);
+      top: $top-bar-height-medium - ($layout-spacing-base * 0.5);
       height: calc(100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin});
     }
   }
@@ -184,7 +186,7 @@ $top-bar-notification-height: 42px;
 
 .top-bar__group {
   display: flex;
-  margin: 0 $layout-spacing-base / 1.33;
+  margin: 0 math.div($layout-spacing-base, 1.33);
 }
 
 .top-bar__group--collapse {
@@ -192,7 +194,7 @@ $top-bar-notification-height: 42px;
 }
 
 .top-bar__group > * {
-  margin: 0 $layout-spacing-base / 4;
+  margin: 0 $layout-spacing-base * 0.25;
 }
 
 .top-bar--has-notification,

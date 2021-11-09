@@ -1,6 +1,8 @@
 /* ==========================================================================
    Config
    ========================================================================== */
+@use "sass:math";
+
 $avatar-size: 32px !default;
 $avatar-border-radius: $avatar-size !default;
 
@@ -12,7 +14,7 @@ $avatar-highlighted-background: $neutral-base !default;
 $avatar-highlighted-color: white !default;
 
 $avatar-offline-transparency: .5 !default;
-$avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
+$avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !default;
 
 /* ==========================================================================
    Styles
@@ -64,7 +66,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 
 .avatar__information {
   overflow: hidden;
-  margin-left: $layout-spacing-base/2;
+  margin-left: $layout-spacing-base*0.5;
 
   .avatar__name,
   .avatar__email {
@@ -104,7 +106,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 
 .avatar--supporting {
   flex-shrink: 0;
-  margin: 0 $layout-spacing-base/2 0 0;
+  margin: 0 $layout-spacing-base*0.5 0 0;
 }
 
 .avatar__wrapper:focus,
@@ -166,7 +168,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 }
 
 .avatar__caret {
-  margin-left: $layout-spacing-base / 4;
+  margin-left: $layout-spacing-base * 0.25;
   opacity: .6;
 }
 
@@ -208,7 +210,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
 }
 
 .avatar__actions {
-  padding-top: $layout-spacing-base/4;
+  padding-top: $layout-spacing-base*0.25;
   display: block;
 }
 
@@ -232,7 +234,7 @@ $avatar-pillbox-padding: $typo-size-lead/4 $typo-size-lead/3 !default;
   .avatar__name {
     font-size: $typo-size-larger;
     font-weight: $typo-weight-bold;
-    margin-bottom: $layout-spacing-base/4;
+    margin-bottom: $layout-spacing-base*0.25;
   }
   .avatar__information .avatar__name + .avatar__email,
   .avatar__email {
