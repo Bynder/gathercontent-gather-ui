@@ -1,21 +1,20 @@
-@import '~tippy.js/dist/tippy.css';
-@import '~tippy.js/animations/shift-toward.css';
+@import './tippystyles.scss';
 
 .tippy-box[data-theme~='dark'] {
   @apply bg-neutral-20 text-white;
 }
 
 .tooltip-wrapper__child {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 
-    &--align-left {
-      justify-content: start;
-    }
+  &--align-left {
+    justify-content: start;
+  }
 }
 
 .tooltip-wrapper__child--clickable {
-    cursor: pointer;
+  cursor: pointer;
 }
