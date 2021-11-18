@@ -218,7 +218,7 @@
 }
 
 @mixin gradient-overflow($toColour) {
-  @apply relative overflow-hidden whitespace-no-wrap;
+  @apply relative overflow-hidden whitespace-nowrap;
   &:before {
     @apply absolute right-0 w-8 h-full;
     background-image: linear-gradient(

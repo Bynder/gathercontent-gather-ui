@@ -23,7 +23,7 @@
     2px,
     solid,
     theme('colors.blue.primary'),
-    theme('borderRadius.default')
+    theme('borderRadius.DEFAULT')
   );
 }
 
@@ -47,7 +47,6 @@
 
 .text-input-disabled {
   @apply bg-neutral-95 text-neutral-primary;
-
 }
 .text-input:disabled {
   @apply text-input-disabled;
