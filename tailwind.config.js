@@ -18,6 +18,7 @@ const yellowPrimary = '#F9D006';
 
 module.exports = {
   important: true,
+  purge: false,
   theme: {
     borderStyles: {
       colors: true
