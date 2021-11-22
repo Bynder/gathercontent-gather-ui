@@ -32,16 +32,31 @@ module.exports = {
       bold: 600
     },
     borderRadius: {
-      default: '6px',
+      DEFAULT: '6px',
       small: '4px',
       xlarge: '16px',
       full: '100%',
       none: 0
     },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
+      '2-5xl': '1.75rem',
+      '3-5xl': '2rem',
+      '1xl': '1.375rem'
+    },
     boxShadow: {
       inner: 'inset 0px 2px 2px rgba(0, 0, 0, 0.06)',
       small: '0px 2px 4px rgba(0, 0, 0, 0.06)',
-      default: '0px 3px 6px rgba(0, 0, 0, 0.06)',
+      DEFAULT: '0px 3px 6px rgba(0, 0, 0, 0.06)',
       large: '0px 8px 16px rgba(0, 0, 0, 0.1)',
       xlarge: '0px 15px 30px rgba(0, 0, 0, 0.2)',
 
@@ -160,7 +175,7 @@ module.exports = {
         'animation-curve': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
       },
       transitionProperty: {
-        'mb': 'margin-bottom',
+        mb: 'margin-bottom'
       },
       opacity: {
         '30': 0.3
@@ -172,22 +187,17 @@ module.exports = {
       },
       spacing: {
         '05': '0.375rem',
-        '100%': '100%',
+        '100%': '100%'
       },
       cursor: {
         grab: 'grab'
-      },
-      fontSize: {
-        '2-5xl': '1.75rem',
-        '3-5xl': '2rem',
-        '1xl': '1.375rem'
       },
       height: {
         screen50: '50vh',
         screen60: '60vh',
         screen70: '70vh',
         screen80: '80vh',
-        screen90: '90vh',
+        screen90: '90vh'
       }
     },
     maxHeight: {
@@ -317,7 +327,15 @@ module.exports = {
       'first',
       'last'
     ],
-    margin: ['responsive', 'group-hover', 'focus', 'hover', 'focus-within', 'first', 'last'],
+    margin: [
+      'responsive',
+      'group-hover',
+      'focus',
+      'hover',
+      'focus-within',
+      'first',
+      'last'
+    ],
     gradients: ['responsive', 'hover', 'group-hover'],
     backgroundColor: ['responsive', 'group-hover', 'hover', 'focus', 'active'],
     border: ['focus'],
@@ -329,7 +347,7 @@ module.exports = {
     textDecoration: ['responsive', 'hover', 'focus', 'active'],
     display: ['responsive', 'hover', 'group-hover', 'focus', 'active'],
     textColor: ['responsive', 'group-hover', 'hover', 'focus'],
-    justifyContent: ['group-hover'],
+    justifyContent: ['group-hover']
   },
   plugins: [
     require('tailwindcss-plugins/gradients'),

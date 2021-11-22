@@ -3,7 +3,7 @@
 
   .button-secondary-text-overflow {
     @include gradient-overflow(white);
-    @apply whitespace-no-wrap overflow-hidden;
+    @apply whitespace-nowrap overflow-hidden;
   }
 
   &:hover {
