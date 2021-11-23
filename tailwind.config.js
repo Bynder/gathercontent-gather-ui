@@ -19,7 +19,6 @@ const yellowPrimary = '#F9D006';
 module.exports = {
   important: true,
   purge: {
-    enabled: true,
     content: [
       './lib/**/*.js',
       './lib/**/*.scss',
