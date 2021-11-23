@@ -45,7 +45,7 @@
     }
   ],
   "scripts": {
-    "compile:css": "parcel build styles/prod.scss",
+    "compile:css": "ENABLE_PURGE=true parcel build styles/prod.scss",
     "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && npm run copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
