@@ -45,13 +45,13 @@
     }
   ],
   "scripts": {
-    "build:css:file": "parcel build styles/prod.scss",
+    "compile:css": "parcel build styles/prod.scss",
     "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && npm run copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "npm run build:lib && npm run build:tailwind:config",
-    "build:with:styles": "npm run build && npm run copy-styles",
+    "build:with:styles": "npm run build && npm run copy-styles && npm run compile:css",
     "prepare": "npm run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
