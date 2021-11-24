@@ -3,6 +3,9 @@
   "version": "0.36.0",
   "description": "GatherContent UI Library",
   "main": "dist/lib/index.js",
+  "targets": {
+    "main": false
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gathercontent/gather-ui"
@@ -42,12 +45,13 @@
     }
   ],
   "scripts": {
+    "compile:css": "ENABLE_PURGE=true parcel build styles/prod.scss",
     "copy-tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "copy-styles": "echo Copying Sass settings... && npm run copy-tailwind && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/",
     "build:lib": "babel lib/ --out-dir dist/lib",
     "build:tailwind:config": "babel tailwind.config.js --out-dir dist",
     "build": "npm run build:lib && npm run build:tailwind:config",
-    "build:with:styles": "npm run build && npm run copy-styles",
+    "build:with:styles": "npm run build && npm run copy-styles && npm run compile:css",
     "prepare": "npm run build:with:styles",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
@@ -101,6 +105,7 @@
     "moment": "^2.29.1",
     "normalize-scss": "^7.0.1",
     "object-assign": "^4.1.1",
+    "parcel": "^2.0.1",
     "pluralize": "^5.0.0",
     "postcss": "^8.3.11",
     "prop-types": "^15.7.2",
@@ -147,6 +152,7 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@parcel/transformer-sass": "^2.0.1",
     "@storybook/addon-a11y": "^5.3.21",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-knobs": "^5.3.8",
@@ -166,6 +172,7 @@
     "concurrently": "^4.1.0",
     "copyfiles": "^1.2.0",
     "css-loader": "^4.3.0",
+    "cssnano": "^5.0.11",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-adapter-utils": "^1.14.0",
@@ -185,9 +192,12 @@
     "lint-staged": "^8.2.1",
     "nodemon": "^1.18.11",
     "pixrem": "^3.0.2",
+    "postcss-cli": "^9.0.2",
     "postcss-cli-simple": "^3.1.0",
+    "postcss-import": "^14.0.2",
     "postcss-load-config": "^2.1.2",
     "postcss-loader": "^4.3.0",
+    "postcss-nested": "^5.0.6",
     "prettier": "1.16.4",
     "raw-loader": "^3.1.0",
     "react-addons-test-utils": "^15.4.2",
