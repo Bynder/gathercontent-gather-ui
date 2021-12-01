@@ -1,7 +1,3 @@
-import './base/Base';
-
-import { AvatarStory } from '../lib/Avatar/stories/AvatarStory';
-import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';
 import SearchInput from './components/SearchInput';
