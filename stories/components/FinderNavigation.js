@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { FinderNavigation, Icon, Layout } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('FinderNavigation', () => (
+export default {
+  title: 'Components',
+};
+
+export const _FinderNavigation = () => (
   <div>
     <StoryItem
       title="FinderNavigation Components"
@@ -37,7 +40,6 @@ storiesOf('Components', module).add('FinderNavigation', () => (
             </FinderNavigation.Item>
           </FinderNavigation.Group>
           <FinderNavigation.Group title="folder">
-
             <FinderNavigation.Item>
               <FinderNavigation.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">
@@ -123,4 +125,8 @@ storiesOf('Components', module).add('FinderNavigation', () => (
       </Layout.InlineSidebar>
     </StoryItem>
   </div>
-));
+);
+
+_FinderNavigation.story = {
+  name: 'FinderNavigation',
+};

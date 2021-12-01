@@ -22,7 +22,7 @@ function HierarchyFolderRowActions({ startCreatingItem }) {
 }
 
 HierarchyFolderRowActions.propTypes = {
-  startCreatingItem: func.isRequired
+  startCreatingItem: func.isRequired,
 };
 
 export { HierarchyFolderRowActions };

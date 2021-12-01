@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import StoryItem from '../styleguide/StoryItem';
 import TopBar from '../../lib/TopBar';
 import TopBarContent from '../../lib/TopBar/TopBarContent';
@@ -16,7 +15,11 @@ import Search from '../../lib/Search';
 import NotificationBar from '../../lib/Notification/bar';
 import { ButtonIcon, MenuItem } from 'lib';
 
-storiesOf('Components', module).add('TopBar', () => (
+export default {
+  title: 'Components',
+};
+
+export const _TopBar = () => (
   <div>
     <StoryItem
       title="TopBar site wide"
@@ -70,10 +73,7 @@ storiesOf('Components', module).add('TopBar', () => (
         </TopBarContent>
       </TopBar>
     </StoryItem>
-    <StoryItem
-      title="TopBar dark"
-      description="TopBar with the dark theme."
-    >
+    <StoryItem title="TopBar dark" description="TopBar with the dark theme.">
       <TopBar useDarkTheme>
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
@@ -172,10 +172,13 @@ storiesOf('Components', module).add('TopBar', () => (
             <Logo />
           </TopBarCell>
           <TopBarCell>
-            <SectionHeader title="Project name" id="sh-123432" collapse noBorder>
-              <MenuItem href="#test">
-                Personal Settings
-              </MenuItem>
+            <SectionHeader
+              title="Project name"
+              id="sh-123432"
+              collapse
+              noBorder
+            >
+              <MenuItem href="#test">Personal Settings</MenuItem>
             </SectionHeader>
           </TopBarCell>
           <TopBarCell bordered>
@@ -199,30 +202,18 @@ storiesOf('Components', module).add('TopBar', () => (
                   />
                 </Search.Options>
                 <Search.List heading="Items">
-                  <Search.ListItem
-                    title="bloop"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="bloop" subText="123 435">
                     hi there <em>waffles</em> hi!
                   </Search.ListItem>
-                  <Search.ListItem
-                    title="blorp"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="blorp" subText="123 435">
                     hhello!! <em>waffles</em> hi!
                   </Search.ListItem>
                 </Search.List>
                 <Search.List heading="Content">
-                  <Search.ListItem
-                    title="bloop"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="bloop" subText="123 435">
                     hi there <em>waffles</em> hi!
                   </Search.ListItem>
-                  <Search.ListItem
-                    title="blorp"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="blorp" subText="123 435">
                     hhello!! <em>waffles</em> hi!
                   </Search.ListItem>
                 </Search.List>
@@ -255,16 +246,25 @@ storiesOf('Components', module).add('TopBar', () => (
       title="TopBar with notification"
       description="The topbar can display a notification"
     >
-      <TopBar notification={<NotificationBar level="warning" center>Important information here!</NotificationBar>}>
+      <TopBar
+        notification={
+          <NotificationBar level="warning" center>
+            Important information here!
+          </NotificationBar>
+        }
+      >
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
           </TopBarCell>
           <TopBarCell>
-            <SectionHeader title="Project name" id="sh-123432" collapse noBorder>
-              <MenuItem href="#test">
-                Personal Settings
-              </MenuItem>
+            <SectionHeader
+              title="Project name"
+              id="sh-123432"
+              collapse
+              noBorder
+            >
+              <MenuItem href="#test">Personal Settings</MenuItem>
             </SectionHeader>
           </TopBarCell>
           <TopBarCell bordered>
@@ -288,30 +288,18 @@ storiesOf('Components', module).add('TopBar', () => (
                   />
                 </Search.Options>
                 <Search.List heading="Items">
-                  <Search.ListItem
-                    title="bloop"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="bloop" subText="123 435">
                     hi there <em>waffles</em> hi!
                   </Search.ListItem>
-                  <Search.ListItem
-                    title="blorp"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="blorp" subText="123 435">
                     hhello!! <em>waffles</em> hi!
                   </Search.ListItem>
                 </Search.List>
                 <Search.List heading="Content">
-                  <Search.ListItem
-                    title="bloop"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="bloop" subText="123 435">
                     hi there <em>waffles</em> hi!
                   </Search.ListItem>
-                  <Search.ListItem
-                    title="blorp"
-                    subText="123 435"
-                  >
+                  <Search.ListItem title="blorp" subText="123 435">
                     hhello!! <em>waffles</em> hi!
                   </Search.ListItem>
                 </Search.List>
@@ -340,4 +328,8 @@ storiesOf('Components', module).add('TopBar', () => (
       </TopBar>
     </StoryItem>
   </div>
-));
+);
+
+_TopBar.story = {
+  name: 'TopBar',
+};

@@ -19,12 +19,12 @@ const createData = ({ levelCount, maxItemCount, statusColor }) => {
           [id]: {
             id,
             name: faker.commerce.department(),
-            depth
-          }
+            depth,
+          },
         },
         itemsByParent: {
           ...acc.itemsByParent,
-          [id]: allItemIds
+          [id]: allItemIds,
         },
         itemsById: {
           ...acc.itemsById,
@@ -34,17 +34,17 @@ const createData = ({ levelCount, maxItemCount, statusColor }) => {
               [itemId]: {
                 id: itemId,
                 status: {
-                  color: statusColor
+                  color: statusColor,
                 },
                 name: faker.commerce.productName(),
-                parentFolderId: id
-              }
+                parentFolderId: id,
+              },
             }),
             {}
-          )
+          ),
         },
         allIds: [...acc.allIds, id, ...allItemIds],
-        allItemIds: [...acc.allItemIds, allItemIds]
+        allItemIds: [...acc.allItemIds, allItemIds],
       };
     },
     {
@@ -53,7 +53,7 @@ const createData = ({ levelCount, maxItemCount, statusColor }) => {
       foldersById: {},
       itemsByParent: {},
       itemsById: {},
-      allIds: []
+      allIds: [],
     }
   );
 };

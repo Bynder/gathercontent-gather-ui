@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { EditableTextWrapper } from 'lib';
 import StoryItem from '../styleguide/StoryItem';
@@ -7,7 +6,11 @@ import StoryItem from '../styleguide/StoryItem';
 const longText =
   'Original text thats quite long and may well go over a single line, so its much safer to set the multiline prop, that way we render an ExpandingTextArea component instead of a normal text input';
 
-storiesOf('Components', module).add('EditableTextWrapper', () => (
+export default {
+  title: 'Components',
+};
+
+export const _EditableTextWrapper = () => (
   <div>
     <StoryItem
       title="EditableTextWrapper"
@@ -16,7 +19,7 @@ storiesOf('Components', module).add('EditableTextWrapper', () => (
       <EditableTextWrapper
         buttonLabel="Editable text"
         value="Original text"
-        onChange={v => action('renamed to: ')(v)}
+        onChange={(v) => action('renamed to: ')(v)}
       >
         <h1>Original text</h1>
       </EditableTextWrapper>
@@ -28,7 +31,7 @@ storiesOf('Components', module).add('EditableTextWrapper', () => (
     >
       <EditableTextWrapper
         value="Original text"
-        onChange={v => action('renamed to: ')(v)}
+        onChange={(v) => action('renamed to: ')(v)}
         pencilEditOnly
       >
         <h1>Original text</h1>
@@ -41,11 +44,15 @@ storiesOf('Components', module).add('EditableTextWrapper', () => (
     >
       <EditableTextWrapper
         value={longText}
-        onChange={v => action('renamed to: ')(v)}
+        onChange={(v) => action('renamed to: ')(v)}
         multiline
       >
         <h1>{longText}</h1>
       </EditableTextWrapper>
     </StoryItem>
   </div>
-));
+);
+
+_EditableTextWrapper.story = {
+  name: 'EditableTextWrapper',
+};

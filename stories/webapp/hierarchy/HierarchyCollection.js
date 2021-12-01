@@ -8,19 +8,19 @@ export const HierarchyCollection = ({
   data,
   statusColor,
   addIds,
-  removeIds
+  removeIds,
 }) => {
   const { allWindowingIds } = useContext(Windowing.Context);
   const [newItemParentId, setNewItemParentId] = useState('');
 
-  return inViewWindowingIds.map(id => {
+  return inViewWindowingIds.map((id) => {
     if (data.allFolderIds.indexOf(id) > -1) {
       return (
         <Windowing.Item
           key={id}
           index={allWindowingIds.indexOf(id)}
           style={{
-            paddingLeft: `${data.foldersById[id].depth * 40}px`
+            paddingLeft: `${data.foldersById[id].depth * 40}px`,
           }}
         >
           <HierarchyFolderRow
@@ -48,7 +48,7 @@ export const HierarchyCollection = ({
         key={id}
         index={allWindowingIds.indexOf(id)}
         style={{
-          paddingLeft: `${(data.foldersById[parentId].depth + 1) * 40}px`
+          paddingLeft: `${(data.foldersById[parentId].depth + 1) * 40}px`,
         }}
       >
         <HierarchyItemRow id={id} name={name} status={{ color: statusColor }} />

@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { BlankSlate, Button } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Blank Slate', () => (
+export default {
+  title: 'Components',
+};
+
+export const _BlankSlate = () => (
   <div>
     <StoryItem
       title="BlankSlate Component"
@@ -24,9 +27,7 @@ storiesOf('Components', module).add('Blank Slate', () => (
       title="BlankSlate Component"
       description="BlankSlate with the arrow style"
     >
-      <BlankSlate
-        slateStyle="arrow"
-      >
+      <BlankSlate slateStyle="arrow">
         <h2 className="blank-slate__heading">Hey do something on the left</h2>
         <p>Then put it over here.</p>
       </BlankSlate>
@@ -35,13 +36,10 @@ storiesOf('Components', module).add('Blank Slate', () => (
       title="BlankSlate Component"
       description="BlankSlate with an emoji"
     >
-      <BlankSlate
-        emoji="🔎"
-        emojiLabel="Magnifying glass"
-      >
+      <BlankSlate emoji="🔎" emojiLabel="Magnifying glass">
         <h2 className="blank-slate__heading">Look an emoji!</h2>
         <p>How wonderful.</p>
       </BlankSlate>
     </StoryItem>
   </div>
-));
+);

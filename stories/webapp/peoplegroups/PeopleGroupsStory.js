@@ -1,18 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
 import {
   createData,
   getUsers,
   getGuestUsers,
   getPendingUsers,
-  getAllProjects
+  getAllProjects,
 } from './data';
 import PeopleGroups from './PeopleGroups';
 
 const stories = storiesOf('Web app', module);
 
-stories.add('PeopleAndGroups', () => {
+export const PeopleAndGroups = () => {
   const userCount = number('Total number of users', 20);
   const guestUserCount = number('Total number of guest users', 4);
   const pendingUserCount = number('Total number of pending users', 2);
@@ -42,4 +41,8 @@ stories.add('PeopleAndGroups', () => {
       projects={projects}
     />
   );
-});
+};
+
+PeopleAndGroups.story = {
+  name: 'PeopleAndGroups',
+};

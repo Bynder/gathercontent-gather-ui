@@ -1,10 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { ShortcutTrigger } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Shortcut Trigger', () => (
+export default {
+  title: 'Components',
+};
+
+export const _ShortcutTrigger = () => (
   <div>
     <StoryItem
       title="ShortcutTrigger"
@@ -18,4 +21,4 @@ storiesOf('Components', module).add('Shortcut Trigger', () => (
       />
     </StoryItem>
   </div>
-));
+);

@@ -1,46 +1,6 @@
 import './base/Base';
 
-import '../lib/src/components/card/CardStory';
-import '../lib/src/components/personSearch/PersonSearchStory';
-import '../lib/src/prefabs/files/fileCard/FileCardStory';
-import '../lib/src/modules/statusIndicatorCircle/statusIndicatorCircleStory';
-import '../lib/src/components/workflowStep/WorkflowStepStory';
-import '../lib/src/components/dropzone/DropzoneStory';
-import 'lib/src/components/animated/AnimatedWrapperStory';
-import 'lib/src/components/componentWrapper/ComponentWrapperStory';
-import 'lib/src/components/sidebar/SidebarStory';
-import 'lib/src/components/form/FormStory';
-import 'lib/src/components/dropdownContent/DropdownContentStory';
-import 'lib/src/prefabs/dueDateDropdown/DueDateDropdownStory';
-import 'lib/src/prefabs/assigneeDropdown/AssigneeDropdownStory';
-import 'lib/src/prefabs/workflowDropdown/WorkflowDropdownStory';
-
-import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryStory';
-import 'lib/ButtonNew/stories/ButtonPrimary/ButtonPrimaryDangerStory';
-import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryStory';
-import 'lib/ButtonNew/stories/ButtonSecondary/ButtonSecondaryDangerStory';
-import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryStory';
-import 'lib/ButtonNew/stories/ButtonTertiary/ButtonTertiaryDangerStory';
-import 'lib/ButtonNew/stories/ButtonIcon/ButtonIconStory';
-import 'lib/ButtonNew/stories/ButtonLink/ButtonLinkStory';
-import 'lib/ButtonNew/stories/ButtonAvatar/ButtonAvatarStory';
-import 'lib/ButtonNew/stories/ButtonSuccess/ButtonSuccessStory';
-
-import 'lib/src/modules/loader/LoaderStory';
-import 'lib/src/modules/closeButton/CloseButtonStory';
-import 'lib/src/modules/input/InputStory';
-import 'lib/src/modules/navigationItems/NavigationItemsStory';
-import 'lib/src/modules/inventoryItem/InventoryItemStory';
-import 'lib/src/modules/selectionControls/SelectionControlsStory';
-import 'lib/src/modules/renameInput/RenameInputStory';
-import 'lib/src/modules/person/PersonStory';
-import 'lib/src/modules/calendar/CalendarStory';
-import 'lib/src/modules/dateSet/DateSetStory';
-import 'lib/src/modules/optionMenuItem/OptionMenuItemStory';
-import 'lib/src/modules/slider/SliderStory';
-import 'lib/src/modules/grid/GridStory';
-
-import Avatar from '../lib/Avatar/stories/AvatarStory';
+import { AvatarStory } from '../lib/Avatar/stories/AvatarStory';
 import Button from './components/Button';
 import CheckToggle from './components/CheckToggle';
 import Notification from './components/Notification';

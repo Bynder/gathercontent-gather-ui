@@ -25,7 +25,7 @@ function HierarchyRowForm({ onSubmit, onCancel, onChange }) {
 HierarchyRowForm.propTypes = {
   onSubmit: func.isRequired,
   onCancel: func.isRequired,
-  onChange: func.isRequired
+  onChange: func.isRequired,
 };
 
 export { HierarchyRowForm };

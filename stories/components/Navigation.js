@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { MenuItem, Navigation } from "../../lib";
+import { MenuItem, Navigation } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Navigation', () => (
+export default {
+  title: 'Components',
+};
+
+export const _Navigation = () => (
   <div>
     <StoryItem
       title="Navigation"
@@ -16,10 +19,7 @@ storiesOf('Components', module).add('Navigation', () => (
         <MenuItem href="#">Archived Items</MenuItem>
       </Navigation>
     </StoryItem>
-    <StoryItem
-      title="Tabs"
-      description="A tabbed navigation."
-    >
+    <StoryItem title="Tabs" description="A tabbed navigation.">
       <Navigation tabs>
         <MenuItem href="#" active>
           Items
@@ -28,4 +28,4 @@ storiesOf('Components', module).add('Navigation', () => (
       </Navigation>
     </StoryItem>
   </div>
-));
+);

@@ -1,10 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import ParticipantInfo from '../../lib/ParticipantInfo';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('ParticipantInfo', () => (
+export default {
+  title: 'Components',
+};
+
+export const _ParticipantInfo = () => (
   <div>
     <StoryItem
       title="Page information: Just a title"
@@ -17,4 +20,8 @@ storiesOf('Components', module).add('ParticipantInfo', () => (
       />
     </StoryItem>
   </div>
-));
+);
+
+_ParticipantInfo.story = {
+  name: 'ParticipantInfo',
+};

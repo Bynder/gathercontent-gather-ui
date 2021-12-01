@@ -6,7 +6,7 @@ import { ItemRow, StatusIndicator, useObjectSelector } from 'lib';
 import { AvatarGroupMock } from 'lib/Avatar/stories/AvatarGroupMock';
 import { HierarchyNameInput } from '../shared/HierarchyNameInput';
 
-const createStatusIndicator = status => (
+const createStatusIndicator = (status) => (
   <StatusIndicator color={status.color} className="h-margin-right-half" />
 );
 
@@ -17,7 +17,7 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
     handleClick,
     isHovered,
     handleMouseEnter,
-    handleMouseLeave
+    handleMouseLeave,
   } = useObjectSelector(
     id,
     'item',
@@ -33,7 +33,7 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
   const classNames = cx('h-margin-bottom-half', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
-    'is-hovered': isHovered
+    'is-hovered': isHovered,
   });
 
   const avatars = useMemo(
@@ -65,7 +65,7 @@ export const HierarchyItemRow = ({ id, name, status, nameForm }) => {
               {status && createStatusIndicator(status)}
               <HierarchyNameInput
                 name={itemName}
-                onChange={value => setItemName(value)}
+                onChange={(value) => setItemName(value)}
                 onStartEditing={() => {}}
                 onStopEditing={() => {}}
                 useLink
@@ -91,10 +91,10 @@ HierarchyItemRow.propTypes = {
   id: string.isRequired,
   name: string.isRequired,
   status: shape({}),
-  nameForm: node
+  nameForm: node,
 };
 
 HierarchyItemRow.defaultProps = {
   status: null,
-  nameForm: null
+  nameForm: null,
 };

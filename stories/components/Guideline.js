@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Guideline } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Guideline', () => (
+export default {
+  title: 'Components',
+};
+
+export const _Guideline = () => (
   <div>
     <StoryItem
       title="Guideline"
@@ -11,8 +14,20 @@ storiesOf('Components', module).add('Guideline', () => (
     >
       <Guideline title="Guideline title">
         <span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit cursus ex at ultricies. Proin nec velit ac elit auctor condimentum vitae nec metus. Sed sollicitudin quam nulla, eget volutpat augue cursus quis.</p>
-          <p>Sed vitae ligula at turpis vehicula facilisis at a ex. Nulla facilisi. Phasellus quis pretium ligula. Donec molestie, justo eu mollis laoreet, orci tellus varius neque, a ornare tortor elit id metus. Nunc in dui in magna aliquet pellentesque sed ut enim. Donec at tincidunt est. Donec justo felis, cursus vel rhoncus ac, sollicitudin nec ex.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            suscipit cursus ex at ultricies. Proin nec velit ac elit auctor
+            condimentum vitae nec metus. Sed sollicitudin quam nulla, eget
+            volutpat augue cursus quis.
+          </p>
+          <p>
+            Sed vitae ligula at turpis vehicula facilisis at a ex. Nulla
+            facilisi. Phasellus quis pretium ligula. Donec molestie, justo eu
+            mollis laoreet, orci tellus varius neque, a ornare tortor elit id
+            metus. Nunc in dui in magna aliquet pellentesque sed ut enim. Donec
+            at tincidunt est. Donec justo felis, cursus vel rhoncus ac,
+            sollicitudin nec ex.
+          </p>
           <ul>
             <li>Point 1</li>
             <li>Point 2</li>
@@ -26,4 +41,4 @@ storiesOf('Components', module).add('Guideline', () => (
       <Guideline title="Guideline title" />
     </StoryItem>
   </div>
-));
+);

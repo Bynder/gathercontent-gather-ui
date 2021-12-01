@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Icon from '../../lib/Icon';
 import StoryItem from '../styleguide/StoryItem';
 
-const allIcons = additionalProps => (
+const allIcons = (additionalProps) => (
   <div>
     <Icon name="comment" {...additionalProps} />
     <Icon name="plusCircle" {...additionalProps} />
@@ -105,8 +104,12 @@ const allIcons = additionalProps => (
   </div>
 );
 
-storiesOf('Components', module).add('Icons', () => (
+export default {
+  title: 'Components',
+};
+
+export const Icons = () => (
   <StoryItem title="SVG Icons" description="">
     {allIcons()}
   </StoryItem>
-));
+);

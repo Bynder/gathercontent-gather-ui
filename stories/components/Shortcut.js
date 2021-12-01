@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Shortcut, ShortcutIcon } from '../../lib/index';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Shortcut', () => (
+export default {
+  title: 'Components',
+};
+
+export const _Shortcut = () => (
   <div>
     <StoryItem title="Shortcut" description="A mix of Mac and Windows">
       <Shortcut name="Bold" styleClass="shortcut__bold" mac>
@@ -33,4 +36,4 @@ storiesOf('Components', module).add('Shortcut', () => (
       </Shortcut>
     </StoryItem>
   </div>
-));
+);

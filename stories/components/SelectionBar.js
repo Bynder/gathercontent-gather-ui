@@ -1,10 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import pluralize from 'pluralize';
 import { SelectionBar, Button, Icon } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('SelectionBar', () => {
+export default {
+  title: 'Components',
+};
+
+export const _SelectionBar = () => {
   const example1selectedIds = [1, 2, 3];
   const example2selectedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const type = 'items';
@@ -12,9 +15,7 @@ storiesOf('Components', module).add('SelectionBar', () => {
   return (
     <div>
       <StoryItem title="SelectionBar">
-        <SelectionBar
-          hasSelected={example1selectedIds.length}
-        >
+        <SelectionBar hasSelected={example1selectedIds.length}>
           <SelectionBar.Information>
             <Button
               clickHandler={() => {}}
@@ -46,10 +47,7 @@ storiesOf('Components', module).add('SelectionBar', () => {
       </StoryItem>
 
       <StoryItem title="SelectionBar" description="fixed SelectionBar">
-        <SelectionBar
-          hasSelected={example2selectedIds.length}
-          fixed
-        >
+        <SelectionBar hasSelected={example2selectedIds.length} fixed>
           <SelectionBar.Information>
             <Button
               clickHandler={() => {}}
@@ -86,4 +84,8 @@ storiesOf('Components', module).add('SelectionBar', () => {
       </StoryItem>
     </div>
   );
-});
+};
+
+_SelectionBar.story = {
+  name: 'SelectionBar',
+};

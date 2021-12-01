@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Dropdown, Breadcrumb } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 
-storiesOf('Components', module).add('Breadcrumb', () => (
+export default {
+  title: 'Components',
+};
+
+export const _Breadcrumb = () => (
   <div>
     <StoryItem title="Breadcrumb">
       <Breadcrumb>
@@ -39,19 +42,25 @@ storiesOf('Components', module).add('Breadcrumb', () => (
       <Breadcrumb>
         <Breadcrumb.Item>
           <Dropdown id="1">
-            <Dropdown.Trigger>
-              ...
-            </Dropdown.Trigger>
+            <Dropdown.Trigger>...</Dropdown.Trigger>
             <Dropdown.Content collapse>
               <Dropdown.ActionGroup>
-                <a href="/" className="dropdown__action" title="Energy Co. Redesign">Energy Co. Redesign</a>
+                <a
+                  href="/"
+                  className="dropdown__action"
+                  title="Energy Co. Redesign"
+                >
+                  Energy Co. Redesign
+                </a>
               </Dropdown.ActionGroup>
             </Dropdown.Content>
           </Dropdown>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
           <div className="text-overflow-ellipsis">
-            <a href="/" title="About">About</a>
+            <a href="/" title="About">
+              About
+            </a>
           </div>
         </Breadcrumb.Item>
         <Breadcrumb.Item>
@@ -62,4 +71,4 @@ storiesOf('Components', module).add('Breadcrumb', () => (
       </Breadcrumb>
     </StoryItem>
   </div>
-));
+);

@@ -13,7 +13,7 @@ function HierarchyFolderRow({
   onNewItem,
   childIds,
   addIds,
-  removeIds
+  removeIds,
 }) {
   const [folderName, setFolderName] = useState(name);
   const { allWindowingIds } = useContext(Windowing.Context);
@@ -24,7 +24,7 @@ function HierarchyFolderRow({
     handleClick,
     isHovered,
     handleMouseEnter,
-    handleMouseLeave
+    handleMouseLeave,
   } = useObjectSelector(
     id,
     'folder',
@@ -39,12 +39,12 @@ function HierarchyFolderRow({
   const classNames = cx('h-margin-bottom-half folder-row__inner', {
     'is-selected': isSelected,
     'is-disabled': isDisabled,
-    'is-hovered': isHovered
+    'is-hovered': isHovered,
   });
 
   const folderRowNameClass = cx(
     {
-      'h-width-100': isEditing
+      'h-width-100': isEditing,
     },
     'folder-row__name'
   );
@@ -86,7 +86,7 @@ function HierarchyFolderRow({
               >
                 <HierarchyNameInput
                   name={folderName}
-                  onChange={value => setFolderName(value)}
+                  onChange={(value) => setFolderName(value)}
                   onStartEditing={() => {
                     setIsEditing(true);
                   }}
@@ -105,9 +105,9 @@ function HierarchyFolderRow({
                     }}
                   />
                 </FolderRow.Cell>
-                <FolderRow.Cell meta>{`${
-                  childIds.length
-                } items`}</FolderRow.Cell>
+                <FolderRow.Cell
+                  meta
+                >{`${childIds.length} items`}</FolderRow.Cell>
               </FolderRow.Aside>
             </FolderRow.Inner>
           </>
@@ -125,13 +125,13 @@ HierarchyFolderRow.propTypes = {
   onNewItem: func,
   childIds: arrayOf(node),
   addIds: func.isRequired,
-  removeIds: func.isRequired
+  removeIds: func.isRequired,
 };
 
 HierarchyFolderRow.defaultProps = {
   open: true,
   onNewItem: () => {},
-  childIds: []
+  childIds: [],
 };
 
 export { HierarchyFolderRow };

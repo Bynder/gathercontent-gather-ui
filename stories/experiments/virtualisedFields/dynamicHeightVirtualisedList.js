@@ -1,17 +1,16 @@
 import React, { useRef } from 'react';
-import { storiesOf } from '@storybook/react';
 import {
   AutoSizer,
   List,
   CellMeasurer,
-  CellMeasurerCache
+  CellMeasurerCache,
 } from 'react-virtualized';
 import TextareaAutosize from 'react-textarea-autosize';
 import ReactResizeDetector from 'react-resize-detector';
 
 const cache = new CellMeasurerCache({
   fixedWidth: true,
-  defaultHeight: 50
+  defaultHeight: 50,
 });
 
 const rowCount = 100;
@@ -63,7 +62,14 @@ const DynamicHeightVirtualisedList = () => {
   );
 };
 
-storiesOf('Experiments/VirtualisedFields', module).add(
-  'DynamicHeightVirtualisedList',
-  () => <DynamicHeightVirtualisedList />
+export default {
+  title: 'Experiments/VirtualisedFields',
+};
+
+export const _DynamicHeightVirtualisedList = () => (
+  <DynamicHeightVirtualisedList />
 );
+
+_DynamicHeightVirtualisedList.story = {
+  name: 'DynamicHeightVirtualisedList',
+};

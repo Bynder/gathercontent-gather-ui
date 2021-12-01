@@ -9,7 +9,7 @@ const NewHierarchyFolderRow = ({ id, removeFolder }) => {
   const [isSaving, setIsSaving] = useState(false);
   const [hasSaved, setHasSaved] = useState(false);
 
-  const onChange = value => {
+  const onChange = (value) => {
     setFolderName(value);
   };
 
@@ -57,7 +57,7 @@ const NewHierarchyFolderRow = ({ id, removeFolder }) => {
 
 NewHierarchyFolderRow.propTypes = {
   id: string.isRequired,
-  removeFolder: func.isRequired
+  removeFolder: func.isRequired,
 };
 
 export { NewHierarchyFolderRow };

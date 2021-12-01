@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { number, text } from '@storybook/addon-knobs';
 import { SelectionProvider, Windowing } from 'lib';
 import { createData } from './data';
@@ -8,7 +7,7 @@ import { WindowingIdsMock } from '../../../lib/Windowing/stories/WindowingIdsMoc
 
 const stories = storiesOf('Web app', module);
 
-stories.add('Hierarchy', () => {
+export const Hierarchy = () => {
   const statusColor = text('Status colour', 'green');
   const levelCount = number('Total number of levels', 10);
   const maxItemCount = number('Max number of items', 10);
@@ -42,4 +41,4 @@ stories.add('Hierarchy', () => {
       </WindowingIdsMock>
     </SelectionProvider>
   );
-});
+};

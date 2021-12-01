@@ -1,9 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Col, ImageLoader, Row } from "../../../lib";
+import { Col, ImageLoader, Row } from '../../../lib';
 import StoryItem from '../../styleguide/StoryItem';
 
-storiesOf('Components', module).add('ImageLoader', () => (
+export default {
+  title: 'Components',
+};
+
+export const _ImageLoader = () => (
   <div>
     <StoryItem
       title="Image loaders"
@@ -11,12 +14,24 @@ storiesOf('Components', module).add('ImageLoader', () => (
     >
       <Row>
         <Col xs={6}>
-          <ImageLoader src="https://fillmurray.com/g/400/400" alt="Fill Murray" preLoadedStyles={{ minHeight: '400px' }} />
+          <ImageLoader
+            src="https://fillmurray.com/g/400/400"
+            alt="Fill Murray"
+            preLoadedStyles={{ minHeight: '400px' }}
+          />
         </Col>
         <Col xs={6}>
-          <ImageLoader src="" alt="a failed image" preLoadedStyles={{ minHeight: '400px' }} />
+          <ImageLoader
+            src=""
+            alt="a failed image"
+            preLoadedStyles={{ minHeight: '400px' }}
+          />
         </Col>
       </Row>
     </StoryItem>
   </div>
-));
+);
+
+_ImageLoader.story = {
+  name: 'ImageLoader',
+};

@@ -7,7 +7,7 @@ function HierarchyNameInput({
   onChange,
   onStartEditing,
   onStopEditing,
-  useLink
+  useLink,
 }) {
   return (
     <EditableTextWrapper
@@ -28,11 +28,11 @@ HierarchyNameInput.propTypes = {
   onChange: func.isRequired,
   onStartEditing: func.isRequired,
   onStopEditing: func.isRequired,
-  useLink: bool
+  useLink: bool,
 };
 
 HierarchyNameInput.defaultProps = {
-  useLink: false
+  useLink: false,
 };
 
 export { HierarchyNameInput };

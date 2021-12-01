@@ -10,7 +10,7 @@ const NewHierarchyItemRow = ({ id, removeItem }) => {
   const [isSaving, setIsSaving] = useState(false);
   const [hasSaved, setHasSaved] = useState(false);
 
-  const onChange = value => {
+  const onChange = (value) => {
     setItemName(value);
   };
 
@@ -49,7 +49,7 @@ const NewHierarchyItemRow = ({ id, removeItem }) => {
 
 NewHierarchyItemRow.propTypes = {
   id: string.isRequired,
-  removeItem: func.isRequired
+  removeItem: func.isRequired,
 };
 
 export { NewHierarchyItemRow };
