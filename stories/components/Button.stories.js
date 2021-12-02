@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import ButtonComponent from '../../lib/Button';
 import ProgressButton from '../../lib/ProgressButton';
 import Icon from '../../lib/Icon';
@@ -7,19 +6,19 @@ import StoryItem from '../styleguide/StoryItem';
 
 export default {
   title: 'Legacy/Button',
-  component: ButtonComponent
+  component: ButtonComponent,
+  argTypes: {
+    clickHandler: { action: 'You clicked a button!' }
+  }
 };
 
-export const Button = () => (
+export const Button = args => (
   <>
     <StoryItem
       title="Primary button"
       description="The primary action button for creation activities"
     >
-      <ButtonComponent
-        types={['primary']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['primary']} clickHandler={args.clickHander}>
         Primary button
       </ButtonComponent>
     </StoryItem>
@@ -28,7 +27,7 @@ export const Button = () => (
       title="ButtonComponent with link style"
       description="A button which looks like a regular link"
     >
-      <ButtonComponent types={['link']} clickHandler={action('clickedHandler')}>
+      <ButtonComponent types={['link']} clickHandler={args.clickHander}>
         Link type
       </ButtonComponent>
     </StoryItem>
@@ -37,10 +36,7 @@ export const Button = () => (
       title="ButtonComponent with link danger style"
       description="A button which looks like a regular link"
     >
-      <ButtonComponent
-        types={['link-danger']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['link-danger']} clickHandler={args.clickHander}>
         Link type
       </ButtonComponent>
     </StoryItem>
@@ -49,10 +45,7 @@ export const Button = () => (
       title="Outline button"
       description="A button with an outline style"
     >
-      <ButtonComponent
-        types={['outline']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['outline']} clickHandler={args.clickHander}>
         Outline button
       </ButtonComponent>
     </StoryItem>
@@ -61,15 +54,12 @@ export const Button = () => (
       title="Loading button"
       description="A button that generates a spinner when pressed. It is of type `button` by default but can also be a `submit` button by setting the `isSubmit` prop to `true`."
     >
-      <ProgressButton
-        clickHandler={action('clickedHandler')}
-        value="Click to load"
-      />
+      <ProgressButton clickHandler={args.clickHander} value="Click to load" />
     </StoryItem>
 
     <StoryItem description="loading buttons can use button types and display text when the spinner is active">
       <ProgressButton
-        clickHandler={action('clickedHandler')}
+        clickHandler={args.clickHander}
         value="Click to load"
         buttonType="outline-default"
         spinnerText="I'm loading!"
@@ -80,10 +70,7 @@ export const Button = () => (
       title="Danger button"
       description="A button that generates a dangerous action"
     >
-      <ButtonComponent
-        types={['danger']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['danger']} clickHandler={args.clickHander}>
         Danger button
       </ButtonComponent>
     </StoryItem>
@@ -92,16 +79,10 @@ export const Button = () => (
       title="Misc buttons (light and dark)"
       description="Buttons that looks like they performs a secondary action."
     >
-      <ButtonComponent
-        types={['light-grey']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['light-grey']} clickHandler={args.clickHander}>
         Import
       </ButtonComponent>
-      <ButtonComponent
-        types={['dark-grey']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['dark-grey']} clickHandler={args.clickHander}>
         Export
       </ButtonComponent>
     </StoryItem>
@@ -110,13 +91,10 @@ export const Button = () => (
       title="Buttons side by side"
       description="Spacing is added when you add multiple Buttons side by side."
     >
-      <ButtonComponent
-        types={['danger']}
-        clickHandler={action('clickedHandler')}
-      >
+      <ButtonComponent types={['danger']} clickHandler={args.clickHander}>
         Delete Items
       </ButtonComponent>
-      <ButtonComponent types={['link']} clickHandler={action('clickedHandler')}>
+      <ButtonComponent types={['link']} clickHandler={args.clickHander}>
         Cancel
       </ButtonComponent>
     </StoryItem>
@@ -125,10 +103,7 @@ export const Button = () => (
       title="Icon Only Content"
       description="A ButtonComponent can use more than just text as content."
     >
-      <ButtonComponent
-        types={['icon-only']}
-        clickHandler={action('I was clicked')}
-      >
+      <ButtonComponent types={['icon-only']} clickHandler={args.clickHander}>
         <Icon name="comment" text="add comment" hideText />
       </ButtonComponent>
     </StoryItem>
@@ -139,7 +114,7 @@ export const Button = () => (
     >
       <ButtonComponent
         types={['danger', 'icon-only']}
-        clickHandler={action('clickedHandler')}
+        clickHandler={args.clickHander}
       >
         <Icon name="clock" />
       </ButtonComponent>
@@ -151,7 +126,7 @@ export const Button = () => (
     >
       <ButtonComponent
         types={['icon-only', 'contained']}
-        clickHandler={action('I was clicked')}
+        clickHandler={args.clickHander}
       >
         <Icon name="comment" text="add comment" hideText />
       </ButtonComponent>
@@ -163,7 +138,7 @@ export const Button = () => (
     >
       <ButtonComponent
         types={['primary', 'hover-transform']}
-        clickHandler={action('I was clicked')}
+        clickHandler={args.clickHander}
       >
         Hover me
       </ButtonComponent>
@@ -178,7 +153,7 @@ export const Button = () => (
       <ButtonComponent
         id="my-button"
         types={['icon-only', 'contained']}
-        clickHandler={action('I was clicked')}
+        clickHandler={args.clickHander}
         aria-label="My accessible button"
       >
         <Icon name="comment" text="add comment" hideText />
@@ -186,7 +161,3 @@ export const Button = () => (
     </StoryItem>
   </>
 );
-
-Button.parameters = {
-  controls: { hideNoControlsWarning: true }
-};
