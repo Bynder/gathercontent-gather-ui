@@ -3,7 +3,7 @@ import InputWithButtonComponent from '../../lib/InputWithButton';
 import StoryItem from '../styleguide/StoryItem';
 
 export default {
-  title: 'Legacy/Input With Button',
+  title: 'Legacy/Form/Inputs/Input With Button',
   component: InputWithButtonComponent
 };
 

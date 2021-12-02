@@ -3,7 +3,7 @@ import StoryItem from '../styleguide/StoryItem';
 import { ExpandingTextArea as ExpandingTextAreaComponent } from '../../lib';
 
 export default {
-  title: 'Legacy/Expanding TextArea',
+  title: 'Legacy/Form/Inputs/Expanding TextArea',
   component: ExpandingTextAreaComponent
 };
 
