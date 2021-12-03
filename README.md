@@ -49,9 +49,6 @@ import { Button } from 'gather-content-ui';
 require('gather-ui/dist/styles.css');
 ```
 
-## External dependencies
-
-This particular version of the Styleguide depends on the Bootstrap and FontAwesome libraries. These do not ship with the components' CSS and should be included separately wherever they are consumed.
-
 ## Deploying the Library
-The library will automatically deploy when a new tag is pushed to the master branch. The easiest way to do this is to run `git pull --tags`, followed by `npm version  <major | minor | patch>` followed by `git push origin --tags` and `git push`.
+
+The library will automatically deploy when a new tag is pushed to the master branch. The easiest way to do this is to run `git pull --tags`, followed by `npm version <major | minor | patch>` followed by `git push origin --tags` and `git push`.

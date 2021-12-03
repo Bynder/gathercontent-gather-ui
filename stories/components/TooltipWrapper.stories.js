@@ -15,7 +15,7 @@ export const Tooltip = args => {
     <div>
       <StoryItem
         title="Tooltip Wrapper"
-        description="TooltipWrapper is a custom wrapper for the `Tooltip` bootstrap component."
+        description="TooltipWrapper is a custom wrapper for tippy."
       >
         <TooltipWrapper id="id-1" tooltipText="Sample tooltip text" {...args}>
           <span>Hover over me for a tooltip!</span>
