@@ -89,6 +89,10 @@
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@react-hook/resize-observer": "^1.2.2",
@@ -109,12 +113,10 @@
     "pluralize": "^5.0.0",
     "postcss": "^8.3.11",
     "prop-types": "^15.7.2",
-    "react": "^16.14.0",
     "react-day-picker": "^7.4.10",
     "react-dnd-cjs": "^9.5.1",
     "react-dnd-html5-backend-cjs": "^9.5.1",
     "react-dnd-test-backend-cjs": "^9.5.1",
-    "react-dom": "^16.14.0",
     "react-dropzone": "^11.3.4",
     "react-image": "^4.0.3",
     "react-mentions": "2.2.0",
