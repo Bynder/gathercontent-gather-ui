@@ -15,11 +15,11 @@ $subProps: ('', 'left', 'right', 'top', 'bottom');
   }
 
   #{$selector}-half {
-    #{$property}: $layout-spacing-base*0.5 !important;
+    #{$property}: $layout-spacing-base * 0.5 !important;
   }
 
   #{$selector}-quarter {
-    #{$property}: $layout-spacing-base*0.25 !important;
+    #{$property}: $layout-spacing-base * 0.25 !important;
   }
 
   #{$selector}-clear {
@@ -166,7 +166,19 @@ $subProps: (stretch, center, flex-start, flex-end, baseline, initial, inherit);
    ========================================================================== */
 
 $props: ('justify-content');
-$subProps: (baseline, center, end, flex-end, flex-start, initial, inherit, space-around, space-between, space-evenly, stretch);
+$subProps: (
+  baseline,
+  center,
+  end,
+  flex-end,
+  flex-start,
+  initial,
+  inherit,
+  space-around,
+  space-between,
+  space-evenly,
+  stretch
+);
 
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
@@ -199,7 +211,7 @@ $subProps: (row, column);
 }
 
 .dropdown-max-height {
-  max-height: 250px;
+  max-height: 230px;
   overflow-y: auto;
 }
 
@@ -236,7 +248,7 @@ $subProps: (top, bottom, left, right, full, clear);
 $props: ('transform-rotate');
 $subProps: ('');
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
-  #{$selector}{
+  #{$selector} {
     transform: rotate(0turn);
   }
 
