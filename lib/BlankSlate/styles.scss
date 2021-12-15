@@ -15,7 +15,7 @@
     transform: translate(-50%, -50%);
   }
   &__content {
-    padding: $layout-spacing-base*0.5;
+    padding: $layout-spacing-base * 0.5;
     font-size: $typo-size-base;
     color: $neutral-base;
     display: flex;
@@ -29,7 +29,7 @@
   }
   &__svg {
     svg {
-      width: 250px;
+      width: 393px;
       height: auto;
     }
   }
