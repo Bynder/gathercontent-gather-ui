@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 
-$folder-row-spacing: $layout-spacing-base*0.5 !default;
+$folder-row-spacing: $layout-spacing-base * 0.5 !default;
 $folder-row-gap: 6px;
 
 /* ==========================================================================
@@ -85,7 +85,7 @@ $folder-row-gap: 6px;
 }
 
 .folder-row__actions {
-  margin: 0 $layout-spacing-base*0.5 0 0;
+  margin: 0 $layout-spacing-base * 0.5 0 0;
 }
 
 .folder-row__action {
@@ -115,7 +115,7 @@ $folder-row-gap: 6px;
    Modifiers
    ========================================================================== */
 
-.folder-row--open .folder-row__backdrop {
+.folder-row--open .folder-row__inner {
   box-shadow: $shadow-base-offset;
 }
 
