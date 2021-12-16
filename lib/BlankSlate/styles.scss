@@ -3,7 +3,7 @@
   text-align: center;
   a {
     text-decoration: none;
-    &:hover {
+    &:not(.button):hover {
       text-decoration: underline;
     }
   }
