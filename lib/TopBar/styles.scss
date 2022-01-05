@@ -158,8 +158,7 @@ $top-bar-notification-height: 42px;
       border-color: $neutral-dark;
       color: white;
     }
-    .top-bar__action,
-    .icon:not(.structure__save-btn) path {
+    .top-bar__action {
       fill: white;
     }
     .top-bar__cell--bordered {
