@@ -15,7 +15,7 @@ $color-btn-warning--text: white !default;
 
 $color-btn-default-light--bg: #eaeaea !default;
 $color-btn-default-light--text: #444 !default;
-$color-btn-default-light--hover: #D3D3D3 !default;
+$color-btn-default-light--hover: #d3d3d3 !default;
 $color-btn-default-dark--bg: #777 !default;
 $color-btn-default-dark--text: white !default;
 $color-btn-default-dark--hover: #5e5e5e !default;
@@ -32,7 +32,7 @@ $btn-border-radius: 3px !default;
   border-radius: $btn-border-radius;
   display: inline-block;
   font-weight: $typo-weight-roman;
-  padding: ($layout-spacing-base*0.5 + 1px) ($layout-spacing-base - 2px);
+  padding: ($layout-spacing-base * 0.5 + 1px) ($layout-spacing-base - 2px);
   transition: all $animation-time-micro ease, padding 0s;
   text-decoration: none;
 
@@ -46,32 +46,34 @@ $btn-border-radius: 3px !default;
 
   & + &,
   & + .dropdown {
-  	margin-left: $layout-spacing-base*0.5;
+    margin-left: $layout-spacing-base * 0.5;
   }
 }
 
 .button__helper {
   border-bottom: 1px dotted;
-  margin-left: $layout-spacing-base*0.25;
+  margin-left: $layout-spacing-base * 0.25;
 }
 
 .button--primary {
   background: $primary-blue;
   color: $color-btn-primary--text;
+  border-radius: 6px;
 
   &:hover,
   &:focus {
     background: $primary-blue-lighter;
     color: $color-btn-primary--text;
-    box-shadow: 0 3px 4px -2px rgba(61,138,235,0.50), inset 0 -2px 0 0 $primary-blue;
+    box-shadow: 0 3px 4px -2px rgba(61, 138, 235, 0.5),
+      inset 0 -2px 0 0 $primary-blue;
   }
 
   &:active {
     transition: none;
     background: $primary-blue-darker;
-    box-shadow: inset 0 2px 0 0 #2662AB;
-    -webkit-box-shadow: inset 0 2px 0 0 #2662AB;
-    -moz-box-shadow: inset 0 2px 0 0 #2662AB;
+    box-shadow: inset 0 2px 0 0 #2662ab;
+    -webkit-box-shadow: inset 0 2px 0 0 #2662ab;
+    -moz-box-shadow: inset 0 2px 0 0 #2662ab;
   }
 
   &:focus {
@@ -145,20 +147,20 @@ $btn-border-radius: 3px !default;
   &:hover {
     color: $color-btn-warning--text;
     background: $primary-red-lighter;
-    box-shadow: 0 3px 4px -2px rgba(252,92,84,0.50),
-                inset 0 -2px 0 0 $primary-red;
-    -webkit-box-shadow: 0 3px 4px -2px rgba(252,92,84,0.50),
-                        inset 0 -2px 0 0 $primary-red;
-    -moz-box-shadow: 0 3px 4px -2px rgba(252,92,84,0.50),
-                     inset 0 -2px 0 0 $primary-red;
+    box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+      inset 0 -2px 0 0 $primary-red;
+    -webkit-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+      inset 0 -2px 0 0 $primary-red;
+    -moz-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+      inset 0 -2px 0 0 $primary-red;
   }
 
   &:active {
     transition: none;
     background: $primary-red-darker;
-    box-shadow: inset 0 2px 0 0 #BD453E;
-    -webkit-box-shadow: inset 0 2px 0 0 #BD453E;
-    -moz-box-shadow: inset 0 2px 0 0 #BD453E;
+    box-shadow: inset 0 2px 0 0 #bd453e;
+    -webkit-box-shadow: inset 0 2px 0 0 #bd453e;
+    -moz-box-shadow: inset 0 2px 0 0 #bd453e;
   }
 
   &:focus {
@@ -195,7 +197,7 @@ $btn-border-radius: 3px !default;
 }
 
 .button--slim {
-  padding: $layout-spacing-base*0.1 $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.1 $layout-spacing-base * 0.5;
   .icon {
     margin-left: math.div($layout-spacing-base, 3);
     vertical-align: text-bottom;
@@ -221,7 +223,7 @@ $btn-border-radius: 3px !default;
 
 .button--size-sm {
   font-size: $typo-size-slight;
-  padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
 }
 
 .button--icon-only,
@@ -241,7 +243,7 @@ $btn-border-radius: 3px !default;
 }
 
 .button--icon-only-padding {
-  padding-left: $layout-spacing-base*0.25;
+  padding-left: $layout-spacing-base * 0.25;
 }
 
 .button--icon-only-cover {
@@ -259,7 +261,7 @@ $btn-border-radius: 3px !default;
 .button--white {
   background-color: white;
   border: 1px solid $neutral-light;
-  width:100%;
+  width: 100%;
   text-align: left;
   box-shadow: $shadow-shallow;
   &:hover {
@@ -273,7 +275,7 @@ $btn-border-radius: 3px !default;
 .button--contained {
   border: 1px solid $color-border-base;
   border-radius: 100%;
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   background-color: $color-btn-contained--bg;
   box-shadow: $shadow-shallow;
 }
@@ -294,7 +296,8 @@ $btn-border-radius: 3px !default;
     border-color: $neutral-base;
   }
 
-  &:hover, &.is-active {
+  &:hover,
+  &.is-active {
     background: none;
     border-color: $primary-blue;
     color: $primary-blue;
@@ -318,7 +321,7 @@ $btn-border-radius: 3px !default;
     border-color: $primary-blue-darker;
   }
   &:focus {
-    outline: lighten($primary-blue, 20%) $layout-spacing-base*0.25 auto;
+    outline: lighten($primary-blue, 20%) $layout-spacing-base * 0.25 auto;
     outline-offset: -2px;
   }
 }
@@ -342,11 +345,11 @@ $btn-border-radius: 3px !default;
   }
   &--size-sm {
     .button__wrapper--icon {
-      height: $layout-spacing-base*0.5 + $layout-spacing-base;
+      height: $layout-spacing-base * 0.5 + $layout-spacing-base;
     }
     .button {
       font-size: $typo-size-slight;
-      padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
+      padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
     }
   }
 }
@@ -358,11 +361,10 @@ $btn-border-radius: 3px !default;
   }
 }
 .button__wrapper--icon {
-  padding: $layout-spacing-base*0.5 + 3;
+  padding: $layout-spacing-base * 0.5 + 3;
   line-height: 0;
   border-radius: 0 $btn-border-radius $btn-border-radius 0;
   &:disabled {
-
   }
 }
 
@@ -411,5 +413,5 @@ $btn-border-radius: 3px !default;
 }
 
 .button--padding-small {
-  padding: math.div($layout-spacing-base, 3) $layout-spacing-base*0.5;
+  padding: math.div($layout-spacing-base, 3) $layout-spacing-base * 0.5;
 }

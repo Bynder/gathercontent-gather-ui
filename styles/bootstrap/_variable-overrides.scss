@@ -1,0 +1,22 @@
+// tooltip
+$tooltip-opacity: 1;
+$tooltip-bg: theme('colors.neutral.20');
+$tooltip-arrow-color: #384047;
+
+// grid
+$grid-gutter-width: $layout-spacing-base;
+
+$screen-sm-min: 680px;
+$screen-sm: 680px;
+
+$screen-md-min: 900px;
+$screen-md: 900px;
+
+$screen-lg-min: 1200px;
+$screen-lg: 1200px;
+
+// popover
+$popover-border-color: $dropdown-border;
+
+// Breadcrumb
+$breadcrumb-active-color: $neutral-dark;

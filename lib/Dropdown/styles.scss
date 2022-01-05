@@ -4,7 +4,7 @@
 @use "sass:math";
 
 $dropdown-item-padding: math.div($layout-spacing-base, 3) $layout-spacing-base !default;
-$dropdown-section-padding: $layout-spacing-base * .75 !default;
+$dropdown-section-padding: $layout-spacing-base * 0.75 !default;
 $dropdown-hover-background: $neutral-lightest !default;
 $dropdown-status-circle-width-height: 15px !default;
 
@@ -71,18 +71,18 @@ $dropdown-status-circle-width-height: 15px !default;
   position: absolute;
   top: -999em;
   left: 0;
-  margin: $layout-spacing-base*0.25 0;
+  margin: $layout-spacing-base * 0.25 0;
   opacity: 0;
   background: white;
   z-index: 2;
-  padding: $layout-spacing-base * .75;
+  padding: $layout-spacing-base * 0.75;
 }
 
 .dropdown__content.is-active {
   opacity: 1;
   top: 100%;
   animation: dropdownAnimation 750ms;
-    animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 
   .auto-top > & {
     position: fixed;
@@ -91,7 +91,7 @@ $dropdown-status-circle-width-height: 15px !default;
 
 .dropdown__content.is-active.dropdown__content--no-transform {
   animation: dropdownAnimationNoTransform 750ms;
-    animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .dropdown__action {
@@ -121,7 +121,7 @@ $dropdown-status-circle-width-height: 15px !default;
     }
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 2px;
       bottom: -$layout-spacing-base;
@@ -140,7 +140,7 @@ $dropdown-status-circle-width-height: 15px !default;
 }
 
 .dropdown__action-group {
-  padding: $layout-spacing-base*0.25 0;
+  padding: $layout-spacing-base * 0.25 0;
 
   + .dropdown__action-group {
     border-top: 1px solid $neutral-light;
@@ -184,6 +184,7 @@ $dropdown-status-circle-width-height: 15px !default;
 .dropdown__content--top.is-active {
   top: auto;
   bottom: 100%;
+  margin-bottom: 10px;
 }
 
 .dropdown__content--fix-right.is-active {
@@ -211,8 +212,8 @@ $dropdown-status-circle-width-height: 15px !default;
 }
 
 .dropdown__content--fix-right {
-  margin: 0 0 0 $layout-spacing-base*0.5;
-  padding: 0 $layout-spacing-base*0.5;
+  margin: 0 0 0 $layout-spacing-base * 0.5;
+  padding: 0 $layout-spacing-base * 0.5;
   left: 100%;
 }
 
@@ -256,7 +257,7 @@ $dropdown-status-circle-width-height: 15px !default;
   line-height: 0;
 
   .dropdown__action-group--horizontal & {
-    padding: 0 $layout-spacing-base*0.5 0 $layout-spacing-base*0.25;
+    padding: 0 $layout-spacing-base * 0.5 0 $layout-spacing-base * 0.25;
   }
 }
 
@@ -300,5 +301,4 @@ $dropdown-status-circle-width-height: 15px !default;
       transform: rotateX(180deg);
     }
   }
-
 }
