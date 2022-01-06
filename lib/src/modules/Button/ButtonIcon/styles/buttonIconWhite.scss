@@ -1,0 +1,27 @@
+.button-icon-white {
+  &.button-icon:active {
+    @apply bg-neutral-40 border-neutral-40;
+    path {
+      fill: white;
+    }
+    &:hover {
+      @apply bg-neutral-30;
+    }
+    &:focus {
+      @apply border-white;
+    }
+  }
+  &:hover {
+    @apply bg-neutral-30 border-neutral-30;
+  }
+  &:focus {
+    @apply bg-neutral-40 border-white shadow-button-icon-dark-focus;
+    path {
+      fill: white;
+    }
+  }
+
+  path {
+    fill: white;
+  }
+}
