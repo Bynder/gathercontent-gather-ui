@@ -45,7 +45,6 @@
   }
 
   .DayPicker-NavButton--prev {
-
     &:before {
       left: 4px;
       transform: rotate(-135deg);
@@ -57,7 +56,8 @@
     @apply flex justify-evenly;
   }
 
-  .DayPicker-Weekday, .DayPicker-Day {
+  .DayPicker-Weekday,
+  .DayPicker-Day {
     @apply text-center text-sm flex justify-center items-center;
     flex: 1 1 0;
     min-width: 28px;
@@ -75,7 +75,6 @@
     abbr {
       @apply no-underline border-0;
     }
-
   }
 
   .DayPicker-Day {
@@ -84,13 +83,15 @@
     &:after {
       @apply border border-transparent border-solid rounded absolute;
       z-index: -1;
-      width:28px;
+      width: 28px;
       height: 28px;
       content: '';
     }
 
-    &.DayPicker-Day--today:after {
-      @apply bg-blue-95 border-blue-primary;
+    &.DayPicker-Day--today:not(.DayPicker-Day--outside) {
+      &:after {
+        @apply bg-blue-95 border-blue-primary;
+      }
     }
 
     &:hover {
