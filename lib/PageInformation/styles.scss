@@ -12,7 +12,7 @@
 .page-information__subtitle {
   display: block;
   text-align: left;
-  overflow-x: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: $neutral-dark;
@@ -21,7 +21,7 @@
 .page-information__title {
   font-size: $typo-size-lead;
   line-height: 1.25em;
-  margin: 0 0 .25em;
+  margin: 0 0 0.25em;
 }
 
 .page-information__subtitle {
