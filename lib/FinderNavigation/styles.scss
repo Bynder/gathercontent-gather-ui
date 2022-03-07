@@ -9,7 +9,7 @@ $finder-indent-level-support: 10 !default;
 }
 
 .finder-group-title {
-  @apply block uppercase text-neutral-primary font-semi-bold text-xs px-4 mb-4;
+  @apply block uppercase text-neutral-primary font-semi-bold text-xs px-3 mb-4;
 }
 
 .finder-item {
@@ -64,7 +64,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-hover-settings {
   .finder-item-settings {
-    display:none;
+    display: none;
   }
   &:hover {
     .finder-item-settings {
@@ -89,17 +89,19 @@ $finder-indent-level-support: 10 !default;
    Drag and drop
    ========================================================================== */
 
- .finder-item-content--drag-wrapper {
-   background-color: white;
-   display: inline-flex;
-   align-items: center;
-   height: 35px;
-   line-height: 35px;
-   border-radius: $layout-spacing-base * 0.25;
-   border: 1px solid $color-border-base;
- }
+.finder-item-content--drag-wrapper {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  line-height: 35px;
+  border-radius: $layout-spacing-base * 0.25;
+  border: 1px solid $color-border-base;
+}
 
-.finder-item.is-over.dragged-insert > .finder-item-content .finder-item-content-inner,
+.finder-item.is-over.dragged-insert
+  > .finder-item-content
+  .finder-item-content-inner,
 .finder-item--selected > .finder-item-content .finder-item-content-inner {
   border: 2px solid $primary-blue;
   border-radius: 3px;
@@ -109,7 +111,7 @@ $finder-indent-level-support: 10 !default;
 .finder-item.is-over.dragged-below > .finder-item-content {
   border: none;
   border-radius: 0;
-  padding: 0 $layout-spacing-base*0.5;
+  padding: 0 $layout-spacing-base * 0.5;
   position: relative;
 
   .finder-item-content-inner {
@@ -173,16 +175,15 @@ $finder-indent-level-support: 10 !default;
     > .finder-item-content,
   #{$finderItemSelector}.finder-item-selected > .finder-item-content {
     padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base*0.5 * ($i - 1)) -
+      ($layout-spacing-base * 0.5 * ($i - 1)) -
       2;
   }
 
   #{$finderItemSelector} > .finder-item-content,
-  #{$finderItemSelector}.finder-item.is-over.dragged-top
-    > .finder-item-content,
+  #{$finderItemSelector}.finder-item.is-over.dragged-top > .finder-item-content,
   #{$finderItemSelector}.finder-item.is-over.dragged-below
     > .finder-item-content {
     padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base*0.5 * ($i - 1));
+      ($layout-spacing-base * 0.5 * ($i - 1));
   }
 }
