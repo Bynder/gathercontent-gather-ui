@@ -40,6 +40,18 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
+.finder-item-disabled {
+  .finder-item-link {
+    @apply text-neutral-70;
+    .icon path {
+      opacity: 0.3;
+    }
+  }
+  .finder-item-settings {
+    @apply text-neutral-70;
+  }
+}
+
 .finder-item-content-hidden {
   @apply h-0 overflow-hidden;
 }
