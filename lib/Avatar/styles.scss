@@ -7,30 +7,49 @@ $avatar-size: 32px !default;
 $avatar-border-radius: $avatar-size !default;
 
 $avatar-size-small: $layout-spacing-base !default;
-$avatar-size-large: $layout-spacing-base*2 !default;
-$avatar-size-extra-large: $layout-spacing-base*4 !default;
+$avatar-size-large: $layout-spacing-base * 2 !default;
+$avatar-size-extra-large: $layout-spacing-base * 4 !default;
 
 $avatar-highlighted-background: $neutral-base !default;
 $avatar-highlighted-color: white !default;
 
-$avatar-offline-transparency: .5 !default;
-$avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !default;
+$avatar-offline-transparency: 0.5 !default;
+$avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
- @keyframes avatar {
-   0%   { opacity: 0; transform: scale(0.5); }
-   25%  { opacity: 1; transform: scale(1.1); }
-   50%  { transform: scale(0.8); }
-   100% { opacity: 1; transform: scale(1.0); animation-timing-function: ease-out; }
- }
+@keyframes avatar {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
 
- @keyframes ring {
-   0%   { box-shadow: none }
-   50%  { box-shadow: white 0px 0px 0px 3px, 0px 0px 0px 4px, white 0 0 0 5px; }
-   100% { box-shadow: white 0px 0px 0px 2px, 0px 0px 0px 3px, white 0 0 0 5px; animation-timing-function: ease; }
- }
+@keyframes ring {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: white 0px 0px 0px 3px, 0px 0px 0px 4px, white 0 0 0 5px;
+  }
+  100% {
+    box-shadow: white 0px 0px 0px 2px, 0px 0px 0px 3px, white 0 0 0 5px;
+    animation-timing-function: ease;
+  }
+}
 
 .avatar {
   background: $neutral-light;
@@ -66,7 +85,7 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
 
 .avatar__information {
   overflow: hidden;
-  margin-left: $layout-spacing-base*0.5;
+  margin-left: $layout-spacing-base * 0.5;
 
   .avatar__name,
   .avatar__email {
@@ -106,7 +125,7 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
 
 .avatar--supporting {
   flex-shrink: 0;
-  margin: 0 $layout-spacing-base*0.5 0 0;
+  margin: 0 $layout-spacing-base * 0.5 0 0;
 }
 
 .avatar__wrapper:focus,
@@ -169,7 +188,7 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
 
 .avatar__caret {
   margin-left: $layout-spacing-base * 0.25;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .is-active .avatar__caret {
@@ -194,7 +213,7 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
       display: block;
       margin-left: auto;
 
-      button[class*="button--link"] {
+      button[class*='button--link'] {
         padding-top: 0;
         padding-bottom: 0;
       }
@@ -210,7 +229,7 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
 }
 
 .avatar__actions {
-  padding-top: $layout-spacing-base*0.25;
+  padding-top: $layout-spacing-base * 0.25;
   display: block;
 }
 
@@ -226,19 +245,25 @@ $avatar-pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !defa
   &.avatar--has-colour {
     box-shadow: none;
   }
-  -webkit-animation: avatar 0.7s cubic-bezier(0.390, 0.575, 0.565, 1) forwards,
-                     ring 0.5s 0.4s ease-out forwards;
+  -webkit-animation: avatar 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) forwards,
+    ring 0.5s 0.4s ease-out forwards;
 }
 
 .avatar__wrapper--size-xlrg {
   .avatar__name {
     font-size: $typo-size-larger;
     font-weight: $typo-weight-bold;
-    margin-bottom: $layout-spacing-base*0.25;
+    margin-bottom: $layout-spacing-base * 0.25;
   }
   .avatar__information .avatar__name + .avatar__email,
   .avatar__email {
     font-size: $typo-size-base;
     color: $neutral-dark;
   }
+}
+
+.avatar-tooltip__wrapper {
+  background-color: white !important;
+  color: black !important;
+  @apply border border-solid border-neutral-90 p-2;
 }
