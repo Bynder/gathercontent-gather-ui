@@ -261,9 +261,3 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
     color: $neutral-dark;
   }
 }
-
-.avatar-tooltip__wrapper {
-  background-color: white !important;
-  color: black !important;
-  @apply border border-solid border-neutral-90 p-2;
-}

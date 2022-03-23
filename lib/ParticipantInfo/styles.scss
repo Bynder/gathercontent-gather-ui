@@ -2,26 +2,20 @@
    Config
    ========================================================================== */
 $participant-info-name-weight: $typo-weight-semi-bold !default;
-$participant-info-name-size: $typo-size-lead !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
+
 .participant_info {
-  background: #fff;
+  text-align: center;
 }
 
 .participant_info__name {
   font-weight: $participant-info-name-weight;
-  font-size: $participant-info-name-size;
   margin: 0;
 }
 
 .participant_info__email {
-  margin: $typo-size-lead*0.2 0;
-}
-
-.participant_info__name + .participant_info__email {
-  color: $neutral-base;
-  font-size: $typo-size-slight;
+  margin: 0;
 }
