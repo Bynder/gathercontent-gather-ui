@@ -12,7 +12,9 @@
 }
 
 .preview-image-img {
-  @apply bg-cover bg-center pb-100% transition-opacity duration-300 opacity-0;
+  @apply bg-center pb-100% transition-opacity duration-300 opacity-0;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .preview-image-succeeded .preview-image-img {
