@@ -1,6 +1,6 @@
 # GatherContent UI Library
 
-**Warning: This is still an experimental repository and all commands and functionality are bound to change.**
+**Warning: This library is being sunsetted. There will be occasional updates for bug fixes and new components we require for legacy pages, but for the most part this is no longer being maintained.**
 UI component library for all GatherContent components.
 
 This uses [React Storybook](https://github.com/storybooks/react-storybook) to showcase and host the development of the UI components used at GatherContent.
@@ -49,6 +49,13 @@ import { Button } from 'gather-content-ui';
 require('gather-ui/dist/styles.css');
 ```
 
-## Deploying the Library
+## Publishing the library
 
-The library will automatically deploy when a new tag is pushed to the master branch. The easiest way to do this is to run `git pull --tags`, followed by `npm version <major | minor | patch>` followed by `git push origin --tags` and `git push`.
+The best and easiest way to publish this library to npm is to use our GitHub action.
+
+1. Head on over to the actions tab
+2. Select the "publish-npm" workflow
+3. Click the "Run workflow" dropdown
+4. Select a branch (this will just be main 99.99% of the time) and a version
+5. Click "Run workflow"
+6. Sit back and relax as the robots publish it for you! 🤖
