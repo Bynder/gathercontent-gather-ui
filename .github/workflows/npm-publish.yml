@@ -1,21 +1,51 @@
-name: Publish to NPM
-
+name: publish-npm
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checking out project
+        uses: actions/checkout@v2
         with:
-          node-version: 12
+          token: ${{ secrets.PAT }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm run test -- --runInBand
-      - run: npm publish
+      - name: install
+        run: npm install
+      - name: 'Run linting'
+        run: npm run lint
+      - name: 'Run tests'
+        run: npm run test
+      - name: 'Bump the version'
+        run: npm version ${{inputs.version}}
+      - name: 'Publish the packages'
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Get new version
+        id: new-version
+        uses: martinbeentjes/npm-get-version-action@main
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: version ${{ steps.new-version.outputs.current-version}}
+          commit_user_name: gathercontent-deploybot
+          commit_user_email: dev+deploybot@gathercontent.com
+          commit_author: GatherContent DeployBot <gathercontent-deploybot> # defaults to author of the commit that triggered the run
+          tagging_message: 'v${{ steps.new-version.outputs.current-version }}'
+          push_options: '--force'
