@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org/
       - name: install
-        run: npm install
+        run: npm install --ignore-scripts
       - name: 'Run linting'
         run: npm run lint
       - name: 'Run tests'
