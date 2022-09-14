@@ -13,6 +13,7 @@
   },
   "plugins": ["jsx-a11y", "prettier"],
   "rules": {
+    "consistent-return": "warn",
     "import/no-unresolved": [0],
     "import/prefer-default-export": [0],
     "import/no-cycle": [0],
@@ -25,15 +26,20 @@
       { "customValidators": [], "skipShapeProps": true }
     ],
     "new-cap": ["error", { "capIsNewExceptions": ["Intercom"] }],
-    "react/prop-types": [{
-      "expections": ["className", "children"]
-    }],
+    "react/prop-types": [
+      {
+        "expections": ["className", "children"]
+      }
+    ],
     "react/no-danger": [0],
     "react/no-unescaped-entities": [0],
     "react/sort-comp": [0],
-    "jsx-a11y/label-has-associated-control": [ 2, {
-      "controlComponents": ["RadioInput"]
-    }]
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["RadioInput"]
+      }
+    ]
   },
   "env": {
     "jest": true
