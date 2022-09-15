@@ -33,7 +33,7 @@ jobs:
       - name: 'Run tests'
         run: npm run test -- --runInBand
       - name: 'Bump the version'
-        run: npm version ${{inputs.version}}
+        run: npm version ${{inputs.version}} --no-git-tag-version
       - name: 'Publish the packages'
         run: npm publish
         env:
