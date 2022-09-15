@@ -21,17 +21,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: install
         run: npm install --ignore-scripts
       - name: 'Run linting'
         run: npm run lint
       - name: 'Run tests'
-        run: npm run test
+        run: npm run test -- --runInBand
       - name: 'Bump the version'
         run: npm version ${{inputs.version}}
       - name: 'Publish the packages'
