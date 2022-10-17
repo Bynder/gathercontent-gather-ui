@@ -1,3 +1,6 @@
+const plugin = require('tailwindcss/plugin');
+const _ = require('lodash');
+
 const blue30 = '#004299';
 const blue80 = '#99C5FF';
 const bluePrimary = '#006EFF';
@@ -18,16 +21,15 @@ const yellowPrimary = '#F9D006';
 
 module.exports = {
   important: true,
-  purge: process.env.ENABLE_PURGE
-    ? {
-        content: [
-          './lib/**/*.js',
-          './lib/**/*.scss',
-          './styles/**/*.scss',
-          './stories/**/*.js'
-        ]
-      }
-    : false,
+  purge: {
+    enabled: process.env.ENABLE_PURGE,
+    content: [
+      './lib/**/*.js',
+      './lib/**/*.scss',
+      './styles/**/*.scss',
+      './stories/**/*.js'
+    ]
+  },
   theme: {
     borderStyles: {
       colors: true
@@ -360,7 +362,24 @@ module.exports = {
     justifyContent: ['group-hover']
   },
   plugins: [
-    require('tailwindcss-plugins/gradients'),
+    plugin(function({ addUtilities, e, theme, variants }) {
+      const utilities = _.map(theme('gradients', {}), (gradient, name) => {
+        const type =
+          _.isPlainObject(gradient) && gradient.hasOwnProperty('type')
+            ? gradient.type
+            : 'linear';
+        const colors = _.isPlainObject(gradient)
+          ? gradient.colors || []
+          : gradient;
+
+        return {
+          [`.bg-${e(name)}`]: {
+            backgroundImage: `${type}-gradient(${colors.join(', ')})`
+          }
+        };
+      });
+      addUtilities(utilities, variants('gradients', []));
+    }),
     require('tailwindcss-border-styles')()
   ],
   corePlugins: {
