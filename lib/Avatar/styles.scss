@@ -131,14 +131,6 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
 .avatar__wrapper:focus,
 .avatar--with-toggle {
   cursor: pointer;
-
-  &:hover,
-  &:focus,
-  .avatar {
-    transform: scale3d(1.1, 1.1, 1);
-    transition: transform $animation-time-micro;
-    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-  }
 }
 
 .avatar__initials {
