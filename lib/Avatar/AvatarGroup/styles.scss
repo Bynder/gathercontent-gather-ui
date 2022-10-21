@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$avatar-group-item-spacing: .115em;
+$avatar-group-item-spacing: 0.115em;
 $avatar-group-size-small: 24px !default;
 $avatar-group-size-micro: 20px !default;
 
@@ -10,12 +10,19 @@ $avatar-group-size-micro: 20px !default;
    ========================================================================== */
 .avatar-group {
   display: flex;
+  gap: 4px;
+}
+
+.avatar-group-stacked {
+  gap: 0;
   margin-right: $avatar-group-item-spacing;
+  .avatar-group__item {
+    margin-right: -$avatar-group-item-spacing;
+    z-index: 1;
+  }
 }
 
 .avatar-group__item {
-  margin-right: -$avatar-group-item-spacing;
-  z-index: 1;
 }
 
 .avatar-group .dropdown__trigger {
