@@ -185,7 +185,7 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
 }
 
 .avatar:hover .avatar__remove {
-  @apply block;
+  @apply flex items-center justify-center;
 }
 
 .avatar--offline {
