@@ -173,6 +173,21 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
   right: -2px;
 }
 
+.avatar__remove {
+  @apply absolute top-0 left-0 w-full h-full border-0 rounded-full;
+  backdrop-filter: blur(2px);
+  background: rgba(#29333d, 0.5);
+  display: none;
+}
+
+.avatar__remove:active {
+  background: rgba(#29333d, 0.7);
+}
+
+.avatar:hover .avatar__remove {
+  @apply flex items-center justify-center;
+}
+
 .avatar--offline {
   opacity: $avatar-offline-transparency;
 }
