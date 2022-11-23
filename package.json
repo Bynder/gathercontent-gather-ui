@@ -58,6 +58,7 @@
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js' --fix",
     "prepare": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook",
     "test": "jest --notify",
     "chromatic": "chromatic --project-token=1f9e13b797f2 --auto-accept-changes"
   },
