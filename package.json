@@ -58,7 +58,9 @@
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js' --fix",
     "prepare": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "test": "jest --notify"
+    "build-storybook": "build-storybook",
+    "test": "jest --notify",
+    "chromatic": "chromatic --project-token=1f9e13b797f2 --auto-accept-changes"
   },
   "husky": {
     "hooks": {
@@ -139,6 +141,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^0.2.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "chromatic": "^6.11.4",
     "copyfiles": "^1.2.0",
     "css-loader": "^4.3.0",
     "cssnano": "^5.0.11",
