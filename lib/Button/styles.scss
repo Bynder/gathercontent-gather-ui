@@ -55,7 +55,9 @@ $btn-border-radius: 3px !default;
   margin-left: $layout-spacing-base * 0.25;
 }
 
-.button--primary {
+// a.button--primary to overwrite bootstrap a:not(.button-base):hover
+.button--primary,
+a.button--primary {
   background: $primary-blue;
   color: $color-btn-primary--text;
   border-radius: 6px;
@@ -137,7 +139,9 @@ $btn-border-radius: 3px !default;
   text-decoration: underline;
 }
 
-.button--danger {
+// a.button--danger to overwrite bootstrap a:not(.button-base):hover
+.button--danger,
+a.button--danger {
   background: $primary-red;
   color: $color-btn-warning--text;
   .icon path {
