@@ -4,6 +4,7 @@ node_modules
 .idea
 npm-debug.log
 dist
+build-storybook.log
 storybook-static/
 yarn-error.log
 .parcel-cache/
