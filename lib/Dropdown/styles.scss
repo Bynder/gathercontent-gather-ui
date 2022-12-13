@@ -297,7 +297,7 @@ $dropdown-status-circle-width-height: 15px !default;
     margin-left: auto;
   }
   &.dropdown__trigger-wrapper--top {
-    .is-active & .icon {
+    .dropdown-gc.is-active > & .icon {
       transform: rotateX(180deg);
     }
   }
