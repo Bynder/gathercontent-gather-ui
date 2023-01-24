@@ -11,5 +11,5 @@ Used for indicating indentation in hierarchical folder structures
 | quantity | Number | 0       | No       | The number of indentation lines to render in this row |
 
 ```jsx
-<TopBar quantity={1} />
+<TreeLines quantity={1} />
 ```
