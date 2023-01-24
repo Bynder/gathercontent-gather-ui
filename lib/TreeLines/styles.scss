@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Config
+   ========================================================================== */
+
+/* ==========================================================================
+   Styles
+   ========================================================================== */
+.treelines {
+  display: flex;
+
+  &__wrapper {
+    display: flex;
+    vertical-align: middle;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: .5rem;
+  }
+
+  &__line {
+    height: 32px;
+    text-align: right;
+    border-left: 1px solid #C2CCD6;
+    margin-left: 30px;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+  }
+}
