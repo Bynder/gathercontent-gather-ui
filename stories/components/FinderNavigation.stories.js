@@ -10,6 +10,8 @@ export default {
   title: 'Legacy/Finder Navigation'
 };
 
+const Meta = <Icon name="plus" />;
+
 export const FinderNavigation = () => (
   <div>
     <StoryItem
@@ -43,7 +45,7 @@ export const FinderNavigation = () => (
               </FinderNavigationComponent.ItemContent>
             </FinderNavigationComponent.Item>
           </FinderNavigationComponent.Group>
-          <FinderNavigationComponent.Group title="folder">
+          <FinderNavigationComponent.Group title="folder" meta={Meta}>
             <FinderNavigationComponent.Item>
               <FinderNavigationComponent.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">

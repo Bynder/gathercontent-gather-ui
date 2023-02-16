@@ -8,8 +8,16 @@ $finder-indent-level-support: 10 !default;
   @apply mb-4 mx-2 mt-2;
 }
 
+.finder-group-heading {
+  @apply flex items-center mb-4;
+}
+
 .finder-group-title {
-  @apply block uppercase text-neutral-primary font-semi-bold text-xs px-3 mb-4;
+  @apply block uppercase text-neutral-primary font-semi-bold text-xs px-3;
+}
+
+.finder-group-meta {
+  @apply ml-auto;
 }
 
 .finder-item {
