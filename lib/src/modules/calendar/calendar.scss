@@ -1,5 +1,14 @@
 .calendar {
   @apply p-4;
+
+  &:not(.enable-weekend-days) .DayPicker-Weekday {
+
+    &:nth-child(6),
+    &:nth-child(7) {
+      @apply bg-neutral-95;
+    }
+  }
+
 }
 
 .DayPicker {
@@ -67,11 +76,6 @@
   .DayPicker-Weekday {
     @apply text-neutral-primary font-semi-bold text-xs uppercase;
 
-    &:nth-child(6),
-    &:nth-child(7) {
-      @apply bg-neutral-95;
-    }
-
     abbr {
       @apply no-underline border-0;
     }
@@ -96,6 +100,7 @@
 
     &:hover {
       @apply text-blue-primary;
+
       &:after {
         @apply border-blue-primary;
       }
@@ -104,12 +109,15 @@
 
   .DayPicker-Day.DayPicker-Day--selected {
     @apply text-white;
+
     &:after {
       @apply bg-blue-primary;
     }
+
     &:hover {
       @apply text-white;
     }
+
     &.DayPicker-Day--outside {
       &:after {
         @apply bg-transparent;
@@ -120,22 +128,27 @@
   .DayPicker-Day--past {
     &:hover {
       @apply text-red-primary;
+
       &:after {
         @apply border-red-primary;
       }
     }
+
     &.DayPicker-Day--selected {
       @apply text-white;
+
       &:after {
         @apply bg-red-primary;
       }
     }
+
     &.DayPicker-Day--outside {
       &:after {
         @apply bg-transparent;
       }
     }
   }
+
   .DayPicker-Day--outside {
     @apply pointer-events-none;
   }
