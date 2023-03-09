@@ -162,3 +162,13 @@
     }
   }
 }
+
+.left-align-header {
+  .DayPicker-NavBar {
+    @apply block text-right;
+  }
+
+  .DayPicker .DayPicker-Caption {
+    @apply text-left;
+  }
+}
