@@ -93,6 +93,8 @@
     }
 
     &.DayPicker-Day--today:not(.DayPicker-Day--outside):not(.DayPicker-Day.DayPicker-Day--selected) {
+      color: $primary-blue !important;
+
       &:after {
         @apply border-blue-primary;
       }
