@@ -164,7 +164,6 @@
   .DayPicker-Day--weekend {
     &:before {
       @apply bg-neutral-95 absolute w-full h-full;
-      height: 29px;
       z-index: -2;
       content: '';
     }
