@@ -1,3 +1,8 @@
+:root {
+  --rdp-cell-size: 40px;
+  --rdp-cell-content-size: 36px;
+}
+
 .calendar {
   @apply p-4;
 
@@ -69,8 +74,8 @@
   .DayPicker-Day {
     @apply text-center text-sm flex justify-center items-center;
     flex: 1 1 0;
-    min-width: 28px;
-    height: 28px;
+    height: var(--rdp-cell-size);
+    min-width: var(--rdp-cell-size);
   }
 
   .DayPicker-Weekday {
@@ -87,8 +92,8 @@
     &:after {
       @apply border border-transparent border-solid rounded absolute;
       z-index: -1;
-      width: 28px;
-      height: 28px;
+      height: var(--rdp-cell-content-size);
+      width: var(--rdp-cell-content-size);
       content: '';
     }
 
