@@ -151,6 +151,7 @@
 
   .DayPicker-Day--outside {
     @apply pointer-events-none;
+    color: $neutral-base-darker;
   }
 
   .DayPicker-Day--weekend {
