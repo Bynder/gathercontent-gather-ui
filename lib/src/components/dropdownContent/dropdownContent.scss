@@ -3,8 +3,9 @@
 }
 
 .dropdown-content-header {
-  @apply p-4 border border-neutral-90 border-t-0 border-r-0 border-l-0 border-solid;
+  @apply p-3 border border-neutral-90 border-t-0 border-r-0 border-l-0 border-solid;
 }
+
 .dropdown-content-header-title {
   @apply m-0 text-neutral-20 text-lg font-semi-bold;
 }
@@ -18,5 +19,5 @@
 }
 
 .dropdown-content-footer {
-  @apply p-4 border border-neutral-90 border-b-0 border-r-0 border-l-0 border-solid;
+  @apply p-3 border border-neutral-90 border-b-0 border-r-0 border-l-0 border-solid;
 }
