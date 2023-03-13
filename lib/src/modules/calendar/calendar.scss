@@ -94,7 +94,7 @@
 
     &.DayPicker-Day--today:not(.DayPicker-Day--outside):not(.DayPicker-Day.DayPicker-Day--selected) {
       &:after {
-        @apply bg-blue-95 border-blue-primary;
+        @apply border-blue-primary;
       }
     }
 
