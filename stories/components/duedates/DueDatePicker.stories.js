@@ -50,12 +50,6 @@ export const DueDatePicker = args => (
         completed
       />
     </StoryItem>
-    <StoryItem
-      title="Due date picker with left header and weekends enables"
-      description=""
-    >
-      <DueDatePickerComponent {...args} enableWeekendDays leftAlignHeader />
-    </StoryItem>
   </div>
 );
 
