@@ -28,9 +28,15 @@
   }
 
   .DayPicker-NavButton {
-    @apply cursor-pointer ml-2 inline-block text-center;
-    width: 15px;
-    height: 15px;
+    @apply cursor-pointer inline-flex text-center items-center justify-center relative;
+    height: 36px;
+    width: 36px;
+    top: -8px;
+    border-radius: 6px;
+
+    &:hover {
+      @apply bg-neutral-95;
+    }
   }
 
   .DayPicker-NavButton:before {
@@ -40,25 +46,22 @@
     content: '';
     display: inline-block;
     position: relative;
-    top: 2px;
     transform: rotate(-45deg);
     vertical-align: top;
-    height: 11px;
-    width: 11px;
+    height: 12px;
+    width: 12px;
   }
 
   .DayPicker-NavButton--next {
-    @apply ml-4;
-
     &:before {
-      left: 0;
+      left: -2px;
       transform: rotate(45deg);
     }
   }
 
   .DayPicker-NavButton--prev {
     &:before {
-      left: 4px;
+      left: 3px;
       transform: rotate(-135deg);
     }
   }
