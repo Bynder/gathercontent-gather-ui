@@ -7,13 +7,11 @@
   @apply p-4;
 
   &:not(.enable-weekend-days) .DayPicker-Weekday {
-
     &:nth-child(6),
     &:nth-child(7) {
       @apply bg-neutral-95;
     }
   }
-
 }
 
 .DayPicker {
@@ -30,9 +28,9 @@
   }
 
   .DayPicker-NavButton {
-    @apply cursor-pointer mx-2;
-    width: 8px;
-    height: 8px;
+    @apply cursor-pointer ml-2 inline-block text-center;
+    width: 15px;
+    height: 15px;
   }
 
   .DayPicker-NavButton:before {
@@ -50,7 +48,7 @@
   }
 
   .DayPicker-NavButton--next {
-    @apply ml-auto;
+    @apply ml-4;
 
     &:before {
       left: 0;
