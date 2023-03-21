@@ -1,182 +1,306 @@
-:root {
-  --rdp-cell-size: 40px;
-  --rdp-cell-content-size: 36px;
-}
-
 .calendar {
-  @apply p-4;
-
-  &:not(.enable-weekend-days) .DayPicker-Weekday {
-    &:nth-child(6),
-    &:nth-child(7) {
-      @apply bg-neutral-95;
-    }
-  }
+  @apply text-neutral-20;
 }
 
-.DayPicker {
-  .DayPicker-wrapper {
-    @apply relative;
-  }
-
-  .DayPicker-Caption {
-    @apply text-center text-base font-semi-bold text-neutral-20 pb-3;
-  }
-
-  .DayPicker-NavBar {
-    @apply flex absolute w-full;
-  }
-
-  .DayPicker-NavButton {
-    @apply cursor-pointer inline-flex text-center items-center justify-center relative;
-    height: 36px;
-    width: 36px;
-    top: -8px;
-    border-radius: 6px;
-
-    &:hover {
-      @apply bg-neutral-95;
-    }
-  }
-
-  .DayPicker-NavButton:before {
-    border-style: solid;
-    border-width: 2px 2px 0 0;
-    border-color: $neutral-base;
-    content: '';
-    display: inline-block;
-    position: relative;
-    transform: rotate(-45deg);
-    vertical-align: top;
-    height: 12px;
-    width: 12px;
-  }
-
-  .DayPicker-NavButton--next {
-    &:before {
-      left: -2px;
-      transform: rotate(45deg);
-    }
-  }
-
-  .DayPicker-NavButton--prev {
-    &:before {
-      left: 3px;
-      transform: rotate(-135deg);
-    }
-  }
-
-  .DayPicker-WeekdaysRow,
-  .DayPicker-Week {
-    @apply flex justify-evenly;
-  }
-
-  .DayPicker-Weekday,
-  .DayPicker-Day {
-    @apply text-center text-sm flex justify-center items-center;
-    flex: 1 1 0;
-    height: var(--rdp-cell-size);
-    min-width: var(--rdp-cell-size);
-  }
-
-  .DayPicker-Weekday {
-    @apply text-neutral-primary font-semi-bold text-xs uppercase;
-
-    abbr {
-      @apply no-underline border-0;
-    }
-  }
-
-  .DayPicker-Day {
-    @apply text-neutral-20 relative cursor-pointer;
-
-    &:after {
-      @apply border border-transparent border-solid rounded absolute;
-      z-index: -1;
-      height: var(--rdp-cell-content-size);
-      width: var(--rdp-cell-content-size);
-      content: '';
-    }
-
-    &.DayPicker-Day--today:not(.DayPicker-Day--outside):not(.DayPicker-Day.DayPicker-Day--selected) {
-      color: $primary-blue !important;
-
-      &:after {
-        @apply border-blue-primary;
-      }
-    }
-
-    &:hover {
-      @apply text-blue-primary;
-
-      &:after {
-        @apply border-blue-primary;
-      }
-    }
-  }
-
-  .DayPicker-Day.DayPicker-Day--selected {
-    @apply text-white;
-
-    &:after {
-      @apply bg-blue-primary;
-    }
-
-    &:hover {
-      @apply text-white;
-    }
-
-    &.DayPicker-Day--outside {
-      &:after {
-        @apply bg-transparent;
-      }
-    }
-  }
-
-  .DayPicker-Day--past {
-    &:hover {
-      @apply text-red-primary;
-
-      &:after {
-        @apply border-red-primary;
-      }
-    }
-
-    &.DayPicker-Day--selected {
-      @apply text-white;
-
-      &:after {
-        @apply bg-red-primary;
-      }
-    }
-
-    &.DayPicker-Day--outside {
-      &:after {
-        @apply bg-transparent;
-      }
-    }
-  }
-
-  .DayPicker-Day--outside {
-    @apply pointer-events-none;
-    color: $neutral-base-darker;
-  }
-
-  .DayPicker-Day--weekend {
-    &:before {
-      @apply bg-neutral-95 absolute w-full h-full;
-      z-index: -2;
-      content: '';
-    }
-  }
+.calendar .rdp-caption_label {
+  @apply text-base;
 }
 
-.left-align-header {
-  .DayPicker-NavBar {
-    @apply block text-right;
-  }
+.calendar .rdp-nav_icon path {
+  @apply fill-neutral-primary;
+}
 
-  .DayPicker .DayPicker-Caption {
-    @apply text-left;
-  }
+.calendar .rdp-day {
+  @apply text-sm;
+}
+
+.calendar .rdp-day,
+.calendar .rdp-weeknumber {
+  @apply rounded;
+}
+
+.calendar.rdp {
+  @apply m-0;
+}
+
+.calendar .rdp-day_today {
+  @apply border-blue-primary border;
+}
+
+.calendar .rdp-table,
+.calendar .rdp-month {
+  @apply max-w-full w-full;
+}
+
+.calendar .rdp-day,
+.calendar .rdp-weeknumber {
+  @apply mx-auto;
+}
+
+.calendar .rdp-day_today:not(.rdp-day_selected) {
+  @apply text-blue-primary;
+}
+
+/* react-day-picker/dist/style.css */
+.rdp {
+  --rdp-cell-size: 36px;
+  --rdp-accent-color: rgb(0, 110, 255);
+  --rdp-background-color: #e7edff;
+  --rdp-accent-color-dark: #3003e1;
+  --rdp-background-color-dark: #180270;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 3px solid var(--rdp-accent-color);
+  margin: 1em;
+}
+.rdp-vhidden {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute !important;
+  top: 0;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  border: 0 !important;
+}
+.rdp-button_reset {
+  appearance: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  color: inherit;
+  background: none;
+  font: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.rdp-button_reset:focus-visible {
+  outline: none;
+}
+.rdp-button {
+  border: 2px solid transparent;
+}
+.rdp-button[disabled]:not(.rdp-day_selected) {
+  opacity: 0.25;
+}
+.rdp-button:not([disabled]) {
+  cursor: pointer;
+}
+.rdp-button:focus-visible:not([disabled]) {
+  color: inherit;
+  background-color: var(--rdp-background-color);
+  border: var(--rdp-outline);
+}
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  @apply bg-neutral-95;
+}
+.rdp-button.rdp-day_past:hover:not(.rdp-day_today):not(.rdp-day_selected) {
+  @apply bg-red-95;
+}
+.rdp-months {
+  display: flex;
+}
+.rdp-month {
+  margin: 0 1em;
+}
+.rdp-month:first-child {
+  margin-left: 0;
+}
+.rdp-month:last-child {
+  margin-right: 0;
+}
+.rdp-table {
+  margin: 0;
+  max-width: calc(var(--rdp-cell-size) * 7);
+  border-collapse: collapse;
+}
+.rdp-with_weeknumber .rdp-table {
+  max-width: calc(var(--rdp-cell-size) * 8);
+  border-collapse: collapse;
+}
+.rdp-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+}
+.rdp-multiple_months .rdp-caption {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.rdp-caption_dropdowns {
+  position: relative;
+  display: inline-flex;
+}
+.rdp-caption_label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.25em;
+  white-space: nowrap;
+  color: currentColor;
+  border: 0;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 140%;
+  font-weight: 500;
+}
+.rdp-nav {
+  white-space: nowrap;
+}
+.rdp-multiple_months .rdp-caption_start .rdp-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.rdp-multiple_months .rdp-caption_end .rdp-nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.rdp-nav_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  padding: 0.25em;
+  border-radius: 6px;
+}
+.rdp-dropdown_year,
+.rdp-dropdown_month {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.rdp-dropdown {
+  appearance: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.rdp-dropdown[disabled] {
+  opacity: unset;
+  color: unset;
+}
+.rdp-dropdown:focus-visible:not([disabled]) + .rdp-caption_label {
+  background-color: var(--rdp-background-color);
+  border: var(--rdp-outline);
+  border-radius: 6px;
+}
+.rdp-dropdown_icon {
+  margin: 0 0 0 5px;
+}
+.rdp-head {
+  border: 0;
+}
+.rdp-head_row,
+.rdp-row {
+  height: 100%;
+}
+.rdp-head_cell {
+  @apply text-neutral-primary;
+  vertical-align: middle;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-align: center;
+  height: 100%;
+  height: var(--rdp-cell-size);
+  padding: 0;
+}
+.rdp-tbody {
+  border: 0;
+}
+.rdp-tfoot {
+  margin: 0.5em;
+}
+.rdp-cell {
+  width: var(--rdp-cell-size);
+  height: 100%;
+  height: calc(var(--rdp-cell-size) + 6px);
+  padding: 0;
+  text-align: center;
+}
+.rdp-weeknumber {
+  font-size: 0.75em;
+}
+.rdp-weeknumber,
+.rdp-day {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--rdp-cell-size);
+  max-width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  margin: 0;
+  border: 2px solid transparent;
+  border-radius: 100%;
+}
+.rdp-day_today:not(.rdp-day_outside) {
+  font-weight: 400;
+}
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  color: #fff;
+  opacity: 1;
+  background-color: var(--rdp-accent-color);
+}
+.rdp-day_outside:not(.rdp-day_selected) {
+  @apply text-neutral-primary;
+}
+.rdp-day_selected:focus-visible {
+  outline: var(--rdp-outline);
+  outline-offset: 2px;
+  z-index: 1;
+}
+.rdp:not([dir='rtl']) .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.rdp:not([dir='rtl']) .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.rdp[dir='rtl'] .rdp-day_range_start:not(.rdp-day_range_end) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.rdp[dir='rtl'] .rdp-day_range_end:not(.rdp-day_range_start) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.rdp-day_range_end.rdp-day_range_start {
+  border-radius: 100%;
+}
+.rdp-day_range_middle {
+  border-radius: 0;
 }

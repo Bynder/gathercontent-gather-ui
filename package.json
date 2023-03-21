@@ -86,7 +86,7 @@
     "moment": "^2.29.1",
     "pluralize": "^5.0.0",
     "prop-types": "^15.7.2",
-    "react-day-picker": "^7.4.10",
+    "react-day-picker": "^8.5.1",
     "react-dnd-cjs": "^9.5.1",
     "react-dnd-html5-backend-cjs": "^9.5.1",
     "react-dropzone": "^11.3.4",
