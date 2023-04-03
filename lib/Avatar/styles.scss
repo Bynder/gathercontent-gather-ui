@@ -156,6 +156,18 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
     height: $avatar-size-small;
     font-size: $typo-size-micro;
   }
+
+  .avatar--size-lrg & {
+    font-size: $typo-size-base;
+    width: $avatar-size-large;
+    height: $avatar-size-large;
+  }
+
+  .avatar--size-xlrg & {
+    font-size: 32px;
+    width: $avatar-size-extra-large;
+    height: $avatar-size-extra-large;
+  }
 }
 
 .avatar__image {
