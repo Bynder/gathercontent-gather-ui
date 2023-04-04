@@ -1,9 +1,12 @@
 name: 'Chromatic Publish'
 
-on: pull_request
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, edited, synchronize]
 
 jobs:
   build:
+    if: ${{ github.event.label.name == 'chromatic' }}
     runs-on: ubuntu-latest
 
     strategy:
