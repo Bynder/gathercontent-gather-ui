@@ -44,8 +44,8 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: version ${{ steps.new-version.outputs.current-version}}
-          commit_user_name: gathercontent-deploybot
-          commit_user_email: dev+deploybot@gathercontent.com
-          commit_author: GatherContent DeployBot <gathercontent-deploybot> # defaults to author of the commit that triggered the run
+          commit_user_name: gathercontent-server
+          commit_user_email: dev@gathercontent.com
+          commit_author: GatherContent Servers <gathercontent-servers> # defaults to author of the commit that triggered the run
           tagging_message: 'v${{ steps.new-version.outputs.current-version }}'
           push_options: '--force'
