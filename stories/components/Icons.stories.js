@@ -108,6 +108,9 @@ const allIcons = additionalProps => (
     <Icon name="goto" {...additionalProps} />
     <Icon name="bynder" {...additionalProps} />
     <Icon name="projectRoot" {...additionalProps} />
+    <Icon name="quote16" {...additionalProps} />
+    <Icon name="image16" {...additionalProps} />
+    <Icon name="tableFill16" {...additionalProps} />
   </div>
 );
 
