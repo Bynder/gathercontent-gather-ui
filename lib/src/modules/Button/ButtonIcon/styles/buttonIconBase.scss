@@ -1,7 +1,8 @@
 .button-icon {
   @apply p-0 items-center justify-center bg-transparent border-transparent;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply bg-neutral-primary/10 text-neutral-20 no-underline;
     .icon {
       path {
@@ -19,7 +20,8 @@
 .button-icon.button-icon-active {
   @apply bg-blue-90 border-blue-90 shadow-none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply bg-blue-95;
   }
 
@@ -29,7 +31,8 @@
 }
 
 .button-icon-enabled {
-  &:hover {
+  &:hover,
+  &:focus {
     @apply bg-green-95;
   }
 
