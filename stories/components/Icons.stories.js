@@ -111,6 +111,8 @@ const allIcons = additionalProps => (
     <Icon name="quote16" {...additionalProps} />
     <Icon name="image16" {...additionalProps} />
     <Icon name="tableFill16" {...additionalProps} />
+    <Icon name="feedback" {...additionalProps} />
+    <Icon name="aiWand" {...additionalProps} />
   </div>
 );
 
