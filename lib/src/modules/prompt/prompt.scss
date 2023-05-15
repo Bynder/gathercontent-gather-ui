@@ -16,6 +16,11 @@
 
   // TODO: avoid important - increase specificity instead!
   &__input {
-    @apply m-0 #{!important};
+    @apply m-0 #{!important} ;
+    @apply pl-10;
+  }
+
+  &__input-wand {
+    @apply absolute top-1/2 transform -translate-y-1/2 left-3;
   }
 }
