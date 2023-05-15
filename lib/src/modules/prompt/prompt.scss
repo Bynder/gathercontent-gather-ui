@@ -1,5 +1,10 @@
 .prompt {
-  @apply border border-solid border-neutral-90;
+  @apply border border-solid border-neutral-90 rounded;
+  @apply p-4;
+
+  &__wrapper {
+    @apply pr-4;
+  }
 
   &__body {
     @apply relative;
@@ -10,4 +15,11 @@
     @apply bg-transparent border-none;
     @apply hover:bg-transparent;
   }
+
+  // TODO: avoid important - increase specificity instead!
+  &__input {
+    @apply m-0 #{!important};
+  }
 }
+
+
