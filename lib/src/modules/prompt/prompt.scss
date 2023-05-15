@@ -1,3 +1,13 @@
 .prompt {
   @apply border border-solid border-neutral-90;
+
+  &__body {
+    @apply relative;
+  }
+
+  &__submit {
+    @apply absolute right-0 top-1/2 transform -translate-y-1/2;
+    @apply bg-transparent border-none;
+    @apply hover:bg-transparent;
+  }
 }
