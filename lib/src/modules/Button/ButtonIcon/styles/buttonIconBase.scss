@@ -4,7 +4,7 @@
   &:hover,
   &:focus {
     @apply bg-neutral-primary/10 text-neutral-20 no-underline;
-    .icon {
+    &:not(.button-icon-no-fill) .icon {
       path {
         @apply fill-neutral-20;
       }
@@ -25,7 +25,7 @@
     @apply bg-blue-95;
   }
 
-  path {
+  &:not(.button-icon-no-fill) path {
     fill: theme('colors.blue.primary');
   }
 }
@@ -40,7 +40,7 @@
     @apply border-green-primary shadow-button-icon-enabled-focus;
   }
 
-  path {
+  &:not(.button-icon-no-fill) path {
     fill: theme('colors.green.primary');
   }
 }

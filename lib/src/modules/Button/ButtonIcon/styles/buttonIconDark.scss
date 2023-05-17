@@ -1,10 +1,11 @@
 .button-icon-dark {
-  path {
-    fill: theme('colors.neutral.70')
+  &:not(.button-icon-no-fill) .icon path {
+    fill: theme('colors.neutral.70');
   }
-  &.button-icon:active, &.button-icon-active {
+  &.button-icon:active,
+  &.button-icon-active {
     @apply bg-neutral-40 border-neutral-40;
-    path {
+    &:not(.button-icon-no-fill) .icon path {
       fill: white;
     }
     &:hover {
@@ -16,10 +17,13 @@
   }
   &:hover {
     @apply bg-neutral-30 border-neutral-30;
+    &:not(.button-icon-no-fill) .icon path {
+      fill: white;
+    }
   }
   &:focus {
     @apply bg-neutral-40 border-white shadow-button-icon-dark-focus;
-    path {
+    &:not(.button-icon-no-fill) .icon path {
       fill: white;
     }
   }
