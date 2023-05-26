@@ -54,8 +54,10 @@
     "compile:css": "ENABLE_PURGE=true parcel build styles/prod.scss && npm run compile:tailwind",
     "compile:tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
+    "format:css": "stylelint '{lib,styles}/**/*.{scss,css}' --fix",
     "legacy:copy-styles": "echo Copying Sass settings... && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/**/*.scss dist/",
     "lint": "eslint -c .eslintrc.json 'lib/**/*.js' 'tests/**/*.js' --fix",
+    "lint:css": "stylelint '{lib,styles}/**/*.{scss,css}' --quiet",
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006 -c .storybook",
     "build-storybook": "storybook build",
@@ -168,7 +170,10 @@
     "sass": "^1.38.0",
     "sass-loader": "^10.0.0",
     "storybook": "^7.0.10",
-    "style-loader": "^1.3.0"
+    "style-loader": "^1.3.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-hudochenkov": "^9.0.0",
+    "stylelint-order": "^6.0.3"
   },
   "peerDependencies": {
     "react": "^16.14.0",
