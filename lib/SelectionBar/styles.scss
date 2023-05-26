@@ -9,17 +9,17 @@ $selection-bar-border: 1px solid $color-border-base !default;
 .selection-bar {
   left: 0;
   width: 100%;
-  background: white;
-  border-top: $selection-bar-border;
-  border-bottom: $selection-bar-border;
   min-height: 50px;
   margin: 0;
+  border-top: $selection-bar-border;
+  border-bottom: $selection-bar-border;
+  background: white;
 }
 
 .selection-bar__divider {
-  background-color: $color-border-base;
   width: 1px;
   height: 20px;
+  background-color: $color-border-base;
 }
 
 .selection-bar__action {
@@ -28,9 +28,9 @@ $selection-bar-border: 1px solid $color-border-base !default;
 }
 
 .selection-bar__section {
-  height: 50px;
   display: flex;
   align-items: center;
+  height: 50px;
 }
 
 .selection-bar__actions {
@@ -47,11 +47,11 @@ $selection-bar-border: 1px solid $color-border-base !default;
 }
 
 .selection-bar__count {
-  color: white;
-  background: $primary-blue;
-  padding: ($layout-spacing-base*0.25 - 1px) $layout-spacing-base*0.5;
   margin: 0 $layout-spacing-base*0.25 0 $layout-spacing-base*0.5;
+  padding: ($layout-spacing-base*0.25 - 1px) $layout-spacing-base*0.5;
   border-radius: $layout-spacing-base*2;
+  background: $primary-blue;
+  color: white;
 }
 
 /* ==========================================================================

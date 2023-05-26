@@ -1,23 +1,25 @@
 .expanding-textarea {
+  width: 100%;
+  padding: $layout-spacing-base*0.5;
   border: 1px solid $color-border-base;
   border-radius: 5px;
-  padding: $layout-spacing-base*0.5;
-  width: 100%;
-  resize: none;
   outline: none;
+  resize: none;
   transition: border .1s ease;
 
   &:focus {
-    outline: none;
     border: 1px solid $color-border-base-hover;
+    outline: none;
   }
+
   &--has-error {
     border-color: $primary-red;
   }
+
   &__error-message {
+    display: block;
+    padding-left: $layout-spacing-base*0.25;
     color: $primary-red;
     font-size: $typo-size-slight;
-    padding-left: $layout-spacing-base*0.25;
-    display: block;
   }
 }

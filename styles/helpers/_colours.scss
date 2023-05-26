@@ -8,6 +8,7 @@
   .icon path, &:hover .icon path {
     fill: $color-text-danger;
   }
+
   .is-active & {
     .icon path {
       fill: $color-text-danger;

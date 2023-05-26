@@ -9,8 +9,8 @@ $guideline-title-size: $typo-size-large !default;
    Styles
    ========================================================================== */
 .guideline {
-  padding: $guideline-spacing;
   margin: 0 0 $guideline-spacing*2;
+  padding: $guideline-spacing;
   border-radius: 4px;
 }
 
@@ -29,11 +29,11 @@ $guideline-title-size: $typo-size-large !default;
 }
 
 .guideline__body {
-  transition: max-height $animation-time-micro ease-out;
+  overflow: hidden;
   max-height: 0;
   font-size: $typo-size-lead;
   line-height: $typo-line-height-base * 1.2;
-  overflow: hidden;
+  transition: max-height $animation-time-micro ease-out;
 
   > *:last-child,
   > *:last-child > *:last-child {
@@ -43,7 +43,7 @@ $guideline-title-size: $typo-size-large !default;
 
 .guideline.is-active {
   .guideline__body {
-    max-height: 100%;
     overflow-y: auto;
+    max-height: 100%;
   }
 }

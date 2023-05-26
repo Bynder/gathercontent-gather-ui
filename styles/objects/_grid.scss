@@ -3,20 +3,20 @@
 }
 
 .grid {
-    &:not(.tw):before,
-    &:not(.tw):after {
-        display: table;
+    &:not(.tw)::before,
+    &:not(.tw)::after {
         content: "";
+        display: table;
     }
 
-    &:not(.tw):after {
+    &:not(.tw)::after {
         clear: both;
     }
 
     &__cell {
         float: left;
-        padding: 0 0 0 10px;
         box-sizing: border-box;
+        padding: 0 0 0 10px;
 
         &--indent {
             padding: 0 50px;

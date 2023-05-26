@@ -1,5 +1,6 @@
 .navigation--items {
   @apply h-full;
+
   ul {
     @apply list-none flex flex-row h-full w-full m-0 p-0;
   }
@@ -7,6 +8,7 @@
 
 .navigation--item {
   @apply h-full;
+
   button {
     @apply border-none bg-white h-full px-5 py-6;
   }
@@ -24,5 +26,6 @@
 
 .navigation--active-border {
   @apply absolute w-full bottom-0 left-0 bg-blue-primary;
+
   height: 2px;
 }

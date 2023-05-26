@@ -1,5 +1,6 @@
 .user-search__dropdown {
   padding: $layout-spacing-base*0.5;
+
   .dropdown__content--fix-right.is-active {
     min-width: 300px;
     padding: $layout-spacing-base*0.5 0 0 0;
@@ -8,6 +9,7 @@
   .icon path {
     fill: $neutral-base;
   }
+
   .is-active {
     .icon path {
       fill: $primary-blue;

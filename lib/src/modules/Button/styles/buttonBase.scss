@@ -4,9 +4,11 @@
   &-md {
     @apply text-base py-3 px-4;
   }
+
   &-sm {
     @apply text-base p-2;
   }
+
   &-xs {
     @apply text-sm p-05 px-2 rounded-small;
   }
@@ -14,6 +16,7 @@
   &-connected-r {
     @apply rounded-r-none mr-0;
   }
+
   &-connected-l {
     @apply rounded-l-none ml-0;
   }
@@ -21,6 +24,7 @@
   &:focus {
     @apply outline-none;
   }
+
   &:disabled {
     @apply pointer-events-none;
   }

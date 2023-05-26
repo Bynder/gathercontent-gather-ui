@@ -1,18 +1,17 @@
 .drag-line {
-  background: $primary-blue;
-  left: 0;
-  height: 2px;
-  width: 100%;
   position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: $primary-blue;
 }
 
 .drag-line__ball {
-  background: $primary-blue;
   position: absolute;
   width: 6px;
   height: 6px;
-  background: $primary-blue;
   border-radius: $layout-spacing-base;
+  background: $primary-blue;
 
   &.drag-line__ball-right {
     right: 0;

@@ -1,18 +1,22 @@
 .gc-checkbox {
   @apply appearance-none w-4 h-4 rounded-small border border-solid border-neutral-80 cursor-pointer bg-white relative shadow-inner;
+
   &:hover {
     @apply border-blue-primary;
   }
+
   &:focus {
     @apply shadow-blue-focus-sm border-blue-primary;
-    &:before {
+
+    &::before {
       @apply absolute border border-solid border-white rounded-small;
+
       content: '';
-      border-radius: 5px;
       top: -2px;
       left: -2px;
       width: 18px;
       height: 18px;
+      border-radius: 5px;
     }
   }
 }
@@ -23,21 +27,25 @@
   &:hover {
     @apply bg-blue-60;
   }
-  &:after {
+
+  &::after {
     @apply border-2 border-solid border-t-0 border-r-0 border-white absolute;
+
+    content: '';
+    top: 4px;
+    left: 3px;
     width: 8px;
     height: 5px;
     transform: rotate(-50deg);
-    top: 4px;
-    left: 3px;
-    content: '';
   }
 }
 
 .gc-checkbox-error {
   @apply border-red-primary;
+
   &:checked {
     @apply bg-red-primary border-red-primary;
+
     &:hover {
       @apply bg-red-60;
     }
@@ -47,12 +55,15 @@
 .gc-checkbox-error:disabled,
 .gc-checkbox:disabled {
   @apply cursor-default bg-neutral-95;
+
   &:hover, &:focus {
     @apply border-neutral-80 shadow-inner;
   }
+
   &:checked {
     @apply border-neutral-80 bg-neutral-95;
-    &:after {
+
+    &::after {
       @apply border-neutral-primary;
     }
   }

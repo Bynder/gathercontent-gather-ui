@@ -5,7 +5,7 @@
 }
 
 .text-overflow-ellipsis {
-  @include text-overflow-ellipsis();
+  @include text-overflow-ellipsis;
 }
 
 .text-overflow-ellipsis-only {
@@ -47,24 +47,31 @@
 .typo-size-xlarge {
   font-size: $typo-size-xlarge;
 }
+
 .typo-size-large {
   font-size: $typo-size-large;
 }
+
 .typo-size-lead {
   font-size: $typo-size-lead;
 }
+
 .typo-size-larger {
   font-size: $typo-size-larger;
 }
+
 .typo-size-base {
   font-size: $typo-size-base;
 }
+
 .typo-size-slight {
   font-size: $typo-size-slight;
 }
+
 .typo-size-small {
   font-size: $typo-size-small;
 }
+
 .typo-size-micro {
   font-size: $typo-size-micro;
 }
@@ -83,6 +90,7 @@
 
 $props: ('text-decoration');
 $subProps: (underline, none);
+
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
     text-decoration: $style;
@@ -91,6 +99,7 @@ $subProps: (underline, none);
 
 $props: ('text-decoration-hover');
 $subProps: (underline, none);
+
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector}:hover {
     text-decoration: $style;

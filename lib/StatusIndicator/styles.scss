@@ -15,8 +15,8 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .status-indicator {
   color: $color-brand-dark;
-  white-space: nowrap;
   font-size: $typo-size-base;
+  white-space: nowrap;
 }
 
 .status-indicator__label-row {
@@ -25,25 +25,25 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__children {
-  color: $color-text-light;
-  font-size: $typo-size-slight;
-  margin-left: $status-indicator-margin-left;
-  font-weight: $typo-weight-roman;
   margin-top: $layout-spacing-base * 0.25;
+  margin-left: $status-indicator-margin-left;
+  color: $color-text-light;
+  font-weight: $typo-weight-roman;
+  font-size: $typo-size-slight;
 }
 
 .status-indicator__circle {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  border-radius: $status-indicator-circle-size;
+  justify-content: center;
+  align-items: center;
   width: $status-indicator-circle-size;
   height: $status-indicator-circle-size;
+  border-radius: $status-indicator-circle-size;
 
   &--large {
-    height: 16px;
     width: 16px;
+    height: 16px;
   }
 
   + .status-indicator__label {
@@ -52,24 +52,26 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__label {
-  white-space: nowrap;
+  overflow: hidden;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1.5rem;
-  overflow: hidden;
+  white-space: nowrap;
+
   &-wrapper {
-    width: 100%;
-    overflow: hidden;
     display: flex;
+    overflow: hidden;
+    width: 100%;
     margin-left: $layout-spacing-base*0.5;
   }
+
   .status-indicator__label-text {
     display: inline-block;
-    text-overflow: ellipsis;
-    overflow: hidden;
     vertical-align: bottom;
-    text-align: left;
+    overflow: hidden;
     max-width: 100%;
+    text-align: left;
+    text-overflow: ellipsis;
   }
 
   .tooltip-wrapper__child {
@@ -79,9 +81,9 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .status-indicator--completed {
   .status-indicator__label, .status-indicator__children .workflow-item__text, .status-indicator__children .duedate__button, .status-indicator__label-text {
-    text-decoration: line-through;
-    font-style: italic;
     color: $color-text-light;
+    font-style: italic;
+    text-decoration: line-through;
   }
 
   .status-indicator__circle {
@@ -90,8 +92,8 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator--bordered {
-  border-bottom: $status-indicator-bordered-border;
   padding-bottom: math.div($layout-spacing-base, 1.3);
+  border-bottom: $status-indicator-bordered-border;
 }
 
 .status-indicator__pre-text {
@@ -99,16 +101,17 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__description {
-  white-space: initial;
-  color: $color-brand-dark;
   margin-top: $layout-spacing-base * 0.25;
-  margin-left: $status-indicator-margin-left;
   margin-bottom: math.div($layout-spacing-base, 2.5);
+  margin-left: $status-indicator-margin-left;
+  color: $color-brand-dark;
+  white-space: initial;
 }
 
 .icon.status-indicator__readonly {
-  margin-left: $layout-spacing-base*0.25;
   vertical-align: top;
+  margin-left: $layout-spacing-base*0.25;
+
   path {
     fill: $color-brand-dark;
   }
@@ -117,6 +120,7 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator__actions {
   margin-left: $layout-spacing-base*0.5;
 }
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -134,8 +138,8 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator--soft-label .status-indicator__label {
-  font-size: $typo-size-slight;
   font-weight: $typo-weight-roman;
+  font-size: $typo-size-slight;
 }
 
 .status-indicator--medium .status-indicator__label {
@@ -145,11 +149,11 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator--row {
   display: flex;
   align-items: baseline;
-  background: white;
-  border: $status-indicator-bordered-border;
-  padding: $layout-spacing-base*0.5;
-  border-radius: 4px;
   margin: 0 0 $layout-spacing-base*0.5;
+  padding: $layout-spacing-base*0.5;
+  border: $status-indicator-bordered-border;
+  border-radius: 4px;
+  background: white;
 
   .status-indicator__children {
     margin: 0 0 0 auto;

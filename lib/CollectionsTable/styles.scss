@@ -15,59 +15,65 @@ $collections-table-cell-min-height: 40px !default;
 
 .collections-table {
   display: flex;
-  flex-flow: column nowrap;
   flex: 1 1 auto;
+  flex-flow: column nowrap;
   color: $neutral-base;
+
   a {
-    @include link-hover-underline();
+    @include link-hover-underline;
+
     &.text-decoration-hover-none {
       text-decoration: none;
     }
   }
+
   .dropdown__content {
     color: $neutral-dark;
   }
 }
 
 .collections-table__row {
-  width: 100%;
   display: flex;
-  flex-flow: row nowrap;
   flex-shrink: 0;
+  flex-flow: row nowrap;
+  width: 100%;
   padding: $collections-table-spacing;
 }
 
 .collections-table__heading,
 .collections-table__cell {
   display: flex;
-  flex-flow: row nowrap;
   flex-grow: 1;
   flex-basis: 0;
-  word-break: break-word;
+  flex-flow: row nowrap;
   overflow: hidden;
+  min-width: 0;
   text-overflow: ellipsis;
-  min-width: 0px;
   white-space: nowrap;
-  &:first-child {
-    flex-basis: 10%;
+  word-break: break-word;
 
+  &:first-child {
     @include respond-to-min($screen-md) {
       flex-basis: 20%;
     }
+
+    flex-basis: 10%;
   }
 }
 
 .collections-table__cell {
+  min-height: $collections-table-cell-min-height;
+  padding: $collections-table-spacing;
   border: $collections-table-border;
   border-width: 1px 0;
-  padding: $collections-table-spacing;
   background: white;
-  min-height: $collections-table-cell-min-height;
+
   &:first-child {
     padding-left: 1px;
     border-width: 1px 0 1px 1px;
     border-radius: $collections-table-border-radius 0 0 $collections-table-border-radius;
   }
+
   &:last-child {
     padding-right: 1px;
     border-width: 1px 1px 1px 0;
@@ -76,34 +82,41 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .collections-table__cell-content {
-  overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 0 $layout-spacing-base*0.5;
+  overflow: hidden;
   width: 100%;
+  padding: 0 $layout-spacing-base*0.5;
+
   .collections-table__cell-content {
     padding: 0;
   }
+
   .figure {
+    flex-shrink: 0;
     width: $layout-spacing-base*2;
     height: $layout-spacing-base*2;
-    padding: 0;
     margin: 0;
-    flex-shrink: 0;
+    padding: 0;
+
     &__loader {
       transform: none;
     }
+
     &__title {
       font-size: $typo-size-slight;
     }
+
     + .collections-table__row-title {
       margin-left: $layout-spacing-base*0.5;
     }
   }
+
   .editable-text__wrapper--editing,
   .editable-text__text  {
     width: 100%;
   }
+
   .editable-text__wrapper {
     max-width: 100%;
     padding-right: $layout-spacing-base * 2 + $layout-spacing-base*0.25;
@@ -116,12 +129,14 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .collections-table__heading {
-  font-size: $typo-size-slight;
-  font-weight: bold;
   padding-top: $layout-spacing-base*0.25;
+  font-weight: bold;
+  font-size: $typo-size-slight;
+
   &:first-child {
     padding-left: 1px;
   }
+
   &:last-child {
     padding-right: 1px;
   }
@@ -133,9 +148,9 @@ $collections-table-cell-min-height: 40px !default;
 
 .collections-table__row-title {
   margin: 0;
-  font-size: $typo-size-base;
-  font-weight: $typo-weight-roman;
   color: $neutral-dark;
+  font-weight: $typo-weight-roman;
+  font-size: $typo-size-base;
 
   a {
     color: $neutral-dark;
@@ -148,13 +163,15 @@ $collections-table-cell-min-height: 40px !default;
    ========================================================================== */
 .collections-table__row--selected {
   .collections-table__cell {
+    padding: ($layout-spacing-base*0.25 - 1) 0;
     border: $collections-table-selected-border;
     border-width: 2px 0;
-    padding: ($layout-spacing-base*0.25 - 1) 0;
+
     &:first-child {
       padding-left: 0;
       border-width: 2px 0 2px 2px;
     }
+
     &:last-child {
       padding-right: 0;
       border-width: 2px 2px 2px 0;
@@ -170,6 +187,7 @@ $collections-table-cell-min-height: 40px !default;
 .collections-table__cell-content--allow-overflow {
   overflow: visible;
 }
+
 .content-items__table--disable-selected .collections-table__row--selected,
 .collections-table__row--disabled {
   opacity: 0.5;
@@ -178,46 +196,53 @@ $collections-table-cell-min-height: 40px !default;
 .collections-table__row--is-over.dragged-top,
 .collections-table__row--is-over.dragged-below {
   position: relative;
+
   .collections-table__cell:first-child {
-    &:before {
+    &::before {
       content: ' ';
-      border-bottom: 2px solid $primary-blue;
+      position: absolute;
       left: 0;
       width: 100%;
-      position: absolute;
+      border-bottom: 2px solid $primary-blue;
     }
   }
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     content: ' ';
     position: absolute;
+    left:0;
     width: 6px;
     height: 6px;
-    background: $primary-blue;
     border-radius: $layout-spacing-base;
-    left:0;
+    background: $primary-blue;
   }
-  &:after {
+
+  &::after {
     right: 0;
     margin-left: auto;
   }
 }
+
 .collections-table__row--is-over {
   &.dragged-top {
-    .collections-table__cell:first-child:before {
+    .collections-table__cell:first-child::before {
       top: -1px;
     }
-    &:before,
-    &:after {
+
+    &::before,
+    &::after {
       top: -3px
     }
   }
+
   &.dragged-below {
-    .collections-table__cell:first-child:before {
+    .collections-table__cell:first-child::before {
       bottom: -1px;
     }
-    &:before,
-    &:after {
+
+    &::before,
+    &::after {
       bottom: -3px
     }
   }

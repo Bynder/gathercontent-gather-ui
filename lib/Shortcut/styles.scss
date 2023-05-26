@@ -7,9 +7,9 @@ $shortcut-max-width: 400px !default;
    Styles
    ========================================================================== */
 .shortcut {
-  border-bottom: 1px solid $color-border-base;
-  padding: $layout-spacing-base*0.5 0;
   max-width: $shortcut-max-width;
+  padding: $layout-spacing-base*0.5 0;
+  border-bottom: 1px solid $color-border-base;
 
   &:last-child {
     border: 0 none;
@@ -27,17 +27,17 @@ $shortcut-max-width: 400px !default;
 
 .shortcut__keyboard {
   padding: 3px 6px;
-  background: #FFFFFF;
   border: 1px solid $color-border-base;
-  box-shadow: $shadow-shallow;
   border-radius: 4px;
+  background: #FFF;
+  box-shadow: $shadow-shallow;
   font-family: Courier;
 }
 
 .shortcut__plus {
-  font-weight: 500;
-  color: $neutral-base;
   margin: 0 $layout-spacing-base*0.25;
+  color: $neutral-base;
+  font-weight: 500;
 }
 
 
@@ -59,10 +59,10 @@ $shortcut-max-width: 400px !default;
 
 .shortcut__superscript,
 .shortcut__subscript {
-  font-size: 75%;
-  line-height: 0;
   position: relative;
   vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
 }
 
 .shortcut__superscript {

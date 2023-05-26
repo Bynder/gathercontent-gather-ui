@@ -8,10 +8,10 @@ $borderColour: #F8FBFC;
 }
 
 .toggle-switch + label {
-  display: block;
   position: relative;
-  cursor: pointer;
+  display: block;
   outline: none;
+  cursor: pointer;
 }
 
 .toggle-wrapper {
@@ -47,54 +47,54 @@ $borderColour: #F8FBFC;
   &:last-of-type { margin-left: 10px; }
 }
 
-.toggle-switch + label:after {
+.toggle-switch + label::after {
   top: 4px;
-  left: 4px;
   bottom: 4px;
+  left: 4px;
   width: 16px;
   height: 16px;
-  background-color: #fff;
   border-radius: 52px;
+  background-color: #fff;
   transition: margin 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55),
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + label:after {
+.toggle-switch:checked + label::after {
   margin-left: 26px;
 }
 
 /*  New switch */
 .toggle-switch + .toggle-switch__label {
-  padding: 2px;
   width: 34px;
   height: 22px;
+  padding: 2px;
   border: 2px solid $borderColour;
-  background-color: $backgroundColour;
   border-radius: 60px;
+  background-color: $backgroundColour;
+  box-shadow: inset 0 0 2px rgb(0 0 0 / 10%);
   transition: background 0.4s;
-  box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
 }
 
-.toggle-switch + .toggle-switch__label:before,
-.toggle-switch + .toggle-switch__label:after {
-  display: block;
-  position: absolute;
+.toggle-switch + .toggle-switch__label::before,
+.toggle-switch + .toggle-switch__label::after {
   content: "";
+  position: absolute;
+  display: block;
 }
 
-.toggle-switch + .toggle-switch__label:after {
+.toggle-switch + .toggle-switch__label::after {
   top: 2px;
-  left: 3px;
   bottom: 2px;
+  left: 3px;
   width: 14px;
   height: 14px;
-  background-color: #fff;
   border-radius: 52px;
+  background-color: #fff;
   transition: margin 0.2s cubic-bezier(0.4, 0, 1, 1),
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + .toggle-switch__label:after {
+.toggle-switch:checked + .toggle-switch__label::after {
   margin-left: 10px;
 }
 
@@ -106,24 +106,28 @@ $borderColour: #F8FBFC;
   .toggle-switch + .toggle-switch__label {
     width: $layout-spacing-base + $layout-spacing-base*0.5;
     height: $layout-spacing-base;
-    &:after {
+
+    &::after {
       top: 2px;
-      left: 2px;
       bottom: 4px;
+      left: 2px;
       width: 12px;
       height: 12px;
     }
   }
-  .toggle-switch:checked + .toggle-switch__label:after {
+
+  .toggle-switch:checked + .toggle-switch__label::after {
     margin-left: $layout-spacing-base*0.5;
   }
+
   .toggle-wrapper__label {
     margin: 0 0 0 $layout-spacing-base*0.25;
   }
+
   .toggle-wrapper__inner {
-    max-height: $layout-spacing-base;
     overflow: hidden;
     min-width: 30px;
+    max-height: $layout-spacing-base;
   }
 }
 
@@ -134,11 +138,11 @@ $borderColour: #F8FBFC;
 }
 
 .toggle-switch__label.label-size-large {
-  font-size: 1rem;
   margin: 0;
+  font-size: 1rem;
 }
 
 .toggle-wrapper__label.label-size-large {
-  font-size: 1rem;
   margin: 0;
+  font-size: 1rem;
 }

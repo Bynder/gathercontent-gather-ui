@@ -10,12 +10,12 @@ $item-row-gap: 6px;
    Styles
    ========================================================================== */
 .item-row {
-  padding: $layout-spacing-base*0.5;
-  cursor: pointer;
-  background-color: white;
   position: relative;
-  margin: $item-row-gap 0 $item-row-gap;
   width: 100%;
+  margin: $item-row-gap 0 $item-row-gap;
+  padding: $layout-spacing-base*0.5;
+  background-color: white;
+  cursor: pointer;
 
   .status-indicator {
     display: inline-flex;
@@ -32,10 +32,10 @@ $item-row-gap: 6px;
 }
 
 .item-row__name {
-  margin-right: $layout-spacing-base*0.5;
   overflow: hidden;
-  text-overflow: ellipsis;
   width: 100%;
+  margin-right: $layout-spacing-base*0.5;
+  text-overflow: ellipsis;
 
   a {
     color: $color-text-base;
@@ -52,8 +52,8 @@ $item-row-gap: 6px;
   }
 
   .editable-text__text {
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -90,8 +90,8 @@ $item-row-gap: 6px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 0 $item-row-stacked-margin;
     width: 100%;
+    margin: 0 0 $item-row-stacked-margin;
 
     &:last-child {
       margin: 0;
@@ -101,7 +101,9 @@ $item-row-gap: 6px;
 
 .item-row-list {
   @apply my-0 pl-2 py-2 pr-0 border-solid border-l-0 border-r-0 border-t border-b border-neutral-90;
+
   margin-top: -1px;
+
   .item-row__name {
     @apply mr-0 leading-6;
     @include gradient-overflow(rgba(255,255,255,1));

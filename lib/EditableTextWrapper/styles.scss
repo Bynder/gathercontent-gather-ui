@@ -38,19 +38,20 @@ $editable-text-wrapper-icon-width: 25px;
 }
 
 .editable-text__input {
-  border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
   background: none;
+  outline: none;
 
   &.single-line {
     height: 1.25em;
   }
+
   &.expanding-textarea,
   &.expanding-textarea:focus {
-    border: none;
     padding: 0;
+    border: none;
   }
 }

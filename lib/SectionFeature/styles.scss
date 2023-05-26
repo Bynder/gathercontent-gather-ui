@@ -9,14 +9,14 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
    ========================================================================== */
 
 .section-feature {
-  text-align: center;
   margin: 0 0 $section-feature-vertical-spacing;
+  text-align: center;
 
   p {
     display: block;
+    margin-top: $layout-spacing-base;
     color: $neutral-base;
     font-size: $typo-size-base;
-    margin-top: $layout-spacing-base;
 
     &:first-child {
       margin-top: 0;
@@ -35,9 +35,9 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
   }
 
   + .section-feature {
-    border-top: 1px solid $color-border-base;
-    padding-top: $section-feature-vertical-spacing;
     margin-top: $section-feature-vertical-spacing;
+    padding-top: $section-feature-vertical-spacing;
+    border-top: 1px solid $color-border-base;
   }
 }
 

@@ -5,11 +5,9 @@ $modal-title-font-size: 21px !default;
 $modal-large-width: 780px !default;
 $modal-x-large-width: 900px !default;
 $modal-small-width: 400px !default;
-
 $modal-padding: $layout-spacing-base !default;
 $modal-heading-font-size: $typo-size-large !default;
 $modal-column-padding: $modal-padding !default;
-
 $modal-media-close-dimensions: 30px;
 
 /* ==========================================================================
@@ -26,32 +24,38 @@ $modal-media-close-dimensions: 30px;
 			@apply p-0;
 		}
 	}
+
 	.modal-footer {
 		@apply border-0 border-t border-neutral-90 border-solid flex p-4;
 	}
+
 	.modal-body {
 		overflow: hidden;
 	}
+
 	&.modal--small {
 		width:400px;
 	}
+
 	&.modal--large {
 		width: 780px;
 	}
+
 	&.modal--x-large {
 		width: 900px;
 	}
+
 	&.modal--full-screen {
 		width: calc(100vw - 128px);
 	}
 }
 
 .modal__row {
-	display: flex;
-
 	@include respond-to(small) {
 		display: block;
 	}
+
+	display: flex;
 }
 
 .modal__column {
@@ -59,25 +63,25 @@ $modal-media-close-dimensions: 30px;
 }
 
 .modal__body-title {
-	font-size: $modal-title-font-size;
+	color: rgb(75 86 95);
 	font-weight: $typo-weight-roman;
-	color: rgb(75, 86, 95);
+	font-size: $modal-title-font-size;
 }
 
 .modal__illustration {
 	margin: 90px 0 0;
 
 	svg {
-		transform: scale(1);
 		height: 100px;
+		transform: scale(1);
 	}
 }
 
 .modal__actions {
 	position: absolute;
-	background-color: transparent !important;
-	bottom: $layout-spacing-base;
 	right: 30px;
+	bottom: $layout-spacing-base;
+	background-color: transparent !important;
 }
 
 .modal__header-intro {
@@ -87,8 +91,8 @@ $modal-media-close-dimensions: 30px;
 .modal-footer {
 	display: flex;
 	align-items: center;
-	background: white;
 	border-radius: 0 0 6px 6px;
+	background: white;
 }
 
 .modal__footer-text {
@@ -97,14 +101,17 @@ $modal-media-close-dimensions: 30px;
 
 .modal-footer.modal-footer--space-between {
   justify-content: space-between;
+
   &::before {
     content: none;
   }
+
   &::after {
     content: none;
   }
 
 }
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */
@@ -119,10 +126,11 @@ $modal-media-close-dimensions: 30px;
 
 .modal--x-large {
 	.modal-dialog {
-		display: block;
 		@include respond-to(medium) {
 			width: $modal-x-large-width;
 		}
+
+		display: block;
 	}
 }
 
@@ -159,8 +167,8 @@ $modal-media-close-dimensions: 30px;
 
 .modal.modal--center .close {
 	position: absolute;
-	right: $modal-padding*1.5;
 	top: $modal-padding*1.5;
+	right: $modal-padding*1.5;
 	transform: none;
 }
 
@@ -171,10 +179,11 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header {
 		padding-bottom: 0;
+
 		.react-modal-header__text {
-			padding:0;
-			left:0;
 			right:0;
+			left:0;
+			padding:0;
 		}
 	}
 
@@ -184,22 +193,19 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header,
 	.modal-footer {
-		background: none;
 		border: 0;
+		background: none;
 	}
 }
 
 .modal--overflow {
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		inset: 0;
 
 	.react-modal-inner {
 		position: absolute;
-		bottom: 0;
 		top: 0;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -218,31 +224,31 @@ $modal-media-close-dimensions: 30px;
 
 .modal--overflow-half {
 	.modal-body {
-		max-height: 40vh;
 		overflow: auto;
+		max-height: 40vh;
 	}
 
 	.modal-footer {
 		position: relative;
 
-		&:after {
+		&::after {
 			content: "";
 			position: absolute;
 			top: -26px;
-			left: 0;
 			right: 0;
-			height: 25px;
+			left: 0;
 			width: 100%;
-			background: linear-gradient(to bottom, rgba(white, 0) 0%, rgba(white, .5) 50%, rgba(white, .75) 100%);
+			height: 25px;
+			background: linear-gradient(to bottom, rgb(white 0) 0%, rgb(white .5) 50%, rgb(white .75) 100%);
 		}
 	}
 }
 
 .modal--highlight .modal-body,
 .modal__column-wrapper--highlight {
+	border-right: 1px solid rgb(229 233 238);
 	background: $neutral-base-lighter;
-	color: rgb(76, 88, 96);
-	border-right: 1px solid rgb(229, 233, 238);
+	color: rgb(76 88 96);
 }
 
 .modal--collapse {
@@ -252,19 +258,20 @@ $modal-media-close-dimensions: 30px;
 }
 
 .modal--media-only.Modal {
-	height: 100%;
-	width: 100%;
 	display: flex;
-	margin: 0;
 	justify-content: center;
 	align-items: center;
-	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	margin: 0;
 	background: none;
 	box-shadow: none;
+	pointer-events: none;
 
 	.modal-body {
 		@apply shadow-small;
 		@include file-backgound;
+
 		max-height: 100% !important;
 	}
 
@@ -274,14 +281,15 @@ $modal-media-close-dimensions: 30px;
 
 	.modal-header {
 		@apply rounded;
-		background: none;
+
 		position: absolute;
 		right: 0;
-		border: 0;
 		z-index: 2;
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
+		border: 0;
+		background: none;
 
 		.close-button {
 			@apply rounded-tl-none rounded-br-none m-0 bg-white;
@@ -297,11 +305,11 @@ $modal-media-close-dimensions: 30px;
 	}
 
 	.modal-footer {
-		width: 100%;
 		display: flex;
 		justify-content: center;
-		background: none;
+		width: 100%;
 		border: 0;
+		background: none;
 	}
 
 	.react-modal-inner {
@@ -322,6 +330,7 @@ $modal-media-close-dimensions: 30px;
 
 .modal-header.modal-header-with-nav {
 	@apply pb-0;
+
 	.react-modal-header-inner {
 		@apply flex flex-row;
 	}

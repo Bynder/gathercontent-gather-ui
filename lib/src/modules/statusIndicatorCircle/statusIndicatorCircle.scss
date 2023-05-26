@@ -1,6 +1,7 @@
 .status-indicator-circle {
-  border-radius: 50%;
-  transition-property: box-shadow;
-  transition-timing-function: ease-in-out;
   @apply flex w-4 h-4 justify-center items-center;
+
+  border-radius: 50%;
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow;
 }

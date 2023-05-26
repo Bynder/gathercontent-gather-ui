@@ -5,9 +5,10 @@ input[type='password'],
 input[type='email'],
 input[type='search'] {
     height: auto;
-    font-size: $typo-size-base;
     outline: none;
+    font-size: $typo-size-base;
 }
+
 input, textarea {
   &::placeholder {
     color: $neutral-base;

@@ -22,11 +22,12 @@ $folder-row-gap: 6px;
 }
 
 .folder-row__inner {
-  padding: $folder-row-spacing;
-  background: $neutral-lightest;
+  @include before-border(1px, solid, $neutral-light, 4px);
+
   position: relative;
   margin: $folder-row-gap 0 $folder-row-gap;
-  @include before-border(1px, solid, $neutral-light, 4px);
+  padding: $folder-row-spacing;
+  background: $neutral-lightest;
 
   + .folder-row {
     margin-top: $folder-row-spacing;
@@ -39,10 +40,10 @@ $folder-row-gap: 6px;
 
 .folder-row__backdrop {
   position: absolute;
+  left: 0;
   display: block;
   width: 100%;
   height: 100%;
-  left: 0;
 
   > * {
     display: block;
@@ -53,17 +54,17 @@ $folder-row-gap: 6px;
 
 .folder-row__name {
   z-index: 1;
-  white-space: nowrap;
-  font-weight: $typo-weight-semi-bold;
   overflow: hidden;
+  font-weight: $typo-weight-semi-bold;
+  white-space: nowrap;
 
   .editable-text__wrapper--editing {
     width: calc(100% - #{$editable-text-wrapper-icon-width});
   }
 
   .editable-text__text {
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .editable-text__wrapper {
@@ -72,8 +73,8 @@ $folder-row-gap: 6px;
 }
 
 .folder-row__aside {
-  margin-left: auto;
   z-index: 1;
+  margin-left: auto;
 }
 
 .folder-row__cell {
@@ -96,8 +97,8 @@ $folder-row-gap: 6px;
   display: inline-flex;
 
   button {
-    height: $layout-spacing-base;
     width: $layout-spacing-base;
+    height: $layout-spacing-base;
     border-radius: $border-radius-base;
 
     .icon {
@@ -130,17 +131,17 @@ $folder-row-gap: 6px;
 }
 
 .folder-row__cell--meta {
-  font-size: $typo-size-slight;
-  color: $neutral-base;
-  white-space: nowrap;
-
   @include respond-to-max($screen-xs-min) {
     display: none;
   }
+
+  color: $neutral-base;
+  font-size: $typo-size-slight;
+  white-space: nowrap;
 }
 
 .folder-row__contents--highlight {
-  &:before {
+  &::before {
     background: $primary-blue;
   }
 }

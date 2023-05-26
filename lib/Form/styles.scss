@@ -12,7 +12,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   display: flex;
   flex-direction: column;
 
-  input:not([type=checkbox]):not([type=radio]),
+  input:not([type="checkbox"], [type="radio"]),
   textarea {
     width: 100%;
     margin: 0 0 $layout-spacing-base*0.5;
@@ -25,29 +25,30 @@ $form-checkbox-label-size: $typo-size-lead !default;
 }
 
 .form__choice-element-wrapper {
-  margin: $form-checkbox-label-size*0.5;
   display: flex;
   align-items: baseline;
+  margin: $form-checkbox-label-size*0.5;
 }
 
 .form-checkbox__label,
 .form-checkbox__label--button {
-  cursor: pointer;
+  display: block;
   margin-left: $form-checkbox-margin;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
-  display: block;
+  cursor: pointer;
+
   &.is-disabled {
     cursor: default;
   }
 }
 
 .form-checkbox__label--button {
-  cursor: default;
   padding: 0;
   border: none;
   background: transparent;
   text-align: left;
+  cursor: default;
 
   &:focus {
     outline: none;
@@ -73,8 +74,8 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
 .form-checkbox__subtitle {
   display: block;
-  font-size: $typo-size-small;
   color: $color-text-light;
+  font-size: $typo-size-small;
 }
 
 .form-checkbox__input,
@@ -84,34 +85,36 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
 .form__choice-element-wrapper .form-radiobutton__other {
   margin-left: $form-checkbox-margin;
+  padding: 0;
   border: none;
+  background-color: transparent;
   outline: none;
   font-size: $form-checkbox-label-size;
-  padding: 0;
-  background-color: transparent;
 }
 
 .form-radiobutton--invisible {
   visibility: hidden;
 }
+
 form .dropdown-gc .button--outline,
 .form__input {
+  padding: $layout-spacing-base*0.5;
   border: 1px solid lighten($neutral-base, 20%);
   border-radius: 4px;
-  font-size: $typo-size-base;
-  padding: $layout-spacing-base*0.5;
-  transition: $animation-time-micro border-color $animation-curve;
   color: $neutral-dark;
   font-size: $typo-size-base;
   line-height: $typo-line-height-base;
+  transition: $animation-time-micro border-color $animation-curve;
+
   &:hover {
     border-color: $neutral-base;
     color: $neutral-dark;
   }
+
   &:focus {
+    padding: $layout-spacing-base*0.5 - 1;
     border-width: 2px;
     border-color: $primary-blue;
-    padding: $layout-spacing-base*0.5 - 1;
     outline: none;
   }
 }
@@ -130,8 +133,8 @@ form .dropdown-gc .button--outline,
 .form__input--noborder,
 .form__input--noborder:focus {
   padding: $layout-spacing-base*0.5;
-  background: transparent;
   border: none;
+  background: transparent;
   font-size: inherit;
 }
 
@@ -146,6 +149,7 @@ form .dropdown-gc .button--outline,
 
 .form__input--padding-small {
   padding: $layout-spacing-base*0.25;
+
   &:focus {
     padding: $layout-spacing-base*0.25 - 1;
   }
@@ -161,9 +165,9 @@ form .dropdown-gc .button--outline,
 }
 
 .form__input.form__input--has-error {
-  border-color: $primary-red;
-  border-width: 2px;
   padding: $layout-spacing-base*0.5 - 1;
+  border-width: 2px;
+  border-color: $primary-red;
 }
 
 input.form__input--display-error {
@@ -171,18 +175,18 @@ input.form__input--display-error {
 }
 
 .form-input__error-message {
-  color: $primary-red;
-  font-size: $typo-size-slight;
   display: block;
   margin-top: $layout-spacing-base*0.25;
+  color: $primary-red;
+  font-size: $typo-size-slight;
 }
 
 .form__input,
 form textarea,
 form .dropdown-gc .button--outline {
   &:disabled {
+    background: white;
     opacity: 0.5;
     cursor: not-allowed;
-    background: white;
   }
 }

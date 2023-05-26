@@ -7,7 +7,7 @@
       $selector: '';
       $property: '';
 
-      @if ($sl == '') {
+      @if  $sl == '' {
         $selector: '.h-#{$l}';
         $property: '#{$l}';
       } @else {

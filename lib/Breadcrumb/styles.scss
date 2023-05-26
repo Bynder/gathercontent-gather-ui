@@ -12,27 +12,30 @@ $breadcrumb-spacing: $layout-spacing-base !default;
    Styles
    ========================================================================== */
 .breadcrumb {
-  font-size: $breadcrumb-font-size;
-  font-weight: $breadcrumb-font-weight;
-  line-height: $breadcrumb-line-height;
   margin-bottom: $breadcrumb-spacing;
+  font-weight: $breadcrumb-font-weight;
+  font-size: $breadcrumb-font-size;
+  line-height: $breadcrumb-line-height;
 
   .dropdown-gc {
+    @include default-font-styles;
+
     color: $breadcrumb-active-color;
-    @include default-font-styles();
 
     .dropdown__action {
-      @include text-overflow-ellipsis();
-      text-decoration: none;
+      @include text-overflow-ellipsis;
+
       max-width: 250px;
+      text-decoration: none;
     }
   }
 
   .dropdown__trigger {
+    @include link-hover-underline;
+
     color: $breadcrumb-inactive-color;
-    font-size: $breadcrumb-font-size;
     font-weight: $breadcrumb-font-weight;
-    @include link-hover-underline();
+    font-size: $breadcrumb-font-size;
 
     &.is-active {
       text-decoration: underline;
@@ -52,30 +55,31 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 }
 
 .breadcrumb a {
-  @include link-hover-underline();
+  @include link-hover-underline;
+
   color: inherit;
 }
 
 .breadcrumb__item {
-  color: $breadcrumb-inactive-color;
-
   @include respond-to(small) {
     display: none;
   }
 
-  &:after {
+  color: $breadcrumb-inactive-color;
+
+  &::after {
     content: '/';
     margin: 0 $breadcrumb-spacing*0.25;
   }
 
   &:last-child {
-    color: $breadcrumb-active-color;
-
     @include respond-to(small) {
       display: block;
     }
 
-    &:after {
+    color: $breadcrumb-active-color;
+
+    &::after {
       content: '';
     }
   }

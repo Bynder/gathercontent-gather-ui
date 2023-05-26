@@ -1,9 +1,10 @@
 .popover {
-  font-family: $typo-stack-base;
-  box-shadow: $shadow-base;
   border-color: $neutral-light;
+  box-shadow: $shadow-base;
+  font-family: $typo-stack-base;
   animation: dropdownAnimation 750ms;
   animation-fill-mode: forwards;
+
   .arrow {
     visibility:hidden;
   }

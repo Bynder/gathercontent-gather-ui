@@ -8,9 +8,19 @@
 
 .col-field__body .ql-editor {
   @apply p-6;
+
+  @for $a from 1 through 6 {
+    @for $b from 1 through 6 {
+      h#{$a} + h#{$b} {
+        @apply mt-3;
+      }
+    }
+  }
+
   *:nth-child(1) {
     @apply mt-0;
   }
+
   h1:nth-child(1) {
     @apply -mt-1;
   }
@@ -25,12 +35,14 @@
   h6:nth-child(1) {
     margin-top: -.06rem;
   }
+
   p {
     @apply mt-3 mb-5;
   }
 
   ul, ol {
     @apply my-5;
+
     ul, ol {
       @apply my-0;
     }
@@ -42,6 +54,7 @@
 
   table {
     @apply w-full my-8 table-fixed;
+
     td {
       @apply w-full border border-solid border-neutral-20 p-1;
     }
@@ -82,15 +95,10 @@
   *:last-child {
     @apply mb-0;
   }
-  @for $a from 1 through 6 {
-    @for $b from 1 through 6 {
-      h#{$a} + h#{$b} {
-        @apply mt-3;
-      }
-    }
-  }
+
   &.ql-blank::before {
     @apply absolute inset-x-0 text-neutral-primary cursor-text text-lg leading-6 ml-6;
+
     content: attr(data-placeholder);
   }
 }

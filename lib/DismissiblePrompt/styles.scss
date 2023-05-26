@@ -1,14 +1,16 @@
 .dismissible-prompt {
-  background: white;
-  border: 1px solid $color-border-base;
-  padding: $layout-spacing-base*0.5;
-  border-radius: $border-radius-base;
-  box-shadow: $shadow-base;
   display: flex;
   align-items: flex-start;
+  padding: $layout-spacing-base*0.5;
+  border: 1px solid $color-border-base;
+  border-radius: $border-radius-base;
+  background: white;
+  box-shadow: $shadow-base;
+
   &__children {
     padding: $layout-spacing-base*0.25;
   }
+
   &__close {
     margin-left: auto;
   }

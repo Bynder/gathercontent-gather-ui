@@ -2,13 +2,15 @@
   width: 3px;
 
   &.left {
-    left: -2px;
     @apply bg-blue-primary;
+
+    left: -2px;
   }
 
   &.right {
-    right: -2px;
     @apply bg-blue-primary;
+
+    right: -2px;
   }
 
   &.whole {

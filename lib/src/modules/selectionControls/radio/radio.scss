@@ -1,12 +1,16 @@
 .gc-radio {
   @apply appearance-none w-4 h-4 rounded-full border border-solid border-neutral-80 cursor-pointer bg-white relative shadow-inner;
+
   &:hover {
     @apply border-blue-primary;
   }
+
   &:focus {
     @apply shadow-blue-focus-sm border-blue-primary;
-    &:before {
+
+    &::before {
       @apply absolute border border-solid border-white rounded-full;
+
       content: '';
       top: -2px;
       left: -2px;
@@ -18,20 +22,25 @@
 
 .gc-radio:checked {
   @apply border-2 border-blue-primary;
-  &:after {
+
+  &::after {
     @apply w-2 h-2 rounded-full bg-blue-primary absolute;
+
     content: '';
     top: 2px;
     left: 2px;
   }
+
   &:hover {
     @apply border-blue-60;
-    &:after {
+
+    &::after {
       @apply bg-blue-60;
     }
   }
+
   &:focus {
-    &:before {
+    &::before {
       top: -3px;
       left: -3px;
     }
@@ -40,14 +49,18 @@
 
 .gc-radio-error {
   @apply border-red-primary;
+
   &:checked {
     @apply border-red-primary;
-    &:after {
+
+    &::after {
       @apply bg-red-primary
     }
+
     &:hover {
       @apply border-red-60;
-      &:after {
+
+      &::after {
         @apply bg-red-60;
       }
     }
@@ -57,12 +70,15 @@
 .gc-radio-error:disabled,
 .gc-radio:disabled {
   @apply cursor-default bg-neutral-95;
+
   &:hover, &:focus {
     @apply border-neutral-80 shadow-inner;
   }
+
   &:checked {
     @apply border-neutral-80;
-    &:after {
+
+    &::after {
       @apply bg-neutral-primary;
     }
   }

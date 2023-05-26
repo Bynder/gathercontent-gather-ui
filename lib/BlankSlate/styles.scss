@@ -1,67 +1,80 @@
 .blank-slate {
   width: 100%;
   text-align: center;
+
   a {
-    text-decoration: none;
     height: 100%;
+    text-decoration: none;
+
     &:not(.button):hover {
       text-decoration: underline;
     }
   }
+
   &--fixed {
-    padding: 0;
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 0;
     transform: translate(-50%, -50%);
   }
+
   &__content {
-    padding: $layout-spacing-base * 0.5;
-    font-size: $typo-size-base;
-    color: $neutral-base;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  & p {
-    font-size: 16px;
+    padding: $layout-spacing-base * 0.5;
     color: $neutral-base;
-    margin-top: 8px;
+    font-size: $typo-size-base;
   }
+
+  & p {
+    margin-top: 8px;
+    color: $neutral-base;
+    font-size: 16px;
+  }
+
   &__heading {
-    font-size: 18px;
+    margin-bottom: 0;
     color: $neutral-dark;
     font-weight: 500;
-    margin-bottom: 0;
+    font-size: 18px;
   }
+
   &__svg {
     svg {
       width: 438px;
       height: 300px;
     }
   }
+
   &--arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     @include respond-to(small) {
       display: block;
     }
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .blank-slate__svg {
+      @include respond-to(medium) {
+        position: absolute;
+        left: $layout-spacing-base;
+      }
+
       svg {
         max-width: 170px;
         height: auto;
       }
-      @include respond-to(medium) {
-        left: $layout-spacing-base;
-        position: absolute;
-      }
     }
+
     .blank-slate__content {
       margin: 0 auto;
     }
   }
+
   &__emoji {
     font-size: 50px;
     line-height: 110%;

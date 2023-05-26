@@ -1,34 +1,34 @@
 /* ==========================================================================
    Neutral
    ========================================================================== */
-$neutral-dark: rgb(41, 51, 61);
-$neutral-base: rgb(133, 153, 173);
-$neutral-light: rgb(224, 229, 234);
-$neutral-lightest: rgb(249, 250, 251);
+$neutral-dark: rgb(41 51 61);
+$neutral-base: rgb(133 153 173);
+$neutral-light: rgb(224 229 234);
+$neutral-lightest: rgb(249 250 251);
 
 /* ==========================================================================
    Primary
    ========================================================================== */
-$primary-blue: rgb(0, 110, 255);
-$primary-red: rgb(235, 85, 71);
+$primary-blue: rgb(0 110 255);
+$primary-red: rgb(235 85 71);
 $primary-green: #39C639;
-$primary-yellow: rgb(245, 214, 61);
-$primary-purple: rgb(139, 71, 235);
-$primary-brown: rgb(138, 108, 66);
+$primary-yellow: rgb(245 214 61);
+$primary-purple: rgb(139 71 235);
+$primary-brown: rgb(138 108 66);
 
 /* ==========================================================================
    Tints
    ========================================================================== */
-$neutral-base-darker: rgb(103, 128, 153);
-$neutral-base-lighter: rgb(247, 250, 253);
-$neutral-base-lightest: rgb(253, 253, 253);
-$primary-blue-darkest: rgb(38, 46, 51);
-$primary-yellow-lighter: rgba(249, 223, 110, 0.7);
-$primary-blue-lighter: rgb(26, 125, 255);
-$primary-blue-darker: rgb(54, 124, 209);
-$primary-red-lighter: rgb(255, 117, 110);
-$primary-red-darker: rgb(227, 82, 75);
-$primary-blue-lightest: rgba(235, 245, 253, 1);
+$neutral-base-darker: rgb(103 128 153);
+$neutral-base-lighter: rgb(247 250 253);
+$neutral-base-lightest: rgb(253 253 253);
+$primary-blue-darkest: rgb(38 46 51);
+$primary-yellow-lighter: rgb(249 223 110 / 70%);
+$primary-blue-lighter: rgb(26 125 255);
+$primary-blue-darker: rgb(54 124 209);
+$primary-red-lighter: rgb(255 117 110);
+$primary-red-darker: rgb(227 82 75);
+$primary-blue-lightest: rgb(235 245 253 / 100%);
 
 /* ==========================================================================
    Brand
@@ -50,7 +50,7 @@ $color-text-light: $neutral-base;
    Links
    ========================================================================== */
 $color-link-base: $primary-blue;
-$color-link-hover: rgb(61, 125, 204);
+$color-link-hover: rgb(61 125 204);
 $color-link-quiet: #C8C8C8;
 
 /* ==========================================================================

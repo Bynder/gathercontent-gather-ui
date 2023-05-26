@@ -1,5 +1,6 @@
 .button-avatar {
   @apply rounded-full p-0 border-transparent relative;
+
   width: 34px;
   height: 34px;
 
@@ -7,8 +8,9 @@
   &:active {
     @apply border-blue-primary shadow-blue-primary-1px bg-blue-primary;
 
-    &:before {
+    &::before {
       @apply top-0 left-0 absolute opacity-30 bg-blue-primary h-full w-full rounded-full;
+
       content: ' '
     }
   }

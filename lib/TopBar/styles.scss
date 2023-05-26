@@ -14,19 +14,20 @@ $top-bar-notification-height: 42px;
    Styles
    ========================================================================== */
 .top-bar {
-  height: $top-bar-height;
-  padding: 0;
-  z-index: $top-bar-zindex;
-  position: relative;
   @include respond-to($top-bar-main-breakpoint) {
     height: $top-bar-height-medium;
   }
 
+  position: relative;
+  z-index: $top-bar-zindex;
+  height: $top-bar-height;
+  padding: 0;
+
   .top-bar__wrapper {
-    background: #fff;
-    border-bottom: 1px solid $color-border-base;
-    padding: $layout-spacing-base * 0.5 math.div($layout-spacing-base, 1.5);
     width: 100%;
+    padding: $layout-spacing-base * 0.5 math.div($layout-spacing-base, 1.5);
+    border-bottom: 1px solid $color-border-base;
+    background: #fff;
   }
 
   .top-bar__wrapper--fixed {
@@ -37,12 +38,13 @@ $top-bar-notification-height: 42px;
   }
 
   .top-bar__inner {
-    min-height: 53px;
-    position: relative;
     @include respond-to($top-bar-main-breakpoint) {
       display: flex;
       align-items: center;
     }
+
+    position: relative;
+    min-height: 53px;
   }
 
   .top-bar__content {
@@ -57,35 +59,37 @@ $top-bar-notification-height: 42px;
       top: 0;
       bottom: 0;
     }
+
     .top-bar__cell:last-child {
       flex-grow: 1;
     }
   }
 
   .top-bar__content--center {
-    justify-content: center;
-
     @include respond-to($top-bar-main-breakpoint) {
       margin: 0 auto;
     }
+
+    justify-content: center;
   }
 
   .top-bar__content--right {
-    justify-content: flex-end;
     @include respond-to($top-bar-main-breakpoint) {
-      padding-right: $layout-spacing-base;
       position: absolute;
       top: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       order: 3;
+      padding-right: $layout-spacing-base;
     }
+
+    justify-content: flex-end;
   }
 
   .top-bar__cell {
-    padding: 0 $layout-spacing-base 0 0;
     display: flex;
     align-items: center;
+    padding: 0 $layout-spacing-base 0 0;
 
     img {
       display: block;
@@ -102,8 +106,8 @@ $top-bar-notification-height: 42px;
   }
 
   .top-bar__action {
-    fill: $neutral-dark;
     padding: math.div($layout-spacing-base, 2.5);
+    fill: $neutral-dark;
   }
 
   .item-settings .button {
@@ -121,52 +125,56 @@ $top-bar-notification-height: 42px;
   }
 
   .top-bar__drop-down {
-    background: #fff;
-    overflow: scroll;
-    position: absolute;
-    height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin});
-    top: $top-bar-height - ($layout-spacing-base * 0.5);
-    bottom: auto;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    padding-bottom: $layout-spacing-base;
     @include respond-to($top-bar-main-breakpoint) {
-      max-width: 400px;
       top: $top-bar-height-medium - ($layout-spacing-base * 0.5);
+      max-width: 400px;
       height: calc(
         100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin}
       );
     }
+
+    position: absolute;
+    inset: $top-bar-height - ($layout-spacing-base * 0.5) 0 auto 0;
+    z-index: 999;
+    overflow: scroll;
+    height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin});
+    padding-bottom: $layout-spacing-base;
+    background: #fff;
   }
 
   &.top-bar--has-notification {
     .top-bar__drop-down {
-      height: calc(
-        100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
-      );
       @include respond-to($top-bar-main-breakpoint) {
         height: calc(
           100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
         );
       }
+
+      height: calc(
+        100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
+      );
     }
   }
+
   &--dark {
     .top-bar__wrapper {
-      background: $neutral-dark;
       border-color: $neutral-dark;
+      background: $neutral-dark;
       color: white;
     }
+
     .top-bar__action {
       fill: white;
     }
+
     .top-bar__cell--bordered {
       border-color: $neutral-base;
     }
+
     .avatar__initials {
       color: black;
     }
+
     .dropdown__action {
       color: $neutral-dark;
     }
@@ -177,6 +185,7 @@ $top-bar-notification-height: 42px;
   .top-bar__wrapper {
     @apply bg-neutral-98 border-neutral-90 text-neutral-20;
   }
+
   .top-bar__cell--bordered {
     @apply border-neutral-90;
   }
@@ -185,6 +194,7 @@ $top-bar-notification-height: 42px;
 .top-bar__content--right.top-bar__content--collapse {
   padding-right: 0;
 }
+
 .top-bar__content--left.top-bar__content--collapse {
   padding-left: 0;
 }
@@ -204,21 +214,23 @@ $top-bar-notification-height: 42px;
 
 .top-bar--has-notification,
 .top-bar--has-notification .top-bar__wrapper {
-  height: $top-bar-height + $top-bar-notification-height;
   @include respond-to($top-bar-main-breakpoint) {
     height: $top-bar-height-medium + $top-bar-notification-height;
   }
+
+  height: $top-bar-height + $top-bar-notification-height;
 }
 
 .top-bar--has-notification {
   .notification {
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-  }
-  .top-bar__inner {
     width: 100%;
+  }
+
+  .top-bar__inner {
     top: $top-bar-notification-height;
+    width: 100%;
   }
 }

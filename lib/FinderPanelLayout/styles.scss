@@ -6,14 +6,16 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
 .finder-panel-layout {
   display: flex;
   flex: 2;
+
   &__left {
-    background: $finder-panel-left-bg;
-    width: $finder-panel-left-width;
-    flex-shrink: 0;
     position: fixed;
+    flex-shrink: 0;
     overflow: auto;
+    width: $finder-panel-left-width;
     height: $finder-panel-left-height;
+    background: $finder-panel-left-bg;
   }
+
   &__right {
     width: 100%;
     min-width: 0;
@@ -25,13 +27,14 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
 .finder-panel-layout__left-head {
   padding: $layout-spacing-base $layout-spacing-base 0;
 }
+
 .finder-panel-layout__left-content {
   padding: $layout-spacing-base;
 }
 
 .finder-panel-layout__left-head--fixed {
-  background: $finder-panel-right-bg;
   position: fixed;
-  width: calc(100% - #{$finder-panel-left-width});
   z-index: 50;
+  width: calc(100% - #{$finder-panel-left-width});
+  background: $finder-panel-right-bg;
 }

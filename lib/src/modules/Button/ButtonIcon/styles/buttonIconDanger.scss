@@ -5,9 +5,11 @@
   &:hover {
     @apply bg-red-95 border-red-95;
   }
+
   &:focus {
     @apply border-red-primary shadow-button-icon-danger-focus;
   }
+
   &:active,
   &-active {
     @apply bg-red-90 border-red-90 shadow-none;

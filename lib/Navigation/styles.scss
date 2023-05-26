@@ -1,7 +1,7 @@
 .navigation {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .navigation__item {
@@ -11,11 +11,12 @@
 
 .navigation__item > * {
   display: block;
-  font-size: $typo-size-base;
-  color: $neutral-dark;
-  text-decoration: none;
   padding: $layout-spacing-base * 0.5 0;
+  color: $neutral-dark;
   font-weight: $typo-weight-roman;
+  font-size: $typo-size-base;
+  text-decoration: none;
+
   [class*='--dark'] & {
     color: $neutral-light;
   }
@@ -25,8 +26,9 @@
   }
 
   &:hover {
-    text-decoration: none;
     color: $primary-blue;
+    text-decoration: none;
+
     [class*='--dark'] & {
       color: white;
     }
@@ -35,6 +37,7 @@
 
 .navigation__item--active > * {
   color: $primary-blue;
+
   [class*='--dark'] & {
     color: white;
   }
@@ -49,14 +52,15 @@
 }
 
 .navigation--tabs .navigation__item {
-  bottom: -1px;
   position: relative;
+  bottom: -1px;
   margin-right: 0;
 }
 
 .navigation--tabs .navigation__item > * {
   padding: $layout-spacing-base;
   color: $neutral-dark;
+
   &:hover {
     color: $primary-blue;
     text-decoration: none;

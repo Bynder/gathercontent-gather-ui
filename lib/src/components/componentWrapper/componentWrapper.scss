@@ -1,13 +1,15 @@
 .component-header {
   @apply rounded-t-xlarge border border-b-0 border-solid border-neutral-90 relative;
+
   &-selected {
     @include before-border(
-      2px 2px 0px 2px,
+      2px 2px 0 2px,
       solid,
       theme('colors.blue.primary'),
-      theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0px 0px
+      theme('borderRadius.xlarge') theme('borderRadius.xlarge') 0 0
     );
   }
+
   &-hovered {
     @apply border-blue-primary;
   }
@@ -39,6 +41,7 @@
 
 .component-instructions {
   @apply rounded-none border-0 border-b border-solid border-neutral-90 text-sm p-4 align-top;
+
   &:focus {
     @apply border-0 border-b border-solid border-neutral-90;
   }
@@ -46,8 +49,9 @@
 
 .component-body {
   @apply border-b-0 border-t-0;
+
   &-selected {
-    @include before-border(0px 2px, solid, theme('colors.blue.primary'), 0);
+    @include before-border(0 2px, solid, theme('colors.blue.primary'), 0);
   }
 }
 
@@ -62,6 +66,7 @@
   &-dragged-over {
     @apply bg-neutral-90;
   }
+
   &-hovered {
     @apply border-blue-primary;
   }
@@ -72,10 +77,10 @@
 
   &-selected {
     @include before-border(
-      0px 2px 2px 2px,
+      0 2px 2px 2px,
       solid,
       theme('colors.blue.primary'),
-      0px 0px theme('borderRadius.xlarge') theme('borderRadius.xlarge')
+      0 0 theme('borderRadius.xlarge') theme('borderRadius.xlarge')
     );
   }
 }

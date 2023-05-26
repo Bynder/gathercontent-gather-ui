@@ -7,17 +7,17 @@
    ========================================================================== */
 
 .image-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 4px;
   background: $neutral-lightest;
   transition: all $animation-time-micro;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  overflow: hidden;
 
   img {
-    transition: opacity $animation-time-micro;
     opacity: 0;
+    transition: opacity $animation-time-micro;
   }
 
   .icon {

@@ -13,12 +13,12 @@
 }
 
 .dropdown-search__input {
+  padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
   border: 1px solid $color-border-base;
+  border-radius: 4px;
+  outline: none;
   font-size: $typo-size-slight;
   line-height: $typo-line-height-base;
-  padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
-  outline: none;
-  border-radius: 4px;
 
   &:focus {
       border-color: $neutral-base;

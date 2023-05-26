@@ -8,33 +8,29 @@ $color-btn-primary--text: white !default;
 $color-btn-primary--hover: $primary-blue !default;
 $color-btn-primary--disabled: $neutral-light !default;
 $color-btn-primary--disabled-text: $neutral-base !default;
-
 $color-btn-warning--bg: #da4f49 !default;
 $color-btn-warning--hover: #bd362f !default;
 $color-btn-warning--text: white !default;
-
 $color-btn-default-light--bg: #eaeaea !default;
 $color-btn-default-light--text: #444 !default;
 $color-btn-default-light--hover: #d3d3d3 !default;
 $color-btn-default-dark--bg: #777 !default;
 $color-btn-default-dark--text: white !default;
 $color-btn-default-dark--hover: #5e5e5e !default;
-
 $color-btn-contained--bg: white !default;
-
 $btn-border-radius: 3px !default;
 
 /* ==========================================================================
    Styles
    ========================================================================== */
 .button {
+  display: inline-block;
+  padding: ($layout-spacing-base * 0.5 + 1px) ($layout-spacing-base - 2px);
   border: none;
   border-radius: $btn-border-radius;
-  display: inline-block;
   font-weight: $typo-weight-roman;
-  padding: ($layout-spacing-base * 0.5 + 1px) ($layout-spacing-base - 2px);
-  transition: all $animation-time-micro ease, padding 0s;
   text-decoration: none;
+  transition: all $animation-time-micro ease, padding 0s;
 
   &:hover {
     text-decoration: none;
@@ -51,36 +47,37 @@ $btn-border-radius: 3px !default;
 }
 
 .button__helper {
-  border-bottom: 1px dotted;
   margin-left: $layout-spacing-base * 0.25;
+  border-bottom: 1px dotted;
 }
 
 // a.button--primary to overwrite bootstrap a:not(.button-base):hover
 .button--primary,
 a.button--primary {
+  border-radius: 6px;
   background: $primary-blue;
   color: $color-btn-primary--text;
-  border-radius: 6px;
 
   &:hover,
   &:focus {
     background: $primary-blue-lighter;
     color: $color-btn-primary--text;
-    box-shadow: 0 3px 4px -2px rgba(61, 138, 235, 0.5),
+    box-shadow: 0 3px 4px -2px rgb(61 138 235 / 50%),
       inset 0 -2px 0 0 $primary-blue;
   }
 
   &:active {
-    transition: none;
     background: $primary-blue-darker;
     box-shadow: inset 0 2px 0 0 #2662ab;
-    -webkit-box-shadow: inset 0 2px 0 0 #2662ab;
-    -moz-box-shadow: inset 0 2px 0 0 #2662ab;
+    box-shadow: inset 0 2px 0 0 #2662ab;
+    box-shadow: inset 0 2px 0 0 #2662ab;
+    transition: none;
   }
 
   &:focus {
     color: $color-btn-primary--text;
   }
+
   .icon path {
     fill: $color-btn-primary--text;
   }
@@ -129,6 +126,7 @@ a.button--primary {
 
 .button--link-white {
   color: white;
+
   &:hover {
     color: white;
     text-decoration: underline;
@@ -144,27 +142,28 @@ a.button--primary {
 a.button--danger {
   background: $primary-red;
   color: $color-btn-warning--text;
+
   .icon path {
     fill: $color-btn-warning--text;
   }
 
   &:hover {
-    color: $color-btn-warning--text;
     background: $primary-red-lighter;
-    box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+    color: $color-btn-warning--text;
+    box-shadow: 0 3px 4px -2px rgb(252 92 84 / 50%),
       inset 0 -2px 0 0 $primary-red;
-    -webkit-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+    box-shadow: 0 3px 4px -2px rgb(252 92 84 / 50%),
       inset 0 -2px 0 0 $primary-red;
-    -moz-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+    box-shadow: 0 3px 4px -2px rgb(252 92 84 / 50%),
       inset 0 -2px 0 0 $primary-red;
   }
 
   &:active {
-    transition: none;
     background: $primary-red-darker;
     box-shadow: inset 0 2px 0 0 #bd453e;
-    -webkit-box-shadow: inset 0 2px 0 0 #bd453e;
-    -moz-box-shadow: inset 0 2px 0 0 #bd453e;
+    box-shadow: inset 0 2px 0 0 #bd453e;
+    box-shadow: inset 0 2px 0 0 #bd453e;
+    transition: none;
   }
 
   &:focus {
@@ -195,6 +194,7 @@ a.button--danger {
 .button--purple-text {
   background: white;
   color: $primary-purple;
+
   .icon path {
     fill: $primary-purple;
   }
@@ -202,15 +202,16 @@ a.button--danger {
 
 .button--slim {
   padding: $layout-spacing-base * 0.1 $layout-spacing-base * 0.5;
+
   .icon {
-    margin-left: math.div($layout-spacing-base, 3);
     vertical-align: text-bottom;
+    margin-left: math.div($layout-spacing-base, 3);
   }
 }
 
 .button--clear {
-  background: none;
   padding: 0;
+  background: none;
 
   &:hover {
     background: none;
@@ -226,20 +227,21 @@ a.button--danger {
 }
 
 .button--size-sm {
-  font-size: $typo-size-slight;
   padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
+  font-size: $typo-size-slight;
 }
 
 .button--icon-only,
 .button--icon-only-padding {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  line-height: 0;
+  transition: transform $animation-time-micro $animation-curve;
+
   &:not(.button--danger) {
     background: none;
   }
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  transition: transform $animation-time-micro $animation-curve;
-  line-height: 0;
 
   &:focus {
     outline: none;
@@ -263,23 +265,25 @@ a.button--danger {
 }
 
 .button--white {
-  background-color: white;
-  border: 1px solid $neutral-light;
   width: 100%;
-  text-align: left;
+  border: 1px solid $neutral-light;
+  background-color: white;
   box-shadow: $shadow-shallow;
+  text-align: left;
+
   &:hover {
     background-color: $neutral-lightest;
   }
+
   &:focus {
     outline: none;
   }
 }
 
 .button--contained {
+  padding: $layout-spacing-base * 0.5;
   border: 1px solid $color-border-base;
   border-radius: 100%;
-  padding: $layout-spacing-base * 0.5;
   background-color: $color-btn-contained--bg;
   box-shadow: $shadow-shallow;
 }
@@ -292,18 +296,18 @@ a.button--danger {
 
 .button--outline {
   border: 1px solid $color-border-base;
-  outline: none;
   background: none;
+  outline: none;
 
   &:focus {
-    background: $neutral-lightest;
     border-color: $neutral-base;
+    background: $neutral-lightest;
   }
 
   &:hover,
   &.is-active {
-    background: none;
     border-color: $primary-blue;
+    background: none;
     color: $primary-blue;
 
     path {
@@ -316,14 +320,17 @@ a.button--danger {
   border: 2px solid $primary-blue;
   background: none;
   color: $primary-blue;
+
   &:hover {
-    color: lighten($primary-blue, 20%);
     border-color: lighten($primary-blue, 10%);
+    color: lighten($primary-blue, 20%);
   }
+
   &:active {
-    color: $primary-blue-darker;
     border-color: $primary-blue-darker;
+    color: $primary-blue-darker;
   }
+
   &:focus {
     outline: lighten($primary-blue, 20%) $layout-spacing-base * 0.25 auto;
     outline-offset: -2px;
@@ -340,34 +347,42 @@ a.button--danger {
 
 .button__wrapper {
   display: flex;
+
   .button {
-    margin: 0;
     vertical-align: middle;
+    margin: 0;
   }
+
   .button__wrapper--icon {
     height: 100%;
   }
+
   &--size-sm {
     .button__wrapper--icon {
       height: $layout-spacing-base * 0.5 + $layout-spacing-base;
     }
+
     .button {
-      font-size: $typo-size-slight;
       padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
+      font-size: $typo-size-slight;
     }
   }
 }
+
 .button__wrapper--button {
-  border-radius: $btn-border-radius 0 0 $btn-border-radius;
   border-right: $primary-blue-darker 1px solid;
+  border-radius: $btn-border-radius 0 0 $btn-border-radius;
+
   &:disabled {
     border-color: $color-btn-primary--disabled-text;
   }
 }
+
 .button__wrapper--icon {
   padding: $layout-spacing-base * 0.5 + 3;
-  line-height: 0;
   border-radius: 0 $btn-border-radius $btn-border-radius 0;
+  line-height: 0;
+
   &:disabled {
   }
 }
@@ -384,6 +399,7 @@ a.button--danger {
   &:hover {
     text-decoration: none;
   }
+
   &.button--link,
   &.button--link-default,
   &.button--link-underline,
@@ -391,15 +407,17 @@ a.button--danger {
   &.button--icon-only {
     background: transparent;
   }
+
   &.button--link,
   &.button--link-danger {
-    cursor: not-allowed;
     color: $color-btn-primary--disabled;
+    cursor: not-allowed;
 
     &:hover {
       color: $color-btn-primary--disabled;
     }
   }
+
   &.button--icon-only {
     opacity: 0.5;
   }
@@ -412,8 +430,8 @@ a.button--danger {
 .button--input-appendage {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  white-space: nowrap;
   background-color: $primary-blue-lighter;
+  white-space: nowrap;
 }
 
 .button--padding-small {

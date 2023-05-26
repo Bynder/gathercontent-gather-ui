@@ -9,15 +9,15 @@
 }
 
 .modal-body {
-    padding: $modal-padding;
     overflow: hidden;
-    background-color: white;
+    padding: $modal-padding;
     border-radius: 6px;
+    background-color: white;
     background-clip: padding-box;
 
     h4 {
-        font-size: $modal-heading-font-size;
         margin-bottom: 0;
+        font-size: $modal-heading-font-size;
     }
 
   &.has-columns {
@@ -31,30 +31,30 @@
 
   .close {
     position: absolute;
-    right: $layout-spacing-base;
     top: $layout-spacing-base;
+    right: $layout-spacing-base;
   }
 }
 
 .modal-header-inner {
-  padding: $modal-padding $modal-padding*2 $modal-padding $modal-padding;
   display: inline-flex;
-  align-items: baseline;
   flex-direction: column;
+  align-items: baseline;
+  padding: $modal-padding $modal-padding*2 $modal-padding $modal-padding;
 }
 
 .modal-content {
-    margin: 0;
     position: relative;
+    margin: 0;
     border: 0;
 }
 
 .modal-footer {
   display: flex;
-  align-items: baseline;
   justify-content: flex-end;
-  background: white;
+  align-items: baseline;
   border-radius: 0 0 6px 6px;
+  background: white;
 }
 
 .modal-dialog {
@@ -62,14 +62,14 @@
 }
 
 .modal-title {
-    font-size: $modal-heading-font-size;
     font-weight: $typo-weight-semi-bold;
+    font-size: $modal-heading-font-size;
 
     img {
       position: relative;
       top: 2px;
-      margin: 0 0 0 $layout-spacing-base*0.5;
       width: $typo-size-large;
+      margin: 0 0 0 $layout-spacing-base*0.5;
     }
 }
 

@@ -6,7 +6,6 @@
 $mention-form-padding: $layout-spacing-base*0.5;
 $mention-suggestions-min-width: 250px;
 $mention-suggestions-max-height: 500px;
-
 $mention-color: #f5effc;
 
 /* ==========================================================================
@@ -16,6 +15,7 @@ $mention-color: #f5effc;
   .mention-form__input-wrapper {
     padding: 0;
   }
+
   .mention-form__input,
   .mention-form__input__input,
   .mention-form__input:focus {
@@ -34,19 +34,22 @@ $mention-color: #f5effc;
 }
 
 .mention-form__input {
+  width: 100%;
+  padding: $mention-form-padding 0;
   border: 1px solid $color-border-base;
   border-radius: 5px;
-  padding: $mention-form-padding 0;
-  width: 100%;
-  font-size: $typo-size-slight;
   color: $neutral-dark;
+  font-size: $typo-size-slight;
+
   &__input {
-    border: none;
     padding: $mention-form-padding;
+    border: none;
+
     &:focus {
       outline: none;
     }
   }
+
   &:focus {
     outline-color: $primary-blue;
   }
@@ -54,10 +57,12 @@ $mention-color: #f5effc;
 
 .mention-form__body {
   margin: 0 0 $mention-form-padding;
+
   .mention-form__avatar {
     position: absolute;
   }
 }
+
 .mention-form__input-wrapper {
   width: 100%;
   padding-left: $layout-spacing-base * 2;
@@ -88,6 +93,7 @@ $mention-color: #f5effc;
 
 .mention-form__actions {
   overflow: hidden;
+
   .mention-form__actions--submit {
     float: right;
   }
@@ -99,22 +105,24 @@ $mention-color: #f5effc;
 
 .mention-form__input__suggestions {
   &__list {
-    min-width: $mention-suggestions-min-width;
     position: absolute;
     top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
-    max-height: $mention-suggestions-max-height;
     overflow-y: scroll;
+    min-width: $mention-suggestions-min-width;
+    max-height: $mention-suggestions-max-height;
+    border: 1px solid $color-border-base;
     border-radius: $conversation-border-radius;
     background-color: white;
-    border: 1px solid $color-border-base;
-    &:before {
-      color: $neutral-base;
+
+    &::before {
       content: 'Mention...';
+      display: block;
       width: 100%;
       padding:  math.div($layout-spacing-base, 3);
-      display: block;
+      color: $neutral-base;
     }
   }
+
   &__item {
     &--focused,
     &:focus,
@@ -122,16 +130,17 @@ $mention-color: #f5effc;
       background: $neutral-lightest;
     }
   }
+
   .avatar__wrapper {
-    cursor: pointer;
     padding: math.div($layout-spacing-base, 3);
     border-top: 1px solid $color-border-base;
+    cursor: pointer;
   }
 
   .avatar__name {
     color: $neutral-dark;
-    font-size: $typo-size-slight;
     font-weight: $typo-weight-semi-bold;
+    font-size: $typo-size-slight;
   }
 
   .avatar__email {

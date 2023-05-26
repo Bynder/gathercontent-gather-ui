@@ -89,6 +89,7 @@
 .card-disabled .card-content {
   @supports (filter: blur()) {
     @apply transition-all duration-200;
+
     filter: blur(3px);
   }
 }

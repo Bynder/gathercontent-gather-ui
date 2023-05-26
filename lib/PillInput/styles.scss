@@ -4,14 +4,14 @@
 }
 
 .pill-input--focused {
+    padding: $layout-spacing-base*0.5 - 1;
     border-width: 2px;
     border-color: $primary-blue;
-    padding: $layout-spacing-base*0.5 - 1;
     outline: none;
 }
 
 .pill-input__input {
-  border: none;
   flex: 1;
   min-width: 150px;
+  border: none;
 }

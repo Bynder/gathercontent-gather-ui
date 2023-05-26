@@ -1,5 +1,6 @@
 .menu-item {
   list-style: none;
+
   a {
     cursor: pointer;
   }
@@ -11,8 +12,10 @@
 
 .dropdown__content .menu-item > a {
   @apply text-neutral-20 text-base py-3 px-4 block;
+
   text-decoration: none;
   white-space: nowrap;
+
   &:hover, &:focus {
     @apply text-neutral-20 bg-neutral-98;
   }
@@ -24,6 +27,7 @@
 
 .dropdown__content .menu-item.divider {
   @apply px-1 bg-neutral-90;
-  height: 1px;
+
   overflow: hidden;
+  height: 1px;
 }

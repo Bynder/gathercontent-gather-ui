@@ -9,15 +9,15 @@ h3 {
 }
 
 blockquote {
-  border-left: 2px solid $neutral-base;
   margin: $layout-spacing-base+$layout-spacing-base*0.5 0;
   padding-left: $layout-spacing-base+$layout-spacing-base*0.25;
+  border-left: 2px solid $neutral-base;
   font-style: italic;
 }
 
 mark {
-  background-color: transparent;
   border-bottom: 2px solid $primary-yellow;
+  background-color: transparent;
 
   &.active,
   &.hover,

@@ -1,11 +1,13 @@
 .option-menu-item {
   @apply text-neutral-20 text-base p-2 w-full flex items-center;
-  text-align: left;
-  background: transparent;
+
   border:none;
+  background: transparent;
+  text-align: left;
 
   &:hover {
     @apply bg-neutral-95;
+
     .option-menu-item-content {
       @include gradient-overflow(theme('colors.neutral.95'));
     }
@@ -13,19 +15,22 @@
 
   &-active, &:active {
     @apply bg-blue-95;
+
     .option-menu-item-content {
       @include gradient-overflow(theme('colors.blue.95'));
     }
   }
 }
+
 .option-menu-item-content {
   @include gradient-overflow(white);
   @apply pr-5;
+
   flex-shrink: 1;
-  white-space: nowrap;
-  min-width: 0;
   overflow: hidden;
   width: 100%;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .option-menu-item-active {
@@ -47,6 +52,7 @@
 .option-menu-item-meta,
 .option-menu-item-tick {
   @apply ml-auto;
+
   flex-shrink: 0;
 }
 

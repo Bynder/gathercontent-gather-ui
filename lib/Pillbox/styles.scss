@@ -4,7 +4,7 @@
 @use "sass:math";
 
 $pillbox-padding: $typo-size-lead*0.25 math.div($typo-size-lead, 3) !default;
-$pillbox-background: rgb(153, 166, 182) !default;
+$pillbox-background: rgb(153 166 182) !default;
 $pillbox-color: #fff !default;
 $pillbox-border-radius: 1rem !default;
 
@@ -12,12 +12,12 @@ $pillbox-border-radius: 1rem !default;
    Styles
    ========================================================================== */
 .pillbox {
+  display: inline-block;
+  margin-bottom: math.div($typo-size-lead, 3);
+  padding: $avatar-pillbox-padding;
+  border-radius: $pillbox-border-radius;
   background-color: $pillbox-background;
   color: $pillbox-color;
-  display: inline-block;
-  text-transform: uppercase;
-  border-radius: $pillbox-border-radius;
-  padding: $avatar-pillbox-padding;
   font-size: $typo-size-micro;
-  margin-bottom: math.div($typo-size-lead, 3);
+  text-transform: uppercase;
 }

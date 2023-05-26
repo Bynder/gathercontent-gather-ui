@@ -57,15 +57,18 @@
 .mentions-input__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
-    top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
-    margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
-    max-height: 200px;
 
-    &:before {
-      content: 'Mention...';
+    top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
+    max-height: 200px;
+    margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
+
+    &::before {
       @apply w-full block p-2 text-neutral-primary;
+
+      content: 'Mention...';
     }
   }
+
   &__item {
     &--focused,
     &:focus,
@@ -73,6 +76,7 @@
       @apply bg-neutral-95;
     }
   }
+
   .avatar__wrapper {
     @apply cursor-pointer p-2 border-t border-b-0 border-l-0 border-r-0 border-solid border-neutral-90;
   }
