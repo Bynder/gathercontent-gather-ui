@@ -1,5 +1,4 @@
-/**
- * Generate a helper
+/*  *  * Generate a helper
  */
 @mixin generate-helper($properties, $subProperties) {
   @each $l in $properties {

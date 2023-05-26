@@ -249,7 +249,7 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
       display: block;
       margin-left: auto;
 
-      button[class*='button--link'] {
+      button[class * ='button--link'] {
         padding-top: 0;
         padding-bottom: 0;
       }

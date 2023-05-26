@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 
-$section-feature-vertical-spacing: $layout-spacing-base*2;
+$section-feature-vertical-spacing: $layout-spacing-base * 2;
 
 /* ==========================================================================
    Styles
@@ -29,7 +29,7 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
     height: 35px;
     transform: translateY(-.1em);
   }
-  
+
   a:hover {
     text-decoration: none;
   }
@@ -46,7 +46,7 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
    ========================================================================== */
 
 .section-feature--extend-top {
-  margin-top: $section-feature-vertical-spacing*1.5;
+  margin-top: $section-feature-vertical-spacing * 1.5;
 }
 
 .section-feature--enhance-intro {

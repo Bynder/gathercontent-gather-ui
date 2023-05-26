@@ -1,6 +1,6 @@
 .expanding-textarea {
   width: 100%;
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   border: 1px solid $color-border-base;
   border-radius: 5px;
   outline: none;
@@ -18,7 +18,7 @@
 
   &__error-message {
     display: block;
-    padding-left: $layout-spacing-base*0.25;
+    padding-left: $layout-spacing-base * 0.25;
     color: $primary-red;
     font-size: $typo-size-slight;
   }

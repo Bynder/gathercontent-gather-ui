@@ -129,7 +129,7 @@ $top-bar-notification-height: 42px;
       top: $top-bar-height-medium - ($layout-spacing-base * 0.5);
       max-width: 400px;
       height: calc(
-        100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin}
+        100vh - #{$top-bar-height-medium + $top-bar-dropdown-bottom-margin}
       );
     }
 
@@ -137,7 +137,7 @@ $top-bar-notification-height: 42px;
     inset: $top-bar-height - ($layout-spacing-base * 0.5) 0 auto 0;
     z-index: 999;
     overflow: scroll;
-    height: calc(100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin});
+    height: calc(100vh - #{$top-bar-height + $top-bar-dropdown-bottom-margin});
     padding-bottom: $layout-spacing-base;
     background: #fff;
   }
@@ -146,12 +146,12 @@ $top-bar-notification-height: 42px;
     .top-bar__drop-down {
       @include respond-to($top-bar-main-breakpoint) {
         height: calc(
-          100vh - #{$top-bar-height-medium+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
+          100vh - #{$top-bar-height-medium + $top-bar-dropdown-bottom-margin + $top-bar-notification-height}
         );
       }
 
       height: calc(
-        100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
+        100vh - #{$top-bar-height + $top-bar-dropdown-bottom-margin + $top-bar-notification-height}
       );
     }
   }

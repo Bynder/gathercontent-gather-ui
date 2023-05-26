@@ -3,7 +3,7 @@
    ========================================================================== */
 @use "sass:math";
 
-$mention-form-padding: $layout-spacing-base*0.5;
+$mention-form-padding: $layout-spacing-base * 0.5;
 $mention-suggestions-min-width: 250px;
 $mention-suggestions-max-height: 500px;
 $mention-color: #f5effc;
@@ -19,7 +19,7 @@ $mention-color: #f5effc;
   .mention-form__input,
   .mention-form__input__input,
   .mention-form__input:focus {
-    padding: 0 $layout-spacing-base*0.5 0 0;
+    padding: 0 $layout-spacing-base * 0.5 0 0;
     border: 0;
   }
 
@@ -152,7 +152,7 @@ $mention-color: #f5effc;
 
 .mention-form__search {
   float: left;
-  margin-top: $layout-spacing-base*0.25;
+  margin-top: $layout-spacing-base * 0.25;
 }
 
 .mention-form.hide-author {

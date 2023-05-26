@@ -1,9 +1,7 @@
-/**
- * Create a pseudo-element arrow (triangle)
- *
- * @param  {String} $color: black         Color
+/*  *  * Create a pseudo-element arrow (triangle)
+ *  * @param  {String} $color: black         Color
  */
-@mixin arrowPointer($color: black) {
+@mixin arrow-pointer($color: black) {
   &::before {
     content: '';
     position: absolute;
@@ -15,16 +13,14 @@
   }
 }
 
-/**
- * Assign a custom keyframe animation.
- *
- * @param  {String} $name       The name of the keyframe animation
+/*  *  * Assign a custom keyframe animation.
+ *  * @param  {String} $name       The name of the keyframe animation
  * @param  {String} $duration:  1s            Duration in seconds
  * @param  {String} $timing:    linear        Timing function to use
  * @param  {String} $count:     infinite      Iteration count
  * @param  {String} $direction: normal        Animation direction
  */
-@mixin animateKeyframe(
+@mixin animate-keyframe(
   $name,
   $duration: 1s,
   $timing: linear,
@@ -38,10 +34,8 @@
   animation-direction: $direction;
 }
 
-/**
- * Creates a text-ellipsis overflow.
- *
- * @param  {size} $max-width: 430px            Maximum width
+/*  *  * Creates a text-ellipsis overflow.
+ *  * @param  {size} $max-width: 430px            Maximum width
  * @param  {Boolean} $v-center:  false         Center vertically
  */
 @mixin text-ellipsis($max-width: 430px, $v-center: false) {
@@ -56,8 +50,7 @@
   white-space: nowrap;
 }
 
-/**
- * Generate several animations at once for nth-children.
+/*  *  * Generate several animations at once for nth-children.
  * @param  {[type]} $animate... [description]
  * @return {[type]}             [description]
  */
@@ -73,8 +66,6 @@
     }
   }
 
-  animation: $animations;
-  animation: $animations;
   animation: $animations;
 }
 
@@ -96,8 +87,7 @@
   transition: opacity 0.15s ease-in-out;
 }
 
-/**
- * Responsive Design Mixins
+/*  *  * Responsive Design Mixins
  */
 @mixin respond-to($media) {
   @if $media == small {
@@ -133,21 +123,19 @@
   }
 }
 
-/**
- * Font smoothing
+/*  *  * Font smoothing
  */
-@mixin applyFontSmoothing() {
+@mixin apply-font-smoothing() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin removeFontSmoothing() {
+@mixin remove-font-smoothing() {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
 }
 
-/**
- * A border that appears in the `before` element
+/*  *  * A border that appears in the `before` element
  */
 @mixin before-border($pixelSize, $style, $colour, $radius) {
   &::before {
@@ -164,8 +152,7 @@
   }
 }
 
-/**
- * A border that appears in the `before` element
+/*  *  * A border that appears in the `before` element
  */
 @mixin before-left-border($pixelSize, $style, $colour) {
   &::before {
@@ -181,8 +168,7 @@
   }
 }
 
-/**
- * A border that appears in the `after` element - this may be useful if the content messes with z-indexes
+/*  *  * A border that appears in the `after` element - this may be useful if the content messes with z-indexes
  */
 @mixin after-border($pixelSize, $style, $colour, $radius) {
   &::after {
@@ -198,8 +184,7 @@
   }
 }
 
-/**
- * A border that appears in the `after` element only when focussed
+/*  *  * A border that appears in the `after` element only when focussed
  */
 @mixin after-border-focussed($pixelSize, $style, $colour, $radius) {
   &:focus {
@@ -233,7 +218,7 @@
 }
 
 @mixin file-backgound {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUNSURBVHgBzVuLkpswDDQGcv3/L+20vfYSXmUhIkYRYPkBtzOZuwSwvbItyZIofv76HKrSmrquDNC0nWnHTzn+dnv+doRhGMz90U5/CUVRmB8ftUmN+6MxfT/383GrjLVWvI94EOqqNNX44desRB7out60XXc4IJB+NJy8GYVXmhyAYAkkCA5f8oCVyAMQTFXuk6CZdweC5z5u9ebMxMLalwDacZJcwc9jwuT5kcdY7daF+mD5d32/WvaYGHSG59xZSo3Sloaal7eemSaAxrNHfhrrn79fg5Y8tkbTdEKn+Yi7mIk3hnijX+gDt3/cQ9/3JthqyaOxK8nPfRbLLANbShhod8iDi5UubAHKjjd2NnmCjxAAWDO6R1L4ll+QQEsOloGw7KELyBN8VwLugUKXFL71I7/W9KTsvgN8hVDXB2ZQgtSYq1m/C3y3AzeRixmUIDUC5+a7kSf4rYSXiVy28Li339wp/vAVmj4UWhNp5Qbyk+/H9vkSTQGNiZz+d1dAbvJoF0oICvXVRzFtKyzJlPBZCYBdP5CXPNrvmP8+CWX0L5r2+OClga9itNLFXOT5MnSbh2m6QgjF57/7dBY4izxvnxPHdqgTWxppO6AfnCwLBEToxrPJE64QAmHRAVeRBzhhCATnjpTg22H5/ffnvwFL4Sj4oUGoTuErQROW0wDeYPs814iOUAxiFeqbEGyR9dCV1PimsCZ8O3S9bL5SIZkAUppSCMENqm7Z8BRIIoAcfkRZniOEaAHkdKIgBOQWuCPT971JhSgBpCYP08fNn+TNPcY+fXIWPggWgJY8HYS2AOI4J+BzKITxg8BsCtc5SAAh5HH/loND5JdBCe28hOAkRhKcH9QCCCVP94Oou4c5+b2QG+UbXacNQvi6N8HKUS0ANw+oJQ9As1PaTEPeBQKcrq/gHrW1UAkAHbnR4RDy5XP2QskTZl+hWivHgLiCSgAuebioOchLlmAL5ZKYef2m3RLhZjAT+S1LcDAYPgrjC9VRy01N9whtVcPbKmic4AqgJb/05eFL4H7en0+Kb8XJKACyJAR0KbmmIEVjDyXvow+ap0ldK+RKnbFSH4d94+4wddnIN93KE4zxQIPiAT5CIKQkT94kT9JW06oLc7+DlKAmF+c6PbHkua1PUZESbAW0ubgU5HMkaaNDYtpcXCx5EmaZKIYZHQ/Q5OL4/g0hj77KhAHcJBEhX51QOeUqoeRTB0eTRoV9twNWwR55mLi27bOTB5JGhX23wxF52PkzyAPJyzl9t4OEK+oPrVRuGosQIZxJHsUZ7fMcsSRHz8rKSh4jr9zKRV7yJJctcFV+/kzyUtRoSo6ufOvqnNQ0TpX4LnuOeci7fc0VpMVsBs/IykpCcBF7qNnvdztAM5fK8oSkOiJzDNoOJSuGItc2Rwb4iPzUv+sInZWfp8FNA8hk4nzIA6vp2FoJqc0kMBdJXUseeHOEJCHkzM+nhoY8IHqCXAgab+5KaMkDm67wmUUKKRBCHtg9C8xFClWQX38mQskDbwLoWPEBz75Mnd2bpEUKMYghD6wEMMXaH+/5NSk/T+nuKxFLHlgE4PrkLTswAFwI9ExzkRBCyDdCfcLmi5OlUL4+C+G2fntzWjXNqXohlDxNrCsEq31rlA4sbpFC7lo+Du6c+ZInuHlH9YuTBLFIYVSObZdXOc4VJuHk+eu04ouTvpUWaGhVxoZGn/n9XKth9aJ2FUce1/4DoWGMSDqmbGoAAAAASUVORK5CYII=');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUNSURBVHgBzVuLkpswDDQGcv3/L + 20vfYSXmUhIkYRYPkBtzOZuwSwvbItyZIofv76HKrSmrquDNC0nWnHTzn + dnv + doRhGMz90U5/CUVRmB8ftUmN + 6MxfT/383GrjLVWvI94EOqqNNX44desRB7out60XXc4IJB + NJy8GYVXmhyAYAkkCA5f8oCVyAMQTFXuk6CZdweC5z5u9ebMxMLalwDacZJcwc9jwuT5kcdY7daF + mD5d32/WvaYGHSG59xZSo3Sloaal7eemSaAxrNHfhrrn79fg5Y8tkbTdEKn + Yi7mIk3hnijX + gDt3/cQ9/3JthqyaOxK8nPfRbLLANbShhod8iDi5UubAHKjjd2NnmCjxAAWDO6R1L4ll + QQEsOloGw7KELyBN8VwLugUKXFL71I7/W9KTsvgN8hVDXB2ZQgtSYq1m/C3y3AzeRixmUIDUC5 + a7kSf4rYSXiVy28Li339wp/vAVmj4UWhNp5Qbyk + /H9vkSTQGNiZz + d1dAbvJoF0oICvXVRzFtKyzJlPBZCYBdP5CXPNrvmP8 + CWX0L5r2 + OClga9itNLFXOT5MnSbh2m6QgjF57/7dBY4izxvnxPHdqgTWxppO6AfnCwLBEToxrPJE64QAmHRAVeRBzhhCATnjpTg22H5/ffnvwFL4Sj4oUGoTuErQROW0wDeYPs814iOUAxiFeqbEGyR9dCV1PimsCZ8O3S9bL5SIZkAUppSCMENqm7Z8BRIIoAcfkRZniOEaAHkdKIgBOQWuCPT971JhSgBpCYP08fNn + TNPcY + fXIWPggWgJY8HYS2AOI4J + BzKITxg8BsCtc5SAAh5HH/loND5JdBCe28hOAkRhKcH9QCCCVP94Oou4c5 + b2QG + UbXacNQvi6N8HKUS0ANw + oJQ9As1PaTEPeBQKcrq/gHrW1UAkAHbnR4RDy5XP2QskTZl + hWivHgLiCSgAuebioOchLlmAL5ZKYef2m3RLhZjAT + S1LcDAYPgrjC9VRy01N9whtVcPbKmic4AqgJb/05eFL4H7en0 + Kb8XJKACyJAR0KbmmIEVjDyXvow + ap0ldK + RKnbFSH4d94 + 4wddnIN93KE4zxQIPiAT5CIKQkT94kT9JW06oLc7 + DlKAmF + c6PbHkua1PUZESbAW0ubgU5HMkaaNDYtpcXCx5EmaZKIYZHQ/Q5OL4/g0hj77KhAHcJBEhX51QOeUqoeRTB0eTRoV9twNWwR55mLi27bOTB5JGhX23wxF52PkzyAPJyzl9t4OEK + oPrVRuGosQIZxJHsUZ7fMcsSRHz8rKSh4jr9zKRV7yJJctcFV + /kzyUtRoSo6ufOvqnNQ0TpX4LnuOeci7fc0VpMVsBs/IykpCcBF7qNnvdztAM5fK8oSkOiJzDNoOJSuGItc2Rwb4iPzUv + sInZWfp8FNA8hk4nzIA6vp2FoJqc0kMBdJXUseeHOEJCHkzM + nhoY8IHqCXAgab + 5KaMkDm67wmUUKKRBCHtg9C8xFClWQX38mQskDbwLoWPEBz75Mnd2bpEUKMYghD6wEMMXaH + /5NSk/T + nuKxFLHlgE4PrkLTswAFwI9ExzkRBCyDdCfcLmi5OlUL4 + C + G2fntzWjXNqXohlDxNrCsEq31rlA4sbpFC7lo + Du6c + ZInuHlH9YuTBLFIYVSObZdXOc4VJuHk + eu04ouTvpUWaGhVxoZGn/n9XKth9aJ2FUce1/4DoWGMSDqmbGoAAAAASUVORK5CYII=');
   background-size: 32px;
   background-repeat: repeat;
 }

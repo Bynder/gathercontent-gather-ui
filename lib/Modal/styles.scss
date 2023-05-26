@@ -144,7 +144,7 @@ $modal-media-close-dimensions: 30px;
 
 .modal--full-screen {
 	.modal-dialog {
-		width: calc(100vw - #{$layout-spacing-base*2});
+		width: calc(100vw - #{$layout-spacing-base * 2});
 	}
 }
 
@@ -167,14 +167,14 @@ $modal-media-close-dimensions: 30px;
 
 .modal.modal--center .close {
 	position: absolute;
-	top: $modal-padding*1.5;
-	right: $modal-padding*1.5;
+	top: $modal-padding * 1.5;
+	right: $modal-padding * 1.5;
 	transform: none;
 }
 
 .modal--clear {
 	.modal-content {
-		padding: $modal-padding*1.5;
+		padding: $modal-padding * 1.5;
 	}
 
 	.modal-header {
@@ -277,6 +277,7 @@ $modal-media-close-dimensions: 30px;
 
 	.react-modal-inner {
 		position: relative;
+		background:none;
 	}
 
 	.modal-header {
@@ -310,10 +311,6 @@ $modal-media-close-dimensions: 30px;
 		width: 100%;
 		border: 0;
 		background: none;
-	}
-
-	.react-modal-inner {
-		background:none;
 	}
 
 	.react-modal-inner,

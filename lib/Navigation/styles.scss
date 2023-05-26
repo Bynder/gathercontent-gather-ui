@@ -17,7 +17,7 @@
   font-size: $typo-size-base;
   text-decoration: none;
 
-  [class*='--dark'] & {
+  [class * ='--dark'] & {
     color: $neutral-light;
   }
 
@@ -29,7 +29,7 @@
     color: $primary-blue;
     text-decoration: none;
 
-    [class*='--dark'] & {
+    [class * ='--dark'] & {
       color: white;
     }
   }
@@ -38,7 +38,7 @@
 .navigation__item--active > * {
   color: $primary-blue;
 
-  [class*='--dark'] & {
+  [class * ='--dark'] & {
     color: white;
   }
 }

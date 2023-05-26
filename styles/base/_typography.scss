@@ -9,8 +9,8 @@ h3 {
 }
 
 blockquote {
-  margin: $layout-spacing-base+$layout-spacing-base*0.5 0;
-  padding-left: $layout-spacing-base+$layout-spacing-base*0.25;
+  margin: $layout-spacing-base + $layout-spacing-base * 0.5 0;
+  padding-left: $layout-spacing-base + $layout-spacing-base * 0.25;
   border-left: 2px solid $neutral-base;
   font-style: italic;
 }

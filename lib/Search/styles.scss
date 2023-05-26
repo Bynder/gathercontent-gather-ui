@@ -11,15 +11,15 @@ $search-min-width: 400px !default;
   left: 0;
   display: none;
   width: 100%;
-  margin-top: $layout-spacing-base*0.5;
+  margin-top: $layout-spacing-base * 0.5;
   border: 1px solid $color-border-base;
-  border-radius: $layout-spacing-base*0.25;
+  border-radius: $layout-spacing-base * 0.25;
   background: white;
   box-shadow: $shadow-base;
 }
 
 .search-options {
-  padding: $layout-spacing-base*0.5 + $layout-spacing-base*0.25;
+  padding: $layout-spacing-base * 0.5 + $layout-spacing-base * 0.25;
   border-bottom:  1px solid $color-border-base;
 
   .search-options__toggle {
@@ -28,7 +28,7 @@ $search-min-width: 400px !default;
 }
 
 .search-list__heading {
-  margin: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 + $layout-spacing-base*0.25);
+  margin: $layout-spacing-base * 0.5 ($layout-spacing-base * 0.5 + $layout-spacing-base * 0.25);
   color: $neutral-base;;
 }
 
@@ -37,7 +37,7 @@ $search-min-width: 400px !default;
 }
 
 .search-list {
-  padding: $layout-spacing-base*0.5 0;
+  padding: $layout-spacing-base * 0.5 0;
 }
 
 .search-list + .search-list {
@@ -45,7 +45,7 @@ $search-min-width: 400px !default;
 }
 
 .search-item {
-  padding: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 + $layout-spacing-base*0.25);
+  padding: $layout-spacing-base * 0.5 ($layout-spacing-base * 0.5 + $layout-spacing-base * 0.25);
 
   em {
     color: $primary-purple;
@@ -79,12 +79,13 @@ $search-min-width: 400px !default;
 
 .search__input {
   width: 40px;
-  margin-right: $layout-spacing-base*0.25;
-  border-radius: $layout-spacing-base*0.25;
+  margin-right: $layout-spacing-base * 0.25;
+  border-radius: $layout-spacing-base * 0.25;
   transition: width cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, background-color cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
 
   &--clear {
     position: absolute;
+    padding-right: $layout-spacing-base * 0.5;
     opacity: 0;
     visibility: hidden;
     transition: visibility 0.0s linear, opacity 0.0s linear;
@@ -93,7 +94,7 @@ $search-min-width: 400px !default;
   &--input {
     display:none;
     flex: 1 0 auto;
-    padding: $layout-spacing-base*0.5;
+    padding: $layout-spacing-base * 0.5;
     border: none;
     background-color: transparent;
 
@@ -101,13 +102,9 @@ $search-min-width: 400px !default;
       outline: none;
     }
   }
-
-  &--clear {
-    padding-right: $layout-spacing-base*0.5;
-  }
-
+  
   &--start {
-    padding: $layout-spacing-base*0.5;
+    padding: $layout-spacing-base * 0.5;
     opacity: 1;
     visibility: visible;
     transition: visibility 0.1s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0.1s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
@@ -135,7 +132,7 @@ $search-min-width: 400px !default;
 
   .search__input--clear {
     position: static;
-    padding: $layout-spacing-base*0.5;
+    padding: $layout-spacing-base * 0.5;
     opacity: 1;
     visibility: visible;
     transition: visibility 0.0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;

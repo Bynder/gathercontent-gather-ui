@@ -8,7 +8,7 @@
     "no-descending-specificity": [ true, { "severity": "warning" }],
     "selector-max-type": [ true, { "severity": "warning" }],
     "declaration-no-important": [ true, { "severity": "warning" }],
-    "function-no-unknown": [true, {"ignoreFunctions": ["theme", "div", "transparentize", "darken", "lighten"]}],
+    "function-no-unknown": [true, {"ignoreFunctions": ["length", "floor", "ceil","theme", "div", "transparentize", "darken", "lighten", "percentage"]}],
     "media-feature-name-no-unknown": [true, {"ignoreFunctions": ["min-device-pixel-ratio"]}],
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,

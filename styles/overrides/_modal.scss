@@ -40,7 +40,7 @@
   display: inline-flex;
   flex-direction: column;
   align-items: baseline;
-  padding: $modal-padding $modal-padding*2 $modal-padding $modal-padding;
+  padding: $modal-padding $modal-padding * 2 $modal-padding $modal-padding;
 }
 
 .modal-content {
@@ -69,7 +69,7 @@
       position: relative;
       top: 2px;
       width: $typo-size-large;
-      margin: 0 0 0 $layout-spacing-base*0.5;
+      margin: 0 0 0 $layout-spacing-base * 0.5;
     }
 }
 

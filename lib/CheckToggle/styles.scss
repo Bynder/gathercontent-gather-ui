@@ -21,12 +21,12 @@ $borderColour: #F8FBFC;
   line-height: 0;
 
   &.margin-large {
-    margin: $layout-spacing-base*0.5 0;
+    margin: $layout-spacing-base * 0.5 0;
   }
 
   &.disabled {
    opacity: 0.5;
-   pointer-events: none; 
+   pointer-events: none;
   }
 }
 
@@ -63,7 +63,7 @@ $borderColour: #F8FBFC;
   margin-left: 26px;
 }
 
-/*  New switch */
+/*  New switch  */
 .toggle-switch + .toggle-switch__label {
   width: 34px;
   height: 22px;
@@ -104,7 +104,7 @@ $borderColour: #F8FBFC;
 
 .size-small {
   .toggle-switch + .toggle-switch__label {
-    width: $layout-spacing-base + $layout-spacing-base*0.5;
+    width: $layout-spacing-base + $layout-spacing-base * 0.5;
     height: $layout-spacing-base;
 
     &::after {
@@ -117,11 +117,11 @@ $borderColour: #F8FBFC;
   }
 
   .toggle-switch:checked + .toggle-switch__label::after {
-    margin-left: $layout-spacing-base*0.5;
+    margin-left: $layout-spacing-base * 0.5;
   }
 
   .toggle-wrapper__label {
-    margin: 0 0 0 $layout-spacing-base*0.25;
+    margin: 0 0 0 $layout-spacing-base * 0.25;
   }
 
   .toggle-wrapper__inner {

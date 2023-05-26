@@ -9,7 +9,7 @@ $guideline-title-size: $typo-size-large !default;
    Styles
    ========================================================================== */
 .guideline {
-  margin: 0 0 $guideline-spacing*2;
+  margin: 0 0 $guideline-spacing * 2;
   padding: $guideline-spacing;
   border-radius: 4px;
 }
@@ -35,8 +35,8 @@ $guideline-title-size: $typo-size-large !default;
   line-height: $typo-line-height-base * 1.2;
   transition: max-height $animation-time-micro ease-out;
 
-  > *:last-child,
-  > *:last-child > *:last-child {
+  > * :last-child,
+  > * :last-child > * :last-child {
     margin-bottom: 0;
   }
 }

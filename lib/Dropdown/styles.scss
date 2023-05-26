@@ -26,11 +26,11 @@ $dropdown-status-circle-width-height: 15px !default;
 .dropdown__section,
 .dropdown__header,
 .dropdown__footer {
-  *:first-child {
+  * :first-child {
     margin-top: 0;
   }
 
-  *:last-child {
+  * :last-child {
     margin-bottom: 0;
   }
 }

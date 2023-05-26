@@ -12,9 +12,7 @@
   button {
     @apply border-none bg-white h-full px-5 py-6;
   }
-}
 
-.navigation--item {
   &.active {
     @apply text-blue-primary relative;
   }

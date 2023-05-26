@@ -1,9 +1,9 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$collections-table-spacing: $layout-spacing-base*0.25 0 !default;
+$collections-table-spacing: $layout-spacing-base * 0.25 0 !default;
 $collections-table-status-spacing: $layout-spacing-base * 0.5 !default;
-$collections-table-content-padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5 !default;
+$collections-table-content-padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5 !default;
 $collections-table-border: 1px solid $color-border-base !default;
 $collections-table-selected-border: 2px solid $primary-blue !default;
 $collections-table-border-radius: 4px !default;
@@ -86,7 +86,7 @@ $collections-table-cell-min-height: 40px !default;
   align-items: center;
   overflow: hidden;
   width: 100%;
-  padding: 0 $layout-spacing-base*0.5;
+  padding: 0 $layout-spacing-base * 0.5;
 
   .collections-table__cell-content {
     padding: 0;
@@ -94,8 +94,8 @@ $collections-table-cell-min-height: 40px !default;
 
   .figure {
     flex-shrink: 0;
-    width: $layout-spacing-base*2;
-    height: $layout-spacing-base*2;
+    width: $layout-spacing-base * 2;
+    height: $layout-spacing-base * 2;
     margin: 0;
     padding: 0;
 
@@ -108,7 +108,7 @@ $collections-table-cell-min-height: 40px !default;
     }
 
     + .collections-table__row-title {
-      margin-left: $layout-spacing-base*0.5;
+      margin-left: $layout-spacing-base * 0.5;
     }
   }
 
@@ -119,7 +119,7 @@ $collections-table-cell-min-height: 40px !default;
 
   .editable-text__wrapper {
     max-width: 100%;
-    padding-right: $layout-spacing-base * 2 + $layout-spacing-base*0.25;
+    padding-right: $layout-spacing-base * 2 + $layout-spacing-base * 0.25;
   }
 }
 
@@ -129,7 +129,7 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .collections-table__heading {
-  padding-top: $layout-spacing-base*0.25;
+  padding-top: $layout-spacing-base * 0.25;
   font-weight: bold;
   font-size: $typo-size-slight;
 
@@ -163,7 +163,7 @@ $collections-table-cell-min-height: 40px !default;
    ========================================================================== */
 .collections-table__row--selected {
   .collections-table__cell {
-    padding: ($layout-spacing-base*0.25 - 1) 0;
+    padding: ($layout-spacing-base * 0.25 - 1) 0;
     border: $collections-table-selected-border;
     border-width: 2px 0;
 

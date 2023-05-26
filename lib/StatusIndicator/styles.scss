@@ -47,7 +47,7 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 
   + .status-indicator__label {
-    margin-left: $layout-spacing-base*0.5;
+    margin-left: $layout-spacing-base * 0.5;
   }
 }
 
@@ -62,7 +62,7 @@ $status-indicator-margin-left: 1.3rem !default;
     display: flex;
     overflow: hidden;
     width: 100%;
-    margin-left: $layout-spacing-base*0.5;
+    margin-left: $layout-spacing-base * 0.5;
   }
 
   .status-indicator__label-text {
@@ -110,7 +110,7 @@ $status-indicator-margin-left: 1.3rem !default;
 
 .icon.status-indicator__readonly {
   vertical-align: top;
-  margin-left: $layout-spacing-base*0.25;
+  margin-left: $layout-spacing-base * 0.25;
 
   path {
     fill: $color-brand-dark;
@@ -118,7 +118,7 @@ $status-indicator-margin-left: 1.3rem !default;
 }
 
 .status-indicator__actions {
-  margin-left: $layout-spacing-base*0.5;
+  margin-left: $layout-spacing-base * 0.5;
 }
 
 /* ==========================================================================
@@ -149,8 +149,8 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator--row {
   display: flex;
   align-items: baseline;
-  margin: 0 0 $layout-spacing-base*0.5;
-  padding: $layout-spacing-base*0.5;
+  margin: 0 0 $layout-spacing-base * 0.5;
+  padding: $layout-spacing-base * 0.5;
   border: $status-indicator-bordered-border;
   border-radius: 4px;
   background: white;

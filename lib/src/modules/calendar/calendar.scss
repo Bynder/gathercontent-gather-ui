@@ -17,6 +17,7 @@
 .calendar .rdp-day,
 .calendar .rdp-weeknumber {
   @apply rounded;
+  @apply mx-auto;
 }
 
 .calendar.rdp {
@@ -30,11 +31,6 @@
 .calendar .rdp-table,
 .calendar .rdp-month {
   @apply max-w-full w-full;
-}
-
-.calendar .rdp-day,
-.calendar .rdp-weeknumber {
-  @apply mx-auto;
 }
 
 .calendar .rdp-day_today:not(.rdp-day_selected) {
@@ -67,8 +63,6 @@
   border: 0 !important;
   background: transparent;
   appearance: none;
-  appearance: none;
-  appearance: none;
 }
 
 .rdp-button_reset {
@@ -79,8 +73,6 @@
   color: inherit;
   font: inherit;
   cursor: default;
-  appearance: none;
-  appearance: none;
   appearance: none;
 }
 

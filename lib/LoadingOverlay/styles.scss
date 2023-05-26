@@ -50,7 +50,7 @@ $loading-line-width: 32px;
 
 @keyframes line1 {
   16.666666667% { opacity: 0;
-    transform: translateY(-$loading-line-height*2);
+    transform: translateY(-$loading-line-height * 2);
   }
   33.333333334% {}
   50.000000001% {}
@@ -62,16 +62,16 @@ $loading-line-width: 32px;
 @keyframes line2 {
   16.666666667% {
     opacity: 1;
-    transform: translateY(-$loading-line-height*2);
+    transform: translateY(-$loading-line-height * 2);
   }
 
   33.333333334% {
     opacity: 1;
-    transform: translateY(-$loading-line-height*2);
+    transform: translateY(-$loading-line-height * 2);
   }
 
   50.000000001% { opacity: 0;
-    transform: translateY(-$loading-line-height*4);
+    transform: translateY(-$loading-line-height * 4);
   }
   66.666666668% {}
   83.333333335% {}
@@ -80,23 +80,23 @@ $loading-line-width: 32px;
 
 @keyframes line3 {
   16.666666667% {
-    transform: translateY(-$loading-line-height*2);
+    transform: translateY(-$loading-line-height * 2);
   }
 
   33.333333334% {
-    transform: translateY(-$loading-line-height*2);
+    transform: translateY(-$loading-line-height * 2);
   }
 
   50.000000001% { opacity: 1;
-    transform: translateY(-$loading-line-height*4);
+    transform: translateY(-$loading-line-height * 4);
   }
 
   66.666666668% { opacity: 1;
-    transform: translateY(-$loading-line-height*4);
+    transform: translateY(-$loading-line-height * 4);
   }
 
   83.333333335% { opacity: 0;
-    transform: translateY(-$loading-line-height*6);
+    transform: translateY(-$loading-line-height * 6);
   }
   100.00000000% { opacity: 0; }
 }
@@ -109,19 +109,19 @@ $loading-line-width: 32px;
   }
 
   50.000000001% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 2);
   }
 
   66.666666668% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 2);
   }
 
   83.333333335% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*4);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 4);
   }
 
   100.00000000% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*4);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 4);
   }
 }
 
@@ -138,11 +138,11 @@ $loading-line-width: 32px;
   }
 
   83.333333335% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 2);
   }
 
   100.00000000% {
-    transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
+    transform: translateX($loading-line-width) translateY(-$loading-line-height * 2);
   }
 }
 

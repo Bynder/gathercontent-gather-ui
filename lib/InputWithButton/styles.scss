@@ -5,7 +5,7 @@
 
 .input-with-button__input {
   flex: 1;
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   border: 1px solid #E6EAED;
   border-radius: 4px 0 0 4px;
   background: #FFF;
@@ -25,16 +25,16 @@
 
 .input-with-button--padding-small {
   .input-with-button__input {
-    height: $layout-spacing-base + $layout-spacing-base*0.5;
-    padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
+    height: $layout-spacing-base + $layout-spacing-base * 0.5;
+    padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
     font-size: $typo-size-slight;
   }
 
   .button--input-appendage {
     width: 95px;
-    height: $layout-spacing-base + $layout-spacing-base*0.5;
-    padding-top: $layout-spacing-base*0.25;
-    padding-bottom: $layout-spacing-base*0.25;
+    height: $layout-spacing-base + $layout-spacing-base * 0.5;
+    padding-top: $layout-spacing-base * 0.25;
+    padding-bottom: $layout-spacing-base * 0.25;
     font-size: $typo-size-slight;
   }
 }

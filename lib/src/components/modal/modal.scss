@@ -45,30 +45,15 @@ $modal-small-width: 400px !default;
   @apply flex justify-center items-center transition ease-out duration-300;
 
   z-index: 1001;
-  background: rgb(
-    41
-    51
-    61 /
-    0%
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 0%) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
 .ReactModal__Overlay--after-open {
-  background: rgb(
-    41
-    51
-    61 /
-    20%
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 20%) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
 .ReactModal__Overlay--before-close {
-  background: rgb(
-    41
-    51
-    61 /
-    0%
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 0%) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
 .react-modal-inner {

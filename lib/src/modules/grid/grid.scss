@@ -1,13 +1,13 @@
-//** Number of columns in the grid.
+// ** Number of columns in the grid.
 @use "sass:math";
 
 $grid-columns: 12 !default;
 
-//** Padding between columns. Gets divided in half for the left and right.
+// ** Padding between columns. Gets divided in half for the left and right.
 $grid-gutter-width: 20px !default;
 
 @mixin new-calc-grid-column($index, $class, $type) {
-  @if  $type == width) and ($index > 0 {
+  @if $type == width and $index > 0 {
     .layout-col-#{$class}-#{$index} {
       flex: 0 1 percentage(math.div($index, $grid-columns));
       width: percentage(math.div($index, $grid-columns));

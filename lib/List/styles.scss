@@ -47,7 +47,7 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list__body {
-  margin: $layout-spacing-base*0.5;
+  margin: $layout-spacing-base * 0.5;
 
   .list__body {
     margin: 0;
@@ -66,18 +66,18 @@ $list-border: 1px solid $color-border-base;
   position: relative;
   display: flex;
   align-items: center;
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
 
   .list .list & {
-    padding-left: $layout-spacing-base*1.5;
+    padding-left: $layout-spacing-base * 1.5;
   }
 
   .list .list .list & {
-    padding-left: $layout-spacing-base*2.5;
+    padding-left: $layout-spacing-base * 2.5;
   }
 
   .list .list .list .list & {
-    padding-left: $layout-spacing-base*3.5;
+    padding-left: $layout-spacing-base * 3.5;
   }
 
   .is-current > & {
@@ -105,11 +105,11 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list__action {
-  margin-left: $layout-spacing-base*0.5;
+  margin-left: $layout-spacing-base * 0.5;
 }
 
 .list__button {
-  padding: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 - 2px);
+  padding: $layout-spacing-base * 0.5 ($layout-spacing-base * 0.5 - 2px);
 
   svg {
     transform: rotate(-90deg);
@@ -174,5 +174,5 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list__item--collapse .list__actions {
-  margin-right: $layout-spacing-base*0.5;
+  margin-right: $layout-spacing-base * 0.5;
 }

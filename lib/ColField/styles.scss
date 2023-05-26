@@ -17,7 +17,7 @@
     }
   }
 
-  *:nth-child(1) {
+  * :nth-child(1) {
     @apply mt-0;
   }
 
@@ -92,7 +92,7 @@
     @apply text-lg leading-6;
   }
 
-  *:last-child {
+  * :last-child {
     @apply mb-0;
   }
 

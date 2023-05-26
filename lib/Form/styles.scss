@@ -1,7 +1,7 @@
 /* ==========================================================================
    Config
    ========================================================================== */
-$form-checkbox-margin: $layout-spacing-base*0.5 !default;
+$form-checkbox-margin: $layout-spacing-base * 0.5 !default;
 $form-checkbox-font-weight: $typo-weight-roman !default;
 $form-checkbox-label-size: $typo-size-lead !default;
 
@@ -15,7 +15,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   input:not([type="checkbox"], [type="radio"]),
   textarea {
     width: 100%;
-    margin: 0 0 $layout-spacing-base*0.5;
+    margin: 0 0 $layout-spacing-base * 0.5;
   }
 }
 
@@ -27,7 +27,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form__choice-element-wrapper {
   display: flex;
   align-items: baseline;
-  margin: $form-checkbox-label-size*0.5;
+  margin: $form-checkbox-label-size * 0.5;
 }
 
 .form-checkbox__label,
@@ -98,7 +98,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 
 form .dropdown-gc .button--outline,
 .form__input {
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   border: 1px solid lighten($neutral-base, 20%);
   border-radius: 4px;
   color: $neutral-dark;
@@ -112,7 +112,7 @@ form .dropdown-gc .button--outline,
   }
 
   &:focus {
-    padding: $layout-spacing-base*0.5 - 1;
+    padding: $layout-spacing-base * 0.5 - 1;
     border-width: 2px;
     border-color: $primary-blue;
     outline: none;
@@ -132,7 +132,7 @@ form .dropdown-gc .button--outline,
 
 .form__input--noborder,
 .form__input--noborder:focus {
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   border: none;
   background: transparent;
   font-size: inherit;
@@ -148,15 +148,15 @@ form .dropdown-gc .button--outline,
 }
 
 .form__input--padding-small {
-  padding: $layout-spacing-base*0.25;
+  padding: $layout-spacing-base * 0.25;
 
   &:focus {
-    padding: $layout-spacing-base*0.25 - 1;
+    padding: $layout-spacing-base * 0.25 - 1;
   }
 }
 
 .form-group {
-  margin-top: $layout-spacing-base*0.5;
+  margin-top: $layout-spacing-base * 0.5;
 }
 
 .form--disabled {
@@ -165,7 +165,7 @@ form .dropdown-gc .button--outline,
 }
 
 .form__input.form__input--has-error {
-  padding: $layout-spacing-base*0.5 - 1;
+  padding: $layout-spacing-base * 0.5 - 1;
   border-width: 2px;
   border-color: $primary-red;
 }
@@ -176,7 +176,7 @@ input.form__input--display-error {
 
 .form-input__error-message {
   display: block;
-  margin-top: $layout-spacing-base*0.25;
+  margin-top: $layout-spacing-base * 0.25;
   color: $primary-red;
   font-size: $typo-size-slight;
 }
