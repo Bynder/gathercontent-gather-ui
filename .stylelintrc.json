@@ -1,5 +1,19 @@
 {
   "extends": [
-    "stylelint-config-hudochenkov/full"
-  ]
+    "stylelint-config-hudochenkov/full",
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "selector-no-qualifying-type": [ true, { "severity": "warning" }],
+    "no-descending-specificity": [ true, { "severity": "warning" }],
+    "selector-max-type": [ true, { "severity": "warning" }],
+    "declaration-no-important": [ true, { "severity": "warning" }],
+    "function-no-unknown": [true, {"ignoreFunctions": ["theme", "div", "transparentize", "darken", "lighten"]}],
+    "media-feature-name-no-unknown": [true, {"ignoreFunctions": ["min-device-pixel-ratio"]}],
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/at-extend-no-missing-placeholder": null,
+    "selector-class-pattern": null,
+    "scss/no-global-function-names": null
+  }
 }
