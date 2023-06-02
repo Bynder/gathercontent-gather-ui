@@ -12,13 +12,32 @@ $icon-active-color: $color-brand-blue !default;
 .icon {
   align-items: center;
   display: $icon-display;
-  height: 1.5rem;
   justify-content: center;
+}
+
+.icon-container-12 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.icon-container-16 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon-container-24 {
   width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-container-32 {
+  width: 2rem;
+  height: 2rem;
 }
 
 .icon svg {
   display: block;
+  max-width: 100%;
 }
 
 .icon--default-fill-color path {
