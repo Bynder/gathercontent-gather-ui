@@ -152,7 +152,7 @@ $icon-active-color: $color-brand-blue !default;
 }
 
 .icon.icon--warning path {
-  @apply text-yellow-primary fill-current;
+  @apply fill-current;
 }
 
 button:active .icon--blue-on-button-parent-active path {
