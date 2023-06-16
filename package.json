@@ -14,6 +14,9 @@
     "url": "https://github.com/gathercontent/gather-ui"
   },
   "license": "MIT",
+  "engines": {
+    "node": "^18.0.0"
+  },
   "author": "",
   "contributors": [
     {
