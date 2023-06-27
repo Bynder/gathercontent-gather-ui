@@ -87,7 +87,7 @@ export const Dropdown = () => {
           <DropdownComponent.Trigger useButton>
             Left alignment
           </DropdownComponent.Trigger>
-          {createContentWithItems()}
+          {createContentWithItems({})}
         </DropdownComponent>
 
         <DropdownComponent id="id-4">
@@ -173,7 +173,7 @@ export const Dropdown = () => {
             Auto Position
           </DropdownComponent.Trigger>
 
-          {createContentWithItems()}
+          {createContentWithItems({})}
         </DropdownComponent>
       </StoryItem>
 
@@ -188,7 +188,7 @@ export const Dropdown = () => {
                 Auto Position
               </DropdownComponent.Trigger>
 
-              {showContent && createContentWithItems()}
+              {showContent && createContentWithItems({})}
             </>
           )}
         </DropdownComponent>
@@ -287,6 +287,7 @@ export const Dropdown = () => {
           dropdownContent={
             <Fragment>
               <DropdownComponent.Header collapse>
+                {/* @ts-expect-error */}
                 <Form onSubmit={() => {}} className="form h-width-100">
                   <FormInput
                     noBorder
@@ -331,7 +332,7 @@ export const Dropdown = () => {
               Select an option...
             </DropdownComponent.Trigger>
 
-            {createContentWithItems()}
+            {createContentWithItems({})}
           </DropdownComponent>
         </div>
       </StoryItem>
