@@ -1,7 +1,10 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-const FinderPanelLayoutRight = ({ children, className }) => (
+const FinderPanelLayoutRight = ({
+  children,
+  className
+}: any) => (
   <div className={`finder-panel-layout__right ${className}`}>{children}</div>
 );
 

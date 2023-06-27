@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
-import { DropdownContent, Input, Label, Person } from 'lib';
-import Dropdown from '../../../Dropdown';
+import React, { useState } from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { DropdownContent, Input, Label, Person } from "lib";
+import Dropdown from "../../../Dropdown";
 
-export function PersonSearch({ people, onPersonSelect, label, placeholder }) {
-  const [searchValue, setSearchValue] = useState('');
+export function PersonSearch({
+  people,
+  onPersonSelect,
+  label,
+  placeholder,
+}: any) {
+  const [searchValue, setSearchValue] = useState("");
 
   const filteredPeople = searchValue
     ? people.filter(
-        p =>
+        (p: any) =>
           p.name.toLowerCase().includes(searchValue.toLowerCase()) ||
           p.email.toLowerCase().includes(searchValue.toLowerCase())
       )
@@ -18,8 +24,9 @@ export function PersonSearch({ people, onPersonSelect, label, placeholder }) {
       <Dropdown id="person-search-story" className="overflow-visible w-full">
         {({ showContent }) => (
           <>
+            {/* @ts-expect-error TS(2769): No overload matches this call. */}
             <Dropdown.Trigger triggerClassName="w-full">
-              {({ toggleShowContent }) => (
+              {({ toggleShowContent }: any) => (
                 <>
                   <Label htmlFor="person-search">{label}</Label>
                   <Input
@@ -29,7 +36,7 @@ export function PersonSearch({ people, onPersonSelect, label, placeholder }) {
                     onBlur={() =>
                       showContent ? null : toggleShowContent(true)
                     }
-                    onChange={e => setSearchValue(e.target.value)}
+                    onChange={(e: any) => setSearchValue(e.target.value)}
                     value={searchValue}
                   />
                 </>
@@ -58,7 +65,7 @@ export function PersonSearch({ people, onPersonSelect, label, placeholder }) {
                     </DropdownContent.Body>
                   ) : (
                     <DropdownContent.Body>
-                      {filteredPeople.map(person => (
+                      {filteredPeople.map((person: any) => (
                         <Person
                           name={person.name}
                           subtitle={person.email}

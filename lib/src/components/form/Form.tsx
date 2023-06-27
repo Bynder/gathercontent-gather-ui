@@ -21,7 +21,13 @@ export const statuses = {
 
 const nonSubmittableStatuses = [statuses.processing, statuses.success];
 
-export function Form({ children, onSubmit, inline, className = '', ...rest }) {
+export function Form({
+  children,
+  onSubmit,
+  inline,
+  className = '',
+  ...rest
+}: any) {
   const [status, setStatus] = React.useState(statuses.idle);
   const timeoutRef = React.useRef(0);
 
@@ -34,7 +40,7 @@ export function Form({ children, onSubmit, inline, className = '', ...rest }) {
     setStatus
   };
 
-  const handleOnSubmit = async event => {
+  const handleOnSubmit = async (event: any) => {
     event.preventDefault();
 
     if (nonSubmittableStatuses.includes(status)) {

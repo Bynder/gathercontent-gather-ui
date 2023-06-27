@@ -7,8 +7,11 @@ import {
   TextForm,
   Label,
   DueDateDropdown
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
 import faker from 'faker';
 import moment from 'moment';
 import Dropdown from '../../../Dropdown';
@@ -23,7 +26,11 @@ export default {
   }
 };
 
-const WorkflowDropdownStory = ({ search, assigned, unassigned }) => {
+const WorkflowDropdownStory = ({
+  search,
+  assigned,
+  unassigned
+}: any) => {
   const workflowSteps = [
     {
       title: 'Draft',
@@ -53,47 +60,41 @@ const WorkflowDropdownStory = ({ search, assigned, unassigned }) => {
 
   const actions = (
     <WorkflowStep.Actions>
-      {onActionToggle => (
-        <>
-          <DueDateDropdown
-            id="due-date-dropdown"
-            selectedDay={moment().toDate()}
-            onToggle={onActionToggle}
-          />
-          <AssigneeDropdown
-            id="assignee-dropdown"
-            searchValue={search}
-            onToggle={onActionToggle}
-          >
-            <DropdownContent.List heading="ASSIGNED">
-              {assigned.map(assignee => (
-                <Person
-                  key={assignee.name}
-                  name={assignee.name}
-                  subtitle={assignee.subtitle}
-                  avatarUrl={assignee.avatarUrl}
-                  selected={assignee.selected}
-                  interactive
-                  bordered
-                />
-              ))}
-            </DropdownContent.List>
-            <DropdownContent.List heading="UNASSIGNED">
-              {unassigned.map(unassignee => (
-                <Person
-                  key={unassignee.name}
-                  name={unassignee.name}
-                  subtitle={unassignee.subtitle}
-                  avatarUrl={unassignee.avatarUrl}
-                  selected={unassignee.selected}
-                  interactive
-                  bordered
-                />
-              ))}
-            </DropdownContent.List>
-          </AssigneeDropdown>
-        </>
-      )}
+      {(onActionToggle: any) => <>
+        <DueDateDropdown
+          id="due-date-dropdown"
+          selectedDay={moment().toDate()}
+          onToggle={onActionToggle}
+        />
+        <AssigneeDropdown
+          id="assignee-dropdown"
+          searchValue={search}
+          onToggle={onActionToggle}
+        >
+          <DropdownContent.List heading="ASSIGNED">
+            {assigned.map((assignee: any) => <Person
+              key={assignee.name}
+              name={assignee.name}
+              subtitle={assignee.subtitle}
+              avatarUrl={assignee.avatarUrl}
+              selected={assignee.selected}
+              interactive
+              bordered
+            />)}
+          </DropdownContent.List>
+          <DropdownContent.List heading="UNASSIGNED">
+            {unassigned.map((unassignee: any) => <Person
+              key={unassignee.name}
+              name={unassignee.name}
+              subtitle={unassignee.subtitle}
+              avatarUrl={unassignee.avatarUrl}
+              selected={unassignee.selected}
+              interactive
+              bordered
+            />)}
+          </DropdownContent.List>
+        </AssigneeDropdown>
+      </>}
     </WorkflowStep.Actions>
   );
 
@@ -101,7 +102,9 @@ const WorkflowDropdownStory = ({ search, assigned, unassigned }) => {
     <StoryItem title="Workflow Dropdown">
       <WorkflowDropdownComponent>
         <Dropdown.Trigger>
-          {({ toggleShowContent }) => (
+          {({
+            toggleShowContent
+          }: any) => (
             <ButtonPrimary onClick={toggleShowContent}>
               Open Dropdown
             </ButtonPrimary>
@@ -114,6 +117,7 @@ const WorkflowDropdownStory = ({ search, assigned, unassigned }) => {
               className="w-full h-full border border-solid border-neutral-90"
               showBody={selectedIndex === index}
               isActive={activeIndex === index}
+              // @ts-expect-error TS(2345): Argument of type 'number' is not assignable to par... Remove this comment to see the full error message
               onClick={() => setSelectedIndex(index)}
             >
               <WorkflowStep.Header>
@@ -152,7 +156,7 @@ const WorkflowDropdownStory = ({ search, assigned, unassigned }) => {
   );
 };
 
-export const WorkflowDropdown = args => {
+export const WorkflowDropdown = (args: any) => {
   const getPerson = () => ({
     name: faker.name.findName(),
     subtitle: faker.internet.email(),

@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
-const SearchBody = props => {
+const SearchBody = (props: any) => {
   const classNames = cx(`search__body ${props.className}`, {
     'display-results': props.showBody
   });

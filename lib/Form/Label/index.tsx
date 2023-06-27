@@ -14,7 +14,7 @@ const Label = ({
   active,
   disabled,
   hinted
-}) => {
+}: any) => {
   const labelClasses = cx(`form-checkbox__label ${className}`, {
     'is-disabled': disabled,
     'form-checkbox__label--hinted': hinted

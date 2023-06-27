@@ -13,7 +13,7 @@ function SearchInputField({
   id,
   className,
   inputClassName
-}) {
+}: any) {
   const transitionsForClearButton = useTransition(value, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -36,6 +36,7 @@ function SearchInputField({
         id={id}
       />
       {transitionsForClearButton.map(
+        // @ts-expect-error TS(2339): Property 'animatedProps' does not exist on type 'U... Remove this comment to see the full error message
         ({ item, animatedProps }) =>
           item && (
             <animated.button

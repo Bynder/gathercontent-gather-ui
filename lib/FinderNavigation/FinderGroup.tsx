@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FinderGroup = ({ className, title, children, meta }) => (
+const FinderGroup = ({
+  className,
+  title,
+  children,
+  meta
+}: any) => (
   <div className={`finder-group ${className}`}>
     {(title || meta) && (
       <div className="finder-group-heading">

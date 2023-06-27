@@ -1,8 +1,12 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { CheckboxInput, TextForm, RadioInput } from 'lib';
 import StoryItem from '../../../../stories/styleguide/StoryItem';
 
-function SelectionControlStoryItem({ children, title }) {
+function SelectionControlStoryItem({
+  children,
+  title
+}: any) {
   return (
     <TextForm onSubmit={() => {}} className="flex flex-col items-center px-2">
       <h4>{title}</h4>

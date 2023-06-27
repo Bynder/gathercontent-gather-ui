@@ -1,4 +1,5 @@
 import * as React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonPrimary, ButtonSuccess, Icon } from 'lib';
 import cx from 'classnames';
 import { FormContext, statuses } from './Form';
@@ -8,7 +9,7 @@ export function FormSubmitButton({
   className = '',
   hideSuccessState = false,
   ...rest
-}) {
+}: any) {
   const { status } = React.useContext(FormContext);
   const classNames = cx('form-submit-button', className, {
     'form-submit-button-success':

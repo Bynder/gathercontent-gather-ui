@@ -12,10 +12,10 @@ export function RenameInputForm({
   placeholder,
   formClass,
   maxLength
-}) {
+}: any) {
   const [value, setValue] = useState(text);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (value.trim() !== '') {
       onRename(value);
@@ -25,11 +25,11 @@ export function RenameInputForm({
     stopEditing();
   };
 
-  const handleOnChange = e => {
+  const handleOnChange = (e: any) => {
     setValue(e.target.value);
   };
 
-  const handleKeyDown = e => {
+  const handleKeyDown = (e: any) => {
     const isEscKey = e.keyCode === 27;
     const isEnterKey = e.keyCode === 13;
     if (isEscKey) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Icon } from 'lib';
 import { ButtonBase } from '../ButtonBase';
 import {
@@ -20,7 +21,7 @@ function ButtonIconWhite({
   children,
   enabled,
   ...rest
-}) {
+}: any) {
   const classes = cx(
     'button-icon',
     'button-icon-white',

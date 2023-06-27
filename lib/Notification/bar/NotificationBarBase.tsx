@@ -16,7 +16,7 @@ const NotificationBarBase = ({
   center,
   onClose,
   ...rest
-}) => {
+}: any) => {
   const classes = cx({
     'cursor-pointer': clickHandler,
     'text-center': center,

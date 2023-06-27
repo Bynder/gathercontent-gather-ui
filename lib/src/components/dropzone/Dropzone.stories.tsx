@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import { Dropzone as DropzoneComponent } from './Dropzone';
 
@@ -13,12 +14,10 @@ export default {
   }
 };
 
-export const Dropzone = args => (
-  <StoryItem>
-    <div className="h-64">
-      <DropzoneComponent {...args}>
-        {args.hasSomethingDropped && 'Hopefully a grid here'}
-      </DropzoneComponent>
-    </div>
-  </StoryItem>
-);
+export const Dropzone = (args: any) => <StoryItem>
+  <div className="h-64">
+    <DropzoneComponent {...args}>
+      {args.hasSomethingDropped && 'Hopefully a grid here'}
+    </DropzoneComponent>
+  </div>
+</StoryItem>;

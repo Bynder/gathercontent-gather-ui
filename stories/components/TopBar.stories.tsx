@@ -1,23 +1,24 @@
-import React from 'react';
-import { ButtonIcon, MenuItem } from 'lib';
-import StoryItem from '../styleguide/StoryItem';
-import TopBar from '../../lib/TopBar';
-import TopBarContent from '../../lib/TopBar/TopBarContent';
-import TopBarCell from '../../lib/TopBar/TopBarCell';
-import Button from '../../lib/Button';
-import Icon from '../../lib/Icon';
-import Avatar from '../../lib/Avatar';
-import AvatarWithPopover from '../../lib/Avatar/AvatarWithPopover';
-import AvatarGroup from '../../lib/Avatar/AvatarGroup';
-import Navigation from '../../lib/Navigation';
-import Logo from '../../lib/Logo';
-import SectionHeader from '../../lib/SectionHeader';
-import Search from '../../lib/Search';
-import NotificationBar from '../../lib/Notification/bar';
+import React from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { ButtonIcon, MenuItem } from "lib";
+import StoryItem from "../styleguide/StoryItem";
+import TopBar from "../../lib/TopBar";
+import TopBarContent from "../../lib/TopBar/TopBarContent";
+import TopBarCell from "../../lib/TopBar/TopBarCell";
+import Button from "../../lib/Button";
+import Icon from "../../lib/Icon";
+import Avatar from "../../lib/Avatar";
+import AvatarWithPopover from "../../lib/Avatar/AvatarWithPopover";
+import AvatarGroup from "../../lib/Avatar/AvatarGroup";
+import Navigation from "../../lib/Navigation";
+import Logo from "../../lib/Logo";
+import SectionHeader from "../../lib/SectionHeader";
+import Search from "../../lib/Search";
+import NotificationBar from "../../lib/Notification/bar";
 
 export default {
-  title: 'Legacy/Topbar',
-  component: TopBar
+  title: "Legacy/Topbar",
+  component: TopBar,
 };
 
 export const Topbar = () => (
@@ -27,6 +28,7 @@ export const Topbar = () => (
       description="TopBar is the top bar used throughout the whole site, can add a fixed attribute to fix it to the top."
     >
       <TopBar>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -36,14 +38,16 @@ export const Topbar = () => (
           </TopBarCell>
           <TopBarCell bordered>
             <Button
-              types={['icon-only']}
+              types={["icon-only"]}
               clickHandler={() => {}}
               className="top-bar__action"
             >
+              {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
             </Button>
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell>
             <AvatarGroup maximum={2}>
@@ -69,6 +73,7 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -76,6 +81,7 @@ export const Topbar = () => (
     </StoryItem>
     <StoryItem title="TopBar dark" description="TopBar with the dark theme.">
       <TopBar useDarkTheme>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -85,14 +91,16 @@ export const Topbar = () => (
           </TopBarCell>
           <TopBarCell bordered>
             <Button
-              types={['icon-only']}
+              types={["icon-only"]}
               clickHandler={() => {}}
               className="top-bar__action"
             >
+              {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
             </Button>
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell>
             <AvatarGroup maximum={2}>
@@ -118,6 +126,7 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -129,6 +138,7 @@ export const Topbar = () => (
       description="TopBar with the light grey theme."
     >
       <TopBar useLightGreyTheme>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -138,14 +148,16 @@ export const Topbar = () => (
           </TopBarCell>
           <TopBarCell bordered>
             <Button
-              types={['icon-only']}
+              types={["icon-only"]}
               clickHandler={() => {}}
               className="top-bar__action"
             >
+              {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
             </Button>
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element; right: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell bordered>
             <ButtonIcon
@@ -157,6 +169,7 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -168,6 +181,7 @@ export const Topbar = () => (
       description="Example of the TopBar used on the app."
     >
       <TopBar>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
@@ -191,12 +205,15 @@ export const Topbar = () => (
             </Navigation>
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
+            {/* @ts-expect-error TS(2769): No overload matches this call. */}
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
+                  {/* @ts-expect-error TS(2741): Property 'displayChecked' is missing in type '{ la... Remove this comment to see the full error message */}
                   <Search.ToggleFilter
                     label="Search all projects"
                     clickHandler={() => {}}
@@ -254,6 +271,7 @@ export const Topbar = () => (
           </NotificationBar>
         }
       >
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
@@ -277,12 +295,15 @@ export const Topbar = () => (
             </Navigation>
           </TopBarCell>
         </TopBarContent>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
+            {/* @ts-expect-error TS(2769): No overload matches this call. */}
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
+                  {/* @ts-expect-error TS(2741): Property 'displayChecked' is missing in type '{ la... Remove this comment to see the full error message */}
                   <Search.ToggleFilter
                     label="Search all projects"
                     clickHandler={() => {}}
@@ -332,5 +353,5 @@ export const Topbar = () => (
 );
 
 Topbar.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

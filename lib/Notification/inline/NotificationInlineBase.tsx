@@ -16,7 +16,7 @@ const NotificationInlineBase = ({
   iconName,
   showShadow,
   ...rest
-}) => {
+}: any) => {
   const classes = cx({
     'shadow-large': showShadow
   });

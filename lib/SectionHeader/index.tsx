@@ -10,7 +10,7 @@ function SectionHeader({
   collapse,
   noBorder,
   ...rest
-}) {
+}: any) {
   const classes = cx(`section-header ${className}`, {
     'section-header-collapse': collapse,
     'section-header-no-border': noBorder

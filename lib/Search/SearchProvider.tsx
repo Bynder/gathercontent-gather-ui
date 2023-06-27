@@ -26,6 +26,7 @@ class SearchProvider extends Component {
   }
 }
 
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 SearchProvider.propTypes = {
   children: PropTypes.node.isRequired
 };

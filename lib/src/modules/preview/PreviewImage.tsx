@@ -2,7 +2,9 @@ import React from 'react';
 import { bool, node, string } from 'prop-types';
 import { useImage } from 'react-image';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'modules/loader/Loader' or its ... Remove this comment to see the full error message
 import { Loader } from 'modules/loader/Loader';
+// @ts-expect-error TS(2307): Cannot find module 'assets/previewFallback.svg' or... Remove this comment to see the full error message
 import previewFallback from 'assets/previewFallback.svg';
 
 function PreviewImage({
@@ -14,7 +16,7 @@ function PreviewImage({
   loader,
   showLoader,
   className
-}) {
+}: any) {
   const image = useImage({
     srcList: src,
     useSuspense: false

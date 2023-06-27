@@ -2,7 +2,11 @@ import React from 'react';
 import { propTypes, defaultProps } from './propTypes';
 import CollectionsTableCellContent from './CollectionsTableCellContent';
 
-const CollectionsTableHeading = ({ children, className, ...props }) => (
+const CollectionsTableHeading = ({
+  children,
+  className,
+  ...props
+}: any) => (
   <div className={`collections-table__heading ${className}`} {...props}>
     <CollectionsTableCellContent>{children}</CollectionsTableCellContent>
   </div>

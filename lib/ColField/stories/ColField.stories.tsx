@@ -1,7 +1,10 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib/ColField/ColField' or its ... Remove this comment to see the full error message
 import ColFieldComponent from 'lib/ColField/ColField';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Col, Row } from 'lib';
 import StoryItem from '../../../stories/styleguide/StoryItem';
+// @ts-expect-error TS(2307): Cannot find module '../../../assets/text-preview.s... Remove this comment to see the full error message
 import TextPreviewSVG from '../../../assets/text-preview.svg';
 
 export default {
@@ -15,7 +18,12 @@ export default {
   }
 };
 
-export const ColField = ({ visible, editable, selected, hovered }) => {
+export const ColField = ({
+  visible,
+  editable,
+  selected,
+  hovered
+}: any) => {
   return (
     <>
       <StoryItem title="ColFieldComponent">

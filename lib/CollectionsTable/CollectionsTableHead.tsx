@@ -1,7 +1,11 @@
 import React from 'react';
 import { propTypes, defaultProps } from './propTypes';
 
-const CollectionsTableHead = ({ children, className, ...props }) => (
+const CollectionsTableHead = ({
+  children,
+  className,
+  ...props
+}: any) => (
   <div className={`collections-table__head ${className}`} {...props}>
     {children}
   </div>

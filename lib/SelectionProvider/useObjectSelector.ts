@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import { SelectionContext } from './index';
 
 export function useObjectSelector(
-  id,
-  type,
-  idsToSelect,
+  id: any,
+  type: any,
+  idsToSelect: any,
   isDisabledChecker = () => false,
   data = {}
 ) {
@@ -19,6 +19,7 @@ export function useObjectSelector(
   } = useContext(SelectionContext);
 
   const isSelected = selected.indexOf(id) !== -1;
+  // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
   const isDisabled = isDisabledChecker(currentSelectedType, isSelected);
   const isHovered = intendedToSelect.indexOf(id) !== -1;
 
@@ -30,13 +31,14 @@ export function useObjectSelector(
           isSelected
             ? deselectMultiple(getIds(), type)
             : selectMultiple(getIds(), type, data)
+      // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
       : () => updateSelected(idsToSelect[0], type, data[id]);
 
   const handleMouseEnter = () => setIntendedToSelect(idsToSelect);
 
   const handleMouseLeave = () =>
     setIntendedToSelect(
-      intendedToSelect.filter(s => idsToSelect.indexOf(s) === -1)
+      intendedToSelect.filter((s: any) => idsToSelect.indexOf(s) === -1)
     );
 
   return {

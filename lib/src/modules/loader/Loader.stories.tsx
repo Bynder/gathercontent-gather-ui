@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Loader as LoaderComponent } from 'lib';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 
 export default {

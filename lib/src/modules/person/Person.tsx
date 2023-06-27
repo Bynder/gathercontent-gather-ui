@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Avatar, Icon, TooltipWrapper } from 'lib';
 import cx from 'classnames';
 import { TextHighlighter } from '../../../helpers/TextHighlighter';
@@ -18,7 +19,7 @@ export function Person({
   colour,
   locked,
   lockedTooltipText
-}) {
+}: any) {
   const classes = cx('person', className, {
     'person-selected': selected,
     'person-interactive': interactive,

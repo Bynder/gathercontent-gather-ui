@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import uuid from 'uuid/v1';
 import { RenameInputForm } from './RenameInputForm';
 import { sizes } from './common';
@@ -17,7 +18,7 @@ export function RenameInput({
   placeholder,
   formClass,
   maxLength
-}) {
+}: any) {
   const [isEditing, setIsEditing] = useState(false);
 
   const classes = cx(`rename-input-text ${className}`, {

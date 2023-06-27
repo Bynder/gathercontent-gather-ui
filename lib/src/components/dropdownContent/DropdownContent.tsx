@@ -4,7 +4,11 @@ import { DropdownContentBody } from './DropdownContentBody';
 import { DropdownContentList } from './DropdownContentList';
 import { DropdownContentFooter } from './DropdownContentFooter';
 
-export function DropdownContent({ children, className, ...rest }) {
+export function DropdownContent({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <div className={`dropdown-content ${className}`} {...rest}>
       {children}

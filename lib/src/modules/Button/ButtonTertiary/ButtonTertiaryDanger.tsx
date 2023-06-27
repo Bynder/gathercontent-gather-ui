@@ -3,7 +3,12 @@ import cx from 'classnames';
 import { ButtonBase } from '../ButtonBase';
 import { propTypes, defaultProps, sizes } from '../common';
 
-function ButtonTertiaryDanger({ children, className, disabled, ...rest }) {
+function ButtonTertiaryDanger({
+  children,
+  className,
+  disabled,
+  ...rest
+}: any) {
   const nonDisabledClasses = cx(
     'bg-white border-white',
     'text-red-primary',

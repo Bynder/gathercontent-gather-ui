@@ -2,13 +2,17 @@ import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import { ButtonPrimary } from '../../modules/Button/ButtonPrimary/ButtonPrimary';
 
-function Dropzone({ onDrop, maxSize, children, ...rest }) {
-  const onDropzoneDrop = acceptedFiles => {
+function Dropzone({
+  onDrop,
+  maxSize,
+  children,
+  ...rest
+}: any) {
+  const onDropzoneDrop = (acceptedFiles: any) => {
     onDrop(
-      acceptedFiles.map(file =>
-        Object.assign(file, {
-          preview: URL.createObjectURL(file)
-        })
+      acceptedFiles.map((file: any) => Object.assign(file, {
+        preview: URL.createObjectURL(file)
+      })
       )
     );
   };

@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { NewModal } from 'lib';
 
-const ModalBody = ({ children, className, ...rest }) => (
+const ModalBody = ({
+  children,
+  className,
+  ...rest
+}: any) => (
   <NewModal.Body className={`modal-body ${className}`} {...rest}>
     {children}
   </NewModal.Body>

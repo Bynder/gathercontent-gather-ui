@@ -9,6 +9,7 @@ class InputWithButton extends Component {
   };
 
   onClick = () => {
+    // @ts-expect-error TS(2339): Property 'inputId' does not exist on type 'Readonl... Remove this comment to see the full error message
     const { inputId, onClick } = this.props;
     const inputElement = document.getElementById(inputId);
 
@@ -18,12 +19,19 @@ class InputWithButton extends Component {
 
   render() {
     const {
+      // @ts-expect-error TS(2339): Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
       value,
+      // @ts-expect-error TS(2339): Property 'buttonText' does not exist on type 'Read... Remove this comment to see the full error message
       buttonText,
+      // @ts-expect-error TS(2339): Property 'buttonTextAfterClick' does not exist on ... Remove this comment to see the full error message
       buttonTextAfterClick,
+      // @ts-expect-error TS(2339): Property 'inputId' does not exist on type 'Readonl... Remove this comment to see the full error message
       inputId,
+      // @ts-expect-error TS(2339): Property 'buttonId' does not exist on type 'Readon... Remove this comment to see the full error message
       buttonId,
+      // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
       disabled,
+      // @ts-expect-error TS(2339): Property 'paddingSmall' does not exist on type 'Re... Remove this comment to see the full error message
       paddingSmall
     } = this.props;
 
@@ -58,12 +66,14 @@ class InputWithButton extends Component {
   }
 }
 
+// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 InputWithButton.defaultProps = {
   disabled: false,
   buttonTextAfterClick: null,
   paddingSmall: false
 };
 
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 InputWithButton.propTypes = {
   inputId: PropTypes.string.isRequired,
   buttonId: PropTypes.string.isRequired,

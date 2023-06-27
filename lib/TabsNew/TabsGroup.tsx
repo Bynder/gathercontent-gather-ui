@@ -2,7 +2,11 @@ import React from 'react';
 import { node, string, number } from 'prop-types';
 import cx from 'classnames';
 
-function TabsGroup({ children, className, maxNumberOfVisibleRows }) {
+function TabsGroup({
+  children,
+  className,
+  maxNumberOfVisibleRows
+}: any) {
   const numberOfRows = children.length;
 
   const tabsClassName = cx('tab-group', {

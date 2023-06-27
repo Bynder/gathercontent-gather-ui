@@ -16,7 +16,7 @@ export function ExpandingTextArea({
   errorMessage,
   handleOnFocus,
   ...rest
-}) {
+}: any) {
   const [inputValue, setInputValue] = useState('');
   const [rowCount, setRowCount] = useState(1);
   const [rowHeight, setRowHeight] = useState(0);
@@ -25,6 +25,7 @@ export function ExpandingTextArea({
 
   const calculateRows = (newRowHeight = rowHeight, newPadding = padding) => {
     let newRows = ~~(
+      // @ts-expect-error TS(2531): Object is possibly 'null'.
       (inputRef.current.scrollHeight - newPadding) /
       newRowHeight
     );
@@ -41,9 +42,11 @@ export function ExpandingTextArea({
     if (!inputRef.current) {
       return;
     }
+    // @ts-expect-error TS(2339): Property 'rows' does not exist on type 'never'.
     inputRef.current.rows = 1;
     const newRows = calculateRows();
     if (newRows === rowCount) {
+      // @ts-expect-error TS(2339): Property 'rows' does not exist on type 'never'.
       inputRef.current.rows = newRows;
     }
     if (newRows !== rowCount) {
@@ -53,6 +56,7 @@ export function ExpandingTextArea({
   };
 
   const setInitialRows = () => {
+    // @ts-expect-error TS(2345): Argument of type 'null' is not assignable to param... Remove this comment to see the full error message
     const inputStyle = window.getComputedStyle(inputRef.current);
     const newRowHeight = parseInt(inputStyle.lineHeight, 10);
 
@@ -65,7 +69,7 @@ export function ExpandingTextArea({
     setRowCount(initialRows);
   };
 
-  const handleChange = e => {
+  const handleChange = (e: any) => {
     handleOnChange(e);
     if (!setValue) {
       setInputValue(e.target.value);

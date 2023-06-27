@@ -9,6 +9,7 @@ import {
   Input,
   TooltipWrapper,
   useLoader
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
 import Icon from '../../../Icon';
 
@@ -22,7 +23,7 @@ export function AssigneeDropdown({
   onToggle,
   autoPosition,
   className
-}) {
+}: any) {
   const [isSubmitting, handleSubmitWithLoader] = useLoader(onSaveClick);
   const [isUnassigning, handleUnassignWithLoader] = useLoader(
     onUnassignAllClick
@@ -35,10 +36,15 @@ export function AssigneeDropdown({
       onToggle={onToggle}
       className={className}
     >
-      {({ showContent, setShowContent }) => (
+      {({
+        showContent,
+        setShowContent
+      }: any) => (
         <>
           <Dropdown.Trigger>
-            {({ toggleShowContent }) => (
+            {({
+              toggleShowContent
+            }: any) => (
               <TooltipWrapper
                 id={`assignee-dropdown-tooltip-${id}`}
                 tooltipText="Change assignees"
@@ -75,7 +81,7 @@ export function AssigneeDropdown({
                 <DropdownContent.Footer className="flex">
                   <ButtonSecondaryDanger
                     size={ButtonSecondaryDanger.sizes.sm}
-                    onClick={async e => {
+                    onClick={async (e: any) => {
                       await handleUnassignWithLoader(e);
                       setShowContent(false);
                     }}
@@ -93,7 +99,7 @@ export function AssigneeDropdown({
                     </ButtonTertiary>
                     <ButtonSecondary
                       size={ButtonSecondary.sizes.sm}
-                      onClick={async e => {
+                      onClick={async (e: any) => {
                         await handleSubmitWithLoader(e);
                         setShowContent(false);
                       }}

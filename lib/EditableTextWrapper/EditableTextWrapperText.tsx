@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Button, Icon } from 'lib';
 
 export function EditableTextWrapperText({
@@ -8,14 +9,14 @@ export function EditableTextWrapperText({
   className,
   pencilEditOnly,
   children
-}) {
-  const handleEditKeyPress = event => {
+}: any) {
+  const handleEditKeyPress = (event: any) => {
     if (event.key === 'Enter') {
       startEditing();
     }
   };
 
-  const handleEditStart = event => {
+  const handleEditStart = (event: any) => {
     event.stopPropagation();
     startEditing();
   };
@@ -26,6 +27,7 @@ export function EditableTextWrapperText({
         className="editable-text__text"
         onClick={pencilEditOnly ? null : startEditing}
         tabIndex={0}
+        // @ts-expect-error TS(2322): Type '((event: any) => void) | null' is not assign... Remove this comment to see the full error message
         onKeyUp={pencilEditOnly ? null : handleEditKeyPress}
         role="button"
       >
@@ -34,7 +36,7 @@ export function EditableTextWrapperText({
       <Button
         types={['icon-only']}
         className="editable-text__button"
-        clickHandler={e => handleEditStart(e)}
+        clickHandler={(e: any) => handleEditStart(e)}
         title={title}
       >
         {buttonLabel && <span className="visually-hidden">{buttonLabel}</span>}

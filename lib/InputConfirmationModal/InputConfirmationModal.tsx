@@ -6,6 +6,7 @@ import {
   ButtonPrimaryDanger,
   ButtonTertiary,
   ButtonSecondary
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
 
 function InputConfirmationModal({
@@ -22,7 +23,7 @@ function InputConfirmationModal({
   loading,
   skipConfirm,
   ...rest
-}) {
+}: any) {
   const [value, setValue] = useState('');
   const [showIntro, setShowIntro] = useState(true);
 

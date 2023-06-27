@@ -9,7 +9,7 @@ const CollectionsTableRow = ({
   disabled,
   isOver,
   ...props
-}) => {
+}: any) => {
   const classes = cx(`collections-table__row ${className}`, {
     'collections-table__row--selected': selected,
     'collections-table__row--disabled': disabled,

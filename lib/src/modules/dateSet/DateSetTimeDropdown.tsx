@@ -1,17 +1,19 @@
-import React from 'react';
-import uuid from 'uuid/v1';
-import { ButtonSecondary, Dropdown, Icon } from 'lib';
+import React from "react";
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
+import uuid from "uuid/v1";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { ButtonSecondary, Dropdown, Icon } from "lib";
 
-export function DateSetTimeDropdown({ onTimeSelect, selectedTime }) {
+export function DateSetTimeDropdown({ onTimeSelect, selectedTime }: any) {
   const getTimes = () => {
-    const times = [];
+    const times: any = [];
 
-    const minutes = ['00', '15', '30', '45'];
+    const minutes = ["00", "15", "30", "45"];
     const hours = Array.from({ length: 24 }, (x, i) => i);
 
-    hours.map(hour =>
-      minutes.map(minute => {
-        const suffix = hour >= 12 ? 'PM' : 'AM';
+    hours.map((hour) =>
+      minutes.map((minute) => {
+        const suffix = hour >= 12 ? "PM" : "AM";
         let twelveHour;
         if (hour > 12) {
           twelveHour = hour - 12;
@@ -23,7 +25,7 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }) {
 
         return times.push({
           key: `${hour}:${minute}`,
-          text: `${twelveHour}:${minute} ${suffix}`
+          text: `${twelveHour}:${minute} ${suffix}`,
         });
       })
     );
@@ -35,10 +37,10 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }) {
 
   return (
     <Dropdown id={`date-set-time-${uuid()}`}>
-      {({ showContent }) => (
+      {({ showContent }: any) => (
         <>
           <Dropdown.Trigger>
-            {({ toggleShowContent }) => (
+            {({ toggleShowContent }: any) => (
               <ButtonSecondary
                 onClick={toggleShowContent}
                 size={ButtonSecondary.sizes.sm}
@@ -47,7 +49,7 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }) {
                 title="Select a time"
               >
                 {selectedTime}
-                <Icon name="down" className="ml-2" types={['dark']} />
+                <Icon name="down" className="ml-2" types={["dark"]} />
               </ButtonSecondary>
             )}
           </Dropdown.Trigger>
@@ -67,5 +69,5 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }) {
 }
 
 DateSetTimeDropdown.defaultProps = {
-  selectedTime: '5:00 PM'
+  selectedTime: "5:00 PM",
 };

@@ -1,7 +1,11 @@
 import React from 'react';
 import { propTypes, defaultProps } from './common';
 
-function SelectionModalColumnHeader({ children, className, ...rest }) {
+function SelectionModalColumnHeader({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <h4
       className={`text-xs weight-semi-bold text-neutral-primary ${className}`}

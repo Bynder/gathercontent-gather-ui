@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2305): Module '"../lib"' has no exported member 'Icon'.
 import { Icon } from '../lib';
 
 export function getDropdownItems() {

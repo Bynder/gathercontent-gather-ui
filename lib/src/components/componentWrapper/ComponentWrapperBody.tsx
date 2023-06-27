@@ -11,7 +11,7 @@ export function ComponentWrapperBody({
   status,
   className,
   ...rest
-}) {
+}: any) {
   const classes = cx(`component-body ${className}`, {
     'component-body-editable': editable,
     'component-body-dragged-over': draggedOver,

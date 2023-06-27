@@ -2,7 +2,12 @@ import React, { useContext } from 'react';
 import { node, number, shape } from 'prop-types';
 import { WindowingContext } from './Windowing';
 
-function WindowingItem({ children, index, style }) {
+function WindowingItem({
+  children,
+  index,
+  style
+}: any) {
+  // @ts-expect-error TS(2339): Property 'itemHeight' does not exist on type '{}'.
   const { itemHeight, baseItemStyle } = useContext(WindowingContext);
 
   return (

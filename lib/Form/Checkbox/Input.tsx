@@ -10,7 +10,7 @@ const Input = ({
   name,
   value,
   disabled
-}) => (
+}: any) => (
   <input
     className={`form-radio__input ${className}`}
     type="checkbox"

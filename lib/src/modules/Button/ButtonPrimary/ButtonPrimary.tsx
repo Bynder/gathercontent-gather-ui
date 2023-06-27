@@ -9,7 +9,7 @@ function ButtonPrimary({
   disabled,
   connectedRight,
   ...rest
-}) {
+}: any) {
   const classes = cx('button-primary', className, {
     'button-primary-connected-right': connectedRight
   });

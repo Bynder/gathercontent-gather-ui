@@ -3,7 +3,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import ListHead from './ListHead';
 
-const List = props => {
+const List = (props: any) => {
   const listClasses = cx('list', {
     'list--bordered-right': props.borderedRight,
     'list--bordered-left': props.borderedLeft,
@@ -17,7 +17,7 @@ const List = props => {
       {props.subtitle && <div className="list__subtitle">{props.subtitle}</div>}
 
       <div className="list__body">
-        {React.Children.map(props.children, child => {
+        {React.Children.map(props.children, (child: any) => {
           if (child) {
             return (
               <div className="list__row">{React.cloneElement(child, {})}</div>
@@ -45,6 +45,7 @@ List.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
+    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
     PropTypes.arrayOf(PropTypes.shape())
   ]).isRequired,
   subtitle: PropTypes.string,

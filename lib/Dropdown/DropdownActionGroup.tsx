@@ -8,7 +8,7 @@ const DropdownActionGroup = ({
   className,
   bordered,
   collapse
-}) => {
+}: any) => {
   const classNames = cx(`dropdown__action-group ${className}`, {
     'dropdown__action-group--horizontal': horizontal,
     'dropdown__action-group--bordered': bordered,

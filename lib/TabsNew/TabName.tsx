@@ -1,7 +1,10 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-function TabName({ children, className }) {
+function TabName({
+  children,
+  className
+}: any) {
   return (
     <div
       className={`tab-name whitespace-nowrap overflow-hidden w-full ${className}`}

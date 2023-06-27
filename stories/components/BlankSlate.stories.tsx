@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Blank... Remove this comment to see the full error message
 import { BlankSlate as BlankSlateComponent, Button } from '../../lib';
 import StoryItem from '../styleguide/StoryItem';
 

@@ -1,6 +1,9 @@
 import React from 'react';
 
-export function TextHighlighter({ text, highlight }) {
+export function TextHighlighter({
+  text,
+  highlight
+}: any) {
   const indexOfHighlightedText = text
     .toLowerCase()
     .search(highlight.toLowerCase());

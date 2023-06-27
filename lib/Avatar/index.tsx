@@ -1,177 +1,141 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { Icon } from '../index';
+import React, { HTMLAttributes, useState } from "react";
+import cx from "classnames";
+// @ts-expect-error TS(2305): Module '"../index"' has no exported member 'Icon'.
+import { Icon } from "../index";
 
-/**
- * @usage
- *
- * <Avatar initials="AE" name="Angus Edwardson" color="green" url="img/url" offline />
- */
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  wrapperClassName?: string;
+  colour?: string;
+  name?: string;
+  url?: string;
+  initials?: string;
+  isOffline?: boolean;
+  isHighlighted?: boolean;
+  smallSize?: boolean;
+  largeSize?: boolean;
+  extraLargeSize?: boolean;
+  additional?: string;
+  bordered?: boolean;
+  animate?: boolean;
+  locked?: boolean;
+  onRemove?: () => {};
+}
 
-class Avatar extends Component {
-  state = {
-    showAdditional: false
-  };
+function Avatar({
+  className,
+  children,
+  wrapperClassName,
+  colour,
+  name,
+  url,
+  initials,
+  isOffline,
+  isHighlighted,
+  smallSize,
+  largeSize,
+  extraLargeSize,
+  additional,
+  bordered,
+  animate,
+  locked,
+  onRemove,
+}: Props) {
+  const [showAdditional, setShowAdditional] = useState(false);
 
-  showAdditional = () => this.setState({ showAdditional: true });
+  const styles = colour ? { color: colour } : {};
 
-  hideAdditional = () => this.setState({ showAdditional: false });
+  const additionalClasses = cx(className, {
+    "avatar--highlighted": isHighlighted,
+    "avatar--offline": isOffline,
+    "avatar--size-sm": smallSize,
+    "avatar--size-lrg": largeSize,
+    "avatar--size-xlrg": extraLargeSize,
+    "avatar--bordered": bordered,
+    "avatar--animated": animate,
+    "avatar--has-colour": colour,
+    "avatar--is-locked": locked,
+  });
 
-  render() {
-    const styles = this.props.colour ? { color: this.props.colour } : {};
+  const wrapperClasses = cx(`avatar__wrapper ${wrapperClassName}`, {
+    "avatar__wrapper--offline": isOffline,
+    "avatar__wrapper--size-sm": smallSize,
+    "avatar__wrapper--size-xlrg": extraLargeSize,
+    "avatar__wrapper--additional": additional,
+    "is-visible": showAdditional && additional,
+  });
 
-    const additionalClasses = cx(this.props.className, {
-      'avatar--highlighted': this.props.isHighlighted,
-      'avatar--offline': this.props.isOffline,
-      'avatar--size-sm': this.props.smallSize,
-      'avatar--size-lrg': this.props.largeSize,
-      'avatar--size-xlrg': this.props.extraLargeSize,
-      'avatar--bordered': this.props.bordered,
-      'avatar--animated': this.props.animate,
-      'avatar--has-colour': this.props.colour,
-      'avatar--is-locked': this.props.locked
-    });
+  if (children || additional) {
+    return (
+      <div
+        className={wrapperClasses}
+        onMouseEnter={() => setShowAdditional(true)}
+        onMouseLeave={() => setShowAdditional(false)}
+      >
+        <div style={styles} className={`avatar ${additionalClasses}`}>
+          {!url && <span className="avatar__initials">{initials}</span>}
 
-    const wrapperClasses = cx(
-      `avatar__wrapper ${this.props.wrapperClassName}`,
-      {
-        'avatar__wrapper--offline': this.props.isOffline,
-        'avatar__wrapper--size-sm': this.props.smallSize,
-        'avatar__wrapper--size-xlrg': this.props.extraLargeSize,
-        'avatar__wrapper--additional': this.props.additional,
-        'is-visible': this.state.showAdditional && this.props.additional
-      }
-    );
-
-    if (this.props.children || this.props.additional) {
-      return (
-        <div
-          className={wrapperClasses}
-          onMouseEnter={this.showAdditional}
-          onMouseLeave={this.hideAdditional}
-        >
-          <div style={styles} className={`avatar ${additionalClasses}`}>
-            {!this.props.url && (
-              <span className="avatar__initials">{this.props.initials}</span>
-            )}
-
-            {this.props.url && (
-              <img
-                className="avatar__image"
-                src={this.props.url}
-                alt={this.props.name}
+          {url && <img className="avatar__image" src={url} alt={name} />}
+          {locked && (
+            <div className="avatar__locked">
+              <Icon
+                name="locked"
+                types={["white"]}
+                defaultActiveColor={false}
               />
-            )}
-            {this.props.locked && (
-              <div className="avatar__locked">
-                <Icon
-                  name="locked"
-                  types={['white']}
-                  defaultActiveColor={false}
-                />
-              </div>
-            )}
-            {this.props.onRemove && !this.props.locked && (
-              <button
-                onClick={this.props.onRemove}
-                className="avatar__remove"
-                type="button"
-              >
-                <Icon
-                  name="cross"
-                  types={['white']}
-                  defaultActiveColor={false}
-                />
-              </button>
-            )}
-          </div>
-          {this.props.children && this.props.children}
-          {this.props.additional && (
-            <div className="avatar__additional">{this.props.additional}</div>
+            </div>
+          )}
+          {onRemove && !locked && (
+            <button onClick={onRemove} className="avatar__remove" type="button">
+              <Icon name="cross" types={["white"]} defaultActiveColor={false} />
+            </button>
           )}
         </div>
-      );
-    }
-
-    return (
-      <div style={styles} className={`avatar ${additionalClasses}`}>
-        {!this.props.url && (
-          <span className="avatar__initials">{this.props.initials}</span>
-        )}
-
-        {this.props.url && (
-          <img
-            className="avatar__image"
-            src={this.props.url}
-            alt={this.props.name}
-          />
-        )}
-        {this.props.locked && (
-          <div className="avatar__locked">
-            <Icon name="locked" types={['white']} defaultActiveColor={false} />
-          </div>
-        )}
-        {this.props.onRemove && !this.props.locked && (
-          <button
-            onClick={this.props.onRemove}
-            className="avatar__remove"
-            type="button"
-          >
-            <Icon
-              name="cross"
-              types={['white']}
-              defaultActiveColor={false}
-              title="Remove"
-            />
-          </button>
-        )}
+        {children && children}
+        {additional && <div className="avatar__additional">{additional}</div>}
       </div>
     );
   }
+  return (
+    <div style={styles} className={`avatar ${additionalClasses}`}>
+      {!url && <span className="avatar__initials">{initials}</span>}
+
+      {url && <img className="avatar__image" src={url} alt={name} />}
+      {locked && (
+        <div className="avatar__locked">
+          <Icon name="locked" types={["white"]} defaultActiveColor={false} />
+        </div>
+      )}
+      {onRemove && !locked && (
+        <button onClick={onRemove} className="avatar__remove" type="button">
+          <Icon
+            name="cross"
+            types={["white"]}
+            defaultActiveColor={false}
+            title="Remove"
+          />
+        </button>
+      )}
+    </div>
+  );
 }
 
 Avatar.defaultProps = {
-  className: '',
-  wrapperClassName: '',
-  colour: '',
-  name: '',
-  url: '',
-  initials: '',
+  className: "",
+  wrapperClassName: "",
+  colour: "",
+  name: "",
+  url: "",
+  initials: "",
   isOffline: false,
   isHighlighted: false,
   smallSize: false,
   largeSize: false,
   extraLargeSize: false,
-  children: '',
-  additional: '',
+  children: "",
+  additional: "",
   bordered: false,
   animate: false,
-  locked: false
-};
-
-Avatar.propTypes = {
-  className: PropTypes.string,
-  wrapperClassName: PropTypes.string,
-  colour: PropTypes.string,
-  name: PropTypes.string,
-  url: PropTypes.string,
-  initials: PropTypes.string,
-  isOffline: PropTypes.bool,
-  isHighlighted: PropTypes.bool,
-  smallSize: PropTypes.bool,
-  largeSize: PropTypes.bool,
-  extraLargeSize: PropTypes.bool,
-  bordered: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.shape()),
-    PropTypes.string
-  ]),
-  additional: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-  animate: PropTypes.bool,
-  locked: PropTypes.bool
+  locked: false,
 };
 
 export default Avatar;

@@ -7,7 +7,7 @@ export function SidebarSectionHead({
   children,
   className = '',
   ...rest
-}) {
+}: any) {
   const layoutClasses = cx({
     'pr-2': toggle
   });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { node, bool, oneOf, string } from 'prop-types';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-e... Remove this comment to see the full error message
 import * as easings from 'd3-ease';
 import cx from 'classnames';
 import { useTransition, animated } from 'react-spring';
@@ -11,7 +12,7 @@ export function LayoutOverlaySidebar({
   width,
   className,
   onTransitionEnd
-}) {
+}: any) {
   const classNames = cx(
     'layout-overlay-sidebar',
     {

@@ -14,10 +14,11 @@ function EditableChoiceInput({
   onBlur,
   onFocus,
   ...props
-}) {
+}: any) {
   const textInput = useRef(null);
   useEffect(() => {
     if (textInput.current && autoFocus) {
+      // @ts-expect-error TS(2339): Property 'focus' does not exist on type 'never'.
       textInput.current.focus();
     }
   }, [autoFocus]);
@@ -26,17 +27,17 @@ function EditableChoiceInput({
   const [isFocused, setIsFocused] = useState(false);
   const [showAside, setShowAside] = useState(false);
 
-  const handleOnChange = e => {
+  const handleOnChange = (e: any) => {
     onChange(e);
     setLabelText(e.target.value);
   };
 
-  const handleOnBlur = e => {
+  const handleOnBlur = (e: any) => {
     onBlur(e);
     setIsFocused(false);
   };
 
-  const handleOnFocus = e => {
+  const handleOnFocus = (e: any) => {
     onFocus(e);
     setIsFocused(true);
   };

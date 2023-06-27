@@ -1,6 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+// @ts-expect-error TS(2307): Cannot find module 'lib/MentionsForm' or its corre... Remove this comment to see the full error message
 import MentionsFormComponent from 'lib/MentionsForm';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 
 const mockUser = {
@@ -42,7 +44,7 @@ export default {
   }
 };
 
-export const MentionsForm = args => {
+export const MentionsForm = (args: any) => {
   return (
     <div>
       <StoryItem title="Mentions Form" description="Form with an author">

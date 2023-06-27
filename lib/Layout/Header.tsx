@@ -1,7 +1,11 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-export function Header({ children, className, ...rest }) {
+export function Header({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <header className={`layout-header ${className}`} {...rest}>
       {children}

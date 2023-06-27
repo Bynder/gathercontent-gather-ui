@@ -20,9 +20,11 @@ const DropdownAction = ({
   showContent: showContentProp,
   toggleShowContent: toggleShowContentProp,
   ...props
-}) => {
+}: any) => {
   const {
+    // @ts-expect-error TS(2339): Property 'toggleShowContent' does not exist on typ... Remove this comment to see the full error message
     toggleShowContent = toggleShowContentProp,
+    // @ts-expect-error TS(2339): Property 'showContent' does not exist on type '{}'... Remove this comment to see the full error message
     showContent = showContentProp
   } = useContext(DropdownContext) || {};
 
@@ -40,13 +42,13 @@ const DropdownAction = ({
     className: classNames,
     type: isSubmit ? 'submit' : 'button',
     value,
-    onClick: e => {
+    onClick: (e: any) => {
       action(e);
       if (hideAfterPerformingAction) {
         toggleShowContent();
       }
     },
-    onKeyDown: e => {
+    onKeyDown: (e: any) => {
       if (actionKeyDown) actionKeyDown(e);
     },
     disabled,

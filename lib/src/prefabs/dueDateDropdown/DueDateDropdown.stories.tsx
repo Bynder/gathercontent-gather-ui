@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { DueDateDropdown as DueDateDropdownComponent } from 'lib';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import moment from 'moment';
 
@@ -13,7 +15,7 @@ export default {
   }
 };
 
-export const DueDateDropdown = args => {
+export const DueDateDropdown = (args: any) => {
   return (
     <>
       <StoryItem

@@ -5,7 +5,10 @@ import ShortcutTrigger from '../ShortcutTrigger';
 
 const SelectionContext = React.createContext({});
 
-const SelectionProvider = ({ children, initialSelected }) => {
+const SelectionProvider = ({
+  children,
+  initialSelected
+}: any) => {
   const [selected, setSelected] = useState(initialSelected);
   const [intendedToSelect, setIntendedToSelect] = useState([]);
   const [currentSelectedType, setCurrentSelectedType] = useState(null);
@@ -19,7 +22,7 @@ const SelectionProvider = ({ children, initialSelected }) => {
     });
   };
 
-  const updateSelected = (id, type, data = {}) => {
+  const updateSelected = (id: any, type: any, data = {}) => {
     let newSelected;
     if (selected.indexOf(id) === -1) {
       newSelected = selected.concat(id);
@@ -28,7 +31,7 @@ const SelectionProvider = ({ children, initialSelected }) => {
         [id]: data
       });
     } else {
-      newSelected = selected.filter(existingId => existingId !== id);
+      newSelected = selected.filter((existingId: any) => existingId !== id);
       setSelectedData(omit(selectedData, [id]));
     }
 
@@ -47,15 +50,15 @@ const SelectionProvider = ({ children, initialSelected }) => {
     setCurrentSelectedType(null);
   };
 
-  const selectMultiple = (ids, type, data = {}) => {
+  const selectMultiple = (ids: any, type: any, data = {}) => {
     setSelected([...new Set(selected.concat(ids))]);
     setSelectedData({ ...selectedData, ...data });
     setCurrentSelectedType(type);
   };
 
-  const deselectMultiple = ids => {
+  const deselectMultiple = (ids: any) => {
     const newSelected = selected.filter(
-      selectedId => !ids.includes(selectedId)
+      (selectedId: any) => !ids.includes(selectedId)
     );
     setSelected(newSelected);
     setSelectedData(omit(selectedData, [ids]));

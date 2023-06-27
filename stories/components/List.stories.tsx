@@ -1,16 +1,22 @@
 import React from 'react';
 import StoryItem from '../styleguide/StoryItem';
 import {
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'List'... Remove this comment to see the full error message
   List as ListComponent,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'ListI... Remove this comment to see the full error message
   ListItem,
   ItemRow,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Statu... Remove this comment to see the full error message
   StatusIndicator,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Butto... Remove this comment to see the full error message
   Button,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Icon'... Remove this comment to see the full error message
   Icon,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Toolt... Remove this comment to see the full error message
   TooltipWrapper
 } from '../../lib';
 
-const addNewItemButton = (size, placement, id, tooltipText) => (
+const addNewItemButton = (size: any, placement: any, id: any, tooltipText: any) => (
   <TooltipWrapper id={id} tooltipText={tooltipText} placement={placement}>
     <Button types={['icon-only']} clickHandler={() => {}}>
       <Icon size={size} name="plus" />
@@ -18,13 +24,13 @@ const addNewItemButton = (size, placement, id, tooltipText) => (
   </TooltipWrapper>
 );
 
-const statusWithTooltip = (color, placement, id, tooltipText) => (
+const statusWithTooltip = (color: any, placement: any, id: any, tooltipText: any) => (
   <TooltipWrapper id={id} tooltipText={tooltipText} placement={placement}>
     <StatusIndicator color={color} />
   </TooltipWrapper>
 );
 
-const overdueTitle = (title, id) => (
+const overdueTitle = (title: any, id: any) => (
   <TooltipWrapper id={id} tooltipText="Overdue">
     <span className="color-overdue">{title}</span>
   </TooltipWrapper>
@@ -97,6 +103,7 @@ export const List = () => (
         >
           <a href="/#">
             <ItemRow
+              // @ts-expect-error TS(2322): Type '{ children: string; indicator: Element; }' i... Remove this comment to see the full error message
               indicator={statusWithTooltip(
                 'green',
                 'bottom',
@@ -112,6 +119,7 @@ export const List = () => (
             <ListItem collapse>
               <a href="/#">
                 <ItemRow
+                  // @ts-expect-error TS(2322): Type '{ children: string; indicator: Element; }' i... Remove this comment to see the full error message
                   indicator={statusWithTooltip(
                     'blue',
                     'bottom',
@@ -127,6 +135,7 @@ export const List = () => (
             <ListItem collapse>
               <a href="/#">
                 <ItemRow
+                  // @ts-expect-error TS(2322): Type '{ children: Element; indicator: Element; }' ... Remove this comment to see the full error message
                   indicator={statusWithTooltip(
                     'orange',
                     'bottom',
@@ -142,6 +151,7 @@ export const List = () => (
                 <ListItem collapse>
                   <a href="/#">
                     <ItemRow
+                      // @ts-expect-error TS(2322): Type '{ children: string; indicator: Element; }' i... Remove this comment to see the full error message
                       indicator={statusWithTooltip(
                         'blue',
                         'bottom',
@@ -157,6 +167,7 @@ export const List = () => (
                 <ListItem collapse>
                   <a href="/#">
                     <ItemRow
+                      // @ts-expect-error TS(2322): Type '{ children: Element; indicator: Element; }' ... Remove this comment to see the full error message
                       indicator={statusWithTooltip(
                         'orange',
                         'bottom',
@@ -189,6 +200,7 @@ export const List = () => (
       >
         <ListItem isCurrent>
           <ItemRow
+            // @ts-expect-error TS(2322): Type '{ children: string; indicator: Element; stac... Remove this comment to see the full error message
             indicator={
               <StatusIndicator
                 label="Approved"
@@ -205,6 +217,7 @@ export const List = () => (
         </ListItem>
         <ListItem>
           <ItemRow
+            // @ts-expect-error TS(2322): Type '{ children: string; indicator: Element; stac... Remove this comment to see the full error message
             indicator={
               <StatusIndicator
                 label="Approved"

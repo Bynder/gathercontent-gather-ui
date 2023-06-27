@@ -3,11 +3,15 @@ import cx from 'classnames';
 
 const DEVICE_SIZES = ['lg', 'md', 'sm', 'xs'];
 
-export function Col({ children, className = '', ...rest }) {
-  const layoutClassNames = [];
+export function Col({
+  children,
+  className = '',
+  ...rest
+}: any) {
+  const layoutClassNames: any = [];
 
   DEVICE_SIZES.forEach(size => {
-    function popProp(propSuffix, modifier) {
+    function popProp(propSuffix: any, modifier: any) {
       const propName = `${size}${propSuffix}`;
       const propValue = rest[propName];
 

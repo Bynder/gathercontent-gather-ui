@@ -5,7 +5,10 @@ import { TabsContext } from './index';
 
 const TabsRowContext = React.createContext({});
 
-function TabsRow({ children, colCount }) {
+function TabsRow({
+  children,
+  colCount
+}: any) {
   const { tabsLength } = useContext(TabsContext);
   const cssGridColCount = Math.min(colCount, tabsLength);
 

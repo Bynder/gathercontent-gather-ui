@@ -1,5 +1,7 @@
 import * as React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Input, InputIcon, Label } from 'lib';
 import { InputWithMentions } from './InputWithMentions';
 
@@ -30,7 +32,7 @@ export default {
   }
 };
 
-export const Inputs = args => {
+export const Inputs = (args: any) => {
   const mockUsers = [
     {
       id: 2,

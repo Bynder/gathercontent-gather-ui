@@ -4,7 +4,10 @@ import { MetaHeading } from './MetaHeading';
 import { MetaText } from './MetaText';
 import { MetaFooter } from './MetaFooter';
 
-function Meta({ children, className }) {
+function Meta({
+  children,
+  className
+}: any) {
   const classNames = cx('meta', className);
 
   return <div className={classNames}>{children}</div>;

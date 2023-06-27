@@ -5,7 +5,10 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import Dropdown from '../Dropdown';
 
-const DueDateButton = ({ children, ...props }) => {
+const DueDateButton = ({
+  children,
+  ...props
+}: any) => {
   if (!props.dueDate && !props.userCanSetDueDate) {
     return null;
   }
@@ -15,6 +18,7 @@ const DueDateButton = ({ children, ...props }) => {
   if (children || !props.dueDate) {
     return (
       <Dropdown.Trigger
+        // @ts-expect-error TS(2769): No overload matches this call.
         className="duedate__button duedate__button--set-duedate duedate__toggle"
         useButton
         types={buttonTypes}
@@ -44,6 +48,7 @@ const DueDateButton = ({ children, ...props }) => {
       {overdue && <Icon name="warning" />}
       {`Due to be completed `}
       <Dropdown.Trigger
+        // @ts-expect-error TS(2769): No overload matches this call.
         className="duedate__toggle"
         useButton
         types={buttonTypes}
@@ -55,6 +60,7 @@ const DueDateButton = ({ children, ...props }) => {
 };
 
 DueDateButton.propTypes = {
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   dueDate: PropTypes.shape(),
   children: PropTypes.string,
   userCanSetDueDate: PropTypes.bool.isRequired,

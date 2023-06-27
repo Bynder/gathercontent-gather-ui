@@ -16,21 +16,19 @@ export default {
   }
 };
 
-export const SearchInput = args => (
-  <div>
-    <StoryItem
-      title="Search field"
-      description="An input that contains behaviour for live search capabilities."
-    >
-      <div className="flex">
-        <SearchInputComponent {...args} />
-      </div>
-    </StoryItem>
-    <StoryItem
-      title="Search field with an initial value"
-      description="Use the `initialValue` prop to set an initial value "
-    >
-      <SearchInputComponent {...args} initialValue="foo" />
-    </StoryItem>
-  </div>
-);
+export const SearchInput = (args: any) => <div>
+  <StoryItem
+    title="Search field"
+    description="An input that contains behaviour for live search capabilities."
+  >
+    <div className="flex">
+      <SearchInputComponent {...args} />
+    </div>
+  </StoryItem>
+  <StoryItem
+    title="Search field with an initial value"
+    description="Use the `initialValue` prop to set an initial value "
+  >
+    <SearchInputComponent {...args} initialValue="foo" />
+  </StoryItem>
+</div>;

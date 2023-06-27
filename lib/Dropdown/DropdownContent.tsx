@@ -17,14 +17,15 @@ export function DropdownContent({
   noBorder,
   autoPositionLeft,
   noTransform
-}) {
+}: any) {
+  // @ts-expect-error TS(2339): Property 'showContent' does not exist on type '{} ... Remove this comment to see the full error message
   const { showContent, autoPosition, bounds } = useContext(DropdownContext) || {
     showContent: false
   };
   const [style, setStyle] = useState({});
   const contentElementRef = useRef(null);
 
-  const getTopPosition = (pos, contentBounds) => {
+  const getTopPosition = (pos: any, contentBounds: any) => {
     let newPos = pos;
 
     const originalExceedsHeight = pos > window.innerHeight;
@@ -52,7 +53,7 @@ export function DropdownContent({
     return bounds.bottom;
   };
 
-  const getLeftPosition = (pos, contentBounds) => {
+  const getLeftPosition = (pos: any, contentBounds: any) => {
     let newPos = pos;
 
     const originalExceedsWidth = pos > window.innerWidth;
@@ -74,6 +75,7 @@ export function DropdownContent({
 
   const getStyle = () => {
     if (contentElementRef?.current && autoPosition && showContent) {
+      // @ts-expect-error TS(2339): Property 'getBoundingClientRect' does not exist on... Remove this comment to see the full error message
       const contentBounds = contentElementRef.current.getBoundingClientRect();
 
       const bottomOfDropdownContent =
@@ -105,6 +107,7 @@ export function DropdownContent({
   useEffect(() => {
     const newStyle = getStyle();
     if (!isEqual(newStyle, style)) {
+      // @ts-expect-error TS(2345): Argument of type '{ top: any; left: any; } | null'... Remove this comment to see the full error message
       setStyle(newStyle);
     }
   }, [showContent, !!contentElementRef.current]);

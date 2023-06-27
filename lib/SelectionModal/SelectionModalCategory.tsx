@@ -9,7 +9,7 @@ function SelectionModalCategory({
   subText,
   counter,
   ...rest
-}) {
+}: any) {
   const buttonClasses = cx(
     `bg-white relative border-solid flex w-full rounded outline-none px-3 py-2 border border-neutral-90 items-center ${className}`,
     {

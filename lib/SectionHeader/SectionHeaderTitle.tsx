@@ -1,7 +1,11 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Dropdown, Icon } from 'lib';
 
-export function SectionHeaderTitle({ children, title }) {
+export function SectionHeaderTitle({
+  children,
+  title
+}: any) {
   const Title = <h1 className="section-header__title">{title}</h1>;
 
   if (children) {

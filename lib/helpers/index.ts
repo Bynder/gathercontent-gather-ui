@@ -1,4 +1,4 @@
-export const childIsComponent = (child, func) => {
+export const childIsComponent = (child: any, func: any) => {
   if (!child) {
     return false;
   }
@@ -6,7 +6,7 @@ export const childIsComponent = (child, func) => {
   return child.type === func;
 };
 
-export const childrenContainsComponent = (children, func) => {
+export const childrenContainsComponent = (children: any, func: any) => {
   if (!children || !func) {
     return false;
   }
@@ -15,5 +15,5 @@ export const childrenContainsComponent = (children, func) => {
     return true;
   }
 
-  return children.some && children.some(child => childIsComponent(child, func));
+  return children.some && children.some((child: any) => childIsComponent(child, func));
 };

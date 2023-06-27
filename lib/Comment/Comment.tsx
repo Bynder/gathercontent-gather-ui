@@ -14,7 +14,12 @@ import { CommentText } from './CommentText';
 import { CommentContext, CommentProvider } from './CommentProvider';
 import { CommentDeleteConfirmation } from './CommentDeleteConfirmation';
 
-function Comment({ children, className, ...rest }) {
+function Comment({
+  children,
+  className,
+  ...rest
+}: any) {
+  // @ts-expect-error TS(2339): Property 'isOpen' does not exist on type '{}'.
   const { isOpen, showBorders } = useContext(CommentContext);
   const classNames = cx('comment relative p-3', className, {
     'border-t-0 border-l-0 border-r-0 border-b border-solid border-neutral-90':

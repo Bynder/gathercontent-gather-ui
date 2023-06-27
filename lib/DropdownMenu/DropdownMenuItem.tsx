@@ -1,29 +1,30 @@
-import React from 'react';
-import cx from 'classnames';
-import Icon from '../Icon';
-import AvatarInformation from '../Avatar/AvatarInformation';
-import Avatar from '../Avatar';
+import React from "react";
+import cx from "classnames";
+import Icon from "../Icon";
+import AvatarInformation from "../Avatar/AvatarInformation";
+import Avatar from "../Avatar";
 
-export function DropdownMenuItem({ item }) {
+export function DropdownMenuItem({ item }: any) {
   const { className, type } = item;
 
   const activeContents = (
     <span className="dropdown-item__tick is-active">
+      {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
       <Icon name="tick" size="micro" />
     </span>
   );
 
   const classes = cx(
-    'dropdown__item',
+    "dropdown__item",
     className,
-    `dropdown__item--${item.linkType || 'button'}`
+    `dropdown__item--${item.linkType || "button"}`
   );
 
-  if (type === 'separator') {
+  if (type === "separator") {
     return <li className="dropdown__separator" />;
   }
 
-  if (type === 'link') {
+  if (type === "link") {
     return (
       <li className={classes}>
         {item.active && activeContents}
@@ -34,7 +35,7 @@ export function DropdownMenuItem({ item }) {
     );
   }
 
-  if (type === 'withAdditional') {
+  if (type === "withAdditional") {
     return (
       <li className={classes}>
         <button
@@ -54,7 +55,7 @@ export function DropdownMenuItem({ item }) {
     );
   }
 
-  if (type === 'avatar') {
+  if (type === "avatar") {
     return (
       <li className={classes}>
         <button
@@ -62,6 +63,7 @@ export function DropdownMenuItem({ item }) {
           className="dropdown__link dropdown__avatar"
           onClick={item.action}
         >
+          // @ts-expect-error TS(2769): No overload matches this call.
           <Avatar url={item.avatar} initials={item.initials}>
             <AvatarInformation name={item.name} email={item.email} />
           </Avatar>
@@ -70,7 +72,7 @@ export function DropdownMenuItem({ item }) {
     );
   }
 
-  if (type === 'title') {
+  if (type === "title") {
     return (
       <li className={classes}>
         <button

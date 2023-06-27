@@ -1,58 +1,58 @@
-import React, { useState, Fragment } from 'react';
-import { OptionMenu as OptionMenuComponent } from '../OptionMenu';
-import StoryItem from '../../../stories/styleguide/StoryItem';
-import Dropdown from '../../Dropdown';
-import { ButtonTertiary } from '../../src/modules/Button/ButtonTertiary/ButtonTertiary';
+import React, { useState, Fragment } from "react";
+import { OptionMenu as OptionMenuComponent } from "../OptionMenu";
+import StoryItem from "../../../stories/styleguide/StoryItem";
+import Dropdown from "../../Dropdown";
+import { ButtonTertiary } from "../../src/modules/Button/ButtonTertiary/ButtonTertiary";
 
 export default {
-  title: 'Legacy/Dropdowns/Option Menu',
-  component: OptionMenuComponent
+  title: "Legacy/Dropdowns/Option Menu",
+  component: OptionMenuComponent,
 };
 
 export const OptionMenu = () => {
-  const [selectedOption, setSelectedOption] = useState('paragraph');
+  const [selectedOption, setSelectedOption] = useState("paragraph");
 
   const options = [
     {
-      id: 'paragraph',
-      text: 'Paragraph',
-      iconName: 'paragraph16'
+      id: "paragraph",
+      text: "Paragraph",
+      iconName: "paragraph16",
     },
     {
-      id: 'h1',
-      text: 'Heading 1',
-      iconName: 'h116'
+      id: "h1",
+      text: "Heading 1",
+      iconName: "h116",
     },
     {
-      id: 'h2',
-      text: 'Heading 2',
-      iconName: 'h216'
+      id: "h2",
+      text: "Heading 2",
+      iconName: "h216",
     },
     {
-      id: 'h3',
-      text: 'Heading 3',
-      iconName: 'h316'
+      id: "h3",
+      text: "Heading 3",
+      iconName: "h316",
     },
     {
-      id: 'h4',
-      text: 'Heading 4',
-      iconName: 'h416'
+      id: "h4",
+      text: "Heading 4",
+      iconName: "h416",
     },
     {
-      id: 'h5',
-      text: 'Heading 5',
-      iconName: 'h516'
+      id: "h5",
+      text: "Heading 5",
+      iconName: "h516",
     },
     {
-      id: 'h6',
-      text: 'Heading 6',
-      iconName: 'h616'
+      id: "h6",
+      text: "Heading 6",
+      iconName: "h616",
     },
     {
-      id: 'quote',
-      text: 'Quote',
-      iconName: 'blockQuote16'
-    }
+      id: "quote",
+      text: "Quote",
+      iconName: "blockQuote16",
+    },
   ];
 
   return (
@@ -65,6 +65,7 @@ export const OptionMenu = () => {
           <Fragment>
             <Dropdown.Trigger>
               <ButtonTertiary>
+                {/* @ts-expect-error TS(2532): Object is possibly 'undefined'. */}
                 {options.find(({ id }) => selectedOption === id).text}
               </ButtonTertiary>
             </Dropdown.Trigger>
@@ -94,5 +95,5 @@ export const OptionMenu = () => {
 };
 
 OptionMenu.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

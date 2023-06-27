@@ -2,7 +2,12 @@ import React from 'react';
 import cx from 'classnames';
 import Icon from '../../../Icon';
 
-export function StatusIndicatorCircle({ color, icon, solid, thickBorder }) {
+export function StatusIndicatorCircle({
+  color,
+  icon,
+  solid,
+  thickBorder
+}: any) {
   const className = cx('status-indicator-circle', {
     'duration-100': thickBorder,
     'duration-300': !thickBorder

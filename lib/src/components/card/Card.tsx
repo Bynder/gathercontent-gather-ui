@@ -20,7 +20,7 @@ function Card({
   active,
   disabled,
   size
-}) {
+}: any) {
   const classNames = cx('card outline-none', className, {
     'card-interactive': onClick,
     'card-selected': selected,
@@ -35,7 +35,7 @@ function Card({
 
   const innerClasses = cx('card-inner', innerClassNames);
 
-  const handleKeyPress = e => {
+  const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       onClick(e);
     }

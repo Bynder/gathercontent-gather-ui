@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib/DropdownMenu' or its corre... Remove this comment to see the full error message
 import { DropdownMenu as DropdownMenuComponent } from 'lib/DropdownMenu';
+// @ts-expect-error TS(2307): Cannot find module 'lib/SearchDropdown' or its cor... Remove this comment to see the full error message
 import SearchDropdown from 'lib/SearchDropdown';
 import StoryItem from '../styleguide/StoryItem';
 import * as assets from '../../assets/data';

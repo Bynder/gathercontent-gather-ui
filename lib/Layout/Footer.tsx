@@ -1,9 +1,15 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-e... Remove this comment to see the full error message
 import * as easings from 'd3-ease';
 import { shape, string } from 'prop-types';
 
-export function Footer({ children, className, animatableProperties, ...rest }) {
+export function Footer({
+  children,
+  className,
+  animatableProperties,
+  ...rest
+}: any) {
   const props = useSpring({
     ...animatableProperties,
     config: {

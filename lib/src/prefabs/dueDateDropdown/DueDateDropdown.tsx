@@ -10,7 +10,9 @@ import {
   ButtonIcon,
   TooltipWrapper,
   useLoader
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'plur... Remove this comment to see the full error message
 import pluralize from 'pluralize';
 import Icon from '../../../Icon';
 
@@ -29,16 +31,21 @@ export function DueDateDropdown({
   today,
   defaultDueDate,
   defaultTime
-}) {
+}: any) {
   const [isSubmitting, handleSubmitWithLoader] = useLoader(onSaveClick);
   const [isRemoving, handleRemoveClick] = useLoader(onRemoveClick);
 
   return (
     <Dropdown id={id} autoPosition={autoPosition} onToggle={onToggle}>
-      {({ showContent, setShowContent }) => (
+      {({
+        showContent,
+        setShowContent
+      }: any) => (
         <>
           <Dropdown.Trigger>
-            {({ toggleShowContent }) => (
+            {({
+              toggleShowContent
+            }: any) => (
               <TooltipWrapper
                 id={`due-date-dropdown-tooltip-${id}`}
                 tooltipText="Set a due date"
@@ -109,7 +116,7 @@ export function DueDateDropdown({
               <DropdownContent.Footer className="flex">
                 <ButtonSecondaryDanger
                   size={ButtonSecondaryDanger.sizes.sm}
-                  onClick={async e => {
+                  onClick={async (e: any) => {
                     await handleRemoveClick(e);
                     setShowContent(false);
                   }}
@@ -128,7 +135,7 @@ export function DueDateDropdown({
                   </ButtonTertiary>
                   <ButtonSecondary
                     size={ButtonSecondary.sizes.sm}
-                    onClick={async e => {
+                    onClick={async (e: any) => {
                       await handleSubmitWithLoader(e);
                       setShowContent(false);
                     }}

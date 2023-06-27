@@ -10,7 +10,7 @@ const FinderItem = ({
   children,
   disabled,
   ...rest
-}) => {
+}: any) => {
   const classNames = cx(`finder-item ${className}`, {
     'finder-item-active': active,
     'finder-item-disabled': disabled,

@@ -6,7 +6,12 @@ import NotificationBar from '../../Notification/bar';
 import { DndContext } from '../DndProvider';
 import { ItemRow } from '../../ItemRow';
 
-const Message = ({ children, canDrop, isOver, isDragging }) => {
+const Message = ({
+  children,
+  canDrop,
+  isOver,
+  isDragging
+}: any) => {
   let level = 'information';
 
   if (isDragging && canDrop) {
@@ -22,6 +27,7 @@ const Message = ({ children, canDrop, isOver, isDragging }) => {
   }
 
   return (
+    // @ts-expect-error TS(2322): Type '{ children: any; level: string; style: { hei... Remove this comment to see the full error message
     <NotificationBar level={level} style={{ height: '200px' }}>
       {children}
     </NotificationBar>
@@ -36,6 +42,7 @@ Message.propTypes = {
 };
 
 function DndDropNotification() {
+  // @ts-expect-error TS(2339): Property 'isDragging' does not exist on type '{}'.
   const { isDragging, setFailurePreview } = useContext(DndContext);
 
   const failurePreview = (

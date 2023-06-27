@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StoryItem = (props) => {
+const StoryItem = (props: any) => {
   return (
       <div className="story-item">
         <h3 className="story-item__title">{props.title}</h3>

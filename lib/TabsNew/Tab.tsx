@@ -6,7 +6,11 @@ import { TabsRowContext } from './TabsRow';
 
 const TabContext = React.createContext({});
 
-function Tab({ children, id, index }) {
+function Tab({
+  children,
+  id,
+  index
+}: any) {
   const { activeTabId } = useContext(TabsContext);
   const { colCount } = useContext(TabsRowContext);
   const [actionsAreActive, setActionsAreActive] = useState(false);

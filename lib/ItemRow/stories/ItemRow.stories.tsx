@@ -1,16 +1,19 @@
-import React from 'react';
-import { Pill } from 'lib';
+import React from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { Pill } from "lib";
 import {
   ItemRow as ItemRowComponent,
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Sta... Remove this comment to see the full error message
   StatusIndicator,
-  TooltipWrapper
-} from '../../index';
-import Icon from '../../Icon';
-import { AvatarGroupMock } from '../../Avatar/stories/AvatarGroupMock';
-import { DragLine } from '../../DnD/DragLine';
-import StoryItem from '../../../stories/styleguide/StoryItem';
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Too... Remove this comment to see the full error message
+  TooltipWrapper,
+} from "../../index";
+import Icon from "../../Icon";
+import { AvatarGroupMock } from "../../Avatar/stories/AvatarGroupMock";
+import { DragLine } from "../../DnD/DragLine";
+import StoryItem from "../../../stories/styleguide/StoryItem";
 
-const createStatusIndicator = props => (
+const createStatusIndicator = (props: any) => (
   <TooltipWrapper
     id="status-tooltip"
     tooltipText="tooltip text"
@@ -21,7 +24,7 @@ const createStatusIndicator = props => (
 );
 
 export default {
-  title: 'Legacy/Item Row',
+  title: "Legacy/Item Row",
   component: ItemRowComponent,
   args: {
     stacked: false,
@@ -30,9 +33,9 @@ export default {
     draggedBelow: false,
     showParticipants: false,
     commentCount: 0,
-    templateName: '',
-    itemName: 'Item name'
-  }
+    templateName: "",
+    itemName: "Item name",
+  },
 };
 
 export const ItemRow = ({
@@ -43,14 +46,14 @@ export const ItemRow = ({
   commentCount,
   templateName,
   showParticipants,
-  itemName
-}) => {
-  let alignment = '';
+  itemName,
+}: any) => {
+  let alignment = "";
 
   if (draggedAbove) {
-    alignment = 'top';
+    alignment = "top";
   } else if (draggedBelow) {
-    alignment = 'bottom';
+    alignment = "bottom";
   }
 
   return (
@@ -60,7 +63,7 @@ export const ItemRow = ({
           bordered={bordered}
           stacked={stacked}
           style={{
-            position: 'relative'
+            position: "relative",
           }}
         >
           {(draggedAbove || draggedBelow) && (
@@ -69,11 +72,11 @@ export const ItemRow = ({
           <ItemRowComponent.Name>
             {!stacked &&
               createStatusIndicator({
-                label: '',
-                color: 'green',
-                preText: '',
+                label: "",
+                color: "green",
+                preText: "",
                 small: false,
-                softLabel: false
+                softLabel: false,
               })}
             {itemName}
           </ItemRowComponent.Name>
@@ -82,12 +85,12 @@ export const ItemRow = ({
             {stacked && (
               <ItemRowComponent.Data>
                 {createStatusIndicator({
-                  label: 'live',
-                  color: 'green',
-                  preText: 'Status',
+                  label: "live",
+                  color: "green",
+                  preText: "Status",
                   small: true,
                   softLabel: false,
-                  className: ''
+                  className: "",
                 })}
               </ItemRowComponent.Data>
             )}
@@ -98,7 +101,7 @@ export const ItemRow = ({
 
             {showParticipants && (
               <AvatarGroupMock avatarProps={{ smallSize: true }} minCount={3}>
-                {({ ui, count }) =>
+                {({ ui, count }: any) =>
                   count ? (
                     <ItemRowComponent.Data>{ui}</ItemRowComponent.Data>
                   ) : null
@@ -121,13 +124,13 @@ export const ItemRow = ({
       >
         <ItemRowComponent list>
           <ItemRowComponent.Name>
-            {createStatusIndicator({ color: 'green' })}
+            {createStatusIndicator({ color: "green" })}
             Item name 1
           </ItemRowComponent.Name>
         </ItemRowComponent>
         <ItemRowComponent list>
           <ItemRowComponent.Name>
-            {createStatusIndicator({ color: 'green' })}
+            {createStatusIndicator({ color: "green" })}
             Really really really really really really really really really
             really really really really really really really really really
             really really really really really really really really really
@@ -136,13 +139,13 @@ export const ItemRow = ({
         </ItemRowComponent>
         <ItemRowComponent list>
           <ItemRowComponent.Name>
-            {createStatusIndicator({ color: 'blue' })}
+            {createStatusIndicator({ color: "blue" })}
             Item name 3
           </ItemRowComponent.Name>
         </ItemRowComponent>
         <ItemRowComponent list>
           <ItemRowComponent.Name>
-            {createStatusIndicator({ color: 'green' })}
+            {createStatusIndicator({ color: "green" })}
             Item name 4
           </ItemRowComponent.Name>
           <ItemRowComponent.Aside>
@@ -151,7 +154,7 @@ export const ItemRow = ({
         </ItemRowComponent>
         <ItemRowComponent list>
           <ItemRowComponent.Name>
-            {createStatusIndicator({ color: 'red' })}
+            {createStatusIndicator({ color: "red" })}
             Another really really really really really really really really
             really really really really really really really really really
             really really really really really really really really really

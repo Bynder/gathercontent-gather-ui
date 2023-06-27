@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  // @ts-expect-error TS(2305): Module '"../../../lib"' has no exported member 'Co... Remove this comment to see the full error message
   CollectionsTable as CollectionsTableComponent,
+  // @ts-expect-error TS(2305): Module '"../../../lib"' has no exported member 'Ic... Remove this comment to see the full error message
   Icon
 } from '../../../lib';
 import BodyRowExample from './BodyRowExample';

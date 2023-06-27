@@ -2,7 +2,12 @@ import React from 'react';
 import { node, string, bool } from 'prop-types';
 import cx from 'classnames';
 
-export function InlineSidebar({ children, className, isFinder, ...rest }) {
+export function InlineSidebar({
+  children,
+  className,
+  isFinder,
+  ...rest
+}: any) {
   const classNames = cx(`inline-sidebar ${className}`, {
     'inline-sidebar-finder': isFinder
   });

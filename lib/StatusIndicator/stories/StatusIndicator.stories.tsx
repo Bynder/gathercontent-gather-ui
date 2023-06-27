@@ -31,7 +31,7 @@ export default {
   }
 };
 
-export const StatusIndicator = args => {
+export const StatusIndicator = (args: any) => {
   return (
     <div>
       <StoryItem

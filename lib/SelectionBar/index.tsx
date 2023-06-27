@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { AnimatedWrapper, Row } from 'lib';
 import SelectionBarAction from './SelectionBarAction';
 import SelectionBarDivider from './SelectionBarDivider';
@@ -16,7 +17,7 @@ const SelectionBar = ({
   children,
   animatableProperties,
   ...rest
-}) => {
+}: any) => {
   const classNames = cx('selection-bar', {
     'selection-bar--fixed': fixed,
     'selection-bar--auto-hide': autoHide,
@@ -46,6 +47,7 @@ SelectionBar.propTypes = {
   children: PropTypes.node.isRequired,
   fixed: PropTypes.bool,
   autoHide: PropTypes.bool,
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   animatableProperties: PropTypes.shape()
 };
 

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { pick } from 'lodash';
 import { SelectionContext, useObjectSelector } from '..';
 
-export function useShiftSelect(id, ids, type, idsData = {}) {
+export function useShiftSelect(id: any, ids: any, type: any, idsData = {}) {
   const {
     selected,
     currentSelectedType,
@@ -19,9 +19,10 @@ export function useShiftSelect(id, ids, type, idsData = {}) {
     pick(idsData, [id])
   );
 
-  const handleSelection = e => {
+  const handleSelection = (e: any) => {
     setLastInteracted(id);
     if (!e.shiftKey || selected.length === 0 || id === lastInteracted) {
+      // @ts-expect-error TS(2554): Expected 0 arguments, but got 1.
       handleClick(e);
     } else {
       const selectedIndex = ids.indexOf(id);

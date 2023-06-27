@@ -12,8 +12,8 @@ export function MenuItem({
   className,
   children,
   ...rest
-}) {
-  const onClick = e => {
+}: any) {
+  const onClick = (e: any) => {
     if (!href || disabled) {
       e.preventDefault();
     }

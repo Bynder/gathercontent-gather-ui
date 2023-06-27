@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownFooter = ({ children, ...rest }) => {
+const DropdownFooter = ({
+  children,
+  ...rest
+}: any) => {
   return (
     <footer className="dropdown__footer" {...rest}>
       {children}

@@ -11,13 +11,16 @@ class Form extends Component {
     document.removeEventListener('keydown', this.handleKeyDown, false);
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: any) => {
     e.preventDefault();
+    // @ts-expect-error TS(2339): Property 'onSubmit' does not exist on type 'Readon... Remove this comment to see the full error message
     this.props.onSubmit(e);
   };
 
-  handleKeyDown = e => {
+  handleKeyDown = (e: any) => {
+    // @ts-expect-error TS(2339): Property 'escToClose' does not exist on type 'Read... Remove this comment to see the full error message
     if (this.props.escToClose && e.keyCode === 27) {
+      // @ts-expect-error TS(2339): Property 'onCancel' does not exist on type 'Readon... Remove this comment to see the full error message
       this.props.onCancel();
     }
   };
@@ -25,10 +28,15 @@ class Form extends Component {
   render() {
     const {
       children,
+      // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
       className,
+      // @ts-expect-error TS(2339): Property 'onSubmit' does not exist on type 'Readon... Remove this comment to see the full error message
       onSubmit,
+      // @ts-expect-error TS(2339): Property 'onCancel' does not exist on type 'Readon... Remove this comment to see the full error message
       onCancel,
+      // @ts-expect-error TS(2339): Property 'escToClose' does not exist on type 'Read... Remove this comment to see the full error message
       escToClose,
+      // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
       disabled,
       ...rest
     } = this.props;
@@ -43,6 +51,7 @@ class Form extends Component {
   }
 }
 
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 Form.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
   onSubmit: PropTypes.func.isRequired,
@@ -52,6 +61,7 @@ Form.propTypes = {
   disabled: PropTypes.bool
 };
 
+// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 Form.defaultProps = {
   onCancel() {},
   className: '',

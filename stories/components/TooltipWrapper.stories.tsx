@@ -10,7 +10,7 @@ export default {
   }
 };
 
-export const Tooltip = args => {
+export const Tooltip = (args: any) => {
   return (
     <div>
       <StoryItem

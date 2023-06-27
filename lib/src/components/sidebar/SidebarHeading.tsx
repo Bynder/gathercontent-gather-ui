@@ -6,7 +6,7 @@ export function SidebarHeading({
   className = '',
   showMoreToggle,
   ...rest
-}) {
+}: any) {
   return (
     <div className={`sidebar-heading ${className}`} {...rest}>
       {children}

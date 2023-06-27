@@ -9,9 +9,12 @@ import { DropdownContext } from './DropdownProvider';
 class DropdownTrigger extends Component {
   static contextType = DropdownContext;
 
-  handleClick = event => {
+  trigger: any;
+
+  handleClick = (event: any) => {
     const { toggleShowContent, autoPosition, showContent } = this.context;
 
+    // @ts-expect-error TS(2339): Property 'onClick' does not exist on type 'Readonl... Remove this comment to see the full error message
     this.props.onClick(!showContent, event);
 
     if (this.trigger && autoPosition) {
@@ -22,10 +25,12 @@ class DropdownTrigger extends Component {
     return toggleShowContent();
   };
 
-  handleMouseover = event => {
+  handleMouseover = (event: any) => {
+    // @ts-expect-error TS(2339): Property 'useHover' does not exist on type 'Readon... Remove this comment to see the full error message
     if (this.props.useHover) {
       const { toggleShowContent, autoPosition, showContent } = this.context;
 
+      // @ts-expect-error TS(2339): Property 'onClick' does not exist on type 'Readonl... Remove this comment to see the full error message
       this.props.onClick(!showContent, event);
 
       if (this.trigger && autoPosition) {
@@ -41,17 +46,24 @@ class DropdownTrigger extends Component {
   render() {
     const {
       children,
+      // @ts-expect-error TS(2339): Property 'useButton' does not exist on type 'Reado... Remove this comment to see the full error message
       useButton,
+      // @ts-expect-error TS(2339): Property 'useSelect' does not exist on type 'Reado... Remove this comment to see the full error message
       useSelect,
+      // @ts-expect-error TS(2339): Property 'types' does not exist on type 'Readonly<... Remove this comment to see the full error message
       types,
+      // @ts-expect-error TS(2339): Property 'direction' does not exist on type 'Reado... Remove this comment to see the full error message
       direction,
+      // @ts-expect-error TS(2339): Property 'triggerClassName' does not exist on type... Remove this comment to see the full error message
       triggerClassName,
+      // @ts-expect-error TS(2339): Property 'blueOnActive' does not exist on type 'Re... Remove this comment to see the full error message
       blueOnActive,
+      // @ts-expect-error TS(2339): Property 'useHover' does not exist on type 'Readon... Remove this comment to see the full error message
       useHover,
       ...rest
     } = this.props;
     const { showContent } = this.context;
-    const createRef = trigger => {
+    const createRef = (trigger: any) => {
       this.trigger = trigger;
     };
     const wrapperClassNames = cx(`dropdown__trigger-wrapper--${direction}`, {
@@ -106,6 +118,7 @@ class DropdownTrigger extends Component {
   }
 }
 
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 DropdownTrigger.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   useButton: PropTypes.bool,
@@ -118,6 +131,7 @@ DropdownTrigger.propTypes = {
   useHover: PropTypes.bool
 };
 
+// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 DropdownTrigger.defaultProps = {
   useButton: false,
   useSelect: false,

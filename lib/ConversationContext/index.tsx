@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes, { arrayOf, shape } from 'prop-types';
-import { Col, Person, Row } from 'lib';
-import { Conversation } from '../Conversation/Conversation';
-import { Comment } from '../Comment/Comment';
+import React from "react";
+import PropTypes, { arrayOf, shape } from "prop-types";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { Col, Person, Row } from "lib";
+import { Conversation } from "../Conversation/Conversation";
+import { Comment } from "../Comment/Comment";
 
 const ConversationContext = ({
   label,
@@ -11,8 +12,8 @@ const ConversationContext = ({
   resolved,
   comments,
   resolveConversation,
-  users
-}) => (
+  users,
+}: any) => (
   <Row>
     <Col sm={3} xs={12}>
       <div className="conversation-context__label">{label}</div>
@@ -33,7 +34,7 @@ const ConversationContext = ({
         </Conversation.Header>
 
         <Conversation.Body>
-          {comments.map(comment => (
+          {comments.map((comment: any) => (
             <Comment.Provider isOpen key={comment.id}>
               <Comment>
                 <Comment.Header>
@@ -47,6 +48,7 @@ const ConversationContext = ({
                 </Comment.Header>
 
                 <Comment.Body>
+                  {/* @ts-expect-error TS(2741): Property 'currentUser' is missing in type '{ child... Remove this comment to see the full error message */}
                   <Comment.Text users={users} showFullText>
                     {comment.body}
                   </Comment.Text>
@@ -65,18 +67,20 @@ ConversationContext.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-    PropTypes.arrayOf(PropTypes.shape())
+    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
+    PropTypes.arrayOf(PropTypes.shape()),
   ]),
   resolved: PropTypes.bool.isRequired,
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   comments: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   resolveConversation: PropTypes.func.isRequired,
   users: arrayOf(shape({})).isRequired,
-  userCanResolve: PropTypes.bool
+  userCanResolve: PropTypes.bool,
 };
 
 ConversationContext.defaultProps = {
   children: null,
-  userCanResolve: false
+  userCanResolve: false,
 };
 
 export default ConversationContext;

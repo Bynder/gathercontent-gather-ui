@@ -11,7 +11,7 @@ const FolderRowName = ({
   handleOnClick,
   toggleTitle,
   ...rest
-}) => {
+}: any) => {
   return (
     <div className="folder-row__name" {...rest}>
       {showToggle && (

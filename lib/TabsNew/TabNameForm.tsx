@@ -11,7 +11,7 @@ export function TabNameForm({
   setActiveTab,
   submitTabForm,
   placeholder
-}) {
+}: any) {
   const {
     id,
     isEditing,
@@ -31,11 +31,14 @@ export function TabNameForm({
   useEffect(() => {
     if (contentRef.current) {
       const padding = 1;
+      // @ts-expect-error TS(2339): Property 'parentNode' does not exist on type 'neve... Remove this comment to see the full error message
       const parentWidth = contentRef.current.parentNode.offsetWidth;
+      // @ts-expect-error TS(2339): Property 'offsetWidth' does not exist on type 'nev... Remove this comment to see the full error message
       const newWidth = contentRef.current.offsetWidth;
       const newInputWidth = newWidth >= parentWidth ? parentWidth : newWidth;
 
       setInputWidth(
+        // @ts-expect-error TS(2345): Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
         `${tabName === '' ? placeholderWidth : newInputWidth + padding}px`
       );
     }
@@ -128,6 +131,7 @@ export function TabNameForm({
               setIsEditing(false);
             }}
             style={{
+              // @ts-expect-error TS(2322): Type 'null' is not assignable to type 'Width<strin... Remove this comment to see the full error message
               width: inputWidth
             }}
             ref={formInputRef}

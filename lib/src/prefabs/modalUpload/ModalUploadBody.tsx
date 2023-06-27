@@ -8,7 +8,7 @@ export function ModalUploadBody({
   maxSize,
   dropzoneProps,
   ...rest
-}) {
+}: any) {
   return (
     <Modal.Body className="modal-upload-body" {...rest}>
       <Dropzone onDrop={onDrop} maxSize={maxSize} {...dropzoneProps}>

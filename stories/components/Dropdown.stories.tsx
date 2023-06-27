@@ -1,25 +1,26 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import {
   Dropdown as DropdownComponent,
   Avatar,
   AvatarInformation,
   Icon,
-  ConfirmationDropdown
-} from 'lib';
-import StoryItem from '../styleguide/StoryItem';
-import StatusIndicator from '../../lib/StatusIndicator';
-import Form from '../../lib/Form';
-import FormInput from '../../lib/Form/FormInput';
+  ConfirmationDropdown,
+  // @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+} from "lib";
+import StoryItem from "../styleguide/StoryItem";
+import StatusIndicator from "../../lib/StatusIndicator";
+import Form from "../../lib/Form";
+import FormInput from "../../lib/Form/FormInput";
 
 export default {
-  title: 'Legacy/Dropdowns/Dropdown',
-  component: DropdownComponent
+  title: "Legacy/Dropdowns/Dropdown",
+  component: DropdownComponent,
 };
 
 const createDelayedPromise = (timeout = 2000) =>
-  new Promise(resolve => setTimeout(resolve, timeout));
+  new Promise((resolve) => setTimeout(resolve, timeout));
 
-const createContentWithItems = props => (
+const createContentWithItems = (props: any) => (
   <DropdownComponent.Content {...props} collapse>
     <DropdownComponent.ActionGroup>
       <DropdownComponent.Action action={() => {}} selected>
@@ -71,7 +72,7 @@ export const Dropdown = () => {
           </DropdownComponent.Trigger>
 
           <DropdownComponent.Content>
-            {showContent => (
+            {(showContent: any) => (
               <button tabIndex={showContent ? 0 : -1}>Focusable element</button>
             )}
           </DropdownComponent.Content>
@@ -86,7 +87,6 @@ export const Dropdown = () => {
           <DropdownComponent.Trigger useButton>
             Left alignment
           </DropdownComponent.Trigger>
-
           {createContentWithItems()}
         </DropdownComponent>
 
@@ -182,7 +182,7 @@ export const Dropdown = () => {
         description="A dropdown where we don't render the dropdown content until the dropdown is active"
       >
         <DropdownComponent id="id-3-b" autoPosition>
-          {({ showContent }) => (
+          {({ showContent }: any) => (
             <>
               <DropdownComponent.Trigger useButton>
                 Auto Position
@@ -247,7 +247,7 @@ export const Dropdown = () => {
                   confirmationPromise={createDelayedPromise}
                   position={{
                     bottom: true,
-                    left: true
+                    left: true,
                   }}
                   isDanger
                   collapse
@@ -325,7 +325,7 @@ export const Dropdown = () => {
         title="DropdownComponent Menu"
         description="DropdownMenu is being phased out. You can achieve the same outcome by composing DropdownComponent components."
       >
-        <div style={{ maxWidth: '300px' }}>
+        <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" autoPosition block>
             <DropdownComponent.Trigger useSelect>
               Select an option...
@@ -340,7 +340,7 @@ export const Dropdown = () => {
         title="DropdownComponent (with other components as content)"
         description="We can compose dropdowns with various components."
       >
-        <div style={{ maxWidth: '300px' }}>
+        <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" block>
             <DropdownComponent.Trigger useSelect>
               <StatusIndicator color="green" label="Status 2" medium />
@@ -380,5 +380,5 @@ export const Dropdown = () => {
 };
 
 Dropdown.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

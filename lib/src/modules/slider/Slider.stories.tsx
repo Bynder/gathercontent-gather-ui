@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import { Slider as SliderComponent } from './Slider';
 

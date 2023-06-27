@@ -6,7 +6,7 @@ import DueDateTime from './DueDateTime';
 import Dropdown from '../Dropdown';
 import Icon from '../Icon';
 
-const DueDateHeader = props => {
+const DueDateHeader = (props: any) => {
   let label = (
     <div className="duedate__header--date duedate__header--date-not-set">
       No due date set
@@ -71,7 +71,9 @@ const DueDateHeader = props => {
 DueDateHeader.propTypes = {
   removeDueDate: PropTypes.func.isRequired,
   setTime: PropTypes.func.isRequired,
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   dueDate: PropTypes.shape(),
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   dueTime: PropTypes.shape()
 };
 

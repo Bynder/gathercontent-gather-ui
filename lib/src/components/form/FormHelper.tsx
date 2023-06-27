@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { FormContext, statuses } from './Form';
 
-export function FormHelper({ children, className = '', ...rest }) {
+export function FormHelper({
+  children,
+  className = '',
+  ...rest
+}: any) {
   const { status } = React.useContext(FormContext);
   const hasFailed = status === statuses.failure;
   const hasSucceeded = status === statuses.success;

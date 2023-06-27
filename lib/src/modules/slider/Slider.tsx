@@ -11,7 +11,7 @@ export function Slider({
   value,
   onChange,
   children
-}) {
+}: any) {
   const valueAsPercent = (((value - min) * 100) / (max - min)).toFixed(0);
   return (
     <Fragment>
@@ -27,6 +27,7 @@ export function Slider({
         step={step}
         value={value}
         onChange={onChange}
+        // @ts-expect-error TS(2322): Type '{ '--val': string; }' is not assignable to t... Remove this comment to see the full error message
         style={{ '--val': valueAsPercent }}
       />
       {children}

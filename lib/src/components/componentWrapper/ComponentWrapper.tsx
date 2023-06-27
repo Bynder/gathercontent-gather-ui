@@ -27,7 +27,7 @@ export function ComponentWrapper({
   isHovered,
   counter,
   ...rest
-}) {
+}: any) {
   return (
     <div className={`component-wrapper ${className}`} {...rest}>
       <ComponentWrapperHeader

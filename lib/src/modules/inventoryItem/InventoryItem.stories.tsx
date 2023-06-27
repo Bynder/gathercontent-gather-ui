@@ -4,7 +4,9 @@ import {
   InventoryItem as InventoryItemComponent,
   Draggable,
   DndProvider
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 
 export default {
@@ -15,7 +17,7 @@ export default {
   }
 };
 
-export const InventoryItem = args => {
+export const InventoryItem = (args: any) => {
   return (
     <StoryItem
       title="InventoryItemComponent"
@@ -26,7 +28,9 @@ export const InventoryItem = args => {
           item={{ type: 'story' }}
           preview={<InventoryItemComponent iconName="text" isPreview />}
         >
-          {({ isDragging }, dragRef) => (
+          {({
+            isDragging
+          }: any, dragRef: any) => (
             <div ref={dragRef}>
               <InventoryItemComponent
                 tooltipText="Text field"

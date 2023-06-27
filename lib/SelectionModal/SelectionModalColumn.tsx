@@ -3,7 +3,12 @@ import { bool } from 'prop-types';
 import cx from 'classnames';
 import { propTypes, defaultProps } from './common';
 
-function SelectionModalColumn({ children, className, isHighlight, ...rest }) {
+function SelectionModalColumn({
+  children,
+  className,
+  isHighlight,
+  ...rest
+}: any) {
   const classes = cx(`flex min-h-0 overflow-y-auto flex-col ${className}`, {
     'bg-neutral-98': isHighlight
   });

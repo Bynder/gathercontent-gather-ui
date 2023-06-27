@@ -10,7 +10,12 @@ import { InlineSidebar } from './InlineSidebar';
 import { Section } from './Section';
 import { LayoutOverlaySidebar } from './LayoutOverlaySidebar';
 
-function Layout({ children, className, fullScreen, ...rest }) {
+function Layout({
+  children,
+  className,
+  fullScreen,
+  ...rest
+}: any) {
   const layoutClassName = cx(
     'layout flex flex-col overflow-x-hidden',
     className,

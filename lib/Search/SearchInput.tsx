@@ -6,17 +6,24 @@ import Icon from '../Icon';
 import ShortcutTrigger from '../ShortcutTrigger';
 
 class SearchInput extends Component {
+  handleKeyPress: any;
+
+  textinput: any;
+
   state = {
     inputValue: '',
     isFocussed: false
   };
 
-  handleChange = event => {
+  handleChange = (event: any) => {
     this.setState({ inputValue: event.target.value });
+    // @ts-expect-error TS(2339): Property 'onChange' does not exist on type 'Readon... Remove this comment to see the full error message
     this.props.onChange(event.target.value);
     if (event.target.value.trim() === '') {
+      // @ts-expect-error TS(2339): Property 'hideBody' does not exist on type 'Readon... Remove this comment to see the full error message
       return this.props.hideBody();
     }
+    // @ts-expect-error TS(2339): Property 'displayBody' does not exist on type 'Rea... Remove this comment to see the full error message
     return this.props.displayBody();
   };
 
@@ -27,7 +34,9 @@ class SearchInput extends Component {
 
   handleFocus = () =>
     this.setState({ isFocussed: true }, () => {
+      // @ts-expect-error TS(2339): Property 'showBody' does not exist on type 'Readon... Remove this comment to see the full error message
       if (this.state.inputValue !== '' && !this.props.showBody) {
+        // @ts-expect-error TS(2339): Property 'displayBody' does not exist on type 'Rea... Remove this comment to see the full error message
         this.props.displayBody();
       }
     });
@@ -37,12 +46,15 @@ class SearchInput extends Component {
   };
 
   handleEscape = () => {
+    // @ts-expect-error TS(2339): Property 'hideBody' does not exist on type 'Readon... Remove this comment to see the full error message
     this.props.hideBody();
     this.setState({ isFocussed: false });
   };
 
   render() {
+    // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
     const classNames = cx(`search__input ${this.props.className}`, {
+      // @ts-expect-error TS(2339): Property 'showBody' does not exist on type 'Readon... Remove this comment to see the full error message
       'is-focus': this.props.showBody || this.state.isFocussed
     });
     return (
@@ -81,11 +93,13 @@ class SearchInput extends Component {
   }
 }
 
+// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 SearchInput.defaultProps = {
   className: '',
   showBody: false
 };
 
+// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
 SearchInput.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func.isRequired,

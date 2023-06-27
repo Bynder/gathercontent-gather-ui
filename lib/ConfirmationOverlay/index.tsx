@@ -6,6 +6,7 @@ import {
   ButtonPrimaryDanger,
   ButtonTertiary,
   useLoader
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
 import Icon from '../Icon';
 
@@ -16,7 +17,7 @@ const ConfirmationOverlay = ({
   failureText,
   className,
   show
-}) => {
+}: any) => {
   const [hasFailed, setHasFailed] = useState(false);
   const setHasFailedTimeout = useRef(null);
 
@@ -25,6 +26,7 @@ const ConfirmationOverlay = ({
       await confirm();
     } catch (error) {
       setHasFailed(true);
+      // @ts-expect-error TS(2322): Type 'Timeout' is not assignable to type 'null'.
       setHasFailedTimeout.current = setTimeout(() => setHasFailed(false), 2000);
       console.error(error);
     }

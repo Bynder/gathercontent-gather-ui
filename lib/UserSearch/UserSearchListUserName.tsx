@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Icon from '../Icon';
 
-const UserSearchListUserName = ({ name, isSelected }) => {
+const UserSearchListUserName = ({
+  name,
+  isSelected
+}: any) => {
   const classes = cx('user-search-list__user-name', {
     'is-active': isSelected
   });

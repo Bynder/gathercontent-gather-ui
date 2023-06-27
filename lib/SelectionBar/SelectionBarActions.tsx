@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Col } from 'lib';
 
-const SelectionBarActions = ({ children }) => (
+const SelectionBarActions = ({
+  children
+}: any) => (
   <Col
     xs={12}
     sm={5}

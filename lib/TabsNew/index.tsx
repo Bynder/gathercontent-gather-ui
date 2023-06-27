@@ -13,7 +13,12 @@ import { TabNameForm } from './TabNameForm';
 
 const TabsContext = React.createContext({});
 
-function Tabs({ children, className, tabsLength, activeTabId }) {
+function Tabs({
+  children,
+  className,
+  tabsLength,
+  activeTabId
+}: any) {
   const [scrollPosition, setScrollPosition] = useState('top');
 
   const sharedState = {
@@ -27,12 +32,15 @@ function Tabs({ children, className, tabsLength, activeTabId }) {
         onScroll={e => {
           const element = e.target;
 
+          // @ts-expect-error TS(2339): Property 'scrollTop' does not exist on type 'Event... Remove this comment to see the full error message
           if (element.scrollTop === 0) {
             if (scrollPosition !== 'top') {
               setScrollPosition('top');
             }
           } else if (
+            // @ts-expect-error TS(2339): Property 'scrollHeight' does not exist on type 'Ev... Remove this comment to see the full error message
             element.scrollHeight - element.scrollTop ===
+            // @ts-expect-error TS(2339): Property 'clientHeight' does not exist on type 'Ev... Remove this comment to see the full error message
             element.clientHeight
           ) {
             if (scrollPosition !== 'bottom') {
@@ -57,6 +65,7 @@ Tabs.ActionGroup = TabsActionGroup;
 Tabs.Group = TabsGroup;
 Tabs.Row = TabsRow;
 Tabs.Tab = Tab;
+// @ts-expect-error TS(2339): Property 'Context' does not exist on type 'typeof ... Remove this comment to see the full error message
 Tabs.Tab.Context = TabContext;
 Tabs.TabDragLine = TabDragLine;
 Tabs.TabName = TabName;

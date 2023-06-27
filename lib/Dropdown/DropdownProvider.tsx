@@ -14,11 +14,11 @@ const DropdownProvider = ({
   autoPosition,
   block,
   className
-}) => {
+}: any) => {
   const [showContent, setShowContent] = useState(false);
   const [bounds, setBounds] = useState({ top: -9999 });
 
-  const dispatchToggle = contentWillShow => {
+  const dispatchToggle = (contentWillShow: any) => {
     const type = contentWillShow || persistShow ? 'ACTIVE' : 'UNACTIVE';
 
     onToggle({
@@ -27,7 +27,7 @@ const DropdownProvider = ({
     });
   };
 
-  const toggleAndSetShowContent = show => {
+  const toggleAndSetShowContent = (show: any) => {
     dispatchToggle(show);
     setShowContent(persistShow ? true : show);
   };
@@ -38,11 +38,17 @@ const DropdownProvider = ({
 
     if (elBounds) {
       setBounds({
+        // @ts-expect-error TS(2339): Property 'top' does not exist on type 'never'.
         top: elBounds.top,
+        // @ts-expect-error TS(2345): Argument of type '{ top: any; left: any; right: an... Remove this comment to see the full error message
         left: elBounds.left,
+        // @ts-expect-error TS(2339): Property 'right' does not exist on type 'never'.
         right: elBounds.right,
+        // @ts-expect-error TS(2339): Property 'width' does not exist on type 'never'.
         width: elBounds.width,
+        // @ts-expect-error TS(2339): Property 'bottom' does not exist on type 'never'.
         bottom: elBounds.bottom,
+        // @ts-expect-error TS(2339): Property 'height' does not exist on type 'never'.
         height: elBounds.height
       });
     }

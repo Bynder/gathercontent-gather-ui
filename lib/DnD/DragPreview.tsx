@@ -3,7 +3,9 @@ import { node } from 'prop-types';
 import { useDragLayer } from 'react-dnd-cjs';
 import { getItemStyles } from './helpers/getItemStyles';
 
-function DragPreview({ children }) {
+function DragPreview({
+  children
+}: any) {
   const { initialOffset, currentOffset, clientOffset } = useDragLayer(
     monitor => ({
       item: monitor.getItem(),

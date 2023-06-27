@@ -10,9 +10,9 @@ export function RadioButtonGroup({
   overrideLabelDefault,
   active,
   disabled
-}) {
-  const checkedOption = choices.find(c => c.checked);
-  const [selected, setSelected] = useState(choices.find(c => c.checked));
+}: any) {
+  const checkedOption = choices.find((c: any) => c.checked);
+  const [selected, setSelected] = useState(choices.find((c: any) => c.checked));
   const [otherOptionValue, setOtherOptionValue] = useState('');
 
   useEffect(() => {
@@ -21,17 +21,17 @@ export function RadioButtonGroup({
     }
   }, [checkedOption]);
 
-  const isChecked = choice => selected && choice.id === selected.id;
+  const isChecked = (choice: any) => selected && choice.id === selected.id;
 
-  const onChange = e => {
+  const onChange = (e: any) => {
     const targetId = e.target.id;
-    const selectedChoice = choices.find(c => c.id === targetId);
+    const selectedChoice = choices.find((c: any) => c.id === targetId);
     setSelected(selectedChoice);
     onChangeHandler(selectedChoice);
   };
 
-  const onTextChange = e => {
-    const otherOption = choices.find(c => c.other_option);
+  const onTextChange = (e: any) => {
+    const otherOption = choices.find((c: any) => c.other_option);
     const { value } = e.target;
     setSelected(otherOption);
     setOtherOptionValue(value);
@@ -43,7 +43,7 @@ export function RadioButtonGroup({
 
   return (
     <div>
-      {choices.map(choice => {
+      {choices.map((choice: any) => {
         if (choice.other_option) {
           return (
             <RadioButtonOther

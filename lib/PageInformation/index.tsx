@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { EditableTextWrapper } from 'lib';
 
 const PageInformation = ({
@@ -9,7 +10,7 @@ const PageInformation = ({
   rename,
   contextName,
   inputLabel
-}) => (
+}: any) => (
   <div className="page-information">
     {editable ? (
       <EditableTextWrapper

@@ -1,4 +1,4 @@
-function getItemStyles(initialOffset, currentOffset, clientOffset) {
+function getItemStyles(initialOffset: any, currentOffset: any, clientOffset: any) {
   if (!initialOffset || !currentOffset || !clientOffset) {
     return {
       display: 'none'

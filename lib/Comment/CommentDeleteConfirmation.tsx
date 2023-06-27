@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
-import { func, string } from 'prop-types';
-import { Comment } from 'lib';
-import ConfirmationOverlay from '../ConfirmationOverlay';
-import BoundaryClickWatcher from '../BoundaryClickWatcher';
+import React, { useContext } from "react";
+import { func, string } from "prop-types";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { Comment } from "lib";
+import ConfirmationOverlay from "../ConfirmationOverlay";
+import BoundaryClickWatcher from "../BoundaryClickWatcher";
 
 function CommentDeleteConfirmation({
   onConfirm,
   confirmButtonText,
   failureText,
-  onCancel
-}) {
-  const { isDeleting, setIsDeleting } = useContext(Comment.Context);
+  onCancel,
+}: any) {
+  const { isDeleting, setIsDeleting }: any = useContext(Comment.Context);
 
   const closeAndCancel = () => {
     setIsDeleting(false);
@@ -35,13 +36,13 @@ CommentDeleteConfirmation.propTypes = {
   onConfirm: func.isRequired,
   confirmButtonText: string,
   onCancel: func,
-  failureText: string
+  failureText: string,
 };
 
 CommentDeleteConfirmation.defaultProps = {
-  confirmButtonText: 'Delete',
+  confirmButtonText: "Delete",
   onCancel: () => {},
-  failureText: ''
+  failureText: "",
 };
 
 export { CommentDeleteConfirmation };

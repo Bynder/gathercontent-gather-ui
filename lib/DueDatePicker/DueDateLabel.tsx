@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Icon from '../Icon';
 
-const DueDateLabel = ({ overdue, children }) => {
+const DueDateLabel = ({
+  overdue,
+  children
+}: any) => {
   if (!children) {
     return (
       <span className="duedate__label duedate__label--button">

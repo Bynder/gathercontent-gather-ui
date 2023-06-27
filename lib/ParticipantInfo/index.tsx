@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ParticipantInfo = ({ name, email }) => (
+const ParticipantInfo = ({
+  name,
+  email
+}: any) => (
   <div className="participant_info">
     <p className="participant_info__name">{name}</p>
     <p className="participant_info__email">{email}</p>

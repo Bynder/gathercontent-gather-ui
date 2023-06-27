@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import uuid from 'uuid/v1';
 import { string, arrayOf, bool, instanceOf, shape, func } from 'prop-types';
 import cx from 'classnames';
@@ -12,9 +13,9 @@ const PillInput = ({
   onPillsChange,
   initialPills,
   ...rest
-}) => {
-  const checkPill = pillName => !checker || checker.regex.test(pillName);
-  const initialPillsValidated = initialPills.map(pill => ({
+}: any) => {
+  const checkPill = (pillName: any) => !checker || checker.regex.test(pillName);
+  const initialPillsValidated = initialPills.map((pill: any) => ({
     ...pill,
     isValid: checkPill(pill.name)
   }));
@@ -23,8 +24,8 @@ const PillInput = ({
   const [pills, setPills] = useState(initialPillsValidated);
   const [inputValue, setInputValue] = useState('');
 
-  const addPills = pillNames => {
-    const pillsToAdd = pillNames.reduce((acc, pillName) => {
+  const addPills = (pillNames: any) => {
+    const pillsToAdd = pillNames.reduce((acc: any, pillName: any) => {
       if (!pillName) {
         return acc;
       }
@@ -36,8 +37,8 @@ const PillInput = ({
     setPills([...pills, ...pillsToAdd]);
   };
 
-  const removePill = id => {
-    const newPills = pills.filter(pill => pill.id !== id);
+  const removePill = (id: any) => {
+    const newPills = pills.filter((pill: any) => pill.id !== id);
     setPills(newPills);
   };
 
@@ -46,7 +47,7 @@ const PillInput = ({
     setPills(newPills);
   };
 
-  const onChange = value => {
+  const onChange = (value: any) => {
     const pillNamesFromValue = value.split(' ');
     const numberOfPillNames = pillNamesFromValue.length;
 
@@ -97,7 +98,11 @@ const PillInput = ({
 
   return (
     <div className={containerClassName}>
-      {pills.map(({ id, name, isValid }) => {
+      {pills.map(({
+        id,
+        name,
+        isValid
+      }: any) => {
         return (
           <DeleteablePill
             key={id}

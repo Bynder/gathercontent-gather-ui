@@ -5,7 +5,7 @@ export function FormSubmission({
   className = '',
   submitText,
   ...rest
-}) {
+}: any) {
   return (
     <div className={`form-submission ${className}`} {...rest}>
       {children}

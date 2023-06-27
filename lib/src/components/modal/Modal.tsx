@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import ReactModal from 'react-modal';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
@@ -13,7 +14,7 @@ export function Modal({
   size,
   keyboard,
   className
-}) {
+}: any) {
 
   const appElement = document.getElementById('app-wrapper');
 

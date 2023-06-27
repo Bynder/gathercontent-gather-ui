@@ -2,7 +2,11 @@ import React from 'react';
 import { propTypes, defaultProps } from './common';
 import PillBase from './PillBase';
 
-const PillPurple = ({ className, children, ...rest }) => (
+const PillPurple = ({
+  className,
+  children,
+  ...rest
+}: any) => (
   <PillBase
     className={`bg-purple-90 text-purple-primary font-semi-bold inherit-color-icon ${className}`}
     {...rest}

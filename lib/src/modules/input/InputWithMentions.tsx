@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Mention, MentionsInput } from 'react-mentions';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Avatar, AvatarInformation, ShortcutTrigger } from 'lib';
 
 export function InputWithMentions({
@@ -10,7 +12,7 @@ export function InputWithMentions({
   onMention,
   onSubmitShortcutTriggered,
   ...rest
-}) {
+}: any) {
   const [inputValue, setInputValue] = useState(value);
   const [currentInputHeight, setCurrentInputHeight] = useState('0px');
   const hiddenContentRef = useRef(null);
@@ -19,6 +21,7 @@ export function InputWithMentions({
 
   const getInputHeight = () => {
     if (hiddenContentRef.current) {
+      // @ts-expect-error TS(2339): Property 'getBoundingClientRect' does not exist on... Remove this comment to see the full error message
       return hiddenContentRef.current.getBoundingClientRect().height;
     }
     return currentInputHeight;
@@ -35,28 +38,27 @@ export function InputWithMentions({
     }
   }, [inputValue]);
 
-  const removeMentionMarkup = newVal => {
+  const removeMentionMarkup = (newVal: any) => {
     const pattern = /(?:@\[\w+\])+/gi;
-    return newVal.replace(pattern, match => {
+    return newVal.replace(pattern, (match: any) => {
       const mention = match.replace(/\]|\[/g, '');
       return mention;
     });
   };
 
-  const handleChange = event => {
+  const handleChange = (event: any) => {
     onChange(removeMentionMarkup(event.target.value));
     setInputValue(removeMentionMarkup(event.target.value));
   };
 
-  const searchForUsers = term => {
+  const searchForUsers = (term: any) => {
     if (term.trim() !== '' && users.length > 0) {
       return users.filter(
-        user =>
-          user.name
-            .toLowerCase()
-            .split(' ')
-            .filter(subStr => subStr.lastIndexOf(term, 0) === 0).length > 0 ||
-          user.display.toLowerCase().lastIndexOf(term, 0) === 0
+        (user: any) => user.name
+          .toLowerCase()
+          .split(' ')
+          .filter((subStr: any) => subStr.lastIndexOf(term, 0) === 0).length > 0 ||
+        user.display.toLowerCase().lastIndexOf(term, 0) === 0
       );
     }
     return users;
@@ -76,7 +78,7 @@ export function InputWithMentions({
         value={inputValue}
         onChange={handleChange}
         markup="@[__display__]"
-        displayTransform={(id, display) => `@${display}`}
+        displayTransform={(id: any, display: any) => `@${display}`}
         suggestionsPortalHost={mentionsPortalRef.current}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
@@ -85,22 +87,20 @@ export function InputWithMentions({
         <Mention
           trigger="@"
           onAdd={onMention}
-          data={search => searchForUsers(search)}
+          data={(search: any) => searchForUsers(search)}
           appendSpaceOnAdd
-          renderSuggestion={suggestion => (
-            <Avatar url={suggestion.avatar} initials={suggestion.initials}>
-              <AvatarInformation
-                email={`@${suggestion.display}`}
-                name={suggestion.name}
-              />
-            </Avatar>
-          )}
+          renderSuggestion={(suggestion: any) => <Avatar url={suggestion.avatar} initials={suggestion.initials}>
+            <AvatarInformation
+              email={`@${suggestion.display}`}
+              name={suggestion.name}
+            />
+          </Avatar>}
         />
       </MentionsInput>
       <div ref={mentionsPortalRef} />
       <ShortcutTrigger
         shortcutKey="Enter"
-        onShortcutTrigger={e => {
+        onShortcutTrigger={(e: any) => {
           if (!hasFocus || !value) {
             return e;
           }
@@ -111,7 +111,7 @@ export function InputWithMentions({
       />
       <ShortcutTrigger
         shortcutKey="Enter"
-        onShortcutTrigger={e => {
+        onShortcutTrigger={(e: any) => {
           if (!hasFocus || !value) {
             return e;
           }

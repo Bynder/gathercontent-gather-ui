@@ -2,7 +2,11 @@ import React from 'react';
 import { defaults, types } from './inlineTypes';
 import NotificationInlineBase from './NotificationInlineBase';
 
-const NotificationInlineWarning = ({ children, className = '', ...rest }) => (
+const NotificationInlineWarning = ({
+  children,
+  className = '',
+  ...rest
+}: any) => (
   <NotificationInlineBase
     iconName="warningTriangle"
     className={`border-yellow-primary ${className}`}

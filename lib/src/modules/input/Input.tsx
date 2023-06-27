@@ -14,7 +14,7 @@ export function Input({
   onChange,
   inputRef,
   ...rest
-}) {
+}: any) {
   const [_value, setValue] = React.useState(value);
 
   const classNames = cx(`input input-${size}`, className, {

@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import { v4 } from 'uuid';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
 import faker from 'faker';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonSecondary, Tabs as TabsComponent } from 'lib';
 import Dropdown from '../../lib/Dropdown';
 import { TabContext } from '../../lib/TabsNew/Tab';
@@ -21,7 +24,12 @@ function RenameTabActionExample() {
 }
 
 // eslint-disable-next-line react/prop-types
-function TabsStory({ tabs, dragSide, dragIndex, editable }) {
+function TabsStory({
+  tabs,
+  dragSide,
+  dragIndex,
+  editable
+}: any) {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
   const numberOfRows = Math.ceil(tabs.length / 8);
   const rows = [...new Array(numberOfRows)].map((i, index) => {
@@ -34,9 +42,9 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }) {
       <TabsComponent.Group>
         {rows.map(r => (
           <TabsComponent.Row key={v4()}>
-            {r.map((t, index) => (
+            {r.map((t: any, index: any) => (
               <TabsComponent.Tab id={t.id} index={index} key={v4()}>
-                {(wrapperClasses, buttonClasses) => (
+                {(wrapperClasses: any, buttonClasses: any) => (
                   <div className={wrapperClasses}>
                     {!editable ? (
                       <button
@@ -54,7 +62,7 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }) {
                       <TabsComponent.TabNameForm
                         tab={t}
                         className={`${buttonClasses}`}
-                        setActiveTab={e => {
+                        setActiveTab={(e: any) => {
                           e.preventDefault();
                           setActiveTabId(t.id);
                         }}
@@ -111,7 +119,7 @@ export default {
   }
 };
 
-export const Tabs = args => {
+export const Tabs = (args: any) => {
   const tabs = [...Array(args.tabsNumber).keys()].map(() => ({
     id: v4(),
     name: faker.commerce.productName()

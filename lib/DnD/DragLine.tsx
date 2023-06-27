@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react';
 import { string, number } from 'prop-types';
 
-export const DragLine = ({ alignment, offsetPx }) => (
+export const DragLine = ({
+  alignment,
+  offsetPx
+}: any) => (
   <Fragment>
     <span
       className="drag-line__ball drag-line__ball-left"

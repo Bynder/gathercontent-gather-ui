@@ -1,10 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTransition, animated } from 'react-spring';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-e... Remove this comment to see the full error message
 import * as easings from 'd3-ease';
 import { WorkflowStepContext } from './workflowStepProvider';
 import { useSize } from '../../../helpers/useSize';
 
-export function WorkflowStepCollapsibleBody({ children }) {
+export function WorkflowStepCollapsibleBody({
+  children
+}: any) {
+  // @ts-expect-error TS(2339): Property 'showBody' does not exist on type '{}'.
   const { showBody } = useContext(WorkflowStepContext);
   const bodyRef = useRef(null);
   const size = useSize(bodyRef);

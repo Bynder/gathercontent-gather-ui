@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib/Icon' or its corresponding... Remove this comment to see the full error message
 import Icon from 'lib/Icon';
 import { ButtonBase } from '../ButtonBase';
 import {
@@ -16,7 +17,7 @@ function ButtonIconDanger({
   active,
   size,
   ...rest
-}) {
+}: any) {
   const classes = cx(
     className,
     'button-icon-danger',

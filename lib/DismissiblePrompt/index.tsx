@@ -3,7 +3,12 @@ import { node, string, func } from 'prop-types';
 import Icon from '../Icon';
 import Button from '../Button';
 
-const DismissiblePrompt = ({ children, onDismiss, className, ...rest }) => (
+const DismissiblePrompt = ({
+  children,
+  onDismiss,
+  className,
+  ...rest
+}: any) => (
   <div {...rest} className={`dismissible-prompt ${className}`}>
     <div className="dismissible-prompt__children">{children}</div>
     <Button

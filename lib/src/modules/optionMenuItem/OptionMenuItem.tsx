@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Icon } from 'lib';
 
 export function OptionMenuItem({
@@ -9,7 +10,7 @@ export function OptionMenuItem({
   danger,
   className,
   ...rest
-}) {
+}: any) {
   const classes = cx(`option-menu-item ${className}`, {
     'option-menu-item-active': active,
     'option-menu-item-danger': danger,

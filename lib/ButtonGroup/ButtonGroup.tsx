@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ButtonGroup = ({ children }) => (
+const ButtonGroup = ({
+  children
+}: any) => (
   <div className="button-group">{children}</div>
 );
 

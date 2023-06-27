@@ -10,7 +10,7 @@ import DropdownFooter from './DropdownFooter';
 import DropdownProvider from './DropdownProvider';
 import DropdownInfo from './DropdownInfo';
 
-const Dropdown = props => <DropdownProvider {...props} />;
+const Dropdown = (props: any) => <DropdownProvider {...props} />;
 
 Dropdown.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,

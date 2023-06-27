@@ -15,8 +15,9 @@ export const InputWithButton = () => (
     >
       <div>
         <InputWithButtonComponent
+          // @ts-expect-error TS(2769): No overload matches this call.
           value="text"
-          onClick={value => alert(value)}
+          onClick={(value: any) => alert(value)}
           buttonText="Click Me"
         />
       </div>
@@ -27,8 +28,9 @@ export const InputWithButton = () => (
     >
       <div>
         <InputWithButtonComponent
+          // @ts-expect-error TS(2769): No overload matches this call.
           value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
-          onClick={value => alert(value)}
+          onClick={(value: any) => alert(value)}
           buttonText="Click Me"
         />
       </div>
@@ -39,8 +41,9 @@ export const InputWithButton = () => (
     >
       <div>
         <InputWithButtonComponent
+          // @ts-expect-error TS(2769): No overload matches this call.
           value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
-          onClick={value => {}}
+          onClick={(value: any) => {}}
           buttonText="Click Me"
           buttonTextAfterClick="I've been clicked!"
         />
@@ -49,8 +52,9 @@ export const InputWithButton = () => (
     <StoryItem title="InputWithButtonComponent padding small">
       <div>
         <InputWithButtonComponent
+          // @ts-expect-error TS(2769): No overload matches this call.
           value="https://www.google.com/search?safe=off&source=hp&ei=-mfmXMLbCdChkwWAvpnIDg&q=hello&oq=hello"
-          onClick={value => {}}
+          onClick={(value: any) => {}}
           buttonText="Click Me"
           buttonTextAfterClick="I've been clicked!"
           paddingSmall

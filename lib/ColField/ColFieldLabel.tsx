@@ -1,7 +1,16 @@
-import React from 'react';
-import { bool, func, string, oneOfType, node } from 'prop-types';
-import cx from 'classnames';
-import { RenameInput } from 'lib';
+import React, { HTMLAttributes, ReactNode } from "react";
+import cx from "classnames";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { RenameInput } from "lib";
+
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  label: string | ReactNode;
+  editable?: string;
+  multiline?: boolean;
+  insetInput?: boolean;
+  formClass?: string;
+  maxLength?: number;
+}
 
 function ColFieldLabel({
   label,
@@ -14,10 +23,10 @@ function ColFieldLabel({
   placeholder,
   maxLength,
   ...props
-}) {
+}: Props) {
   if (editable) {
     const classes = cx({
-      '-m-05': insetInput
+      "-m-05": insetInput,
     });
 
     return (
@@ -44,25 +53,14 @@ function ColFieldLabel({
   );
 }
 
-ColFieldLabel.propTypes = {
-  label: oneOfType([string, node]).isRequired,
-  className: string,
-  editable: bool,
-  onChange: func,
-  multiline: bool,
-  insetInput: bool,
-  formClass: string,
-  placeholder: string
-};
-
 ColFieldLabel.defaultProps = {
-  className: '',
+  className: "",
   editable: false,
   onChange: () => {},
   multiline: false,
   insetInput: true,
-  formClass: '',
-  placeholder: 'Enter a field label'
+  formClass: "",
+  placeholder: "Enter a field label",
 };
 
 export default ColFieldLabel;

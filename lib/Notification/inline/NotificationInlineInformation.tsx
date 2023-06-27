@@ -6,7 +6,7 @@ const NotificationInlineInformation = ({
   children,
   className = '',
   ...rest
-}) => (
+}: any) => (
   <NotificationInlineBase
     iconName="infoSquare"
     className={`border-blue-primary ${className}`}

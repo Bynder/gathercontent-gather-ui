@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
-import { func } from 'prop-types';
-import { ButtonIcon, Comment } from 'lib';
-import Dropdown from '../Dropdown';
-import DropdownActionGroup from '../Dropdown/DropdownActionGroup';
+import React, { useContext } from "react";
+import { func } from "prop-types";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { ButtonIcon, Comment } from "lib";
+import Dropdown from "../Dropdown";
+import DropdownActionGroup from "../Dropdown/DropdownActionGroup";
 
-function CommentActions({ onEditClick, onRemoveClick, className }) {
-  const { setIsEditing, setIsDeleting, isOpen } = useContext(Comment.Context);
-  const metaClass = 'pr-12';
+function CommentActions({ onEditClick, onRemoveClick, className }: any) {
+  const { setIsEditing, setIsDeleting, isOpen }: any = useContext(
+    Comment.Context
+  );
+  const metaClass = "pr-12";
 
   return isOpen ? (
     <div className={className}>
@@ -14,7 +17,7 @@ function CommentActions({ onEditClick, onRemoveClick, className }) {
         {({ showContent }) => (
           <>
             <Dropdown.Trigger>
-              {({ toggleShowContent }) => (
+              {({ toggleShowContent }: any) => (
                 <ButtonIcon
                   name="menuDotted"
                   active={showContent}
@@ -56,12 +59,12 @@ function CommentActions({ onEditClick, onRemoveClick, className }) {
 
 CommentActions.propTypes = {
   onEditClick: func,
-  onRemoveClick: func
+  onRemoveClick: func,
 };
 
 CommentActions.defaultProps = {
   onEditClick: () => {},
-  onRemoveClick: () => {}
+  onRemoveClick: () => {},
 };
 
 export { CommentActions };

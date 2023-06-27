@@ -1,10 +1,11 @@
-import * as React from 'react';
-import { ButtonPrimary, ButtonTertiary, Icon } from 'lib';
-import { Sidebar as SidebarComponent } from './Sidebar';
+import * as React from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { ButtonPrimary, ButtonTertiary, Icon } from "lib";
+import { Sidebar as SidebarComponent } from "./Sidebar";
 
 export default {
-  title: 'GUI/Sidebar',
-  component: SidebarComponent
+  title: "GUI/Sidebar",
+  component: SidebarComponent,
 };
 
 const ExampleOfUsingShowMoreToggle = () => {
@@ -71,6 +72,7 @@ export const Sidebar = () => (
       </SidebarComponent.Section>
 
       <SidebarComponent.Section>
+        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; toggle: Element; }' i... Remove this comment to see the full error message */}
         <SidebarComponent.SectionHead
           toggle={
             <SidebarComponent.SectionToggle
@@ -128,5 +130,5 @@ export const Sidebar = () => (
 );
 
 Sidebar.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

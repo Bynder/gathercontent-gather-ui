@@ -11,7 +11,11 @@ import { SidebarSectionToggle } from './SidebarSectionToggle';
 import { SidebarDescription } from './SidebarDescription';
 import { SidebarHiddenContent } from './SidebarHiddenContent';
 
-export function Sidebar({ children, className = '', ...rest }) {
+export function Sidebar({
+  children,
+  className = '',
+  ...rest
+}: any) {
   return (
     <div className={`sidebar ${className}`} {...rest}>
       {children}

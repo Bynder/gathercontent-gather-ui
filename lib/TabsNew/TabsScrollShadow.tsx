@@ -2,7 +2,9 @@ import React, { Fragment } from 'react';
 import { string } from 'prop-types';
 import { useSpring, animated } from 'react-spring';
 
-export function TabsScrollShadow({ scrollPosition }) {
+export function TabsScrollShadow({
+  scrollPosition
+}: any) {
   const shouldTopShadowBeVisible =
     scrollPosition === 'bottom' || scrollPosition === 'middle';
   const shouldBottomShadowBeVisible =

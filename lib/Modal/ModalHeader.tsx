@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { NewModal } from 'lib';
 import { LegacyModalContext } from './Modal';
 
-const ModalHeader = ({ children, text, ...rest }) => {
+const ModalHeader = ({
+  children,
+  text,
+  ...rest
+}: any) => {
+  // @ts-expect-error TS(2339): Property 'onHide' does not exist on type '{}'.
   const { onHide } = useContext(LegacyModalContext);
 
   return (

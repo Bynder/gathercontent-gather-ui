@@ -2,6 +2,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { arrayOf, bool, oneOfType, string } from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib/Icon' or its corresponding... Remove this comment to see the full error message
 import Icon from 'lib/Icon';
 import { defaultProps, propTypes, sizes } from './common';
 
@@ -18,7 +19,7 @@ function ButtonBase({
   buttonRef,
   defaultFillColor,
   ...rest
-}) {
+}: any) {
   const classes = cx('button-base', className, {
     'button-base-connected-r': connectedRight,
     'button-base-connected-l': connectedLeft,

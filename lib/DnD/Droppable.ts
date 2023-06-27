@@ -1,8 +1,9 @@
-import { useDrop } from 'react-dnd-cjs';
-import { func, node } from 'prop-types';
-import { useContext } from 'react';
-import { DndContext } from 'lib';
-import { throttle } from 'lodash';
+import { useDrop } from "react-dnd-cjs";
+import { func, node } from "prop-types";
+import { useContext } from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { DndContext } from "lib";
+import { throttle } from "lodash";
 
 function Droppable({
   children,
@@ -10,9 +11,9 @@ function Droppable({
   onDrop,
   canDropChecker,
   onHoverHandler,
-  isOverOptions
-}) {
-  const { setIsDragging } = useContext(DndContext);
+  isOverOptions,
+}: any) {
+  const { setIsDragging }: any = useContext(DndContext);
   const [collected, defineDropRef] = useDrop({
     accept: acceptDragTypes,
     drop: (...args) => {
@@ -25,11 +26,11 @@ function Droppable({
         onHoverHandler(item, monitor);
       }
     }, 150),
-    collect: monitor => ({
+    collect: (monitor) => ({
       isOver: monitor.isOver(isOverOptions),
       canDrop: monitor.canDrop(),
-      item: monitor.getItem()
-    })
+      item: monitor.getItem(),
+    }),
   });
 
   return children(collected, defineDropRef);
@@ -39,13 +40,13 @@ Droppable.propTypes = {
   children: func.isRequired,
   onDrop: func.isRequired,
   acceptDragTypes: node.isRequired,
-  canDropChecker: func
+  canDropChecker: func,
 };
 
 Droppable.defaultProps = {
   canDropChecker: () => true,
   isOverOptions: { shallow: false },
-  onHoverHandler: () => {}
+  onHoverHandler: () => {},
 };
 
 export { Droppable };

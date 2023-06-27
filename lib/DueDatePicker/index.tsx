@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Calendar } from 'lib';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
@@ -17,7 +18,7 @@ export function DueDatePicker({
   autoPosition,
   triggerButtonTypes,
   today
-}) {
+}: any) {
   const defaultSelectedDay = dueDate ? dueDate.toDate() : null;
   const defaultSelectedTime = dueDate
     ? moment(dueDate)
@@ -37,7 +38,7 @@ export function DueDatePicker({
     resetState();
   }, [dueDate]);
 
-  const handleApplyDueDate = hideDropdown => {
+  const handleApplyDueDate = (hideDropdown: any) => {
     if (selectedDay) {
       const newDueDate = moment(selectedDay).set({
         hour: selectedTime.hour(),
@@ -50,21 +51,24 @@ export function DueDatePicker({
     }
   };
 
-  const handleRemoveDueDate = hideDropdown => {
+  const handleRemoveDueDate = (hideDropdown: any) => {
     removeDueDate();
+    // @ts-expect-error TS(2345): Argument of type 'null' is not assignable to param... Remove this comment to see the full error message
     setChanged(null);
     setSelectedDay(null);
     hideDropdown();
   };
 
-  const handleDayClick = (day, { selected }) => {
+  const handleDayClick = (day: any, {
+    selected
+  }: any) => {
     if (!selected) {
       setSelectedDay(day);
       setChanged(true);
     }
   };
 
-  const handleTimeClick = time => {
+  const handleTimeClick = (time: any) => {
     setSelectedTime(moment(time));
     setChanged(true);
   };
@@ -96,46 +100,45 @@ export function DueDatePicker({
 
             {userCanSetDueDate && (
               <Dropdown.Content className="duedate__dropdown">
-                {showContent =>
-                  showContent ? (
-                    <>
-                      <DueDateHeader
-                        dueDate={selectedDay}
-                        dueTime={selectedTime}
-                        setTime={handleTimeClick}
-                        removeDueDate={() =>
-                          handleRemoveDueDate(() => setShowContent(false))
-                        }
+                {(showContent: any) => showContent ? (
+                  <>
+                    <DueDateHeader
+                      dueDate={selectedDay}
+                      dueTime={selectedTime}
+                      setTime={handleTimeClick}
+                      removeDueDate={() =>
+                        handleRemoveDueDate(() => setShowContent(false))
+                      }
+                    />
+                    <div className="duedate__datepicker">
+                      <Calendar
+                        onDayClick={handleDayClick}
+                        selectedDay={selectedDay}
+                        enableWeekendDays
+                        leftAlignHeader
+                        today={today}
                       />
-                      <div className="duedate__datepicker">
-                        <Calendar
-                          onDayClick={handleDayClick}
-                          selectedDay={selectedDay}
-                          enableWeekendDays
-                          leftAlignHeader
-                          today={today}
-                        />
-                        <div className={buttonClasses}>
-                          <Button
-                            clickHandler={() => setShowContent(false)}
-                            types={['link-default', 'collapse']}
-                            className="duedate__submit--cancel"
-                          >
-                            Cancel
-                          </Button>
-                          <Button
-                            clickHandler={() =>
-                              handleApplyDueDate(() => setShowContent(false))
-                            }
-                            types={['primary']}
-                            className="duedate__submit--save"
-                          >
-                            Set due date
-                          </Button>
-                        </div>
+                      <div className={buttonClasses}>
+                        <Button
+                          clickHandler={() => setShowContent(false)}
+                          types={['link-default', 'collapse']}
+                          className="duedate__submit--cancel"
+                        >
+                          Cancel
+                        </Button>
+                        <Button
+                          clickHandler={() =>
+                            handleApplyDueDate(() => setShowContent(false))
+                          }
+                          types={['primary']}
+                          className="duedate__submit--save"
+                        >
+                          Set due date
+                        </Button>
                       </div>
-                    </>
-                  ) : null
+                    </div>
+                  </>
+                ) : null
                 }
               </Dropdown.Content>
             )}

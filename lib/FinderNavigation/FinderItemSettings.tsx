@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FinderItemSettings = ({ className, children }) => (
+const FinderItemSettings = ({
+  className,
+  children
+}: any) => (
   <div className={`finder-item-settings ${className}`}>{children}</div>
 );
 

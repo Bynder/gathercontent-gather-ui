@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormFooter = ({ children }) => (
+const FormFooter = ({
+  children
+}: any) => (
   <footer className="form__footer">{children}</footer>
 );
 

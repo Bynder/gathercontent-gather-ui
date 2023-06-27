@@ -19,11 +19,11 @@ export function UserSearch({
   hideAfterPerformingAction,
   className,
   displayList: propsDisplayList
-}) {
+}: any) {
   const [searchedUsers, setSearchedUsers] = useState(null);
   const [displayList, setDisplayList] = useState(propsDisplayList);
 
-  const searchForUsers = e => {
+  const searchForUsers = (e: any) => {
     const { value } = e.target;
     if (value.trim() !== '' && users.length > 0) {
       setSearchedUsers(filterUsers(users, value, displayEmail));
@@ -32,7 +32,7 @@ export function UserSearch({
     }
   };
 
-  const handleKeyPress = e => {
+  const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       e.preventDefault();
     }
@@ -97,7 +97,7 @@ UserSearch.defaultProps = {
 
 // disabling linter here since I think its just getting confused with refs
 // eslint-disable-next-line react/no-multi-comp
-export default React.forwardRef((props, ref) => (
+export default React.forwardRef((props: any, ref: any) => (
   <UserSearch inputRef={ref} {...props} />
 ));
 

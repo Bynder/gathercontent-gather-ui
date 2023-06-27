@@ -1,5 +1,6 @@
 import React from 'react';
 import { bool, func } from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonSecondary } from 'lib';
 import Icon from '../Icon';
 
@@ -8,7 +9,7 @@ export function CommentResolveButton({
   onUndoResolve,
   userCanResolve,
   onResolve
-}) {
+}: any) {
   return (
     <div className="flex items-center ml-auto h-8">
       {resolved && (

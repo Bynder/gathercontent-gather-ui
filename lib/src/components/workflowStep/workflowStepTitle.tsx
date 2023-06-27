@@ -3,7 +3,12 @@ import cx from 'classnames';
 import { StatusIndicatorCircle } from '../../modules/statusIndicatorCircle/statusIndicatorCircle';
 import { WorkflowStepContext } from './workflowStepProvider';
 
-export function WorkflowStepTitle({ children, statusColour, approved }) {
+export function WorkflowStepTitle({
+  children,
+  statusColour,
+  approved
+}: any) {
+  // @ts-expect-error TS(2339): Property 'isActive' does not exist on type '{}'.
   const { isActive, showActions, showBody } = useContext(WorkflowStepContext);
   const titleClassName = cx('workflow-step__title', {
     'text-neutral-primary': !isActive && !showActions && !showBody,

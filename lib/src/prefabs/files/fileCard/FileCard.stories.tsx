@@ -6,8 +6,11 @@ import {
   PreviewImage,
   Controls,
   Loader
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import uuid from 'uuid/v1';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import ConfirmationOverlay from '../../../../ConfirmationOverlay';
 
@@ -30,7 +33,7 @@ export default {
   }
 };
 
-export const FileCard = args => {
+export const FileCard = (args: any) => {
   const onClick = args.interactive ? () => {} : null;
 
   const controls = (
@@ -47,7 +50,10 @@ export const FileCard = args => {
     ? 'http://fail'
     : `http://placeimg.com/${args.imgWidth}/${args.imgHeight}/animals`;
 
-  const Preview = ({ children, loader }) => (
+  const Preview = ({
+    children,
+    loader
+  }: any) => (
     <PreviewImage
       src={previewSrc}
       altText="preview image"

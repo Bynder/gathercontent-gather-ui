@@ -3,7 +3,9 @@ import { node } from 'prop-types';
 import cx from 'classnames';
 import { TabContext } from './Tab';
 
-function TabAside({ children }) {
+function TabAside({
+  children
+}: any) {
   const { isActive, isEditing, actionsAreActive } = useContext(TabContext);
 
   const asideClassNames = cx(

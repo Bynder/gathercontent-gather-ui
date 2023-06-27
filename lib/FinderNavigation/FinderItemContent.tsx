@@ -9,7 +9,7 @@ const FinderItemContent = ({
   hidden,
   isFolder,
   ...rest
-}) => {
+}: any) => {
   const classNames = cx(`finder-item-content ${className}`, {
     'finder-item-content-hidden': hidden,
     'finder-item-content-folder': isFolder

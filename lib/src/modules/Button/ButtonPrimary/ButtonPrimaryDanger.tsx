@@ -9,7 +9,7 @@ function ButtonPrimaryDanger({
   disabled,
   connectedRight,
   ...rest
-}) {
+}: any) {
   const disabledClasses = cx(
     'text-neutral-primary bg-neutral-95 border-neutral-95',
     {

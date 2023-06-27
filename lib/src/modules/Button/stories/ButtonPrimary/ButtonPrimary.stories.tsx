@@ -1,5 +1,6 @@
 import React from 'react';
 import { map } from 'lodash';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import { ButtonPrimary as ButtonPrimaryComponent } from '../../ButtonPrimary/ButtonPrimary';
 import { ButtonStoryItem } from '../ButtonStoryItem';

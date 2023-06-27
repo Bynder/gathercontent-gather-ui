@@ -10,7 +10,11 @@ import PillBlueWhiteText from './PillBlueWhiteText';
 import PillYellow from './PillYellow';
 import { PillBeta } from './PillBeta';
 
-const Pill = ({ type, children, ...rest }) => {
+const Pill = ({
+  type,
+  children,
+  ...rest
+}: any) => {
   const getPill = () => {
     switch (type) {
       case types.red:

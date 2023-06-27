@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Finde... Remove this comment to see the full error message
   FinderNavigation as FinderNavigationComponent,
+  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Icon'... Remove this comment to see the full error message
   Icon,
   Layout
 } from '../../lib';

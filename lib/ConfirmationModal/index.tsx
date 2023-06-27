@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Form } from '../src/components/form/Form';
-import Button from '../Button';
-import ProgressButton from '../ProgressButton';
-import Modal from '../Modal';
+import React from "react";
+import PropTypes from "prop-types";
+import { Form } from "../src/components/form/Form";
+import Button from "../Button";
+import ProgressButton from "../ProgressButton";
+import Modal from "../Modal";
 
 const ConfirmationModal = ({
   title,
@@ -20,17 +20,18 @@ const ConfirmationModal = ({
   useShowSpinnerProp,
   extraButtons,
   ...rest
-}) => (
+}: any) => (
   <Modal.Container {...rest}>
+    {/* @ts-expect-error TS(2322): Type '{ children: Element[]; onSubmit: (event: any... Remove this comment to see the full error message */}
     <Form
-      onSubmit={event => {
+      onSubmit={(event: any) => {
         submitCallback(event);
       }}
     >
       <Modal.Header text={introText}>{title}</Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer text={footerContent}>
-        <Button types={['link']} clickHandler={rest.onHide}>
+        <Button types={["link"]} clickHandler={rest.onHide}>
           {cancelText}
         </Button>
         {extraButtons}
@@ -62,17 +63,17 @@ ConfirmationModal.propTypes = {
   footerContent: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   disabled: PropTypes.bool,
   showSpinner: PropTypes.bool,
-  useShowSpinnerProp: PropTypes.bool
+  useShowSpinnerProp: PropTypes.bool,
 };
 
 ConfirmationModal.defaultProps = {
-  buttonType: 'primary',
+  buttonType: "primary",
   introText: null,
   callbackCanExecute: true,
   footerContent: null,
   disabled: false,
   showSpinner: false,
-  useShowSpinnerProp: false
+  useShowSpinnerProp: false,
 };
 
 export default ConfirmationModal;

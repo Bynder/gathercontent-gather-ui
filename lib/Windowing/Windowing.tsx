@@ -10,20 +10,22 @@ const Windowing = ({
   itemHeight,
   buffer,
   allIds
-}) => {
+}: any) => {
   const [scrollTop, setScrollTop] = useState(null);
   const [height, setHeight] = useState(null);
   const [renderIndexes, setRenderIndexes] = useState({});
   const [inViewWindowingIds, setInViewWindowingIds] = useState([]);
 
-  const subtractFromStartIndex = index => Math.max(index - buffer, 0);
+  const subtractFromStartIndex = (index: any) => Math.max(index - buffer, 0);
 
-  const addToEndIndex = index => Math.min(allIds.length, index + buffer);
+  const addToEndIndex = (index: any) => Math.min(allIds.length, index + buffer);
 
   const getRenderIndexes = () => {
     const startBoundary = scrollTop;
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     const endBoundary = startBoundary + height;
 
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     const startIndex = Math.round(startBoundary / itemHeight);
     const endIndex = Math.round(endBoundary / itemHeight);
 

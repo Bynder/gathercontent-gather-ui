@@ -22,6 +22,7 @@ import {
   FormInput,
   ButtonPrimaryDanger,
   ButtonTertiary
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from 'lib';
 import StoryItem from '../styleguide/StoryItem';
 
@@ -31,10 +32,10 @@ export default {
 
 const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
 
-const StatefulFormModal = props => {
+const StatefulFormModal = (props: any) => {
   const [formIsSubmitting, setFormIsSubmitting] = useState(false);
 
-  const submitHandler = e => {
+  const submitHandler = (e: any) => {
     e.preventDefault();
     setFormIsSubmitting(true);
 
@@ -269,7 +270,7 @@ export const Modals = () => (
           cancelText="Meow no"
           type="primary"
           onHide={() => {}}
-          submitCallback={e => {
+          submitCallback={(e: any) => {
             action(e);
             e.preventDefault();
           }}

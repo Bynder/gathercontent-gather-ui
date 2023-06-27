@@ -1,37 +1,40 @@
-import React from 'react';
-import { Windowing, ItemRow, FolderRow } from '../../index';
-import { createData } from './windowingData';
-import { WindowingIdsMock } from './WindowingIdsMock';
+import React from "react";
+import { Windowing, ItemRow, FolderRow } from "../../index";
+import { createData } from "./windowingData";
+import { WindowingIdsMock } from "./WindowingIdsMock";
 
 export default {
-  title: 'Legacy/Windowing/Nested',
+  title: "Legacy/Windowing/Nested",
   args: {
     parents: 20,
-    children: 20
-  }
+    children: 20,
+  },
 };
 
-export const Nested = ({ parents, children }) => {
+export const Nested = ({ parents, children }: any) => {
   const { allIds, parentIds, byId } = createData(parents, children);
 
   return (
     <WindowingIdsMock allWindowingIds={allIds}>
-      {({ allWindowingIds, addIds, removeIds }) => (
+      {({ allWindowingIds, addIds, removeIds }: any) => (
         <Windowing
           itemHeight={50}
           buffer={20}
           allIds={allWindowingIds}
           containerHeight="500px"
         >
+          {/* @ts-expect-error TS(2339): Property 'Scroller' does not exist on type '{ ({ c... Remove this comment to see the full error message */}
           <Windowing.Scroller style={{}}>
+            {/* @ts-expect-error TS(2339): Property 'List' does not exist on type '{ ({ child... Remove this comment to see the full error message */}
             <Windowing.List>
-              {({ inViewWindowingIds }) =>
-                inViewWindowingIds.map(i => (
+              {({ inViewWindowingIds }: any) =>
+                inViewWindowingIds.map((i: any) => (
+                  // @ts-expect-error TS(2339): Property 'Item' does not exist on type '{ ({ child... Remove this comment to see the full error message
                   <Windowing.Item
                     key={i}
                     index={allIds.indexOf(i)}
                     style={{
-                      paddingLeft: `${byId[i].depth * 40}px`
+                      paddingLeft: `${byId[i].depth * 40}px`,
                     }}
                   >
                     {parentIds.indexOf(i) === -1 ? (
@@ -41,7 +44,9 @@ export const Nested = ({ parents, children }) => {
                     ) : (
                       <FolderRow open>
                         {(show, setShow) => (
-                          <FolderRow.Inner style={{ minWidth: '320px' }}>
+                          // @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message
+                          <FolderRow.Inner style={{ minWidth: "320px" }}>
+                            {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
                             <FolderRow.Name
                               show={show}
                               setShow={setShow}
@@ -64,15 +69,20 @@ export const Nested = ({ parents, children }) => {
                               }
                             >
                               {byId[i].name}
+                              {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
                             </FolderRow.Name>
+                            {/* @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message */}
                           </FolderRow.Inner>
                         )}
                       </FolderRow>
                     )}
+                    {/* @ts-expect-error TS(2339): Property 'Item' does not exist on type '{ ({ child... Remove this comment to see the full error message */}
                   </Windowing.Item>
                 ))
               }
+              {/* @ts-expect-error TS(2339): Property 'List' does not exist on type '{ ({ child... Remove this comment to see the full error message */}
             </Windowing.List>
+            {/* @ts-expect-error TS(2339): Property 'Scroller' does not exist on type '{ ({ c... Remove this comment to see the full error message */}
           </Windowing.Scroller>
         </Windowing>
       )}

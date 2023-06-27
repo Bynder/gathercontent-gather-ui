@@ -1,6 +1,10 @@
 import React from 'react';
 
-export function DropdownContentFooter({ children, className, ...rest }) {
+export function DropdownContentFooter({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <div className={`dropdown-content-footer ${className}`} {...rest}>
       {children}

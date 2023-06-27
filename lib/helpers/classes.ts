@@ -1,2 +1,2 @@
-export const createClassesFromTypesList = (types, prefix) =>
-  types.reduce((className, type) => `${className} ${prefix}${type}`, '');
+export const createClassesFromTypesList = (types: any, prefix: any) =>
+  types.reduce((className: any, type: any) => `${className} ${prefix}${type}`, '');

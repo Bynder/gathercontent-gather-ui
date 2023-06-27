@@ -3,7 +3,11 @@ import { node } from 'prop-types';
 
 const NavigationContext = createContext({});
 
-function NavigationProvider({ children, onNav, defaultTabId }) {
+function NavigationProvider({
+  children,
+  onNav,
+  defaultTabId
+}: any) {
   const [activeTabId, setActiveTabId] = useState(defaultTabId);
   const sharedState = { onNav, activeTabId, setActiveTabId };
 

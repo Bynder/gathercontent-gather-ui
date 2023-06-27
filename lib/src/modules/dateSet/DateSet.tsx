@@ -2,7 +2,13 @@ import React from 'react';
 import moment from 'moment';
 import { DateSetTimeDropdown } from './DateSetTimeDropdown';
 
-export function DateSet({ className, date, time, onTimeSelect, subtext }) {
+export function DateSet({
+  className,
+  date,
+  time,
+  onTimeSelect,
+  subtext
+}: any) {
   if (!date) {
     return null;
   }

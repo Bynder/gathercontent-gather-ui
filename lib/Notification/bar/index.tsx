@@ -6,7 +6,11 @@ import NotificationBarInformation from './NotificationBarInformation';
 import NotificationBarPromo from './NotificationBarPromo';
 import NotificationBarWarning from './NotificationBarWarning';
 
-const NotificationBar = ({ level, children, ...rest }) => {
+const NotificationBar = ({
+  level,
+  children,
+  ...rest
+}: any) => {
   const getNotificationBar = () => {
     switch (level) {
       case 'warning':
@@ -23,6 +27,7 @@ const NotificationBar = ({ level, children, ...rest }) => {
   };
   const NotificationBarType = getNotificationBar();
 
+  // @ts-expect-error TS(2604): JSX element type 'NotificationBarType' does not ha... Remove this comment to see the full error message
   return <NotificationBarType {...rest}>{children}</NotificationBarType>;
 };
 

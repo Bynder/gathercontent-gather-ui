@@ -9,10 +9,12 @@ import {
   func
 } from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate.svg' o... Remove this comment to see the full error message
 import BlankSlateSVG from '../../assets/blankstate.svg';
+// @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate-2.svg'... Remove this comment to see the full error message
 import BlankSlate2SVG from '../../assets/blankstate-2.svg';
 
-const BlankSlate = props => {
+const BlankSlate = (props: any) => {
   const classes = cx(`blank-slate p-3 ${props.className}`, {
     'blank-slate--fixed': props.fixed,
     'blank-slate--arrow': props.slateStyle === 'arrow',
@@ -53,7 +55,9 @@ BlankSlate.propTypes = {
   fixed: bool,
   fullHeight: bool,
   slateStyle: string,
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   children: oneOfType([arrayOf(node), node, arrayOf(shape()), string]),
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   customSVG: oneOfType([node, shape(), bool, func]),
   SVGClassName: string,
   className: string,

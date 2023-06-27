@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { bool, node, string, oneOfType, func } from 'prop-types';
 import cx from 'classnames';
 
-function FolderRow({ children, open, className, ...rest }) {
+function FolderRow({
+  children,
+  open,
+  className,
+  ...rest
+}: any) {
   const [show, setShow] = useState(open);
 
   useEffect(() => {

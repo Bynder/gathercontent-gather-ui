@@ -1,12 +1,15 @@
 import { useState } from 'react';
 
-function WindowingIdsMock({ children, allWindowingIds }) {
+function WindowingIdsMock({
+  children,
+  allWindowingIds
+}: any) {
   const [allIds, setAllIds] = useState(allWindowingIds);
 
-  const addIds = (ids, index) =>
+  const addIds = (ids: any, index: any) =>
     setAllIds([...allIds.slice(0, index), ...ids, ...allIds.slice(index)]);
 
-  const removeIds = (offset, length) =>
+  const removeIds = (offset: any, length: any) =>
     setAllIds([
       ...allIds.slice(0, offset),
       ...allIds.slice(offset + length, allIds.length)

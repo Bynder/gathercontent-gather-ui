@@ -1,11 +1,12 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { NewModal } from 'lib';
 import cx from 'classnames';
 
 export const LegacyModalContext = createContext({});
 
-const Modal = props => {
+const Modal = (props: any) => {
   const {
     size,
     highlight,

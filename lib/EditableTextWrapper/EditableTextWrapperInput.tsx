@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ExpandingTextArea } from 'lib';
 
 export function EditableTextWrapperInput({
@@ -12,7 +13,7 @@ export function EditableTextWrapperInput({
   onChange,
   value,
   maxLength
-}) {
+}: any) {
   const [inputValue, setInputValue] = useState(value);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export function EditableTextWrapperInput({
     `${className}--editing`
   );
 
-  const handleOnKeyDown = e => {
+  const handleOnKeyDown = (e: any) => {
     const isEscKey = e.keyCode === 27;
     const isReturnKey = e.keyCode === 13;
 
@@ -61,9 +62,9 @@ export function EditableTextWrapperInput({
           placeholder={placeholder}
           className={`editable-text__input ${inputClassNames}`}
           value={inputValue}
-          handleOnChange={e => setInputValue(e.target.value)}
+          handleOnChange={(e: any) => setInputValue(e.target.value)}
           onKeyDown={handleOnKeyDown}
-          handleOnFocus={e => e.target.select()}
+          handleOnFocus={(e: any) => e.target.select()}
           handleOnBlur={handleOnBlur}
           focusOnMount
           id="editable-text-wrapper-input"

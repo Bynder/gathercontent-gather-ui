@@ -1,7 +1,11 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-function ButtonStoryItem({ children, title, className }) {
+function ButtonStoryItem({
+  children,
+  title,
+  className
+}: any) {
   return (
     <div className={`flex flex-col items-center px-2 ${className}`}>
       <h4>{title}</h4>

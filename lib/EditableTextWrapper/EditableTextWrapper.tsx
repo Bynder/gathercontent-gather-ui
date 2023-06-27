@@ -17,7 +17,7 @@ export function EditableTextWrapper({
   inputClassNames,
   maxLength,
   buttonLabel
-}) {
+}: any) {
   const [editing, setEditing] = useState(false);
 
   const startEditing = () => {

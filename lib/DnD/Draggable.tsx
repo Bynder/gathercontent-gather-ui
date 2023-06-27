@@ -11,7 +11,8 @@ function Draggable({
   onBeginDrag,
   onEndDrag,
   canDragChecker
-}) {
+}: any) {
+  // @ts-expect-error TS(2339): Property 'setIsDragging' does not exist on type '{... Remove this comment to see the full error message
   const { setIsDragging, setPreview } = useContext(DndContext);
   const [collect, defineDragRef, definePreviewRef] = useDrag({
     item,
@@ -37,6 +38,7 @@ function Draggable({
     <>
       {preview && (
         <DragPreviewImage
+          // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
           src={getEmptyImage().getAttribute('src')}
           connect={definePreviewRef}
         />
@@ -48,6 +50,7 @@ function Draggable({
 
 Draggable.propTypes = {
   children: func.isRequired,
+  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
   item: shape().isRequired,
   preview: node,
   onBeginDrag: func,

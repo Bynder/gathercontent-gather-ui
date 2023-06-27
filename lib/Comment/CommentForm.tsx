@@ -1,7 +1,8 @@
-import React, { useState, useRef, useContext, useEffect } from 'react';
-import { arrayOf, bool, func, shape, string } from 'prop-types';
-import { Mention, MentionsInput } from 'react-mentions';
-import cx from 'classnames';
+import React, { useState, useRef, useContext, useEffect } from "react";
+import { arrayOf, bool, func, shape, string } from "prop-types";
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
+import { Mention, MentionsInput } from "react-mentions";
+import cx from "classnames";
 import {
   Comment,
   Avatar,
@@ -9,11 +10,12 @@ import {
   ShortcutTrigger,
   ButtonPrimary,
   useLoader,
-  ButtonTertiary
-} from 'lib';
-import Icon from '../Icon';
-import { CommentFailed } from './CommentFailed';
-import TooltipWrapper from '../TooltipWrapper';
+  ButtonTertiary,
+  // @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+} from "lib";
+import Icon from "../Icon";
+import { CommentFailed } from "./CommentFailed";
+import TooltipWrapper from "../TooltipWrapper";
 
 function CommentForm({
   children,
@@ -26,11 +28,13 @@ function CommentForm({
   submitText,
   submitTooltipText,
   autoFocusInput,
-  onMention
-}) {
-  const { setIsEditing, hasFailed, setHasFailed } = useContext(Comment.Context);
+  onMention,
+}: any) {
+  const { setIsEditing, hasFailed, setHasFailed }: any = useContext(
+    Comment.Context
+  );
   const [commentText, setCommentText] = useState(children);
-  const [currentInputHeight, setCurrentInputHeight] = useState('0px');
+  const [currentInputHeight, setCurrentInputHeight] = useState("0px");
   const [hasFocus, setHasFocus] = useState(false);
   const inputWrapperRef = useRef(null);
   const focusFallback = useRef(null);
@@ -41,20 +45,21 @@ function CommentForm({
 
   const getInputHeight = () => {
     if (inputWrapperRef.current) {
+      // @ts-expect-error TS(2339): Property 'getBoundingClientRect' does not exist on... Remove this comment to see the full error message
       return inputWrapperRef.current.getBoundingClientRect().height;
     }
     return currentInputHeight;
   };
 
-  const removeMentionMarkup = newVal => {
+  const removeMentionMarkup = (newVal: any) => {
     const pattern = /(?:@\[\w+\])+/gi;
-    return newVal.replace(pattern, match => {
-      const mention = match.replace(/\]|\[/g, '');
+    return newVal.replace(pattern, (match: any) => {
+      const mention = match.replace(/\]|\[/g, "");
       return mention;
     });
   };
 
-  const handleChange = event => {
+  const handleChange = (event: any) => {
     const newHeight = getInputHeight();
     if (newHeight !== currentInputHeight) {
       onRowCountChange();
@@ -65,15 +70,15 @@ function CommentForm({
     return setCommentText(removeMentionMarkup(event.target.value));
   };
 
-  const searchForUsers = term => {
-    if (term.trim() !== '' && users.length > 0) {
+  const searchForUsers = (term: any) => {
+    if (term.trim() !== "" && users.length > 0) {
       const termLowerCase = term.toLowerCase();
       return users.filter(
-        user =>
+        (user: any) =>
           user.name
             .toLowerCase()
-            .split(' ')
-            .filter(subStr => subStr.lastIndexOf(termLowerCase, 0) === 0)
+            .split(" ")
+            .filter((subStr: any) => subStr.lastIndexOf(termLowerCase, 0) === 0)
             .length > 0 ||
           user.display.toLowerCase().lastIndexOf(termLowerCase, 0) === 0
       );
@@ -96,15 +101,16 @@ function CommentForm({
 
   const handleCancel = () => {
     setCommentText(children);
+    // @ts-expect-error TS(2531): Object is possibly 'null'.
     focusFallback.current.focus();
     setIsEditing(false);
     onCancel();
   };
 
-  const inputWrapperClassNames = cx('relative p-2 w-full rounded text-sm', {
-    'pseudo-border-grey-1px': !hasFocus && !hasFailed,
-    'pseudo-border-blue-2px': hasFocus && !hasFailed,
-    'pseudo-border-red-2px': hasFailed
+  const inputWrapperClassNames = cx("relative p-2 w-full rounded text-sm", {
+    "pseudo-border-grey-1px": !hasFocus && !hasFailed,
+    "pseudo-border-blue-2px": hasFocus && !hasFailed,
+    "pseudo-border-red-2px": hasFailed,
   });
 
   return (
@@ -120,15 +126,15 @@ function CommentForm({
             placeholder={placeholder}
             markup="@[__display__]"
             autoFocus={autoFocusInput}
-            displayTransform={(id, display) => `@${display}`}
+            displayTransform={(id: any, display: any) => `@${display}`}
             disabled={isSubmitting}
           >
             <Mention
               trigger="@"
               onAdd={onMention}
-              data={search => searchForUsers(search)}
+              data={(search: any) => searchForUsers(search)}
               appendSpaceOnAdd
-              renderSuggestion={suggestion => (
+              renderSuggestion={(suggestion: any) => (
                 <Avatar url={suggestion.avatar} initials={suggestion.initials}>
                   <AvatarInformation
                     email={`@${suggestion.display}`}
@@ -141,7 +147,7 @@ function CommentForm({
 
           <ShortcutTrigger
             shortcutKey="Enter"
-            onShortcutTrigger={e => {
+            onShortcutTrigger={(e: any) => {
               if (!hasFocus || !commentText) {
                 return e;
               }
@@ -152,7 +158,7 @@ function CommentForm({
           />
           <ShortcutTrigger
             shortcutKey="Enter"
-            onShortcutTrigger={e => {
+            onShortcutTrigger={(e: any) => {
               if (!hasFocus || !commentText) {
                 return e;
               }
@@ -195,7 +201,7 @@ function CommentForm({
             {isSubmitting && (
               <Icon name="loader16" className="mr-2 fill-white" />
             )}
-            {hasFailed ? 'Retry' : submitText}
+            {hasFailed ? "Retry" : submitText}
           </ButtonPrimary>
         </TooltipWrapper>
       </div>
@@ -222,19 +228,19 @@ CommentForm.propTypes = {
   onChange: func,
   submitText: string,
   onMention: func,
-  submitTooltipText: string
+  submitTooltipText: string,
 };
 
 CommentForm.defaultProps = {
-  children: '',
+  children: "",
   onRowCountChange: () => {},
   onCancel: () => {},
   onChange: () => {},
   autoFocusInput: false,
-  placeholder: 'New Comment...',
-  submitText: 'Comment',
+  placeholder: "New Comment...",
+  submitText: "Comment",
   onMention: () => {},
-  submitTooltipText: ''
+  submitTooltipText: "",
 };
 
 export { CommentForm };

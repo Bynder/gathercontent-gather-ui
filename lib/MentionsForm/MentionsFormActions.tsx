@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import { pluralisePerson } from '../helpers';
 
-const MentionsFormActions = props => {
+const MentionsFormActions = (props: any) => {
   const additionalClasses = cx({
     'mention-form__actions--inline': props.editing
   });

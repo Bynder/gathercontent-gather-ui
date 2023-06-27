@@ -10,8 +10,8 @@ export function CheckboxGroup({
   overrideLabelDefault,
   active,
   disabled
-}) {
-  const checkedChoices = choices.filter(c => c.checked);
+}: any) {
+  const checkedChoices = choices.filter((c: any) => c.checked);
   const [selected, setSelected] = useState(checkedChoices);
 
   useEffect(() => {
@@ -20,39 +20,36 @@ export function CheckboxGroup({
     }
   }, [checkedChoices?.length]);
 
-  const isChecked = choice =>
-    selected.filter(c => c.id === choice.id).length > 0;
+  const isChecked = (choice: any) => selected.filter((c: any) => c.id === choice.id).length > 0;
 
-  const addChoice = choice => {
+  const addChoice = (choice: any) => {
     setSelected(selected.concat(choice));
     onAddingChoice(choice);
   };
 
-  const removeChoice = choice => {
-    setSelected(selected.filter(c => c.id !== choice.id));
+  const removeChoice = (choice: any) => {
+    setSelected(selected.filter((c: any) => c.id !== choice.id));
     onRemovingChoice(choice);
   };
 
-  const onChange = e => {
-    const choice = choices.filter(c => c.id === e.target.id)[0];
+  const onChange = (e: any) => {
+    const choice = choices.filter((c: any) => c.id === e.target.id)[0];
     return isChecked(choice) ? removeChoice(choice) : addChoice(choice);
   };
 
   return (
     <div>
-      {choices.map(choice => (
-        <Checkbox
-          key={choice.id}
-          {...choice}
-          onChangeHandler={onChange}
-          checked={isChecked(choice)}
-          overrideLabelDefault={overrideLabelDefault}
-          labelMouseEnter={labelMouseEnter}
-          labelMouseLeave={labelMouseLeave}
-          active={active}
-          disabled={disabled}
-        />
-      ))}
+      {choices.map((choice: any) => <Checkbox
+        key={choice.id}
+        {...choice}
+        onChangeHandler={onChange}
+        checked={isChecked(choice)}
+        overrideLabelDefault={overrideLabelDefault}
+        labelMouseEnter={labelMouseEnter}
+        labelMouseLeave={labelMouseLeave}
+        active={active}
+        disabled={disabled}
+      />)}
     </div>
   );
 }

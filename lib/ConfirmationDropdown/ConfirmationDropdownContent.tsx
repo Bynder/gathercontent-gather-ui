@@ -22,7 +22,8 @@ const ConfirmationDropdownContent = ({
   actionTooltip,
   onCompletion,
   ...props
-}) => {
+}: any) => {
+  // @ts-expect-error TS(2339): Property 'setShowContent' does not exist on type '... Remove this comment to see the full error message
   const { setShowContent } = useContext(DropdownContext);
   const sharedButtonProps = ['slim', 'collapse'];
 
@@ -32,56 +33,55 @@ const ConfirmationDropdownContent = ({
 
   return (
     <DropdownContent {...props}>
-      {showContent =>
-        showContent ? (
-          <>
-            {children}
+      {(showContent: any) => showContent ? (
+        <>
+          {children}
 
-            <DropdownFooter data-testid={`${id}-footer`}>
-              <Icon
-                name="loader"
-                className="confirmation-dropdown__loader"
-                aria-hidden={!promiseIsPending}
-              />
-              <TooltipWrapper
-                id="confirmation-dropdown-tooltip"
-                tooltipText={actionTooltip}
-                placement="top"
+          <DropdownFooter data-testid={`${id}-footer`}>
+            <Icon
+              name="loader"
+              className="confirmation-dropdown__loader"
+              aria-hidden={!promiseIsPending}
+            />
+            <TooltipWrapper
+              id="confirmation-dropdown-tooltip"
+              tooltipText={actionTooltip}
+              placement="top"
+            >
+              <Button
+                types={confirmButtonTypes}
+                clickHandler={() =>
+                  onConfirm().then(() => {
+                    if (hideOnCompletion) {
+                      setShowContent(false);
+                    }
+
+                    onCompletion();
+                  })
+                }
+                className="confirmation-dropdown__confirm-trigger"
+                aria-hidden={promiseIsPending}
+                disabled={disabled}
               >
-                <Button
-                  types={confirmButtonTypes}
-                  clickHandler={() =>
-                    onConfirm().then(() => {
-                      if (hideOnCompletion) {
-                        setShowContent(false);
-                      }
-
-                      onCompletion();
-                    })
-                  }
-                  className="confirmation-dropdown__confirm-trigger"
-                  aria-hidden={promiseIsPending}
-                  disabled={disabled}
-                >
-                  {confirmationText}
-                </Button>
-              </TooltipWrapper>
-              {secondaryAction || (
-                <Button
-                  types={sharedButtonProps}
-                  clickHandler={() => {
-                    onHide();
-                    onCancel();
-                    setShowContent(false);
-                  }}
-                  className="confirmation-dropdown__cancel"
-                >
-                  Cancel
-                </Button>
-              )}
-            </DropdownFooter>
-          </>
-        ) : null
+                {confirmationText}
+              </Button>
+            </TooltipWrapper>
+            {secondaryAction || (
+              <Button
+                types={sharedButtonProps}
+                clickHandler={() => {
+                  onHide();
+                  onCancel();
+                  setShowContent(false);
+                }}
+                className="confirmation-dropdown__cancel"
+              >
+                Cancel
+              </Button>
+            )}
+          </DropdownFooter>
+        </>
+      ) : null
       }
     </DropdownContent>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
 import { StatusIndicatorCircle as StatusIndicatorCircleComponent } from './statusIndicatorCircle';
 
@@ -18,8 +19,6 @@ export default {
   }
 };
 
-export const StatusIndicatorCircle = args => (
-  <StoryItem>
-    <StatusIndicatorCircleComponent {...args} />
-  </StoryItem>
-);
+export const StatusIndicatorCircle = (args: any) => <StoryItem>
+  <StatusIndicatorCircleComponent {...args} />
+</StoryItem>;

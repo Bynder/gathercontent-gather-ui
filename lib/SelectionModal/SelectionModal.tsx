@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Modal } from 'lib';
 import { propTypes, defaultProps } from './common';
 import SelectionModalBody from './SelectionModalBody';
@@ -7,7 +8,11 @@ import SelectionModalColumnHeader from './SelectionModalColumnHeader';
 import SelectionModalCategory from './SelectionModalCategory';
 import SelectionModalColumnLoader from './SelectionModalColumnLoader';
 
-function SelectionModal({ children, className, ...rest }) {
+function SelectionModal({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <Modal.Container className={`selection-modal ${className}`} {...rest}>
       {children}

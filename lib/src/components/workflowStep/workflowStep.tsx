@@ -11,7 +11,11 @@ import { WorkflowStepTitle } from './workflowStepTitle';
 import { WorkflowStepMeta } from './workflowStepMeta';
 import { WorkflowStepCollapsibleBody } from './workflowStepCollapsibleBody';
 
-export function WorkflowStep({ showBody, isActive, ...props }) {
+export function WorkflowStep({
+  showBody,
+  isActive,
+  ...props
+}: any) {
   return (
     <WorkflowStepProvider showBody={showBody} isActive={isActive}>
       <WorkflowStepInner {...props} />
@@ -19,7 +23,12 @@ export function WorkflowStep({ showBody, isActive, ...props }) {
   );
 }
 
-const WorkflowStepInner = ({ children, onClick, className }) => {
+const WorkflowStepInner = ({
+  children,
+  onClick,
+  className
+}: any) => {
+  // @ts-expect-error TS(2339): Property 'showBody' does not exist on type '{}'.
   const { showBody, setShowActions, isActive, showActions } = useContext(
     WorkflowStepContext
   );
@@ -30,7 +39,7 @@ const WorkflowStepInner = ({ children, onClick, className }) => {
     'cursor-pointer': onClick && !showBody && !isActive
   });
 
-  const onStepClick = e => {
+  const onStepClick = (e: any) => {
     if (e.target.className && e.target.className.includes) {
       const hasClickedStep = e.target.className.includes('workflow-step');
       const hasClickedMeta = !!e.target.closest('.workflow-step__meta');
@@ -41,7 +50,7 @@ const WorkflowStepInner = ({ children, onClick, className }) => {
     }
   };
 
-  const handleKeyUp = e => {
+  const handleKeyUp = (e: any) => {
     e.stopPropagation();
     if (e.keyCode === 32) {
       onStepClick(e);

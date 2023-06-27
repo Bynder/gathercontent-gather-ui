@@ -12,7 +12,7 @@ const FormModal = ({
   cancelText,
   formIsSubmitting,
   ...rest
-}) => (
+}: any) => (
   <Modal.Container {...rest}>
     <form onSubmit={submitHandler}>
       <Modal.Header>{title}</Modal.Header>

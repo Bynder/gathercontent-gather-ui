@@ -1,9 +1,15 @@
 import React from 'react';
 import { string } from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib/Icon' or its corresponding... Remove this comment to see the full error message
 import Icon from 'lib/Icon';
 
-function Loader({ heading, progress, size, className }) {
+function Loader({
+  heading,
+  progress,
+  size,
+  className
+}: any) {
   const baseClassNames = `gc-loader flex items-center flex-col justify-center ${className}`;
   const classNames = cx(baseClassNames, {
     'loader-sm': size === 'sm',

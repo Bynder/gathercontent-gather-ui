@@ -13,7 +13,7 @@ function TooltipWrapper({
   id,
   onClick,
   ...rest
-}) {
+}: any) {
   if (!tooltipText) {
     return children;
   }

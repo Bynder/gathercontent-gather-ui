@@ -8,7 +8,7 @@ export function SidebarSection({
   initialShowMore,
   className = '',
   ...rest
-}) {
+}: any) {
   const [showMore, setShowMore] = React.useState(initialShowMore);
   const sharedState = {
     showMore,

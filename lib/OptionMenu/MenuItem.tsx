@@ -3,7 +3,14 @@ import { string, func, bool } from 'prop-types';
 import cx from 'classnames';
 import Icon from '../Icon';
 
-function MenuItem({ text, iconName, selected, className, iconTitle, ...rest }) {
+function MenuItem({
+  text,
+  iconName,
+  selected,
+  className,
+  iconTitle,
+  ...rest
+}: any) {
   const classes = cx(
     className,
     'bg-white hover:bg-neutral-95',

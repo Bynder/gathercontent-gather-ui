@@ -2,10 +2,11 @@
 import React, { createContext, useEffect, useRef, useState } from 'react';
 import { func, bool, string, number, oneOfType, node } from 'prop-types';
 
-const getElementPath = targetElement => {
+const getElementPath = (targetElement: any) => {
   let path = [targetElement];
 
-  const addParentToPath = element => {
+  // @ts-expect-error TS(7023): 'addParentToPath' implicitly has return type 'any'... Remove this comment to see the full error message
+  const addParentToPath = (element: any) => {
     const { parentElement } = element;
 
     if (parentElement) {
@@ -19,7 +20,7 @@ const getElementPath = targetElement => {
   return addParentToPath(targetElement);
 };
 
-const removeDocumentEventListener = (handleClickRef, handleMouseDownRef) => {
+const removeDocumentEventListener = (handleClickRef: any, handleMouseDownRef: any) => {
   document.removeEventListener('click', handleClickRef.current);
   document.removeEventListener('mousedown', handleMouseDownRef.current);
   handleClickRef.current = null;
@@ -27,10 +28,10 @@ const removeDocumentEventListener = (handleClickRef, handleMouseDownRef) => {
 };
 
 const addDocumentEventListener = (
-  handleClick,
-  handleMouseDown,
-  handleClickRef,
-  handleMouseDownRef
+  handleClick: any,
+  handleMouseDown: any,
+  handleClickRef: any,
+  handleMouseDownRef: any
 ) => {
   const hasExistingEvenListener = handleClickRef.current;
   if (hasExistingEvenListener) {
@@ -45,7 +46,7 @@ const addDocumentEventListener = (
 
 const BoundaryClickWatcherContext = createContext({});
 
-function BoundaryClickWatcher(props) {
+function BoundaryClickWatcher(props: any) {
   const [boundaryIsActive, setBoundaryIsActive] = useState(props.isActive);
   const [boundaryIsFocussed, setBoundaryIsFocussed] = useState(
     props.isFocussed
@@ -55,11 +56,11 @@ function BoundaryClickWatcher(props) {
   const handleClickRef = useRef();
   const handleMouseDownRef = useRef();
 
-  const handleBlur = e => {
+  const handleBlur = (e: any) => {
     setBoundaryIsFocussed(e.target === containerRef.current && false);
   };
 
-  const handleFocus = e => {
+  const handleFocus = (e: any) => {
     setBoundaryIsFocussed(e.target === containerRef.current);
   };
 
@@ -68,25 +69,29 @@ function BoundaryClickWatcher(props) {
     props.insideClickHandler();
   };
 
-  const handleOuterClick = event => {
+  const handleOuterClick = (event: any) => {
     setBoundaryIsActive(false);
     props.outsideClickHandler(event);
   };
 
-  const handleMouseDown = ({ target }) => {
+  const handleMouseDown = ({
+    target
+  }: any) => {
     clickedElementPath.current = getElementPath(target);
   };
 
-  const handleClick = event => {
+  const handleClick = (event: any) => {
     const { target } = event;
 
     const targetIsContainer = target === containerRef.current;
 
     const elementPathContainsContainer =
+      // @ts-expect-error TS(2345): Argument of type 'undefined' is not assignable to ... Remove this comment to see the full error message
       clickedElementPath.current.indexOf(containerRef.current) !== -1;
 
     const containerContainsFocus =
       containerRef.current &&
+      // @ts-expect-error TS(2339): Property 'contains' does not exist on type 'never'... Remove this comment to see the full error message
       containerRef.current.contains(document.activeElement);
 
     const hasPassedValidation = props.outsideClickEventValidator(event);
@@ -139,7 +144,7 @@ function BoundaryClickWatcher(props) {
       <BoundaryElement
         tabIndex={props.tabIndex}
         role="button"
-        ref={el => {
+        ref={(el: any) => {
           containerRef.current = el;
         }}
         onClick={handleInnerClick}

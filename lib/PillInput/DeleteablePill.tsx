@@ -5,7 +5,12 @@ import Icon from '../Icon';
 import Button from '../Button';
 import TooltipWrapper from '../TooltipWrapper';
 
-const DeleteablePill = ({ name, onRemove, warning, id }) => {
+const DeleteablePill = ({
+  name,
+  onRemove,
+  warning,
+  id
+}: any) => {
   const pillType = warning ? Pill.types.red : Pill.types.default;
   return (
     <TooltipWrapper id={`pill-input-pill-tooltip-${id}`} tooltipText={warning}>

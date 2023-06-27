@@ -25,7 +25,7 @@ const StatusIndicator = ({
   children,
   labelFontSize,
   ...rest
-}) => {
+}: any) => {
   const classNames = cx(className, {
     'status-indicator': true,
     'status-indicator--completed': completed,

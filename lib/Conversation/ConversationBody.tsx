@@ -1,7 +1,11 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-export function ConversationBody({ children, className, ...rest }) {
+export function ConversationBody({
+  children,
+  className,
+  ...rest
+}: any) {
   return (
     <div className={className} {...rest}>
       {children}

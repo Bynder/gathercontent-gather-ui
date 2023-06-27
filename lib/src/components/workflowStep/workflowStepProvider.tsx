@@ -2,7 +2,11 @@ import React, { createContext, useState } from 'react';
 
 const WorkflowStepContext = createContext({});
 
-function WorkflowStepProvider({ children, showBody, isActive }) {
+function WorkflowStepProvider({
+  children,
+  showBody,
+  isActive
+}: any) {
   const [showActions, setShowActions] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState([]);
 

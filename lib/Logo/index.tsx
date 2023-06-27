@@ -1,5 +1,6 @@
 import React from 'react';
 import { string, func, oneOfType } from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module '../../assets/logo.svg' or its ... Remove this comment to see the full error message
 import logoSVG from '../../assets/logo.svg';
 
 /**
@@ -8,7 +9,7 @@ import logoSVG from '../../assets/logo.svg';
  * <Logo url="http://example.com/myimage.png" alt="Alt Tag" />
  */
 
-const Logo = props => {
+const Logo = (props: any) => {
   const LogoPath = props.url || logoSVG;
   const image =
     typeof LogoPath === 'string' ? (

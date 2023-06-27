@@ -1,6 +1,9 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Person as PersonComponent } from 'lib';
+// @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from 'stories/styleguide/StoryItem';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
 import faker from 'faker';
 
 export default {
@@ -18,7 +21,7 @@ export default {
   }
 };
 
-export const Person = args => {
+export const Person = (args: any) => {
   return (
     <StoryItem title="PersonComponent" description="A person">
       <PersonComponent {...args} />

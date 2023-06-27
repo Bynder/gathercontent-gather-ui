@@ -1,7 +1,10 @@
 import React from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
 import faker from 'faker';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import uuid from 'uuid/v1';
 import AvatarGroup from '../AvatarGroup';
+// @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
 import { AvatarWithPopover, ParticipantInfo } from '../../index';
 
 const AvatarGroupMock = ({
@@ -11,7 +14,7 @@ const AvatarGroupMock = ({
   avatarProps,
   avatarGroupProps,
   overlayProps
-}) => {
+}: any) => {
   const count = minCount;
 
   const avatarCount =

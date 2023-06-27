@@ -2,7 +2,11 @@ import React from 'react';
 import { defaults, types } from './inlineTypes';
 import NotificationInlineBase from './NotificationInlineBase';
 
-const NotificationInlineDanger = ({ children, className = '', ...rest }) => (
+const NotificationInlineDanger = ({
+  children,
+  className = '',
+  ...rest
+}: any) => (
   <NotificationInlineBase
     iconName="warningOctogon"
     className={`border-red-primary ${className}`}

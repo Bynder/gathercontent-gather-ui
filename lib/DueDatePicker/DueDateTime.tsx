@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { MenuItem, Dropdown } from 'lib';
 
-const DueDateTime = props => {
+const DueDateTime = (props: any) => {
   const minutes = ['00', '15', '30', '45'];
   const hours = Array.from({ length: 24 }, (x, i) => i);
   const { setTime } = props;

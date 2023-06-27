@@ -8,7 +8,7 @@ export const sizes = {
   xs: 'xs'
 };
 
-export const getSizeClasses = size => {
+export const getSizeClasses = (size: any) => {
   if (!size) {
     return '';
   }

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormGroup = ({ children }) => (
+const FormGroup = ({
+  children
+}: any) => (
   <div className="form-group">{children}</div>
 );
 

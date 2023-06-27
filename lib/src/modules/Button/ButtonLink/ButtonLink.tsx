@@ -1,7 +1,12 @@
 import React from 'react';
 import { node, string } from 'prop-types';
 
-function ButtonLink({ children, className, buttonRef, ...rest }) {
+function ButtonLink({
+  children,
+  className,
+  buttonRef,
+  ...rest
+}: any) {
   return (
     <button
       type="button"

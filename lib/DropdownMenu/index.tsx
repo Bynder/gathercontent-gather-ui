@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect, useRef } from 'react';
-import cx from 'classnames';
-import Button from '../Button';
-import Icon from '../Icon';
-import { DropdownMenuItem } from './DropdownMenuItem';
+import React, { useState, useEffect, useRef } from "react";
+import cx from "classnames";
+import Button from "../Button";
+import Icon from "../Icon";
+import { DropdownMenuItem } from "./DropdownMenuItem";
 
 export function DropdownMenu({
   items,
@@ -19,16 +19,16 @@ export function DropdownMenu({
   downIcon,
   fullWidth,
   buttonClassName,
-  disabled
-}) {
+  disabled,
+}: any) {
   const [showItems, setShowItems] = useState(selected);
   const eventSet = useRef(selected);
 
-  const closeDropdown = e => {
+  const closeDropdown = (e: any) => {
     let isTargetDropDownButton = false;
     if (e.target.classList) {
       isTargetDropDownButton = e.target.classList.contains(
-        'dropdown-menu__button'
+        "dropdown-menu__button"
       );
     }
     if (showItems && !isTargetDropDownButton) {
@@ -38,16 +38,16 @@ export function DropdownMenu({
 
   useEffect(() => {
     if (showItems) {
-      document.body.addEventListener('click', closeDropdown);
+      document.body.addEventListener("click", closeDropdown);
       eventSet.current = true;
     }
     if (!showItems && eventSet.current) {
-      document.body.removeEventListener('click', closeDropdown);
+      document.body.removeEventListener("click", closeDropdown);
       eventSet.current = false;
     }
     return () => {
       if (eventSet.current) {
-        document.body.removeEventListener('click', closeDropdown);
+        document.body.removeEventListener("click", closeDropdown);
       }
     };
   }, [showItems]);
@@ -59,21 +59,21 @@ export function DropdownMenu({
   };
 
   const menuClass = cx(`dropdown ${className}`, {
-    'is-visible': shouldDisplay,
-    'is-hidden': !shouldDisplay,
-    'open is-active': showItems,
-    dropup: direction === 'up',
-    'full-width': fullWidth
+    "is-visible": shouldDisplay,
+    "is-hidden": !shouldDisplay,
+    "open is-active": showItems,
+    dropup: direction === "up",
+    "full-width": fullWidth,
   });
 
   const listClass = cx(`dropdown-menu ${listClassName}`, {
-    'align-right': alignRight
+    "align-right": alignRight,
   });
 
   const buttonClass = cx(
     `${buttonClassName} dropdown-menu__button dropdown-menu__button--${[type]}`,
     {
-      'dropdown-menu__button-disabled': disabled
+      "dropdown-menu__button-disabled": disabled,
     }
   );
 
@@ -83,18 +83,20 @@ export function DropdownMenu({
         {children}
         {caret && (
           <span className="dropdown-menu__caret">
+            {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
             <Icon name="caret" size="micro" />
           </span>
         )}
         {downIcon && (
           <span className="dropdown-menu__down">
+            {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
             <Icon name="down" size="micro" />
           </span>
         )}
       </Button>
 
       <ul className={listClass}>
-        {items.map((item, index) => (
+        {items.map((item: any, index: any) => (
           <DropdownMenuItem item={item} key={`item-${index}`} />
         ))}
       </ul>
@@ -103,16 +105,16 @@ export function DropdownMenu({
 }
 
 DropdownMenu.defaultProps = {
-  type: 'primary',
+  type: "primary",
   selected: false,
   alignRight: false,
-  className: '',
-  listClassName: '',
+  className: "",
+  listClassName: "",
   caret: false,
   downIcon: false,
-  direction: 'down',
+  direction: "down",
   shouldDisplay: true,
   fullWidth: false,
-  buttonClassName: '',
-  disabled: false
+  buttonClassName: "",
+  disabled: false,
 };

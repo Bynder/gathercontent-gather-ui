@@ -1,7 +1,7 @@
 import React from 'react';
 import useResizeObserver from '@react-hook/resize-observer';
 
-export function useSize(target) {
+export function useSize(target: any) {
   const [size, setSize] = React.useState();
 
   React.useLayoutEffect(() => {

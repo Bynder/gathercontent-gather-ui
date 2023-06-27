@@ -8,7 +8,7 @@ const UserSearchHead = ({
   useDisplayToggle,
   toggleListDisplay,
   toggleActive
-}) => (
+}: any) => (
   <div className="user-search__search-head">
     <div className="user-search__search-head-top">
       {searchHeading && (

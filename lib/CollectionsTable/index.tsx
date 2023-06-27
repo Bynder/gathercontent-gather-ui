@@ -6,7 +6,11 @@ import CollectionsTableCell from './CollectionsTableCell';
 import CollectionsTableCellContent from './CollectionsTableCellContent';
 import { propTypes, defaultProps } from './propTypes';
 
-const CollectionsTable = ({ children, className, ...props }) => (
+const CollectionsTable = ({
+  children,
+  className,
+  ...props
+}: any) => (
   <div className={`collections-table ${className}`} {...props}>
     {children}
   </div>

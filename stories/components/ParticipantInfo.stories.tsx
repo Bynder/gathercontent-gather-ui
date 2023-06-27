@@ -16,6 +16,7 @@ export const ParticipantInfo = () => (
       <ParticipantInfoComponent
         name="Angus Edwardson"
         email="example@gmail.com"
+        // @ts-expect-error TS(2322): Type '{ name: string; email: string; pillboxText: ... Remove this comment to see the full error message
         pillboxText="Assigned"
       />
     </StoryItem>

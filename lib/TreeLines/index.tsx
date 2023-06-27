@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2305): Module '"prop-types"' has no exported member 'Prop... Remove this comment to see the full error message
 import { PropTypes } from 'prop-types';
 import { uniqueId } from 'lodash';
 

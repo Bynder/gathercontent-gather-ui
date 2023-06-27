@@ -10,7 +10,7 @@ const CollectionsTableCell = ({
   allowOverflow,
   alignRight,
   ...props
-}) => {
+}: any) => {
   const classNames = cx(`collections-table__cell ${className}`, {
     'collections-table__cell--allow-overflow': allowOverflow,
     'collections-table__cell--align-right': alignRight

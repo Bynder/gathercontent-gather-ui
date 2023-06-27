@@ -7,9 +7,9 @@ function useKeyDownHandlers({
   inputValue,
   setInputValue,
   inputRef
-}) {
+}: any) {
   useEffect(() => {
-    const handleEnter = event => {
+    const handleEnter = (event: any) => {
       event.preventDefault();
       addPills([inputValue]);
       setInputValue('');
@@ -23,7 +23,7 @@ function useKeyDownHandlers({
       removeLastPill();
     };
 
-    const handleKeyDown = event => {
+    const handleKeyDown = (event: any) => {
       if (event.target !== inputRef.current) {
         return;
       }

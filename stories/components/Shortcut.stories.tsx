@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2305): Module '"../../lib/index"' has no exported member ... Remove this comment to see the full error message
 import { Shortcut as ShortcutComponent, ShortcutIcon } from '../../lib/index';
 import StoryItem from '../styleguide/StoryItem';
 

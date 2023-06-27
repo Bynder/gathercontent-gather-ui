@@ -1,98 +1,91 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { Grid, Row } from 'lib';
+import React, {
+  HTMLAttributes,
+  ReactNode,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
+import cx from "classnames";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { Grid, Row } from "lib";
 
-class TopBar extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      initialPostion: 0,
-      scrollFixed: false
-    };
-  }
-
-  componentDidMount = () => {
-    if (this.props.scrollToFixed) {
-      window.addEventListener('scroll', this.handleScroll);
-      this.setState({
-        initialPostion:
-          this.topbar.getBoundingClientRect().top + window.pageYOffset
-      });
-    }
-  };
-
-  componentWillUnmount = () => {
-    if (this.props.scrollToFixed) {
-      window.removeEventListener('scroll', this.handleScroll);
-    }
-  };
-
-  handleScroll = () => {
-    const topBarPosition = this.topbar.getBoundingClientRect().top;
-    if (topBarPosition <= 0 && !this.state.scrollFixed) {
-      this.setState({ scrollFixed: true });
-    }
-    if (
-      window.pageYOffset < this.state.initialPostion &&
-      this.state.scrollFixed
-    ) {
-      this.setState({ scrollFixed: false });
-    }
-  };
-
-  render() {
-    const wrapperClasses = cx('top-bar__wrapper', {
-      shadow: this.props.shadow,
-      'top-bar__wrapper--fixed': this.props.fixed || this.state.scrollFixed
-    });
-
-    const classes = cx(`top-bar p-0 ${this.props.className}`, {
-      'top-bar--dark': this.props.useDarkTheme,
-      'top-bar-light-grey': this.props.useLightGreyTheme,
-      'top-bar--has-notification': this.props.notification
-    });
-    return (
-      <Grid className={classes}>
-        <div
-          className={wrapperClasses}
-          ref={node => {
-            this.topbar = node;
-          }}
-        >
-          <>
-            {this.props.notification}
-            <Row className="top-bar__inner">{this.props.children}</Row>
-          </>
-        </div>
-      </Grid>
-    );
-  }
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  fixed?: boolean;
+  scrollToFixed?: boolean;
+  useDarkTheme?: boolean;
+  notification?: ReactNode;
+  shadow?: boolean;
+  useLightGreyTheme?: boolean;
 }
 
-TopBar.propTypes = {
-  fixed: PropTypes.bool,
-  scrollToFixed: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.shape())
-  ]),
-  useDarkTheme: PropTypes.bool,
-  className: PropTypes.string,
-  notification: PropTypes.node,
-  shadow: PropTypes.bool
-};
+function TopBar({
+  className,
+  children,
+  fixed,
+  scrollToFixed,
+  useDarkTheme,
+  notification,
+  shadow,
+  useLightGreyTheme,
+}: Props) {
+  const [initialPostion, setInitialPosition] = useState(0);
+  const [scrollFixed, setScrollFixed] = useState(false);
+
+  const topbarRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  const handleScroll = () => {
+    const topBarPosition = topbarRef.current.getBoundingClientRect().top;
+    if (topBarPosition <= 0 && !scrollFixed) {
+      setScrollFixed(true);
+    }
+    if (window.pageYOffset < initialPostion && scrollFixed) {
+      setScrollFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    if (scrollToFixed && topbarRef.current) {
+      window.addEventListener("scroll", handleScroll);
+      setInitialPosition(
+        topbarRef.current.getBoundingClientRect().top + window.pageYOffset
+      );
+    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [topbarRef.current]);
+
+  const wrapperClasses = cx("top-bar__wrapper", {
+    shadow: shadow,
+    "top-bar__wrapper--fixed": fixed || scrollFixed,
+  });
+
+  const classes = cx(`top-bar p-0 ${className}`, {
+    "top-bar--dark": useDarkTheme,
+    "top-bar-light-grey": useLightGreyTheme,
+    "top-bar--has-notification": notification,
+  });
+
+  return (
+    <Grid className={classes}>
+      <div className={wrapperClasses} ref={topbarRef}>
+        <>
+          {notification}
+          <Row className="top-bar__inner">{children}</Row>
+        </>
+      </div>
+    </Grid>
+  );
+}
 
 TopBar.defaultProps = {
   fixed: false,
   scrollToFixed: false,
   useDarkTheme: false,
   children: [],
-  className: '',
+  className: "",
   notification: null,
-  shadow: true
+  shadow: true,
 };
 
 export default TopBar;

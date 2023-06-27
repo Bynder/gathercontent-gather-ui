@@ -8,7 +8,7 @@ export function ButtonSecondaryDanger({
   className,
   disabled,
   ...rest
-}) {
+}: any) {
   const disabledClasses = cx('bg-neutral-95 text-neutral-primary');
 
   const nonDisabledClasses = cx(

@@ -8,7 +8,7 @@ export function ModalHeader({
   children,
   className,
   ...rest
-}) {
+}: any) {
   return (
     <div className={`react-modal-header ${className}`} {...rest}>
       <div className="react-modal-header-inner">

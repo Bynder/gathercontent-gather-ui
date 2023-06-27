@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export function useLoader(action, isInitiallyLoading = false) {
+export function useLoader(action: any, isInitiallyLoading = false) {
   const [isLoading, setIsLoading] = useState(isInitiallyLoading);
 
   const isMounted = useRef(true);
@@ -12,7 +12,7 @@ export function useLoader(action, isInitiallyLoading = false) {
     []
   );
 
-  const actionLoader = async e => {
+  const actionLoader = async (e: any) => {
     if (e.preventDefault) {
       e.preventDefault();
     }

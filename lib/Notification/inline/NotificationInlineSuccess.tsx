@@ -2,7 +2,11 @@ import React from 'react';
 import { defaults, types } from './inlineTypes';
 import NotificationInlineBase from './NotificationInlineBase';
 
-const NotificationInlineSuccess = ({ children, className = '', ...rest }) => (
+const NotificationInlineSuccess = ({
+  children,
+  className = '',
+  ...rest
+}: any) => (
   <NotificationInlineBase
     iconName="approved"
     className={`border-green-primary ${className}`}

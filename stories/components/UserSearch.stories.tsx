@@ -48,7 +48,7 @@ export default {
   }
 };
 
-export const UserSearch = args => {
+export const UserSearch = (args: any) => {
   return (
     <div>
       <StoryItem

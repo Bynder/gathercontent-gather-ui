@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
-import { Comment, Person } from 'lib';
-import { mockUserNoAvatar, mockUsers } from './mockData';
+import React, { useContext } from "react";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
+import { Comment, Person } from "lib";
+import { mockUserNoAvatar, mockUsers } from "./mockData";
 
 function ExistingCommentExample({
   comment,
   submitPromise,
   isFirst,
-  deletePromise
-}) {
-  const { isEditing, isOpen } = useContext(Comment.Context);
+  deletePromise,
+}: any) {
+  const { isEditing, isOpen }: any = useContext(Comment.Context);
   const { avatar, initials, name } = comment.author || {};
   return (
     <Comment>
@@ -49,7 +50,7 @@ function ExistingCommentExample({
       </Comment.Body>
 
       <Comment.DeleteConfirmation
-        confirmButtonText={isFirst ? 'Delete conversation' : 'Delete comment'}
+        confirmButtonText={isFirst ? "Delete conversation" : "Delete comment"}
         onConfirm={deletePromise}
         failureText="Delete failed"
       />

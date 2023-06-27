@@ -10,7 +10,7 @@ function CommentProvider({
   isDeleting: deleting,
   hasFailed: failed,
   showBorders
-}) {
+}: any) {
   const [isEditing, setIsEditing] = useState(editing);
   const [isDeleting, setIsDeleting] = useState(deleting);
   const [hasFailed, setHasFailed] = useState(failed);

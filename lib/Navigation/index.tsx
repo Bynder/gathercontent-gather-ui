@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const Navigation = props => {
+const Navigation = (props: any) => {
   const classes = cx(`navigation ${props.className}`, {
     'navigation--tabs': props.tabs
   });
 
   return (
     <nav className={classes}>
-      {React.Children.map(props.children, child => {
+      {React.Children.map(props.children, (child: any) => {
         if (child?.props) {
           const itemClasses = cx(
             'navigation__item',
@@ -40,6 +40,7 @@ Navigation.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
+    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
     PropTypes.arrayOf(PropTypes.shape())
   ]).isRequired,
   className: PropTypes.string

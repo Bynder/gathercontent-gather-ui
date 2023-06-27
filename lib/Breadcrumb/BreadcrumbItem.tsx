@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BreadcrumbItem = ({ children, ...rest }) => (
+const BreadcrumbItem = ({
+  children,
+  ...rest
+}: any) => (
   <div className="breadcrumb__item" {...rest}>
     {children}
   </div>

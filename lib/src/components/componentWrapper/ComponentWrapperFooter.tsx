@@ -11,7 +11,7 @@ export function ComponentWrapperFooter({
   className,
   status,
   ...rest
-}) {
+}: any) {
   const classes = cx('component-footer', className, {
     'component-footer-editable': editable,
     'component-footer-dragged-over': draggedOver,

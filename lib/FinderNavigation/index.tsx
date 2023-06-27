@@ -25,6 +25,7 @@ class FinderNavigation extends Component {
 
   render() {
     return (
+      // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
       <div className={`finder ${this.props.className}`}>
         {this.props.children}
       </div>

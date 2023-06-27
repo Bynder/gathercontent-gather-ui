@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Icon } from 'lib';
 import cx from 'classnames';
 import { ComponentLabel } from './ComponentLabel';
@@ -21,7 +22,7 @@ export function ComponentWrapperHeader({
   maxLength,
   className,
   ...rest
-}) {
+}: any) {
   const classes = cx(`component-header ${className}`, {
     'component-header-selected': isSelected,
     'component-header-hovered': isHovered,

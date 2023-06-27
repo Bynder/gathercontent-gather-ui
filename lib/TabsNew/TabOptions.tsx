@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import cx from 'classnames';
 import { node } from 'prop-types';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonIcon } from 'lib';
 import Dropdown from '../Dropdown';
 import { TabContext } from './Tab';
 
-function TabOptions({ children }) {
+function TabOptions({
+  children
+}: any) {
   const { isActive, actionsAreActive, setActionsAreActive } = useContext(
     TabContext
   );
@@ -19,13 +22,12 @@ function TabOptions({ children }) {
 
   const iconClassNames = cx('bg-transparent hover:bg-neutral-95');
 
-  const createTriggerWrapperClassNames = showContent =>
-    cx('tab-dropdown-trigger h-6 w-6 items-center justify-center', {
-      flex: isActive || showContent,
-      'hidden group-hover:flex': !isActive && !showContent,
-      'group-hover:bg-neutral-90': !isActive,
-      'bg-neutral-90': actionsAreActive
-    });
+  const createTriggerWrapperClassNames = (showContent: any) => cx('tab-dropdown-trigger h-6 w-6 items-center justify-center', {
+    flex: isActive || showContent,
+    'hidden group-hover:flex': !isActive && !showContent,
+    'group-hover:bg-neutral-90': !isActive,
+    'bg-neutral-90': actionsAreActive
+  });
 
   return (
     <Dropdown
@@ -38,7 +40,9 @@ function TabOptions({ children }) {
         <>
           <div className={createTriggerWrapperClassNames(showContent)}>
             <Dropdown.Trigger>
-              {({ toggleShowContent }) => (
+              {({
+                toggleShowContent
+              }: any) => (
                 <ButtonIcon
                   name="cog16"
                   tabIndex={0}

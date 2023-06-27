@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListHead = ({ title, action }) => {
+const ListHead = ({
+  title,
+  action
+}: any) => {
   if (!title && !action) {
     return null;
   }

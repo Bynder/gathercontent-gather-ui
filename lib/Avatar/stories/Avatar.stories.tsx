@@ -1,10 +1,16 @@
 import React from 'react';
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
 import faker from 'faker';
 import {
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   Avatar as AvatarComponent,
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   AvatarWithPopover,
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Par... Remove this comment to see the full error message
   ParticipantInfo,
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   AvatarInformation,
+  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'But... Remove this comment to see the full error message
   Button
 } from '../../index';
 import StoryItem from '../../../stories/styleguide/StoryItem';
@@ -34,7 +40,7 @@ export default {
   }
 };
 
-export const Avatar = args => {
+export const Avatar = (args: any) => {
   const avatarUrl = args.url;
 
   const props = {
@@ -91,7 +97,9 @@ export const Avatar = args => {
           avatarProps={propsWithoutColour}
           avatarGroupProps={{ stacked: args.stacked }}
         >
-          {({ ui }) => ui}
+          {({
+            ui
+          }: any) => ui}
         </AvatarGroupMock>
       </StoryItem>
     </div>

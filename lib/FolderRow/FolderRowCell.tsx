@@ -2,7 +2,11 @@ import React from 'react';
 import { bool, node } from 'prop-types';
 import cx from 'classnames';
 
-function FolderRowCell({ children, meta, ...props }) {
+function FolderRowCell({
+  children,
+  meta,
+  ...props
+}: any) {
   const classNames = cx(`folder-row__cell`, {
     'folder-row__cell--meta': meta
   });

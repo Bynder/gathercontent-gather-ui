@@ -1,7 +1,14 @@
-import React from 'react';
-import { string, func, bool, oneOfType, node } from 'prop-types';
-import ExpandingTextArea from 'lib/ExpandingTextArea';
-import Linkify from 'linkifyjs/react';
+import React, { HTMLAttributes, ReactNode } from "react";
+import { string, func, bool, oneOfType, node } from "prop-types";
+// @ts-expect-error TS(2307): Cannot find module 'lib/ExpandingTextArea' or its ... Remove this comment to see the full error message
+import ExpandingTextArea from "lib/ExpandingTextArea";
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'link... Remove this comment to see the full error message
+import Linkify from "linkifyjs/react";
+
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  instructions?: string | ReactNode;
+  editable?: boolean;
+}
 
 function ColFieldInstructions({
   instructions,
@@ -10,7 +17,7 @@ function ColFieldInstructions({
   onChange,
   placeholder,
   ...props
-}) {
+}: Props) {
   const classes = `col-field__instructions py-4 px-5 border-0 text-sm whitespace-pre-line ${className}`;
   if (editable) {
     return (
@@ -31,19 +38,11 @@ function ColFieldInstructions({
   );
 }
 
-ColFieldInstructions.propTypes = {
-  instructions: oneOfType([string, node]).isRequired,
-  className: string,
-  editable: bool,
-  onChange: func,
-  placeholder: string
-};
-
 ColFieldInstructions.defaultProps = {
-  className: '',
+  className: "",
   editable: false,
   onChange: () => {},
-  placeholder: 'Add some instructions...'
+  placeholder: "Add some instructions...",
 };
 
 export default ColFieldInstructions;

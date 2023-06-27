@@ -1,6 +1,7 @@
 import React from 'react';
 import { bool, node } from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib/src/components/card/Card' ... Remove this comment to see the full error message
 import { Card } from 'lib/src/components/card/Card';
 
 function FileCard({
@@ -12,7 +13,7 @@ function FileCard({
   size,
   innerClassName,
   ...cardProps
-}) {
+}: any) {
   const cardClassNames = cx('file-card group', cardProps.className, {
     'w-full': size !== 'thumbnail',
     'w-8 h-8': size === 'thumbnail',

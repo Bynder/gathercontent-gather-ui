@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownSection = ({ children }) => {
+const DropdownSection = ({
+  children
+}: any) => {
   return <div className="dropdown__section">{children}</div>;
 };
 

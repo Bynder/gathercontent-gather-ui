@@ -1,6 +1,7 @@
 import React from 'react';
 import { bool, func, string } from 'prop-types';
 import cx from 'classnames';
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonIconContained, ButtonIconContainedDanger } from 'lib';
 
 function Control({
@@ -10,7 +11,7 @@ function Control({
   className,
   danger,
   ...buttonProps
-}) {
+}: any) {
   const classNames = cx('control flex mr-2', className);
   const ButtonComponent = danger
     ? ButtonIconContainedDanger
