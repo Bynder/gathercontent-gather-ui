@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Dropdown,
   Calendar,
@@ -9,12 +9,11 @@ import {
   ButtonSecondaryDanger,
   ButtonIcon,
   TooltipWrapper,
-  useLoader
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  useLoader,
+} from "lib";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'plur... Remove this comment to see the full error message
-import pluralize from 'pluralize';
-import Icon from '../../../Icon';
+import pluralize from "pluralize";
+import Icon from "../../../Icon";
 
 export function DueDateDropdown({
   id,
@@ -30,22 +29,17 @@ export function DueDateDropdown({
   workflowDueDate,
   today,
   defaultDueDate,
-  defaultTime
+  defaultTime,
 }: any) {
   const [isSubmitting, handleSubmitWithLoader] = useLoader(onSaveClick);
   const [isRemoving, handleRemoveClick] = useLoader(onRemoveClick);
 
   return (
     <Dropdown id={id} autoPosition={autoPosition} onToggle={onToggle}>
-      {({
-        showContent,
-        setShowContent
-      }: any) => (
+      {({ showContent, setShowContent }: any) => (
         <>
           <Dropdown.Trigger>
-            {({
-              toggleShowContent
-            }: any) => (
+            {({ toggleShowContent }: any) => (
               <TooltipWrapper
                 id={`due-date-dropdown-tooltip-${id}`}
                 tooltipText="Set a due date"
@@ -56,6 +50,7 @@ export function DueDateDropdown({
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
+                  // @ts-expect-error
                   title="Set a due date"
                 />
               </TooltipWrapper>
@@ -77,7 +72,7 @@ export function DueDateDropdown({
                         workflowDueDate.dynamic.interval,
                         workflowDueDate.dynamic.amount,
                         true
-                      )} has been scheduled by the workflow.`}{' '}
+                      )} has been scheduled by the workflow.`}{" "}
                       <a href="https://help.gathercontent.com/en/articles/7041381-automated-due-dates">
                         What's this?
                       </a>
@@ -90,7 +85,7 @@ export function DueDateDropdown({
                   <div className="flex items-center gap-4">
                     <Icon name="infoSquare" />
                     <p className="mt-0 text-neutral-20">
-                      {`A fixed due date has been set by the workflow.`}{' '}
+                      {`A fixed due date has been set by the workflow.`}{" "}
                       <a href="https://help.gathercontent.com/en/articles/7041381-automated-due-dates">
                         What's this?
                       </a>
@@ -108,7 +103,7 @@ export function DueDateDropdown({
                 />
                 <DateSet
                   date={selectedDay || defaultDueDate || today}
-                  time={selectedTime || defaultTime || '5:00 PM'}
+                  time={selectedTime || defaultTime || "5:00 PM"}
                   onTimeSelect={onTimeSelect}
                   className="p-4 border border-solid border-b-0 border-l-0 border-r-0 border-neutral-90"
                 />
@@ -117,6 +112,7 @@ export function DueDateDropdown({
                 <ButtonSecondaryDanger
                   size={ButtonSecondaryDanger.sizes.sm}
                   onClick={async (e: any) => {
+                    // @ts-expect-error
                     await handleRemoveClick(e);
                     setShowContent(false);
                   }}
@@ -136,6 +132,7 @@ export function DueDateDropdown({
                   <ButtonSecondary
                     size={ButtonSecondary.sizes.sm}
                     onClick={async (e: any) => {
+                      // @ts-expect-error
                       await handleSubmitWithLoader(e);
                       setShowContent(false);
                     }}

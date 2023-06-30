@@ -1,12 +1,11 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { DueDateLabel as DueDateLabelComponent } from 'lib';
+import React from "react";
+import { DueDateLabel as DueDateLabelComponent } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Due dates/Due Date Label',
-  component: DueDateLabelComponent
+  title: "Legacy/Due dates/Due Date Label",
+  component: DueDateLabelComponent,
 };
 
 export const DueDateLabel = () => (
@@ -24,5 +23,5 @@ export const DueDateLabel = () => (
 );
 
 DueDateLabel.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

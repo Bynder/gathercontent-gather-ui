@@ -1,8 +1,7 @@
-import React from 'react';
-import cx from 'classnames';
-import { bool, string } from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonIconContained, TooltipWrapper } from 'lib';
+import React from "react";
+import cx from "classnames";
+import { bool, string } from "prop-types";
+import { ButtonIconContained, TooltipWrapper } from "lib";
 
 export function InventoryItem({
   isPreviewActive,
@@ -16,8 +15,8 @@ export function InventoryItem({
   ...rest
 }: any) {
   const classNames = cx(`inventory-item ${className}`, {
-    'inventory-item-preview-active': isPreviewActive, // change classname and styles
-    'inventory-item-preview': isPreview
+    "inventory-item-preview-active": isPreviewActive, // change classname and styles
+    "inventory-item-preview": isPreview,
   });
 
   if (isPreviewActive) {
@@ -49,15 +48,15 @@ InventoryItem.propTypes = {
   tooltipText: string,
   className: string,
   tooltipPlacement: string,
-  id: string
+  id: string,
 };
 
 InventoryItem.defaultProps = {
   isPreviewActive: false,
   isPreview: false,
-  className: '',
-  tooltipClassName: '',
-  tooltipText: '',
-  tooltipPlacement: 'right',
-  id: ''
+  className: "",
+  tooltipClassName: "",
+  tooltipText: "",
+  tooltipPlacement: "right",
+  id: "",
 };

@@ -1,21 +1,16 @@
-import React, { useContext } from 'react';
-import { func } from 'prop-types';
-import { WindowingContext } from './Windowing';
+import React, { useContext } from "react";
+import { func } from "prop-types";
+import { WindowingContext } from "./Windowing";
 
-function WindowingList({
-  children,
-  ...rest
-}: any) {
-  // @ts-expect-error TS(2339): Property 'itemHeight' does not exist on type '{}'.
-  const { itemHeight, allWindowingIds, inViewWindowingIds } = useContext(
-    WindowingContext
-  );
+function WindowingList({ children, ...rest }: any) {
+  const { itemHeight, allWindowingIds, inViewWindowingIds }: any =
+    useContext(WindowingContext);
 
   return (
     <div
       className="windowing-list"
       style={{
-        height: `${allWindowingIds.length * itemHeight}px`
+        height: `${allWindowingIds.length * itemHeight}px`,
       }}
       {...rest}
     >
@@ -25,7 +20,7 @@ function WindowingList({
 }
 
 WindowingList.propTypes = {
-  children: func.isRequired
+  children: func.isRequired,
 };
 
 export { WindowingList };

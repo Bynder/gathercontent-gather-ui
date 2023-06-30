@@ -1,16 +1,11 @@
-import React, { useContext } from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { NewModal } from 'lib';
-import { node, string } from 'prop-types';
-import Navigation from '../Navigation';
-import { LegacyModalContext } from './Modal';
+import React, { useContext } from "react";
+import { NewModal } from "lib";
+import { node, string } from "prop-types";
+import Navigation from "../Navigation";
+import { LegacyModalContext } from "./Modal";
 
-export function ModalHeaderNavigation({
-  children,
-  title
-}: any) {
-  // @ts-expect-error TS(2339): Property 'onHide' does not exist on type '{}'.
-  const { onHide } = useContext(LegacyModalContext);
+export function ModalHeaderNavigation({ children, title }: any) {
+  const { onHide }: any = useContext(LegacyModalContext);
 
   return (
     <NewModal.Header
@@ -32,5 +27,5 @@ export function ModalHeaderNavigation({
 
 ModalHeaderNavigation.propTypes = {
   children: node.isRequired,
-  title: string.isRequired
+  title: string.isRequired,
 };

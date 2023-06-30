@@ -1,7 +1,6 @@
 import { useDrop } from "react-dnd-cjs";
 import { func, node } from "prop-types";
 import { useContext } from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { DndContext } from "lib";
 import { throttle } from "lodash";
 

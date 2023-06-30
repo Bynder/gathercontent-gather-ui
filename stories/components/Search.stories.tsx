@@ -1,11 +1,10 @@
-import React from 'react';
-import StoryItem from '../styleguide/StoryItem';
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Searc... Remove this comment to see the full error message
-import { Search as SearchComponent } from '../../lib';
+import React from "react";
+import StoryItem from "../styleguide/StoryItem";
+import { Search as SearchComponent } from "../../lib";
 
 export default {
-  title: 'Legacy/Search',
-  component: SearchComponent
+  title: "Legacy/Search",
+  component: SearchComponent,
 };
 
 export const Search = () => {
@@ -19,6 +18,7 @@ export const Search = () => {
           <SearchComponent.Input onChange={() => {}} />
           <SearchComponent.Body>
             <SearchComponent.Options>
+              {/* @ts-expect-error */}
               <SearchComponent.ToggleFilter
                 label="SearchComponent all projects"
                 clickHandler={() => {}}
@@ -48,5 +48,5 @@ export const Search = () => {
 };
 
 Search.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

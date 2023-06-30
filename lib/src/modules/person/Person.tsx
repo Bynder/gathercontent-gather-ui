@@ -1,8 +1,7 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Avatar, Icon, TooltipWrapper } from 'lib';
-import cx from 'classnames';
-import { TextHighlighter } from '../../../helpers/TextHighlighter';
+import React from "react";
+import { Avatar, Icon, TooltipWrapper } from "lib";
+import cx from "classnames";
+import { TextHighlighter } from "../../../helpers/TextHighlighter";
 
 export function Person({
   name,
@@ -18,19 +17,19 @@ export function Person({
   highlightText,
   colour,
   locked,
-  lockedTooltipText
+  lockedTooltipText,
 }: any) {
-  const classes = cx('person', className, {
-    'person-selected': selected,
-    'person-interactive': interactive,
-    'person-collapse': collapse,
-    'person-bordered': bordered
+  const classes = cx("person", className, {
+    "person-selected": selected,
+    "person-interactive": interactive,
+    "person-collapse": collapse,
+    "person-bordered": bordered,
   });
 
-  const WrapperElement = interactive ? 'button' : 'div';
+  const WrapperElement = interactive ? "button" : "div";
 
   const shouldHighlightSubtitle =
-    !!highlightText.length && typeof subtitle === 'string';
+    !!highlightText.length && typeof subtitle === "string";
 
   return (
     <WrapperElement className={classes} onClick={onClick}>
@@ -54,7 +53,7 @@ export function Person({
         )}
       </div>
       {selected && !locked && (
-        <Icon className="person-tick" name="tick16" types={['primary-blue']} />
+        <Icon className="person-tick" name="tick16" types={["primary-blue"]} />
       )}
       {locked && (
         <TooltipWrapper
@@ -64,7 +63,7 @@ export function Person({
           <Icon
             name="lock"
             className="person-lock"
-            types={['neutral-20']}
+            types={["neutral-20"]}
             defaultActiveColor={false}
           />
         </TooltipWrapper>
@@ -75,7 +74,7 @@ export function Person({
 
 Person.defaultProps = {
   interactive: false,
-  highlightText: '',
+  highlightText: "",
   locked: false,
-  lockedTooltipText: ''
+  lockedTooltipText: "",
 };

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Calendar } from 'lib';
-import Button from '../Button';
-import Dropdown from '../Dropdown';
-import DueDateHeader from './DueDateHeader';
-import DueDateButton from './DueDateButton';
+import React, { useState, useEffect } from "react";
+import moment from "moment";
+import cx from "classnames";
+import { Calendar } from "lib";
+import Button from "../Button";
+import Dropdown from "../Dropdown";
+import DueDateHeader from "./DueDateHeader";
+import DueDateButton from "./DueDateButton";
 
 export function DueDatePicker({
   applyDueDate,
@@ -17,7 +16,7 @@ export function DueDatePicker({
   userCanSetDueDate,
   autoPosition,
   triggerButtonTypes,
-  today
+  today,
 }: any) {
   const defaultSelectedDay = dueDate ? dueDate.toDate() : null;
   const defaultSelectedTime = dueDate
@@ -42,7 +41,7 @@ export function DueDatePicker({
     if (selectedDay) {
       const newDueDate = moment(selectedDay).set({
         hour: selectedTime.hour(),
-        minute: selectedTime.minute()
+        minute: selectedTime.minute(),
       });
       applyDueDate(newDueDate);
 
@@ -59,9 +58,7 @@ export function DueDatePicker({
     hideDropdown();
   };
 
-  const handleDayClick = (day: any, {
-    selected
-  }: any) => {
+  const handleDayClick = (day: any, { selected }: any) => {
     if (!selected) {
       setSelectedDay(day);
       setChanged(true);
@@ -73,12 +70,12 @@ export function DueDatePicker({
     setChanged(true);
   };
 
-  const classes = cx('duedate__container is-active', {
-    'duedate__container--completed': completed
+  const classes = cx("duedate__container is-active", {
+    "duedate__container--completed": completed,
   });
 
-  const buttonClasses = cx('duedate__submit', {
-    'duedate__submit--hidden': !changed
+  const buttonClasses = cx("duedate__submit", {
+    "duedate__submit--hidden": !changed,
   });
 
   return (
@@ -100,45 +97,46 @@ export function DueDatePicker({
 
             {userCanSetDueDate && (
               <Dropdown.Content className="duedate__dropdown">
-                {(showContent: any) => showContent ? (
-                  <>
-                    <DueDateHeader
-                      dueDate={selectedDay}
-                      dueTime={selectedTime}
-                      setTime={handleTimeClick}
-                      removeDueDate={() =>
-                        handleRemoveDueDate(() => setShowContent(false))
-                      }
-                    />
-                    <div className="duedate__datepicker">
-                      <Calendar
-                        onDayClick={handleDayClick}
-                        selectedDay={selectedDay}
-                        enableWeekendDays
-                        leftAlignHeader
-                        today={today}
+                {(showContent: any) =>
+                  showContent ? (
+                    <>
+                      <DueDateHeader
+                        dueDate={selectedDay}
+                        dueTime={selectedTime}
+                        setTime={handleTimeClick}
+                        removeDueDate={() =>
+                          handleRemoveDueDate(() => setShowContent(false))
+                        }
                       />
-                      <div className={buttonClasses}>
-                        <Button
-                          clickHandler={() => setShowContent(false)}
-                          types={['link-default', 'collapse']}
-                          className="duedate__submit--cancel"
-                        >
-                          Cancel
-                        </Button>
-                        <Button
-                          clickHandler={() =>
-                            handleApplyDueDate(() => setShowContent(false))
-                          }
-                          types={['primary']}
-                          className="duedate__submit--save"
-                        >
-                          Set due date
-                        </Button>
+                      <div className="duedate__datepicker">
+                        <Calendar
+                          onDayClick={handleDayClick}
+                          selectedDay={selectedDay}
+                          enableWeekendDays
+                          leftAlignHeader
+                          today={today}
+                        />
+                        <div className={buttonClasses}>
+                          <Button
+                            clickHandler={() => setShowContent(false)}
+                            types={["link-default", "collapse"]}
+                            className="duedate__submit--cancel"
+                          >
+                            Cancel
+                          </Button>
+                          <Button
+                            clickHandler={() =>
+                              handleApplyDueDate(() => setShowContent(false))
+                            }
+                            types={["primary"]}
+                            className="duedate__submit--save"
+                          >
+                            Set due date
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </>
-                ) : null
+                    </>
+                  ) : null
                 }
               </Dropdown.Content>
             )}
@@ -155,7 +153,7 @@ DueDatePicker.defaultProps = {
   completed: false,
   userCanSetDueDate: true,
   autoPosition: false,
-  triggerButtonTypes: []
+  triggerButtonTypes: [],
 };
 
 export default DueDatePicker;

@@ -1,18 +1,14 @@
-import React, { useContext } from 'react';
-import cx from 'classnames';
-import { StatusIndicatorCircle } from '../../modules/statusIndicatorCircle/statusIndicatorCircle';
-import { WorkflowStepContext } from './workflowStepProvider';
+import React, { useContext } from "react";
+import cx from "classnames";
+import { StatusIndicatorCircle } from "../../modules/statusIndicatorCircle/statusIndicatorCircle";
+import { WorkflowStepContext } from "./workflowStepProvider";
 
-export function WorkflowStepTitle({
-  children,
-  statusColour,
-  approved
-}: any) {
-  // @ts-expect-error TS(2339): Property 'isActive' does not exist on type '{}'.
-  const { isActive, showActions, showBody } = useContext(WorkflowStepContext);
-  const titleClassName = cx('workflow-step__title', {
-    'text-neutral-primary': !isActive && !showActions && !showBody,
-    'text-neutral-20': (!isActive && showActions) || (!isActive && showBody)
+export function WorkflowStepTitle({ children, statusColour, approved }: any) {
+  const { isActive, showActions, showBody }: any =
+    useContext(WorkflowStepContext);
+  const titleClassName = cx("workflow-step__title", {
+    "text-neutral-primary": !isActive && !showActions && !showBody,
+    "text-neutral-20": (!isActive && showActions) || (!isActive && showBody),
   });
 
   return (
@@ -22,7 +18,7 @@ export function WorkflowStepTitle({
           color={statusColour}
           thickBorder={showActions || showBody}
           solid={isActive}
-          icon={approved && 'boldTickSmall'}
+          icon={approved && "boldTickSmall"}
         />
       </div>
       {children}

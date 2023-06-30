@@ -1,11 +1,10 @@
-import React from 'react';
-// @ts-expect-error TS(2305): Module '"../../../lib"' has no exported member 'Im... Remove this comment to see the full error message
-import { Col, ImageLoader as ImageLoaderComponent, Row } from '../../../lib';
-import StoryItem from '../../styleguide/StoryItem';
+import React from "react";
+import { Col, ImageLoader as ImageLoaderComponent, Row } from "lib";
+import StoryItem from "../../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Image Loader',
-  component: ImageLoaderComponent
+  title: "Legacy/Image Loader",
+  component: ImageLoaderComponent,
 };
 
 export const ImageLoader = () => (
@@ -19,14 +18,14 @@ export const ImageLoader = () => (
           <ImageLoaderComponent
             src="https://fillmurray.com/g/400/400"
             alt="Fill Murray"
-            preLoadedStyles={{ minHeight: '400px' }}
+            preLoadedStyles={{ minHeight: "400px" }}
           />
         </Col>
         <Col xs={6}>
           <ImageLoaderComponent
             src=""
             alt="a failed image"
-            preLoadedStyles={{ minHeight: '400px' }}
+            preLoadedStyles={{ minHeight: "400px" }}
           />
         </Col>
       </Row>
@@ -35,5 +34,5 @@ export const ImageLoader = () => (
 );
 
 ImageLoader.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

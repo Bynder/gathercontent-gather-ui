@@ -1,5 +1,4 @@
 import * as React from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonPrimary, ButtonTertiary, Icon } from "lib";
 import { Sidebar as SidebarComponent } from "./Sidebar";
 
@@ -9,7 +8,7 @@ export default {
 };
 
 const ExampleOfUsingShowMoreToggle = () => {
-  const { showMore } = React.useContext(SidebarComponent.SectionContext);
+  const { showMore }: any = React.useContext(SidebarComponent.SectionContext);
 
   return (
     showMore && (

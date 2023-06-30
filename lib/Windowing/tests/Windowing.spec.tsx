@@ -2,18 +2,14 @@ import { render, fireEvent, waitForElement } from "@testing-library/react";
 import { React } from "../../../tests/setup";
 import { Windowing } from "../..";
 
-// @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
 jest.mock("debounce", () => (fn: any) => fn);
 
-// @ts-expect-error TS(2582): Cannot find name 'describe'. Do you need to instal... Remove this comment to see the full error message
 describe("Windowing", () => {
   const items = [...new Array(50)].map((i, index) => ({
     id: index + 1,
   }));
 
-  // @ts-expect-error TS(2304): Cannot find name 'beforeEach'.
   beforeEach(() => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     jest.useFakeTimers();
   });
 
@@ -40,7 +36,6 @@ describe("Windowing", () => {
     </Windowing>
   );
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("renders 15 ({ start: 0, end: 15 }) in-view items", async () => {
     const { getByTestId, queryByTestId } = render(createFlatWrapper());
     await waitForElement(() => [
@@ -52,11 +47,9 @@ describe("Windowing", () => {
       target: { scrollTop: 0 },
     });
 
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("renders 15 ({ start: 20, end: 35 }) in-view items", async () => {
     const { getByTestId, queryByTestId } = render(createFlatWrapper());
     await waitForElement(() => [
@@ -68,7 +61,6 @@ describe("Windowing", () => {
       target: { scrollTop: 200 },
     });
 
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
 
     await waitForElement(() => [
@@ -76,7 +68,6 @@ describe("Windowing", () => {
       getByTestId("test-id-35"),
     ]);
 
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(queryByTestId("test-id-9")).toBeNull();
   });
 });

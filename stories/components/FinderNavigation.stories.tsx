@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 import {
-  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Finde... Remove this comment to see the full error message
   FinderNavigation as FinderNavigationComponent,
-  // @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Icon'... Remove this comment to see the full error message
   Icon,
-  Layout
-} from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+  Layout,
+} from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Finder Navigation'
+  title: "Legacy/Finder Navigation",
 };
 
 const Meta = <Icon name="plus" />;
@@ -49,6 +47,7 @@ export const FinderNavigation = () => (
           </FinderNavigationComponent.Group>
           <FinderNavigationComponent.Group title="folder" meta={Meta}>
             <FinderNavigationComponent.Item>
+              {/* @ts-expect-error */}
               <FinderNavigationComponent.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="folder" />
@@ -56,6 +55,7 @@ export const FinderNavigation = () => (
                 </a>
               </FinderNavigationComponent.ItemContent>
               <FinderNavigationComponent.Item active>
+                {/* @ts-expect-error */}
                 <FinderNavigationComponent.ItemContent active isFolder>
                   <a className="finder-item-link" href="google.com">
                     <Icon name="folderOpen" />
@@ -63,6 +63,7 @@ export const FinderNavigation = () => (
                   </a>
                 </FinderNavigationComponent.ItemContent>
                 <FinderNavigationComponent.Item>
+                  {/* @ts-expect-error */}
                   <FinderNavigationComponent.ItemContent isFolder>
                     <a className="finder-item-link" href="google.com">
                       <Icon name="folder" />
@@ -70,6 +71,7 @@ export const FinderNavigation = () => (
                     </a>
                   </FinderNavigationComponent.ItemContent>
                   <FinderNavigationComponent.Item>
+                    {/* @ts-expect-error */}
                     <FinderNavigationComponent.ItemContent isFolder>
                       <a className="finder-item-link" href="google.com">
                         <Icon name="folder" />
@@ -77,6 +79,7 @@ export const FinderNavigation = () => (
                       </a>
                     </FinderNavigationComponent.ItemContent>
                     <FinderNavigationComponent.Item>
+                      {/* @ts-expect-error */}
                       <FinderNavigationComponent.ItemContent isFolder>
                         <a className="finder-item-link" href="google.com">
                           <Icon name="folder" />
@@ -84,6 +87,7 @@ export const FinderNavigation = () => (
                         </a>
                       </FinderNavigationComponent.ItemContent>
                       <FinderNavigationComponent.Item>
+                        {/* @ts-expect-error */}
                         <FinderNavigationComponent.ItemContent isFolder>
                           <a className="finder-item-link" href="google.com">
                             <Icon name="folder" />
@@ -91,6 +95,7 @@ export const FinderNavigation = () => (
                           </a>
                         </FinderNavigationComponent.ItemContent>
                         <FinderNavigationComponent.Item>
+                          {/* @ts-expect-error */}
                           <FinderNavigationComponent.ItemContent isFolder>
                             <a className="finder-item-link" href="google.com">
                               <Icon name="folder" />
@@ -103,6 +108,7 @@ export const FinderNavigation = () => (
                   </FinderNavigationComponent.Item>
                 </FinderNavigationComponent.Item>
                 <FinderNavigationComponent.Item>
+                  {/* @ts-expect-error */}
                   <FinderNavigationComponent.ItemContent isFolder>
                     <a className="finder-item-link" href="google.com">
                       <Icon name="folder" />
@@ -112,6 +118,7 @@ export const FinderNavigation = () => (
                 </FinderNavigationComponent.Item>
               </FinderNavigationComponent.Item>
               <FinderNavigationComponent.Item>
+                {/* @ts-expect-error */}
                 <FinderNavigationComponent.ItemContent isFolder>
                   <a className="finder-item-link" href="google.com">
                     <Icon name="folder" />
@@ -121,6 +128,7 @@ export const FinderNavigation = () => (
               </FinderNavigationComponent.Item>
             </FinderNavigationComponent.Item>
             <FinderNavigationComponent.Item>
+              {/* @ts-expect-error */}
               <FinderNavigationComponent.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="folder" />
@@ -136,5 +144,5 @@ export const FinderNavigation = () => (
 );
 
 FinderNavigation.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

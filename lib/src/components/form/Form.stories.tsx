@@ -1,31 +1,30 @@
-import * as React from 'react';
+import * as React from "react";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Label, RadioInput, TextForm as TextFormComponent } from 'lib';
-import { createDelayedPromise } from '../../../../stories/helpers/createDelayedPromise';
-import { createFailedPromise } from '../../../../stories/helpers/createFailedPromise';
+import StoryItem from "stories/styleguide/StoryItem";
+import { Label, RadioInput, TextForm as TextFormComponent } from "lib";
+import { createDelayedPromise } from "../../../../stories/helpers/createDelayedPromise";
+import { createFailedPromise } from "../../../../stories/helpers/createFailedPromise";
 
 export default {
-  title: 'GUI/Form/Text Form',
+  title: "GUI/Form/Text Form",
   component: TextFormComponent,
   args: {
     showFailure: false,
-    inputSize: 'md',
-    buttonSize: 'md'
+    inputSize: "md",
+    buttonSize: "md",
   },
   argTypes: {
     inputSize: {
-      name: 'Input size',
-      control: { type: 'radio' },
-      options: ['md', 'sm']
+      name: "Input size",
+      control: { type: "radio" },
+      options: ["md", "sm"],
     },
     buttonSize: {
-      name: 'Button size',
-      control: { type: 'radio' },
-      options: ['md', 'sm', 'xs']
-    }
-  }
+      name: "Button size",
+      control: { type: "radio" },
+      options: ["md", "sm", "xs"],
+    },
+  },
 };
 
 export const TextForm = (args: any) => {
@@ -35,10 +34,12 @@ export const TextForm = (args: any) => {
   return (
     <>
       <StoryItem>
+        {/* @ts-expect-error */}
         <TextFormComponent
           onSubmit={args.showFailure ? failedPromise : promise}
         >
           <TextFormComponent.Body>
+            {/* @ts-expect-error */}
             <Label htmlFor="test">Label</Label>
             <TextFormComponent.Input id="test" size={args.inputSize} />
             <TextFormComponent.Helper>Ops!</TextFormComponent.Helper>
@@ -54,11 +55,13 @@ export const TextForm = (args: any) => {
       </StoryItem>
 
       <StoryItem>
+        {/* @ts-expect-error */}
         <TextFormComponent
           onSubmit={args.showFailure ? failedPromise : promise}
           inline
         >
           <TextFormComponent.Body>
+            {/* @ts-expect-error */}
             <Label htmlFor="test-inline" className="visually-hidden">
               Label
             </Label>
@@ -76,6 +79,7 @@ export const TextForm = (args: any) => {
       </StoryItem>
 
       <StoryItem>
+        {/* @ts-expect-error */}
         <TextFormComponent
           onSubmit={args.showFailure ? failedPromise : promise}
           inline

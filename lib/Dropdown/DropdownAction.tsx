@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { DropdownContext } from './DropdownProvider';
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import { DropdownContext } from "./DropdownProvider";
 
 const DropdownAction = ({
   children,
@@ -22,25 +22,23 @@ const DropdownAction = ({
   ...props
 }: any) => {
   const {
-    // @ts-expect-error TS(2339): Property 'toggleShowContent' does not exist on typ... Remove this comment to see the full error message
     toggleShowContent = toggleShowContentProp,
-    // @ts-expect-error TS(2339): Property 'showContent' does not exist on type '{}'... Remove this comment to see the full error message
-    showContent = showContentProp
-  } = useContext(DropdownContext) || {};
+    showContent = showContentProp,
+  }: any = useContext(DropdownContext) || {};
 
   const classNames = cx(`dropdown__action ${className}`, {
-    'dropdown__action--danger': danger,
-    'dropdown__action--noBg': noBackground,
-    'dropdown__action--icon-only': iconOnly,
-    'dropdown__action--selected': selected,
-    'dropdown__action--overflow': overflow,
-    'dropdown__action--disabled': disabled
+    "dropdown__action--danger": danger,
+    "dropdown__action--noBg": noBackground,
+    "dropdown__action--icon-only": iconOnly,
+    "dropdown__action--selected": selected,
+    "dropdown__action--overflow": overflow,
+    "dropdown__action--disabled": disabled,
   });
 
   const sharedProps = {
     tabIndex: showContent ? 0 : -1,
     className: classNames,
-    type: isSubmit ? 'submit' : 'button',
+    type: isSubmit ? "submit" : "button",
     value,
     onClick: (e: any) => {
       action(e);
@@ -52,7 +50,7 @@ const DropdownAction = ({
       if (actionKeyDown) actionKeyDown(e);
     },
     disabled,
-    ...props
+    ...props,
   };
 
   return isSubmit ? (
@@ -71,14 +69,14 @@ DropdownAction.defaultProps = {
   noBackground: false,
   selected: false,
   iconOnly: false,
-  className: '',
+  className: "",
   isSubmit: false,
   overflow: false,
   hideAfterPerformingAction: true,
   disabled: false,
   toggleShowContent: () => {},
   showContent: false,
-  value: null
+  value: null,
 };
 
 DropdownAction.propTypes = {
@@ -95,7 +93,7 @@ DropdownAction.propTypes = {
   disabled: PropTypes.bool,
   toggleShowContent: PropTypes.func,
   showContent: PropTypes.bool,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export default DropdownAction;

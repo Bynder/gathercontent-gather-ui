@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { SelectionContext } from './index';
+import { useContext } from "react";
+import { SelectionContext } from "./index";
 
 export function useObjectSelector(
   id: any,
@@ -15,8 +15,8 @@ export function useObjectSelector(
     updateSelected,
     currentSelectedType,
     intendedToSelect,
-    setIntendedToSelect
-  } = useContext(SelectionContext);
+    setIntendedToSelect,
+  }: any = useContext(SelectionContext);
 
   const isSelected = selected.indexOf(id) !== -1;
   // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
@@ -31,8 +31,8 @@ export function useObjectSelector(
           isSelected
             ? deselectMultiple(getIds(), type)
             : selectMultiple(getIds(), type, data)
-      // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
-      : () => updateSelected(idsToSelect[0], type, data[id]);
+      : // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
+        () => updateSelected(idsToSelect[0], type, data[id]);
 
   const handleMouseEnter = () => setIntendedToSelect(idsToSelect);
 
@@ -47,6 +47,6 @@ export function useObjectSelector(
     isDisabled,
     isHovered,
     handleMouseEnter,
-    handleMouseLeave
+    handleMouseLeave,
   };
 }

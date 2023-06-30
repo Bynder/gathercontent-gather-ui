@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 import {
   AssigneeDropdown as AssigneeDropdownComponent,
   Person,
-  DropdownContent
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  DropdownContent,
+} from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
+import faker from "faker";
 
 export default {
-  title: 'GUI/Dropdowns/Assignee Dropdown',
+  title: "GUI/Dropdowns/Assignee Dropdown",
   component: AssigneeDropdownComponent,
   args: {
-    search: ''
-  }
+    search: "",
+  },
 };
 
 export const AssigneeDropdown = (args: any) => {
@@ -23,7 +22,7 @@ export const AssigneeDropdown = (args: any) => {
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
     avatarUrl: faker.image.avatar(),
-    selected: faker.random.boolean()
+    selected: faker.random.boolean(),
   });
 
   const assigned = [getPerson(), getPerson()];
@@ -39,7 +38,7 @@ export const AssigneeDropdown = (args: any) => {
         searchValue={args.search}
       >
         <DropdownContent.List heading="ASSIGNED">
-          {assigned.map(assignee => (
+          {assigned.map((assignee) => (
             <Person
               key={assignee.name}
               name={assignee.name}
@@ -52,7 +51,7 @@ export const AssigneeDropdown = (args: any) => {
           ))}
         </DropdownContent.List>
         <DropdownContent.List heading="UNASSIGNED">
-          {unassigned.map(unassignee => (
+          {unassigned.map((unassignee) => (
             <Person
               key={unassignee.name}
               name={unassignee.name}

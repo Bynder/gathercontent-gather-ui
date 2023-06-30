@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useTransition, animated } from 'react-spring';
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useTransition, animated } from "react-spring";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-e... Remove this comment to see the full error message
-import * as easings from 'd3-ease';
-import { WorkflowStepContext } from './workflowStepProvider';
-import { useSize } from '../../../helpers/useSize';
+import * as easings from "d3-ease";
+import { WorkflowStepContext } from "./workflowStepProvider";
+import { useSize } from "../../../helpers/useSize";
 
-export function WorkflowStepCollapsibleBody({
-  children
-}: any) {
-  // @ts-expect-error TS(2339): Property 'showBody' does not exist on type '{}'.
-  const { showBody } = useContext(WorkflowStepContext);
+export function WorkflowStepCollapsibleBody({ children }: any) {
+  const { showBody }: any = useContext(WorkflowStepContext);
   const bodyRef = useRef(null);
   const size = useSize(bodyRef);
   const [bodyIsFullyOpen, setBodyIsFullyOpen] = useState(false);
@@ -29,27 +26,28 @@ export function WorkflowStepCollapsibleBody({
   const transitions = useTransition(showBody, null, {
     from: {
       opacity: 0,
-      maxHeight: '0px'
+      maxHeight: "0px",
     },
     enter: {
       opacity: 1,
-      maxHeight: `${size ? size.height : 0}px`
+      // @ts-expect-error
+      maxHeight: `${size ? size.height : 0}px`,
     },
     leave: {
       opacity: 0,
-      maxHeight: '0px'
+      maxHeight: "0px",
     },
     config: {
       easing: easings.easeCubic,
-      duration: 300
+      duration: 300,
     },
-    onDestroyed: onTransitionEnd
+    onDestroyed: onTransitionEnd,
   });
 
   return (
     <div
       className={`relative ${
-        bodyIsFullyOpen ? 'overflow-y-visible' : 'overflow-y-hidden'
+        bodyIsFullyOpen ? "overflow-y-visible" : "overflow-y-hidden"
       }`}
     >
       <div ref={bodyRef} className="invisible absolute workflow-step__body">
@@ -63,7 +61,8 @@ export function WorkflowStepCollapsibleBody({
               key={key}
               style={{
                 ...props,
-                maxHeight: bodyIsFullyOpen ? size.height : props.maxHeight
+                // @ts-expect-error
+                maxHeight: bodyIsFullyOpen ? size.height : props.maxHeight,
               }}
             >
               {children}

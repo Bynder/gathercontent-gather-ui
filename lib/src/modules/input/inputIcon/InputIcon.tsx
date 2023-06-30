@@ -1,11 +1,10 @@
-import * as React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Icon } from 'lib';
-import { Input } from '../Input';
+import * as React from "react";
+import { Icon } from "lib";
+import { Input } from "../Input";
 
 export function InputIcon({
   children,
-  className = '',
+  className = "",
   iconName,
   ...rest
 }: any) {

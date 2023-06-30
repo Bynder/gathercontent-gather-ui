@@ -1,10 +1,9 @@
-import * as React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonIcon, Layout } from 'lib';
+import * as React from "react";
+import { ButtonIcon, Layout } from "lib";
 
 export function SidebarHeader({
   children,
-  className = '',
+  className = "",
   onClose,
   ...rest
 }: any) {

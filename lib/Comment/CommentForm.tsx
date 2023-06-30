@@ -11,7 +11,6 @@ import {
   ButtonPrimary,
   useLoader,
   ButtonTertiary,
-  // @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from "lib";
 import Icon from "../Icon";
 import { CommentFailed } from "./CommentFailed";
@@ -114,6 +113,7 @@ function CommentForm({
   });
 
   return (
+    // @ts-expect-error
     <form onSubmit={handleSubmitWithLoader} className="comment-edit-form">
       <div className={inputWrapperClassNames} ref={inputWrapperRef}>
         <>
@@ -151,7 +151,7 @@ function CommentForm({
               if (!hasFocus || !commentText) {
                 return e;
               }
-
+              // @ts-expect-error
               return handleSubmitWithLoader(e);
             }}
             withCtrlKey
@@ -162,7 +162,7 @@ function CommentForm({
               if (!hasFocus || !commentText) {
                 return e;
               }
-
+              // @ts-expect-error
               return handleSubmitWithLoader(e);
             }}
             withMetaKey
@@ -181,6 +181,7 @@ function CommentForm({
       <div className="mt-2 flex justify-end items-center">
         <ButtonTertiary
           size={ButtonPrimary.sizes.xs}
+          // @ts-expect-error
           disabled={isSubmitting}
           onClick={handleCancel}
           className="mr-2"

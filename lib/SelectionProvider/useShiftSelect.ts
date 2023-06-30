@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { pick } from 'lodash';
-import { SelectionContext, useObjectSelector } from '..';
+import { useContext } from "react";
+import { pick } from "lodash";
+import { SelectionContext, useObjectSelector } from "..";
 
 export function useShiftSelect(id: any, ids: any, type: any, idsData = {}) {
   const {
@@ -9,8 +9,8 @@ export function useShiftSelect(id: any, ids: any, type: any, idsData = {}) {
     selectMultiple,
     deselectMultiple,
     lastInteracted,
-    setLastInteracted
-  } = useContext(SelectionContext);
+    setLastInteracted,
+  }: any = useContext(SelectionContext);
   const { isSelected, handleClick } = useObjectSelector(
     id,
     type,
@@ -45,6 +45,6 @@ export function useShiftSelect(id: any, ids: any, type: any, idsData = {}) {
   return {
     handleSelection,
     isSelected,
-    selected
+    selected,
   };
 }

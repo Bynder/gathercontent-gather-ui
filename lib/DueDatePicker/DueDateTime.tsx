@@ -1,20 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { MenuItem, Dropdown } from 'lib';
+import React from "react";
+import PropTypes from "prop-types";
+import { MenuItem, Dropdown } from "lib";
 
 const DueDateTime = (props: any) => {
-  const minutes = ['00', '15', '30', '45'];
+  const minutes = ["00", "15", "30", "45"];
   const hours = Array.from({ length: 24 }, (x, i) => i);
   const { setTime } = props;
 
-  const times = hours.map(hour =>
-    minutes.map(minute => {
-      let suffix = 'AM';
+  const times = hours.map((hour) =>
+    minutes.map((minute) => {
+      let suffix = "AM";
       let hourValue = hour;
 
       if (hour === 12) {
-        suffix = 'PM';
+        suffix = "PM";
       }
 
       if (hour === 0) {
@@ -23,7 +22,7 @@ const DueDateTime = (props: any) => {
 
       if (hour > 12) {
         hourValue = hour - 12;
-        suffix = 'PM';
+        suffix = "PM";
       }
 
       const key = `${hour}:${minute}`;
@@ -45,6 +44,7 @@ const DueDateTime = (props: any) => {
   return (
     <Dropdown id="duedate__header--time">
       <Dropdown.Trigger
+        // @ts-expect-error
         triggerClassName="button button--link-default button--collapse duedate__time"
         noCaret
       >
@@ -59,11 +59,11 @@ const DueDateTime = (props: any) => {
 
 DueDateTime.propTypes = {
   setTime: PropTypes.func.isRequired,
-  time: PropTypes.string
+  time: PropTypes.string,
 };
 
 DueDateTime.defaultProps = {
-  time: ''
+  time: "",
 };
 
 export default DueDateTime;

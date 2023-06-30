@@ -1,11 +1,10 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonSecondary, Card as CardComponent } from 'lib';
+import React from "react";
+import { ButtonSecondary, Card as CardComponent } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 
 export default {
-  title: 'GUI/Cards/Card',
+  title: "GUI/Cards/Card",
   component: CardComponent,
   args: {
     interactive: false,
@@ -13,15 +12,15 @@ export default {
     highlighted: false,
     added: false,
     removed: false,
-    active: false
+    active: false,
   },
   argTypes: {
     size: {
-      name: 'Size',
-      options: ['sm', 'md'],
-      control: { type: 'radio' }
-    }
-  }
+      name: "Size",
+      options: ["sm", "md"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 export const Card = (args: any) => {

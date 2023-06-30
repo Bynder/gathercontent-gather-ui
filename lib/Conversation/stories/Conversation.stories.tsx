@@ -1,13 +1,12 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Conversation as ConversationComponent } from 'lib';
-import BoundaryClickWatcher from '../../BoundaryClickWatcher';
-import { ConversationHeaderForStory } from './ConversationHeaderForStory';
-import { ConversationFooterForStory } from './ConversationFooterForStory';
-import { ConversationBodyForStory } from './ConversationBodyForStory';
+import React from "react";
+import { Conversation as ConversationComponent } from "lib";
+import BoundaryClickWatcher from "../../BoundaryClickWatcher";
+import { ConversationHeaderForStory } from "./ConversationHeaderForStory";
+import { ConversationFooterForStory } from "./ConversationFooterForStory";
+import { ConversationBodyForStory } from "./ConversationBodyForStory";
 
 export default {
-  title: 'Legacy/Conversations/Conversation',
+  title: "Legacy/Conversations/Conversation",
   component: ConversationComponent,
   args: {
     isOpen: false,
@@ -16,8 +15,8 @@ export default {
     userCanResolve: true,
     commentHasFailedToSubscribe: false,
     commentHasFailedToSave: false,
-    commentHasFailedToDelete: false
-  }
+    commentHasFailedToDelete: false,
+  },
 };
 
 export const Conversation = ({
@@ -27,26 +26,26 @@ export const Conversation = ({
   userCanResolve,
   commentHasFailedToSubscribe,
   commentHasFailedToSave,
-  commentHasFailedToDelete
+  commentHasFailedToDelete,
 }: any) => {
   const headerProps = {
     isOpen,
     isResolved,
     userCanResolve,
     isSubscribed,
-    commentHasFailedToSubscribe
+    commentHasFailedToSubscribe,
   };
 
   const bodyProps = {
     isOpen,
     commentHasFailedToSave,
-    commentHasFailedToDelete
+    commentHasFailedToDelete,
   };
 
   return (
     <div
       style={{
-        maxWidth: '300px'
+        maxWidth: "300px",
       }}
     >
       <BoundaryClickWatcher>

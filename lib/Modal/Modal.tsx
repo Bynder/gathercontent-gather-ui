@@ -1,8 +1,7 @@
-import React, { createContext } from 'react';
-import PropTypes from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { NewModal } from 'lib';
-import cx from 'classnames';
+import React, { createContext } from "react";
+import PropTypes from "prop-types";
+import { NewModal } from "lib";
+import cx from "classnames";
 
 export const LegacyModalContext = createContext({});
 
@@ -16,20 +15,20 @@ const Modal = (props: any) => {
     collapse,
     ...rest
   } = props;
-  const classNames = cx(props.className, 'legacy-modal', {
-    'modal--small': size === 'small',
-    'modal--large': size === 'large',
-    'modal--x-large': size === 'x-large',
-    'modal--full-screen': size === 'full-screen',
-    'modal--highlight': highlight,
-    'modal--overflow': overflow,
-    'modal--overflow-half': overflowHalf,
-    'modal--media-only': mediaOnly,
-    'modal--collapse': collapse
+  const classNames = cx(props.className, "legacy-modal", {
+    "modal--small": size === "small",
+    "modal--large": size === "large",
+    "modal--x-large": size === "x-large",
+    "modal--full-screen": size === "full-screen",
+    "modal--highlight": highlight,
+    "modal--overflow": overflow,
+    "modal--overflow-half": overflowHalf,
+    "modal--media-only": mediaOnly,
+    "modal--collapse": collapse,
   });
 
   const sharedState = {
-    onHide: props.onHide
+    onHide: props.onHide,
   };
 
   return (
@@ -42,13 +41,13 @@ const Modal = (props: any) => {
 };
 
 Modal.defaultProps = {
-  size: '',
-  className: '',
+  size: "",
+  className: "",
   overflow: false,
   overflowHalf: false,
   mediaOnly: false,
   collapse: false,
-  highlight: false
+  highlight: false,
 };
 
 Modal.propTypes = {
@@ -59,7 +58,7 @@ Modal.propTypes = {
   overflowHalf: PropTypes.bool,
   mediaOnly: PropTypes.bool,
   collapse: PropTypes.bool,
-  highlight: PropTypes.bool
+  highlight: PropTypes.bool,
 };
 
 export default Modal;

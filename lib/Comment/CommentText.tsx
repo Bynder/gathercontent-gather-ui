@@ -3,7 +3,6 @@ import { arrayOf, bool, shape, string } from "prop-types";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'link... Remove this comment to see the full error message
 import Linkify from "linkifyjs/react";
 import cx from "classnames";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Comment } from "lib";
 
 // eslint-disable-next-line react/prop-types

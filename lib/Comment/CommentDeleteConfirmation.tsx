@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { func, string } from "prop-types";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Comment } from "lib";
 import ConfirmationOverlay from "../ConfirmationOverlay";
 import BoundaryClickWatcher from "../BoundaryClickWatcher";

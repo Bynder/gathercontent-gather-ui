@@ -1,11 +1,10 @@
-import React from 'react';
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Blank... Remove this comment to see the full error message
-import { BlankSlate as BlankSlateComponent, Button } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { BlankSlate as BlankSlateComponent, Button } from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Blank Slate',
-  component: BlankSlateComponent
+  title: "Legacy/Blank Slate",
+  component: BlankSlateComponent,
 };
 
 export const BlankSlate = () => (
@@ -18,8 +17,8 @@ export const BlankSlate = () => (
         <h2 className="blank-slate__heading">This is a blank slate</h2>
         <p>Use me to show that something is empty.</p>
         <Button
-          types={['secondary']}
-          clickHandler={() => console.log('do a thing')}
+          types={["secondary"]}
+          clickHandler={() => console.log("do a thing")}
         >
           Do something
         </Button>
@@ -47,5 +46,5 @@ export const BlankSlate = () => (
 );
 
 BlankSlate.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

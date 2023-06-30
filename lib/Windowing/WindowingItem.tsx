@@ -1,14 +1,9 @@
-import React, { useContext } from 'react';
-import { node, number, shape } from 'prop-types';
-import { WindowingContext } from './Windowing';
+import React, { useContext } from "react";
+import { node, number, shape } from "prop-types";
+import { WindowingContext } from "./Windowing";
 
-function WindowingItem({
-  children,
-  index,
-  style
-}: any) {
-  // @ts-expect-error TS(2339): Property 'itemHeight' does not exist on type '{}'.
-  const { itemHeight, baseItemStyle } = useContext(WindowingContext);
+function WindowingItem({ children, index, style }: any) {
+  const { itemHeight, baseItemStyle }: any = useContext(WindowingContext);
 
   return (
     <div
@@ -16,7 +11,7 @@ function WindowingItem({
       style={{
         ...style,
         ...baseItemStyle,
-        top: `${index * itemHeight}px`
+        top: `${index * itemHeight}px`,
       }}
       className="windowing-item"
     >
@@ -28,11 +23,11 @@ function WindowingItem({
 WindowingItem.propTypes = {
   children: node.isRequired,
   index: number.isRequired,
-  style: shape({})
+  style: shape({}),
 };
 
 WindowingItem.defaultProps = {
-  style: {}
+  style: {},
 };
 
 export { WindowingItem };

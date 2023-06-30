@@ -1,34 +1,29 @@
-import React, { useContext } from 'react';
-import { bool, node } from 'prop-types';
-import { action } from '@storybook/addon-actions';
-import { Droppable } from '../Droppable';
-import NotificationBar from '../../Notification/bar';
-import { DndContext } from '../DndProvider';
-import { ItemRow } from '../../ItemRow';
+import React, { useContext } from "react";
+import { bool, node } from "prop-types";
+import { action } from "@storybook/addon-actions";
+import { Droppable } from "../Droppable";
+import NotificationBar from "../../Notification/bar";
+import { DndContext } from "../DndProvider";
+import { ItemRow } from "../../ItemRow";
 
-const Message = ({
-  children,
-  canDrop,
-  isOver,
-  isDragging
-}: any) => {
-  let level = 'information';
+const Message = ({ children, canDrop, isOver, isDragging }: any) => {
+  let level = "information";
 
   if (isDragging && canDrop) {
-    level = 'warning';
+    level = "warning";
   }
 
   if (isDragging && isOver) {
-    level = 'success';
+    level = "success";
   }
 
   if (isDragging && isOver && !canDrop) {
-    level = 'danger';
+    level = "danger";
   }
 
   return (
     // @ts-expect-error TS(2322): Type '{ children: any; level: string; style: { hei... Remove this comment to see the full error message
-    <NotificationBar level={level} style={{ height: '200px' }}>
+    <NotificationBar level={level} style={{ height: "200px" }}>
       {children}
     </NotificationBar>
   );
@@ -38,15 +33,14 @@ Message.propTypes = {
   children: node.isRequired,
   canDrop: bool.isRequired,
   isOver: bool.isRequired,
-  isDragging: bool.isRequired
+  isDragging: bool.isRequired,
 };
 
 function DndDropNotification() {
-  // @ts-expect-error TS(2339): Property 'isDragging' does not exist on type '{}'.
-  const { isDragging, setFailurePreview } = useContext(DndContext);
+  const { isDragging, setFailurePreview }: any = useContext(DndContext);
 
   const failurePreview = (
-    <div style={{ maxWidth: '300px' }}>
+    <div style={{ maxWidth: "300px" }}>
       <ItemRow bordered>
         <ItemRow.Name>You cannot drag folders into here!</ItemRow.Name>
       </ItemRow>
@@ -55,10 +49,10 @@ function DndDropNotification() {
 
   return (
     <Droppable
-      acceptDragTypes={['item', 'folder']}
-      onDrop={action('something was dropped')}
+      acceptDragTypes={["item", "folder"]}
+      onDrop={action("something was dropped")}
       canDropChecker={({ type }, monitor) => {
-        const typeIsItem = type === 'item';
+        const typeIsItem = type === "item";
 
         if (!typeIsItem) {
           setFailurePreview(failurePreview);
@@ -75,10 +69,10 @@ function DndDropNotification() {
         <div ref={defineDropRef} className="h-margin-top">
           <Message isDragging={isDragging} isOver={isOver} canDrop={canDrop}>
             {(!isDragging || (!canDrop && !isOver)) &&
-              'Start by dragging items in here.'}
-            {isDragging && !isOver && canDrop && 'Drag it here.'}
-            {isDragging && isOver && canDrop && 'Drop it!'}
-            {isDragging && isOver && !canDrop && 'You cannot drag here!'}
+              "Start by dragging items in here."}
+            {isDragging && !isOver && canDrop && "Drag it here."}
+            {isDragging && isOver && canDrop && "Drop it!"}
+            {isDragging && isOver && !canDrop && "You cannot drag here!"}
           </Message>
         </div>
       )}

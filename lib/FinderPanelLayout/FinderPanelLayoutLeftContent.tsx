@@ -1,15 +1,12 @@
-import React, { useContext } from 'react';
-import { node, string } from 'prop-types';
-import { FinderPanelLayoutContext } from './FinderPanelLayoutProvider';
+import React, { useContext } from "react";
+import { node, string } from "prop-types";
+import { FinderPanelLayoutContext } from "./FinderPanelLayoutProvider";
 
-const FinderPanelLayoutLeftContent = ({
-  children,
-  className
-}: any) => {
-  const { fixed, headerHeight } = useContext(FinderPanelLayoutContext);
+const FinderPanelLayoutLeftContent = ({ children, className }: any) => {
+  const { fixed, headerHeight }: any = useContext(FinderPanelLayoutContext);
   const style = fixed
     ? {
-        marginTop: headerHeight
+        marginTop: headerHeight,
       }
     : {};
   return (
@@ -24,11 +21,11 @@ const FinderPanelLayoutLeftContent = ({
 
 FinderPanelLayoutLeftContent.propTypes = {
   children: node.isRequired,
-  className: string
+  className: string,
 };
 
 FinderPanelLayoutLeftContent.defaultProps = {
-  className: ''
+  className: "",
 };
 
 export default FinderPanelLayoutLeftContent;

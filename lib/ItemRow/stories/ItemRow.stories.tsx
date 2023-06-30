@@ -1,11 +1,8 @@
 import React from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Pill } from "lib";
 import {
   ItemRow as ItemRowComponent,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Sta... Remove this comment to see the full error message
   StatusIndicator,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Too... Remove this comment to see the full error message
   TooltipWrapper,
 } from "../../index";
 import Icon from "../../Icon";

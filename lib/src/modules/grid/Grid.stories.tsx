@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Grid as GridComponent, Row, Col } from 'lib';
+import StoryItem from "stories/styleguide/StoryItem";
+import { Grid as GridComponent, Row, Col } from "lib";
 
 export default {
-  title: 'GUI/Grid',
-  component: GridComponent
+  title: "GUI/Grid",
+  component: GridComponent,
 };
 
 export const Grid = () => (
@@ -27,5 +26,5 @@ export const Grid = () => (
 );
 
 Grid.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

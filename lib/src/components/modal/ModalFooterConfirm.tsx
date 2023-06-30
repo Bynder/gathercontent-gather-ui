@@ -1,6 +1,5 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonSecondary, ButtonTertiary } from 'lib';
+import React from "react";
+import { ButtonSecondary, ButtonTertiary } from "lib";
 
 export function ModalFooterConfirm({
   confirmText,
@@ -8,7 +7,7 @@ export function ModalFooterConfirm({
   tertiaryOnClick,
   secondaryText,
   secondaryOnClick,
-  disableSecondary
+  disableSecondary,
 }: any) {
   return (
     <div className="react-modal-footer__confirm">

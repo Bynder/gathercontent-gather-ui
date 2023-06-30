@@ -1,13 +1,12 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { RenameInput } from 'lib';
+import React from "react";
+import { RenameInput } from "lib";
 
 export function ComponentLabel({
   editable,
   label,
   onChange,
   onEmpty,
-  maxLength
+  maxLength,
 }: any) {
   if (editable) {
     return (

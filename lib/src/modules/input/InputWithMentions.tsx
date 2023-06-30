@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
-import { Mention, MentionsInput } from 'react-mentions';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Avatar, AvatarInformation, ShortcutTrigger } from 'lib';
+import { Mention, MentionsInput } from "react-mentions";
+import cx from "classnames";
+import { Avatar, AvatarInformation, ShortcutTrigger } from "lib";
 
 export function InputWithMentions({
   value,
@@ -14,7 +13,7 @@ export function InputWithMentions({
   ...rest
 }: any) {
   const [inputValue, setInputValue] = useState(value);
-  const [currentInputHeight, setCurrentInputHeight] = useState('0px');
+  const [currentInputHeight, setCurrentInputHeight] = useState("0px");
   const hiddenContentRef = useRef(null);
   const mentionsPortalRef = useRef(null);
   const [hasFocus, setHasFocus] = useState(false);
@@ -41,7 +40,7 @@ export function InputWithMentions({
   const removeMentionMarkup = (newVal: any) => {
     const pattern = /(?:@\[\w+\])+/gi;
     return newVal.replace(pattern, (match: any) => {
-      const mention = match.replace(/\]|\[/g, '');
+      const mention = match.replace(/\]|\[/g, "");
       return mention;
     });
   };
@@ -52,24 +51,25 @@ export function InputWithMentions({
   };
 
   const searchForUsers = (term: any) => {
-    if (term.trim() !== '' && users.length > 0) {
+    if (term.trim() !== "" && users.length > 0) {
       return users.filter(
-        (user: any) => user.name
-          .toLowerCase()
-          .split(' ')
-          .filter((subStr: any) => subStr.lastIndexOf(term, 0) === 0).length > 0 ||
-        user.display.toLowerCase().lastIndexOf(term, 0) === 0
+        (user: any) =>
+          user.name
+            .toLowerCase()
+            .split(" ")
+            .filter((subStr: any) => subStr.lastIndexOf(term, 0) === 0).length >
+            0 || user.display.toLowerCase().lastIndexOf(term, 0) === 0
       );
     }
     return users;
   };
 
-  const inputWrapperClassNames = cx('relative w-full');
+  const inputWrapperClassNames = cx("relative w-full");
 
   return (
     <div
       style={{
-        height: currentInputHeight
+        height: currentInputHeight,
       }}
       className={inputWrapperClassNames}
     >
@@ -89,12 +89,14 @@ export function InputWithMentions({
           onAdd={onMention}
           data={(search: any) => searchForUsers(search)}
           appendSpaceOnAdd
-          renderSuggestion={(suggestion: any) => <Avatar url={suggestion.avatar} initials={suggestion.initials}>
-            <AvatarInformation
-              email={`@${suggestion.display}`}
-              name={suggestion.name}
-            />
-          </Avatar>}
+          renderSuggestion={(suggestion: any) => (
+            <Avatar url={suggestion.avatar} initials={suggestion.initials}>
+              <AvatarInformation
+                email={`@${suggestion.display}`}
+                name={suggestion.name}
+              />
+            </Avatar>
+          )}
         />
       </MentionsInput>
       <div ref={mentionsPortalRef} />
@@ -123,8 +125,8 @@ export function InputWithMentions({
       <div
         ref={hiddenContentRef}
         style={{
-          whiteSpace: 'pre-wrap',
-          visibility: 'hidden'
+          whiteSpace: "pre-wrap",
+          visibility: "hidden",
         }}
         className="mentions-input__input absolute top-0"
       >

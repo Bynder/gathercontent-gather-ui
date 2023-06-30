@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
+import faker from "faker";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import uuid from 'uuid/v1';
-import AvatarGroup from '../AvatarGroup';
-// @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
-import { AvatarWithPopover, ParticipantInfo } from '../../index';
+import uuid from "uuid/v1";
+import AvatarGroup from "../AvatarGroup";
+import { AvatarWithPopover, ParticipantInfo } from "../../index";
 
 const AvatarGroupMock = ({
   children,
@@ -13,7 +12,7 @@ const AvatarGroupMock = ({
   minCount,
   avatarProps,
   avatarGroupProps,
-  overlayProps
+  overlayProps,
 }: any) => {
   const count = minCount;
 
@@ -36,7 +35,7 @@ const AvatarGroupMock = ({
             email={email}
             url={avatar}
             colour={color}
-            className={color ? 'avatar--has-colour' : ''}
+            className={color ? "avatar--has-colour" : ""}
             {...avatarProps}
             {...overlayProps}
             key={uuid()}
@@ -50,7 +49,7 @@ const AvatarGroupMock = ({
 
   return children({
     ui,
-    count
+    count,
   });
 };
 
@@ -59,10 +58,10 @@ AvatarGroupMock.defaultProps = {
   minCount: 0,
   avatarGroupProps: {
     maximum: 3,
-    stacked: true
+    stacked: true,
   },
   avatarProps: {},
-  overlayProps: {}
+  overlayProps: {},
 };
 
 export { AvatarGroupMock };

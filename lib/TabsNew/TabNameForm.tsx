@@ -1,16 +1,16 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { string, func } from 'prop-types';
-import cx from 'classnames';
-import { TabContext } from './Tab';
-import { Tabs, TabsContext } from './index';
-import ShortcutTrigger from '../ShortcutTrigger';
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { string, func } from "prop-types";
+import cx from "classnames";
+import { TabContext } from "./Tab";
+import { Tabs, TabsContext } from "./index";
+import ShortcutTrigger from "../ShortcutTrigger";
 
 export function TabNameForm({
   className,
   initialName,
   setActiveTab,
   submitTabForm,
-  placeholder
+  placeholder,
 }: any) {
   const {
     id,
@@ -18,9 +18,9 @@ export function TabNameForm({
     setIsEditing,
     formInputRef,
     isActive,
-    setActionsAreActive
-  } = useContext(TabContext);
-  const { tabsLength } = useContext(TabsContext);
+    setActionsAreActive,
+  }: any = useContext(TabContext);
+  const { tabsLength }: any = useContext(TabsContext);
   const [tabName, setTabName] = useState(initialName);
   const nameToSet = tabName.trim();
 
@@ -39,39 +39,39 @@ export function TabNameForm({
 
       setInputWidth(
         // @ts-expect-error TS(2345): Argument of type 'string' is not assignable to par... Remove this comment to see the full error message
-        `${tabName === '' ? placeholderWidth : newInputWidth + padding}px`
+        `${tabName === "" ? placeholderWidth : newInputWidth + padding}px`
       );
     }
   }, [tabName, tabsLength]);
 
-  const valueWithWhitespaceUnicode = tabName.replace(/ /g, '\u00a0');
+  const valueWithWhitespaceUnicode = tabName.replace(/ /g, "\u00a0");
 
   const sharedClassNames = cx(
-    'border-solid block rounded outline-none px-2 z-10 bg-transparent',
+    "border-solid block rounded outline-none px-2 z-10 bg-transparent",
     {
-      'border border-transparent hover:border-neutral-90': !isEditing,
-      'border-2 border-blue-primary z-50': isEditing
+      "border border-transparent hover:border-neutral-90": !isEditing,
+      "border-2 border-blue-primary z-50": isEditing,
     }
   );
 
   const labelClassNames = cx(
     sharedClassNames,
-    'cursor-pointer max-w-full text-center',
+    "cursor-pointer max-w-full text-center",
     {
-      '-mt-32 absolute': isActive,
-      'pointer-events-none': !isActive,
-      'invisible fixed': isEditing
+      "-mt-32 absolute": isActive,
+      "pointer-events-none": !isActive,
+      "invisible fixed": isEditing,
     }
   );
 
-  const inputClassNames = cx(sharedClassNames, 'tab-name-input', {
-    '-mt-32 absolute': !isActive
+  const inputClassNames = cx(sharedClassNames, "tab-name-input", {
+    "-mt-32 absolute": !isActive,
   });
 
   const surroundButtonClassNames = cx(
-    'absolute w-full h-full border-0 bg-transparent outline-none',
+    "absolute w-full h-full border-0 bg-transparent outline-none",
     {
-      'focus:bg-neutral-90': !isActive
+      "focus:bg-neutral-90": !isActive,
     }
   );
 
@@ -105,7 +105,7 @@ export function TabNameForm({
       />
       <form
         className={`tab-name-form ${className}`}
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
           formInputRef.current.blur();
         }}
@@ -120,8 +120,8 @@ export function TabNameForm({
             value={tabName}
             className={inputClassNames}
             tabIndex={isActive ? 0 : -1}
-            onChange={e => setTabName(e.target.value)}
-            onFocus={e => {
+            onChange={(e) => setTabName(e.target.value)}
+            onFocus={(e) => {
               setIsEditing(true);
               setActiveTab(e);
             }}
@@ -132,7 +132,7 @@ export function TabNameForm({
             }}
             style={{
               // @ts-expect-error TS(2322): Type 'null' is not assignable to type 'Width<strin... Remove this comment to see the full error message
-              width: inputWidth
+              width: inputWidth,
             }}
             ref={formInputRef}
             placeholder={placeholder}
@@ -152,11 +152,11 @@ TabNameForm.propTypes = {
   initialName: string,
   className: string,
   setActiveTab: func.isRequired,
-  submitTabForm: func.isRequired
+  submitTabForm: func.isRequired,
 };
 
 TabNameForm.defaultProps = {
-  placeholder: 'Name this tab',
-  initialName: '',
-  className: ''
+  placeholder: "Name this tab",
+  initialName: "",
+  className: "",
 };

@@ -1,10 +1,9 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Icon } from 'lib';
-import cx from 'classnames';
-import { ComponentLabel } from './ComponentLabel';
-import { ComponentInstructions } from './ComponentInstructions';
-import { componentStatuses } from '../ComponentWrapper';
+import React from "react";
+import { Icon } from "lib";
+import cx from "classnames";
+import { ComponentLabel } from "./ComponentLabel";
+import { ComponentInstructions } from "./ComponentInstructions";
+import { componentStatuses } from "../ComponentWrapper";
 
 export function ComponentWrapperHeader({
   editable,
@@ -24,29 +23,29 @@ export function ComponentWrapperHeader({
   ...rest
 }: any) {
   const classes = cx(`component-header ${className}`, {
-    'component-header-selected': isSelected,
-    'component-header-hovered': isHovered,
-    'border-l-2 border-r-2 border-t-2 border-b-0 border-green-primary bg-white':
+    "component-header-selected": isSelected,
+    "component-header-hovered": isHovered,
+    "border-l-2 border-r-2 border-t-2 border-b-0 border-green-primary bg-white":
       status === componentStatuses.added,
-    'border-l-2 border-r-2 border-t-2 border-b-0 border-red-primary bg-white':
+    "border-l-2 border-r-2 border-t-2 border-b-0 border-red-primary bg-white":
       status === componentStatuses.deleted,
-    'border-l-2 border-r-2 border-t-2 border-b-0 border-purple-primary bg-white':
+    "border-l-2 border-r-2 border-t-2 border-b-0 border-purple-primary bg-white":
       status === componentStatuses.movedDown ||
       status === componentStatuses.movedUp,
-    'bg-white': [
+    "bg-white": [
       componentStatuses.active,
-      componentStatuses.unchanged
-    ].includes(status)
+      componentStatuses.unchanged,
+    ].includes(status),
   });
 
-  const countText = `${counter < 9 ? '0' : ''}${counter}`;
+  const countText = `${counter < 9 ? "0" : ""}${counter}`;
 
   return (
     <div className={classes} {...rest}>
       <div className="component-header-top">
         <div className="component-label">
           {counter && <span className="component-counter">{countText}</span>}
-          <Icon name="component16" types={['neutral-20']} className="mr-2" />
+          <Icon name="component16" types={["neutral-20"]} className="mr-2" />
           <ComponentLabel
             editable={editable}
             label={label}
@@ -75,5 +74,5 @@ ComponentWrapperHeader.defaultProps = {
   editable: false,
   isSelected: false,
   isHovered: false,
-  className: ''
+  className: "",
 };

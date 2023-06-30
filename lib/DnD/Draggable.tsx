@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { func, shape, node } from 'prop-types';
-import { DragPreviewImage, useDrag } from 'react-dnd-cjs';
-import { getEmptyImage } from 'react-dnd-html5-backend-cjs';
-import { DndContext } from './DndProvider';
+import React, { useContext } from "react";
+import { func, shape, node } from "prop-types";
+import { DragPreviewImage, useDrag } from "react-dnd-cjs";
+import { getEmptyImage } from "react-dnd-html5-backend-cjs";
+import { DndContext } from "./DndProvider";
 
 function Draggable({
   children,
@@ -10,13 +10,12 @@ function Draggable({
   item,
   onBeginDrag,
   onEndDrag,
-  canDragChecker
+  canDragChecker,
 }: any) {
-  // @ts-expect-error TS(2339): Property 'setIsDragging' does not exist on type '{... Remove this comment to see the full error message
-  const { setIsDragging, setPreview } = useContext(DndContext);
+  const { setIsDragging, setPreview }: any = useContext(DndContext);
   const [collect, defineDragRef, definePreviewRef] = useDrag({
     item,
-    begin: monitor => {
+    begin: (monitor) => {
       setPreview(preview);
       setIsDragging(true);
       onBeginDrag(item, monitor);
@@ -27,11 +26,11 @@ function Draggable({
         setIsDragging(false);
       }
     },
-    collect: monitor => ({
+    collect: (monitor) => ({
       itemType: monitor.getItemType(),
-      isDragging: !!monitor.isDragging()
+      isDragging: !!monitor.isDragging(),
     }),
-    canDrag: canDragChecker
+    canDrag: canDragChecker,
   });
 
   return (
@@ -39,7 +38,7 @@ function Draggable({
       {preview && (
         <DragPreviewImage
           // @ts-expect-error TS(2322): Type 'string | null' is not assignable to type 'st... Remove this comment to see the full error message
-          src={getEmptyImage().getAttribute('src')}
+          src={getEmptyImage().getAttribute("src")}
           connect={definePreviewRef}
         />
       )}
@@ -55,14 +54,14 @@ Draggable.propTypes = {
   preview: node,
   onBeginDrag: func,
   onEndDrag: func,
-  canDragChecker: func
+  canDragChecker: func,
 };
 
 Draggable.defaultProps = {
   preview: null,
   onBeginDrag: () => {},
   onEndDrag: () => {},
-  canDragChecker: () => true
+  canDragChecker: () => true,
 };
 
 export { Draggable };

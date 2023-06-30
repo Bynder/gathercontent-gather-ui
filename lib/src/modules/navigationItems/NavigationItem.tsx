@@ -1,21 +1,20 @@
-import React, { useContext } from 'react';
-import cx from 'classnames';
-import { NavigationContext } from './NavigationProvider';
+import React, { useContext } from "react";
+import cx from "classnames";
+import { NavigationContext } from "./NavigationProvider";
 
 export function NavigationItem({
   children,
   id,
   className,
   onClick,
-  disabled
+  disabled,
 }: any) {
-  // @ts-expect-error TS(2339): Property 'setActiveTabId' does not exist on type '... Remove this comment to see the full error message
-  const { setActiveTabId, activeTabId } = useContext(NavigationContext);
+  const { setActiveTabId, activeTabId }: any = useContext(NavigationContext);
   const isActive = activeTabId === id;
 
-  const classNames = cx(className, 'navigation--item', {
+  const classNames = cx(className, "navigation--item", {
     active: isActive,
-    disabled
+    disabled,
   });
   return (
     <li className={classNames} role="none">

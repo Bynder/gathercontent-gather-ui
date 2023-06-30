@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Comment, Person } from "lib";
 import { mockUserNoAvatar, mockUsers } from "./mockData";
 

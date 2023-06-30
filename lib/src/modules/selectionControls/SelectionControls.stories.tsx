@@ -1,13 +1,10 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { CheckboxInput, TextForm, RadioInput } from 'lib';
-import StoryItem from '../../../../stories/styleguide/StoryItem';
+import React from "react";
+import { CheckboxInput, TextForm, RadioInput } from "lib";
+import StoryItem from "../../../../stories/styleguide/StoryItem";
 
-function SelectionControlStoryItem({
-  children,
-  title
-}: any) {
+function SelectionControlStoryItem({ children, title }: any) {
   return (
+    // @ts-expect-error
     <TextForm onSubmit={() => {}} className="flex flex-col items-center px-2">
       <h4>{title}</h4>
       {children}
@@ -16,7 +13,7 @@ function SelectionControlStoryItem({
 }
 
 export default {
-  title: 'GUI/Form/Inputs/Selection Controls'
+  title: "GUI/Form/Inputs/Selection Controls",
 };
 
 export const SelectionControls = () => {
@@ -71,5 +68,5 @@ export const SelectionControls = () => {
 };
 
 SelectionControls.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

@@ -1,23 +1,18 @@
-import React from 'react';
+import React from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
+import faker from "faker";
 import {
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   Avatar as AvatarComponent,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   AvatarWithPopover,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Par... Remove this comment to see the full error message
   ParticipantInfo,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ava... Remove this comment to see the full error message
   AvatarInformation,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'But... Remove this comment to see the full error message
-  Button
-} from '../../index';
-import StoryItem from '../../../stories/styleguide/StoryItem';
-import { AvatarGroupMock } from './AvatarGroupMock';
+  Button,
+} from "../../index";
+import StoryItem from "../../../stories/styleguide/StoryItem";
+import { AvatarGroupMock } from "./AvatarGroupMock";
 
 export default {
-  title: 'Legacy/Avatar',
+  title: "Legacy/Avatar",
   component: AvatarComponent,
   args: {
     name: faker.name.findName(),
@@ -30,14 +25,14 @@ export default {
     locked: false,
     stacked: true,
     animate: true,
-    onRemove: () => {}
+    onRemove: () => {},
   },
   argTypes: {
     colour: {
-      name: 'Colour',
-      control: { type: 'color' }
-    }
-  }
+      name: "Colour",
+      control: { type: "color" },
+    },
+  },
 };
 
 export const Avatar = (args: any) => {
@@ -46,7 +41,7 @@ export const Avatar = (args: any) => {
   const props = {
     ...args,
     initials: args.name.substring(0, 2),
-    url: args.showImage ? avatarUrl : null
+    url: args.showImage ? avatarUrl : null,
   };
 
   const { colour, ...propsWithoutColour } = props;
@@ -78,7 +73,7 @@ export const Avatar = (args: any) => {
         <AvatarComponent
           {...props}
           additional={
-            <Button types={['link-danger', 'size-sm']} clickHandler={() => {}}>
+            <Button types={["link-danger", "size-sm"]} clickHandler={() => {}}>
               Link type
             </Button>
           }
@@ -97,9 +92,7 @@ export const Avatar = (args: any) => {
           avatarProps={propsWithoutColour}
           avatarGroupProps={{ stacked: args.stacked }}
         >
-          {({
-            ui
-          }: any) => ui}
+          {({ ui }: any) => ui}
         </AvatarGroupMock>
       </StoryItem>
     </div>

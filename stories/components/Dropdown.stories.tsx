@@ -5,7 +5,6 @@ import {
   AvatarInformation,
   Icon,
   ConfirmationDropdown,
-  // @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from "lib";
 import StoryItem from "../styleguide/StoryItem";
 import StatusIndicator from "../../lib/StatusIndicator";
@@ -67,6 +66,7 @@ export const Dropdown = () => {
         description="Triggers can also use the Button component, which is common."
       >
         <DropdownComponent id="id-2">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Show content
           </DropdownComponent.Trigger>
@@ -84,6 +84,7 @@ export const Dropdown = () => {
         description="The dropdown content can be aligned to different points of the trigger."
       >
         <DropdownComponent id="id-3">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Left alignment
           </DropdownComponent.Trigger>
@@ -91,6 +92,7 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-4">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Centre alignment
           </DropdownComponent.Trigger>
@@ -99,6 +101,7 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-5">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Right alignment
           </DropdownComponent.Trigger>
@@ -112,6 +115,7 @@ export const Dropdown = () => {
         description="The dropdown content can also be vertically aligned so it appears above the trigger."
       >
         <DropdownComponent id="id-6">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top left alignment
           </DropdownComponent.Trigger>
@@ -120,6 +124,7 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-7">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top centre alignment
           </DropdownComponent.Trigger>
@@ -128,6 +133,7 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-8">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top right alignment
           </DropdownComponent.Trigger>
@@ -141,21 +147,26 @@ export const Dropdown = () => {
         description="The dropdown content can also be horizontally aligned."
       >
         <DropdownComponent id="id-9">
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             fixRight alignment collapse
           </DropdownComponent.Trigger>
 
           <DropdownComponent.Content fixRight collapse noBorder>
             <DropdownComponent.ActionGroup horizontal>
+              {/* @ts-expect-error */}
               <DropdownComponent.Action action={() => {}} plain>
                 <Icon name="bulletList" defaultActiveColor={false} />
               </DropdownComponent.Action>
+              {/* @ts-expect-error */}
               <DropdownComponent.Action action={() => {}} plain>
                 <Icon name="numberedList" defaultActiveColor={false} />
               </DropdownComponent.Action>
+              {/* @ts-expect-error */}
               <DropdownComponent.Action action={() => {}} plain>
                 <Icon name="table" defaultActiveColor={false} />
               </DropdownComponent.Action>
+              {/* @ts-expect-error */}
               <DropdownComponent.Action action={() => {}} plain>
                 <Icon name="quote" defaultActiveColor={false} />
               </DropdownComponent.Action>
@@ -169,6 +180,7 @@ export const Dropdown = () => {
         description="The dropdown content have auto positioning based on where the trigger is."
       >
         <DropdownComponent id="id-3" autoPosition>
+          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Auto Position
           </DropdownComponent.Trigger>
@@ -184,6 +196,7 @@ export const Dropdown = () => {
         <DropdownComponent id="id-3-b" autoPosition>
           {({ showContent }: any) => (
             <>
+              {/* @ts-expect-error */}
               <DropdownComponent.Trigger useButton>
                 Auto Position
               </DropdownComponent.Trigger>
@@ -198,6 +211,7 @@ export const Dropdown = () => {
         description="A dropdown like component that renders a confirmation dropdown."
       >
         <ConfirmationDropdown
+          // @ts-expect-error
           id="confirm-dropdown"
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
@@ -224,6 +238,7 @@ export const Dropdown = () => {
         </ConfirmationDropdown>
 
         <ConfirmationDropdown
+          // @ts-expect-error
           id="trash-dropdown-2"
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
@@ -232,6 +247,7 @@ export const Dropdown = () => {
               <DropdownComponent.Header>
                 <h3>Archive 1 item</h3>
                 <ConfirmationDropdown
+                  // @ts-expect-error
                   id="confirm-sub-dropdown"
                   confirmationText="Archive all"
                   dropdownContent={
@@ -281,6 +297,7 @@ export const Dropdown = () => {
         </ConfirmationDropdown>
 
         <ConfirmationDropdown
+          // @ts-expect-error
           id="trash-dropdown-3"
           confirmationText="Do a thing"
           confirmationPromise={createDelayedPromise}
@@ -328,6 +345,7 @@ export const Dropdown = () => {
       >
         <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" autoPosition block>
+            {/* @ts-expect-error */}
             <DropdownComponent.Trigger useSelect>
               Select an option...
             </DropdownComponent.Trigger>
@@ -343,6 +361,7 @@ export const Dropdown = () => {
       >
         <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" block>
+            {/* @ts-expect-error */}
             <DropdownComponent.Trigger useSelect>
               <StatusIndicator color="green" label="Status 2" medium />
             </DropdownComponent.Trigger>

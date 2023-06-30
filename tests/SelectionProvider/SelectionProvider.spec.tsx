@@ -2,7 +2,6 @@ import { render, fireEvent } from "@testing-library/react";
 import { React } from "../setup";
 import { SelectionProvider, SelectionContext } from "../../lib";
 
-// @ts-expect-error TS(2582): Cannot find name 'describe'. Do you need to instal... Remove this comment to see the full error message
 describe("SelectionProvider", () => {
   const createWrapper = (child: any) => (
     <SelectionProvider>
@@ -11,9 +10,7 @@ describe("SelectionProvider", () => {
     </SelectionProvider>
   );
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("appends a selected id", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -34,15 +31,12 @@ describe("SelectionProvider", () => {
 
     const resultingContext = childSpy.mock.calls[1][0];
 
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(resultingContext.selected).toEqual(["7"]);
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(resultingContext.currentSelectedType).toEqual("testType");
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("removes a selected id if it is already selected", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -64,15 +58,12 @@ describe("SelectionProvider", () => {
 
     const resultingContext = childSpy.mock.calls[2][0];
 
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(resultingContext.selected).toEqual([]);
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(resultingContext.currentSelectedType).toEqual(null);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("sets multiple selected ids", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -95,15 +86,12 @@ describe("SelectionProvider", () => {
 
     const resultingContext = childSpy.mock.calls[1][0];
 
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(resultingContext.selected).toEqual(["7", "8", "9", "10"]);
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(resultingContext.currentSelectedType).toEqual("testType");
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("deselects multiple ids", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -142,9 +130,7 @@ describe("SelectionProvider", () => {
     expect(resultingContext.currentSelectedType).toEqual(null);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("clears everything", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -174,9 +160,7 @@ describe("SelectionProvider", () => {
     expect(resultingContext.currentSelectedType).toEqual(null);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
   it("handles intendedToSelect", () => {
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     const childSpy = jest.fn();
 
     const { getByText } = render(
@@ -200,7 +184,7 @@ describe("SelectionProvider", () => {
     fireEvent.mouseLeave(getByText("IntendedToSelect"));
 
     const mouseEnterContext = childSpy.mock.calls[1][0];
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(mouseEnterContext.intendedToSelect).toEqual([
       "7",
       "8",
@@ -212,7 +196,7 @@ describe("SelectionProvider", () => {
     ]);
 
     const mouseLeaveContext = childSpy.mock.calls[2][0];
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(mouseLeaveContext.intendedToSelect).toEqual([]);
   });
 });

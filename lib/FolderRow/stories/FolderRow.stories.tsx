@@ -3,11 +3,8 @@ import cx from "classnames";
 import StoryItem from "../../../stories/styleguide/StoryItem";
 import {
   FolderRow as FolderRowComponent,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Too... Remove this comment to see the full error message
   TooltipWrapper,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'Ico... Remove this comment to see the full error message
   Icon,
-  // @ts-expect-error TS(2305): Module '"../../index"' has no exported member 'But... Remove this comment to see the full error message
   Button,
 } from "../../index";
 

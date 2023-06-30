@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonPrimary, Label, TextForm } from 'lib';
-import { WorkflowStep as WorkflowStepComponent } from './workflowStep';
+import StoryItem from "stories/styleguide/StoryItem";
+import { ButtonPrimary, Label, TextForm } from "lib";
+import { WorkflowStep as WorkflowStepComponent } from "./workflowStep";
 
 export default {
-  title: 'GUI/Workflow Step',
-  component: WorkflowStepComponent
+  title: "GUI/Workflow Step",
+  component: WorkflowStepComponent,
 };
 
 export const WorkflowStep = () => {
@@ -18,7 +17,7 @@ export const WorkflowStep = () => {
       <StoryItem title="Workflow Step">
         <div
           style={{
-            width: '680px'
+            width: "680px",
           }}
         >
           <>
@@ -35,7 +34,7 @@ export const WorkflowStep = () => {
                 <WorkflowStepComponent.Meta
                   actions={
                     <WorkflowStepComponent.Actions>
-                      {() => 'Actions'}
+                      {() => "Actions"}
                     </WorkflowStepComponent.Actions>
                   }
                 >
@@ -47,8 +46,10 @@ export const WorkflowStep = () => {
                   Creating the initial draft of content following the project
                   style guide and requirements for this item.
                 </p>
+                {/* @ts-expect-error */}
                 <TextForm className="pt-4 pr-4">
                   <TextForm.Body>
+                    {/* @ts-expect-error */}
                     <Label htmlFor="test">
                       leave a Note
                       <span className="text-neutral-primary">(OPTIONAL)</span>
@@ -72,7 +73,7 @@ export const WorkflowStep = () => {
       <StoryItem title="Active Step">
         <div
           style={{
-            width: '680px'
+            width: "680px",
           }}
         >
           <WorkflowStepComponent className="w-full h-full" showBody isActive>
@@ -93,5 +94,5 @@ export const WorkflowStep = () => {
 };
 
 WorkflowStep.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

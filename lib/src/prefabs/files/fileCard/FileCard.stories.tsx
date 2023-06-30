@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 import {
   Pill,
   Meta,
   FileCard as FileCardComponent,
   PreviewImage,
   Controls,
-  Loader
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  Loader,
+} from "lib";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import uuid from 'uuid/v1';
+import uuid from "uuid/v1";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-import ConfirmationOverlay from '../../../../ConfirmationOverlay';
+import StoryItem from "stories/styleguide/StoryItem";
+import ConfirmationOverlay from "../../../../ConfirmationOverlay";
 
 export default {
-  title: 'GUI/Cards/File Card',
+  title: "GUI/Cards/File Card",
   component: FileCardComponent,
   args: {
     insetMeta: false,
@@ -29,8 +28,8 @@ export default {
     disabled: false,
     showLoader: false,
     imgHeight: 500,
-    imgWidth: 500
-  }
+    imgWidth: 500,
+  },
 };
 
 export const FileCard = (args: any) => {
@@ -47,13 +46,11 @@ export const FileCard = (args: any) => {
   );
 
   const previewSrc = args.previewFailedToLoad
-    ? 'http://fail'
+    ? "http://fail"
     : `http://placeimg.com/${args.imgWidth}/${args.imgHeight}/animals`;
 
-  const Preview = ({
-    children,
-    loader
-  }: any) => (
+  const Preview = ({ children, loader }: any) => (
+    // @ts-expect-error
     <PreviewImage
       src={previewSrc}
       altText="preview image"
@@ -125,7 +122,9 @@ export const FileCard = (args: any) => {
         description="A card component which utilises the thumbnail size to display a file at a reduced size."
       >
         <FileCardComponent
+          // @ts-expect-error
           size="thumbnail"
+          // @ts-expect-error
           preview={<Preview loader={<Loader size="sm" />} />}
         />
       </StoryItem>
@@ -135,7 +134,9 @@ export const FileCard = (args: any) => {
         description="A card component which represents a loading file."
       >
         <div className="w-32 h-32">
+          {/* @ts-expect-error */}
           <FileCardComponent className="h-full" innerClassName="h-full">
+            {/* @ts-expect-error */}
             <Loader size="sm" className="h-full" />
           </FileCardComponent>
         </div>

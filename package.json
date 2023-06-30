@@ -63,7 +63,8 @@
     "storybook": "storybook dev -p 6006 -c .storybook",
     "build-storybook": "storybook build",
     "test": "jest --notify",
-    "chromatic": "chromatic --project-token=1f9e13b797f2 --auto-accept-changes"
+    "chromatic": "chromatic --project-token=1f9e13b797f2 --auto-accept-changes",
+    "type-check": "tsc --noEmit --pretty"
   },
   "husky": {
     "hooks": {
@@ -138,6 +139,7 @@
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^9.1.1",
     "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.5.2",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "autoprefixer": "^10.4.0",
     "babel-core": "^7.0.0-bridge.0",

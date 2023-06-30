@@ -1,12 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { bool, func } from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonIcon, ButtonIconDanger, useLoader } from 'lib';
+import React, { useEffect, useRef, useState } from "react";
+import { bool, func } from "prop-types";
+import { ButtonIcon, ButtonIconDanger, useLoader } from "lib";
 
-export function CommentSubscribeToggle({
-  onToggle,
-  isSubscribed
-}: any) {
+export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
   const [hasFailed, setHasFailed] = useState(false);
   const setHasFailedTimeout = useRef(null);
 
@@ -35,15 +31,16 @@ export function CommentSubscribeToggle({
   return (
     <div className="flex items-center">
       <ButtonType
-        name={isSubscribing ? 'loader16' : 'bell'}
+        name={isSubscribing ? "loader16" : "bell"}
         title="Subscribe to conversation"
         size={ButtonIcon.sizes.sm}
+        // @ts-expect-error
         onClick={onToggleWithLoader}
         active={isSubscribed}
       />
       {hasFailed && (
         <p className="ml-2 text-red-primary my-0 text-sm">
-          Couldn't {isSubscribed ? 'unsubscribe' : 'subscribe'}
+          Couldn't {isSubscribed ? "unsubscribe" : "subscribe"}
         </p>
       )}
     </div>
@@ -52,10 +49,10 @@ export function CommentSubscribeToggle({
 
 CommentSubscribeToggle.propTypes = {
   onToggle: func,
-  isSubscribed: bool
+  isSubscribed: bool,
 };
 
 CommentSubscribeToggle.defaultProps = {
   onToggle: () => {},
-  isSubscribed: false
+  isSubscribed: false,
 };

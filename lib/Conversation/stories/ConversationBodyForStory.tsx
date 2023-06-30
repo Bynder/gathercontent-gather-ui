@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Comment, Conversation } from 'lib';
-import { mockComments } from './mockData';
-import { createDelayedPromise } from '../../../stories/helpers/createDelayedPromise';
-import { createFailedPromise } from '../../../stories/helpers/createFailedPromise';
-import { ExistingCommentExample } from './ExistingCommentExample';
+import React from "react";
+import { Comment, Conversation } from "lib";
+import { mockComments } from "./mockData";
+import { createDelayedPromise } from "../../../stories/helpers/createDelayedPromise";
+import { createFailedPromise } from "../../../stories/helpers/createFailedPromise";
+import { ExistingCommentExample } from "./ExistingCommentExample";
 
 function ConversationBodyForStory({
   isOpen,
   commentHasFailedToSave,
-  commentHasFailedToDelete
+  commentHasFailedToDelete,
 }: any) {
   const numberOfRepliesInbetween = mockComments.length - 2;
 

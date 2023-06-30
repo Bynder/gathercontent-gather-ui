@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react";
 import {
   DropdownContent as DropdownContentComponent,
   Person,
-  ButtonSecondary
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  ButtonSecondary,
+} from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
+import faker from "faker";
 
 export default {
-  title: 'GUI/Dropdowns/Dropdown Content',
-  component: DropdownContentComponent
+  title: "GUI/Dropdowns/Dropdown Content",
+  component: DropdownContentComponent,
 };
 
 export const DropdownContent = () => {
@@ -20,7 +19,7 @@ export const DropdownContent = () => {
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
     avatarUrl: faker.image.avatar(),
-    selected: faker.random.boolean()
+    selected: faker.random.boolean(),
   });
 
   const people = [getPerson(), getPerson(), getPerson(), getPerson()];
@@ -34,7 +33,7 @@ export const DropdownContent = () => {
         <DropdownContentComponent.Header title="Assignees" />
         <DropdownContentComponent.Body>
           <DropdownContentComponent.List heading="WAFFLES">
-            {people.map(person => (
+            {people.map((person) => (
               <Person
                 name={person.name}
                 subtitle={person.subtitle}
@@ -55,5 +54,5 @@ export const DropdownContent = () => {
 };
 
 DropdownContent.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

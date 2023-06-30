@@ -56,6 +56,7 @@ export const ConfirmationOverlay = ({
           Cancel
         </ButtonTertiary>
         <ButtonPrimaryDanger
+          // @ts-expect-error
           onClick={handleSubmitWithLoader}
           size={ButtonPrimary.sizes.xs}
         >

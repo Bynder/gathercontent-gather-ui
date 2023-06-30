@@ -1,16 +1,16 @@
-import React from 'react';
-// @ts-expect-error TS(2305): Module '"../../lib/index"' has no exported member ... Remove this comment to see the full error message
-import { Shortcut as ShortcutComponent, ShortcutIcon } from '../../lib/index';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { Shortcut as ShortcutComponent, ShortcutIcon } from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Shortcut',
-  component: ShortcutComponent
+  title: "Legacy/Shortcut",
+  component: ShortcutComponent,
 };
 
 export const Shortcut = () => (
   <div>
     <StoryItem title="ShortcutComponent" description="A mix of Mac and Windows">
+      {/* @ts-expect-error */}
       <ShortcutComponent name="Bold" styleClass="shortcut__bold" mac>
         <ShortcutIcon>⌘</ShortcutIcon>
         <ShortcutIcon>b</ShortcutIcon>
@@ -19,6 +19,7 @@ export const Shortcut = () => (
         <ShortcutIcon>Ctrl</ShortcutIcon>
         <ShortcutIcon>i</ShortcutIcon>
       </ShortcutComponent>
+      {/* @ts-expect-error */}
       <ShortcutComponent name="Underline" styleClass="shortcut__underline" mac>
         <ShortcutIcon>⌘</ShortcutIcon>
         <ShortcutIcon>u</ShortcutIcon>
@@ -28,11 +29,13 @@ export const Shortcut = () => (
         <ShortcutIcon>Alt</ShortcutIcon>
         <ShortcutIcon>1-6</ShortcutIcon>
       </ShortcutComponent>
+      {/* @ts-expect-error */}
       <ShortcutComponent name="A shortcut" mac>
         <ShortcutIcon>⌘</ShortcutIcon>
         <ShortcutIcon>Option</ShortcutIcon>
         <ShortcutIcon>G</ShortcutIcon>
       </ShortcutComponent>
+      {/* @ts-expect-error */}
       <ShortcutComponent name="A single button!" mac>
         <ShortcutIcon>⇥</ShortcutIcon>
       </ShortcutComponent>
@@ -41,5 +44,5 @@ export const Shortcut = () => (
 );
 
 Shortcut.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

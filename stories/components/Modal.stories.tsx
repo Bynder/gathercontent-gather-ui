@@ -267,6 +267,7 @@ export const Modals = () => (
           introText="Are you really sure?"
           submitText="Hell yes"
           cancelText="Meow no"
+          // @ts-expect-error
           type="primary"
           onHide={() => {}}
           submitCallback={(e: any) => {
@@ -422,9 +423,11 @@ export const Modals = () => (
           cancelText="Cancel"
           highlight
         >
+          {/* @ts-expect-error */}
           <Label htmlFor="form-modal-field-a">Field A</Label>
+          {/* @ts-expect-error */}
           <Input id="form-modal-field-a" className="mb-3" />
-
+          {/* @ts-expect-error */}
           <Label htmlFor="form-modal-field-b">Field B</Label>
           <Input id="form-modal-field-b" />
         </StatefulFormModal>
@@ -578,7 +581,9 @@ export const Modals = () => (
       description="SelectionModal can be used with other Modal components to create a selection layout"
     >
       <ModalTrigger>
+        {/* @ts-expect-error */}
         <SelectionModal size="large">
+          {/* @ts-expect-error */}
           <Modal.Header useTitle={false}>
             <h3 className="text-lg mt-2 mb-3">Import templates</h3>
             <p className="m-0 leading-6">
@@ -622,24 +627,28 @@ export const Modals = () => (
               </SelectionModal.ColumnHeader>
               <Checkbox
                 id="template 1"
+                // @ts-expect-error
                 label="template 1"
                 name="template 1"
                 className="text-base"
               />
               <Checkbox
                 id="template 2"
+                // @ts-expect-error
                 label="template 2"
                 name="template 2"
                 className="text-base"
               />
               <Checkbox
                 id="template 3"
+                // @ts-expect-error
                 label="template 3"
                 name="template 3"
                 className="text-base"
               />
               <Checkbox
                 id="template 4"
+                // @ts-expect-error
                 label="template 4"
                 name="template 4"
                 className="text-base"

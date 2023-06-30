@@ -1,20 +1,19 @@
-import React from 'react';
-import HTML5Backend from 'react-dnd-html5-backend-cjs';
+import React from "react";
+import HTML5Backend from "react-dnd-html5-backend-cjs";
 import {
   InventoryItem as InventoryItemComponent,
   Draggable,
-  DndProvider
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  DndProvider,
+} from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 
 export default {
-  title: 'GUI/Inventory Item',
+  title: "GUI/Inventory Item",
   component: InventoryItemComponent,
   args: {
-    disabled: false
-  }
+    disabled: false,
+  },
 };
 
 export const InventoryItem = (args: any) => {
@@ -25,18 +24,17 @@ export const InventoryItem = (args: any) => {
     >
       <DndProvider backend={HTML5Backend}>
         <Draggable
-          item={{ type: 'story' }}
+          item={{ type: "story" }}
           preview={<InventoryItemComponent iconName="text" isPreview />}
         >
-          {({
-            isDragging
-          }: any, dragRef: any) => (
+          {({ isDragging }: any, dragRef: any) => (
             <div ref={dragRef}>
               <InventoryItemComponent
                 tooltipText="Text field"
                 iconName="text"
                 isPreviewActive={isDragging}
                 tooltipClassName="inline-block"
+                // @ts-expect-error
                 disabled={args.disabled}
               />
             </div>

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { func } from "prop-types";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonIcon, Comment } from "lib";
 import Dropdown from "../Dropdown";
 import DropdownActionGroup from "../Dropdown/DropdownActionGroup";
@@ -23,6 +22,7 @@ function CommentActions({ onEditClick, onRemoveClick, className }: any) {
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
+                  // @ts-expect-error
                   title="Edit or delete this comment"
                 />
               )}

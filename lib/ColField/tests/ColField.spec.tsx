@@ -4,11 +4,9 @@ import ColField from "lib/ColField/ColField";
 // @ts-expect-error TS(2307): Cannot find module 'tests/setup' or its correspond... Remove this comment to see the full error message
 import { React } from "tests/setup";
 
-// @ts-expect-error TS(2582): Cannot find name 'describe'. Do you need to instal... Remove this comment to see the full error message
 describe("ColField", () => {
-  // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
   const labelChange = jest.fn();
-  // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
+
   const instructionChange = jest.fn();
   const defaultProps = {
     editable: true,
@@ -42,16 +40,14 @@ describe("ColField", () => {
       </ColField>
     );
 
-  // @ts-expect-error TS(2304): Cannot find name 'afterEach'.
   afterEach(() => {
     cleanup();
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
+
     jest.restoreAllMocks();
-    // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
+
     jest.clearAllMocks();
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("displays the editable field label", () => {
     const { getByText, getByLabelText } = renderWrapper();
     fireEvent.click(getByText(defaultProps.label));
@@ -64,14 +60,13 @@ describe("ColField", () => {
       },
     });
     labelInput.blur();
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(labelChange).toHaveBeenCalledWith("Meowdy");
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("displays the editable field instructions", () => {
     const { getByText, getByPlaceholderText } = renderWrapper();
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(getByText(defaultProps.instructions));
     const instructionsInput = getByPlaceholderText(
       defaultProps.instructionPlaceholder
@@ -81,11 +76,10 @@ describe("ColField", () => {
         value: "add some lovely text",
       },
     });
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(instructionChange).toHaveBeenCalled();
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("displays the non-editable field label", () => {
     const { getByText, queryByText } = renderWrapper({
       ...defaultProps,
@@ -93,29 +87,27 @@ describe("ColField", () => {
     });
     fireEvent.click(getByText(defaultProps.label));
     const labelInput = queryByText(`edit field label: ${defaultProps.label}`);
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(labelInput).toEqual(null);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("displays the non-editable field instructions", () => {
     const { getByText, queryByPlaceholderText } = renderWrapper({
       ...defaultProps,
       editable: false,
     });
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(getByText(defaultProps.instructions));
     const instructionsInput = queryByPlaceholderText(
       defaultProps.instructionPlaceholder
     );
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(instructionsInput).toEqual(null);
   });
 
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("displays the field body", () => {
     const { getByText } = renderWrapper();
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
+
     expect(getByText("field body hello!"));
   });
 });

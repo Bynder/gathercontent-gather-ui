@@ -11,6 +11,7 @@ export class UserSearchDropdown extends Component {
 
   focusSearch = ({ type }: any) => {
     if (type === "ACTIVE") {
+      // @ts-expect-error
       this.searchInputRef.current.focus();
     }
   };

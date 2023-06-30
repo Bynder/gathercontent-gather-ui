@@ -8,7 +8,6 @@ import {
   ButtonIconBubble,
   ButtonIconDark,
   ButtonIconWhite,
-  // @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from "stories/styleguide/StoryItem";
@@ -65,6 +64,7 @@ export const ButtonIcon = () => (
       <ButtonStoryItem title="Base (counter)">
         {states.map((s) => (
           <div className="h-16">
+            {/* @ts-expect-error */}
             <ButtonIconComponent name="caption16" {...s}>
               <Counter>9</Counter>
             </ButtonIconComponent>

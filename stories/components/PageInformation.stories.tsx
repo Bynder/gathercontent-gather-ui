@@ -1,62 +1,63 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { PageInformation as PageInformationComponent } from 'lib';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { PageInformation as PageInformationComponent } from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Page Information',
+  title: "Legacy/Page Information",
   component: PageInformationComponent,
   argTypes: {
-    textChanged: { action: 'Text has been changed' }
-  }
+    textChanged: { action: "Text has been changed" },
+  },
 };
 
-export const PageInformation = (args: any) => <div>
-  <StoryItem
-    title="Page information: Just a title"
-    description="Includes a title as a minimum"
-  >
-    <PageInformationComponent title="This is the title of the page" />
-  </StoryItem>
+export const PageInformation = (args: any) => (
+  <div>
+    <StoryItem
+      title="Page information: Just a title"
+      description="Includes a title as a minimum"
+    >
+      <PageInformationComponent title="This is the title of the page" />
+    </StoryItem>
 
-  <StoryItem
-    title="Page information: With Subtitle"
-    description="Can be text, or another node"
-  >
-    <PageInformationComponent
-      title="This is the title of the page"
-      subtitle="This is a text subtitle"
-    />
-    <PageInformationComponent
-      title="This is the title of the page"
-      subtitle={
-        <span>
-          oOooh:{' '}
-          <span className="page-information__subtitle--highlight">
-            some highlighted text
+    <StoryItem
+      title="Page information: With Subtitle"
+      description="Can be text, or another node"
+    >
+      <PageInformationComponent
+        title="This is the title of the page"
+        subtitle="This is a text subtitle"
+      />
+      <PageInformationComponent
+        title="This is the title of the page"
+        subtitle={
+          <span>
+            oOooh:{" "}
+            <span className="page-information__subtitle--highlight">
+              some highlighted text
+            </span>
           </span>
-        </span>
-      }
-    />
-  </StoryItem>
+        }
+      />
+    </StoryItem>
 
-  <StoryItem title="Page information: wraps extremely long titles and subtitles">
-    <PageInformationComponent
-      title="This title is really really really really really really really really long"
-      subtitle="The subtitle just goes on and on and on and on and on and on and on and on"
-    />
-  </StoryItem>
+    <StoryItem title="Page information: wraps extremely long titles and subtitles">
+      <PageInformationComponent
+        title="This title is really really really really really really really really long"
+        subtitle="The subtitle just goes on and on and on and on and on and on and on and on"
+      />
+    </StoryItem>
 
-  <StoryItem title="Page information: with an editable title">
-    <PageInformationComponent
-      editable
-      title="The original title"
-      subtitle="This is the subtitle"
-      rename={args.textChanged}
-    />
-  </StoryItem>
-</div>;
+    <StoryItem title="Page information: with an editable title">
+      <PageInformationComponent
+        editable
+        title="The original title"
+        subtitle="This is the subtitle"
+        rename={args.textChanged}
+      />
+    </StoryItem>
+  </div>
+);
 
 PageInformation.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

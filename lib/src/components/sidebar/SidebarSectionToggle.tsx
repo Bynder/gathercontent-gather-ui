@@ -1,17 +1,18 @@
-import * as React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonSecondary } from 'lib';
-import { string } from 'prop-types';
-import { SidebarSectionContext } from './SidebarSection';
+import * as React from "react";
+import { ButtonSecondary } from "lib";
+import { string } from "prop-types";
+import { SidebarSectionContext } from "./SidebarSection";
 
 export function SidebarSectionToggle({
   showText,
   hideText,
   children,
-  className = '',
+  className = "",
   ...rest
 }: any) {
-  const { showMore, setShowMore } = React.useContext(SidebarSectionContext);
+  const { showMore, setShowMore }: any = React.useContext(
+    SidebarSectionContext
+  );
 
   return (
     <ButtonSecondary
@@ -27,10 +28,10 @@ export function SidebarSectionToggle({
 
 SidebarSectionToggle.propTypes = {
   showText: string,
-  hideText: string
+  hideText: string,
 };
 
 SidebarSectionToggle.defaultProps = {
-  showText: 'Show',
-  hideText: 'Hide'
+  showText: "Show",
+  hideText: "Hide",
 };

@@ -1,7 +1,6 @@
 import React from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
 import uuid from "uuid/v1";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonSecondary, Dropdown, Icon } from "lib";
 
 export function DateSetTimeDropdown({ onTimeSelect, selectedTime }: any) {
@@ -45,6 +44,7 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }: any) {
                 onClick={toggleShowContent}
                 size={ButtonSecondary.sizes.sm}
                 className="ml-2"
+                // @ts-expect-error
                 contained
                 title="Select a time"
               >

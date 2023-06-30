@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { DropdownContent, Input, Label, Person } from "lib";
 import Dropdown from "../../../Dropdown";
 
@@ -28,9 +27,11 @@ export function PersonSearch({
             <Dropdown.Trigger triggerClassName="w-full">
               {({ toggleShowContent }: any) => (
                 <>
+                  {/* @ts-expect-error */}
                   <Label htmlFor="person-search">{label}</Label>
                   <Input
                     id="person-search"
+                    // @ts-expect-error
                     placeholder={placeholder}
                     onFocus={() => toggleShowContent(true)}
                     onBlur={() =>

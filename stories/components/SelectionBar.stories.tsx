@@ -1,28 +1,28 @@
-import React from 'react';
+import React from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'plur... Remove this comment to see the full error message
-import pluralize from 'pluralize';
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Selec... Remove this comment to see the full error message
-import { SelectionBar as SelectionBarComponent, Button, Icon } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+import pluralize from "pluralize";
+import { SelectionBar as SelectionBarComponent, Button, Icon } from "../../lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Selection Bar',
-  component: SelectionBarComponent
+  title: "Legacy/Selection Bar",
+  component: SelectionBarComponent,
 };
 
 export const SelectionBar = () => {
   const example1selectedIds = [1, 2, 3];
   const example2selectedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const type = 'items';
+  const type = "items";
 
   return (
     <div>
       <StoryItem title="SelectionBarComponent">
+        {/* @ts-expect-error */}
         <SelectionBarComponent hasSelected={example1selectedIds.length}>
           <SelectionBarComponent.Information>
             <Button
               clickHandler={() => {}}
-              types={['link-default']}
+              types={["link-default"]}
               className="selection-bar__all"
             >
               Select all
@@ -36,12 +36,12 @@ export const SelectionBar = () => {
           </SelectionBarComponent.Information>
           <SelectionBarComponent.Actions>
             <SelectionBarComponent.Action>
-              <Button clickHandler={() => {}} types={['icon-only']}>
+              <Button clickHandler={() => {}} types={["icon-only"]}>
                 <Icon name="download" />
               </Button>
             </SelectionBarComponent.Action>
             <SelectionBarComponent.Action>
-              <Button clickHandler={() => {}} types={['icon-only']}>
+              <Button clickHandler={() => {}} types={["icon-only"]}>
                 <Icon name="trash" />
               </Button>
             </SelectionBarComponent.Action>
@@ -53,11 +53,12 @@ export const SelectionBar = () => {
         title="SelectionBarComponent"
         description="fixed SelectionBarComponent"
       >
+        {/* @ts-expect-error */}
         <SelectionBarComponent hasSelected={example2selectedIds.length} fixed>
           <SelectionBarComponent.Information>
             <Button
               clickHandler={() => {}}
-              types={['link-default']}
+              types={["link-default"]}
               className="selection-bar__all"
             >
               Select all
@@ -71,17 +72,17 @@ export const SelectionBar = () => {
           </SelectionBarComponent.Information>
           <SelectionBarComponent.Actions>
             <SelectionBarComponent.Action>
-              <Button clickHandler={() => {}} types={['icon-only']}>
+              <Button clickHandler={() => {}} types={["icon-only"]}>
                 <Icon name="files" />
               </Button>
             </SelectionBarComponent.Action>
             <SelectionBarComponent.Action>
-              <Button clickHandler={() => {}} types={['icon-only']}>
+              <Button clickHandler={() => {}} types={["icon-only"]}>
                 <Icon name="save" />
               </Button>
             </SelectionBarComponent.Action>
             <SelectionBarComponent.Action>
-              <Button clickHandler={() => {}} types={['icon-only']}>
+              <Button clickHandler={() => {}} types={["icon-only"]}>
                 <Icon name="export" />
               </Button>
             </SelectionBarComponent.Action>
@@ -93,5 +94,5 @@ export const SelectionBar = () => {
 };
 
 SelectionBar.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

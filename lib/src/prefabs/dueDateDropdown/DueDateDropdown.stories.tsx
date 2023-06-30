@@ -1,18 +1,17 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { DueDateDropdown as DueDateDropdownComponent } from 'lib';
+import React from "react";
+import { DueDateDropdown as DueDateDropdownComponent } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-import moment from 'moment';
+import StoryItem from "stories/styleguide/StoryItem";
+import moment from "moment";
 
 export default {
-  title: 'GUI/Dropdowns/Due Date Dropdown',
+  title: "GUI/Dropdowns/Due Date Dropdown",
   argTypes: {
     selectedDay: {
-      name: 'Selected day',
-      control: { type: 'date' }
-    }
-  }
+      name: "Selected day",
+      control: { type: "date" },
+    },
+  },
 };
 
 export const DueDateDropdown = (args: any) => {
@@ -35,7 +34,7 @@ export const DueDateDropdown = (args: any) => {
         <DueDateDropdownComponent
           id="due-date-dropdown-with-info-prefab"
           selectedDay={moment(args.selectedDay).toDate()}
-          workflowDueDate={{ dynamic: { amount: 3, interval: 'day' } }}
+          workflowDueDate={{ dynamic: { amount: 3, interval: "day" } }}
         />
       </StoryItem>
     </>

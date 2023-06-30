@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ExpandingTextArea } from 'lib';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
+import { ExpandingTextArea } from "lib";
 
 export function EditableTextWrapperInput({
   multiline,
@@ -12,7 +11,7 @@ export function EditableTextWrapperInput({
   stopEditing,
   onChange,
   value,
-  maxLength
+  maxLength,
 }: any) {
   const [inputValue, setInputValue] = useState(value);
 
@@ -23,8 +22,8 @@ export function EditableTextWrapperInput({
   }, [value]);
 
   const classes = cx(
-    'editable-text__wrapper',
-    'editable-text__wrapper--editing',
+    "editable-text__wrapper",
+    "editable-text__wrapper--editing",
     className,
     `${className}--editing`
   );
@@ -83,9 +82,9 @@ export function EditableTextWrapperInput({
         placeholder={placeholder}
         className={`editable-text__input single-line ${inputClassNames}`}
         value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleOnKeyDown}
-        onFocus={e => e.target.select()}
+        onFocus={(e) => e.target.select()}
         onBlur={handleOnBlur}
         autoFocus // eslint-disable-line jsx-a11y/no-autofocus
         id="editable-text-wrapper-input"

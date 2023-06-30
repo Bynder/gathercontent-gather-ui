@@ -1,18 +1,17 @@
 /*
 eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Comment, Conversation } from 'lib';
-import { mockConversation } from './mockData';
-import { createDelayedPromise } from '../../../stories/helpers/createDelayedPromise';
-import { createFailedPromise } from '../../../stories/helpers/createFailedPromise';
+import React, { useEffect, useState } from "react";
+import { Comment, Conversation } from "lib";
+import { mockConversation } from "./mockData";
+import { createDelayedPromise } from "../../../stories/helpers/createDelayedPromise";
+import { createFailedPromise } from "../../../stories/helpers/createFailedPromise";
 
 function ConversationHeaderForStory({
   isOpen,
   isSubscribed,
   isResolved,
   userCanResolve,
-  commentHasFailedToSubscribe
+  commentHasFailedToSubscribe,
 }: any) {
   const [subscribed, setSubscribed] = useState(isSubscribed);
 
@@ -32,6 +31,7 @@ function ConversationHeaderForStory({
   return isOpen ? (
     <Conversation.Header>
       <Comment.SubscribeToggle
+        // @ts-expect-error
         id={`${mockConversation.id}-subscribe`}
         isSubscribed={subscribed}
         onToggle={promise}

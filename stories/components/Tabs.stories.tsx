@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonSecondary, Tabs as TabsComponent } from 'lib';
-import Dropdown from '../../lib/Dropdown';
-import { TabContext } from '../../lib/TabsNew/Tab';
+import faker from "faker";
+import { ButtonSecondary, Tabs as TabsComponent } from "lib";
+import Dropdown from "../../lib/Dropdown";
+import { TabContext } from "../../lib/TabsNew/Tab";
 
 function RenameTabActionExample() {
-  const { formInputRef } = useContext(TabContext);
+  const { formInputRef }: any = useContext(TabContext);
 
   return (
     <Dropdown.ActionGroup className="text-neutral-20 font-normal">
@@ -24,12 +23,7 @@ function RenameTabActionExample() {
 }
 
 // eslint-disable-next-line react/prop-types
-function TabsStory({
-  tabs,
-  dragSide,
-  dragIndex,
-  editable
-}: any) {
+function TabsStory({ tabs, dragSide, dragIndex, editable }: any) {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
   const numberOfRows = Math.ceil(tabs.length / 8);
   const rows = [...new Array(numberOfRows)].map((i, index) => {
@@ -40,7 +34,7 @@ function TabsStory({
   return (
     <TabsComponent tabsLength={tabs.length} activeTabId={activeTabId}>
       <TabsComponent.Group>
-        {rows.map(r => (
+        {rows.map((r) => (
           <TabsComponent.Row key={v4()}>
             {r.map((t: any, index: any) => (
               <TabsComponent.Tab id={t.id} index={index} key={v4()}>
@@ -50,7 +44,7 @@ function TabsStory({
                       <button
                         type="button"
                         className={buttonClasses}
-                        onClick={e => {
+                        onClick={(e) => {
                           e.preventDefault();
                           setActiveTabId(t.id);
                         }}
@@ -60,6 +54,7 @@ function TabsStory({
                       </button>
                     ) : (
                       <TabsComponent.TabNameForm
+                        // @ts-expect-error
                         tab={t}
                         className={`${buttonClasses}`}
                         setActiveTab={(e: any) => {
@@ -102,27 +97,27 @@ function TabsStory({
 }
 
 export default {
-  title: 'Legacy/Tabs',
+  title: "Legacy/Tabs",
   component: TabsComponent,
   args: {
     editable: true,
     tabsNumber: 3,
     dragIndex: 0,
-    noOfTabs: 3
+    noOfTabs: 3,
   },
   argTypes: {
     dragSide: {
-      name: 'Drag side',
-      control: { type: 'select' },
-      options: [null, 'left', 'right', 'whole']
-    }
-  }
+      name: "Drag side",
+      control: { type: "select" },
+      options: [null, "left", "right", "whole"],
+    },
+  },
 };
 
 export const Tabs = (args: any) => {
   const tabs = [...Array(args.tabsNumber).keys()].map(() => ({
     id: v4(),
-    name: faker.commerce.productName()
+    name: faker.commerce.productName(),
   }));
 
   return <TabsStory tabs={tabs} {...args} />;

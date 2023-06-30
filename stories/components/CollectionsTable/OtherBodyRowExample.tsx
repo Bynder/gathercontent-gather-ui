@@ -1,10 +1,5 @@
-import React from 'react';
-import {
-  // @ts-expect-error TS(2305): Module '"../../../lib"' has no exported member 'Co... Remove this comment to see the full error message
-  CollectionsTable,
-  // @ts-expect-error TS(2305): Module '"../../../lib"' has no exported member 'Av... Remove this comment to see the full error message
-  Avatar,
-} from '../../../lib';
+import React from "react";
+import { CollectionsTable, Avatar } from "../../../lib";
 
 const OtherBodyRowExample = () => (
   <CollectionsTable.Row>
@@ -28,6 +23,7 @@ const OtherBodyRowExample = () => (
         <Avatar
           name="Angus Edwardson"
           initials="AE"
+          // @ts-expect-error
           email="example@gmail.com"
         />
       </div>

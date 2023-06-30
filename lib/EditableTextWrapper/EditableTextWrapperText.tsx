@@ -1,6 +1,5 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Button, Icon } from 'lib';
+import React from "react";
+import { Button, Icon } from "lib";
 
 export function EditableTextWrapperText({
   startEditing,
@@ -8,10 +7,10 @@ export function EditableTextWrapperText({
   buttonLabel,
   className,
   pencilEditOnly,
-  children
+  children,
 }: any) {
   const handleEditKeyPress = (event: any) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       startEditing();
     }
   };
@@ -34,7 +33,7 @@ export function EditableTextWrapperText({
         {children}
       </span>
       <Button
-        types={['icon-only']}
+        types={["icon-only"]}
         className="editable-text__button"
         clickHandler={(e: any) => handleEditStart(e)}
         title={title}

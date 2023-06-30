@@ -1,11 +1,10 @@
-import React from 'react';
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Guide... Remove this comment to see the full error message
-import { Guideline as GuidelineComponent } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { Guideline as GuidelineComponent } from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Guideline',
-  component: GuidelineComponent
+  title: "Legacy/Guideline",
+  component: GuidelineComponent,
 };
 
 export const Guideline = () => (
@@ -46,5 +45,5 @@ export const Guideline = () => (
 );
 
 Guideline.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

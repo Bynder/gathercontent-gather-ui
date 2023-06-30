@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   DropdownContent,
   Dropdown,
@@ -8,10 +8,9 @@ import {
   ButtonTertiary,
   Input,
   TooltipWrapper,
-  useLoader
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
-import Icon from '../../../Icon';
+  useLoader,
+} from "lib";
+import Icon from "../../../Icon";
 
 export function AssigneeDropdown({
   id,
@@ -22,12 +21,11 @@ export function AssigneeDropdown({
   onSearchChange,
   onToggle,
   autoPosition,
-  className
+  className,
 }: any) {
   const [isSubmitting, handleSubmitWithLoader] = useLoader(onSaveClick);
-  const [isUnassigning, handleUnassignWithLoader] = useLoader(
-    onUnassignAllClick
-  );
+  const [isUnassigning, handleUnassignWithLoader] =
+    useLoader(onUnassignAllClick);
 
   return (
     <Dropdown
@@ -36,15 +34,10 @@ export function AssigneeDropdown({
       onToggle={onToggle}
       className={className}
     >
-      {({
-        showContent,
-        setShowContent
-      }: any) => (
+      {({ showContent, setShowContent }: any) => (
         <>
           <Dropdown.Trigger>
-            {({
-              toggleShowContent
-            }: any) => (
+            {({ toggleShowContent }: any) => (
               <TooltipWrapper
                 id={`assignee-dropdown-tooltip-${id}`}
                 tooltipText="Change assignees"
@@ -55,6 +48,7 @@ export function AssigneeDropdown({
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
+                  // @ts-expect-error
                   title="Change assignees"
                 />
               </TooltipWrapper>
@@ -73,6 +67,7 @@ export function AssigneeDropdown({
                     id={`${id}-search`}
                     value={searchValue}
                     onChange={onSearchChange}
+                    // @ts-expect-error
                     className="mt-2"
                     placeholder="Search..."
                   />
@@ -82,6 +77,7 @@ export function AssigneeDropdown({
                   <ButtonSecondaryDanger
                     size={ButtonSecondaryDanger.sizes.sm}
                     onClick={async (e: any) => {
+                      // @ts-expect-error
                       await handleUnassignWithLoader(e);
                       setShowContent(false);
                     }}
@@ -100,6 +96,7 @@ export function AssigneeDropdown({
                     <ButtonSecondary
                       size={ButtonSecondary.sizes.sm}
                       onClick={async (e: any) => {
+                        // @ts-expect-error
                         await handleSubmitWithLoader(e);
                         setShowContent(false);
                       }}

@@ -1,10 +1,9 @@
-import React from 'react';
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Dropd... Remove this comment to see the full error message
-import { Dropdown, Breadcrumb as BreadcrumbComponent } from '../../lib';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { Dropdown, Breadcrumb as BreadcrumbComponent } from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Breadcrumb'
+  title: "Legacy/Breadcrumb",
 };
 
 export const Breadcrumb = () => (
@@ -21,17 +20,20 @@ export const Breadcrumb = () => (
 
     <StoryItem title="BreadcrumbComponent">
       <BreadcrumbComponent>
-        <BreadcrumbComponent.Item style={{ maxWidth: '20%' }}>
+        {/* @ts-expect-error */}
+        <BreadcrumbComponent.Item style={{ maxWidth: "20%" }}>
           <div className="text-overflow-ellipsis" title="Energy Co. Redesign">
             <a href="/">Energy Co. Redesign</a>
           </div>
         </BreadcrumbComponent.Item>
-        <BreadcrumbComponent.Item style={{ maxWidth: '20%' }}>
+        {/* @ts-expect-error */}
+        <BreadcrumbComponent.Item style={{ maxWidth: "20%" }}>
           <div className="text-overflow-ellipsis" title="About">
             <a href="/">About</a>
           </div>
         </BreadcrumbComponent.Item>
-        <BreadcrumbComponent.Item style={{ maxWidth: '50%' }}>
+        {/* @ts-expect-error */}
+        <BreadcrumbComponent.Item style={{ maxWidth: "50%" }}>
           <div className="text-overflow-ellipsis" title="History">
             History
           </div>
@@ -75,5 +77,5 @@ export const Breadcrumb = () => (
 );
 
 Breadcrumb.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

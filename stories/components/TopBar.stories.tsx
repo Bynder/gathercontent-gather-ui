@@ -1,5 +1,4 @@
 import React from "react";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { ButtonIcon, MenuItem } from "lib";
 import StoryItem from "../styleguide/StoryItem";
 import TopBar from "../../lib/TopBar";

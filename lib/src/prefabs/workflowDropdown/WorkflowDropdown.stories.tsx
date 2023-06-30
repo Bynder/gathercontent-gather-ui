@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   AssigneeDropdown,
   Person,
@@ -6,95 +6,96 @@ import {
   ButtonPrimary,
   TextForm,
   Label,
-  DueDateDropdown
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  DueDateDropdown,
+} from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
+import StoryItem from "stories/styleguide/StoryItem";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from 'faker';
-import moment from 'moment';
-import Dropdown from '../../../Dropdown';
-import { WorkflowStep } from '../../components/workflowStep/workflowStep';
-import { WorkflowDropdown as WorkflowDropdownComponent } from './WorkflowDropdown';
+import faker from "faker";
+import moment from "moment";
+import Dropdown from "../../../Dropdown";
+import { WorkflowStep } from "../../components/workflowStep/workflowStep";
+import { WorkflowDropdown as WorkflowDropdownComponent } from "./WorkflowDropdown";
 
 export default {
-  title: 'GUI/Dropdowns/Workflow Dropdown',
+  title: "GUI/Dropdowns/Workflow Dropdown",
   component: WorkflowDropdownComponent,
   args: {
-    search: ''
-  }
+    search: "",
+  },
 };
 
-const WorkflowDropdownStory = ({
-  search,
-  assigned,
-  unassigned
-}: any) => {
+const WorkflowDropdownStory = ({ search, assigned, unassigned }: any) => {
   const workflowSteps = [
     {
-      title: 'Draft',
+      title: "Draft",
       description:
-        'Creating the initial draft of content following the project style guide and requirements for this item.',
-      colour: '#F9D006'
+        "Creating the initial draft of content following the project style guide and requirements for this item.",
+      colour: "#F9D006",
     },
     {
-      title: 'Review',
+      title: "Review",
       description:
-        'Content to be approved by key stakeholders. If changes are to be made, pass it back to Draft for another round.',
-      colour: '#006EFF'
+        "Content to be approved by key stakeholders. If changes are to be made, pass it back to Draft for another round.",
+      colour: "#006EFF",
     },
     {
-      title: 'Publish',
-      description: 'Ready to be published to the CMS.',
-      colour: '#6E19E6'
+      title: "Publish",
+      description: "Ready to be published to the CMS.",
+      colour: "#6E19E6",
     },
     {
-      title: 'Live',
-      description: 'Successfully published to the CMS. Live!',
-      colour: '#E51A2B'
-    }
+      title: "Live",
+      description: "Successfully published to the CMS. Live!",
+      colour: "#E51A2B",
+    },
   ];
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const actions = (
     <WorkflowStep.Actions>
-      {(onActionToggle: any) => <>
-        <DueDateDropdown
-          id="due-date-dropdown"
-          selectedDay={moment().toDate()}
-          onToggle={onActionToggle}
-        />
-        <AssigneeDropdown
-          id="assignee-dropdown"
-          searchValue={search}
-          onToggle={onActionToggle}
-        >
-          <DropdownContent.List heading="ASSIGNED">
-            {assigned.map((assignee: any) => <Person
-              key={assignee.name}
-              name={assignee.name}
-              subtitle={assignee.subtitle}
-              avatarUrl={assignee.avatarUrl}
-              selected={assignee.selected}
-              interactive
-              bordered
-            />)}
-          </DropdownContent.List>
-          <DropdownContent.List heading="UNASSIGNED">
-            {unassigned.map((unassignee: any) => <Person
-              key={unassignee.name}
-              name={unassignee.name}
-              subtitle={unassignee.subtitle}
-              avatarUrl={unassignee.avatarUrl}
-              selected={unassignee.selected}
-              interactive
-              bordered
-            />)}
-          </DropdownContent.List>
-        </AssigneeDropdown>
-      </>}
+      {(onActionToggle: any) => (
+        <>
+          <DueDateDropdown
+            id="due-date-dropdown"
+            selectedDay={moment().toDate()}
+            onToggle={onActionToggle}
+          />
+          <AssigneeDropdown
+            id="assignee-dropdown"
+            searchValue={search}
+            onToggle={onActionToggle}
+          >
+            <DropdownContent.List heading="ASSIGNED">
+              {assigned.map((assignee: any) => (
+                <Person
+                  key={assignee.name}
+                  name={assignee.name}
+                  subtitle={assignee.subtitle}
+                  avatarUrl={assignee.avatarUrl}
+                  selected={assignee.selected}
+                  interactive
+                  bordered
+                />
+              ))}
+            </DropdownContent.List>
+            <DropdownContent.List heading="UNASSIGNED">
+              {unassigned.map((unassignee: any) => (
+                <Person
+                  key={unassignee.name}
+                  name={unassignee.name}
+                  subtitle={unassignee.subtitle}
+                  avatarUrl={unassignee.avatarUrl}
+                  selected={unassignee.selected}
+                  interactive
+                  bordered
+                />
+              ))}
+            </DropdownContent.List>
+          </AssigneeDropdown>
+        </>
+      )}
     </WorkflowStep.Actions>
   );
 
@@ -102,9 +103,7 @@ const WorkflowDropdownStory = ({
     <StoryItem title="Workflow Dropdown">
       <WorkflowDropdownComponent>
         <Dropdown.Trigger>
-          {({
-            toggleShowContent
-          }: any) => (
+          {({ toggleShowContent }: any) => (
             <ButtonPrimary onClick={toggleShowContent}>
               Open Dropdown
             </ButtonPrimary>
@@ -130,8 +129,10 @@ const WorkflowDropdownStory = ({
                 <p className="text-neutral-primary text-base pt-2">
                   {step.description}
                 </p>
+                {/* @ts-expect-error */}
                 <TextForm className="pt-4 pr-4">
                   <TextForm.Body className="pb-4">
+                    {/* @ts-expect-error */}
                     <Label htmlFor="test">
                       leave a Note
                       <span className="text-neutral-primary">(OPTIONAL)</span>
@@ -161,7 +162,7 @@ export const WorkflowDropdown = (args: any) => {
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
     avatarUrl: faker.image.avatar(),
-    selected: faker.random.boolean()
+    selected: faker.random.boolean(),
   });
 
   const assigned = [getPerson(), getPerson()];
