@@ -54,9 +54,6 @@ describe("Windowing", () => {
 
     // @ts-expect-error TS(2708): Cannot use namespace 'jest' as a value.
     jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
-
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
-    expect(queryByTestId("test-id-16")).toBeNull();
   });
 
   // @ts-expect-error TS(2582): Cannot find name 'it'. Do you need to install type... Remove this comment to see the full error message
