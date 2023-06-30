@@ -17,11 +17,9 @@ describe("Dropdown", () => {
   beforeEach(() => {
     wrapper = mount(
       <Dropdown onToggle={onToggleMock} onHide={onHideMock} id="id-1">
-        // @ts-expect-error TS(2304): Cannot find name 'Trigger'.
         <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
         <Dropdown.Content>
           <Dropdown.ActionGroup>
-            // @ts-expect-error TS(2304): Cannot find name 'action'.
             <Dropdown.Action action={actionMock}>Howdy</Dropdown.Action>
           </Dropdown.ActionGroup>
         </Dropdown.Content>
@@ -96,12 +94,9 @@ describe("Dropdown", () => {
   test("passing a function as a child shares the ability to set the showing state", () => {
     const newWrapper = mount(
       <Dropdown id="render-prop-test">
-        // @ts-expect-error TS(2349): This expression is not callable.
         {({ setShowContent, showContent }: any) => (
           <Dropdown.Content>
-            // @ts-expect-error TS(2304): Cannot find name 'input'.
             <input onChange={() => setShowContent(!showContent)} />
-            // @ts-expect-error TS(2304): Cannot find name 'input'.
             <input onChange={() => setShowContent(!showContent)} />
           </Dropdown.Content>
         )}

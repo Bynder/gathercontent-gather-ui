@@ -12,7 +12,7 @@ describe("DismissiblePrompt", () => {
   beforeEach(() => {
     wrapper = shallow(
       <DismissiblePrompt onDismiss={onDismissSpy}>
-        // @ts-expect-error TS(2304): Cannot find name 'Hello'. Hello world
+        Hello world
       </DismissiblePrompt>
     );
   });

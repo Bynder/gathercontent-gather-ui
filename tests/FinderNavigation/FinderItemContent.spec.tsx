@@ -10,7 +10,6 @@ describe("FinderNavigation Content", () => {
   beforeEach(() => {
     wrapper = shallow(
       <FinderNavigation.ItemContent>
-        // @ts-expect-error TS(2304): Cannot find name 'hello'.
         <FinderNavigation.ItemSettings>hello!</FinderNavigation.ItemSettings>
       </FinderNavigation.ItemContent>
     );

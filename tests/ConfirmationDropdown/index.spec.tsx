@@ -41,9 +41,7 @@ describe("Confirmation Dropdown blabla", () => {
         onHide={onHideSpy}
         dropdownContent={dropdownContent}
       >
-        // @ts-expect-error TS(2304): Cannot find name 'button'.
         <button type="button" className="im-the-trigger">
-          // @ts-expect-error TS(2304): Cannot find name 'confirmation'. open
           confirmation
         </button>
       </ConfirmationDropdown>
@@ -53,7 +51,7 @@ describe("Confirmation Dropdown blabla", () => {
   // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("renders children", () => {
     // @ts-expect-error TS(2304): Cannot find name 'expect'.
-    expect(wrapper.contains("open confirmation")).toEqual(true);
+    expect(wrapper.contains("confirmation")).toEqual(true);
   });
 
   // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message

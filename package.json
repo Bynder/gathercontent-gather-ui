@@ -71,7 +71,7 @@
     }
   },
   "lint-staged": {
-    "{lib,tests/**/*.js": [
+    "{lib,tests/**/*.tsx": [
       "prettier --write",
       "eslint -c .eslintrc.json --fix",
       "git add"

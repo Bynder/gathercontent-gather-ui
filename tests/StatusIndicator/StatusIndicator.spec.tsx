@@ -16,7 +16,6 @@ describe("StatusIndicator", () => {
         label="Review"
         actions={<div>Test Actions</div>}
       >
-        // @ts-expect-error TS(2304): Cannot find name 'due'. due{" "}
         <span>Tommorrow at 12:00pm</span>
       </StatusIndicator>
     );
@@ -48,7 +47,7 @@ describe("StatusIndicator", () => {
   test("should have a child", () => {
     // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(wrapper.find(".status-indicator__children").text()).toBe(
-      "due Tommorrow at 12:00pm"
+      "Tommorrow at 12:00pm"
     );
   });
 

@@ -11,7 +11,7 @@ describe("Collections table heading", () => {
   beforeEach(() => {
     wrapper = shallow(
       <CollectionsTable.Heading onClick={onClick} className="test">
-        // @ts-expect-error TS(2304): Cannot find name 'Hello'. Hello world
+        Hello world
       </CollectionsTable.Heading>
     );
   });

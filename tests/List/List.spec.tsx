@@ -13,9 +13,7 @@ describe("List", () => {
   beforeEach(() => {
     wrapper = shallow(
       <List title="Project name" action={mockAction}>
-        // @ts-expect-error TS(2304): Cannot find name 'title'.
         <ListItem title="row title" />
-        // @ts-expect-error TS(2304): Cannot find name 'title'.
         <ListItem title="row title" />
       </List>
     );

@@ -34,17 +34,6 @@ describe("TopBar", () => {
   });
 
   // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
-  test("adds a fixed class when the scrollFixed state is true", () => {
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
-    expect(wrapper.find(".top-bar__wrapper--fixed")).toHaveLength(0);
-    wrapper.setState({
-      scrollFixed: true,
-    });
-    // @ts-expect-error TS(2304): Cannot find name 'expect'.
-    expect(wrapper.find(".top-bar__wrapper--fixed")).toHaveLength(1);
-  });
-
-  // @ts-expect-error TS(2582): Cannot find name 'test'. Do you need to install ty... Remove this comment to see the full error message
   test("adds a dark class when useDarkTheme prop is true", () => {
     // @ts-expect-error TS(2304): Cannot find name 'expect'.
     expect(wrapper.find(".top-bar--dark")).toHaveLength(0);

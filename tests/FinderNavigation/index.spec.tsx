@@ -12,7 +12,6 @@ describe("FinderNavigation", () => {
   beforeEach(() => {
     wrapper = shallow(
       <FinderNavigation>
-        // @ts-expect-error TS(2304): Cannot find name 'hello'.
         <FinderNavigation.Group>hello!</FinderNavigation.Group>
       </FinderNavigation>
     );
