@@ -53,7 +53,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "babel lib/ --out-dir dist/lib && babel tailwind.config.js --out-dir dist && npm run compile:css && npm run legacy:copy-styles",
+    "build": "babel --extensions '.ts,.tsx' lib/ --out-dir dist/lib && babel tailwind.config.js --out-dir dist && npm run compile:css && npm run legacy:copy-styles",
     "compile:css": "ENABLE_PURGE=true parcel build styles/prod.scss && npm run compile:tailwind",
     "compile:tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",

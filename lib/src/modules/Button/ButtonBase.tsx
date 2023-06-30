@@ -1,10 +1,10 @@
 /* eslint-disable react/button-has-type */
-import React from 'react';
-import cx from 'classnames';
-import { arrayOf, bool, oneOfType, string } from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib/Icon' or its corresponding... Remove this comment to see the full error message
-import Icon from 'lib/Icon';
-import { defaultProps, propTypes, sizes } from './common';
+import React from "react";
+import cx from "classnames";
+import { arrayOf, bool, oneOfType, string } from "prop-types";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding... Remove this comment to see the full error message
+import Icon from "lib";
+import { defaultProps, propTypes, sizes } from "./common";
 
 function ButtonBase({
   children,
@@ -20,20 +20,20 @@ function ButtonBase({
   defaultFillColor,
   ...rest
 }: any) {
-  const classes = cx('button-base', className, {
-    'button-base-connected-r': connectedRight,
-    'button-base-connected-l': connectedLeft,
+  const classes = cx("button-base", className, {
+    "button-base-connected-r": connectedRight,
+    "button-base-connected-l": connectedLeft,
 
-    'button-base-md': size && size === sizes.md,
-    'button-base-sm': size && size === sizes.sm,
-    'button-base-xs': size && size === sizes.xs
+    "button-base-md": size && size === sizes.md,
+    "button-base-sm": size && size === sizes.sm,
+    "button-base-xs": size && size === sizes.xs,
   });
 
-  if (typeof children === 'function') {
+  if (typeof children === "function") {
     return children(classes);
   }
 
-  const loaderTypesWithDisabled = disabled ? ['dark'] : loaderTypes;
+  const loaderTypesWithDisabled = disabled ? ["dark"] : loaderTypes;
   return (
     <button className={classes} disabled={disabled} ref={buttonRef} {...rest}>
       {loading && !loaderRight && (
@@ -59,13 +59,13 @@ ButtonBase.propTypes = {
   ...propTypes,
   disabled: bool,
   loaderTypes: arrayOf(string),
-  size: oneOfType([string, bool])
+  size: oneOfType([string, bool]),
 };
 
 ButtonBase.defaultProps = {
   ...defaultProps,
   loaderTypes: [],
-  disabled: false
+  disabled: false,
 };
 
 ButtonBase.sizes = sizes;

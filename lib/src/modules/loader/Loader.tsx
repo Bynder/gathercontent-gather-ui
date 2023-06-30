@@ -1,20 +1,15 @@
-import React from 'react';
-import { string } from 'prop-types';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib/Icon' or its corresponding... Remove this comment to see the full error message
-import Icon from 'lib/Icon';
+import React from "react";
+import { string } from "prop-types";
+import cx from "classnames";
+// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding... Remove this comment to see the full error message
+import Icon from "lib";
 
-function Loader({
-  heading,
-  progress,
-  size,
-  className
-}: any) {
+function Loader({ heading, progress, size, className }: any) {
   const baseClassNames = `gc-loader flex items-center flex-col justify-center ${className}`;
   const classNames = cx(baseClassNames, {
-    'loader-sm': size === 'sm',
-    'loader-md': size === 'md',
-    'loader-lrg': size === 'lrg' || progress
+    "loader-sm": size === "sm",
+    "loader-md": size === "md",
+    "loader-lrg": size === "lrg" || progress,
   });
 
   return (
@@ -36,12 +31,12 @@ function Loader({
 
 Loader.propTypes = {
   heading: string,
-  progress: string
+  progress: string,
 };
 
 Loader.defaultProps = {
   heading: null,
-  progress: null
+  progress: null,
 };
 
 export { Loader };

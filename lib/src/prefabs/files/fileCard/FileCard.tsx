@@ -1,8 +1,7 @@
-import React from 'react';
-import { bool, node } from 'prop-types';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib/src/components/card/Card' ... Remove this comment to see the full error message
-import { Card } from 'lib/src/components/card/Card';
+import React from "react";
+import { bool, node } from "prop-types";
+import cx from "classnames";
+import { Card } from "lib";
 
 function FileCard({
   preview,
@@ -14,10 +13,10 @@ function FileCard({
   innerClassName,
   ...cardProps
 }: any) {
-  const cardClassNames = cx('file-card group', cardProps.className, {
-    'w-full': size !== 'thumbnail',
-    'w-8 h-8': size === 'thumbnail',
-    'file-card-inset-meta': insetMeta
+  const cardClassNames = cx("file-card group", cardProps.className, {
+    "w-full": size !== "thumbnail",
+    "w-8 h-8": size === "thumbnail",
+    "file-card-inset-meta": insetMeta,
   });
 
   return (
@@ -40,14 +39,14 @@ FileCard.propTypes = {
   meta: node,
   controls: node,
   insetMeta: bool,
-  preview: node
+  preview: node,
 };
 
 FileCard.defaultProps = {
   insetMeta: false,
   meta: null,
   controls: null,
-  preview: null
+  preview: null,
 };
 
 export { FileCard };
