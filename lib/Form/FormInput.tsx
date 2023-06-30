@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-class FormInput extends Component {
+export class FormInput extends Component {
   static propTypes = {
     type: PropTypes.string,
     focusOnMount: PropTypes.bool,
@@ -16,30 +16,30 @@ class FormInput extends Component {
     paddingSmall: PropTypes.bool,
     hasError: PropTypes.bool,
     errorMessage: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
-    type: 'text',
+    type: "text",
     focusOnMount: false,
-    value: '',
-    placeholder: '',
-    className: '',
+    value: "",
+    placeholder: "",
+    className: "",
     onInputChange: () => {},
     noBorder: false,
     paddingSmall: false,
     fullWidth: false,
     hasError: false,
-    errorMessage: '',
+    errorMessage: "",
     disabled: false,
-    collapse: false
+    collapse: false,
   };
 
   constructor(props: any) {
     // @ts-expect-error TS(2554): Expected 1-2 arguments, but got 0.
     super();
     this.state = {
-      value: props.value || ''
+      value: props.value || "",
     };
   }
 
@@ -83,12 +83,12 @@ class FormInput extends Component {
     const inputValue = this.state.value;
 
     const classNames = cx(`form__input ${className}`, {
-      'form__input--noborder': noBorder,
-      'form__input--full-width': fullWidth,
-      'form__input--padding-small': paddingSmall,
-      'form__input--has-error': hasError,
-      'form__input--display-error': hasError && errorMessage,
-      'form__input--collapse': collapse
+      "form__input--noborder": noBorder,
+      "form__input--full-width": fullWidth,
+      "form__input--padding-small": paddingSmall,
+      "form__input--has-error": hasError,
+      "form__input--display-error": hasError && errorMessage,
+      "form__input--collapse": collapse,
     });
 
     return (

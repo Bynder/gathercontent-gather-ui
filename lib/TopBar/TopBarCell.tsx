@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-const TopBarCell = (props: any) => {
+export const TopBarCell = (props: any) => {
   const classes = cx(`top-bar__cell ${props.className}`, {
-    'top-bar__cell--bordered': props.bordered
+    "top-bar__cell--bordered": props.bordered,
   });
   return <div className={classes}>{props.children}</div>;
 };
@@ -15,15 +15,15 @@ TopBarCell.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.arrayOf(PropTypes.shape())
+    PropTypes.arrayOf(PropTypes.shape()),
   ]),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 TopBarCell.defaultProps = {
   bordered: false,
   children: [],
-  className: ''
+  className: "",
 };
 
 export default TopBarCell;

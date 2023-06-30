@@ -4,7 +4,7 @@ import cx from "classnames";
 import Dropdown from "../Dropdown";
 import ConfirmationDropdownContent from "./ConfirmationDropdownContent";
 
-class ConfirmationDropdown extends Component {
+export class ConfirmationDropdown extends Component {
   state = {
     promiseIsPending: false,
   };

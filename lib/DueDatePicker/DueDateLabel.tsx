@@ -1,12 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Icon from '../Icon';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import Icon from "../Icon";
 
-const DueDateLabel = ({
-  overdue,
-  children
-}: any) => {
+export const DueDateLabel = ({ overdue, children }: any) => {
   if (!children) {
     return (
       <span className="duedate__label duedate__label--button">
@@ -15,8 +12,8 @@ const DueDateLabel = ({
     );
   }
 
-  const classNames = cx('duedate__label', {
-    'color-overdue': overdue
+  const classNames = cx("duedate__label", {
+    "color-overdue": overdue,
   });
 
   return (
@@ -32,12 +29,12 @@ const DueDateLabel = ({
 
 DueDateLabel.propTypes = {
   children: PropTypes.node,
-  overdue: PropTypes.bool
+  overdue: PropTypes.bool,
 };
 
 DueDateLabel.defaultProps = {
   children: null,
-  overdue: false
+  overdue: false,
 };
 
 export default DueDateLabel;

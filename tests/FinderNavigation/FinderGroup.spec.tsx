@@ -1,6 +1,5 @@
 import { React, shallow } from "../setup";
-// @ts-expect-error TS(2305): Module '"../../lib"' has no exported member 'Finde... Remove this comment to see the full error message
-import { FinderNavigation } from "../../lib";
+import { FinderNavigation } from "lib";
 
 // @ts-expect-error TS(2582): Cannot find name 'describe'. Do you need to instal... Remove this comment to see the full error message
 describe("FinderNavigation Group", () => {

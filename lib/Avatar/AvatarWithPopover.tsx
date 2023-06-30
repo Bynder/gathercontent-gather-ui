@@ -1,8 +1,8 @@
-import React from 'react';
-import Tippy from '@tippyjs/react';
+import React from "react";
+import Tippy from "@tippyjs/react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import { v4 as uuid } from 'uuid';
-import Avatar from '.';
+import { v4 as uuid } from "uuid";
+import Avatar from ".";
 
 /**
  * @usage
@@ -15,7 +15,7 @@ import Avatar from '.';
  * </AvatarWithPopover>
  */
 
-function AvatarWithPopover({
+export function AvatarWithPopover({
   email,
   name,
   children,
@@ -46,7 +46,7 @@ function AvatarWithPopover({
 }
 
 AvatarWithPopover.defaultProps = {
-  overlayPosition: 'top'
+  overlayPosition: "top",
 };
 
 export default AvatarWithPopover;

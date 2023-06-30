@@ -5,7 +5,7 @@ import Button from "../Button";
 import ProgressButton from "../ProgressButton";
 import Modal from "../Modal";
 
-const ConfirmationModal = ({
+export const ConfirmationModal = ({
   title,
   introText,
   children,

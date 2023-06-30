@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { action } from '@storybook/addon-actions';
+import React, { useState } from "react";
+import { action } from "@storybook/addon-actions";
 import {
   Modal,
   Button,
@@ -21,16 +21,15 @@ import {
   Col,
   FormInput,
   ButtonPrimaryDanger,
-  ButtonTertiary
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
-import StoryItem from '../styleguide/StoryItem';
+  ButtonTertiary,
+} from "lib";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Modals'
+  title: "Legacy/Modals",
 };
 
-const ModalTrigger = withModalTrigger({ children: 'Show Modal' });
+const ModalTrigger = withModalTrigger({ children: "Show Modal" });
 
 const StatefulFormModal = (props: any) => {
   const [formIsSubmitting, setFormIsSubmitting] = useState(false);
@@ -93,10 +92,10 @@ export const Modals = () => (
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -131,9 +130,9 @@ export const Modals = () => (
                   <div className="modal__illustration">
                     <div
                       style={{
-                        background: 'grey',
-                        height: '100px',
-                        color: 'white'
+                        background: "grey",
+                        height: "100px",
+                        color: "white",
                       }}
                     >
                       Illustration goes here
@@ -166,14 +165,14 @@ export const Modals = () => (
           <Modal.Footer>
             <ButtonTertiary
               size={ButtonTertiary.sizes.md}
-              onClick={action('Cancel delete')}
+              onClick={action("Cancel delete")}
               className="mr-2"
             >
               Cancel
             </ButtonTertiary>
             <ButtonPrimaryDanger
               size={ButtonPrimaryDanger.sizes.md}
-              onClick={action('Confirm delete')}
+              onClick={action("Confirm delete")}
               loading={false}
             >
               Delete
@@ -199,7 +198,7 @@ export const Modals = () => (
             pariatur. Excepteur sint occaecat cupidatat non proident
           </Modal.Body>
           <Modal.Footer>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -401,10 +400,10 @@ export const Modals = () => (
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -444,18 +443,18 @@ export const Modals = () => (
               src="https://placekitten.com/g/500/500"
               alt="A lovely pic!"
               preLoadedStyles={{
-                width: '300px',
-                height: '300px'
+                width: "300px",
+                height: "300px",
               }}
               loadTransition
             />
           </Modal.Body>
           <Modal.Footer>
             <ButtonGroup>
-              <Button onClick={() => {}} types={['icon-only']}>
+              <Button onClick={() => {}} types={["icon-only"]}>
                 <Icon name="download" />
               </Button>
-              <Button onClick={() => {}} types={['icon-only']}>
+              <Button onClick={() => {}} types={["icon-only"]}>
                 <Icon name="trash" />
               </Button>
             </ButtonGroup>
@@ -501,10 +500,10 @@ export const Modals = () => (
             </Row>
           </Modal.Body>
           <Modal.Footer spaceBetween>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -524,10 +523,10 @@ export const Modals = () => (
           />
           <Modal.Body>Look at this lovely image ☝️</Modal.Body>
           <Modal.Footer spaceBetween>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -543,9 +542,9 @@ export const Modals = () => (
         <Modal.Container size="large">
           <Modal.HeaderWithNavigation title="Title!">
             <MenuItem
-              style={{ bottom: '-3px' }}
+              style={{ bottom: "-3px" }}
               active
-              onClick={action('clickHandler')}
+              onClick={action("clickHandler")}
             >
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
               <div className="h-full w-full" role="menuitem" tabIndex={0}>
@@ -553,8 +552,8 @@ export const Modals = () => (
               </div>
             </MenuItem>
             <MenuItem
-              style={{ bottom: '-3px' }}
-              onClick={action('clickHandler')}
+              style={{ bottom: "-3px" }}
+              onClick={action("clickHandler")}
             >
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
               <div className="h-full w-full" role="menuitem" tabIndex={0}>
@@ -564,10 +563,10 @@ export const Modals = () => (
           </Modal.HeaderWithNavigation>
           <Modal.Body>Here is some body️</Modal.Body>
           <Modal.Footer spaceBetween>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -648,10 +647,10 @@ export const Modals = () => (
             </SelectionModal.Column>
           </SelectionModal.Body>
           <Modal.Footer spaceBetween>
-            <Button types={['link']} clickHandler={action('clickHandler')}>
+            <Button types={["link"]} clickHandler={action("clickHandler")}>
               Cancel
             </Button>
-            <Button types={['primary']} clickHandler={action('clickHandler')}>
+            <Button types={["primary"]} clickHandler={action("clickHandler")}>
               Confirm
             </Button>
           </Modal.Footer>
@@ -676,5 +675,5 @@ export const Modals = () => (
 );
 
 Modals.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

@@ -9,7 +9,7 @@ import ToggleFilter from "./ToggleFilter";
 import SearchBoundaryListener from "./SearchBoundaryListener";
 import SearchProvider, { SearchContext } from "./SearchProvider";
 
-class Search extends Component {
+export class Search extends Component {
   static Input = (props: any) => (
     <SearchContext.Consumer>
       {(context: any) => <SearchInput {...context} {...props} />}

@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import DropdownAction from './DropdownAction';
-import DropdownActionGroup from './DropdownActionGroup';
-import { DropdownContent } from './DropdownContent';
-import DropdownSection from './DropdownSection';
-import DropdownTrigger from './DropdownTrigger';
-import DropdownHeader from './DropdownHeader';
-import DropdownFooter from './DropdownFooter';
-import DropdownProvider from './DropdownProvider';
-import DropdownInfo from './DropdownInfo';
+import React from "react";
+import PropTypes from "prop-types";
+import DropdownAction from "./DropdownAction";
+import DropdownActionGroup from "./DropdownActionGroup";
+import { DropdownContent } from "./DropdownContent";
+import DropdownSection from "./DropdownSection";
+import DropdownTrigger from "./DropdownTrigger";
+import DropdownHeader from "./DropdownHeader";
+import DropdownFooter from "./DropdownFooter";
+import DropdownProvider from "./DropdownProvider";
+import DropdownInfo from "./DropdownInfo";
 
-const Dropdown = (props: any) => <DropdownProvider {...props} />;
+export const Dropdown = (props: any) => <DropdownProvider {...props} />;
 
 Dropdown.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
@@ -20,16 +20,16 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   autoPosition: PropTypes.bool,
   block: PropTypes.bool,
-  persistShow: PropTypes.bool
+  persistShow: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
   onToggle: () => {},
   onHide: () => {},
-  className: '',
+  className: "",
   autoPosition: false,
   block: false,
-  persistShow: false
+  persistShow: false,
 };
 
 Dropdown.Action = DropdownAction;

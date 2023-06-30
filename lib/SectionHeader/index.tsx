@@ -1,8 +1,8 @@
-import React from 'react';
-import cx from 'classnames';
-import { SectionHeaderTitle } from './SectionHeaderTitle';
+import React from "react";
+import cx from "classnames";
+import { SectionHeaderTitle } from "./SectionHeaderTitle";
 
-function SectionHeader({
+export function SectionHeader({
   title,
   cta,
   children,
@@ -12,8 +12,8 @@ function SectionHeader({
   ...rest
 }: any) {
   const classes = cx(`section-header ${className}`, {
-    'section-header-collapse': collapse,
-    'section-header-no-border': noBorder
+    "section-header-collapse": collapse,
+    "section-header-no-border": noBorder,
   });
 
   return (
@@ -29,7 +29,7 @@ function SectionHeader({
 SectionHeader.defaultProps = {
   cta: null,
   children: null,
-  className: ''
+  className: "",
 };
 
 export default SectionHeader;

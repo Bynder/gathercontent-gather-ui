@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import cx from 'classnames';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import cx from "classnames";
 
-class CheckToggle extends Component {
+export class CheckToggle extends Component {
   static propTypes = {
     className: PropTypes.string,
     id: PropTypes.string.isRequired,
@@ -17,7 +17,7 @@ class CheckToggle extends Component {
     labelSizeLarge: PropTypes.bool,
     disabled: PropTypes.bool,
     marginSizeLarge: PropTypes.bool,
-    toggleClasses: PropTypes.string
+    toggleClasses: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,7 +25,7 @@ class CheckToggle extends Component {
     labelRight: null,
     clickHandler() {},
     checked: false,
-    className: '',
+    className: "",
     displaySmall: false,
     displayChecked: false,
     autoToggle: true,
@@ -33,7 +33,7 @@ class CheckToggle extends Component {
     disabled: false,
     labelSizeLarge: false,
     marginSizeLarge: false,
-    toggleClasses: ''
+    toggleClasses: "",
   };
 
   constructor(props: any) {
@@ -42,7 +42,7 @@ class CheckToggle extends Component {
     this.onClickHandler = this.onClickHandler.bind(this);
 
     this.state = {
-      checked: props.checked
+      checked: props.checked,
     };
   }
 
@@ -50,7 +50,7 @@ class CheckToggle extends Component {
     // @ts-expect-error TS(2339): Property 'clickHandler' does not exist on type 'Re... Remove this comment to see the full error message
     this.props.clickHandler();
     // @ts-expect-error TS(2339): Property 'checked' does not exist on type 'Readonl... Remove this comment to see the full error message
-    this.setState(prevState => ({ checked: !prevState.checked }));
+    this.setState((prevState) => ({ checked: !prevState.checked }));
   }
 
   render() {
@@ -76,30 +76,30 @@ class CheckToggle extends Component {
       // @ts-expect-error TS(2339): Property 'marginSizeLarge' does not exist on type ... Remove this comment to see the full error message
       marginSizeLarge,
       // @ts-expect-error TS(2339): Property 'toggleClasses' does not exist on type 'R... Remove this comment to see the full error message
-      toggleClasses
+      toggleClasses,
     } = this.props;
 
     // @ts-expect-error TS(2339): Property 'autoToggle' does not exist on type 'Read... Remove this comment to see the full error message
     const checked = this.props.autoToggle
-      // @ts-expect-error TS(2339): Property 'checked' does not exist on type 'Readonl... Remove this comment to see the full error message
-      ? this.state.checked
-      // @ts-expect-error TS(2339): Property 'checked' does not exist on type 'Readonl... Remove this comment to see the full error message
-      : this.props.checked;
+      ? // @ts-expect-error TS(2339): Property 'checked' does not exist on type 'Readonl... Remove this comment to see the full error message
+        this.state.checked
+      : // @ts-expect-error TS(2339): Property 'checked' does not exist on type 'Readonl... Remove this comment to see the full error message
+        this.props.checked;
 
     const wrapperClasses = cx(`toggle-wrapper ${className}`, {
-      'size-small': displaySmall,
-      'is-checked': displayChecked && checked,
-      'h-justify-content-space-between': spaceBetween,
-      'margin-large': marginSizeLarge,
-      disabled
+      "size-small": displaySmall,
+      "is-checked": displayChecked && checked,
+      "h-justify-content-space-between": spaceBetween,
+      "margin-large": marginSizeLarge,
+      disabled,
     });
 
-    const switchLabelClasses = cx('toggle-switch__label', {
-      'label-size-large': labelSizeLarge
+    const switchLabelClasses = cx("toggle-switch__label", {
+      "label-size-large": labelSizeLarge,
     });
 
-    const wrapperLabelClasses = cx('toggle-wrapper__label', {
-      'label-size-large': labelSizeLarge
+    const wrapperLabelClasses = cx("toggle-wrapper__label", {
+      "label-size-large": labelSizeLarge,
     });
 
     return (

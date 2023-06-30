@@ -1,17 +1,17 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/loading.svg' or i... Remove this comment to see the full error message
-import loadingSVG from '../../assets/loading.svg';
+import loadingSVG from "../../assets/loading.svg";
 
-const LoadingOverlay = ({
+export const LoadingOverlay = ({
   fixed,
   hideSVG,
   percentageLoaded,
-  loadingText
+  loadingText,
 }: any) => {
-  const className = cx('loading-overlay', {
-    'loading-overlay--fixed': fixed
+  const className = cx("loading-overlay", {
+    "loading-overlay--fixed": fixed,
   });
 
   return (
@@ -35,14 +35,14 @@ LoadingOverlay.propTypes = {
   fixed: PropTypes.bool,
   hideSVG: PropTypes.bool,
   percentageLoaded: PropTypes.number,
-  loadingText: PropTypes.string
+  loadingText: PropTypes.string,
 };
 
 LoadingOverlay.defaultProps = {
   fixed: false,
   hideSVG: false,
   percentageLoaded: 0,
-  loadingText: 'Loading'
+  loadingText: "Loading",
 };
 
 export default LoadingOverlay;

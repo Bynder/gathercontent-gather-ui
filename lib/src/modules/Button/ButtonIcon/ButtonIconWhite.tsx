@@ -1,17 +1,16 @@
-import React from 'react';
-import { bool } from 'prop-types';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { Icon } from 'lib';
-import { ButtonBase } from '../ButtonBase';
+import React from "react";
+import { bool } from "prop-types";
+import cx from "classnames";
+import { Icon } from "lib";
+import { ButtonBase } from "../ButtonBase";
 import {
   sizes,
   getSizeClasses,
   buttonIconPropTypes,
-  buttonIconDefaultProps
-} from '../common';
+  buttonIconDefaultProps,
+} from "../common";
 
-function ButtonIconWhite({
+export function ButtonIconWhite({
   className,
   disabled,
   name,
@@ -23,11 +22,11 @@ function ButtonIconWhite({
   ...rest
 }: any) {
   const classes = cx(
-    'button-icon',
-    'button-icon-white',
+    "button-icon",
+    "button-icon-white",
     className,
     {
-      'rounded-small': size === sizes.sm
+      "rounded-small": size === sizes.sm,
     },
     getSizeClasses(size)
   );
@@ -46,12 +45,12 @@ ButtonIconWhite.sizes = sizes;
 
 ButtonIconWhite.propTypes = {
   ...buttonIconPropTypes,
-  enabled: bool
+  enabled: bool,
 };
 
 ButtonIconWhite.defaultProps = {
   ...buttonIconDefaultProps,
-  enabled: false
+  enabled: false,
 };
 
 export default ButtonIconWhite;

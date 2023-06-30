@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-class Form extends Component {
+export class Form extends Component {
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown, false);
+    document.addEventListener("keydown", this.handleKeyDown, false);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown, false);
+    document.removeEventListener("keydown", this.handleKeyDown, false);
   }
 
   handleSubmit = (e: any) => {
@@ -41,7 +41,7 @@ class Form extends Component {
       ...rest
     } = this.props;
 
-    const classNames = cx(className, { 'form--disabled': disabled });
+    const classNames = cx(className, { "form--disabled": disabled });
 
     return (
       <form onSubmit={this.handleSubmit} className={classNames} {...rest}>
@@ -58,15 +58,15 @@ Form.propTypes = {
   onCancel: PropTypes.func,
   className: PropTypes.string,
   escToClose: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 // @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 Form.defaultProps = {
   onCancel() {},
-  className: '',
+  className: "",
   escToClose: false,
-  disabled: false
+  disabled: false,
 };
 
 export default Form;

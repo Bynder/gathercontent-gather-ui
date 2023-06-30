@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Icon from '../Icon';
-import SearchResults from './SearchResults';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import Icon from "../Icon";
+import SearchResults from "./SearchResults";
 
-class SearchDropdown extends Component {
+export class SearchDropdown extends Component {
   input: any;
 
   constructor() {
@@ -12,7 +12,7 @@ class SearchDropdown extends Component {
     super();
 
     this.state = {
-      inputValue: ''
+      inputValue: "",
     };
 
     this.input = React.createRef();
@@ -25,7 +25,7 @@ class SearchDropdown extends Component {
   };
 
   clearInputValue = () => {
-    this.setState({ inputValue: '' });
+    this.setState({ inputValue: "" });
     // @ts-expect-error TS(2339): Property 'onInputClear' does not exist on type 'Re... Remove this comment to see the full error message
     this.props.onInputClear();
   };
@@ -45,7 +45,7 @@ class SearchDropdown extends Component {
       // @ts-expect-error TS(2339): Property 'focusOnMount' does not exist on type 'Re... Remove this comment to see the full error message
       focusOnMount,
       // @ts-expect-error TS(2339): Property 'placeholder' does not exist on type 'Rea... Remove this comment to see the full error message
-      placeholder
+      placeholder,
     } = this.props;
 
     const showResults =
@@ -54,13 +54,13 @@ class SearchDropdown extends Component {
 
     const menuClass = cx(`search-dropdown ${className}`, {
       // @ts-expect-error TS(2339): Property 'direction' does not exist on type 'Reado... Remove this comment to see the full error message
-      dropup: this.props.direction === 'up',
-      'full-width': fullWidth,
-      open: showResults
+      dropup: this.props.direction === "up",
+      "full-width": fullWidth,
+      open: showResults,
     });
 
     const listClass = cx(`dropdown-menu ${listClassName}`, {
-      'align-right': alignRight
+      "align-right": alignRight,
     });
 
     return (
@@ -105,17 +105,17 @@ class SearchDropdown extends Component {
 
 // @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 SearchDropdown.defaultProps = {
-  placeholder: 'Search...',
+  placeholder: "Search...",
   alignRight: false,
   results: [],
-  className: '',
-  listClassName: '',
+  className: "",
+  listClassName: "",
   fullWidth: false,
-  resultsTitle: 'Results',
+  resultsTitle: "Results",
   handleOnChange: () => {},
   onInputClear: () => {},
-  direction: 'down',
-  focusOnMount: false
+  direction: "down",
+  focusOnMount: false,
 };
 
 // @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
@@ -131,7 +131,7 @@ SearchDropdown.propTypes = {
   listClassName: PropTypes.string,
   handleOnChange: PropTypes.func,
   onInputClear: PropTypes.func,
-  focusOnMount: PropTypes.bool
+  focusOnMount: PropTypes.bool,
 };
 
 export default SearchDropdown;

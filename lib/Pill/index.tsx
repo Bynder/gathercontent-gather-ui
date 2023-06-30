@@ -1,20 +1,16 @@
-import React from 'react';
-import { oneOf } from 'prop-types';
-import { propTypes, defaultProps, types, sizes } from './common';
-import PillDefault from './PillDefault';
-import PillRed from './PillRed';
-import PillGreen from './PillGreen';
-import PillPurple from './PillPurple';
-import PillGreenWhiteText from './PillGreenWhiteText';
-import PillBlueWhiteText from './PillBlueWhiteText';
-import PillYellow from './PillYellow';
-import { PillBeta } from './PillBeta';
+import React from "react";
+import { oneOf } from "prop-types";
+import { propTypes, defaultProps, types, sizes } from "./common";
+import PillDefault from "./PillDefault";
+import PillRed from "./PillRed";
+import PillGreen from "./PillGreen";
+import PillPurple from "./PillPurple";
+import PillGreenWhiteText from "./PillGreenWhiteText";
+import PillBlueWhiteText from "./PillBlueWhiteText";
+import PillYellow from "./PillYellow";
+import { PillBeta } from "./PillBeta";
 
-const Pill = ({
-  type,
-  children,
-  ...rest
-}: any) => {
+export const Pill = ({ type, children, ...rest }: any) => {
   const getPill = () => {
     switch (type) {
       case types.red:
@@ -42,12 +38,12 @@ const Pill = ({
 
 Pill.propTypes = {
   ...propTypes,
-  type: oneOf(Object.keys(types))
+  type: oneOf(Object.keys(types)),
 };
 
 Pill.defaultProps = {
   ...defaultProps,
-  type: types.default
+  type: types.default,
 };
 
 Pill.types = types;

@@ -1,25 +1,21 @@
-import React from 'react';
-import { string } from 'prop-types';
-import { defaults, types } from './barTypes';
-import NotificationBarDanger from './NotificationBarDanger';
-import NotificationBarInformation from './NotificationBarInformation';
-import NotificationBarPromo from './NotificationBarPromo';
-import NotificationBarWarning from './NotificationBarWarning';
+import React from "react";
+import { string } from "prop-types";
+import { defaults, types } from "./barTypes";
+import NotificationBarDanger from "./NotificationBarDanger";
+import NotificationBarInformation from "./NotificationBarInformation";
+import NotificationBarPromo from "./NotificationBarPromo";
+import NotificationBarWarning from "./NotificationBarWarning";
 
-const NotificationBar = ({
-  level,
-  children,
-  ...rest
-}: any) => {
+export const NotificationBar = ({ level, children, ...rest }: any) => {
   const getNotificationBar = () => {
     switch (level) {
-      case 'warning':
+      case "warning":
         return NotificationBarWarning;
-      case 'danger':
+      case "danger":
         return NotificationBarDanger;
-      case 'information':
+      case "information":
         return NotificationBarInformation;
-      case 'promo':
+      case "promo":
         return NotificationBarPromo;
       default:
         return null;
@@ -33,12 +29,12 @@ const NotificationBar = ({
 
 NotificationBar.defaultProps = {
   ...defaults,
-  level: 'warning'
+  level: "warning",
 };
 
 NotificationBar.propTypes = {
   ...types,
-  level: string
+  level: string,
 };
 
 export default NotificationBar;

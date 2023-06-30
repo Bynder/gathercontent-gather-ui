@@ -1,25 +1,21 @@
-import React from 'react';
-import { string } from 'prop-types';
-import { defaults, types } from './inlineTypes';
-import NotificationInlineDanger from './NotificationInlineDanger';
-import NotificationInlineInformation from './NotificationInlineInformation';
-import NotificationInlineSuccess from './NotificationInlineSuccess';
-import NotificationInlineWarning from './NotificationInlineWarning';
+import React from "react";
+import { string } from "prop-types";
+import { defaults, types } from "./inlineTypes";
+import NotificationInlineDanger from "./NotificationInlineDanger";
+import NotificationInlineInformation from "./NotificationInlineInformation";
+import NotificationInlineSuccess from "./NotificationInlineSuccess";
+import NotificationInlineWarning from "./NotificationInlineWarning";
 
-const NotificationInline = ({
-  level,
-  children,
-  ...rest
-}: any) => {
+export const NotificationInline = ({ level, children, ...rest }: any) => {
   const getInlineNotification = () => {
     switch (level) {
-      case 'warning':
+      case "warning":
         return NotificationInlineWarning;
-      case 'danger':
+      case "danger":
         return NotificationInlineDanger;
-      case 'information':
+      case "information":
         return NotificationInlineInformation;
-      case 'success':
+      case "success":
         return NotificationInlineSuccess;
       default:
         return null;
@@ -33,12 +29,12 @@ const NotificationInline = ({
 
 NotificationInline.defaultProps = {
   ...defaults,
-  level: 'information'
+  level: "information",
 };
 
 NotificationInline.propTypes = {
   ...types,
-  level: string
+  level: string,
 };
 
 export default NotificationInline;

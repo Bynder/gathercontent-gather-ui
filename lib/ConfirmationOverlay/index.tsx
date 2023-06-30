@@ -1,22 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 import {
   ButtonPrimary,
   ButtonPrimaryDanger,
   ButtonTertiary,
-  useLoader
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
-import Icon from '../Icon';
+  useLoader,
+} from "lib";
+import Icon from "../Icon";
 
-const ConfirmationOverlay = ({
+export const ConfirmationOverlay = ({
   confirm,
   cancel,
   confirmationText,
   failureText,
   className,
-  show
+  show,
 }: any) => {
   const [hasFailed, setHasFailed] = useState(false);
   const setHasFailedTimeout = useRef(null);
@@ -43,7 +42,7 @@ const ConfirmationOverlay = ({
   const [isSubmitting, handleSubmitWithLoader] = useLoader(handleConfirm);
 
   const classNames = cx(`confirmation-overlay ${className}`, {
-    'confirmation-overlay--show': show
+    "confirmation-overlay--show": show,
   });
 
   return (
@@ -75,14 +74,14 @@ ConfirmationOverlay.propTypes = {
   className: PropTypes.string,
   confirmationText: PropTypes.string,
   show: PropTypes.bool,
-  failureText: PropTypes.string
+  failureText: PropTypes.string,
 };
 
 ConfirmationOverlay.defaultProps = {
-  className: '',
-  confirmationText: 'Confirm',
+  className: "",
+  confirmationText: "Confirm",
   show: false,
-  failureText: ''
+  failureText: "",
 };
 
 export default ConfirmationOverlay;

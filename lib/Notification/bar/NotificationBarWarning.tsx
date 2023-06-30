@@ -1,8 +1,8 @@
-import React from 'react';
-import { defaults, types } from './barTypes';
-import NotificationBarBase from './NotificationBarBase';
+import React from "react";
+import { defaults, types } from "./barTypes";
+import NotificationBarBase from "./NotificationBarBase";
 
-const NotificationBarWarning = ({
+export const NotificationBarWarning = ({
   children,
   className,
   ...rest

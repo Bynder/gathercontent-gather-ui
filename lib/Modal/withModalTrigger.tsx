@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Button from '../Button';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Button from "../Button";
 
-export default function(buttonProps: any) {
-  class withModalTrigger extends Component {
+export function withModalTrigger(buttonProps: any) {
+  class withModalTriggerComponent extends Component {
     constructor(props: any) {
       super(props);
       this.state = { show: false };
@@ -12,7 +12,7 @@ export default function(buttonProps: any) {
     }
 
     static propTypes = {
-      children: PropTypes.node.isRequired
+      children: PropTypes.node.isRequired,
     };
 
     onHide() {
@@ -27,15 +27,16 @@ export default function(buttonProps: any) {
       return (
         <div>
           <Button {...buttonProps} clickHandler={this.showModal} />
-          {React.Children.map(this.props.children, (child: any) => React.cloneElement(child, {
-            ...this.state,
-            onHide: this.onHide
-          })
+          {React.Children.map(this.props.children, (child: any) =>
+            React.cloneElement(child, {
+              ...this.state,
+              onHide: this.onHide,
+            })
           )}
         </div>
       );
     }
   }
 
-  return withModalTrigger;
+  return withModalTriggerComponent;
 }

@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes, { arrayOf, shape } from "prop-types";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Col, Person, Row } from "lib";
 import { Conversation } from "../Conversation/Conversation";
 import { Comment } from "../Comment/Comment";
 
-const ConversationContext = ({
+export const ConversationContext = ({
   label,
   children,
   userCanResolve,

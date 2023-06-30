@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events jsx-a11y/no-noninteractive-element-interactions  */
 
-import React from 'react';
-import Tippy from '@tippyjs/react';
+import React from "react";
+import Tippy from "@tippyjs/react";
 
-function TooltipWrapper({
+export function TooltipWrapper({
   tooltipText,
   children,
   theme,
@@ -44,14 +44,14 @@ function TooltipWrapper({
 }
 
 TooltipWrapper.defaultProps = {
-  className: '',
-  placement: 'top',
-  trigger: 'mouseenter focus',
-  tooltipText: '',
-  wrapperClassName: '',
+  className: "",
+  placement: "top",
+  trigger: "mouseenter focus",
+  tooltipText: "",
+  wrapperClassName: "",
   tabbable: true,
-  theme: 'dark',
-  onClick: () => {}
+  theme: "dark",
+  onClick: () => {},
 };
 
 export default TooltipWrapper;

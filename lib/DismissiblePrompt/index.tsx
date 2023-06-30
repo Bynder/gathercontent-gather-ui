@@ -1,9 +1,9 @@
-import React from 'react';
-import { node, string, func } from 'prop-types';
-import Icon from '../Icon';
-import Button from '../Button';
+import React from "react";
+import { node, string, func } from "prop-types";
+import Icon from "../Icon";
+import Button from "../Button";
 
-const DismissiblePrompt = ({
+export const DismissiblePrompt = ({
   children,
   onDismiss,
   className,
@@ -12,7 +12,7 @@ const DismissiblePrompt = ({
   <div {...rest} className={`dismissible-prompt ${className}`}>
     <div className="dismissible-prompt__children">{children}</div>
     <Button
-      types={['icon-only', 'collapse']}
+      types={["icon-only", "collapse"]}
       className="dismissible-prompt__close"
       onClick={onDismiss}
     >
@@ -24,11 +24,11 @@ const DismissiblePrompt = ({
 DismissiblePrompt.propTypes = {
   children: node.isRequired,
   className: string,
-  onDismiss: func.isRequired
+  onDismiss: func.isRequired,
 };
 
 DismissiblePrompt.defaultProps = {
-  className: ''
+  className: "",
 };
 
 export default DismissiblePrompt;

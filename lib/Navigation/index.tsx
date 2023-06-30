@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-const Navigation = (props: any) => {
+export const Navigation = (props: any) => {
   const classes = cx(`navigation ${props.className}`, {
-    'navigation--tabs': props.tabs
+    "navigation--tabs": props.tabs,
   });
 
   return (
@@ -12,15 +12,15 @@ const Navigation = (props: any) => {
       {React.Children.map(props.children, (child: any) => {
         if (child?.props) {
           const itemClasses = cx(
-            'navigation__item',
-            child.props.className || '',
+            "navigation__item",
+            child.props.className || "",
             {
-              'navigation__item--active': child.props.active
+              "navigation__item--active": child.props.active,
             }
           );
 
           const newProps = {
-            className: itemClasses
+            className: itemClasses,
           };
 
           return React.cloneElement(child, newProps);
@@ -32,7 +32,7 @@ const Navigation = (props: any) => {
 
 Navigation.defaultProps = {
   tabs: false,
-  className: ''
+  className: "",
 };
 
 Navigation.propTypes = {
@@ -41,9 +41,9 @@ Navigation.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.arrayOf(PropTypes.shape())
+    PropTypes.arrayOf(PropTypes.shape()),
   ]).isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Navigation;

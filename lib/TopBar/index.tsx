@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from "react";
 import cx from "classnames";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
 import { Grid, Row } from "lib";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -18,7 +17,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   useLightGreyTheme?: boolean;
 }
 
-function TopBar({
+export function TopBar({
   className,
   children,
   fixed,

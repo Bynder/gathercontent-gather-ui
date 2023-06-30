@@ -1,10 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const ParticipantInfo = ({
-  name,
-  email
-}: any) => (
+export const ParticipantInfo = ({ name, email }: any) => (
   <div className="participant_info">
     <p className="participant_info__name">{name}</p>
     <p className="participant_info__email">{email}</p>
@@ -13,7 +10,7 @@ const ParticipantInfo = ({
 
 ParticipantInfo.propTypes = {
   name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired
+  email: PropTypes.string.isRequired,
 };
 
 export default ParticipantInfo;

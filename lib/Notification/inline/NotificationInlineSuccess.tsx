@@ -1,10 +1,10 @@
-import React from 'react';
-import { defaults, types } from './inlineTypes';
-import NotificationInlineBase from './NotificationInlineBase';
+import React from "react";
+import { defaults, types } from "./inlineTypes";
+import NotificationInlineBase from "./NotificationInlineBase";
 
-const NotificationInlineSuccess = ({
+export const NotificationInlineSuccess = ({
   children,
-  className = '',
+  className = "",
   ...rest
 }: any) => (
   <NotificationInlineBase

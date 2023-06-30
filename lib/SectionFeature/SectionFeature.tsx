@@ -1,16 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-const SectionFeature = ({
+export const SectionFeature = ({
   children,
   extendTop,
   enhanceIntro,
-  className
+  className,
 }: any) => {
   const classNames = cx(`section-feature ${className}`, {
-    'section-feature--extend-top': extendTop,
-    'section-feature--enhance-intro': enhanceIntro
+    "section-feature--extend-top": extendTop,
+    "section-feature--enhance-intro": enhanceIntro,
   });
 
   return <div className={classNames}>{children}</div>;
@@ -21,17 +21,17 @@ SectionFeature.propTypes = {
     PropTypes.string,
     PropTypes.node,
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.shape()
+    PropTypes.shape(),
   ]).isRequired,
   extendTop: PropTypes.bool,
   enhanceIntro: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 SectionFeature.defaultProps = {
   extendTop: false,
   enhanceIntro: false,
-  className: ''
+  className: "",
 };
 
 export default SectionFeature;

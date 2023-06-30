@@ -30,7 +30,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   isHovered?: boolean;
 }
 
-function ColField({
+export function ColField({
   children,
   className,
   visible,

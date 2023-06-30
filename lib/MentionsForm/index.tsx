@@ -7,7 +7,7 @@ import ShortcutTrigger from "../ShortcutTrigger/index";
 import MentionsFormInput from "./MentionsFormInput";
 import { MENTION_REGEX, MENTION_OR_AT_REGEX } from "../constants";
 
-class MentionsForm extends Component {
+export class MentionsForm extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onInputChange: PropTypes.func,

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
-import React, { createContext, useEffect, useRef, useState } from 'react';
-import { func, bool, string, number, oneOfType, node } from 'prop-types';
+import React, { createContext, useEffect, useRef, useState } from "react";
+import { func, bool, string, number, oneOfType, node } from "prop-types";
 
 const getElementPath = (targetElement: any) => {
   let path = [targetElement];
@@ -20,9 +20,12 @@ const getElementPath = (targetElement: any) => {
   return addParentToPath(targetElement);
 };
 
-const removeDocumentEventListener = (handleClickRef: any, handleMouseDownRef: any) => {
-  document.removeEventListener('click', handleClickRef.current);
-  document.removeEventListener('mousedown', handleMouseDownRef.current);
+const removeDocumentEventListener = (
+  handleClickRef: any,
+  handleMouseDownRef: any
+) => {
+  document.removeEventListener("click", handleClickRef.current);
+  document.removeEventListener("mousedown", handleMouseDownRef.current);
   handleClickRef.current = null;
   handleMouseDownRef.current = null;
 };
@@ -40,13 +43,13 @@ const addDocumentEventListener = (
 
   handleClickRef.current = handleClick;
   handleMouseDownRef.current = handleMouseDown;
-  document.addEventListener('click', handleClickRef.current);
-  document.addEventListener('mousedown', handleMouseDownRef.current);
+  document.addEventListener("click", handleClickRef.current);
+  document.addEventListener("mousedown", handleMouseDownRef.current);
 };
 
 const BoundaryClickWatcherContext = createContext({});
 
-function BoundaryClickWatcher(props: any) {
+export function BoundaryClickWatcher(props: any) {
   const [boundaryIsActive, setBoundaryIsActive] = useState(props.isActive);
   const [boundaryIsFocussed, setBoundaryIsFocussed] = useState(
     props.isFocussed
@@ -74,9 +77,7 @@ function BoundaryClickWatcher(props: any) {
     props.outsideClickHandler(event);
   };
 
-  const handleMouseDown = ({
-    target
-  }: any) => {
+  const handleMouseDown = ({ target }: any) => {
     clickedElementPath.current = getElementPath(target);
   };
 
@@ -136,7 +137,7 @@ function BoundaryClickWatcher(props: any) {
     boundaryIsActive,
     boundaryIsFocussed,
     clickedElementPath,
-    containerRef
+    containerRef,
   };
 
   return (
@@ -155,7 +156,7 @@ function BoundaryClickWatcher(props: any) {
         onBlur={handleBlur}
         onFocus={handleFocus}
       >
-        {typeof props.children === 'function'
+        {typeof props.children === "function"
           ? props.children(boundaryIsActive, boundaryIsFocussed)
           : props.children}
       </BoundaryElement>
@@ -175,7 +176,7 @@ BoundaryClickWatcher.propTypes = {
   onMouseLeave: func,
   BoundaryElement: string,
   tabIndex: number,
-  outsideClickEventValidator: func
+  outsideClickEventValidator: func,
 };
 
 BoundaryClickWatcher.defaultProps = {
@@ -183,13 +184,13 @@ BoundaryClickWatcher.defaultProps = {
   outsideClickHandler() {},
   onMouseEnter() {},
   onMouseLeave() {},
-  className: '',
+  className: "",
   alwaysListen: false,
   isActive: false,
   isFocussed: false,
-  BoundaryElement: 'div',
+  BoundaryElement: "div",
   tabIndex: 0,
-  outsideClickEventValidator: () => true
+  outsideClickEventValidator: () => true,
 };
 
 export default BoundaryClickWatcher;

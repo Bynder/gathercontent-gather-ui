@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { EditableTextWrapper } from 'lib';
+import React from "react";
+import PropTypes from "prop-types";
+import { EditableTextWrapper } from "lib";
 
-const PageInformation = ({
+export const PageInformation = ({
   title,
   subtitle,
   editable,
   rename,
   contextName,
-  inputLabel
+  inputLabel,
 }: any) => (
   <div className="page-information">
     {editable ? (
@@ -40,15 +39,15 @@ PageInformation.propTypes = {
   editable: PropTypes.bool,
   rename: PropTypes.func,
   contextName: PropTypes.string,
-  inputLabel: PropTypes.string
+  inputLabel: PropTypes.string,
 };
 
 PageInformation.defaultProps = {
-  subtitle: '',
+  subtitle: "",
   editable: false,
   rename: () => {},
-  contextName: '',
-  inputLabel: ''
+  contextName: "",
+  inputLabel: "",
 };
 
 export default PageInformation;

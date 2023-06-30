@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Icon from '../../Icon';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import Icon from "../../Icon";
 
-class ImageLoader extends PureComponent {
+export class ImageLoader extends PureComponent {
   static propTypes = {
     alt: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
@@ -11,14 +11,14 @@ class ImageLoader extends PureComponent {
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
     preLoadedStyles: PropTypes.shape(),
     onLoad: PropTypes.func,
-    onError: PropTypes.func
+    onError: PropTypes.func,
   };
 
   static defaultProps = {
     loadTransition: false,
     preLoadedStyles: {},
     onLoad: () => {},
-    onError: () => {}
+    onError: () => {},
   };
 
   image: any;
@@ -26,7 +26,7 @@ class ImageLoader extends PureComponent {
   state = {
     imageHasLoaded: false,
     showImage: false,
-    imageHasErrored: false
+    imageHasErrored: false,
   };
 
   showImage = () => setTimeout(() => this.setState({ showImage: true }), 200);
@@ -48,10 +48,10 @@ class ImageLoader extends PureComponent {
     const { alt, src, loadTransition, preLoadedStyles, ...rest } = this.props;
     const { imageHasLoaded, imageHasErrored, showImage } = this.state;
 
-    const classNames = cx('image-loader', {
-      'image-loader--loaded': imageHasLoaded,
-      'image-loader--errored': imageHasErrored,
-      'image-loader--show': showImage
+    const classNames = cx("image-loader", {
+      "image-loader--loaded": imageHasLoaded,
+      "image-loader--errored": imageHasErrored,
+      "image-loader--show": showImage,
     });
 
     let style;
@@ -66,7 +66,7 @@ class ImageLoader extends PureComponent {
     if (imageHasLoadedAndTransitionRequired) {
       style = {
         width: `${this.image.width}px`,
-        height: `${this.image.height}px`
+        height: `${this.image.height}px`,
       };
     }
 
@@ -78,7 +78,7 @@ class ImageLoader extends PureComponent {
           onError={this.handleOnError}
           alt={alt}
           src={src}
-          ref={image => {
+          ref={(image) => {
             this.image = image;
           }}
         />

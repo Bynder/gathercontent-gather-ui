@@ -1,18 +1,14 @@
-import React from 'react';
-import { node, string, bool } from 'prop-types';
-import FinderPanelLayoutProvider from './FinderPanelLayoutProvider';
-import FinderPanelLayoutLeft from './FinderPanelLayoutLeft';
-import FinderPanelLayoutRight from './FinderPanelLayoutRight';
-import FinderPanelLayoutHeader from './FinderPanelLayoutHeader';
-import FinderPanelLayoutLeftContent from './FinderPanelLayoutLeftContent';
+import React from "react";
+import { node, string, bool } from "prop-types";
+import FinderPanelLayoutProvider from "./FinderPanelLayoutProvider";
+import FinderPanelLayoutLeft from "./FinderPanelLayoutLeft";
+import FinderPanelLayoutRight from "./FinderPanelLayoutRight";
+import FinderPanelLayoutHeader from "./FinderPanelLayoutHeader";
+import FinderPanelLayoutLeftContent from "./FinderPanelLayoutLeftContent";
 
 export const FinderPanelLayoutContext = React.createContext({});
 
-const FinderPanelLayout = ({
-  children,
-  className,
-  fixed
-}: any) => {
+export const FinderPanelLayout = ({ children, className, fixed }: any) => {
   return (
     <FinderPanelLayoutProvider fixed={fixed}>
       <div className={`finder-panel-layout ${className}`}>{children}</div>
@@ -31,12 +27,12 @@ FinderPanelLayout.LeftContent = FinderPanelLayoutLeftContent;
 FinderPanelLayout.propTypes = {
   children: node.isRequired,
   className: string,
-  fixed: bool
+  fixed: bool,
 };
 
 FinderPanelLayout.defaultProps = {
-  className: '',
-  fixed: false
+  className: "",
+  fixed: false,
 };
 
 export default FinderPanelLayout;

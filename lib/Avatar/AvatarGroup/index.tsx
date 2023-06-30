@@ -5,7 +5,7 @@ import Dropdown from "../../Dropdown";
 import Avatar from "../index";
 import AvatarInformation from "../AvatarInformation";
 
-const AvatarGroup = ({
+export const AvatarGroup = ({
   children,
   maximum,
   className,

@@ -1,19 +1,19 @@
-import { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import { PureComponent } from "react";
+import PropTypes from "prop-types";
 
-class EventCodeWatcher extends PureComponent {
+export class EventCodeWatcher extends PureComponent {
   static propTypes = {
     eventName: PropTypes.string.isRequired,
     onKeyCodePress: PropTypes.func.isRequired,
     keyCode: PropTypes.number.isRequired,
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
     element: PropTypes.shape(),
-    preventDefault: PropTypes.bool
+    preventDefault: PropTypes.bool,
   };
 
   static defaultProps = {
     element: null,
-    preventDefault: false
+    preventDefault: false,
   };
 
   componentDidMount() {

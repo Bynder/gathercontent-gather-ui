@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
-const TopBarGroup = (props: any) => {
-  const classes = cx('top-bar__group', {
-    'top-bar__group--collapse': props.collapse
+export const TopBarGroup = (props: any) => {
+  const classes = cx("top-bar__group", {
+    "top-bar__group--collapse": props.collapse,
   });
   return <div className={classes}>{props.children}</div>;
 };
@@ -15,13 +15,13 @@ TopBarGroup.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
     // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.arrayOf(PropTypes.shape())
-  ])
+    PropTypes.arrayOf(PropTypes.shape()),
+  ]),
 };
 
 TopBarGroup.defaultProps = {
   collapse: false,
-  children: []
+  children: [],
 };
 
 export default TopBarGroup;

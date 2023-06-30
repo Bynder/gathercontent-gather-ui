@@ -1,6 +1,5 @@
 import React, { HTMLAttributes, useState } from "react";
 import cx from "classnames";
-// @ts-expect-error TS(2305): Module '"../index"' has no exported member 'Icon'.
 import { Icon } from "../index";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -21,7 +20,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   onRemove?: () => {};
 }
 
-function Avatar({
+export function Avatar({
   className,
   children,
   wrapperClassName,

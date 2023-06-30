@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { node, string, bool, func, oneOfType } from 'prop-types';
+import React, { useState } from "react";
+import { node, string, bool, func, oneOfType } from "prop-types";
 import {
   Modal,
   FormInput,
   ButtonPrimaryDanger,
   ButtonTertiary,
-  ButtonSecondary
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-} from 'lib';
+  ButtonSecondary,
+} from "lib";
 
-function InputConfirmationModal({
+export function InputConfirmationModal({
   onHide,
   show,
   introTitle,
@@ -24,7 +23,7 @@ function InputConfirmationModal({
   skipConfirm,
   ...rest
 }: any) {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const [showIntro, setShowIntro] = useState(true);
 
   const disableButton = (!skipConfirm && value !== confirmKeyword) || loading;
@@ -86,17 +85,17 @@ InputConfirmationModal.propTypes = {
   onConfirm: func.isRequired,
   className: string,
   loading: bool,
-  skipConfirm: bool
+  skipConfirm: bool,
 };
 
 InputConfirmationModal.defaultProps = {
   onHide: () => {},
   show: false,
-  buttonText: 'Delete',
-  confirmKeyword: 'DELETE',
-  className: '',
+  buttonText: "Delete",
+  confirmKeyword: "DELETE",
+  className: "",
   loading: false,
-  skipConfirm: false
+  skipConfirm: false,
 };
 
 export default InputConfirmationModal;

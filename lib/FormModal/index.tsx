@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Button from '../Button';
-import ProgressButton from '../ProgressButton';
-import Modal from '../Modal';
+import React from "react";
+import PropTypes from "prop-types";
+import Button from "../Button";
+import ProgressButton from "../ProgressButton";
+import Modal from "../Modal";
 
-const FormModal = ({
+export const FormModal = ({
   children,
   title,
   submitText,
@@ -18,13 +18,13 @@ const FormModal = ({
       <Modal.Header>{title}</Modal.Header>
       <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
-        <Button types={['link']} clickHandler={rest.onHide}>
+        <Button types={["link"]} clickHandler={rest.onHide}>
           {cancelText}
         </Button>
         <ProgressButton
           buttonType="primary"
           value={submitText}
-          clickHandler={e => e}
+          clickHandler={(e) => e}
           isSubmit
           useShowSpinnerProp
           showSpinner={formIsSubmitting}
@@ -41,11 +41,11 @@ FormModal.propTypes = {
   submitHandler: PropTypes.func.isRequired,
   cancelText: PropTypes.string.isRequired,
   onHide: PropTypes.func.isRequired,
-  formIsSubmitting: PropTypes.bool
+  formIsSubmitting: PropTypes.bool,
 };
 
 FormModal.defaultProps = {
-  formIsSubmitting: false
+  formIsSubmitting: false,
 };
 
 export default FormModal;

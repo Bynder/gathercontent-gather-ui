@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { string, func, bool, node } from 'prop-types';
-import cx from 'classnames';
+import React, { useState, useRef, useEffect } from "react";
+import { string, func, bool, node } from "prop-types";
+import cx from "classnames";
 
-function EditableChoiceInput({
+export function EditableChoiceInput({
   type,
   className,
   label,
@@ -43,7 +43,7 @@ function EditableChoiceInput({
   };
 
   const classNames = cx(`text-input-border pl-5 pr-2 ${className}`, {
-    'text-input-border-focus': isFocused
+    "text-input-border-focus": isFocused,
   });
 
   return (
@@ -83,18 +83,18 @@ EditableChoiceInput.propTypes = {
   aside: node,
   autoFocus: bool,
   onBlur: func,
-  onFocus: func
+  onFocus: func,
 };
 
 EditableChoiceInput.defaultProps = {
-  className: '',
-  label: '',
-  placeholder: 'Add label text',
+  className: "",
+  label: "",
+  placeholder: "Add label text",
   readOnly: false,
   aside: null,
   autoFocus: false,
   onBlur: () => {},
-  onFocus: () => {}
+  onFocus: () => {},
 };
 
 export default EditableChoiceInput;

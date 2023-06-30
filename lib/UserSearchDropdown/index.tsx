@@ -6,7 +6,7 @@ import TooltipWrapper from "../TooltipWrapper";
 // eslint-disable-next-line import/no-named-as-default
 import UserSearch from "../UserSearch";
 
-class UserSearchDropdown extends Component {
+export class UserSearchDropdown extends Component {
   searchInputRef = React.createRef();
 
   focusSearch = ({ type }: any) => {

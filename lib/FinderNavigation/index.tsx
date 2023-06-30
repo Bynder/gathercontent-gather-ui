@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import FinderGroup from './FinderGroup';
-import FinderItem from './FinderItem';
-import FinderItemContent from './FinderItemContent';
-import FinderItemSettings from './FinderItemSettings';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import FinderGroup from "./FinderGroup";
+import FinderItem from "./FinderItem";
+import FinderItemContent from "./FinderItemContent";
+import FinderItemSettings from "./FinderItemSettings";
 
-class FinderNavigation extends Component {
+export class FinderNavigation extends Component {
   static Group = FinderGroup;
 
   static Item = FinderItem;
@@ -16,11 +16,11 @@ class FinderNavigation extends Component {
 
   static propTypes = {
     children: PropTypes.node.isRequired,
-    className: PropTypes.string
+    className: PropTypes.string,
   };
 
   static defaultProps = {
-    className: ''
+    className: "",
   };
 
   render() {

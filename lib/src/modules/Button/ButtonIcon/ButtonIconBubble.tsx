@@ -1,10 +1,9 @@
-import React from 'react';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { ButtonIcon } from 'lib';
-import cx from 'classnames';
-import { buttonIconPropTypes, buttonIconDefaultProps } from '../common';
+import React from "react";
+import { ButtonIcon } from "lib";
+import cx from "classnames";
+import { buttonIconPropTypes, buttonIconDefaultProps } from "../common";
 
-const ButtonIconBubble = ({
+export const ButtonIconBubble = ({
   className,
   disabled,
   name,
@@ -12,10 +11,10 @@ const ButtonIconBubble = ({
   ...rest
 }: any) => {
   const classes = cx(
-    'button-icon-bubble button-icon-contained rounded-full p-3',
+    "button-icon-bubble button-icon-contained rounded-full p-3",
     className,
     {
-      shadow: !rest.active
+      shadow: !rest.active,
     }
   );
 

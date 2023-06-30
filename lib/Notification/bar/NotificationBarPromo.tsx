@@ -1,12 +1,8 @@
-import React from 'react';
-import { defaults, types } from './barTypes';
-import NotificationBarBase from './NotificationBarBase';
+import React from "react";
+import { defaults, types } from "./barTypes";
+import NotificationBarBase from "./NotificationBarBase";
 
-const NotificationBarPromo = ({
-  children,
-  className,
-  ...rest
-}: any) => (
+export const NotificationBarPromo = ({ children, className, ...rest }: any) => (
   <NotificationBarBase
     {...rest}
     className={`bg-purple-primary text-white ${className}`}

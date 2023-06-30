@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   bool,
   string,
@@ -6,23 +6,23 @@ import {
   arrayOf,
   node,
   shape,
-  func
-} from 'prop-types';
-import cx from 'classnames';
+  func,
+} from "prop-types";
+import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate.svg' o... Remove this comment to see the full error message
-import BlankSlateSVG from '../../assets/blankstate.svg';
+import BlankSlateSVG from "../../assets/blankstate.svg";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate-2.svg'... Remove this comment to see the full error message
-import BlankSlate2SVG from '../../assets/blankstate-2.svg';
+import BlankSlate2SVG from "../../assets/blankstate-2.svg";
 
-const BlankSlate = (props: any) => {
+export const BlankSlate = (props: any) => {
   const classes = cx(`blank-slate p-3 ${props.className}`, {
-    'blank-slate--fixed': props.fixed,
-    'blank-slate--arrow': props.slateStyle === 'arrow',
-    'flex flex-col flex-1 justify-center': props.fullHeight
+    "blank-slate--fixed": props.fixed,
+    "blank-slate--arrow": props.slateStyle === "arrow",
+    "flex flex-col flex-1 justify-center": props.fullHeight,
   });
 
   const BuiltInSVG =
-    props.slateStyle === 'arrow' ? BlankSlate2SVG : BlankSlateSVG;
+    props.slateStyle === "arrow" ? BlankSlate2SVG : BlankSlateSVG;
   return (
     <div className={classes}>
       <>
@@ -62,19 +62,19 @@ BlankSlate.propTypes = {
   SVGClassName: string,
   className: string,
   emoji: string,
-  emojiLabel: string
+  emojiLabel: string,
 };
 
 BlankSlate.defaultProps = {
   fixed: false,
   fullHeight: false,
-  children: '',
-  slateStyle: 'default',
+  children: "",
+  slateStyle: "default",
   customSVG: false,
-  className: '',
-  emoji: '',
-  emojiLabel: 'blank slate emoji',
-  SVGClassName: ''
+  className: "",
+  emoji: "",
+  emojiLabel: "blank slate emoji",
+  SVGClassName: "",
 };
 
 export default BlankSlate;

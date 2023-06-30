@@ -4,7 +4,7 @@ import cx from "classnames";
 import Button from "../Button";
 import Icon from "../Icon";
 
-class ProgressButton extends Component {
+export class ProgressButton extends Component {
   constructor(props: any) {
     super(props);
 

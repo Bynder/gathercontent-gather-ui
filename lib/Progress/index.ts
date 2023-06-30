@@ -1,9 +1,9 @@
-import ProgressBar from './Bar';
-import ProgressUnit from './Unit';
+import ProgressBar from "./Bar";
+import ProgressUnit from "./Unit";
 
-const Progress = {
+export const Progress = {
   Bar: ProgressBar,
-  Unit: ProgressUnit
+  Unit: ProgressUnit,
 };
 
 export default Progress;

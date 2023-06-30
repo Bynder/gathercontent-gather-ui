@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import cx from 'classnames';
-import PropTypes from 'prop-types';
-import Button from '../Button';
+import React, { Component } from "react";
+import cx from "classnames";
+import PropTypes from "prop-types";
+import Button from "../Button";
 
-class InputWithButton extends Component {
+export class InputWithButton extends Component {
   state = {
-    hasBeenClicked: false
+    hasBeenClicked: false,
   };
 
   onClick = () => {
@@ -32,15 +32,15 @@ class InputWithButton extends Component {
       // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
       disabled,
       // @ts-expect-error TS(2339): Property 'paddingSmall' does not exist on type 'Re... Remove this comment to see the full error message
-      paddingSmall
+      paddingSmall,
     } = this.props;
 
     const { hasBeenClicked } = this.state;
-    const wrapperClasses = cx('input-with-button', {
-      'input-with-button--padding-small': paddingSmall
+    const wrapperClasses = cx("input-with-button", {
+      "input-with-button--padding-small": paddingSmall,
     });
-    const inputClasses = cx('input-with-button__input', {
-      'input-with-button__input--disabled': disabled
+    const inputClasses = cx("input-with-button__input", {
+      "input-with-button__input--disabled": disabled,
     });
     return (
       <div className={wrapperClasses}>
@@ -54,7 +54,7 @@ class InputWithButton extends Component {
         <Button
           id={buttonId}
           disabled={disabled}
-          types={['primary', 'input-appendage']}
+          types={["primary", "input-appendage"]}
           onClick={this.onClick}
         >
           {buttonTextAfterClick && hasBeenClicked
@@ -70,7 +70,7 @@ class InputWithButton extends Component {
 InputWithButton.defaultProps = {
   disabled: false,
   buttonTextAfterClick: null,
-  paddingSmall: false
+  paddingSmall: false,
 };
 
 // @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
@@ -82,7 +82,7 @@ InputWithButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   buttonTextAfterClick: PropTypes.string,
   disabled: PropTypes.bool,
-  paddingSmall: PropTypes.bool
+  paddingSmall: PropTypes.bool,
 };
 
 export default InputWithButton;

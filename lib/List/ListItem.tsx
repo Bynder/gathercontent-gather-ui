@@ -5,7 +5,7 @@ import List from "./index";
 import Button from "../Button";
 import Icon from "../Icon";
 
-class ListItem extends Component {
+export class ListItem extends Component {
   static propTypes = {
     action: PropTypes.node,
     children: PropTypes.oneOfType([

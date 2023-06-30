@@ -1,16 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding type... Remove this comment to see the full error message
-import { AnimatedWrapper, Row } from 'lib';
-import SelectionBarAction from './SelectionBarAction';
-import SelectionBarDivider from './SelectionBarDivider';
-import SelectionBarCancel from './SelectionBarCancel';
-import SelectionBarInformation from './SelectionBarInformation';
-import SelectionBarActions from './SelectionBarActions';
-import SelectionBarCounter from './SelectionBarCounter';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import { AnimatedWrapper, Row } from "lib";
+import SelectionBarAction from "./SelectionBarAction";
+import SelectionBarDivider from "./SelectionBarDivider";
+import SelectionBarCancel from "./SelectionBarCancel";
+import SelectionBarInformation from "./SelectionBarInformation";
+import SelectionBarActions from "./SelectionBarActions";
+import SelectionBarCounter from "./SelectionBarCounter";
 
-const SelectionBar = ({
+export const SelectionBar = ({
   fixed,
   autoHide,
   hasSelected,
@@ -18,10 +17,10 @@ const SelectionBar = ({
   animatableProperties,
   ...rest
 }: any) => {
-  const classNames = cx('selection-bar', {
-    'selection-bar--fixed': fixed,
-    'selection-bar--auto-hide': autoHide,
-    'has-selected': hasSelected
+  const classNames = cx("selection-bar", {
+    "selection-bar--fixed": fixed,
+    "selection-bar--auto-hide": autoHide,
+    "has-selected": hasSelected,
   });
 
   return (
@@ -48,13 +47,13 @@ SelectionBar.propTypes = {
   fixed: PropTypes.bool,
   autoHide: PropTypes.bool,
   // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  animatableProperties: PropTypes.shape()
+  animatableProperties: PropTypes.shape(),
 };
 
 SelectionBar.defaultProps = {
   fixed: false,
   autoHide: false,
-  animatableProperties: {}
+  animatableProperties: {},
 };
 
 export default SelectionBar;

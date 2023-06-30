@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { animated, useTransition } from 'react-spring';
-import Icon from '../Icon';
+import React from "react";
+import PropTypes from "prop-types";
+import { animated, useTransition } from "react-spring";
+import Icon from "../Icon";
 
-function SearchInputField({
+export function SearchInput({
   placeholder,
   onChangeHandler,
   onClearHandler,
@@ -12,12 +12,12 @@ function SearchInputField({
   label,
   id,
   className,
-  inputClassName
+  inputClassName,
 }: any) {
   const transitionsForClearButton = useTransition(value, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
-    leave: { opacity: 0 }
+    leave: { opacity: 0 },
   });
 
   return (
@@ -53,17 +53,17 @@ function SearchInputField({
   );
 }
 
-SearchInputField.defaultProps = {
-  placeholder: 'Search...',
+SearchInput.defaultProps = {
+  placeholder: "Search...",
   hideIcon: false,
-  value: '',
+  value: "",
   label: null,
   id: null,
-  className: '',
-  inputClassName: ''
+  className: "",
+  inputClassName: "",
 };
 
-SearchInputField.propTypes = {
+SearchInput.propTypes = {
   placeholder: PropTypes.string,
   onChangeHandler: PropTypes.func.isRequired,
   onClearHandler: PropTypes.func.isRequired,
@@ -72,7 +72,7 @@ SearchInputField.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string,
   className: PropTypes.string,
-  inputClassName: PropTypes.string
+  inputClassName: PropTypes.string,
 };
 
-export default SearchInputField;
+export default SearchInput;

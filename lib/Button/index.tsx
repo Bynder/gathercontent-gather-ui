@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { createClassesFromTypesList } from '../helpers/classes';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { createClassesFromTypesList } from "../helpers/classes";
 
 /**
  * @usage
@@ -12,20 +12,20 @@ import { createClassesFromTypesList } from '../helpers/classes';
  *   ...text goes here
  * </Button>
  */
-class Button extends Component {
+export class Button extends Component {
   static defaultProps = {
-    types: ['primary'],
+    types: ["primary"],
     disableOnClick: false,
     disabled: false,
-    className: '',
+    className: "",
     isSubmit: false,
-    title: '',
+    title: "",
     clickHandler: () => {},
     onClick: null,
     onMouseEnter: () => {},
     onMouseLeave: () => {},
     onKeyDown: () => {},
-    id: null
+    id: null,
   };
 
   static propTypes = {
@@ -41,7 +41,7 @@ class Button extends Component {
     isSubmit: PropTypes.bool,
     onMouseEnter: PropTypes.func,
     onMouseLeave: PropTypes.func,
-    id: PropTypes.string
+    id: PropTypes.string,
   };
 
   constructor() {
@@ -49,7 +49,7 @@ class Button extends Component {
     super();
 
     this.state = {
-      disabled: false
+      disabled: false,
     };
 
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -89,7 +89,7 @@ class Button extends Component {
       // @ts-expect-error TS(2339): Property 'onMouseLeave' does not exist on type 'Re... Remove this comment to see the full error message
       onMouseLeave,
       // @ts-expect-error TS(2339): Property 'onKeyDown' does not exist on type 'Reado... Remove this comment to see the full error message
-      onKeyDown
+      onKeyDown,
     } = this.props;
 
     const shareProps = {
@@ -99,12 +99,12 @@ class Button extends Component {
       onKeyDown,
       className: `button ${createClassesFromTypesList(
         types,
-        'button--'
+        "button--"
       )} ${className}`,
       title,
       id,
       onMouseEnter,
-      onMouseLeave
+      onMouseLeave,
     };
 
     return isSubmit ? (
