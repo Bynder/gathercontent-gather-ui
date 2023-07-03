@@ -2,11 +2,10 @@
 import React from "react";
 import cx from "classnames";
 import { arrayOf, bool, oneOfType, string } from "prop-types";
-// @ts-expect-error TS(2307): Cannot find module 'lib' or its corresponding... Remove this comment to see the full error message
-import Icon from "lib";
+import { Icon } from "lib";
 import { defaultProps, propTypes, sizes } from "./common";
 
-function ButtonBase({
+export function ButtonBase({
   children,
   className,
   size,
@@ -69,5 +68,3 @@ ButtonBase.defaultProps = {
 };
 
 ButtonBase.sizes = sizes;
-
-export { ButtonBase };
