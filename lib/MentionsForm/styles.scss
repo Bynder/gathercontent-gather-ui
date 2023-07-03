@@ -71,6 +71,11 @@ $mention-color: #f5effc;
 .mention-form__actions {
   position: relative;
   text-align: right;
+  overflow: hidden;
+
+  .mention-form__actions--submit {
+    float: right;
+  }
 }
 
 .mention-form__actions--submit {
@@ -88,14 +93,6 @@ $mention-color: #f5effc;
 .mention-form__button {
   svg {
     position: relative;
-  }
-}
-
-.mention-form__actions {
-  overflow: hidden;
-
-  .mention-form__actions--submit {
-    float: right;
   }
 }
 

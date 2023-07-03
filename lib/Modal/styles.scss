@@ -239,7 +239,7 @@ $modal-media-close-dimensions: 30px;
 			right: 0;
 			height: 25px;
 			width: 100%;
-			background: linear-gradient(to bottom, rgb(white 0) 0%, rgb(white .5) 50%, rgb(white .75) 100%);
+			background: linear-gradient(to bottom, rgb(255 255 255 / 0%), rgb(255 255 255 / 50%), rgb(255 255 255 / 75%));
 		}
 	}
 }
@@ -277,6 +277,7 @@ $modal-media-close-dimensions: 30px;
 
 	.react-modal-inner {
 		position: relative;
+		background:none;
 	}
 
 	.modal-header {
@@ -310,10 +311,6 @@ $modal-media-close-dimensions: 30px;
 		justify-content: center;
 		background: none;
 		border: 0;
-	}
-
-	.react-modal-inner {
-		background:none;
 	}
 
 	.react-modal-inner,

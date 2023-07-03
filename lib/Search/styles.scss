@@ -88,6 +88,7 @@ $search-min-width: 400px !default;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.0s linear, opacity 0.0s linear;
+    padding-right: $layout-spacing-base*0.5;
   }
 
   &--input {
@@ -100,10 +101,6 @@ $search-min-width: 400px !default;
     &:focus {
       outline: none;
     }
-  }
-
-  &--clear {
-    padding-right: $layout-spacing-base*0.5;
   }
 
   &--start {

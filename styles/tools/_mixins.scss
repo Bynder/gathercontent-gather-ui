@@ -1,3 +1,5 @@
+@use "sass:list";
+
 /**
  * Create a pseudo-element arrow (triangle)
  *
@@ -62,18 +64,18 @@
  * @return {[type]}             [description]
  */
 @mixin animation($animate...) {
-  $max: length($animate);
+  $max: list.length($animate);
   $animations: '';
 
   @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
+    $animations: #{$animations + list.nth($animate, $i)};
 
     @if $i < $max {
       $animations: #{$animations + ', '};
     }
   }
 
-  animation: $animations;
+  animation: #{$animations};
 }
 
 @mixin keyframes($animationName) {

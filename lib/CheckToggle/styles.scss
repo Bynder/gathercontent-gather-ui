@@ -26,7 +26,7 @@ $borderColour: #F8FBFC;
 
   &.disabled {
    opacity: 0.5;
-   pointer-events: none; 
+   pointer-events: none;
   }
 }
 
@@ -63,7 +63,7 @@ $borderColour: #F8FBFC;
   margin-left: 26px;
 }
 
-/*  New switch */
+/* New switch */
 .toggle-switch + .toggle-switch__label {
   padding: 2px;
   width: 34px;

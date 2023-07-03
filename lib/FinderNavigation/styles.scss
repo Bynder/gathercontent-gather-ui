@@ -208,16 +208,13 @@ $finder-indent-level-support: 10 !default;
   #{$finderItemSelector}.finder-item.is-over.dragged-insert
     > .finder-item-content,
   #{$finderItemSelector}.finder-item-selected > .finder-item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base * 0.5 * ($i - 1)) -
-      2;
+    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1)) - 2;
   }
 
   #{$finderItemSelector} > .finder-item-content,
   #{$finderItemSelector}.finder-item.is-over.dragged-top > .finder-item-content,
   #{$finderItemSelector}.finder-item.is-over.dragged-below
     > .finder-item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base * 0.5 * ($i - 1));
+    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1));
   }
 }
