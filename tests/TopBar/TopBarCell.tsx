@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { TopBarCell } from "lib";
+import { React, shallow } from "../setup";
 
 describe("TopBar/TopBarCell", () => {
   let wrapper: any;
@@ -7,7 +7,6 @@ describe("TopBar/TopBarCell", () => {
   beforeEach(() => {
     wrapper = shallow(
       <TopBarCell>
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="test">Test child</div>
       </TopBarCell>
     );

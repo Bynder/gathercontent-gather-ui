@@ -10,14 +10,14 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   list?: boolean;
 }
 
-const ItemRow = ({
+function ItemRow({
   children,
   stacked,
   className,
   bordered,
   list,
   ...rest
-}: Props) => {
+}: Props) {
   const classNames = cx(`item-row ${className}`, {
     "item-row--stacked": stacked,
     "item-row--bordered": bordered,
@@ -29,7 +29,7 @@ const ItemRow = ({
       {children}
     </div>
   );
-};
+}
 
 ItemRow.defaultProps = {
   stacked: false,

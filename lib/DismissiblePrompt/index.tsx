@@ -3,13 +3,13 @@ import { node, string, func } from "prop-types";
 import Icon from "../Icon";
 import Button from "../Button";
 
-export const DismissiblePrompt = ({
+export function DismissiblePrompt({
   children,
   onDismiss,
   className,
   ...rest
-}: any) => (
-  <div {...rest} className={`dismissible-prompt ${className}`}>
+}: any) {
+  return <div {...rest} className={`dismissible-prompt ${className}`}>
     <div className="dismissible-prompt__children">{children}</div>
     <Button
       types={["icon-only", "collapse"]}
@@ -19,7 +19,7 @@ export const DismissiblePrompt = ({
       <Icon name="cross" />
     </Button>
   </div>
-);
+}
 
 DismissiblePrompt.propTypes = {
   children: node.isRequired,

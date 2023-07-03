@@ -9,7 +9,7 @@ export default {
   component: OptionMenuComponent,
 };
 
-export const OptionMenu = () => {
+export function OptionMenu() {
   const [selectedOption, setSelectedOption] = useState("paragraph");
 
   const options = [
@@ -62,7 +62,7 @@ export const OptionMenu = () => {
     >
       <Dropdown id="option-menu-controlled-dropdown">
         {({ showContent, setShowContent }) => (
-          <Fragment>
+          <>
             <Dropdown.Trigger>
               <ButtonTertiary>
                 {/* @ts-expect-error TS(2532): Object is possibly 'undefined'. */}
@@ -87,12 +87,12 @@ export const OptionMenu = () => {
                 </OptionMenuComponent>
               )}
             </Dropdown.Content>
-          </Fragment>
+          </>
         )}
       </Dropdown>
     </StoryItem>
   );
-};
+}
 
 OptionMenu.parameters = {
   controls: { hideNoControlsWarning: true },

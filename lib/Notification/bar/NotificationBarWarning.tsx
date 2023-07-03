@@ -2,18 +2,18 @@ import React from "react";
 import { defaults, types } from "./barTypes";
 import NotificationBarBase from "./NotificationBarBase";
 
-export const NotificationBarWarning = ({
+export function NotificationBarWarning({
   children,
   className,
   ...rest
-}: any) => (
-  <NotificationBarBase
+}: any) {
+  return <NotificationBarBase
     {...rest}
     className={`bg-yellow-primary text-neutral-20 ${className}`}
   >
     {children}
   </NotificationBarBase>
-);
+}
 
 NotificationBarWarning.defaultProps = defaults;
 

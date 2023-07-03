@@ -116,8 +116,7 @@ function CommentForm({
     // @ts-expect-error
     <form onSubmit={handleSubmitWithLoader} className="comment-edit-form">
       <div className={inputWrapperClassNames} ref={inputWrapperRef}>
-        <>
-          <MentionsInput
+        <MentionsInput
             className="edit-comment"
             value={commentText}
             onChange={handleChange}
@@ -171,7 +170,6 @@ function CommentForm({
             shortcutKey="Escape"
             onShortcutTrigger={handleCancel}
           />
-        </>
       </div>
 
       {hasFailed && (

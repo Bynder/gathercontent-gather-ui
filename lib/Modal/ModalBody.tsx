@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NewModal } from "lib";
 
-const ModalBody = ({ children, className, ...rest }: any) => (
-  <NewModal.Body className={`modal-body ${className}`} {...rest}>
+function ModalBody({ children, className, ...rest }: any) {
+  return <NewModal.Body className={`modal-body ${className}`} {...rest}>
     {children}
   </NewModal.Body>
-);
+}
 
 ModalBody.defaultProps = {
   className: "",

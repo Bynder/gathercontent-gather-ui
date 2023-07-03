@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Icon from '../Icon';
 
-const UserSearchListUserName = ({
+function UserSearchListUserName({
   name,
   isSelected
-}: any) => {
+}: any) {
   const classes = cx('user-search-list__user-name', {
     'is-active': isSelected
   });
@@ -16,7 +16,7 @@ const UserSearchListUserName = ({
       {isSelected && <Icon className="h-margin-left-quarter" name="boldTick" />}
     </div>
   );
-};
+}
 
 UserSearchListUserName.propTypes = {
   name: PropTypes.string.isRequired,

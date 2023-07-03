@@ -1,15 +1,15 @@
 import React from 'react';
 import { propTypes, defaultProps } from './propTypes';
 
-const CollectionsTableHead = ({
+function CollectionsTableHead({
   children,
   className,
   ...props
-}: any) => (
-  <div className={`collections-table__head ${className}`} {...props}>
+}: any) {
+  return <div className={`collections-table__head ${className}`} {...props}>
     {children}
   </div>
-);
+}
 
 CollectionsTableHead.propTypes = propTypes;
 CollectionsTableHead.defaultProps = defaultProps;

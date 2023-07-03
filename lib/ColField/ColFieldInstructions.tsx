@@ -1,5 +1,4 @@
 import React, { HTMLAttributes, ReactNode } from "react";
-import { string, func, bool, oneOfType, node } from "prop-types";
 // @ts-expect-error TS(2307): Cannot find module 'lib/ExpandingTextArea' or its ... Remove this comment to see the full error message
 import ExpandingTextArea from "lib/ExpandingTextArea";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'link... Remove this comment to see the full error message

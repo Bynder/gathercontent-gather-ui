@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { ImageLoader } from "lib";
+import { React, shallow } from "../setup";
 
 describe("ImageLoader", () => {
   let wrapper: any;

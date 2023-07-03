@@ -35,7 +35,7 @@ export default {
   },
 };
 
-export const Avatar = (args: any) => {
+export function Avatar(args: any) {
   const avatarUrl = args.url;
 
   const props = {
@@ -44,6 +44,7 @@ export const Avatar = (args: any) => {
     url: args.showImage ? avatarUrl : null,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { colour, ...propsWithoutColour } = props;
 
   return (
@@ -97,4 +98,4 @@ export const Avatar = (args: any) => {
       </StoryItem>
     </div>
   );
-};
+}

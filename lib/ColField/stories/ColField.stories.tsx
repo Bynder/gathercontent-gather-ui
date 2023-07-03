@@ -17,15 +17,14 @@ export default {
   }
 };
 
-export const ColField = ({
+export function ColField({
   visible,
   editable,
   selected,
   hovered
-}: any) => {
+}: any) {
   return (
-    <>
-      <StoryItem title="ColFieldComponent">
+    <StoryItem title="ColFieldComponent">
         <Row>
           <Col xs={12} sm={8} smOffset={2}>
             <ColFieldComponent
@@ -56,6 +55,5 @@ export const ColField = ({
           </Col>
         </Row>
       </StoryItem>
-    </>
   );
-};
+}

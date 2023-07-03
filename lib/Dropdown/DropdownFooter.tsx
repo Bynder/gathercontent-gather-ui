@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownFooter = ({
+function DropdownFooter({
   children,
   ...rest
-}: any) => {
+}: any) {
   return (
     <footer className="dropdown__footer" {...rest}>
       {children}
     </footer>
   );
-};
+}
 
 DropdownFooter.propTypes = {
   children: PropTypes.node.isRequired

@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { EditableTextWrapper } from "lib";
 
-export const PageInformation = ({
+export function PageInformation({
   title,
   subtitle,
   editable,
   rename,
   contextName,
   inputLabel,
-}: any) => (
-  <div className="page-information">
+}: any) {
+  return <div className="page-information">
     {editable ? (
       <EditableTextWrapper
         value={title}
@@ -31,7 +31,7 @@ export const PageInformation = ({
 
     {subtitle && <div className="page-information__subtitle">{subtitle}</div>}
   </div>
-);
+}
 
 PageInformation.propTypes = {
   title: PropTypes.string.isRequired,

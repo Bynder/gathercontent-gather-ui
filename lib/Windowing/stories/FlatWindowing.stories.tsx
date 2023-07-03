@@ -5,7 +5,7 @@ export default {
   title: "Legacy/Windowing/Flat",
 };
 
-export const Flat = () => {
+export function Flat() {
   const items = [...new Array(1000)].map((i, index) => ({
     id: index + 1,
   }));
@@ -34,7 +34,7 @@ export const Flat = () => {
       </Windowing.Scroller>
     </Windowing>
   );
-};
+}
 
 Flat.parameters = {
   controls: { hideNoControlsWarning: true },

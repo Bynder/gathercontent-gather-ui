@@ -11,15 +11,7 @@ import { WorkflowStepTitle } from "./workflowStepTitle";
 import { WorkflowStepMeta } from "./workflowStepMeta";
 import { WorkflowStepCollapsibleBody } from "./workflowStepCollapsibleBody";
 
-export function WorkflowStep({ showBody, isActive, ...props }: any) {
-  return (
-    <WorkflowStepProvider showBody={showBody} isActive={isActive}>
-      <WorkflowStepInner {...props} />
-    </WorkflowStepProvider>
-  );
-}
-
-const WorkflowStepInner = ({ children, onClick, className }: any) => {
+function WorkflowStepInner({ children, onClick, className }: any) {
   const { showBody, setShowActions, isActive, showActions }: any =
     useContext(WorkflowStepContext);
 
@@ -70,7 +62,15 @@ const WorkflowStepInner = ({ children, onClick, className }: any) => {
       {children}
     </div>
   );
-};
+}
+
+export function WorkflowStep({ showBody, isActive, ...props }: any) {
+  return (
+    <WorkflowStepProvider showBody={showBody} isActive={isActive}>
+      <WorkflowStepInner {...props} />
+    </WorkflowStepProvider>
+  );
+}
 
 WorkflowStep.Body = WorkflowStepBody;
 WorkflowStep.CollapsibleBody = WorkflowStepCollapsibleBody;

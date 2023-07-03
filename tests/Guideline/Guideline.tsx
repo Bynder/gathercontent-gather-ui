@@ -12,7 +12,6 @@ describe("Guideline", () => {
 
     wrapper = mount(
       <Guideline title="Guideline title">
-        // @ts-expect-error TS(2304): Cannot find name 'p'.
         <p>Guideline content</p>
       </Guideline>
     );

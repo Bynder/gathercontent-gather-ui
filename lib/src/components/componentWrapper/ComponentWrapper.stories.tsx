@@ -43,140 +43,144 @@ const Aside = (
   </>
 );
 
-export const ComponentWrapper = (args: any) => (
-  <>
-    <StoryItem
-      title="ComponentWrapperComponent"
-      description=" A component component"
-    >
-      <Row>
-        <Col xs={12} sm={8} smOffset={2}>
-          <ComponentWrapperComponent
-            label="Hello!"
-            onLabelChange={() => console.log("label change handler")}
-            onLabelEmpty={() => console.log("label empty handler")}
-            instructions="hello do a thing"
-            onInstructionChange={() => {}}
-            headerAside={Aside}
-            subLabel="(Goodbye!)"
-            {...args}
-          >
-            <ColField className="mb-10">
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-            <ColField>
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-          </ComponentWrapperComponent>
-        </Col>
-      </Row>
-    </StoryItem>
+export function ComponentWrapper(args: any) {
+  return (
+    <>
+      <StoryItem
+        title="ComponentWrapperComponent"
+        description=" A component component"
+      >
+        <Row>
+          <Col xs={12} sm={8} smOffset={2}>
+            <ComponentWrapperComponent
+              label="Hello!"
+              // eslint-disable-next-line no-console
+              onLabelChange={() => console.log("label change handler")}
+              // eslint-disable-next-line no-console
+              onLabelEmpty={() => console.log("label empty handler")}
+              instructions="hello do a thing"
+              onInstructionChange={() => {}}
+              headerAside={Aside}
+              subLabel="(Goodbye!)"
+              {...args}
+            >
+              <ColField className="mb-10">
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+              <ColField>
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+            </ComponentWrapperComponent>
+          </Col>
+        </Row>
+      </StoryItem>
 
-    <StoryItem
-      title="ComponentWrapperComponent"
-      description=" A sectioned component"
-    >
-      <Row>
-        <Col xs={12} sm={8} smOffset={2}>
-          <ComponentWrapperComponent.Header
-            label="I'm split up!"
-            onLabelChange={() => {}}
-            {...args}
-          />
-          <ComponentWrapperComponent.Body {...args}>
-            <ColField>
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-          </ComponentWrapperComponent.Body>
-          <ComponentWrapperComponent.Footer {...args}>
-            <ColField className="mt-6">
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-          </ComponentWrapperComponent.Footer>
-        </Col>
-      </Row>
-    </StoryItem>
+      <StoryItem
+        title="ComponentWrapperComponent"
+        description=" A sectioned component"
+      >
+        <Row>
+          <Col xs={12} sm={8} smOffset={2}>
+            <ComponentWrapperComponent.Header
+              label="I'm split up!"
+              onLabelChange={() => {}}
+              {...args}
+            />
+            <ComponentWrapperComponent.Body {...args}>
+              <ColField>
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+            </ComponentWrapperComponent.Body>
+            <ComponentWrapperComponent.Footer {...args}>
+              <ColField className="mt-6">
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+            </ComponentWrapperComponent.Footer>
+          </Col>
+        </Row>
+      </StoryItem>
 
-    <StoryItem title="ComponentWrapperComponent" description="Statuses">
-      <Row>
-        <Col xs={12} sm={8} smOffset={2}>
-          <ComponentWrapperComponent.Header
-            label="I'm split up!"
-            onLabelChange={() => {}}
-            {...args}
-          />
-          <ComponentWrapperComponent.Body {...args}>
-            <ColField>
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-          </ComponentWrapperComponent.Body>
-          <ComponentWrapperComponent.Footer {...args}>
-            <ColField className="mt-6">
-              <ColField.Header>
-                <ColField.Label label="Howdy" />
-              </ColField.Header>
-              <ColField.Body>
-                <div className="py-5 px-6 text-center">
-                  <TextPreviewSVG />
-                </div>
-              </ColField.Body>
-              <ColField.Footer>
-                <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
-              </ColField.Footer>
-            </ColField>
-          </ComponentWrapperComponent.Footer>
-        </Col>
-      </Row>
-    </StoryItem>
-  </>
-);
+      <StoryItem title="ComponentWrapperComponent" description="Statuses">
+        <Row>
+          <Col xs={12} sm={8} smOffset={2}>
+            <ComponentWrapperComponent.Header
+              label="I'm split up!"
+              onLabelChange={() => {}}
+              {...args}
+            />
+            <ComponentWrapperComponent.Body {...args}>
+              <ColField>
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+            </ComponentWrapperComponent.Body>
+            <ComponentWrapperComponent.Footer {...args}>
+              <ColField className="mt-6">
+                <ColField.Header>
+                  <ColField.Label label="Howdy" />
+                </ColField.Header>
+                <ColField.Body>
+                  <div className="py-5 px-6 text-center">
+                    <TextPreviewSVG />
+                  </div>
+                </ColField.Body>
+                <ColField.Footer>
+                  <ColField.Instructions instructions="Lots of instructions here how fun blabla." />
+                </ColField.Footer>
+              </ColField>
+            </ComponentWrapperComponent.Footer>
+          </Col>
+        </Row>
+      </StoryItem>
+    </>
+  );
+}

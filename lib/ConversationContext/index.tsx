@@ -4,7 +4,7 @@ import { Col, Person, Row } from "lib";
 import { Conversation } from "../Conversation/Conversation";
 import { Comment } from "../Comment/Comment";
 
-export const ConversationContext = ({
+export function ConversationContext({
   label,
   children,
   userCanResolve,
@@ -12,8 +12,8 @@ export const ConversationContext = ({
   comments,
   resolveConversation,
   users,
-}: any) => (
-  <Row>
+}: any) {
+  return <Row>
     <Col sm={3} xs={12}>
       <div className="conversation-context__label">{label}</div>
     </Col>
@@ -59,7 +59,7 @@ export const ConversationContext = ({
       </Conversation>
     </Col>
   </Row>
-);
+}
 
 ConversationContext.propTypes = {
   label: PropTypes.string.isRequired,

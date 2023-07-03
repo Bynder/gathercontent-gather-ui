@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { Dropdown } from "lib";
+import { React, mount } from "../setup";
 import BoundaryClickWatcher from "../../lib/BoundaryClickWatcher";
 
 describe("Dropdown", () => {

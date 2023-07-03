@@ -7,7 +7,6 @@ describe("SearchProvider", () => {
   beforeEach(() => {
     wrapper = shallow(
       <SearchProvider>
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="child" />
       </SearchProvider>
     );

@@ -2,19 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-export const SectionFeature = ({
+export function SectionFeature({
   children,
   extendTop,
   enhanceIntro,
   className,
-}: any) => {
+}: any) {
   const classNames = cx(`section-feature ${className}`, {
     "section-feature--extend-top": extendTop,
     "section-feature--enhance-intro": enhanceIntro,
   });
 
   return <div className={classNames}>{children}</div>;
-};
+}
 
 SectionFeature.propTypes = {
   children: PropTypes.oneOfType([

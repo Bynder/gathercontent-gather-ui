@@ -7,7 +7,7 @@ export default {
   component: SidebarComponent,
 };
 
-const ExampleOfUsingShowMoreToggle = () => {
+function ExampleOfUsingShowMoreToggle() {
   const { showMore }: any = React.useContext(SidebarComponent.SectionContext);
 
   return (
@@ -46,10 +46,10 @@ const ExampleOfUsingShowMoreToggle = () => {
       </>
     )
   );
-};
+}
 
-export const Sidebar = () => (
-  <SidebarComponent>
+export function Sidebar() {
+  return <SidebarComponent>
     <SidebarComponent.Header onClose={() => {}}>
       <h2>SidebarComponent header</h2>
     </SidebarComponent.Header>
@@ -126,7 +126,7 @@ export const Sidebar = () => (
       </ButtonPrimary>
     </SidebarComponent.Footer>
   </SidebarComponent>
-);
+}
 
 Sidebar.parameters = {
   controls: { hideNoControlsWarning: true },

@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { EventCodeWatcher } from "lib";
+import { React, shallow } from "../setup";
 
 describe("EventCodeWatcher", () => {
   let wrapper: any;

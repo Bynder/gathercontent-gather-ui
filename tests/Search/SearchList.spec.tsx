@@ -7,7 +7,6 @@ describe("SearchList", () => {
   beforeEach(() => {
     wrapper = shallow(
       <SearchList heading="The heading!">
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="child">small child</div>
       </SearchList>
     );

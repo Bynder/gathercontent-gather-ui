@@ -6,11 +6,11 @@ import CollectionsTableCell from "./CollectionsTableCell";
 import CollectionsTableCellContent from "./CollectionsTableCellContent";
 import { propTypes, defaultProps } from "./propTypes";
 
-export const CollectionsTable = ({ children, className, ...props }: any) => (
-  <div className={`collections-table ${className}`} {...props}>
+export function CollectionsTable({ children, className, ...props }: any) {
+  return <div className={`collections-table ${className}`} {...props}>
     {children}
   </div>
-);
+}
 
 CollectionsTable.propTypes = propTypes;
 CollectionsTable.defaultProps = defaultProps;

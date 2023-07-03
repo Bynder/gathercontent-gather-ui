@@ -59,7 +59,7 @@ class SearchResults extends Component {
     const escKey = 27;
 
     return (
-      <Fragment>
+      <>
         <EventCodeWatcher
           // @ts-expect-error TS(2339): Property 'input' does not exist on type 'Readonly<... Remove this comment to see the full error message
           element={this.props.input}
@@ -92,7 +92,7 @@ class SearchResults extends Component {
           onKeyCodePress={this.props.hideResults}
         />
 
-        <Fragment>
+        <>
           {/* @ts-expect-error TS(2339): Property 'results' does not exist on type 'Readonl... Remove this comment to see the full error message */}
           {this.props.results.map((result: any, index: any) => {
             const idKey = `search-results-item-${index}`;
@@ -120,8 +120,8 @@ class SearchResults extends Component {
               </li>
             );
           })}
-        </Fragment>
-      </Fragment>
+        </>
+      </>
     );
   }
 }

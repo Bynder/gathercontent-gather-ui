@@ -19,7 +19,7 @@ export default {
   },
 };
 
-export const Conversation = ({
+export function Conversation({
   isOpen,
   isSubscribed,
   isResolved,
@@ -27,7 +27,7 @@ export const Conversation = ({
   commentHasFailedToSubscribe,
   commentHasFailedToSave,
   commentHasFailedToDelete,
-}: any) => {
+}: any) {
   const headerProps = {
     isOpen,
     isResolved,
@@ -71,4 +71,4 @@ export const Conversation = ({
       </BoundaryClickWatcher>
     </div>
   );
-};
+}

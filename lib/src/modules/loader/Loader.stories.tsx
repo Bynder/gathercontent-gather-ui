@@ -8,10 +8,9 @@ export default {
   component: LoaderComponent,
 };
 
-export const Loader = () => {
+export function Loader() {
   return (
-    <>
-      <StoryItem title="LoaderComponent">
+    <StoryItem title="LoaderComponent">
         <div className="grid tw grid-cols-5 col-gap-4">
           {/* @ts-expect-error */}
           <LoaderComponent size="sm" />
@@ -23,9 +22,8 @@ export const Loader = () => {
           <LoaderComponent heading="Processing" progress="100%" />
         </div>
       </StoryItem>
-    </>
   );
-};
+}
 
 Loader.parameters = {
   controls: { hideNoControlsWarning: true },

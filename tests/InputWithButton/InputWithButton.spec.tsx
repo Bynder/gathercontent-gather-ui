@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { InputWithButton, Button } from "lib";
+import { React, shallow } from "../setup";
 
 describe("InputWithButton", () => {
   let wrapper: any;

@@ -10,7 +10,7 @@ import PillBlueWhiteText from "./PillBlueWhiteText";
 import PillYellow from "./PillYellow";
 import { PillBeta } from "./PillBeta";
 
-export const Pill = ({ type, children, ...rest }: any) => {
+export function Pill({ type, children, ...rest }: any) {
   const getPill = () => {
     switch (type) {
       case types.red:
@@ -34,7 +34,7 @@ export const Pill = ({ type, children, ...rest }: any) => {
   const PillType = getPill();
 
   return <PillType {...rest}>{children}</PillType>;
-};
+}
 
 Pill.propTypes = {
   ...propTypes,

@@ -8,7 +8,7 @@ export default {
   component: TreeLineComponent
 };
 
-export const Treelines = () => {
+export function Treelines() {
   return (
     <div>
       <StoryItem
@@ -50,4 +50,4 @@ export const Treelines = () => {
       </StoryItem>
     </div>
   );
-};
+}

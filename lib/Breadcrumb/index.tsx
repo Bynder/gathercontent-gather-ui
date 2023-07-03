@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import BreadcrumbItem from "./BreadcrumbItem";
 
-export const Breadcrumb = ({ children, className, ...rest }: any) => (
-  <nav {...rest} className={`breadcrumb ${className}`}>
+export function Breadcrumb({ children, className, ...rest }: any) {
+  return <nav {...rest} className={`breadcrumb ${className}`}>
     {children}
   </nav>
-);
+}
 
 Breadcrumb.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,

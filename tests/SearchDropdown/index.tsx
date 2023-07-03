@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Icon } from "lib";
+import { React, shallow } from "../setup";
 import SearchDropdown from "../../lib/SearchDropdown";
 import SearchResults from "../../lib/SearchDropdown/SearchResults";
 

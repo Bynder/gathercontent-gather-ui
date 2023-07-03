@@ -11,8 +11,8 @@ export default {
 
 const { lg, ...storySizes } = ButtonPrimaryDangerComponent.sizes;
 
-export const ButtonPrimaryDanger = () => (
-  <div>
+export function ButtonPrimaryDanger() {
+  return <div>
     {map(storySizes, size => (
       <StoryItem
         key={size}
@@ -86,7 +86,7 @@ export const ButtonPrimaryDanger = () => (
       </StoryItem>
     ))}
   </div>
-);
+}
 
 ButtonPrimaryDanger.parameters = {
   controls: { hideNoControlsWarning: true }

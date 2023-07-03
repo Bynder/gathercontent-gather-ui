@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const Label = ({
+function Label({
   label,
   id,
   subtitle,
@@ -14,7 +14,7 @@ const Label = ({
   active,
   disabled,
   hinted
-}: any) => {
+}: any) {
   const labelClasses = cx(`form-checkbox__label ${className}`, {
     'is-disabled': disabled,
     'form-checkbox__label--hinted': hinted
@@ -57,7 +57,7 @@ const Label = ({
       {subtitle && <span className="form-checkbox__subtitle">{subtitle}</span>}
     </label>
   );
-};
+}
 
 Label.propTypes = {
   label: PropTypes.string.isRequired,

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const FinderItemContent = ({
+function FinderItemContent({
   className,
   children,
   active,
   hidden,
   isFolder,
   ...rest
-}: any) => {
+}: any) {
   const classNames = cx(`finder-item-content ${className}`, {
     'finder-item-content-hidden': hidden,
     'finder-item-content-folder': isFolder
@@ -20,7 +20,7 @@ const FinderItemContent = ({
       <div className="finder-item-content-inner">{children}</div>
     </div>
   );
-};
+}
 
 FinderItemContent.propTypes = {
   children: PropTypes.node.isRequired,

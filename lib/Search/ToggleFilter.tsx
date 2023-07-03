@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CheckToggle from '../CheckToggle';
 
-const ToggleFilter = (props: any) => <div className="search-options__toggle">
+function ToggleFilter(props: any) {
+  return <div className="search-options__toggle">
   <CheckToggle
     id="search-toggle"
     labelRight={props.label}
@@ -10,7 +11,8 @@ const ToggleFilter = (props: any) => <div className="search-options__toggle">
     displayChecked={props.displayChecked}
     clickHandler={props.clickHandler}
   />
-</div>;
+</div>
+}
 
 ToggleFilter.propTypes = {
   clickHandler: PropTypes.func.isRequired,

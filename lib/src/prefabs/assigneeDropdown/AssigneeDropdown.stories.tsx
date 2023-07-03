@@ -17,7 +17,7 @@ export default {
   },
 };
 
-export const AssigneeDropdown = (args: any) => {
+export function AssigneeDropdown(args: any) {
   const getPerson = () => ({
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
@@ -66,4 +66,4 @@ export const AssigneeDropdown = (args: any) => {
       </AssigneeDropdownComponent>
     </StoryItem>
   );
-};
+}

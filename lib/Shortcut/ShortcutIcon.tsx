@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const ShortcutIcon = (props: any) => (
-  <span className="shortcut__keyboard">{props.children}</span>
-);
+export function ShortcutIcon(props: any) {
+  return <span className="shortcut__keyboard">{props.children}</span>
+}
 
 ShortcutIcon.propTypes = {
   children: PropTypes.oneOfType([

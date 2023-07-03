@@ -9,14 +9,14 @@ import {
 } from "lib";
 import Icon from "../Icon";
 
-export const ConfirmationOverlay = ({
+export function ConfirmationOverlay({
   confirm,
   cancel,
   confirmationText,
   failureText,
   className,
   show,
-}: any) => {
+}: any) {
   const [hasFailed, setHasFailed] = useState(false);
   const setHasFailedTimeout = useRef(null);
 
@@ -31,13 +31,11 @@ export const ConfirmationOverlay = ({
     }
   };
 
-  useEffect(() => {
-    return () => {
+  useEffect(() => () => {
       if (setHasFailedTimeout.current !== null) {
         clearTimeout(setHasFailedTimeout.current);
       }
-    };
-  });
+    });
 
   const [isSubmitting, handleSubmitWithLoader] = useLoader(handleConfirm);
 
@@ -67,7 +65,7 @@ export const ConfirmationOverlay = ({
       </div>
     </div>
   );
-};
+}
 
 ConfirmationOverlay.propTypes = {
   cancel: PropTypes.func.isRequired,

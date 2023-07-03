@@ -3,7 +3,7 @@ import { bool, func, node } from 'prop-types';
 import Button from '../Button';
 import Icon from '../Icon';
 
-const FolderRowName = ({
+function FolderRowName({
   children,
   showToggle,
   show,
@@ -11,7 +11,7 @@ const FolderRowName = ({
   handleOnClick,
   toggleTitle,
   ...rest
-}: any) => {
+}: any) {
   return (
     <div className="folder-row__name" {...rest}>
       {showToggle && (
@@ -37,7 +37,7 @@ const FolderRowName = ({
       </div>
     </div>
   );
-};
+}
 
 FolderRowName.propTypes = {
   children: node.isRequired,

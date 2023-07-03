@@ -63,7 +63,6 @@ export function DropdownMenuItem({ item }: any) {
           className="dropdown__link dropdown__avatar"
           onClick={item.action}
         >
-          // @ts-expect-error TS(2769): No overload matches this call.
           <Avatar url={item.avatar} initials={item.initials}>
             <AvatarInformation name={item.name} email={item.email} />
           </Avatar>

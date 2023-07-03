@@ -4,7 +4,7 @@ import cx from "classnames";
 import Icon from "../Icon";
 import TooltipWrapper from "../TooltipWrapper";
 
-export const StatusIndicator = ({
+export function StatusIndicator({
   className,
   approved,
   completed,
@@ -25,7 +25,7 @@ export const StatusIndicator = ({
   children,
   labelFontSize,
   ...rest
-}: any) => {
+}: any) {
   const classNames = cx(className, {
     "status-indicator": true,
     "status-indicator--completed": completed,
@@ -95,7 +95,7 @@ export const StatusIndicator = ({
       {children && <div className="status-indicator__children">{children}</div>}
     </div>
   );
-};
+}
 
 StatusIndicator.propTypes = {
   className: PropTypes.string,

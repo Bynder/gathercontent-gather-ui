@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchList = (props: any) => <div className="search-list">
+function SearchList(props: any) {
+  return <div className="search-list">
   {props.heading && (
     <div className="search-list__heading">{props.heading}</div>
   )}
   {props.children}
-</div>;
+</div>
+}
 
 SearchList.defaultProps = {
   heading: ''

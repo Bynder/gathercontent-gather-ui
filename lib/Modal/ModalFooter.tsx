@@ -3,13 +3,13 @@ import { node, oneOfType, string, bool } from "prop-types";
 import cx from "classnames";
 import { NewModal } from "lib";
 
-const ModalFooter = ({
+function ModalFooter({
   children,
   text,
   spaceBetween,
   className,
   ...props
-}: any) => {
+}: any) {
   const containerClassName = cx(className, "modal-footer", {
     "modal-footer--space-between": spaceBetween,
   });
@@ -21,7 +21,7 @@ const ModalFooter = ({
       {children}
     </NewModal.Footer>
   );
-};
+}
 
 ModalFooter.propTypes = {
   children: node.isRequired,

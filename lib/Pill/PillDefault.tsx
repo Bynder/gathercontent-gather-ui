@@ -3,12 +3,12 @@ import cx from 'classnames';
 import { propTypes, defaultProps, sizes } from './common';
 import PillBase from './PillBase';
 
-const PillDefault = ({
+function PillDefault({
   className,
   children,
   size,
   ...rest
-}: any) => {
+}: any) {
   const classes = cx(`bg-neutral-90 border-neutral-90 ${className}`, {
     'text-neutral-primary': size === sizes.xs
   });
@@ -18,7 +18,7 @@ const PillDefault = ({
       {children}
     </PillBase>
   );
-};
+}
 
 PillDefault.propTypes = propTypes;
 

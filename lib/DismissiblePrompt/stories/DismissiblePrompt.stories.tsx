@@ -10,7 +10,8 @@ export default {
   }
 };
 
-export const DismissiblePrompt = (args: any) => <div>
+export function DismissiblePrompt(args: any) {
+  return <div>
   <StoryItem
     title="DismissiblePromptComponent"
     description="A small prompt that can be dissmissed"
@@ -19,7 +20,8 @@ export const DismissiblePrompt = (args: any) => <div>
       hello there!
     </DismissiblePromptComponent>
   </StoryItem>
-</div>;
+</div>
+}
 
 DismissiblePrompt.parameters = {
   controls: { hideNoControlsWarning: true }

@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { ConfirmationOverlay, ButtonTertiary, ButtonPrimaryDanger } from "lib";
+import { React, shallow } from "../setup";
 
 describe("Confirmation Overlay", () => {
   let wrapper: any;

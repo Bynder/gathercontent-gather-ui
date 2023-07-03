@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { TopBar, NotificationBar } from "lib";
+import { React, shallow } from "../setup";
 
 describe("TopBar", () => {
   let wrapper: any;

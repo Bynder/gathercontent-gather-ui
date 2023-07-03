@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { MenuItem, Dropdown } from "lib";
 
-const DueDateTime = (props: any) => {
+function DueDateTime(props: any) {
   const minutes = ["00", "15", "30", "45"];
   const hours = Array.from({ length: 24 }, (x, i) => i);
   const { setTime } = props;
@@ -55,7 +55,7 @@ const DueDateTime = (props: any) => {
       </Dropdown.Content>
     </Dropdown>
   );
-};
+}
 
 DueDateTime.propTypes = {
   setTime: PropTypes.func.isRequired,

@@ -5,7 +5,7 @@ import Button from "../Button";
 import ProgressButton from "../ProgressButton";
 import Modal from "../Modal";
 
-export const ConfirmationModal = ({
+export function ConfirmationModal({
   title,
   introText,
   children,
@@ -20,8 +20,8 @@ export const ConfirmationModal = ({
   useShowSpinnerProp,
   extraButtons,
   ...rest
-}: any) => (
-  <Modal.Container {...rest}>
+}: any) {
+  return <Modal.Container {...rest}>
     {/* @ts-expect-error TS(2322): Type '{ children: Element[]; onSubmit: (event: any... Remove this comment to see the full error message */}
     <Form
       onSubmit={(event: any) => {
@@ -48,7 +48,7 @@ export const ConfirmationModal = ({
       </Modal.Footer>
     </Form>
   </Modal.Container>
-);
+}
 
 ConfirmationModal.propTypes = {
   title: PropTypes.string.isRequired,

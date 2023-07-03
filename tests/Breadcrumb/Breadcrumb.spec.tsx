@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Breadcrumb } from "lib";
+import { React, shallow } from "../setup";
 
 describe("Breadcrumb", () => {
   let wrapper: any;

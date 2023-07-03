@@ -8,13 +8,13 @@ import FinderPanelLayoutLeftContent from "./FinderPanelLayoutLeftContent";
 
 export const FinderPanelLayoutContext = React.createContext({});
 
-export const FinderPanelLayout = ({ children, className, fixed }: any) => {
+export function FinderPanelLayout({ children, className, fixed }: any) {
   return (
     <FinderPanelLayoutProvider fixed={fixed}>
       <div className={`finder-panel-layout ${className}`}>{children}</div>
     </FinderPanelLayoutProvider>
   );
-};
+}
 
 FinderPanelLayout.Left = FinderPanelLayoutLeft;
 

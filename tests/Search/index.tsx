@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Search } from "lib";
+import { React, shallow } from "../setup";
 import SearchBoundaryListener from "../../lib/Search/SearchBoundaryListener";
 import SearchProvider from "../../lib/Search/SearchProvider";
 import SearchList from "../../lib/Search/SearchList";

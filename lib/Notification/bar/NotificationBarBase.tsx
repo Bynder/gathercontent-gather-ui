@@ -9,14 +9,14 @@ import { defaults, types } from './barTypes';
  *
  * <NotificationBarBase>This is a warning</NotificationBarBase>
  */
-const NotificationBarBase = ({
+function NotificationBarBase({
   children,
   clickHandler,
   className,
   center,
   onClose,
   ...rest
-}: any) => {
+}: any) {
   const classes = cx({
     'cursor-pointer': clickHandler,
     'text-center': center,
@@ -49,7 +49,7 @@ const NotificationBarBase = ({
       )}
     </div>
   );
-};
+}
 
 NotificationBarBase.defaultProps = defaults;
 

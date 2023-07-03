@@ -9,7 +9,7 @@ import logoSVG from "../../assets/logo.svg";
  * <Logo url="http://example.com/myimage.png" alt="Alt Tag" />
  */
 
-export const Logo = (props: any) => {
+export function Logo(props: any) {
   const LogoPath = props.url || logoSVG;
   const image =
     typeof LogoPath === "string" ? (
@@ -20,7 +20,7 @@ export const Logo = (props: any) => {
       </span>
     );
   return <span className="logo">{image}</span>;
-};
+}
 
 Logo.defaultProps = {
   url: "",

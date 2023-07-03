@@ -11,7 +11,7 @@ export default {
   component: ButtonAvatarComponent,
 };
 
-export const ButtonAvatar = () => {
+export function ButtonAvatar() {
   const props = {
     url: faker.image.avatar(),
     initials: "PP",
@@ -46,7 +46,7 @@ export const ButtonAvatar = () => {
       </StoryItem>
     </div>
   );
-};
+}
 
 ButtonAvatar.parameters = {
   controls: { hideNoControlsWarning: true },

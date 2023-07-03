@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { Shortcut, ShortcutIcon } from "lib";
+import { React, mount } from "../setup";
 
 describe("Shortcut", () => {
   let wrapper: any;

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const ProgressBar = ({
+function ProgressBar({
   className,
   children
-}: any) => {
+}: any) {
   const classes = cx(['progress__bar', className]);
 
   return <div className={classes}>{children}</div>;
-};
+}
 
 ProgressBar.propTypes = {
   children: PropTypes.node.isRequired,

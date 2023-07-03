@@ -8,17 +8,15 @@ export default {
   component: CloseButtonComponent
 };
 
-export const CloseButton = () => {
+export function CloseButton() {
   return (
-    <>
-      <StoryItem title="Close Button">
+    <StoryItem title="Close Button">
         <div className="h-12 w-32 border border-neutral-90 rounded border-solid relative">
           <CloseButtonComponent />
         </div>
       </StoryItem>
-    </>
   );
-};
+}
 
 CloseButton.parameters = {
   controls: { hideNoControlsWarning: true }

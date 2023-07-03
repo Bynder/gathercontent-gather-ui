@@ -23,7 +23,7 @@ export default {
   },
 };
 
-export const Card = (args: any) => {
+export function Card(args: any) {
   const onClick = args.interactive ? () => {} : null;
 
   return (
@@ -43,4 +43,4 @@ export const Card = (args: any) => {
       </CardComponent>
     </StoryItem>
   );
-};
+}

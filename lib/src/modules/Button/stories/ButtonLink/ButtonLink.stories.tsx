@@ -9,8 +9,8 @@ export default {
   component: ButtonLinkComponent
 };
 
-export const ButtonLink = () => (
-  <StoryItem
+export function ButtonLink() {
+  return <StoryItem
     title="ButtonLinkComponent"
     description="The link button component"
   >
@@ -21,7 +21,7 @@ export const ButtonLink = () => (
       Looks like a link, acts like a button!
     </ButtonLinkComponent>
   </StoryItem>
-);
+}
 
 ButtonLink.parameters = {
   controls: { hideNoControlsWarning: true }

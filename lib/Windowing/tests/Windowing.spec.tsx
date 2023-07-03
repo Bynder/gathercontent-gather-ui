@@ -37,7 +37,7 @@ describe("Windowing", () => {
   );
 
   it("renders 15 ({ start: 0, end: 15 }) in-view items", async () => {
-    const { getByTestId, queryByTestId } = render(createFlatWrapper());
+    const { getByTestId } = render(createFlatWrapper());
     await waitForElement(() => [
       getByTestId("test-id-1"),
       getByTestId("test-id-15"),

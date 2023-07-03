@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { node, string } from "prop-types";
 import { FinderPanelLayoutContext } from "./FinderPanelLayoutProvider";
 
-const FinderPanelLayoutLeftContent = ({ children, className }: any) => {
+function FinderPanelLayoutLeftContent({ children, className }: any) {
   const { fixed, headerHeight }: any = useContext(FinderPanelLayoutContext);
   const style = fixed
     ? {
@@ -17,7 +17,7 @@ const FinderPanelLayoutLeftContent = ({ children, className }: any) => {
       {children}
     </div>
   );
-};
+}
 
 FinderPanelLayoutLeftContent.propTypes = {
   children: node.isRequired,

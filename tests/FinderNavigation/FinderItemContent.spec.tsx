@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { FinderNavigation } from "lib";
+import { React, shallow } from "../setup";
 
 describe("FinderNavigation Content", () => {
   let wrapper: any;

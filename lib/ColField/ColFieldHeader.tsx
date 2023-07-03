@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 import cx from "classnames";
-import { propTypes, defaultProps } from "./common";
+import { defaultProps } from "./common";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   border?: boolean;

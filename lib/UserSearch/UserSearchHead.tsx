@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CheckToggle from '../CheckToggle';
 
-const UserSearchHead = ({
+function UserSearchHead({
   searchHeading,
   subheading,
   useDisplayToggle,
   toggleListDisplay,
   toggleActive
-}: any) => (
-  <div className="user-search__search-head">
+}: any) {
+  return <div className="user-search__search-head">
     <div className="user-search__search-head-top">
       {searchHeading && (
         <span className="user-search__search-heading">{searchHeading}</span>
@@ -28,7 +28,7 @@ const UserSearchHead = ({
       <span className="user-search__search-subheading">{subheading}</span>
     )}
   </div>
-);
+}
 
 UserSearchHead.propTypes = {
   searchHeading: PropTypes.string,

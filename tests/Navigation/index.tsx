@@ -7,12 +7,9 @@ describe("Navigation", () => {
   beforeEach(() => {
     wrapper = mount(
       <Navigation>
-        // @ts-expect-error TS(2304): Cannot find name 'href'.
         <MenuItem href="#" active>
-          // @ts-expect-error TS(2552): Cannot find name 'Items'. Did you mean
-          'items'? Items
+          Items
         </MenuItem>
-        // @ts-expect-error TS(2304): Cannot find name 'href'.
         <MenuItem href="#">Archived Items</MenuItem>
       </Navigation>
     );

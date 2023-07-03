@@ -5,7 +5,7 @@ import cx from "classnames";
 
 export const LegacyModalContext = createContext({});
 
-const Modal = (props: any) => {
+function Modal(props: any) {
   const {
     size,
     highlight,
@@ -38,7 +38,7 @@ const Modal = (props: any) => {
       </NewModal>
     </LegacyModalContext.Provider>
   );
-};
+}
 
 Modal.defaultProps = {
   size: "",

@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { EventCodeWatcher } from "lib";
+import { React, shallow } from "../setup";
 import SearchResults from "../../lib/SearchDropdown/SearchResults";
 
 describe("SearchResults", () => {

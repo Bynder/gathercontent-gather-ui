@@ -11,14 +11,14 @@ export default {
   title: "Legacy/Drag And Drop",
 };
 
-export const DragAndDrop = () => (
-  <DndProvider backend={HTML5Backend}>
+export function DragAndDrop() {
+  return <DndProvider backend={HTML5Backend}>
     {/* @ts-expect-error TS(2322): Type '{ name: any; }' is not assignable to type 'I... Remove this comment to see the full error message */}
     <FolderDndMock name={faker.commerce.productName()} />
     <ItemDndMock>{faker.commerce.productName()}</ItemDndMock>
     <DndDropNotification />
   </DndProvider>
-);
+}
 
 DragAndDrop.parameters = {
   controls: { hideNoControlsWarning: true },

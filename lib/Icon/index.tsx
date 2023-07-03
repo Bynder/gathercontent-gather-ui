@@ -527,7 +527,7 @@ const getIcon = (name: any) => {
   return icons[name] || null;
 };
 
-export const Icon = (props: any) => {
+export function Icon(props: any) {
   const IconComponent = getIcon(props.name);
 
   if (!IconComponent) {
@@ -587,7 +587,7 @@ export const Icon = (props: any) => {
       </span>
     </span>
   );
-};
+}
 
 Icon.defaultProps = {
   hideText: false,

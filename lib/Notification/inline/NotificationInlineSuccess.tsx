@@ -2,12 +2,12 @@ import React from "react";
 import { defaults, types } from "./inlineTypes";
 import NotificationInlineBase from "./NotificationInlineBase";
 
-export const NotificationInlineSuccess = ({
+export function NotificationInlineSuccess({
   children,
   className = "",
   ...rest
-}: any) => (
-  <NotificationInlineBase
+}: any) {
+  return <NotificationInlineBase
     iconName="approved"
     className={`border-green-primary ${className}`}
     textClassName="text-green-primary"
@@ -15,7 +15,7 @@ export const NotificationInlineSuccess = ({
   >
     {children}
   </NotificationInlineBase>
-);
+}
 
 NotificationInlineSuccess.defaultProps = defaults;
 NotificationInlineSuccess.propTypes = types;

@@ -9,14 +9,14 @@ import SelectionBarInformation from "./SelectionBarInformation";
 import SelectionBarActions from "./SelectionBarActions";
 import SelectionBarCounter from "./SelectionBarCounter";
 
-export const SelectionBar = ({
+export function SelectionBar({
   fixed,
   autoHide,
   hasSelected,
   children,
   animatableProperties,
   ...rest
-}: any) => {
+}: any) {
   const classNames = cx("selection-bar", {
     "selection-bar--fixed": fixed,
     "selection-bar--auto-hide": autoHide,
@@ -32,7 +32,7 @@ export const SelectionBar = ({
       <Row className="m-0">{children}</Row>
     </AnimatedWrapper>
   );
-};
+}
 
 SelectionBar.Information = SelectionBarInformation;
 SelectionBar.Cancel = SelectionBarCancel;

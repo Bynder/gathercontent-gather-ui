@@ -5,7 +5,6 @@ import { SelectionProvider, SelectionContext } from "../../lib";
 describe("SelectionProvider", () => {
   const createWrapper = (child: any) => (
     <SelectionProvider>
-      // @ts-expect-error TS(2503): Cannot find namespace 'SelectionContext'.
       <SelectionContext.Consumer>{child}</SelectionContext.Consumer>
     </SelectionProvider>
   );
@@ -15,7 +14,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onClick={() => context.updateSelected("7", "testType")}
@@ -23,7 +22,7 @@ describe("SelectionProvider", () => {
             Append Id
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 
@@ -41,7 +40,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onClick={() => context.updateSelected("7", "anotherTestType")}
@@ -49,7 +48,7 @@ describe("SelectionProvider", () => {
             Click with Id
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 
@@ -68,7 +67,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onClick={() =>
@@ -78,7 +77,7 @@ describe("SelectionProvider", () => {
             Select Multiple
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 
@@ -96,7 +95,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onClick={() =>
@@ -117,7 +116,7 @@ describe("SelectionProvider", () => {
             Deselect Multiple
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 
@@ -135,7 +134,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onClick={() =>
@@ -148,7 +147,7 @@ describe("SelectionProvider", () => {
             Clear
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 
@@ -165,7 +164,7 @@ describe("SelectionProvider", () => {
 
     const { getByText } = render(
       createWrapper((context: any) => (
-        <React.Fragment>
+        <>
           <button
             type="button"
             onMouseEnter={() =>
@@ -176,7 +175,7 @@ describe("SelectionProvider", () => {
             IntendedToSelect
           </button>
           {childSpy(context)}
-        </React.Fragment>
+        </>
       ))
     );
 

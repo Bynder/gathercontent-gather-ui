@@ -1,18 +1,36 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "airbnb",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "globals": {
     "window": true,
     "document": true,
     "Element": true
   },
-  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "jsx-a11y", "prettier"],
   "rules": {
+    "react/state-in-constructor": [0],
+    "no-console": [1, { "allow": ["warn", "error"] }],
+    "react/static-property-placement": [0],
+    "@typescript-eslint/ban-types": [0],
+    "react/require-default-props": [0],
+    "@typescript-eslint/no-unused-vars": [
+      1,
+      {
+        "ignoreRestSiblings": true
+      }
+    ],
+    "react/default-props-match-prop-types": [0],
+    "@typescript-eslint/no-empty-function": [0],
+    "@typescript-eslint/ban-ts-comment": [0],
+    "@typescript-eslint/no-explicit-any": [0],
+    "react/no-unstable-nested-components": [0],
+    "react/jsx-no-constructed-context-values": [0],
+    "react/jsx-props-no-spreading": [0],
     "consistent-return": "warn",
     "import/no-unresolved": [0],
     "import/prefer-default-export": [0],
@@ -29,11 +47,7 @@
       { "customValidators": [], "skipShapeProps": true }
     ],
     "new-cap": ["error", { "capIsNewExceptions": ["Intercom"] }],
-    "react/prop-types": [
-      {
-        "expections": ["className", "children"]
-      }
-    ],
+    "react/prop-types": [0],
     "react/no-danger": [0],
     "react/no-unescaped-entities": [0],
     "react/sort-comp": [0],
@@ -47,5 +61,10 @@
   },
   "env": {
     "jest": true
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
   }
 }

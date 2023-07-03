@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FinderGroup = ({
+function FinderGroup({
   className,
   title,
   children,
   meta
-}: any) => (
-  <div className={`finder-group ${className}`}>
+}: any) {
+  return <div className={`finder-group ${className}`}>
     {(title || meta) && (
       <div className="finder-group-heading">
         {title && <span className="finder-group-title">{title}</span>}
@@ -16,7 +16,7 @@ const FinderGroup = ({
     )}
     {children}
   </div>
-);
+}
 
 FinderGroup.propTypes = {
   children: PropTypes.node.isRequired,

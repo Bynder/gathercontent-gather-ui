@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { Button } from "lib";
+import { React, mount } from "../setup";
 
 describe("Button", () => {
   let wrapper: any;

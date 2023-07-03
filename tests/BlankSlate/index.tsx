@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { BlankSlate } from "lib";
+import { React, mount } from "../setup";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/icons/keyboard.sv... Remove this comment to see the full error message
 import keyboardSVG from "../../assets/icons/keyboard.svg";
 
@@ -9,7 +9,6 @@ describe("Blank Slate", () => {
   beforeEach(() => {
     wrapper = mount(
       <BlankSlate>
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="child">I am a small child</div>
       </BlankSlate>
     );

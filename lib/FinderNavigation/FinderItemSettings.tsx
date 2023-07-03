@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FinderItemSettings = ({
+function FinderItemSettings({
   className,
   children
-}: any) => (
-  <div className={`finder-item-settings ${className}`}>{children}</div>
-);
+}: any) {
+  return <div className={`finder-item-settings ${className}`}>{children}</div>
+}
 
 FinderItemSettings.propTypes = {
   children: PropTypes.node.isRequired,

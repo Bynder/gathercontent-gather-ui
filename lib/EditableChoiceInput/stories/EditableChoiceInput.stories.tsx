@@ -6,8 +6,8 @@ export default {
   title: "Legacy/Form/Inputs/Editable Choice Input",
 };
 
-export const EditableChoiceInput = () => (
-  <div>
+export function EditableChoiceInput() {
+  return <div>
     <StoryItem
       title="EditableChoiceInputComponent"
       description="A text input next to a choice input"
@@ -31,7 +31,7 @@ export const EditableChoiceInput = () => (
       />
     </StoryItem>
   </div>
-);
+}
 
 EditableChoiceInput.parameters = {
   controls: { hideNoControlsWarning: true },

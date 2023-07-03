@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const InventoryItem = (args: any) => {
+export function InventoryItem(args: any) {
   return (
     <StoryItem
       title="InventoryItemComponent"
@@ -43,4 +43,4 @@ export const InventoryItem = (args: any) => {
       </DndProvider>
     </StoryItem>
   );
-};
+}

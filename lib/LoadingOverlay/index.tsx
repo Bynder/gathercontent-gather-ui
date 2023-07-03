@@ -4,12 +4,12 @@ import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/loading.svg' or i... Remove this comment to see the full error message
 import loadingSVG from "../../assets/loading.svg";
 
-export const LoadingOverlay = ({
+export function LoadingOverlay({
   fixed,
   hideSVG,
   percentageLoaded,
   loadingText,
-}: any) => {
+}: any) {
   const className = cx("loading-overlay", {
     "loading-overlay--fixed": fixed,
   });
@@ -19,17 +19,17 @@ export const LoadingOverlay = ({
       <div className="loading-overlay__content weight-semi-bold text-align-center">
         {!hideSVG && loadingSVG()}
         {percentageLoaded > 0 && (
-          <Fragment>
+          <>
             <p className="h-margin-bottom-quarter h-margin-top-clear">
               {loadingText}
             </p>
             <p className="h-margin-clear color-neutral-base">{`${percentageLoaded}%`}</p>
-          </Fragment>
+          </>
         )}
       </div>
     </div>
   );
-};
+}
 
 LoadingOverlay.propTypes = {
   fixed: PropTypes.bool,

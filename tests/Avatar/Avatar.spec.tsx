@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Avatar } from "lib";
+import { React, shallow } from "../setup";
 
 describe("AvatarGroup", () => {
   let wrapper: any;

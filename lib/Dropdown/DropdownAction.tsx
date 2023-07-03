@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import { DropdownContext } from "./DropdownProvider";
 
-const DropdownAction = ({
+function DropdownAction({
   children,
   action,
   actionKeyDown,
@@ -20,7 +20,7 @@ const DropdownAction = ({
   showContent: showContentProp,
   toggleShowContent: toggleShowContentProp,
   ...props
-}: any) => {
+}: any) {
   const {
     toggleShowContent = toggleShowContentProp,
     showContent = showContentProp,
@@ -62,7 +62,7 @@ const DropdownAction = ({
       {children}
     </button>
   );
-};
+}
 
 DropdownAction.defaultProps = {
   danger: false,

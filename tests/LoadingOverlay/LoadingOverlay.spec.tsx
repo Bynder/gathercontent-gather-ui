@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { LoadingOverlay } from "lib";
+import { React, shallow } from "../setup";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/loading.svg' or i... Remove this comment to see the full error message
 import loadingSVG from "../../assets/loading.svg";
 

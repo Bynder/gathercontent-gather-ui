@@ -6,14 +6,14 @@ import cx from 'classnames';
 import { DeleteablePill } from '../DeleteablePill';
 import { useKeyDownHandlers } from './useKeyDownHandlers';
 
-const PillInput = ({
+function PillInput({
   className,
   checker,
   placeholder,
   onPillsChange,
   initialPills,
   ...rest
-}: any) => {
+}: any) {
   const checkPill = (pillName: any) => !checker || checker.regex.test(pillName);
   const initialPillsValidated = initialPills.map((pill: any) => ({
     ...pill,
@@ -102,8 +102,7 @@ const PillInput = ({
         id,
         name,
         isValid
-      }: any) => {
-        return (
+      }: any) => (
           <DeleteablePill
             key={id}
             id={id}
@@ -111,8 +110,7 @@ const PillInput = ({
             onRemove={() => removePill(id)}
             warning={isValid ? null : checker.warning}
           />
-        );
-      })}
+        ))}
       <input
         {...rest}
         ref={inputRef}
@@ -125,7 +123,7 @@ const PillInput = ({
       />
     </div>
   );
-};
+}
 
 PillInput.propTypes = {
   className: string,

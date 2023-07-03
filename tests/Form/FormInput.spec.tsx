@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { FormInput } from "lib";
+import { React, shallow } from "../setup";
 
 describe("FormInput", () => {
   let wrapper: any;

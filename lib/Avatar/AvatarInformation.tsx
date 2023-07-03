@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const AvatarInformation = (props: any) => (
-  <div className={`avatar__information ${props.className}`}>
+export function AvatarInformation(props: any) {
+  return <div className={`avatar__information ${props.className}`}>
     {props.name && <span className="avatar__name">{props.name}</span>}
 
     {props.email && (
@@ -12,7 +12,7 @@ export const AvatarInformation = (props: any) => (
     )}
     {props.actions && <span className="avatar__actions">{props.actions}</span>}
   </div>
-);
+}
 
 AvatarInformation.defaultProps = {
   className: "",

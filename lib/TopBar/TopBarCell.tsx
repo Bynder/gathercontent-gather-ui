@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-export const TopBarCell = (props: any) => {
+export function TopBarCell(props: any) {
   const classes = cx(`top-bar__cell ${props.className}`, {
     "top-bar__cell--bordered": props.bordered,
   });
   return <div className={classes}>{props.children}</div>;
-};
+}
 
 TopBarCell.propTypes = {
   bordered: PropTypes.bool,

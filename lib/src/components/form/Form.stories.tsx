@@ -27,7 +27,7 @@ export default {
   },
 };
 
-export const TextForm = (args: any) => {
+export function TextForm(args: any) {
   const promise = createDelayedPromise(1000);
   const failedPromise = createFailedPromise(1000);
 
@@ -128,4 +128,4 @@ export const TextForm = (args: any) => {
       </StoryItem>
     </>
   );
-};
+}

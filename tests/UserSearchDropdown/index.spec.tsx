@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { UserSearchDropdown, Icon } from "lib";
+import { React, shallow } from "../setup";
 
 describe("User Search Dropdown", () => {
   let wrapper: any;

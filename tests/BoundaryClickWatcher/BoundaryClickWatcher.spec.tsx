@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { BoundaryClickWatcher } from "lib";
+import { React, mount } from "../setup";
 
 describe("BoundaryClickWatcher", () => {
   const childSpy = jest.fn();
