@@ -16,6 +16,7 @@
   text-decoration: none;
   padding: $layout-spacing-base * 0.5 0;
   font-weight: $typo-weight-roman;
+
   [class*='--dark'] & {
     color: $neutral-light;
   }
@@ -27,6 +28,7 @@
   &:hover {
     text-decoration: none;
     color: $primary-blue;
+
     [class*='--dark'] & {
       color: white;
     }
@@ -35,6 +37,7 @@
 
 .navigation__item--active > * {
   color: $primary-blue;
+
   [class*='--dark'] & {
     color: white;
   }
@@ -57,6 +60,7 @@
 .navigation--tabs .navigation__item > * {
   padding: $layout-spacing-base;
   color: $neutral-dark;
+
   &:hover {
     color: $primary-blue;
     text-decoration: none;

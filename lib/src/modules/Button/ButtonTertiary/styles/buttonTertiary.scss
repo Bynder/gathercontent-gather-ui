@@ -2,16 +2,17 @@
   @apply border-transparent border-solid text-neutral-20 bg-white;
 
   &:hover {
-    background-color: rgba(103, 128, 152, 0.1);
+    background-color: rgb(103 128 152 / 10%);
   }
 
   &:active,
   &.button-tertiary-active {
-    background-color: rgba(103, 128, 152, 0.1);
+    background-color: rgb(103 128 152 / 10%);
   }
 
   &:focus {
-    background-color: rgba(103, 128, 152, 0.2);
+    background-color: rgb(103 128 152 / 20%);
+
     @apply border-neutral-20 shadow-button-tertiary-focus;
   }
 

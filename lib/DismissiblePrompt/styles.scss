@@ -6,9 +6,11 @@
   box-shadow: $shadow-base;
   display: flex;
   align-items: flex-start;
+
   &__children {
     padding: $layout-spacing-base*0.25;
   }
+
   &__close {
     margin-left: auto;
   }

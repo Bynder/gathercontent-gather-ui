@@ -21,6 +21,7 @@ $search-min-width: 400px !default;
 .search-options {
   padding: $layout-spacing-base*0.5 + $layout-spacing-base*0.25;
   border-bottom:  1px solid $color-border-base;
+
   .search-options__toggle {
     color: $neutral-base;
   }
@@ -45,20 +46,24 @@ $search-min-width: 400px !default;
 
 .search-item {
   padding: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 + $layout-spacing-base*0.25);
+
   em {
     font-style: normal;
     color: $primary-purple;
   }
+
   &:hover,
   &:focus {
     outline: none;
     background: $neutral-lightest;
   }
 }
+
 .search-item__title,
 .search-item__content {
   font-weight: 500;
 }
+
 .search-item__subtext {
   color: $neutral-base;
   font-size: $typo-size-small;
@@ -77,25 +82,30 @@ $search-min-width: 400px !default;
   width: 40px;
   border-radius: $layout-spacing-base*0.25;
   margin-right: $layout-spacing-base*0.25;
+
   &--clear {
     position: absolute;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.0s linear, opacity 0.0s linear;
   }
+
   &--input {
     display:none;
     flex: 1 0 auto;
     border: none;
     background-color: transparent;
     padding: $layout-spacing-base*0.5;
+
     &:focus {
       outline: none;
     }
   }
+
   &--clear {
     padding-right: $layout-spacing-base*0.5;
   }
+
   &--start {
     visibility: visible;
     opacity: 1;
@@ -118,9 +128,11 @@ $search-min-width: 400px !default;
   transition: width cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
   margin-right: 0;
   box-shadow: -25px 0 13px -5px #FFF;
+
   .search__input--input {
     display: block;
   }
+
   .search__input--clear {
     position: static;
     visibility: visible;
@@ -128,6 +140,7 @@ $search-min-width: 400px !default;
     padding: $layout-spacing-base*0.5;
     transition: visibility 0.0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
   }
+
   .search__input--start {
     visibility: hidden;
     opacity: 0;

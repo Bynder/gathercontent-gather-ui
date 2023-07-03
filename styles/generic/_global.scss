@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
     box-sizing: inherit;
 }
 
@@ -15,10 +15,10 @@ html {
 }
 
 body {
-    @include default-font-styles();
+    @include default-font-styles;
 
-    @media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-        @include applyFontSmoothing();
+    @media (min-device-pixel-ratio: 1.25), (resolution >= 120dpi) {
+        @include applyFontSmoothing;
     }
 }
 

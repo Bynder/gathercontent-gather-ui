@@ -8,7 +8,7 @@
 }
 
 .pseudo-border-blue-2px-no-border-radius-on-focus {
-  @include after-border-focussed(2px, solid, theme('colors.blue.primary'), 0px);
+  @include after-border-focussed(2px, solid, theme('colors.blue.primary'), 0);
 }
 
 .pseudo-left-border-blue-2px {

@@ -19,10 +19,12 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 
   .dropdown-gc {
     color: $breadcrumb-active-color;
-    @include default-font-styles();
+
+    @include default-font-styles;
 
     .dropdown__action {
-      @include text-overflow-ellipsis();
+      @include text-overflow-ellipsis;
+
       text-decoration: none;
       max-width: 250px;
     }
@@ -32,7 +34,8 @@ $breadcrumb-spacing: $layout-spacing-base !default;
     color: $breadcrumb-inactive-color;
     font-size: $breadcrumb-font-size;
     font-weight: $breadcrumb-font-weight;
-    @include link-hover-underline();
+
+    @include link-hover-underline;
 
     &.is-active {
       text-decoration: underline;
@@ -52,7 +55,8 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 }
 
 .breadcrumb a {
-  @include link-hover-underline();
+  @include link-hover-underline;
+
   color: inherit;
 }
 
@@ -63,7 +67,7 @@ $breadcrumb-spacing: $layout-spacing-base !default;
     display: none;
   }
 
-  &:after {
+  &::after {
     content: '/';
     margin: 0 $breadcrumb-spacing*0.25;
   }
@@ -75,7 +79,7 @@ $breadcrumb-spacing: $layout-spacing-base !default;
       display: block;
     }
 
-    &:after {
+    &::after {
       content: '';
     }
   }

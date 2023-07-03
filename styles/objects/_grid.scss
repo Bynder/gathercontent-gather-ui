@@ -3,13 +3,13 @@
 }
 
 .grid {
-    &:not(.tw):before,
-    &:not(.tw):after {
+    &:not(.tw)::before,
+    &:not(.tw)::after {
         display: table;
         content: "";
     }
 
-    &:not(.tw):after {
+    &:not(.tw)::after {
         clear: both;
     }
 

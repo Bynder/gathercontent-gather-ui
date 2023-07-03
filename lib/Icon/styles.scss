@@ -59,7 +59,8 @@ $icon-active-color: $color-brand-blue !default;
 
 .icon__text {
   margin: 0 0 0 $layout-spacing-base * 0.5;
-  @include text-overflow-ellipsis();
+
+  @include text-overflow-ellipsis;
 
   &--primary-blue {
     color: $primary-blue;
@@ -118,6 +119,7 @@ $icon-active-color: $color-brand-blue !default;
 .icon--keyboard rect {
   stroke: $icon-default-color;
 }
+
 .is-active .icon--keyboard rect {
   stroke: $icon-active-color;
 }

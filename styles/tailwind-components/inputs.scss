@@ -1,5 +1,6 @@
 .text-input-base {
   @apply text-base text-neutral-20 bg-white;
+
   &::placeholder {
     @apply text-neutral-primary;
   }
@@ -13,7 +14,7 @@
   @apply border-neutral-primary transition-all duration-200;
 }
 
-.text-input-border:hover:not(:focus):not(.text-input-border-focus) {
+.text-input-border:hover:not(:focus, .text-input-border-focus) {
   @apply text-input-border-hover;
 }
 
@@ -48,6 +49,7 @@
 .text-input-disabled {
   @apply bg-neutral-95 text-neutral-primary;
 }
+
 .text-input:disabled {
   @apply text-input-disabled;
 }

@@ -1,13 +1,16 @@
 .blank-slate {
   width: 100%;
   text-align: center;
+
   a {
     text-decoration: none;
     height: 100%;
+
     &:not(.button):hover {
       text-decoration: underline;
     }
   }
+
   &--fixed {
     padding: 0;
     position: absolute;
@@ -15,6 +18,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   &__content {
     padding: $layout-spacing-base * 0.5;
     font-size: $typo-size-base;
@@ -23,45 +27,54 @@
     flex-direction: column;
     align-items: center;
   }
+
   & p {
     font-size: 16px;
     color: $neutral-base;
     margin-top: 8px;
   }
+
   &__heading {
     font-size: 18px;
     color: $neutral-dark;
     font-weight: 500;
     margin-bottom: 0;
   }
+
   &__svg {
     svg {
       width: 438px;
       height: 300px;
     }
   }
+
   &--arrow {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+
     @include respond-to(small) {
       display: block;
     }
+
     .blank-slate__svg {
       svg {
         max-width: 170px;
         height: auto;
       }
+
       @include respond-to(medium) {
         left: $layout-spacing-base;
         position: absolute;
       }
     }
+
     .blank-slate__content {
       margin: 0 auto;
     }
   }
+
   &__emoji {
     font-size: 50px;
     line-height: 110%;

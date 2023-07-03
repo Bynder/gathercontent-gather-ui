@@ -12,11 +12,13 @@
 .user-search__search-wrapper {
   padding: $layout-spacing-base * 0.5 $layout-spacing-base * 0.75;
 }
+
 .user-search__search-input {
   width: 100%;
   padding: $layout-spacing-base*0.25;
   border-radius: 3px;
   border: 1px solid $color-border-base;
+
   &:focus {
     outline: none;
   }
@@ -25,6 +27,7 @@
 .user-search__search-head-top {
   display: flex;
 }
+
 .user-search__search-head {
   .toggle-wrapper {
     margin-left: auto;
@@ -38,10 +41,12 @@
   display: block;
   padding: 0 $layout-spacing-base * 0.75;
 }
+
 .user-search__search-heading {
   font-weight: 500;
   padding-bottom: $layout-spacing-base*0.25;
 }
+
 .user-search__search-subheading {
   color: $neutral-base;
   font-size: $typo-size-slight;
@@ -50,14 +55,17 @@
 .user-search__search-results {
   max-height: 300px;
   overflow-y: auto;
+
   .no-results {
     display: block;
     padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
     color: $neutral-base;
     font-style: italic;
   }
+
   .dropdown__action--selected {
     background: scale-color($primary-blue-lightest, $lightness: 20%);
+
     .avatar__name {
       color: $primary-blue;
     }

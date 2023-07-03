@@ -12,5 +12,6 @@
 
 .is-parent-selected {
   @include before-border(2px, solid, lighten($primary-blue, 30%), 4px);
+
   pointer-events: none;
 }

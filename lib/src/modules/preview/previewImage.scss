@@ -8,11 +8,13 @@
 
 .preview-image-fallback {
   @apply absolute;
+
   padding: 10%;
 }
 
 .preview-image-img {
   @apply bg-center pb-100% transition-opacity duration-300 opacity-0;
+
   background-size: contain;
   background-repeat: no-repeat;
 }

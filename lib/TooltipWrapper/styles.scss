@@ -1,4 +1,4 @@
-@import './tippystyles.scss';
+@import './tippystyles';
 
 .tippy-box[data-theme~='dark'] {
   @apply bg-neutral-20 text-white;

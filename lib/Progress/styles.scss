@@ -14,14 +14,12 @@ $progress-animation-delay: 2000ms !default;
 	background-color: $progress-bg;
 	border-radius: $progress-border-radius;
 	height: $progress-height;
-
 	overflow: hidden;
 	transform: rotateY(180deg);
 }
 
 .progress__unit {
 	height: $progress-height;
-
 	display: inline-block;
 	vertical-align: top;
 	transition: all $progress-animation-delay ease-in-out $progress-transition;

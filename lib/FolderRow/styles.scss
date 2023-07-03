@@ -26,6 +26,7 @@ $folder-row-gap: 6px;
   background: $neutral-lightest;
   position: relative;
   margin: $folder-row-gap 0 $folder-row-gap;
+
   @include before-border(1px, solid, $neutral-light, 4px);
 
   + .folder-row {
@@ -140,7 +141,7 @@ $folder-row-gap: 6px;
 }
 
 .folder-row__contents--highlight {
-  &:before {
+  &::before {
     background: $primary-blue;
   }
 }

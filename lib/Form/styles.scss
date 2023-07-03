@@ -12,7 +12,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   display: flex;
   flex-direction: column;
 
-  input:not([type=checkbox]):not([type=radio]),
+  input:not([type="checkbox"], [type="radio"]),
   textarea {
     width: 100%;
     margin: 0 0 $layout-spacing-base*0.5;
@@ -37,6 +37,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
   display: block;
+
   &.is-disabled {
     cursor: default;
   }
@@ -94,20 +95,22 @@ $form-checkbox-label-size: $typo-size-lead !default;
 .form-radiobutton--invisible {
   visibility: hidden;
 }
+
 form .dropdown-gc .button--outline,
 .form__input {
   border: 1px solid lighten($neutral-base, 20%);
   border-radius: 4px;
-  font-size: $typo-size-base;
   padding: $layout-spacing-base*0.5;
   transition: $animation-time-micro border-color $animation-curve;
   color: $neutral-dark;
   font-size: $typo-size-base;
   line-height: $typo-line-height-base;
+
   &:hover {
     border-color: $neutral-base;
     color: $neutral-dark;
   }
+
   &:focus {
     border-width: 2px;
     border-color: $primary-blue;
@@ -146,6 +149,7 @@ form .dropdown-gc .button--outline,
 
 .form__input--padding-small {
   padding: $layout-spacing-base*0.25;
+
   &:focus {
     padding: $layout-spacing-base*0.25 - 1;
   }

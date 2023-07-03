@@ -1,17 +1,17 @@
 .confirmation-overlay {
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1;
+
   &__inner {
     display: flex;
   }
+
   &__button {
     margin: $layout-spacing-base*0.25;
   }
+
   &--show {
     display: flex;
   }

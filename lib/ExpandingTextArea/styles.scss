@@ -11,9 +11,11 @@
     outline: none;
     border: 1px solid $color-border-base-hover;
   }
+
   &--has-error {
     border-color: $primary-red;
   }
+
   &__error-message {
     color: $primary-red;
     font-size: $typo-size-slight;

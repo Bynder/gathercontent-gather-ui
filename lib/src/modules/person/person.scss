@@ -5,6 +5,7 @@
 .person-right {
   @apply ml-3 flex-shrink overflow-hidden w-full flex flex-wrap items-center;
   @include gradient-overflow(rgba(255, 255, 255, 1));
+
   white-space: nowrap;
 }
 

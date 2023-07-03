@@ -8,8 +8,10 @@
   &:hover {
     @apply border border-solid border-neutral-90 rounded;
   }
+
   &:focus, &:active {
     @apply border-2 border-solid border-blue-primary rounded;
+
     outline:none;
   }
 }
@@ -29,9 +31,11 @@ textarea.rename-input-text {
 
 .rename-input-text-md {
   @apply text-base p-05 leading-4;
+
   &:hover {
     padding: 5px;
   }
+
   &:focus, &:active {
     padding: 4px;
   }
@@ -39,9 +43,11 @@ textarea.rename-input-text {
 
 .rename-input-text-lrg {
   @apply text-lg p-2 leading-5;
+
   &:hover {
     padding: 7px;
   }
+
   &:focus, &:active {
     padding: 6px;
   }
