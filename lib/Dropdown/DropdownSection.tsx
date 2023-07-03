@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropdownSection = ({
+function DropdownSection({
   children
-}: any) => {
+}: any) {
   return <div className="dropdown__section">{children}</div>;
-};
+}
 
 DropdownSection.propTypes = {
   children: PropTypes.node.isRequired

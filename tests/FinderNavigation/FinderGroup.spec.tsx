@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { FinderNavigation } from "lib";
+import { React, shallow } from "../setup";
 
 describe("FinderNavigation Group", () => {
   let wrapper: any;
@@ -7,7 +7,6 @@ describe("FinderNavigation Group", () => {
   beforeEach(() => {
     wrapper = shallow(
       <FinderNavigation.Group title="waffles">
-        // @ts-expect-error TS(2304): Cannot find name 'hello'.
         <FinderNavigation.Item>hello!</FinderNavigation.Item>
       </FinderNavigation.Group>
     );

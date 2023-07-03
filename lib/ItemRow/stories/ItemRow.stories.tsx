@@ -35,7 +35,7 @@ export default {
   },
 };
 
-export const ItemRow = ({
+export function ItemRow({
   stacked,
   bordered,
   draggedAbove,
@@ -44,7 +44,7 @@ export const ItemRow = ({
   templateName,
   showParticipants,
   itemName,
-}: any) => {
+}: any) {
   let alignment = "";
 
   if (draggedAbove) {
@@ -164,4 +164,4 @@ export const ItemRow = ({
       </StoryItem>
     </>
   );
-};
+}

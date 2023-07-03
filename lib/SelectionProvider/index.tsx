@@ -5,10 +5,10 @@ import ShortcutTrigger from '../ShortcutTrigger';
 
 const SelectionContext = React.createContext({});
 
-const SelectionProvider = ({
+function SelectionProvider({
   children,
   initialSelected
-}: any) => {
+}: any) {
   const [selected, setSelected] = useState(initialSelected);
   const [intendedToSelect, setIntendedToSelect] = useState([]);
   const [currentSelectedType, setCurrentSelectedType] = useState(null);
@@ -87,7 +87,7 @@ const SelectionProvider = ({
       <ShortcutTrigger shortcutKey="Escape" onShortcutTrigger={clear} />
     </SelectionContext.Provider>
   );
-};
+}
 
 SelectionProvider.propTypes = {
   children: node.isRequired,

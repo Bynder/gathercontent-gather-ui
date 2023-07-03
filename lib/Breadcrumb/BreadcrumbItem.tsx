@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BreadcrumbItem = ({
+function BreadcrumbItem({
   children,
   ...rest
-}: any) => (
-  <div className="breadcrumb__item" {...rest}>
+}: any) {
+  return <div className="breadcrumb__item" {...rest}>
     {children}
   </div>
-);
+}
 
 BreadcrumbItem.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired

@@ -4,7 +4,7 @@ import { node, shape } from "prop-types";
 import debounce from "debounce";
 import { WindowingContext } from "./Windowing";
 
-const WindowingScroller = ({ children, style, ...rest }: any) => {
+function WindowingScroller({ children, style, ...rest }: any) {
   const {
     setScrollTop,
     setHeight,
@@ -52,7 +52,7 @@ const WindowingScroller = ({ children, style, ...rest }: any) => {
       {children}
     </div>
   );
-};
+}
 
 WindowingScroller.propTypes = {
   children: node.isRequired,

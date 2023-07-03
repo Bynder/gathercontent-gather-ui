@@ -1,3 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export default () => <div className="selection-bar__divider" />;
+export default function SelectionBarDivider() {
+  return <div className="selection-bar__divider" />;
+}

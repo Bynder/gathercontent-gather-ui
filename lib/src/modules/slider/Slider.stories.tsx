@@ -8,11 +8,10 @@ export default {
   component: SliderComponent
 };
 
-export const Slider = () => {
+export function Slider() {
   const [value, setValue] = useState(50);
   return (
-    <>
-      <StoryItem
+    <StoryItem
         title="SliderComponent"
         description="An input type='range' styled nicely. Takes a children prop to allow the value to be displayed depending on what the slider is controlling."
       >
@@ -23,9 +22,8 @@ export const Slider = () => {
           <p>{value}</p>
         </SliderComponent>
       </StoryItem>
-    </>
   );
-};
+}
 
 Slider.parameters = {
   controls: { hideNoControlsWarning: true }

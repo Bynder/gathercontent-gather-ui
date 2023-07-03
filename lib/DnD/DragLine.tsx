@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { string, number } from 'prop-types';
 
-export const DragLine = ({
+export function DragLine({
   alignment,
   offsetPx
-}: any) => (
-  <Fragment>
+}: any) {
+  return <>
     <span
       className="drag-line__ball drag-line__ball-left"
       style={{
@@ -24,8 +24,8 @@ export const DragLine = ({
         [alignment]: `${-5 - offsetPx}px`
       }}
     />
-  </Fragment>
-);
+  </>
+}
 
 DragLine.propTypes = {
   alignment: string.isRequired,

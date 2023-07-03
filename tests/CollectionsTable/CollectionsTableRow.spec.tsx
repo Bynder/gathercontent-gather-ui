@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { CollectionsTable } from "lib";
+import { React, shallow } from "../setup";
 
 describe("Collections table row", () => {
   let wrapper: any;

@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { defaultProps, propTypes } from './propTypes';
 
-const CollectionsTableCellContent = ({
+function CollectionsTableCellContent({
   children,
   allowOverflow
-}: any) => {
+}: any) {
   const classNames = cx('collections-table__cell-content', {
     'collections-table__cell-content--allow-overflow': allowOverflow
   });
 
   return <div className={classNames}>{children}</div>;
-};
+}
 
 CollectionsTableCellContent.propTypes = {
   ...propTypes,

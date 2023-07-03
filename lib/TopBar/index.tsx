@@ -18,7 +18,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function TopBar({
-  className,
+  className = "",
   children,
   fixed,
   scrollToFixed,
@@ -55,7 +55,7 @@ export function TopBar({
   }, [topbarRef.current]);
 
   const wrapperClasses = cx("top-bar__wrapper", {
-    shadow: shadow,
+    shadow,
     "top-bar__wrapper--fixed": fixed || scrollFixed,
   });
 
@@ -68,10 +68,8 @@ export function TopBar({
   return (
     <Grid className={classes}>
       <div className={wrapperClasses} ref={topbarRef}>
-        <>
-          {notification}
-          <Row className="top-bar__inner">{children}</Row>
-        </>
+        {notification}
+        <Row className="top-bar__inner">{children}</Row>
       </div>
     </Grid>
   );
@@ -81,10 +79,9 @@ TopBar.defaultProps = {
   fixed: false,
   scrollToFixed: false,
   useDarkTheme: false,
-  children: [],
-  className: "",
   notification: null,
   shadow: true,
+  useLightGreyTheme: false,
 };
 
 export default TopBar;

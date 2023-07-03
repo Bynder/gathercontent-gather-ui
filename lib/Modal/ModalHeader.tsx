@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { NewModal } from "lib";
 import { LegacyModalContext } from "./Modal";
 
-const ModalHeader = ({ children, text, ...rest }: any) => {
+function ModalHeader({ children, text, ...rest }: any) {
   const { onHide }: any = useContext(LegacyModalContext);
 
   return (
@@ -16,7 +16,7 @@ const ModalHeader = ({ children, text, ...rest }: any) => {
       {text && <p className="modal__header-intro">{text}</p>}
     </NewModal.Header>
   );
-};
+}
 
 ModalHeader.propTypes = {
   children: PropTypes.node,

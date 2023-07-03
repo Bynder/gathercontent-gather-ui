@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Icon } from "lib";
+import { React, shallow } from "../setup";
 import UserSearchListUserName from "../../lib/UserSearch/UserSearchListUserName";
 
 describe("User Search Name", () => {

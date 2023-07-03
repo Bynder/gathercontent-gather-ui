@@ -3,13 +3,13 @@ import { ButtonIcon } from "lib";
 import cx from "classnames";
 import { buttonIconPropTypes, buttonIconDefaultProps } from "../common";
 
-export const ButtonIconBubble = ({
+export function ButtonIconBubble({
   className,
   disabled,
   name,
   size,
   ...rest
-}: any) => {
+}: any) {
   const classes = cx(
     "button-icon-bubble button-icon-contained rounded-full p-3",
     className,
@@ -27,7 +27,7 @@ export const ButtonIconBubble = ({
       {...rest}
     />
   );
-};
+}
 
 ButtonIconBubble.propTypes = buttonIconPropTypes;
 

@@ -11,7 +11,7 @@ export default {
   component: AnimatedWrapperComponent,
 };
 
-export const AnimatedWrapper = () => {
+export function AnimatedWrapper() {
   const [grow, setGrow] = useState(false);
   const animatableProperties = {
     width: grow ? "calc(100% - 0px)" : "calc(100% - 5000px)",
@@ -37,7 +37,7 @@ export const AnimatedWrapper = () => {
       </AnimatedWrapperComponent>
     </StoryItem>
   );
-};
+}
 
 AnimatedWrapper.parameters = {
   controls: { hideNoControlsWarning: true },

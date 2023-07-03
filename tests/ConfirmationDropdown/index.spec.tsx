@@ -1,5 +1,5 @@
-import { React, mount } from "../setup";
 import { ConfirmationDropdown, Dropdown } from "lib";
+import { React, mount } from "../setup";
 import ConfirmationDropdownContent from "../../lib/ConfirmationDropdown/ConfirmationDropdownContent";
 
 describe("Confirmation Dropdown blabla", () => {

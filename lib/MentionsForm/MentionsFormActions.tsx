@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import { pluralisePerson } from '../helpers';
 
-const MentionsFormActions = (props: any) => {
+function MentionsFormActions(props: any) {
   const additionalClasses = cx({
     'mention-form__actions--inline': props.editing
   });
@@ -44,7 +44,7 @@ const MentionsFormActions = (props: any) => {
       </span>
     </div>
   );
-};
+}
 
 MentionsFormActions.propTypes = {
   onCancel: PropTypes.func.isRequired,

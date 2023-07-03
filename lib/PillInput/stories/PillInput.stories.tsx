@@ -9,8 +9,8 @@ export default {
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export const PillInput = () => (
-  <div>
+export function PillInput() {
+  return <div>
     <StoryItem
       title="PillInputComponent"
       description="Text input that creates pills"
@@ -36,7 +36,7 @@ export const PillInput = () => (
       />
     </StoryItem>
   </div>
-);
+}
 
 PillInput.parameters = {
   controls: { hideNoControlsWarning: true }

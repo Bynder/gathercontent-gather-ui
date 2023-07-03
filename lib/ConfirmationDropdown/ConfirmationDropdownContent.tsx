@@ -7,7 +7,7 @@ import { DropdownContent } from "../Dropdown/DropdownContent";
 import DropdownFooter from "../Dropdown/DropdownFooter";
 import { DropdownContext } from "../Dropdown/DropdownProvider";
 
-const ConfirmationDropdownContent = ({
+function ConfirmationDropdownContent({
   id,
   isDanger,
   children,
@@ -22,7 +22,7 @@ const ConfirmationDropdownContent = ({
   actionTooltip,
   onCompletion,
   ...props
-}: any) => {
+}: any) {
   const { setShowContent }: any = useContext(DropdownContext);
   const sharedButtonProps = ["slim", "collapse"];
 
@@ -85,7 +85,7 @@ const ConfirmationDropdownContent = ({
       }
     </DropdownContent>
   );
-};
+}
 
 ConfirmationDropdownContent.propTypes = {
   id: PropTypes.string.isRequired,

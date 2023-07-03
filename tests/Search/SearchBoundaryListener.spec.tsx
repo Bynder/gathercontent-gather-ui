@@ -1,6 +1,6 @@
+import { BoundaryClickWatcher } from "lib";
 import { React, shallow } from "../setup";
 import { PureSearchBoundaryListener } from "../../lib/Search/SearchBoundaryListener";
-import { BoundaryClickWatcher } from "lib";
 
 describe("SearchBoundaryListener", () => {
   let wrapper: any;
@@ -10,7 +10,6 @@ describe("SearchBoundaryListener", () => {
     hideBodySpy = jest.fn();
     wrapper = shallow(
       <PureSearchBoundaryListener hideBody={hideBodySpy}>
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="child">small child</div>
       </PureSearchBoundaryListener>
     );

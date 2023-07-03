@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import Label from "../Label";
 import Input from "./Input";
 
-export const Checkbox = (props: any) => (
-  <div className="form__choice-element-wrapper">
+export function Checkbox(props: any) {
+  return <div className="form__choice-element-wrapper">
     <Input {...props} />
     <Label {...props} />
   </div>
-);
+}
 
 Checkbox.propTypes = {
   id: PropTypes.string.isRequired,

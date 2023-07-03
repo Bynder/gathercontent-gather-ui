@@ -18,7 +18,7 @@ export default {
   },
 };
 
-export const DateSet = (args: any) => {
+export function DateSet(args: any) {
   return (
     <StoryItem
       title="DateSetComponent"
@@ -29,4 +29,4 @@ export const DateSet = (args: any) => {
       </div>
     </StoryItem>
   );
-};
+}

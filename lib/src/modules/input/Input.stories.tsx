@@ -31,7 +31,7 @@ export default {
   },
 };
 
-export const Inputs = (args: any) => {
+export function Inputs(args: any) {
   const mockUsers = [
     {
       id: 2,
@@ -93,4 +93,4 @@ export const Inputs = (args: any) => {
       </StoryItem>
     </>
   );
-};
+}

@@ -10,7 +10,7 @@ export default {
   component: PersonSearchComponent
 };
 
-export const PersonSearch = (args: any) => {
+export function PersonSearch(args: any) {
   const getPerson = () => ({
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
@@ -38,7 +38,7 @@ export const PersonSearch = (args: any) => {
       </div>
     </StoryItem>
   );
-};
+}
 
 PersonSearch.parameters = {
   controls: { hideNoControlsWarning: true }

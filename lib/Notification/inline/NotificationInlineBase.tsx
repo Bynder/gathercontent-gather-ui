@@ -9,14 +9,14 @@ import Icon from '../../Icon';
  *
  * <NotificationInlineBase>This is a warning</NotificationInlineBase>
  */
-const NotificationInlineBase = ({
+function NotificationInlineBase({
   children,
   className = '',
   textClassName = '',
   iconName,
   showShadow,
   ...rest
-}: any) => {
+}: any) {
   const classes = cx({
     'shadow-large': showShadow
   });
@@ -34,7 +34,7 @@ const NotificationInlineBase = ({
       <div className="notification__content w-full">{children}</div>
     </div>
   );
-};
+}
 
 NotificationInlineBase.defaultProps = defaults;
 

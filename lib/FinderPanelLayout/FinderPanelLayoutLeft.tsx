@@ -1,15 +1,15 @@
 import React from 'react';
 import { node, string, shape } from 'prop-types';
 
-const FinderPanelLayoutLeft = ({
+function FinderPanelLayoutLeft({
   children,
   className,
   style
-}: any) => (
-  <div className={`finder-panel-layout__left ${className}`} style={style}>
+}: any) {
+  return <div className={`finder-panel-layout__left ${className}`} style={style}>
     {children}
   </div>
-);
+}
 
 FinderPanelLayoutLeft.propTypes = {
   children: node.isRequired,

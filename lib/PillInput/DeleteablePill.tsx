@@ -5,12 +5,12 @@ import Icon from '../Icon';
 import Button from '../Button';
 import TooltipWrapper from '../TooltipWrapper';
 
-const DeleteablePill = ({
+function DeleteablePill({
   name,
   onRemove,
   warning,
   id
-}: any) => {
+}: any) {
   const pillType = warning ? Pill.types.red : Pill.types.default;
   return (
     <TooltipWrapper id={`pill-input-pill-tooltip-${id}`} tooltipText={warning}>
@@ -22,7 +22,7 @@ const DeleteablePill = ({
       </Pill>
     </TooltipWrapper>
   );
-};
+}
 
 DeleteablePill.propTypes = {
   name: string.isRequired,

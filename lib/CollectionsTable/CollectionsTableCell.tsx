@@ -4,13 +4,13 @@ import cx from 'classnames';
 import CollectionsTableCellContent from './CollectionsTableCellContent';
 import { defaultProps, propTypes } from './propTypes';
 
-const CollectionsTableCell = ({
+function CollectionsTableCell({
   children,
   className,
   allowOverflow,
   alignRight,
   ...props
-}: any) => {
+}: any) {
   const classNames = cx(`collections-table__cell ${className}`, {
     'collections-table__cell--allow-overflow': allowOverflow,
     'collections-table__cell--align-right': alignRight
@@ -22,7 +22,7 @@ const CollectionsTableCell = ({
       </CollectionsTableCellContent>
     </div>
   );
-};
+}
 
 CollectionsTableCell.propTypes = {
   ...propTypes,

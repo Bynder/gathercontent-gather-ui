@@ -32,7 +32,7 @@ export default {
   },
 };
 
-export const FileCard = (args: any) => {
+export function FileCard(args: any) {
   const onClick = args.interactive ? () => {} : null;
 
   const controls = (
@@ -49,9 +49,8 @@ export const FileCard = (args: any) => {
     ? "http://fail"
     : `http://placeimg.com/${args.imgWidth}/${args.imgHeight}/animals`;
 
-  const Preview = ({ children, loader }: any) => (
-    // @ts-expect-error
-    <PreviewImage
+  function Preview({ children, loader }: any) {
+  return <PreviewImage
       src={previewSrc}
       altText="preview image"
       title="preview image"
@@ -60,7 +59,7 @@ export const FileCard = (args: any) => {
     >
       {children}
     </PreviewImage>
-  );
+}
 
   const meta = (
     <Meta>
@@ -92,8 +91,7 @@ export const FileCard = (args: any) => {
         description="A card component which utilises the Preview, Meta and Control modules to display a file."
       >
         <ul className="list-none grid p-0 m-0 tw grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {[...new Array(4)].map(() => {
-            return (
+          {[...new Array(4)].map(() => (
               <li key={`file-card-${uuid()}`}>
                 <FileCardComponent
                   preview={<Preview />}
@@ -112,8 +110,7 @@ export const FileCard = (args: any) => {
                   )}
                 </FileCardComponent>
               </li>
-            );
-          })}
+            ))}
         </ul>
       </StoryItem>
 
@@ -143,4 +140,4 @@ export const FileCard = (args: any) => {
       </StoryItem>
     </>
   );
-};
+}

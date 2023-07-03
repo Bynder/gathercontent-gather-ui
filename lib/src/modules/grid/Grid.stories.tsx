@@ -8,8 +8,8 @@ export default {
   component: GridComponent,
 };
 
-export const Grid = () => (
-  <StoryItem title="Grid" description="Some layout components">
+export function Grid() {
+  return <StoryItem title="Grid" description="Some layout components">
     <div>
       <GridComponent>
         <Row>
@@ -23,7 +23,7 @@ export const Grid = () => (
       </GridComponent>
     </div>
   </StoryItem>
-);
+}
 
 Grid.parameters = {
   controls: { hideNoControlsWarning: true },

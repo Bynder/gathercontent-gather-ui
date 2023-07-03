@@ -6,7 +6,7 @@ import DueDateTime from './DueDateTime';
 import Dropdown from '../Dropdown';
 import Icon from '../Icon';
 
-const DueDateHeader = (props: any) => {
+function DueDateHeader(props: any) {
   let label = (
     <div className="duedate__header--date duedate__header--date-not-set">
       No due date set
@@ -66,7 +66,7 @@ const DueDateHeader = (props: any) => {
       </Dropdown>
     </div>
   );
-};
+}
 
 DueDateHeader.propTypes = {
   removeDueDate: PropTypes.func.isRequired,

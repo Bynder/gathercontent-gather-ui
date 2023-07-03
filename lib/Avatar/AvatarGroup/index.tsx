@@ -5,7 +5,7 @@ import Dropdown from "../../Dropdown";
 import Avatar from "../index";
 import AvatarInformation from "../AvatarInformation";
 
-export const AvatarGroup = ({
+export function AvatarGroup({
   children,
   maximum,
   className,
@@ -13,7 +13,7 @@ export const AvatarGroup = ({
   micro,
   noTransform,
   stacked,
-}: any) => {
+}: any) {
   const total = (children && children.length) || 0;
   const plusLabel = `+${total - maximum}`;
 
@@ -67,7 +67,7 @@ export const AvatarGroup = ({
       )}
     </div>
   );
-};
+}
 
 AvatarGroup.defaultProps = {
   maximum: 3,

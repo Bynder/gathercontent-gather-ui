@@ -3,14 +3,14 @@ import { node, number, arrayOf, string, oneOfType } from 'prop-types';
 
 export const WindowingContext = createContext({});
 
-const Windowing = ({
+function Windowing({
   children,
   containerHeight,
   debounceTimer,
   itemHeight,
   buffer,
   allIds
-}: any) => {
+}: any) {
   const [scrollTop, setScrollTop] = useState(null);
   const [height, setHeight] = useState(null);
   const [renderIndexes, setRenderIndexes] = useState({});
@@ -61,7 +61,7 @@ const Windowing = ({
       {children}
     </WindowingContext.Provider>
   );
-};
+}
 
 Windowing.propTypes = {
   children: node.isRequired,

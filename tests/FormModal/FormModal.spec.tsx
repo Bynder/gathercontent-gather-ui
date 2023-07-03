@@ -16,7 +16,6 @@ describe("FormModal", () => {
         // @ts-expect-error
         show
       >
-        // @ts-expect-error TS(2304): Cannot find name 'input'.
         <input />
       </FormModal>
     );

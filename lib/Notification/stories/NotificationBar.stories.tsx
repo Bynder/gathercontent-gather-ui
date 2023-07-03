@@ -11,8 +11,8 @@ export default {
   },
 };
 
-export const NotificationBars = (args: any) => (
-  <div>
+export function NotificationBars(args: any) {
+  return <div>
     <StoryItem
       title="NotificationBar Warning"
       description="A notification box with the warning level."
@@ -76,7 +76,7 @@ export const NotificationBars = (args: any) => (
       </NotificationBar>
     </StoryItem>
   </div>
-);
+}
 
 NotificationBars.parameters = {
   controls: { hideNoControlsWarning: true },

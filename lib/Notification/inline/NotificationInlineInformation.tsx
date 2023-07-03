@@ -2,12 +2,12 @@ import React from "react";
 import { defaults, types } from "./inlineTypes";
 import NotificationInlineBase from "./NotificationInlineBase";
 
-export const NotificationInlineInformation = ({
+export function NotificationInlineInformation({
   children,
   className = "",
   ...rest
-}: any) => (
-  <NotificationInlineBase
+}: any) {
+  return <NotificationInlineBase
     iconName="infoSquare"
     className={`border-blue-primary ${className}`}
     textClassName="text-blue-primary"
@@ -15,7 +15,7 @@ export const NotificationInlineInformation = ({
   >
     {children}
   </NotificationInlineBase>
-);
+}
 
 NotificationInlineInformation.defaultProps = defaults;
 NotificationInlineInformation.propTypes = types;

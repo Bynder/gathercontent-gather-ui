@@ -6,14 +6,14 @@ import uuid from "uuid/v1";
 import AvatarGroup from "../AvatarGroup";
 import { AvatarWithPopover, ParticipantInfo } from "../../index";
 
-const AvatarGroupMock = ({
+function AvatarGroupMock({
   children,
   defaultMaxCount,
   minCount,
   avatarProps,
   avatarGroupProps,
   overlayProps,
-}: any) => {
+}: any) {
   const count = minCount;
 
   const avatarCount =
@@ -51,7 +51,7 @@ const AvatarGroupMock = ({
     ui,
     count,
   });
-};
+}
 
 AvatarGroupMock.defaultProps = {
   defaultMaxCount: 3,

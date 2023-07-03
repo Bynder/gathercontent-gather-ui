@@ -13,10 +13,9 @@ export default {
   },
 };
 
-export const OptionMenuItem = (args: any) => {
+export function OptionMenuItem(args: any) {
   return (
-    <>
-      <StoryItem title="OptionMenuItemComponent">
+    <StoryItem title="OptionMenuItemComponent">
         <OptionMenuItemComponent
           danger={args.danger}
           active={args.active}
@@ -25,6 +24,5 @@ export const OptionMenuItem = (args: any) => {
           {args.optionText}
         </OptionMenuItemComponent>
       </StoryItem>
-    </>
   );
-};
+}

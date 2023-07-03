@@ -12,8 +12,8 @@ export default {
 
 const { lg, ...storySizes } = ButtonSecondaryComponent.sizes;
 
-export const ButtonSecondary = () => (
-  <div>
+export function ButtonSecondary() {
+  return <div>
     {map(storySizes, size => (
       <StoryItem
         key={size}
@@ -54,7 +54,7 @@ export const ButtonSecondary = () => (
       </StoryItem>
     ))}
   </div>
-);
+}
 
 ButtonSecondary.parameters = {
   controls: { hideNoControlsWarning: true }

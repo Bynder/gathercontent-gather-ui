@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Breadcrumb } from "lib";
+import { React, shallow } from "../setup";
 
 describe("Breadcrumb.Item", () => {
   let wrapper: any;
@@ -8,7 +8,6 @@ describe("Breadcrumb.Item", () => {
     wrapper = shallow(
       // @ts-expect-error
       <Breadcrumb.Item className="test">
-        // @ts-expect-error TS(2304): Cannot find name 'a'.
         <a href="/">Test 1</a>
       </Breadcrumb.Item>
     );

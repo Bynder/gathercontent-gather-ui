@@ -14,10 +14,12 @@ export default {
   }
 };
 
-export const Dropzone = (args: any) => <StoryItem>
+export function Dropzone(args: any) {
+  return <StoryItem>
   <div className="h-64">
     <DropzoneComponent {...args}>
       {args.hasSomethingDropped && 'Hopefully a grid here'}
     </DropzoneComponent>
   </div>
-</StoryItem>;
+</StoryItem>
+}

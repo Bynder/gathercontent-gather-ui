@@ -14,7 +14,7 @@ export default {
   },
 };
 
-export const DueDateDropdown = (args: any) => {
+export function DueDateDropdown(args: any) {
   return (
     <>
       <StoryItem
@@ -39,4 +39,4 @@ export const DueDateDropdown = (args: any) => {
       </StoryItem>
     </>
   );
-};
+}

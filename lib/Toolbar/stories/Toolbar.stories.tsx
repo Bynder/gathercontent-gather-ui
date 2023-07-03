@@ -8,8 +8,8 @@ export default {
   component: ToolbarComponent
 };
 
-export const Toolbar = () => (
-  <StoryItem title="ToolbarComponent" description="The toolbar component">
+export function Toolbar() {
+  return <StoryItem title="ToolbarComponent" description="The toolbar component">
     <ToolbarComponent>
       <ButtonIcon name="bold16" size={ButtonIcon.sizes.sm} />
       <ButtonIcon name="italic16" size={ButtonIcon.sizes.sm} />
@@ -30,7 +30,7 @@ export const Toolbar = () => (
       <ButtonIcon name="caption16" size={ButtonIcon.sizes.sm} />
     </ToolbarComponent>
   </StoryItem>
-);
+}
 
 Toolbar.parameters = {
   controls: { hideNoControlsWarning: true }

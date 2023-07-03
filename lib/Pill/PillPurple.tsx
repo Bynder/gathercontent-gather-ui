@@ -2,18 +2,18 @@ import React from 'react';
 import { propTypes, defaultProps } from './common';
 import PillBase from './PillBase';
 
-const PillPurple = ({
+function PillPurple({
   className,
   children,
   ...rest
-}: any) => (
-  <PillBase
+}: any) {
+  return <PillBase
     className={`bg-purple-90 text-purple-primary font-semi-bold inherit-color-icon ${className}`}
     {...rest}
   >
     {children}
   </PillBase>
-);
+}
 
 PillPurple.propTypes = propTypes;
 

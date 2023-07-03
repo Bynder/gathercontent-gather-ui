@@ -9,7 +9,7 @@ export default {
   component: WorkflowStepComponent,
 };
 
-export const WorkflowStep = () => {
+export function WorkflowStep() {
   const [showBody, setShowBody] = useState(false);
 
   return (
@@ -20,8 +20,7 @@ export const WorkflowStep = () => {
             width: "680px",
           }}
         >
-          <>
-            <WorkflowStepComponent
+          <WorkflowStepComponent
               className="w-full h-full border border-solid border-neutral-90"
               showBody={showBody}
               isActive={false}
@@ -67,7 +66,6 @@ export const WorkflowStep = () => {
             <ButtonPrimary className="mt-4" onClick={() => setShowBody(false)}>
               Close Step
             </ButtonPrimary>
-          </>
         </div>
       </StoryItem>
       <StoryItem title="Active Step">
@@ -91,7 +89,7 @@ export const WorkflowStep = () => {
       </StoryItem>
     </>
   );
-};
+}
 
 WorkflowStep.parameters = {
   controls: { hideNoControlsWarning: true },

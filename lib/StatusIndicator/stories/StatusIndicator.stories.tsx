@@ -31,7 +31,7 @@ export default {
   }
 };
 
-export const StatusIndicator = (args: any) => {
+export function StatusIndicator(args: any) {
   return (
     <div>
       <StoryItem
@@ -84,4 +84,4 @@ export const StatusIndicator = (args: any) => {
       </StoryItem>
     </div>
   );
-};
+}

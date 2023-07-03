@@ -20,8 +20,8 @@ export default {
   component: ButtonIconComponent,
 };
 
-export const ButtonIcon = () => (
-  <StoryItem
+export function ButtonIcon() {
+  return <StoryItem
     title="ButtonIconComponent"
     description="The icon button component"
   >
@@ -123,7 +123,7 @@ export const ButtonIcon = () => (
       </ButtonStoryItem>
     </div>
   </StoryItem>
-);
+}
 
 ButtonIcon.parameters = {
   controls: { hideNoControlsWarning: true },

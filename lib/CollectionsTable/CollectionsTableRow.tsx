@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const CollectionsTableRow = ({
+function CollectionsTableRow({
   children,
   className,
   selected,
   disabled,
   isOver,
   ...props
-}: any) => {
+}: any) {
   const classes = cx(`collections-table__row ${className}`, {
     'collections-table__row--selected': selected,
     'collections-table__row--disabled': disabled,
@@ -20,7 +20,7 @@ const CollectionsTableRow = ({
       {children}
     </div>
   );
-};
+}
 
 CollectionsTableRow.propTypes = {
   children: PropTypes.node.isRequired,

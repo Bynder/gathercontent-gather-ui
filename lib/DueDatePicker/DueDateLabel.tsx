@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import Icon from "../Icon";
 
-export const DueDateLabel = ({ overdue, children }: any) => {
+export function DueDateLabel({ overdue, children }: any) {
   if (!children) {
     return (
       <span className="duedate__label duedate__label--button">
@@ -25,7 +25,7 @@ export const DueDateLabel = ({ overdue, children }: any) => {
       </span>
     </div>
   );
-};
+}
 
 DueDateLabel.propTypes = {
   children: PropTypes.node,

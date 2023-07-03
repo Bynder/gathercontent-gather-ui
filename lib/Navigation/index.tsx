@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-export const Navigation = (props: any) => {
+export function Navigation(props: any) {
   const classes = cx(`navigation ${props.className}`, {
     "navigation--tabs": props.tabs,
   });
@@ -25,10 +25,11 @@ export const Navigation = (props: any) => {
 
           return React.cloneElement(child, newProps);
         }
+        return null;
       })}
     </nav>
   );
-};
+}
 
 Navigation.defaultProps = {
   tabs: false,

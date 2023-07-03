@@ -9,8 +9,8 @@ export default {
   component: PillComponent
 };
 
-export const Pill = () => (
-  <Fragment>
+export function Pill() {
+  return <>
     {map(PillComponent.types, value => (
       <StoryItem title={`PillComponent ${value}`}>
         <div className="flex flex-row items-center">
@@ -41,8 +41,8 @@ export const Pill = () => (
         </div>
       </StoryItem>
     ))}
-  </Fragment>
-);
+  </>
+}
 
 Pill.parameters = {
   controls: { hideNoControlsWarning: true }

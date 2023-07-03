@@ -1,16 +1,16 @@
 import React from 'react';
 import { node } from 'prop-types';
 
-const ItemRowAside = ({
+function ItemRowAside({
   children,
   ...rest
-}: any) => {
+}: any) {
   return (
     <div className="item-row__aside" {...rest}>
       {children}
     </div>
   );
-};
+}
 
 ItemRowAside.propTypes = {
   children: node.isRequired

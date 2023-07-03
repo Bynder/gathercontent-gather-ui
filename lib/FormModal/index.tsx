@@ -4,7 +4,7 @@ import Button from "../Button";
 import ProgressButton from "../ProgressButton";
 import Modal from "../Modal";
 
-export const FormModal = ({
+export function FormModal({
   children,
   title,
   submitText,
@@ -12,8 +12,8 @@ export const FormModal = ({
   cancelText,
   formIsSubmitting,
   ...rest
-}: any) => (
-  <Modal.Container {...rest}>
+}: any) {
+  return <Modal.Container {...rest}>
     <form onSubmit={submitHandler}>
       <Modal.Header>{title}</Modal.Header>
       <Modal.Body>{children}</Modal.Body>
@@ -32,7 +32,7 @@ export const FormModal = ({
       </Modal.Footer>
     </form>
   </Modal.Container>
-);
+}
 
 FormModal.propTypes = {
   title: PropTypes.string.isRequired,

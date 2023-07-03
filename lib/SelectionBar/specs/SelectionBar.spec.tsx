@@ -8,8 +8,6 @@ describe("SelectionBar", () => {
   const renderWrapper = (ui: any, props = {}) =>
     render(
       <SelectionBar hasSelected onCancel={() => {}} {...props}>
-        // @ts-expect-error TS(18004): No value exists in scope for the
-        shorthand propert... Remove this comment to see the full error message
         {ui}
       </SelectionBar>
     );

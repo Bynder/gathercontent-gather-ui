@@ -12,8 +12,8 @@ export default {
 
 const { lg, ...storySizes } = ButtonSecondaryDangerComponent.sizes;
 
-export const ButtonSecondaryDanger = () => (
-  <div>
+export function ButtonSecondaryDanger() {
+  return <div>
     {map(storySizes, size => (
       <StoryItem
         key={size}
@@ -54,7 +54,7 @@ export const ButtonSecondaryDanger = () => (
       </StoryItem>
     ))}
   </div>
-);
+}
 
 ButtonSecondaryDanger.parameters = {
   controls: { hideNoControlsWarning: true }

@@ -20,10 +20,10 @@ export default {
   },
 };
 
-export const Person = (args: any) => {
+export function Person(args: any) {
   return (
     <StoryItem title="PersonComponent" description="A person">
       <PersonComponent {...args} />
     </StoryItem>
   );
-};
+}

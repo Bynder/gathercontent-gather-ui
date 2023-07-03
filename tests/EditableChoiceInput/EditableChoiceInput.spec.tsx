@@ -1,6 +1,6 @@
 import { cleanup, render, fireEvent } from "@testing-library/react";
-import { React } from "../setup";
 import { EditableChoiceInput } from "lib";
+import { React } from "../setup";
 
 describe("EditableChoiceInput", () => {
   const defaultProps = {

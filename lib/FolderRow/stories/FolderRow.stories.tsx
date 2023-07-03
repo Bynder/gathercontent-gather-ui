@@ -53,13 +53,13 @@ export default {
   },
 };
 
-export const FolderRow = ({
+export function FolderRow({
   open,
   draggedOver,
   showToggle,
   folderName,
   meta,
-}: any) => {
+}: any) {
   const classNameInner = cx("folder-row__inner", {
     "folder-row__inner-dragged-insert": draggedOver,
   });
@@ -112,4 +112,4 @@ export const FolderRow = ({
       </FolderRowComponent>
     </StoryItem>
   );
-};
+}

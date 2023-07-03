@@ -1,6 +1,6 @@
+import { CheckToggle } from "lib";
 import { React, shallow } from "../setup";
 import ToggleFilter from "../../lib/Search/ToggleFilter";
-import { CheckToggle } from "lib";
 
 describe("SearchBoundaryListener", () => {
   let wrapper: any;

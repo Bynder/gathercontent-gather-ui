@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Col } from "lib";
 
-const SelectionBarInformation = (props: any) => (
-  <Col
+function SelectionBarInformation(props: any) {
+  return <Col
     xs={12}
     sm={4}
     md={3}
@@ -11,7 +11,7 @@ const SelectionBarInformation = (props: any) => (
   >
     {props.children}
   </Col>
-);
+}
 
 SelectionBarInformation.propTypes = {
   children: PropTypes.oneOfType([

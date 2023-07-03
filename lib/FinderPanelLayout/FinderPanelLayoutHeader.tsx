@@ -3,7 +3,7 @@ import { node, string } from "prop-types";
 import cx from "classnames";
 import { FinderPanelLayoutContext } from "./FinderPanelLayoutProvider";
 
-const FinderPanelLayoutHeader = ({ children, className }: any) => {
+function FinderPanelLayoutHeader({ children, className }: any) {
   const { fixed, setHeaderHeight }: any = useContext(FinderPanelLayoutContext);
   const headerRef = useRef();
 
@@ -24,7 +24,7 @@ const FinderPanelLayoutHeader = ({ children, className }: any) => {
       {children}
     </div>
   );
-};
+}
 
 FinderPanelLayoutHeader.propTypes = {
   children: node.isRequired,

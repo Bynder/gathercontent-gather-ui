@@ -7,7 +7,7 @@ export default {
   title: "GUI/Calendar",
 };
 
-export const Calendar = () => {
+export function Calendar() {
   return (
     <StoryItem
       title="CalendarComponent"
@@ -18,9 +18,9 @@ export const Calendar = () => {
       </div>
     </StoryItem>
   );
-};
+}
 
-export const CalendarWithWeekends = () => {
+export function CalendarWithWeekends() {
   return (
     <StoryItem
       title="Calender With Weekends"
@@ -31,9 +31,9 @@ export const CalendarWithWeekends = () => {
       </div>
     </StoryItem>
   );
-};
+}
 
-export const CalendarWithLeftAlignedHeader = () => {
+export function CalendarWithLeftAlignedHeader() {
   return (
     <StoryItem
       title="Calender With Left-aligned Header"
@@ -44,7 +44,7 @@ export const CalendarWithLeftAlignedHeader = () => {
       </div>
     </StoryItem>
   );
-};
+}
 
 Calendar.parameters = {
   controls: { hideNoControlsWarning: true },

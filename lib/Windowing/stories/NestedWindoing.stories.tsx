@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const Nested = ({ parents, children }: any) => {
+export function Nested({ parents, children }: any) {
   const { allIds, parentIds, byId } = createData(parents, children);
 
   return (
@@ -88,4 +88,4 @@ export const Nested = ({ parents, children }: any) => {
       )}
     </WindowingIdsMock>
   );
-};
+}

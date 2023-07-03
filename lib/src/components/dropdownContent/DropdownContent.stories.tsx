@@ -14,7 +14,7 @@ export default {
   component: DropdownContentComponent,
 };
 
-export const DropdownContent = () => {
+export function DropdownContent() {
   const getPerson = () => ({
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
@@ -51,7 +51,7 @@ export const DropdownContent = () => {
       </DropdownContentComponent>
     </StoryItem>
   );
-};
+}
 
 DropdownContent.parameters = {
   controls: { hideNoControlsWarning: true },

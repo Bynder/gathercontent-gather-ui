@@ -1,8 +1,8 @@
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { MentionsInput } from "react-mentions";
+import { UserSearchDropdown } from "lib";
 import { React, mount } from "../setup";
 import MentionFormInput from "../../lib/MentionsForm/MentionsFormInput";
-import { UserSearchDropdown } from "lib";
 
 describe("Mentions Form Input", () => {
   jest.useFakeTimers();

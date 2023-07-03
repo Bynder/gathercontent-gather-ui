@@ -14,7 +14,7 @@ export function Slider({
 }: any) {
   const valueAsPercent = (((value - min) * 100) / (max - min)).toFixed(0);
   return (
-    <Fragment>
+    <>
       <label htmlFor={id} className={labelClass}>
         {labelText}
       </label>
@@ -31,7 +31,7 @@ export function Slider({
         style={{ '--val': valueAsPercent }}
       />
       {children}
-    </Fragment>
+    </>
   );
 }
 

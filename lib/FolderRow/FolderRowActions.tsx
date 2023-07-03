@@ -1,14 +1,14 @@
 import React from 'react';
 import { node, arrayOf, oneOfType } from 'prop-types';
 
-const FolderRowActions = ({
+function FolderRowActions({
   children,
   ...props
-}: any) => (
-  <div className="folder-row__actions" {...props}>
+}: any) {
+  return <div className="folder-row__actions" {...props}>
     {children}
   </div>
-);
+}
 
 FolderRowActions.propTypes = {
   children: oneOfType([node, arrayOf(node)]).isRequired

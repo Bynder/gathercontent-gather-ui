@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-const FinderItem = ({
+function FinderItem({
   className,
   active,
   hoverSettings,
@@ -10,7 +10,7 @@ const FinderItem = ({
   children,
   disabled,
   ...rest
-}: any) => {
+}: any) {
   const classNames = cx(`finder-item ${className}`, {
     'finder-item-active': active,
     'finder-item-disabled': disabled,
@@ -23,7 +23,7 @@ const FinderItem = ({
       {children}
     </div>
   );
-};
+}
 
 FinderItem.propTypes = {
   children: PropTypes.node.isRequired,

@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import { Col } from "lib";
 
-export const TopBarContent = ({
+export function TopBarContent({
   left,
   center,
   right,
   collapse,
   className,
   ...props
-}: any) => {
+}: any) {
   const classes = cx(`top-bar__content ${className}`, {
     "top-bar__content--left": left,
     "top-bar__content--center": center,
@@ -22,7 +22,7 @@ export const TopBarContent = ({
       {props.children}
     </Col>
   );
-};
+}
 
 TopBarContent.propTypes = {
   left: PropTypes.bool,

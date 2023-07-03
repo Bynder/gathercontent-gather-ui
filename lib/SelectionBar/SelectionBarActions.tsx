@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Col } from "lib";
 
-const SelectionBarActions = ({ children }: any) => (
-  <Col
+function SelectionBarActions({ children }: any) {
+  return <Col
     xs={12}
     sm={5}
     md={6}
@@ -11,7 +11,7 @@ const SelectionBarActions = ({ children }: any) => (
   >
     {children}
   </Col>
-);
+}
 
 SelectionBarActions.propTypes = {
   children: PropTypes.node.isRequired,

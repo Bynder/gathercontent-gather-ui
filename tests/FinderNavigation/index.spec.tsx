@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { FinderNavigation } from "lib";
+import { React, shallow } from "../setup";
 import FinderItem from "../../lib/FinderNavigation/FinderItem";
 import FinderGroup from "../../lib/FinderNavigation/FinderGroup";
 

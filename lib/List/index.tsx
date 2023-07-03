@@ -3,7 +3,7 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 import ListHead from "./ListHead";
 
-export const List = (props: any) => {
+export function List(props: any) {
   const listClasses = cx("list", {
     "list--bordered-right": props.borderedRight,
     "list--bordered-left": props.borderedLeft,
@@ -28,7 +28,7 @@ export const List = (props: any) => {
       </div>
     </div>
   );
-};
+}
 
 List.defaultProps = {
   title: null,

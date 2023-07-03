@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Form } from "lib";
+import { React, shallow } from "../setup";
 
 describe("Form", () => {
   let onSubmitSpy: any;

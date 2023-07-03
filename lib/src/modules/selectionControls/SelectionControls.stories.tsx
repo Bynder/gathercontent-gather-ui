@@ -16,7 +16,7 @@ export default {
   title: "GUI/Form/Inputs/Selection Controls",
 };
 
-export const SelectionControls = () => {
+export function SelectionControls() {
   return (
     <>
       <StoryItem title="Checkbox">
@@ -65,7 +65,7 @@ export const SelectionControls = () => {
       </StoryItem>
     </>
   );
-};
+}
 
 SelectionControls.parameters = {
   controls: { hideNoControlsWarning: true },

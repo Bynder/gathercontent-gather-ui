@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const RenameInput = (args: any) => {
+export function RenameInput(args: any) {
   return (
     <>
       <StoryItem
@@ -46,4 +46,4 @@ export const RenameInput = (args: any) => {
       </StoryItem>
     </>
   );
-};
+}

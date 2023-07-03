@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({
+function Input({
   onChangeHandler,
   className,
   label,
@@ -10,8 +10,8 @@ const Input = ({
   name,
   value,
   disabled
-}: any) => (
-  <input
+}: any) {
+  return <input
     className={`form-radio__input ${className}`}
     type="radio"
     onChange={onChangeHandler}
@@ -22,7 +22,7 @@ const Input = ({
     disabled={disabled}
     checked={checked ?? false}
   />
-);
+}
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,

@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-export const TopBarGroup = (props: any) => {
+export function TopBarGroup(props: any) {
   const classes = cx("top-bar__group", {
     "top-bar__group--collapse": props.collapse,
   });
   return <div className={classes}>{props.children}</div>;
-};
+}
 
 TopBarGroup.propTypes = {
   collapse: PropTypes.bool,

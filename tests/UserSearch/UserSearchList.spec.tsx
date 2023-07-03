@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { Dropdown, Avatar, AvatarInformation } from "lib";
+import { React, shallow } from "../setup";
 import UserSearchList from "../../lib/UserSearch/UserSearchList";
 
 describe("User Search List", () => {

@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { MenuItem, SectionHeader } from "lib";
+import { React, shallow } from "../setup";
 
 describe("SectionHeader", () => {
   // @ts-expect-error

@@ -5,10 +5,10 @@ import cx from 'classnames';
 import Icon from '../Icon';
 import Dropdown from '../Dropdown';
 
-const DueDateButton = ({
+function DueDateButton({
   children,
   ...props
-}: any) => {
+}: any) {
   if (!props.dueDate && !props.userCanSetDueDate) {
     return null;
   }
@@ -57,7 +57,7 @@ const DueDateButton = ({
       </Dropdown.Trigger>
     </span>
   );
-};
+}
 
 DueDateButton.propTypes = {
   // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.

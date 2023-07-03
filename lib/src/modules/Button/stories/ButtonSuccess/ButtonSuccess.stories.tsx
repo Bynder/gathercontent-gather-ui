@@ -12,8 +12,8 @@ export default {
 
 const { lg, ...storySizes } = ButtonSuccessComponent.sizes;
 
-export const ButtonSuccess = () => (
-  <div>
+export function ButtonSuccess() {
+  return <div>
     {map(storySizes, (size) => (
       <StoryItem
         key={size}
@@ -30,7 +30,7 @@ export const ButtonSuccess = () => (
       </StoryItem>
     ))}
   </div>
-);
+}
 
 ButtonSuccess.parameters = {
   controls: { hideNoControlsWarning: true },

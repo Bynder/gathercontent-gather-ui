@@ -6,7 +6,7 @@ import NotificationBar from "../../Notification/bar";
 import { DndContext } from "../DndProvider";
 import { ItemRow } from "../../ItemRow";
 
-const Message = ({ children, canDrop, isOver, isDragging }: any) => {
+function Message({ children, canDrop, isOver, isDragging }: any) {
   let level = "information";
 
   if (isDragging && canDrop) {
@@ -27,7 +27,7 @@ const Message = ({ children, canDrop, isOver, isDragging }: any) => {
       {children}
     </NotificationBar>
   );
-};
+}
 
 Message.propTypes = {
   children: node.isRequired,

@@ -13,12 +13,12 @@ const items = [...new Array(8)].map((i, index) => ({
   data: { key: 'womp' }
 }));
 
-export const Selection = () => (
-  <>
+export function Selection() {
+  return <>
     <StoryItem title="Selecting Items">
       <SelectionProvider>
         <SelectionContext.Consumer>
-          {(context: any) => <Fragment>
+          {(context: any) => <>
             {items.map(i => (
               <Button
                 onClick={() =>
@@ -33,7 +33,7 @@ export const Selection = () => (
             <Button types={['danger']} onClick={() => context.clear()}>
               Clear
             </Button>
-          </Fragment>}
+          </>}
         </SelectionContext.Consumer>
       </SelectionProvider>
     </StoryItem>
@@ -41,7 +41,7 @@ export const Selection = () => (
     <StoryItem title="Restricting items using currentSelectedType">
       <SelectionProvider>
         <SelectionContext.Consumer>
-          {(context: any) => <Fragment>
+          {(context: any) => <>
             {items.map(i => (
               <Button
                 disabled={
@@ -59,12 +59,12 @@ export const Selection = () => (
             <Button types={['danger']} onClick={() => context.clear()}>
               Clear
             </Button>
-          </Fragment>}
+          </>}
         </SelectionContext.Consumer>
       </SelectionProvider>
     </StoryItem>
   </>
-);
+}
 
 Selection.parameters = {
   controls: { hideNoControlsWarning: true }

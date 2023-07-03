@@ -92,7 +92,7 @@ export class FormInput extends Component {
     });
 
     return (
-      <Fragment>
+      <>
         <input
           type={type}
           value={inputValue}
@@ -110,7 +110,7 @@ export class FormInput extends Component {
             {errorMessage}
           </span>
         )}
-      </Fragment>
+      </>
     );
   }
 }

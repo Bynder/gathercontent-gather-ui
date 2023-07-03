@@ -5,7 +5,7 @@ import Avatar from "../Avatar";
 import AvatarInformation from "../Avatar/AvatarInformation";
 import UserSearchListUserName from "./UserSearchListUserName";
 
-const UserSearchList = ({
+function UserSearchList({
   users,
   addUser,
   displayEmail,
@@ -13,7 +13,7 @@ const UserSearchList = ({
   noUsers,
   noUserDisplay,
   hideAfterPerformingAction,
-}: any) => {
+}: any) {
   if (users.length <= 0 && !noUsers) {
     return (
       <Dropdown.ActionGroup className="user-search__search-results">
@@ -53,7 +53,7 @@ const UserSearchList = ({
       )}
     </ul>
   );
-};
+}
 
 UserSearchList.propTypes = {
   // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.

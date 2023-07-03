@@ -5,7 +5,7 @@ import BoundaryClickWatcher from '../BoundaryClickWatcher';
 
 export const DropdownContext = createContext({});
 
-const DropdownProvider = ({
+function DropdownProvider({
   id,
   onToggle,
   persistShow,
@@ -14,7 +14,7 @@ const DropdownProvider = ({
   autoPosition,
   block,
   className
-}: any) => {
+}: any) {
   const [showContent, setShowContent] = useState(false);
   const [bounds, setBounds] = useState({ top: -9999 });
 
@@ -87,7 +87,7 @@ const DropdownProvider = ({
       </BoundaryClickWatcher>
     </DropdownContext.Provider>
   );
-};
+}
 
 DropdownProvider.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,

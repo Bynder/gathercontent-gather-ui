@@ -19,6 +19,8 @@ export default {
   }
 };
 
-export const StatusIndicatorCircle = (args: any) => <StoryItem>
+export function StatusIndicatorCircle(args: any) {
+  return <StoryItem>
   <StatusIndicatorCircleComponent {...args} />
-</StoryItem>;
+</StoryItem>
+}

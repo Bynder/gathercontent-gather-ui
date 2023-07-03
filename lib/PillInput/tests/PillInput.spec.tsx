@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { PillInput } from "../PillInput/PillInput";
 
@@ -9,13 +9,10 @@ const checker = {
   regex: /^[a-z]*@[a-z]*.com$/,
 };
 
-const renderComponent = (props: any) => {
-  return render(
-    <Fragment>
-      <PillInput placeholder={PLACEHOLDER_TEXT} checker={checker} {...props} />
-    </Fragment>
+const renderComponent = (props: any) =>
+  render(
+    <PillInput placeholder={PLACEHOLDER_TEXT} checker={checker} {...props} />
   );
-};
 
 // @ts-expect-error TS(7023): 'isNodeInPill' implicitly has return type 'any' be... Remove this comment to see the full error message
 const isNodeInPill = (node: any) => {

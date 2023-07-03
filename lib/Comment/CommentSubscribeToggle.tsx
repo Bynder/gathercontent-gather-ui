@@ -18,13 +18,11 @@ export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
   };
   const [isSubscribing, onToggleWithLoader] = useLoader(handleSubscribeClick);
 
-  useEffect(() => {
-    return () => {
+  useEffect(() => () => {
       if (setHasFailedTimeout.current !== null) {
         clearTimeout(setHasFailedTimeout.current);
       }
-    };
-  });
+    });
 
   const ButtonType = hasFailed ? ButtonIconDanger : ButtonIcon;
 

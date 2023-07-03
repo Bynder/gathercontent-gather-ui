@@ -19,8 +19,7 @@ export function PersonSearch({
     : people;
 
   return (
-    <>
-      <Dropdown id="person-search-story" className="overflow-visible w-full">
+    <Dropdown id="person-search-story" className="overflow-visible w-full">
         {({ showContent }) => (
           <>
             {/* @ts-expect-error TS(2769): No overload matches this call. */}
@@ -88,6 +87,5 @@ export function PersonSearch({
           </>
         )}
       </Dropdown>
-    </>
   );
 }

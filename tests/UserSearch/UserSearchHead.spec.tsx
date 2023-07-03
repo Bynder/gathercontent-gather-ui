@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { CheckToggle } from "lib";
+import { React, shallow } from "../setup";
 import UserSearchHead from "../../lib/UserSearch/UserSearchHead";
 
 describe("User Search Head", () => {

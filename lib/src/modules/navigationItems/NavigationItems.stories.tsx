@@ -9,10 +9,9 @@ export default {
   component: NavigationItems
 };
 
-export const Navigation = () => {
+export function Navigation() {
   return (
-    <>
-      <StoryItem title="Navigation">
+    <StoryItem title="Navigation">
         <div className="h-12">
           <NavigationItems defaultTabId="upload" srLabel="Storybook Navigation">
             <NavigationItem id="upload">Upload</NavigationItem>
@@ -20,9 +19,8 @@ export const Navigation = () => {
           </NavigationItems>
         </div>
       </StoryItem>
-    </>
   );
-};
+}
 
 Navigation.parameters = {
   controls: { hideNoControlsWarning: true }

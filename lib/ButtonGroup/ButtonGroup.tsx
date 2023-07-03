@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const ButtonGroup = ({ children }: any) => (
-  <div className="button-group">{children}</div>
-);
+export function ButtonGroup({ children }: any) {
+  return <div className="button-group">{children}</div>
+}
 
 ButtonGroup.propTypes = {
   children: PropTypes.oneOfType([

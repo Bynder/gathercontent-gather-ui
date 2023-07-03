@@ -8,7 +8,7 @@ export default {
   component: ConversationContextComponent,
 };
 
-export const ConversationContext = () => {
+export function ConversationContext() {
   const mockUser = {
     id: 2,
     name: "Bruce",
@@ -77,7 +77,7 @@ export const ConversationContext = () => {
       </StoryItem>
     </>
   );
-};
+}
 
 ConversationContext.parameters = {
   controls: { hideNoControlsWarning: true },

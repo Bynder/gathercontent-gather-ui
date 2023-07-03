@@ -1,5 +1,5 @@
-import { React, shallow } from "../setup";
 import { FinderNavigation } from "lib";
+import { React, shallow } from "../setup";
 
 describe("FinderNavigation Item", () => {
   let wrapper: any;
@@ -7,7 +7,6 @@ describe("FinderNavigation Item", () => {
   beforeEach(() => {
     wrapper = shallow(
       <FinderNavigation.Item>
-        // @ts-expect-error TS(2304): Cannot find name 'div'.
         <div className="child">hello!</div>
       </FinderNavigation.Item>
     );

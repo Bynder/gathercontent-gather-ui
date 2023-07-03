@@ -25,7 +25,7 @@ export default {
   },
 };
 
-const WorkflowDropdownStory = ({ search, assigned, unassigned }: any) => {
+function WorkflowDropdownStory({ search, assigned, unassigned }: any) {
   const workflowSteps = [
     {
       title: "Draft",
@@ -155,9 +155,9 @@ const WorkflowDropdownStory = ({ search, assigned, unassigned }: any) => {
       </WorkflowDropdownComponent>
     </StoryItem>
   );
-};
+}
 
-export const WorkflowDropdown = (args: any) => {
+export function WorkflowDropdown(args: any) {
   const getPerson = () => ({
     name: faker.name.findName(),
     subtitle: faker.internet.email(),
@@ -175,4 +175,4 @@ export const WorkflowDropdown = (args: any) => {
       {...args}
     />
   );
-};
+}

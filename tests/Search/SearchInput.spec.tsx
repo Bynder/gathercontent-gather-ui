@@ -1,6 +1,6 @@
+import { ShortcutTrigger } from "lib";
 import { React, mount } from "../setup";
 import SearchInput from "../../lib/Search/SearchInput";
-import { ShortcutTrigger } from "lib";
 
 describe("SearchInput", () => {
   let wrapper: any;

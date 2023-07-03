@@ -9,8 +9,8 @@ export default {
   component: NotificationInline
 };
 
-export const InlineNotifications = () => (
-  <div>
+export function InlineNotifications() {
+  return <div>
     <StoryItem
       title="NotificationInline Warning"
       description="A notification box with the warning level."
@@ -47,7 +47,7 @@ export const InlineNotifications = () => (
       </NotificationInline>
     </StoryItem>
   </div>
-);
+}
 
 InlineNotifications.parameters = {
   controls: { hideNoControlsWarning: true }

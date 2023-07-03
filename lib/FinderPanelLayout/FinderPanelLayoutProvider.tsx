@@ -3,10 +3,10 @@ import { node, bool } from 'prop-types';
 
 export const FinderPanelLayoutContext = React.createContext({});
 
-const FinderPanelLayoutProvider = ({
+function FinderPanelLayoutProvider({
   children,
   fixed
-}: any) => {
+}: any) {
   const [headerHeight, setHeaderHeight] = useState(null);
   const sharedState = {
     headerHeight,
@@ -19,7 +19,7 @@ const FinderPanelLayoutProvider = ({
       {children}
     </FinderPanelLayoutContext.Provider>
   );
-};
+}
 
 FinderPanelLayoutProvider.propTypes = {
   children: node.isRequired,

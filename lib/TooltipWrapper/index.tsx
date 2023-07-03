@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events jsx-a11y/no-noninteractive-element-interactions  */
-
 import React from "react";
 import Tippy from "@tippyjs/react";
 

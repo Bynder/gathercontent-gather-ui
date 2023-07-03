@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ListHead = ({
+function ListHead({
   title,
   action
-}: any) => {
+}: any) {
   if (!title && !action) {
     return null;
   }
@@ -17,7 +17,7 @@ const ListHead = ({
       </div>
     </div>
   );
-};
+}
 
 ListHead.defaultProps = {
   title: null,

@@ -2,15 +2,15 @@ import React from 'react';
 import { propTypes, defaultProps } from './propTypes';
 import CollectionsTableCellContent from './CollectionsTableCellContent';
 
-const CollectionsTableHeading = ({
+function CollectionsTableHeading({
   children,
   className,
   ...props
-}: any) => (
-  <div className={`collections-table__heading ${className}`} {...props}>
+}: any) {
+  return <div className={`collections-table__heading ${className}`} {...props}>
     <CollectionsTableCellContent>{children}</CollectionsTableCellContent>
   </div>
-);
+}
 
 CollectionsTableHeading.propTypes = propTypes;
 CollectionsTableHeading.defaultProps = defaultProps;

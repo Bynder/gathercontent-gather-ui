@@ -14,7 +14,7 @@ import BlankSlateSVG from "../../assets/blankstate.svg";
 // @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate-2.svg'... Remove this comment to see the full error message
 import BlankSlate2SVG from "../../assets/blankstate-2.svg";
 
-export const BlankSlate = (props: any) => {
+export function BlankSlate(props: any) {
   const classes = cx(`blank-slate p-3 ${props.className}`, {
     "blank-slate--fixed": props.fixed,
     "blank-slate--arrow": props.slateStyle === "arrow",
@@ -25,8 +25,7 @@ export const BlankSlate = (props: any) => {
     props.slateStyle === "arrow" ? BlankSlate2SVG : BlankSlateSVG;
   return (
     <div className={classes}>
-      <>
-        {props.emoji ? (
+      {props.emoji ? (
           <span
             className="blank-slate__emoji"
             role="img"
@@ -45,11 +44,10 @@ export const BlankSlate = (props: any) => {
             )}
           </div>
         )}
-      </>
       <div className="blank-slate__content">{props.children}</div>
     </div>
   );
-};
+}
 
 BlankSlate.propTypes = {
   fixed: bool,

@@ -12,8 +12,8 @@ export default {
 
 const { lg, ...storySizes } = ButtonTertiaryComponent.sizes;
 
-export const ButtonTertiary = () => (
-  <div>
+export function ButtonTertiary() {
+  return <div>
     {map(storySizes, size => (
       <StoryItem
         key={size}
@@ -60,7 +60,7 @@ export const ButtonTertiary = () => (
       </StoryItem>
     ))}
   </div>
-);
+}
 
 ButtonTertiary.parameters = {
   controls: { hideNoControlsWarning: true }
