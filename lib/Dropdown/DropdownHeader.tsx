@@ -1,27 +1,24 @@
-import React from 'react';
-import cx from 'classnames';
-import { node, string, bool } from 'prop-types';
+import React, { HTMLAttributes } from "react";
+import cx from "classnames";
+
+interface Props extends HTMLAttributes<HTMLHeadingElement> {
+  collapse?: boolean;
+}
 
 function DropdownHeader({
   children,
-  className,
-  collapse
-}: any) {
+  className = "",
+  collapse = false,
+  ...rest
+}: Props) {
   const classNames = cx(`dropdown__header ${className}`, {
-    'dropdown__header--collapse': collapse
+    "dropdown__header--collapse": collapse,
   });
-  return <header className={classNames}>{children}</header>;
+  return (
+    <header className={classNames} {...rest}>
+      {children}
+    </header>
+  );
 }
-
-DropdownHeader.propTypes = {
-  children: node.isRequired,
-  className: string,
-  collapse: bool
-};
-
-DropdownHeader.defaultProps = {
-  className: '',
-  collapse: false
-};
 
 export default DropdownHeader;

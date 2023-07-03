@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import DropdownAction from "./DropdownAction";
 import DropdownActionGroup from "./DropdownActionGroup";
 import { DropdownContent } from "./DropdownContent";
@@ -9,21 +8,11 @@ import DropdownHeader from "./DropdownHeader";
 import DropdownFooter from "./DropdownFooter";
 import DropdownProvider from "./DropdownProvider";
 import DropdownInfo from "./DropdownInfo";
+import { DropdownProps } from "./.types/DropdownTypes";
 
-export function Dropdown(props: any) {
-  return <DropdownProvider {...props} />
+export function Dropdown(props: DropdownProps) {
+  return <DropdownProvider {...props} />;
 }
-
-Dropdown.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  id: PropTypes.string.isRequired,
-  onToggle: PropTypes.func,
-  onHide: PropTypes.func,
-  className: PropTypes.string,
-  autoPosition: PropTypes.bool,
-  block: PropTypes.bool,
-  persistShow: PropTypes.bool,
-};
 
 Dropdown.defaultProps = {
   onToggle: () => {},

@@ -1,9 +1,27 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, {
+  useEffect,
+  useState,
+  useContext,
+  useRef,
+  HTMLAttributes,
+} from "react";
 import { isEqual } from "lodash";
 import cx from "classnames";
 import { DropdownContext } from "./DropdownProvider";
 
 const CONTENT_BOUNDARY_PADDING = 40;
+
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  collapse?: boolean;
+  right?: boolean;
+  centre?: boolean;
+  top?: boolean;
+  fixRight?: boolean;
+  full?: boolean;
+  noBorder?: boolean;
+  autoPositionLeft?: boolean;
+  noTransform?: boolean;
+}
 
 export function DropdownContent({
   children,
@@ -17,14 +35,14 @@ export function DropdownContent({
   noBorder,
   autoPositionLeft,
   noTransform,
-}: any) {
+}: Props) {
   const { showContent, autoPosition, bounds }: any = useContext(
     DropdownContext
   ) || {
     showContent: false,
   };
   const [style, setStyle] = useState({});
-  const contentElementRef = useRef(null);
+  const contentElementRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const getTopPosition = (pos: any, contentBounds: any) => {
     let newPos = pos;
@@ -76,7 +94,6 @@ export function DropdownContent({
 
   const getStyle = () => {
     if (contentElementRef?.current && autoPosition && showContent) {
-      // @ts-expect-error TS(2339): Property 'getBoundingClientRect' does not exist on... Remove this comment to see the full error message
       const contentBounds = contentElementRef.current.getBoundingClientRect();
 
       const bottomOfDropdownContent =
@@ -102,13 +119,12 @@ export function DropdownContent({
       };
     }
 
-    return null;
+    return {};
   };
 
   useEffect(() => {
     const newStyle = getStyle();
     if (!isEqual(newStyle, style)) {
-      // @ts-expect-error TS(2345): Argument of type '{ top: any; left: any; } | null'... Remove this comment to see the full error message
       setStyle(newStyle);
     }
   }, [showContent, !!contentElementRef.current]);

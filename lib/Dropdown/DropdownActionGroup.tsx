@@ -1,35 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React, { HTMLAttributes } from "react";
+import cx from "classnames";
+
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  collapse?: boolean;
+  horizontal?: boolean;
+  bordered?: boolean;
+}
 
 function DropdownActionGroup({
   children,
   horizontal,
   className,
   bordered,
-  collapse
-}: any) {
+  collapse,
+  ...rest
+}: Props) {
   const classNames = cx(`dropdown__action-group ${className}`, {
-    'dropdown__action-group--horizontal': horizontal,
-    'dropdown__action-group--bordered': bordered,
-    'dropdown__action-group--collapse': collapse
+    "dropdown__action-group--horizontal": horizontal,
+    "dropdown__action-group--bordered": bordered,
+    "dropdown__action-group--collapse": collapse,
   });
-  return <div className={classNames}>{children}</div>;
+  return (
+    <div className={classNames} {...rest}>
+      {children}
+    </div>
+  );
 }
-
-DropdownActionGroup.propTypes = {
-  horizontal: PropTypes.bool,
-  bordered: PropTypes.bool,
-  collapse: PropTypes.bool,
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired
-};
 
 DropdownActionGroup.defaultProps = {
   horizontal: false,
   bordered: false,
   collapse: false,
-  className: ''
+  className: "",
 };
 
 export default DropdownActionGroup;

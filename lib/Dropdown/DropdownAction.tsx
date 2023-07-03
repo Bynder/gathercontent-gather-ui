@@ -1,7 +1,22 @@
-import React, { useContext } from "react";
-import PropTypes from "prop-types";
+import React, { HTMLAttributes, useContext } from "react";
 import cx from "classnames";
 import { DropdownContext } from "./DropdownProvider";
+
+interface Props extends HTMLAttributes<HTMLButtonElement> {
+  action: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {};
+  actionKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
+  danger?: boolean;
+  noBackground?: boolean;
+  iconOnly?: boolean;
+  selected?: boolean;
+  hideAfterPerformingAction?: boolean;
+  isSubmit?: boolean;
+  overflow?: boolean;
+  disabled?: boolean;
+  toggleShowContent?: () => {};
+  showContent?: boolean;
+  value?: string;
+}
 
 function DropdownAction({
   children,
@@ -20,11 +35,11 @@ function DropdownAction({
   showContent: showContentProp,
   toggleShowContent: toggleShowContentProp,
   ...props
-}: any) {
+}: Props) {
   const {
     toggleShowContent = toggleShowContentProp,
     showContent = showContentProp,
-  }: any = useContext(DropdownContext) || {};
+  } = useContext(DropdownContext) || {};
 
   const classNames = cx(`dropdown__action ${className}`, {
     "dropdown__action--danger": danger,
@@ -40,13 +55,13 @@ function DropdownAction({
     className: classNames,
     type: isSubmit ? "submit" : "button",
     value,
-    onClick: (e: any) => {
+    onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       action(e);
-      if (hideAfterPerformingAction) {
-        toggleShowContent();
+      if (hideAfterPerformingAction && toggleShowContent) {
+        toggleShowContent(null);
       }
     },
-    onKeyDown: (e: any) => {
+    onKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (actionKeyDown) actionKeyDown(e);
     },
     disabled,
@@ -77,23 +92,6 @@ DropdownAction.defaultProps = {
   toggleShowContent: () => {},
   showContent: false,
   value: null,
-};
-
-DropdownAction.propTypes = {
-  children: PropTypes.node.isRequired,
-  action: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  noBackground: PropTypes.bool,
-  selected: PropTypes.bool,
-  hideAfterPerformingAction: PropTypes.bool,
-  iconOnly: PropTypes.bool,
-  danger: PropTypes.bool,
-  isSubmit: PropTypes.bool,
-  overflow: PropTypes.bool,
-  disabled: PropTypes.bool,
-  toggleShowContent: PropTypes.func,
-  showContent: PropTypes.bool,
-  value: PropTypes.string,
 };
 
 export default DropdownAction;

@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { HTMLAttributes } from "react";
 
 function DropdownSection({
-  children
-}: any) {
-  return <div className="dropdown__section">{children}</div>;
+  children,
+  ...rest
+}: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div className="dropdown__section" {...rest}>
+      {children}
+    </div>
+  );
 }
-
-DropdownSection.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default DropdownSection;
