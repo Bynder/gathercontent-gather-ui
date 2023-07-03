@@ -3,8 +3,8 @@ import cx from "classnames";
 import { DropdownContext } from "./DropdownProvider";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  action: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {};
-  actionKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
+  action: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  actionKeyDown?: (e: React.KeyboardEvent<HTMLButtonElement>) => void;
   danger?: boolean;
   noBackground?: boolean;
   iconOnly?: boolean;
