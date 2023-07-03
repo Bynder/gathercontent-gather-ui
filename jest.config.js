@@ -1,5 +1,14 @@
 module.exports = {
   verbose: true,
-  testMatch: ['**/tests/**/*.js?(x)', '**/tests/**/*.spec.js', '**/specs/**/*.spec.js'],
-  testPathIgnorePatterns: ['tests/setup.js', 'dist']
+  transform: {
+    "^.+\\.[t|j]sx?$": "babel-jest",
+  },
+
+  testMatch: [
+    "**/tests/**/*.tsx",
+    "**/tests/**/*.spec.tsx",
+    "**/specs/**/*.spec.tsx",
+  ],
+  testPathIgnorePatterns: ["tests/setup.ts", "dist", "node_modules"],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 };

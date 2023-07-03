@@ -1,0 +1,19 @@
+import { React, shallow } from "../setup";
+import SearchOptions from "../../lib/Search/SearchOptions";
+
+describe("SearchOptions", () => {
+  let wrapper: any;
+
+  beforeEach(() => {
+    wrapper = shallow(
+      <SearchOptions>
+        // @ts-expect-error TS(2304): Cannot find name 'div'.
+        <div className="child">small child</div>
+      </SearchOptions>
+    );
+  });
+
+  test("renders children", () => {
+    expect(wrapper.find(".child")).toHaveLength(1);
+  });
+});
