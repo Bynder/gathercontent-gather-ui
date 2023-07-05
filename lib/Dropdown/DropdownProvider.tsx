@@ -1,9 +1,33 @@
-import React, { createContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import BoundaryClickWatcher from '../BoundaryClickWatcher';
+import React, {
+  createContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import cx from "classnames";
+import BoundaryClickWatcher from "../BoundaryClickWatcher";
+import { DropdownProps } from "./.types/DropdownTypes";
 
-export const DropdownContext = createContext({});
+type boundsType = {
+  top: number;
+  left: number;
+  bottom: number;
+  right: number;
+  width: number;
+  height: number;
+};
+
+interface Context {
+  showContent?: boolean;
+  toggleShowContent: (elBounds: boundsType | null) => void;
+  setShowContent?: Dispatch<SetStateAction<boolean>>;
+  autoPosition?: boolean;
+  bounds?: boundsType;
+}
+
+export const DropdownContext = createContext<Context>({
+  toggleShowContent: () => {},
+});
 
 function DropdownProvider({
   id,
@@ -13,17 +37,24 @@ function DropdownProvider({
   onHide,
   autoPosition,
   block,
-  className
-}: any) {
+  className,
+}: DropdownProps) {
   const [showContent, setShowContent] = useState(false);
-  const [bounds, setBounds] = useState({ top: -9999 });
+  const [bounds, setBounds] = useState({
+    top: -9999,
+    left: -9999,
+    right: -9999,
+    bottom: -9999,
+    width: 0,
+    height: 0,
+  });
 
   const dispatchToggle = (contentWillShow: any) => {
-    const type = contentWillShow || persistShow ? 'ACTIVE' : 'UNACTIVE';
+    const type = contentWillShow || persistShow ? "ACTIVE" : "UNACTIVE";
 
     onToggle({
       type,
-      payload: { id }
+      payload: { id },
     });
   };
 
@@ -32,24 +63,18 @@ function DropdownProvider({
     setShowContent(persistShow ? true : show);
   };
 
-  const toggleShowContent = (elBounds = null) => {
+  const toggleShowContent = (elBounds: boundsType | null) => {
     dispatchToggle(!showContent);
     setShowContent(persistShow ? true : !showContent);
 
     if (elBounds) {
       setBounds({
-        // @ts-expect-error TS(2339): Property 'top' does not exist on type 'never'.
         top: elBounds.top,
-        // @ts-expect-error TS(2345): Argument of type '{ top: any; left: any; right: an... Remove this comment to see the full error message
         left: elBounds.left,
-        // @ts-expect-error TS(2339): Property 'right' does not exist on type 'never'.
         right: elBounds.right,
-        // @ts-expect-error TS(2339): Property 'width' does not exist on type 'never'.
         width: elBounds.width,
-        // @ts-expect-error TS(2339): Property 'bottom' does not exist on type 'never'.
         bottom: elBounds.bottom,
-        // @ts-expect-error TS(2339): Property 'height' does not exist on type 'never'.
-        height: elBounds.height
+        height: elBounds.height,
       });
     }
   };
@@ -59,13 +84,13 @@ function DropdownProvider({
     toggleShowContent,
     setShowContent: toggleAndSetShowContent,
     autoPosition,
-    bounds
+    bounds,
   };
 
   const classNames = cx(`dropdown-gc ${className}`, {
-    'is-active': showContent,
-    'auto-top': autoPosition,
-    'dropdown-gc--block': block
+    "is-active": showContent,
+    "auto-top": autoPosition,
+    "dropdown-gc--block": block,
   });
 
   return (
@@ -78,26 +103,15 @@ function DropdownProvider({
         }}
         tabIndex={null}
       >
-        {typeof children === 'function'
+        {typeof children === "function"
           ? children({
               setShowContent: toggleAndSetShowContent,
-              showContent
+              showContent,
             })
           : children}
       </BoundaryClickWatcher>
     </DropdownContext.Provider>
   );
 }
-
-DropdownProvider.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  id: PropTypes.string.isRequired,
-  onToggle: PropTypes.func.isRequired,
-  onHide: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
-  autoPosition: PropTypes.bool.isRequired,
-  block: PropTypes.bool.isRequired,
-  persistShow: PropTypes.bool.isRequired
-};
 
 export default DropdownProvider;

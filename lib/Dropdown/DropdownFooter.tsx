@@ -1,19 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { HTMLAttributes } from "react";
 
-function DropdownFooter({
-  children,
-  ...rest
-}: any) {
+interface Props extends HTMLAttributes<HTMLElement> {
+  collapse?: boolean;
+}
+
+function DropdownFooter({ children, ...rest }: Props) {
   return (
     <footer className="dropdown__footer" {...rest}>
       {children}
     </footer>
   );
 }
-
-DropdownFooter.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default DropdownFooter;

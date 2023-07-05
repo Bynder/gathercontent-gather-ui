@@ -17,6 +17,7 @@ export default {
 };
 
 const createDelayedPromise = (timeout = 2000) =>
+  // eslint-disable-next-line no-promise-executor-return
   new Promise((resolve) => setTimeout(resolve, timeout));
 
 const createContentWithItems = (props: any) => (
@@ -41,7 +42,7 @@ const createContentWithItems = (props: any) => (
   </DropdownComponent.Content>
 );
 
-export const Dropdown = () => {
+export function Dropdown() {
   return (
     <div>
       <StoryItem
@@ -66,14 +67,15 @@ export const Dropdown = () => {
         description="Triggers can also use the Button component, which is common."
       >
         <DropdownComponent id="id-2">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Show content
           </DropdownComponent.Trigger>
 
           <DropdownComponent.Content>
             {(showContent: any) => (
-              <button tabIndex={showContent ? 0 : -1}>Focusable element</button>
+              <button type="button" tabIndex={showContent ? 0 : -1}>
+                Focusable element
+              </button>
             )}
           </DropdownComponent.Content>
         </DropdownComponent>
@@ -84,7 +86,6 @@ export const Dropdown = () => {
         description="The dropdown content can be aligned to different points of the trigger."
       >
         <DropdownComponent id="id-3">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Left alignment
           </DropdownComponent.Trigger>
@@ -92,7 +93,6 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-4">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Centre alignment
           </DropdownComponent.Trigger>
@@ -101,7 +101,6 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-5">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Right alignment
           </DropdownComponent.Trigger>
@@ -115,7 +114,6 @@ export const Dropdown = () => {
         description="The dropdown content can also be vertically aligned so it appears above the trigger."
       >
         <DropdownComponent id="id-6">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top left alignment
           </DropdownComponent.Trigger>
@@ -124,7 +122,6 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-7">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top centre alignment
           </DropdownComponent.Trigger>
@@ -133,7 +130,6 @@ export const Dropdown = () => {
         </DropdownComponent>
 
         <DropdownComponent id="id-8">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Top right alignment
           </DropdownComponent.Trigger>
@@ -147,7 +143,6 @@ export const Dropdown = () => {
         description="The dropdown content can also be horizontally aligned."
       >
         <DropdownComponent id="id-9">
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             fixRight alignment collapse
           </DropdownComponent.Trigger>
@@ -180,7 +175,6 @@ export const Dropdown = () => {
         description="The dropdown content have auto positioning based on where the trigger is."
       >
         <DropdownComponent id="id-3" autoPosition>
-          {/* @ts-expect-error */}
           <DropdownComponent.Trigger useButton>
             Auto Position
           </DropdownComponent.Trigger>
@@ -196,7 +190,6 @@ export const Dropdown = () => {
         <DropdownComponent id="id-3-b" autoPosition>
           {({ showContent }: any) => (
             <>
-              {/* @ts-expect-error */}
               <DropdownComponent.Trigger useButton>
                 Auto Position
               </DropdownComponent.Trigger>
@@ -216,7 +209,7 @@ export const Dropdown = () => {
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
           dropdownContent={
-            <Fragment>
+            <>
               <DropdownComponent.Header>
                 <h3>Archive 1 item</h3>
               </DropdownComponent.Header>
@@ -230,7 +223,7 @@ export const Dropdown = () => {
                   remove assignees and due-dates.
                 </p>
               </DropdownComponent.Section>
-            </Fragment>
+            </>
           }
           isDanger
         >
@@ -243,7 +236,7 @@ export const Dropdown = () => {
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
           dropdownContent={
-            <Fragment>
+            <>
               <DropdownComponent.Header>
                 <h3>Archive 1 item</h3>
                 <ConfirmationDropdown
@@ -251,14 +244,14 @@ export const Dropdown = () => {
                   id="confirm-sub-dropdown"
                   confirmationText="Archive all"
                   dropdownContent={
-                    <Fragment>
+                    <>
                       <DropdownComponent.Header>
                         <h3>Remove all items</h3>
                       </DropdownComponent.Header>
                       <DropdownComponent.Section>
                         <p>Do you wish to archive all items?</p>
                       </DropdownComponent.Section>
-                    </Fragment>
+                    </>
                   }
                   confirmationPromise={createDelayedPromise}
                   position={{
@@ -288,7 +281,7 @@ export const Dropdown = () => {
                   </Avatar>
                 </DropdownComponent.Action>
               </DropdownComponent.ActionGroup>
-            </Fragment>
+            </>
           }
           isDanger
           collapse
@@ -302,7 +295,7 @@ export const Dropdown = () => {
           confirmationText="Do a thing"
           confirmationPromise={createDelayedPromise}
           dropdownContent={
-            <Fragment>
+            <>
               <DropdownComponent.Header collapse>
                 {/* @ts-expect-error */}
                 <Form onSubmit={() => {}} className="form h-width-100">
@@ -330,7 +323,7 @@ export const Dropdown = () => {
                   </Avatar>
                 </DropdownComponent.Action>
               </DropdownComponent.ActionGroup>
-            </Fragment>
+            </>
           }
           isDanger
           collapse
@@ -345,7 +338,6 @@ export const Dropdown = () => {
       >
         <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" autoPosition block>
-            {/* @ts-expect-error */}
             <DropdownComponent.Trigger useSelect>
               Select an option...
             </DropdownComponent.Trigger>
@@ -361,12 +353,11 @@ export const Dropdown = () => {
       >
         <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" block>
-            {/* @ts-expect-error */}
             <DropdownComponent.Trigger useSelect>
               <StatusIndicator color="green" label="Status 2" medium />
             </DropdownComponent.Trigger>
 
-            <DropdownComponent.Content collapse top left full>
+            <DropdownComponent.Content collapse top full>
               <DropdownComponent.Action action={() => {}} overflow>
                 <StatusIndicator
                   color="red"
@@ -397,7 +388,7 @@ export const Dropdown = () => {
       </StoryItem>
     </div>
   );
-};
+}
 
 Dropdown.parameters = {
   controls: { hideNoControlsWarning: true },

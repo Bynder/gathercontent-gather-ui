@@ -1,146 +1,132 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { isFunction } from 'lodash';
-import Button from '../Button';
-import Icon from '../Icon';
-import { DropdownContext } from './DropdownProvider';
+import React, { HTMLAttributes, useContext, useRef } from "react";
+import cx from "classnames";
+import { isFunction } from "lodash";
+import Button from "../Button";
+import Icon from "../Icon";
+import { DropdownContext } from "./DropdownProvider";
 
-class DropdownTrigger extends Component {
-  static contextType = DropdownContext;
+interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "onClick"> {
+  useButton?: boolean;
+  useSelect?: boolean;
+  direction?: "top" | "bottom" | "left" | "right";
+  triggerClassName?: string;
+  types?: string[];
+  blueOnActive?: boolean;
+  useHover?: boolean;
+  onClick: (
+    arg: boolean,
+    arg2: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {};
+}
 
-  trigger: any;
+export function DropdownTrigger({
+  onClick,
+  children,
+  triggerClassName,
+  useButton,
+  useSelect,
+  direction,
+  types = [],
+  blueOnActive,
+  useHover,
+  ...rest
+}: Props) {
+  const triggerDivRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+  const triggerBtnRef = useRef() as React.MutableRefObject<HTMLButtonElement>;
+  const { toggleShowContent, autoPosition, showContent } =
+    useContext(DropdownContext);
 
-  handleClick = (event: any) => {
-    const { toggleShowContent, autoPosition, showContent } = this.context;
-
-    // @ts-expect-error TS(2339): Property 'onClick' does not exist on type 'Readonl... Remove this comment to see the full error message
-    this.props.onClick(!showContent, event);
-
-    if (this.trigger && autoPosition) {
-      const bounds = this.trigger.getBoundingClientRect();
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    if (onClick) {
+      onClick(!showContent, e);
+    }
+    const triggerRef = triggerDivRef.current || triggerBtnRef.current;
+    if (triggerRef && autoPosition) {
+      const bounds = triggerRef.getBoundingClientRect();
       return toggleShowContent(bounds);
     }
 
-    return toggleShowContent();
+    return toggleShowContent(null);
   };
 
-  handleMouseover = (event: any) => {
-    // @ts-expect-error TS(2339): Property 'useHover' does not exist on type 'Readon... Remove this comment to see the full error message
-    if (this.props.useHover) {
-      const { toggleShowContent, autoPosition, showContent } = this.context;
-
-      // @ts-expect-error TS(2339): Property 'onClick' does not exist on type 'Readonl... Remove this comment to see the full error message
-      this.props.onClick(!showContent, event);
-
-      if (this.trigger && autoPosition) {
-        const bounds = this.trigger.getBoundingClientRect();
+  const handleMouseover = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    if (useHover) {
+      if (onClick) {
+        onClick(!showContent, event);
+      }
+      const triggerRef = triggerDivRef.current || triggerBtnRef.current;
+      if (triggerRef && autoPosition) {
+        const bounds = triggerRef.getBoundingClientRect();
         return toggleShowContent(bounds);
       }
 
-      return toggleShowContent();
+      return toggleShowContent(null);
     }
     return null;
   };
 
-  render() {
-    const {
-      children,
-      // @ts-expect-error TS(2339): Property 'useButton' does not exist on type 'Reado... Remove this comment to see the full error message
-      useButton,
-      // @ts-expect-error TS(2339): Property 'useSelect' does not exist on type 'Reado... Remove this comment to see the full error message
-      useSelect,
-      // @ts-expect-error TS(2339): Property 'types' does not exist on type 'Readonly<... Remove this comment to see the full error message
-      types,
-      // @ts-expect-error TS(2339): Property 'direction' does not exist on type 'Reado... Remove this comment to see the full error message
-      direction,
-      // @ts-expect-error TS(2339): Property 'triggerClassName' does not exist on type... Remove this comment to see the full error message
-      triggerClassName,
-      // @ts-expect-error TS(2339): Property 'blueOnActive' does not exist on type 'Re... Remove this comment to see the full error message
-      blueOnActive,
-      // @ts-expect-error TS(2339): Property 'useHover' does not exist on type 'Readon... Remove this comment to see the full error message
-      useHover,
-      ...rest
-    } = this.props;
-    const { showContent } = this.context;
-    const createRef = (trigger: any) => {
-      this.trigger = trigger;
-    };
-    const wrapperClassNames = cx(`dropdown__trigger-wrapper--${direction}`, {
-      'dropdown__trigger-wrapper': useButton,
-      'dropdown__trigger-wrapper--select': useSelect
-    });
-    const buttonClassNames = cx(triggerClassName, {
-      'is-active': showContent,
-      dropdown__trigger: !useButton && !useSelect,
-      'primary-blue-text': blueOnActive && showContent
-    });
+  const wrapperClassNames = cx(`dropdown__trigger-wrapper--${direction}`, {
+    "dropdown__trigger-wrapper": useButton,
+    "dropdown__trigger-wrapper--select": useSelect,
+  });
+  const buttonClassNames = cx(triggerClassName, {
+    "is-active": showContent,
+    dropdown__trigger: !useButton && !useSelect,
+    "primary-blue-text": blueOnActive && showContent,
+  });
 
-    const buttonTypes = useSelect ? types.concat('outline') : types;
+  const buttonTypes = useSelect ? types.concat("outline") : types;
 
-    if (isFunction(children)) {
-      return (
-        <div className={triggerClassName} ref={createRef}>
-          {children({ toggleShowContent: this.handleClick })}
-        </div>
-      );
-    }
-
-    if (useButton || useSelect) {
-      return (
-        <div ref={createRef} className={wrapperClassNames}>
-          <Button
-            types={buttonTypes}
-            className={buttonClassNames}
-            {...rest}
-            onClick={this.handleClick}
-            onMouseEnter={this.handleMouseover}
-          >
-            {children}
-            {useSelect && <Icon name="down" />}
-          </Button>
-        </div>
-      );
-    }
-
+  if (isFunction(children)) {
     return (
-      <button
-        type="button"
-        {...rest}
-        className={buttonClassNames}
-        onClick={this.handleClick}
-        onMouseEnter={this.handleMouseover}
-        ref={createRef}
-      >
-        {children}
-      </button>
+      <div className={triggerClassName} ref={triggerDivRef}>
+        {children({ toggleShowContent: handleClick })}
+      </div>
     );
   }
+
+  if (useButton || useSelect) {
+    return (
+      <div ref={triggerDivRef} className={wrapperClassNames}>
+        <Button
+          types={buttonTypes}
+          className={buttonClassNames}
+          {...rest}
+          onClick={handleClick}
+          onMouseEnter={handleMouseover}
+        >
+          {children}
+          {useSelect && <Icon name="down" />}
+        </Button>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      {...rest}
+      className={buttonClassNames}
+      onClick={handleClick}
+      onMouseEnter={handleMouseover}
+      ref={triggerBtnRef}
+    >
+      {children}
+    </button>
+  );
 }
 
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-DropdownTrigger.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  useButton: PropTypes.bool,
-  useSelect: PropTypes.bool,
-  direction: PropTypes.string,
-  triggerClassName: PropTypes.string,
-  onClick: PropTypes.func,
-  types: PropTypes.arrayOf(PropTypes.string),
-  blueOnActive: PropTypes.bool,
-  useHover: PropTypes.bool
-};
-
-// @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 DropdownTrigger.defaultProps = {
   useButton: false,
   useSelect: false,
-  direction: 'top',
-  triggerClassName: '',
+  direction: "top",
+  triggerClassName: "",
   onClick: () => {},
   types: [],
   blueOnActive: false,
-  useHover: false
+  useHover: false,
 };
 
 export default DropdownTrigger;
