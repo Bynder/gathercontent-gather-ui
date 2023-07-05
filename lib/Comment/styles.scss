@@ -2,10 +2,12 @@
   .person-right {
     @include gradient-overflow(theme('colors.neutral.98'));
   }
+
   &:hover {
     .conversation__text__cutoff {
       @apply bg-blur-grey-bottom;
     }
+
     .person-right {
       @include gradient-overflow(theme('colors.neutral.95'));
     }
@@ -18,7 +20,7 @@
 }
 
 .blur-background {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgb(255 255 255 / 75%);
 
   @supports (filter: blur()) {
     transition: filter $animation-time-micro*0.5;
@@ -32,14 +34,17 @@
 .edit-comment__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
+
     top: $layout-spacing-base * 0.5 + ($layout-spacing-base * 0.25);
     margin-bottom: $layout-spacing-base * 3 !important; // have to override inline styles from react-mentions package :(
 
-    &:before {
+    &::before {
       content: 'Mention...';
+
       @apply w-full block p-2 text-neutral-primary;
     }
   }
+
   &__item {
     &--focused,
     &:focus,
@@ -47,6 +52,7 @@
       @apply bg-neutral-95;
     }
   }
+
   .avatar__wrapper {
     @apply cursor-pointer p-2 border-t border-b-0 border-l-0 border-r-0 border-solid border-neutral-90;
   }

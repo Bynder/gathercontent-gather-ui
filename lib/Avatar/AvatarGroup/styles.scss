@@ -16,6 +16,7 @@ $avatar-group-size-micro: 20px !default;
 .avatar-group-stacked {
   gap: 0;
   margin-right: $avatar-group-item-spacing;
+
   .avatar-group__item {
     margin-right: -$avatar-group-item-spacing;
     z-index: 1;

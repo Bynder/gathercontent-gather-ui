@@ -27,11 +27,11 @@ $shortcut-max-width: 400px !default;
 
 .shortcut__keyboard {
   padding: 3px 6px;
-  background: #FFFFFF;
+  background: #FFF;
   border: 1px solid $color-border-base;
   box-shadow: $shadow-shallow;
   border-radius: 4px;
-  font-family: Courier;
+  font-family: Courier, monospace;
 }
 
 .shortcut__plus {

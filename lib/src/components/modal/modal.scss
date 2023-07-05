@@ -4,17 +4,20 @@ $modal-small-width: 400px !default;
 
 .ReactModal__Content {
   transform: translate(0, -25%);
+
   @apply opacity-0 p-0 transition-all ease-out duration-300;
 }
 
 .ReactModal__Content--after-open {
   @apply opacity-100;
+
   opacity: 1;
   transform: none;
 }
 
 .ReactModal__Content--before-close {
   @apply opacity-0;
+
   transform: translate(0, -25%);
 }
 
@@ -39,32 +42,19 @@ $modal-small-width: 400px !default;
 }
 
 .ReactModal__Overlay {
-  background: rgb(
-    41,
-    51,
-    61,
-    0
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 0% ) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+
   @apply flex justify-center items-center transition ease-out duration-300;
+
   z-index: 1001;
 }
 
 .ReactModal__Overlay--after-open {
-  background: rgb(
-    41,
-    51,
-    61,
-    0.2
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 20% ) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
 .ReactModal__Overlay--before-close {
-  background: rgb(
-    41,
-    51,
-    61,
-    0
-  ) !important; //Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
+  background: rgb(41 51 61 / 0% ) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
 .react-modal-inner {
@@ -77,6 +67,7 @@ $modal-small-width: 400px !default;
   .react-modal-footer__confirm-actions {
     @apply ml-auto;
   }
+
   .react-modal-footer__confirm-text {
     @apply text-neutral-primary;
   }
@@ -87,6 +78,7 @@ $modal-small-width: 400px !default;
 
   .react-modal-header__text {
     font-size: 1.125em;
+
     @apply font-semi-bold pl-6 mr-auto;
   }
 }

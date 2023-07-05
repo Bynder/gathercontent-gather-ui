@@ -8,20 +8,16 @@ $color-btn-primary--text: white !default;
 $color-btn-primary--hover: $primary-blue !default;
 $color-btn-primary--disabled: $neutral-light !default;
 $color-btn-primary--disabled-text: $neutral-base !default;
-
 $color-btn-warning--bg: #da4f49 !default;
 $color-btn-warning--hover: #bd362f !default;
 $color-btn-warning--text: white !default;
-
 $color-btn-default-light--bg: #eaeaea !default;
 $color-btn-default-light--text: #444 !default;
 $color-btn-default-light--hover: #d3d3d3 !default;
 $color-btn-default-dark--bg: #777 !default;
 $color-btn-default-dark--text: white !default;
 $color-btn-default-dark--hover: #5e5e5e !default;
-
 $color-btn-contained--bg: white !default;
-
 $btn-border-radius: 3px !default;
 
 /* ==========================================================================
@@ -66,7 +62,7 @@ a.button--primary {
   &:focus {
     background: $primary-blue-lighter;
     color: $color-btn-primary--text;
-    box-shadow: 0 3px 4px -2px rgba(61, 138, 235, 0.5),
+    box-shadow: 0 3px 4px -2px rgb(61 138 235 / 50%),
       inset 0 -2px 0 0 $primary-blue;
   }
 
@@ -74,13 +70,12 @@ a.button--primary {
     transition: none;
     background: $primary-blue-darker;
     box-shadow: inset 0 2px 0 0 #2662ab;
-    -webkit-box-shadow: inset 0 2px 0 0 #2662ab;
-    -moz-box-shadow: inset 0 2px 0 0 #2662ab;
   }
 
   &:focus {
     color: $color-btn-primary--text;
   }
+
   .icon path {
     fill: $color-btn-primary--text;
   }
@@ -129,6 +124,7 @@ a.button--primary {
 
 .button--link-white {
   color: white;
+
   &:hover {
     color: white;
     text-decoration: underline;
@@ -144,6 +140,7 @@ a.button--primary {
 a.button--danger {
   background: $primary-red;
   color: $color-btn-warning--text;
+
   .icon path {
     fill: $color-btn-warning--text;
   }
@@ -151,11 +148,7 @@ a.button--danger {
   &:hover {
     color: $color-btn-warning--text;
     background: $primary-red-lighter;
-    box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
-      inset 0 -2px 0 0 $primary-red;
-    -webkit-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
-      inset 0 -2px 0 0 $primary-red;
-    -moz-box-shadow: 0 3px 4px -2px rgba(252, 92, 84, 0.5),
+    box-shadow: 0 3px 4px -2px rgb(252 92 84 / 50%),
       inset 0 -2px 0 0 $primary-red;
   }
 
@@ -163,8 +156,6 @@ a.button--danger {
     transition: none;
     background: $primary-red-darker;
     box-shadow: inset 0 2px 0 0 #bd453e;
-    -webkit-box-shadow: inset 0 2px 0 0 #bd453e;
-    -moz-box-shadow: inset 0 2px 0 0 #bd453e;
   }
 
   &:focus {
@@ -195,6 +186,7 @@ a.button--danger {
 .button--purple-text {
   background: white;
   color: $primary-purple;
+
   .icon path {
     fill: $primary-purple;
   }
@@ -202,6 +194,7 @@ a.button--danger {
 
 .button--slim {
   padding: $layout-spacing-base * 0.1 $layout-spacing-base * 0.5;
+
   .icon {
     margin-left: math.div($layout-spacing-base, 3);
     vertical-align: text-bottom;
@@ -235,6 +228,7 @@ a.button--danger {
   &:not(.button--danger) {
     background: none;
   }
+
   border: none;
   box-shadow: none;
   padding: 0;
@@ -268,9 +262,11 @@ a.button--danger {
   width: 100%;
   text-align: left;
   box-shadow: $shadow-shallow;
+
   &:hover {
     background-color: $neutral-lightest;
   }
+
   &:focus {
     outline: none;
   }
@@ -316,14 +312,17 @@ a.button--danger {
   border: 2px solid $primary-blue;
   background: none;
   color: $primary-blue;
+
   &:hover {
     color: lighten($primary-blue, 20%);
     border-color: lighten($primary-blue, 10%);
   }
+
   &:active {
     color: $primary-blue-darker;
     border-color: $primary-blue-darker;
   }
+
   &:focus {
     outline: lighten($primary-blue, 20%) $layout-spacing-base * 0.25 auto;
     outline-offset: -2px;
@@ -340,36 +339,41 @@ a.button--danger {
 
 .button__wrapper {
   display: flex;
+
   .button {
     margin: 0;
     vertical-align: middle;
   }
+
   .button__wrapper--icon {
     height: 100%;
   }
+
   &--size-sm {
     .button__wrapper--icon {
       height: $layout-spacing-base * 0.5 + $layout-spacing-base;
     }
+
     .button {
       font-size: $typo-size-slight;
       padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
     }
   }
 }
+
 .button__wrapper--button {
   border-radius: $btn-border-radius 0 0 $btn-border-radius;
   border-right: $primary-blue-darker 1px solid;
+
   &:disabled {
     border-color: $color-btn-primary--disabled-text;
   }
 }
+
 .button__wrapper--icon {
   padding: $layout-spacing-base * 0.5 + 3;
   line-height: 0;
   border-radius: 0 $btn-border-radius $btn-border-radius 0;
-  &:disabled {
-  }
 }
 
 .button:disabled {
@@ -384,6 +388,7 @@ a.button--danger {
   &:hover {
     text-decoration: none;
   }
+
   &.button--link,
   &.button--link-default,
   &.button--link-underline,
@@ -391,6 +396,7 @@ a.button--danger {
   &.button--icon-only {
     background: transparent;
   }
+
   &.button--link,
   &.button--link-danger {
     cursor: not-allowed;
@@ -400,6 +406,7 @@ a.button--danger {
       color: $color-btn-primary--disabled;
     }
   }
+
   &.button--icon-only {
     opacity: 0.5;
   }

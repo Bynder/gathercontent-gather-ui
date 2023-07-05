@@ -1,20 +1,22 @@
-//** Number of columns in the grid.
+// ** Number of columns in the grid.
 @use "sass:math";
 
 $grid-columns: 12 !default;
-//** Padding between columns. Gets divided in half for the left and right.
+
+// ** Padding between columns. Gets divided in half for the left and right.
 $grid-gutter-width: 20px !default;
 
-@mixin new-calc-grid-column($index, $class, $type) {
-  @if ($type == width) and ($index > 0) {
+@mixin new-calc-grid-column($index, $class, $type ) {
+  @if $type == width and $index > 0 {
     .layout-col-#{$class}-#{$index} {
-      flex: 0 1 percentage(math.div($index, $grid-columns));
-      width: percentage(math.div($index, $grid-columns));
+      flex: 0 1 math.percentage(math.div($index, $grid-columns));
+      width: math.percentage(math.div($index, $grid-columns));
     }
   }
-  @if ($type == offset) {
+
+  @if  $type == offset {
     .layout-col-#{$class}-offset-#{$index} {
-      margin-left: percentage(math.div($index, $grid-columns));
+      margin-left: math.percentage(math.div($index, $grid-columns));
     }
   }
 }
@@ -40,16 +42,17 @@ $grid-gutter-width: 20px !default;
   }
   #{$list} {
     position: relative;
+
     // Prevent columns from collapsing when empty
     min-height: 1px;
+
     // Inner gutter via padding
-    padding-right: floor(($grid-gutter-width * 0.5));
-    padding-left: ceil(($grid-gutter-width * 0.5));
+    padding-right: math.floor(($grid-gutter-width * 0.5));
+    padding-left: math.ceil(($grid-gutter-width * 0.5));
   }
 }
 
 @include new-make-grid-columns;
-
 @include new-make-grid(xs);
 
 @media (min-width: $screen-sm-min) {

@@ -1,10 +1,12 @@
+@use "sass:list";
+
 /**
  * Create a pseudo-element arrow (triangle)
  *
  * @param  {String} $color: black         Color
  */
 @mixin arrowPointer($color: black) {
-  &:before {
+  &::before {
     content: '';
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
@@ -62,28 +64,26 @@
  * @return {[type]}             [description]
  */
 @mixin animation($animate...) {
-  $max: length($animate);
+  $max: list.length($animate);
   $animations: '';
 
   @for $i from 1 through $max {
-    $animations: #{$animations + nth($animate, $i)};
+    $animations: #{$animations + list.nth($animate, $i)};
 
     @if $i < $max {
       $animations: #{$animations + ', '};
     }
   }
 
-  -webkit-animation: $animations;
-  -moz-animation: $animations;
-  animation: $animations;
+  animation: #{$animations};
 }
 
 @mixin keyframes($animationName) {
-  @-webkit-keyframes #{$animationName} {
+  @keyframes #{$animationName} {
     @content;
   }
 
-  @-moz-keyframes #{$animationName} {
+  @keyframes #{$animationName} {
     @content;
   }
 
@@ -150,7 +150,7 @@
  * A border that appears in the `before` element
  */
 @mixin before-border($pixelSize, $style, $colour, $radius) {
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     left: 0;
@@ -168,7 +168,7 @@
  * A border that appears in the `before` element
  */
 @mixin before-left-border($pixelSize, $style, $colour) {
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     left: 0;
@@ -185,7 +185,7 @@
  * A border that appears in the `after` element - this may be useful if the content messes with z-indexes
  */
 @mixin after-border($pixelSize, $style, $colour, $radius) {
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     left: 0;
@@ -203,7 +203,7 @@
  */
 @mixin after-border-focussed($pixelSize, $style, $colour, $radius) {
   &:focus {
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       left: 0;
@@ -219,11 +219,13 @@
 
 @mixin gradient-overflow($toColour) {
   @apply relative overflow-hidden whitespace-nowrap;
-  &:before {
+
+  &::before {
     @apply absolute right-0 w-8 h-full;
+
     background-image: linear-gradient(
       to right,
-      rgba(255, 255, 255, 0),
+      rgb(255 255 255 / 0%),
       $toColour 90%
     );
     content: ' ';

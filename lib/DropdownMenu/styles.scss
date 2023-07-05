@@ -17,434 +17,92 @@ $dropdown-menu-font-color: $color-text-base !default;
 
 @keyframes dropdownAnimation {
   0% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -15,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -15, 0, 1);
   }
+
   5.81% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -7.748,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -7.748, 0, 1);
   }
+
   11.61% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -1.799,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.799, 0, 1);
   }
+
   17.42% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      1.348,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.348, 0, 1);
   }
+
   23.12% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      2.137,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.137, 0, 1);
   }
+
   30.33% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      1.468,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.468, 0, 1);
   }
+
   37.44% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0.489,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.489, 0, 1);
   }
+
   44.54% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -0.094,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.094, 0, 1);
   }
+
   51.65% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -0.244,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.244, 0, 1);
   }
+
   80.28% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0.028,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.028, 0, 1);
   }
+
   100% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
 
 @keyframes dropdownAnimationNoTransform {
   0% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -15,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -15, 0, 1);
   }
+
   5.81% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -7.748,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -7.748, 0, 1);
   }
+
   11.61% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -1.799,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -1.799, 0, 1);
   }
+
   17.42% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      1.348,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.348, 0, 1);
   }
+
   23.12% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      2.137,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 2.137, 0, 1);
   }
+
   30.33% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      1.468,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1.468, 0, 1);
   }
+
   37.44% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0.489,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.489, 0, 1);
   }
+
   44.54% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -0.094,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.094, 0, 1);
   }
+
   51.65% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      -0.244,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -0.244, 0, 1);
   }
+
   80.28% {
-    -webkit-transform: matrix3d(
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0.028,
-      0,
-      1
-    );
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0.028, 0, 1);
   }
+
   100% {
-    -webkit-transform: none;
     transform: none;
   }
 }
@@ -478,9 +136,11 @@ $dropdown-menu-font-color: $color-text-base !default;
   svg path {
     fill: white;
   }
+
   button {
     outline: none;
   }
+
   .dropdown-menu {
     animation: dropdownAnimation 750ms;
     animation-fill-mode: forwards;
@@ -489,10 +149,12 @@ $dropdown-menu-font-color: $color-text-base !default;
 
 .dropdown.full-width {
   width: 100%;
+
   .dropdown-menu__button,
   .dropdown-menu {
     width: 100%;
   }
+
   .dropdown-menu__caret,
   .dropdown-menu__down {
     margin-left: auto;
@@ -505,6 +167,7 @@ $dropdown-menu-font-color: $color-text-base !default;
     .dropdown & {
       fill: $neutral-dark;
     }
+
     .dropdown.is-active & {
       fill: $primary-blue;
     }
@@ -515,9 +178,11 @@ $dropdown-menu-font-color: $color-text-base !default;
   span {
     vertical-align: middle;
   }
+
   svg path {
     fill: $primary-blue;
   }
+
   & + .dropdown__item--name {
     color: $primary-blue;
   }
@@ -551,10 +216,12 @@ $dropdown-menu-font-color: $color-text-base !default;
 
 .dropdown-menu {
   line-height: $typo-line-height-base;
+
   &.align-right {
     left: auto;
     right: 0;
   }
+
   .open & {
     display: block;
     opacity: 1;
@@ -605,7 +272,7 @@ $dropdown-menu-font-color: $color-text-base !default;
   font-size: $dropdown-menu-font-size;
   background: none;
   border: 0;
-  -webkit-appearance: none;
+  appearance: none;
   text-align: left;
   width: 100%;
 
@@ -613,6 +280,7 @@ $dropdown-menu-font-color: $color-text-base !default;
     color: #111823;
     background: #f9f9f9;
   }
+
   &:focus {
     outline: none;
   }
@@ -651,12 +319,14 @@ $dropdown-menu-font-color: $color-text-base !default;
 .dropdown__additional,
 .dropdown__title {
   display: flex;
+
   .dropdown__item--name {
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .dropdown__item--additional {
     display: block;
     margin-left: auto;
@@ -679,13 +349,16 @@ $dropdown-menu-font-color: $color-text-base !default;
 .dropdown__title.dropdown__link {
   &:hover {
     background: white;
+
     svg path {
       fill: $primary-blue;
     }
   }
+
   svg path {
     fill: $neutral-dark;
   }
+
   .dropdown__item--name {
     color: $neutral-base;
   }

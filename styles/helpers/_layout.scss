@@ -205,6 +205,7 @@ $subProps: (row, column);
 
 .full-height-minus-topbar {
   height: calc(100vh - #{$top-bar-height-medium});
+
   @include respond-to-max($screen-md) {
     height: calc(100vh - #{$top-bar-height});
   }
@@ -221,6 +222,7 @@ $subProps: (row, column);
 
 $props: ('border-default');
 $subProps: (top, bottom, left, right, full, clear);
+
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   @if $style == 'full' {
     #{$selector} {
@@ -247,6 +249,7 @@ $subProps: (top, bottom, left, right, full, clear);
 
 $props: ('transform-rotate');
 $subProps: ('');
+
 @include generate-helper($props, $subProps) using ($selector, $property, $style) {
   #{$selector} {
     transform: rotate(0turn);

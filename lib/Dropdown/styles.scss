@@ -120,7 +120,7 @@ $dropdown-status-circle-width-height: 15px !default;
       height: $dropdown-status-circle-width-height;
     }
 
-    &:after {
+    &::after {
       content: '';
       display: block;
       width: 2px;
@@ -133,7 +133,7 @@ $dropdown-status-circle-width-height: 15px !default;
   }
 
   &:last-child {
-    .status-indicator:after {
+    .status-indicator::after {
       display: none;
     }
   }
@@ -296,6 +296,7 @@ $dropdown-status-circle-width-height: 15px !default;
   .icon {
     margin-left: auto;
   }
+
   &.dropdown__trigger-wrapper--top {
     .dropdown-gc.is-active > & .icon {
       transform: rotateX(180deg);

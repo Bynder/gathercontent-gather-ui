@@ -4,6 +4,7 @@
   &:hover,
   &:focus {
     @apply bg-neutral-primary/10 text-neutral-20 no-underline;
+
     &:not(.button-icon-no-fill) .icon {
       path {
         @apply fill-neutral-20;

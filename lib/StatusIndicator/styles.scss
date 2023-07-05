@@ -57,12 +57,14 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-bottom: 0;
   line-height: 1.5rem;
   overflow: hidden;
+
   &-wrapper {
     width: 100%;
     overflow: hidden;
     display: flex;
     margin-left: $layout-spacing-base*0.5;
   }
+
   .status-indicator__label-text {
     display: inline-block;
     text-overflow: ellipsis;
@@ -109,6 +111,7 @@ $status-indicator-margin-left: 1.3rem !default;
 .icon.status-indicator__readonly {
   margin-left: $layout-spacing-base*0.25;
   vertical-align: top;
+
   path {
     fill: $color-brand-dark;
   }
@@ -117,6 +120,7 @@ $status-indicator-margin-left: 1.3rem !default;
 .status-indicator__actions {
   margin-left: $layout-spacing-base*0.5;
 }
+
 /* ==========================================================================
    Modifiers
    ========================================================================== */

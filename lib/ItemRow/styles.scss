@@ -101,7 +101,9 @@ $item-row-gap: 6px;
 
 .item-row-list {
   @apply my-0 pl-2 py-2 pr-0 border-solid border-l-0 border-r-0 border-t border-b border-neutral-90;
+
   margin-top: -1px;
+
   .item-row__name {
     @apply mr-0 leading-6;
     @include gradient-overflow(rgba(255,255,255,1));

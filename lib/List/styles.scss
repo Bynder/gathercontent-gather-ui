@@ -151,7 +151,7 @@ $list-border: 1px solid $color-border-base;
 }
 
 .list--bordered .is-current > .list__item-content > .list__item-text {
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     left: 0;

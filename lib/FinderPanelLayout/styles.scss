@@ -6,6 +6,7 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
 .finder-panel-layout {
   display: flex;
   flex: 2;
+
   &__left {
     background: $finder-panel-left-bg;
     width: $finder-panel-left-width;
@@ -14,6 +15,7 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
     overflow: auto;
     height: $finder-panel-left-height;
   }
+
   &__right {
     width: 100%;
     min-width: 0;
@@ -25,6 +27,7 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
 .finder-panel-layout__left-head {
   padding: $layout-spacing-base $layout-spacing-base 0;
 }
+
 .finder-panel-layout__left-content {
   padding: $layout-spacing-base;
 }

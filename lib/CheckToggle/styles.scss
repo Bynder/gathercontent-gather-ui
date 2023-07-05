@@ -26,7 +26,7 @@ $borderColour: #F8FBFC;
 
   &.disabled {
    opacity: 0.5;
-   pointer-events: none; 
+   pointer-events: none;
   }
 }
 
@@ -47,7 +47,7 @@ $borderColour: #F8FBFC;
   &:last-of-type { margin-left: 10px; }
 }
 
-.toggle-switch + label:after {
+.toggle-switch + label::after {
   top: 4px;
   left: 4px;
   bottom: 4px;
@@ -59,11 +59,11 @@ $borderColour: #F8FBFC;
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + label:after {
+.toggle-switch:checked + label::after {
   margin-left: 26px;
 }
 
-/*  New switch */
+/* New switch */
 .toggle-switch + .toggle-switch__label {
   padding: 2px;
   width: 34px;
@@ -72,17 +72,17 @@ $borderColour: #F8FBFC;
   background-color: $backgroundColour;
   border-radius: 60px;
   transition: background 0.4s;
-  box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 2px rgb(0 0 0 / 10%);
 }
 
-.toggle-switch + .toggle-switch__label:before,
-.toggle-switch + .toggle-switch__label:after {
+.toggle-switch + .toggle-switch__label::before,
+.toggle-switch + .toggle-switch__label::after {
   display: block;
   position: absolute;
   content: "";
 }
 
-.toggle-switch + .toggle-switch__label:after {
+.toggle-switch + .toggle-switch__label::after {
   top: 2px;
   left: 3px;
   bottom: 2px;
@@ -94,7 +94,7 @@ $borderColour: #F8FBFC;
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + .toggle-switch__label:after {
+.toggle-switch:checked + .toggle-switch__label::after {
   margin-left: 10px;
 }
 
@@ -106,7 +106,8 @@ $borderColour: #F8FBFC;
   .toggle-switch + .toggle-switch__label {
     width: $layout-spacing-base + $layout-spacing-base*0.5;
     height: $layout-spacing-base;
-    &:after {
+
+    &::after {
       top: 2px;
       left: 2px;
       bottom: 4px;
@@ -114,12 +115,15 @@ $borderColour: #F8FBFC;
       height: 12px;
     }
   }
-  .toggle-switch:checked + .toggle-switch__label:after {
+
+  .toggle-switch:checked + .toggle-switch__label::after {
     margin-left: $layout-spacing-base*0.5;
   }
+
   .toggle-wrapper__label {
     margin: 0 0 0 $layout-spacing-base*0.25;
   }
+
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;
     overflow: hidden;

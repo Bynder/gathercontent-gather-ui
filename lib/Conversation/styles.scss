@@ -3,18 +3,14 @@
    ========================================================================== */
 $conversation-background-color: $neutral-base-lightest !default;
 $conversation-active-background-color: #fff !default;
-$conversation-active-shadow-color: rgba(158, 158, 158, 0.17) !default;
-$conversation-active-shadow-size: 0px 0px 5px 0px !default;
-
+$conversation-active-shadow-color: rgb(158 158 158 / 17%) !default;
+$conversation-active-shadow-size: 0 0 5px 0 !default;
 $conversation-border-radius: 4px !default;
 $conversation-padding: $layout-spacing-base*0.5 !default;
-
 $conversation-border-width: 1px !default;
 $conversation-border-color: $color-border-base !default;
-
 $conversation-comment-body-indentation: (30px + $layout-spacing-base*0.5);
 $conversation-comment-body-padding: 0 0 0 $conversation-comment-body-indentation !default;
-
 $conversation-meta-bullet-size: 4px !default;
 $conversation-meta-text-size: $typo-size-small !default;
 $conversation-meta-text-color: $neutral-base !default;
@@ -30,6 +26,7 @@ $conversation-meta-text-color: $neutral-base !default;
   width: 100%;
   cursor: pointer;
   background: $conversation-background-color;
+
   &.hover,
   &:hover {
     border-color: $conversation-border-color;
@@ -79,7 +76,7 @@ $conversation-meta-text-color: $neutral-base !default;
   position: relative;
   margin-left: $layout-spacing-base*.75;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     height: 4px;
@@ -102,6 +99,7 @@ $conversation-meta-text-color: $neutral-base !default;
   display: none;
   padding: $conversation-padding $conversation-padding 0 $conversation-padding;
   margin-bottom: $conversation-padding;
+
   &:first-child {
     display: block;
   }
@@ -111,6 +109,7 @@ $conversation-meta-text-color: $neutral-base !default;
   padding-left: $layout-spacing-base*2;
   margin: -$conversation-padding 0 0;
   font-size: $conversation-meta-text-size;
+
   .is-active & {
     display: none;
   }
@@ -140,26 +139,31 @@ $conversation-meta-text-color: $neutral-base !default;
   max-height: 120px;
   overflow: hidden;
   position: relative;
-  &:after {
+
+  &::after {
     content: ' ';
     position: absolute;
     left: 0;
     top: 87px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, transparentize($conversation-background-color, 0.5) 50%, $conversation-background-color 100%);
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%, transparentize($conversation-background-color, 0.5) 50%, $conversation-background-color 100%);
     width: 100%;
     height: 30px;
   }
+
   .conversation:hover & {
-    &:after {
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,transparentize($neutral-lightest, 0.5) 50%, $neutral-lightest 100%);
+    &::after {
+      background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%,transparentize($neutral-lightest, 0.5) 50%, $neutral-lightest 100%);
     }
   }
+
   .conversation.is-active & {
     max-height: none;
-    &:after {
+
+    &::after {
       display:none;
     }
   }
+
   .mention {
     background: rgba( $primary-purple, .1 );
     padding: $layout-spacing-base*0.1;
@@ -177,7 +181,7 @@ $conversation-meta-text-color: $neutral-base !default;
   font-size: $conversation-meta-text-size;
   margin: 0 $conversation-padding*0.5 0 0;
 
-  &:after {
+  &::after {
     content: "";
     display: inline-block;
     width: $conversation-meta-bullet-size;
@@ -190,7 +194,7 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 
   &:last-child {
-    &:after {
+    &::after {
       display: none;
     }
   }
@@ -221,10 +225,12 @@ $conversation-meta-text-color: $neutral-base !default;
 .is-active .conversation__failed--icon {
   margin-right: 5px;
   vertical-align: sub;
+
   path {
     fill: $primary-red;
   }
 }
+
 .conversation__failed--button {
   margin-left: $layout-spacing-base*0.25
 }
@@ -278,7 +284,8 @@ $conversation-meta-text-color: $neutral-base !default;
 .is-active .conversation__comment,
 .show-reply-preview > .conversation__comment-list .conversation__comment {
   position: relative;
-  &:before {
+
+  &::before {
     content: ' ';
     border-left: 2px solid $conversation-border-color;
     position: absolute;
@@ -291,7 +298,8 @@ $conversation-meta-text-color: $neutral-base !default;
 .is-active .conversation__comment:last-child {
   border-bottom: $conversation-border-width solid $conversation-border-color;
   padding-bottom: $conversation-padding;
-  &:before {
+
+  &::before {
     content: none;
   }
 }
@@ -304,7 +312,7 @@ $conversation-meta-text-color: $neutral-base !default;
 .is-visually-disabled .conversation__person-type,
 .is-visually-disabled .conversation__person-name,
 .is-visually-disabled .conversation__comment-body {
-  background: rgba(255, 255, 255, .75);
+  background: rgb(255 255 255 / 75%);
 
   @supports (filter: blur()) {
     transition: filter $animation-time-micro*0.5;
@@ -319,11 +327,13 @@ $conversation-meta-text-color: $neutral-base !default;
     border-bottom: none;
   }
 }
-.is-active .has-author-type.conversation__comment:before,
-.show-reply-preview > .conversation__comment-list .has-author-type.conversation__comment:before {
+
+.is-active .has-author-type.conversation__comment::before,
+.show-reply-preview > .conversation__comment-list .has-author-type.conversation__comment::before {
   margin-top: $layout-spacing-base*0.25 - 1;
   height: calc(100% - #{$layout-spacing-base*0.25 - 1});
 }
+
 .has-author-type.conversation__comment {
   .conversation__comment-body {
     margin: -0.1rem 0 0;

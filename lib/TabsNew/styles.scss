@@ -3,11 +3,13 @@
 
   &.left {
     left: -2px;
+
     @apply bg-blue-primary;
   }
 
   &.right {
     right: -2px;
+
     @apply bg-blue-primary;
   }
 

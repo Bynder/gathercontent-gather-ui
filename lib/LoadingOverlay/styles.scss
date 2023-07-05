@@ -1,3 +1,5 @@
+/* stylelint-disable block-no-empty */
+
 /* ==========================================================================
    Config
    ========================================================================== */
@@ -10,10 +12,7 @@ $loading-line-width: 32px;
 .loading-overlay {
   background: rgba($neutral-base-lightest, .5);
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,10 +66,12 @@ $loading-line-width: 32px;
     transform: translateY(-$loading-line-height*2);
     opacity: 1;
   }
+
   33.333333334% {
     transform: translateY(-$loading-line-height*2);
     opacity: 1;
   }
+
   50.000000001% {
     transform: translateY(-$loading-line-height*4); opacity: 0;
   }
@@ -83,15 +84,19 @@ $loading-line-width: 32px;
   16.666666667% {
     transform: translateY(-$loading-line-height*2);
   }
+
   33.333333334% {
     transform: translateY(-$loading-line-height*2);
   }
+
   50.000000001% {
     transform: translateY(-$loading-line-height*4); opacity: 1;
   }
+
   66.666666668% {
     transform: translateY(-$loading-line-height*4); opacity: 1;
   }
+
   83.333333335% {
     transform: translateY(-$loading-line-height*6); opacity: 0;
   }
@@ -100,18 +105,23 @@ $loading-line-width: 32px;
 
 @keyframes line4 {
   16.666666667% {}
+
   33.333333334% {
     transform: translateX($loading-line-width);
   }
+
   50.000000001% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
   }
+
   66.666666668% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
   }
+
   83.333333335% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*4);
   }
+
   100.00000000% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*4);
   }
@@ -120,15 +130,19 @@ $loading-line-width: 32px;
 @keyframes line5 {
   16.666666667% {}
   33.333333334% {}
+
   50.000000001% {
     transform: translateX(0);
   }
+
   66.666666668% {
     transform: translateX($loading-line-width);
   }
+
   83.333333335% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
   }
+
   100.00000000% {
     transform: translateX($loading-line-width) translateY(-$loading-line-height*2);
   }
@@ -139,9 +153,11 @@ $loading-line-width: 32px;
   33.333333334% {}
   50.000000001% {}
   66.666666668% {}
+
   83.333333335% {
     transform: translateX(0);
   }
+
   100.00000000% {
     transform: translateX($loading-line-width);
   }

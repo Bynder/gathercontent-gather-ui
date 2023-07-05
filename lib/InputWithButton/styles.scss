@@ -5,9 +5,9 @@
 
 .input-with-button__input {
   flex: 1;
-  background: #FFFFFF;
+  background: #FFF;
   border: 1px solid #E6EAED;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 0 0 4px;
   font-size: $typo-size-base;
   line-height: $typo-line-height-base;
   padding: $layout-spacing-base*0.5;
@@ -29,6 +29,7 @@
     font-size: $typo-size-slight;
     padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
   }
+
   .button--input-appendage {
     font-size: $typo-size-slight;
     padding-top: $layout-spacing-base*0.25;

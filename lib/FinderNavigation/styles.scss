@@ -26,6 +26,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-content {
   @apply flex h-10 mb-1 items-center;
+
   transition: height 200ms;
 }
 
@@ -36,12 +37,15 @@ $finder-indent-level-support: 10 !default;
 .finder-item-active > .finder-item-content {
   .finder-item-content-inner {
     @apply bg-white text-blue-primary shadow-small;
+
     &:hover {
       @apply bg-white;
     }
   }
+
   .finder-item-link {
     @apply text-blue-primary;
+
     .icon path {
       fill: theme('colors.blue.primary');
     }
@@ -51,10 +55,12 @@ $finder-indent-level-support: 10 !default;
 .finder-item-disabled {
   .finder-item-link {
     @apply text-neutral-70;
+
     .icon path {
       opacity: 0.3;
     }
   }
+
   .finder-item-settings {
     @apply text-neutral-70;
   }
@@ -66,10 +72,13 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-content-inner {
   @apply flex w-full h-full items-center pl-3 pr-2 rounded;
+
   min-width: 150px;
+
   &:hover {
     @apply bg-neutral-90;
   }
+
   .form__input {
     @apply py-0 pl-3 pr-0;
   }
@@ -77,6 +86,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-settings {
   @apply ml-auto flex-shrink-0 pl-1 flex items-center text-neutral-primary;
+
   .dropdown__content {
     @apply mt-0 -mr-2 text-neutral-20;
   }
@@ -86,6 +96,7 @@ $finder-indent-level-support: 10 !default;
   .finder-item-settings {
     display: none;
   }
+
   &:hover {
     .finder-item-settings {
       @apply flex;
@@ -95,6 +106,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder-item-link {
   @apply no-underline text-neutral-20 flex-shrink w-full flex items-center cursor-pointer outline-none h-full truncate;
+
   .icon {
     @apply mr-3;
   }
@@ -102,6 +114,7 @@ $finder-indent-level-support: 10 !default;
 
 .finder__separator {
   @apply bg-neutral-90 text-neutral-90 border-0 m-3;
+
   height: 2px;
 }
 
@@ -137,8 +150,8 @@ $finder-indent-level-support: 10 !default;
   .finder-item-content-inner {
     position: relative;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: ' ';
       position: absolute;
       width: 6px;
@@ -148,7 +161,7 @@ $finder-indent-level-support: 10 !default;
       left: 0;
     }
 
-    &:after {
+    &::after {
       right: 0;
       margin-left: auto;
     }
@@ -161,8 +174,9 @@ $finder-indent-level-support: 10 !default;
   border-top: 2px solid $primary-blue;
   top: -3px;
   padding-top: 3px;
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     top: -4px;
   }
 }
@@ -174,8 +188,8 @@ $finder-indent-level-support: 10 !default;
   margin-bottom: -5px;
   padding-bottom: 4px;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     bottom: -4px;
   }
 }
@@ -194,16 +208,13 @@ $finder-indent-level-support: 10 !default;
   #{$finderItemSelector}.finder-item.is-over.dragged-insert
     > .finder-item-content,
   #{$finderItemSelector}.finder-item-selected > .finder-item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base * 0.5 * ($i - 1)) -
-      2;
+    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1)) - 2;
   }
 
   #{$finderItemSelector} > .finder-item-content,
   #{$finderItemSelector}.finder-item.is-over.dragged-top > .finder-item-content,
   #{$finderItemSelector}.finder-item.is-over.dragged-below
     > .finder-item-content {
-    padding-left: ($layout-spacing-base * 1.5 * $i) -
-      ($layout-spacing-base * 0.5 * ($i - 1));
+    padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1));
   }
 }

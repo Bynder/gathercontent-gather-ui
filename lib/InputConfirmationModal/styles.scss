@@ -2,16 +2,20 @@
   .modal-header {
     min-height: 0;
   }
+
   .modal-header,
   .modal-footer {
     @apply p-0;
   }
+
   .modal-body {
     @apply px-0 leading-6;
   }
+
   .react-modal-inner {
     @apply p-6;
   }
+
   .modal-header .close-button {
     @apply -mt-4 -mr-4 ml-auto mb-auto;
   }
