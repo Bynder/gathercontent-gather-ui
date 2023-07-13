@@ -114,15 +114,17 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="feedback" {...additionalProps} />
     <Icon name="aiWand" {...additionalProps} />
     <Icon name="highlighter" {...additionalProps} />
+    <Icon name="refresh16" {...additionalProps} />
   </div>
 );
 
-export const Icons = () => (
-  <StoryItem title="SVG Icons" description="">
-    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    {allIcons()}
-  </StoryItem>
-);
+export function Icons() {
+  return (
+    <StoryItem title="SVG Icons" description="">
+      {allIcons()}
+    </StoryItem>
+  );
+}
 
 Icons.parameters = {
   controls: { hideNoControlsWarning: true },
