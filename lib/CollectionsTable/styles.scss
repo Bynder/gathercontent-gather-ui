@@ -119,7 +119,7 @@ $collections-table-cell-min-height: 40px !default;
   }
 
   .editable-text__wrapper {
-    max-width: calc(100% - 30px);
+    max-width: 100%;
     padding-right: $layout-spacing-base * 2 + $layout-spacing-base*0.25;
   }
 }
