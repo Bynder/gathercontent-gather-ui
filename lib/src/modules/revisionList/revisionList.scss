@@ -1,0 +1,16 @@
+.revision-list {
+  list-style: none;
+}
+
+.revision-list-item {
+}
+
+.revision-list-timestamp {
+  display: flex;
+  align-items: center;
+}
+
+.revision-list-time {
+  @apply text-neutral-20;
+  margin-right: auto;
+}
