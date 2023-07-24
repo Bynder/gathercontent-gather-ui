@@ -5,7 +5,10 @@
 .revision-list-item {
 }
 
-.revision-list-timestamp {
+.revision-list-timestamp,
+.revision-list-status,
+.revision-list-current-status,
+.revision-list-old-status {
   display: flex;
   align-items: center;
 }
@@ -13,4 +16,8 @@
 .revision-list-time {
   @apply text-neutral-20;
   margin-right: auto;
+}
+
+.revision-list-status-name {
+  @apply text-neutral-20;
 }
