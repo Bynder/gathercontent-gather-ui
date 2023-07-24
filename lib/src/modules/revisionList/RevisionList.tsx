@@ -2,6 +2,8 @@ import React, { HTMLAttributes } from "react";
 import { RevisionListItem } from "./RevisionListItem";
 import { RevisionListTimestamp } from "./RevisionListTimestamp";
 import { RevisionListStatus } from "./RevisionListStatus";
+import { RevisionListNote } from "./RevisionListNote";
+import { RevisionListHeading } from "./RevisionListHeading";
 
 export function RevisionList({
   children,
@@ -18,3 +20,5 @@ export function RevisionList({
 RevisionList.Item = RevisionListItem;
 RevisionList.Timestamp = RevisionListTimestamp;
 RevisionList.Status = RevisionListStatus;
+RevisionList.Note = RevisionListNote;
+RevisionList.Heading = RevisionListHeading;
