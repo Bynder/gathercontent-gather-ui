@@ -9,15 +9,15 @@ interface Props extends HTMLAttributes<HTMLLIElement> {
 export function RevisionListItem({
   children,
   className = "",
-  leftContent,
-  active,
+  leftContent = null,
+  active = false,
   ...rest
 }: Props) {
   const classes = cx(className, "revision-list-item", {
     "revision-list-item-active": active,
   });
   return (
-    <li className={`${className} revision-list-item`} {...rest}>
+    <li className={classes} {...rest}>
       <div className="revision-list-item-left">{leftContent}</div>
       <div className="w-full">{children}</div>
     </li>
