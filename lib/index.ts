@@ -153,6 +153,7 @@ export { Grid } from "./src/modules/grid/Grid";
 export { Row } from "./src/modules/grid/Row";
 export { Col } from "./src/modules/grid/Col";
 export { OptionMenuItem } from "./src/modules/optionMenuItem/OptionMenuItem";
+export { RevisionList } from "./src/modules/revisionList/RevisionList";
 
 export { ModalUpload } from "./src/prefabs/modalUpload/ModalUpload";
 export { DueDateDropdown } from "./src/prefabs/dueDateDropdown/DueDateDropdown";

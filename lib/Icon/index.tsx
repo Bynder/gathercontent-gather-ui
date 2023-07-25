@@ -174,6 +174,7 @@ import feedback from "../../assets/icons/feedback.svg";
 import aiWand from "../../assets/icons/ai-assist-wand.svg";
 import highlighter from "../../assets/icons/highlighter.svg";
 import refresh16 from "../../assets/icons/refresh16.svg";
+import arrowRight16 from "../../assets/icons/arrow-right-16.svg";
 
 /**
  * @usage
@@ -353,6 +354,7 @@ const getIcon = (name: string) => {
     aiWand,
     highlighter,
     refresh16,
+    arrowRight16,
   };
   return icons[name as keyof typeof icons] || null;
 };
@@ -365,8 +367,8 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
   types?: [string];
   textTypes?: [string];
   title?: string;
-  defaultFillColor?: string;
-  defaultActiveColor?: string;
+  defaultFillColor?: boolean;
+  defaultActiveColor?: boolean;
   containerSize?: string;
 }
 

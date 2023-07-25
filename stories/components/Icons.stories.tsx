@@ -115,6 +115,7 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="aiWand" {...additionalProps} />
     <Icon name="highlighter" {...additionalProps} />
     <Icon name="refresh16" {...additionalProps} />
+    <Icon name="arrowRight16" {...additionalProps} />
   </div>
 );
 
