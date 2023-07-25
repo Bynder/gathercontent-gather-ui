@@ -4,6 +4,21 @@
   padding: 0;
 }
 
+.revision-list > .revision-list {
+  @apply bg-neutral-98;
+  .revision-list-item {
+    @apply ml-10;
+    border-width: 0 0 1px 1px;
+  }
+  .revision-list-item .revision-list-item-left {
+    display: none;
+  }
+}
+
+.revision-list a {
+  text-decoration: none;
+}
+
 .revision-list-item,
 .revision-list-heading {
   @apply border-neutral-90 border-solid;
@@ -11,7 +26,19 @@
 }
 
 .revision-list-item {
-  @apply p-4;
+  @apply p-4 flex bg-white;
+  cursor: pointer;
+  &:hover {
+    @apply bg-neutral-98;
+  }
+}
+
+.revision-list-item-active {
+  @apply bg-blue-95;
+}
+
+.revision-list-item-left {
+  @apply w-6 mr-2;
 }
 
 .revision-list-timestamp,
