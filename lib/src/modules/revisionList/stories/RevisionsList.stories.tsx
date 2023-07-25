@@ -31,22 +31,20 @@ export function RevisionsList() {
         April 13, 2023
       </RevisionListComponent.Heading>
       <RevisionListComponent>
-        <a href="#">
-          <RevisionListComponent.Item leftContent={LeftContent}>
-            <RevisionListComponent.Timestamp timestamp="6:33 pm">
-              <Avatar url={faker.image.avatar()} />
-            </RevisionListComponent.Timestamp>
-            <RevisionListStatus
-              oldStatusColour="#C2CCD6"
-              statusColour="#F9D006"
-              statusName="Review"
-            />
-            <RevisionListComponent.Note>
-              Hey @angus - the content is ready for review. Feel free to make
-              any necessary changes.
-            </RevisionListComponent.Note>
-          </RevisionListComponent.Item>
-        </a>
+        <RevisionListComponent.Item leftContent={LeftContent}>
+          <RevisionListComponent.Timestamp timestamp="6:33 pm">
+            <Avatar url={faker.image.avatar()} />
+          </RevisionListComponent.Timestamp>
+          <RevisionListStatus
+            oldStatusColour="#C2CCD6"
+            statusColour="#F9D006"
+            statusName="Review"
+          />
+          <RevisionListComponent.Note>
+            Hey @angus - the content is ready for review. Feel free to make any
+            necessary changes.
+          </RevisionListComponent.Note>
+        </RevisionListComponent.Item>
         {showNested && (
           <RevisionListComponent>
             <RevisionListComponent.Item>
@@ -68,14 +66,12 @@ export function RevisionsList() {
         )}
       </RevisionListComponent>
       <RevisionListComponent>
-        <a href="#">
-          <RevisionListComponent.Item>
-            <RevisionListComponent.Timestamp timestamp="6:33 pm">
-              <Avatar url={faker.image.avatar()} />
-            </RevisionListComponent.Timestamp>
-            <RevisionListStatus statusColour="#F9D006" statusName="Review" />
-          </RevisionListComponent.Item>
-        </a>
+        <RevisionListComponent.Item>
+          <RevisionListComponent.Timestamp timestamp="6:33 pm">
+            <Avatar url={faker.image.avatar()} />
+          </RevisionListComponent.Timestamp>
+          <RevisionListStatus statusColour="#F9D006" statusName="Review" />
+        </RevisionListComponent.Item>
       </RevisionListComponent>
     </>
   );
