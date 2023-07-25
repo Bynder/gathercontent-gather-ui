@@ -13,9 +13,10 @@ export function RevisionListStatus({
   statusName,
   statusColour,
   className = "",
+  ...rest
 }: Props) {
   return (
-    <div className={`${className} revision-list-status`}>
+    <div className={`${className} revision-list-status`} {...rest}>
       {!!oldStatusColour && (
         <div className="revision-list-old-status mr-2">
           <StatusIndicatorCircle
