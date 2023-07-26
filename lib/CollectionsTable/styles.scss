@@ -52,7 +52,7 @@ $collections-table-cell-min-height: 40px !default;
   min-width: 0;
   white-space: nowrap;
 
-  &:first-child {
+  &:nth-child(2) {
     flex-basis: 10%;
 
     @include respond-to-min($screen-md) {
