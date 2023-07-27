@@ -47,7 +47,6 @@ export function AvatarGroup({
 
       {total > maximum && (
         <Dropdown id="avatar-group-dropdown" autoPosition>
-          {/* @ts-expect-error@ts-expect-error TS(2769): No overload matches this call. */}
           <Dropdown.Trigger triggerClassName="avatar-plus-trigger">
             <Avatar initials={plusLabel} />
           </Dropdown.Trigger>

@@ -19,7 +19,7 @@ export function RevisionListItem({
   return (
     <li className={classes} {...rest}>
       <div className="revision-list-item-left">{leftContent}</div>
-      <div className="w-full">{children}</div>
+      <div className="w-full overflow-hidden">{children}</div>
     </li>
   );
 }

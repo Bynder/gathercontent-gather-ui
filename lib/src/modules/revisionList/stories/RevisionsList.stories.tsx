@@ -37,6 +37,7 @@ export function RevisionsList() {
           </RevisionListComponent.Timestamp>
           <RevisionListStatus
             oldStatusColour="#C2CCD6"
+            oldStatusName="First Draft"
             statusColour="#F9D006"
             statusName="Review"
           />

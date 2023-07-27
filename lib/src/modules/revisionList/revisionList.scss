@@ -69,6 +69,20 @@
   @apply text-neutral-20;
 }
 
+.revision-list-current-status,
+.revision-list-current-status .tooltip-wrapper__child {
+  overflow: hidden;
+}
+
+.revision-list-status .status-indicator-circle {
+  flex-shrink: 0;
+}
+
+.revision-list-status-name {
+  @apply truncate;
+  white-space: nowrap;
+}
+
 .revision-list-note-heading {
   @apply text-neutral-primary font-semi-bold text-sm mt-2 mb-1;
 
