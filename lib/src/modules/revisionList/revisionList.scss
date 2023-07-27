@@ -8,7 +8,7 @@
   @apply bg-neutral-98;
 
   .revision-list-item {
-    @apply ml-10;
+    @apply ml-12;
 
     border-width: 0 0 1px 1px;
   }
@@ -16,6 +16,10 @@
   .revision-list-item .revision-list-item-left {
     display: none;
   }
+}
+
+.revision-list-item-right {
+  @apply w-full overflow-hidden flex flex-col gap-2;
 }
 
 .revision-list a {
@@ -35,7 +39,7 @@
   cursor: pointer;
 
   &:hover {
-    @apply bg-neutral-98;
+    @apply bg-neutral-95;
   }
 }
 
@@ -83,14 +87,18 @@
   white-space: nowrap;
 }
 
+.revision-list-note {
+  @apply text-sm;
+}
+
 .revision-list-note-heading {
-  @apply text-neutral-primary font-semi-bold text-sm mt-2 mb-1;
+  @apply text-neutral-primary font-semi-bold mt-0 mb-1;
 
   text-transform: uppercase;
 }
 
 .revision-list-heading {
-  @apply text-base text-neutral-20 font-semi-bold w-full bg-neutral-98 p-2 m-0;
+  @apply text-base text-neutral-20 font-semi-bold w-full bg-neutral-98 py-2 px-4 m-0;
 
   display: block;
 }
