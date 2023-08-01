@@ -6,7 +6,9 @@
 
 .revision-list > .revision-list {
   @apply bg-neutral-98 border-solid border-neutral-90;
-  border-width: 0 0 1px 0;
+
+  border-width: 0 0 1px;
+
   .revision-list-item {
     @apply ml-12;
 
