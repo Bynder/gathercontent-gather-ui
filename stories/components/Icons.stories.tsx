@@ -116,6 +116,12 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="highlighter" {...additionalProps} />
     <Icon name="refresh16" {...additionalProps} />
     <Icon name="arrowRight16" {...additionalProps} />
+    <Icon name="sparkle" {...additionalProps} />
+    <Icon name="spelling" {...additionalProps} />
+    <Icon name="textLong" {...additionalProps} />
+    <Icon name="textShort" {...additionalProps} />
+    <Icon name="emoji" {...additionalProps} />
+    <Icon name="translate" {...additionalProps} />
   </div>
 );
 
