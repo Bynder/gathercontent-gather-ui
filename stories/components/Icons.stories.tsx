@@ -122,6 +122,7 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="textShort" {...additionalProps} />
     <Icon name="emoji" {...additionalProps} />
     <Icon name="translate" {...additionalProps} />
+    <Icon name="caretRight" {...additionalProps} />
   </div>
 );
 

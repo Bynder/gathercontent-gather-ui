@@ -77,25 +77,25 @@ export function Dropdown() {
                 className="flex items-center"
                 action={() => {}}
               >
-                <Icon name="lock" className="mr-2" /> Improve writing
+                <Icon name="sparkle" className="mr-2" /> Improve writing
               </DropdownComponent.Action>
               <DropdownComponent.Action
                 className="flex items-center"
                 action={() => {}}
               >
-                <Icon name="resolved" className="mr-2" /> Fix spelling & grammar
+                <Icon name="spelling" className="mr-2" /> Fix spelling & grammar
               </DropdownComponent.Action>
               <DropdownComponent.Action
                 className="flex items-center"
                 action={() => {}}
               >
-                <Icon name="warning" className="mr-2" /> Extend
+                <Icon name="textLong" className="mr-2" /> Extend
               </DropdownComponent.Action>
               <DropdownComponent.Action
                 className="flex items-center"
                 action={() => {}}
               >
-                <Icon name="cross" className="mr-2" /> Shorten
+                <Icon name="textShort" className="mr-2" /> Shorten
               </DropdownComponent.Action>
               <DropdownComponent.Action
                 hideAfterPerformingAction={false}
@@ -104,8 +104,13 @@ export function Dropdown() {
               >
                 <DropdownComponent className="w-full" id="id-dropdown-2">
                   <DropdownComponent.Trigger triggerClassName="flex items-center w-full">
-                    <Icon name="trash" className="mr-2" /> Change tone{' '}
-                    <Icon name="arrowRight" className="ml-auto" />
+                    <Icon name="emoji" className="mr-2" /> Change tone{' '}
+                    <Icon 
+                      name="caretRight" 
+                      defaultFillColor={false} 
+                      defaultActiveColor={false} 
+                      className="ml-auto icon--neutral-70" 
+                    />
                   </DropdownComponent.Trigger>
                   <DropdownComponent.Content
                     className="top-0 left-100%"

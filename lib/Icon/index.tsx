@@ -181,6 +181,7 @@ import textLong from "../../assets/icons/text-long.svg";
 import textShort from "../../assets/icons/text-short.svg";
 import translate from "../../assets/icons/translate.svg";
 import sparkle from "../../assets/icons/sparkle.svg";
+import caretRight from "../../assets/icons/caret-right.svg";
 
 /**
  * @usage
@@ -367,6 +368,7 @@ const getIcon = (name: string) => {
     textShort,
     emoji,
     translate,
+    caretRight,
   };
   return icons[name as keyof typeof icons] || null;
 };
