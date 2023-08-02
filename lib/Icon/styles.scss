@@ -149,6 +149,11 @@ $icon-active-color: $color-brand-blue !default;
   @apply fill-current;
 }
 
+.icon.icon--neutral-70 path {
+  @apply text-neutral-70;
+  @apply fill-current;
+}
+
 .icon.icon--purple path {
   @apply text-purple-primary fill-current #{!important};
 }
