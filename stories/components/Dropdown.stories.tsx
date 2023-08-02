@@ -1,18 +1,18 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 import {
   Dropdown as DropdownComponent,
   Avatar,
   AvatarInformation,
   Icon,
   ConfirmationDropdown,
-} from "lib";
-import StoryItem from "../styleguide/StoryItem";
-import StatusIndicator from "../../lib/StatusIndicator";
-import Form from "../../lib/Form";
-import FormInput from "../../lib/Form/FormInput";
+} from 'lib';
+import StoryItem from '../styleguide/StoryItem';
+import StatusIndicator from '../../lib/StatusIndicator';
+import Form from '../../lib/Form';
+import FormInput from '../../lib/Form/FormInput';
 
 export default {
-  title: "Legacy/Dropdowns/Dropdown",
+  title: 'Legacy/Dropdowns/Dropdown',
   component: DropdownComponent,
 };
 
@@ -58,6 +58,77 @@ export function Dropdown() {
             <Avatar url="https://d3iw72m71ie81c.cloudfront.net/female-83.jpg">
               <AvatarInformation email="heythere@lol.com" name="Mr Ben" />
             </Avatar>
+          </DropdownComponent.Content>
+        </DropdownComponent>
+      </StoryItem>
+
+      <StoryItem
+        title="DropdownComponent with inner menu"
+        description="An example of a dropdown within a dropdown"
+      >
+        <DropdownComponent id="id-dropdown">
+          <DropdownComponent.Trigger useButton>
+            Show content
+          </DropdownComponent.Trigger>
+
+          <DropdownComponent.Content collapse>
+            <DropdownComponent.ActionGroup>
+              <DropdownComponent.Action
+                className="flex items-center"
+                action={() => {}}
+              >
+                <Icon name="lock" className="mr-2" /> Improve writing
+              </DropdownComponent.Action>
+              <DropdownComponent.Action
+                className="flex items-center"
+                action={() => {}}
+              >
+                <Icon name="resolved" className="mr-2" /> Fix spelling & grammar
+              </DropdownComponent.Action>
+              <DropdownComponent.Action
+                className="flex items-center"
+                action={() => {}}
+              >
+                <Icon name="warning" className="mr-2" /> Extend
+              </DropdownComponent.Action>
+              <DropdownComponent.Action
+                className="flex items-center"
+                action={() => {}}
+              >
+                <Icon name="cross" className="mr-2" /> Shorten
+              </DropdownComponent.Action>
+              <DropdownComponent.Action
+                hideAfterPerformingAction={false}
+                action={() => {}}
+                className="overflow-visible w-full text-left"
+              >
+                <DropdownComponent className="w-full" id="id-dropdown-2">
+                  <DropdownComponent.Trigger triggerClassName="flex items-center w-full">
+                    <Icon name="trash" className="mr-2" /> Change tone{' '}
+                    <Icon name="arrowRight" className="ml-auto" />
+                  </DropdownComponent.Trigger>
+                  <DropdownComponent.Content
+                    className="top-0 left-100%"
+                    collapse
+                  >
+                    <DropdownComponent.ActionGroup>
+                      <DropdownComponent.Action action={() => {}}>
+                        Professional
+                      </DropdownComponent.Action>
+                      <DropdownComponent.Action action={() => {}}>
+                        Confident
+                      </DropdownComponent.Action>
+                      <DropdownComponent.Action action={() => {}}>
+                        Understanding
+                      </DropdownComponent.Action>
+                      <DropdownComponent.Action action={() => {}}>
+                        Casual
+                      </DropdownComponent.Action>
+                    </DropdownComponent.ActionGroup>
+                  </DropdownComponent.Content>
+                </DropdownComponent>
+              </DropdownComponent.Action>
+            </DropdownComponent.ActionGroup>
           </DropdownComponent.Content>
         </DropdownComponent>
       </StoryItem>
@@ -336,7 +407,7 @@ export function Dropdown() {
         title="DropdownComponent Menu"
         description="DropdownMenu is being phased out. You can achieve the same outcome by composing DropdownComponent components."
       >
-        <div style={{ maxWidth: "300px" }}>
+        <div style={{ maxWidth: '300px' }}>
           <DropdownComponent id="dropdown-menu" autoPosition block>
             <DropdownComponent.Trigger useSelect>
               Select an option...
@@ -351,7 +422,7 @@ export function Dropdown() {
         title="DropdownComponent (with other components as content)"
         description="We can compose dropdowns with various components."
       >
-        <div style={{ maxWidth: "300px" }}>
+        <div style={{ maxWidth: '300px' }}>
           <DropdownComponent id="dropdown-menu" block>
             <DropdownComponent.Trigger useSelect>
               <StatusIndicator color="green" label="Status 2" medium />
