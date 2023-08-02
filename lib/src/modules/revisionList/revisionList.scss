@@ -5,12 +5,18 @@
 }
 
 .revision-list > .revision-list {
-  @apply bg-neutral-98;
+  @apply bg-neutral-98 border-solid border-neutral-90;
+
+  border-width: 0 0 1px;
 
   .revision-list-item {
     @apply ml-12;
 
     border-width: 0 0 1px 1px;
+  }
+
+  a:last-of-type .revision-list-item {
+    border-width: 0 0 0 1px;
   }
 
   .revision-list-item .revision-list-item-left {
