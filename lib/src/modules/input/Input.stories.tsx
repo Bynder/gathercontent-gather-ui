@@ -91,6 +91,44 @@ export function Inputs(args: any) {
           {...args}
         />
       </StoryItem>
+
+      <StoryItem title="TextArea">
+        {/* @ts-expect-error */}
+        <Label htmlFor="textarea-1">Label</Label>
+        <Input
+          id="textarea-1"
+          placeholder="Describe this textarea..."
+          useTextarea
+          {...args}
+        />
+      </StoryItem>
+
+      <StoryItem title="TextArea (with an icon)">
+        {/* @ts-expect-error */}
+        <Label htmlFor="textarea-2">Label</Label>
+        <InputIcon
+          id="textarea-2"
+          placeholder="Describe this textarea..."
+          iconName="search"
+          useTextarea
+          {...args}
+        />
+      </StoryItem>
+
+      <StoryItem title="TextArea (with mentions)">
+        {/* @ts-expect-error */}
+        <Label htmlFor="textarea-3">Label</Label>
+        <InputWithMentions
+          users={mockUsers}
+          onChange={() => {}}
+          onMention={() => {}}
+          id="textarea-3"
+          placeholder="@mention your team"
+          value=""
+          useTextarea
+          {...args}
+        />
+      </StoryItem>
     </>
   );
 }

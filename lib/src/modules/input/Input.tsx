@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { bool, func, string } from 'prop-types';
-import cx from 'classnames';
-import { InputHelper } from './InputHelper';
+import * as React from "react";
+import { bool, func, string } from "prop-types";
+import cx from "classnames";
+import { InputHelper } from "./InputHelper";
 
 export function Input({
   id,
-  className = '',
+  className = "",
   valid,
   invalid,
   enhanceNativeSupport,
@@ -13,40 +13,46 @@ export function Input({
   value,
   onChange,
   inputRef,
+  useTextarea = false,
   ...rest
 }: any) {
   const [_value, setValue] = React.useState(value);
-
   const classNames = cx(`input input-${size}`, className, {
-    'input-native': enhanceNativeSupport,
-    'input-valid': valid,
-    'input-invalid': invalid
+    "input-native": enhanceNativeSupport,
+    "input-valid": valid,
+    "input-invalid": invalid,
   });
+
+  const allProps = {
+    id,
+    value: _value,
+    className: classNames,
+    onChange: (
+      e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+    ) => {
+      onChange(e);
+      setValue(e.target.value);
+    },
+    ref: inputRef,
+    ...rest,
+  };
 
   React.useEffect(() => {
     setValue(value);
   }, [value]);
 
-  return (
-    <input
-      id={id}
-      value={_value}
-      className={classNames}
-      onChange={e => {
-        onChange(e);
-        setValue(e.target.value);
-      }}
-      ref={inputRef}
-      {...rest}
-    />
+  return useTextarea ? (
+    <textarea rows={1} {...allProps} />
+  ) : (
+    <input {...allProps} />
   );
 }
 
 Input.Helper = InputHelper;
 
 const sizes = {
-  md: 'md',
-  sm: 'sm'
+  md: "md",
+  sm: "sm",
 };
 
 Input.sizes = sizes;
@@ -58,7 +64,7 @@ Input.propTypes = {
   invalid: bool,
   enhanceNativeSupport: bool,
   value: string,
-  onChange: func
+  onChange: func,
 };
 
 Input.defaultProps = {
@@ -66,6 +72,6 @@ Input.defaultProps = {
   valid: false,
   invalid: false,
   enhanceNativeSupport: false,
-  value: '',
-  onChange() {}
+  value: "",
+  onChange() {},
 };

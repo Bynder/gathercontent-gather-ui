@@ -92,4 +92,11 @@
   }
 }
 
+.input-icon .icon:has(+textarea) {
+  top: 0.6125rem;
+}
 
+textarea.input {
+  min-height: 2.625rem;
+  resize: vertical;
+}
