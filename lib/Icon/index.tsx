@@ -175,6 +175,12 @@ import aiWand from "../../assets/icons/ai-assist-wand.svg";
 import highlighter from "../../assets/icons/highlighter.svg";
 import refresh16 from "../../assets/icons/refresh16.svg";
 import arrowRight16 from "../../assets/icons/arrow-right-16.svg";
+import emoji from "../../assets/icons/emoji.svg";
+import spelling from "../../assets/icons/spelling.svg";
+import textLong from "../../assets/icons/text-long.svg";
+import textShort from "../../assets/icons/text-short.svg";
+import translate from "../../assets/icons/translate.svg";
+import sparkle from "../../assets/icons/sparkle.svg";
 
 /**
  * @usage
@@ -355,6 +361,12 @@ const getIcon = (name: string) => {
     highlighter,
     refresh16,
     arrowRight16,
+    sparkle,
+    spelling,
+    textLong,
+    textShort,
+    emoji,
+    translate,
   };
   return icons[name as keyof typeof icons] || null;
 };
