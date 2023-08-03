@@ -123,6 +123,8 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="emoji" {...additionalProps} />
     <Icon name="translate" {...additionalProps} />
     <Icon name="caretRight" {...additionalProps} />
+    <Icon name="arrowReturn" {...additionalProps} />
+    <Icon name="arrowRightAngle" {...additionalProps} />
   </div>
 );
 
