@@ -34,7 +34,6 @@ export class UserSearchDropdown extends Component {
           tooltipText={this.props.tooltipText}
           placement="top"
         >
-          {/* @ts-expect-error */}
           <Dropdown.Trigger useButton types={["icon-only"]}>
             <Icon name={icon} title="Open user search" />
           </Dropdown.Trigger>

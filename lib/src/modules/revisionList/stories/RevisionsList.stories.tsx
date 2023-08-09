@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// @ts-expect-error Could not find a declaration file for module 'faker'.
 import faker from "faker";
 import { RevisionList as RevisionListComponent } from "../RevisionList";
 import Avatar from "../../../../Avatar";
@@ -13,7 +14,7 @@ export default {
 export function RevisionsList() {
   const [showNested, setShowNested] = useState(false);
 
-  const onClick = (e) => {
+  const onClick = (e: any) => {
     e.preventDefault();
     setShowNested(!showNested);
   };

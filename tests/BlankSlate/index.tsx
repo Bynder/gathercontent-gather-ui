@@ -1,6 +1,5 @@
 import { BlankSlate } from "lib";
 import { React, mount } from "../setup";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/icons/keyboard.sv... Remove this comment to see the full error message
 import keyboardSVG from "../../assets/icons/keyboard.svg";
 
 describe("Blank Slate", () => {

@@ -61,7 +61,7 @@ export function OptionMenu() {
       description="OptionMenuComponent component with the selected option"
     >
       <Dropdown id="option-menu-controlled-dropdown">
-        {({ showContent, setShowContent }) => (
+        {({ showContent, setShowContent }: any) => (
           <>
             <Dropdown.Trigger>
               <ButtonTertiary>

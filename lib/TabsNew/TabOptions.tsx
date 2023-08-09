@@ -33,7 +33,7 @@ function TabOptions({ children }: any) {
       onHide={() => setActionsAreActive(false)}
       autoPosition
     >
-      {({ showContent }) => (
+      {({ showContent }: any) => (
         <>
           <div className={createTriggerWrapperClassNames(showContent)}>
             <Dropdown.Trigger>

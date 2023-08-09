@@ -13,7 +13,7 @@ function CommentActions({ onEditClick, onRemoveClick, className }: any) {
   return isOpen ? (
     <div className={className}>
       <Dropdown id="comment-actions">
-        {({ showContent }) => (
+        {({ showContent }: any) => (
           <>
             <Dropdown.Trigger>
               {({ toggleShowContent }: any) => (

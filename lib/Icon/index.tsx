@@ -382,8 +382,8 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
   text?: string;
   hideText?: boolean;
   notification?: string | number;
-  types?: [string];
-  textTypes?: [string];
+  types?: string[];
+  textTypes?: string[];
   title?: string;
   defaultFillColor?: boolean;
   defaultActiveColor?: boolean;

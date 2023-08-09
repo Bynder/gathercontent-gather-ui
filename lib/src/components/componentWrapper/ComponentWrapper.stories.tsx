@@ -8,7 +8,6 @@ import {
 } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from "stories/styleguide/StoryItem";
-// @ts-expect-error TS(2307): Cannot find module '../../../../assets/text-previe... Remove this comment to see the full error message
 import TextPreviewSVG from "../../../../assets/text-preview.svg";
 import { componentStatuses } from "./ComponentWrapper";
 

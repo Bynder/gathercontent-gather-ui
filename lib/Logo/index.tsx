@@ -1,6 +1,5 @@
 import React from "react";
 import { string, func, oneOfType } from "prop-types";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/logo.svg' or its ... Remove this comment to see the full error message
 import logoSVG from "../../assets/logo.svg";
 
 /**
