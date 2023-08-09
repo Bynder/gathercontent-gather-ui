@@ -1,6 +1,5 @@
 import { LoadingOverlay } from "lib";
 import { React, shallow } from "../setup";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/loading.svg' or i... Remove this comment to see the full error message
 import loadingSVG from "../../assets/loading.svg";
 
 describe("Loading Overlay", () => {
@@ -13,6 +12,7 @@ describe("Loading Overlay", () => {
   test("renders a Loading SVG", () => {
     expect(wrapper.find("svg")).toHaveLength(1);
 
+    // @ts-expect-error Object is possibly 'null'.ts(2531)
     expect(wrapper.find("svg").props()).toEqual(loadingSVG().props);
   });
 

@@ -85,7 +85,7 @@ export function DueDatePicker({
         autoPosition={autoPosition}
         onToggle={resetState}
       >
-        {({ setShowContent }) => (
+        {({ setShowContent }: any) => (
           <>
             <DueDateButton
               dueDate={dueDate}

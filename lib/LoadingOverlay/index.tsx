@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/loading.svg' or i... Remove this comment to see the full error message
 import loadingSVG from "../../assets/loading.svg";
 
 export function LoadingOverlay({
@@ -17,6 +16,7 @@ export function LoadingOverlay({
   return (
     <div className={className}>
       <div className="loading-overlay__content weight-semi-bold text-align-center">
+        {/* @ts-expect-error Expected 1-2 arguments, but got 0 */}
         {!hideSVG && loadingSVG()}
         {percentageLoaded > 0 && (
           <>

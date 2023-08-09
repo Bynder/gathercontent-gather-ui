@@ -50,16 +50,19 @@ export function FileCard(args: any) {
     : `http://placeimg.com/${args.imgWidth}/${args.imgHeight}/animals`;
 
   function Preview({ children, loader }: any) {
-  return <PreviewImage
-      src={previewSrc}
-      altText="preview image"
-      title="preview image"
-      loader={loader}
-      showLoader={args.showLoader}
-    >
-      {children}
-    </PreviewImage>
-}
+    return (
+      // @ts-expect-error Type '{ children: any; src: string; altText: string; title: string; loader: any; showLoader: any; }' is not assignable to type 'IntrinsicAttributes
+      <PreviewImage
+        src={previewSrc}
+        altText="preview image"
+        title="preview image"
+        loader={loader}
+        showLoader={args.showLoader}
+      >
+        {children}
+      </PreviewImage>
+    );
+  }
 
   const meta = (
     <Meta>
@@ -92,25 +95,25 @@ export function FileCard(args: any) {
       >
         <ul className="list-none grid p-0 m-0 tw grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {[...new Array(4)].map(() => (
-              <li key={`file-card-${uuid()}`}>
-                <FileCardComponent
-                  preview={<Preview />}
-                  controls={controls}
-                  meta={args.insetMeta && args.disabled ? null : meta}
-                  onClick={onClick}
-                  {...args}
-                >
-                  {args.disabled && (
-                    <ConfirmationOverlay
-                      confirmationText="Delete"
-                      confirm={() => {}}
-                      cancel={() => {}}
-                      show
-                    />
-                  )}
-                </FileCardComponent>
-              </li>
-            ))}
+            <li key={`file-card-${uuid()}`}>
+              <FileCardComponent
+                preview={<Preview />}
+                controls={controls}
+                meta={args.insetMeta && args.disabled ? null : meta}
+                onClick={onClick}
+                {...args}
+              >
+                {args.disabled && (
+                  <ConfirmationOverlay
+                    confirmationText="Delete"
+                    confirm={() => {}}
+                    cancel={() => {}}
+                    show
+                  />
+                )}
+              </FileCardComponent>
+            </li>
+          ))}
         </ul>
       </StoryItem>
 

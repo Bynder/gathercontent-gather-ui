@@ -9,8 +9,8 @@ type onToggleArgs = {
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
-  onToggle: (args: onToggleArgs) => {};
-  onHide: () => {};
+  onToggle: (args: onToggleArgs) => void;
+  onHide: () => void;
   autoPosition: boolean;
   block: boolean;
   persistShow: boolean;

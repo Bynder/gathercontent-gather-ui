@@ -43,11 +43,7 @@ function DueDateTime(props: any) {
 
   return (
     <Dropdown id="duedate__header--time">
-      <Dropdown.Trigger
-        // @ts-expect-error
-        triggerClassName="button button--link-default button--collapse duedate__time"
-        noCaret
-      >
+      <Dropdown.Trigger triggerClassName="button button--link-default button--collapse duedate__time">
         {props.time}
       </Dropdown.Trigger>
       <Dropdown.Content className="duedate__time-picker">

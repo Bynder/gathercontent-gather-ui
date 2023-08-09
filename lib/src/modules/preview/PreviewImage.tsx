@@ -1,11 +1,10 @@
-import React from 'react';
-import { bool, node, string } from 'prop-types';
-import { useImage } from 'react-image';
-import cx from 'classnames';
+import React from "react";
+import { bool, node, string } from "prop-types";
+import { useImage } from "react-image";
+import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module 'modules/loader/Loader' or its ... Remove this comment to see the full error message
-import { Loader } from 'modules/loader/Loader';
-// @ts-expect-error TS(2307): Cannot find module 'assets/previewFallback.svg' or... Remove this comment to see the full error message
-import previewFallback from 'assets/previewFallback.svg';
+import { Loader } from "modules/loader/Loader";
+import previewFallback from "assets/previewFallback.svg";
 
 function PreviewImage({
   src,
@@ -15,29 +14,29 @@ function PreviewImage({
   children,
   loader,
   showLoader,
-  className
+  className,
 }: any) {
   const image = useImage({
     srcList: src,
-    useSuspense: false
+    useSuspense: false,
   });
 
   const imageIsLoading = image.isLoading && !image.error;
   const imageHasSucceeded = !image.isLoading && !image.error;
   const imageHasFailed = image.error && !image.isLoading;
 
-  const commonAbsoluteLayoutClasses = 'absolute top-0 w-full h-full';
+  const commonAbsoluteLayoutClasses = "absolute top-0 w-full h-full";
   const classNames = cx(
-    'preview-image',
+    "preview-image",
     {
-      'preview-image-succeeded': imageHasSucceeded,
-      'preview-image-failed': imageHasFailed,
-      'preview-image-show-loader': showLoader
+      "preview-image-succeeded": imageHasSucceeded,
+      "preview-image-failed": imageHasFailed,
+      "preview-image-show-loader": showLoader,
     },
     className
   );
   const previewClassNames = cx(
-    'preview-image-img',
+    "preview-image-img",
     `${commonAbsoluteLayoutClasses}`
   );
 
@@ -77,17 +76,18 @@ PreviewImage.propTypes = {
   loader: node,
   src: string.isRequired,
   altText: string.isRequired,
-  title: string.isRequired
+  title: string.isRequired,
 };
 
 PreviewImage.defaultProps = {
   showLoader: false,
   fallback: (
     <div className="preview-image-fallback w-full h-full">
+      {/* @ts-expect-error Expected 1-2 arguments, but got 0.ts(2554) */}
       {previewFallback()}
     </div>
   ),
-  loader: <Loader size="md" />
+  loader: <Loader size="md" />,
 };
 
 export { PreviewImage };

@@ -7,7 +7,6 @@ export function SectionHeaderTitle({ children, title }: any) {
   if (children) {
     return (
       <Dropdown className="relative" id="section-header-title-dropdown">
-        {/* @ts-expect-error */}
         <Dropdown.Trigger triggerClassName="flex items-center">
           {Title} <Icon className="ml-2" name="down" />
         </Dropdown.Trigger>

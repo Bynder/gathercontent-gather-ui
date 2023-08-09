@@ -9,9 +9,7 @@ import {
   func,
 } from "prop-types";
 import cx from "classnames";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate.svg' o... Remove this comment to see the full error message
 import BlankSlateSVG from "../../assets/blankstate.svg";
-// @ts-expect-error TS(2307): Cannot find module '../../assets/blankstate-2.svg'... Remove this comment to see the full error message
 import BlankSlate2SVG from "../../assets/blankstate-2.svg";
 
 export function BlankSlate(props: any) {
@@ -26,24 +24,24 @@ export function BlankSlate(props: any) {
   return (
     <div className={classes}>
       {props.emoji ? (
-          <span
-            className="blank-slate__emoji"
-            role="img"
-            aria-label={props.emojiLabel}
-          >
-            {props.emoji}
-          </span>
-        ) : (
-          <div className="blank-slate__svg">
-            {props.customSVG ? (
-              <props.customSVG
-                className={`blank-slate__svg--custom ${props.SVGClassName}`}
-              />
-            ) : (
-              <BuiltInSVG className={props.SVGClassName} />
-            )}
-          </div>
-        )}
+        <span
+          className="blank-slate__emoji"
+          role="img"
+          aria-label={props.emojiLabel}
+        >
+          {props.emoji}
+        </span>
+      ) : (
+        <div className="blank-slate__svg">
+          {props.customSVG ? (
+            <props.customSVG
+              className={`blank-slate__svg--custom ${props.SVGClassName}`}
+            />
+          ) : (
+            <BuiltInSVG className={props.SVGClassName} />
+          )}
+        </div>
+      )}
       <div className="blank-slate__content">{props.children}</div>
     </div>
   );
