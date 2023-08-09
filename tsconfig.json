@@ -14,6 +14,12 @@
 
     "strict": true /* Enable all strict type-checking options. */,
 
+    "declaration": true,
+
+    "outDir": "dist",
+
+    "declarationMap": true,
+
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "paths": {
       "lib": ["./lib"],
