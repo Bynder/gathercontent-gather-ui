@@ -1,13 +1,13 @@
-import React from 'react';
-import StoryItem from '../styleguide/StoryItem';
-import TooltipWrapper from '../../lib/TooltipWrapper/index';
+import React from "react";
+import StoryItem from "../styleguide/StoryItem";
+import TooltipWrapper from "../../lib/TooltipWrapper/index";
 
 export default {
-  title: 'Legacy/Tooltip',
+  title: "Legacy/Tooltip",
   component: TooltipWrapper,
   args: {
-    showManual: false
-  }
+    showManual: false,
+  },
 };
 
 export const Tooltip = (args: any) => {

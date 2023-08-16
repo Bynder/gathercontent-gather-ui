@@ -15,6 +15,7 @@
   line-height: 1.4;
   outline: 0;
   transition-property: transform, visibility, opacity;
+  transform: translateY(7px);
 }
 
 .tippy-box[data-placement^='top'] > .tippy-arrow {
