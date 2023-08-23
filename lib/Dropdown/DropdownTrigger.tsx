@@ -96,6 +96,7 @@ export function DropdownTrigger({
           {...rest}
           onClick={handleClick}
           onMouseEnter={handleMouseover}
+          onMouseLeave={handleMouseover}
         >
           {children}
           {useSelect && <Icon name="down" />}
@@ -111,6 +112,7 @@ export function DropdownTrigger({
       className={buttonClassNames}
       onClick={handleClick}
       onMouseEnter={handleMouseover}
+      onMouseLeave={handleMouseover}
       ref={triggerBtnRef}
     >
       {children}
