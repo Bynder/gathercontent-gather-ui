@@ -4,7 +4,7 @@ import { useImage } from "react-image";
 import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module 'modules/loader/Loader' or its ... Remove this comment to see the full error message
 import { Loader } from "modules/loader/Loader";
-import previewFallback from "assets/previewFallback.svg";
+import PreviewFallback from "assets/previewFallback.svg";
 
 function PreviewImage({
   src,
@@ -83,8 +83,7 @@ PreviewImage.defaultProps = {
   showLoader: false,
   fallback: (
     <div className="preview-image-fallback w-full h-full">
-      {/* @ts-expect-error Expected 1-2 arguments, but got 0.ts(2554) */}
-      {previewFallback()}
+      <PreviewFallback />
     </div>
   ),
   loader: <Loader size="md" />,

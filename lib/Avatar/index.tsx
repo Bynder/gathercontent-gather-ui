@@ -70,7 +70,7 @@ export function Avatar({
         onMouseEnter={() => setShowAdditional(true)}
         onMouseLeave={() => setShowAdditional(false)}
       >
-        <div style={styles} className={`avatar ${additionalClasses}`}>
+        <div style={styles} className={`avatar ${additionalClasses}`} role="figure">
           {!url && <span className="avatar__initials">{initials}</span>}
 
           {url && <img className="avatar__image" src={url} alt={name} />}
@@ -95,7 +95,7 @@ export function Avatar({
     );
   }
   return (
-    <div style={styles} className={`avatar ${additionalClasses}`}>
+    <div style={styles} className={`avatar ${additionalClasses}`}  role="figure">
       {!url && <span className="avatar__initials">{initials}</span>}
 
       {url && <img className="avatar__image" src={url} alt={name} />}
