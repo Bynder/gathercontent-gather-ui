@@ -22,4 +22,5 @@ jobs:
           node-version: '18'
       - run: npm install
       - run: npm run test -- --runInBand
+      - run: npm run vtest
       - run: npm run lint:style
