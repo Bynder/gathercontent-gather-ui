@@ -66,7 +66,7 @@ export function TopBar({
   });
 
   return (
-    <Grid className={classes}>
+    <Grid className={classes} role="banner">
       <div className={wrapperClasses} ref={topbarRef}>
         {notification}
         <Row className="top-bar__inner">{children}</Row>
