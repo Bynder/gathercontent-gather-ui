@@ -1,6 +1,12 @@
+import React from "react";
+import {
+    describe,
+    expect,
+    it,
+    vi
+} from 'vitest';
 import { render, fireEvent } from "@testing-library/react";
-import { React } from "../setup";
-import { SelectionProvider, SelectionContext } from "../../lib";
+import { SelectionProvider, SelectionContext } from "../";
 
 describe("SelectionProvider", () => {
   const createWrapper = (child: any) => (
@@ -10,7 +16,7 @@ describe("SelectionProvider", () => {
   );
 
   it("appends a selected id", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (
@@ -36,7 +42,7 @@ describe("SelectionProvider", () => {
   });
 
   it("removes a selected id if it is already selected", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (
@@ -63,7 +69,7 @@ describe("SelectionProvider", () => {
   });
 
   it("sets multiple selected ids", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (
@@ -91,7 +97,7 @@ describe("SelectionProvider", () => {
   });
 
   it("deselects multiple ids", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (
@@ -130,7 +136,7 @@ describe("SelectionProvider", () => {
   });
 
   it("clears everything", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (
@@ -160,7 +166,7 @@ describe("SelectionProvider", () => {
   });
 
   it("handles intendedToSelect", () => {
-    const childSpy = jest.fn();
+    const childSpy = vi.fn();
 
     const { getByText } = render(
       createWrapper((context: any) => (

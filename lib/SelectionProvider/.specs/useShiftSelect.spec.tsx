@@ -1,10 +1,15 @@
 import React from "react";
+import {
+    describe,
+    expect,
+    it,
+} from 'vitest';
 import { renderHook, act } from "@testing-library/react-hooks";
-import { useShiftSelect } from "../../lib/SelectionProvider/useShiftSelect";
-import { SelectionProvider } from "../../lib/SelectionProvider";
+import { useShiftSelect } from "../useShiftSelect";
+import { SelectionProvider } from "../";
 
-describe("useShiftSelect", () => {
-  it("selects multiple when shift clicking", () => {
+describe('useShiftSelect', () => {
+    it("selects multiple when shift clicking", () => {
     let id = 1;
     // eslint-disable-next-line react/prop-types
     const wrapper = ({ children }: any) => (
@@ -74,4 +79,4 @@ describe("useShiftSelect", () => {
 
     expect(result.current.selected).toEqual([1, id]);
   });
-});
+})
