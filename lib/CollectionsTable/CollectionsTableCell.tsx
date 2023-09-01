@@ -16,7 +16,7 @@ function CollectionsTableCell({
     'collections-table__cell--align-right': alignRight
   });
   return (
-    <div className={classNames} {...props}>
+    <div className={classNames} {...props} role="cell">
       <CollectionsTableCellContent allowOverflow={allowOverflow}>
         {children}
       </CollectionsTableCellContent>

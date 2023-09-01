@@ -7,7 +7,7 @@ import CollectionsTableCellContent from "./CollectionsTableCellContent";
 import { propTypes, defaultProps } from "./propTypes";
 
 export function CollectionsTable({ children, className, ...props }: any) {
-  return <div className={`collections-table ${className}`} {...props}>
+  return <div className={`collections-table ${className}`} {...props} role="table">
     {children}
   </div>
 }
