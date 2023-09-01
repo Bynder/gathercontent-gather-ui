@@ -117,7 +117,6 @@ export class CheckToggle extends Component {
             type="checkbox"
             id={id}
             className="toggle-switch toggle-switch--inline"
-            role="checkbox"
           />
           {/* prettier-ignore */}
           <label // eslint-disable-line jsx-a11y/label-has-associated-control
