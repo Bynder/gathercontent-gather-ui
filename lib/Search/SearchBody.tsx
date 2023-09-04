@@ -1,24 +1,26 @@
-import React from 'react';
-import cx from 'classnames';
-import PropTypes from 'prop-types';
+import React from "react";
+import cx from "classnames";
+import type { HTMLAttributes } from "react";
 
-function SearchBody(props: any) {
-  const classNames = cx(`search__body ${props.className}`, {
-    'display-results': props.showBody
-  });
-
-  return <div className={classNames}>{props.children}</div>;
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  showBody?: boolean;
 }
 
-SearchBody.defaultProps = {
-  className: '',
-  showBody: false
-};
+function SearchBody({
+  showBody = false,
+  className = "",
+  children,
+  ...rest
+}: Props) {
+  const classNames = cx(`search__body ${className}`, {
+    "display-results": showBody,
+  });
 
-SearchBody.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  showBody: PropTypes.bool
-};
+  return (
+    <div className={classNames} {...rest}>
+      {children}
+    </div>
+  );
+}
 
 export default SearchBody;

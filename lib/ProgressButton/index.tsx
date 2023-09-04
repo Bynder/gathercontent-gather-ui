@@ -58,6 +58,7 @@ export class ProgressButton extends Component {
           className="progress-button__icon"
           name="loader"
           defaultActiveColor={false}
+          title="Loading"
         />
       </span>
     );
