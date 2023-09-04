@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, getByTestId, render, screen } from "@testing-library/react";
 import Search from "..";
 
 describe("Search", () => {
@@ -9,7 +9,7 @@ describe("Search", () => {
     render(
       <Search>
         <Search.Input onChange={onChange} />
-        <Search.Body>
+        <Search.Body data-testid="search-body">
           <Search.Options>I'm some options</Search.Options>
           <Search.List>
             <Search.ListItem title="bloop" subText="123 435">
@@ -23,6 +23,9 @@ describe("Search", () => {
       </Search>
     );
 
+    expect(
+      screen.getByTestId("search-body").classList.contains("display-results")
+    ).toEqual(false);
     fireEvent.click(screen.getByTitle("Open search"));
 
     fireEvent.change(screen.getByLabelText("Search"), {
@@ -30,11 +33,22 @@ describe("Search", () => {
         value: "PLOP",
       },
     });
+    expect(
+      screen.getByTestId("search-body").classList.contains("display-results")
+    ).toEqual(true);
     expect(screen.getByText("I'm some options"));
     expect(screen.getByText("Waffles"));
     expect(screen.getByText("Pancakes"));
 
+    expect(screen.getByLabelText("Search").getAttribute("value")).toEqual(
+      "PLOP"
+    );
     fireEvent.click(screen.getByTitle("Clear search"));
+    expect(screen.getByLabelText("Search").getAttribute("value")).toEqual("");
+
     fireEvent.click(screen.getByTitle("Close search"));
+    expect(
+      screen.getByTestId("search-body").classList.contains("display-results")
+    ).toEqual(false);
   });
 });
