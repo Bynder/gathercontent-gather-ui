@@ -83,7 +83,9 @@ export class ImageLoader extends PureComponent {
           }}
         />
 
-        {!showImage && !imageHasErrored && <Icon name="loader" />}
+        {!showImage && !imageHasErrored && (
+          <Icon name="loader" title="Loading" />
+        )}
 
         {imageHasErrored && (
           <Icon name="cross" text="Oops, this image seems to be missing." />
