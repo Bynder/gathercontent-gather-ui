@@ -77,7 +77,7 @@ describe("MentionsForm", () => {
       />
     );
 
-    expect(screen.getAllByRole("figure")).toHaveLength(3);
+    expect(screen.getAllByRole("figure")).toHaveLength(4);
 
     rerender(
       <MentionsForm
@@ -88,7 +88,7 @@ describe("MentionsForm", () => {
       />
     );
 
-    expect(screen.getAllByRole("figure")).toHaveLength(4);
+    expect(screen.getAllByRole("figure")).toHaveLength(5);
   });
 
   it("Can prepopulate the input with default users", async () => {
