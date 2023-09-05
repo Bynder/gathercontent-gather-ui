@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { DropdownContent, Input, Label, Person } from "lib";
-import Dropdown from "../../../Dropdown";
+import React, { useState } from 'react';
+import { DropdownContent, Input, Label, Person } from 'lib';
+import Dropdown from '../../../Dropdown';
 
 export function PersonSearch({
   people,
@@ -8,7 +8,7 @@ export function PersonSearch({
   label,
   placeholder,
 }: any) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const filteredPeople = searchValue
     ? people.filter(
@@ -25,7 +25,6 @@ export function PersonSearch({
           <Dropdown.Trigger triggerClassName="w-full">
             {({ toggleShowContent }: any) => (
               <>
-                {/* @ts-expect-error */}
                 <Label htmlFor="person-search">{label}</Label>
                 <Input
                   id="person-search"

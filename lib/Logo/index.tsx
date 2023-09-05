@@ -1,6 +1,6 @@
-import React from "react";
-import { string, func, oneOfType } from "prop-types";
-import logoSVG from "../../assets/logo.svg";
+import React from 'react';
+import { string, func, oneOfType } from 'prop-types';
+import logoSVG from '../../assets/logo.svg';
 
 /**
  * @usage
@@ -9,9 +9,10 @@ import logoSVG from "../../assets/logo.svg";
  */
 
 export function Logo(props: any) {
+  console.log('props', props);
   const LogoPath = props.url || logoSVG;
   const image =
-    typeof LogoPath === "string" ? (
+    typeof LogoPath === 'string' ? (
       <img src={props.url} alt={props.alt} className="logo__image" />
     ) : (
       <span className="logo__image">
@@ -22,8 +23,8 @@ export function Logo(props: any) {
 }
 
 Logo.defaultProps = {
-  url: "",
-  alt: "GatherContent Logo",
+  url: '',
+  alt: 'GatherContent Logo',
 };
 
 Logo.propTypes = {

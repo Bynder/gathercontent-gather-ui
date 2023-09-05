@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   AssigneeDropdown,
   Person,
@@ -7,47 +7,47 @@ import {
   TextForm,
   Label,
   DueDateDropdown,
-} from "lib";
+} from 'lib';
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from "stories/styleguide/StoryItem";
+import StoryItem from 'stories/styleguide/StoryItem';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'fake... Remove this comment to see the full error message
-import faker from "faker";
-import moment from "moment";
-import Dropdown from "../../../Dropdown";
-import { WorkflowStep } from "../../components/workflowStep/workflowStep";
-import { WorkflowDropdown as WorkflowDropdownComponent } from "./WorkflowDropdown";
+import faker from 'faker';
+import moment from 'moment';
+import Dropdown from '../../../Dropdown';
+import { WorkflowStep } from '../../components/workflowStep/workflowStep';
+import { WorkflowDropdown as WorkflowDropdownComponent } from './WorkflowDropdown';
 
 export default {
-  title: "GUI/Dropdowns/Workflow Dropdown",
+  title: 'GUI/Dropdowns/Workflow Dropdown',
   component: WorkflowDropdownComponent,
   args: {
-    search: "",
+    search: '',
   },
 };
 
 function WorkflowDropdownStory({ search, assigned, unassigned }: any) {
   const workflowSteps = [
     {
-      title: "Draft",
+      title: 'Draft',
       description:
-        "Creating the initial draft of content following the project style guide and requirements for this item.",
-      colour: "#F9D006",
+        'Creating the initial draft of content following the project style guide and requirements for this item.',
+      colour: '#F9D006',
     },
     {
-      title: "Review",
+      title: 'Review',
       description:
-        "Content to be approved by key stakeholders. If changes are to be made, pass it back to Draft for another round.",
-      colour: "#006EFF",
+        'Content to be approved by key stakeholders. If changes are to be made, pass it back to Draft for another round.',
+      colour: '#006EFF',
     },
     {
-      title: "Publish",
-      description: "Ready to be published to the CMS.",
-      colour: "#6E19E6",
+      title: 'Publish',
+      description: 'Ready to be published to the CMS.',
+      colour: '#6E19E6',
     },
     {
-      title: "Live",
-      description: "Successfully published to the CMS. Live!",
-      colour: "#E51A2B",
+      title: 'Live',
+      description: 'Successfully published to the CMS. Live!',
+      colour: '#E51A2B',
     },
   ];
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -129,10 +129,8 @@ function WorkflowDropdownStory({ search, assigned, unassigned }: any) {
                 <p className="text-neutral-primary text-base pt-2">
                   {step.description}
                 </p>
-                {/* @ts-expect-error */}
                 <TextForm className="pt-4 pr-4">
                   <TextForm.Body className="pb-4">
-                    {/* @ts-expect-error */}
                     <Label htmlFor="test">
                       leave a Note
                       <span className="text-neutral-primary">(OPTIONAL)</span>

@@ -1,22 +1,27 @@
-import * as React from "react";
-import { bool, func } from "prop-types";
-import cx from "classnames";
-import { FormSubmission } from "./FormSubmission";
-import { FormSubmitButton } from "./FormSubmitButton";
-import { FormCancelButton } from "./FormCancelButton";
-import { FormHelper } from "./FormHelper";
-import { FormInput } from "./FormInput";
-import { FormBody } from "./FormBody";
-import { FormFieldset } from "./FormFieldset";
-import { FormLegend } from "./FormLegend";
+import * as React from 'react';
+import type { FormHTMLAttributes } from 'react';
+import { bool, func } from 'prop-types';
+import cx from 'classnames';
+import { FormSubmission } from './FormSubmission';
+import { FormSubmitButton } from './FormSubmitButton';
+import { FormCancelButton } from './FormCancelButton';
+import { FormHelper } from './FormHelper';
+import { FormInput } from './FormInput';
+import { FormBody } from './FormBody';
+import { FormFieldset } from './FormFieldset';
+import { FormLegend } from './FormLegend';
+
+interface Props extends FormHTMLAttributes<HTMLFormElement> {
+  inline: boolean;
+}
 
 export const FormContext = React.createContext({});
 
 export const statuses = {
-  idle: "FORM_STATUS_IDLE",
-  processing: "FORM_STATUS_SUBMITTING",
-  failure: "FORM_STATUS_FAILURE",
-  success: "FORM_STATUS_SUCCESS",
+  idle: 'FORM_STATUS_IDLE',
+  processing: 'FORM_STATUS_SUBMITTING',
+  failure: 'FORM_STATUS_FAILURE',
+  success: 'FORM_STATUS_SUCCESS',
 };
 
 const nonSubmittableStatuses = [statuses.processing, statuses.success];
@@ -25,14 +30,14 @@ export function Form({
   children,
   onSubmit,
   inline,
-  className = "",
+  className = '',
   ...rest
-}: any) {
+}: Props) {
   const [status, setStatus] = React.useState(statuses.idle);
   const timeoutRef = React.useRef(0);
 
-  const classNames = cx("form", className, {
-    "form-inline": inline,
+  const classNames = cx('form', className, {
+    'form-inline': inline,
   });
 
   const sharedState = {
@@ -51,7 +56,9 @@ export function Form({
 
     try {
       setStatus(statuses.processing);
-      await onSubmit(event);
+      if (onSubmit) {
+        await onSubmit(event);
+      }
       setStatus(statuses.success);
     } catch (e) {
       setStatus(statuses.failure);
