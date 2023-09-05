@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react";
 
 import Checkbox from "../Checkbox";
 
-describe("RadioButtons", () => {
+describe("Checkbox", () => {
   it("renders a checkbox", () => {
     // @ts-expect-error TS(2709): Cannot use namespace 'Checkbox' as a type.
     render(<Checkbox id="123" label="Check me out" name="input name" />);
