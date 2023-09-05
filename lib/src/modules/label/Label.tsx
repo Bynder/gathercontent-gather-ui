@@ -1,19 +1,14 @@
-import * as React from 'react';
-import { string } from 'prop-types';
+import * as React from "react";
 
 export function Label({
   htmlFor,
   children,
-  className = '',
+  className = "",
   ...rest
-}: any) {
+}: React.LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label className={`label ${className}`} htmlFor={htmlFor} {...rest}>
       {children}
     </label>
   );
 }
-
-Label.propTypes = {
-  htmlFor: string.isRequired
-};

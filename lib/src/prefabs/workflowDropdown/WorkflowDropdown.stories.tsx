@@ -132,7 +132,6 @@ function WorkflowDropdownStory({ search, assigned, unassigned }: any) {
                 {/* @ts-expect-error */}
                 <TextForm className="pt-4 pr-4">
                   <TextForm.Body className="pb-4">
-                    {/* @ts-expect-error */}
                     <Label htmlFor="test">
                       leave a Note
                       <span className="text-neutral-primary">(OPTIONAL)</span>
