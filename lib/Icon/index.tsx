@@ -437,6 +437,7 @@ export function Icon(props: Props) {
   return (
     <span
       className={`icon icon--${props.name} icon-container-${props.containerSize} ${classNames}`}
+      role="figure"
     >
       {props.notification && (
         <span className="icon__notification">{props.notification}</span>
