@@ -39,7 +39,6 @@ export function TextForm(args: any) {
           onSubmit={args.showFailure ? failedPromise : promise}
         >
           <TextFormComponent.Body>
-            {/* @ts-expect-error */}
             <Label htmlFor="test">Label</Label>
             <TextFormComponent.Input id="test" size={args.inputSize} />
             <TextFormComponent.Helper>Ops!</TextFormComponent.Helper>
@@ -61,7 +60,6 @@ export function TextForm(args: any) {
           inline
         >
           <TextFormComponent.Body>
-            {/* @ts-expect-error */}
             <Label htmlFor="test-inline" className="visually-hidden">
               Label
             </Label>
