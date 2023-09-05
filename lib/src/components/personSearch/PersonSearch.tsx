@@ -25,11 +25,9 @@ export function PersonSearch({
           <Dropdown.Trigger triggerClassName="w-full">
             {({ toggleShowContent }: any) => (
               <>
-                {/* @ts-expect-error */}
                 <Label htmlFor="person-search">{label}</Label>
                 <Input
                   id="person-search"
-                  // @ts-expect-error
                   placeholder={placeholder}
                   onFocus={() => toggleShowContent(true)}
                   onBlur={() => (showContent ? null : toggleShowContent(true))}

@@ -1,26 +1,32 @@
-import * as React from 'react';
-import { bool, func, string } from 'prop-types';
-import cx from 'classnames';
-import { InputHelper } from './InputHelper';
+import * as React from "react";
+import cx from "classnames";
+import { InputHelper } from "./InputHelper";
+
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  valid?: boolean;
+  invalid?: boolean;
+  enhanceNativeSupport?: boolean;
+  inputRef?: React.RefObject<HTMLInputElement>;
+}
 
 export function Input({
   id,
-  className = '',
-  valid,
-  invalid,
-  enhanceNativeSupport,
+  className = "",
+  valid = false,
+  invalid = false,
+  enhanceNativeSupport = false,
   size,
-  value,
+  value = "",
   onChange,
   inputRef,
   ...rest
-}: any) {
+}: Props) {
   const [_value, setValue] = React.useState(value);
 
   const classNames = cx(`input input-${size}`, className, {
-    'input-native': enhanceNativeSupport,
-    'input-valid': valid,
-    'input-invalid': invalid
+    "input-native": enhanceNativeSupport,
+    "input-valid": valid,
+    "input-invalid": invalid,
   });
 
   React.useEffect(() => {
@@ -32,8 +38,10 @@ export function Input({
       id={id}
       value={_value}
       className={classNames}
-      onChange={e => {
-        onChange(e);
+      onChange={(e) => {
+        if (onChange) {
+          onChange(e);
+        }
         setValue(e.target.value);
       }}
       ref={inputRef}
@@ -45,27 +53,8 @@ export function Input({
 Input.Helper = InputHelper;
 
 const sizes = {
-  md: 'md',
-  sm: 'sm'
+  md: "md",
+  sm: "sm",
 };
 
 Input.sizes = sizes;
-
-Input.propTypes = {
-  id: string.isRequired,
-  size: string,
-  valid: bool,
-  invalid: bool,
-  enhanceNativeSupport: bool,
-  value: string,
-  onChange: func
-};
-
-Input.defaultProps = {
-  size: sizes.md,
-  valid: false,
-  invalid: false,
-  enhanceNativeSupport: false,
-  value: '',
-  onChange() {}
-};
