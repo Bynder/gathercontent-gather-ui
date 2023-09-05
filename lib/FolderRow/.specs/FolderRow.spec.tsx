@@ -1,37 +1,32 @@
-import { cleanup, render, fireEvent } from "@testing-library/react";
-import { React } from "../setup";
-import { FolderRow } from "../../lib";
-import { FolderRowName } from "../../lib/FolderRow/FolderRowName";
+import { describe, expect, it } from "vitest";
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+import { FolderRow } from "../";
+import { FolderRowName } from "../FolderRowName";
 
 describe("FolderRow", () => {
   const renderWrapper = (ui: any, props = {}) =>
     render(<FolderRow {...props}>{ui}</FolderRow>);
 
-  afterEach(() => {
-    cleanup();
-  });
-
-  test("rendering folder name", () => {
+  it("rendering folder name", () => {
     const { getByText } = renderWrapper(() => (
       // @ts-expect-error TS(2694): Namespace 'FolderRow' has no exported member 'Name... Remove this comment to see the full error message
       <FolderRow.Name>Folder name</FolderRow.Name>
     ));
 
-    expect(getByText(/folder name/i)).toBeInTheDocument();
+    expect(getByText(/folder name/i));
   });
 
-  test("showing the toggle action", () => {
+  it("showing the toggle action", () => {
     const { getByTitle } = renderWrapper(() => (
       // @ts-expect-error TS(2694): Namespace 'FolderRow' has no exported member 'Name... Remove this comment to see the full error message
       <FolderRow.Name>Folder name</FolderRow.Name>
     ));
 
-    expect(
-      getByTitle(FolderRowName.defaultProps.toggleTitle)
-    ).toBeInTheDocument();
+    expect(getByTitle(FolderRowName.defaultProps.toggleTitle));
   });
 
-  test("hiding the toggle action", () => {
+  it("hiding the toggle action", () => {
     const { queryByTitle } = renderWrapper(() => (
       // @ts-expect-error TS(2694): Namespace 'FolderRow' has no exported member 'Name... Remove this comment to see the full error message
       <FolderRow.Name showToggle={false}>Folder name</FolderRow.Name>
@@ -40,7 +35,7 @@ describe("FolderRow", () => {
     expect(queryByTitle(FolderRowName.defaultProps.toggleTitle)).toBeNull();
   });
 
-  test("rendering the folder contents", () => {
+  it("rendering the folder contents", () => {
     const { getByText, queryByText, getByTitle } = renderWrapper(
       (show: any, setShow: any) => (
         // @ts-expect-error TS(2694): Namespace 'FolderRow' has no exported member 'Inne... Remove this comment to see the full error message
@@ -60,6 +55,6 @@ describe("FolderRow", () => {
     expect(queryByText(/contents/i)).toBeNull();
     fireEvent.click(getByTitle(FolderRowName.defaultProps.toggleTitle));
 
-    expect(getByText(/contents/i)).toBeInTheDocument();
+    expect(getByText(/contents/i));
   });
 });
