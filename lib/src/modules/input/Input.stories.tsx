@@ -62,13 +62,11 @@ export function Inputs(args: any) {
   return (
     <>
       <StoryItem title="Input">
-        {/* @ts-expect-error */}
         <Label htmlFor="input-1">Label</Label>
         <Input id="input-1" placeholder="Describe this input..." {...args} />
       </StoryItem>
 
       <StoryItem title="Input (with an icon)">
-        {/* @ts-expect-error */}
         <Label htmlFor="input-2">Label</Label>
         <InputIcon
           id="input-2"
@@ -79,7 +77,6 @@ export function Inputs(args: any) {
       </StoryItem>
 
       <StoryItem title="Input (with mentions)">
-        {/* @ts-expect-error */}
         <Label htmlFor="input-3">Label</Label>
         <InputWithMentions
           users={mockUsers}
