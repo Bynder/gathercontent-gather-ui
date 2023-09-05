@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
 
 function FinderItemContent({
   className,
@@ -11,8 +11,8 @@ function FinderItemContent({
   ...rest
 }: any) {
   const classNames = cx(`finder-item-content ${className}`, {
-    'finder-item-content-hidden': hidden,
-    'finder-item-content-folder': isFolder
+    "finder-item-content-hidden": hidden,
+    "finder-item-content-folder": isFolder,
   });
 
   return (
@@ -25,14 +25,14 @@ function FinderItemContent({
 FinderItemContent.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  active: PropTypes.bool,
-  hidden: PropTypes.bool
+  isFolder: PropTypes.bool,
+  hidden: PropTypes.bool,
 };
 
 FinderItemContent.defaultProps = {
-  className: '',
-  active: false,
-  hidden: false
+  className: "",
+  isFolder: false,
+  hidden: false,
 };
 
 export default FinderItemContent;
