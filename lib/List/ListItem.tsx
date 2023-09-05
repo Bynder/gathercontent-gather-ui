@@ -99,6 +99,10 @@ export class ListItem extends Component {
                   className={toggleClassNames}
                   types={["icon-only", "icon-only-cover"]}
                   clickHandler={this.toggleSubList}
+                  title={
+                    // @ts-expect-error Property 'showSubList' does not exist on type 'Readonly<{}>'.ts(2339)
+                    this.state.showSubList ? "Hide sublist" : "Show sublist"
+                  }
                 >
                   {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
                   <Icon name="caret" size="micro" />

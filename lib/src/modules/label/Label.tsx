@@ -1,12 +1,11 @@
 import * as React from 'react';
-import type { LabelHTMLAttributes } from 'react';
 
 export function Label({
   htmlFor,
   children,
-  className = '',
+  className = "",
   ...rest
-}: LabelHTMLAttributes<HTMLLabelElement>) {
+}: React.LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label className={`label ${className}`} htmlFor={htmlFor} {...rest}>
       {children}

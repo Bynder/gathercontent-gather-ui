@@ -28,7 +28,6 @@ export function PersonSearch({
                 <Label htmlFor="person-search">{label}</Label>
                 <Input
                   id="person-search"
-                  // @ts-expect-error
                   placeholder={placeholder}
                   onFocus={() => toggleShowContent(true)}
                   onBlur={() => (showContent ? null : toggleShowContent(true))}

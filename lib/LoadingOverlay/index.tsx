@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import loadingSVG from "../../assets/loading.svg";
+import LoadingSVG from "../../assets/loading.svg";
 
 export function LoadingOverlay({
   fixed,
@@ -14,10 +14,10 @@ export function LoadingOverlay({
   });
 
   return (
-    <div className={className}>
+    <div className={className} role="status">
       <div className="loading-overlay__content weight-semi-bold text-align-center">
-        {/* @ts-expect-error Expected 1-2 arguments, but got 0 */}
-        {!hideSVG && loadingSVG()}
+        {/* @ts-expect-error Type '{ title: string; }' is not assignable to type */}
+        {!hideSVG && <LoadingSVG title="Loading" />}
         {percentageLoaded > 0 && (
           <>
             <p className="h-margin-bottom-quarter h-margin-top-clear">

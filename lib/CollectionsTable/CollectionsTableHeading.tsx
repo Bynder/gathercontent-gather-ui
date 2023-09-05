@@ -7,7 +7,7 @@ function CollectionsTableHeading({
   className,
   ...props
 }: any) {
-  return <div className={`collections-table__heading ${className}`} {...props}>
+  return <div className={`collections-table__heading ${className}`} {...props} role="columnheader">
     <CollectionsTableCellContent>{children}</CollectionsTableCellContent>
   </div>
 }

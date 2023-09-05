@@ -62,7 +62,7 @@ export const Modals = () => (
       <ModalTrigger>
         <Modal.Container>
           <Modal.Header>Hello</Modal.Header>
-          <Modal.Body className="has-columns">
+          <Modal.Body>
             <Row>
               <Col
                 className="modal__column-wrapper modal__column-wrapper--highlight"
@@ -424,7 +424,6 @@ export const Modals = () => (
           highlight
         >
           <Label htmlFor="form-modal-field-a">Field A</Label>
-          {/* @ts-expect-error */}
           <Input id="form-modal-field-a" className="mb-3" />
           <Label htmlFor="form-modal-field-b">Field B</Label>
           <Input id="form-modal-field-b" />
