@@ -1,24 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { ReactNode } from "react";
 import { NewModal } from "lib";
 
-function ModalBody({ children, className, ...rest }: any) {
-  return <NewModal.Body className={`modal-body ${className}`} {...rest}>
-    {children}
-  </NewModal.Body>
+interface Props {
+  children: ReactNode;
+  className?: string;
 }
 
-ModalBody.defaultProps = {
-  className: "",
-};
-
-ModalBody.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]).isRequired,
-  className: PropTypes.string,
-};
+function ModalBody({ children, className = "", ...rest }: Props) {
+  return (
+    <NewModal.Body className={`modal-body ${className}`} {...rest}>
+      {children}
+    </NewModal.Body>
+  );
+}
 
 export default ModalBody;

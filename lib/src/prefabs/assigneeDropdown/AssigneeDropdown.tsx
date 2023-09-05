@@ -67,7 +67,6 @@ export function AssigneeDropdown({
                     id={`${id}-search`}
                     value={searchValue}
                     onChange={onSearchChange}
-                    // @ts-expect-error
                     className="mt-2"
                     placeholder="Search..."
                   />

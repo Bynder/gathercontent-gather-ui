@@ -13,8 +13,8 @@ describe("FormModal", () => {
         submitText="Go"
         cancelText="Stop"
         submitHandler={handleSubmitSpy}
-        // @ts-expect-error
         show
+        onHide={() => {}}
       >
         <input />
       </FormModal>
