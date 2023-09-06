@@ -14,11 +14,20 @@ describe("DismissiblePrompt", () => {
 
   test("renders children", () => {
     render(
-      <DismissiblePrompt onDismiss={onDismissSpy}>
+      <DismissiblePrompt
+        data-testid="test-dismissible-prompt"
+        onDismiss={onDismissSpy}
+        className={"hellooooo"}
+      >
         Hello world
       </DismissiblePrompt>
     );
     expect(screen.getByText("Hello world"));
+    expect(
+      screen
+        .getByTestId("test-dismissible-prompt")
+        .classList.contains("hellooooo")
+    ).toBeTruthy();
   });
 
   test("it fires the onDismiss prop when clicking the close button", () => {
