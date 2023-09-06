@@ -6,11 +6,7 @@ import Button from "../../Button";
 import { render, fireEvent, screen } from "@testing-library/react";
 
 describe("DismissiblePrompt", () => {
-  let wrapper: any;
-
   const onDismissSpy = vi.fn();
-
-  beforeAll(() => {});
 
   test("renders children", () => {
     render(
