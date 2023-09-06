@@ -1,10 +1,9 @@
-import React from "react";
-import { CheckboxInput, TextForm, RadioInput } from "lib";
-import StoryItem from "../../../../stories/styleguide/StoryItem";
+import React from 'react';
+import { CheckboxInput, TextForm, RadioInput } from 'lib';
+import StoryItem from '../../../../stories/styleguide/StoryItem';
 
 function SelectionControlStoryItem({ children, title }: any) {
   return (
-    // @ts-expect-error
     <TextForm onSubmit={() => {}} className="flex flex-col items-center px-2">
       <h4>{title}</h4>
       {children}
@@ -13,7 +12,7 @@ function SelectionControlStoryItem({ children, title }: any) {
 }
 
 export default {
-  title: "GUI/Form/Inputs/Selection Controls",
+  title: 'GUI/Form/Inputs/Selection Controls',
 };
 
 export function SelectionControls() {
