@@ -1,20 +1,16 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import React from 'react';
+import React from "react";
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
 import BlankSlate from "../index";
 
 // @ts-expect-error
 import keyboardSVG from "../../../assets/icons/keyboard.svg";
 
-describe('Blank Slate', () => {
-  it('Renders the BlankSlate SVG', () => {
+describe("Blank Slate", () => {
+  it("Renders the BlankSlate SVG", () => {
     render(
       <BlankSlate>
         <div className="child">I am a small child</div>
@@ -22,17 +18,17 @@ describe('Blank Slate', () => {
     );
 
     const blankSlate = screen.getByTestId("blank-slate");
-    expect(blankSlate.querySelector('svg')).toBeTruthy();
+    expect(blankSlate.querySelector("svg")).toBeTruthy();
   });
 
   it("Adds a fixed modifier", () => {
     const { rerender } = render(<BlankSlate />);
 
     let blankSlate = screen.getByTestId("blank-slate");
-    
+
     expect(blankSlate.classList.contains("blank-slate--fixed")).toBe(false);
 
-    rerender(<BlankSlate fixed />)
+    rerender(<BlankSlate fixed />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
@@ -46,7 +42,7 @@ describe('Blank Slate', () => {
 
     expect(blankSlate.classList.contains("blank-slate--arrow")).toBe(false);
 
-    rerender(<BlankSlate slateStyle='arrow' />)
+    rerender(<BlankSlate slateStyle="arrow" />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
@@ -60,7 +56,7 @@ describe('Blank Slate', () => {
       </BlankSlate>
     );
 
-    expect(screen.getByTestId('child')).toBeTruthy();
+    expect(screen.getByTestId("child")).toBeTruthy();
   });
 
   it("Renders a customSVG", () => {
@@ -70,7 +66,7 @@ describe('Blank Slate', () => {
 
     expect(blankSlate.querySelector(".blank-slate__svg--custom")).toBe(null);
 
-    rerender(<BlankSlate customSVG={keyboardSVG} />)
+    rerender(<BlankSlate customSVG={keyboardSVG} />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
