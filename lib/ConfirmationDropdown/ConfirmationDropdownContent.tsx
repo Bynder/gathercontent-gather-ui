@@ -30,19 +30,31 @@ function ConfirmationDropdownContent({
     ? [...sharedButtonProps, "link-danger"]
     : [...sharedButtonProps, "link-default"];
 
+  const { 
+    confirmationPromise, 
+    onPromiseResolve, 
+    onPromiseReject, 
+    dropdownContent, 
+    ...rest 
+  } = props;
+
   return (
-    <DropdownContent {...props}>
+    <DropdownContent {...rest}>
       {(showContent: any) =>
         showContent ? (
           <>
             {children}
 
             <DropdownFooter data-testid={`${id}-footer`}>
-              <Icon
-                name="loader"
-                className="confirmation-dropdown__loader"
-                aria-hidden={!promiseIsPending}
-              />
+              {
+                promiseIsPending && (
+                  <Icon
+                    name="loader"
+                    className="confirmation-dropdown__loader"
+                    title="Loading icon"
+                  />  
+                )
+              }
               <TooltipWrapper
                 id="confirmation-dropdown-tooltip"
                 tooltipText={actionTooltip}
