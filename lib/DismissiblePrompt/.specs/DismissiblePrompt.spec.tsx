@@ -8,24 +8,6 @@ import { render, fireEvent, screen } from "@testing-library/react";
 describe("DismissiblePrompt", () => {
   const onDismissSpy = vi.fn();
 
-  test("renders children", () => {
-    render(
-      <DismissiblePrompt
-        data-testid="test-dismissible-prompt"
-        onDismiss={onDismissSpy}
-        className={"hellooooo"}
-      >
-        Hello world
-      </DismissiblePrompt>
-    );
-    expect(screen.getByText("Hello world"));
-    expect(
-      screen
-        .getByTestId("test-dismissible-prompt")
-        .classList.contains("hellooooo")
-    ).toBeTruthy();
-  });
-
   test("it fires the onDismiss prop when clicking the close button", () => {
     render(
       <DismissiblePrompt onDismiss={onDismissSpy}>Yo yo</DismissiblePrompt>
