@@ -16,16 +16,24 @@ export function Resizeable({
   minWidth,
 }: PropsWithChildren<ResizeableProps>) {
   const resizableRef = useRef<HTMLDivElement>(null);
+  const gutterRef = useRef<HTMLDivElement>(null);
   const [state, setState] = React.useState({
     startX: 0,
     startWidth: 0,
   });
 
   const doDrag = (evt: MouseEvent) => {
-    if (resizableRef.current === null) return;
+    if (resizableRef.current === null || gutterRef.current === null) return;
+
+    // Using the computed style to get the px value
+    // Just in case the gutterSize prop is in anything other than px
+    const gutterOffset = parseInt(
+      window.getComputedStyle(gutterRef.current).width,
+      10
+    );
 
     resizableRef.current.style.width = `${
-      state.startWidth + evt.clientX - state.startX
+      state.startWidth + evt.clientX - state.startX - gutterOffset
     }px`;
   };
 
@@ -65,6 +73,7 @@ export function Resizeable({
     >
       {children}
       <span
+        ref={gutterRef}
         className="resizable__gutter resizable__gutter--h"
         style={{
           width: gutterSize,
