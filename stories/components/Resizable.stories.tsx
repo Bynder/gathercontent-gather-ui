@@ -41,7 +41,7 @@ export function Resizable() {
         <div style={{ border: "1px solid red", width: "50%" }}>
           Not resizable
         </div>
-        <ResizableComponent defaultWidth="50%" maxWidth="75%" minWidth={200}>
+        <ResizableComponent defaultWidth="50%" maxWidth="75%" minWidth="200px">
           <div style={{ border: "1px solid green", width: "50%" }}>Hello</div>
         </ResizableComponent>
         <div style={{ border: "1px solid red", width: "50%" }}>

@@ -1,23 +1,35 @@
 .resizable {
-  resize: horizontal;
   display: inline-block;
-  overflow: auto;
+  overflow: visible;
   position: relative;
   height: 100%;
 
   & > *:first-child {
     width: 100% !important;
   }
+}
 
-  &__gutter {
-    display: inline-block;
+.resizable__gutter {
+  position: absolute;
+  user-select: none;
+
+  &:hover, &:focus, &:active {
+    @apply bg-red-500 bg-opacity-20;
+  }
+
+  &--h {
     height: 100%;
-    position: absolute;
-    right: 0;
+    width: 16px;
     top: 0;
+    right: -8px;
+    cursor: col-resize;
+  }
 
-    &:hover {
-      @apply bg-red-500 bg-opacity-20;
-    }
+  &--v {
+    height: 16px;
+    width: 100%;
+    bottom: -8px;
+    left: 0;
+    cursor: row-resize;
   }
 }
