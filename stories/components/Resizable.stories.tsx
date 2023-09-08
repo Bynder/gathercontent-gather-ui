@@ -13,7 +13,7 @@ export function Resizable() {
     <>
       <StoryItem
         title="Vertically split resizable element"
-        description="The primary action button for creation activities"
+        description="So you could have a split-pane or resizable horizontal menu"
       >
         <div
           style={{
@@ -36,7 +36,7 @@ export function Resizable() {
 
       <StoryItem
         title="Single resizable element"
-        description="The primary action button for creation activities"
+        description="Could be used to reveal a before and after of two images"
       >
         <div style={{ border: "1px solid red", width: "50%" }}>
           Not resizable
