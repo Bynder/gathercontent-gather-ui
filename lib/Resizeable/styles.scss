@@ -1,0 +1,23 @@
+.resizable {
+  resize: horizontal;
+  display: inline-block;
+  overflow: auto;
+  position: relative;
+  height: 100%;
+
+  & > *:first-child {
+    width: 100% !important;
+  }
+
+  &__gutter {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &:hover {
+      @apply bg-red-500 bg-opacity-20;
+    }
+  }
+}

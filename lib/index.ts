@@ -23,6 +23,7 @@ export { NotificationInlineWarning } from "./Notification/inline/NotificationInl
 export { Dropdown } from "./Dropdown";
 export { DropdownMenu } from "./DropdownMenu";
 export { ProgressButton } from "./ProgressButton";
+export { Resizable } from "./Resizeable";
 export { Progress } from "./Progress";
 export { SearchInput } from "./SearchInput";
 export { Modal } from "./Modal";
