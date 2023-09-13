@@ -64,7 +64,7 @@ export function Resizeable({
   return (
     <div
       ref={resizableRef}
-      className="resizable"
+      className="resizeable"
       style={{
         width: defaultWidth,
         maxWidth,

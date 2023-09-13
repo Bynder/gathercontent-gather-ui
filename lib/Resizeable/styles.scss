@@ -1,8 +1,8 @@
-.resizable {
-  display: inline-block;
-  overflow: visible;
+.resizeable {
+  //display: inline-block;
+  //overflow: visible;
   position: relative;
-  height: 100%;
+  //height: 100%;
 
   & > *:first-child {
     width: 100% !important;
