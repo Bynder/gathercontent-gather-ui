@@ -1,44 +1,83 @@
 import type { PropsWithChildren } from "react";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect } from "react";
+
+/**
+ * Try to normalise all units to a standard pixel value to keep maths simple elsewhere
+ */
+function normaliseUnitsToPixelValue(
+  value: string | number,
+  container?: HTMLElement
+) {
+  if (typeof value === "number") {
+    return value;
+  }
+
+  if (value.endsWith("px")) {
+    return parseInt(value, 10);
+  }
+
+  if (value.endsWith("%")) {
+    const containerWidthAsPercent =
+      (container || document.body).offsetWidth / 100;
+    return containerWidthAsPercent * parseInt(value, 10);
+  }
+
+  console.warn(
+    `Could not interpret a normalised value for "${value}. Parsing directly to integer.`
+  );
+  return parseInt(value, 10);
+}
+
+/**
+ * Ensure the default width is between the specified max and min widths
+ */
+const calculateStartingWidth = (
+  defaultWidth: number,
+  min: number,
+  max: number
+) => {
+  let value = normaliseUnitsToPixelValue(defaultWidth);
+  value = Math.min(value, max);
+  value = Math.max(value, min);
+  return value;
+};
 
 export interface ResizeableProps {
   defaultWidth?: string;
-  gutterSize?: string;
   minWidth?: string;
   maxWidth?: string;
 }
 
 export function Resizeable({
   children,
-  defaultWidth,
-  gutterSize = "16px",
+  defaultWidth = "50%",
   maxWidth,
   minWidth,
 }: PropsWithChildren<ResizeableProps>) {
-  const resizableRef = useRef<HTMLDivElement>(null);
-  const gutterRef = useRef<HTMLDivElement>(null);
+  const min = normaliseUnitsToPixelValue(minWidth ?? 0);
+  const max = normaliseUnitsToPixelValue(maxWidth ?? "100%");
+  const gutterSize = 16;
+
   const [state, setState] = React.useState({
     startX: 0,
     startWidth: 0,
+    width: calculateStartingWidth(
+      normaliseUnitsToPixelValue(defaultWidth),
+      min,
+      max
+    ),
   });
-  const [width, setWidth] = useState(defaultWidth);
 
   const doDrag = (evt: MouseEvent) => {
-    if (resizableRef.current === null || gutterRef.current === null) return;
+    const newWidth = state.startWidth + evt.clientX - state.startX;
+    const hasExceededMaxWidth = newWidth > max;
+    const hasExceededMinWidth = newWidth < min;
 
-    // Using the computed style to get the px value
-    // Just in case the gutterSize prop is in anything other than px
-    const gutterOffset = parseInt(
-      window.getComputedStyle(gutterRef.current).width,
-      10
-    );
+    if (hasExceededMaxWidth || hasExceededMinWidth) {
+      return;
+    }
 
-    const newWidth =
-      state.startWidth + evt.clientX - state.startX - gutterOffset;
-
-    console.log({ newWidth, maxWidth, minWidth });
-
-    setWidth(`${newWidth}px`);
+    setState((prev) => ({ ...prev, width: newWidth }));
   };
 
   const stopDrag = () => {
@@ -48,48 +87,40 @@ export function Resizeable({
 
   const initDrag = useCallback(
     (evt: React.DragEvent<HTMLDivElement>) => {
-      if (resizableRef.current === null) return;
+      const { clientX } = evt;
 
-      const startWidth = parseInt(
-        window.getComputedStyle(resizableRef.current).width,
-        10
-      );
-      const startX = evt.clientX;
+      const newState = {
+        ...state,
+        startX: clientX,
+        startWidth: state.width,
+      };
 
-      setState({ startX, startWidth });
+      setState(newState);
 
       document.addEventListener("mousemove", doDrag, false);
       document.addEventListener("mouseup", stopDrag, false);
     },
-    [setState]
+    [state, setState]
   );
 
   // remember to remove global listeners on dismount
   useEffect(() => () => stopDrag(), []);
 
   return (
-    <div
-      className="resizeable"
-      style={{
-        width,
-        // maxWidth,
-        // minWidth,
-      }}
-      ref={resizableRef}
-    >
+    <div className="resizeable">
       <div
         className="resizeable__wrapper"
         style={{
-          width,
+          width: state.width - gutterSize,
         }}
       >
         {children}
         <span
-          ref={gutterRef}
+          role="none"
           className="resizable__gutter"
           style={{
             width: gutterSize,
-            right: `calc(-${gutterSize} / 2)`,
+            right: -(gutterSize / 2),
           }}
           onMouseDown={initDrag}
         />

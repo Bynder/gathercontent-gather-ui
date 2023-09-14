@@ -24,15 +24,14 @@ export function Resizeable() {
           }}
         >
           <ResizableComponent
-            defaultWidth="50%"
-            maxWidth="75%"
-            minWidth="200px"
+            defaultWidth="240px"
+            maxWidth="33.33%"
+            minWidth="240px"
           >
             <div
               style={{
                 width: "400px",
                 flexShrink: "0",
-                overflow: "auto",
                 border: "1px solid blue",
               }}
             >

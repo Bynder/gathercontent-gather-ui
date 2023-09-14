@@ -1,8 +1,11 @@
 .resizeable {
   position: relative;
+  display: flex;
 
   &__wrapper {
     position: relative;
+    display: flex;
+    align-items: stretch;
   }
 
   &__wrapper > *:first-child {
@@ -13,7 +16,6 @@
 .resizable__gutter {
   position: absolute;
   user-select: none;
-  background: orange;
   height: 100%;
   width: 16px;
   top: 0;
@@ -25,5 +27,4 @@
   &:active {
     @apply bg-red-500 bg-opacity-20;
   }
-
 }
