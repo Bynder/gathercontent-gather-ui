@@ -33,12 +33,6 @@ $gutterColour: #006aff;
     display: block;
     height: 100%;
   }
-
-  &:hover,
-  &:focus,
-  &:active {
-    @apply bg-red-500 bg-opacity-20;
-  }
 }
 
 .resizable__gutter-handle {
