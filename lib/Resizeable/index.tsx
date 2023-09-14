@@ -1,46 +1,6 @@
 import type { PropsWithChildren } from "react";
 import React, { useCallback, useEffect, useRef } from "react";
-
-/**
- * Try to normalise all units to a standard pixel value to keep maths simple elsewhere
- */
-function normaliseUnitsToPixelValue(
-  value: string | number,
-  container?: HTMLElement
-) {
-  if (typeof value === "number") {
-    return value;
-  }
-
-  if (value.endsWith("px")) {
-    return parseInt(value, 10);
-  }
-
-  if (value.endsWith("%")) {
-    const containerWidthAsPercent =
-      (container || document.body).offsetWidth / 100;
-    return containerWidthAsPercent * parseInt(value, 10);
-  }
-
-  console.warn(
-    `Could not interpret a normalised value for "${value}. Parsing directly to integer.`
-  );
-  return parseInt(value, 10);
-}
-
-/**
- * Ensure the default width is between the specified max and min widths
- */
-const calculateStartingWidth = (
-  defaultWidth: number,
-  min: number,
-  max: number
-) => {
-  let value = normaliseUnitsToPixelValue(defaultWidth);
-  value = Math.min(value, max);
-  value = Math.max(value, min);
-  return value;
-};
+import { keepValueWithinRange, normaliseUnitsToPixelValue } from "../helpers";
 
 export interface ResizeableProps {
   defaultWidth?: string;
@@ -62,7 +22,7 @@ export function Resizeable({
   const [state, setState] = React.useState({
     startX: 0,
     startWidth: 0,
-    width: calculateStartingWidth(
+    width: keepValueWithinRange(
       normaliseUnitsToPixelValue(defaultWidth),
       min,
       max
@@ -71,14 +31,11 @@ export function Resizeable({
 
   const doDrag = (evt: MouseEvent) => {
     const newWidth = state.startWidth + evt.clientX - state.startX;
-    const hasExceededMaxWidth = newWidth > max;
-    const hasExceededMinWidth = newWidth < min;
 
-    if (hasExceededMaxWidth || hasExceededMinWidth) {
-      return;
-    }
-
-    setState((prev) => ({ ...prev, width: newWidth }));
+    setState((prev) => ({
+      ...prev,
+      width: keepValueWithinRange(newWidth, min, max),
+    }));
   };
 
   const stopDrag = () => {
