@@ -32,7 +32,7 @@ export function Resizeable() {
               style={{
                 width: "400px",
                 flexShrink: "0",
-                border: "1px solid blue",
+                border: "1px solid orange",
               }}
             >
               Hello

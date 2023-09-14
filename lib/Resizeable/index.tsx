@@ -118,10 +118,6 @@ export function Resizeable({
         <span
           role="none"
           className="resizable__gutter"
-          style={{
-            width: gutterSize,
-            right: -(gutterSize / 2),
-          }}
           onMouseDown={initDrag}
         />
       </div>

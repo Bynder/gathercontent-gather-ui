@@ -1,3 +1,5 @@
+$gutterSize: 16px;
+
 .resizeable {
   position: relative;
   display: flex;
@@ -17,9 +19,9 @@
   position: absolute;
   user-select: none;
   height: 100%;
-  width: 16px;
+  width: $gutterSize;
   top: 0;
-  right: -8px;
+  right: -(calc($gutterSize / 2));
   cursor: col-resize;
 
   &:hover,
