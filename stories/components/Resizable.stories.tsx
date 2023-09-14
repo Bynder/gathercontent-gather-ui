@@ -32,7 +32,6 @@ export function Resizeable() {
               style={{
                 width: "400px",
                 flexShrink: "0",
-                border: "1px solid orange",
               }}
             >
               Hello
@@ -45,7 +44,6 @@ export function Resizeable() {
               minWidth: "0",
               flexDirection: "column",
               display: " flex !important",
-              border: "1px solid green",
             }}
           >
             How are you?

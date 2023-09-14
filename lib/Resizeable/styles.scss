@@ -24,6 +24,17 @@ $gutterSize: 16px;
   right: -(calc($gutterSize / 2));
   cursor: col-resize;
 
+  &::before {
+    content: '';
+    width: 2px;
+    margin: auto;
+    background-color: #006AFF;
+    display: block;
+    height: 100%;
+  }
+
+
+
   &:hover,
   &:focus,
   &:active {
