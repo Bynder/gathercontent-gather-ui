@@ -21,6 +21,7 @@ export function Resizeable() {
             flex: "1",
             minHeight: "0",
             border: "1px solid red",
+            height: 600,
           }}
         >
           <ResizableComponent

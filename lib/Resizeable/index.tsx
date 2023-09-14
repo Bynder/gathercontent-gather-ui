@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 /**
  * Try to normalise all units to a standard pixel value to keep maths simple elsewhere
@@ -54,6 +54,7 @@ export function Resizeable({
   maxWidth,
   minWidth,
 }: PropsWithChildren<ResizeableProps>) {
+  const handleRef = useRef<HTMLSpanElement>(null);
   const min = normaliseUnitsToPixelValue(minWidth ?? 0);
   const max = normaliseUnitsToPixelValue(maxWidth ?? "100%");
   const gutterSize = 16;
@@ -100,8 +101,18 @@ export function Resizeable({
       document.addEventListener("mousemove", doDrag, false);
       document.addEventListener("mouseup", stopDrag, false);
     },
-    [state, setState]
+    [setState]
   );
+
+  const setGutterHandlePosition = (evt: React.MouseEvent<HTMLSpanElement>) => {
+    const handle = handleRef.current;
+    if (handle === null) return;
+
+    const rect = evt.currentTarget.getBoundingClientRect();
+    const y = evt.clientY - rect.top;
+
+    handle.style.top = `${y - handle.offsetHeight / 2}px`;
+  };
 
   // remember to remove global listeners on dismount
   useEffect(() => () => stopDrag(), []);
@@ -115,8 +126,13 @@ export function Resizeable({
         }}
       >
         {children}
-        <span role="none" className="resizable__gutter" onMouseDown={initDrag}>
-          <span className="resizable__gutter-jandle" />
+        <span
+          role="none"
+          className="resizable__gutter"
+          onMouseDown={initDrag}
+          onMouseMove={setGutterHandlePosition}
+        >
+          <span ref={handleRef} className="resizable__gutter-handle" />
         </span>
       </div>
     </div>
