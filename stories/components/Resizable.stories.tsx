@@ -23,7 +23,11 @@ export function Resizeable() {
             border: "1px solid red",
           }}
         >
-          <ResizableComponent defaultWidth="50%" maxWidth="50%">
+          <ResizableComponent
+            defaultWidth="50%"
+            maxWidth="75%"
+            minWidth="200px"
+          >
             <div
               style={{
                 width: "400px",

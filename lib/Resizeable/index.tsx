@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export interface ResizeableProps {
   defaultWidth?: string;
@@ -21,6 +21,7 @@ export function Resizeable({
     startX: 0,
     startWidth: 0,
   });
+  const [width, setWidth] = useState(defaultWidth);
 
   const doDrag = (evt: MouseEvent) => {
     if (resizableRef.current === null || gutterRef.current === null) return;
@@ -32,9 +33,12 @@ export function Resizeable({
       10
     );
 
-    resizableRef.current.style.width = `${
-      state.startWidth + evt.clientX - state.startX - gutterOffset
-    }px`;
+    const newWidth =
+      state.startWidth + evt.clientX - state.startX - gutterOffset;
+
+    console.log({ newWidth, maxWidth, minWidth });
+
+    setWidth(`${newWidth}px`);
   };
 
   const stopDrag = () => {
@@ -46,8 +50,10 @@ export function Resizeable({
     (evt: React.DragEvent<HTMLDivElement>) => {
       if (resizableRef.current === null) return;
 
-      const { width } = window.getComputedStyle(resizableRef.current);
-      const startWidth = parseInt(width, 10);
+      const startWidth = parseInt(
+        window.getComputedStyle(resizableRef.current).width,
+        10
+      );
       const startX = evt.clientX;
 
       setState({ startX, startWidth });
@@ -63,24 +69,31 @@ export function Resizeable({
 
   return (
     <div
-      ref={resizableRef}
       className="resizeable"
       style={{
-        width: defaultWidth,
-        maxWidth,
-        minWidth,
+        width,
+        // maxWidth,
+        // minWidth,
       }}
+      ref={resizableRef}
     >
-      {children}
-      <span
-        ref={gutterRef}
-        className="resizable__gutter resizable__gutter--h"
+      <div
+        className="resizeable__wrapper"
         style={{
-          width: gutterSize,
-          right: `calc(-${gutterSize} / 2)`,
+          width,
         }}
-        onMouseDown={initDrag}
-      />
+      >
+        {children}
+        <span
+          ref={gutterRef}
+          className="resizable__gutter"
+          style={{
+            width: gutterSize,
+            right: `calc(-${gutterSize} / 2)`,
+          }}
+          onMouseDown={initDrag}
+        />
+      </div>
     </div>
   );
 }
