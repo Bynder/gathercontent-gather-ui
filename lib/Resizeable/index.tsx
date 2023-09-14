@@ -115,11 +115,9 @@ export function Resizeable({
         }}
       >
         {children}
-        <span
-          role="none"
-          className="resizable__gutter"
-          onMouseDown={initDrag}
-        />
+        <span role="none" className="resizable__gutter" onMouseDown={initDrag}>
+          <span className="resizable__gutter-jandle" />
+        </span>
       </div>
     </div>
   );

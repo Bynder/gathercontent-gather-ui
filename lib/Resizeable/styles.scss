@@ -1,4 +1,5 @@
 $gutterSize: 16px;
+$gutterColour: #006aff;
 
 .resizeable {
   position: relative;
@@ -22,22 +23,39 @@ $gutterSize: 16px;
   width: $gutterSize;
   top: 0;
   right: -(calc($gutterSize / 2));
-  cursor: col-resize;
+  cursor: ew-resize;
 
   &::before {
-    content: '';
+    content: "";
     width: 2px;
     margin: auto;
-    background-color: #006AFF;
+    background-color: $gutterColour;
     display: block;
     height: 100%;
   }
-
-
 
   &:hover,
   &:focus,
   &:active {
     @apply bg-red-500 bg-opacity-20;
+  }
+}
+
+.resizable__gutter-handle {
+  background-color: $gutterColour;
+  border-radius: 4px;
+  height: 30px;
+  margin: auto;
+  width: 8px;
+  display: flex;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.1s;
+
+  .resizable__gutter:hover & {
+    opacity: 1;
   }
 }
