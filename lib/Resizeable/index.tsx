@@ -66,9 +66,16 @@ export function Resizeable({
     if (handle === null) return;
 
     const rect = evt.currentTarget.getBoundingClientRect();
-    const y = evt.clientY - rect.top;
+    const gutter = handle.parentElement as HTMLSpanElement;
+    const handleOffset = handle.offsetHeight / 2;
 
-    handle.style.top = `${y - handle.offsetHeight / 2}px`;
+    const y = keepValueWithinRange(
+      evt.clientY - rect.top,
+      handleOffset,
+      gutter.offsetHeight - handleOffset
+    );
+
+    handle.style.top = `${y - handleOffset}px`;
   };
 
   // remember to remove global listeners on dismount
