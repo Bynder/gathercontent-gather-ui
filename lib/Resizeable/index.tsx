@@ -24,11 +24,12 @@ export function Resizeable({
   minWidth,
   useGutterOffset = false,
 }: PropsWithChildren<ResizeableProps>) {
+  const resizeRef = useRef<HTMLDivElement>(null);
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
-  const min = toPixels(minWidth ?? 0);
-  const max = toPixels(maxWidth ?? "100%");
   const gutterSize = useGutterOffset ? 16 : 0;
+  let min: number;
+  let max: number;
 
   const [state, setState] = React.useState({
     startX: 0,
@@ -91,14 +92,18 @@ export function Resizeable({
   };
 
   useEffect(() => {
-    setWidth(keepValueWithinRange(toPixels(defaultWidth), min, max));
+    // set initial values on mount as we need to know the resize container width before calculating percentages
+    min = toPixels(minWidth ?? 0, resizeRef.current?.offsetWidth);
+    max = toPixels(maxWidth ?? "100%", resizeRef.current?.offsetWidth);
+    const newWidth = keepValueWithinRange(toPixels(defaultWidth), min, max);
+    setWidth(newWidth);
 
     // remember to remove global listeners on dismount
     return () => stopDrag();
   }, []);
 
   return (
-    <div className="resizeable">
+    <div ref={resizeRef} className="resizeable">
       <div ref={resizeWrapperRef} className="resizeable__wrapper">
         {children}
         <span
