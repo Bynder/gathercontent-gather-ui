@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { keepValueWithinRange, normaliseUnitsToPixelValue } from "../helpers";
 
 export interface ResizeableProps {
-  defaultWidth?: string;
-  minWidth?: string;
-  maxWidth?: string;
+  defaultWidth?: number | string;
+  minWidth?: number | string;
+  maxWidth?: number | string;
 }
 
 export function Resizeable({
