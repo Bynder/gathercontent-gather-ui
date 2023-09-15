@@ -14,6 +14,7 @@ export function Resizeable({
   maxWidth,
   minWidth,
 }: PropsWithChildren<ResizeableProps>) {
+  const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
   const min = normaliseUnitsToPixelValue(minWidth ?? 0);
   const max = normaliseUnitsToPixelValue(maxWidth ?? "100%");
@@ -22,20 +23,22 @@ export function Resizeable({
   const [state, setState] = React.useState({
     startX: 0,
     startWidth: 0,
-    width: keepValueWithinRange(
-      normaliseUnitsToPixelValue(defaultWidth),
-      min,
-      max
-    ),
   });
+
+  const getWidth = () =>
+    normaliseUnitsToPixelValue(resizeWrapperRef.current?.style.width || 0);
+
+  const setWidth = (value: number) => {
+    if (resizeWrapperRef.current === null) return;
+
+    resizeWrapperRef.current.style.width = `${
+      keepValueWithinRange(value, min, max) - gutterSize
+    }px`;
+  };
 
   const doDrag = (evt: MouseEvent) => {
     const newWidth = state.startWidth + evt.clientX - state.startX;
-
-    setState((prev) => ({
-      ...prev,
-      width: keepValueWithinRange(newWidth, min, max),
-    }));
+    setWidth(newWidth);
   };
 
   const stopDrag = () => {
@@ -50,7 +53,7 @@ export function Resizeable({
       const newState = {
         ...state,
         startX: clientX,
-        startWidth: state.width,
+        startWidth: getWidth(),
       };
 
       setState(newState);
@@ -78,17 +81,18 @@ export function Resizeable({
     handle.style.top = `${y - handleOffset}px`;
   };
 
-  // remember to remove global listeners on dismount
-  useEffect(() => () => stopDrag(), []);
+  useEffect(() => {
+    setWidth(
+      keepValueWithinRange(normaliseUnitsToPixelValue(defaultWidth), min, max)
+    );
+
+    // remember to remove global listeners on dismount
+    return () => stopDrag();
+  }, []);
 
   return (
     <div className="resizeable">
-      <div
-        className="resizeable__wrapper"
-        style={{
-          width: state.width - gutterSize,
-        }}
-      >
+      <div ref={resizeWrapperRef} className="resizeable__wrapper">
         {children}
         <span
           role="none"
