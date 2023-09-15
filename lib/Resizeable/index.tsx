@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
 import React, { useCallback, useEffect, useRef } from "react";
-import { keepValueWithinRange, normaliseUnitsToPixelValue } from "../helpers";
+import { keepValueWithinRange, toPixels } from "../helpers";
 
 export interface ResizeableProps {
   defaultWidth?: number | string;
@@ -26,8 +26,8 @@ export function Resizeable({
 }: PropsWithChildren<ResizeableProps>) {
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
-  const min = normaliseUnitsToPixelValue(minWidth ?? 0);
-  const max = normaliseUnitsToPixelValue(maxWidth ?? "100%");
+  const min = toPixels(minWidth ?? 0);
+  const max = toPixels(maxWidth ?? "100%");
   const gutterSize = useGutterOffset ? 16 : 0;
 
   const [state, setState] = React.useState({
@@ -35,8 +35,7 @@ export function Resizeable({
     startWidth: 0,
   });
 
-  const getWidth = () =>
-    normaliseUnitsToPixelValue(resizeWrapperRef.current?.style.width || 0);
+  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width || 0);
 
   const setWidth = (value: number) => {
     if (resizeWrapperRef.current === null) return;
@@ -92,9 +91,7 @@ export function Resizeable({
   };
 
   useEffect(() => {
-    setWidth(
-      keepValueWithinRange(normaliseUnitsToPixelValue(defaultWidth), min, max)
-    );
+    setWidth(keepValueWithinRange(toPixels(defaultWidth), min, max));
 
     // remember to remove global listeners on dismount
     return () => stopDrag();

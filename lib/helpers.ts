@@ -18,7 +18,7 @@ export const filterUsers = (users: any, term: any, searchByEmail = false) => {
   );
 };
 
-export const normaliseUnitsToPixelValue = (
+export const toPixels = (
   value: string | number,
   container: HTMLElement = document.body
 ) => {
