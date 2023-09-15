@@ -24,7 +24,6 @@ $gutterColour: #006aff;
   top: 0;
   right: -(calc($gutterSize / 2));
   cursor: ew-resize;
-  z-index: 99;
 
   &::before {
     content: "";
