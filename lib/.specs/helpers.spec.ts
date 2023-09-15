@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { keepValueWithinRange, toPixels } from "../helpers";
 
 describe("helpers: toPixels", () => {
@@ -19,7 +19,13 @@ describe("helpers: toPixels", () => {
   });
 
   it("should return number and warning for unknown units", () => {
+    const warn = vi.spyOn(global.console, "warn");
+
     expect(toPixels("123rem")).toBe(123);
+    expect(warn).toHaveBeenCalledOnce();
+    expect(warn).toHaveBeenCalledWith(
+      `Could not interpret a normalised value for: 123rem.\nParsing directly to integer: 123.`
+    );
   });
 });
 
