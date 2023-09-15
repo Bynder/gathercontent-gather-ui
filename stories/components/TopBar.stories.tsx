@@ -20,6 +20,7 @@ export default {
   component: TopBar,
 };
 
+// eslint-disable-next-line react/function-component-definition
 export const Topbar = () => (
   <div>
     <StoryItem
@@ -207,7 +208,6 @@ export const Topbar = () => (
         {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
-            {/* @ts-expect-error TS(2769): No overload matches this call. */}
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
@@ -297,7 +297,6 @@ export const Topbar = () => (
         {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
-            {/* @ts-expect-error TS(2769): No overload matches this call. */}
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>

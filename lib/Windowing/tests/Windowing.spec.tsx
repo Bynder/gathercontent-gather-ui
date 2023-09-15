@@ -1,4 +1,4 @@
-import { render, fireEvent, waitForElement } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import { React } from "../../../tests/setup";
 import { Windowing } from "../..";
 
@@ -38,10 +38,7 @@ describe("Windowing", () => {
 
   it("renders 15 ({ start: 0, end: 15 }) in-view items", async () => {
     const { getByTestId } = render(createFlatWrapper());
-    await waitForElement(() => [
-      getByTestId("test-id-1"),
-      getByTestId("test-id-15"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-1"), getByTestId("test-id-15")]);
 
     fireEvent.scroll(getByTestId("windowing-scroller"), {
       target: { scrollTop: 0 },
@@ -52,10 +49,7 @@ describe("Windowing", () => {
 
   it("renders 15 ({ start: 20, end: 35 }) in-view items", async () => {
     const { getByTestId, queryByTestId } = render(createFlatWrapper());
-    await waitForElement(() => [
-      getByTestId("test-id-1"),
-      getByTestId("test-id-15"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-1"), getByTestId("test-id-15")]);
 
     fireEvent.scroll(getByTestId("windowing-scroller"), {
       target: { scrollTop: 200 },
@@ -63,10 +57,7 @@ describe("Windowing", () => {
 
     jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
 
-    await waitForElement(() => [
-      getByTestId("test-id-20"),
-      getByTestId("test-id-35"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-20"), getByTestId("test-id-35")]);
 
     expect(queryByTestId("test-id-9")).toBeNull();
   });

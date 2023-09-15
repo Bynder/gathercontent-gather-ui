@@ -279,8 +279,8 @@ export function Dropdown() {
         title="Confirmation DropdownComponent"
         description="A dropdown like component that renders a confirmation dropdown."
       >
+        {/* @ts-expect-error */}
         <ConfirmationDropdown
-          // @ts-expect-error
           id="confirm-dropdown"
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
@@ -305,9 +305,8 @@ export function Dropdown() {
         >
           <Icon name="archive" />
         </ConfirmationDropdown>
-
+        {/* @ts-expect-error */}
         <ConfirmationDropdown
-          // @ts-expect-error
           id="trash-dropdown-2"
           confirmationText="Archive"
           confirmationPromise={createDelayedPromise}
@@ -315,8 +314,8 @@ export function Dropdown() {
             <>
               <DropdownComponent.Header>
                 <h3>Archive 1 item</h3>
+                {/* @ts-expect-error */}
                 <ConfirmationDropdown
-                  // @ts-expect-error
                   id="confirm-sub-dropdown"
                   confirmationText="Archive all"
                   dropdownContent={
@@ -365,8 +364,8 @@ export function Dropdown() {
           <Icon name="trash" />
         </ConfirmationDropdown>
 
+        {/* @ts-expect-error */}
         <ConfirmationDropdown
-          // @ts-expect-error
           id="trash-dropdown-3"
           confirmationText="Do a thing"
           confirmationPromise={createDelayedPromise}

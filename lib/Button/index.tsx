@@ -73,6 +73,7 @@ export class Button extends Component {
     const {
       // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
       disabled,
+      // @ts-expect-error TS(2339): Property 'children' does not exist on type 'Reado... Remove this comment to see the full error message
       children,
       // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
       className,
