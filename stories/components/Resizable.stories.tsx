@@ -28,6 +28,7 @@ export function Resizeable() {
             defaultWidth="240px"
             maxWidth="33.33%"
             minWidth="240px"
+            useGutterOffset
           >
             <div
               style={{
@@ -59,7 +60,12 @@ export function Resizeable() {
         <div style={{ border: "1px solid red", width: "50%" }}>
           Not resizeable
         </div>
-        <ResizableComponent defaultWidth="50%" maxWidth="75%" minWidth="200px">
+        <ResizableComponent
+          defaultWidth="50%"
+          maxWidth="75%"
+          minWidth="200px"
+          useGutterOffset
+        >
           <div style={{ border: "1px solid green", width: "50%" }}>Hello</div>
         </ResizableComponent>
         <div style={{ border: "1px solid red", width: "50%" }}>

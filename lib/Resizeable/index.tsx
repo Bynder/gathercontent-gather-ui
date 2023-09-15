@@ -6,19 +6,29 @@ export interface ResizeableProps {
   defaultWidth?: number | string;
   minWidth?: number | string;
   maxWidth?: number | string;
+  useGutterOffset?: boolean;
 }
 
+/**
+ * A wrapper for making a given child element resizable
+ * @param children The element to be resized
+ * @param defaultWidth The width the child should initially render to. If min and max widths are provided, then the provided width will be massaged to meet those constraints
+ * @param maxWidth The maximum width the element can be resized to
+ * @param minWidth The minimum width the element can be resized to
+ * @param useGutterOffset Toggle whether we should take the width of the gutter into account for calculating the width of the resized item. This can be handy depending on the CSS being applied to or around the child element
+ */
 export function Resizeable({
   children,
   defaultWidth = "50%",
   maxWidth,
   minWidth,
+  useGutterOffset = false,
 }: PropsWithChildren<ResizeableProps>) {
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
   const min = normaliseUnitsToPixelValue(minWidth ?? 0);
   const max = normaliseUnitsToPixelValue(maxWidth ?? "100%");
-  const gutterSize = 16;
+  const gutterSize = useGutterOffset ? 16 : 0;
 
   const [state, setState] = React.useState({
     startX: 0,
