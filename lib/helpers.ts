@@ -18,10 +18,7 @@ export const filterUsers = (users: any, term: any, searchByEmail = false) => {
   );
 };
 
-export const toPixels = (
-  value: string | number,
-  container: HTMLElement = document.body
-) => {
+export const toPixels = (value: string | number, percentageOf = 100) => {
   if (typeof value === "number") return value;
 
   const integer = parseInt(value, 10);
@@ -31,7 +28,7 @@ export const toPixels = (
   }
 
   if (value.endsWith("%")) {
-    return (container.offsetWidth / 100) * integer;
+    return (percentageOf / 100) * integer;
   }
 
   console.warn(
