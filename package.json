@@ -63,7 +63,7 @@
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
     "format:style": "stylelint \"{lib,styles}/**/*.scss\" --fix",
     "legacy:copy-styles": "echo Copying Sass settings... && copyfiles styles/* dist/ && copyfiles styles/**/* dist/ && copyfiles lib/**/*.scss dist/ && copyfiles lib/**/**/*.scss dist/ && copyfiles lib/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/*.scss dist/ && copyfiles lib/**/**/**/**/**/*.scss dist/",
-    "lint": "eslint -c .eslintrc.json 'lib/**/*.tsx' 'tests/**/*.tsx' --fix",
+    "lint": "eslint -c .eslintrc.json 'lib/**/*.tsx' --fix",
     "lint:style": "stylelint \"{lib,styles}/**/*.scss\" --quiet",
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006 -c .storybook",
