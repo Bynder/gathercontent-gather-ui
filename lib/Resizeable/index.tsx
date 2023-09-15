@@ -82,13 +82,13 @@ export function Resizeable({
     const gutter = handle.parentElement as HTMLSpanElement;
     const handleOffset = handle.offsetHeight / 2;
 
-    const y = keepValueWithinRange(
+    const yPosition = keepValueWithinRange(
       evt.clientY - rect.top,
       handleOffset,
       gutter.offsetHeight - handleOffset
     );
 
-    handle.style.top = `${y - handleOffset}px`;
+    handle.style.top = `${yPosition - handleOffset}px`;
   };
 
   useEffect(() => {
