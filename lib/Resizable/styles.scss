@@ -1,10 +1,9 @@
 $gutterSize: 16px;
 $gutterColour: #006aff;
 
-.resizeable {
+.resizable {
   position: relative;
   display: flex;
-  width: 100%;
 
   &__wrapper {
     position: relative;

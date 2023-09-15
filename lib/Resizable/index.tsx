@@ -2,11 +2,12 @@ import type { PropsWithChildren } from "react";
 import React, { useCallback, useEffect, useRef } from "react";
 import { keepValueWithinRange, toPixels } from "../helpers";
 
-export interface ResizeableProps {
+export interface ResizableProps {
   defaultWidth?: number | string;
   minWidth?: number | string;
   maxWidth?: number | string;
   useGutterOffset?: boolean;
+  containerWidth?: number | string;
 }
 
 /**
@@ -16,20 +17,25 @@ export interface ResizeableProps {
  * @param maxWidth The maximum width the element can be resized to
  * @param minWidth The minimum width the element can be resized to
  * @param useGutterOffset Toggle whether we should take the width of the gutter into account for calculating the width of the resized item. This can be handy depending on the CSS being applied to or around the child element
+ * @param rest Contains params that need converting such as the containerWidth
  */
-export function Resizeable({
+export function Resizable({
   children,
   defaultWidth = "50%",
   maxWidth,
   minWidth,
   useGutterOffset = false,
-}: PropsWithChildren<ResizeableProps>) {
+  ...rest
+}: PropsWithChildren<ResizableProps>) {
+  const containerWidth = toPixels(
+    rest.containerWidth ?? document.body.offsetWidth
+  );
   const resizeRef = useRef<HTMLDivElement>(null);
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
   const gutterSize = useGutterOffset ? 16 : 0;
-  let min: number;
-  let max: number;
+  const min = toPixels(minWidth ?? 0, containerWidth);
+  const max = toPixels(maxWidth ?? "100%", containerWidth);
 
   const [state, setState] = React.useState({
     startX: 0,
@@ -92,9 +98,6 @@ export function Resizeable({
   };
 
   useEffect(() => {
-    // set initial values on mount as we need to know the resize container width before calculating percentages
-    min = toPixels(minWidth ?? 0, resizeRef.current?.offsetWidth);
-    max = toPixels(maxWidth ?? "100%", resizeRef.current?.offsetWidth);
     const newWidth = keepValueWithinRange(toPixels(defaultWidth), min, max);
     setWidth(newWidth);
 
@@ -103,8 +106,8 @@ export function Resizeable({
   }, []);
 
   return (
-    <div ref={resizeRef} className="resizeable">
-      <div ref={resizeWrapperRef} className="resizeable__wrapper">
+    <div ref={resizeRef} className="resizable">
+      <div ref={resizeWrapperRef} className="resizable__wrapper">
         {children}
         <span
           role="none"

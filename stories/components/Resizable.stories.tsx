@@ -4,16 +4,16 @@ import {
   Icon,
   Layout,
 } from "lib";
-import { Resizeable as ResizableComponent } from "../../lib/Resizeable";
+import { Resizable as ResizableComponent } from "../../lib/Resizable";
 
 import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: "GUI/Resizeable",
+  title: "GUI/Resizable",
   component: ResizableComponent,
 };
 
-export function Resizeable() {
+export function Resizable() {
   return (
     <>
       <StoryItem
@@ -38,11 +38,14 @@ export function Resizeable() {
             {/* eslint-disable-next-line no-use-before-define */}
             <FolderMenu />
           </ResizableComponent>
+          <div style={{ width: "100%" }}>
+            <p>This content will appear next to the resizable component</p>
+          </div>
         </div>
       </StoryItem>
 
       <StoryItem
-        title="Vertically split resizeable element"
+        title="Vertically split resizable element"
         description="So you could have a resizable split-pane"
       >
         <div
@@ -96,12 +99,12 @@ export function Resizeable() {
       </StoryItem>
 
       <StoryItem
-        title="Single resizeable element"
+        title="Single resizable element"
         description="Could be used to reveal a before and after of two images"
       >
         <div style={{ width: "100%" }}>
           <div style={{ border: "1px solid red", width: "50%" }}>
-            <p>Not resizeable</p>
+            <p>Not resizable</p>
           </div>
           <ResizableComponent
             defaultWidth="100%"
@@ -114,7 +117,7 @@ export function Resizeable() {
             </div>
           </ResizableComponent>
           <div style={{ border: "1px solid red", width: "50%" }}>
-            <p>Not resizeable</p>
+            <p>Not resizable</p>
           </div>
         </div>
       </StoryItem>
