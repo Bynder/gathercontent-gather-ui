@@ -13,6 +13,7 @@ $gutterColour: #006aff;
 
   &__wrapper > *:first-child {
     width: 100% !important;
+    overflow-x: hidden;
   }
 }
 
