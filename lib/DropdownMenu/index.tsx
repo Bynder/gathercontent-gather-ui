@@ -20,6 +20,7 @@ export function DropdownMenu({
   fullWidth,
   buttonClassName,
   disabled,
+  ...rest
 }: any) {
   const [showItems, setShowItems] = useState(selected);
   const eventSet = useRef(selected);
@@ -78,19 +79,19 @@ export function DropdownMenu({
   );
 
   return (
-    <div className={menuClass}>
+    <div className={menuClass} {...rest}>
       <Button types={[type]} className={buttonClass} onClick={toggleShowItems}>
         {children}
         {caret && (
           <span className="dropdown-menu__caret">
             {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
-            <Icon name="caret" size="micro" />
+            <Icon name="caret" size="micro" title="Caret icon" />
           </span>
         )}
         {downIcon && (
           <span className="dropdown-menu__down">
             {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
-            <Icon name="down" size="micro" />
+            <Icon name="down" size="micro" title="Down icon" />
           </span>
         )}
       </Button>

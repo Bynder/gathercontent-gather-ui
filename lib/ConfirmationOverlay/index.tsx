@@ -15,7 +15,8 @@ export function ConfirmationOverlay({
   confirmationText,
   failureText,
   className,
-  show,
+  show = false,
+  ...rest
 }: any) {
   const [hasFailed, setHasFailed] = useState(false);
   const setHasFailedTimeout = useRef(null);
@@ -32,10 +33,10 @@ export function ConfirmationOverlay({
   };
 
   useEffect(() => () => {
-      if (setHasFailedTimeout.current !== null) {
-        clearTimeout(setHasFailedTimeout.current);
-      }
-    });
+    if (setHasFailedTimeout.current !== null) {
+      clearTimeout(setHasFailedTimeout.current);
+    }
+  });
 
   const [isSubmitting, handleSubmitWithLoader] = useLoader(handleConfirm);
 
@@ -44,7 +45,7 @@ export function ConfirmationOverlay({
   });
 
   return (
-    <div className={classNames}>
+    <div className={classNames} {...rest}>
       <div className="confirmation-overlay__inner">
         <ButtonTertiary
           size={ButtonTertiary.sizes.xs}
@@ -57,6 +58,7 @@ export function ConfirmationOverlay({
           // @ts-expect-error
           onClick={handleSubmitWithLoader}
           size={ButtonPrimary.sizes.xs}
+          aria-label="Submit"
         >
           {isSubmitting && <Icon name="loader16" className="mr-2 fill-white" />}
           {hasFailed && <Icon name="danger16" className="mr-2 fill-white" />}

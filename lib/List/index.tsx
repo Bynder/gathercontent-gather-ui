@@ -11,7 +11,7 @@ export function List(props: any) {
   });
 
   return (
-    <div className={listClasses}>
+    <div className={listClasses} role="list">
       <ListHead title={props.title} action={props.action} />
 
       {props.subtitle && <div className="list__subtitle">{props.subtitle}</div>}
@@ -20,7 +20,9 @@ export function List(props: any) {
         {React.Children.map(props.children, (child: any) => {
           if (child) {
             return (
-              <div className="list__row">{React.cloneElement(child, {})}</div>
+              <div className="list__row" role="listitem">
+                {React.cloneElement(child, {})}
+              </div>
             );
           }
           return null;

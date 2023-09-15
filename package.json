@@ -71,11 +71,13 @@
     "test": "jest --notify",
     "chromatic": "chromatic --project-token=1f9e13b797f2 --auto-accept-changes",
     "type-check": "tsc --noEmit --pretty",
-    "generate-types": "tsc --emitDeclarationOnly"
+    "generate-types": "tsc --emitDeclarationOnly",
+    "vtest": "vitest"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@react-hook/resize-observer": "^1.2.2",
+    "@testing-library/user-event": "^14.4.3",
     "@tippyjs/react": "^4.2.5",
     "classnames": "^2.3.1",
     "d3-ease": "^1.0.7",
@@ -95,7 +97,8 @@
     "react-spring": "^8.0.27",
     "tailwindcss": "^3.0.13",
     "tailwindcss-border-styles": "^1.0.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "vite-plugin-magical-svg": "^1.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
@@ -127,6 +130,7 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-styling": "^1.0.6",
     "@storybook/addons": "^7.0.10",
+    "@storybook/components": "^7.4.2",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.10",
     "@storybook/react-webpack5": "^7.0.10",
@@ -136,6 +140,7 @@
     "@types/jest": "^29.5.2",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.60.1",
+    "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
@@ -156,8 +161,9 @@
     "eslint-plugin-react": "^7.32.2",
     "faker": "^4.1.0",
     "jest": "^29.6.4",
+    "jsdom": "^22.1.0",
     "node-notifier": "^10.0.1",
-    "parcel": "^2.1.1",
+    "parcel": "^2.9.3",
     "pixrem": "^3.0.2",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
@@ -171,7 +177,11 @@
     "stylelint-config-standard-scss": "^10.0.0",
     "ts-loader": "^9.4.3",
     "ts-migrate": "^0.1.35",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vite": "^4.4.9",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.34.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",

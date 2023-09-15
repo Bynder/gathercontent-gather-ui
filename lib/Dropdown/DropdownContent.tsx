@@ -35,6 +35,7 @@ export function DropdownContent({
   noBorder,
   autoPositionLeft,
   noTransform,
+  ...rest
 }: Props) {
   const { showContent, autoPosition, bounds }: any = useContext(
     DropdownContext
@@ -143,7 +144,7 @@ export function DropdownContent({
   });
 
   return (
-    <div className={classNames} style={style} ref={contentElementRef}>
+    <div className={classNames} style={style} ref={contentElementRef} {...rest}>
       {typeof children === "function" ? children(showContent) : children}
     </div>
   );

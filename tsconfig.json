@@ -21,6 +21,7 @@
     "declarationMap": true,
 
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+
     "paths": {
       "lib": ["./lib"],
       "tests": ["./tests"],
@@ -30,6 +31,6 @@
       "modules": ["./lib/src/modules"],
       "helpers": ["./lib/src/helpers"],
       "assets": ["./assets"]
-    }
+    },
   }
 }

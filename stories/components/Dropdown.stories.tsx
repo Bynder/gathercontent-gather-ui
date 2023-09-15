@@ -1,18 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import {
   Dropdown as DropdownComponent,
   Avatar,
   AvatarInformation,
   Icon,
   ConfirmationDropdown,
-} from 'lib';
-import StoryItem from '../styleguide/StoryItem';
-import StatusIndicator from '../../lib/StatusIndicator';
-import Form from '../../lib/Form';
-import FormInput from '../../lib/Form/FormInput';
+} from "lib";
+import StoryItem from "../styleguide/StoryItem";
+import StatusIndicator from "../../lib/StatusIndicator";
+import Form from "../../lib/Form";
+import FormInput from "../../lib/Form/FormInput";
 
 export default {
-  title: 'Legacy/Dropdowns/Dropdown',
+  title: "Legacy/Dropdowns/Dropdown",
   component: DropdownComponent,
 };
 
@@ -104,12 +104,12 @@ export function Dropdown() {
               >
                 <DropdownComponent className="w-full" id="id-dropdown-2">
                   <DropdownComponent.Trigger triggerClassName="flex items-center w-full">
-                    <Icon name="emoji" className="mr-2" /> Change tone{' '}
-                    <Icon 
-                      name="caretRight" 
-                      defaultFillColor={false} 
-                      defaultActiveColor={false} 
-                      className="ml-auto icon--neutral-70" 
+                    <Icon name="emoji" className="mr-2" /> Change tone{" "}
+                    <Icon
+                      name="caretRight"
+                      defaultFillColor={false}
+                      defaultActiveColor={false}
+                      className="ml-auto icon--neutral-70"
                     />
                   </DropdownComponent.Trigger>
                   <DropdownComponent.Content
@@ -373,7 +373,6 @@ export function Dropdown() {
           dropdownContent={
             <>
               <DropdownComponent.Header collapse>
-                {/* @ts-expect-error */}
                 <Form onSubmit={() => {}} className="form h-width-100">
                   <FormInput
                     noBorder
@@ -412,7 +411,7 @@ export function Dropdown() {
         title="DropdownComponent Menu"
         description="DropdownMenu is being phased out. You can achieve the same outcome by composing DropdownComponent components."
       >
-        <div style={{ maxWidth: '300px' }}>
+        <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" autoPosition block>
             <DropdownComponent.Trigger useSelect>
               Select an option...
@@ -427,7 +426,7 @@ export function Dropdown() {
         title="DropdownComponent (with other components as content)"
         description="We can compose dropdowns with various components."
       >
-        <div style={{ maxWidth: '300px' }}>
+        <div style={{ maxWidth: "300px" }}>
           <DropdownComponent id="dropdown-menu" block>
             <DropdownComponent.Trigger useSelect>
               <StatusIndicator color="green" label="Status 2" medium />

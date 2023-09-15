@@ -47,7 +47,6 @@ export const FinderNavigation = () => (
           </FinderNavigationComponent.Group>
           <FinderNavigationComponent.Group title="folder" meta={Meta}>
             <FinderNavigationComponent.Item>
-              {/* @ts-expect-error */}
               <FinderNavigationComponent.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="folder" />
@@ -55,15 +54,13 @@ export const FinderNavigation = () => (
                 </a>
               </FinderNavigationComponent.ItemContent>
               <FinderNavigationComponent.Item active>
-                {/* @ts-expect-error */}
-                <FinderNavigationComponent.ItemContent active isFolder>
+                <FinderNavigationComponent.ItemContent isFolder>
                   <a className="finder-item-link" href="google.com">
                     <Icon name="folderOpen" />
                     Another Folder
                   </a>
                 </FinderNavigationComponent.ItemContent>
                 <FinderNavigationComponent.Item>
-                  {/* @ts-expect-error */}
                   <FinderNavigationComponent.ItemContent isFolder>
                     <a className="finder-item-link" href="google.com">
                       <Icon name="folder" />
@@ -71,7 +68,6 @@ export const FinderNavigation = () => (
                     </a>
                   </FinderNavigationComponent.ItemContent>
                   <FinderNavigationComponent.Item>
-                    {/* @ts-expect-error */}
                     <FinderNavigationComponent.ItemContent isFolder>
                       <a className="finder-item-link" href="google.com">
                         <Icon name="folder" />
@@ -79,7 +75,6 @@ export const FinderNavigation = () => (
                       </a>
                     </FinderNavigationComponent.ItemContent>
                     <FinderNavigationComponent.Item>
-                      {/* @ts-expect-error */}
                       <FinderNavigationComponent.ItemContent isFolder>
                         <a className="finder-item-link" href="google.com">
                           <Icon name="folder" />
@@ -87,7 +82,6 @@ export const FinderNavigation = () => (
                         </a>
                       </FinderNavigationComponent.ItemContent>
                       <FinderNavigationComponent.Item>
-                        {/* @ts-expect-error */}
                         <FinderNavigationComponent.ItemContent isFolder>
                           <a className="finder-item-link" href="google.com">
                             <Icon name="folder" />
@@ -95,7 +89,6 @@ export const FinderNavigation = () => (
                           </a>
                         </FinderNavigationComponent.ItemContent>
                         <FinderNavigationComponent.Item>
-                          {/* @ts-expect-error */}
                           <FinderNavigationComponent.ItemContent isFolder>
                             <a className="finder-item-link" href="google.com">
                               <Icon name="folder" />
@@ -108,7 +101,6 @@ export const FinderNavigation = () => (
                   </FinderNavigationComponent.Item>
                 </FinderNavigationComponent.Item>
                 <FinderNavigationComponent.Item>
-                  {/* @ts-expect-error */}
                   <FinderNavigationComponent.ItemContent isFolder>
                     <a className="finder-item-link" href="google.com">
                       <Icon name="folder" />
@@ -118,7 +110,6 @@ export const FinderNavigation = () => (
                 </FinderNavigationComponent.Item>
               </FinderNavigationComponent.Item>
               <FinderNavigationComponent.Item>
-                {/* @ts-expect-error */}
                 <FinderNavigationComponent.ItemContent isFolder>
                   <a className="finder-item-link" href="google.com">
                     <Icon name="folder" />
@@ -128,7 +119,6 @@ export const FinderNavigation = () => (
               </FinderNavigationComponent.Item>
             </FinderNavigationComponent.Item>
             <FinderNavigationComponent.Item>
-              {/* @ts-expect-error */}
               <FinderNavigationComponent.ItemContent isFolder>
                 <a className="finder-item-link" href="google.com">
                   <Icon name="folder" />

@@ -16,7 +16,7 @@ function CollectionsTableRow({
     'collections-table__row--is-over': isOver
   });
   return (
-    <div className={classes} {...props}>
+    <div className={classes} {...props} role="row">
       {children}
     </div>
   );

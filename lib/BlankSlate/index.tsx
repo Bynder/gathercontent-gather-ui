@@ -22,7 +22,7 @@ export function BlankSlate(props: any) {
   const BuiltInSVG =
     props.slateStyle === "arrow" ? BlankSlate2SVG : BlankSlateSVG;
   return (
-    <div className={classes}>
+    <div className={classes} data-testid="blank-slate">
       {props.emoji ? (
         <span
           className="blank-slate__emoji"
