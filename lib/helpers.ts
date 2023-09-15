@@ -22,24 +22,22 @@ export const normaliseUnitsToPixelValue = (
   value: string | number,
   container: HTMLElement = document.body
 ) => {
-  if (typeof value === "number") {
-    // assume value is already in pixels
-    return value;
-  }
+  if (typeof value === "number") return value;
+
+  const integer = parseInt(value, 10);
 
   if (value.endsWith("px")) {
-    return parseInt(value, 10);
+    return integer;
   }
 
   if (value.endsWith("%")) {
-    const containerWidthAsPercent = container.offsetWidth / 100;
-    return containerWidthAsPercent * parseInt(value, 10);
+    return (container.offsetWidth / 100) * integer;
   }
 
   console.warn(
-    `Could not interpret a normalised value for "${value}. Parsing directly to integer.`
+    `Could not interpret a normalised value for: ${value}.\nParsing directly to integer: ${integer}.`
   );
-  return parseInt(value, 10);
+  return integer;
 };
 
 export const keepValueWithinRange = (
