@@ -1,13 +1,8 @@
 import React from "react";
-import {
-    describe,
-    expect,
-    it,
-} from 'vitest'; 
-import { renderHook, act } from "@testing-library/react-hooks";
+import { describe, expect, it } from "vitest";
+import { renderHook, act } from "@testing-library/react";
 import { useObjectSelector } from "../useObjectSelector";
 import { SelectionProvider } from "../";
-
 
 describe("useObjectSelector", () => {
   it("should select the given ids", () => {
