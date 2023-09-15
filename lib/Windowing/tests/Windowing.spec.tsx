@@ -1,8 +1,9 @@
+import { describe, expect, it, vi } from "vitest";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import { React } from "../../../tests/setup";
+import React from "react";
 import { Windowing } from "../..";
 
-jest.mock("debounce", () => (fn: any) => fn);
+vi.mock("debounce", () => (fn: any) => fn);
 
 describe("Windowing", () => {
   const items = [...new Array(50)].map((i, index) => ({
@@ -10,7 +11,7 @@ describe("Windowing", () => {
   }));
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   const createFlatWrapper = () => (
@@ -44,7 +45,7 @@ describe("Windowing", () => {
       target: { scrollTop: 0 },
     });
 
-    jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
+    vi.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
   });
 
   it("renders 15 ({ start: 20, end: 35 }) in-view items", async () => {
@@ -55,7 +56,7 @@ describe("Windowing", () => {
       target: { scrollTop: 200 },
     });
 
-    jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
+    vi.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
 
     await waitFor(() => [getByTestId("test-id-20"), getByTestId("test-id-35")]);
 
