@@ -26,131 +26,17 @@ export function Resizeable() {
             flex: "1",
             minHeight: "0",
             height: 600,
+            width: "100%",
           }}
         >
           <ResizableComponent
             defaultWidth="240px"
-            maxWidth="33.33%"
             minWidth="240px"
+            maxWidth="33.33%"
             useGutterOffset
           >
-            <Layout.InlineSidebar isFinder>
-              <FinderNavigationComponent>
-                <FinderNavigationComponent.Group>
-                  <FinderNavigationComponent.Item hoverSettings={false}>
-                    <FinderNavigationComponent.ItemContent>
-                      <a className="finder-item-link" href="google.com">
-                        <Icon name="item" />
-                        All items
-                        <FinderNavigationComponent.ItemSettings>
-                          200
-                        </FinderNavigationComponent.ItemSettings>
-                      </a>
-                    </FinderNavigationComponent.ItemContent>
-                  </FinderNavigationComponent.Item>
-
-                  <FinderNavigationComponent.Item hoverSettings={false}>
-                    <FinderNavigationComponent.ItemContent>
-                      <a className="finder-item-link" href="google.com">
-                        <Icon name="user" />
-                        Assigned items
-                        <FinderNavigationComponent.ItemSettings>
-                          40
-                        </FinderNavigationComponent.ItemSettings>
-                      </a>
-                    </FinderNavigationComponent.ItemContent>
-                  </FinderNavigationComponent.Item>
-                </FinderNavigationComponent.Group>
-                <FinderNavigationComponent.Group title="folder">
-                  <FinderNavigationComponent.Item>
-                    <FinderNavigationComponent.ItemContent isFolder>
-                      <a className="finder-item-link" href="google.com">
-                        <Icon name="folder" />
-                        Another Folder
-                      </a>
-                    </FinderNavigationComponent.ItemContent>
-                    <FinderNavigationComponent.Item active>
-                      <FinderNavigationComponent.ItemContent isFolder>
-                        <a className="finder-item-link" href="google.com">
-                          <Icon name="folderOpen" />
-                          Another Folder
-                        </a>
-                      </FinderNavigationComponent.ItemContent>
-                      <FinderNavigationComponent.Item>
-                        <FinderNavigationComponent.ItemContent isFolder>
-                          <a className="finder-item-link" href="google.com">
-                            <Icon name="folder" />
-                            Another Folder
-                          </a>
-                        </FinderNavigationComponent.ItemContent>
-                        <FinderNavigationComponent.Item>
-                          <FinderNavigationComponent.ItemContent isFolder>
-                            <a className="finder-item-link" href="google.com">
-                              <Icon name="folder" />
-                              Another Folder
-                            </a>
-                          </FinderNavigationComponent.ItemContent>
-                          <FinderNavigationComponent.Item>
-                            <FinderNavigationComponent.ItemContent isFolder>
-                              <a className="finder-item-link" href="google.com">
-                                <Icon name="folder" />
-                                Another Folder
-                              </a>
-                            </FinderNavigationComponent.ItemContent>
-                            <FinderNavigationComponent.Item>
-                              <FinderNavigationComponent.ItemContent isFolder>
-                                <a
-                                  className="finder-item-link"
-                                  href="google.com"
-                                >
-                                  <Icon name="folder" />
-                                  Another Folder
-                                </a>
-                              </FinderNavigationComponent.ItemContent>
-                              <FinderNavigationComponent.Item>
-                                <FinderNavigationComponent.ItemContent isFolder>
-                                  <a
-                                    className="finder-item-link"
-                                    href="google.com"
-                                  >
-                                    <Icon name="folder" />
-                                    Another Folder
-                                  </a>
-                                </FinderNavigationComponent.ItemContent>
-                              </FinderNavigationComponent.Item>
-                            </FinderNavigationComponent.Item>
-                          </FinderNavigationComponent.Item>
-                        </FinderNavigationComponent.Item>
-                      </FinderNavigationComponent.Item>
-                      <FinderNavigationComponent.Item>
-                        <FinderNavigationComponent.ItemContent isFolder>
-                          <a className="finder-item-link" href="google.com">
-                            <Icon name="folder" />
-                            Another Folder
-                          </a>
-                        </FinderNavigationComponent.ItemContent>
-                      </FinderNavigationComponent.Item>
-                    </FinderNavigationComponent.Item>
-                    <FinderNavigationComponent.Item>
-                      <FinderNavigationComponent.ItemContent isFolder>
-                        <a className="finder-item-link" href="google.com">
-                          <Icon name="folder" />
-                          Another Folder
-                        </a>
-                      </FinderNavigationComponent.ItemContent>
-                    </FinderNavigationComponent.Item>
-                  </FinderNavigationComponent.Item>
-                  <FinderNavigationComponent.Item>
-                    <FinderNavigationComponent.ItemContent isFolder>
-                      <a className="finder-item-link" href="google.com">
-                        <Icon name="folder" />
-                        Another Folder
-                      </a>
-                    </FinderNavigationComponent.ItemContent>
-                  </FinderNavigationComponent.Item>
-                </FinderNavigationComponent.Group>
-              </FinderNavigationComponent>
-            </Layout.InlineSidebar>
+            {/* eslint-disable-next-line no-use-before-define */}
+            <FolderMenu />
           </ResizableComponent>
         </div>
       </StoryItem>
@@ -166,6 +52,7 @@ export function Resizeable() {
             minHeight: "0",
             border: "1px solid red",
             height: 200,
+            width: "100%",
           }}
         >
           <ResizableComponent
@@ -212,23 +99,153 @@ export function Resizeable() {
         title="Single resizeable element"
         description="Could be used to reveal a before and after of two images"
       >
-        <div style={{ border: "1px solid red", width: "50%" }}>
-          <p>Not resizeable</p>
-        </div>
-        <ResizableComponent
-          defaultWidth="50%"
-          maxWidth="75%"
-          minWidth="200px"
-          useGutterOffset
-        >
-          <div style={{ border: "1px solid green", width: "50%" }}>
-            <p>Hello</p>
+        <div style={{ width: "100%" }}>
+          <div style={{ border: "1px solid red", width: "50%" }}>
+            <p>Not resizeable</p>
           </div>
-        </ResizableComponent>
-        <div style={{ border: "1px solid red", width: "50%" }}>
-          <p>Not resizeable</p>
+          <ResizableComponent
+            defaultWidth="100%"
+            maxWidth="75%"
+            minWidth="200px"
+            useGutterOffset
+          >
+            <div style={{ border: "1px solid green" }}>
+              <p>Hello</p>
+            </div>
+          </ResizableComponent>
+          <div style={{ border: "1px solid red", width: "50%" }}>
+            <p>Not resizeable</p>
+          </div>
         </div>
       </StoryItem>
     </>
+  );
+}
+
+function FolderMenu() {
+  return (
+    <Layout.InlineSidebar isFinder>
+      <FinderNavigationComponent>
+        <FinderNavigationComponent.Group>
+          <FinderNavigationComponent.Item hoverSettings={false}>
+            <FinderNavigationComponent.ItemContent>
+              <a className="finder-item-link" href="https://www.google.com">
+                <Icon name="item" />
+                All items
+                <FinderNavigationComponent.ItemSettings>
+                  200
+                </FinderNavigationComponent.ItemSettings>
+              </a>
+            </FinderNavigationComponent.ItemContent>
+          </FinderNavigationComponent.Item>
+
+          <FinderNavigationComponent.Item hoverSettings={false}>
+            <FinderNavigationComponent.ItemContent>
+              <a className="finder-item-link" href="https://www.google.com">
+                <Icon name="user" />
+                Assigned items
+                <FinderNavigationComponent.ItemSettings>
+                  40
+                </FinderNavigationComponent.ItemSettings>
+              </a>
+            </FinderNavigationComponent.ItemContent>
+          </FinderNavigationComponent.Item>
+        </FinderNavigationComponent.Group>
+        <FinderNavigationComponent.Group title="folder">
+          <FinderNavigationComponent.Item>
+            <FinderNavigationComponent.ItemContent isFolder>
+              <a className="finder-item-link" href="https://www.google.com">
+                <Icon name="folder" />
+                Another Folder
+              </a>
+            </FinderNavigationComponent.ItemContent>
+            <FinderNavigationComponent.Item active>
+              <FinderNavigationComponent.ItemContent isFolder>
+                <a className="finder-item-link" href="https://www.google.com">
+                  <Icon name="folderOpen" />
+                  Another Folder
+                </a>
+              </FinderNavigationComponent.ItemContent>
+              <FinderNavigationComponent.Item>
+                <FinderNavigationComponent.ItemContent isFolder>
+                  <a className="finder-item-link" href="https://www.google.com">
+                    <Icon name="folder" />
+                    Another Folder
+                  </a>
+                </FinderNavigationComponent.ItemContent>
+                <FinderNavigationComponent.Item>
+                  <FinderNavigationComponent.ItemContent isFolder>
+                    <a
+                      className="finder-item-link"
+                      href="https://www.google.com"
+                    >
+                      <Icon name="folder" />
+                      Another Folder
+                    </a>
+                  </FinderNavigationComponent.ItemContent>
+                  <FinderNavigationComponent.Item>
+                    <FinderNavigationComponent.ItemContent isFolder>
+                      <a
+                        className="finder-item-link"
+                        href="https://www.google.com"
+                      >
+                        <Icon name="folder" />
+                        Another Folder
+                      </a>
+                    </FinderNavigationComponent.ItemContent>
+                    <FinderNavigationComponent.Item>
+                      <FinderNavigationComponent.ItemContent isFolder>
+                        <a
+                          className="finder-item-link"
+                          href="https://www.google.com"
+                        >
+                          <Icon name="folder" />
+                          Another Folder
+                        </a>
+                      </FinderNavigationComponent.ItemContent>
+                      <FinderNavigationComponent.Item>
+                        <FinderNavigationComponent.ItemContent isFolder>
+                          <a
+                            className="finder-item-link"
+                            href="https://www.google.com"
+                          >
+                            <Icon name="folder" />
+                            Another Folder
+                          </a>
+                        </FinderNavigationComponent.ItemContent>
+                      </FinderNavigationComponent.Item>
+                    </FinderNavigationComponent.Item>
+                  </FinderNavigationComponent.Item>
+                </FinderNavigationComponent.Item>
+              </FinderNavigationComponent.Item>
+              <FinderNavigationComponent.Item>
+                <FinderNavigationComponent.ItemContent isFolder>
+                  <a className="finder-item-link" href="https://www.google.com">
+                    <Icon name="folder" />
+                    Another Folder
+                  </a>
+                </FinderNavigationComponent.ItemContent>
+              </FinderNavigationComponent.Item>
+            </FinderNavigationComponent.Item>
+            <FinderNavigationComponent.Item>
+              <FinderNavigationComponent.ItemContent isFolder>
+                <a className="finder-item-link" href="https://www.google.com">
+                  <Icon name="folder" />
+                  Another Folder
+                </a>
+              </FinderNavigationComponent.ItemContent>
+            </FinderNavigationComponent.Item>
+          </FinderNavigationComponent.Item>
+          <FinderNavigationComponent.Item>
+            <FinderNavigationComponent.ItemContent isFolder>
+              <a className="finder-item-link" href="https://www.google.com">
+                <Icon name="folder" />
+                Another Folder
+              </a>
+            </FinderNavigationComponent.ItemContent>
+          </FinderNavigationComponent.Item>
+        </FinderNavigationComponent.Group>
+      </FinderNavigationComponent>
+    </Layout.InlineSidebar>
   );
 }
