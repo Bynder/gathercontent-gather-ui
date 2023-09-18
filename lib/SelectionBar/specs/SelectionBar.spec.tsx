@@ -21,6 +21,6 @@ describe("SelectionBar", () => {
       <SelectionBar.Actions>Actions</SelectionBar.Actions>
     );
 
-    expect(getByText(/Actions/i)).toBeInTheDocument();
+    expect(getByText(/Actions/i));
   });
 });
