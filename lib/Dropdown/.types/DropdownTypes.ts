@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 type onToggleArgs = {
   type: string;
@@ -7,11 +7,17 @@ type onToggleArgs = {
   };
 };
 
-export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
+interface RenderProps {
+  setShowContent: (showContent: boolean) => void,
+  showContent: boolean,
+}
+
+export interface DropdownProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   id: string;
   onToggle: (args: onToggleArgs) => void;
   onHide: () => void;
   autoPosition: boolean;
   block: boolean;
   persistShow: boolean;
+  children: ReactNode | ((renderProps: RenderProps) => ReactNode);
 }

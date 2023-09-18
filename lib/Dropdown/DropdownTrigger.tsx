@@ -5,7 +5,14 @@ import Button from "../Button";
 import Icon from "../Icon";
 import { DropdownContext } from "./DropdownProvider";
 
-interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "onClick"> {
+interface RenderProps {
+  toggleShowContent: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
+}
+
+interface Props
+  extends Omit<HTMLAttributes<HTMLButtonElement>, "onClick" | "children"> {
   useButton?: boolean;
   useSelect?: boolean;
   direction?: "top" | "bottom" | "left" | "right";
@@ -17,6 +24,7 @@ interface Props extends Omit<HTMLAttributes<HTMLButtonElement>, "onClick"> {
     arg: boolean,
     arg2: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {};
+  children: React.ReactNode | ((renderProps: RenderProps) => React.ReactNode);
 }
 
 export function DropdownTrigger({

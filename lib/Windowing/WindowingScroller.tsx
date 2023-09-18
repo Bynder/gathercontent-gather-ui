@@ -15,7 +15,7 @@ function WindowingScroller({ children, style, ...rest }: any) {
     allWindowingIds,
   }: any = useContext(WindowingContext);
 
-  const ref = useCallback((elem) => {
+  const ref = useCallback((elem: HTMLElement) => {
     if (elem !== null) {
       setHeight(elem.getBoundingClientRect().height || containerHeight);
       setScrollTop(elem.scrollTop);

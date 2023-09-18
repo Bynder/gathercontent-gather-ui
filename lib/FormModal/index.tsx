@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import PropTypes from "prop-types";
 import Button from "../Button";
 import ProgressButton from "../ProgressButton";
 import Modal from "../Modal";

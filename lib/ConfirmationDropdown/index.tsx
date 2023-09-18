@@ -66,6 +66,7 @@ export class ConfirmationDropdown extends Component {
         </ConfirmationDropdownContent>
         {/* @ts-expect-error TS(2339): Property 'id' does not exist on type 'Readonly<{}>... Remove this comment to see the full error message */}
         <Dropdown.Trigger data-testid={`${this.props.id}-trigger`}>
+          {/* @ts-expect-error */}
           {this.props.children}
         </Dropdown.Trigger>
       </Dropdown>

@@ -1,10 +1,10 @@
+import { describe, expect, it, vi } from "vitest";
 import { cleanup, render, fireEvent } from "@testing-library/react";
 import { InputConfirmationModal } from "lib";
-// @ts-expect-error TS(2307): Cannot find module 'tests/setup' or its correspond... Remove this comment to see the full error message
-import { React } from "tests/setup";
+import React from "react";
 
 describe("InputConfirmationModal", () => {
-  const onConfirmSpy = jest.fn();
+  const onConfirmSpy = vi.fn();
   const defaultProps = {
     onConfirm: onConfirmSpy,
     introTitle: "Do a delete",
@@ -13,7 +13,7 @@ describe("InputConfirmationModal", () => {
     confirmBody: "are you sure you are sure?",
     show: true,
 
-    onHide: jest.fn(),
+    onHide: vi.fn(),
   };
 
   const renderWrapper = (props = defaultProps) =>
@@ -22,12 +22,12 @@ describe("InputConfirmationModal", () => {
   afterEach(() => {
     cleanup();
 
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
-  test("makes you confirm by typing the keyword", () => {
+  it("makes you confirm by typing the keyword", () => {
     const { getByText, getByPlaceholderText } = renderWrapper();
 
     expect(getByText(defaultProps.introTitle));
@@ -62,7 +62,7 @@ describe("InputConfirmationModal", () => {
     expect(onConfirmSpy).toBeCalled();
   });
 
-  test("lets you skip the confirmation", () => {
+  it("lets you skip the confirmation", () => {
     const { getByText } = renderWrapper({
       ...defaultProps,
       // @ts-expect-error TS(2345): Argument of type '{ skipConfirm: boolean; onConfir... Remove this comment to see the full error message
