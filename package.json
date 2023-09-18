@@ -58,7 +58,7 @@
   ],
   "scripts": {
     "build": "rm -rf dist && babel --extensions '.ts,.tsx' lib/ --out-dir dist/lib && babel tailwind.config.js --out-dir dist && npm run compile:css && npm run legacy:copy-styles && npm run generate-types",
-    "compile:css": "ENABLE_PURGE=true parcel build styles/prod.scss && npm run compile:tailwind",
+    "compile:css": "ENABLE_PURGE=true PARCEL_WORKERS=0 parcel build styles/prod.scss && npm run compile:tailwind",
     "compile:tailwind": "tailwind build styles/prod-tailwind.css -o dist/styles/tailwind.css",
     "format:js": "prettier --write \"{lib,tests,stories/webapp}/**/*.js\"",
     "format:style": "stylelint \"{lib,styles}/**/*.scss\" --fix",
