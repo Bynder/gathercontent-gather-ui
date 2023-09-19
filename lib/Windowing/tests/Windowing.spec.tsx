@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import React from "react";
 import { Windowing } from "../..";

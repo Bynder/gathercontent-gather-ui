@@ -40,7 +40,7 @@ export function InputWithMentions({
   const removeMentionMarkup = (newVal: any) => {
     const pattern = /(?:@\[\w+\])+/gi;
     return newVal.replace(pattern, (match: any) => {
-      const mention = match.replace(/\]|\[/g, "");
+      const mention = match.replace(/\]|\[|\(\d+\)/g, "");
       return mention;
     });
   };
@@ -77,8 +77,6 @@ export function InputWithMentions({
         className="mentions-input"
         value={inputValue}
         onChange={handleChange}
-        markup="@[__display__]"
-        displayTransform={(id: any, display: any) => `@${display}`}
         suggestionsPortalHost={mentionsPortalRef.current}
         onFocus={() => setHasFocus(true)}
         onBlur={() => setHasFocus(false)}
@@ -89,6 +87,8 @@ export function InputWithMentions({
           onAdd={onMention}
           data={(search: any) => searchForUsers(search)}
           appendSpaceOnAdd
+          displayTransform={(id: any, display: any) => `@${display}`}
+          markup="@[__display__]"
           renderSuggestion={(suggestion: any) => (
             <Avatar url={suggestion.avatar} initials={suggestion.initials}>
               <AvatarInformation
