@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import Icon from "../Icon";
 import TooltipWrapper from "../TooltipWrapper";
@@ -96,28 +95,6 @@ export function StatusIndicator({
     </div>
   );
 }
-
-StatusIndicator.propTypes = {
-  className: PropTypes.string,
-  color: PropTypes.string,
-  label: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  actions: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  completed: PropTypes.bool,
-  showDescription: PropTypes.bool,
-  description: PropTypes.string,
-  preText: PropTypes.string,
-  collapsed: PropTypes.bool,
-  small: PropTypes.bool,
-  medium: PropTypes.bool,
-  softLabel: PropTypes.bool,
-  bordered: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  row: PropTypes.bool,
-  circleLarge: PropTypes.bool,
-  approved: PropTypes.bool,
-  labelFontSize: PropTypes.string,
-};
 
 StatusIndicator.defaultProps = {
   className: "",

@@ -1,15 +1,9 @@
-import React from 'react';
-import { bool, node } from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-function FolderRowContents({
-  show,
-  children,
-  highlight,
-  ...rest
-}: any) {
+function FolderRowContents({ show, children, highlight, ...rest }: any) {
   const classNames = cx(`folder-row__contents`, {
-    'folder-row__contents--highlight': highlight
+    "folder-row__contents--highlight": highlight,
   });
 
   return (
@@ -21,16 +15,10 @@ function FolderRowContents({
   );
 }
 
-FolderRowContents.propTypes = {
-  show: bool,
-  highlight: bool,
-  children: node
-};
-
 FolderRowContents.defaultProps = {
   show: true,
   highlight: false,
-  children: null
+  children: null,
 };
 
 export { FolderRowContents };

@@ -1,8 +1,8 @@
-import React from 'react';
-import cx from 'classnames';
-import Button from '../../Button';
-import Icon from '../../Icon';
-import { defaults, types } from './barTypes';
+import React from "react";
+import cx from "classnames";
+import Button from "../../Button";
+import Icon from "../../Icon";
+import { defaults } from "./barTypes";
 
 /**
  * @usage
@@ -18,10 +18,10 @@ function NotificationBarBase({
   ...rest
 }: any) {
   const classes = cx({
-    'cursor-pointer': clickHandler,
-    'text-center': center,
+    "cursor-pointer": clickHandler,
+    "text-center": center,
     flex: onClose,
-    'justify-end': center && onClose
+    "justify-end": center && onClose,
   });
 
   return (
@@ -37,7 +37,7 @@ function NotificationBarBase({
       {onClose && (
         <Button
           onClick={onClose}
-          types={['icon-only']}
+          types={["icon-only"]}
           className="notification__close ml-auto"
         >
           <Icon
@@ -52,7 +52,5 @@ function NotificationBarBase({
 }
 
 NotificationBarBase.defaultProps = defaults;
-
-NotificationBarBase.propTypes = types;
 
 export default NotificationBarBase;

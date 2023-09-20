@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useEffect } from "react";
-import { node, string } from "prop-types";
 import cx from "classnames";
 import { FinderPanelLayoutContext } from "./FinderPanelLayoutProvider";
 
@@ -25,11 +24,6 @@ function FinderPanelLayoutHeader({ children, className }: any) {
     </div>
   );
 }
-
-FinderPanelLayoutHeader.propTypes = {
-  children: node.isRequired,
-  className: string,
-};
 
 FinderPanelLayoutHeader.defaultProps = {
   className: "",

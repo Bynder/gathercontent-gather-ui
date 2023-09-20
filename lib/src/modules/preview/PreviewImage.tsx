@@ -1,5 +1,4 @@
 import React from "react";
-import { bool, node, string } from "prop-types";
 import { useImage } from "react-image";
 import cx from "classnames";
 // @ts-expect-error TS(2307): Cannot find module 'modules/loader/Loader' or its ... Remove this comment to see the full error message
@@ -69,15 +68,6 @@ function PreviewImage({
     </div>
   );
 }
-
-PreviewImage.propTypes = {
-  showLoader: bool,
-  fallback: node,
-  loader: node,
-  src: string.isRequired,
-  altText: string.isRequired,
-  title: string.isRequired,
-};
 
 PreviewImage.defaultProps = {
   showLoader: false,

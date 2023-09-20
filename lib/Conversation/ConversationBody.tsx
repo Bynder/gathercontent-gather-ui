@@ -1,11 +1,6 @@
-import React from 'react';
-import { node, string } from 'prop-types';
+import React from "react";
 
-export function ConversationBody({
-  children,
-  className,
-  ...rest
-}: any) {
+export function ConversationBody({ children, className, ...rest }: any) {
   return (
     <div className={className} {...rest}>
       {children}
@@ -13,11 +8,6 @@ export function ConversationBody({
   );
 }
 
-ConversationBody.propTypes = {
-  children: node.isRequired,
-  className: string
-};
-
 ConversationBody.defaultProps = {
-  className: ''
+  className: "",
 };

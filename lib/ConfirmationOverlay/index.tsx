@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import {
   ButtonPrimary,
@@ -68,15 +67,6 @@ export function ConfirmationOverlay({
     </div>
   );
 }
-
-ConfirmationOverlay.propTypes = {
-  cancel: PropTypes.func.isRequired,
-  confirm: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  confirmationText: PropTypes.string,
-  show: PropTypes.bool,
-  failureText: PropTypes.string,
-};
 
 ConfirmationOverlay.defaultProps = {
   className: "",

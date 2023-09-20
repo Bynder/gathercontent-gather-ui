@@ -51,7 +51,6 @@ export function FileCard(args: any) {
 
   function Preview({ children, loader }: any) {
     return (
-      // @ts-expect-error Type '{ children: any; src: string; altText: string; title: string; loader: any; showLoader: any; }' is not assignable to type 'IntrinsicAttributes
       <PreviewImage
         src={previewSrc}
         altText="preview image"
@@ -122,9 +121,7 @@ export function FileCard(args: any) {
         description="A card component which utilises the thumbnail size to display a file at a reduced size."
       >
         <FileCardComponent
-          // @ts-expect-error
           size="thumbnail"
-          // @ts-expect-error
           preview={<Preview loader={<Loader size="sm" />} />}
         />
       </StoryItem>
@@ -134,9 +131,7 @@ export function FileCard(args: any) {
         description="A card component which represents a loading file."
       >
         <div className="w-32 h-32">
-          {/* @ts-expect-error */}
           <FileCardComponent className="h-full" innerClassName="h-full">
-            {/* @ts-expect-error */}
             <Loader size="sm" className="h-full" />
           </FileCardComponent>
         </div>

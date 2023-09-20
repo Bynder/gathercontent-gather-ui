@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import cx from "classnames";
-import PropTypes from "prop-types";
 import Button from "../Button";
 
 export class InputWithButton extends Component {
@@ -71,18 +70,6 @@ InputWithButton.defaultProps = {
   disabled: false,
   buttonTextAfterClick: null,
   paddingSmall: false,
-};
-
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-InputWithButton.propTypes = {
-  inputId: PropTypes.string.isRequired,
-  buttonId: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  buttonTextAfterClick: PropTypes.string,
-  disabled: PropTypes.bool,
-  paddingSmall: PropTypes.bool,
 };
 
 export default InputWithButton;

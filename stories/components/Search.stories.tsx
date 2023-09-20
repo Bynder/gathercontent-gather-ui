@@ -7,7 +7,7 @@ export default {
   component: SearchComponent,
 };
 
-export const Search = () => {
+export function Search() {
   return (
     <div>
       <StoryItem
@@ -18,7 +18,6 @@ export const Search = () => {
           <SearchComponent.Input onChange={() => {}} />
           <SearchComponent.Body>
             <SearchComponent.Options>
-              {/* @ts-expect-error */}
               <SearchComponent.ToggleFilter
                 label="SearchComponent all projects"
                 clickHandler={() => {}}
@@ -45,7 +44,7 @@ export const Search = () => {
       </StoryItem>
     </div>
   );
-};
+}
 
 Search.parameters = {
   controls: { hideNoControlsWarning: true },

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import BoundaryClickWatcher from "../BoundaryClickWatcher";
 import { SearchContext } from "./SearchProvider";
 
@@ -26,12 +25,6 @@ export default function ListenerWithContext(props: any) {
 
 SearchBoundaryListener.defaultProps = {
   className: "",
-};
-
-SearchBoundaryListener.propTypes = {
-  children: PropTypes.node.isRequired,
-  hideBody: PropTypes.func.isRequired,
-  className: PropTypes.string,
 };
 
 export { SearchBoundaryListener as PureSearchBoundaryListener };

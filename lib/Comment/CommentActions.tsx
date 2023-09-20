@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { func } from "prop-types";
 import { ButtonIcon, Comment } from "lib";
 import Dropdown from "../Dropdown";
 import DropdownActionGroup from "../Dropdown/DropdownActionGroup";
@@ -22,7 +21,6 @@ function CommentActions({ onEditClick, onRemoveClick, className }: any) {
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
-                  // @ts-expect-error
                   title="Edit or delete this comment"
                 />
               )}
@@ -56,11 +54,6 @@ function CommentActions({ onEditClick, onRemoveClick, className }: any) {
     </div>
   ) : null;
 }
-
-CommentActions.propTypes = {
-  onEditClick: func,
-  onRemoveClick: func,
-};
 
 CommentActions.defaultProps = {
   onEditClick: () => {},

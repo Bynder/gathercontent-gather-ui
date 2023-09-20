@@ -76,13 +76,4 @@ AvatarGroup.defaultProps = {
   stacked: true,
 };
 
-AvatarGroup.propTypes = {
-  children: node.isRequired,
-  maximum: number,
-  className: string,
-  small: bool,
-  micro: bool,
-  stacked: bool,
-};
-
 export default AvatarGroup;

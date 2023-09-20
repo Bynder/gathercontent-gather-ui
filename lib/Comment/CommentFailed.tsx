@@ -1,12 +1,5 @@
-import React from 'react';
-import { string } from 'prop-types';
+import React from "react";
 
-export function CommentFailed({
-  errorText
-}: any) {
+export function CommentFailed({ errorText }: any) {
   return <span className="text-red-primary text-sm">{errorText}</span>;
 }
-
-CommentFailed.propTypes = {
-  errorText: string.isRequired
-};

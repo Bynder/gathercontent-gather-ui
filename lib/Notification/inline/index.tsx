@@ -1,6 +1,5 @@
 import React from "react";
-import { string } from "prop-types";
-import { defaults, types } from "./inlineTypes";
+import { defaults } from "./inlineTypes";
 import NotificationInlineDanger from "./NotificationInlineDanger";
 import NotificationInlineInformation from "./NotificationInlineInformation";
 import NotificationInlineSuccess from "./NotificationInlineSuccess";
@@ -30,11 +29,6 @@ export function NotificationInline({ level, children, ...rest }: any) {
 NotificationInline.defaultProps = {
   ...defaults,
   level: "information",
-};
-
-NotificationInline.propTypes = {
-  ...types,
-  level: string,
 };
 
 export default NotificationInline;

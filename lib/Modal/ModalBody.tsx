@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { NewModal } from "lib";
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode | JSX.Element;
   className?: string;
 }
 

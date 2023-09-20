@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { MenuItem, Dropdown } from "lib";
 
 function DueDateTime(props: any) {
@@ -52,11 +51,6 @@ function DueDateTime(props: any) {
     </Dropdown>
   );
 }
-
-DueDateTime.propTypes = {
-  setTime: PropTypes.func.isRequired,
-  time: PropTypes.string,
-};
 
 DueDateTime.defaultProps = {
   time: "",

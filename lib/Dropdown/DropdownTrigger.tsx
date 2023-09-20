@@ -24,7 +24,10 @@ interface Props
     arg: boolean,
     arg2: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {};
-  children: React.ReactNode | ((renderProps: RenderProps) => React.ReactNode);
+  children:
+    | React.ReactNode
+    | JSX.Element
+    | ((renderProps: RenderProps) => React.ReactNode | JSX.Element);
 }
 
 export function DropdownTrigger({

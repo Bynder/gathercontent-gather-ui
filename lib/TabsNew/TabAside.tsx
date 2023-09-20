@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { node } from "prop-types";
 import cx from "classnames";
 import { TabContext } from "./Tab";
 
@@ -29,10 +28,5 @@ function TabAside({ children }: any) {
     </div>
   );
 }
-
-TabAside.propTypes = {
-  // eslint-disable-next-line react/require-default-props
-  children: node,
-};
 
 export { TabAside };

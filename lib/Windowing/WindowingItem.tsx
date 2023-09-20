@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { node, number, shape } from "prop-types";
 import { WindowingContext } from "./Windowing";
 
 function WindowingItem({ children, index, style }: any) {
@@ -19,12 +18,6 @@ function WindowingItem({ children, index, style }: any) {
     </div>
   );
 }
-
-WindowingItem.propTypes = {
-  children: node.isRequired,
-  index: number.isRequired,
-  style: shape({}),
-};
 
 WindowingItem.defaultProps = {
   style: {},

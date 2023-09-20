@@ -1,5 +1,4 @@
 import React, { useContext, useState, useRef } from "react";
-import { func, string, number } from "prop-types";
 import cx from "classnames";
 import { TabsContext } from "./index";
 import { TabsRowContext } from "./TabsRow";
@@ -56,11 +55,5 @@ function Tab({ children, id, index }: any) {
     </TabContext.Provider>
   );
 }
-
-Tab.propTypes = {
-  children: func.isRequired,
-  id: string.isRequired,
-  index: number.isRequired,
-};
 
 export { Tab, TabContext };

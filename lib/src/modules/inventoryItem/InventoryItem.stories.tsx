@@ -34,7 +34,6 @@ export function InventoryItem(args: any) {
                 iconName="text"
                 isPreviewActive={isDragging}
                 tooltipClassName="inline-block"
-                // @ts-expect-error
                 disabled={args.disabled}
               />
             </div>

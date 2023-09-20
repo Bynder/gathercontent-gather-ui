@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { func, string } from "prop-types";
 import { Comment } from "lib";
 import ConfirmationOverlay from "../ConfirmationOverlay";
 import BoundaryClickWatcher from "../BoundaryClickWatcher";
@@ -30,13 +29,6 @@ function CommentDeleteConfirmation({
     </BoundaryClickWatcher>
   ) : null;
 }
-
-CommentDeleteConfirmation.propTypes = {
-  onConfirm: func.isRequired,
-  confirmButtonText: string,
-  onCancel: func,
-  failureText: string,
-};
 
 CommentDeleteConfirmation.defaultProps = {
   confirmButtonText: "Delete",

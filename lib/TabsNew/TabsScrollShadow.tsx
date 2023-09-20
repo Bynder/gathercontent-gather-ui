@@ -1,31 +1,28 @@
-import React, { Fragment } from 'react';
-import { string } from 'prop-types';
-import { useSpring, animated } from 'react-spring';
+import React, { Fragment } from "react";
+import { useSpring, animated } from "react-spring";
 
-export function TabsScrollShadow({
-  scrollPosition
-}: any) {
+export function TabsScrollShadow({ scrollPosition }: any) {
   const shouldTopShadowBeVisible =
-    scrollPosition === 'bottom' || scrollPosition === 'middle';
+    scrollPosition === "bottom" || scrollPosition === "middle";
   const shouldBottomShadowBeVisible =
-    scrollPosition === 'top' || scrollPosition === 'middle';
+    scrollPosition === "top" || scrollPosition === "middle";
 
   const [propsTop, setTop] = useSpring(() => ({
-    opacity: shouldTopShadowBeVisible ? 1 : 0
+    opacity: shouldTopShadowBeVisible ? 1 : 0,
   }));
   const [propsBottom, setBottom] = useSpring(() => ({
-    opacity: shouldBottomShadowBeVisible ? 1 : 0
+    opacity: shouldBottomShadowBeVisible ? 1 : 0,
   }));
 
   setTop({
-    opacity: shouldTopShadowBeVisible ? 1 : 0
+    opacity: shouldTopShadowBeVisible ? 1 : 0,
   });
 
   setBottom({
-    opacity: shouldBottomShadowBeVisible ? 1 : 0
+    opacity: shouldBottomShadowBeVisible ? 1 : 0,
   });
 
-  const initialClassName = 'absolute w-full h-4 -mr-4 pointer-events-none z-20';
+  const initialClassName = "absolute w-full h-4 -mr-4 pointer-events-none z-20";
 
   return (
     <>
@@ -40,7 +37,3 @@ export function TabsScrollShadow({
     </>
   );
 }
-
-TabsScrollShadow.propTypes = {
-  scrollPosition: string.isRequired
-};

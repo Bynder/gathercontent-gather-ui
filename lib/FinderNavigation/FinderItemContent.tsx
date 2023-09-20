@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 
 function FinderItemContent({
@@ -21,13 +20,6 @@ function FinderItemContent({
     </div>
   );
 }
-
-FinderItemContent.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  isFolder: PropTypes.bool,
-  hidden: PropTypes.bool,
-};
 
 FinderItemContent.defaultProps = {
   className: "",

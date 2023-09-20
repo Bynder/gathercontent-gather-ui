@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import uuid from 'uuid/v1';
-import { string, arrayOf, bool, instanceOf, shape, func } from 'prop-types';
-import cx from 'classnames';
-import { DeleteablePill } from '../DeleteablePill';
-import { useKeyDownHandlers } from './useKeyDownHandlers';
+import uuid from "uuid/v1";
+import cx from "classnames";
+import { DeleteablePill } from "../DeleteablePill";
+import { useKeyDownHandlers } from "./useKeyDownHandlers";
 
 function PillInput({
   className,
@@ -17,12 +16,12 @@ function PillInput({
   const checkPill = (pillName: any) => !checker || checker.regex.test(pillName);
   const initialPillsValidated = initialPills.map((pill: any) => ({
     ...pill,
-    isValid: checkPill(pill.name)
+    isValid: checkPill(pill.name),
   }));
 
   const [isFocused, setIsFocused] = useState(false);
   const [pills, setPills] = useState(initialPillsValidated);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const addPills = (pillNames: any) => {
     const pillsToAdd = pillNames.reduce((acc: any, pillName: any) => {
@@ -48,7 +47,7 @@ function PillInput({
   };
 
   const onChange = (value: any) => {
-    const pillNamesFromValue = value.split(' ');
+    const pillNamesFromValue = value.split(" ");
     const numberOfPillNames = pillNamesFromValue.length;
 
     if (numberOfPillNames === 1) {
@@ -70,14 +69,14 @@ function PillInput({
 
   const onBlur = () => {
     addPills([inputValue]);
-    setInputValue('');
+    setInputValue("");
     setIsFocused(false);
   };
 
   const containerClassName = cx(
     `${className} pill-input__container form__input h-padding-quarter h-padding-bottom-clear`,
     {
-      'pill-input--focused': isFocused
+      "pill-input--focused": isFocused,
     }
   );
 
@@ -93,28 +92,24 @@ function PillInput({
     removeLastPill,
     inputValue,
     setInputValue,
-    inputRef
+    inputRef,
   });
 
   return (
     <div className={containerClassName}>
-      {pills.map(({
-        id,
-        name,
-        isValid
-      }: any) => (
-          <DeleteablePill
-            key={id}
-            id={id}
-            name={name}
-            onRemove={() => removePill(id)}
-            warning={isValid ? null : checker.warning}
-          />
-        ))}
+      {pills.map(({ id, name, isValid }: any) => (
+        <DeleteablePill
+          key={id}
+          id={id}
+          name={name}
+          onRemove={() => removePill(id)}
+          warning={isValid ? null : checker.warning}
+        />
+      ))}
       <input
         {...rest}
         ref={inputRef}
-        placeholder={!pills.length ? placeholder : ''}
+        placeholder={!pills.length ? placeholder : ""}
         className="pill-input__input h-margin-bottom-quarter h-margin-right-quarter h-padding-bottom-quarter h-padding-top-quarter h-padding-left-quarter h-padding-right-quarter"
         value={inputValue}
         onChange={({ target: { value } }) => onChange(value)}
@@ -125,29 +120,12 @@ function PillInput({
   );
 }
 
-PillInput.propTypes = {
-  className: string,
-  placeholder: string,
-  checker: shape({
-    warning: string,
-    regex: instanceOf(RegExp)
-  }),
-  onPillsChange: func,
-  initialPills: arrayOf(
-    shape({ name: string.isRequired, id: string.isRequired })
-  )
-};
-
 PillInput.defaultProps = {
-  className: '',
+  className: "",
   checker: null,
-  placeholder: '',
+  placeholder: "",
   onPillsChange: () => {},
-  initialPills: []
-};
-
-PillInput.exportedPropTypes = {
-  pill: shape({ name: string, isValid: bool })
+  initialPills: [],
 };
 
 export { PillInput };

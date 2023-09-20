@@ -1,11 +1,6 @@
-import React from 'react';
-import { node, string } from 'prop-types';
+import React from "react";
 
-export function Header({
-  children,
-  className,
-  ...rest
-}: any) {
+export function Header({ children, className, ...rest }: any) {
   return (
     <header className={`layout-header ${className}`} {...rest}>
       {children}
@@ -13,11 +8,6 @@ export function Header({
   );
 }
 
-Header.propTypes = {
-  children: node.isRequired,
-  className: string
-};
-
 Header.defaultProps = {
-  className: ''
+  className: "",
 };

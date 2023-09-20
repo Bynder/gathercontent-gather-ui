@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { arrayOf, bool, shape, string } from "prop-types";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'link... Remove this comment to see the full error message
 import Linkify from "linkifyjs/react";
 import cx from "classnames";
@@ -75,14 +74,6 @@ function CommentText({
     </div>
   );
 }
-
-CommentText.propTypes = {
-  children: string.isRequired,
-  users: arrayOf(shape({})).isRequired,
-  currentUser: shape({}).isRequired,
-  showFullText: bool,
-  hasBeenEdited: bool,
-};
 
 CommentText.defaultProps = {
   showFullText: true,

@@ -21,7 +21,10 @@ interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   noBorder?: boolean;
   autoPositionLeft?: boolean;
   noTransform?: boolean;
-  children: React.ReactNode | ((showContent: boolean) => React.ReactNode);
+  children:
+    | React.ReactNode
+    | JSX.Element
+    | ((showContent: boolean) => React.ReactNode | JSX.Element);
 }
 
 export function DropdownContent({

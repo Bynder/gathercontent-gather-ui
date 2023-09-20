@@ -1,5 +1,4 @@
 import React from "react";
-import { node, string, bool } from "prop-types";
 import FinderPanelLayoutProvider from "./FinderPanelLayoutProvider";
 import FinderPanelLayoutLeft from "./FinderPanelLayoutLeft";
 import FinderPanelLayoutRight from "./FinderPanelLayoutRight";
@@ -23,12 +22,6 @@ FinderPanelLayout.Right = FinderPanelLayoutRight;
 FinderPanelLayout.Header = FinderPanelLayoutHeader;
 
 FinderPanelLayout.LeftContent = FinderPanelLayoutLeftContent;
-
-FinderPanelLayout.propTypes = {
-  children: node.isRequired,
-  className: string,
-  fixed: bool,
-};
 
 FinderPanelLayout.defaultProps = {
   className: "",

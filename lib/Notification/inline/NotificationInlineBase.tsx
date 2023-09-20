@@ -1,8 +1,7 @@
-import React from 'react';
-import { string } from 'prop-types';
-import cx from 'classnames';
-import { defaults, types } from './inlineTypes';
-import Icon from '../../Icon';
+import React from "react";
+import cx from "classnames";
+import { defaults } from "./inlineTypes";
+import Icon from "../../Icon";
 
 /**
  * @usage
@@ -11,14 +10,14 @@ import Icon from '../../Icon';
  */
 function NotificationInlineBase({
   children,
-  className = '',
-  textClassName = '',
+  className = "",
+  textClassName = "",
   iconName,
   showShadow,
   ...rest
 }: any) {
   const classes = cx({
-    'shadow-large': showShadow
+    "shadow-large": showShadow,
   });
   return (
     <div
@@ -37,10 +36,5 @@ function NotificationInlineBase({
 }
 
 NotificationInlineBase.defaultProps = defaults;
-
-NotificationInlineBase.propTypes = {
-  ...types,
-  iconName: string.isRequired
-};
 
 export default NotificationInlineBase;

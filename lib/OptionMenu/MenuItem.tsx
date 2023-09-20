@@ -1,7 +1,6 @@
-import React from 'react';
-import { string, func, bool } from 'prop-types';
-import cx from 'classnames';
-import Icon from '../Icon';
+import React from "react";
+import cx from "classnames";
+import Icon from "../Icon";
 
 function MenuItem({
   text,
@@ -13,15 +12,15 @@ function MenuItem({
 }: any) {
   const classes = cx(
     className,
-    'bg-white hover:bg-neutral-95',
-    'rounded-small w-48 border-0',
-    'py-1 px-2',
-    'mb-1',
-    'flex items-center',
-    'focus:outline-none focus:shadow-blue-focus-sm',
+    "bg-white hover:bg-neutral-95",
+    "rounded-small w-48 border-0",
+    "py-1 px-2",
+    "mb-1",
+    "flex items-center",
+    "focus:outline-none focus:shadow-blue-focus-sm",
     {
-      'text-neutral-20': !selected,
-      'text-blue-primary': selected
+      "text-neutral-20": !selected,
+      "text-blue-primary": selected,
     }
   );
 
@@ -32,7 +31,7 @@ function MenuItem({
           className="pr-2"
           name={iconName}
           defaultActiveColor={false}
-          types={selected ? ['primary-blue'] : []}
+          types={selected ? ["primary-blue"] : []}
           title={iconTitle}
         />
       )}
@@ -41,20 +40,11 @@ function MenuItem({
   );
 }
 
-MenuItem.propTypes = {
-  text: string.isRequired,
-  onClick: func.isRequired,
-  iconName: string,
-  iconTitle: string,
-  selected: bool,
-  className: string
-};
-
 MenuItem.defaultProps = {
   iconName: null,
-  iconTitle: '',
+  iconTitle: "",
   selected: false,
-  className: ''
+  className: "",
 };
 
 export { MenuItem };

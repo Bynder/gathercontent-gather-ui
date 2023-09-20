@@ -1,6 +1,5 @@
 import React from "react";
 import cx from "classnames";
-import { bool, string } from "prop-types";
 import { ButtonIconContained, TooltipWrapper } from "lib";
 
 export function InventoryItem({
@@ -39,17 +38,6 @@ export function InventoryItem({
     </TooltipWrapper>
   );
 }
-
-InventoryItem.propTypes = {
-  isPreviewActive: bool,
-  isPreview: bool,
-  iconName: string.isRequired,
-  tooltipClassName: string,
-  tooltipText: string,
-  className: string,
-  tooltipPlacement: string,
-  id: string,
-};
 
 InventoryItem.defaultProps = {
   isPreviewActive: false,

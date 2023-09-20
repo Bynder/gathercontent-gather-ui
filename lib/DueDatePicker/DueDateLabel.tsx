@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import Icon from "../Icon";
 
@@ -26,11 +25,6 @@ export function DueDateLabel({ overdue, children }: any) {
     </div>
   );
 }
-
-DueDateLabel.propTypes = {
-  children: PropTypes.node,
-  overdue: PropTypes.bool,
-};
 
 DueDateLabel.defaultProps = {
   children: null,

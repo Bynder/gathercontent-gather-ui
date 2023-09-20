@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Layout = ({ isOpen }: any) => {
+export function Layout({ isOpen }: any) {
   return (
     <LayoutComponent>
       <style>{"#root { padding: 0 }"}</style>
@@ -29,14 +29,12 @@ export const Layout = ({ isOpen }: any) => {
           <LayoutComponent.Body className="bg-green-primary border-8 border-solid border-green-30">
             Body
           </LayoutComponent.Body>
-          {/* @ts-expect-error TS(2322): Type '{ children: string; className: string; anima... Remove this comment to see the full error message */}
           <LayoutComponent.Footer
             className="bg-yellow-primary h-10 border-8 border-solid border-yellow-30"
             animatableProperties={{ width: isOpen ? "75%" : "100%" }}
           >
             Footer
           </LayoutComponent.Footer>
-          {/* @ts-expect-error TS(2786): 'LayoutComponent.OverlaySidebar' cannot be used as... Remove this comment to see the full error message */}
           <LayoutComponent.OverlaySidebar className="top-0" isOpen={isOpen}>
             <Sidebar />
           </LayoutComponent.OverlaySidebar>
@@ -47,4 +45,4 @@ export const Layout = ({ isOpen }: any) => {
       </LayoutComponent.Section>
     </LayoutComponent>
   );
-};
+}

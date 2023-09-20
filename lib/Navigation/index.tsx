@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 
 export function Navigation(props: any) {
@@ -34,17 +33,6 @@ export function Navigation(props: any) {
 Navigation.defaultProps = {
   tabs: false,
   className: "",
-};
-
-Navigation.propTypes = {
-  tabs: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.arrayOf(PropTypes.shape()),
-  ]).isRequired,
-  className: PropTypes.string,
 };
 
 export default Navigation;

@@ -1,15 +1,14 @@
-import * as React from 'react';
-import cx from 'classnames';
-import { node } from 'prop-types';
+import * as React from "react";
+import cx from "classnames";
 
 export function SidebarSectionHead({
   toggle,
   children,
-  className = '',
+  className = "",
   ...rest
 }: any) {
   const layoutClasses = cx({
-    'pr-2': toggle
+    "pr-2": toggle,
   });
 
   return (
@@ -21,10 +20,6 @@ export function SidebarSectionHead({
   );
 }
 
-SidebarSectionHead.propTypes = {
-  toggle: node
-};
-
 SidebarSectionHead.defaultProps = {
-  toggle: null
+  toggle: null,
 };

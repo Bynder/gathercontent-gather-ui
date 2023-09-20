@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
 function FinderItem({
   className,
@@ -12,10 +11,10 @@ function FinderItem({
   ...rest
 }: any) {
   const classNames = cx(`finder-item ${className}`, {
-    'finder-item-active': active,
-    'finder-item-disabled': disabled,
-    'finder-item-hover-settings': hoverSettings,
-    'finder-item-selected': selected
+    "finder-item-active": active,
+    "finder-item-disabled": disabled,
+    "finder-item-hover-settings": hoverSettings,
+    "finder-item-selected": selected,
   });
 
   return (
@@ -25,21 +24,12 @@ function FinderItem({
   );
 }
 
-FinderItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  active: PropTypes.bool,
-  className: PropTypes.string,
-  hoverSettings: PropTypes.bool,
-  selected: PropTypes.bool,
-  disabled: PropTypes.bool
-};
-
 FinderItem.defaultProps = {
   active: false,
-  className: '',
+  className: "",
   hoverSettings: true,
   selected: false,
-  disabled: false
+  disabled: false,
 };
 
 export default FinderItem;

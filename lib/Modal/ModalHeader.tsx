@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import { NewModal } from "lib";
 import { LegacyModalContext } from "./Modal";
 
@@ -17,11 +16,6 @@ function ModalHeader({ children, text, ...rest }: any) {
     </NewModal.Header>
   );
 }
-
-ModalHeader.propTypes = {
-  children: PropTypes.node,
-  text: PropTypes.string,
-};
 
 ModalHeader.defaultProps = {
   children: null,

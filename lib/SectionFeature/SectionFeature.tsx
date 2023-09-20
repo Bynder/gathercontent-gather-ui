@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 
 export function SectionFeature({
@@ -15,18 +14,6 @@ export function SectionFeature({
 
   return <div className={classNames}>{children}</div>;
 }
-
-SectionFeature.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.shape(),
-  ]).isRequired,
-  extendTop: PropTypes.bool,
-  enhanceIntro: PropTypes.bool,
-  className: PropTypes.string,
-};
 
 SectionFeature.defaultProps = {
   extendTop: false,

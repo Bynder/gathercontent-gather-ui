@@ -47,7 +47,6 @@ export function ConversationContext() {
       >
         <ConversationContextComponent
           label="A nice label"
-          // @ts-expect-error
           id="123"
           userCanResolve
           comments={mockComments}
@@ -64,7 +63,6 @@ export function ConversationContext() {
       >
         <ConversationContextComponent
           label="A nice label"
-          // @ts-expect-error
           id="123"
           resolved={false}
           userCanResolve

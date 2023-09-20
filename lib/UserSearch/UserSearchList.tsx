@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Dropdown from "../Dropdown";
 import Avatar from "../Avatar";
 import AvatarInformation from "../Avatar/AvatarInformation";
@@ -54,19 +53,5 @@ function UserSearchList({
     </ul>
   );
 }
-
-UserSearchList.propTypes = {
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  users: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  addUser: PropTypes.func.isRequired,
-  displayEmail: PropTypes.bool.isRequired,
-  selectedUserIds: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-  noUsers: PropTypes.bool.isRequired,
-  noUserDisplay: PropTypes.oneOfType([PropTypes.node, PropTypes.string])
-    .isRequired,
-  hideAfterPerformingAction: PropTypes.bool.isRequired,
-};
 
 export default UserSearchList;

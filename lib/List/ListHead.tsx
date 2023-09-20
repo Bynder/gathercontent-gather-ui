@@ -1,10 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-function ListHead({
-  title,
-  action
-}: any) {
+function ListHead({ title, action }: any) {
   if (!title && !action) {
     return null;
   }
@@ -21,12 +17,7 @@ function ListHead({
 
 ListHead.defaultProps = {
   title: null,
-  action: null
-};
-
-ListHead.propTypes = {
-  title: PropTypes.string,
-  action: PropTypes.node
+  action: null,
 };
 
 export default ListHead;

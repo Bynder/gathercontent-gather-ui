@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { bool, node, string, oneOfType, func } from 'prop-types';
-import cx from 'classnames';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
-function FolderRow({
-  children,
-  open,
-  className,
-  ...rest
-}: any) {
+function FolderRow({ children, open, className, ...rest }: any) {
   const [show, setShow] = useState(open);
 
   useEffect(() => {
@@ -15,7 +9,7 @@ function FolderRow({
   }, [open]);
 
   const classNames = cx(`folder-row ${className}`, {
-    'folder-row--open': show
+    "folder-row--open": show,
   });
 
   return (
@@ -25,15 +19,9 @@ function FolderRow({
   );
 }
 
-FolderRow.propTypes = {
-  children: oneOfType([node, func]).isRequired,
-  className: string,
-  open: bool
-};
-
 FolderRow.defaultProps = {
-  className: '',
-  open: false
+  className: "",
+  open: false,
 };
 
 export { FolderRow };

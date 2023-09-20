@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { bool, node } from "prop-types";
 import { action } from "@storybook/addon-actions";
 import { Droppable } from "../Droppable";
 import NotificationBar from "../../Notification/bar";
@@ -22,19 +21,11 @@ function Message({ children, canDrop, isOver, isDragging }: any) {
   }
 
   return (
-    // @ts-expect-error TS(2322): Type '{ children: any; level: string; style: { hei... Remove this comment to see the full error message
     <NotificationBar level={level} style={{ height: "200px" }}>
       {children}
     </NotificationBar>
   );
 }
-
-Message.propTypes = {
-  children: node.isRequired,
-  canDrop: bool.isRequired,
-  isOver: bool.isRequired,
-  isDragging: bool.isRequired,
-};
 
 function DndDropNotification() {
   const { isDragging, setFailurePreview }: any = useContext(DndContext);
@@ -51,7 +42,7 @@ function DndDropNotification() {
     <Droppable
       acceptDragTypes={["item", "folder"]}
       onDrop={action("something was dropped")}
-      canDropChecker={({ type }, monitor) => {
+      canDropChecker={({ type }: any, monitor: any) => {
         const typeIsItem = type === "item";
 
         if (!typeIsItem) {
@@ -65,7 +56,7 @@ function DndDropNotification() {
         return typeIsItem;
       }}
     >
-      {({ canDrop, isOver }, defineDropRef) => (
+      {({ canDrop, isOver }: any, defineDropRef: any) => (
         <div ref={defineDropRef} className="h-margin-top">
           <Message isDragging={isDragging} isOver={isOver} canDrop={canDrop}>
             {(!isDragging || (!canDrop && !isOver)) &&

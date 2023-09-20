@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import cx from "classnames";
-import { node, string } from "prop-types";
 import { CommentBody } from "./CommentBody";
 import { CommentMeta } from "./CommentMeta";
 import { CommentReplyCount } from "./CommentReplyCount";
@@ -27,11 +26,6 @@ function Comment({ children, className, ...rest }: any) {
     </div>
   );
 }
-
-Comment.propTypes = {
-  children: node.isRequired,
-  className: string,
-};
 
 Comment.defaultProps = {
   className: "",

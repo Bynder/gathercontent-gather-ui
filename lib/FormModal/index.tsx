@@ -5,7 +5,7 @@ import Modal from "../Modal";
 
 interface Props {
   title: string;
-  children: ReactNode;
+  children: ReactNode | JSX.Element;
   submitText: string;
   submitHandler: () => void;
   cancelText: string;

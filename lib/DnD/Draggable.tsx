@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { func, shape, node } from "prop-types";
 import { DragPreviewImage, useDrag } from "react-dnd-cjs";
 import { getEmptyImage } from "react-dnd-html5-backend-cjs";
 import { DndContext } from "./DndProvider";
@@ -46,16 +45,6 @@ function Draggable({
     </>
   );
 }
-
-Draggable.propTypes = {
-  children: func.isRequired,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  item: shape().isRequired,
-  preview: node,
-  onBeginDrag: func,
-  onEndDrag: func,
-  canDragChecker: func,
-};
 
 Draggable.defaultProps = {
   preview: null,

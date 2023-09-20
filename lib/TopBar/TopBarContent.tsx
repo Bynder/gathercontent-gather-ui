@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import { Col } from "lib";
 
@@ -23,20 +22,6 @@ export function TopBarContent({
     </Col>
   );
 }
-
-TopBarContent.propTypes = {
-  left: PropTypes.bool,
-  center: PropTypes.bool,
-  right: PropTypes.bool,
-  collapse: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    PropTypes.arrayOf(PropTypes.shape()),
-  ]),
-  className: PropTypes.string,
-};
 
 TopBarContent.defaultProps = {
   left: false,

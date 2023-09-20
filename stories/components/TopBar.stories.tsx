@@ -28,7 +28,6 @@ export const Topbar = () => (
       description="TopBar is the top bar used throughout the whole site, can add a fixed attribute to fix it to the top."
     >
       <TopBar>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -47,7 +46,6 @@ export const Topbar = () => (
             </Button>
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell>
             <AvatarGroup maximum={2}>
@@ -73,7 +71,6 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -81,7 +78,6 @@ export const Topbar = () => (
     </StoryItem>
     <StoryItem title="TopBar dark" description="TopBar with the dark theme.">
       <TopBar useDarkTheme>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -100,7 +96,6 @@ export const Topbar = () => (
             </Button>
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell>
             <AvatarGroup maximum={2}>
@@ -126,7 +121,6 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -138,7 +132,6 @@ export const Topbar = () => (
       description="TopBar with the light grey theme."
     >
       <TopBar useLightGreyTheme>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={5}>
           <TopBarCell>
             <Icon
@@ -157,7 +150,6 @@ export const Topbar = () => (
             </Button>
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element; right: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={4}>
           <TopBarCell bordered>
             <ButtonIcon
@@ -169,7 +161,6 @@ export const Topbar = () => (
             />
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: string; center: true; xs: number... Remove this comment to see the full error message */}
         <TopBarContent center xs={12} md={3}>
           Centered content
         </TopBarContent>
@@ -181,7 +172,6 @@ export const Topbar = () => (
       description="Example of the TopBar used on the app."
     >
       <TopBar>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
@@ -205,14 +195,12 @@ export const Topbar = () => (
             </Navigation>
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
-                  {/* @ts-expect-error TS(2741): Property 'displayChecked' is missing in type '{ la... Remove this comment to see the full error message */}
                   <Search.ToggleFilter
                     label="Search all projects"
                     clickHandler={() => {}}
@@ -270,7 +258,6 @@ export const Topbar = () => (
           </NotificationBar>
         }
       >
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; left: true; xs: numbe... Remove this comment to see the full error message */}
         <TopBarContent left xs={10} md={10}>
           <TopBarCell>
             <Logo />
@@ -294,14 +281,12 @@ export const Topbar = () => (
             </Navigation>
           </TopBarCell>
         </TopBarContent>
-        {/* @ts-expect-error TS(2322): Type '{ children: Element[]; right: true; xs: numb... Remove this comment to see the full error message */}
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
             <Search className="top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
-                  {/* @ts-expect-error TS(2741): Property 'displayChecked' is missing in type '{ la... Remove this comment to see the full error message */}
                   <Search.ToggleFilter
                     label="Search all projects"
                     clickHandler={() => {}}
