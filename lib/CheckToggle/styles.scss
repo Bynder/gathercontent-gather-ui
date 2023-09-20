@@ -10,16 +10,18 @@ $borderColour: #F8FBFC;
   border-style: solid;
   border-width: 1px;
   cursor: pointer;
-  height: 22px;
+  height: 20px;
+  left: 1px;
   outline: revert;
   outline-offset: 0px;
   position: absolute;
-  width: 34px;
+  top: 1px;
+  width: 32px;
   z-index: 1;
 
   .size-small & {
-    height: 20px;
-    width: 30px;
+    height: 18px;
+    width: 28px;
   }
 
   &:checked:hover + .toggle-switch__label {
