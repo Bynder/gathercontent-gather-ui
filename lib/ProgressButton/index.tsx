@@ -1,59 +1,43 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, useState } from "react";
 import cx from "classnames";
 import Button from "../Button";
 import Icon from "../Icon";
 
-export class ProgressButton extends Component {
-  constructor(props: any) {
-    super(props);
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  buttonType?: string;
+  isSubmit?: boolean;
+  clickHandler: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  callbackCanExecute?: boolean;
+  showSpinner?: boolean;
+  useShowSpinnerProp?: boolean;
+  autoSpinner?: boolean;
+  spinnerText?: string;
+  onCallbackResolved?: (arg: any) => void;
+}
 
-    this.state = {
-      showSpinner: false,
-    };
-  }
-
-  static defaultProps = {
-    buttonType: "primary",
-    isSubmit: false,
-    callbackCanExecute: true,
-    showSpinner: false,
-    useShowSpinnerProp: false,
-    disabled: false,
-    autoSpinner: false,
-    spinnerText: null,
-    className: "",
-    onCallbackResolved: null,
-  };
-
-  static propTypes = {
-    buttonType: PropTypes.string,
-    clickHandler: PropTypes.func.isRequired,
-    value: PropTypes.node.isRequired,
-    isSubmit: PropTypes.bool,
-    callbackCanExecute: PropTypes.bool,
-    showSpinner: PropTypes.bool,
-    useShowSpinnerProp: PropTypes.bool,
-    disabled: PropTypes.bool,
-    autoSpinner: PropTypes.bool,
-    spinnerText: PropTypes.string,
-    className: PropTypes.string,
-    onCallbackResolved: PropTypes.func,
-  };
-
-  getSpinningState() {
+export function ProgressButton({
+  buttonType = "primary",
+  isSubmit = false,
+  callbackCanExecute = true,
+  showSpinner = false,
+  useShowSpinnerProp = false,
+  disabled,
+  autoSpinner = false,
+  spinnerText,
+  className,
+  onCallbackResolved,
+  value,
+  clickHandler,
+}: Props) {
+  const [showSpinnerState, setShowSpinnerState] = useState(false);
+  const getSpinningState = () => {
     const classes = cx({
-      // @ts-expect-error TS(2339): Property 'spinnerText' does not exist on type 'Rea... Remove this comment to see the full error message
-      "is-hidden": !this.props.spinnerText,
-      // @ts-expect-error TS(2339): Property 'spinnerText' does not exist on type 'Rea... Remove this comment to see the full error message
-      "progress-button__spinner-text": this.props.spinnerText,
+      "is-hidden": !spinnerText,
+      "progress-button__spinner-text": spinnerText,
     });
     return (
       <span className="progress-button__wrapper">
-        <span className={classes}>
-          {/* @ts-expect-error TS(2339): Property 'spinnerText' does not exist on type 'Rea... Remove this comment to see the full error message */}
-          {this.props.spinnerText || this.props.value}
-        </span>
+        <span className={classes}>{spinnerText || value}</span>
         <Icon
           className="progress-button__icon"
           name="loader"
@@ -62,71 +46,50 @@ export class ProgressButton extends Component {
         />
       </span>
     );
-  }
+  };
 
-  getNormalState() {
-    // @ts-expect-error TS(2339): Property 'value' does not exist on type 'Readonly<... Remove this comment to see the full error message
-    return <span>{this.props.value}</span>;
-  }
+  const getNormalState = () => <span>{value}</span>;
 
-  showSpinner() {
-    this.setState({ showSpinner: true });
-  }
-
-  clickHandler = async (e: any) => {
-    // @ts-expect-error TS(2339): Property 'showSpinner' does not exist on type 'Rea... Remove this comment to see the full error message
-    if (this.state.showSpinner || !this.props.callbackCanExecute) {
+  const handleClick = async (e: any) => {
+    if (showSpinner || !callbackCanExecute) {
       return;
     }
 
-    this.showSpinner();
-    // @ts-expect-error TS(2339): Property 'clickHandler' does not exist on type 'Re... Remove this comment to see the full error message
-    const result = await this.props.clickHandler(e);
-    // @ts-expect-error TS(2339): Property 'autoSpinner' does not exist on type 'Rea... Remove this comment to see the full error message
-    if (this.props.autoSpinner) {
-      this.setState({ showSpinner: false });
+    setShowSpinnerState(true);
+    const result = await clickHandler(e);
+    if (autoSpinner) {
+      setShowSpinnerState(false);
     }
 
-    // @ts-expect-error TS(2339): Property 'onCallbackResolved' does not exist on ty... Remove this comment to see the full error message
-    if (this.props.onCallbackResolved) {
-      // @ts-expect-error TS(2339): Property 'onCallbackResolved' does not exist on ty... Remove this comment to see the full error message
-      this.props.onCallbackResolved(result);
+    if (onCallbackResolved) {
+      onCallbackResolved(result);
     }
   };
 
-  render() {
-    let content = null;
-    // @ts-expect-error TS(2339): Property 'useShowSpinnerProp' does not exist on ty... Remove this comment to see the full error message
-    if (this.props.useShowSpinnerProp) {
-      // @ts-expect-error TS(2339): Property 'showSpinner' does not exist on type 'Rea... Remove this comment to see the full error message
-      if (this.props.showSpinner) {
-        content = this.getSpinningState();
-      } else {
-        content = this.getNormalState();
-      }
-      // @ts-expect-error TS(2339): Property 'showSpinner' does not exist on type 'Rea... Remove this comment to see the full error message
-    } else if (this.state.showSpinner) {
-      content = this.getSpinningState();
+  let content = null;
+  if (useShowSpinnerProp) {
+    if (showSpinner) {
+      content = getSpinningState();
     } else {
-      content = this.getNormalState();
+      content = getNormalState();
     }
-
-    return (
-      <Button
-        // @ts-expect-error TS(2339): Property 'buttonType' does not exist on type 'Read... Remove this comment to see the full error message
-        types={[this.props.buttonType]}
-        clickHandler={this.clickHandler}
-        // @ts-expect-error TS(2339): Property 'isSubmit' does not exist on type 'Readon... Remove this comment to see the full error message
-        isSubmit={this.props.isSubmit}
-        // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
-        disabled={this.props.disabled}
-        // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
-        className={this.props.className}
-      >
-        {content}
-      </Button>
-    );
+  } else if (showSpinnerState) {
+    content = getSpinningState();
+  } else {
+    content = getNormalState();
   }
+
+  return (
+    <Button
+      types={[buttonType]}
+      clickHandler={handleClick}
+      isSubmit={isSubmit}
+      disabled={disabled}
+      className={className}
+    >
+      {content}
+    </Button>
+  );
 }
 
 export default ProgressButton;

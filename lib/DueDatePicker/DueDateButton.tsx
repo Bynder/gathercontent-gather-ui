@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import moment from "moment";
 import cx from "classnames";
 import Icon from "../Icon";
@@ -53,14 +52,6 @@ function DueDateButton({ children, ...props }: any) {
     </span>
   );
 }
-
-DueDateButton.propTypes = {
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  dueDate: PropTypes.shape(),
-  children: PropTypes.string,
-  userCanSetDueDate: PropTypes.bool.isRequired,
-  types: PropTypes.arrayOf(PropTypes.string),
-};
 
 DueDateButton.defaultProps = {
   dueDate: null,

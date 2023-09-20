@@ -9,7 +9,7 @@ export default {
   component: SelectionBarComponent,
 };
 
-export const SelectionBar = () => {
+export function SelectionBar() {
   const example1selectedIds = [1, 2, 3];
   const example2selectedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const type = "items";
@@ -17,7 +17,6 @@ export const SelectionBar = () => {
   return (
     <div>
       <StoryItem title="SelectionBarComponent">
-        {/* @ts-expect-error */}
         <SelectionBarComponent hasSelected={example1selectedIds.length}>
           <SelectionBarComponent.Information>
             <Button
@@ -53,7 +52,6 @@ export const SelectionBar = () => {
         title="SelectionBarComponent"
         description="fixed SelectionBarComponent"
       >
-        {/* @ts-expect-error */}
         <SelectionBarComponent hasSelected={example2selectedIds.length} fixed>
           <SelectionBarComponent.Information>
             <Button
@@ -91,7 +89,7 @@ export const SelectionBar = () => {
       </StoryItem>
     </div>
   );
-};
+}
 
 SelectionBar.parameters = {
   controls: { hideNoControlsWarning: true },

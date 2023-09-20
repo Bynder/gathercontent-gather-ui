@@ -11,7 +11,6 @@ export function Flat() {
   }));
 
   return (
-    // @ts-expect-error TS(2322): Type '{ id: number; }[]' is not assignable to type... Remove this comment to see the full error message
     <Windowing itemHeight={50} allIds={items} containerHeight="800px">
       {/* @ts-expect-error TS(2339): Property 'Scroller' does not exist on type '{ ({ c... Remove this comment to see the full error message */}
       <Windowing.Scroller>

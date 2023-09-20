@@ -1,6 +1,5 @@
-import React from 'react';
-import { bool, string, number } from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
 function SelectionModalCategory({
   isSelected,
@@ -13,14 +12,14 @@ function SelectionModalCategory({
   const buttonClasses = cx(
     `bg-white relative border-solid flex w-full rounded outline-none px-3 py-2 border border-neutral-90 items-center ${className}`,
     {
-      'text-input-border-focus': isSelected,
-      'hover:border-blue-primary': !isSelected
+      "text-input-border-focus": isSelected,
+      "hover:border-blue-primary": !isSelected,
     }
   );
 
-  const nameClasses = cx('m-0 mb-1', {
-    'text-neutral-20': !isSelected,
-    'text-blue-primary': isSelected
+  const nameClasses = cx("m-0 mb-1", {
+    "text-neutral-20": !isSelected,
+    "text-blue-primary": isSelected,
   });
 
   return (
@@ -38,19 +37,11 @@ function SelectionModalCategory({
   );
 }
 
-SelectionModalCategory.propTypes = {
-  isSelected: bool,
-  className: string,
-  name: string.isRequired,
-  subText: string,
-  counter: number
-};
-
 SelectionModalCategory.defaultProps = {
   isSelected: false,
-  className: '',
-  subText: '',
-  counter: 0
+  className: "",
+  subText: "",
+  counter: 0,
 };
 
 export default SelectionModalCategory;

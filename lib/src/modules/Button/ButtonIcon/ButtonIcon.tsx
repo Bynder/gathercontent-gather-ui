@@ -1,14 +1,8 @@
 import React from "react";
-import { bool } from "prop-types";
 import cx from "classnames";
 import { Icon } from "lib";
 import { ButtonBase } from "../ButtonBase";
-import {
-  sizes,
-  getSizeClasses,
-  buttonIconPropTypes,
-  buttonIconDefaultProps,
-} from "../common";
+import { sizes, getSizeClasses, buttonIconDefaultProps } from "../common";
 
 function ButtonIcon({
   className,
@@ -50,11 +44,6 @@ function ButtonIcon({
 }
 
 ButtonIcon.sizes = sizes;
-
-ButtonIcon.propTypes = {
-  ...buttonIconPropTypes,
-  enabled: bool,
-};
 
 ButtonIcon.defaultProps = {
   ...buttonIconDefaultProps,

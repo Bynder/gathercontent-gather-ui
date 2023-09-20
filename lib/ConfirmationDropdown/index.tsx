@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import Dropdown from "../Dropdown";
 import ConfirmationDropdownContent from "./ConfirmationDropdownContent";
@@ -73,25 +72,6 @@ export class ConfirmationDropdown extends Component {
     );
   }
 }
-
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-ConfirmationDropdown.propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  dropdownContent: PropTypes.node.isRequired,
-  confirmationPromise: PropTypes.func.isRequired,
-  onHide: PropTypes.func,
-  hideOnCompletion: PropTypes.bool,
-  className: PropTypes.string,
-  isDanger: PropTypes.bool,
-  disabled: PropTypes.bool,
-  confirmationText: PropTypes.string,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  position: PropTypes.shape(),
-  onCancel: PropTypes.func,
-  secondaryAction: PropTypes.node,
-  onCompletion: PropTypes.func,
-};
 
 // @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 ConfirmationDropdown.defaultProps = {

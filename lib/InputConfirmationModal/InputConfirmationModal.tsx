@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { node, string, bool, func, oneOfType } from "prop-types";
 import {
   Modal,
   FormInput,
@@ -72,21 +71,6 @@ export function InputConfirmationModal({
     </Modal.Container>
   );
 }
-
-InputConfirmationModal.propTypes = {
-  onHide: func,
-  show: bool,
-  introTitle: string.isRequired,
-  confirmTitle: string.isRequired,
-  introBody: oneOfType([string, node]).isRequired,
-  confirmBody: oneOfType([string, node]).isRequired,
-  buttonText: string,
-  confirmKeyword: string,
-  onConfirm: func.isRequired,
-  className: string,
-  loading: bool,
-  skipConfirm: bool,
-};
 
 InputConfirmationModal.defaultProps = {
   onHide: () => {},

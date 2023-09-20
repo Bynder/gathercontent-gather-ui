@@ -1,14 +1,14 @@
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import CheckToggleComponent from '../../lib/CheckToggle';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import CheckToggleComponent from "../../lib/CheckToggle";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Check Toggle',
-  component: CheckToggleComponent
+  title: "Legacy/Check Toggle",
+  component: CheckToggleComponent,
 };
 
-export const CheckToggle = () => {
+export function CheckToggle() {
   return (
     <div>
       <StoryItem
@@ -50,13 +50,13 @@ export const CheckToggle = () => {
           id="four"
           labelRight={
             <>
-              Limit to{' '}
+              Limit to{" "}
               <input
                 type="number"
                 min={2}
-                onChange={action('input changed')}
+                onChange={action("input changed")}
                 className="w-1/4 rounded border border-solid border-neutral-90 py-quarter px-half shadow"
-              />{' '}
+              />{" "}
               fields
             </>
           }
@@ -67,8 +67,8 @@ export const CheckToggle = () => {
       </StoryItem>
     </div>
   );
-};
+}
 
 CheckToggle.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import { string, func, oneOfType } from "prop-types";
 import logoSVG from "../../assets/logo.svg";
 
 /**
@@ -24,11 +23,6 @@ export function Logo(props: any) {
 Logo.defaultProps = {
   url: "",
   alt: "GatherContent Logo",
-};
-
-Logo.propTypes = {
-  url: oneOfType([string, func]),
-  alt: string,
 };
 
 export default Logo;

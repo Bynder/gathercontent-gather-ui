@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { node, arrayOf, oneOfType, string, func } from "prop-types";
 import cx from "classnames";
 import Button from "../Button";
 
@@ -74,14 +73,6 @@ export function Guideline({ children, title, onToggle, className, dir }: any) {
     </div>
   );
 }
-
-Guideline.propTypes = {
-  children: oneOfType([node, arrayOf(node), string]),
-  title: string.isRequired,
-  onToggle: func,
-  className: string,
-  dir: string,
-};
 
 Guideline.defaultProps = {
   children: "",

@@ -62,10 +62,11 @@ interface Props {
   outsideClickEventValidator?: (e?: React.MouseEvent) => boolean;
   children:
     | React.ReactNode
+    | JSX.Element
     | ((
         boundaryIsActive: boolean,
         boundaryIsFocussed: boolean
-      ) => React.ReactNode);
+      ) => React.ReactNode | JSX.Element);
 }
 
 export function BoundaryClickWatcher({

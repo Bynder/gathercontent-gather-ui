@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Button from "../Button";
 
 export function withModalTrigger(buttonProps: any) {
@@ -10,10 +9,6 @@ export function withModalTrigger(buttonProps: any) {
       this.showModal = this.showModal.bind(this);
       this.onHide = this.onHide.bind(this);
     }
-
-    static propTypes = {
-      children: PropTypes.node.isRequired,
-    };
 
     onHide() {
       this.setState({ show: false });

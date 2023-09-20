@@ -2,12 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { Icon } from "lib";
 import { ButtonBase } from "../ButtonBase";
-import {
-  sizes,
-  getSizeClasses,
-  buttonIconPropTypes,
-  buttonIconDefaultProps,
-} from "../common";
+import { sizes, getSizeClasses, buttonIconDefaultProps } from "../common";
 
 export function ButtonIconDanger({
   className,
@@ -45,7 +40,5 @@ export function ButtonIconDanger({
 }
 
 ButtonIconDanger.sizes = sizes;
-
-ButtonIconDanger.propTypes = buttonIconPropTypes;
 
 ButtonIconDanger.defaultProps = buttonIconDefaultProps;

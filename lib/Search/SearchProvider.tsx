@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 export const SearchContext = React.createContext({});
 
-export function SearchProvider({ children }: { children: React.ReactNode }) {
+export function SearchProvider({
+  children,
+}: {
+  children: React.ReactNode | JSX.Element;
+}) {
   const [showBody, setShowBody] = useState(false);
   const displayBody = () => setShowBody(true);
 

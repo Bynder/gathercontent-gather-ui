@@ -1,7 +1,7 @@
-import React from 'react';
-import cx from 'classnames';
-import { ButtonBase } from '../ButtonBase';
-import { propTypes, defaultProps, sizes } from '../common';
+import React from "react";
+import cx from "classnames";
+import { ButtonBase } from "../ButtonBase";
+import { defaultProps, sizes } from "../common";
 
 function ButtonSecondary({
   children,
@@ -10,8 +10,8 @@ function ButtonSecondary({
   active,
   ...rest
 }: any) {
-  const classes = cx('button-secondary inherit-color-icon', className, {
-    'button-secondary-active': active
+  const classes = cx("button-secondary inherit-color-icon", className, {
+    "button-secondary-active": active,
   });
 
   return (
@@ -25,8 +25,6 @@ function ButtonSecondary({
     </ButtonBase>
   );
 }
-
-ButtonSecondary.propTypes = propTypes;
 
 ButtonSecondary.defaultProps = defaultProps;
 

@@ -1,20 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Input from "./Input";
 import Label from "../Label";
 
 class Other extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    checked: PropTypes.bool,
-    label: PropTypes.string.isRequired,
-    onChangeHandler: PropTypes.func.isRequired,
-    onTextChangeHandler: PropTypes.func.isRequired,
-    disabled: PropTypes.bool,
-  };
-
   static defaultProps = {
     value: "",
     checked: false,
@@ -50,7 +38,6 @@ class Other extends Component {
     if (rest.checked) {
       return (
         <div className="form__choice-element-wrapper">
-          {/* @ts-expect-error TS(2739): Type '{ disabled: any; onChangeHandler: any; child... Remove this comment to see the full error message */}
           <Input
             {...rest}
             disabled={disabled}
@@ -79,7 +66,6 @@ class Other extends Component {
 
     return (
       <div className="form__choice-element-wrapper">
-        {/* @ts-expect-error TS(2739): Type '{ onChangeHandler: any; className: string; d... Remove this comment to see the full error message */}
         <Input
           {...rest}
           onChangeHandler={onChangeHandler}

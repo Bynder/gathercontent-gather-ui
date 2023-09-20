@@ -1,7 +1,7 @@
-import React from 'react';
-import { bool } from 'prop-types';
-import cx from 'classnames';
-import { propTypes, defaultProps } from './common';
+import React from "react";
+import { bool } from "prop-types";
+import cx from "classnames";
+import { defaultProps } from "./common";
 
 function SelectionModalColumn({
   children,
@@ -10,7 +10,7 @@ function SelectionModalColumn({
   ...rest
 }: any) {
   const classes = cx(`flex min-h-0 overflow-y-auto flex-col ${className}`, {
-    'bg-neutral-98': isHighlight
+    "bg-neutral-98": isHighlight,
   });
 
   return (
@@ -20,14 +20,9 @@ function SelectionModalColumn({
   );
 }
 
-SelectionModalColumn.propTypes = {
-  ...propTypes,
-  isHighlight: bool
-};
-
 SelectionModalColumn.defaultProps = {
   ...defaultProps,
-  isHighlight: false
+  isHighlight: false,
 };
 
 export default SelectionModalColumn;

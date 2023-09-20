@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { arrayOf, number, node } from "prop-types";
 import cx from "classnames";
 import { TabsContext } from "./index";
 
@@ -30,11 +29,6 @@ function TabsRow({ children, colCount }: any) {
     </TabsRowContext.Provider>
   );
 }
-
-TabsRow.propTypes = {
-  children: arrayOf(node).isRequired,
-  colCount: number,
-};
 
 TabsRow.defaultProps = {
   colCount: 8,

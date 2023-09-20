@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, LoadingOverlay } from "lib";
-import { propTypes, defaultProps } from "./common";
+import { defaultProps } from "./common";
 
 function SelectionModalBody({ children, className, isLoading, ...rest }: any) {
   return (
@@ -14,7 +14,5 @@ function SelectionModalBody({ children, className, isLoading, ...rest }: any) {
 }
 
 export default SelectionModalBody;
-
-SelectionModalBody.propTypes = propTypes;
 
 SelectionModalBody.defaultProps = defaultProps;

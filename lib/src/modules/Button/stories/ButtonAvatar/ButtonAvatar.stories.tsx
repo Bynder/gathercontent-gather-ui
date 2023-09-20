@@ -30,14 +30,12 @@ export function ButtonAvatar() {
           </ButtonStoryItem>
 
           <ButtonStoryItem title="Disabled">
-            {/* @ts-expect-error */}
             <ButtonAvatarComponent {...props} disabled>
               Button text
             </ButtonAvatarComponent>
           </ButtonStoryItem>
 
           <ButtonStoryItem title="Active">
-            {/* @ts-expect-error */}
             <ButtonAvatarComponent {...props} active>
               Button text
             </ButtonAvatarComponent>

@@ -1,26 +1,20 @@
-import React from 'react';
-import { node, string, bool } from 'prop-types';
-import cx from 'classnames';
-import { Body } from './Body';
-import { Footer } from './Footer';
-import { Header } from './Header';
-import { SubHeader } from './SubHeader';
-import { Main } from './Main';
-import { InlineSidebar } from './InlineSidebar';
-import { Section } from './Section';
-import { LayoutOverlaySidebar } from './LayoutOverlaySidebar';
+import React from "react";
+import cx from "classnames";
+import { Body } from "./Body";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { SubHeader } from "./SubHeader";
+import { Main } from "./Main";
+import { InlineSidebar } from "./InlineSidebar";
+import { Section } from "./Section";
+import { LayoutOverlaySidebar } from "./LayoutOverlaySidebar";
 
-function Layout({
-  children,
-  className,
-  fullScreen,
-  ...rest
-}: any) {
+function Layout({ children, className, fullScreen, ...rest }: any) {
   const layoutClassName = cx(
-    'layout flex flex-col overflow-x-hidden',
+    "layout flex flex-col overflow-x-hidden",
     className,
     {
-      'h-screen': fullScreen
+      "h-screen": fullScreen,
     }
   );
 
@@ -31,15 +25,9 @@ function Layout({
   );
 }
 
-Layout.propTypes = {
-  children: node.isRequired,
-  className: string,
-  fullScreen: bool
-};
-
 Layout.defaultProps = {
-  className: '',
-  fullScreen: true
+  className: "",
+  fullScreen: true,
 };
 
 Layout.Header = Header;

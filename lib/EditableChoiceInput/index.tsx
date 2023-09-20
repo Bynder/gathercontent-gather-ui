@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { string, func, bool, node } from "prop-types";
 import cx from "classnames";
 
 export function EditableChoiceInput({
@@ -72,19 +71,6 @@ export function EditableChoiceInput({
     </div>
   );
 }
-
-EditableChoiceInput.propTypes = {
-  type: string.isRequired,
-  onChange: func.isRequired,
-  className: string,
-  label: string,
-  placeholder: string,
-  readOnly: bool,
-  aside: node,
-  autoFocus: bool,
-  onBlur: func,
-  onFocus: func,
-};
 
 EditableChoiceInput.defaultProps = {
   className: "",

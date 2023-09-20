@@ -1,11 +1,7 @@
-import React from 'react';
-import { propTypes, defaultProps } from './common';
+import React from "react";
+import { defaultProps } from "./common";
 
-function SelectionModalColumnHeader({
-  children,
-  className,
-  ...rest
-}: any) {
+function SelectionModalColumnHeader({ children, className, ...rest }: any) {
   return (
     <h4
       className={`text-xs weight-semi-bold text-neutral-primary ${className}`}
@@ -15,8 +11,6 @@ function SelectionModalColumnHeader({
     </h4>
   );
 }
-
-SelectionModalColumnHeader.propTypes = propTypes;
 
 SelectionModalColumnHeader.defaultProps = defaultProps;
 

@@ -1,5 +1,4 @@
-import { string, node, bool, func, oneOfType } from 'prop-types';
-import { omit } from 'lodash';
+
 
 export const sizes = {
   lg: 'lg',
@@ -24,18 +23,14 @@ export const getSizeClasses = (size: any) => {
   return 'w-6 h-6';
 };
 
-export const propTypes = {
-  children: oneOfType([node, func]).isRequired,
-  className: string,
-  type: string,
-  loading: bool,
-  loaderRight: bool,
-  size: oneOfType([string, bool]),
-  disabled: bool,
-  connectedLeft: bool,
-  connectedRight: bool,
-  onClick: func
-};
+
+export interface ButtonTypes extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  loading?: boolean;
+  loaderRight?: boolean;
+  size?: string | boolean;
+  connectedLeft?: boolean;
+  connectedRight?: boolean;
+}
 
 export const defaultProps = {
   className: '',
@@ -49,12 +44,7 @@ export const defaultProps = {
   onClick: () => {}
 };
 
-export const buttonIconPropTypes = {
-  ...omit(propTypes, 'children'),
-  active: bool,
-  iconTitle: string,
-  name: string
-};
+
 export const buttonIconDefaultProps = {
   ...defaultProps,
   active: false,

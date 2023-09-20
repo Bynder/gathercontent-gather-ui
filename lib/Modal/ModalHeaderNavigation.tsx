@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { NewModal } from "lib";
-import { node, string } from "prop-types";
 import Navigation from "../Navigation";
 import { LegacyModalContext } from "./Modal";
 
@@ -24,8 +23,3 @@ export function ModalHeaderNavigation({ children, title }: any) {
     </NewModal.Header>
   );
 }
-
-ModalHeaderNavigation.propTypes = {
-  children: node.isRequired,
-  title: string.isRequired,
-};

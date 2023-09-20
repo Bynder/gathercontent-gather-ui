@@ -1,5 +1,4 @@
 import React from "react";
-import { node, oneOfType, string, bool } from "prop-types";
 import cx from "classnames";
 import { NewModal } from "lib";
 
@@ -22,13 +21,6 @@ function ModalFooter({
     </NewModal.Footer>
   );
 }
-
-ModalFooter.propTypes = {
-  children: node.isRequired,
-  text: oneOfType([string, node]),
-  spaceBetween: bool,
-  className: string,
-};
 
 ModalFooter.defaultProps = {
   text: null,

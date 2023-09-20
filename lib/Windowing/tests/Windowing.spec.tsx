@@ -15,7 +15,6 @@ describe("Windowing", () => {
   });
 
   const createFlatWrapper = () => (
-    // @ts-expect-error TS(2709): Cannot use namespace 'Windowing' as a type.
     <Windowing allIds={items} itemHeight={10} containerHeight={50} buffer={10}>
       {/* @ts-expect-error TS(2694): Namespace 'Windowing' has no exported member 'Scro... Remove this comment to see the full error message */}
       <Windowing.Scroller>

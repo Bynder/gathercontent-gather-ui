@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import { propTypes, defaultProps } from "./common";
+import { defaultProps } from "./common";
 
 function ColFieldFooter({
   children,
@@ -15,8 +15,6 @@ function ColFieldFooter({
     </div>
   );
 }
-
-ColFieldFooter.propTypes = propTypes;
 
 ColFieldFooter.defaultProps = defaultProps;
 

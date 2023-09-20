@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { func } from "prop-types";
 import { WindowingContext } from "./Windowing";
 
 function WindowingList({ children, ...rest }: any) {
@@ -18,9 +17,5 @@ function WindowingList({ children, ...rest }: any) {
     </div>
   );
 }
-
-WindowingList.propTypes = {
-  children: func.isRequired,
-};
 
 export { WindowingList };

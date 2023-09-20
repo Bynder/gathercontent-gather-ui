@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import cx from "classnames";
-import PropTypes from "prop-types";
 import Button from "../Button";
 import Icon from "../Icon";
 import ShortcutTrigger from "../ShortcutTrigger";
@@ -103,15 +102,6 @@ class SearchInput extends Component {
 SearchInput.defaultProps = {
   className: "",
   showBody: false,
-};
-
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-SearchInput.propTypes = {
-  className: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  hideBody: PropTypes.func.isRequired,
-  displayBody: PropTypes.func.isRequired,
-  showBody: PropTypes.bool,
 };
 
 export default SearchInput;

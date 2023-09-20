@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { node, string } from "prop-types";
 import { Comment } from "lib";
 import cx from "classnames";
 
@@ -12,11 +11,6 @@ function CommentBody({ children, className }: any) {
 
   return <div className={classNames}>{children}</div>;
 }
-
-CommentBody.propTypes = {
-  children: node.isRequired,
-  className: string,
-};
 
 CommentBody.defaultProps = {
   className: "",

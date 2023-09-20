@@ -1,5 +1,4 @@
 import React, { createContext } from "react";
-import PropTypes from "prop-types";
 import { NewModal } from "lib";
 import cx from "classnames";
 
@@ -48,17 +47,6 @@ Modal.defaultProps = {
   mediaOnly: false,
   collapse: false,
   highlight: false,
-};
-
-Modal.propTypes = {
-  children: PropTypes.node.isRequired,
-  size: PropTypes.string,
-  className: PropTypes.string,
-  overflow: PropTypes.bool,
-  overflowHalf: PropTypes.bool,
-  mediaOnly: PropTypes.bool,
-  collapse: PropTypes.bool,
-  highlight: PropTypes.bool,
 };
 
 export default Modal;

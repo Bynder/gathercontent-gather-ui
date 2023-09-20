@@ -48,7 +48,6 @@ export function AssigneeDropdown({
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
-                  // @ts-expect-error
                   title="Change assignees"
                 />
               </TooltipWrapper>

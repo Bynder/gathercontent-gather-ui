@@ -25,7 +25,6 @@ export function AnimatedWrapper() {
     >
       <AnimatedWrapperComponent
         animatableProperties={animatableProperties}
-        // @ts-expect-error
         className="min-w-30 absolute"
       >
         <ButtonPrimary

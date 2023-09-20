@@ -3,12 +3,7 @@ import { bool } from "prop-types";
 import cx from "classnames";
 import { Icon } from "lib";
 import { ButtonBase } from "../ButtonBase";
-import {
-  sizes,
-  getSizeClasses,
-  buttonIconPropTypes,
-  buttonIconDefaultProps,
-} from "../common";
+import { sizes, getSizeClasses, buttonIconDefaultProps } from "../common";
 
 export function ButtonIconWhite({
   className,
@@ -42,11 +37,6 @@ export function ButtonIconWhite({
 }
 
 ButtonIconWhite.sizes = sizes;
-
-ButtonIconWhite.propTypes = {
-  ...buttonIconPropTypes,
-  enabled: bool,
-};
 
 ButtonIconWhite.defaultProps = {
   ...buttonIconDefaultProps,

@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import { string, number, func, node } from 'prop-types';
+import React, { Fragment } from "react";
 
 export function Slider({
   id,
@@ -10,7 +9,7 @@ export function Slider({
   step,
   value,
   onChange,
-  children
+  children,
 }: any) {
   const valueAsPercent = (((value - min) * 100) / (max - min)).toFixed(0);
   return (
@@ -28,31 +27,19 @@ export function Slider({
         value={value}
         onChange={onChange}
         // @ts-expect-error TS(2322): Type '{ '--val': string; }' is not assignable to t... Remove this comment to see the full error message
-        style={{ '--val': valueAsPercent }}
+        style={{ "--val": valueAsPercent }}
       />
       {children}
     </>
   );
 }
 
-Slider.propTypes = {
-  id: string,
-  labelText: string,
-  labelClass: string,
-  min: number,
-  max: number,
-  step: number,
-  value: number.isRequired,
-  onChange: func.isRequired,
-  children: node
-};
-
 Slider.defaultProps = {
-  id: 'input-slider',
-  labelText: 'Slider',
-  labelClass: '',
+  id: "input-slider",
+  labelText: "Slider",
+  labelClass: "",
   min: 1,
   max: 100,
   step: 1,
-  children: null
+  children: null,
 };

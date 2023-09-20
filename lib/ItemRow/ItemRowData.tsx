@@ -1,19 +1,11 @@
-import React from 'react';
-import { node } from 'prop-types';
+import React from "react";
 
-function ItemRowData({
-  children,
-  ...rest
-}: any) {
+function ItemRowData({ children, ...rest }: any) {
   return (
     <div className="item-row__data" {...rest}>
       {children}
     </div>
   );
 }
-
-ItemRowData.propTypes = {
-  children: node.isRequired
-};
 
 export { ItemRowData };

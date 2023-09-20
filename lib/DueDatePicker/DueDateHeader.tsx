@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import cx from 'classnames';
-import DueDateTime from './DueDateTime';
-import Dropdown from '../Dropdown';
-import Icon from '../Icon';
+import React from "react";
+import moment from "moment";
+import cx from "classnames";
+import DueDateTime from "./DueDateTime";
+import Dropdown from "../Dropdown";
+import Icon from "../Icon";
 
 function DueDateHeader(props: any) {
   let label = (
@@ -19,18 +18,18 @@ function DueDateHeader(props: any) {
     const day = date
       .set({ hour: props.dueTime.hour(), minute: props.dueTime.minute() })
       .calendar(null, {
-        sameDay: '[Today at]',
-        nextDay: '[Tomorrow at]',
-        nextWeek: 'dddd [at]',
-        lastDay: '[Yesterday at]',
-        lastWeek: '[Last] dddd [at]',
-        sameElse: 'MMMM Do YYYY [at]'
+        sameDay: "[Today at]",
+        nextDay: "[Tomorrow at]",
+        nextWeek: "dddd [at]",
+        lastDay: "[Yesterday at]",
+        lastWeek: "[Last] dddd [at]",
+        sameElse: "MMMM Do YYYY [at]",
       });
 
-    const time = props.dueTime.local().format('LT');
+    const time = props.dueTime.local().format("LT");
 
-    const classes = cx('duedate__header--date', {
-      'color-overdue': date < moment()
+    const classes = cx("duedate__header--date", {
+      "color-overdue": date < moment(),
     });
 
     label = (
@@ -40,8 +39,8 @@ function DueDateHeader(props: any) {
     );
   }
 
-  const dropdownClasses = cx('duedate__remove', {
-    'duedate__remove--not-set': !props.dueDate
+  const dropdownClasses = cx("duedate__remove", {
+    "duedate__remove--not-set": !props.dueDate,
   });
 
   return (
@@ -68,18 +67,9 @@ function DueDateHeader(props: any) {
   );
 }
 
-DueDateHeader.propTypes = {
-  removeDueDate: PropTypes.func.isRequired,
-  setTime: PropTypes.func.isRequired,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  dueDate: PropTypes.shape(),
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  dueTime: PropTypes.shape()
-};
-
 DueDateHeader.defaultProps = {
   dueDate: null,
-  dueTime: null
+  dueTime: null,
 };
 
 export default DueDateHeader;

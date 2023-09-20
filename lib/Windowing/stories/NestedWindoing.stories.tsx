@@ -43,7 +43,7 @@ export function Nested({ parents, children }: any) {
                       </ItemRow>
                     ) : (
                       <FolderRow open>
-                        {(show, setShow) => (
+                        {(show: any, setShow: any) => (
                           // @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message
                           <FolderRow.Inner style={{ minWidth: "320px" }}>
                             {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}

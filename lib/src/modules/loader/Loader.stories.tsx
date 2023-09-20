@@ -11,17 +11,14 @@ export default {
 export function Loader() {
   return (
     <StoryItem title="LoaderComponent">
-        <div className="grid tw grid-cols-5 col-gap-4">
-          {/* @ts-expect-error */}
-          <LoaderComponent size="sm" />
-          {/* @ts-expect-error */}
-          <LoaderComponent size="md" />
-          {/* @ts-expect-error */}
-          <LoaderComponent size="lrg" />
-          <LoaderComponent progress="25%" />
-          <LoaderComponent heading="Processing" progress="100%" />
-        </div>
-      </StoryItem>
+      <div className="grid tw grid-cols-5 col-gap-4">
+        <LoaderComponent size="sm" />
+        <LoaderComponent size="md" />
+        <LoaderComponent size="lrg" />
+        <LoaderComponent progress="25%" />
+        <LoaderComponent heading="Processing" progress="100%" />
+      </div>
+    </StoryItem>
   );
 }
 

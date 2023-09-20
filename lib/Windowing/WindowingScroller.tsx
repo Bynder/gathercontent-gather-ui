@@ -1,5 +1,4 @@
 import React, { useCallback, useContext, useEffect } from "react";
-import { node, shape } from "prop-types";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'debo... Remove this comment to see the full error message
 import debounce from "debounce";
 import { WindowingContext } from "./Windowing";
@@ -53,12 +52,6 @@ function WindowingScroller({ children, style, ...rest }: any) {
     </div>
   );
 }
-
-WindowingScroller.propTypes = {
-  children: node.isRequired,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  style: shape(),
-};
 
 WindowingScroller.defaultProps = {
   style: {},

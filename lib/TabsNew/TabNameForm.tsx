@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { string, func } from "prop-types";
 import cx from "classnames";
 import { TabContext } from "./Tab";
 import { Tabs, TabsContext } from "./index";
@@ -146,14 +145,6 @@ export function TabNameForm({
     </>
   );
 }
-
-TabNameForm.propTypes = {
-  placeholder: string,
-  initialName: string,
-  className: string,
-  setActiveTab: func.isRequired,
-  submitTabForm: func.isRequired,
-};
 
 TabNameForm.defaultProps = {
   placeholder: "Name this tab",

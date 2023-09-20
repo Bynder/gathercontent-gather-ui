@@ -1,5 +1,4 @@
 import React from "react";
-import { string, bool } from "prop-types";
 import { Avatar } from "lib";
 import cx from "classnames";
 import { ButtonBase } from "../ButtonBase";
@@ -22,14 +21,6 @@ export function ButtonAvatar({
     </ButtonBase>
   );
 }
-
-ButtonAvatar.propTypes = {
-  initials: string.isRequired,
-  url: string,
-  disabled: bool,
-  className: string,
-  active: bool,
-};
 
 ButtonAvatar.defaultProps = {
   url: "",

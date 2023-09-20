@@ -19,5 +19,5 @@ export interface DropdownProps extends Omit<HTMLAttributes<HTMLDivElement>, "chi
   autoPosition: boolean;
   block: boolean;
   persistShow: boolean;
-  children: ReactNode | ((renderProps: RenderProps) => ReactNode);
+  children: ReactNode | JSX.Element | ((renderProps: RenderProps) => ReactNode | JSX.Element);
 }

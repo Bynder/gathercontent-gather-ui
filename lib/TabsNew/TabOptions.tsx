@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import cx from "classnames";
-import { node } from "prop-types";
 import { ButtonIcon } from "lib";
 import Dropdown from "../Dropdown";
 import { TabContext } from "./Tab";
@@ -40,7 +39,6 @@ function TabOptions({ children }: any) {
               {({ toggleShowContent }: any) => (
                 <ButtonIcon
                   name="cog16"
-                  // @ts-expect-error
                   tabIndex={0}
                   onClick={() => {
                     toggleShowContent();
@@ -62,9 +60,5 @@ function TabOptions({ children }: any) {
     </Dropdown>
   );
 }
-
-TabOptions.propTypes = {
-  children: node.isRequired,
-};
 
 export { TabOptions };

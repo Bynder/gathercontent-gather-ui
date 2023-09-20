@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  bool,
-  string,
-  oneOfType,
-  arrayOf,
-  node,
-  shape,
-  func,
-} from "prop-types";
+import { bool, string, oneOfType, node, shape, func } from "prop-types";
 import cx from "classnames";
 import BlankSlateSVG from "../../assets/blankstate.svg";
 import BlankSlate2SVG from "../../assets/blankstate-2.svg";
@@ -46,20 +38,6 @@ export function BlankSlate(props: any) {
     </div>
   );
 }
-
-BlankSlate.propTypes = {
-  fixed: bool,
-  fullHeight: bool,
-  slateStyle: string,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  children: oneOfType([arrayOf(node), node, arrayOf(shape()), string]),
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  customSVG: oneOfType([node, shape(), bool, func]),
-  SVGClassName: string,
-  className: string,
-  emoji: string,
-  emojiLabel: string,
-};
 
 BlankSlate.defaultProps = {
   fixed: false,

@@ -4,7 +4,6 @@ import { Draggable } from "../Draggable";
 
 function FolderDndMock({ name }: any) {
   const preview = (
-    // @ts-expect-error TS(2322): Type '{ children: () => Element; style: { maxWidth... Remove this comment to see the full error message
     <FolderRow style={{ maxWidth: "300px" }}>
       {() => (
         <>
@@ -22,10 +21,9 @@ function FolderDndMock({ name }: any) {
 
   return (
     <Draggable item={{ type: "folder" }} preview={preview}>
-      {({ isDragging }, dragRef) => (
+      {({ isDragging }: any, dragRef: any) => (
         <div ref={dragRef}>
           <FolderRow
-            // @ts-expect-error TS(2322): Type '{ children: () => Element; style: { opacity:... Remove this comment to see the full error message
             style={{
               opacity: isDragging ? ".5" : "1",
             }}
@@ -47,7 +45,5 @@ function FolderDndMock({ name }: any) {
     </Draggable>
   );
 }
-
-FolderDndMock.propTypes = FolderRow.propTypes;
 
 export { FolderDndMock };
