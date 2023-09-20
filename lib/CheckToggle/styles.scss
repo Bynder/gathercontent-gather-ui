@@ -2,9 +2,21 @@ $backgroundColour: #C2CCD6;
 $borderColour: #F8FBFC;
 
 .toggle-switch {
+  appearance: none;
+  background: transparent;
+  border-radius: 60px;
+  cursor: pointer;
+  height: 22px;
+  outline: revert;
   position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
+  width: 34px;
+  z-index: 1;
+
+  .size-small & {
+    height: 20px;
+    width: 30px;
+    
+  }
 }
 
 .toggle-switch + label {
@@ -17,7 +29,6 @@ $borderColour: #F8FBFC;
 .toggle-wrapper {
   display: flex;
   align-items: center;
-  overflow: hidden;
   line-height: 0;
 
   &.margin-large {
@@ -126,7 +137,6 @@ $borderColour: #F8FBFC;
 
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;
-    overflow: hidden;
     min-width: 30px;
   }
 }
