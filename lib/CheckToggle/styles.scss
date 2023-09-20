@@ -1,13 +1,18 @@
 $backgroundColour: #C2CCD6;
 $borderColour: #F8FBFC;
 
+
 .toggle-switch {
   appearance: none;
   background: transparent;
+  border-color: transparent;
   border-radius: 60px;
+  border-style: solid;
+  border-width: 1px;
   cursor: pointer;
   height: 22px;
   outline: revert;
+  outline-offset: 0px;
   position: absolute;
   width: 34px;
   z-index: 1;
@@ -15,7 +20,14 @@ $borderColour: #F8FBFC;
   .size-small & {
     height: 20px;
     width: 30px;
-    
+  }
+
+  &:checked:hover + .toggle-switch__label {
+    @apply bg-green-60;
+  }
+
+  &:not(:checked):hover {
+    @apply border-blue-primary;
   }
 }
 
