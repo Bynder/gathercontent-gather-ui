@@ -21,6 +21,7 @@ export function Button({
   onMouseEnter,
   onMouseLeave,
   types = ["primary"],
+  disabled,
 }: Props) {
   const [disabledAfterClick, setDisabledAfterClick] = useState(false);
   const handleOnClick = (
