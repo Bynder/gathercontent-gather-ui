@@ -117,59 +117,59 @@ function CommentForm({
     <form onSubmit={handleSubmitWithLoader} className="comment-edit-form">
       <div className={inputWrapperClassNames} ref={inputWrapperRef}>
         <MentionsInput
-            className="edit-comment"
-            value={commentText}
-            onChange={handleChange}
-            onFocus={() => setHasFocus(true)}
-            onBlur={() => setHasFocus(false)}
-            placeholder={placeholder}
-            markup="@[__display__]"
-            autoFocus={autoFocusInput}
-            displayTransform={(id: any, display: any) => `@${display}`}
-            disabled={isSubmitting}
-          >
-            <Mention
-              trigger="@"
-              onAdd={onMention}
-              data={(search: any) => searchForUsers(search)}
-              appendSpaceOnAdd
-              renderSuggestion={(suggestion: any) => (
-                <Avatar url={suggestion.avatar} initials={suggestion.initials}>
-                  <AvatarInformation
-                    email={`@${suggestion.display}`}
-                    name={suggestion.name}
-                  />
-                </Avatar>
-              )}
-            />
-          </MentionsInput>
+          className="edit-comment"
+          value={commentText}
+          onChange={handleChange}
+          onFocus={() => setHasFocus(true)}
+          onBlur={() => setHasFocus(false)}
+          placeholder={placeholder}
+          markup="@[__display__]"
+          autoFocus={autoFocusInput}
+          displayTransform={(id: any, display: any) => `@${display}`}
+          disabled={isSubmitting}
+        >
+          <Mention
+            trigger="@"
+            onAdd={onMention}
+            data={(search: any) => searchForUsers(search)}
+            appendSpaceOnAdd
+            renderSuggestion={(suggestion: any) => (
+              <Avatar url={suggestion.avatar} initials={suggestion.initials}>
+                <AvatarInformation
+                  email={`@${suggestion.display}`}
+                  name={suggestion.name}
+                />
+              </Avatar>
+            )}
+          />
+        </MentionsInput>
 
-          <ShortcutTrigger
-            shortcutKey="Enter"
-            onShortcutTrigger={(e: any) => {
-              if (!hasFocus || !commentText) {
-                return e;
-              }
-              // @ts-expect-error
-              return handleSubmitWithLoader(e);
-            }}
-            withCtrlKey
-          />
-          <ShortcutTrigger
-            shortcutKey="Enter"
-            onShortcutTrigger={(e: any) => {
-              if (!hasFocus || !commentText) {
-                return e;
-              }
-              // @ts-expect-error
-              return handleSubmitWithLoader(e);
-            }}
-            withMetaKey
-          />
-          <ShortcutTrigger
-            shortcutKey="Escape"
-            onShortcutTrigger={handleCancel}
-          />
+        <ShortcutTrigger
+          shortcutKey="Enter"
+          onShortcutTrigger={(e: any) => {
+            if (!hasFocus || !commentText) {
+              return e;
+            }
+            // @ts-expect-error
+            return handleSubmitWithLoader(e);
+          }}
+          withCtrlKey
+        />
+        <ShortcutTrigger
+          shortcutKey="Enter"
+          onShortcutTrigger={(e: any) => {
+            if (!hasFocus || !commentText) {
+              return e;
+            }
+            // @ts-expect-error
+            return handleSubmitWithLoader(e);
+          }}
+          withMetaKey
+        />
+        <ShortcutTrigger
+          shortcutKey="Escape"
+          onShortcutTrigger={handleCancel}
+        />
       </div>
 
       {hasFailed && (
@@ -191,6 +191,7 @@ function CommentForm({
           id="submit-conversation-button"
           tooltipText={submitTooltipText}
           placement="bottom"
+          tabbable="false"
         >
           <ButtonPrimary
             disabled={!commentText}
