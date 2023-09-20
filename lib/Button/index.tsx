@@ -39,7 +39,6 @@ export function Button({
   };
 
   const shareProps = {
-    // @ts-expect-error TS(2339): Property 'disabled' does not exist on type 'Readon... Remove this comment to see the full error message
     disabled: disabled || disabledAfterClick,
     onClick: handleOnClick,
     onKeyDown,
