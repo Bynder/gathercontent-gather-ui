@@ -71,7 +71,7 @@ export function CheckToggle({
         <input
           data-testid={id}
           onChange={onClickHandler}
-          checked={checked}
+          checked={isChecked}
           type="checkbox"
           id={id}
           className="toggle-switch toggle-switch--inline"
