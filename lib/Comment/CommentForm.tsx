@@ -122,9 +122,7 @@ function CommentForm({
           onFocus={() => setHasFocus(true)}
           onBlur={() => setHasFocus(false)}
           placeholder={placeholder}
-          markup="@[__display__]"
           autoFocus={autoFocusInput}
-          displayTransform={(id: any, display: any) => `@${display}`}
           disabled={isSubmitting}
         >
           <Mention
@@ -132,6 +130,8 @@ function CommentForm({
             onAdd={onMention}
             data={(search: any) => searchForUsers(search)}
             appendSpaceOnAdd
+            markup="@[__display__]"
+            displayTransform={(id: any, display: any) => `@${display}`}
             renderSuggestion={(suggestion: any) => (
               <Avatar url={suggestion.avatar} initials={suggestion.initials}>
                 <AvatarInformation
