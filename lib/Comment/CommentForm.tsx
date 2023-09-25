@@ -189,6 +189,7 @@ function CommentForm({
           id="submit-conversation-button"
           tooltipText={submitTooltipText}
           placement="bottom"
+          tabbable="false"
         >
           <ButtonPrimary
             disabled={!commentText}
