@@ -41,7 +41,7 @@ module.exports = {
       bold: 600,
     },
     borderRadius: {
-      DEFAULT: "6px",
+      DEFAULT: "8px",
       small: "4px",
       xlarge: "16px",
       full: "100%",
