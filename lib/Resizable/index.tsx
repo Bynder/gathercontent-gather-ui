@@ -3,27 +3,18 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { keepValueWithinRange, toPixels } from "../helpers";
 
 export interface ResizableProps {
-  defaultWidth?: number | string;
-  minWidth?: number | string;
-  maxWidth?: number | string;
-  useGutterOffset?: boolean;
   containerWidth?: number | string;
+  initialWidth?: number | string;
+  minResizableWidth?: number | string;
+  maxResizableWidth?: number | string;
+  useGutterOffset?: boolean;
 }
 
-/**
- * A wrapper for making a given child element resizable
- * @param children The element to be resized
- * @param defaultWidth The width the child should initially render to. If min and max widths are provided, then the provided width will be massaged to meet those constraints
- * @param maxWidth The maximum width the element can be resized to
- * @param minWidth The minimum width the element can be resized to
- * @param useGutterOffset Toggle whether we should take the width of the gutter into account for calculating the width of the resized item. This can be handy depending on the CSS being applied to or around the child element
- * @param rest Contains params that need converting such as the containerWidth
- */
 export function Resizable({
   children,
-  defaultWidth = "50%",
-  maxWidth,
-  minWidth,
+  initialWidth = "50%",
+  maxResizableWidth,
+  minResizableWidth,
   useGutterOffset = false,
   ...rest
 }: PropsWithChildren<ResizableProps>) {
@@ -36,8 +27,8 @@ export function Resizable({
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
   const gutterSize = useGutterOffset ? 16 : 0;
-  const min = toPixels(minWidth ?? 0, containerWidth);
-  const max = toPixels(maxWidth ?? "100%", containerWidth);
+  const minWidth = toPixels(minResizableWidth ?? 0, containerWidth);
+  const maxWidth = toPixels(maxResizableWidth ?? "100%", containerWidth);
 
   const [state, setState] = React.useState({
     startX: 0,
@@ -50,7 +41,7 @@ export function Resizable({
     if (resizeWrapperRef.current === null) return;
 
     resizeWrapperRef.current.style.width = `${
-      keepValueWithinRange(value, min, max) - gutterSize
+      keepValueWithinRange(value, minWidth, maxWidth) - gutterSize
     }px`;
   };
 
@@ -99,7 +90,11 @@ export function Resizable({
   };
 
   useEffect(() => {
-    const newWidth = keepValueWithinRange(toPixels(defaultWidth), min, max);
+    const newWidth = keepValueWithinRange(
+      toPixels(initialWidth),
+      minWidth,
+      maxWidth
+    );
     setWidth(newWidth);
 
     // remember to remove global listeners on dismount

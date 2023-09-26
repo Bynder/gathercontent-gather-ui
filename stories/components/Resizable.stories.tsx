@@ -30,9 +30,9 @@ export function Resizable() {
           }}
         >
           <ResizableComponent
-            defaultWidth="240px"
-            minWidth="240px"
-            maxWidth="33.33%"
+            initialWidth="240px"
+            minResizableWidth="240px"
+            maxResizableWidth="33.33%"
             useGutterOffset
           >
             {/* eslint-disable-next-line no-use-before-define */}
@@ -59,9 +59,9 @@ export function Resizable() {
           }}
         >
           <ResizableComponent
-            defaultWidth="50%"
-            minWidth="33.33%"
-            maxWidth="77.77%"
+            initialWidth="50%"
+            minResizableWidth="33.33%"
+            maxResizableWidth="77.77%"
             useGutterOffset
           >
             <div
@@ -107,9 +107,9 @@ export function Resizable() {
             <p>Not resizable</p>
           </div>
           <ResizableComponent
-            defaultWidth="100%"
-            maxWidth="75%"
-            minWidth="200px"
+            initialWidth="100%"
+            maxResizableWidth="75%"
+            minResizableWidth="200px"
             useGutterOffset
           >
             <div style={{ border: "1px solid green" }}>
