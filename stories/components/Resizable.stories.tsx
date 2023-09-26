@@ -121,6 +121,19 @@ export function Resizable() {
           </div>
         </div>
       </StoryItem>
+
+      <StoryItem
+        title="Remember last position"
+        description="If you resize me, I'll remember where you left me when you refresh or return to the item - coz I'm nice like that!"
+      >
+        <div style={{ width: "100%" }}>
+          <ResizableComponent rememberPosition useGutterOffset>
+            <div style={{ border: "1px solid green" }}>
+              <p>Move me - refresh the page - I should be where you left me!</p>
+            </div>
+          </ResizableComponent>
+        </div>
+      </StoryItem>
     </>
   );
 }
