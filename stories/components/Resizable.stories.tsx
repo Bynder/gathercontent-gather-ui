@@ -30,9 +30,11 @@ export function Resizable() {
           }}
         >
           <ResizableComponent
+            id="sidebar"
             initialWidth="240px"
             minResizableWidth="240px"
             maxResizableWidth="33.33%"
+            rememberPosition
             useGutterOffset
           >
             {/* eslint-disable-next-line no-use-before-define */}
@@ -127,7 +129,7 @@ export function Resizable() {
         description="If you resize me, I'll remember where you left me when you refresh or return to the item - coz I'm nice like that!"
       >
         <div style={{ width: "100%" }}>
-          <ResizableComponent rememberPosition useGutterOffset>
+          <ResizableComponent id="remember-me" rememberPosition useGutterOffset>
             <div style={{ border: "1px solid green" }}>
               <p>Move me - refresh the page - I should be where you left me!</p>
             </div>

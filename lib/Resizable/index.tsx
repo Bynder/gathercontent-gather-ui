@@ -3,10 +3,9 @@ import React, { useCallback, useEffect, useRef } from "react";
 import { keepValueWithinRange, toPixels } from "../helpers";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-const LOCALSTORAGE_KEY = "RESIZE_POSITION";
-
 export interface ResizableProps {
   containerWidth?: number | string;
+  id?: string;
   initialWidth?: number | string;
   minResizableWidth?: number | string;
   maxResizableWidth?: number | string;
@@ -17,6 +16,7 @@ export interface ResizableProps {
 export function Resizable(props: PropsWithChildren<ResizableProps>) {
   const {
     children,
+    id,
     initialWidth = "50%",
     rememberPosition = false,
     useGutterOffset = false,
@@ -40,7 +40,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   });
 
   const [lastPosition, setLastPosition] = useLocalStorage(
-    LOCALSTORAGE_KEY,
+    `RESIZE_POSITION_${id ?? ""}`,
     toPixels(initialWidth)
   );
 
