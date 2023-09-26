@@ -30,6 +30,8 @@ export function Resizable({
   const containerWidth = toPixels(
     rest.containerWidth ?? document.body.offsetWidth
   );
+  const doDragRef = useRef<(evt: MouseEvent) => void>(() => {});
+  const stopDragRef = useRef<(evt: MouseEvent) => void>(() => {});
   const resizeRef = useRef<HTMLDivElement>(null);
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
@@ -58,22 +60,21 @@ export function Resizable({
   };
 
   const stopDrag = () => {
-    document.removeEventListener("mousemove", doDrag, false);
-    document.removeEventListener("mouseup", stopDrag, false);
+    document.removeEventListener("mousemove", doDragRef.current, false);
+    document.removeEventListener("mouseup", stopDragRef.current, false);
   };
 
   const initDrag = useCallback(
     (evt: React.DragEvent<HTMLDivElement>) => {
       const { clientX } = evt;
 
-      const newState = {
-        ...state,
+      setState({
         startX: clientX,
         startWidth: getWidth(),
-      };
+      });
 
-      setState(newState);
-
+      doDragRef.current = doDrag;
+      stopDragRef.current = stopDrag;
       document.addEventListener("mousemove", doDrag, false);
       document.addEventListener("mouseup", stopDrag, false);
     },
