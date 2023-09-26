@@ -10,25 +10,20 @@ export interface ResizableProps {
   useGutterOffset?: boolean;
 }
 
-export function Resizable({
-  children,
-  initialWidth = "50%",
-  maxResizableWidth,
-  minResizableWidth,
-  useGutterOffset = false,
-  ...rest
-}: PropsWithChildren<ResizableProps>) {
-  const containerWidth = toPixels(
-    rest.containerWidth ?? document.body.offsetWidth
+export function Resizable(props: PropsWithChildren<ResizableProps>) {
+  const { children, initialWidth = "50%", useGutterOffset = false } = props;
+  const containerWidth: number = toPixels(
+    props.containerWidth ?? document.body.offsetWidth
   );
+  const gutterSize = useGutterOffset ? 16 : 0;
+  const minWidth = toPixels(props.minResizableWidth ?? 0, containerWidth);
+  const maxWidth = toPixels(props.maxResizableWidth ?? "100%", containerWidth);
+
   const doDragRef = useRef<(evt: MouseEvent) => void>(() => {});
   const stopDragRef = useRef<(evt: MouseEvent) => void>(() => {});
   const resizeRef = useRef<HTMLDivElement>(null);
   const resizeWrapperRef = useRef<HTMLDivElement>(null);
   const handleRef = useRef<HTMLSpanElement>(null);
-  const gutterSize = useGutterOffset ? 16 : 0;
-  const minWidth = toPixels(minResizableWidth ?? 0, containerWidth);
-  const maxWidth = toPixels(maxResizableWidth ?? "100%", containerWidth);
 
   const [state, setState] = React.useState({
     startX: 0,
