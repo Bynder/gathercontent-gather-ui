@@ -90,12 +90,7 @@ export function Resizable({
   };
 
   useEffect(() => {
-    const newWidth = keepValueWithinRange(
-      toPixels(initialWidth),
-      minWidth,
-      maxWidth
-    );
-    setWidth(newWidth);
+    setWidth(toPixels(initialWidth));
 
     // remember to remove global listeners on dismount
     return () => stopDrag();
