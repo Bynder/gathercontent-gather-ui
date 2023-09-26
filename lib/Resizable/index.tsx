@@ -17,10 +17,10 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   const {
     children,
     id,
-    initialWidth = "50%",
     rememberPosition = false,
     useGutterOffset = false,
   } = props;
+  const initialWidth = toPixels(props.initialWidth ?? "50%");
   const containerWidth: number = toPixels(
     props.containerWidth ?? document.body.offsetWidth
   );
@@ -41,10 +41,10 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
   const [lastPosition, setLastPosition] = useLocalStorage(
     `RESIZE_POSITION_${id ?? ""}`,
-    toPixels(initialWidth)
+    initialWidth
   );
 
-  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width || 0);
+  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width ?? 0);
 
   const setWidth = (value: number) => {
     if (resizeWrapperRef.current === null) return;
@@ -101,7 +101,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   };
 
   useEffect(() => {
-    setWidth(rememberPosition ? lastPosition : toPixels(initialWidth));
+    setWidth(rememberPosition ? lastPosition : initialWidth);
 
     // remember to remove global listeners on dismount
     return () => stopDrag();
