@@ -1,5 +1,4 @@
 import { PureComponent, ReactNode, useEffect } from "react";
-import PropTypes from "prop-types";
 
 
 interface Props {

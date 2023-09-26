@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import Icon from "../Icon";
 import SearchResults from "./SearchResults";
@@ -116,22 +115,6 @@ SearchDropdown.defaultProps = {
   onInputClear: () => {},
   direction: "down",
   focusOnMount: false,
-};
-
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-SearchDropdown.propTypes = {
-  placeholder: PropTypes.string,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  results: PropTypes.arrayOf(PropTypes.shape()),
-  alignRight: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  className: PropTypes.string,
-  direction: PropTypes.string,
-  resultsTitle: PropTypes.string,
-  listClassName: PropTypes.string,
-  handleOnChange: PropTypes.func,
-  onInputClear: PropTypes.func,
-  focusOnMount: PropTypes.bool,
 };
 
 export default SearchDropdown;

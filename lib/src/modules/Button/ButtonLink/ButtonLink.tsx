@@ -1,12 +1,6 @@
-import React from 'react';
-import { node, string } from 'prop-types';
+import React from "react";
 
-function ButtonLink({
-  children,
-  className,
-  buttonRef,
-  ...rest
-}: any) {
+function ButtonLink({ children, className, buttonRef, ...rest }: any) {
   return (
     <button
       type="button"
@@ -19,13 +13,8 @@ function ButtonLink({
   );
 }
 
-ButtonLink.propTypes = {
-  children: node.isRequired,
-  className: string
-};
-
 ButtonLink.defaultProps = {
-  className: ''
+  className: "",
 };
 
 export { ButtonLink };

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import FigurePlaceholderSVG from "../../assets/figureplaceholder.svg";
 
 function FigurePlaceholder(props: any) {
@@ -12,10 +11,6 @@ function FigurePlaceholder(props: any) {
     </div>
   );
 }
-
-FigurePlaceholder.propTypes = {
-  svgClassName: PropTypes.string,
-};
 
 FigurePlaceholder.defaultProps = {
   svgClassName: "",

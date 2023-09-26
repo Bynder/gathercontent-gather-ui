@@ -1,10 +1,36 @@
 $backgroundColour: #C2CCD6;
 $borderColour: #F8FBFC;
 
+
 .toggle-switch {
+  appearance: none;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 60px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  height: 20px;
+  left: 1px;
+  outline: revert;
+  outline-offset: unset;
   position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
+  top: 1px;
+  width: 32px;
+  z-index: 1;
+
+  .size-small & {
+    height: 18px;
+    width: 28px;
+  }
+
+  &:checked:hover + .toggle-switch__label {
+    @apply bg-green-60;
+  }
+
+  &:not(:checked):hover {
+    @apply border-blue-primary;
+  }
 }
 
 .toggle-switch + label {
@@ -17,7 +43,6 @@ $borderColour: #F8FBFC;
 .toggle-wrapper {
   display: flex;
   align-items: center;
-  overflow: hidden;
   line-height: 0;
 
   &.margin-large {
@@ -126,7 +151,6 @@ $borderColour: #F8FBFC;
 
   .toggle-wrapper__inner {
     max-height: $layout-spacing-base;
-    overflow: hidden;
     min-width: 30px;
   }
 }

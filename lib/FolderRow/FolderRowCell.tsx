@@ -1,14 +1,9 @@
-import React from 'react';
-import { bool, node } from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-function FolderRowCell({
-  children,
-  meta,
-  ...props
-}: any) {
+function FolderRowCell({ children, meta, ...props }: any) {
   const classNames = cx(`folder-row__cell`, {
-    'folder-row__cell--meta': meta
+    "folder-row__cell--meta": meta,
   });
 
   return (
@@ -18,13 +13,8 @@ function FolderRowCell({
   );
 }
 
-FolderRowCell.propTypes = {
-  children: node.isRequired,
-  meta: bool
-};
-
 FolderRowCell.defaultProps = {
-  meta: false
+  meta: false,
 };
 
 export { FolderRowCell };

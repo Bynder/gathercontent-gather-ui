@@ -1,8 +1,9 @@
-import { render, fireEvent, waitForElement } from "@testing-library/react";
-import { React } from "../../../tests/setup";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import React from "react";
 import { Windowing } from "../..";
 
-jest.mock("debounce", () => (fn: any) => fn);
+vi.mock("debounce", () => (fn: any) => fn);
 
 describe("Windowing", () => {
   const items = [...new Array(50)].map((i, index) => ({
@@ -10,11 +11,10 @@ describe("Windowing", () => {
   }));
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   const createFlatWrapper = () => (
-    // @ts-expect-error TS(2709): Cannot use namespace 'Windowing' as a type.
     <Windowing allIds={items} itemHeight={10} containerHeight={50} buffer={10}>
       {/* @ts-expect-error TS(2694): Namespace 'Windowing' has no exported member 'Scro... Remove this comment to see the full error message */}
       <Windowing.Scroller>
@@ -38,35 +38,26 @@ describe("Windowing", () => {
 
   it("renders 15 ({ start: 0, end: 15 }) in-view items", async () => {
     const { getByTestId } = render(createFlatWrapper());
-    await waitForElement(() => [
-      getByTestId("test-id-1"),
-      getByTestId("test-id-15"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-1"), getByTestId("test-id-15")]);
 
     fireEvent.scroll(getByTestId("windowing-scroller"), {
       target: { scrollTop: 0 },
     });
 
-    jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
+    vi.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
   });
 
   it("renders 15 ({ start: 20, end: 35 }) in-view items", async () => {
     const { getByTestId, queryByTestId } = render(createFlatWrapper());
-    await waitForElement(() => [
-      getByTestId("test-id-1"),
-      getByTestId("test-id-15"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-1"), getByTestId("test-id-15")]);
 
     fireEvent.scroll(getByTestId("windowing-scroller"), {
       target: { scrollTop: 200 },
     });
 
-    jest.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
+    vi.advanceTimersByTime(Windowing.defaultProps.debounceTimer);
 
-    await waitForElement(() => [
-      getByTestId("test-id-20"),
-      getByTestId("test-id-35"),
-    ]);
+    await waitFor(() => [getByTestId("test-id-20"), getByTestId("test-id-35")]);
 
     expect(queryByTestId("test-id-9")).toBeNull();
   });

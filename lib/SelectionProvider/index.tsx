@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import { node, arrayOf, oneOfType, string, number } from 'prop-types';
-import { omit } from 'lodash';
-import ShortcutTrigger from '../ShortcutTrigger';
+import React, { useState } from "react";
+import { omit } from "lodash";
+import ShortcutTrigger from "../ShortcutTrigger";
 
 const SelectionContext = React.createContext({});
 
-function SelectionProvider({
-  children,
-  initialSelected
-}: any) {
+function SelectionProvider({ children, initialSelected }: any) {
   const [selected, setSelected] = useState(initialSelected);
   const [intendedToSelect, setIntendedToSelect] = useState([]);
   const [currentSelectedType, setCurrentSelectedType] = useState(null);
@@ -18,7 +14,7 @@ function SelectionProvider({
   const updateSelectedData = (data = {}) => {
     setSelectedData({
       ...selectedData,
-      ...data
+      ...data,
     });
   };
 
@@ -28,7 +24,7 @@ function SelectionProvider({
       newSelected = selected.concat(id);
       setSelectedData({
         ...selectedData,
-        [id]: data
+        [id]: data,
       });
     } else {
       newSelected = selected.filter((existingId: any) => existingId !== id);
@@ -79,7 +75,7 @@ function SelectionProvider({
     intendedToSelect,
     lastInteracted,
     setLastInteracted,
-    updateSelectedData
+    updateSelectedData,
   };
   return (
     <SelectionContext.Provider value={sharedState}>
@@ -89,13 +85,8 @@ function SelectionProvider({
   );
 }
 
-SelectionProvider.propTypes = {
-  children: node.isRequired,
-  initialSelected: arrayOf(oneOfType([string, number]))
-};
-
 SelectionProvider.defaultProps = {
-  initialSelected: []
+  initialSelected: [],
 };
 
 export { SelectionProvider, SelectionContext };

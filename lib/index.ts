@@ -73,7 +73,6 @@ export { FolderRow } from "./FolderRow";
 export { Search } from "./Search";
 export { CollectionsTable } from "./CollectionsTable";
 export { UserSearchDropdown } from "./UserSearchDropdown";
-export { MentionsForm } from "./MentionsForm";
 export { EventCodeWatcher } from "./EventCodeWatcher";
 export { Breadcrumb } from "./Breadcrumb";
 export { ConfirmationDropdown } from "./ConfirmationDropdown";

@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import LoadingSVG from "../../assets/loading.svg";
 
@@ -30,13 +29,6 @@ export function LoadingOverlay({
     </div>
   );
 }
-
-LoadingOverlay.propTypes = {
-  fixed: PropTypes.bool,
-  hideSVG: PropTypes.bool,
-  percentageLoaded: PropTypes.number,
-  loadingText: PropTypes.string,
-};
 
 LoadingOverlay.defaultProps = {
   fixed: false,

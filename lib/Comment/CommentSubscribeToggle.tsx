@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { bool, func } from "prop-types";
 import { ButtonIcon, ButtonIconDanger, useLoader } from "lib";
 
 export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
@@ -19,10 +18,10 @@ export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
   const [isSubscribing, onToggleWithLoader] = useLoader(handleSubscribeClick);
 
   useEffect(() => () => {
-      if (setHasFailedTimeout.current !== null) {
-        clearTimeout(setHasFailedTimeout.current);
-      }
-    });
+    if (setHasFailedTimeout.current !== null) {
+      clearTimeout(setHasFailedTimeout.current);
+    }
+  });
 
   const ButtonType = hasFailed ? ButtonIconDanger : ButtonIcon;
 
@@ -32,7 +31,6 @@ export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
         name={isSubscribing ? "loader16" : "bell"}
         title="Subscribe to conversation"
         size={ButtonIcon.sizes.sm}
-        // @ts-expect-error
         onClick={onToggleWithLoader}
         active={isSubscribed}
       />
@@ -44,11 +42,6 @@ export function CommentSubscribeToggle({ onToggle, isSubscribed }: any) {
     </div>
   );
 }
-
-CommentSubscribeToggle.propTypes = {
-  onToggle: func,
-  isSubscribed: bool,
-};
 
 CommentSubscribeToggle.defaultProps = {
   onToggle: () => {},

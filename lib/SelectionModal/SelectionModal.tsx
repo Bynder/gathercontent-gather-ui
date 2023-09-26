@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "lib";
-import { propTypes, defaultProps } from "./common";
+import { defaultProps } from "./common";
 import SelectionModalBody from "./SelectionModalBody";
 import SelectionModalColumn from "./SelectionModalColumn";
 import SelectionModalColumnHeader from "./SelectionModalColumnHeader";
@@ -14,8 +14,6 @@ export function SelectionModal({ children, className, ...rest }: any) {
     </Modal.Container>
   );
 }
-
-SelectionModal.propTypes = propTypes;
 
 SelectionModal.defaultProps = defaultProps;
 

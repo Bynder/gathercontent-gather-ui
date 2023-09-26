@@ -4,15 +4,16 @@ import CollectionsTableHeading from "./CollectionsTableHeading";
 import CollectionsTableRow from "./CollectionsTableRow";
 import CollectionsTableCell from "./CollectionsTableCell";
 import CollectionsTableCellContent from "./CollectionsTableCellContent";
-import { propTypes, defaultProps } from "./propTypes";
+import { defaultProps } from "./propTypes";
 
 export function CollectionsTable({ children, className, ...props }: any) {
-  return <div className={`collections-table ${className}`} {...props} role="table">
-    {children}
-  </div>
+  return (
+    <div className={`collections-table ${className}`} {...props} role="table">
+      {children}
+    </div>
+  );
 }
 
-CollectionsTable.propTypes = propTypes;
 CollectionsTable.defaultProps = defaultProps;
 
 CollectionsTable.Head = CollectionsTableHead;

@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import { propTypes, defaultProps } from "./common";
+import { defaultProps } from "./common";
 
 function ColFieldBody({
   children,
@@ -12,8 +12,6 @@ function ColFieldBody({
     </div>
   );
 }
-
-ColFieldBody.propTypes = propTypes;
 
 ColFieldBody.defaultProps = defaultProps;
 

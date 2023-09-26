@@ -44,7 +44,6 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }: any) {
                 onClick={toggleShowContent}
                 size={ButtonSecondary.sizes.sm}
                 className="ml-2"
-                // @ts-expect-error
                 contained
                 title="Select a time"
               >

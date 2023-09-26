@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { node, string } from "prop-types";
 import { Comment } from "lib";
 import cx from "classnames";
 
@@ -21,12 +20,6 @@ function CommentHeader({ children, actions, className }: any) {
     </div>
   );
 }
-
-CommentHeader.propTypes = {
-  children: node.isRequired,
-  actions: node,
-  className: string,
-};
 
 CommentHeader.defaultProps = {
   actions: null,

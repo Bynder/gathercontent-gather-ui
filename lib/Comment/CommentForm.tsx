@@ -1,5 +1,4 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
-import { arrayOf, bool, func, shape, string } from "prop-types";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Mention, MentionsInput } from "react-mentions";
 import cx from "classnames";
@@ -117,59 +116,59 @@ function CommentForm({
     <form onSubmit={handleSubmitWithLoader} className="comment-edit-form">
       <div className={inputWrapperClassNames} ref={inputWrapperRef}>
         <MentionsInput
-            className="edit-comment"
-            value={commentText}
-            onChange={handleChange}
-            onFocus={() => setHasFocus(true)}
-            onBlur={() => setHasFocus(false)}
-            placeholder={placeholder}
+          className="edit-comment"
+          value={commentText}
+          onChange={handleChange}
+          onFocus={() => setHasFocus(true)}
+          onBlur={() => setHasFocus(false)}
+          placeholder={placeholder}
+          autoFocus={autoFocusInput}
+          disabled={isSubmitting}
+        >
+          <Mention
+            trigger="@"
+            onAdd={onMention}
+            data={(search: any) => searchForUsers(search)}
+            appendSpaceOnAdd
             markup="@[__display__]"
-            autoFocus={autoFocusInput}
             displayTransform={(id: any, display: any) => `@${display}`}
-            disabled={isSubmitting}
-          >
-            <Mention
-              trigger="@"
-              onAdd={onMention}
-              data={(search: any) => searchForUsers(search)}
-              appendSpaceOnAdd
-              renderSuggestion={(suggestion: any) => (
-                <Avatar url={suggestion.avatar} initials={suggestion.initials}>
-                  <AvatarInformation
-                    email={`@${suggestion.display}`}
-                    name={suggestion.name}
-                  />
-                </Avatar>
-              )}
-            />
-          </MentionsInput>
+            renderSuggestion={(suggestion: any) => (
+              <Avatar url={suggestion.avatar} initials={suggestion.initials}>
+                <AvatarInformation
+                  email={`@${suggestion.display}`}
+                  name={suggestion.name}
+                />
+              </Avatar>
+            )}
+          />
+        </MentionsInput>
 
-          <ShortcutTrigger
-            shortcutKey="Enter"
-            onShortcutTrigger={(e: any) => {
-              if (!hasFocus || !commentText) {
-                return e;
-              }
-              // @ts-expect-error
-              return handleSubmitWithLoader(e);
-            }}
-            withCtrlKey
-          />
-          <ShortcutTrigger
-            shortcutKey="Enter"
-            onShortcutTrigger={(e: any) => {
-              if (!hasFocus || !commentText) {
-                return e;
-              }
-              // @ts-expect-error
-              return handleSubmitWithLoader(e);
-            }}
-            withMetaKey
-          />
-          <ShortcutTrigger
-            shortcutKey="Escape"
-            onShortcutTrigger={handleCancel}
-          />
+        <ShortcutTrigger
+          shortcutKey="Enter"
+          onShortcutTrigger={(e: any) => {
+            if (!hasFocus || !commentText) {
+              return e;
+            }
+            // @ts-expect-error
+            return handleSubmitWithLoader(e);
+          }}
+          withCtrlKey
+        />
+        <ShortcutTrigger
+          shortcutKey="Enter"
+          onShortcutTrigger={(e: any) => {
+            if (!hasFocus || !commentText) {
+              return e;
+            }
+            // @ts-expect-error
+            return handleSubmitWithLoader(e);
+          }}
+          withMetaKey
+        />
+        <ShortcutTrigger
+          shortcutKey="Escape"
+          onShortcutTrigger={handleCancel}
+        />
       </div>
 
       {hasFailed && (
@@ -179,7 +178,6 @@ function CommentForm({
       <div className="mt-2 flex justify-end items-center">
         <ButtonTertiary
           size={ButtonPrimary.sizes.xs}
-          // @ts-expect-error
           disabled={isSubmitting}
           onClick={handleCancel}
           className="mr-2"
@@ -191,6 +189,7 @@ function CommentForm({
           id="submit-conversation-button"
           tooltipText={submitTooltipText}
           placement="bottom"
+          tabbable="false"
         >
           <ButtonPrimary
             disabled={!commentText}
@@ -215,20 +214,6 @@ function CommentForm({
     </form>
   );
 }
-
-CommentForm.propTypes = {
-  children: string,
-  onSubmit: func.isRequired,
-  users: arrayOf(shape({})).isRequired,
-  onRowCountChange: func,
-  autoFocusInput: bool,
-  onCancel: func,
-  placeholder: string,
-  onChange: func,
-  submitText: string,
-  onMention: func,
-  submitTooltipText: string,
-};
 
 CommentForm.defaultProps = {
   children: "",

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Dropdown from "../Dropdown";
 import Icon from "../Icon";
 import TooltipWrapper from "../TooltipWrapper";
@@ -56,19 +55,6 @@ export class UserSearchDropdown extends Component {
     );
   }
 }
-
-// @ts-expect-error TS(2339): Property 'propTypes' does not exist on type 'typeo... Remove this comment to see the full error message
-UserSearchDropdown.propTypes = {
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  users: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  addUser: PropTypes.func.isRequired,
-  displayEmail: PropTypes.bool.isRequired,
-  dropdownAutoPosition: PropTypes.bool.isRequired,
-  searchHeading: PropTypes.string,
-  tooltipText: PropTypes.string,
-  className: PropTypes.string,
-  useAtIcon: PropTypes.bool,
-};
 
 // @ts-expect-error TS(2339): Property 'defaultProps' does not exist on type 'ty... Remove this comment to see the full error message
 UserSearchDropdown.defaultProps = {

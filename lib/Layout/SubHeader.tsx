@@ -1,8 +1,7 @@
-import React from 'react';
-import { useSpring, animated } from 'react-spring';
+import React from "react";
+import { useSpring, animated } from "react-spring";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'd3-e... Remove this comment to see the full error message
-import * as easings from 'd3-ease';
-import { node, string, shape } from 'prop-types';
+import * as easings from "d3-ease";
 
 export function SubHeader({
   children,
@@ -14,8 +13,8 @@ export function SubHeader({
     ...animatableProperties,
     config: {
       easing: easings.easeCubic,
-      duration: 300
-    }
+      duration: 300,
+    },
   });
   return (
     <animated.div
@@ -28,13 +27,7 @@ export function SubHeader({
   );
 }
 
-SubHeader.propTypes = {
-  children: node.isRequired,
-  className: string,
-  animatableProperties: shape({})
-};
-
 SubHeader.defaultProps = {
-  className: '',
-  animatableProperties: {}
+  className: "",
+  animatableProperties: {},
 };

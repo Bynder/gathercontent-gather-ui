@@ -11,7 +11,7 @@ function ItemDndMock({ children }: any) {
 
   return (
     <Draggable item={{ type: "item" }} preview={preview}>
-      {({ isDragging }, dragRef) => (
+      {({ isDragging }: any, dragRef: any) => (
         <div ref={dragRef}>
           <ItemRow
             bordered

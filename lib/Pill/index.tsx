@@ -1,6 +1,6 @@
 import React from "react";
 import { oneOf } from "prop-types";
-import { propTypes, defaultProps, types, sizes } from "./common";
+import { defaultProps, types, sizes } from "./common";
 import PillDefault from "./PillDefault";
 import PillRed from "./PillRed";
 import PillGreen from "./PillGreen";
@@ -35,11 +35,6 @@ export function Pill({ type, children, ...rest }: any) {
 
   return <PillType {...rest}>{children}</PillType>;
 }
-
-Pill.propTypes = {
-  ...propTypes,
-  type: oneOf(Object.keys(types)),
-};
 
 Pill.defaultProps = {
   ...defaultProps,

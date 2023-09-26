@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 import Button from "../Button";
 import Icon from "../Icon";
 import TooltipWrapper from "../TooltipWrapper";
@@ -30,12 +29,12 @@ function ConfirmationDropdownContent({
     ? [...sharedButtonProps, "link-danger"]
     : [...sharedButtonProps, "link-default"];
 
-  const { 
-    confirmationPromise, 
-    onPromiseResolve, 
-    onPromiseReject, 
-    dropdownContent, 
-    ...rest 
+  const {
+    confirmationPromise,
+    onPromiseResolve,
+    onPromiseReject,
+    dropdownContent,
+    ...rest
   } = props;
 
   return (
@@ -46,15 +45,13 @@ function ConfirmationDropdownContent({
             {children}
 
             <DropdownFooter data-testid={`${id}-footer`}>
-              {
-                promiseIsPending && (
-                  <Icon
-                    name="loader"
-                    className="confirmation-dropdown__loader"
-                    title="Loading icon"
-                  />  
-                )
-              }
+              {promiseIsPending && (
+                <Icon
+                  name="loader"
+                  className="confirmation-dropdown__loader"
+                  title="Loading icon"
+                />
+              )}
               <TooltipWrapper
                 id="confirmation-dropdown-tooltip"
                 tooltipText={actionTooltip}
@@ -98,22 +95,6 @@ function ConfirmationDropdownContent({
     </DropdownContent>
   );
 }
-
-ConfirmationDropdownContent.propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  onConfirm: PropTypes.func.isRequired,
-  onHide: PropTypes.func,
-  isDanger: PropTypes.bool,
-  disabled: PropTypes.bool,
-  hideOnCompletion: PropTypes.bool,
-  promiseIsPending: PropTypes.bool,
-  confirmationText: PropTypes.string,
-  onCancel: PropTypes.func,
-  secondaryAction: PropTypes.node,
-  actionTooltip: PropTypes.string,
-  onCompletion: PropTypes.func.isRequired,
-};
 
 ConfirmationDropdownContent.defaultProps = {
   isDanger: false,

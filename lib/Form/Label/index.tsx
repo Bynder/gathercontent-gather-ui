@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
 function Label({
   label,
@@ -13,24 +12,24 @@ function Label({
   overrideLabelDefault,
   active,
   disabled,
-  hinted
+  hinted,
 }: any) {
   const labelClasses = cx(`form-checkbox__label ${className}`, {
-    'is-disabled': disabled,
-    'form-checkbox__label--hinted': hinted
+    "is-disabled": disabled,
+    "form-checkbox__label--hinted": hinted,
   });
 
-  const textElementClasses = cx('form-input__text', {
-    'is-highlight': highlight,
-    'is-active': active
+  const textElementClasses = cx("form-input__text", {
+    "is-highlight": highlight,
+    "is-active": active,
   });
 
   const buttonElementClasses = cx({
-    'is-highlight': highlight
+    "is-highlight": highlight,
   });
 
   const handleOnClick = () => {
-    if (typeof overrideLabelDefault === 'function') {
+    if (typeof overrideLabelDefault === "function") {
       overrideLabelDefault();
     }
   };
@@ -59,30 +58,16 @@ function Label({
   );
 }
 
-Label.propTypes = {
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  overrideLabelDefault: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-  labelMouseEnter: PropTypes.func,
-  labelMouseLeave: PropTypes.func,
-  active: PropTypes.bool,
-  subtitle: PropTypes.string,
-  className: PropTypes.string,
-  highlight: PropTypes.bool,
-  disabled: PropTypes.bool,
-  hinted: PropTypes.bool
-};
-
 Label.defaultProps = {
-  subtitle: '',
-  className: '',
+  subtitle: "",
+  className: "",
   highlight: false,
   overrideLabelDefault: false,
   labelMouseEnter: () => {},
   labelMouseLeave: () => {},
   active: false,
   disabled: false,
-  hinted: false
+  hinted: false,
 };
 
 export default Label;

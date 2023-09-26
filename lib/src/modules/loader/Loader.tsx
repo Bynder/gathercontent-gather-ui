@@ -1,5 +1,4 @@
 import React from "react";
-import { string } from "prop-types";
 import cx from "classnames";
 import { Icon } from "lib";
 
@@ -27,11 +26,6 @@ function Loader({ heading, progress, size, className }: any) {
     </div>
   );
 }
-
-Loader.propTypes = {
-  heading: string,
-  progress: string,
-};
 
 Loader.defaultProps = {
   heading: null,

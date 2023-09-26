@@ -1,33 +1,28 @@
-import * as React from 'react';
-import { bool } from 'prop-types';
+import * as React from "react";
 
 export const SidebarSectionContext = React.createContext({});
 
 export function SidebarSection({
   children,
   initialShowMore,
-  className = '',
+  className = "",
   ...rest
 }: any) {
   const [showMore, setShowMore] = React.useState(initialShowMore);
   const sharedState = {
     showMore,
-    setShowMore
+    setShowMore,
   };
 
   return (
     <SidebarSectionContext.Provider value={sharedState}>
       <div className={`sidebar-section ${className}`} {...rest}>
-        {typeof children === 'function' ? children(sharedState) : children}
+        {typeof children === "function" ? children(sharedState) : children}
       </div>
     </SidebarSectionContext.Provider>
   );
 }
 
-SidebarSection.propTypes = {
-  initialShowMore: bool
-};
-
 SidebarSection.defaultProps = {
-  initialShowMore: false
+  initialShowMore: false,
 };

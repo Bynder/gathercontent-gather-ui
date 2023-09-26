@@ -1,28 +1,13 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import List from "./index";
 import Button from "../Button";
 import Icon from "../Icon";
 
 export class ListItem extends Component {
-  static propTypes = {
-    action: PropTypes.node,
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]),
-    isCurrent: PropTypes.bool,
-    showSubList: PropTypes.bool,
-    onToggle: PropTypes.func,
-    id: PropTypes.string,
-    collapse: PropTypes.bool,
-  };
-
   static defaultProps = {
     id: "",
     action: null,
-    children: null,
     isCurrent: false,
     collapse: false,
     showSubList: false,

@@ -1,11 +1,6 @@
-import React from 'react';
-import { node, string } from 'prop-types';
+import React from "react";
 
-export function Section({
-  children,
-  className,
-  ...rest
-}: any) {
+export function Section({ children, className, ...rest }: any) {
   return (
     <div className={`layout-section ${className}`} {...rest}>
       {children}
@@ -13,11 +8,6 @@ export function Section({
   );
 }
 
-Section.propTypes = {
-  children: node.isRequired,
-  className: string
-};
-
 Section.defaultProps = {
-  className: ''
+  className: "",
 };

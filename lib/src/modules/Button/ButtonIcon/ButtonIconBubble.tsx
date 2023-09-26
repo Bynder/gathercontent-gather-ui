@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonIcon } from "lib";
 import cx from "classnames";
-import { buttonIconPropTypes, buttonIconDefaultProps } from "../common";
+import { buttonIconDefaultProps } from "../common";
 
 export function ButtonIconBubble({
   className,
@@ -28,8 +28,6 @@ export function ButtonIconBubble({
     />
   );
 }
-
-ButtonIconBubble.propTypes = buttonIconPropTypes;
 
 ButtonIconBubble.defaultProps = buttonIconDefaultProps;
 

@@ -1,14 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Icon from '../Icon';
+import React from "react";
+import cx from "classnames";
+import Icon from "../Icon";
 
-function UserSearchListUserName({
-  name,
-  isSelected
-}: any) {
-  const classes = cx('user-search-list__user-name', {
-    'is-active': isSelected
+function UserSearchListUserName({ name, isSelected }: any) {
+  const classes = cx("user-search-list__user-name", {
+    "is-active": isSelected,
   });
   return (
     <div className={classes}>
@@ -17,10 +13,5 @@ function UserSearchListUserName({
     </div>
   );
 }
-
-UserSearchListUserName.propTypes = {
-  name: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool.isRequired
-};
 
 export default UserSearchListUserName;

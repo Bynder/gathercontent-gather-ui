@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import React, { createContext, useEffect, useRef, useState } from "react";
-import { func, bool, string, number, oneOfType, node } from "prop-types";
 
 const getElementPath = (targetElement: any) => {
   let path = [targetElement];
@@ -49,11 +48,43 @@ const addDocumentEventListener = (
 
 const BoundaryClickWatcherContext = createContext({});
 
-export function BoundaryClickWatcher(props: any) {
-  const [boundaryIsActive, setBoundaryIsActive] = useState(props.isActive);
-  const [boundaryIsFocussed, setBoundaryIsFocussed] = useState(
-    props.isFocussed
-  );
+interface Props {
+  insideClickHandler?: (e?: React.MouseEvent) => void;
+  outsideClickHandler?: (e?: React.MouseEvent) => void;
+  onMouseEnter?: (e?: React.MouseEvent) => void;
+  onMouseLeave?: (e?: React.MouseEvent) => void;
+  className?: string;
+  alwaysListen?: boolean;
+  isActive?: boolean;
+  isFocussed?: boolean;
+  BoundaryElement?: string;
+  tabIndex?: number | null;
+  outsideClickEventValidator?: (e?: React.MouseEvent) => boolean;
+  children:
+    | React.ReactNode
+    | JSX.Element
+    | ((
+        boundaryIsActive: boolean,
+        boundaryIsFocussed: boolean
+      ) => React.ReactNode | JSX.Element);
+}
+
+export function BoundaryClickWatcher({
+  insideClickHandler = () => {},
+  outsideClickHandler = () => {},
+  onMouseEnter = () => {},
+  onMouseLeave = () => {},
+  className = "",
+  alwaysListen = false,
+  isActive = false,
+  isFocussed = false,
+  BoundaryElement = "div",
+  tabIndex = 0,
+  outsideClickEventValidator = () => true,
+  children,
+}: Props) {
+  const [boundaryIsActive, setBoundaryIsActive] = useState(isActive);
+  const [boundaryIsFocussed, setBoundaryIsFocussed] = useState(isFocussed);
   const clickedElementPath = useRef([]);
   const containerRef = useRef();
   const handleClickRef = useRef();
@@ -69,12 +100,12 @@ export function BoundaryClickWatcher(props: any) {
 
   const handleInnerClick = () => {
     setBoundaryIsActive(true);
-    props.insideClickHandler();
+    insideClickHandler();
   };
 
   const handleOuterClick = (event: any) => {
     setBoundaryIsActive(false);
-    props.outsideClickHandler(event);
+    outsideClickHandler(event);
   };
 
   const handleMouseDown = ({ target }: any) => {
@@ -95,7 +126,7 @@ export function BoundaryClickWatcher(props: any) {
       // @ts-expect-error TS(2339): Property 'contains' does not exist on type 'never'... Remove this comment to see the full error message
       containerRef.current.contains(document.activeElement);
 
-    const hasPassedValidation = props.outsideClickEventValidator(event);
+    const hasPassedValidation = outsideClickEventValidator(event);
 
     const userHasClickedOutside =
       !targetIsContainer &&
@@ -109,11 +140,11 @@ export function BoundaryClickWatcher(props: any) {
   };
 
   useEffect(() => {
-    setBoundaryIsActive(props.isActive);
-  }, [props.isActive]);
+    setBoundaryIsActive(isActive);
+  }, [isActive]);
 
   useEffect(() => {
-    if (boundaryIsActive || props.alwaysListen) {
+    if (boundaryIsActive || alwaysListen) {
       addDocumentEventListener(
         handleClick,
         handleMouseDown,
@@ -122,16 +153,14 @@ export function BoundaryClickWatcher(props: any) {
       );
     }
 
-    if (!boundaryIsActive && !props.alwaysListen) {
+    if (!boundaryIsActive && !alwaysListen) {
       removeDocumentEventListener(handleClickRef, handleMouseDownRef);
     }
 
     return () => {
       removeDocumentEventListener(handleClickRef, handleMouseDownRef);
     };
-  }, [boundaryIsActive, props.outsideClickEventValidator]);
-
-  const { BoundaryElement } = props;
+  }, [boundaryIsActive, outsideClickEventValidator]);
 
   const sharedContext = {
     boundaryIsActive,
@@ -142,55 +171,27 @@ export function BoundaryClickWatcher(props: any) {
 
   return (
     <BoundaryClickWatcherContext.Provider value={sharedContext}>
+      {/* @ts-expect-error */}
       <BoundaryElement
-        tabIndex={props.tabIndex}
+        tabIndex={tabIndex}
         role="button"
         ref={(el: any) => {
           containerRef.current = el;
         }}
         onClick={handleInnerClick}
         onKeyPress={handleInnerClick}
-        className={`boundary-click-watcher ${props.className}`}
-        onMouseEnter={props.onMouseEnter}
-        onMouseLeave={props.onMouseLeave}
+        className={`boundary-click-watcher ${className}`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
         onBlur={handleBlur}
         onFocus={handleFocus}
       >
-        {typeof props.children === "function"
-          ? props.children(boundaryIsActive, boundaryIsFocussed)
-          : props.children}
+        {typeof children === "function"
+          ? children(boundaryIsActive, boundaryIsFocussed)
+          : children}
       </BoundaryElement>
     </BoundaryClickWatcherContext.Provider>
   );
 }
-
-BoundaryClickWatcher.propTypes = {
-  insideClickHandler: func,
-  outsideClickHandler: func,
-  alwaysListen: bool,
-  isActive: bool,
-  isFocussed: bool,
-  className: string,
-  children: oneOfType([node, func]).isRequired,
-  onMouseEnter: func,
-  onMouseLeave: func,
-  BoundaryElement: string,
-  tabIndex: number,
-  outsideClickEventValidator: func,
-};
-
-BoundaryClickWatcher.defaultProps = {
-  insideClickHandler() {},
-  outsideClickHandler() {},
-  onMouseEnter() {},
-  onMouseLeave() {},
-  className: "",
-  alwaysListen: false,
-  isActive: false,
-  isFocussed: false,
-  BoundaryElement: "div",
-  tabIndex: 0,
-  outsideClickEventValidator: () => true,
-};
 
 export default BoundaryClickWatcher;

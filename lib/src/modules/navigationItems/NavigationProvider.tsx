@@ -1,13 +1,8 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { node } from 'prop-types';
+import React, { createContext, useState, useEffect } from "react";
 
 const NavigationContext = createContext({});
 
-function NavigationProvider({
-  children,
-  onNav,
-  defaultTabId
-}: any) {
+function NavigationProvider({ children, onNav, defaultTabId }: any) {
   const [activeTabId, setActiveTabId] = useState(defaultTabId);
   const sharedState = { onNav, activeTabId, setActiveTabId };
 
@@ -21,10 +16,6 @@ function NavigationProvider({
     </NavigationContext.Provider>
   );
 }
-
-NavigationProvider.propTypes = {
-  children: node.isRequired
-};
 
 NavigationProvider.defaultProps = {};
 

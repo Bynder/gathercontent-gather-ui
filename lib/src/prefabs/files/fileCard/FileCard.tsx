@@ -1,5 +1,4 @@
 import React from "react";
-import { bool, node } from "prop-types";
 import cx from "classnames";
 import { Card } from "lib";
 
@@ -34,13 +33,6 @@ function FileCard({
     </Card>
   );
 }
-
-FileCard.propTypes = {
-  meta: node,
-  controls: node,
-  insetMeta: bool,
-  preview: node,
-};
 
 FileCard.defaultProps = {
   insetMeta: false,

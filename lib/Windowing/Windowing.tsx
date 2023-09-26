@@ -1,5 +1,4 @@
-import React, { useState, createContext, useEffect } from 'react';
-import { node, number, arrayOf, string, oneOfType } from 'prop-types';
+import React, { useState, createContext, useEffect } from "react";
 
 export const WindowingContext = createContext({});
 
@@ -9,7 +8,7 @@ function Windowing({
   debounceTimer,
   itemHeight,
   buffer,
-  allIds
+  allIds,
 }: any) {
   const [scrollTop, setScrollTop] = useState(null);
   const [height, setHeight] = useState(null);
@@ -34,7 +33,7 @@ function Windowing({
 
     setRenderIndexes({
       offset: startWithBuffer,
-      length: endWithBuffer - startWithBuffer
+      length: endWithBuffer - startWithBuffer,
     });
   };
 
@@ -46,14 +45,14 @@ function Windowing({
     renderIndexes,
     itemHeight,
     baseItemStyle: {
-      height: `${itemHeight}px`
+      height: `${itemHeight}px`,
     },
     setHeight,
     debounceTimer,
     containerHeight,
     inViewWindowingIds,
     setInViewWindowingIds,
-    allWindowingIds: allIds
+    allWindowingIds: allIds,
   };
 
   return (
@@ -63,19 +62,10 @@ function Windowing({
   );
 }
 
-Windowing.propTypes = {
-  children: node.isRequired,
-  itemHeight: number.isRequired,
-  debounceTimer: number,
-  containerHeight: oneOfType([string, number]),
-  buffer: number,
-  allIds: arrayOf(oneOfType([string, number])).isRequired
-};
-
 Windowing.defaultProps = {
   debounceTimer: 15,
-  containerHeight: '',
-  buffer: 10
+  containerHeight: "",
+  buffer: 10,
 };
 
 export { Windowing };

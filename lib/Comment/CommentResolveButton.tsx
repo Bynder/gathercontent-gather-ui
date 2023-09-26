@@ -1,5 +1,4 @@
 import React from "react";
-import { bool, func } from "prop-types";
 import { ButtonSecondary } from "lib";
 import Icon from "../Icon";
 
@@ -33,13 +32,6 @@ export function CommentResolveButton({
     </div>
   );
 }
-
-CommentResolveButton.propTypes = {
-  resolved: bool,
-  onUndoResolve: func,
-  userCanResolve: bool,
-  onResolve: func,
-};
 
 CommentResolveButton.defaultProps = {
   resolved: false,

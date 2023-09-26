@@ -1,12 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
 function SearchOptions(props: any) {
-  return <div className="search-options">{props.children}</div>
+  return <div className="search-options">{props.children}</div>;
 }
-
-SearchOptions.propTypes = {
-  children: PropTypes.node.isRequired
-};
 
 export default SearchOptions;

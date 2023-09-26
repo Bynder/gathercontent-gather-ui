@@ -54,7 +54,6 @@ function TabsStory({ tabs, dragSide, dragIndex, editable }: any) {
                       </button>
                     ) : (
                       <TabsComponent.TabNameForm
-                        // @ts-expect-error
                         tab={t}
                         className={`${buttonClasses}`}
                         setActiveTab={(e: any) => {
@@ -114,11 +113,11 @@ export default {
   },
 };
 
-export const Tabs = (args: any) => {
+export function Tabs(args: any) {
   const tabs = [...Array(args.tabsNumber).keys()].map(() => ({
     id: v4(),
     name: faker.commerce.productName(),
   }));
 
   return <TabsStory tabs={tabs} {...args} />;
-};
+}

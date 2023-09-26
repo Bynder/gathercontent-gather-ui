@@ -1,19 +1,8 @@
 import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
 import cx from "classnames";
 import Icon from "../../Icon";
 
 export class ImageLoader extends PureComponent {
-  static propTypes = {
-    alt: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    loadTransition: PropTypes.bool,
-    // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-    preLoadedStyles: PropTypes.shape(),
-    onLoad: PropTypes.func,
-    onError: PropTypes.func,
-  };
-
   static defaultProps = {
     loadTransition: false,
     preLoadedStyles: {},

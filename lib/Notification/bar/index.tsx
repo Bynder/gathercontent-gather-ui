@@ -1,6 +1,5 @@
 import React from "react";
-import { string } from "prop-types";
-import { defaults, types } from "./barTypes";
+import { defaults } from "./barTypes";
 import NotificationBarDanger from "./NotificationBarDanger";
 import NotificationBarInformation from "./NotificationBarInformation";
 import NotificationBarPromo from "./NotificationBarPromo";
@@ -30,11 +29,6 @@ export function NotificationBar({ level, children, ...rest }: any) {
 NotificationBar.defaultProps = {
   ...defaults,
   level: "warning",
-};
-
-NotificationBar.propTypes = {
-  ...types,
-  level: string,
 };
 
 export default NotificationBar;

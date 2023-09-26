@@ -1,5 +1,4 @@
 import React from "react";
-import { bool, func, string } from "prop-types";
 import cx from "classnames";
 import { ButtonIconContained, ButtonIconContainedDanger } from "lib";
 
@@ -29,12 +28,6 @@ function Control({
     </div>
   );
 }
-
-Control.propTypes = {
-  onClick: func.isRequired,
-  iconName: string.isRequired,
-  danger: bool,
-};
 
 Control.defaultProps = {
   danger: false,

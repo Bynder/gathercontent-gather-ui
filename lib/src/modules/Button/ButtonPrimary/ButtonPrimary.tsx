@@ -1,7 +1,7 @@
-import React from 'react';
-import cx from 'classnames';
-import { ButtonBase } from '../ButtonBase';
-import { propTypes, defaultProps, sizes } from '../common';
+import React from "react";
+import cx from "classnames";
+import { ButtonBase } from "../ButtonBase";
+import { ButtonTypes, defaultProps, sizes } from "../common";
 
 function ButtonPrimary({
   children,
@@ -9,15 +9,15 @@ function ButtonPrimary({
   disabled,
   connectedRight,
   ...rest
-}: any) {
-  const classes = cx('button-primary', className, {
-    'button-primary-connected-right': connectedRight
+}: ButtonTypes) {
+  const classes = cx("button-primary", className, {
+    "button-primary-connected-right": connectedRight,
   });
 
   return (
     <ButtonBase
       className={classes}
-      loaderTypes={['white']}
+      loaderTypes={["white"]}
       disabled={disabled}
       connectedRight={connectedRight}
       {...rest}
@@ -26,8 +26,6 @@ function ButtonPrimary({
     </ButtonBase>
   );
 }
-
-ButtonPrimary.propTypes = propTypes;
 
 ButtonPrimary.defaultProps = defaultProps;
 

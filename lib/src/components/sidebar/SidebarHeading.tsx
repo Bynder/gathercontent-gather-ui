@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { bool } from 'prop-types';
+import * as React from "react";
 
 export function SidebarHeading({
   children,
-  className = '',
+  className = "",
   showMoreToggle,
   ...rest
 }: any) {
@@ -14,10 +13,6 @@ export function SidebarHeading({
   );
 }
 
-SidebarHeading.propTypes = {
-  showMoreToggle: bool
-};
-
 SidebarHeading.defaultProps = {
-  showMoreToggle: false
+  showMoreToggle: false,
 };

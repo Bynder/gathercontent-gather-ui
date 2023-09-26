@@ -1,12 +1,11 @@
 import React, { ReactNode } from "react";
-import PropTypes from "prop-types";
 import Button from "../Button";
 import ProgressButton from "../ProgressButton";
 import Modal from "../Modal";
 
 interface Props {
   title: string;
-  children: ReactNode;
+  children: ReactNode | JSX.Element;
   submitText: string;
   submitHandler: () => void;
   cancelText: string;

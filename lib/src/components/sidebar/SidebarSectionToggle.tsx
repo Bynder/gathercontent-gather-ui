@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ButtonSecondary } from "lib";
-import { string } from "prop-types";
 import { SidebarSectionContext } from "./SidebarSection";
 
 export function SidebarSectionToggle({
@@ -25,11 +24,6 @@ export function SidebarSectionToggle({
     </ButtonSecondary>
   );
 }
-
-SidebarSectionToggle.propTypes = {
-  showText: string,
-  hideText: string,
-};
 
 SidebarSectionToggle.defaultProps = {
   showText: "Show",

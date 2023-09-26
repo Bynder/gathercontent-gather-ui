@@ -1,41 +1,35 @@
-import React, { useState } from 'react';
-import { node, string, number } from 'prop-types';
-import { Tab, TabContext } from './Tab';
-import { TabsActionGroup } from './TabsActionGroup';
-import { TabsGroup } from './TabsGroup';
-import { TabsScrollShadow } from './TabsScrollShadow';
-import { TabDragLine } from './TabDragLine';
-import { TabName } from './TabName';
-import { TabAside } from './TabAside';
-import { TabOptions } from './TabOptions';
-import { TabsRow } from './TabsRow';
-import { TabNameForm } from './TabNameForm';
+import React, { useState } from "react";
+import { Tab, TabContext } from "./Tab";
+import { TabsActionGroup } from "./TabsActionGroup";
+import { TabsGroup } from "./TabsGroup";
+import { TabsScrollShadow } from "./TabsScrollShadow";
+import { TabDragLine } from "./TabDragLine";
+import { TabName } from "./TabName";
+import { TabAside } from "./TabAside";
+import { TabOptions } from "./TabOptions";
+import { TabsRow } from "./TabsRow";
+import { TabNameForm } from "./TabNameForm";
 
 const TabsContext = React.createContext({});
 
-function Tabs({
-  children,
-  className,
-  tabsLength,
-  activeTabId
-}: any) {
-  const [scrollPosition, setScrollPosition] = useState('top');
+function Tabs({ children, className, tabsLength, activeTabId }: any) {
+  const [scrollPosition, setScrollPosition] = useState("top");
 
   const sharedState = {
     activeTabId,
-    tabsLength
+    tabsLength,
   };
 
   return (
     <TabsContext.Provider value={sharedState}>
       <div
-        onScroll={e => {
+        onScroll={(e) => {
           const element = e.target;
 
           // @ts-expect-error TS(2339): Property 'scrollTop' does not exist on type 'Event... Remove this comment to see the full error message
           if (element.scrollTop === 0) {
-            if (scrollPosition !== 'top') {
-              setScrollPosition('top');
+            if (scrollPosition !== "top") {
+              setScrollPosition("top");
             }
           } else if (
             // @ts-expect-error TS(2339): Property 'scrollHeight' does not exist on type 'Ev... Remove this comment to see the full error message
@@ -43,11 +37,11 @@ function Tabs({
             // @ts-expect-error TS(2339): Property 'clientHeight' does not exist on type 'Ev... Remove this comment to see the full error message
             element.clientHeight
           ) {
-            if (scrollPosition !== 'bottom') {
-              setScrollPosition('bottom');
+            if (scrollPosition !== "bottom") {
+              setScrollPosition("bottom");
             }
-          } else if (scrollPosition !== 'middle') {
-            setScrollPosition('middle');
+          } else if (scrollPosition !== "middle") {
+            setScrollPosition("middle");
           }
         }}
         className={`tabs-new relative ${className} ${scrollPosition}`}
@@ -73,15 +67,8 @@ Tabs.TabNameForm = TabNameForm;
 Tabs.TabAside = TabAside;
 Tabs.TabOptions = TabOptions;
 
-Tabs.propTypes = {
-  tabsLength: number.isRequired,
-  activeTabId: string.isRequired,
-  children: node.isRequired,
-  className: string
-};
-
 Tabs.defaultProps = {
-  className: ''
+  className: "",
 };
 
 export { Tabs, TabsContext };

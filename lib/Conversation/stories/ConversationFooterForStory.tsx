@@ -15,7 +15,6 @@ function ConversationFooterForStory({ isOpen }: any) {
       <Comment.Provider isEditing isOpen>
         <Comment.Form
           users={mockUsers}
-          // @ts-expect-error
           author={mockUser}
           submitText="Reply"
           placeholder="Reply..."

@@ -1,12 +1,7 @@
-import React from 'react';
-import { node, string } from 'prop-types';
-import { MenuItem } from './MenuItem';
+import React from "react";
+import { MenuItem } from "./MenuItem";
 
-function OptionMenu({
-  children,
-  className,
-  ...rest
-}: any) {
+function OptionMenu({ children, className, ...rest }: any) {
   return (
     <div className={`${className} px-4 py-2`} {...rest}>
       {children}
@@ -14,13 +9,8 @@ function OptionMenu({
   );
 }
 
-OptionMenu.propTypes = {
-  children: node.isRequired,
-  className: string
-};
-
 OptionMenu.defaultProps = {
-  className: ''
+  className: "",
 };
 
 OptionMenu.MenuItem = MenuItem;

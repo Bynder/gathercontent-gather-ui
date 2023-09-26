@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
-import { node, bool } from 'prop-types';
+import React, { useState } from "react";
 
 export const FinderPanelLayoutContext = React.createContext({});
 
-function FinderPanelLayoutProvider({
-  children,
-  fixed
-}: any) {
+function FinderPanelLayoutProvider({ children, fixed }: any) {
   const [headerHeight, setHeaderHeight] = useState(null);
   const sharedState = {
     headerHeight,
     setHeaderHeight,
-    fixed
+    fixed,
   };
 
   return (
@@ -21,13 +17,8 @@ function FinderPanelLayoutProvider({
   );
 }
 
-FinderPanelLayoutProvider.propTypes = {
-  children: node.isRequired,
-  fixed: bool
-};
-
 FinderPanelLayoutProvider.defaultProps = {
-  fixed: false
+  fixed: false,
 };
 
 export default FinderPanelLayoutProvider;

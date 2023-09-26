@@ -1,7 +1,6 @@
-import React from 'react';
-import { bool, func, node } from 'prop-types';
-import Button from '../Button';
-import Icon from '../Icon';
+import React from "react";
+import Button from "../Button";
+import Icon from "../Icon";
 
 function FolderRowName({
   children,
@@ -17,7 +16,7 @@ function FolderRowName({
       {showToggle && (
         <div className="folder-row__toggle h-margin-clear h-margin-right-half">
           <Button
-            types={['icon-only']}
+            types={["icon-only"]}
             onClick={() => {
               setShow(!show);
               handleOnClick();
@@ -29,7 +28,7 @@ function FolderRowName({
         </div>
       )}
       <Icon
-        name={show ? 'folderOpen' : 'folder'}
+        name={show ? "folderOpen" : "folder"}
         className="h-margin-right-half"
       />
       <div className="text-overflow-ellipsis h-margin-clear h-width-100">
@@ -39,19 +38,10 @@ function FolderRowName({
   );
 }
 
-FolderRowName.propTypes = {
-  children: node.isRequired,
-  show: bool.isRequired,
-  setShow: func.isRequired,
-  showToggle: bool,
-  toggleTitle: node,
-  handleOnClick: func
-};
-
 FolderRowName.defaultProps = {
   showToggle: true,
-  toggleTitle: 'toggle the contents',
-  handleOnClick: () => {}
+  toggleTitle: "toggle the contents",
+  handleOnClick: () => {},
 };
 
 export { FolderRowName };

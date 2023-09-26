@@ -1,9 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React from "react";
 import cx from "classnames";
-import { arrayOf, bool, oneOfType, string } from "prop-types";
 import { Icon } from "lib";
-import { defaultProps, propTypes, sizes } from "./common";
+import { defaultProps, sizes } from "./common";
 
 export function ButtonBase({
   children,
@@ -53,13 +52,6 @@ export function ButtonBase({
     </button>
   );
 }
-
-ButtonBase.propTypes = {
-  ...propTypes,
-  disabled: bool,
-  loaderTypes: arrayOf(string),
-  size: oneOfType([string, bool]),
-};
 
 ButtonBase.defaultProps = {
   ...defaultProps,

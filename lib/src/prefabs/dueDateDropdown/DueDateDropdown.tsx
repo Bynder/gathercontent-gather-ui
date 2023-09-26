@@ -50,7 +50,6 @@ export function DueDateDropdown({
                   active={showContent}
                   size={ButtonIcon.sizes.sm}
                   onClick={toggleShowContent}
-                  // @ts-expect-error
                   title="Set a due date"
                 />
               </TooltipWrapper>

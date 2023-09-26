@@ -1,26 +1,16 @@
-import React from 'react';
-import { node, string, shape } from 'prop-types';
+import React from "react";
 
-function FinderPanelLayoutLeft({
-  children,
-  className,
-  style
-}: any) {
-  return <div className={`finder-panel-layout__left ${className}`} style={style}>
-    {children}
-  </div>
+function FinderPanelLayoutLeft({ children, className, style }: any) {
+  return (
+    <div className={`finder-panel-layout__left ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
 
-FinderPanelLayoutLeft.propTypes = {
-  children: node.isRequired,
-  className: string,
-  // @ts-expect-error TS(2554): Expected 1 arguments, but got 0.
-  style: shape()
-};
-
 FinderPanelLayoutLeft.defaultProps = {
-  className: '',
-  style: {}
+  className: "",
+  style: {},
 };
 
 export default FinderPanelLayoutLeft;

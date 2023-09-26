@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { node, string } from "prop-types";
 import { FinderPanelLayoutContext } from "./FinderPanelLayoutProvider";
 
 function FinderPanelLayoutLeftContent({ children, className }: any) {
@@ -18,11 +17,6 @@ function FinderPanelLayoutLeftContent({ children, className }: any) {
     </div>
   );
 }
-
-FinderPanelLayoutLeftContent.propTypes = {
-  children: node.isRequired,
-  className: string,
-};
 
 FinderPanelLayoutLeftContent.defaultProps = {
   className: "",

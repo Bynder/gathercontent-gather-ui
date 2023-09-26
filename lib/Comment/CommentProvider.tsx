@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { bool, node } from 'prop-types';
+import React, { createContext, useEffect, useState } from "react";
 
 const CommentContext = createContext({});
 
@@ -9,7 +8,7 @@ function CommentProvider({
   isEditing: editing,
   isDeleting: deleting,
   hasFailed: failed,
-  showBorders
+  showBorders,
 }: any) {
   const [isEditing, setIsEditing] = useState(editing);
   const [isDeleting, setIsDeleting] = useState(deleting);
@@ -35,7 +34,7 @@ function CommentProvider({
     isDeleting,
     setIsDeleting,
     hasFailed,
-    setHasFailed
+    setHasFailed,
   };
 
   return (
@@ -44,21 +43,11 @@ function CommentProvider({
     </CommentContext.Provider>
   );
 }
-
-CommentProvider.propTypes = {
-  children: node.isRequired,
-  isOpen: bool.isRequired,
-  showBorders: bool,
-  isDeleting: bool,
-  isEditing: bool,
-  hasFailed: bool
-};
-
 CommentProvider.defaultProps = {
   isDeleting: false,
   isEditing: false,
   hasFailed: false,
-  showBorders: false
+  showBorders: false,
 };
 
 export { CommentProvider, CommentContext };

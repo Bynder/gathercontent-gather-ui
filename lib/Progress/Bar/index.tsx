@@ -1,23 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-function ProgressBar({
-  className,
-  children
-}: any) {
-  const classes = cx(['progress__bar', className]);
+function ProgressBar({ className, children }: any) {
+  const classes = cx(["progress__bar", className]);
 
   return <div className={classes}>{children}</div>;
 }
 
-ProgressBar.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string
-};
-
 ProgressBar.defaultProps = {
-  className: ''
+  className: "",
 };
 
 export default ProgressBar;

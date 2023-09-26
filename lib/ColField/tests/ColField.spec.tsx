@@ -1,13 +1,13 @@
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, fireEvent } from "@testing-library/react";
 // @ts-expect-error TS(2307): Cannot find module 'lib/ColField/ColField' or its ... Remove this comment to see the full error message
 import ColField from "lib/ColField/ColField";
-// @ts-expect-error TS(2307): Cannot find module 'tests/setup' or its correspond... Remove this comment to see the full error message
-import { React } from "tests/setup";
+import React from "react";
 
 describe("ColField", () => {
-  const labelChange = jest.fn();
+  const labelChange = vi.fn();
 
-  const instructionChange = jest.fn();
+  const instructionChange = vi.fn();
   const defaultProps = {
     editable: true,
     labelChange,
@@ -43,12 +43,12 @@ describe("ColField", () => {
   afterEach(() => {
     cleanup();
 
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
-  test("displays the editable field label", () => {
+  it("displays the editable field label", () => {
     const { getByText, getByLabelText } = renderWrapper();
     fireEvent.click(getByText(defaultProps.label));
     const labelInput = getByLabelText(
@@ -64,7 +64,7 @@ describe("ColField", () => {
     expect(labelChange).toHaveBeenCalledWith("Meowdy");
   });
 
-  test("displays the editable field instructions", () => {
+  it("displays the editable field instructions", () => {
     const { getByText, getByPlaceholderText } = renderWrapper();
 
     expect(getByText(defaultProps.instructions));
@@ -80,7 +80,7 @@ describe("ColField", () => {
     expect(instructionChange).toHaveBeenCalled();
   });
 
-  test("displays the non-editable field label", () => {
+  it("displays the non-editable field label", () => {
     const { getByText, queryByText } = renderWrapper({
       ...defaultProps,
       editable: false,
@@ -91,7 +91,7 @@ describe("ColField", () => {
     expect(labelInput).toEqual(null);
   });
 
-  test("displays the non-editable field instructions", () => {
+  it("displays the non-editable field instructions", () => {
     const { getByText, queryByPlaceholderText } = renderWrapper({
       ...defaultProps,
       editable: false,
@@ -105,7 +105,7 @@ describe("ColField", () => {
     expect(instructionsInput).toEqual(null);
   });
 
-  test("displays the field body", () => {
+  it("displays the field body", () => {
     const { getByText } = renderWrapper();
 
     expect(getByText("field body hello!"));

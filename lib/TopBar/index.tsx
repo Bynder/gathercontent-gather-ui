@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   fixed?: boolean;
   scrollToFixed?: boolean;
   useDarkTheme?: boolean;
-  notification?: ReactNode;
+  notification?: ReactNode | JSX.Element;
   shadow?: boolean;
   useLightGreyTheme?: boolean;
 }

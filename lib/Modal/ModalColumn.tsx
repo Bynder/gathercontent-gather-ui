@@ -1,17 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
 function ModalColumn(props: any) {
-  return <div className={`modal__column ${props.className}`}>{props.children}</div>
+  return (
+    <div className={`modal__column ${props.className}`}>{props.children}</div>
+  );
 }
 
 ModalColumn.defaultProps = {
-  className: ''
-};
-
-ModalColumn.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: "",
 };
 
 export default ModalColumn;

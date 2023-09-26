@@ -31,7 +31,6 @@ function ConversationHeaderForStory({
   return isOpen ? (
     <Conversation.Header>
       <Comment.SubscribeToggle
-        // @ts-expect-error
         id={`${mockConversation.id}-subscribe`}
         isSubscribed={subscribed}
         onToggle={promise}

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { animated, useTransition } from "react-spring";
 import Icon from "../Icon";
 
@@ -61,18 +60,6 @@ SearchInput.defaultProps = {
   id: null,
   className: "",
   inputClassName: "",
-};
-
-SearchInput.propTypes = {
-  placeholder: PropTypes.string,
-  onChangeHandler: PropTypes.func.isRequired,
-  onClearHandler: PropTypes.func.isRequired,
-  hideIcon: PropTypes.bool,
-  value: PropTypes.string,
-  label: PropTypes.string,
-  id: PropTypes.string,
-  className: PropTypes.string,
-  inputClassName: PropTypes.string,
 };
 
 export default SearchInput;

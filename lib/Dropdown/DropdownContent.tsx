@@ -11,7 +11,7 @@ import { DropdownContext } from "./DropdownProvider";
 
 const CONTENT_BOUNDARY_PADDING = 40;
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   collapse?: boolean;
   right?: boolean;
   centre?: boolean;
@@ -21,6 +21,10 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   noBorder?: boolean;
   autoPositionLeft?: boolean;
   noTransform?: boolean;
+  children:
+    | React.ReactNode
+    | JSX.Element
+    | ((showContent: boolean) => React.ReactNode | JSX.Element);
 }
 
 export function DropdownContent({
