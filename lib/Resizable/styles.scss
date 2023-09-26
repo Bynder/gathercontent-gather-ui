@@ -1,0 +1,55 @@
+$gutterSize: 16px;
+$gutterColour: #006aff;
+
+.resizable {
+  position: relative;
+  display: flex;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__wrapper > *:first-child {
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+}
+
+.resizable__gutter {
+  position: absolute;
+  user-select: none;
+  height: 100%;
+  width: $gutterSize;
+  top: 0;
+  right: -(calc($gutterSize / 2));
+  cursor: ew-resize;
+
+  &::before {
+    content: "";
+    width: 2px;
+    margin: auto;
+    background-color: $gutterColour;
+    display: block;
+    height: 100%;
+  }
+}
+
+.resizable__gutter-handle {
+  background-color: $gutterColour;
+  border-radius: 4px;
+  height: 30px;
+  margin: auto;
+  width: 8px;
+  display: flex;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.1s;
+
+  .resizable__gutter:hover & {
+    opacity: 1;
+  }
+}
