@@ -1,17 +1,26 @@
 import type { PropsWithChildren } from "react";
 import React, { useCallback, useEffect, useRef } from "react";
 import { keepValueWithinRange, toPixels } from "../helpers";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export interface ResizableProps {
   containerWidth?: number | string;
+  id?: string;
   initialWidth?: number | string;
   minResizableWidth?: number | string;
   maxResizableWidth?: number | string;
+  rememberPosition?: boolean;
   useGutterOffset?: boolean;
 }
 
 export function Resizable(props: PropsWithChildren<ResizableProps>) {
-  const { children, initialWidth = "50%", useGutterOffset = false } = props;
+  const {
+    children,
+    id,
+    rememberPosition = false,
+    useGutterOffset = false,
+  } = props;
+  const initialWidth = toPixels(props.initialWidth ?? "50%");
   const containerWidth: number = toPixels(
     props.containerWidth ?? document.body.offsetWidth
   );
@@ -30,14 +39,21 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     startWidth: 0,
   });
 
-  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width || 0);
+  const [lastPosition, setLastPosition] = useLocalStorage(
+    `RESIZE_POSITION_${id ?? ""}`,
+    initialWidth
+  );
+
+  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width ?? 0);
 
   const setWidth = (value: number) => {
     if (resizeWrapperRef.current === null) return;
 
-    resizeWrapperRef.current.style.width = `${
-      keepValueWithinRange(value, minWidth, maxWidth) - gutterSize
-    }px`;
+    const newWidth =
+      keepValueWithinRange(value, minWidth, maxWidth) - gutterSize;
+
+    resizeWrapperRef.current.style.width = `${newWidth}px`;
+    setLastPosition(newWidth);
   };
 
   const doDrag = (evt: MouseEvent) => {
@@ -85,7 +101,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   };
 
   useEffect(() => {
-    setWidth(toPixels(initialWidth));
+    setWidth(rememberPosition ? lastPosition : initialWidth);
 
     // remember to remove global listeners on dismount
     return () => stopDrag();
