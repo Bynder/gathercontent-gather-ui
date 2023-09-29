@@ -30,9 +30,13 @@ $gutterColour: #006aff;
     content: "";
     width: 2px;
     margin: auto;
-    background-color: $gutterColour;
     display: block;
     height: 100%;
+    transition: background-color 0.1s;
+  }
+
+  &:hover::before {
+    background-color: $gutterColour;
   }
 }
 
