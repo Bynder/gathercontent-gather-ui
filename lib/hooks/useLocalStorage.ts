@@ -3,17 +3,15 @@ import { useState } from "react";
 export const useLocalStorage = (key: string, defaultValue: unknown) => {
   const [localStorageValue, setLocalStorageValue] = useState(() => {
     try {
-      // Try and retrieve any previously recorded values
-      const value = localStorage.getItem(key);
-      if (value) {
-        return JSON.parse(value);
+      const previousValue = localStorage.getItem(key);
+
+      if (previousValue === null) {
+        localStorage.setItem(key, JSON.stringify(defaultValue));
+        return defaultValue;
       }
 
-      // Else, record the defaultValue and return it instead
-      localStorage.setItem(key, JSON.stringify(defaultValue));
-      return defaultValue;
+      return JSON.parse(previousValue);
     } catch (error) {
-      // Fallback to the defaultValue if we can't retrieve a previous value
       localStorage.setItem(key, JSON.stringify(defaultValue));
       return defaultValue;
     }
