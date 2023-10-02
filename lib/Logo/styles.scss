@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $logo-max-height: 40px !default;
-$logo-max-width: 150px !default;
+$logo-max-width: 40px !default;
 
 /* ==========================================================================
    Styles
@@ -10,4 +10,8 @@ $logo-max-width: 150px !default;
 .logo__image {
   max-width: $logo-max-width;
   max-height: $logo-max-height;
+
+  svg {
+   border-radius: 8px;
+  }
 }
