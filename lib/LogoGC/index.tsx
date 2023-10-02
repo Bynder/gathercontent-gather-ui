@@ -7,7 +7,7 @@ import logoSVG from "../../assets/logo.svg";
  * <Logo url="http://example.com/myimage.png" alt="Alt Tag" />
  */
 
-export function Logo(props: any) {
+export function LogoGC(props: any) {
   const LogoPath = props.url || logoSVG;
   const image =
     typeof LogoPath === "string" ? (
