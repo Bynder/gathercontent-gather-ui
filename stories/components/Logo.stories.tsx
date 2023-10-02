@@ -1,5 +1,5 @@
 import React from "react";
-import LogoComponent from "../../lib/LogoGC";
+import LogoComponent from "../../lib/Logo";
 import StoryItem from "../styleguide/StoryItem";
 
 export default {

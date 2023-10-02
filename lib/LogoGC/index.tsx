@@ -1,5 +1,5 @@
 import React from "react";
-import logoSVG from "../../assets/logogc.svg";
+import logoGCSVG from "../../assets/logogc.svg";
 
 /**
  * @usage
@@ -8,7 +8,7 @@ import logoSVG from "../../assets/logogc.svg";
  */
 
 export function LogoGC(props: any) {
-  const LogoPath = props.url || logoSVG;
+  const LogoPath = props.url || logoGCSVG;
   const image =
     typeof LogoPath === "string" ? (
       <img src={props.url} alt={props.alt} className="logo__image" />
