@@ -14,7 +14,7 @@ export function Logo(props: any) {
     typeof LogoPath === "string" ? (
       <img src={props.url} alt={props.alt} className="logo__image" />
     ) : (
-      <span className="logo__image">
+      <span className="logo__image bynder">
         <LogoPath />
       </span>
     );

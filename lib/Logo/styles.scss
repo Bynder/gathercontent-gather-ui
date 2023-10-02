@@ -2,7 +2,7 @@
    Config
    ========================================================================== */
 $logo-max-height: 40px !default;
-$logo-max-width: 40px !default;
+$logo-max-width: 150px !default;
 
 /* ==========================================================================
    Styles
@@ -11,7 +11,12 @@ $logo-max-width: 40px !default;
   max-width: $logo-max-width;
   max-height: $logo-max-height;
 
-  svg {
-   border-radius: 8px;
+  &.bynder {
+   max-width: 40px;
+   
+   svg {
+      border-radius: 8px;
+   }
   }
+  
 }
