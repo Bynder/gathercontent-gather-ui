@@ -1,5 +1,5 @@
 import React from "react";
-import logoSVG from "../../assets/logo.svg";
+import logoSVG from "../../assets/logogc.svg";
 
 /**
  * @usage
