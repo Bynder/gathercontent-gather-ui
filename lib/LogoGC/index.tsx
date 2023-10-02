@@ -20,9 +20,9 @@ export function LogoGC(props: any) {
   return <span className="logo">{image}</span>;
 }
 
-Logo.defaultProps = {
+LogoGC.defaultProps = {
   url: "",
   alt: "GatherContent Logo",
 };
 
-export default Logo;
+export default LogoGC;
