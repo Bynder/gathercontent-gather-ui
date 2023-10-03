@@ -1,22 +1,22 @@
 import React from "react";
-import LogoComponent from "../../lib/Logo";
+import LogoGCComponent from "../../lib/LogoGC";
 import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: "Legacy/Logo",
-  component: LogoComponent,
+  title: "Legacy/LogoGC",
+  component: LogoGCComponent,
 };
 
-export const Logo = () => (
+export const LogoGC = () => (
   <div>
     <StoryItem title="Default Logo" description="A wrapper around the logo">
       <div>
-        <LogoComponent />
+        <LogoGCComponent />
       </div>
     </StoryItem>
 
     <StoryItem title="Custom Logo" description="">
-      <LogoComponent
+      <LogoGCComponent
         url="https://dummyimage.com/150x40/3d8beb/fff.png"
         alt="Alt Tag"
       />
@@ -24,6 +24,6 @@ export const Logo = () => (
   </div>
 );
 
-Logo.parameters = {
+LogoGC.parameters = {
   controls: { hideNoControlsWarning: true },
 };

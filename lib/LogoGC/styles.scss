@@ -10,13 +10,4 @@ $logo-max-width: 150px !default;
 .logo__image {
   max-width: $logo-max-width;
   max-height: $logo-max-height;
-
-  &.bynder-logo {
-   max-width: 40px;
-   
-   svg {
-      border-radius: 8px;
-   }
-  }
-  
 }

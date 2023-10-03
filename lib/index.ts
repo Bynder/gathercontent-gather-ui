@@ -56,6 +56,7 @@ export { TopBarGroup } from "./TopBar/TopBarGroup";
 export { ParticipantInfo } from "./ParticipantInfo";
 export { Navigation } from "./Navigation";
 export { Logo } from "./Logo";
+export { LogoGC } from "./LogoGC";
 export { Shortcut } from "./Shortcut";
 export { ShortcutIcon } from "./Shortcut/ShortcutIcon";
 export { ShortcutTrigger } from "./ShortcutTrigger";
