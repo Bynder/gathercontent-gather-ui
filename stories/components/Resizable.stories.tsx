@@ -153,6 +153,8 @@ function OnResizeStory() {
       <div style={{ width: "100%" }}>
         <ResizableComponent
           initialWidth={300}
+          minResizableWidth={200}
+          maxResizableWidth={400}
           onResizeComplete={setResizedTo}
           useGutterOffset
         >

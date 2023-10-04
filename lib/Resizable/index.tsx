@@ -64,6 +64,9 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   };
 
   const stopDrag = () => {
+    if (onResizeComplete) {
+      onResizeComplete(getWidth() + gutterSize);
+    }
     document.removeEventListener("mousemove", doDragRef.current, false);
     document.removeEventListener("mouseup", stopDragRef.current, false);
   };
@@ -102,12 +105,6 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     handle.style.top = `${yPosition - handleOffset}px`;
   };
 
-  const handleResizeComplete = () => {
-    if (onResizeComplete) {
-      onResizeComplete(lastPosition);
-    }
-  };
-
   useEffect(() => {
     doResize(rememberPosition ? lastPosition : initialWidth);
 
@@ -124,7 +121,6 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
           className="resizable__gutter"
           onMouseDown={initDrag}
           onMouseMove={setGutterHandlePosition}
-          onMouseUp={handleResizeComplete}
         >
           <span ref={handleRef} className="resizable__gutter-handle" />
         </span>
