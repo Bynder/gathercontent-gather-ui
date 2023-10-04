@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FinderNavigation as FinderNavigationComponent,
   Icon,
@@ -136,7 +136,31 @@ export function Resizable() {
           </ResizableComponent>
         </div>
       </StoryItem>
+
+      <OnResizeStory />
     </>
+  );
+}
+
+function OnResizeStory() {
+  const [resizedTo, setResizedTo] = useState(0);
+  return (
+    <StoryItem
+      title="OnResize event"
+      description="If you resize me, I'll tell you what px value i was resized too"
+    >
+      <div style={{ width: "100%" }}>
+        <ResizableComponent
+          initialWidth={300}
+          onResize={setResizedTo}
+          useGutterOffset
+        >
+          <div style={{ border: "1px solid green" }}>
+            <p>I'm this big: {resizedTo}px!</p>
+          </div>
+        </ResizableComponent>
+      </div>
+    </StoryItem>
   );
 }
 

@@ -9,6 +9,7 @@ export interface ResizableProps {
   initialWidth?: number | string;
   minResizableWidth?: number | string;
   maxResizableWidth?: number | string;
+  onResize?: (resizedTo: number) => void;
   rememberPosition?: boolean;
   useGutterOffset?: boolean;
 }
@@ -17,6 +18,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   const {
     children,
     id,
+    onResize,
     rememberPosition = false,
     useGutterOffset = false,
   } = props;
@@ -46,7 +48,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
   const getWidth = () => toPixels(resizeWrapperRef.current?.style.width ?? 0);
 
-  const setWidth = (value: number) => {
+  const doResize = (value: number) => {
     if (resizeWrapperRef.current === null) return;
 
     const newWidth =
@@ -54,11 +56,15 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
     resizeWrapperRef.current.style.width = `${newWidth}px`;
     setLastPosition(newWidth);
+
+    if (onResize) {
+      onResize(newWidth + gutterSize);
+    }
   };
 
   const doDrag = (evt: MouseEvent) => {
     const newWidth = state.startWidth + evt.clientX - state.startX;
-    setWidth(newWidth);
+    doResize(newWidth);
   };
 
   const stopDrag = () => {
@@ -101,7 +107,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   };
 
   useEffect(() => {
-    setWidth(rememberPosition ? lastPosition : initialWidth);
+    doResize(rememberPosition ? lastPosition : initialWidth);
 
     // remember to remove global listeners on dismount
     return () => stopDrag();
