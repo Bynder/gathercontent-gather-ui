@@ -9,7 +9,7 @@ export interface ResizableProps {
   initialWidth?: number | string;
   minResizableWidth?: number | string;
   maxResizableWidth?: number | string;
-  onResize?: (resizedTo: number) => void;
+  onResizeComplete?: (resizedTo: number) => void;
   rememberPosition?: boolean;
   useGutterOffset?: boolean;
 }
@@ -18,7 +18,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   const {
     children,
     id,
-    onResize,
+    onResizeComplete,
     rememberPosition = false,
     useGutterOffset = false,
   } = props;
@@ -56,10 +56,6 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
     resizeWrapperRef.current.style.width = `${newWidth}px`;
     setLastPosition(newWidth);
-
-    if (onResize) {
-      onResize(newWidth + gutterSize);
-    }
   };
 
   const doDrag = (evt: MouseEvent) => {
@@ -68,6 +64,9 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   };
 
   const stopDrag = () => {
+    if (onResizeComplete) {
+      onResizeComplete(lastPosition);
+    }
     document.removeEventListener("mousemove", doDragRef.current, false);
     document.removeEventListener("mouseup", stopDragRef.current, false);
   };
