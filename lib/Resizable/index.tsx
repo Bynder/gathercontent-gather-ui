@@ -23,13 +23,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     useGutterOffset = false,
   } = props;
   const initialWidth = toPixels(props.initialWidth ?? "50%");
-  const containerWidth: number = toPixels(
-    props.containerWidth ?? document.body.offsetWidth
-  );
   const gutterSize = useGutterOffset ? 16 : 0;
-  const minWidth = toPixels(props.minResizableWidth ?? 0, containerWidth);
-  const maxWidth = toPixels(props.maxResizableWidth ?? "100%", containerWidth);
-
   const doDragRef = useRef<(evt: MouseEvent) => void>(() => {});
   const stopDragRef = useRef<(evt: MouseEvent) => void>(() => {});
   const resizeRef = useRef<HTMLDivElement>(null);
@@ -46,13 +40,23 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     initialWidth
   );
 
-  const getWidth = () => toPixels(resizeWrapperRef.current?.style.width ?? 0);
+  const containerWidth = () =>
+    toPixels(props.containerWidth ?? document.body.offsetWidth);
+
+  const minWidth = () =>
+    toPixels(props.minResizableWidth ?? 0, containerWidth());
+
+  const maxWidth = () =>
+    toPixels(props.maxResizableWidth ?? "100%", containerWidth());
+
+  const getWrapperWidth = () =>
+    toPixels(resizeWrapperRef.current?.style.width ?? 0);
 
   const doResize = (value: number) => {
     if (resizeWrapperRef.current === null) return;
 
     const newWidth =
-      keepValueWithinRange(value, minWidth, maxWidth) - gutterSize;
+      keepValueWithinRange(value, minWidth(), maxWidth()) - gutterSize;
 
     resizeWrapperRef.current.style.width = `${newWidth}px`;
     setLastPosition(newWidth);
@@ -65,7 +69,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
   const stopDrag = () => {
     if (onResizeComplete) {
-      onResizeComplete(getWidth() + gutterSize);
+      onResizeComplete(getWrapperWidth() + gutterSize);
     }
     document.removeEventListener("mousemove", doDragRef.current, false);
     document.removeEventListener("mouseup", stopDragRef.current, false);
@@ -77,7 +81,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
       setState({
         startX: clientX,
-        startWidth: getWidth(),
+        startWidth: getWrapperWidth(),
       });
 
       doDragRef.current = doDrag;
