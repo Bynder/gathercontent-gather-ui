@@ -58,7 +58,7 @@ interface Props {
   isActive?: boolean;
   isFocussed?: boolean;
   BoundaryElement?: string;
-  tabIndex?: number | null;
+  tabIndex?: number;
   outsideClickEventValidator?: (e?: React.MouseEvent) => boolean;
   children:
     | React.ReactNode

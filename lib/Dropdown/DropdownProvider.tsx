@@ -1,8 +1,8 @@
 import React, {
   createContext,
-  useState,
   Dispatch,
   SetStateAction,
+  useState,
 } from "react";
 import cx from "classnames";
 import BoundaryClickWatcher from "../BoundaryClickWatcher";
@@ -101,7 +101,7 @@ function DropdownProvider({
           toggleAndSetShowContent(false);
           onHide();
         }}
-        tabIndex={null}
+        tabIndex={-1}
       >
         {typeof children === "function"
           ? children({
