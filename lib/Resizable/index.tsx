@@ -111,9 +111,16 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
 
   useEffect(() => {
     doResize(rememberPosition ? lastPosition : initialWidth);
-
-    // remember to remove global listeners on dismount
+    // remember to remove global listeners on unmounting
     return () => stopDrag();
+  }, []);
+
+  useEffect(() => {
+    const handeWindowResize = () => doResize(getWrapperWidth() + gutterSize);
+    window.addEventListener("resize", handeWindowResize);
+    return () => {
+      window.removeEventListener("resize", handeWindowResize);
+    };
   }, []);
 
   return (
