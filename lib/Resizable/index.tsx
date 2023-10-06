@@ -40,14 +40,14 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     initialWidth
   );
 
-  const containerWidth = () =>
+  const getContainerWidth = () =>
     toPixels(props.containerWidth ?? document.body.offsetWidth);
 
-  const minWidth = () =>
-    toPixels(props.minResizableWidth ?? 0, containerWidth());
+  const getMinWidth = () =>
+    toPixels(props.minResizableWidth ?? 0, getContainerWidth());
 
-  const maxWidth = () =>
-    toPixels(props.maxResizableWidth ?? "100%", containerWidth());
+  const getMaxWidth = () =>
+    toPixels(props.maxResizableWidth ?? "100%", getContainerWidth());
 
   const getWrapperWidth = () =>
     toPixels(resizeWrapperRef.current?.style.width ?? 0);
@@ -56,7 +56,7 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
     if (resizeWrapperRef.current === null) return;
 
     const newWidth =
-      keepValueWithinRange(value, minWidth(), maxWidth()) - gutterSize;
+      keepValueWithinRange(value, getMinWidth(), getMaxWidth()) - gutterSize;
 
     resizeWrapperRef.current.style.width = `${newWidth}px`;
     setLastPosition(newWidth);
