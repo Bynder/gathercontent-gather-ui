@@ -14,8 +14,8 @@ export const NotificationBlip = (args: any) => <>
     title="Notification blip"
     description="A visual indicator to inform the user they have notifications"
   >
-    <ButtonIcon name={'bell'}>
-      <NotificationBlipComponent />
-    </ButtonIcon>
+    <NotificationBlipComponent>
+      <ButtonIcon name={'bell'} />
+    </NotificationBlipComponent>
   </StoryItem>
 </>;

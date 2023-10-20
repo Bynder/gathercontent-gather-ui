@@ -1,5 +1,5 @@
 .notification-blip {
-  @apply absolute h-full w-full;
+  @apply relative w-fit h-fit;
 }
 
 .notification-blip::after {

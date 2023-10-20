@@ -2,10 +2,13 @@ import React from 'react';
 import cx from 'classnames';
 
 interface Props {
+  children: React.ReactNode;
   className?: string;
 }
 
-export default function NotificationBlip({ className }: Props) {
+export function NotificationBlip({ children, className }: Props) {
   const classes = cx('notification-blip', className);
-  return <div className={classes}></div>;
+  return <div className={classes}>{children}</div>;
 }
+
+export default NotificationBlip;
