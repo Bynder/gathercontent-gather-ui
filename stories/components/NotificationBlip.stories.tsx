@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonIcon } from "../../lib";
 import { Icon } from "../../lib";
-import NotificationBlipComponent from "../../lib/Notification/blip/NotificationBlip";
+import { NotificationBlip as NotificationBlipComponent } from "../../lib/Notification/blip/NotificationBlip";
 import StoryItem from "../styleguide/StoryItem";
 
 export default {
@@ -14,8 +14,8 @@ export const NotificationBlip = (args: any) => <>
     title="Notification blip"
     description="A visual indicator to inform the user they have notifications"
   >
-    <ButtonIcon name={'bell'}>
-      <NotificationBlipComponent />
-    </ButtonIcon>
+    <NotificationBlipComponent>
+      <ButtonIcon name={'bell'} />
+    </NotificationBlipComponent>
   </StoryItem>
 </>;

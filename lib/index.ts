@@ -20,6 +20,7 @@ export { NotificationInlineDanger } from "./Notification/inline/NotificationInli
 export { NotificationInlineInformation } from "./Notification/inline/NotificationInlineInformation";
 export { NotificationInlineSuccess } from "./Notification/inline/NotificationInlineSuccess";
 export { NotificationInlineWarning } from "./Notification/inline/NotificationInlineWarning";
+export { NotificationBlip } from "./Notification/blip/NotificationBlip";
 export { Dropdown } from "./Dropdown";
 export { DropdownMenu } from "./DropdownMenu";
 export { ProgressButton } from "./ProgressButton";
