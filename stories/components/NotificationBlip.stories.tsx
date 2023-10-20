@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonIcon } from "../../lib";
 import { Icon } from "../../lib";
-import NotificationBlipComponent from "../../lib/Notification/blip/NotificationBlip";
+import { NotificationBlip as NotificationBlipComponent } from "../../lib/Notification/blip/NotificationBlip";
 import StoryItem from "../styleguide/StoryItem";
 
 export default {
