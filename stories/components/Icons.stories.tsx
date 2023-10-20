@@ -125,6 +125,7 @@ const allIcons = (additionalProps?: any) => (
     <Icon name="caretRight" {...additionalProps} />
     <Icon name="arrowReturn" {...additionalProps} />
     <Icon name="arrowRightAngle" {...additionalProps} />
+    <Icon name="bell" {...additionalProps} />
   </div>
 );
 
