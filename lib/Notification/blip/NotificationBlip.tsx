@@ -10,5 +10,3 @@ export function NotificationBlip({ children, className }: Props) {
   const classes = cx('notification-blip', className);
   return <div className={classes}>{children}</div>;
 }
-
-export default NotificationBlip;
