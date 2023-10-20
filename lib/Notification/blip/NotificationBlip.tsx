@@ -7,5 +7,5 @@ interface Props {
 
 export default function NotificationBlip({ className }: Props) {
   const classes = cx('notification-blip', className);
-  return <div className={classes}></div>;
+  return <div className={classes} />;
 }
