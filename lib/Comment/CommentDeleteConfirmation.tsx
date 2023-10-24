@@ -17,7 +17,7 @@ function CommentDeleteConfirmation({
   };
 
   return isDeleting ? (
-    <BoundaryClickWatcher outsideClickHandler={closeAndCancel} alwaysListen>
+    <BoundaryClickWatcher outsideClickHandler={closeAndCancel}>
       <ConfirmationOverlay
         className="comment-delete-confirmation"
         show={isDeleting}
