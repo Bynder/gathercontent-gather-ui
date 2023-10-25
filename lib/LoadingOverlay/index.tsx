@@ -17,9 +17,8 @@ export function LoadingOverlay({
   return (
     <div className={className} role="status">
       <div className="loading-overlay__content weight-semi-bold text-align-center">
-        {!hideSVG && useSpinner ? (
-          <Loader isOverlay />
-        ) : (
+        {!hideSVG && useSpinner && <Loader isOverlay />}
+        {!hideSVG && !useSpinner && (
           // @ts-expect-error Type '{ title: string; }' is not assignable to type
           <LoadingSVG title="Loading" />
         )}
