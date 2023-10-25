@@ -18,6 +18,14 @@ $loading-line-width: 32px;
   justify-content: center;
   z-index: 2;
 
+  .loading-overlay-text {
+    @apply mt-0 mb-2;
+  }
+
+  .gc-loader + .loading-overlay-text {
+    @apply mt-4;
+  }
+
   .line {
     animation-duration: 2s;
     animation-timing-function: ease-in-out;

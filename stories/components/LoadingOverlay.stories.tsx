@@ -8,6 +8,7 @@ export default {
   args: {
     percentageLoaded: 50,
     fixed: true,
+    useSpinner: false,
   },
 };
 

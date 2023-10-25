@@ -1,12 +1,14 @@
 import React, { Fragment } from "react";
 import cx from "classnames";
 import LoadingSVG from "../../assets/loading.svg";
+import { Loader } from "../src/modules/loader/Loader";
 
 export function LoadingOverlay({
   fixed,
   hideSVG,
   percentageLoaded,
   loadingText,
+  useSpinner,
 }: any) {
   const className = cx("loading-overlay", {
     "loading-overlay--fixed": fixed,
@@ -15,13 +17,15 @@ export function LoadingOverlay({
   return (
     <div className={className} role="status">
       <div className="loading-overlay__content weight-semi-bold text-align-center">
-        {/* @ts-expect-error Type '{ title: string; }' is not assignable to type */}
-        {!hideSVG && <LoadingSVG title="Loading" />}
+        {!hideSVG && useSpinner ? (
+          <Loader isOverlay />
+        ) : (
+          // @ts-expect-error Type '{ title: string; }' is not assignable to type
+          <LoadingSVG title="Loading" />
+        )}
         {percentageLoaded > 0 && (
           <>
-            <p className="h-margin-bottom-quarter h-margin-top-clear">
-              {loadingText}
-            </p>
+            <p className="loading-overlay-text">{loadingText}</p>
             <p className="h-margin-clear color-neutral-base">{`${percentageLoaded}%`}</p>
           </>
         )}
@@ -33,6 +37,7 @@ export function LoadingOverlay({
 LoadingOverlay.defaultProps = {
   fixed: false,
   hideSVG: false,
+  useSpinner: false,
   percentageLoaded: 0,
   loadingText: "Loading",
 };
