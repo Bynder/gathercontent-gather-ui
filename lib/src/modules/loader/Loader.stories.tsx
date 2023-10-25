@@ -11,9 +11,10 @@ export default {
 export function Loader() {
   return (
     <StoryItem title="LoaderComponent">
-      <div className="grid tw grid-cols-5 col-gap-4">
+      <div className="grid tw grid-cols-6 col-gap-4">
         <LoaderComponent size="sm" />
         <LoaderComponent size="md" />
+        <LoaderComponent isOverlay />
         <LoaderComponent size="lrg" />
         <LoaderComponent progress="25%" />
         <LoaderComponent heading="Processing" progress="100%" />

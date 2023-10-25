@@ -2,11 +2,12 @@ import React from "react";
 import cx from "classnames";
 import { Icon } from "lib";
 
-function Loader({ heading, progress, size, className }: any) {
+function Loader({ heading, progress, size, className, isOverlay }: any) {
   const baseClassNames = `gc-loader flex items-center flex-col justify-center ${className}`;
   const classNames = cx(baseClassNames, {
     "loader-sm": size === "sm",
     "loader-md": size === "md",
+    "loader-overlay": isOverlay,
     "loader-lrg": size === "lrg" || progress,
   });
 

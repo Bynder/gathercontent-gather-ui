@@ -6,6 +6,16 @@
   @apply w-8 h-8;
 }
 
+.loader-overlay {
+  @apply h-12;
+  
+  width: 100%;
+}
+
+.loader-overlay svg {
+  @apply w-12 h-12;
+}
+
 .loader-lrg svg {
   @apply w-16 h-16;
 }
