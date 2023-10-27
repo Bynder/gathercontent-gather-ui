@@ -51,7 +51,7 @@ describe("ConfirmationDropdown", () => {
       expect(
         screen
           .getByTestId("confirmation-dropdown")
-          .parentElement?.classList.contains("is-pending")
+          .parentElement?.classList.contains("gui-is-pending")
       );
 
       setTimeout(() => {

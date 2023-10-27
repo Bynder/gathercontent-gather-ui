@@ -36,7 +36,7 @@ describe("InputWithButton", () => {
     );
     let wrapper = screen.getByText("Clicky").parentNode as HTMLElement;
     expect(
-      wrapper.classList.contains("input-with-button--padding-small")
+      wrapper.classList.contains("gui-input-with-button--padding-small")
     ).toBeFalsy();
 
     rerender(
@@ -52,7 +52,7 @@ describe("InputWithButton", () => {
 
     screen.getByText("Clicky").parentNode as HTMLElement;
     expect(
-      wrapper.classList.contains("input-with-button--padding-small")
+      wrapper.classList.contains("gui-input-with-button--padding-small")
     ).toBeTruthy();
   });
 });

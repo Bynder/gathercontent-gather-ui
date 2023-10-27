@@ -24,7 +24,9 @@ describe("Search", () => {
     );
 
     expect(
-      screen.getByTestId("search-body").classList.contains("display-results")
+      screen
+        .getByTestId("search-body")
+        .classList.contains("gui-display-results")
     ).toEqual(false);
     fireEvent.click(screen.getByTitle("Open search"));
 
@@ -34,7 +36,9 @@ describe("Search", () => {
       },
     });
     expect(
-      screen.getByTestId("search-body").classList.contains("display-results")
+      screen
+        .getByTestId("search-body")
+        .classList.contains("gui-display-results")
     ).toEqual(true);
     expect(screen.getByText("I'm some options"));
     expect(screen.getByText("Waffles"));
@@ -48,7 +52,9 @@ describe("Search", () => {
 
     fireEvent.click(screen.getByTitle("Close search"));
     expect(
-      screen.getByTestId("search-body").classList.contains("display-results")
+      screen
+        .getByTestId("search-body")
+        .classList.contains("gui-display-results")
     ).toEqual(false);
   });
 });

@@ -26,13 +26,15 @@ describe("Blank Slate", () => {
 
     let blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.classList.contains("blank-slate--fixed")).toBe(false);
+    expect(blankSlate.classList.contains("gui-blank-slate--fixed")).toBe(false);
 
     rerender(<BlankSlate fixed />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.classList.contains("blank-slate--fixed")).toBeTruthy();
+    expect(
+      blankSlate.classList.contains("gui-blank-slate--fixed")
+    ).toBeTruthy();
   });
 
   it("Adds a style modifer", () => {
@@ -40,13 +42,13 @@ describe("Blank Slate", () => {
 
     let blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.classList.contains("blank-slate--arrow")).toBe(false);
+    expect(blankSlate.classList.contains("gui-blank-slate--arrow")).toBe(false);
 
     rerender(<BlankSlate slateStyle="arrow" />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.classList.contains("blank-slate--arrow")).toBe(true);
+    expect(blankSlate.classList.contains("gui-blank-slate--arrow")).toBe(true);
   });
 
   it("Renders its children", () => {
@@ -64,12 +66,16 @@ describe("Blank Slate", () => {
 
     let blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.querySelector(".blank-slate__svg--custom")).toBe(null);
+    expect(blankSlate.querySelector(".gui-blank-slate__svg--custom")).toBe(
+      null
+    );
 
     rerender(<BlankSlate customSVG={keyboardSVG} />);
 
     blankSlate = screen.getByTestId("blank-slate");
 
-    expect(blankSlate.querySelector(".blank-slate__svg--custom")).toBeTruthy();
+    expect(
+      blankSlate.querySelector(".gui-blank-slate__svg--custom")
+    ).toBeTruthy();
   });
 });

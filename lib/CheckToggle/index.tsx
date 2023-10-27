@@ -49,7 +49,7 @@ export function CheckToggle({
     "gui-is-checked": displayChecked && isChecked,
     "gui-h-justify-content-space-between": spaceBetween,
     "gui-margin-large": marginSizeLarge,
-    disabled,
+    "gui-disabled": disabled,
   });
 
   const switchLabelClasses = cx("gui-toggle-switch__label", {

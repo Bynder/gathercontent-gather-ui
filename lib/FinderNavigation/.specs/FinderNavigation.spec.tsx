@@ -7,14 +7,14 @@ import FinderNavigation from "..";
 describe("FinderNavigation", () => {
   it("adds all the modifier classes", () => {
     const itemClasses = [
-      "finder-item-active",
-      "finder-item-disabled",
-      "finder-item-hover-settings",
-      "finder-item-selected",
+      "gui-finder-item-active",
+      "gui-finder-item-disabled",
+      "gui-finder-item-hover-settings",
+      "gui-finder-item-selected",
     ];
     const contentClasses = [
-      "finder-item-content-hidden",
-      "finder-item-content-folder",
+      "gui-finder-item-content-hidden",
+      "gui-finder-item-content-folder",
     ];
 
     const { rerender } = render(

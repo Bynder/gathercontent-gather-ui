@@ -10,11 +10,11 @@ describe("Icon", () => {
   it("appends the icon name to the class", () => {
     const { rerender } = render(<Icon name="comment" />);
     expect(
-      screen.getByRole("figure").classList.contains("icon--comment")
+      screen.getByRole("figure").classList.contains("gui-icon--comment")
     ).toBeTruthy();
     rerender(<Icon name="pencil" />);
     expect(
-      screen.getByRole("figure").classList.contains("icon--pencil")
+      screen.getByRole("figure").classList.contains("gui-icon--pencil")
     ).toBeTruthy();
   });
 
