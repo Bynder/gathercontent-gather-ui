@@ -16,7 +16,7 @@ export function SidebarSection({
 
   return (
     <SidebarSectionContext.Provider value={sharedState}>
-      <div className={`sidebar-section ${className}`} {...rest}>
+      <div className={`gui-sidebar-section ${className}`} {...rest}>
         {typeof children === "function" ? children(sharedState) : children}
       </div>
     </SidebarSectionContext.Provider>

@@ -11,8 +11,8 @@ export function ButtonAvatar({
   active,
   ...rest
 }: any) {
-  const classes = cx("button-avatar", className, {
-    "button-avatar-active": !disabled && active,
+  const classes = cx("gui-button-avatar", className, {
+    "gui-button-avatar-active": !disabled && active,
   });
 
   return (

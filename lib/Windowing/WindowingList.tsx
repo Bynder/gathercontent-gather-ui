@@ -7,7 +7,7 @@ function WindowingList({ children, ...rest }: any) {
 
   return (
     <div
-      className="windowing-list"
+      className="gui-windowing-list"
       style={{
         height: `${allWindowingIds.length * itemHeight}px`,
       }}

@@ -6,7 +6,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 function DropdownFooter({ children, ...rest }: Props) {
   return (
-    <footer className="dropdown__footer" {...rest}>
+    <footer className="gui-dropdown__footer" {...rest}>
       {children}
     </footer>
   );

@@ -17,8 +17,8 @@ export function ButtonIconWhite({
   ...rest
 }: any) {
   const classes = cx(
-    "button-icon",
-    "button-icon-white",
+    "gui-button-icon",
+    "gui-button-icon-white",
     className,
     {
       "rounded-small": size === sizes.sm,

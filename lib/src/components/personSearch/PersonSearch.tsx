@@ -22,7 +22,7 @@ export function PersonSearch({
     <Dropdown id="person-search-story" className="overflow-visible w-full">
       {({ showContent }: any) => (
         <>
-          <Dropdown.Trigger triggerClassName="w-full">
+          <Dropdown.Trigger triggerClassName="-w-full">
             {({ toggleShowContent }: any) => (
               <>
                 <Label htmlFor="person-search">{label}</Label>

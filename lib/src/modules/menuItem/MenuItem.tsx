@@ -1,5 +1,5 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
 export function MenuItem({
   href,
@@ -23,10 +23,10 @@ export function MenuItem({
     }
   };
 
-  const classes = cx('menu-item', className, {
-    disabled,
-    divider,
-    active
+  const classes = cx("gui-menu-item", className, {
+    "gui-disabled": disabled,
+    "gui-divider": divider,
+    "gui-active": active,
   });
 
   if (divider) {
@@ -44,6 +44,6 @@ export function MenuItem({
 
 MenuItem.defaultProps = {
   tabIndex: -1,
-  className: '',
-  onSelect: () => {}
+  className: "",
+  onSelect: () => {},
 };

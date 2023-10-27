@@ -1,23 +1,23 @@
-.dropdown-content {
+.gui-dropdown-content {
   @apply flex flex-col;
 }
 
-.dropdown-content-header {
+.gui-dropdown-content-header {
   @apply p-3 border border-neutral-90 border-t-0 border-r-0 border-l-0 border-solid;
 }
 
-.dropdown-content-header-title {
+.gui-dropdown-content-header-title {
   @apply m-0 text-neutral-20 text-lg font-semi-bold;
 }
 
-.dropdown-content-body {
+.gui-dropdown-content-body {
   @apply h-full overflow-y-auto;
 }
 
-.dropdown-content-list-heading {
+.gui-dropdown-content-list-heading {
   @apply text-neutral-primary font-semi-bold text-xs py-1 px-4 bg-neutral-98 border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90;
 }
 
-.dropdown-content-footer {
+.gui-dropdown-content-footer {
   @apply p-3 border border-neutral-90 border-b-0 border-r-0 border-l-0 border-solid;
 }

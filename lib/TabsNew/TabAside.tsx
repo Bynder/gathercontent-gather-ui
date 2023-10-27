@@ -6,7 +6,7 @@ function TabAside({ children }: any) {
   const { isActive, isEditing, actionsAreActive }: any = useContext(TabContext);
 
   const asideClassNames = cx(
-    "tab-aside absolute right-0 top-0 bottom-0 flex items-center justify-end pointer-events-none z-10",
+    "gui-tab-aside absolute right-0 top-0 bottom-0 flex items-center justify-end pointer-events-none z-10",
     {
       "bg-blur-white-right": isActive,
       "bg-blur-grey-95-right group-hover:bg-blur-grey-90-right": !isActive,

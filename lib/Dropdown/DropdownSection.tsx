@@ -5,7 +5,7 @@ function DropdownSection({
   ...rest
 }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="dropdown__section" {...rest}>
+    <div className="gui-dropdown__section" {...rest}>
       {children}
     </div>
   );

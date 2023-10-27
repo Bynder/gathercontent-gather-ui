@@ -6,16 +6,16 @@ $grid-columns: 12 !default;
 // ** Padding between columns. Gets divided in half for the left and right.
 $grid-gutter-width: 20px !default;
 
-@mixin new-calc-grid-column($index, $class, $type ) {
+@mixin new-calc-grid-column($index, $class, $type) {
   @if $type == width and $index > 0 {
-    .layout-col-#{$class}-#{$index} {
+    .gui-layout-col-#{$class}-#{$index} {
       flex: 0 1 math.percentage(math.div($index, $grid-columns));
       width: math.percentage(math.div($index, $grid-columns));
     }
   }
 
-  @if  $type == offset {
-    .layout-col-#{$class}-offset-#{$index} {
+  @if $type == offset {
+    .gui-layout-col-#{$class}-offset-#{$index} {
       margin-left: math.percentage(math.div($index, $grid-columns));
     }
   }
@@ -35,10 +35,10 @@ $grid-gutter-width: 20px !default;
 @mixin new-make-grid-columns(
   $i: 1,
   $list:
-    '.layout-col-xs-#{$i}, .layout-col-sm-#{$i}, .layout-col-md-#{$i}, .layout-col-lg-#{$i}'
+    ".gui-layout-col-xs-#{$i}, .gui-layout-col-sm-#{$i}, .gui-layout-col-md-#{$i}, .gui-layout-col-lg-#{$i}"
 ) {
   @for $i from (1 + 1) through $grid-columns {
-    $list: '#{$list}, .layout-col-xs-#{$i}, .layout-col-sm-#{$i}, .layout-col-md-#{$i}, .layout-col-lg-#{$i}';
+    $list: "#{$list}, .gui-layout-col-xs-#{$i}, .gui-layout-col-sm-#{$i}, .gui-layout-col-md-#{$i}, .gui-layout-col-lg-#{$i}";
   }
   #{$list} {
     position: relative;
@@ -67,12 +67,12 @@ $grid-gutter-width: 20px !default;
   @include new-make-grid(lg);
 }
 
-.layout-grid {
+.gui-layout-grid {
   margin-right: auto;
   margin-left: auto;
 }
 
-.layout-row {
+.gui-layout-row {
   flex-wrap: wrap;
   display: flex;
 }

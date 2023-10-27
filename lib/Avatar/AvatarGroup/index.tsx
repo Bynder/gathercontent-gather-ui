@@ -1,5 +1,4 @@
 import React from "react";
-import { node, number, string, bool } from "prop-types";
 import cx from "classnames";
 import Dropdown from "../../Dropdown";
 import Avatar from "../index";
@@ -26,33 +25,33 @@ export function AvatarGroup({
     remaining = children.slice(maximum, total);
   }
 
-  const classes = cx(`avatar-group ${className}`, {
-    "avatar-group--small": small,
-    "avatar-group--micro": micro,
-    "avatar-group-stacked": stacked,
+  const classes = cx(`gui-avatar-group ${className}`, {
+    "gui-avatar-group--small": small,
+    "gui-avatar-group--micro": micro,
+    "gui-avatar-group-stacked": stacked,
   });
 
   return (
-    <div data-component="avatar-group" className={classes}>
+    <div data-component="gui-avatar-group" className={classes}>
       {React.Children.map(display, (child: any) => {
         const styles = { zIndex };
         zIndex -= 1;
 
         return (
-          <span className="avatar-group__item" style={styles}>
+          <span className="gui-avatar-group__item" style={styles}>
             {React.cloneElement(child)}
           </span>
         );
       })}
 
       {total > maximum && (
-        <Dropdown id="avatar-group-dropdown" autoPosition>
-          <Dropdown.Trigger triggerClassName="avatar-plus-trigger">
+        <Dropdown id="gui-avatar-group-dropdown" autoPosition>
+          <Dropdown.Trigger triggerClassName="gui-avatar-plus-trigger">
             <Avatar initials={plusLabel} />
           </Dropdown.Trigger>
           <Dropdown.Content noTransform={noTransform}>
             {React.Children.map(remaining, (child: any) => (
-              <div className="h-margin-bottom-half">
+              <div className="gui-h-margin-bottom-half">
                 <Avatar {...child.props}>
                   <AvatarInformation
                     name={child.props.name}

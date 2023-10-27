@@ -10,9 +10,9 @@ function CollectionsTableCell({
   alignRight,
   ...props
 }: any) {
-  const classNames = cx(`collections-table__cell ${className}`, {
-    "collections-table__cell--allow-overflow": allowOverflow,
-    "collections-table__cell--align-right": alignRight,
+  const classNames = cx(`gui-collections-table__cell ${className}`, {
+    "gui-collections-table__cell--allow-overflow": allowOverflow,
+    "gui-collections-table__cell--align-right": alignRight,
   });
   return (
     <div className={classNames} {...props} role="cell">

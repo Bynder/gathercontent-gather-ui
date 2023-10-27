@@ -1,10 +1,10 @@
-import React from 'react';
-import ProgressComponent from '../../lib/Progress';
-import StoryItem from '../styleguide/StoryItem';
+import React from "react";
+import ProgressComponent from "../../lib/Progress";
+import StoryItem from "../styleguide/StoryItem";
 
 export default {
-  title: 'Legacy/Progress',
-  component: ProgressComponent
+  title: "Legacy/Progress",
+  component: ProgressComponent,
 };
 
 export const Progress = () => (
@@ -14,14 +14,14 @@ export const Progress = () => (
   >
     <ProgressComponent.Bar>
       <ProgressComponent.Unit
-        className="progress-unit--test"
+        className="gui-progress-unit--test"
         percent={70}
         color="rgba(100,250,125,1)"
         name="Unit 1"
         filterLink="#test"
       />
       <ProgressComponent.Unit
-        className="progress-unit--test"
+        className="gui-progress-unit--test"
         percent={30}
         name="Unit 2"
         filterLink="#test"
@@ -31,5 +31,5 @@ export const Progress = () => (
 );
 
 Progress.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
 };

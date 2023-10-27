@@ -1,6 +1,6 @@
-import React from 'react';
-import cx from 'classnames';
-import { componentStatuses } from './ComponentWrapper';
+import React from "react";
+import cx from "classnames";
+import { componentStatuses } from "./ComponentWrapper";
 
 export function ComponentWrapperFooter({
   children,
@@ -12,22 +12,22 @@ export function ComponentWrapperFooter({
   status,
   ...rest
 }: any) {
-  const classes = cx('component-footer', className, {
-    'component-footer-editable': editable,
-    'component-footer-dragged-over': draggedOver,
-    'component-footer-selected': isSelected,
-    'component-footer-hovered': isHovered,
-    'border-l-2 border-r-2 border-t-0 border-b-2 border-2 border-green-primary bg-white':
+  const classes = cx("gui-component-footer", className, {
+    "gui-component-footer-editable": editable,
+    "gui-component-footer-dragged-over": draggedOver,
+    "gui-component-footer-selected": isSelected,
+    "gui-component-footer-hovered": isHovered,
+    "border-l-2 border-r-2 border-t-0 border-b-2 border-2 border-green-primary bg-white":
       status === componentStatuses.added,
-    'border-l-2 border-r-2 border-t-0 border-b-2  border-red-primary bg-white':
+    "border-l-2 border-r-2 border-t-0 border-b-2  border-red-primary bg-white":
       status === componentStatuses.deleted,
-    'border-l-2 border-r-2 border-t-0 border-b-2  border-purple-primary bg-white':
+    "border-l-2 border-r-2 border-t-0 border-b-2  border-purple-primary bg-white":
       status === componentStatuses.movedDown ||
       status === componentStatuses.movedUp,
-    'bg-white': [
+    "bg-white": [
       componentStatuses.active,
-      componentStatuses.unchanged
-    ].includes(status)
+      componentStatuses.unchanged,
+    ].includes(status),
   });
 
   return (
@@ -41,5 +41,5 @@ ComponentWrapperFooter.defaultProps = {
   editable: false,
   isSelected: false,
   isHovered: false,
-  className: ''
+  className: "",
 };

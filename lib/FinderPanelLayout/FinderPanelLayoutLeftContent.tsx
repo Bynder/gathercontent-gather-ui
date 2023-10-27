@@ -10,7 +10,7 @@ function FinderPanelLayoutLeftContent({ children, className }: any) {
     : {};
   return (
     <div
-      className={`finder-panel-layout__left-content ${className}`}
+      className={`gui-finder-panel-layout__left-content ${className}`}
       style={style}
     >
       {children}

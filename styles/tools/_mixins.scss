@@ -64,11 +64,11 @@
  * @return {[type]}             [description]
  */
 @mixin animation($animate...) {
-  $max: list.length($animate);
+  $max: list.gui-length($animate);
   $animations: '';
 
   @for $i from 1 through $max {
-    $animations: #{$animations + list.nth($animate, $i)};
+    $animations: #{$animations + list.gui-nth($animate, $i)};
 
     @if $i < $max {
       $animations: #{$animations + ', '};

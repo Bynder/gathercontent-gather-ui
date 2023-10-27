@@ -5,8 +5,8 @@ import pluralize from "pluralize";
 function SelectionBarCounter({ count, type }: any) {
   return (
     <>
-      <span className="selection-bar__count">{count}</span>
-      <span className="selection-bar__type">
+      <span className="gui-selection-bar__count">{count}</span>
+      <span className="gui-selection-bar__type">
         {pluralize(type, count)} selected
       </span>
     </>

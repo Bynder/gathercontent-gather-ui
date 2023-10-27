@@ -22,7 +22,7 @@ export function SearchInput({
   return (
     <span className={`relative inline-flex items-center ${className}`}>
       {label && (
-        <label className="visually-hidden" htmlFor={id}>
+        <label className="gui-visually-hidden" htmlFor={id}>
           {label}
         </label>
       )}

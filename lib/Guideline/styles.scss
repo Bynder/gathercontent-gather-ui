@@ -8,27 +8,27 @@ $guideline-title-size: $typo-size-large !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.guideline {
+.gui-guideline {
   padding: $guideline-spacing;
   margin: 0 0 $guideline-spacing*2;
   border-radius: 4px;
 }
 
-.guideline__head {
+.gui-guideline__head {
   display: flex;
   align-items: center;
 }
 
-.guideline__button {
+.gui-guideline__button {
   margin-left: auto;
 }
 
-.guideline__title {
+.gui-guideline__title {
   margin: 0;
   font-size: $guideline-title-size;
 }
 
-.guideline__body {
+.gui-guideline__body {
   transition: max-height $animation-time-micro ease-out;
   max-height: 0;
   font-size: $typo-size-lead;
@@ -41,8 +41,8 @@ $guideline-title-size: $typo-size-large !default;
   }
 }
 
-.guideline.is-active {
-  .guideline__body {
+.gui-guideline.gui-is-active {
+  .gui-guideline__body {
     max-height: 100%;
     overflow-y: auto;
   }

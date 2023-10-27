@@ -1,6 +1,6 @@
 @import 'inputIcon/inputIcon';
 
-.input {
+.gui-input {
   @apply m-0 border border-solid border-neutral-90 rounded w-full outline-none transition-colors duration-200 bg-white;
 
   &:hover:enabled {
@@ -12,16 +12,16 @@
   }
 }
 
-.input-md {
+.gui-input-md {
   @apply p-2 text-base leading-6;
 }
 
-.input-sm {
+.gui-input-sm {
   @apply p-2 text-sm leading-4;
 }
 
-.input-invalid,
-.input-native:invalid {
+.gui-input-invalid,
+.gui-input-native:invalid {
   @apply border-transparent shadow-red-primary-2px;
 
   &:hover:enabled,
@@ -30,8 +30,8 @@
   }
 }
 
-.input-valid,
-.input-native:valid {
+.gui-input-valid,
+.gui-input-native:valid {
   @apply border-transparent shadow-green-primary-2px;
 
   &:hover:enabled,
@@ -40,12 +40,12 @@
   }
 }
 
-.mentions-input--multiLine {
+.gui-mentions-input--multiLine {
   @apply h-full bg-white;
 }
 
-.mentions-input__input {
-  @apply input input-md;
+.gui-mentions-input__input {
+  @apply gui-input gui-input-md;
 
   &:hover:enabled {
     @apply border-transparent shadow-blue-primary-1px;
@@ -56,7 +56,7 @@
   }
 }
 
-.mentions-input__suggestions {
+.gui-mentions-input__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
 
@@ -79,15 +79,15 @@
     }
   }
 
-  .avatar__wrapper {
+  .gui-avatar__wrapper {
     @apply cursor-pointer p-2 border-t border-b-0 border-l-0 border-r-0 border-solid border-neutral-90;
   }
 
-  .avatar__name {
+  .gui-avatar__name {
     @apply text-neutral-30 text-sm font-semi-bold;
   }
 
-  .avatar__email {
+  .gui-avatar__email {
     @apply text-neutral-primary text-xs;
   }
 }

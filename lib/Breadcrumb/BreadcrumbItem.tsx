@@ -2,7 +2,7 @@ import React from "react";
 
 function BreadcrumbItem({ children, ...rest }: any) {
   return (
-    <div className="breadcrumb__item" {...rest}>
+    <div className="gui-breadcrumb__item" {...rest}>
       {children}
     </div>
   );

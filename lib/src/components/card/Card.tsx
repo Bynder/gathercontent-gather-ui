@@ -20,19 +20,19 @@ function Card({
   disabled,
   size,
 }: any) {
-  const classNames = cx("card outline-none", className, {
-    "card-interactive": onClick,
-    "card-selected": selected,
-    "card-highlighted": highlighted,
-    "card-added": added,
-    "card-removed": removed,
-    "card-disabled": disabled,
-    "card-active": active,
-    "card-sm": size === cardSizes.sm,
-    "card-md": size === cardSizes.md,
+  const classNames = cx("gui-card outline-none", className, {
+    "gui-card-interactive": onClick,
+    "gui-card-selected": selected,
+    "gui-card-highlighted": highlighted,
+    "gui-card-added": added,
+    "gui-card-removed": removed,
+    "gui-card-disabled": disabled,
+    "gui-card-active": active,
+    "gui-card-sm": size === cardSizes.sm,
+    "gui-card-md": size === cardSizes.md,
   });
 
-  const innerClasses = cx("card-inner", innerClassNames);
+  const innerClasses = cx("gui-card-inner", innerClassNames);
 
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") {

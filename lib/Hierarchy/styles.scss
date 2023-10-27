@@ -1,11 +1,11 @@
-.hierarchy-line {
+.gui-hierarchy-line {
   content: '';
   position: absolute;
   bottom: 0;
   width: 2px;
   background: $neutral-light;
 
-  &.dragged-insert {
+  &.gui-dragged-insert {
     background: $primary-blue;
   }
 }

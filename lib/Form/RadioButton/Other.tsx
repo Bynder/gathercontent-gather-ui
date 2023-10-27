@@ -37,20 +37,20 @@ class Other extends Component {
     // @ts-expect-error TS(2339): Property 'checked' does not exist on type '{ child... Remove this comment to see the full error message
     if (rest.checked) {
       return (
-        <div className="form__choice-element-wrapper">
+        <div className="gui-form__choice-element-wrapper">
           <Input
             {...rest}
             disabled={disabled}
             onChangeHandler={onChangeHandler}
           />
           {disabled ? (
-            <span className="form-radiobutton__other">{label}</span>
+            <span className="gui-form-radiobutton__other">{label}</span>
           ) : (
             <input
               ref={(input) => {
                 this.input = input;
               }}
-              className="form-radiobutton__other"
+              className="gui-form-radiobutton__other"
               type="text"
               // @ts-expect-error TS(2339): Property 'id' does not exist on type '{ children?:... Remove this comment to see the full error message
               id={`other-value-${rest.id}`}
@@ -65,18 +65,18 @@ class Other extends Component {
     }
 
     return (
-      <div className="form__choice-element-wrapper">
+      <div className="gui-form__choice-element-wrapper">
         <Input
           {...rest}
           onChangeHandler={onChangeHandler}
-          className="form-radiobutton--invisible"
+          className="gui-form-radiobutton--invisible"
           disabled={disabled}
         />
         <Label
           label={label}
           // @ts-expect-error TS(2339): Property 'id' does not exist on type '{ children?:... Remove this comment to see the full error message
           id={rest.id}
-          className="form-checkbox__label--other-option"
+          className="gui-form-checkbox__label--other-option"
           disabled={disabled}
         />
       </div>

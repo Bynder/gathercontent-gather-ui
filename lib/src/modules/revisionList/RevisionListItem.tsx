@@ -13,13 +13,13 @@ export function RevisionListItem({
   active = false,
   ...rest
 }: Props) {
-  const classes = cx(className, "revision-list-item", {
-    "revision-list-item-active": active,
+  const classes = cx(className, "gui-revision-list-item", {
+    "gui-revision-list-item-active": active,
   });
   return (
     <li className={classes} {...rest}>
-      <div className="revision-list-item-left">{leftContent}</div>
-      <div className="revision-list-item-right">{children}</div>
+      <div className="gui-revision-list-item-left">{leftContent}</div>
+      <div className="gui-revision-list-item-right">{children}</div>
     </li>
   );
 }

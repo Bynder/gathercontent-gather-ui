@@ -2,8 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 export function InlineSidebar({ children, className, isFinder, ...rest }: any) {
-  const classNames = cx(`inline-sidebar ${className}`, {
-    "inline-sidebar-finder": isFinder,
+  const classNames = cx(`gui-inline-sidebar ${className}`, {
+    "gui-inline-sidebar-finder": isFinder,
   });
 
   return (

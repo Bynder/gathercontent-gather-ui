@@ -15,8 +15,8 @@ function WorkflowStepInner({ children, onClick, className }: any) {
   const { showBody, setShowActions, isActive, showActions }: any =
     useContext(WorkflowStepContext);
 
-  const workflowStepClassName = cx(`workflow-step`, className, {
-    "is-active pseudo-left-border-blue-2px relative": isActive,
+  const workflowStepClassName = cx(`gui-workflow-step`, className, {
+    "gui-is-active gui-pseudo-left-border-blue-2px relative": isActive,
     "bg-neutral-98": (showBody && !isActive) || (showActions && !isActive),
     "cursor-pointer": onClick && !showBody && !isActive,
   });

@@ -50,14 +50,14 @@ export function WorkflowStepCollapsibleBody({ children }: any) {
         bodyIsFullyOpen ? "overflow-y-visible" : "overflow-y-hidden"
       }`}
     >
-      <div ref={bodyRef} className="invisible absolute workflow-step__body">
+      <div ref={bodyRef} className="invisible absolute gui-workflow-step__body">
         {children}
       </div>
       {transitions.map(
         ({ item, key, props }) =>
           item && (
             <animated.div
-              className="workflow-step__body"
+              className="gui-workflow-step__body"
               key={key}
               style={{
                 ...props,

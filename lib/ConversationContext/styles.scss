@@ -1,4 +1,4 @@
-.conversation-context {
+.gui-conversation-context {
   &__label {
     font-size: $typo-size-lead;
     font-weight: $typo-weight-semi-bold;
@@ -30,8 +30,8 @@
       font-weight: $typo-weight-roman;
     }
 
-    .figure--highlighted,
-    .figure--active {
+    .gui-figure--highlighted,
+    .gui-figure--active {
       &:hover {
         cursor: default;
       }

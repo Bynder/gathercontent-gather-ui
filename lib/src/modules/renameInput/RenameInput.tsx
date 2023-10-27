@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import cx from 'classnames';
+import React, { useState } from "react";
+import cx from "classnames";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'uuid... Remove this comment to see the full error message
-import uuid from 'uuid/v1';
-import { RenameInputForm } from './RenameInputForm';
-import { sizes } from './common';
+import uuid from "uuid/v1";
+import { RenameInputForm } from "./RenameInputForm";
+import { sizes } from "./common";
 
 export function RenameInput({
   text,
@@ -17,14 +17,14 @@ export function RenameInput({
   className,
   placeholder,
   formClass,
-  maxLength
+  maxLength,
 }: any) {
   const [isEditing, setIsEditing] = useState(false);
 
-  const classes = cx(`rename-input-text ${className}`, {
-    'rename-input-text-md': size === sizes.md,
-    'rename-input-text-lrg': size === sizes.lrg,
-    'rename-input-multiline': multiline
+  const classes = cx(`gui-rename-input-text ${className}`, {
+    "gui-rename-input-text-md": size === sizes.md,
+    "gui-rename-input-text-lrg": size === sizes.lrg,
+    "gui-rename-input-multiline": multiline,
   });
 
   if (isEditing) {
@@ -59,11 +59,11 @@ export function RenameInput({
 
 RenameInput.defaultProps = {
   size: sizes.md,
-  placeholder: 'Enter a new value',
-  className: '',
-  formClass: '',
+  placeholder: "Enter a new value",
+  className: "",
+  formClass: "",
   id: `rename-input-${uuid()}`,
-  maxLength: null
+  maxLength: null,
 };
 
 RenameInput.sizes = sizes;

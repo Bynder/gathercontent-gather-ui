@@ -6,28 +6,28 @@ $editable-text-wrapper-icon-width: 25px;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.editable-text__wrapper {
+.gui-editable-text__wrapper {
   display: flex;
   margin: 0 0 0.25em;
 
   &:hover {
-    .editable-text__button {
+    .gui-editable-text__button {
       visibility: visible;
     }
   }
 
-  .page-information__title {
+  .gui-page-information__title {
     margin: 0;
   }
 }
 
-.editable-text__text {
+.gui-editable-text__text {
   &:focus, &:active {
     outline: none;
   }
 }
 
-.editable-text__button {
+.gui-editable-text__button {
   margin-left: 0.5em;
   visibility: hidden;
   fill: $neutral-dark;
@@ -37,7 +37,7 @@ $editable-text-wrapper-icon-width: 25px;
   }
 }
 
-.editable-text__input {
+.gui-editable-text__input {
   border: none;
   outline: none;
   padding: 0;
@@ -45,12 +45,12 @@ $editable-text-wrapper-icon-width: 25px;
   width: 100%;
   background: none;
 
-  &.single-line {
+  &.gui-single-line {
     height: 1.25em;
   }
 
-  &.expanding-textarea,
-  &.expanding-textarea:focus {
+  &.gui-expanding-textarea,
+  &.gui-expanding-textarea:focus {
     border: none;
     padding: 0;
   }

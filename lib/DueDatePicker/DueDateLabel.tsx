@@ -5,14 +5,14 @@ import Icon from "../Icon";
 export function DueDateLabel({ overdue, children }: any) {
   if (!children) {
     return (
-      <span className="duedate__label duedate__label--button">
+      <span className="gui-duedate__label gui-duedate__label--button">
         No due date set
       </span>
     );
   }
 
-  const classNames = cx("duedate__label", {
-    "color-overdue": overdue,
+  const classNames = cx("gui-duedate__label", {
+    "gui-color-overdue": overdue,
   });
 
   return (
@@ -20,7 +20,7 @@ export function DueDateLabel({ overdue, children }: any) {
       {overdue && <Icon name="warning" />}
       <span>
         {`Due `}
-        <span className="duedate__label--button">{children}</span>
+        <span className="gui-duedate__label--button">{children}</span>
       </span>
     </div>
   );

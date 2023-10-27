@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 function ColFieldHeader({ children, className, border, ...props }: Props) {
-  const classes = cx(`col-field__header border-0 py-4 px-5  ${className}`, {
+  const classes = cx(`gui-col-field__header border-0 py-4 px-5  ${className}`, {
     "border-b border-solid border-neutral-90": border,
   });
   return (

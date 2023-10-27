@@ -1,12 +1,12 @@
-.col-field-label {
+.gui-col-field-label {
   @apply text-lg font-semi-bold text-neutral-20 mb-0 leading-6;
 }
 
-.col-field-label-editable {
+.gui-col-field-label-editable {
   @apply font-semi-bold text-neutral-20;
 }
 
-.col-field__body .ql-editor {
+.gui-col-field__body .gui-ql-editor {
   @apply p-6;
 
   *:nth-child(1) {
@@ -96,13 +96,13 @@
     }
   }
 
-  &.ql-blank::before {
+  &.gui-ql-blank::before {
     @apply absolute inset-x-0 text-neutral-primary cursor-text text-lg leading-6 ml-6;
 
     content: attr(data-placeholder);
   }
 }
 
-.col-field-selected {
+.gui-col-field-selected {
   @include before-border(2px, solid, $primary-blue, 6px)
 }

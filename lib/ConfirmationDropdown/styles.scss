@@ -6,11 +6,11 @@
    Styles
    ========================================================================== */
 
-.confirmation-dropdown .dropdown__content {
+.gui-confirmation-dropdown .gui-dropdown__content {
   width: 300px;
 }
 
-.confirmation-dropdown .dropdown__footer {
+.gui-confirmation-dropdown .gui-dropdown__footer {
   position: relative;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
   flex-direction: row-reverse;
 }
 
-.confirmation-dropdown__cancel {
+.gui-confirmation-dropdown__cancel {
   color: $neutral-base;
   background: none;
 
@@ -27,7 +27,7 @@
   }
 }
 
-.confirmation-dropdown__confirm-trigger {
+.gui-confirmation-dropdown__confirm-trigger {
   position: relative;
   background: none;
   z-index: 1;
@@ -39,18 +39,18 @@
   }
 }
 
-.confirmation-dropdown__loader {
+.gui-confirmation-dropdown__loader {
   position: absolute;
   transform: scale(.5);
   transition: opacity $animation-time-micro ease-in $animation-time-micro;
 }
 
-.confirmation-dropdown__loader,
-.confirmation-dropdown.is-pending .confirmation-dropdown__confirm-trigger {
+.gui-confirmation-dropdown__loader,
+.gui-confirmation-dropdown.gui-is-pending .gui-confirmation-dropdown__confirm-trigger {
   opacity: 0;
 }
 
-.confirmation-dropdown.is-pending .confirmation-dropdown__loader {
+.gui-confirmation-dropdown.gui-is-pending .gui-confirmation-dropdown__loader {
   opacity: 1;
 }
 
@@ -58,6 +58,6 @@
    Modifiers
    ========================================================================== */
 
-.confirmation-dropdown--is-dangerous > .dropdown__trigger {
-  @extend .button--link-danger;
+.gui-confirmation-dropdown--is-dangerous > .gui-dropdown__trigger {
+  @extend .gui-button--link-danger;
 }

@@ -124,16 +124,16 @@ export function Resizable(props: PropsWithChildren<ResizableProps>) {
   }, []);
 
   return (
-    <div ref={resizeRef} className="resizable">
-      <div ref={resizeWrapperRef} className="resizable__wrapper">
+    <div ref={resizeRef} className="gui-resizable">
+      <div ref={resizeWrapperRef} className="gui-resizable__wrapper">
         {children}
         <span
           role="none"
-          className="resizable__gutter"
+          className="gui-resizable__gutter"
           onMouseDown={initDrag}
           onMouseMove={setGutterHandlePosition}
         >
-          <span ref={handleRef} className="resizable__gutter-handle" />
+          <span ref={handleRef} className="gui-resizable__gutter-handle" />
         </span>
       </div>
     </div>

@@ -15,15 +15,15 @@ function UserSearchList({
 }: any) {
   if (users.length <= 0 && !noUsers) {
     return (
-      <Dropdown.ActionGroup className="user-search__search-results">
-        <span className="no-results">Oops! No people found.</span>
+      <Dropdown.ActionGroup className="gui-user-search__search-results">
+        <span className="gui-no-results">Oops! No people found.</span>
       </Dropdown.ActionGroup>
     );
   }
   return (
-    <ul className="user-search-list h-padding-clear h-margin-clear">
+    <ul className="gui-user-search-list h-padding-clear h-margin-clear">
       {users.map((user: any) => (
-        <li className="user-search-list__user" key={user.id}>
+        <li className="gui-user-search-list__user" key={user.id}>
           <Dropdown.Action
             action={() => addUser(user)}
             key={user.id}
@@ -46,8 +46,8 @@ function UserSearchList({
         </li>
       ))}
       {noUsers && (
-        <Dropdown.ActionGroup className="user-search__search-results">
-          <span className="no-results">{noUserDisplay}</span>
+        <Dropdown.ActionGroup className="gui-user-search__search-results">
+          <span className="gui-no-results">{noUserDisplay}</span>
         </Dropdown.ActionGroup>
       )}
     </ul>

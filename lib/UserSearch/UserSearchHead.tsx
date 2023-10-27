@@ -9,10 +9,12 @@ function UserSearchHead({
   toggleActive,
 }: any) {
   return (
-    <div className="user-search__search-head">
-      <div className="user-search__search-head-top">
+    <div className="gui-user-search__search-head">
+      <div className="gui-user-search__search-head-top">
         {searchHeading && (
-          <span className="user-search__search-heading">{searchHeading}</span>
+          <span className="gui-user-search__search-heading">
+            {searchHeading}
+          </span>
         )}
         {useDisplayToggle && (
           <CheckToggle
@@ -25,7 +27,7 @@ function UserSearchHead({
         )}
       </div>
       {subheading && (
-        <span className="user-search__search-subheading">{subheading}</span>
+        <span className="gui-user-search__search-subheading">{subheading}</span>
       )}
     </div>
   );

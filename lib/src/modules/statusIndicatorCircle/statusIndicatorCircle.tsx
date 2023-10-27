@@ -16,9 +16,9 @@ export function StatusIndicatorCircle({
   thickBorder,
   className = "",
 }: Props) {
-  const classes = cx("status-indicator-circle", className, {
-    "duration-100": thickBorder,
-    "duration-300": !thickBorder,
+  const classes = cx("gui-status-indicator-circle", className, {
+    "gui-duration-100": thickBorder,
+    "gui-duration-300": !thickBorder,
   });
   const boxShadow = `inset 0px 0px 0px ${thickBorder ? "4" : "2"}px ${color}`;
 

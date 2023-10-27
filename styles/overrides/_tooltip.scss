@@ -1,14 +1,14 @@
-.tooltip {
+.gui-tooltip {
     font-family: $typo-stack-base;
     animation: dropdownAnimation 750ms;
     animation-fill-mode: forwards;
 }
 
-.tooltip-arrow {
+.gui-tooltip-arrow {
   display: none;
 }
 
-.tooltip--large {
+.gui-tooltip--large {
     padding: .5em .25em;
     font-size: $typo-size-lead;
 }
@@ -16,18 +16,18 @@
 /* ==========================================================================
    <Figure />
    ========================================================================== */
-.figure > span {
+.gui-figure > span {
   flex-grow: 1;
 }
 
-.figure__tooltip.tooltip {
+.gui-figure__tooltip.gui-tooltip {
   opacity: 1;
 }
 
-.figure__tooltip--added .tooltip-inner {
+.gui-figure__tooltip--added .gui-tooltip-inner {
   background: $primary-green;
 }
 
-.figure__tooltip--removed .tooltip-inner {
+.gui-figure__tooltip--removed .gui-tooltip-inner {
   background: $primary-red;
 }

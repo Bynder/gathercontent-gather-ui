@@ -60,7 +60,7 @@ export function Avatar(args: any) {
         title="AvatarComponent (with popover)"
         description="An avatar can show a tooltip on hover."
       >
-        <div className="h-display-flex">
+        <div className="gui-h-display-flex">
           <AvatarWithPopover {...props}>
             <ParticipantInfo name={props.name} email={props.email} />
           </AvatarWithPopover>

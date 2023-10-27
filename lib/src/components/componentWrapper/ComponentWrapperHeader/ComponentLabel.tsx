@@ -11,7 +11,7 @@ export function ComponentLabel({
   if (editable) {
     return (
       <RenameInput
-        className="component-label-text"
+        className="gui-component-label-text"
         text={label}
         label={`edit component label: ${label}`}
         multiline
@@ -23,5 +23,5 @@ export function ComponentLabel({
     );
   }
 
-  return <div className="component-label-text">{label}</div>;
+  return <div className="gui-component-label-text">{label}</div>;
 }

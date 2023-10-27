@@ -1,14 +1,14 @@
 /* ==========================================================================
    Styling
    ========================================================================== */
-.progress-button__wrapper {
+.gui-progress-button__wrapper {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.progress-button__icon {
+.gui-progress-button__icon {
   position: absolute;
 
   path {
@@ -16,7 +16,7 @@
   }
 }
 
-.progress-button__spinner-text + .progress-button__icon {
+.gui-progress-button__spinner-text + .gui-progress-button__icon {
   position: relative;
   order: 1;
   margin-right: $layout-spacing-base*0.25;
@@ -27,13 +27,13 @@
   }
 }
 
-.progress-button__spinner-text {
+.gui-progress-button__spinner-text {
   order: 2;
 }
 
 
-.button--outline-default {
-  .progress-button__icon path {
+.gui-button--outline-default {
+  .gui-progress-button__icon path {
     fill: $primary-blue-darker;
   }
 }

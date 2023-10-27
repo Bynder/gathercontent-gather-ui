@@ -9,7 +9,7 @@ function DeleteablePill({ name, onRemove, warning, id }: any) {
   return (
     <TooltipWrapper id={`pill-input-pill-tooltip-${id}`} tooltipText={warning}>
       <Pill className="mr-1 mb-1" type={pillType}>
-        <p className="h-margin-clear h-margin-right-half">{name}</p>
+        <p className="gui-h-margin-clear gui-h-margin-right-half">{name}</p>
         <Button onClick={onRemove} types={["clear"]}>
           <Icon name="cross" />
         </Button>

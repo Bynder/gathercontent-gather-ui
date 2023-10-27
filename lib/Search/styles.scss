@@ -1,11 +1,11 @@
 $top-bar-height: 95px !default;
 $search-min-width: 400px !default;
 
-.search {
+.gui-search {
   position: relative;
 }
 
-.search__body {
+.gui-search__body {
   display: none;
   position: absolute;
   top: 100%;
@@ -18,33 +18,33 @@ $search-min-width: 400px !default;
   box-shadow: $shadow-base;
 }
 
-.search-options {
+.gui-search-options {
   padding: $layout-spacing-base*0.5 + $layout-spacing-base*0.25;
   border-bottom:  1px solid $color-border-base;
 
-  .search-options__toggle {
+  .gui-search-options__toggle {
     color: $neutral-base;
   }
 }
 
-.search-list__heading {
+.gui-search-list__heading {
   color: $neutral-base;
   margin: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 + $layout-spacing-base*0.25);;
 }
 
-.search__body.display-results {
+.gui-search__body.gui-display-results {
   display: block;
 }
 
-.search-list {
+.gui-search-list {
   padding: $layout-spacing-base*0.5 0;
 }
 
-.search-list + .search-list {
+.gui-search-list + .gui-search-list {
   border-top: 1px solid $color-border-base;
 }
 
-.search-item {
+.gui-search-item {
   padding: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 + $layout-spacing-base*0.25);
 
   em {
@@ -59,25 +59,25 @@ $search-min-width: 400px !default;
   }
 }
 
-.search-item__title,
-.search-item__content {
+.gui-search-item__title,
+.gui-search-item__content {
   font-weight: 500;
 }
 
-.search-item__subtext {
+.gui-search-item__subtext {
   color: $neutral-base;
   font-size: $typo-size-small;
 }
 
-.search-item__content {
+.gui-search-item__content {
   font-style: italic;
 }
 
-.search-list a, .search-list a:hover {
+.gui-search-list a, .gui-search-list a:hover {
   text-decoration: none;
 }
 
-.search__input {
+.gui-search__input {
   transition: width cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, background-color cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
   width: 40px;
   border-radius: $layout-spacing-base*0.25;
@@ -111,14 +111,14 @@ $search-min-width: 400px !default;
   }
 }
 
-.top-bar__search-dropdown {
-  .search__body {
+.gui-top-bar__search-dropdown {
+  .gui-search__body {
     max-height: calc(100vh - #{$top-bar-height});
     overflow-y: auto;
   }
 }
 
-.search__input.is-focus {
+.gui-search__input.gui-is-focus {
   width: $search-min-width;
   background-color: $neutral-lightest;
   display: flex;
@@ -126,11 +126,11 @@ $search-min-width: 400px !default;
   margin-right: 0;
   box-shadow: -25px 0 13px -5px #FFF;
 
-  .search__input--input {
+  .gui-search__input--input {
     display: block;
   }
 
-  .search__input--clear {
+  .gui-search__input--clear {
     position: static;
     visibility: visible;
     opacity: 1;
@@ -138,7 +138,7 @@ $search-min-width: 400px !default;
     transition: visibility 0.0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
   }
 
-  .search__input--start {
+  .gui-search__input--start {
     visibility: hidden;
     opacity: 0;
     transition: visibility cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;

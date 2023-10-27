@@ -180,7 +180,7 @@ export function BoundaryClickWatcher({
         }}
         onClick={handleInnerClick}
         onKeyPress={handleInnerClick}
-        className={`boundary-click-watcher ${className}`}
+        className={`gui-boundary-click-watcher ${className}`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onBlur={handleBlur}

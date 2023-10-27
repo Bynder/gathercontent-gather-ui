@@ -54,22 +54,22 @@ export function TopBar({
     };
   }, [topbarRef.current]);
 
-  const wrapperClasses = cx("top-bar__wrapper", {
+  const wrapperClasses = cx("gui-top-bar__wrapper", {
     shadow,
-    "top-bar__wrapper--fixed": fixed || scrollFixed,
+    "gui-top-bar__wrapper--fixed": fixed || scrollFixed,
   });
 
-  const classes = cx(`top-bar p-0 ${className}`, {
-    "top-bar--dark": useDarkTheme,
-    "top-bar-light-grey": useLightGreyTheme,
-    "top-bar--has-notification": notification,
+  const classes = cx(`gui-top-bar p-0 ${className}`, {
+    "gui-top-bar--dark": useDarkTheme,
+    "gui-top-bar-light-grey": useLightGreyTheme,
+    "gui-top-bar--has-notification": notification,
   });
 
   return (
     <Grid className={classes} role="banner">
       <div className={wrapperClasses} ref={topbarRef}>
         {notification}
-        <Row className="top-bar__inner">{children}</Row>
+        <Row className="gui-top-bar__inner">{children}</Row>
       </div>
     </Grid>
   );

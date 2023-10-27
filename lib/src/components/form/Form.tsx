@@ -34,8 +34,8 @@ export function Form({
   const [status, setStatus] = React.useState(statuses.idle);
   const timeoutRef = React.useRef(0);
 
-  const classNames = cx("form", className, {
-    "form-inline": inline,
+  const classNames = cx("gui-form", className, {
+    "gui-form-inline": inline,
   });
 
   const sharedState = {

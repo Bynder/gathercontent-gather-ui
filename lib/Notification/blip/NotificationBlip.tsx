@@ -1,5 +1,5 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
 interface Props {
   children: React.ReactNode;
@@ -7,6 +7,6 @@ interface Props {
 }
 
 export function NotificationBlip({ children, className }: Props) {
-  const classes = cx('notification-blip', className);
+  const classes = cx("gui-notification-blip", className);
   return <div className={classes}>{children}</div>;
 }

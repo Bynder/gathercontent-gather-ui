@@ -26,16 +26,16 @@ function PreviewImage({
 
   const commonAbsoluteLayoutClasses = "absolute top-0 w-full h-full";
   const classNames = cx(
-    "preview-image",
+    "gui-preview-image",
     {
-      "preview-image-succeeded": imageHasSucceeded,
-      "preview-image-failed": imageHasFailed,
-      "preview-image-show-loader": showLoader,
+      "gui-preview-image-succeeded": imageHasSucceeded,
+      "gui-preview-image-failed": imageHasFailed,
+      "gui-preview-image-show-loader": showLoader,
     },
     className
   );
   const previewClassNames = cx(
-    "preview-image-img",
+    "gui-preview-image-img",
     `${commonAbsoluteLayoutClasses}`
   );
 
@@ -46,7 +46,7 @@ function PreviewImage({
           src={image.src}
           alt={altText}
           title={title}
-          className="invisible"
+          className="gui-invisible"
         />
 
         <div

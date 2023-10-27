@@ -10,7 +10,7 @@ export function FinderNavigation({
   ...rest
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`finder ${className}`} {...rest}>
+    <div className={`gui-finder ${className}`} {...rest}>
       {children}
     </div>
   );

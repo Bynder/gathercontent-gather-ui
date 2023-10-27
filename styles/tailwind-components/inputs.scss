@@ -1,4 +1,4 @@
-.text-input-base {
+.gui-text-input-base {
   @apply text-base text-neutral-20 bg-white;
 
   &::placeholder {
@@ -6,19 +6,19 @@
   }
 }
 
-.text-input-border {
+.gui-text-input-border {
   @apply border border-solid border-neutral-90 rounded relative;
 }
 
-.text-input-border-hover {
+.gui-text-input-border-hover {
   @apply border-neutral-primary transition-all duration-200;
 }
 
-.text-input-border:hover:not(:focus, .text-input-border-focus) {
-  @apply text-input-border-hover;
+.gui-text-input-border:hover:not(:focus, .gui-text-input-border-focus) {
+  @apply gui-text-input-border-hover;
 }
 
-.text-input-border-focus {
+.gui-text-input-border-focus {
   @apply border-transparent;
   @include before-border(
     2px,
@@ -28,28 +28,28 @@
   );
 }
 
-.text-input-border:active,
-.text-input-border:focus {
-  @apply text-input-border-focus;
+.gui-text-input-border:active,
+.gui-text-input-border:focus {
+  @apply gui-text-input-border-focus;
 }
 
-.text-input {
-  @apply text-input-base text-input-border p-3;
+.gui-text-input {
+  @apply gui-text-input-base gui-text-input-border p-3;
 }
 
-.text-input:hover:not(:focus) {
-  @apply text-input-border-hover;
+.gui-text-input:hover:not(:focus) {
+  @apply gui-text-input-border-hover;
 }
 
-.text-input:active,
-.text-input:focus {
-  @apply text-input-border-focus;
+.gui-text-input:active,
+.gui-text-input:focus {
+  @apply gui-text-input-border-focus;
 }
 
-.text-input-disabled {
+.gui-text-input-disabled {
   @apply bg-neutral-95 text-neutral-primary;
 }
 
-.text-input:disabled {
-  @apply text-input-disabled;
+.gui-text-input:disabled {
+  @apply gui-text-input-disabled;
 }

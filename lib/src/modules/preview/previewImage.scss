@@ -1,4 +1,4 @@
-.preview-image {
+.gui-preview-image {
   @apply relative flex overflow-hidden w-full h-full pb-100%;
 
   svg {
@@ -6,25 +6,25 @@
   }
 }
 
-.preview-image-fallback {
+.gui-preview-image-fallback {
   @apply absolute;
 
   padding: 10%;
 }
 
-.preview-image-img {
+.gui-preview-image-img {
   @apply bg-center pb-100% transition-opacity duration-300 opacity-0;
 
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.preview-image-succeeded .preview-image-img {
+.gui-preview-image-succeeded .gui-preview-image-img {
   @apply opacity-100;
 }
 
-.preview-image-show-loader {
-  &.preview-image-succeeded {
+.gui-preview-image-show-loader {
+  &.gui-preview-image-succeeded {
     @apply bg-neutral-20;
 
     path {
@@ -32,8 +32,8 @@
     }
   }
 
-  .preview-image-img,
-  .preview-image-fallback {
+  .gui-preview-image-img,
+  .gui-preview-image-fallback {
     @apply opacity-50;
   }
 }

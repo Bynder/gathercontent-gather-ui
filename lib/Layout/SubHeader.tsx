@@ -18,7 +18,7 @@ export function SubHeader({
   });
   return (
     <animated.div
-      className={`layout-subheader ${className}`}
+      className={`gui-layout-subheader ${className}`}
       style={props}
       {...rest}
     >

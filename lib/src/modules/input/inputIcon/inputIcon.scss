@@ -1,11 +1,11 @@
-.input-icon {
+.gui-input-icon {
   @apply relative inline-flex items-center w-full;
 
-  .icon {
+  .gui-icon {
     @apply absolute ml-3;
   }
 
-  .input {
+  .gui-input {
     @apply pl-8;
   }
 }

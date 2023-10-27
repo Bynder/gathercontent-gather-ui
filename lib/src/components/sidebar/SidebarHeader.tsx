@@ -8,8 +8,8 @@ export function SidebarHeader({
   ...rest
 }: any) {
   return (
-    <Layout.Header className={`sidebar-header ${className}`} {...rest}>
-      <div className="text-overflow-ellipsis">{children}</div>
+    <Layout.Header className={`gui-sidebar-header ${className}`} {...rest}>
+      <div className="gui-text-overflow-ellipsis">{children}</div>
       {onClose && (
         <ButtonIcon
           name="cross"

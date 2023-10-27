@@ -41,13 +41,13 @@ function DropdownAction({
     showContent = showContentProp,
   } = useContext(DropdownContext) || {};
 
-  const classNames = cx(`dropdown__action ${className}`, {
-    "dropdown__action--danger": danger,
-    "dropdown__action--noBg": noBackground,
-    "dropdown__action--icon-only": iconOnly,
-    "dropdown__action--selected": selected,
-    "dropdown__action--overflow": overflow,
-    "dropdown__action--disabled": disabled,
+  const classNames = cx(`gui-dropdown__action ${className}`, {
+    "gui-dropdown__action--danger": danger,
+    "gui-dropdown__action--noBg": noBackground,
+    "gui-dropdown__action--icon-only": iconOnly,
+    "gui-dropdown__action--selected": selected,
+    "gui-dropdown__action--overflow": overflow,
+    "gui-dropdown__action--disabled": disabled,
   });
 
   const sharedProps = {

@@ -12,7 +12,10 @@ export function Breadcrumb() {
       <StoryItem title="BreadcrumbComponent">
         <BreadcrumbComponent>
           <BreadcrumbComponent.Item>
-            <div className="text-overflow-ellipsis" title="Energy Co. Redesign">
+            <div
+              className="gui-text-overflow-ellipsis"
+              title="Energy Co. Redesign"
+            >
               Energy Co. Redesign
             </div>
           </BreadcrumbComponent.Item>
@@ -22,17 +25,20 @@ export function Breadcrumb() {
       <StoryItem title="BreadcrumbComponent">
         <BreadcrumbComponent>
           <BreadcrumbComponent.Item style={{ maxWidth: "20%" }}>
-            <div className="text-overflow-ellipsis" title="Energy Co. Redesign">
+            <div
+              className="gui-text-overflow-ellipsis"
+              title="Energy Co. Redesign"
+            >
               <a href="/">Energy Co. Redesign</a>
             </div>
           </BreadcrumbComponent.Item>
           <BreadcrumbComponent.Item style={{ maxWidth: "20%" }}>
-            <div className="text-overflow-ellipsis" title="About">
+            <div className="gui-text-overflow-ellipsis" title="About">
               <a href="/">About</a>
             </div>
           </BreadcrumbComponent.Item>
           <BreadcrumbComponent.Item style={{ maxWidth: "50%" }}>
-            <div className="text-overflow-ellipsis" title="History">
+            <div className="gui-text-overflow-ellipsis" title="History">
               History
             </div>
           </BreadcrumbComponent.Item>
@@ -48,7 +54,7 @@ export function Breadcrumb() {
                 <Dropdown.ActionGroup>
                   <a
                     href="/"
-                    className="dropdown__action"
+                    className="gui-dropdown__action"
                     title="Energy Co. Redesign"
                   >
                     Energy Co. Redesign
@@ -58,14 +64,14 @@ export function Breadcrumb() {
             </Dropdown>
           </BreadcrumbComponent.Item>
           <BreadcrumbComponent.Item>
-            <div className="text-overflow-ellipsis">
+            <div className="gui-text-overflow-ellipsis">
               <a href="/" title="About">
                 About
               </a>
             </div>
           </BreadcrumbComponent.Item>
           <BreadcrumbComponent.Item>
-            <div className="text-overflow-ellipsis" title="History">
+            <div className="gui-text-overflow-ellipsis" title="History">
               History
             </div>
           </BreadcrumbComponent.Item>

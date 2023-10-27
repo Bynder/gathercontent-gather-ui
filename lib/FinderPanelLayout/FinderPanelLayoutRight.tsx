@@ -2,7 +2,9 @@ import React from "react";
 
 function FinderPanelLayoutRight({ children, className }: any) {
   return (
-    <div className={`finder-panel-layout__right ${className}`}>{children}</div>
+    <div className={`gui-finder-panel-layout__right ${className}`}>
+      {children}
+    </div>
   );
 }
 

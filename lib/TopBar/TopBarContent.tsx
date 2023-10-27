@@ -10,11 +10,11 @@ export function TopBarContent({
   className,
   ...props
 }: any) {
-  const classes = cx(`top-bar__content ${className}`, {
-    "top-bar__content--left": left,
-    "top-bar__content--center": center,
-    "top-bar__content--right": right,
-    "top-bar__content--collapse": collapse,
+  const classes = cx(`gui-top-bar__content ${className}`, {
+    "gui-top-bar__content--left": left,
+    "gui-top-bar__content--center": center,
+    "gui-top-bar__content--right": right,
+    "gui-top-bar__content--collapse": collapse,
   });
   return (
     <Col className={classes} {...props}>

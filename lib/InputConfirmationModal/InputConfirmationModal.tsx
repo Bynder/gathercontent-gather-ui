@@ -29,7 +29,7 @@ export function InputConfirmationModal({
 
   return (
     <Modal.Container
-      className={`modal--clear modal--input-confirm ${className}`}
+      className={`gui-modal--clear gui-modal--input-confirm ${className}`}
       show={show}
       onHide={onHide}
       {...rest}

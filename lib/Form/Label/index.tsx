@@ -14,18 +14,18 @@ function Label({
   disabled,
   hinted,
 }: any) {
-  const labelClasses = cx(`form-checkbox__label ${className}`, {
-    "is-disabled": disabled,
-    "form-checkbox__label--hinted": hinted,
+  const labelClasses = cx(`gui-form-checkbox__label ${className}`, {
+    "gui-is-disabled": disabled,
+    "gui-form-checkbox__label--hinted": hinted,
   });
 
-  const textElementClasses = cx("form-input__text", {
-    "is-highlight": highlight,
-    "is-active": active,
+  const textElementClasses = cx("gui-form-input__text", {
+    "gui-is-highlight": highlight,
+    "gui-is-active": active,
   });
 
   const buttonElementClasses = cx({
-    "is-highlight": highlight,
+    "gui-is-highlight": highlight,
   });
 
   const handleOnClick = () => {
@@ -38,14 +38,14 @@ function Label({
     return (
       <button
         type="button"
-        className={`form-checkbox__label--button ${className} ${buttonElementClasses}`}
+        className={`gui-form-checkbox__label--button ${className} ${buttonElementClasses}`}
         onClick={handleOnClick}
         onMouseEnter={labelMouseEnter}
         onMouseLeave={labelMouseLeave}
       >
         <span className={textElementClasses}>{label}</span>
         {subtitle && (
-          <span className="form-checkbox__subtitle">{subtitle}</span>
+          <span className="gui-form-checkbox__subtitle">{subtitle}</span>
         )}
       </button>
     );
@@ -53,7 +53,9 @@ function Label({
   return (
     <label htmlFor={id} className={labelClasses}>
       <span className={textElementClasses}>{label}</span>
-      {subtitle && <span className="form-checkbox__subtitle">{subtitle}</span>}
+      {subtitle && (
+        <span className="gui-form-checkbox__subtitle">{subtitle}</span>
+      )}
     </label>
   );
 }

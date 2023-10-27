@@ -2,7 +2,9 @@ import React from "react";
 
 function ModalColumn(props: any) {
   return (
-    <div className={`modal__column ${props.className}`}>{props.children}</div>
+    <div className={`gui-modal__column ${props.className}`}>
+      {props.children}
+    </div>
   );
 }
 

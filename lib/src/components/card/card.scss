@@ -1,8 +1,8 @@
-.card {
+.gui-card {
   @apply rounded-small shadow-small;
 }
 
-.card-inner {
+.gui-card-inner {
   @apply flex flex-col rounded-small bg-white;
   @apply border border-solid border-neutral-90;
 
@@ -12,7 +12,7 @@
   }
 }
 
-.card-content {
+.gui-card-content {
   @apply p-4;
 
   @include respond-to-min($screen-sm) {
@@ -20,73 +20,73 @@
   }
 }
 
-.card-sm .card-content {
+.gui-card-sm .gui-card-content {
   @apply p-4;
 }
 
-.card-md .card-content {
+.gui-card-md .gui-card-content {
   @include respond-to-min($screen-sm) {
     @apply p-6;
   }
 }
 
-.card-title {
+.gui-card-title {
   @apply text-lg font-semi-bold mb-4;
 }
 
-.card-description {
+.gui-card-description {
   @apply text-neutral-primary leading-6 mb-4;
 }
 
-.card-footer {
+.gui-card-footer {
   @apply flex justify-end;
 }
 
-.card-interactive {
+.gui-card-interactive {
   cursor: pointer;
 
-  &:focus .card-inner {
+  &:focus .gui-card-inner {
     @apply shadow-button-primary-focus;
   }
 }
 
-.card-selected {
-  .card-inner {
+.gui-card-selected {
+  .gui-card-inner {
     @apply shadow-blue-primary-1px border-blue-primary;
   }
 
-  &:hover .card-inner,
-  &:focus .card-inner,
-  &.card-active .card-inner {
+  &:hover .gui-card-inner,
+  &:focus .gui-card-inner,
+  &.gui-card-active .gui-card-inner {
     @apply shadow-blue-primary-2px;
   }
 }
 
-.card-highlighted {
-  .card-inner {
+.gui-card-highlighted {
+  .gui-card-inner {
     @apply shadow-yellow-primary-1px border-yellow-primary;
   }
 
-  &:hover .card-inner,
-  &:focus .card-inner,
-  &.card-active .card-inner {
+  &:hover .gui-card-inner,
+  &:focus .gui-card-inner,
+  &.gui-card-active .gui-card-inner {
     @apply shadow-yellow-primary-3px;
   }
 }
 
-.card-added {
-  .card-inner {
+.gui-card-added {
+  .gui-card-inner {
     @apply shadow-green-primary-1px border-green-primary;
   }
 }
 
-.card-removed {
-  .card-inner {
+.gui-card-removed {
+  .gui-card-inner {
     @apply shadow-red-primary-1px border-red-primary;
   }
 }
 
-.card-disabled .card-content {
+.gui-card-disabled .gui-card-content {
   @supports (filter: blur()) {
     @apply transition-all duration-200;
 
@@ -94,16 +94,16 @@
   }
 }
 
-.card-controls {
+.gui-card-controls {
   @apply absolute top-0 p-2 -mt-10 transition-all duration-200;
 }
 
-.card:not(.card-disabled) {
+.gui-card:not(.gui-card-disabled) {
   &:active,
   &:hover,
   &:focus,
   &:focus-within {
-    .card-controls {
+    .gui-card-controls {
       @apply mt-0;
     }
   }

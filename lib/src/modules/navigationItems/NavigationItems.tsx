@@ -9,7 +9,7 @@ export function NavigationItems({
 }: any) {
   return (
     <NavigationProvider onNav={onNav} defaultTabId={defaultTabId}>
-      <nav className="navigation--items" aria-label={srLabel}>
+      <nav className="gui-navigation--items" aria-label={srLabel}>
         <ul role="menubar" aria-label={srLabel}>
           {children}
         </ul>

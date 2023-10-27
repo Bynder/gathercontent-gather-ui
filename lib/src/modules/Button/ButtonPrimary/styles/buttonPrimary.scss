@@ -1,4 +1,4 @@
-.button-primary {
+.gui-button-primary {
   @apply text-white bg-blue-primary border-blue-primary relative;
 
   &:hover {
@@ -18,7 +18,7 @@
   }
 }
 
-.button-primary-connected-right {
+.gui-button-primary-connected-right {
   @apply border-r-blue-40;
 
   &:disabled {

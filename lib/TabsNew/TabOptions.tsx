@@ -9,7 +9,7 @@ function TabOptions({ children }: any) {
     useContext(TabContext);
 
   const dropdownClassNames = cx(
-    "tab-dropdown overflow-visible items-center flex",
+    "gui-tab-dropdown overflow-visible items-center flex",
     {
       "hidden group-hover:flex": !isActive && !actionsAreActive,
     }
@@ -18,7 +18,7 @@ function TabOptions({ children }: any) {
   const iconClassNames = cx("bg-transparent hover:bg-neutral-95");
 
   const createTriggerWrapperClassNames = (showContent: any) =>
-    cx("tab-dropdown-trigger h-6 w-6 items-center justify-center", {
+    cx("gui-tab-dropdown-trigger h-6 w-6 items-center justify-center", {
       flex: isActive || showContent,
       "hidden group-hover:flex": !isActive && !showContent,
       "group-hover:bg-neutral-90": !isActive,

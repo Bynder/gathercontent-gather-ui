@@ -10,8 +10,8 @@ export function FormSubmitButton({
   ...rest
 }: any) {
   const { status }: any = React.useContext(FormContext);
-  const classNames = cx("form-submit-button", className, {
-    "form-submit-button-success":
+  const classNames = cx("gui-form-submit-button", className, {
+    "gui-form-submit-button-success":
       status === statuses.success && !hideSuccessState,
   });
   const isLoading = status === statuses.processing;
@@ -32,7 +32,7 @@ export function FormSubmitButton({
         <Icon
           name="tick"
           defaultActiveColor={false}
-          className="icon--white mr-2 transform scale-150"
+          className="gui-icon--white mr-2 transform scale-150"
         />
       )}
       {children}

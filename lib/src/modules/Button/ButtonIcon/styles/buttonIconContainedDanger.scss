@@ -1,4 +1,4 @@
-.button-icon-contained-danger {
+.gui-button-icon-contained-danger {
   @apply border border-solid border-neutral-90 bg-white;
 
   &:hover {
@@ -6,7 +6,7 @@
   }
 }
 
-.button-icon-contained-danger:active,
-.button-icon-contained-danger.button-icon-active {
+.gui-button-icon-contained-danger:active,
+.gui-button-icon-contained-danger.gui-button-icon-active {
   @apply border-red-primary;
 }

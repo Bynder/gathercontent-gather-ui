@@ -11,18 +11,18 @@ $breadcrumb-spacing: $layout-spacing-base !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.breadcrumb {
+.gui-breadcrumb {
   font-size: $breadcrumb-font-size;
   font-weight: $breadcrumb-font-weight;
   line-height: $breadcrumb-line-height;
   margin-bottom: $breadcrumb-spacing;
 
-  .dropdown-gc {
+  .gui-dropdown-gc {
     color: $breadcrumb-active-color;
 
     @include default-font-styles;
 
-    .dropdown__action {
+    .gui-dropdown__action {
       @include text-overflow-ellipsis;
 
       text-decoration: none;
@@ -30,37 +30,37 @@ $breadcrumb-spacing: $layout-spacing-base !default;
     }
   }
 
-  .dropdown__trigger {
+  .gui-dropdown__trigger {
     color: $breadcrumb-inactive-color;
     font-size: $breadcrumb-font-size;
     font-weight: $breadcrumb-font-weight;
 
     @include link-hover-underline;
 
-    &.is-active {
+    &.gui-is-active {
       text-decoration: underline;
     }
   }
 }
 
-.breadcrumb,
-.breadcrumb__item,
-.breadcrumb__item > * {
+.gui-breadcrumb,
+.gui-breadcrumb__item,
+.gui-breadcrumb__item > * {
   display: flex;
   align-items: center;
 }
 
-.breadcrumb .text-overflow-ellipsis {
+.gui-breadcrumb .gui-text-overflow-ellipsis {
   display: block;
 }
 
-.breadcrumb a {
+.gui-breadcrumb a {
   @include link-hover-underline;
 
   color: inherit;
 }
 
-.breadcrumb__item {
+.gui-breadcrumb__item {
   color: $breadcrumb-inactive-color;
 
   @include respond-to(small) {

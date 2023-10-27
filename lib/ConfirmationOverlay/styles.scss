@@ -1,4 +1,4 @@
-.confirmation-overlay {
+.gui-confirmation-overlay {
   display: none;
   position: absolute;
   inset: 0;
@@ -17,8 +17,8 @@
   }
 }
 
-.confirmation-overlay,
-.confirmation-overlay__inner {
+.gui-confirmation-overlay,
+.gui-confirmation-overlay__inner {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;

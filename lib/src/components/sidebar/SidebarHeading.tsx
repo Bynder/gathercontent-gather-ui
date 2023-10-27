@@ -7,7 +7,7 @@ export function SidebarHeading({
   ...rest
 }: any) {
   return (
-    <div className={`sidebar-heading ${className}`} {...rest}>
+    <div className={`gui-sidebar-heading ${className}`} {...rest}>
       {children}
     </div>
   );

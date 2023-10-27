@@ -17,12 +17,12 @@ function ButtonIcon({
   ...rest
 }: any) {
   const classes = cx(
-    "button-icon",
+    "gui-button-icon",
     className,
     {
-      "button-icon-active": !disabled && active,
-      "button-icon-enabled": !disabled && enabled && !active,
-      "button-icon-no-fill": !defaultFillColor,
+      "gui-button-icon-active": !disabled && active,
+      "gui-button-icon-enabled": !disabled && enabled && !active,
+      "gui-button-icon-no-fill": !defaultFillColor,
       "rounded-small": size === sizes.sm,
     },
     getSizeClasses(size)

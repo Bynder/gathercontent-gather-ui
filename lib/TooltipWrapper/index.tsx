@@ -29,7 +29,7 @@ export function TooltipWrapper({
     >
       <span
         id={id}
-        className={`tooltip-wrapper__child ${wrapperClassName}`}
+        className={`gui-tooltip-wrapper__child ${wrapperClassName}`}
         tabIndex={tabIndex}
         role="button"
         onClick={onClick}

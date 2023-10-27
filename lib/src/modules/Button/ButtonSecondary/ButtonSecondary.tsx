@@ -10,8 +10,8 @@ function ButtonSecondary({
   active,
   ...rest
 }: any) {
-  const classes = cx("button-secondary inherit-color-icon", className, {
-    "button-secondary-active": active,
+  const classes = cx("gui-button-secondary gui-inherit-color-icon", className, {
+    "gui-button-secondary-active": active,
   });
 
   return (

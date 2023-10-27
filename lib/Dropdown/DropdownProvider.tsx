@@ -87,10 +87,10 @@ function DropdownProvider({
     bounds,
   };
 
-  const classNames = cx(`dropdown-gc ${className}`, {
-    "is-active": showContent,
-    "auto-top": autoPosition,
-    "dropdown-gc--block": block,
+  const classNames = cx(`gui-dropdown-gc ${className}`, {
+    "gui-is-active": showContent,
+    "gui-auto-top": autoPosition,
+    "gui-dropdown-gc--block": block,
   });
 
   return (

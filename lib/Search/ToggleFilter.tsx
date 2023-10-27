@@ -3,7 +3,7 @@ import CheckToggle from "../CheckToggle";
 
 function ToggleFilter(props: any) {
   return (
-    <div className="search-options__toggle">
+    <div className="gui-search-options__toggle">
       <CheckToggle
         id="search-toggle"
         labelRight={props.label}

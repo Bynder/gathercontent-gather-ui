@@ -7,7 +7,7 @@ export function Label({
   ...rest
 }: React.LabelHTMLAttributes<HTMLLabelElement>) {
   return (
-    <label className={`label ${className}`} htmlFor={htmlFor} {...rest}>
+    <label className={`gui-label ${className}`} htmlFor={htmlFor} {...rest}>
       {children}
     </label>
   );

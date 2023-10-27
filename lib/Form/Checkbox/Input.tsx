@@ -12,7 +12,7 @@ function Input({
 }: any) {
   return (
     <input
-      className={`form-radio__input ${className}`}
+      className={`gui-form-radio__input ${className}`}
       type="checkbox"
       onChange={onChangeHandler}
       aria-label={label}

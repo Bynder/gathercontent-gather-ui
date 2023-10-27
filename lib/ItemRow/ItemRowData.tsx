@@ -2,7 +2,7 @@ import React from "react";
 
 function ItemRowData({ children, ...rest }: any) {
   return (
-    <div className="item-row__data" {...rest}>
+    <div className="gui-item-row__data" {...rest}>
       {children}
     </div>
   );

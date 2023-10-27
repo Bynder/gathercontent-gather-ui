@@ -8,41 +8,41 @@ $avatar-group-size-micro: 20px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.avatar-group {
+.gui-avatar-group {
   display: flex;
   gap: 4px;
 }
 
-.avatar-group-stacked {
+.gui-avatar-group-stacked {
   gap: 0;
   margin-right: $avatar-group-item-spacing;
 
-  .avatar-group__item {
+  .gui-avatar-group__item {
     margin-right: -$avatar-group-item-spacing;
     z-index: 1;
   }
 }
 
-.avatar-group .dropdown__trigger {
+.gui-avatar-group .gui-dropdown__trigger {
   cursor: pointer;
   border-radius: $avatar-border-radius;
 
-  &.avatar-plus-trigger .avatar {
+  &.gui-avatar-plus-trigger .gui-avatar {
     background: none;
   }
 
-  &:hover .avatar,
-  &:focus .avatar,
-  &.is-active .avatar {
+  &:hover .gui-avatar,
+  &:focus .gui-avatar,
+  &.gui-is-active .gui-avatar {
     background: $avatar-highlighted-background;
 
-    .avatar__initials {
+    .gui-avatar__initials {
       color: $avatar-highlighted-color;
     }
   }
 }
 
-.avatar-group .dropdown__content {
+.gui-avatar-group .gui-dropdown__content {
   z-index: 9999;
   max-width: 300px;
   max-height: 300px;
@@ -52,17 +52,17 @@ $avatar-group-size-micro: 20px !default;
    Modifiers
    ========================================================================== */
 
-.avatar-group--small {
-  .avatar,
-  .avatar__initials {
+.gui-avatar-group--small {
+  .gui-avatar,
+  .gui-avatar__initials {
     width: $avatar-group-size-small;
     height: $avatar-group-size-small;
   }
 }
 
-.avatar-group--micro {
-  .avatar,
-  .avatar__initials {
+.gui-avatar-group--micro {
+  .gui-avatar,
+  .gui-avatar__initials {
     width: $avatar-group-size-micro;
     height: $avatar-group-size-micro;
   }

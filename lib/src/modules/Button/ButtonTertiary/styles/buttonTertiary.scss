@@ -1,4 +1,4 @@
-.button-tertiary {
+.gui-button-tertiary {
   @apply border-neutral-90 border-solid text-neutral-20 bg-white;
 
   &:hover {
@@ -6,7 +6,7 @@
   }
 
   &:active,
-  &.button-tertiary-active {
+  &.gui-button-tertiary-active {
     background-color: rgb(103 128 152 / 10%);
   }
 
@@ -21,6 +21,6 @@
   }
 }
 
-.button-tertiary-contained {
+.gui-button-tertiary-contained {
   @apply border-neutral-90;
 }

@@ -1,4 +1,4 @@
-.gc-checkbox {
+.gui-gc-checkbox {
   @apply appearance-none w-4 h-4 rounded-small border border-solid border-neutral-80 cursor-pointer bg-white relative shadow-inner;
 
   &:hover {
@@ -21,7 +21,7 @@
   }
 }
 
-.gc-checkbox:checked {
+.gui-gc-checkbox:checked {
   @apply border-blue-primary bg-blue-primary;
 
   &:hover {
@@ -40,7 +40,7 @@
   }
 }
 
-.gc-checkbox-error {
+.gui-gc-checkbox-error {
   @apply border-red-primary;
 
   &:checked {
@@ -52,8 +52,8 @@
   }
 }
 
-.gc-checkbox-error:disabled,
-.gc-checkbox:disabled {
+.gui-gc-checkbox-error:disabled,
+.gui-gc-checkbox:disabled {
   @apply cursor-default bg-neutral-95;
 
   &:hover, &:focus {

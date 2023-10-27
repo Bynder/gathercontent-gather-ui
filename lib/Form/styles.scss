@@ -8,7 +8,7 @@ $form-checkbox-label-size: $typo-size-lead !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.form {
+.gui-form {
   display: flex;
   flex-direction: column;
 
@@ -19,31 +19,31 @@ $form-checkbox-label-size: $typo-size-lead !default;
   }
 }
 
-.form__footer {
+.gui-form__footer {
   display: flex;
   justify-content: flex-end;
 }
 
-.form__choice-element-wrapper {
+.gui-form__choice-element-wrapper {
   margin: $form-checkbox-label-size*0.5;
   display: flex;
   align-items: baseline;
 }
 
-.form-checkbox__label,
-.form-checkbox__label--button {
+.gui-form-checkbox__label,
+.gui-form-checkbox__label--button {
   cursor: pointer;
   margin-left: $form-checkbox-margin;
   font-weight: $form-checkbox-font-weight;
   font-size: $form-checkbox-label-size;
   display: block;
 
-  &.is-disabled {
+  &.gui-is-disabled {
     cursor: default;
   }
 }
 
-.form-checkbox__label--button {
+.gui-form-checkbox__label--button {
   cursor: default;
   padding: 0;
   border: none;
@@ -54,36 +54,36 @@ $form-checkbox-label-size: $typo-size-lead !default;
     outline: none;
   }
 
-  &.is-highlight {
+  &.gui-is-highlight {
     cursor: pointer;
   }
 }
 
-.form-input__text {
-  &.is-highlight {
+.gui-form-input__text {
+  &.gui-is-highlight {
     border-bottom: 2px solid $primary-yellow-lighter;
 
     &:hover,
-    &.is-active,
-    .hover &,
+    &.gui-is-active,
+    .gui-hover &,
     &--active {
       background: $primary-yellow-lighter;
     }
   }
 }
 
-.form-checkbox__subtitle {
+.gui-form-checkbox__subtitle {
   display: block;
   font-size: $typo-size-small;
   color: $color-text-light;
 }
 
-.form-checkbox__input,
-.form-radio__input  {
+.gui-form-checkbox__input,
+.gui-form-radio__input  {
   cursor: pointer;
 }
 
-.form__choice-element-wrapper .form-radiobutton__other {
+.gui-form__choice-element-wrapper .gui-form-radiobutton__other {
   margin-left: $form-checkbox-margin;
   border: none;
   outline: none;
@@ -92,12 +92,12 @@ $form-checkbox-label-size: $typo-size-lead !default;
   background-color: transparent;
 }
 
-.form-radiobutton--invisible {
+.gui-form-radiobutton--invisible {
   visibility: hidden;
 }
 
-form .dropdown-gc .button--outline,
-.form__input {
+form .gui-dropdown-gc .gui-button--outline,
+.gui-form__input {
   border: 1px solid lighten($neutral-base, 20%);
   border-radius: 4px;
   padding: $layout-spacing-base*0.5;
@@ -122,32 +122,32 @@ form .dropdown-gc .button--outline,
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-.form-checkbox__label--hinted {
+.gui-form-checkbox__label--hinted {
   color: $primary-purple;
 }
 
-.form-checkbox__label--other-option {
+.gui-form-checkbox__label--other-option {
   color: $primary-blue;
 }
 
-.form__input--noborder,
-.form__input--noborder:focus {
+.gui-form__input--noborder,
+.gui-form__input--noborder:focus {
   padding: $layout-spacing-base*0.5;
   background: transparent;
   border: none;
   font-size: inherit;
 }
 
-.form__input--collapse,
-.form__input--collapse:focus {
+.gui-form__input--collapse,
+.gui-form__input--collapse:focus {
   padding: 0;
 }
 
-.form__input--full-width {
+.gui-form__input--full-width {
   width: 100%;
 }
 
-.form__input--padding-small {
+.gui-form__input--padding-small {
   padding: $layout-spacing-base*0.25;
 
   &:focus {
@@ -155,35 +155,35 @@ form .dropdown-gc .button--outline,
   }
 }
 
-.form-group {
+.gui-form-group {
   margin-top: $layout-spacing-base*0.5;
 }
 
-.form--disabled {
+.gui-form--disabled {
   opacity: 0.5;
   pointer-events: none;
 }
 
-.form__input.form__input--has-error {
+.gui-form__input.gui-form__input--has-error {
   border-color: $primary-red;
   border-width: 2px;
   padding: $layout-spacing-base*0.5 - 1;
 }
 
-input.form__input--display-error {
+input.gui-form__input--display-error {
   margin-bottom: 0;
 }
 
-.form-input__error-message {
+.gui-form-input__error-message {
   color: $primary-red;
   font-size: $typo-size-slight;
   display: block;
   margin-top: $layout-spacing-base*0.25;
 }
 
-.form__input,
+.gui-form__input,
 form textarea,
-form .dropdown-gc .button--outline {
+form .gui-dropdown-gc .gui-button--outline {
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

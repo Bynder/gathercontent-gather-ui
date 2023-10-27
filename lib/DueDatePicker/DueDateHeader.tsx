@@ -7,7 +7,7 @@ import Icon from "../Icon";
 
 function DueDateHeader(props: any) {
   let label = (
-    <div className="duedate__header--date duedate__header--date-not-set">
+    <div className="gui-duedate__header--date gui-duedate__header--date-not-set">
       No due date set
     </div>
   );
@@ -28,8 +28,8 @@ function DueDateHeader(props: any) {
 
     const time = props.dueTime.local().format("LT");
 
-    const classes = cx("duedate__header--date", {
-      "color-overdue": date < moment(),
+    const classes = cx("gui-duedate__header--date", {
+      "gui-color-overdue": date < moment(),
     });
 
     label = (
@@ -39,12 +39,12 @@ function DueDateHeader(props: any) {
     );
   }
 
-  const dropdownClasses = cx("duedate__remove", {
-    "duedate__remove--not-set": !props.dueDate,
+  const dropdownClasses = cx("gui-duedate__remove", {
+    "gui-duedate__remove--not-set": !props.dueDate,
   });
 
   return (
-    <div className="duedate__header">
+    <div className="gui-duedate__header">
       Due date
       {label}
       <Dropdown className={dropdownClasses} id="duedate__remove">
@@ -54,7 +54,7 @@ function DueDateHeader(props: any) {
         <Dropdown.Content right collapse>
           <Dropdown.ActionGroup>
             <Dropdown.Action
-              className="duedate__remove-action"
+              className="gui-duedate__remove-action"
               action={props.removeDueDate}
               danger
             >

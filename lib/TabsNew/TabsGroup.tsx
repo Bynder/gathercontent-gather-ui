@@ -4,7 +4,7 @@ import cx from "classnames";
 function TabsGroup({ children, className, maxNumberOfVisibleRows }: any) {
   const numberOfRows = children.length;
 
-  const tabsClassName = cx("tab-group", {
+  const tabsClassName = cx("gui-tab-group", {
     "max-h-30": maxNumberOfVisibleRows === 3,
     "overflow-y-hidden": numberOfRows <= maxNumberOfVisibleRows,
     "overflow-y-scroll": numberOfRows > maxNumberOfVisibleRows,

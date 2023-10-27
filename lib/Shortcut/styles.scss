@@ -6,7 +6,7 @@ $shortcut-max-width: 400px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.shortcut {
+.gui-shortcut {
   border-bottom: 1px solid $color-border-base;
   padding: $layout-spacing-base*0.5 0;
   max-width: $shortcut-max-width;
@@ -16,16 +16,16 @@ $shortcut-max-width: 400px !default;
   }
 }
 
-.shortcut__name {
+.gui-shortcut__name {
   display: inline-block;
 }
 
-.shortcut__wrapper {
+.gui-shortcut__wrapper {
   display: inline-block;
   float: right;
 }
 
-.shortcut__keyboard {
+.gui-shortcut__keyboard {
   padding: 3px 6px;
   background: #FFF;
   border: 1px solid $color-border-base;
@@ -34,41 +34,41 @@ $shortcut-max-width: 400px !default;
   font-family: Courier, monospace;
 }
 
-.shortcut__plus {
+.gui-shortcut__plus {
   font-weight: 500;
   color: $neutral-base;
   margin: 0 $layout-spacing-base*0.25;
 }
 
 
-.shortcut__bold {
+.gui-shortcut__bold {
   font-weight: bold;
 }
 
-.shortcut__italic {
+.gui-shortcut__italic {
   font-style: italic;
 }
 
-.shortcut__underline {
+.gui-shortcut__underline {
   text-decoration: underline;
 }
 
-.shortcut__strikethrough {
+.gui-shortcut__strikethrough {
   text-decoration: line-through;
 }
 
-.shortcut__superscript,
-.shortcut__subscript {
+.gui-shortcut__superscript,
+.gui-shortcut__subscript {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-.shortcut__superscript {
+.gui-shortcut__superscript {
   top: -0.5em;
 }
 
-.shortcut__subscript {
+.gui-shortcut__subscript {
   bottom: -0.25em;
 }

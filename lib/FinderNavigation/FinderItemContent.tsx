@@ -9,14 +9,14 @@ function FinderItemContent({
   isFolder,
   ...rest
 }: any) {
-  const classNames = cx(`finder-item-content ${className}`, {
-    "finder-item-content-hidden": hidden,
-    "finder-item-content-folder": isFolder,
+  const classNames = cx(`gui-finder-item-content ${className}`, {
+    "gui-finder-item-content-hidden": hidden,
+    "gui-finder-item-content-folder": isFolder,
   });
 
   return (
     <div className={classNames} {...rest}>
-      <div className="finder-item-content-inner">{children}</div>
+      <div className="gui-finder-item-content-inner">{children}</div>
     </div>
   );
 }

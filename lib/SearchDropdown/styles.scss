@@ -1,18 +1,18 @@
-.search-dropdown {
+.gui-search-dropdown {
   position: relative;
 
-  &.full-width {
-    .dropdown-search__input {
+  &.gui-full-width {
+    .gui-dropdown-search__input {
       width: 100%;
     }
   }
 
-  .dropdown-menu {
+  .gui-dropdown-menu {
     width: 100%;
   }
 }
 
-.dropdown-search__input {
+.gui-dropdown-search__input {
   border: 1px solid $color-border-base;
   font-size: $typo-size-slight;
   line-height: $typo-line-height-base;

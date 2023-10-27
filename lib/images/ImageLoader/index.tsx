@@ -37,10 +37,10 @@ export class ImageLoader extends PureComponent {
     const { alt, src, loadTransition, preLoadedStyles, ...rest } = this.props;
     const { imageHasLoaded, imageHasErrored, showImage } = this.state;
 
-    const classNames = cx("image-loader", {
-      "image-loader--loaded": imageHasLoaded,
-      "image-loader--errored": imageHasErrored,
-      "image-loader--show": showImage,
+    const classNames = cx("gui-image-loader", {
+      "gui-image-loader--loaded": imageHasLoaded,
+      "gui-image-loader--errored": imageHasErrored,
+      "gui-image-loader--show": showImage,
     });
 
     let style;

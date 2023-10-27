@@ -1,23 +1,23 @@
-.form-body {
+.gui-form-body {
   @apply w-full;
 }
 
-.form-inline {
+.gui-form-inline {
   @apply flex flex-row;
 }
 
-.form:not(.form-inline) .form-submission {
+.gui-form:not(.gui-form-inline) .gui-form-submission {
   @apply flex justify-end;
 }
 
-.form-submit-button {
+.gui-form-submit-button {
   @apply ml-2;
 }
 
-.form-helper {
+.gui-form-helper {
   @apply text-sm text-red-primary;
 }
 
-.form-fieldset {
+.gui-form-fieldset {
   @apply border-0 w-full h-full p-0 m-0;
 }

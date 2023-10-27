@@ -53,7 +53,7 @@ export function DateSetTimeDropdown({ onTimeSelect, selectedTime }: any) {
             )}
           </Dropdown.Trigger>
           {showContent && (
-            <Dropdown.Content top collapse className="dropdown-max-height">
+            <Dropdown.Content top collapse className="gui-dropdown-max-height">
               {times.map(({ key, text }: any) => (
                 <Dropdown.Action key={key} action={() => onTimeSelect(text)}>
                   {text}

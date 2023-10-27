@@ -7,9 +7,9 @@ export function SectionFeature({
   enhanceIntro,
   className,
 }: any) {
-  const classNames = cx(`section-feature ${className}`, {
-    "section-feature--extend-top": extendTop,
-    "section-feature--enhance-intro": enhanceIntro,
+  const classNames = cx(`gui-section-feature ${className}`, {
+    "gui-section-feature--extend-top": extendTop,
+    "gui-section-feature--enhance-intro": enhanceIntro,
   });
 
   return <div className={classNames}>{children}</div>;

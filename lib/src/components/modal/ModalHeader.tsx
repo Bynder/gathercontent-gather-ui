@@ -1,5 +1,5 @@
-import React from 'react';
-import { CloseButton } from '../../modules/closeButton/CloseButton';
+import React from "react";
+import { CloseButton } from "../../modules/closeButton/CloseButton";
 
 export function ModalHeader({
   headerText,
@@ -10,9 +10,9 @@ export function ModalHeader({
   ...rest
 }: any) {
   return (
-    <div className={`react-modal-header ${className}`} {...rest}>
-      <div className="react-modal-header-inner">
-        <div className="react-modal-header__text">{headerText}</div>
+    <div className={`gui-react-modal-header ${className}`} {...rest}>
+      <div className="gui-react-modal-header-inner">
+        <div className="gui-react-modal-header__text">{headerText}</div>
         {children}
       </div>
 
@@ -23,5 +23,5 @@ export function ModalHeader({
 }
 
 ModalHeader.defaultProps = {
-  className: ''
+  className: "",
 };

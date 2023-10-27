@@ -70,12 +70,12 @@ export function DueDatePicker({
     setChanged(true);
   };
 
-  const classes = cx("duedate__container is-active", {
-    "duedate__container--completed": completed,
+  const classes = cx("gui-duedate__container gui-is-active", {
+    "gui-duedate__container--completed": completed,
   });
 
-  const buttonClasses = cx("duedate__submit", {
-    "duedate__submit--hidden": !changed,
+  const buttonClasses = cx("gui-duedate__submit", {
+    "gui-duedate__submit--hidden": !changed,
   });
 
   return (
@@ -96,7 +96,7 @@ export function DueDatePicker({
             </DueDateButton>
 
             {userCanSetDueDate && (
-              <Dropdown.Content className="duedate__dropdown">
+              <Dropdown.Content className="gui-duedate__dropdown">
                 {(showContent: any) =>
                   showContent ? (
                     <>
@@ -108,7 +108,7 @@ export function DueDatePicker({
                           handleRemoveDueDate(() => setShowContent(false))
                         }
                       />
-                      <div className="duedate__datepicker">
+                      <div className="gui-duedate__datepicker">
                         <Calendar
                           onDayClick={handleDayClick}
                           selectedDay={selectedDay}
@@ -120,7 +120,7 @@ export function DueDatePicker({
                           <Button
                             clickHandler={() => setShowContent(false)}
                             types={["link-default", "collapse"]}
-                            className="duedate__submit--cancel"
+                            className="gui-duedate__submit--cancel"
                           >
                             Cancel
                           </Button>
@@ -129,7 +129,7 @@ export function DueDatePicker({
                               handleApplyDueDate(() => setShowContent(false))
                             }
                             types={["primary"]}
-                            className="duedate__submit--save"
+                            className="gui-duedate__submit--save"
                           >
                             Set due date
                           </Button>

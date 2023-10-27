@@ -2,7 +2,7 @@ import React from "react";
 
 function FolderRowInner({ children, ...rest }: any) {
   return (
-    <div className="folder-row__inner" {...rest}>
+    <div className="gui-folder-row__inner" {...rest}>
       {children}
     </div>
   );

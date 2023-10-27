@@ -1,6 +1,6 @@
-import React from 'react';
-import { Modal } from '../../components/modal/Modal';
-import { Dropzone } from '../../components/dropzone/Dropzone';
+import React from "react";
+import { Modal } from "../../components/modal/Modal";
+import { Dropzone } from "../../components/dropzone/Dropzone";
 
 export function ModalUploadBody({
   fileCards,
@@ -10,7 +10,7 @@ export function ModalUploadBody({
   ...rest
 }: any) {
   return (
-    <Modal.Body className="modal-upload-body" {...rest}>
+    <Modal.Body className="gui-modal-upload-body" {...rest}>
       <Dropzone onDrop={onDrop} maxSize={maxSize} {...dropzoneProps}>
         {fileCards}
       </Dropzone>
@@ -19,5 +19,5 @@ export function ModalUploadBody({
 }
 
 ModalUploadBody.defaultProps = {
-  dropzoneProps: {}
+  dropzoneProps: {},
 };

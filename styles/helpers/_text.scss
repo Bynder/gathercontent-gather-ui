@@ -1,90 +1,90 @@
-.text-inherit {
+.gui-text-inherit {
   color: inherit;
   font-weight: inherit;
   font-size: inherit;
 }
 
-.text-overflow-ellipsis {
+.gui-text-overflow-ellipsis {
   @include text-overflow-ellipsis;
 }
 
-.text-overflow-ellipsis-only {
+.gui-text-overflow-ellipsis-only {
   text-overflow: ellipsis;
 }
 
-.weight-bold {
+.gui-weight-bold {
   font-weight: $typo-weight-bold;
 }
 
-.weight-semi-bold {
+.gui-weight-semi-bold {
   font-weight: $typo-weight-semi-bold;
 }
 
-.weight-roman {
+.gui-weight-roman {
   font-weight: $typo-weight-roman;
 }
 
-.primary-blue-text {
+.gui-primary-blue-text {
   color: $primary-blue;
 }
 
-.black-text {
+.gui-black-text {
   color: black;
 }
 
-.neutral-dark-text {
+.gui-neutral-dark-text {
   color: $neutral-dark;
 }
 
-.neutral-base-text {
+.gui-neutral-base-text {
   color: $neutral-base;
 }
 
-.danger-text {
+.gui-danger-text {
   color: $primary-red-darker;
 }
 
-.typo-size-xlarge {
+.gui-typo-size-xlarge {
   font-size: $typo-size-xlarge;
 }
 
-.typo-size-large {
+.gui-typo-size-large {
   font-size: $typo-size-large;
 }
 
-.typo-size-lead {
+.gui-typo-size-lead {
   font-size: $typo-size-lead;
 }
 
-.typo-size-larger {
+.gui-typo-size-larger {
   font-size: $typo-size-larger;
 }
 
-.typo-size-base {
+.gui-typo-size-base {
   font-size: $typo-size-base;
 }
 
-.typo-size-slight {
+.gui-typo-size-slight {
   font-size: $typo-size-slight;
 }
 
-.typo-size-small {
+.gui-typo-size-small {
   font-size: $typo-size-small;
 }
 
-.typo-size-micro {
+.gui-typo-size-micro {
   font-size: $typo-size-micro;
 }
 
-.text-align-center {
+.gui-text-align-center {
   text-align: center;
 }
 
-.text-align-left {
+.gui-text-align-left {
   text-align: left;
 }
 
-.text-align-right {
+.gui-text-align-right {
   text-align: right;
 }
 

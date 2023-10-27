@@ -1,8 +1,8 @@
-.notification-blip {
+.gui-notification-blip {
   @apply relative w-fit h-fit;
 }
 
-.notification-blip::after {
+.gui-notification-blip::after {
   @apply rounded-full absolute block h-1.5 w-1.5 bg-red-40 right-[13%] top-[13%];
 
   content: '';

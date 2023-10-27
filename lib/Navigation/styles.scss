@@ -1,15 +1,15 @@
-.navigation {
+.gui-navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.navigation__item {
+.gui-navigation__item {
   display: inline-block;
   margin-right: $layout-spacing-base;
 }
 
-.navigation__item > * {
+.gui-navigation__item > * {
   display: block;
   font-size: $typo-size-base;
   color: $neutral-dark;
@@ -31,7 +31,7 @@
   }
 }
 
-.navigation__item--active > * {
+.gui-navigation__item--active > * {
   color: $primary-blue;
 
   [class*='--dark'] & {
@@ -43,17 +43,17 @@
    Tabbed Modifier
    ========================================================================== */
 
-.navigation--tabs {
+.gui-navigation--tabs {
   border-bottom: 1px solid $neutral-light;
 }
 
-.navigation--tabs .navigation__item {
+.gui-navigation--tabs .gui-navigation__item {
   bottom: -1px;
   position: relative;
   margin-right: 0;
 }
 
-.navigation--tabs .navigation__item > * {
+.gui-navigation--tabs .gui-navigation__item > * {
   padding: $layout-spacing-base;
   color: $neutral-dark;
 
@@ -63,10 +63,10 @@
   }
 }
 
-.navigation--tabs .navigation__item--active {
+.gui-navigation--tabs .gui-navigation__item--active {
   border-bottom: 2px solid $primary-blue;
 }
 
-.navigation--tabs .navigation__item--active > * {
+.gui-navigation--tabs .gui-navigation__item--active > * {
   color: $primary-blue;
 }

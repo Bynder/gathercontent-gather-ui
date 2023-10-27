@@ -14,43 +14,43 @@ $modal-media-close-dimensions: 30px;
    Styles
    ========================================================================== */
 
-.legacy-modal {
+.gui-legacy-modal {
 	width: 600px;
 
-	.modal-header {
+	.gui-modal-header {
 		@apply border-0 border-b border-neutral-90 border-solid p-3 min-h-16;
 
-		.react-modal-header__text {
+		.gui-react-modal-header__text {
 			@apply p-0;
 		}
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		@apply border-0 border-t border-neutral-90 border-solid flex p-4;
 	}
 
-	.modal-body {
+	.gui-modal-body {
 		overflow: hidden;
 	}
 
-	&.modal--small {
+	&.gui-modal--small {
 		width:400px;
 	}
 
-	&.modal--large {
+	&.gui-modal--large {
 		width: 780px;
 	}
 
-	&.modal--x-large {
+	&.gui-modal--x-large {
 		width: 900px;
 	}
 
-	&.modal--full-screen {
+	&.gui-modal--full-screen {
 		width: calc(100vw - 128px);
 	}
 }
 
-.modal__row {
+.gui-modal__row {
 	display: flex;
 
 	@include respond-to(small) {
@@ -58,17 +58,17 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal__column {
+.gui-modal__column {
 	padding: $modal-column-padding;
 }
 
-.modal__body-title {
+.gui-modal__body-title {
 	font-size: $modal-title-font-size;
 	font-weight: $typo-weight-roman;
 	color: rgb(75 86 95);
 }
 
-.modal__illustration {
+.gui-modal__illustration {
 	margin: 90px 0 0;
 
 	svg {
@@ -77,29 +77,29 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal__actions {
+.gui-modal__actions {
 	position: absolute;
 	background-color: transparent !important;
 	bottom: $layout-spacing-base;
 	right: 30px;
 }
 
-.modal__header-intro {
+.gui-modal__header-intro {
 	margin-bottom: 0;
 }
 
-.modal-footer {
+.gui-modal-footer {
 	display: flex;
 	align-items: center;
 	background: white;
 	border-radius: 0 0 6px 6px;
 }
 
-.modal__footer-text {
+.gui-modal__footer-text {
 	margin-right: auto;
 }
 
-.modal-footer.modal-footer--space-between {
+.gui-modal-footer.gui-modal-footer--space-between {
   justify-content: space-between;
 
   &::before {
@@ -116,16 +116,16 @@ $modal-media-close-dimensions: 30px;
    Modifiers
    ========================================================================== */
 
-.modal--large {
-	.modal-dialog {
+.gui-modal--large {
+	.gui-modal-dialog {
 		@include respond-to(medium) {
 			width: $modal-large-width;
 		}
 	}
 }
 
-.modal--x-large {
-	.modal-dialog {
+.gui-modal--x-large {
+	.gui-modal-dialog {
 		display: block;
 
 		@include respond-to(medium) {
@@ -134,75 +134,75 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal--small {
-	.modal-dialog {
+.gui-modal--small {
+	.gui-modal-dialog {
 		@include respond-to(medium) {
 			width: $modal-small-width;
 		}
 	}
 }
 
-.modal--full-screen {
-	.modal-dialog {
+.gui-modal--full-screen {
+	.gui-modal-dialog {
 		width: calc(100vw - #{$layout-spacing-base*2});
 	}
 }
 
-.modal--center {
+.gui-modal--center {
 	text-align: center;
 
-	.modal-header {
+	.gui-modal-header {
 		position: static;
 		justify-content: center;
 	}
 
-	.modal-title {
+	.gui-modal-title {
 		margin: 0 auto;
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		justify-content: center;
 	}
 }
 
-.modal.modal--center .close {
+.gui-modal.gui-modal--center .gui-close {
 	position: absolute;
 	right: $modal-padding*1.5;
 	top: $modal-padding*1.5;
 	transform: none;
 }
 
-.modal--clear {
-	.modal-content {
+.gui-modal--clear {
+	.gui-modal-content {
 		padding: $modal-padding*1.5;
 	}
 
-	.modal-header {
+	.gui-modal-header {
 		padding-bottom: 0;
 
-		.react-modal-header__text {
+		.gui-react-modal-header__text {
 			padding:0;
 			left:0;
 			right:0;
 		}
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		padding-top: 0;
 	}
 
-	.modal-header,
-	.modal-footer {
+	.gui-modal-header,
+	.gui-modal-footer {
 		background: none;
 		border: 0;
 	}
 }
 
-.modal--overflow {
+.gui-modal--overflow {
 		position: absolute;
 		inset: 0;
 
-	.react-modal-inner {
+	.gui-react-modal-inner {
 		position: absolute;
 		bottom: 0;
 		top: 0;
@@ -212,23 +212,23 @@ $modal-media-close-dimensions: 30px;
 		width: 100%;
 	}
 
-	.modal-body {
+	.gui-modal-body {
 		flex-grow: 1;
 		overflow: scroll;
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		margin-top: auto;
 	}
 }
 
-.modal--overflow-half {
-	.modal-body {
+.gui-modal--overflow-half {
+	.gui-modal-body {
 		max-height: 40vh;
 		overflow: auto;
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		position: relative;
 
 		&::after {
@@ -244,20 +244,20 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal--highlight .modal-body,
-.modal__column-wrapper--highlight {
+.gui-modal--highlight .gui-modal-body,
+.gui-modal__column-wrapper--highlight {
 	background: $neutral-base-lighter;
 	color: rgb(76 88 96);
 	border-right: 1px solid rgb(229 233 238);
 }
 
-.modal--collapse {
-	.modal-body {
+.gui-modal--collapse {
+	.gui-modal-body {
 		padding: 0;
 	}
 }
 
-.modal--media-only.Modal {
+.gui-modal--media-only.gui-Modal {
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -268,19 +268,19 @@ $modal-media-close-dimensions: 30px;
 	background: none;
 	box-shadow: none;
 
-	.modal-body {
+	.gui-modal-body {
 		@apply shadow-small;
 		@include file-backgound;
 
 		max-height: 100% !important;
 	}
 
-	.react-modal-inner {
+	.gui-react-modal-inner {
 		position: relative;
 		background:none;
 	}
 
-	.modal-header {
+	.gui-modal-header {
 		@apply rounded;
 
 		background: none;
@@ -292,7 +292,7 @@ $modal-media-close-dimensions: 30px;
 		align-items: center;
 		justify-content: center;
 
-		.close-button {
+		.gui-close-button {
 			@apply rounded-tl-none rounded-br-none m-0 bg-white;
 
 			&:hover path {
@@ -300,12 +300,12 @@ $modal-media-close-dimensions: 30px;
 			}
 		}
 
-		.modal-header-inner {
+		.gui-modal-header-inner {
 			display: none;
 		}
 	}
 
-	.modal-footer {
+	.gui-modal-footer {
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -313,8 +313,8 @@ $modal-media-close-dimensions: 30px;
 		border: 0;
 	}
 
-	.react-modal-inner,
-	.modal-body {
+	.gui-react-modal-inner,
+	.gui-modal-body {
 		pointer-events: auto;
 	}
 
@@ -325,10 +325,10 @@ $modal-media-close-dimensions: 30px;
 	}
 }
 
-.modal-header.modal-header-with-nav {
+.gui-modal-header.gui-modal-header-with-nav {
 	@apply pb-0;
 
-	.react-modal-header-inner {
+	.gui-react-modal-header-inner {
 		@apply flex flex-row;
 	}
 }

@@ -7,7 +7,7 @@ function SelectionBarInformation(props: any) {
       xs={12}
       sm={4}
       md={3}
-      className="selection-bar__section selection-bar__information"
+      className="gui-selection-bar__section gui-selection-bar__information"
     >
       {props.children}
     </Col>

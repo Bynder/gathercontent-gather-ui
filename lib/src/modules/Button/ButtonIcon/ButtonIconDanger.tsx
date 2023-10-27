@@ -14,10 +14,10 @@ export function ButtonIconDanger({
 }: any) {
   const classes = cx(
     className,
-    "button-icon-danger",
+    "gui-button-icon-danger",
     {
-      "button-icon-danger-active": active,
-      "button-icon-danger-sm": size === sizes.sm,
+      "gui-button-icon-danger-active": active,
+      "gui-button-icon-danger-sm": size === sizes.sm,
     },
     getSizeClasses(size)
   );

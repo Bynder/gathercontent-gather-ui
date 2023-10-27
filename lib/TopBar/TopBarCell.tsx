@@ -2,8 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 export function TopBarCell(props: any) {
-  const classes = cx(`top-bar__cell ${props.className}`, {
-    "top-bar__cell--bordered": props.bordered,
+  const classes = cx(`gui-top-bar__cell ${props.className}`, {
+    "gui-top-bar__cell--bordered": props.bordered,
   });
   return <div className={classes}>{props.children}</div>;
 }

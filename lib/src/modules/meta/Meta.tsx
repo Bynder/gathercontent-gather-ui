@@ -1,14 +1,11 @@
-import React from 'react';
-import cx from 'classnames';
-import { MetaHeading } from './MetaHeading';
-import { MetaText } from './MetaText';
-import { MetaFooter } from './MetaFooter';
+import React from "react";
+import cx from "classnames";
+import { MetaHeading } from "./MetaHeading";
+import { MetaText } from "./MetaText";
+import { MetaFooter } from "./MetaFooter";
 
-function Meta({
-  children,
-  className
-}: any) {
-  const classNames = cx('meta', className);
+function Meta({ children, className }: any) {
+  const classNames = cx("gui-meta", className);
 
   return <div className={classNames}>{children}</div>;
 }

@@ -1,7 +1,7 @@
 $gutterSize: 16px;
 $gutterColour: #006aff;
 
-.resizable {
+.gui-resizable {
   position: relative;
   display: flex;
 
@@ -17,7 +17,7 @@ $gutterColour: #006aff;
   }
 }
 
-.resizable__gutter {
+.gui-resizable__gutter {
   position: absolute;
   user-select: none;
   height: 100%;
@@ -40,7 +40,7 @@ $gutterColour: #006aff;
   }
 }
 
-.resizable__gutter-handle {
+.gui-resizable__gutter-handle {
   background-color: $gutterColour;
   border-radius: 4px;
   height: 30px;
@@ -53,7 +53,7 @@ $gutterColour: #006aff;
   opacity: 0;
   transition: opacity 0.1s;
 
-  .resizable__gutter:hover & {
+  .gui-resizable__gutter:hover & {
     opacity: 1;
   }
 }

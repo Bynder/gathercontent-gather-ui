@@ -19,9 +19,9 @@ export function RevisionListStatus({
   ...rest
 }: Props) {
   return (
-    <div className={`${className} revision-list-status`} {...rest}>
+    <div className={`${className} gui-revision-list-status`} {...rest}>
       {!!oldStatusColour && !!oldStatusName && (
-        <div className="revision-list-old-status mr-2">
+        <div className="gui-revision-list-old-status mr-2">
           <TooltipWrapper tooltipText={oldStatusName}>
             <StatusIndicatorCircle
               color={oldStatusColour}
@@ -37,10 +37,10 @@ export function RevisionListStatus({
           />
         </div>
       )}
-      <div className="revision-list-current-status">
+      <div className="gui-revision-list-current-status">
         <TooltipWrapper tooltipText={statusName}>
           <StatusIndicatorCircle color={statusColour} solid className="mr-2" />
-          <span className="revision-list-status-name">{statusName}</span>
+          <span className="gui-revision-list-status-name">{statusName}</span>
         </TooltipWrapper>
       </div>
     </div>

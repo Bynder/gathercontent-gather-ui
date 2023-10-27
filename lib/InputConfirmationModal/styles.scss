@@ -1,22 +1,22 @@
-.modal--input-confirm {
-  .modal-header {
+.gui-modal--input-confirm {
+  .gui-modal-header {
     min-height: 0;
   }
 
-  .modal-header,
-  .modal-footer {
+  .gui-modal-header,
+  .gui-modal-footer {
     @apply p-0;
   }
 
-  .modal-body {
+  .gui-modal-body {
     @apply px-0 leading-6;
   }
 
-  .react-modal-inner {
+  .gui-react-modal-inner {
     @apply p-6;
   }
 
-  .modal-header .close-button {
+  .gui-modal-header .gui-close-button {
     @apply -mt-4 -mr-4 ml-auto mb-auto;
   }
 }

@@ -11,7 +11,7 @@ export function ButtonIconBubble({
   ...rest
 }: any) {
   const classes = cx(
-    "button-icon-bubble button-icon-contained rounded-full p-3",
+    "gui-button-icon-bubble gui-button-icon-contained rounded-full p-3",
     className,
     {
       shadow: !rest.active,

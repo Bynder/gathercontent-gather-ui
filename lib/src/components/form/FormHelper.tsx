@@ -18,7 +18,7 @@ export function FormHelper({ children, className = "", ...rest }: any) {
   return React.useMemo(
     () =>
       hasFailedRef.current ? (
-        <div className={`form-helper ${className}`} {...rest}>
+        <div className={`gui-form-helper ${className}`} {...rest}>
           {children}
         </div>
       ) : null,

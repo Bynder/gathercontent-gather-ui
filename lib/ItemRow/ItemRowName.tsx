@@ -2,7 +2,7 @@ import React from "react";
 
 function ItemRowName({ children, ...props }: any) {
   return (
-    <div className="item-row__name" {...props}>
+    <div className="gui-item-row__name" {...props}>
       {children}
     </div>
   );

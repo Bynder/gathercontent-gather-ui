@@ -4,7 +4,7 @@ import Input from "./Input";
 
 export function RadioButton(props: any) {
   return (
-    <div className="form__choice-element-wrapper" key={props.id}>
+    <div className="gui-form__choice-element-wrapper" key={props.id}>
       <Input {...props} />
       <Label {...props} />
     </div>

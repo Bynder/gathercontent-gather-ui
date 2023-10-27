@@ -6,7 +6,7 @@
    Styles
    ========================================================================== */
 
-.image-loader {
+.gui-image-loader {
   background: $neutral-lightest;
   transition: all $animation-time-micro;
   display: flex;
@@ -20,7 +20,7 @@
     opacity: 0;
   }
 
-  .icon {
+  .gui-icon {
     position: absolute;
   }
 }
@@ -29,7 +29,7 @@
    Modifiers
    ========================================================================== */
 
-.image-loader--show {
+.gui-image-loader--show {
   background: none;
 
   img {
@@ -37,7 +37,7 @@
   }
 }
 
-.image-loader--errored {
+.gui-image-loader--errored {
   path {
     fill: $primary-red;
   }

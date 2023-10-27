@@ -1,9 +1,9 @@
-.input-with-button {
+.gui-input-with-button {
   display: flex;
   flex-direction: row;
 }
 
-.input-with-button__input {
+.gui-input-with-button__input {
   flex: 1;
   background: #FFF;
   border: 1px solid #E6EAED;
@@ -14,7 +14,7 @@
   text-overflow: ellipsis;
 }
 
-.input-with-button__input--disabled {
+.gui-input-with-button__input--disabled {
   pointer-events: none;
   color: #8599AD;
 }
@@ -23,14 +23,14 @@
    Modifiers
    ========================================================================== */
 
-.input-with-button--padding-small {
-  .input-with-button__input {
+.gui-input-with-button--padding-small {
+  .gui-input-with-button__input {
     height: $layout-spacing-base + $layout-spacing-base*0.5;
     font-size: $typo-size-slight;
     padding: $layout-spacing-base*0.25 $layout-spacing-base*0.5;
   }
 
-  .button--input-appendage {
+  .gui-button--input-appendage {
     font-size: $typo-size-slight;
     padding-top: $layout-spacing-base*0.25;
     padding-bottom: $layout-spacing-base*0.25;

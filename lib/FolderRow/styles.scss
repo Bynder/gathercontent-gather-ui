@@ -9,19 +9,19 @@ $folder-row-gap: 6px;
    Styles
    ========================================================================== */
 
-.folder-row {
+.gui-folder-row {
   overflow: hidden;
   width: 100%;
 }
 
-.folder-row__inner,
-.folder-row__inner > *,
-.folder-row__aside > * {
+.gui-folder-row__inner,
+.gui-folder-row__inner > *,
+.gui-folder-row__aside > * {
   display: flex;
   align-items: center;
 }
 
-.folder-row__inner {
+.gui-folder-row__inner {
   padding: $folder-row-spacing;
   background: $neutral-lightest;
   position: relative;
@@ -29,16 +29,16 @@ $folder-row-gap: 6px;
 
   @include before-border(1px, solid, $neutral-light, 4px);
 
-  + .folder-row {
+  + .gui-folder-row {
     margin-top: $folder-row-spacing;
   }
 }
 
-.folder-row__inner-dragged-insert {
+.gui-folder-row__inner-dragged-insert {
   @include before-border(2px, solid, $primary-blue, 4px);
 }
 
-.folder-row__backdrop {
+.gui-folder-row__backdrop {
   position: absolute;
   display: block;
   width: 100%;
@@ -52,32 +52,32 @@ $folder-row-gap: 6px;
   }
 }
 
-.folder-row__name {
+.gui-folder-row__name {
   z-index: 1;
   white-space: nowrap;
   font-weight: $typo-weight-semi-bold;
   overflow: hidden;
 
-  .editable-text__wrapper--editing {
+  .gui-editable-text__wrapper--editing {
     width: calc(100% - #{$editable-text-wrapper-icon-width});
   }
 
-  .editable-text__text {
+  .gui-editable-text__text {
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  .editable-text__wrapper {
+  .gui-editable-text__wrapper {
     cursor: text;
   }
 }
 
-.folder-row__aside {
+.gui-folder-row__aside {
   margin-left: auto;
   z-index: 1;
 }
 
-.folder-row__cell {
+.gui-folder-row__cell {
   margin-left: $folder-row-spacing * 2;
 
   &:first-child {
@@ -85,15 +85,15 @@ $folder-row-gap: 6px;
   }
 }
 
-.folder-row__actions {
+.gui-folder-row__actions {
   margin: 0 $layout-spacing-base * 0.5 0 0;
 }
 
-.folder-row__action {
+.gui-folder-row__action {
   padding: 0 0 0 $folder-row-spacing;
 }
 
-.folder-row__toggle {
+.gui-folder-row__toggle {
   display: inline-flex;
 
   button {
@@ -101,7 +101,7 @@ $folder-row-gap: 6px;
     width: $layout-spacing-base;
     border-radius: $border-radius-base;
 
-    .icon {
+    .gui-icon {
       transform: rotate(-90deg);
     }
   }
@@ -116,12 +116,12 @@ $folder-row-gap: 6px;
    Modifiers
    ========================================================================== */
 
-.folder-row--open .folder-row__inner {
+.gui-folder-row--open .gui-folder-row__inner {
   box-shadow: $shadow-base-offset;
 }
 
-.folder-row--open .folder-row__toggle {
-  button .icon {
+.gui-folder-row--open .gui-folder-row__toggle {
+  button .gui-icon {
     transform: rotate(0deg);
   }
 
@@ -130,7 +130,7 @@ $folder-row-gap: 6px;
   }
 }
 
-.folder-row__cell--meta {
+.gui-folder-row__cell--meta {
   font-size: $typo-size-slight;
   color: $neutral-base;
   white-space: nowrap;
@@ -140,7 +140,7 @@ $folder-row-gap: 6px;
   }
 }
 
-.folder-row__contents--highlight {
+.gui-folder-row__contents--highlight {
   &::before {
     background: $primary-blue;
   }

@@ -13,7 +13,7 @@ describe("Blank Slate", () => {
   it("Renders the BlankSlate SVG", () => {
     render(
       <BlankSlate>
-        <div className="child">I am a small child</div>
+        <div className="gui-child">I am a small child</div>
       </BlankSlate>
     );
 

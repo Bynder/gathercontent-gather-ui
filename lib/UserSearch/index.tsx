@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Dropdown from '../Dropdown';
-import { filterUsers } from '../helpers';
-import UserSearchList from './UserSearchList';
-import UserSearchHead from './UserSearchHead';
+import React, { useState } from "react";
+import Dropdown from "../Dropdown";
+import { filterUsers } from "../helpers";
+import UserSearchList from "./UserSearchList";
+import UserSearchHead from "./UserSearchHead";
 
 export function UserSearch({
   users,
@@ -18,14 +18,14 @@ export function UserSearch({
   useDisplayToggle,
   hideAfterPerformingAction,
   className,
-  displayList: propsDisplayList
+  displayList: propsDisplayList,
 }: any) {
   const [searchedUsers, setSearchedUsers] = useState(null);
   const [displayList, setDisplayList] = useState(propsDisplayList);
 
   const searchForUsers = (e: any) => {
     const { value } = e.target;
-    if (value.trim() !== '' && users.length > 0) {
+    if (value.trim() !== "" && users.length > 0) {
       setSearchedUsers(filterUsers(users, value, displayEmail));
     } else {
       setSearchedUsers(null);
@@ -33,7 +33,7 @@ export function UserSearch({
   };
 
   const handleKeyPress = (e: any) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
     }
   };
@@ -44,7 +44,7 @@ export function UserSearch({
   };
 
   return (
-    <div className={`user-search ${className}`}>
+    <div className={`gui-user-search ${className}`}>
       <UserSearchHead
         searchHeading={searchHeading}
         subheading={subheading}
@@ -54,9 +54,9 @@ export function UserSearch({
       />
       {displayList && (
         <>
-          <Dropdown.ActionGroup className="user-search__search-wrapper">
+          <Dropdown.ActionGroup className="gui-user-search__search-wrapper">
             <input
-              className="user-search__search-input"
+              className="gui-user-search__search-input"
               onChange={searchForUsers}
               type="text"
               placeholder="Search people..."
@@ -64,7 +64,7 @@ export function UserSearch({
               onKeyPress={handleKeyPress}
             />
           </Dropdown.ActionGroup>
-          <Dropdown.ActionGroup className="user-search__search-results">
+          <Dropdown.ActionGroup className="gui-user-search__search-results">
             <UserSearchList
               users={searchedUsers || users}
               noUsers={users.length <= minUserLength}
@@ -82,17 +82,17 @@ export function UserSearch({
 }
 
 UserSearch.defaultProps = {
-  searchHeading: 'Search...',
-  className: '',
+  searchHeading: "Search...",
+  className: "",
   selectedUserIds: [],
   useDisplayToggle: false,
   displayList: true,
   subheading: null,
   minUserLength: 0,
-  noUserDisplay: 'Looks like there are no people!',
+  noUserDisplay: "Looks like there are no people!",
   hideAfterPerformingAction: false,
   onToggle: () => {},
-  inputRef: {}
+  inputRef: {},
 };
 
 // disabling linter here since I think its just getting confused with refs

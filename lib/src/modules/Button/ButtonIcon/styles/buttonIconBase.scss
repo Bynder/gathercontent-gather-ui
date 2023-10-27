@@ -1,11 +1,11 @@
-.button-icon {
+.gui-button-icon {
   @apply p-0 items-center justify-center bg-transparent border-transparent;
 
   &:hover,
   &:focus {
     @apply bg-neutral-primary/10 text-neutral-20 no-underline;
 
-    &:not(.button-icon-no-fill) .icon {
+    &:not(.gui-button-icon-no-fill) .gui-icon {
       path {
         @apply fill-neutral-20;
       }
@@ -17,8 +17,8 @@
   }
 }
 
-.button-icon:active,
-.button-icon.button-icon-active {
+.gui-button-icon:active,
+.gui-button-icon.gui-button-icon-active {
   @apply bg-blue-90 border-blue-90 shadow-none;
 
   &:hover,
@@ -26,12 +26,12 @@
     @apply bg-blue-95;
   }
 
-  &:not(.button-icon-no-fill) path {
+  &:not(.gui-button-icon-no-fill) path {
     fill: theme('colors.blue.primary');
   }
 }
 
-.button-icon-enabled {
+.gui-button-icon-enabled {
   &:hover,
   &:focus {
     @apply bg-green-95;
@@ -41,7 +41,7 @@
     @apply border-green-primary shadow-button-icon-enabled-focus;
   }
 
-  &:not(.button-icon-no-fill) path {
+  &:not(.gui-button-icon-no-fill) path {
     fill: theme('colors.green.primary');
   }
 }

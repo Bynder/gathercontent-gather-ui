@@ -1,15 +1,15 @@
-.grid:not(.tw) {
+.gui-grid:not(.gui-tw) {
     margin-left: -10px;
 }
 
-.grid {
-    &:not(.tw)::before,
-    &:not(.tw)::after {
+.gui-grid {
+    &:not(.gui-tw)::before,
+    &:not(.gui-tw)::after {
         display: table;
         content: "";
     }
 
-    &:not(.tw)::after {
+    &:not(.gui-tw)::after {
         clear: both;
     }
 

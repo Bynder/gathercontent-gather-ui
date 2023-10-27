@@ -1,6 +1,6 @@
-.button-icon-danger {
+.gui-button-icon-danger {
   @apply border-white text-red-primary p-0 items-center justify-center;
-  @extend .inherit-color-icon;
+  @extend .gui-inherit-color-icon;
 
   &:hover {
     @apply bg-red-95 border-red-95;

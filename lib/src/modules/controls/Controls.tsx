@@ -1,12 +1,9 @@
-import React from 'react';
-import cx from 'classnames';
-import { Control } from './Control';
+import React from "react";
+import cx from "classnames";
+import { Control } from "./Control";
 
-function Controls({
-  children,
-  className
-}: any) {
-  const classNames = cx('controls relative flex', className);
+function Controls({ children, className }: any) {
+  const classNames = cx("gui-controls relative flex", className);
 
   return <div className={classNames}>{children}</div>;
 }

@@ -1,23 +1,23 @@
-.counter {
+.gui-counter {
   font-size: 0.625rem;
   line-height: 0.5625rem;
   min-width: 0.875rem;
 }
 
-.button-icon {
-  .counter {
+.gui-button-icon {
+  .gui-counter {
     @apply border-white border-solid border-2 absolute top-0 right-0 mt-px mr-px;
   }
 
   &:hover {
-    .counter {
+    .gui-counter {
       @apply border-neutral-95;
     }
   }
 
   &:active,
-  &.button__icon-active {
-    .counter {
+  &.gui-button__icon-active {
+    .gui-counter {
       @apply border-blue-90;
     }
   }

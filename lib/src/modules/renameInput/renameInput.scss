@@ -1,8 +1,8 @@
-.rename-input-form {
+.gui-rename-input-form {
   @apply inline-block relative whitespace-pre-wrap max-w-full;
 }
 
-.rename-input-text {
+.gui-rename-input-text {
   @apply bg-transparent border-0 relative transition-none overflow-hidden resize-none text-left;
 
   &:hover {
@@ -16,20 +16,20 @@
   }
 }
 
-input.rename-input-text,
-textarea.rename-input-text {
+input.gui-rename-input-text,
+textarea.gui-rename-input-text {
   @apply inline-block absolute inset-0 w-full h-full;
 }
 
-.rename-input-size-helper {
+.gui-rename-input-size-helper {
   @apply opacity-0 inline-block w-auto whitespace-pre max-w-full align-middle;
 }
 
-.rename-input-multiline.rename-input-size-helper {
+.gui-rename-input-multiline.gui-rename-input-size-helper {
   @apply whitespace-pre-wrap;
 }
 
-.rename-input-text-md {
+.gui-rename-input-text-md {
   @apply text-base p-05 leading-4;
 
   &:hover {
@@ -41,7 +41,7 @@ textarea.rename-input-text {
   }
 }
 
-.rename-input-text-lrg {
+.gui-rename-input-text-lrg {
   @apply text-lg p-2 leading-5;
 
   &:hover {
@@ -53,7 +53,7 @@ textarea.rename-input-text {
   }
 }
 
-input.rename-input-text-lrg {
+input.gui-rename-input-text-lrg {
   &:focus, &:active {
     padding-top: 5px;
   }

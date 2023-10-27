@@ -9,7 +9,7 @@ $loading-line-width: 32px;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.loading-overlay {
+.gui-loading-overlay {
   background: rgba($neutral-base-lightest, .5);
   position: absolute;
   inset: 0;
@@ -18,42 +18,42 @@ $loading-line-width: 32px;
   justify-content: center;
   z-index: 2;
 
-  .loading-overlay-text {
+  .gui-loading-overlay-text {
     @apply mt-0 mb-2;
   }
 
-  .gc-loader + .loading-overlay-text {
+  .gui-gc-loader + .gui-loading-overlay-text {
     @apply mt-4;
   }
 
-  .line {
+  .gui-line {
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
   }
 
-  .line-1 {
+  .gui-line-1 {
     animation-name: line1;
   }
 
-  .line-2 {
+  .gui-line-2 {
     animation-name: line2;
   }
 
-  .line-3 {
+  .gui-line-3 {
     animation-name: line3;
   }
 
-  .line-4 {
+  .gui-line-4 {
     animation-name: line4;
   }
 
-  .line-5 {
+  .gui-line-5 {
     animation-name: line5;
   }
 
-  .line-6 {
+  .gui-line-6 {
     animation-name: line6;
   }
 }
@@ -171,6 +171,6 @@ $loading-line-width: 32px;
   }
 }
 
-.loading-overlay--fixed {
+.gui-loading-overlay--fixed {
   position: fixed;
 }

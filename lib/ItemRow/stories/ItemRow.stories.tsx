@@ -14,7 +14,7 @@ const createStatusIndicator = (props: any) => (
   <TooltipWrapper
     id="status-tooltip"
     tooltipText="tooltip text"
-    wrapperClassName="h-margin-right-half"
+    wrapperClassName="gui-h-margin-right-half"
   >
     <StatusIndicator {...props} />
   </TooltipWrapper>
@@ -108,7 +108,10 @@ export function ItemRow({
 
             {!!commentCount && (
               <ItemRowComponent.Data>
-                <Icon name="commentFill" className="h-margin-right-quarter" />
+                <Icon
+                  name="commentFill"
+                  className="gui-h-margin-right-quarter"
+                />
                 {commentCount}
               </ItemRowComponent.Data>
             )}

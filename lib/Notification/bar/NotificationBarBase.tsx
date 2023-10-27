@@ -29,16 +29,16 @@ function NotificationBarBase({
       role="button"
       onClick={clickHandler}
       onKeyPress={clickHandler}
-      className={`notification text-base font-semi-bold p-3 border-0 rounded-none inherit-color-icon inherit-color-link ${classes} ${className}`}
+      className={`gui-notification text-base font-semi-bold p-3 border-0 rounded-none gui-inherit-color-icon gui-inherit-color-link ${classes} ${className}`}
       tabIndex={0}
       {...rest}
     >
-      <div className="notification__content w-full">{children}</div>
+      <div className="gui-notification__content w-full">{children}</div>
       {onClose && (
         <Button
           onClick={onClose}
           types={["icon-only"]}
-          className="notification__close ml-auto"
+          className="gui-notification__close ml-auto"
         >
           <Icon
             name="cross"

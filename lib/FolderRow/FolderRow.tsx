@@ -8,8 +8,8 @@ function FolderRow({ children, open, className, ...rest }: any) {
     setShow(open);
   }, [open]);
 
-  const classNames = cx(`folder-row ${className}`, {
-    "folder-row--open": show,
+  const classNames = cx(`gui-folder-row ${className}`, {
+    "gui-folder-row--open": show,
   });
 
   return (

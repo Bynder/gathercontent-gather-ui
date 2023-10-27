@@ -5,7 +5,7 @@ import { SearchContext } from "./SearchProvider";
 function SearchBoundaryListener(props: any) {
   return (
     <BoundaryClickWatcher
-      className={`search ${props.className}`}
+      className={`gui-search ${props.className}`}
       outsideClickHandler={props.hideBody}
     >
       {props.children}

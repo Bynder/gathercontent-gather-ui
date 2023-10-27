@@ -10,20 +10,20 @@ $button-group-default-background: $neutral-lightest;
    Styles
    ========================================================================== */
 
-.button-group {
+.gui-button-group {
   background: $button-group-default-background;
-  padding: 0 $layout-spacing-base*0.5;
+  padding: 0 $layout-spacing-base * 0.5;
   border-radius: $btn-border-radius;
   display: flex;
   align-items: center;
 
-  .button {
+  .gui-button {
     margin: 0;
     border-radius: 0;
     padding: math.div($layout-spacing-base, 1.5);
   }
 
-  .button--icon-only {
+  .gui-button--icon-only {
     &:hover path {
       fill: $neutral-dark;
     }
@@ -37,5 +37,3 @@ $button-group-default-background: $neutral-lightest;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-
-

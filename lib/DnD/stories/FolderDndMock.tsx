@@ -9,7 +9,7 @@ function FolderDndMock({ name }: any) {
         <>
           {/* @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message */}
           <FolderRow.Inner style={{ minWidth: "320px" }}>
-            <div className="folder-row__backdrop" />
+            <div className="gui-folder-row__backdrop" />
             {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
             <FolderRow.Name>{name}</FolderRow.Name>
             {/* @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message */}
@@ -32,7 +32,7 @@ function FolderDndMock({ name }: any) {
               <>
                 {/* @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message */}
                 <FolderRow.Inner style={{ minWidth: "320px" }}>
-                  <div className="folder-row__backdrop" />
+                  <div className="gui-folder-row__backdrop" />
                   {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
                   <FolderRow.Name>{name}</FolderRow.Name>
                   {/* @ts-expect-error TS(2339): Property 'Inner' does not exist on type 'typeof Fo... Remove this comment to see the full error message */}

@@ -5,12 +5,12 @@
 /* ==========================================================================
    Styles
    ========================================================================== */
-.page-information {
+.gui-page-information {
   width: 100%;
 }
 
-.page-information__title,
-.page-information__subtitle {
+.gui-page-information__title,
+.gui-page-information__subtitle {
   display: block;
   text-align: left;
   overflow: hidden;
@@ -19,17 +19,17 @@
   color: $neutral-dark;
 }
 
-.page-information__title {
+.gui-page-information__title {
   font-size: $typo-size-lead;
   line-height: 1.25em;
   margin: 0 0 0.25em;
 }
 
-.page-information__subtitle {
+.gui-page-information__subtitle {
   font-size: $typo-size-slight;
   color: $neutral-base;
 }
 
-.page-information__subtitle--highlight {
+.gui-page-information__subtitle--highlight {
   color: $primary-blue;
 }

@@ -4,7 +4,7 @@ import Input from "./Input";
 
 export function Checkbox(props: any) {
   return (
-    <div className="form__choice-element-wrapper">
+    <div className="gui-form__choice-element-wrapper">
       <Input {...props} />
       <Label {...props} />
     </div>

@@ -23,10 +23,10 @@ export function Input({
 }: Props) {
   const [_value, setValue] = React.useState(value);
 
-  const classNames = cx(`input input-${size}`, className, {
-    "input-native": enhanceNativeSupport,
-    "input-valid": valid,
-    "input-invalid": invalid,
+  const classNames = cx(`gui-input gui-input-${size}`, className, {
+    "gui-input-native": enhanceNativeSupport,
+    "gui-input-valid": valid,
+    "gui-input-invalid": invalid,
   });
 
   React.useEffect(() => {

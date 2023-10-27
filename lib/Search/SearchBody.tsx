@@ -12,8 +12,8 @@ function SearchBody({
   children,
   ...rest
 }: Props) {
-  const classNames = cx(`search__body ${className}`, {
-    "display-results": showBody,
+  const classNames = cx(`gui-search__body ${className}`, {
+    "gui-display-results": showBody,
   });
 
   return (

@@ -7,9 +7,9 @@ function CommentHeader({ children, actions, className }: any) {
 
   const classNames = cx(
     className,
-    "comment-header mb-2 relative leading-tight",
+    "gui-comment-header mb-2 relative leading-tight",
     {
-      "blur-background": isDeleting,
+      "gui-blur-background": isDeleting,
     }
   );
 

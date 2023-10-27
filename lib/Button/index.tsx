@@ -42,9 +42,9 @@ export function Button({
     disabled: disabled || disabledAfterClick,
     onClick: handleOnClick,
     onKeyDown,
-    className: `button ${createClassesFromTypesList(
+    className: `gui-button ${createClassesFromTypesList(
       types,
-      "button--"
+      "gui-button--"
     )} ${className}`,
     title,
     id,

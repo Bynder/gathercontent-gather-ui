@@ -15,10 +15,10 @@ function DropdownActionGroup({
   collapse,
   ...rest
 }: Props) {
-  const classNames = cx(`dropdown__action-group ${className}`, {
-    "dropdown__action-group--horizontal": horizontal,
-    "dropdown__action-group--bordered": bordered,
-    "dropdown__action-group--collapse": collapse,
+  const classNames = cx(`gui-dropdown__action-group ${className}`, {
+    "gui-dropdown__action-group--horizontal": horizontal,
+    "gui-dropdown__action-group--bordered": bordered,
+    "gui-dropdown__action-group--collapse": collapse,
   });
   return (
     <div className={classNames} {...rest}>

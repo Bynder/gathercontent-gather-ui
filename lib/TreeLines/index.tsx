@@ -2,7 +2,7 @@ import React from "react";
 import { uniqueId } from "lodash";
 
 export function TreeLine() {
-  return <span className="treelines__line" />;
+  return <span className="gui-treelines__line" />;
 }
 
 export function TreeLines({ quantity = 0 }) {
@@ -10,7 +10,7 @@ export function TreeLines({ quantity = 0 }) {
   while (lines.length < quantity) {
     lines.push(<TreeLine key={uniqueId()} />);
   }
-  return <div className="treelines">{lines}</div>;
+  return <div className="gui-treelines">{lines}</div>;
 }
 
 TreeLines.defaultProps = {

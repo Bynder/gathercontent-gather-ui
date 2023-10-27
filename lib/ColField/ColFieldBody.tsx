@@ -7,7 +7,7 @@ function ColFieldBody({
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`col-field__body ${className}`} {...props}>
+    <div className={`gui-col-field__body ${className}`} {...props}>
       {children}
     </div>
   );

@@ -12,9 +12,9 @@ function ButtonTertiary({
   contained,
   ...rest
 }: any) {
-  const classes = cx("button-tertiary", className, {
-    "button-tertiary-active": active,
-    "button-tertiary-contained": contained,
+  const classes = cx("gui-button-tertiary", className, {
+    "gui-button-tertiary-active": active,
+    "gui-button-tertiary-contained": contained,
   });
 
   return (

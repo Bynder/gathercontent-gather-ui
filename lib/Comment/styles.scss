@@ -1,25 +1,25 @@
-.conversation__inactive {
-  .person-right {
+.gui-conversation__inactive {
+  .gui-person-right {
     @include gradient-overflow(theme('colors.neutral.98'));
   }
 
   &:hover {
-    .conversation__text__cutoff {
+    .gui-conversation__text__cutoff {
       @apply bg-blur-grey-bottom;
     }
 
-    .person-right {
+    .gui-person-right {
       @include gradient-overflow(theme('colors.neutral.95'));
     }
   }
 }
 
-.new-comment__input,
-.edit-comment__input {
+.gui-new-comment__input,
+.gui-edit-comment__input {
   @apply border-0 p-0;
 }
 
-.blur-background {
+.gui-blur-background {
   background: rgb(255 255 255 / 75%);
 
   @supports (filter: blur()) {
@@ -30,8 +30,8 @@
   }
 }
 
-.new-comment__suggestions,
-.edit-comment__suggestions {
+.gui-new-comment__suggestions,
+.gui-edit-comment__suggestions {
   &__list {
     @apply absolute overflow-y-scroll bg-white border border-solid border-neutral-90 rounded max-h-128 min-w-64;
 
@@ -53,15 +53,15 @@
     }
   }
 
-  .avatar__wrapper {
+  .gui-avatar__wrapper {
     @apply cursor-pointer p-2 border-t border-b-0 border-l-0 border-r-0 border-solid border-neutral-90;
   }
 
-  .avatar__name {
+  .gui-avatar__name {
     @apply text-neutral-30 text-sm font-semi-bold;
   }
 
-  .avatar__email {
+  .gui-avatar__email {
     @apply text-neutral-primary text-xs;
   }
 }

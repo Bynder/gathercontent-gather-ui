@@ -18,10 +18,10 @@ function ItemRow({
   list,
   ...rest
 }: Props) {
-  const classNames = cx(`item-row ${className}`, {
-    "item-row--stacked": stacked,
-    "item-row--bordered": bordered,
-    "item-row-list": list,
+  const classNames = cx(`gui-item-row ${className}`, {
+    "gui-item-row--stacked": stacked,
+    "gui-item-row--bordered": bordered,
+    "gui-item-row-list": list,
   });
 
   return (

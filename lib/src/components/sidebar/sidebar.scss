@@ -1,8 +1,8 @@
-.sidebar {
+.gui-sidebar {
   @apply relative flex flex-col h-full;
 }
 
-.sidebar-header {
+.gui-sidebar-header {
   @apply p-4 flex flex-row;
 
   div {
@@ -10,20 +10,20 @@
   }
 }
 
-.sidebar-footer {
+.gui-sidebar-footer {
   @apply flex p-2 justify-end items-center border-b-0 border-l-0 border-r-0 border-t border-solid border-neutral-90
 }
 
-.sidebar-body {
+.gui-sidebar-body {
   @apply flex-grow;
 }
 
-.sidebar-header,
-.sidebar-section {
+.gui-sidebar-header,
+.gui-sidebar-section {
   @apply border-t-0 border-l-0 border-r-0 border-b border-solid border-neutral-90;
 }
 
-.sidebar-section {
+.gui-sidebar-section {
   @apply p-4 text-base text-neutral-20;
 
   &:last-child {
@@ -31,25 +31,25 @@
   }
 }
 
-.sidebar-heading,
-.sidebar-subsection {
+.gui-sidebar-heading,
+.gui-sidebar-subsection {
   @apply mb-4;
 }
 
-.sidebar-subsection:last-child {
+.gui-sidebar-subsection:last-child {
   @apply mb-0;
 }
 
-.sidebar-description {
+.gui-sidebar-description {
   @apply text-neutral-primary text-sm mb-4 -mt-2;
 }
 
-.sidebar-section-head {
+.gui-sidebar-section-head {
   @apply flex;
 }
 
-.sidebar-header,
-.sidebar-heading {
+.gui-sidebar-header,
+.gui-sidebar-heading {
   @apply font-semi-bold text-base text-neutral-20 leading-normal;
 
   * {
@@ -57,7 +57,7 @@
   }
 }
 
-.sidebar-subheading {
+.gui-sidebar-subheading {
   @apply mb-1 text-xs text-neutral-primary uppercase leading-5 block font-semi-bold;
 
   * {

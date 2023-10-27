@@ -1,16 +1,16 @@
-.is-selected {
+.gui-is-selected {
   @include before-border(2px, solid, $primary-blue, 4px);
 }
 
-.is-hovered {
+.gui-is-hovered {
   @include before-border(2px, solid, $primary-blue, 4px);
 
-  &.is-selected {
+  &.gui-is-selected {
     @include before-border(2px, solid, lighten($primary-blue, 30%), 4px);
   }
 }
 
-.is-parent-selected {
+.gui-is-parent-selected {
   @include before-border(2px, solid, lighten($primary-blue, 30%), 4px);
 
   pointer-events: none;

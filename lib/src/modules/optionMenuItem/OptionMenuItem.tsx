@@ -10,10 +10,10 @@ export function OptionMenuItem({
   className,
   ...rest
 }: any) {
-  const classes = cx(`option-menu-item ${className}`, {
-    "option-menu-item-active": active,
-    "option-menu-item-danger": danger,
-    "option-menu-item-has-meta": !!meta,
+  const classes = cx(`gui-option-menu-item ${className}`, {
+    "gui-option-menu-item-active": active,
+    "gui-option-menu-item-danger": danger,
+    "gui-option-menu-item-has-meta": !!meta,
   });
 
   return (
@@ -24,15 +24,15 @@ export function OptionMenuItem({
       type="button"
       {...rest}
     >
-      <div className="option-menu-item-content">{children}</div>
+      <div className="gui-option-menu-item-content">{children}</div>
       {active && (
         <Icon
           name="tick16"
           types={["primary-blue"]}
-          className="option-menu-item-tick"
+          className="gui-option-menu-item-tick"
         />
       )}
-      {!!meta && <div className="option-menu-item-meta">{meta}</div>}
+      {!!meta && <div className="gui-option-menu-item-meta">{meta}</div>}
     </button>
   );
 }
