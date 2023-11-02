@@ -13,7 +13,7 @@ export default {
 export function PersonSearch(args: any) {
   const getPerson = () => ({
     name: faker.name.findName(),
-    subtitle: faker.internet.email(),
+    email: faker.internet.email(),
     avatar: faker.image.avatar(),
     selected: faker.random.boolean()
   });
