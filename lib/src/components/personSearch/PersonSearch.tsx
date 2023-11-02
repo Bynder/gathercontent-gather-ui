@@ -33,7 +33,7 @@ export function PersonSearch({
                   onBlur={() => (showContent ? null : toggleShowContent(true))}
                   onChange={(e: any) => setSearchValue(e.target.value)}
                   value={searchValue}
-                  size="md"
+                  size={Input.sizes.md}
                 />
               </>
             )}
