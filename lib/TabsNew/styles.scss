@@ -1,19 +1,19 @@
 .gui-tab-drag-line {
   width: 3px;
 
-  &.gui-left {
+  &.left {
     left: -2px;
 
     @apply bg-blue-primary;
   }
 
-  &.gui-right {
+  &.right {
     right: -2px;
 
     @apply bg-blue-primary;
   }
 
-  &.gui-whole {
+  &.whole {
     @apply border-2 border-blue-primary border-solid w-full top-0 left-0 bg-transparent;
   }
 }
