@@ -59,8 +59,12 @@ export function ConfirmationOverlay({
           size={ButtonPrimary.sizes.xs}
           aria-label="Submit"
         >
-          {isSubmitting && <Icon name="loader16" className="mr-2 fill-white" />}
-          {hasFailed && <Icon name="danger16" className="mr-2 fill-white" />}
+          {isSubmitting && (
+            <Icon name="loader16" className="mr-2 gui-fill-white" />
+          )}
+          {hasFailed && (
+            <Icon name="danger16" className="mr-2 gui-fill-white" />
+          )}
           {!hasFailed ? confirmationText : failureText}
         </ButtonPrimaryDanger>
       </div>

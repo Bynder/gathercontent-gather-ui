@@ -197,7 +197,7 @@ function CommentForm({
             type="submit"
           >
             {isSubmitting && (
-              <Icon name="loader16" className="mr-2 fill-white" />
+              <Icon name="loader16" className="mr-2 gui-fill-white" />
             )}
             {hasFailed ? "Retry" : submitText}
           </ButtonPrimary>
