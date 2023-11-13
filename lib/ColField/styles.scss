@@ -6,7 +6,7 @@
   @apply font-semi-bold text-neutral-20;
 }
 
-.gui-col-field__body .gui-ql-editor {
+.gui-col-field__body .ql-editor {
   @apply p-6;
 
   *:nth-child(1) {
@@ -96,7 +96,7 @@
     }
   }
 
-  &.gui-ql-blank::before {
+  &.ql-blank::before {
     @apply absolute inset-x-0 text-neutral-primary cursor-text text-lg leading-6 ml-6;
 
     content: attr(data-placeholder);
