@@ -72,7 +72,7 @@ function PreviewImage({
 PreviewImage.defaultProps = {
   showLoader: false,
   fallback: (
-    <div className="preview-image-fallback w-full h-full">
+    <div className="gui-preview-image-fallback w-full h-full">
       <PreviewFallback />
     </div>
   ),
