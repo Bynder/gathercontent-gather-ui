@@ -180,7 +180,7 @@ function CommentForm({
           size={ButtonPrimary.sizes.xs}
           disabled={isSubmitting}
           onClick={handleCancel}
-          className="gui-mr-2"
+          className="mr-2"
         >
           Cancel
         </ButtonTertiary>

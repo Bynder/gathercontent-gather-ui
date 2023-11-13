@@ -16,7 +16,7 @@ export function ModalFooterConfirm({
         <ButtonTertiary
           size={ButtonTertiary.sizes.sm}
           onClick={tertiaryOnClick}
-          className="gui-mr-2"
+          className="mr-2"
         >
           {tertiaryText}
         </ButtonTertiary>
