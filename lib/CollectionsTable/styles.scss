@@ -194,8 +194,8 @@ $collections-table-cell-min-height: 40px !default;
   opacity: 0.5;
 }
 
-.gui-collections-table__row--is-over.gui-dragged-top,
-.gui-collections-table__row--is-over.gui-dragged-below {
+.gui-collections-table__row--is-over.dragged-top,
+.gui-collections-table__row--is-over.dragged-below {
   position: relative;
 
   .gui-collections-table__cell:first-child {
@@ -226,7 +226,7 @@ $collections-table-cell-min-height: 40px !default;
 }
 
 .gui-collections-table__row--is-over {
-  &.gui-dragged-top {
+  &.dragged-top {
     .gui-collections-table__cell:first-child::before {
       top: -1px;
     }
@@ -237,7 +237,7 @@ $collections-table-cell-min-height: 40px !default;
     }
   }
 
-  &.gui-dragged-below {
+  &.dragged-below {
     .gui-collections-table__cell:first-child::before {
       bottom: -1px;
     }

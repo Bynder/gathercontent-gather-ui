@@ -132,7 +132,7 @@ $finder-indent-level-support: 10 !default;
   border: 1px solid $color-border-base;
 }
 
-.gui-finder-item.gui-is-over.gui-dragged-insert
+.gui-finder-item.is-over.dragged-insert
   > .gui-finder-item-content
   .gui-finder-item-content-inner,
 .gui-finder-item--selected > .gui-finder-item-content .gui-finder-item-content-inner {
@@ -140,8 +140,8 @@ $finder-indent-level-support: 10 !default;
   border-radius: 3px;
 }
 
-.gui-finder-item.gui-is-over.gui-dragged-top > .gui-finder-item-content,
-.gui-finder-item.gui-is-over.gui-dragged-below > .gui-finder-item-content {
+.gui-finder-item.is-over.dragged-top > .gui-finder-item-content,
+.gui-finder-item.is-over.dragged-below > .gui-finder-item-content {
   border: none;
   border-radius: 0;
   padding: 0 $layout-spacing-base * 0.5;
@@ -168,7 +168,7 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.gui-finder-item.gui-is-over.gui-dragged-top
+.gui-finder-item.is-over.dragged-top
   > .gui-finder-item-content
   .gui-finder-item-content-inner {
   border-top: 2px solid $primary-blue;
@@ -181,7 +181,7 @@ $finder-indent-level-support: 10 !default;
   }
 }
 
-.gui-finder-item.gui-is-over.gui-dragged-below
+.gui-finder-item.is-over.dragged-below
   > .gui-finder-item-content
   .gui-finder-item-content-inner {
   border-bottom: 2px solid $primary-blue;
@@ -205,15 +205,15 @@ $finder-indent-level-support: 10 !default;
     $finderItemSelector: '#{$finderItemSelector} .gui-finder-item';
   }
 
-  #{$finderItemSelector}.gui-finder-item.gui-is-over.gui-dragged-insert
+  #{$finderItemSelector}.gui-finder-item.is-over.dragged-insert
     > .gui-finder-item-content,
   #{$finderItemSelector}.gui-finder-item-selected > .gui-finder-item-content {
     padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1)) - 2;
   }
 
   #{$finderItemSelector} > .gui-finder-item-content,
-  #{$finderItemSelector}.gui-finder-item.gui-is-over.gui-dragged-top > .gui-finder-item-content,
-  #{$finderItemSelector}.gui-finder-item.gui-is-over.gui-dragged-below
+  #{$finderItemSelector}.gui-finder-item.is-over.dragged-top > .gui-finder-item-content,
+  #{$finderItemSelector}.gui-finder-item.is-over.dragged-below
     > .gui-finder-item-content {
     padding-left: ($layout-spacing-base * 1.5 * $i) - ($layout-spacing-base * 0.5 * ($i - 1));
   }

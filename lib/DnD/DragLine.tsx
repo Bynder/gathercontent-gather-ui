@@ -10,7 +10,7 @@ export function DragLine({ alignment, offsetPx }: any) {
         }}
       />
       <span
-        className="gui-gui-drag-line"
+        className="gui-drag-line"
         style={{
           [alignment]: `${-3 - offsetPx}px`,
         }}

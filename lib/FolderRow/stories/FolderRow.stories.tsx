@@ -65,7 +65,7 @@ export function FolderRow({
   });
 
   const classNameLine = cx("gui-hierarchy-line", {
-    "gui-dragged-insert": draggedOver,
+    "dragged-insert": draggedOver,
   });
 
   return (
