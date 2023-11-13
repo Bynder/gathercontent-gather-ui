@@ -21,7 +21,7 @@ function UserSearchList({
     );
   }
   return (
-    <ul className="gui-user-search-list h-padding-clear h-margin-clear">
+    <ul className="gui-user-search-list gui-h-padding-clear gui-h-margin-clear">
       {users.map((user: any) => (
         <li className="gui-user-search-list__user" key={user.id}>
           <Dropdown.Action
