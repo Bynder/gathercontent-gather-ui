@@ -1,12 +1,14 @@
 import React from "react";
-import { Button, ButtonIcon } from "../../lib";
-import { Icon } from "../../lib";
+import { ButtonIcon } from "../../lib";
 import { NotificationBlip as NotificationBlipComponent } from "../../lib/Notification/blip/NotificationBlip";
 import StoryItem from "../styleguide/StoryItem";
 
 export default {
   title: 'GUI/Notification Blip',
   component: NotificationBlipComponent,
+  args: {
+    visible: true,
+  }
 };
 
 export const NotificationBlip = (args: any) => <>
@@ -14,7 +16,7 @@ export const NotificationBlip = (args: any) => <>
     title="Notification blip"
     description="A visual indicator to inform the user they have notifications"
   >
-    <NotificationBlipComponent>
+    <NotificationBlipComponent visible={args.visible} className={args.className}>
       <ButtonIcon name={'bell'} />
     </NotificationBlipComponent>
   </StoryItem>
