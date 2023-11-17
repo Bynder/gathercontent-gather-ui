@@ -22,7 +22,7 @@ export function Input({
   valid = false,
   invalid = false,
   enhanceNativeSupport = false,
-  size,
+  size = sizes.md,
   value = "",
   onChange,
   inputRef,
