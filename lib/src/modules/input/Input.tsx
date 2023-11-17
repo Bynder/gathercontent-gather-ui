@@ -2,11 +2,18 @@ import * as React from "react";
 import cx from "classnames";
 import { InputHelper } from "./InputHelper";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+const sizes = {
+  md: "md",
+  sm: "sm",
+} as const;
+
+interface Props
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   valid?: boolean;
   invalid?: boolean;
   enhanceNativeSupport?: boolean;
   inputRef?: React.RefObject<HTMLInputElement>;
+  size?: (typeof sizes)[keyof typeof sizes];
 }
 
 export function Input({
@@ -51,10 +58,4 @@ export function Input({
 }
 
 Input.Helper = InputHelper;
-
-const sizes = {
-  md: "md",
-  sm: "sm",
-};
-
 Input.sizes = sizes;
