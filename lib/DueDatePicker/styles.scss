@@ -10,78 +10,81 @@ $duedate-timepicker-height: 220px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.duedate__dropdown {
+.gui-duedate__dropdown {
   width: $duedate-popover-width;
   padding: 0;
 
-  .arrow {
+  .gui-arrow {
     display: none;
   }
 }
 
-.duedate__container {
+.gui-duedate__container {
   font-size: $typo-size-slight;
   position: relative;
 }
 
-.duedate__button {
+.gui-duedate__button {
   color: $color-text-light;
 
-  .button {
+  .gui-button {
     text-decoration: underline;
     color: $color-text-light;
   }
 
-  .icon {
+  .gui-icon {
     margin-right: $layout-spacing-base * 0.25;
     top: -2px;
     position: relative;
     vertical-align: middle;
   }
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     text-decoration: none;
   }
 }
 
-.duedate__button--set-duedate {
+.gui-duedate__button--set-duedate {
   color: $color-link-base;
 }
 
-.duedate__button.color-overdue,
-.duedate__button.color-overdue .button {
+.gui-duedate__button.gui-color-overdue,
+.gui-duedate__button.gui-color-overdue .gui-button {
   color: $color-text-danger;
 }
 
-.duedate__container--completed.duedate__container--completed {
-  .duedate__button, .duedate__toggle {
+.gui-duedate__container--completed.gui-duedate__container--completed {
+  .gui-duedate__button,
+  .gui-duedate__toggle {
     text-decoration: line-through;
     font-style: italic;
     color: $color-text-light;
   }
 
-  .icon path, &:hover .icon path {
+  .gui-icon path,
+  &:hover .gui-icon path {
     fill: $color-text-light;
   }
 }
 
-.duedate__header {
+.gui-duedate__header {
   padding: $layout-spacing-base * 0.5;
   border-bottom: 1px solid $neutral-light;
   font-size: $typo-size-slight;
   color: $neutral-dark;
 }
 
-.duedate__header--date {
+.gui-duedate__header--date {
   font-size: $typo-size-base;
   color: $neutral-dark;
 }
 
-.duedate__header--date-not-set {
+.gui-duedate__header--date-not-set {
   color: $neutral-base;
 }
 
-.duedate__time {
+.gui-duedate__time {
   color: $color-text-base;
   text-decoration: underline;
 
@@ -90,16 +93,16 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.color-overdue .duedate__time {
+.gui-color-overdue .gui-duedate__time {
   color: $primary-red;
 }
 
-.duedate__submit {
+.gui-duedate__submit {
   text-align: center;
   padding: 0 0 $layout-spacing-base * 0.5;
 }
 
-.duedate__submit--cancel {
+.gui-duedate__submit--cancel {
   font-size: $typo-size-slight;
   margin-right: $layout-spacing-base * 0.5;
   color: $neutral-base;
@@ -110,17 +113,17 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.duedate__submit--save {
+.gui-duedate__submit--save {
   padding: $layout-spacing-base * 0.25 math.div($layout-spacing-base, 2.5);
 }
 
-.duedate__submit--hidden {
+.gui-duedate__submit--hidden {
   display: none;
 }
 
 /* DueDate Time picker dropdown */
 
-.duedate__dropdown .duedate__time-picker {
+.gui-duedate__dropdown .gui-duedate__time-picker {
   min-width: $duedate-timepicker-width;
   max-height: $duedate-timepicker-height;
   overflow: auto;
@@ -140,7 +143,7 @@ $duedate-timepicker-height: 220px !default;
     }
   }
 
-  > .active a {
+  > .gui-active a {
     background-color: $color-link-base;
     color: white;
 
@@ -151,51 +154,50 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-
-
 /* DueDate Label */
-.duedate__label, .duedate__label--button, .duedate__label--button:hover {
+.gui-duedate__label,
+.gui-duedate__label--button,
+.gui-duedate__label--button:hover {
   color: $neutral-base;
   font-size: $typo-size-slight;
 
-  .icon {
+  .gui-icon {
     margin-right: $layout-spacing-base * 0.25;
     top: -2px;
     position: relative;
     vertical-align: middle;
   }
 
-  .icon path {
+  .gui-icon path {
     fill: $neutral-base;
   }
 }
 
-.duedate__label.color-overdue,
-.duedate__label.color-overdue .duedate__label--button {
+.gui-duedate__label.gui-color-overdue,
+.gui-duedate__label.gui-color-overdue .gui-duedate__label--button {
   color: $primary-red;
 
-  .icon path {
+  .gui-icon path {
     fill: $primary-red;
   }
 }
 
-.duedate__label--button {
+.gui-duedate__label--button {
   text-decoration: underline;
 }
 
-
 /* DueDate remove date dropdown */
-.duedate__remove {
+.gui-duedate__remove {
   position: absolute;
   top: $layout-spacing-base;
   right: 0;
 }
 
-.duedate__remove--not-set {
+.gui-duedate__remove--not-set {
   opacity: 0;
 }
 
-.duedate__remove .icon {
+.gui-duedate__remove .gui-icon {
   padding: 0 $layout-spacing-base;
 
   path {
@@ -203,6 +205,6 @@ $duedate-timepicker-height: 220px !default;
   }
 }
 
-.duedate__remove.is-active .icon path {
+.gui-duedate__remove.gui-is-active .gui-icon path {
   fill: $color-brand-blue;
 }

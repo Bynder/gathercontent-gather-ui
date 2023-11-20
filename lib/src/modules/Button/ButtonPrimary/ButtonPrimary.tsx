@@ -10,8 +10,8 @@ function ButtonPrimary({
   connectedRight,
   ...rest
 }: ButtonTypes) {
-  const classes = cx("button-primary", className, {
-    "button-primary-connected-right": connectedRight,
+  const classes = cx("gui-button-primary", className, {
+    "gui-button-primary-connected-right": connectedRight,
   });
 
   return (

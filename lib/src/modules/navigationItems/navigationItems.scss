@@ -1,4 +1,4 @@
-.navigation--items {
+.gui-navigation--items {
   @apply h-full;
 
   ul {
@@ -9,16 +9,16 @@
     @apply border-none bg-white h-full px-5 py-6;
   }
 
-  &.active {
+  &.gui-active {
     @apply text-blue-primary relative;
   }
 
-  &.disabled {
+  &.gui-disabled {
     @apply text-neutral-primary cursor-not-allowed;
   }
 }
 
-.navigation--active-border {
+.gui-navigation--active-border {
   @apply absolute w-full bottom-0 left-0 bg-blue-primary;
 
   height: 2px;

@@ -8,7 +8,7 @@ interface Props {
 
 function ModalBody({ children, className = "", ...rest }: Props) {
   return (
-    <NewModal.Body className={`modal-body ${className}`} {...rest}>
+    <NewModal.Body className={`gui-modal-body ${className}`} {...rest}>
       {children}
     </NewModal.Body>
   );

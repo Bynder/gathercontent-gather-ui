@@ -15,7 +15,7 @@ const actions = (
       <TooltipWrapper
         id="new folder"
         tooltipText="New folder"
-        className="folder-row__action"
+        className="gui-folder-row__action"
         placement="top"
       >
         <Button types={["icon-only"]} onClick={() => {}}>
@@ -29,7 +29,7 @@ const actions = (
       <TooltipWrapper
         id="delete folder"
         tooltipText="Delete folder"
-        className="folder-row__action"
+        className="gui-folder-row__action"
         placement="top"
       >
         <Button types={["icon-only"]} onClick={() => {}}>
@@ -60,11 +60,11 @@ export function FolderRow({
   folderName,
   meta,
 }: any) {
-  const classNameInner = cx("folder-row__inner", {
-    "folder-row__inner-dragged-insert": draggedOver,
+  const classNameInner = cx("gui-folder-row__inner", {
+    "gui-folder-row__inner-dragged-insert": draggedOver,
   });
 
-  const classNameLine = cx("hierarchy-line", {
+  const classNameLine = cx("gui-hierarchy-line", {
     "dragged-insert": draggedOver,
   });
 
@@ -77,7 +77,7 @@ export function FolderRow({
             <FolderRowComponent.Inner className={classNameInner}>
               {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
               <FolderRowComponent.Name showToggle={showToggle}>
-                <p className="h-margin-clear">{folderName}</p>
+                <p className="gui-h-margin-clear">{folderName}</p>
                 {/* @ts-expect-error TS(2339): Property 'Name' does not exist on type 'typeof Fol... Remove this comment to see the full error message */}
               </FolderRowComponent.Name>
 

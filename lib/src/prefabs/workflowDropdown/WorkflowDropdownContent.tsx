@@ -1,12 +1,8 @@
-import React from 'react';
-import Dropdown from '../../../Dropdown';
+import React from "react";
+import Dropdown from "../../../Dropdown";
 
-export function WorkflowDropdownContent({
-  children,
-  className,
-  ...rest
-}: any) {
-  const dropdownClassName = `workflow-dropdown__content ${className}`;
+export function WorkflowDropdownContent({ children, className, ...rest }: any) {
+  const dropdownClassName = `gui-workflow-dropdown__content ${className}`;
 
   return (
     <Dropdown.Content

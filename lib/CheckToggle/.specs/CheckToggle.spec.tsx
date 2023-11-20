@@ -1,52 +1,44 @@
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest';
+import { describe, expect, it } from "vitest";
 
-import React from 'react';
+import React from "react";
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from "@testing-library/react";
 
-import CheckToggle from '../index';
+import CheckToggle from "../index";
 
-const classList = ['disabled', 'margin-large', 'size-small'];
+const classList = ["gui-disabled", "gui-margin-large", "gui-size-small"];
 
 describe("CheckToggle", () => {
   it("Should have modifier classnames depending on props", () => {
-    const { rerender } = render(
-      <CheckToggle 
-        id="check-toggle" 
-      />
-    );
+    const { rerender } = render(<CheckToggle id="check-toggle" />);
 
-    let checkToggleWrapper = screen.getByRole('checkbox')?.parentElement?.parentElement;
+    let checkToggleWrapper =
+      screen.getByRole("checkbox")?.parentElement?.parentElement;
 
-    classList.map(modifierClass => {
+    classList.map((modifierClass) => {
       expect(checkToggleWrapper?.classList.contains(modifierClass)).toBe(false);
     });
 
     rerender(
-      <CheckToggle 
-        id="check-toggle" 
-        disabled
-        displaySmall 
-        marginSizeLarge
-      />
+      <CheckToggle id="check-toggle" disabled displaySmall marginSizeLarge />
     );
 
-    classList.map(modifierClass => {
-      expect(checkToggleWrapper?.classList.contains(modifierClass)).toBeTruthy();
+    classList.map((modifierClass) => {
+      expect(
+        checkToggleWrapper?.classList.contains(modifierClass)
+      ).toBeTruthy();
     });
   });
 
   it("Should add a modifier class when props.displayChecked is set", () => {
-    render(
-      <CheckToggle id="check-toggle" displayChecked />
-    );
+    render(<CheckToggle id="check-toggle" displayChecked />);
 
-    fireEvent.click(screen.getByRole('checkbox'));
+    fireEvent.click(screen.getByRole("checkbox"));
 
-    expect(screen.getByRole('checkbox').parentElement?.parentElement?.classList.contains('is-checked')).toBeTruthy();
+    expect(
+      screen
+        .getByRole("checkbox")
+        .parentElement?.parentElement?.classList.contains("gui-is-checked")
+    ).toBeTruthy();
   });
 });

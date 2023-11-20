@@ -13,9 +13,9 @@ export function InventoryItem({
   id,
   ...rest
 }: any) {
-  const classNames = cx(`inventory-item ${className}`, {
-    "inventory-item-preview-active": isPreviewActive, // change classname and styles
-    "inventory-item-preview": isPreview,
+  const classNames = cx(`gui-inventory-item ${className}`, {
+    "gui-inventory-item-preview-active": isPreviewActive, // change classname and styles
+    "gui-inventory-item-preview": isPreview,
   });
 
   if (isPreviewActive) {

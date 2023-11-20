@@ -34,21 +34,21 @@ export function Guideline({ children, title, onToggle, className, dir }: any) {
   const toggleText = showContent ? "Hide guidelines" : "Show guidelines";
 
   const classNames = cx(
-    `guideline bg-blue-98 border border-blue-90 border-solid ${className}`,
+    `gui-guideline bg-blue-98 border border-blue-90 border-solid ${className}`,
     {
-      "is-active": showContent,
+      "gui-is-active": showContent,
     }
   );
 
-  const buttonClasses = cx("guideline__button", {
+  const buttonClasses = cx("gui-guideline__button", {
     "ml-auto": dir === "ltr",
     "mr-auto": dir === "rtl ml-0",
   });
 
   return (
     <div className={classNames} dir={dir}>
-      <div className="guideline__head">
-        <h2 className="guideline__title">{title}</h2>
+      <div className="gui-guideline__head">
+        <h2 className="gui-guideline__title">{title}</h2>
         {children && (
           <Button
             types={["link-default", "collapse"]}
@@ -62,7 +62,7 @@ export function Guideline({ children, title, onToggle, className, dir }: any) {
 
       {children && (
         <div
-          className="guideline__body"
+          className="gui-guideline__body"
           // @ts-expect-error TS(2322): Type 'null' is not assignable to type 'CSSProperti... Remove this comment to see the full error message
           style={showContent ? style : null}
           ref={guidelineBody}

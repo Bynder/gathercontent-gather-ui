@@ -1,42 +1,42 @@
-.calendar {
+.gui-calendar {
   @apply text-neutral-20;
 }
 
-.calendar .rdp-caption_label {
+.gui-calendar .rdp-caption_label {
   @apply text-base;
 }
 
-.calendar .rdp-nav_icon path {
+.gui-calendar .rdp-nav_icon path {
   @apply fill-neutral-primary;
 }
 
-.calendar .rdp-day {
+.gui-calendar .rdp-day {
   @apply text-sm;
 }
 
-.calendar .rdp-day,
-.calendar .rdp-weeknumber {
+.gui-calendar .rdp-day,
+.gui-calendar .rdp-weeknumber {
   @apply rounded mx-auto;
 }
 
-.calendar.rdp {
+.gui-calendar.rdp {
   @apply m-0;
 }
 
-.calendar .rdp-day_today {
+.gui-calendar .rdp-day_today {
   @apply border-blue-primary border;
 }
 
-.calendar .rdp-table,
-.calendar .rdp-month {
+.gui-calendar .rdp-table,
+.gui-calendar .rdp-month {
   @apply max-w-full w-full;
 }
 
-.calendar .rdp-day_today:not(.rdp-day_selected) {
+.gui-calendar .rdp-day_today:not(.rdp-day_selected) {
   @apply text-blue-primary;
 }
 
-/* react-day-picker/dist/style.css */
+/* react-day-picker/dist/style.gui-css */
 .rdp {
   --rdp-cell-size: 36px;
   --rdp-accent-color: rgb(0 110 255);

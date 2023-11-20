@@ -51,15 +51,15 @@ export class SearchDropdown extends Component {
       // @ts-expect-error TS(2339): Property 'results' does not exist on type 'Readonl... Remove this comment to see the full error message
       this.props.results.length > 0 && this.state.inputValue.length > 0;
 
-    const menuClass = cx(`search-dropdown ${className}`, {
+    const menuClass = cx(`gui-search-dropdown ${className}`, {
       // @ts-expect-error TS(2339): Property 'direction' does not exist on type 'Reado... Remove this comment to see the full error message
-      dropup: this.props.direction === "up",
-      "full-width": fullWidth,
-      open: showResults,
+      "gui-dropup": this.props.direction === "up",
+      "gui-full-width": fullWidth,
+      "gui-open": showResults,
     });
 
-    const listClass = cx(`dropdown-menu ${listClassName}`, {
-      "align-right": alignRight,
+    const listClass = cx(`gui-dropdown-menu ${listClassName}`, {
+      "gui-align-right": alignRight,
     });
 
     return (
@@ -69,7 +69,7 @@ export class SearchDropdown extends Component {
           value={this.state.inputValue}
           onChange={this.updateInputValue}
           type="text"
-          className="dropdown-search__input"
+          className="gui-dropdown-search__input"
           placeholder={placeholder}
           autoFocus={focusOnMount} // eslint-disable-line jsx-a11y/no-autofocus
           ref={this.input}
@@ -77,14 +77,14 @@ export class SearchDropdown extends Component {
 
         {showResults && (
           <ul className={listClass}>
-            <li className="dropdown__item dropdown__item--title">
+            <li className="gui-dropdown__item dropdown__item--title">
               <button
                 type="button"
-                className="dropdown__link dropdown__title"
+                className="gui-dropdown__link dropdown__title"
                 onClick={this.clearInputValue}
               >
-                <span className="dropdown__item--name">{resultsTitle}</span>
-                <span className="dropdown__item--additional">
+                <span className="gui-dropdown__item--name">{resultsTitle}</span>
+                <span className="gui-dropdown__item--additional">
                   <Icon name="cross" text="close" hideText />
                 </span>
               </button>

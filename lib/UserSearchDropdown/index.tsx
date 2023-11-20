@@ -22,7 +22,7 @@ export class UserSearchDropdown extends Component {
       <Dropdown
         id="user-search"
         // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
-        className={`user-search__dropdown ${this.props.className}`}
+        className={`gui-user-search__dropdown ${this.props.className}`}
         onToggle={this.focusSearch}
         // @ts-expect-error TS(2339): Property 'dropdownAutoPosition' does not exist on ... Remove this comment to see the full error message
         autoPosition={this.props.dropdownAutoPosition}

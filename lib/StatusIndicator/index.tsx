@@ -26,28 +26,28 @@ export function StatusIndicator({
   ...rest
 }: any) {
   const classNames = cx(className, {
-    "status-indicator": true,
-    "status-indicator--completed": completed,
-    "status-indicator--collapsed": collapsed,
-    "status-indicator--bordered": bordered,
-    "status-indicator--small": small,
-    "status-indicator--medium": medium,
-    "status-indicator--soft-label": softLabel,
-    "status-indicator--read-only": readOnly,
-    "status-indicator--row": row,
+    "gui-status-indicator": true,
+    "gui-status-indicator--completed": completed,
+    "gui-status-indicator--collapsed": collapsed,
+    "gui-status-indicator--bordered": bordered,
+    "gui-status-indicator--small": small,
+    "gui-status-indicator--medium": medium,
+    "gui-status-indicator--soft-label": softLabel,
+    "gui-status-indicator--read-only": readOnly,
+    "gui-status-indicator--row": row,
   });
 
-  const circleClassNames = cx("status-indicator__circle", {
-    "status-indicator__circle--large": circleLarge || approved,
+  const circleClassNames = cx("gui-status-indicator__circle", {
+    "gui-status-indicator__circle--large": circleLarge || approved,
   });
 
   const style = completed ? {} : { backgroundColor: color };
 
   return (
     <div className={classNames} {...rest}>
-      <div className="status-indicator__label-row">
+      <div className="gui-status-indicator__label-row">
         {preText && (
-          <span className="status-indicator__pre-text">{preText}</span>
+          <span className="gui-status-indicator__pre-text">{preText}</span>
         )}
 
         <span className={circleClassNames} style={style}>
@@ -61,10 +61,10 @@ export function StatusIndicator({
         </span>
 
         {label && (
-          <div className="status-indicator__label-wrapper">
-            <h3 className="status-indicator__label" title={label}>
+          <div className="gui-status-indicator__label-wrapper">
+            <h3 className="gui-status-indicator__label" title={label}>
               <span
-                className={`status-indicator__label-text typo-size-${labelFontSize}`}
+                className={`gui-status-indicator__label-text gui-typo-size-${labelFontSize}`}
               >
                 {label}
               </span>
@@ -74,7 +74,7 @@ export function StatusIndicator({
               <TooltipWrapper id={label} tooltipText="Read only">
                 <Icon
                   name="lock"
-                  className="status-indicator__readonly"
+                  className="gui-status-indicator__readonly"
                   defaultActiveColor={false}
                 />
               </TooltipWrapper>
@@ -83,15 +83,17 @@ export function StatusIndicator({
         )}
 
         {actions && (
-          <span className="status-indicator__actions">{actions}</span>
+          <span className="gui-status-indicator__actions">{actions}</span>
         )}
       </div>
 
       {showDescription && (
-        <p className="status-indicator__description">{description}</p>
+        <p className="gui-status-indicator__description">{description}</p>
       )}
 
-      {children && <div className="status-indicator__children">{children}</div>}
+      {children && (
+        <div className="gui-status-indicator__children">{children}</div>
+      )}
     </div>
   );
 }

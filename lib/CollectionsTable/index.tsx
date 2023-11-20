@@ -8,7 +8,11 @@ import { defaultProps } from "./propTypes";
 
 export function CollectionsTable({ children, className, ...props }: any) {
   return (
-    <div className={`collections-table ${className}`} {...props} role="table">
+    <div
+      className={`gui-collections-table ${className}`}
+      {...props}
+      role="table"
+    >
       {children}
     </div>
   );

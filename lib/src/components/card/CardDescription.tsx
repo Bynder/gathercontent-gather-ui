@@ -1,12 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-export function CardDescription({
-  children,
-  className = '',
-  ...rest
-}: any) {
+export function CardDescription({ children, className = "", ...rest }: any) {
   return (
-    <div className={`card-description ${className}`} {...rest}>
+    <div className={`gui-card-description ${className}`} {...rest}>
       {children}
     </div>
   );

@@ -11,7 +11,7 @@ export function RevisionList({
   ...rest
 }: HTMLAttributes<HTMLUListElement>) {
   return (
-    <ul className={`${className} revision-list`} {...rest}>
+    <ul className={`${className} gui-revision-list`} {...rest}>
       {children}
     </ul>
   );

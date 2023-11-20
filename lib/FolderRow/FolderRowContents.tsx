@@ -2,8 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 function FolderRowContents({ show, children, highlight, ...rest }: any) {
-  const classNames = cx(`folder-row__contents`, {
-    "folder-row__contents--highlight": highlight,
+  const classNames = cx(`gui-folder-row__contents`, {
+    "gui-folder-row__contents--highlight": highlight,
   });
 
   return (

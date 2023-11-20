@@ -10,26 +10,28 @@ export function PageInformation({
   inputLabel,
 }: any) {
   return (
-    <div className="page-information">
+    <div className="gui-page-information">
       {editable ? (
         <EditableTextWrapper
           value={title}
           onChange={rename}
           title={`Rename ${contextName}`}
-          className="page-information__editable"
+          className="gui-page-information__editable"
           inputLabel={inputLabel || `Rename ${contextName}`}
         >
-          <h1 className="page-information__title" title={title}>
+          <h1 className="gui-page-information__title" title={title}>
             {title}
           </h1>
         </EditableTextWrapper>
       ) : (
-        <h1 className="page-information__title" title={title}>
+        <h1 className="gui-page-information__title" title={title}>
           {title}
         </h1>
       )}
 
-      {subtitle && <div className="page-information__subtitle">{subtitle}</div>}
+      {subtitle && (
+        <div className="gui-page-information__subtitle">{subtitle}</div>
+      )}
     </div>
   );
 }

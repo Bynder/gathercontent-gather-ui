@@ -33,7 +33,7 @@ export function Form({
     };
   });
 
-  const classNames = cx(className, { "form--disabled": disabled });
+  const classNames = cx(className, { "gui-form--disabled": disabled });
 
   return (
     <form onSubmit={handleSubmit} className={classNames} {...rest}>

@@ -22,15 +22,16 @@ function NotificationInlineBase({
   return (
     <div
       role="alert"
-      className={`notification text-base font-semi-bold py-3 px-4 border-2 border-solid inline-flex text-neutral-20 bg-white rounded items-center inherit-color-icon inherit-color-link  ${classes} ${className}`}
+      className={`gui-notification text-base font-semi-bold py-3 px-4 border-2 border-solid inline-flex text-neutral-20 bg-white rounded items-center gui-inherit-color-icon gui-inherit-color-link  ${classes} ${className}`}
       {...rest}
     >
       <Icon
         name={iconName}
         className={`${textClassName} mr-3`}
         defaultActiveColor={false}
+        defaultFillColor={false}
       />
-      <div className="notification__content w-full">{children}</div>
+      <div className="gui-notification__content w-full">{children}</div>
     </div>
   );
 }

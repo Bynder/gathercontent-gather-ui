@@ -23,7 +23,7 @@ $btn-border-radius: 3px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.button {
+.gui-button {
   border: none;
   border-radius: $btn-border-radius;
   display: inline-block;
@@ -41,19 +41,19 @@ $btn-border-radius: 3px !default;
   }
 
   & + &,
-  & + .dropdown {
+  & + .gui-dropdown {
     margin-left: $layout-spacing-base * 0.5;
   }
 }
 
-.button__helper {
+.gui-button__helper {
   border-bottom: 1px dotted;
   margin-left: $layout-spacing-base * 0.25;
 }
 
-// a.button--primary to overwrite bootstrap a:not(.button-base):hover
-.button--primary,
-a.button--primary {
+// a.gui-button--primary to overwrite bootstrap a:not(.gui-button-base):hover
+.gui-button--primary,
+a.gui-button--primary {
   background: $primary-blue;
   color: $color-btn-primary--text;
   border-radius: 6px;
@@ -76,17 +76,17 @@ a.button--primary {
     color: $color-btn-primary--text;
   }
 
-  .icon path {
+  .gui-icon path {
     fill: $color-btn-primary--text;
   }
 }
 
-.button--link,
-.button--link-default,
-.button--link-danger,
-.button--link-white,
-.button--link-underline,
-.button--link-no-underline {
+.gui-button--link,
+.gui-button--link-default,
+.gui-button--link-danger,
+.gui-button--link-white,
+.gui-button--link-underline,
+.gui-button--link-no-underline {
   background: transparent;
 
   &:focus {
@@ -101,11 +101,11 @@ a.button--primary {
   }
 }
 
-.button--link-no-underline:hover {
+.gui-button--link-no-underline:hover {
   text-decoration: none;
 }
 
-.button--link-default {
+.gui-button--link-default {
   color: $color-brand-blue;
 
   &:hover {
@@ -113,7 +113,7 @@ a.button--primary {
   }
 }
 
-.button--link-danger {
+.gui-button--link-danger {
   color: $color-text-danger;
 
   &:hover {
@@ -122,7 +122,7 @@ a.button--primary {
   }
 }
 
-.button--link-white {
+.gui-button--link-white {
   color: white;
 
   &:hover {
@@ -131,17 +131,17 @@ a.button--primary {
   }
 }
 
-.button--link-underline {
+.gui-button--link-underline {
   text-decoration: underline;
 }
 
-// a.button--danger to overwrite bootstrap a:not(.button-base):hover
-.button--danger,
-a.button--danger {
+// a.gui-button--danger to overwrite bootstrap a:not(.gui-button-base):hover
+.gui-button--danger,
+a.gui-button--danger {
   background: $primary-red;
   color: $color-btn-warning--text;
 
-  .icon path {
+  .gui-icon path {
     fill: $color-btn-warning--text;
   }
 
@@ -163,7 +163,7 @@ a.button--danger {
   }
 }
 
-.button--light-grey {
+.gui-button--light-grey {
   background: $color-btn-default-light--bg;
   color: $color-btn-default-light--text;
 
@@ -173,7 +173,7 @@ a.button--danger {
   }
 }
 
-.button--dark-grey {
+.gui-button--dark-grey {
   background: $color-btn-default-dark--bg;
   color: $color-btn-default-dark--text;
 
@@ -183,25 +183,25 @@ a.button--danger {
   }
 }
 
-.button--purple-text {
+.gui-button--purple-text {
   background: white;
   color: $primary-purple;
 
-  .icon path {
+  .gui-icon path {
     fill: $primary-purple;
   }
 }
 
-.button--slim {
+.gui-button--slim {
   padding: $layout-spacing-base * 0.1 $layout-spacing-base * 0.5;
 
-  .icon {
+  .gui-icon {
     margin-left: math.div($layout-spacing-base, 3);
     vertical-align: text-bottom;
   }
 }
 
-.button--clear {
+.gui-button--clear {
   background: none;
   padding: 0;
 
@@ -214,18 +214,18 @@ a.button--danger {
   }
 }
 
-.button--has-tooltip {
+.gui-button--has-tooltip {
   display: inline-block;
 }
 
-.button--size-sm {
+.gui-button--size-sm {
   font-size: $typo-size-slight;
   padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
 }
 
-.button--icon-only,
-.button--icon-only-padding {
-  &:not(.button--danger) {
+.gui-button--icon-only,
+.gui-button--icon-only-padding {
+  &:not(.gui-button--danger) {
     background: none;
   }
 
@@ -240,23 +240,23 @@ a.button--danger {
   }
 }
 
-.button--icon-only-padding {
+.gui-button--icon-only-padding {
   padding-left: $layout-spacing-base * 0.25;
 }
 
-.button--icon-only-cover {
+.gui-button--icon-only-cover {
   &:hover {
     background: $color-background-light;
   }
 
-  &.is-active {
+  &.gui-is-active {
     svg path {
       fill: $color-text-base;
     }
   }
 }
 
-.button--white {
+.gui-button--white {
   background-color: white;
   border: 1px solid $neutral-light;
   width: 100%;
@@ -272,7 +272,7 @@ a.button--danger {
   }
 }
 
-.button--contained {
+.gui-button--contained {
   border: 1px solid $color-border-base;
   border-radius: 100%;
   padding: $layout-spacing-base * 0.5;
@@ -280,13 +280,13 @@ a.button--danger {
   box-shadow: $shadow-shallow;
 }
 
-.button--hover-transform {
+.gui-button--hover-transform {
   &:hover {
     transform: scale(1.1);
   }
 }
 
-.button--outline {
+.gui-button--outline {
   border: 1px solid $color-border-base;
   outline: none;
   background: none;
@@ -297,7 +297,7 @@ a.button--danger {
   }
 
   &:hover,
-  &.is-active {
+  &.gui-is-active {
     background: none;
     border-color: $primary-blue;
     color: $primary-blue;
@@ -308,7 +308,7 @@ a.button--danger {
   }
 }
 
-.button--outline-default {
+.gui-button--outline-default {
   border: 2px solid $primary-blue;
   background: none;
   color: $primary-blue;
@@ -329,7 +329,7 @@ a.button--danger {
   }
 }
 
-.button--collapse {
+.gui-button--collapse {
   padding: 0;
 
   & + & {
@@ -337,31 +337,31 @@ a.button--danger {
   }
 }
 
-.button__wrapper {
+.gui-button__wrapper {
   display: flex;
 
-  .button {
+  .gui-button {
     margin: 0;
     vertical-align: middle;
   }
 
-  .button__wrapper--icon {
+  .gui-button__wrapper--icon {
     height: 100%;
   }
 
   &--size-sm {
-    .button__wrapper--icon {
+    .gui-button__wrapper--icon {
       height: $layout-spacing-base * 0.5 + $layout-spacing-base;
     }
 
-    .button {
+    .gui-button {
       font-size: $typo-size-slight;
       padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
     }
   }
 }
 
-.button__wrapper--button {
+.gui-button__wrapper--button {
   border-radius: $btn-border-radius 0 0 $btn-border-radius;
   border-right: $primary-blue-darker 1px solid;
 
@@ -370,18 +370,18 @@ a.button--danger {
   }
 }
 
-.button__wrapper--icon {
+.gui-button__wrapper--icon {
   padding: $layout-spacing-base * 0.5 + 3;
   line-height: 0;
   border-radius: 0 $btn-border-radius $btn-border-radius 0;
 }
 
-.button:disabled {
+.gui-button:disabled {
   background: $color-btn-primary--disabled;
   color: $color-btn-primary--disabled-text;
   box-shadow: none;
 
-  .icon path {
+  .gui-icon path {
     fill: $color-btn-primary--disabled-text;
   }
 
@@ -389,16 +389,16 @@ a.button--danger {
     text-decoration: none;
   }
 
-  &.button--link,
-  &.button--link-default,
-  &.button--link-underline,
-  &.button--link-danger,
-  &.button--icon-only {
+  &.gui-button--link,
+  &.gui-button--link-default,
+  &.gui-button--link-underline,
+  &.gui-button--link-danger,
+  &.gui-button--icon-only {
     background: transparent;
   }
 
-  &.button--link,
-  &.button--link-danger {
+  &.gui-button--link,
+  &.gui-button--link-danger {
     cursor: not-allowed;
     color: $color-btn-primary--disabled;
 
@@ -407,22 +407,22 @@ a.button--danger {
     }
   }
 
-  &.button--icon-only {
+  &.gui-button--icon-only {
     opacity: 0.5;
   }
 }
 
-.button--medium {
+.gui-button--medium {
   font-size: $typo-size-base;
 }
 
-.button--input-appendage {
+.gui-button--input-appendage {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   white-space: nowrap;
   background-color: $primary-blue-lighter;
 }
 
-.button--padding-small {
+.gui-button--padding-small {
   padding: math.div($layout-spacing-base, 3) $layout-spacing-base * 0.5;
 }

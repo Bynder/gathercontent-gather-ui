@@ -15,7 +15,7 @@ describe("FormInput", () => {
     expect(
       screen
         .getByPlaceholderText("Input friend")
-        .classList.contains("form__input--has-error")
+        .classList.contains("gui-form__input--has-error")
     ).toBeFalsy();
 
     fireEvent.change(screen.getByPlaceholderText("Input friend"), {
@@ -36,7 +36,7 @@ describe("FormInput", () => {
     expect(
       screen
         .getByPlaceholderText("yikes")
-        .classList.contains("form__input--has-error")
+        .classList.contains("gui-form__input--has-error")
     ).toBeTruthy();
     expect(screen.getByText("A big oof has happened"));
   });

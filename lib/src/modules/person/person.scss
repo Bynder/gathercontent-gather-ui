@@ -1,30 +1,30 @@
-.person {
+.gui-person {
   @apply flex py-2 px-4 overflow-hidden items-center;
 }
 
-.person-right {
+.gui-person-right {
   @apply ml-3 flex-shrink overflow-hidden w-full flex flex-wrap items-center;
   @include gradient-overflow(rgba(255, 255, 255, 1));
 
   white-space: nowrap;
 }
 
-.person-name {
+.gui-person-name {
   @apply text-neutral-20 w-full flex-shrink-0;
 }
 
-.person-subtitle {
+.gui-person-subtitle {
   @apply text-neutral-primary text-sm w-full flex-shrink-0;
 }
 
-.person-interactive {
+.gui-person-interactive {
   @apply outline-none bg-transparent border-0 text-left w-full cursor-pointer;
 
   &:hover,
   &:focus {
     @apply bg-neutral-95;
 
-    .person-right {
+    .gui-person-right {
       @include gradient-overflow(theme('colors.neutral.95'));
     }
   }
@@ -32,32 +32,32 @@
   &:active {
     @apply bg-blue-98;
 
-    .person-right {
+    .gui-person-right {
       @include gradient-overflow(theme('colors.blue.98'));
     }
   }
 }
 
-.person-selected {
+.gui-person-selected {
   @apply bg-blue-98;
 
-  .person-right {
+  .gui-person-right {
     @include gradient-overflow(theme('colors.blue.98'));
   }
 
-  .person-name {
+  .gui-person-name {
     @apply text-blue-primary;
   }
 
-  .person-tick {
+  .gui-person-tick {
     @apply ml-auto;
   }
 }
 
-.person-collapse {
+.gui-person-collapse {
   @apply p-0;
 }
 
-.person-bordered {
+.gui-person-bordered {
   @apply border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90;
 }

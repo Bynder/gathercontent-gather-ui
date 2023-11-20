@@ -20,6 +20,6 @@ export function WorkflowStepActions({ children }: any) {
     }
   };
   return (
-    <div className="workflow-step__actions">{children(onActionToggle)}</div>
+    <div className="gui-workflow-step__actions">{children(onActionToggle)}</div>
   );
 }

@@ -35,17 +35,17 @@ export class ListItem extends Component {
     // @ts-expect-error TS(2339): Property 'isCurrent' does not exist on type 'Reado... Remove this comment to see the full error message
     const { children, isCurrent, action, collapse } = this.props;
 
-    const classNames = cx("list__item", {
-      "list__item--collapse": collapse,
-      "is-current": isCurrent,
+    const classNames = cx("gui-list__item", {
+      "gui-list__item--collapse": collapse,
+      "gui-is-current": isCurrent,
       // @ts-expect-error TS(2339): Property 'showSubList' does not exist on type 'Rea... Remove this comment to see the full error message
-      "show-sub-list": this.state.showSubList,
-      "has-action": action,
+      "gui-show-sub-list": this.state.showSubList,
+      "gui-has-action": action,
     });
 
-    const toggleClassNames = cx("list__button", {
+    const toggleClassNames = cx("gui-list__button", {
       // @ts-expect-error TS(2339): Property 'showSubList' does not exist on type 'Rea... Remove this comment to see the full error message
-      "is-active": this.state.showSubList,
+      "gui-is-active": this.state.showSubList,
     });
 
     const filteredChildren = React.Children.map(children, (child: any) => {
@@ -72,14 +72,14 @@ export class ListItem extends Component {
 
     return (
       <div className={classNames}>
-        <div className="list__item-content">
-          <div className="list__item-text">{filteredChildren}</div>
+        <div className="gui-list__item-content">
+          <div className="gui-list__item-text">{filteredChildren}</div>
 
-          <span className="list__actions">
-            {action && <span className="list__action">{action}</span>}
+          <span className="gui-list__actions">
+            {action && <span className="gui-list__action">{action}</span>}
 
             {hasSubList && (
-              <span className="list__action list__toggle">
+              <span className="gui-list__action gui-list__toggle">
                 <Button
                   className={toggleClassNames}
                   types={["icon-only", "icon-only-cover"]}

@@ -15,7 +15,7 @@ export function SidebarSectionToggle({
 
   return (
     <ButtonSecondary
-      className={`sidebar-section-toggle whitespace-nowrap ${className}`}
+      className={`gui-sidebar-section-toggle whitespace-nowrap ${className}`}
       size={ButtonSecondary.sizes.sm}
       onClick={() => setShowMore(!showMore)}
       {...rest}

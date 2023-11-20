@@ -22,9 +22,9 @@ export function ComponentWrapperHeader({
   className,
   ...rest
 }: any) {
-  const classes = cx(`component-header ${className}`, {
-    "component-header-selected": isSelected,
-    "component-header-hovered": isHovered,
+  const classes = cx(`gui-component-header ${className}`, {
+    "gui-component-header-selected": isSelected,
+    "gui-component-header-hovered": isHovered,
     "border-l-2 border-r-2 border-t-2 border-b-0 border-green-primary bg-white":
       status === componentStatuses.added,
     "border-l-2 border-r-2 border-t-2 border-b-0 border-red-primary bg-white":
@@ -42,9 +42,11 @@ export function ComponentWrapperHeader({
 
   return (
     <div className={classes} {...rest}>
-      <div className="component-header-top">
-        <div className="component-label">
-          {counter && <span className="component-counter">{countText}</span>}
+      <div className="gui-component-header-top">
+        <div className="gui-component-label">
+          {counter && (
+            <span className="gui-component-counter">{countText}</span>
+          )}
           <Icon name="component16" types={["neutral-20"]} className="mr-2" />
           <ComponentLabel
             editable={editable}
@@ -53,10 +55,12 @@ export function ComponentWrapperHeader({
             onEmpty={onLabelEmpty}
             maxLength={maxLength}
           />
-          {subLabel && <span className="component-sublabel">{subLabel}</span>}
+          {subLabel && (
+            <span className="gui-component-sublabel">{subLabel}</span>
+          )}
         </div>
         {headerAside && (
-          <div className="component-header-aside">{headerAside}</div>
+          <div className="gui-component-header-aside">{headerAside}</div>
         )}
       </div>
       {(instructions || editable) && (

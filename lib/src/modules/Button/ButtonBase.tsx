@@ -18,13 +18,13 @@ export function ButtonBase({
   defaultFillColor,
   ...rest
 }: any) {
-  const classes = cx("button-base", className, {
-    "button-base-connected-r": connectedRight,
-    "button-base-connected-l": connectedLeft,
+  const classes = cx("gui-button-base", className, {
+    "gui-button-base-connected-r": connectedRight,
+    "gui-button-base-connected-l": connectedLeft,
 
-    "button-base-md": size && size === sizes.md,
-    "button-base-sm": size && size === sizes.sm,
-    "button-base-xs": size && size === sizes.xs,
+    "gui-button-base-md": size && size === sizes.md,
+    "gui-button-base-sm": size && size === sizes.sm,
+    "gui-button-base-xs": size && size === sizes.xs,
   });
 
   if (typeof children === "function") {

@@ -48,7 +48,7 @@ function ConfirmationDropdownContent({
               {promiseIsPending && (
                 <Icon
                   name="loader"
-                  className="confirmation-dropdown__loader"
+                  className="gui-confirmation-dropdown__loader"
                   title="Loading icon"
                 />
               )}
@@ -68,7 +68,7 @@ function ConfirmationDropdownContent({
                       onCompletion();
                     })
                   }
-                  className="confirmation-dropdown__confirm-trigger"
+                  className="gui-confirmation-dropdown__confirm-trigger"
                   aria-hidden={promiseIsPending}
                   disabled={disabled}
                 >
@@ -83,7 +83,7 @@ function ConfirmationDropdownContent({
                     onCancel();
                     setShowContent(false);
                   }}
-                  className="confirmation-dropdown__cancel"
+                  className="gui-confirmation-dropdown__cancel"
                 >
                   Cancel
                 </Button>

@@ -1,17 +1,17 @@
-.user-search__dropdown {
+.gui-user-search__dropdown {
   padding: $layout-spacing-base * 0.5;
 
-  .dropdown__content--fix-right.is-active {
+  .gui-dropdown__content--fix-right.gui-is-active {
     min-width: 300px;
     padding: $layout-spacing-base * 0.5 0 0 0;
   }
 
-  .icon path {
+  .gui-icon path {
     fill: $neutral-base;
   }
 
-  .is-active {
-    .icon path {
+  .gui-is-active {
+    .gui-icon path {
       fill: $primary-blue;
     }
   }

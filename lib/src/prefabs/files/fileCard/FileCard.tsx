@@ -12,10 +12,10 @@ function FileCard({
   innerClassName,
   ...cardProps
 }: any) {
-  const cardClassNames = cx("file-card group", cardProps.className, {
+  const cardClassNames = cx("gui-file-card group", cardProps.className, {
     "w-full": size !== "thumbnail",
     "w-8 h-8": size === "thumbnail",
-    "file-card-inset-meta": insetMeta,
+    "gui-file-card-inset-meta": insetMeta,
   });
 
   return (
@@ -26,7 +26,9 @@ function FileCard({
     >
       <Card.Content className="p-0">{preview}</Card.Content>
 
-      {meta && <Card.Content className="file-card-meta">{meta}</Card.Content>}
+      {meta && (
+        <Card.Content className="gui-file-card-meta">{meta}</Card.Content>
+      )}
 
       {controls && <Card.Controls>{controls}</Card.Controls>}
       {children}

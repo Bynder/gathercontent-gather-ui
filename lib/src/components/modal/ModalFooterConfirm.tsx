@@ -10,9 +10,9 @@ export function ModalFooterConfirm({
   disableSecondary,
 }: any) {
   return (
-    <div className="react-modal-footer__confirm">
-      <div className="react-modal-footer__confirm-text">{confirmText}</div>
-      <div className="react-modal-footer__confirm-actions">
+    <div className="gui-react-modal-footer__confirm">
+      <div className="gui-react-modal-footer__confirm-text">{confirmText}</div>
+      <div className="gui-react-modal-footer__confirm-actions">
         <ButtonTertiary
           size={ButtonTertiary.sizes.sm}
           onClick={tertiaryOnClick}

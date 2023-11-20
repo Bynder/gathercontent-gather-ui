@@ -1,14 +1,9 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-export function CheckboxInput({
-  checked,
-  className,
-  hasError,
-  ...rest
-}: any) {
-  const classes = cx(`gc-checkbox ${className}`, {
-    'gc-checkbox-error': hasError
+export function CheckboxInput({ checked, className, hasError, ...rest }: any) {
+  const classes = cx(`gui-gc-checkbox ${className}`, {
+    "gui-gc-checkbox-error": hasError,
   });
 
   return (

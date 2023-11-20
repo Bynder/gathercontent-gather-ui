@@ -9,11 +9,11 @@ export function DismissiblePrompt({
   ...rest
 }: any) {
   return (
-    <div {...rest} className={`dismissible-prompt ${className}`}>
-      <div className="dismissible-prompt__children">{children}</div>
+    <div {...rest} className={`gui-dismissible-prompt ${className}`}>
+      <div className="gui-dismissible-prompt__children">{children}</div>
       <Button
         types={["icon-only", "collapse"]}
-        className="dismissible-prompt__close"
+        className="gui-dismissible-prompt__close"
         onClick={onDismiss}
       >
         <Icon name="cross" />

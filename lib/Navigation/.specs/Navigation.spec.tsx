@@ -15,10 +15,10 @@ describe("Navigation", () => {
     );
 
     expect(
-      screen.getByRole("navigation").classList.contains("navigation--tabs")
+      screen.getByRole("navigation").classList.contains("gui-navigation--tabs")
     ).toEqual(false);
     expect(
-      screen.getByRole("presentation").classList.contains("active")
+      screen.getByRole("presentation").classList.contains("gui-active")
     ).toEqual(false);
     expect(screen.getByRole("menuitem"));
 
@@ -29,10 +29,10 @@ describe("Navigation", () => {
     );
 
     expect(
-      screen.getByRole("navigation").classList.contains("navigation--tabs")
+      screen.getByRole("navigation").classList.contains("gui-navigation--tabs")
     ).toEqual(true);
     expect(
-      screen.getByRole("presentation").classList.contains("active")
+      screen.getByRole("presentation").classList.contains("gui-active")
     ).toEqual(true);
   });
 });

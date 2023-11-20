@@ -9,7 +9,7 @@ import SelectionModalColumnLoader from "./SelectionModalColumnLoader";
 
 export function SelectionModal({ children, className, ...rest }: any) {
   return (
-    <Modal.Container className={`selection-modal ${className}`} {...rest}>
+    <Modal.Container className={`gui-selection-modal ${className}`} {...rest}>
       {children}
     </Modal.Container>
   );

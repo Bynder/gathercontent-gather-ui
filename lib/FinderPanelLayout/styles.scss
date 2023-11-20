@@ -3,7 +3,7 @@ $finder-panel-left-width: 350px !default;
 $finder-panel-left-height: 100% !default;
 $finder-panel-right-bg: $neutral-base-lightest !default;
 
-.finder-panel-layout {
+.gui-finder-panel-layout {
   display: flex;
   flex: 2;
 
@@ -24,15 +24,15 @@ $finder-panel-right-bg: $neutral-base-lightest !default;
   }
 }
 
-.finder-panel-layout__left-head {
+.gui-finder-panel-layout__left-head {
   padding: $layout-spacing-base $layout-spacing-base 0;
 }
 
-.finder-panel-layout__left-content {
+.gui-finder-panel-layout__left-content {
   padding: $layout-spacing-base;
 }
 
-.finder-panel-layout__left-head--fixed {
+.gui-finder-panel-layout__left-head--fixed {
   background: $finder-panel-right-bg;
   position: fixed;
   width: calc(100% - #{$finder-panel-left-width});

@@ -1,35 +1,35 @@
-.workflow-step {
+.gui-workflow-step {
   @apply h-full pb-4 relative;
 }
 
-.workflow-step.is-active {
+.gui-workflow-step.gui-is-active {
   @apply bg-blue-98;
 }
 
-.workflow-step__meta {
+.gui-workflow-step__meta {
   @apply pr-4 flex flex-row items-center flex-shrink-0;
 }
 
-.workflow-step__header {
+.gui-workflow-step__header {
   @apply w-full flex flex-row pt-4 overflow-hidden;
 }
 
-.workflow-step__title {
+.gui-workflow-step__title {
   @apply font-semi-bold text-lg leading-6 text-neutral-20 flex flex-row;
 
-  .workflow-step__status {
+  .gui-workflow-step__status {
     @apply w-12 flex justify-center mt-1 flex-shrink-0 pointer-events-none;
   }
 }
 
-.workflow-step__meta-container {
+.gui-workflow-step__meta-container {
   @apply flex flex-row ml-auto relative flex-shrink-0;
 }
 
-.workflow-step__actions {
+.gui-workflow-step__actions {
   @apply pr-4 flex flex-row;
 }
 
-.workflow-step__body {
+.gui-workflow-step__body {
   @apply pl-12 flex flex-col pr-4;
 }

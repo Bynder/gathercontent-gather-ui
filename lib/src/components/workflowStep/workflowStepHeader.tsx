@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-export function WorkflowStepHeader({
-  children
-}: any) {
-  return <div className="workflow-step__header">{children}</div>;
+export function WorkflowStepHeader({ children }: any) {
+  return <div className="gui-workflow-step__header">{children}</div>;
 }

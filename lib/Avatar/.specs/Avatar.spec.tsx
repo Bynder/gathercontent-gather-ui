@@ -9,13 +9,13 @@ import AvatarInformation from "../AvatarInformation";
 import AvatarGroup from "../AvatarGroup";
 
 const classList = [
-  "avatar--highlighted",
-  "avatar--offline",
-  "avatar--size-sm",
-  "avatar--bordered",
-  "avatar--animated",
-  "avatar--has-colour",
-  "avatar--is-locked",
+  "gui-avatar--highlighted",
+  "gui-avatar--offline",
+  "gui-avatar--size-sm",
+  "gui-avatar--bordered",
+  "gui-avatar--animated",
+  "gui-avatar--has-colour",
+  "gui-avatar--is-locked",
 ];
 
 describe("Avatar", () => {

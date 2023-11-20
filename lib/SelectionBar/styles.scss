@@ -6,7 +6,7 @@ $selection-bar-border: 1px solid $color-border-base !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.selection-bar {
+.gui-selection-bar {
   left: 0;
   width: 100%;
   background: white;
@@ -16,37 +16,37 @@ $selection-bar-border: 1px solid $color-border-base !default;
   margin: 0;
 }
 
-.selection-bar__divider {
+.gui-selection-bar__divider {
   background-color: $color-border-base;
   width: 1px;
   height: 20px;
 }
 
-.selection-bar__action {
+.gui-selection-bar__action {
   display: flex;
   margin: 0 $layout-spacing-base * 0.5;
 }
 
-.selection-bar__section {
+.gui-selection-bar__section {
   height: 50px;
   display: flex;
   align-items: center;
 }
 
-.selection-bar__actions {
+.gui-selection-bar__actions {
   justify-content: center;
 }
 
-.selection-bar__cancel {
+.gui-selection-bar__cancel {
   justify-content: flex-end;
   color: $neutral-base;
 }
 
-.selection-bar__all {
+.gui-selection-bar__all {
   padding-left: 0;
 }
 
-.selection-bar__count {
+.gui-selection-bar__count {
   color: white;
   background: $primary-blue;
   padding: ($layout-spacing-base*0.25 - 1px) $layout-spacing-base*0.5;
@@ -57,18 +57,18 @@ $selection-bar-border: 1px solid $color-border-base !default;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-.selection-bar--fixed {
+.gui-selection-bar--fixed {
   position: fixed;
   bottom: 0;
   box-shadow: $shadow-base;
 }
 
-.selection-bar--auto-hide {
+.gui-selection-bar--auto-hide {
   bottom: -50px;
   opacity: 0;
   transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0.2s;
 
-  &.has-selected {
+  &.gui-has-selected {
     bottom: 0;
     opacity: 1;
     transition: bottom cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s, opacity 0s linear 0s;

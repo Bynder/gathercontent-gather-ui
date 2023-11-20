@@ -13,8 +13,8 @@ function FinderPanelLayoutHeader({ children, className }: any) {
     }
   }, [headerRef]);
 
-  const classes = cx(`finder-panel-layout__left-head ${className}`, {
-    "finder-panel-layout__left-head--fixed": fixed,
+  const classes = cx(`gui-finder-panel-layout__left-head ${className}`, {
+    "gui-finder-panel-layout__left-head--fixed": fixed,
   });
 
   return (

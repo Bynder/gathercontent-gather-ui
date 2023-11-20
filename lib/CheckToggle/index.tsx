@@ -44,20 +44,20 @@ export function CheckToggle({
 
   const isChecked = autoToggle ? checkedState : checked;
 
-  const wrapperClasses = cx(`toggle-wrapper ${className}`, {
-    "size-small": displaySmall,
-    "is-checked": displayChecked && isChecked,
-    "h-justify-content-space-between": spaceBetween,
-    "margin-large": marginSizeLarge,
-    disabled,
+  const wrapperClasses = cx(`gui-toggle-wrapper ${className}`, {
+    "gui-size-small": displaySmall,
+    "gui-is-checked": displayChecked && isChecked,
+    "gui-h-justify-content-space-between": spaceBetween,
+    "gui-margin-large": marginSizeLarge,
+    "gui-disabled": disabled,
   });
 
-  const switchLabelClasses = cx("toggle-switch__label", {
-    "label-size-large": labelSizeLarge,
+  const switchLabelClasses = cx("gui-toggle-switch__label", {
+    "gui-label-size-large": labelSizeLarge,
   });
 
-  const wrapperLabelClasses = cx("toggle-wrapper__label", {
-    "label-size-large": labelSizeLarge,
+  const wrapperLabelClasses = cx("gui-toggle-wrapper__label", {
+    "gui-label-size-large": labelSizeLarge,
   });
 
   return (
@@ -67,14 +67,14 @@ export function CheckToggle({
           {labelLeft}
         </label>
       )}
-      <span className={`toggle-wrapper__inner ${toggleClasses}`}>
+      <span className={`gui-toggle-wrapper__inner ${toggleClasses}`}>
         <input
           data-testid={id}
           onChange={onClickHandler}
           checked={isChecked}
           type="checkbox"
           id={id}
-          className="toggle-switch toggle-switch--inline"
+          className="gui-toggle-switch toggle-switch--inline"
         />
         {/* prettier-ignore */}
         <label // eslint-disable-line jsx-a11y/label-has-associated-control

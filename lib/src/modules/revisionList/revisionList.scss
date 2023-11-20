@@ -1,45 +1,45 @@
-.revision-list {
+.gui-revision-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.revision-list > .revision-list {
+.gui-revision-list > .gui-revision-list {
   @apply bg-neutral-98 border-solid border-neutral-90;
 
   border-width: 0 0 1px;
 
-  .revision-list-item {
+  .gui-revision-list-item {
     @apply ml-12;
 
     border-width: 0 0 1px 1px;
   }
 
-  a:last-of-type .revision-list-item {
+  a:last-of-type .gui-revision-list-item {
     border-width: 0 0 0 1px;
   }
 
-  .revision-list-item .revision-list-item-left {
+  .gui-revision-list-item .gui-revision-list-item-left {
     display: none;
   }
 }
 
-.revision-list-item-right {
+.gui-revision-list-item-right {
   @apply w-full overflow-hidden flex flex-col gap-2;
 }
 
-.revision-list a {
+.gui-revision-list a {
   text-decoration: none;
 }
 
-.revision-list-item,
-.revision-list-heading {
+.gui-revision-list-item,
+.gui-revision-list-heading {
   @apply border-neutral-90 border-solid;
 
   border-width: 0 0 1px;
 }
 
-.revision-list-item {
+.gui-revision-list-item {
   @apply p-4 flex bg-white;
 
   cursor: pointer;
@@ -49,62 +49,62 @@
   }
 }
 
-.revision-list-item-active {
+.gui-revision-list-item-active {
   @apply bg-blue-95;
 
-  .revision-list-time {
+  .gui-revision-list-time {
     @apply text-blue-primary;
   }
 }
 
-.revision-list-item-left {
+.gui-revision-list-item-left {
   @apply w-6 mr-2;
 }
 
-.revision-list-timestamp,
-.revision-list-status,
-.revision-list-current-status,
-.revision-list-old-status {
+.gui-revision-list-timestamp,
+.gui-revision-list-status,
+.gui-revision-list-current-status,
+.gui-revision-list-old-status {
   display: flex;
   align-items: center;
 }
 
-.revision-list-time {
+.gui-revision-list-time {
   margin-right: auto;
 }
 
-.revision-list-time,
-.revision-list-status-name,
-.revision-list-note {
+.gui-revision-list-time,
+.gui-revision-list-status-name,
+.gui-revision-list-note {
   @apply text-neutral-20;
 }
 
-.revision-list-current-status,
-.revision-list-current-status .tooltip-wrapper__child {
+.gui-revision-list-current-status,
+.gui-revision-list-current-status .gui-tooltip-wrapper__child {
   overflow: hidden;
 }
 
-.revision-list-status .status-indicator-circle {
+.gui-revision-list-status .gui-status-indicator-circle {
   flex-shrink: 0;
 }
 
-.revision-list-status-name {
+.gui-revision-list-status-name {
   @apply truncate;
 
   white-space: nowrap;
 }
 
-.revision-list-note {
+.gui-revision-list-note {
   @apply text-sm;
 }
 
-.revision-list-note-heading {
+.gui-revision-list-note-heading {
   @apply text-neutral-primary font-semi-bold mt-0 mb-1;
 
   text-transform: uppercase;
 }
 
-.revision-list-heading {
+.gui-revision-list-heading {
   @apply text-base text-neutral-20 font-semi-bold w-full bg-neutral-98 py-2 px-4 m-0;
 
   display: block;

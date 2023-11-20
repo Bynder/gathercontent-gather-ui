@@ -7,7 +7,7 @@ $section-header-title-font-size: 22px;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.section-header {
+.gui-section-header {
   padding-top: $layout-spacing-base;
   margin-bottom: $layout-spacing-base * 2;
   padding-bottom: $layout-spacing-base * 2;
@@ -15,29 +15,29 @@ $section-header-title-font-size: 22px;
   position: relative;
 }
 
-.section-header-collapse {
+.gui-section-header-collapse {
   margin:0;
   padding: 0
 }
 
-.section-header-no-border {
+.gui-section-header-no-border {
   border: none;
 }
 
-.section-header__inner {
+.gui-section-header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: $section-header-inner-height;
 }
 
-.section-header__inner > * {
+.gui-section-header__inner > * {
   position: static;
   display: flex;
   align-items: center;
 }
 
-.section-header__title {
+.gui-section-header__title {
   font-size: $section-header-title-font-size;
   display: inline-flex;
   margin: 0;

@@ -5,7 +5,7 @@ import CollectionsTableCellContent from "./CollectionsTableCellContent";
 function CollectionsTableHeading({ children, className, ...props }: any) {
   return (
     <div
-      className={`collections-table__heading ${className}`}
+      className={`gui-collections-table__heading ${className}`}
       {...props}
       role="columnheader"
     >

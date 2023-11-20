@@ -7,15 +7,15 @@ $participant-info-name-weight: $typo-weight-semi-bold !default;
    Styles
    ========================================================================== */
 
-.participant_info {
+.gui-participant_info {
   text-align: center;
 }
 
-.participant_info__name {
+.gui-participant_info__name {
   font-weight: $participant-info-name-weight;
   margin: 0;
 }
 
-.participant_info__email {
+.gui-participant_info__email {
   margin: 0;
 }

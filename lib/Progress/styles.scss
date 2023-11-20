@@ -10,7 +10,7 @@ $progress-animation-delay: 2000ms !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.progress__bar {
+.gui-progress__bar {
 	background-color: $progress-bg;
 	border-radius: $progress-border-radius;
 	height: $progress-height;
@@ -18,7 +18,7 @@ $progress-animation-delay: 2000ms !default;
 	transform: rotateY(180deg);
 }
 
-.progress__unit {
+.gui-progress__unit {
 	height: $progress-height;
 	display: inline-block;
 	vertical-align: top;

@@ -12,9 +12,9 @@ function FolderRowName({
   ...rest
 }: any) {
   return (
-    <div className="folder-row__name" {...rest}>
+    <div className="gui-folder-row__name" {...rest}>
       {showToggle && (
-        <div className="folder-row__toggle h-margin-clear h-margin-right-half">
+        <div className="gui-folder-row__toggle gui-h-margin-clear gui-h-margin-right-half">
           <Button
             types={["icon-only"]}
             onClick={() => {
@@ -29,9 +29,9 @@ function FolderRowName({
       )}
       <Icon
         name={show ? "folderOpen" : "folder"}
-        className="h-margin-right-half"
+        className="gui-h-margin-right-half"
       />
-      <div className="text-overflow-ellipsis h-margin-clear h-width-100">
+      <div className="text-overflow-ellipsis gui-h-margin-clear gui-h-width-100">
         {children}
       </div>
     </div>

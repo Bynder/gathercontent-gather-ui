@@ -19,7 +19,7 @@ export function Slider({
       </label>
       <input
         id={id}
-        className="input-slider"
+        className="gui-input-slider"
         type="range"
         min={min}
         max={max}

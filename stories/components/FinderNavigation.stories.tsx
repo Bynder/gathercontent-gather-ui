@@ -23,7 +23,7 @@ export const FinderNavigation = () => (
           <FinderNavigationComponent.Group>
             <FinderNavigationComponent.Item hoverSettings={false}>
               <FinderNavigationComponent.ItemContent>
-                <a className="finder-item-link" href="google.com">
+                <a className="gui-finder-item-link" href="google.com">
                   <Icon name="item" />
                   All items
                   <FinderNavigationComponent.ItemSettings>
@@ -35,7 +35,7 @@ export const FinderNavigation = () => (
 
             <FinderNavigationComponent.Item hoverSettings={false}>
               <FinderNavigationComponent.ItemContent>
-                <a className="finder-item-link" href="google.com">
+                <a className="gui-finder-item-link" href="google.com">
                   <Icon name="user" />
                   Assigned items
                   <FinderNavigationComponent.ItemSettings>
@@ -48,49 +48,52 @@ export const FinderNavigation = () => (
           <FinderNavigationComponent.Group title="folder" meta={Meta}>
             <FinderNavigationComponent.Item>
               <FinderNavigationComponent.ItemContent isFolder>
-                <a className="finder-item-link" href="google.com">
+                <a className="gui-finder-item-link" href="google.com">
                   <Icon name="folder" />
                   Another Folder
                 </a>
               </FinderNavigationComponent.ItemContent>
               <FinderNavigationComponent.Item active>
                 <FinderNavigationComponent.ItemContent isFolder>
-                  <a className="finder-item-link" href="google.com">
+                  <a className="gui-finder-item-link" href="google.com">
                     <Icon name="folderOpen" />
                     Another Folder
                   </a>
                 </FinderNavigationComponent.ItemContent>
                 <FinderNavigationComponent.Item>
                   <FinderNavigationComponent.ItemContent isFolder>
-                    <a className="finder-item-link" href="google.com">
+                    <a className="gui-finder-item-link" href="google.com">
                       <Icon name="folder" />
                       Another Folder
                     </a>
                   </FinderNavigationComponent.ItemContent>
                   <FinderNavigationComponent.Item>
                     <FinderNavigationComponent.ItemContent isFolder>
-                      <a className="finder-item-link" href="google.com">
+                      <a className="gui-finder-item-link" href="google.com">
                         <Icon name="folder" />
                         Another Folder
                       </a>
                     </FinderNavigationComponent.ItemContent>
                     <FinderNavigationComponent.Item>
                       <FinderNavigationComponent.ItemContent isFolder>
-                        <a className="finder-item-link" href="google.com">
+                        <a className="gui-finder-item-link" href="google.com">
                           <Icon name="folder" />
                           Another Folder
                         </a>
                       </FinderNavigationComponent.ItemContent>
                       <FinderNavigationComponent.Item>
                         <FinderNavigationComponent.ItemContent isFolder>
-                          <a className="finder-item-link" href="google.com">
+                          <a className="gui-finder-item-link" href="google.com">
                             <Icon name="folder" />
                             Another Folder
                           </a>
                         </FinderNavigationComponent.ItemContent>
                         <FinderNavigationComponent.Item>
                           <FinderNavigationComponent.ItemContent isFolder>
-                            <a className="finder-item-link" href="google.com">
+                            <a
+                              className="gui-finder-item-link"
+                              href="google.com"
+                            >
                               <Icon name="folder" />
                               Another Folder
                             </a>
@@ -102,7 +105,7 @@ export const FinderNavigation = () => (
                 </FinderNavigationComponent.Item>
                 <FinderNavigationComponent.Item>
                   <FinderNavigationComponent.ItemContent isFolder>
-                    <a className="finder-item-link" href="google.com">
+                    <a className="gui-finder-item-link" href="google.com">
                       <Icon name="folder" />
                       Another Folder
                     </a>
@@ -111,7 +114,7 @@ export const FinderNavigation = () => (
               </FinderNavigationComponent.Item>
               <FinderNavigationComponent.Item>
                 <FinderNavigationComponent.ItemContent isFolder>
-                  <a className="finder-item-link" href="google.com">
+                  <a className="gui-finder-item-link" href="google.com">
                     <Icon name="folder" />
                     Another Folder
                   </a>
@@ -120,7 +123,7 @@ export const FinderNavigation = () => (
             </FinderNavigationComponent.Item>
             <FinderNavigationComponent.Item>
               <FinderNavigationComponent.ItemContent isFolder>
-                <a className="finder-item-link" href="google.com">
+                <a className="gui-finder-item-link" href="google.com">
                   <Icon name="folder" />
                   Another Folder
                 </a>

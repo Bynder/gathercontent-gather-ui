@@ -16,10 +16,10 @@ export function SelectionBar({
   animatableProperties,
   ...rest
 }: any) {
-  const classNames = cx("selection-bar", {
-    "selection-bar--fixed": fixed,
-    "selection-bar--auto-hide": autoHide,
-    "has-selected": hasSelected,
+  const classNames = cx("gui-selection-bar", {
+    "gui-selection-bar--fixed": fixed,
+    "gui-selection-bar--auto-hide": autoHide,
+    "gui-has-selected": hasSelected,
   });
 
   return (

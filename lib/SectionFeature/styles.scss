@@ -8,7 +8,7 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
    Styles
    ========================================================================== */
 
-.section-feature {
+.gui-section-feature {
   text-align: center;
   margin: 0 0 $section-feature-vertical-spacing;
 
@@ -34,7 +34,7 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
     text-decoration: none;
   }
 
-  + .section-feature {
+  + .gui-section-feature {
     border-top: 1px solid $color-border-base;
     padding-top: $section-feature-vertical-spacing;
     margin-top: $section-feature-vertical-spacing;
@@ -45,11 +45,11 @@ $section-feature-vertical-spacing: $layout-spacing-base*2;
    Modifiers
    ========================================================================== */
 
-.section-feature--extend-top {
+.gui-section-feature--extend-top {
   margin-top: $section-feature-vertical-spacing*1.5;
 }
 
-.section-feature--enhance-intro {
+.gui-section-feature--enhance-intro {
   p:first-child {
     color: $neutral-dark;
     font-size: $typo-size-xlarge;

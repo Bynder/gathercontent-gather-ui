@@ -1,29 +1,29 @@
-.color-overdue {
+.gui-color-overdue {
   color: $color-text-danger;
 
   a {
     color: inherit;
   }
 
-  .icon path, &:hover .icon path {
+  .gui-icon path, &:hover .gui-icon path {
     fill: $color-text-danger;
   }
 
-  .is-active & {
-    .icon path {
+  .gui-is-active & {
+    .gui-icon path {
       fill: $color-text-danger;
     }
   }
 }
 
-.color-neutral-base {
+.gui-color-neutral-base {
   color: $neutral-base;
 }
 
-.inherit-color-icon .icon path {
+.gui-inherit-color-icon .gui-icon path {
   @apply fill-current;
 }
 
-.inherit-color-link a {
+.gui-inherit-color-link a {
   @apply text-current;
 }

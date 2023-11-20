@@ -18,7 +18,7 @@ export function ButtonSecondaryDanger({
   );
 
   const classes = cx(
-    "inherit-color-icon",
+    "gui-inherit-color-icon",
     "border-neutral-90",
     "focus:border-red-primary focus:shadow-button-tertiary-danger-focus",
     disabled ? disabledClasses : nonDisabledClasses,

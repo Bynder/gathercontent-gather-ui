@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
 export function FormSubmission({
   children,
-  className = '',
+  className = "",
   submitText,
   ...rest
 }: any) {
   return (
-    <div className={`form-submission ${className}`} {...rest}>
+    <div className={`gui-form-submission ${className}`} {...rest}>
       {children}
     </div>
   );

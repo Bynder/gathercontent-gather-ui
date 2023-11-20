@@ -17,7 +17,7 @@ function ColFieldInstructions({
   placeholder,
   ...props
 }: Props) {
-  const classes = `col-field__instructions py-4 px-5 border-0 text-sm whitespace-pre-line ${className}`;
+  const classes = `gui-col-field__instructions py-4 px-5 border-0 text-sm whitespace-pre-line ${className}`;
   if (editable) {
     return (
       <ExpandingTextArea

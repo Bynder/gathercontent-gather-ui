@@ -32,14 +32,14 @@ export function ProgressButton({
   const [showSpinnerState, setShowSpinnerState] = useState(false);
   const getSpinningState = () => {
     const classes = cx({
-      "is-hidden": !spinnerText,
-      "progress-button__spinner-text": spinnerText,
+      "gui-is-hidden": !spinnerText,
+      "gui-progress-button__spinner-text": spinnerText,
     });
     return (
-      <span className="progress-button__wrapper">
+      <span className="gui-progress-button__wrapper">
         <span className={classes}>{spinnerText || value}</span>
         <Icon
-          className="progress-button__icon"
+          className="gui-progress-button__icon"
           name="loader"
           defaultActiveColor={false}
           title="Loading"

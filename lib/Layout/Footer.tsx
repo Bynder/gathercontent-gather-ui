@@ -19,7 +19,7 @@ export function Footer({
 
   return (
     <animated.footer
-      className={`layout-footer ${className}`}
+      className={`gui-layout-footer ${className}`}
       style={props}
       {...rest}
     >

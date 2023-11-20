@@ -44,23 +44,23 @@ export function Avatar({
   const styles = colour ? { color: colour } : {};
 
   const additionalClasses = cx(className, {
-    "avatar--highlighted": isHighlighted,
-    "avatar--offline": isOffline,
-    "avatar--size-sm": smallSize,
-    "avatar--size-lrg": largeSize,
-    "avatar--size-xlrg": extraLargeSize,
-    "avatar--bordered": bordered,
-    "avatar--animated": animate,
-    "avatar--has-colour": colour,
-    "avatar--is-locked": locked,
+    "gui-avatar--highlighted": isHighlighted,
+    "gui-avatar--offline": isOffline,
+    "gui-avatar--size-sm": smallSize,
+    "gui-avatar--size-lrg": largeSize,
+    "gui-avatar--size-xlrg": extraLargeSize,
+    "gui-avatar--bordered": bordered,
+    "gui-avatar--animated": animate,
+    "gui-avatar--has-colour": colour,
+    "gui-avatar--is-locked": locked,
   });
 
-  const wrapperClasses = cx(`avatar__wrapper ${wrapperClassName}`, {
-    "avatar__wrapper--offline": isOffline,
-    "avatar__wrapper--size-sm": smallSize,
-    "avatar__wrapper--size-xlrg": extraLargeSize,
-    "avatar__wrapper--additional": additional,
-    "is-visible": showAdditional && additional,
+  const wrapperClasses = cx(`gui-avatar__wrapper ${wrapperClassName}`, {
+    "gui-avatar__wrapper--offline": isOffline,
+    "gui-avatar__wrapper--size-sm": smallSize,
+    "gui-avatar__wrapper--size-xlrg": extraLargeSize,
+    "gui-avatar__wrapper--additional": additional,
+    "gui-is-visible": showAdditional && additional,
   });
 
   if (children || additional) {
@@ -70,12 +70,16 @@ export function Avatar({
         onMouseEnter={() => setShowAdditional(true)}
         onMouseLeave={() => setShowAdditional(false)}
       >
-        <div style={styles} className={`avatar ${additionalClasses}`} role="figure">
-          {!url && <span className="avatar__initials">{initials}</span>}
+        <div
+          style={styles}
+          className={`gui-avatar ${additionalClasses}`}
+          role="figure"
+        >
+          {!url && <span className="gui-avatar__initials">{initials}</span>}
 
-          {url && <img className="avatar__image" src={url} alt={name} />}
+          {url && <img className="gui-avatar__image" src={url} alt={name} />}
           {locked && (
-            <div className="avatar__locked">
+            <div className="gui-avatar__locked">
               <Icon
                 name="locked"
                 types={["white"]}
@@ -84,28 +88,38 @@ export function Avatar({
             </div>
           )}
           {onRemove && !locked && (
-            <button onClick={onRemove} className="avatar__remove" type="button">
+            <button
+              onClick={onRemove}
+              className="gui-avatar__remove"
+              type="button"
+            >
               <Icon name="cross" types={["white"]} defaultActiveColor={false} />
             </button>
           )}
         </div>
         {children && children}
-        {additional && <div className="avatar__additional">{additional}</div>}
+        {additional && (
+          <div className="gui-avatar__additional">{additional}</div>
+        )}
       </div>
     );
   }
   return (
-    <div style={styles} className={`avatar ${additionalClasses}`}  role="figure">
-      {!url && <span className="avatar__initials">{initials}</span>}
+    <div
+      style={styles}
+      className={`gui-avatar ${additionalClasses}`}
+      role="figure"
+    >
+      {!url && <span className="gui-avatar__initials">{initials}</span>}
 
-      {url && <img className="avatar__image" src={url} alt={name} />}
+      {url && <img className="gui-avatar__image" src={url} alt={name} />}
       {locked && (
-        <div className="avatar__locked">
+        <div className="gui-avatar__locked">
           <Icon name="locked" types={["white"]} defaultActiveColor={false} />
         </div>
       )}
       {onRemove && !locked && (
-        <button onClick={onRemove} className="avatar__remove" type="button">
+        <button onClick={onRemove} className="gui-avatar__remove" type="button">
           <Icon
             name="cross"
             types={["white"]}

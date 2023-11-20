@@ -35,7 +35,7 @@ function AvatarGroupMock({
             email={email}
             url={avatar}
             colour={color}
-            className={color ? "avatar--has-colour" : ""}
+            className={color ? "gui-avatar--has-colour" : ""}
             {...avatarProps}
             {...overlayProps}
             key={uuid()}

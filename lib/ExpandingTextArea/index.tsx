@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import cx from 'classnames';
+import React, { useState, useEffect, useRef } from "react";
+import cx from "classnames";
 
 export function ExpandingTextArea({
   placeholder,
@@ -17,7 +17,7 @@ export function ExpandingTextArea({
   handleOnFocus,
   ...rest
 }: any) {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [rowCount, setRowCount] = useState(1);
   const [rowHeight, setRowHeight] = useState(0);
   const [padding, setPadding] = useState(0);
@@ -26,8 +26,7 @@ export function ExpandingTextArea({
   const calculateRows = (newRowHeight = rowHeight, newPadding = padding) => {
     let newRows = ~~(
       // @ts-expect-error TS(2531): Object is possibly 'null'.
-      (inputRef.current.scrollHeight - newPadding) /
-      newRowHeight
+      ((inputRef.current.scrollHeight - newPadding) / newRowHeight)
     );
     if (newRows <= 0 || newRows < minRows) {
       newRows = minRows;
@@ -79,10 +78,10 @@ export function ExpandingTextArea({
 
   useEffect(() => {
     setInitialRows();
-    window.addEventListener('resize', resizeTextArea);
+    window.addEventListener("resize", resizeTextArea);
 
     return () => {
-      window.removeEventListener('resize', resizeTextArea);
+      window.removeEventListener("resize", resizeTextArea);
     };
   }, []);
 
@@ -95,8 +94,8 @@ export function ExpandingTextArea({
     }
   }, [value]);
 
-  const classNames = cx(`expanding-textarea ${className}`, {
-    'expanding-textarea--has-error': hasError
+  const classNames = cx(`gui-expanding-textarea ${className}`, {
+    "gui-expanding-textarea--has-error": hasError,
   });
 
   return (
@@ -113,7 +112,7 @@ export function ExpandingTextArea({
         {...rest}
       />
       {hasError && errorMessage && (
-        <span role="alert" className="expanding-textarea__error-message">
+        <span role="alert" className="gui-expanding-textarea__error-message">
           {errorMessage}
         </span>
       )}
@@ -126,14 +125,14 @@ ExpandingTextArea.defaultProps = {
   handleOnFocus: () => {},
   handleOnBlur: () => {},
   onRowCountChange: () => {},
-  value: '',
+  value: "",
   focusOnMount: false,
   setValue: false,
-  className: '',
+  className: "",
   minRows: 1,
   maxRows: null,
   hasError: false,
-  errorMessage: ''
+  errorMessage: "",
 };
 
 export default ExpandingTextArea;

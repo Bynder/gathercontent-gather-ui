@@ -14,16 +14,16 @@ function Modal(props: any) {
     collapse,
     ...rest
   } = props;
-  const classNames = cx(props.className, "legacy-modal", {
-    "modal--small": size === "small",
-    "modal--large": size === "large",
-    "modal--x-large": size === "x-large",
-    "modal--full-screen": size === "full-screen",
-    "modal--highlight": highlight,
-    "modal--overflow": overflow,
-    "modal--overflow-half": overflowHalf,
-    "modal--media-only": mediaOnly,
-    "modal--collapse": collapse,
+  const classNames = cx(props.className, "gui-legacy-modal", {
+    "gui-modal--small": size === "small",
+    "gui-modal--large": size === "large",
+    "gui-modal--x-large": size === "x-large",
+    "gui-modal--full-screen": size === "full-screen",
+    "gui-modal--highlight": highlight,
+    "gui-modal--overflow": overflow,
+    "gui-modal--overflow-half": overflowHalf,
+    "gui-modal--media-only": mediaOnly,
+    "gui-modal--collapse": collapse,
   });
 
   const sharedState = {

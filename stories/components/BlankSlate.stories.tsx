@@ -14,7 +14,7 @@ export const BlankSlate = () => (
       description="BlankSlateComponent with the default style"
     >
       <BlankSlateComponent>
-        <h2 className="blank-slate__heading">This is a blank slate</h2>
+        <h2 className="gui-blank-slate__heading">This is a blank slate</h2>
         <p>Use me to show that something is empty.</p>
         <Button
           types={["secondary"]}
@@ -29,7 +29,9 @@ export const BlankSlate = () => (
       description="BlankSlateComponent with the arrow style"
     >
       <BlankSlateComponent slateStyle="arrow">
-        <h2 className="blank-slate__heading">Hey do something on the left</h2>
+        <h2 className="gui-blank-slate__heading">
+          Hey do something on the left
+        </h2>
         <p>Then put it over here.</p>
       </BlankSlateComponent>
     </StoryItem>
@@ -38,7 +40,7 @@ export const BlankSlate = () => (
       description="BlankSlateComponent with an emoji"
     >
       <BlankSlateComponent emoji="🔎" emojiLabel="Magnifying glass">
-        <h2 className="blank-slate__heading">Look an emoji!</h2>
+        <h2 className="gui-blank-slate__heading">Look an emoji!</h2>
         <p>How wonderful.</p>
       </BlankSlateComponent>
     </StoryItem>

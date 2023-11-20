@@ -15,11 +15,11 @@ export function ConversationContext({
   return (
     <Row>
       <Col sm={3} xs={12}>
-        <div className="conversation-context__label">{label}</div>
+        <div className="gui-conversation-context__label">{label}</div>
       </Col>
       <Col sm={8} xs={12}>
         {children && (
-          <div className="conversation-context__context">{children}</div>
+          <div className="gui-conversation-context__context">{children}</div>
         )}
         <Conversation isOpen>
           <Conversation.Header>

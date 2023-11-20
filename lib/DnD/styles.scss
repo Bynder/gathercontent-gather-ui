@@ -1,4 +1,4 @@
-.drag-line {
+.gui-drag-line {
   background: $primary-blue;
   left: 0;
   height: 2px;
@@ -6,18 +6,18 @@
   position: absolute;
 }
 
-.drag-line__ball {
+.gui-drag-line__ball {
   position: absolute;
   width: 6px;
   height: 6px;
   background: $primary-blue;
   border-radius: $layout-spacing-base;
 
-  &.drag-line__ball-right {
+  &.gui-drag-line__ball-right {
     right: 0;
   }
 
-  &.drag-line__ball-left {
+  &.gui-drag-line__ball-left {
     left: 0;
   }
 }

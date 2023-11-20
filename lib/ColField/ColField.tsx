@@ -45,20 +45,23 @@ export function ColField({
     config: { duration: 100 },
   });
 
-  const classes = cx(`col-field border-solid rounded relative ${className}`, {
-    "bg-white border shadow": status === statuses.active,
-    "border-neutral-90":
-      (status === statuses.active || status === statuses.unchanged) &&
-      !isHovered,
-    "bg-neutral-98 border hover:bg-white hover:shadow":
-      status === statuses.unchanged,
-    "border-2 border-green-primary bg-white": status === statuses.added,
-    "border-2 border-red-primary bg-white": status === statuses.deleted,
-    "border-2 border-purple-primary bg-white":
-      status === statuses.movedDown || status === statuses.movedUp,
-    "col-field-selected": isSelected,
-    "border-blue-primary": isHovered,
-  });
+  const classes = cx(
+    `gui-col-field border-solid rounded relative ${className}`,
+    {
+      "bg-white border shadow": status === statuses.active,
+      "border-neutral-90":
+        (status === statuses.active || status === statuses.unchanged) &&
+        !isHovered,
+      "bg-neutral-98 border hover:bg-white hover:shadow":
+        status === statuses.unchanged,
+      "border-2 border-green-primary bg-white": status === statuses.added,
+      "border-2 border-red-primary bg-white": status === statuses.deleted,
+      "border-2 border-purple-primary bg-white":
+        status === statuses.movedDown || status === statuses.movedUp,
+      "gui-col-field-selected": isSelected,
+      "border-blue-primary": isHovered,
+    }
+  );
 
   return (
     <animated.div

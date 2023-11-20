@@ -9,10 +9,10 @@ function ModalHeader({ children, text, ...rest }: any) {
     <NewModal.Header
       onCloseClick={onHide}
       headerText={children}
-      className="modal-header"
+      className="gui-modal-header"
       {...rest}
     >
-      {text && <p className="modal__header-intro">{text}</p>}
+      {text && <p className="gui-modal__header-intro">{text}</p>}
     </NewModal.Header>
   );
 }

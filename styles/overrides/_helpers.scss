@@ -1,34 +1,34 @@
-.is-visible {
+.gui-is-visible {
 	opacity: 1;
 }
 
-.is-hidden {
+.gui-is-hidden {
 	opacity: 0;
 }
 
-.no-wrap {
+.gui-no-wrap {
 	white-space: nowrap !important;
 }
 
-.hide-small {
+.gui-hide-small {
   @include respond-to-max($screen-sm) {
     display: none !important;
   }
 }
 
-.hide-medium {
+.gui-hide-medium {
   @include respond-to-max($screen-md) {
     display: none !important;
   }
 }
 
-.hide-large {
+.gui-hide-large {
   @include respond-to-max($screen-lg) {
     display: none !important;
   }
 }
 
-.hide-off-page {
+.gui-hide-off-page {
   position: absolute;
   left: -999em;
 }

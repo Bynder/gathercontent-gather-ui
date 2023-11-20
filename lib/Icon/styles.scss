@@ -9,55 +9,55 @@ $icon-active-color: $color-brand-blue !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.icon {
+.gui-icon {
   align-items: center;
   display: $icon-display;
   justify-content: center;
 }
 
-.icon-container-12 {
+.gui-icon-container-12 {
   width: 0.75rem;
   height: 0.75rem;
 }
 
-.icon-container-16 {
+.gui-icon-container-16 {
   width: 1rem;
   height: 1rem;
 }
 
-.icon-container-24 {
+.gui-icon-container-24 {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.icon-container-32 {
+.gui-icon-container-32 {
   width: 2rem;
   height: 2rem;
 }
 
-.icon svg {
+.gui-icon svg {
   display: block;
 }
 
-.icon--default-fill-color path {
+.gui-icon--default-fill-color path {
   fill: $icon-default-color;
 }
 
-.is-active .icon.icon--default-active-color path {
+.gui-is-active .gui-icon.gui-icon--default-active-color path {
   fill: $icon-active-color;
 }
 
-.icon + .icon {
+.gui-icon + .gui-icon {
   margin-left: $layout-spacing-base * 0.5;
 }
 
-.icon__body {
+.gui-icon__body {
   display: flex;
   align-items: center;
   background: transparent;
 }
 
-.icon__text {
+.gui-icon__text {
   margin: 0 0 0 $layout-spacing-base * 0.5;
 
   @include text-overflow-ellipsis;
@@ -75,16 +75,16 @@ $icon-active-color: $color-brand-blue !default;
   }
 }
 
-.icon--hide-text .icon__text {
+.gui-icon--hide-text .gui-icon__text {
   display: none;
 }
 
-.icon--has-notification {
+.gui-icon--has-notification {
   position: relative;
   padding-right: $layout-spacing-base * 0.5;
 }
 
-.icon__notification {
+.gui-icon__notification {
   font-size: $typo-size-micro;
   color: white;
   background: $primary-blue;
@@ -104,73 +104,73 @@ $icon-active-color: $color-brand-blue !default;
 /* ==========================================================================
    SVG fill / stroke overrides (due to differences with SVGs)
    ========================================================================== */
-.icon--upload {
+.gui-icon--upload {
   path {
     stroke: $icon-default-color;
     fill: none;
   }
 }
 
-.is-active .icon--upload path {
+.gui-is-active .gui-icon--upload path {
   fill: none;
   stroke: $icon-active-color;
 }
 
-.icon--keyboard rect {
+.gui-icon--keyboard rect {
   stroke: $icon-default-color;
 }
 
-.is-active .icon--keyboard rect {
+.gui-is-active .gui-icon--keyboard rect {
   stroke: $icon-active-color;
 }
 
-.icon--dark path {
+.gui-icon--dark path {
   fill: $neutral-dark;
 }
 
-.icon--primary-blue path {
+.gui-icon--primary-blue path {
   fill: $primary-blue;
 }
 
-.icon.icon--white path {
+.gui-icon.gui-icon--white path {
   fill: white;
 }
 
-.icon--danger path {
+.gui-icon--danger path {
   fill: $color-text-danger;
 }
 
-.icon.icon--green path {
+.gui-icon.gui-icon--green path {
   fill: $color-brand-green;
 }
 
-.icon.icon--neutral path {
+.gui-icon.gui-icon--neutral path {
   @apply text-neutral-primary;
   @apply fill-current;
 }
 
-.icon.icon--neutral-20 path {
+.gui-icon.gui-icon--neutral-20 path {
   @apply text-neutral-20;
   @apply fill-current;
 }
 
-.icon.icon--neutral-70 path {
+.gui-icon.gui-icon--neutral-70 path {
   @apply text-neutral-70;
   @apply fill-current;
 }
 
-.icon.icon--purple path {
+.gui-icon.gui-icon--purple path {
   @apply text-purple-primary fill-current #{!important};
 }
 
-.icon.icon--warning path {
+.gui-icon.gui-icon--warning path {
   @apply fill-current;
 }
 
-button:active .icon--blue-on-button-parent-active path {
+button:active .gui-icon--blue-on-button-parent-active path {
   fill: $primary-blue;
 }
 
-button:active .icon--red-on-button-parent-active path {
+button:active .gui-icon--red-on-button-parent-active path {
   fill: $primary-red;
 }

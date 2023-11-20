@@ -2,9 +2,9 @@ import React from "react";
 
 function SearchList(props: any) {
   return (
-    <div className="search-list">
+    <div className="gui-search-list">
       {props.heading && (
-        <div className="search-list__heading">{props.heading}</div>
+        <div className="gui-search-list__heading">{props.heading}</div>
       )}
       {props.children}
     </div>

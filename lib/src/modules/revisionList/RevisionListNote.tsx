@@ -6,8 +6,8 @@ export function RevisionListNote({
   ...rest
 }: HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`${className} revision-list-note`} {...rest}>
-      <h4 className="revision-list-note-heading">Note</h4>
+    <div className={`${className} gui-revision-list-note`} {...rest}>
+      <h4 className="gui-revision-list-note-heading">Note</h4>
       {children}
     </div>
   );

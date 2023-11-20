@@ -39,13 +39,13 @@ export function ConfirmationOverlay({
 
   const [isSubmitting, handleSubmitWithLoader] = useLoader(handleConfirm);
 
-  const classNames = cx(`confirmation-overlay ${className}`, {
-    "confirmation-overlay--show": show,
+  const classNames = cx(`gui-confirmation-overlay ${className}`, {
+    "gui-confirmation-overlay--show": show,
   });
 
   return (
     <div className={classNames} {...rest}>
-      <div className="confirmation-overlay__inner">
+      <div className="gui-confirmation-overlay__inner">
         <ButtonTertiary
           size={ButtonTertiary.sizes.xs}
           onClick={cancel}
@@ -59,8 +59,12 @@ export function ConfirmationOverlay({
           size={ButtonPrimary.sizes.xs}
           aria-label="Submit"
         >
-          {isSubmitting && <Icon name="loader16" className="mr-2 fill-white" />}
-          {hasFailed && <Icon name="danger16" className="mr-2 fill-white" />}
+          {isSubmitting && (
+            <Icon name="loader16" className="mr-2 gui-fill-white" />
+          )}
+          {hasFailed && (
+            <Icon name="danger16" className="mr-2 gui-fill-white" />
+          )}
           {!hasFailed ? confirmationText : failureText}
         </ButtonPrimaryDanger>
       </div>

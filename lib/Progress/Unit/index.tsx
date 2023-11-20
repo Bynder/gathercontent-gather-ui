@@ -3,7 +3,7 @@ import cx from "classnames";
 import { TooltipWrapper } from "lib";
 
 function ProgressUnit({ className, color, percent, name, filterLink }: any) {
-  const classes = cx(["progress__unit", className]);
+  const classes = cx(["gui-progress__unit", className]);
   const style = { width: `${percent}%` };
   if (color !== "") {
     // @ts-expect-error TS(2339): Property 'backgroundColor' does not exist on type ... Remove this comment to see the full error message

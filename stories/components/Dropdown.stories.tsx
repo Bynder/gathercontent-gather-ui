@@ -372,10 +372,10 @@ export function Dropdown() {
           dropdownContent={
             <>
               <DropdownComponent.Header collapse>
-                <Form onSubmit={() => {}} className="form h-width-100">
+                <Form onSubmit={() => {}} className="gui-form h-width-100">
                   <FormInput
                     noBorder
-                    className="h-width-100"
+                    className="gui-h-width-100"
                     placeholder="Search for users"
                   />
                 </Form>

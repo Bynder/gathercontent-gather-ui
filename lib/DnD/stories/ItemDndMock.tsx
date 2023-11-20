@@ -18,7 +18,7 @@ function ItemDndMock({ children }: any) {
             style={{
               opacity: isDragging ? ".5" : "1",
             }}
-            className="h-margin-top-half"
+            className="gui-h-margin-top-half"
           >
             {children}
           </ItemRow>

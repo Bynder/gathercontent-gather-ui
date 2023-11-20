@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export function DropdownContentHeader({
-  children,
-  title,
-  ...rest
-}: any) {
+export function DropdownContentHeader({ children, title, ...rest }: any) {
   return (
-    <div className="dropdown-content-header" {...rest}>
-      <h4 className="dropdown-content-header-title">{title}</h4>
+    <div className="gui-dropdown-content-header" {...rest}>
+      <h4 className="gui-dropdown-content-header-title">{title}</h4>
       {children}
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown, Icon } from "lib";
 
 export function SectionHeaderTitle({ children, title }: any) {
-  const Title = <h1 className="section-header__title">{title}</h1>;
+  const Title = <h1 className="gui-section-header__title">{title}</h1>;
 
   if (children) {
     return (

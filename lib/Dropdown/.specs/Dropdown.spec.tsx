@@ -12,7 +12,7 @@ describe("Dropdown", () => {
     const onHideSpy = vi.fn();
     const actionSpy = vi.fn();
 
-   render(
+    render(
       <>
         <Dropdown onToggle={onToggleSpy} onHide={onHideSpy} id="id-1">
           <Dropdown.Trigger>Trigger 1</Dropdown.Trigger>
@@ -26,21 +26,33 @@ describe("Dropdown", () => {
       </>
     );
 
-    expect(screen.getByTestId("test-dropdown-content").classList.contains('is-active')).toBeFalsy();
+    expect(
+      screen
+        .getByTestId("test-dropdown-content")
+        .classList.contains("gui-is-active")
+    ).toBeFalsy();
 
-    fireEvent.click(screen.getByText('Trigger 1'));
+    fireEvent.click(screen.getByText("Trigger 1"));
 
     expect(onToggleSpy).toHaveBeenCalledOnce();
 
-    expect(screen.getByTestId("test-dropdown-content").classList.contains('is-active')).toBeTruthy();
+    expect(
+      screen
+        .getByTestId("test-dropdown-content")
+        .classList.contains("gui-is-active")
+    ).toBeTruthy();
 
-    fireEvent.click(screen.getByText('Howdy'));
+    fireEvent.click(screen.getByText("Howdy"));
 
     expect(actionSpy).toHaveBeenCalledOnce();
 
-    fireEvent.click(screen.getByText('We outside'));
+    fireEvent.click(screen.getByText("We outside"));
 
-    expect(screen.getByTestId("test-dropdown-content").classList.contains('is-active')).toBeFalsy();
+    expect(
+      screen
+        .getByTestId("test-dropdown-content")
+        .classList.contains("gui-is-active")
+    ).toBeFalsy();
   });
 
   it("Persists the active state when the external show prop is true", () => {
@@ -58,12 +70,20 @@ describe("Dropdown", () => {
       </>
     );
 
-    fireEvent.click(screen.getByText('Trigger 1'));
+    fireEvent.click(screen.getByText("Trigger 1"));
 
-    expect(screen.getByTestId("test-dropdown-content").classList.contains('is-active')).toBeTruthy();
+    expect(
+      screen
+        .getByTestId("test-dropdown-content")
+        .classList.contains("gui-is-active")
+    ).toBeTruthy();
 
-    fireEvent.click(screen.getByText('We outside'));
+    fireEvent.click(screen.getByText("We outside"));
 
-    expect(screen.getByTestId("test-dropdown-content").classList.contains('is-active')).toBeTruthy();
+    expect(
+      screen
+        .getByTestId("test-dropdown-content")
+        .classList.contains("gui-is-active")
+    ).toBeTruthy();
   });
 });

@@ -22,7 +22,7 @@ describe("Confirmation Overlay", () => {
     expect(
       screen
         .getByTestId("confirmation-overlay")
-        .classList.contains("confirmation-overlay--show")
+        .classList.contains("gui-confirmation-overlay--show")
     ).toBeTruthy();
 
     rerender(
@@ -37,7 +37,7 @@ describe("Confirmation Overlay", () => {
     expect(
       screen
         .getByTestId("confirmation-overlay")
-        .classList.contains("confirmation-overlay--show")
+        .classList.contains("gui-confirmation-overlay--show")
     ).toBeFalsy();
   });
 

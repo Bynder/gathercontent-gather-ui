@@ -4,7 +4,7 @@ import { defaultProps, sizes } from "../common";
 
 export function ButtonSuccess({ children, className = "", ...rest }: any) {
   return (
-    <ButtonBase className={`button-success ${className}`} {...rest}>
+    <ButtonBase className={`gui-button-success ${className}`} {...rest}>
       {children}
     </ButtonBase>
   );

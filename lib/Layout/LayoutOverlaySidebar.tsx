@@ -13,7 +13,7 @@ export function LayoutOverlaySidebar({
   onTransitionEnd,
 }: any) {
   const classNames = cx(
-    "layout-overlay-sidebar",
+    "gui-layout-overlay-sidebar",
     {
       "border-l border-r-0": direction === "right",
       "border-r border-l-0": direction === "left",

@@ -36,7 +36,7 @@ function ColFieldLabel({
           onRename={onChange}
           multiline={multiline}
           label={`edit field label: ${label}`}
-          className={`col-field-label col-field-label-editable ${className}`}
+          className={`gui-col-field-label gui-col-field-label-editable ${className}`}
           formClass={formClass}
           placeholder={placeholder}
           maxLength={maxLength}
@@ -46,7 +46,7 @@ function ColFieldLabel({
     );
   }
   return (
-    <div className={`col-field-label break-all ${className}`} {...props}>
+    <div className={`gui-col-field-label break-all ${className}`} {...props}>
       {label}
     </div>
   );

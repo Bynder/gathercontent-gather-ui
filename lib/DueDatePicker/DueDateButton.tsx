@@ -14,7 +14,7 @@ function DueDateButton({ children, ...props }: any) {
   if (children || !props.dueDate) {
     return (
       <Dropdown.Trigger
-        className="duedate__button duedate__button--set-duedate duedate__toggle"
+        className="gui-duedate__button gui-duedate__button--set-duedate gui-duedate__toggle"
         useButton
         types={buttonTypes}
       >
@@ -25,8 +25,8 @@ function DueDateButton({ children, ...props }: any) {
 
   const overdue = props.dueDate < moment();
 
-  const classes = cx("duedate__button", {
-    "color-overdue": overdue,
+  const classes = cx("gui-duedate__button", {
+    "gui-color-overdue": overdue,
   });
 
   if (!props.userCanSetDueDate) {
@@ -43,7 +43,7 @@ function DueDateButton({ children, ...props }: any) {
       {overdue && <Icon name="warning" />}
       {`Due to be completed `}
       <Dropdown.Trigger
-        className="duedate__toggle"
+        className="gui-duedate__toggle"
         useButton
         types={buttonTypes}
       >

@@ -1,4 +1,4 @@
-.gc-radio {
+.gui-gc-radio {
   @apply appearance-none w-4 h-4 rounded-full border border-solid border-neutral-80 cursor-pointer bg-white relative shadow-inner;
 
   &:hover {
@@ -20,7 +20,7 @@
   }
 }
 
-.gc-radio:checked {
+.gui-gc-radio:checked {
   @apply border-2 border-blue-primary;
 
   &::after {
@@ -47,7 +47,7 @@
   }
 }
 
-.gc-radio-error {
+.gui-gc-radio-error {
   @apply border-red-primary;
 
   &:checked {
@@ -67,8 +67,8 @@
   }
 }
 
-.gc-radio-error:disabled,
-.gc-radio:disabled {
+.gui-gc-radio-error:disabled,
+.gui-gc-radio:disabled {
   @apply cursor-default bg-neutral-95;
 
   &:hover, &:focus {

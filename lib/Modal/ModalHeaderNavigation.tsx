@@ -9,10 +9,10 @@ export function ModalHeaderNavigation({ children, title }: any) {
   return (
     <NewModal.Header
       onCloseClick={onHide}
-      className="modal-header modal-header-with-nav"
+      className="gui-modal-header gui-modal-header-with-nav"
     >
       <div className="flex items-center h-16 pl-5 text-lg">
-        <h4 className="modal-title">{title}</h4>
+        <h4 className="gui-modal-title">{title}</h4>
       </div>
       <Navigation
         className="flex justify-center flex-row w-full absolute border-b-0"

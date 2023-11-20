@@ -44,7 +44,7 @@ function Tabs({ children, className, tabsLength, activeTabId }: any) {
             setScrollPosition("middle");
           }
         }}
-        className={`tabs-new relative ${className} ${scrollPosition}`}
+        className={`gui-tabs-new relative ${className} ${scrollPosition}`}
       >
         {children}
         {tabsLength > 24 && (

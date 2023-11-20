@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
-import StoryItem from 'stories/styleguide/StoryItem';
-import { ButtonPrimary, Label, TextForm } from 'lib';
-import { WorkflowStep as WorkflowStepComponent } from './workflowStep';
+import StoryItem from "stories/styleguide/StoryItem";
+import { ButtonPrimary, Label, TextForm } from "lib";
+import { WorkflowStep as WorkflowStepComponent } from "./workflowStep";
 
 export default {
-  title: 'GUI/Workflow Step',
+  title: "GUI/Workflow Step",
   component: WorkflowStepComponent,
 };
 
@@ -17,7 +17,7 @@ export function WorkflowStep() {
       <StoryItem title="Workflow Step">
         <div
           style={{
-            width: '680px',
+            width: "680px",
           }}
         >
           <WorkflowStepComponent
@@ -33,7 +33,7 @@ export function WorkflowStep() {
               <WorkflowStepComponent.Meta
                 actions={
                   <WorkflowStepComponent.Actions>
-                    {() => 'Actions'}
+                    {() => "Actions"}
                   </WorkflowStepComponent.Actions>
                 }
               >
@@ -69,7 +69,7 @@ export function WorkflowStep() {
       <StoryItem title="Active Step">
         <div
           style={{
-            width: '680px',
+            width: "680px",
           }}
         >
           <WorkflowStepComponent className="w-full h-full" showBody isActive>

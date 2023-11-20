@@ -5,7 +5,7 @@ import PillBase from "./PillBase";
 function PillGreen({ className, children, ...rest }: any) {
   return (
     <PillBase
-      className={`bg-green-90 text-green-primary font-semi-bold inherit-color-icon ${className}`}
+      className={`bg-green-90 text-green-primary font-semi-bold gui-inherit-color-icon ${className}`}
       {...rest}
     >
       {children}

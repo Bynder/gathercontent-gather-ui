@@ -9,7 +9,7 @@ export function InputIcon({
   ...rest
 }: any) {
   return (
-    <span className={`input-icon ${className}`}>
+    <span className={`gui-input-icon ${className}`}>
       <Icon name={iconName} />
       <Input {...rest} />
     </span>

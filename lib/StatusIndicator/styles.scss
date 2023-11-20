@@ -5,7 +5,7 @@
 
 $status-indicator-circle-size: $typo-size-small !default;
 $status-indicator-circle-small: $typo-size-micro !default;
-$status-indicator-horizontal-margin: .5rem !default;
+$status-indicator-horizontal-margin: 0.5rem !default;
 $status-indicator-bordered-border: 1px solid $color-background-light !default;
 $status-indicator-margin-left: 1.3rem !default;
 
@@ -13,18 +13,18 @@ $status-indicator-margin-left: 1.3rem !default;
    Styles
    ========================================================================== */
 
-.status-indicator {
+.gui-status-indicator {
   color: $color-brand-dark;
   white-space: nowrap;
   font-size: $typo-size-base;
 }
 
-.status-indicator__label-row {
+.gui-status-indicator__label-row {
   display: flex;
   align-items: center;
 }
 
-.status-indicator__children {
+.gui-status-indicator__children {
   color: $color-text-light;
   font-size: $typo-size-slight;
   margin-left: $status-indicator-margin-left;
@@ -32,7 +32,7 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-top: $layout-spacing-base * 0.25;
 }
 
-.status-indicator__circle {
+.gui-status-indicator__circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,12 +46,12 @@ $status-indicator-margin-left: 1.3rem !default;
     width: 16px;
   }
 
-  + .status-indicator__label {
-    margin-left: $layout-spacing-base*0.5;
+  + .gui-status-indicator__label {
+    margin-left: $layout-spacing-base * 0.5;
   }
 }
 
-.status-indicator__label {
+.gui-status-indicator__label {
   white-space: nowrap;
   margin-top: 0;
   margin-bottom: 0;
@@ -62,10 +62,10 @@ $status-indicator-margin-left: 1.3rem !default;
     width: 100%;
     overflow: hidden;
     display: flex;
-    margin-left: $layout-spacing-base*0.5;
+    margin-left: $layout-spacing-base * 0.5;
   }
 
-  .status-indicator__label-text {
+  .gui-status-indicator__label-text {
     display: inline-block;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -74,33 +74,36 @@ $status-indicator-margin-left: 1.3rem !default;
     max-width: 100%;
   }
 
-  .tooltip-wrapper__child {
+  .gui-tooltip-wrapper__child {
     display: inline-flex;
   }
 }
 
-.status-indicator--completed {
-  .status-indicator__label, .status-indicator__children .workflow-item__text, .status-indicator__children .duedate__button, .status-indicator__label-text {
+.gui-status-indicator--completed {
+  .gui-status-indicator__label,
+  .gui-status-indicator__children .gui-workflow-item__text,
+  .gui-status-indicator__children .gui-duedate__button,
+  .gui-status-indicator__label-text {
     text-decoration: line-through;
     font-style: italic;
     color: $color-text-light;
   }
 
-  .status-indicator__circle {
+  .gui-status-indicator__circle {
     background-color: $color-text-light;
   }
 }
 
-.status-indicator--bordered {
+.gui-status-indicator--bordered {
   border-bottom: $status-indicator-bordered-border;
   padding-bottom: math.div($layout-spacing-base, 1.3);
 }
 
-.status-indicator__pre-text {
+.gui-status-indicator__pre-text {
   margin-right: math.div($layout-spacing-base, 3);
 }
 
-.status-indicator__description {
+.gui-status-indicator__description {
   white-space: initial;
   color: $color-brand-dark;
   margin-top: $layout-spacing-base * 0.25;
@@ -108,8 +111,8 @@ $status-indicator-margin-left: 1.3rem !default;
   margin-bottom: math.div($layout-spacing-base, 2.5);
 }
 
-.icon.status-indicator__readonly {
-  margin-left: $layout-spacing-base*0.25;
+.gui-icon.gui-status-indicator__readonly {
+  margin-left: $layout-spacing-base * 0.25;
   vertical-align: top;
 
   path {
@@ -117,45 +120,45 @@ $status-indicator-margin-left: 1.3rem !default;
   }
 }
 
-.status-indicator__actions {
-  margin-left: $layout-spacing-base*0.5;
+.gui-status-indicator__actions {
+  margin-left: $layout-spacing-base * 0.5;
 }
 
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-.status-indicator--small .status-indicator__circle {
+.gui-status-indicator--small .gui-status-indicator__circle {
   width: $status-indicator-circle-small;
   height: $status-indicator-circle-small;
 
-  + .status-indicator__label {
+  + .gui-status-indicator__label {
     margin-left: math.div($layout-spacing-base, 3);
   }
 }
 
-.status-indicator--small .status-indicator__label {
+.gui-status-indicator--small .gui-status-indicator__label {
   font-size: $typo-size-slight;
 }
 
-.status-indicator--soft-label .status-indicator__label {
+.gui-status-indicator--soft-label .gui-status-indicator__label {
   font-size: $typo-size-slight;
   font-weight: $typo-weight-roman;
 }
 
-.status-indicator--medium .status-indicator__label {
+.gui-status-indicator--medium .gui-status-indicator__label {
   font-size: $typo-size-base;
 }
 
-.status-indicator--row {
+.gui-status-indicator--row {
   display: flex;
   align-items: baseline;
   background: white;
   border: $status-indicator-bordered-border;
-  padding: $layout-spacing-base*0.5;
+  padding: $layout-spacing-base * 0.5;
   border-radius: 4px;
-  margin: 0 0 $layout-spacing-base*0.5;
+  margin: 0 0 $layout-spacing-base * 0.5;
 
-  .status-indicator__children {
+  .gui-status-indicator__children {
     margin: 0 0 0 auto;
   }
 }

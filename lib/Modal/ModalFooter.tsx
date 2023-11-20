@@ -9,13 +9,13 @@ function ModalFooter({
   className,
   ...props
 }: any) {
-  const containerClassName = cx(className, "modal-footer", {
-    "modal-footer--space-between": spaceBetween,
+  const containerClassName = cx(className, "gui-modal-footer", {
+    "gui-modal-footer--space-between": spaceBetween,
   });
 
   return (
     <NewModal.Footer className={containerClassName} {...props}>
-      {text && <span className="modal__footer-text">{text}</span>}
+      {text && <span className="gui-modal__footer-text">{text}</span>}
 
       {children}
     </NewModal.Footer>

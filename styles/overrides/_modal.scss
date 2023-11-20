@@ -1,14 +1,14 @@
-.modal {
+.gui-modal {
     overflow: hidden;
 }
 
-.modal--hide-close {
-  .modal-header .close {
+.gui-modal--hide-close {
+  .gui-modal-header .gui-close {
     display: none;
   }
 }
 
-.modal-body {
+.gui-modal-body {
     padding: $modal-padding;
     overflow: hidden;
     background-color: white;
@@ -20,36 +20,36 @@
         margin-bottom: 0;
     }
 
-  &.has-columns {
+  &.gui-has-columns {
     padding: 0;
   }
 }
 
-.modal-header {
+.gui-modal-header {
   position: relative;
   padding: 0;
 
-  .close {
+  .gui-close {
     position: absolute;
     right: $layout-spacing-base;
     top: $layout-spacing-base;
   }
 }
 
-.modal-header-inner {
+.gui-modal-header-inner {
   padding: $modal-padding $modal-padding*2 $modal-padding $modal-padding;
   display: inline-flex;
   align-items: baseline;
   flex-direction: column;
 }
 
-.modal-content {
+.gui-modal-content {
     margin: 0;
     position: relative;
     border: 0;
 }
 
-.modal-footer {
+.gui-modal-footer {
   display: flex;
   align-items: baseline;
   justify-content: flex-end;
@@ -57,11 +57,11 @@
   border-radius: 0 0 6px 6px;
 }
 
-.modal-dialog {
+.gui-modal-dialog {
   position: relative;
 }
 
-.modal-title {
+.gui-modal-title {
     font-size: $modal-heading-font-size;
     font-weight: $typo-weight-semi-bold;
 
@@ -73,10 +73,10 @@
     }
 }
 
-.modal.fade .modal-dialog {
+.gui-modal.gui-fade .gui-modal-dialog {
   transition: transform .3s ease-out;
 }
 
-.modal.in .modal-dialog {
+.gui-modal.gui-in .gui-modal-dialog {
   transform: none;
 }

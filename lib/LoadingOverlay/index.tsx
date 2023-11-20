@@ -10,13 +10,13 @@ export function LoadingOverlay({
   loadingText,
   useSpinner,
 }: any) {
-  const className = cx("loading-overlay", {
-    "loading-overlay--fixed": fixed,
+  const className = cx("gui-loading-overlay", {
+    "gui-loading-overlay--fixed": fixed,
   });
 
   return (
     <div className={className} role="status">
-      <div className="loading-overlay__content weight-semi-bold text-align-center">
+      <div className="gui-loading-overlay__content gui-weight-semi-bold gui-text-align-center">
         {!hideSVG && useSpinner && <Loader isOverlay />}
         {!hideSVG && !useSpinner && (
           // @ts-expect-error Type '{ title: string; }' is not assignable to type
@@ -24,8 +24,8 @@ export function LoadingOverlay({
         )}
         {percentageLoaded > 0 && (
           <>
-            <p className="loading-overlay-text">{loadingText}</p>
-            <p className="h-margin-clear color-neutral-base">{`${percentageLoaded}%`}</p>
+            <p className="gui-loading-overlay-text">{loadingText}</p>
+            <p className="gui-h-margin-clear gui-color-neutral-base">{`${percentageLoaded}%`}</p>
           </>
         )}
       </div>

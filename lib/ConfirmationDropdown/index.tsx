@@ -34,10 +34,10 @@ export class ConfirmationDropdown extends Component {
 
   render() {
     // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
-    const classNames = cx(`confirmation-dropdown ${this.props.className}`, {
-      "is-pending": this.state.promiseIsPending,
+    const classNames = cx(`gui-confirmation-dropdown ${this.props.className}`, {
+      "gui-is-pending": this.state.promiseIsPending,
       // @ts-expect-error TS(2339): Property 'isDanger' does not exist on type 'Readon... Remove this comment to see the full error message
-      "confirmation-dropdown--is-dangerous": this.props.isDanger,
+      "gui-confirmation-dropdown--is-dangerous": this.props.isDanger,
     });
 
     // @ts-expect-error TS(2339): Property 'position' does not exist on type 'Readon... Remove this comment to see the full error message

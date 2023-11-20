@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export function RenameInputForm({
   stopEditing,
@@ -11,13 +11,13 @@ export function RenameInputForm({
   classes,
   placeholder,
   formClass,
-  maxLength
+  maxLength,
 }: any) {
   const [value, setValue] = useState(text);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (value.trim() !== '') {
+    if (value.trim() !== "") {
       onRename(value);
     } else if (onEmpty) {
       onEmpty();
@@ -40,13 +40,19 @@ export function RenameInputForm({
     }
   };
 
-  const InputType = multiline ? 'textarea' : 'input';
+  const InputType = multiline ? "textarea" : "input";
   return (
-    <form onSubmit={handleSubmit} className={`rename-input-form ${formClass}`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`gui-rename-input-form ${formClass}`}
+    >
       <label htmlFor={id} className="hidden">
         {label}
       </label>
-      <div className={`rename-input-size-helper ${classes}`} aria-hidden="true">
+      <div
+        className={`gui-rename-input-size-helper ${classes}`}
+        aria-hidden="true"
+      >
         {value || placeholder}
       </div>
       <InputType
@@ -58,7 +64,7 @@ export function RenameInputForm({
         onBlur={handleSubmit}
         className={`${classes}`}
         placeholder={placeholder}
-        onFocus={e => e.target.select()}
+        onFocus={(e) => e.target.select()}
         maxLength={maxLength}
       />
     </form>

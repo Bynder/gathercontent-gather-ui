@@ -3,7 +3,7 @@ import BreadcrumbItem from "./BreadcrumbItem";
 
 export function Breadcrumb({ children, className, ...rest }: any) {
   return (
-    <nav {...rest} className={`breadcrumb ${className}`}>
+    <nav {...rest} className={`gui-breadcrumb ${className}`}>
       {children}
     </nav>
   );

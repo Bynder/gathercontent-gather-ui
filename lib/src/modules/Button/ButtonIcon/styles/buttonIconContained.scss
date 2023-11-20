@@ -1,4 +1,4 @@
-.button-icon-contained {
+.gui-button-icon-contained {
   @apply border border-solid border-neutral-90 bg-white;
 
   &:hover:not([disabled]) {
@@ -10,7 +10,7 @@
   }
 }
 
-.button-icon-contained:active,
-.button-icon-contained.button-icon-active {
+.gui-button-icon-contained:active,
+.gui-button-icon-contained.gui-button-icon-active {
   @apply border-blue-primary;
 }

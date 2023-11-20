@@ -11,8 +11,8 @@ function DropdownHeader({
   collapse = false,
   ...rest
 }: Props) {
-  const classNames = cx(`dropdown__header ${className}`, {
-    "dropdown__header--collapse": collapse,
+  const classNames = cx(`gui-dropdown__header ${className}`, {
+    "gui-dropdown__header--collapse": collapse,
   });
   return (
     <header className={classNames} {...rest}>

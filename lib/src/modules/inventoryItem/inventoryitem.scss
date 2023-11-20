@@ -1,4 +1,4 @@
-.inventory-item {
+.gui-inventory-item {
   @apply shadow-small bg-white;
 
   &:disabled {
@@ -6,11 +6,11 @@
   }
 }
 
-.inventory-item-preview-active {
+.gui-inventory-item-preview-active {
   @apply w-12 h-12 rounded border border-solid border-neutral-90 bg-neutral-98;
 }
 
-.inventory-item-preview {
+.gui-inventory-item-preview {
   @apply shadow-large;
 
   transform: rotate(-12deg);

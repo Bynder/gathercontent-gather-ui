@@ -1,13 +1,13 @@
-.button-icon-dark {
-  &:not(.button-icon-no-fill) .icon path {
+.gui-button-icon-dark {
+  &:not(.gui-button-icon-no-fill) .gui-icon path {
     fill: theme('colors.neutral.70');
   }
 
-  &.button-icon:active,
-  &.button-icon-active {
+  &.gui-button-icon:active,
+  &.gui-button-icon-active {
     @apply bg-neutral-40 border-neutral-40;
 
-    &:not(.button-icon-no-fill) .icon path {
+    &:not(.gui-button-icon-no-fill) .gui-icon path {
       fill: white;
     }
 
@@ -23,7 +23,7 @@
   &:hover {
     @apply bg-neutral-30 border-neutral-30;
 
-    &:not(.button-icon-no-fill) .icon path {
+    &:not(.gui-button-icon-no-fill) .gui-icon path {
       fill: white;
     }
   }
@@ -31,7 +31,7 @@
   &:focus {
     @apply bg-neutral-40 border-white shadow-button-icon-dark-focus;
 
-    &:not(.button-icon-no-fill) .icon path {
+    &:not(.gui-button-icon-no-fill) .gui-icon path {
       fill: white;
     }
   }

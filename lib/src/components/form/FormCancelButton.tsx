@@ -3,7 +3,7 @@ import { ButtonTertiary } from "lib";
 
 export function FormCancelButton({ children, className = "", ...rest }: any) {
   return (
-    <ButtonTertiary className={`form-cancel-button ${className}`} {...rest}>
+    <ButtonTertiary className={`gui-form-cancel-button ${className}`} {...rest}>
       {children}
     </ButtonTertiary>
   );

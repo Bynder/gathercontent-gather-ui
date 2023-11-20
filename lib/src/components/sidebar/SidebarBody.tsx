@@ -1,12 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
-export function SidebarBody({
-  children,
-  className = '',
-  ...rest
-}: any) {
+export function SidebarBody({ children, className = "", ...rest }: any) {
   return (
-    <div className={`sidebar-body overflow-y-auto ${className}`} {...rest}>
+    <div className={`gui-sidebar-body overflow-y-auto ${className}`} {...rest}>
       {children}
     </div>
   );

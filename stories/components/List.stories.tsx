@@ -37,7 +37,7 @@ const statusWithTooltip = (
 
 const overdueTitle = (title: any, id: any) => (
   <TooltipWrapper id={id} tooltipText="Overdue">
-    <span className="color-overdue">{title}</span>
+    <span className="gui-color-overdue">{title}</span>
   </TooltipWrapper>
 );
 

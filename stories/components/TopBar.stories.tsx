@@ -32,14 +32,14 @@ export const Topbar = () => (
           <TopBarCell>
             <Icon
               name="backArrow"
-              className="top-bar__action top-bar__action--collapse-left"
+              className="gui-top-bar__action gui-top-bar__action--collapse-left"
             />
           </TopBarCell>
           <TopBarCell bordered>
             <Button
               types={["icon-only"]}
               clickHandler={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
             >
               {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
@@ -66,7 +66,7 @@ export const Topbar = () => (
               name="menuDotted"
               size={ButtonIcon.sizes.md}
               onClick={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
               iconTitle="Open item settings"
             />
           </TopBarCell>
@@ -82,14 +82,14 @@ export const Topbar = () => (
           <TopBarCell>
             <Icon
               name="backArrow"
-              className="top-bar__action top-bar__action--collapse-left"
+              className="gui-top-bar__action gui-top-bar__action--collapse-left"
             />
           </TopBarCell>
           <TopBarCell bordered>
             <Button
               types={["icon-only"]}
               clickHandler={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
             >
               {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
@@ -116,7 +116,7 @@ export const Topbar = () => (
               name="menuDotted"
               size={ButtonIcon.sizes.md}
               onClick={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
               iconTitle="Open item settings"
             />
           </TopBarCell>
@@ -136,14 +136,14 @@ export const Topbar = () => (
           <TopBarCell>
             <Icon
               name="backArrow"
-              className="top-bar__action top-bar__action--collapse-left"
+              className="gui-top-bar__action gui-top-bar__action--collapse-left"
             />
           </TopBarCell>
           <TopBarCell bordered>
             <Button
               types={["icon-only"]}
               clickHandler={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
             >
               {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
               <Icon name="menu" size="minor" />
@@ -156,7 +156,7 @@ export const Topbar = () => (
               name="menuDotted"
               size={ButtonIcon.sizes.md}
               onClick={() => {}}
-              className="top-bar__action"
+              className="gui-top-bar__action"
               iconTitle="Open item settings"
             />
           </TopBarCell>
@@ -197,7 +197,7 @@ export const Topbar = () => (
         </TopBarContent>
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
-            <Search className="top-bar__search-dropdown">
+            <Search className="gui-top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
@@ -234,9 +234,9 @@ export const Topbar = () => (
               popoverClass="popover-dropdown"
               caret
             >
-              <ul className="dropdown-menu">
-                <li className="dropdown__item">
-                  <a href="#test" className="dropdown__link">
+              <ul className="gui-dropdown-menu">
+                <li className="gui-dropdown__item">
+                  <a href="#test" className="gui-dropdown__link">
                     Personal Settings
                   </a>
                 </li>
@@ -283,7 +283,7 @@ export const Topbar = () => (
         </TopBarContent>
         <TopBarContent right xs={2} md={2}>
           <TopBarCell>
-            <Search className="top-bar__search-dropdown">
+            <Search className="gui-top-bar__search-dropdown">
               <Search.Input onChange={() => {}} />
               <Search.Body>
                 <Search.Options>
@@ -320,9 +320,9 @@ export const Topbar = () => (
               popoverClass="popover-dropdown"
               caret
             >
-              <ul className="dropdown-menu">
-                <li className="dropdown__item">
-                  <a href="#test" className="dropdown__link">
+              <ul className="gui-dropdown-menu">
+                <li className="gui-dropdown__item">
+                  <a href="#test" className="gui-dropdown__link">
                     Personal Settings
                   </a>
                 </li>

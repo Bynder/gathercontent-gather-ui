@@ -10,7 +10,7 @@ export const FinderPanelLayoutContext = React.createContext({});
 export function FinderPanelLayout({ children, className, fixed }: any) {
   return (
     <FinderPanelLayoutProvider fixed={fixed}>
-      <div className={`finder-panel-layout ${className}`}>{children}</div>
+      <div className={`gui-finder-panel-layout ${className}`}>{children}</div>
     </FinderPanelLayoutProvider>
   );
 }

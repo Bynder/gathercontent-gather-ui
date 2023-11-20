@@ -57,7 +57,7 @@ function DndDropNotification() {
       }}
     >
       {({ canDrop, isOver }: any, defineDropRef: any) => (
-        <div ref={defineDropRef} className="h-margin-top">
+        <div ref={defineDropRef} className="gui-h-margin-top">
           <Message isDragging={isDragging} isOver={isOver} canDrop={canDrop}>
             {(!isDragging || (!canDrop && !isOver)) &&
               "Start by dragging items in here."}

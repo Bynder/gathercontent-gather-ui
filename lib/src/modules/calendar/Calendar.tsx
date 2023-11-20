@@ -1,30 +1,30 @@
-import React from 'react';
-import { DayPicker } from 'react-day-picker';
+import React from "react";
+import { DayPicker } from "react-day-picker";
 
-import cx from 'classnames';
+import cx from "classnames";
 
 export function Calendar({
   onDayClick,
   selectedDay,
   className,
   enableWeekendDays = false,
-  containerClassName = '',
-  today
+  containerClassName = "",
+  today,
 }: any) {
-  const classes = cx('calendar', className);
-  const containerClasses = cx('calendar-container', containerClassName);
+  const classes = cx("gui-calendar", className);
+  const containerClasses = cx("gui-calendar-container", containerClassName);
   const modifiers = {
-    past: (day: any) => day < today
+    past: (day: any) => day < today,
   };
 
   if (enableWeekendDays === false) {
     // @ts-expect-error TS(2339): Property 'weekend' does not exist on type '{ past:... Remove this comment to see the full error message
     modifiers.weekend = {
-      daysOfWeek: [0, 6]
+      daysOfWeek: [0, 6],
     };
   }
 
-  const weekdayText = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  const weekdayText = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   const getDayOfWeekLabel = (dateObject: any) => {
     const dayOfWeekNumber = dateObject.getDay();
@@ -46,10 +46,10 @@ export function Calendar({
         showOutsideDays
         today={today}
         formatters={{
-          formatWeekdayName: dateObject => getDayOfWeekLabel(dateObject)
+          formatWeekdayName: (dateObject) => getDayOfWeekLabel(dateObject),
         }}
         modifiersClassNames={{
-          past: 'rdp-day_past'
+          past: "rdp-day_past",
         }}
         captionLayout="buttons"
       />

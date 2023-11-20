@@ -12,7 +12,7 @@ function WindowingItem({ children, index, style }: any) {
         ...baseItemStyle,
         top: `${index * itemHeight}px`,
       }}
-      className="windowing-item"
+      className="gui-windowing-item"
     >
       {children}
     </div>

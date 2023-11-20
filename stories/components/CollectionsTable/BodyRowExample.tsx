@@ -13,28 +13,28 @@ import {
 const BodyRowExample = () => (
   <CollectionsTable.Row>
     <CollectionsTable.Cell>
-      <div className="text-overflow-ellipsis">
+      <div className="gui-text-overflow-ellipsis">
         <CollectionsTable.CellContent>
           <StatusIndicator
             color="rgb(250, 167, 50)"
-            className="collections-table__status-indicator"
+            className="gui-collections-table__status-indicator"
           />
-          <h3 className="collections-table__row-title text-overflow-ellipsis">
+          <h3 className="gui-collections-table__row-title text-overflow-ellipsis">
             <a href="/">Energy Company Services</a>
           </h3>
         </CollectionsTable.CellContent>
       </div>
     </CollectionsTable.Cell>
-    <CollectionsTable.Cell className="hide-small">
-      <div className="text-overflow-ellipsis">No template</div>
+    <CollectionsTable.Cell className="gui-hide-small">
+      <div className="gui-text-overflow-ellipsis">No template</div>
     </CollectionsTable.Cell>
-    <CollectionsTable.Cell className="hide-small">
-      <div className="text-overflow-ellipsis">Today</div>
+    <CollectionsTable.Cell className="gui-hide-small">
+      <div className="gui-text-overflow-ellipsis">Today</div>
     </CollectionsTable.Cell>
-    <CollectionsTable.Cell className="hide-small">
-      <div className="text-overflow-ellipsis">Yesterday</div>
+    <CollectionsTable.Cell className="gui-hide-small">
+      <div className="gui-text-overflow-ellipsis">Yesterday</div>
     </CollectionsTable.Cell>
-    <CollectionsTable.Cell className="hide-small">
+    <CollectionsTable.Cell className="gui-hide-small">
       <AvatarGroup maximum={3}>
         <AvatarWithPopover
           name="Angus Edwardson"
@@ -55,8 +55,12 @@ const BodyRowExample = () => (
       </AvatarGroup>
     </CollectionsTable.Cell>
     <CollectionsTable.Cell>
-      <div className="text-overflow-ellipsis">
-        <Icon className="collections-table__icon" name="comment" text="20" />
+      <div className="gui-text-overflow-ellipsis">
+        <Icon
+          className="gui-collections-table__icon"
+          name="comment"
+          text="20"
+        />
       </div>
     </CollectionsTable.Cell>
   </CollectionsTable.Row>

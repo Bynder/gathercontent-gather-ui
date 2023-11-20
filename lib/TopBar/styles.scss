@@ -13,7 +13,7 @@ $top-bar-notification-height: 42px;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.top-bar {
+.gui-top-bar {
   height: $top-bar-height;
   padding: 0;
   z-index: $top-bar-zindex;
@@ -23,21 +23,21 @@ $top-bar-notification-height: 42px;
     height: $top-bar-height-medium;
   }
 
-  .top-bar__wrapper {
+  .gui-top-bar__wrapper {
     background: #fff;
     border-bottom: 1px solid $color-border-base;
     padding: $layout-spacing-base * 0.5 math.div($layout-spacing-base, 1.5);
     width: 100%;
   }
 
-  .top-bar__wrapper--fixed {
+  .gui-top-bar__wrapper--fixed {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
   }
 
-  .top-bar__inner {
+  .gui-top-bar__inner {
     min-height: 53px;
     position: relative;
 
@@ -47,25 +47,25 @@ $top-bar-notification-height: 42px;
     }
   }
 
-  .top-bar__content {
+  .gui-top-bar__content {
     position: static;
     display: flex;
     align-items: center;
   }
 
-  .top-bar__content--left {
+  .gui-top-bar__content--left {
     @include respond-to($top-bar-main-breakpoint) {
       position: absolute;
       top: 0;
       bottom: 0;
     }
 
-    .top-bar__cell:last-child {
+    .gui-top-bar__cell:last-child {
       flex-grow: 1;
     }
   }
 
-  .top-bar__content--center {
+  .gui-top-bar__content--center {
     justify-content: center;
 
     @include respond-to($top-bar-main-breakpoint) {
@@ -73,7 +73,7 @@ $top-bar-notification-height: 42px;
     }
   }
 
-  .top-bar__content--right {
+  .gui-top-bar__content--right {
     justify-content: flex-end;
 
     @include respond-to($top-bar-main-breakpoint) {
@@ -86,7 +86,7 @@ $top-bar-notification-height: 42px;
     }
   }
 
-  .top-bar__cell {
+  .gui-top-bar__cell {
     padding: 0 $layout-spacing-base 0 0;
     display: flex;
     align-items: center;
@@ -100,31 +100,31 @@ $top-bar-notification-height: 42px;
     }
   }
 
-  .top-bar__cell--bordered {
+  .gui-top-bar__cell--bordered {
     padding-left: $layout-spacing-base;
     border-left: 1px solid $color-border-base;
   }
 
-  .top-bar__action {
+  .gui-top-bar__action {
     fill: $neutral-dark;
     padding: math.div($layout-spacing-base, 2.5);
   }
 
-  .item-settings .button {
+  .gui-item-settings .gui-button {
     display: block;
     padding: math.div($layout-spacing-base, 2.5)
       math.div($layout-spacing-base, 1.55);
   }
 
-  .top-bar__action--collapse-left {
+  .gui-top-bar__action--collapse-left {
     margin-left: 0;
   }
 
-  .top-bar__action--collapse-right {
+  .gui-top-bar__action--collapse-right {
     margin-right: 0;
   }
 
-  .top-bar__drop-down {
+  .gui-top-bar__drop-down {
     background: #fff;
     overflow: scroll;
     position: absolute;
@@ -142,8 +142,8 @@ $top-bar-notification-height: 42px;
     }
   }
 
-  &.top-bar--has-notification {
-    .top-bar__drop-down {
+  &.gui-top-bar--has-notification {
+    .gui-top-bar__drop-down {
       height: calc(
         100vh - #{$top-bar-height+$top-bar-dropdown-bottom-margin+$top-bar-notification-height}
       );
@@ -157,63 +157,63 @@ $top-bar-notification-height: 42px;
   }
 
   &--dark {
-    .top-bar__wrapper {
+    .gui-top-bar__wrapper {
       background: $neutral-dark;
       border-color: $neutral-dark;
       color: white;
     }
 
-    .top-bar__action {
+    .gui-top-bar__action {
       fill: white;
     }
 
-    .top-bar__cell--bordered {
+    .gui-top-bar__cell--bordered {
       border-color: $neutral-base;
     }
 
-    .avatar__initials {
+    .gui-avatar__initials {
       color: black;
     }
 
-    .dropdown__action {
+    .gui-dropdown__action {
       color: $neutral-dark;
     }
   }
 }
 
-.top-bar-light-grey {
-  .top-bar__wrapper {
+.gui-top-bar-light-grey {
+  .gui-top-bar__wrapper {
     @apply bg-neutral-98 border-neutral-90 text-neutral-20;
   }
 
-  .top-bar__cell--bordered {
+  .gui-top-bar__cell--bordered {
     @apply border-neutral-90;
   }
 }
 
-.top-bar__content--right.top-bar__content--collapse {
+.gui-top-bar__content--right.gui-top-bar__content--collapse {
   padding-right: 0;
 }
 
-.top-bar__content--left.top-bar__content--collapse {
+.gui-top-bar__content--left.gui-top-bar__content--collapse {
   padding-left: 0;
 }
 
-.top-bar__group {
+.gui-top-bar__group {
   display: flex;
   margin: 0 math.div($layout-spacing-base, 1.33);
 }
 
-.top-bar__group--collapse {
+.gui-top-bar__group--collapse {
   margin: 0;
 }
 
-.top-bar__group > * {
+.gui-top-bar__group > * {
   margin: 0 $layout-spacing-base * 0.25;
 }
 
-.top-bar--has-notification,
-.top-bar--has-notification .top-bar__wrapper {
+.gui-top-bar--has-notification,
+.gui-top-bar--has-notification .gui-top-bar__wrapper {
   height: $top-bar-height + $top-bar-notification-height;
 
   @include respond-to($top-bar-main-breakpoint) {
@@ -221,15 +221,15 @@ $top-bar-notification-height: 42px;
   }
 }
 
-.top-bar--has-notification {
-  .notification {
+.gui-top-bar--has-notification {
+  .gui-notification {
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
   }
 
-  .top-bar__inner {
+  .gui-top-bar__inner {
     width: 100%;
     top: $top-bar-notification-height;
   }

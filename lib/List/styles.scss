@@ -6,97 +6,97 @@ $list-border: 1px solid $color-border-base;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.list {
+.gui-list {
   width: 100%;
 
-  .list {
+  .gui-list {
     display: none;
     order: 3;
   }
 
-  &.is-active svg path,
-  .is-active & svg path {
+  &.gui-is-active svg path,
+  .gui-is-active & svg path {
     fill: $color-text-base;
   }
 
-  .is-active & .item-row svg path {
+  .gui-is-active & .gui-item-row svg path {
     fill: $neutral-base;
   }
 }
 
-.list__head {
+.gui-list__head {
   padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
   border-top: $list-border;
 }
 
-.list__subtitle {
+.gui-list__subtitle {
   font-size: $typo-size-small;
   text-transform: uppercase;
   color: $neutral-base;
   padding: $layout-spacing-base $layout-spacing-base 0 $layout-spacing-base;
 }
 
-.list__head-inner {
+.gui-list__head-inner {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.list__title {
+.gui-list__title {
   font-weight: $typo-weight-semi-bold;
 }
 
-.list__body {
+.gui-list__body {
   margin: $layout-spacing-base*0.5;
 
-  .list__body {
+  .gui-list__body {
     margin: 0;
   }
 }
 
-.list__item {
+.gui-list__item {
   position: relative;
 
-  &.show-sub-list > .list {
+  &.gui-show-sub-list > .gui-list {
     display: block;
   }
 }
 
-.list__item-content {
+.gui-list__item-content {
   position: relative;
   display: flex;
   align-items: center;
   padding: $layout-spacing-base*0.5;
 
-  .list .list & {
+  .gui-list .gui-list & {
     padding-left: $layout-spacing-base*1.5;
   }
 
-  .list .list .list & {
+  .gui-list .gui-list .gui-list & {
     padding-left: $layout-spacing-base*2.5;
   }
 
-  .list .list .list .list & {
+  .gui-list .gui-list .gui-list .gui-list & {
     padding-left: $layout-spacing-base*3.5;
   }
 
-  .is-current > & {
+  .gui-is-current > & {
     background: $primary-blue-lightest;
     border-radius: 4px;
 
-    & .list__item-title,
-    & .list__item-title a {
+    & .gui-list__item-title,
+    & .gui-list__item-title a {
       font-weight: 500;
       color: $primary-blue;
     }
 
-    & .color-overdue a {
+    & .gui-color-overdue a {
       color: $primary-red;
     }
   }
 }
 
-.list__actions {
+.gui-list__actions {
   display: flex;
   align-items: center;
   margin-left: auto;
@@ -104,23 +104,23 @@ $list-border: 1px solid $color-border-base;
   order: 2;
 }
 
-.list__action {
+.gui-list__action {
   margin-left: $layout-spacing-base*0.5;
 }
 
-.list__button {
+.gui-list__button {
   padding: $layout-spacing-base*0.5 ($layout-spacing-base*0.5 - 2px);
 
   svg {
     transform: rotate(-90deg);
   }
 
-  &.is-active svg {
+  &.gui-is-active svg {
     transform: rotate(0deg);
   }
 }
 
-.list__item-text {
+.gui-list__item-text {
   width: 100%;
   overflow: hidden;
 
@@ -133,24 +133,24 @@ $list-border: 1px solid $color-border-base;
 /* ==========================================================================
    Modifiers
    ========================================================================== */
-.list--bordered-right {
+.gui-list--bordered-right {
   border-right: $list-border;
 }
 
-.list--bordered-left {
+.gui-list--bordered-left {
   border-left: $list-border;
 }
 
-.list--bordered .list__head {
+.gui-list--bordered .gui-list__head {
   padding: $layout-spacing-base;
   border-bottom: $list-border;
 }
 
-.list--bordered .list__body {
+.gui-list--bordered .gui-list__body {
   margin: 0;
 }
 
-.list--bordered .is-current > .list__item-content > .list__item-text {
+.gui-list--bordered .gui-is-current > .gui-list__item-content > .gui-list__item-text {
   &::before {
     content: "";
     position: absolute;
@@ -162,17 +162,17 @@ $list-border: 1px solid $color-border-base;
   }
 }
 
-.list--bordered .list__item-content {
+.gui-list--bordered .gui-list__item-content {
   border-radius: 0;
   border-bottom: $list-border;
   padding-left: $layout-spacing-base;
   padding-right: $layout-spacing-base;
 }
 
-.list__item--collapse .list__item-content {
+.gui-list__item--collapse .gui-list__item-content {
   padding: 0;
 }
 
-.list__item--collapse .list__actions {
+.gui-list__item--collapse .gui-list__actions {
   margin-right: $layout-spacing-base*0.5;
 }

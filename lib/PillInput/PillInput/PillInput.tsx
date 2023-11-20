@@ -74,9 +74,9 @@ function PillInput({
   };
 
   const containerClassName = cx(
-    `${className} pill-input__container form__input h-padding-quarter h-padding-bottom-clear`,
+    `${className} gui-pill-input__container gui-form__input gui-h-padding-quarter gui-h-padding-bottom-clear`,
     {
-      "pill-input--focused": isFocused,
+      "gui-pill-input--focused": isFocused,
     }
   );
 
@@ -110,7 +110,7 @@ function PillInput({
         {...rest}
         ref={inputRef}
         placeholder={!pills.length ? placeholder : ""}
-        className="pill-input__input h-margin-bottom-quarter h-margin-right-quarter h-padding-bottom-quarter h-padding-top-quarter h-padding-left-quarter h-padding-right-quarter"
+        className="gui-pill-input__input gui-h-margin-bottom-quarter gui-h-margin-right-quarter gui-h-padding-bottom-quarter gui-h-padding-top-quarter gui-h-padding-left-quarter gui-h-padding-right-quarter"
         value={inputValue}
         onChange={({ target: { value } }) => onChange(value)}
         onFocus={onFocus}

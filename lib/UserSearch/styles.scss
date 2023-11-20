@@ -1,19 +1,19 @@
-.user-search {
-  .dropdown__action-group + .dropdown__action-group {
+.gui-user-search {
+  .gui-dropdown__action-group + .gui-dropdown__action-group {
     border: none;
   }
 
-  .dropdown__action {
+  .gui-dropdown__action {
     padding-left: $layout-spacing-base * 0.75;
     padding-right: $layout-spacing-base * 0.75;
   }
 }
 
-.user-search__search-wrapper {
+.gui-user-search__search-wrapper {
   padding: $layout-spacing-base * 0.5 $layout-spacing-base * 0.75;
 }
 
-.user-search__search-input {
+.gui-user-search__search-input {
   width: 100%;
   padding: $layout-spacing-base * 0.25;
   border-radius: 3px;
@@ -24,63 +24,63 @@
   }
 }
 
-.user-search__search-head-top {
+.gui-user-search__search-head-top {
   display: flex;
 }
 
-.user-search__search-head {
-  .toggle-wrapper {
+.gui-user-search__search-head {
+  .gui-toggle-wrapper {
     margin-left: auto;
     flex-shrink: 0;
     padding-right: $layout-spacing-base * 0.75;
   }
 }
 
-.user-search__search-heading,
-.user-search__search-subheading {
+.gui-user-search__search-heading,
+.gui-user-search__search-subheading {
   display: block;
   padding: 0 $layout-spacing-base * 0.75;
 }
 
-.user-search__search-heading {
+.gui-user-search__search-heading {
   font-weight: 500;
   padding-bottom: $layout-spacing-base * 0.25;
 }
 
-.user-search__search-subheading {
+.gui-user-search__search-subheading {
   color: $neutral-base;
   font-size: $typo-size-slight;
 }
 
-.user-search__search-results {
+.gui-user-search__search-results {
   max-height: 300px;
   overflow-y: auto;
 
-  .no-results {
+  .gui-no-results {
     display: block;
     padding: $layout-spacing-base * 0.25 $layout-spacing-base * 0.5;
     color: $neutral-base;
     font-style: italic;
   }
 
-  .dropdown__action--selected {
+  .gui-dropdown__action--selected {
     background: scale-color($primary-blue-lightest, $lightness: 20%);
 
-    .avatar__name {
+    .gui-avatar__name {
       color: $primary-blue;
     }
   }
 }
 
-.user-search__text {
+.gui-user-search__text {
   font-size: $typo-size-small;
   color: $neutral-base;
   font-style: italic;
   padding-left: $layout-spacing-base * 0.25;
 }
 
-.user-search-list {
-  .user-search-list__user {
+.gui-user-search-list {
+  .gui-user-search-list__user {
     border-top: 1px solid $neutral-light;
     list-style: none;
 
@@ -88,11 +88,11 @@
       border-bottom: 1px solid $neutral-light;
     }
 
-    .user-search-list__user-name {
+    .gui-user-search-list__user-name {
       display: flex;
       align-items: center;
 
-      .icon svg {
+      .gui-icon svg {
         width: $layout-spacing-base * 0.5;
       }
     }

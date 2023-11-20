@@ -11,7 +11,7 @@ import { LayoutOverlaySidebar } from "./LayoutOverlaySidebar";
 
 function Layout({ children, className, fullScreen, ...rest }: any) {
   const layoutClassName = cx(
-    "layout flex flex-col overflow-x-hidden",
+    "gui-layout flex flex-col overflow-x-hidden",
     className,
     {
       "h-screen": fullScreen,

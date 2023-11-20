@@ -106,17 +106,17 @@ function CommentForm({
   };
 
   const inputWrapperClassNames = cx("relative p-2 w-full rounded text-sm", {
-    "pseudo-border-grey-1px": !hasFocus && !hasFailed,
-    "pseudo-border-blue-2px": hasFocus && !hasFailed,
-    "pseudo-border-red-2px": hasFailed,
+    "gui-pseudo-border-grey-1px": !hasFocus && !hasFailed,
+    "gui-pseudo-border-blue-2px": hasFocus && !hasFailed,
+    "gui-pseudo-border-red-2px": hasFailed,
   });
 
   return (
     // @ts-expect-error
-    <form onSubmit={handleSubmitWithLoader} className="comment-edit-form">
+    <form onSubmit={handleSubmitWithLoader} className="gui-comment-edit-form">
       <div className={inputWrapperClassNames} ref={inputWrapperRef}>
         <MentionsInput
-          className="edit-comment"
+          className="gui-edit-comment"
           value={commentText}
           onChange={handleChange}
           onFocus={() => setHasFocus(true)}
@@ -197,7 +197,7 @@ function CommentForm({
             type="submit"
           >
             {isSubmitting && (
-              <Icon name="loader16" className="mr-2 fill-white" />
+              <Icon name="loader16" className="mr-2 gui-fill-white" />
             )}
             {hasFailed ? "Retry" : submitText}
           </ButtonPrimary>

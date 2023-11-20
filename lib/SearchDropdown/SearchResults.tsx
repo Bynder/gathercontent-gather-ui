@@ -96,13 +96,16 @@ class SearchResults extends Component {
           {/* @ts-expect-error TS(2339): Property 'results' does not exist on type 'Readonl... Remove this comment to see the full error message */}
           {this.props.results.map((result: any, index: any) => {
             const idKey = `search-results-item-${index}`;
-            const className = cx("dropdown__link dropdown__avatar", {
-              "dropdown__link--highlighted":
+            const className = cx("gui-dropdown__link dropdown__avatar", {
+              "gui-dropdown__link--highlighted":
                 this.state.highlightedIndex === index,
             });
 
             return (
-              <li key={idKey} className="dropdown__item dropdown__item--avatar">
+              <li
+                key={idKey}
+                className="gui-dropdown__item gui-dropdown__item--avatar"
+              >
                 <button
                   type="button"
                   className={className}

@@ -42,10 +42,10 @@ function DueDateTime(props: any) {
 
   return (
     <Dropdown id="duedate__header--time">
-      <Dropdown.Trigger triggerClassName="button button--link-default button--collapse duedate__time">
+      <Dropdown.Trigger triggerClassName="gui-button gui-button--link-default gui-button--collapse gui-duedate__time">
         {props.time}
       </Dropdown.Trigger>
-      <Dropdown.Content className="duedate__time-picker">
+      <Dropdown.Content className="gui-duedate__time-picker">
         {times}
       </Dropdown.Content>
     </Dropdown>

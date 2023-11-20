@@ -78,14 +78,14 @@ export function DropdownTrigger({
     return null;
   };
 
-  const wrapperClassNames = cx(`dropdown__trigger-wrapper--${direction}`, {
-    "dropdown__trigger-wrapper": useButton,
-    "dropdown__trigger-wrapper--select": useSelect,
+  const wrapperClassNames = cx(`gui-dropdown__trigger-wrapper--${direction}`, {
+    "gui-dropdown__trigger-wrapper": useButton,
+    "gui-dropdown__trigger-wrapper--select": useSelect,
   });
   const buttonClassNames = cx(triggerClassName, {
-    "is-active": showContent,
-    dropdown__trigger: !useButton && !useSelect,
-    "primary-blue-text": blueOnActive && showContent,
+    "gui-is-active": showContent,
+    "gui-dropdown__trigger": !useButton && !useSelect,
+    "gui-primary-blue-text": blueOnActive && showContent,
   });
 
   const buttonTypes = useSelect ? types.concat("outline") : types;

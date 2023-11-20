@@ -1,10 +1,10 @@
 @import './tippystyles';
 
-.tippy-box[data-theme~='dark'] {
+.gui-tippy-box[data-theme~='dark'] {
   @apply bg-neutral-20 text-white;
 }
 
-.tooltip-wrapper__child {
+.gui-tooltip-wrapper__child {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +15,6 @@
   }
 }
 
-.tooltip-wrapper__child--clickable {
+.gui-tooltip-wrapper__child--clickable {
   cursor: pointer;
 }

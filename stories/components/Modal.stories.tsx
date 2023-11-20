@@ -66,10 +66,10 @@ export function Modals() {
             <Modal.Body>
               <Row>
                 <Col
-                  className="modal__column-wrapper modal__column-wrapper--highlight"
+                  className="gui-modal__column-wrapper gui-modal__column-wrapper--highlight"
                   xs={6}
                 >
-                  <div className="modal__column">
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -79,8 +79,8 @@ export function Modals() {
                     occaecat cupidatat non proident
                   </div>
                 </Col>
-                <Col className="modal__column-wrapper" xs={6}>
-                  <div className="modal__column">
+                <Col className="gui-modal__column-wrapper" xs={6}>
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -110,25 +110,25 @@ export function Modals() {
       >
         <ModalTrigger>
           <Modal.Container>
-            <Modal.Body className="has-columns">
-              <Row className="modal__row">
+            <Modal.Body className="gui-has-columns">
+              <Row className="gui-modal__row">
                 <Col
                   xs={12}
                   sm={6}
-                  className="modal__column-wrapper modal__column-wrapper--highlight"
+                  className="gui-modal__column-wrapper gui-modal__column-wrapper--highlight"
                 >
-                  <div className="modal__column">
-                    <h2 className="modal__body-title">Lorem ipsum dolor</h2>
+                  <div className="gui-modal__column">
+                    <h2 className="gui-modal__body-title">Lorem ipsum dolor</h2>
                   </div>
                 </Col>
-                <Col xs={12} sm={6} className="modal__column-wrapper">
-                  <div className="modal__column">
+                <Col xs={12} sm={6} className="gui-modal__column-wrapper">
+                  <div className="gui-modal__column">
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua.
                     </p>
-                    <div className="modal__illustration">
+                    <div className="gui-modal__illustration">
                       <div
                         style={{
                           background: "grey",
@@ -152,7 +152,7 @@ export function Modals() {
         description="A modal that has the backgrounds/borders cleared and a slightly larger padding"
       >
         <ModalTrigger>
-          <Modal.Container className="modal--clear modal--input-confirm">
+          <Modal.Container className="gui-modal--clear gui-modal--input-confirm">
             <Modal.Header>Confirm deletion</Modal.Header>
             <Modal.Body>
               File deletion is permanent and cannot be undone. Please confirm
@@ -189,7 +189,10 @@ export function Modals() {
         description="A modal that has its content centered and the backgrounds/borders cleared."
       >
         <ModalTrigger>
-          <Modal.Container className="modal--center modal--clear" size="small">
+          <Modal.Container
+            className="gui-modal--center gui-modal--clear"
+            size="small"
+          >
             <Modal.Header>Lorem ipsum dolor</Modal.Header>
             <Modal.Body>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -337,13 +340,13 @@ export function Modals() {
         <ModalTrigger>
           <Modal.Container overflow>
             <Modal.Header>Hello</Modal.Header>
-            <Modal.Body className="has-columns">
+            <Modal.Body className="gui-has-columns">
               <Row>
                 <Col
-                  className="modal__column-wrapper modal__column-wrapper--highlight"
+                  className="gui-modal__column-wrapper gui-modal__column-wrapper--highlight"
                   xs={6}
                 >
-                  <div className="modal__column">
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -392,8 +395,8 @@ export function Modals() {
                     Excepteur sint occaecat cupidatat non proident
                   </div>
                 </Col>
-                <Col className="modal__column-wrapper" xs={6}>
-                  <div className="modal__column">
+                <Col className="gui-modal__column-wrapper" xs={6}>
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -476,13 +479,13 @@ export function Modals() {
         <ModalTrigger>
           <Modal.Container>
             <Modal.Header>Hello</Modal.Header>
-            <Modal.Body className="has-columns">
+            <Modal.Body className="gui-has-columns">
               <Row>
                 <Col
-                  className="modal__column-wrapper modal__column-wrapper--highlight"
+                  className="gui-modal__column-wrapper gui-modal__column-wrapper--highlight"
                   xs={6}
                 >
-                  <div className="modal__column">
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -492,8 +495,8 @@ export function Modals() {
                     occaecat cupidatat non proident
                   </div>
                 </Col>
-                <Col className="modal__column-wrapper" xs={6}>
-                  <div className="modal__column">
+                <Col className="gui-modal__column-wrapper" xs={6}>
+                  <div className="gui-modal__column">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation

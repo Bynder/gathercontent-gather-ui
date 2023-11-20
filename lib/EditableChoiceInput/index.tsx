@@ -41,8 +41,8 @@ export function EditableChoiceInput({
     setIsFocused(true);
   };
 
-  const classNames = cx(`text-input-border pl-5 pr-2 ${className}`, {
-    "text-input-border-focus": isFocused,
+  const classNames = cx(`gui-text-input-border pl-5 pr-2 ${className}`, {
+    "gui-text-input-border-focus": isFocused,
   });
 
   return (
@@ -52,7 +52,7 @@ export function EditableChoiceInput({
       onMouseLeave={() => setShowAside(false)}
       {...props}
     >
-      <div className="option-inner flex items-center">
+      <div className="gui-option-inner flex items-center">
         <input type={type} disabled />
         <input
           data-testid="editable-choice-text-input"

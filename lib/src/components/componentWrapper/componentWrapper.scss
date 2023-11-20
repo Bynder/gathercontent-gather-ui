@@ -1,4 +1,4 @@
-.component-header {
+.gui-component-header {
   @apply rounded-t-xlarge border border-b-0 border-solid border-neutral-90 relative;
 
   &-selected {
@@ -15,31 +15,31 @@
   }
 }
 
-.component-header-top {
+.gui-component-header-top {
   @apply flex p-4 border border-t-0 border-l-0 border-r-0 border-solid border-neutral-90 items-center;
 }
 
-.component-counter {
+.gui-component-counter {
   @apply text-neutral-primary mr-2 text-lg;
 }
 
-.component-label {
+.gui-component-label {
   @apply flex text-lg leading-6 w-full items-center;
 }
 
-.component-label-text {
+.gui-component-label-text {
   @apply font-semi-bold text-neutral-20 mb-0 text-lg leading-6 break-all;
 }
 
-.component-sublabel {
+.gui-component-sublabel {
   @apply text-neutral-primary ml-1;
 }
 
-.component-header-aside {
+.gui-component-header-aside {
   @apply ml-auto flex-shrink-0;
 }
 
-.component-instructions {
+.gui-component-instructions {
   @apply rounded-none border-0 border-b border-solid border-neutral-90 text-sm p-4 align-top;
 
   &:focus {
@@ -47,7 +47,7 @@
   }
 }
 
-.component-body {
+.gui-component-body {
   @apply border-b-0 border-t-0;
 
   &-selected {
@@ -55,8 +55,8 @@
   }
 }
 
-.component-body,
-.component-footer {
+.gui-component-body,
+.gui-component-footer {
   @apply px-4 pt-4 border-0 border-l border-r border-solid border-neutral-90 relative;
 
   &-editable {
@@ -72,7 +72,7 @@
   }
 }
 
-.component-footer {
+.gui-component-footer {
   @apply border-b rounded-b-xlarge py-4;
 
   &-selected {

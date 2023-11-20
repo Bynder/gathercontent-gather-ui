@@ -7,11 +7,11 @@ $logo-max-width: 150px !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.logo__image {
+.gui-logo__image {
   max-width: $logo-max-width;
   max-height: $logo-max-height;
 
-  &.bynder-logo {
+  &.gui-bynder-logo {
    max-width: 40px;
    
    svg {

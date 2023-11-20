@@ -18,13 +18,17 @@ describe("LoadingOverlay", () => {
   it("can optionally load a fixed modifier", () => {
     const { rerender } = render(<LoadingOverlay />);
     expect(
-      screen.getByRole("status").classList.contains("loading-overlay--fixed")
+      screen
+        .getByRole("status")
+        .classList.contains("gui-loading-overlay--fixed")
     ).toBeFalsy();
 
     rerender(<LoadingOverlay fixed />);
 
     expect(
-      screen.getByRole("status").classList.contains("loading-overlay--fixed")
+      screen
+        .getByRole("status")
+        .classList.contains("gui-loading-overlay--fixed")
     ).toBeTruthy();
   });
 

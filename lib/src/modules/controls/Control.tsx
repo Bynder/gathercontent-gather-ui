@@ -10,7 +10,7 @@ function Control({
   danger,
   ...buttonProps
 }: any) {
-  const classNames = cx("control flex mr-2", className);
+  const classNames = cx("gui-control flex mr-2", className);
   const ButtonComponent = danger
     ? ButtonIconContainedDanger
     : ButtonIconContained;

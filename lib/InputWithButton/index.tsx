@@ -35,11 +35,11 @@ export class InputWithButton extends Component {
     } = this.props;
 
     const { hasBeenClicked } = this.state;
-    const wrapperClasses = cx("input-with-button", {
-      "input-with-button--padding-small": paddingSmall,
+    const wrapperClasses = cx("gui-input-with-button", {
+      "gui-input-with-button--padding-small": paddingSmall,
     });
-    const inputClasses = cx("input-with-button__input", {
-      "input-with-button__input--disabled": disabled,
+    const inputClasses = cx("gui-input-with-button__input", {
+      "gui-input-with-button__input--disabled": disabled,
     });
     return (
       <div className={wrapperClasses}>

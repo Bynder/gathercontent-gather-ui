@@ -1,14 +1,10 @@
-import React from 'react';
+import React from "react";
 
-export function DropdownContentList({
-  children,
-  heading,
-  ...rest
-}: any) {
+export function DropdownContentList({ children, heading, ...rest }: any) {
   return (
-    <div className="dropdown-content-list" {...rest}>
+    <div className="gui-dropdown-content-list" {...rest}>
       {heading && (
-        <div className="dropdown-content-list-heading">{heading}</div>
+        <div className="gui-dropdown-content-list-heading">{heading}</div>
       )}
       {children}
     </div>

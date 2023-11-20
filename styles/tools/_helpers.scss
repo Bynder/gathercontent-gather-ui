@@ -8,10 +8,10 @@
       $property: '';
 
       @if  $sl == '' {
-        $selector: '.h-#{$l}';
+        $selector: '.gui-h-#{$l}';
         $property: '#{$l}';
       } @else {
-        $selector: '.h-#{$l}-#{$sl}';
+        $selector: '.gui-h-#{$l}-#{$sl}';
         $property: '#{$l}-#{$sl}';
       }
 

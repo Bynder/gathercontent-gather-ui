@@ -19,11 +19,11 @@ export function Person({
   locked,
   lockedTooltipText,
 }: any) {
-  const classes = cx("person", className, {
-    "person-selected": selected,
-    "person-interactive": interactive,
-    "person-collapse": collapse,
-    "person-bordered": bordered,
+  const classes = cx("gui-person", className, {
+    "gui-person-selected": selected,
+    "gui-person-interactive": interactive,
+    "gui-person-collapse": collapse,
+    "gui-person-bordered": bordered,
   });
 
   const WrapperElement = interactive ? "button" : "div";
@@ -34,8 +34,8 @@ export function Person({
   return (
     <WrapperElement className={classes} onClick={onClick}>
       <Avatar url={avatarUrl} initials={initials} colour={colour} />
-      <div className="person-right">
-        <div className="person-name">
+      <div className="gui-person-right">
+        <div className="gui-person-name">
           {highlightText ? (
             <TextHighlighter highlight={highlightText} text={name} />
           ) : (
@@ -43,7 +43,7 @@ export function Person({
           )}
         </div>
         {!!subtitle && (
-          <div className="person-subtitle">
+          <div className="gui-person-subtitle">
             {shouldHighlightSubtitle ? (
               <TextHighlighter highlight={highlightText} text={subtitle} />
             ) : (
@@ -53,7 +53,11 @@ export function Person({
         )}
       </div>
       {selected && !locked && (
-        <Icon className="person-tick" name="tick16" types={["primary-blue"]} />
+        <Icon
+          className="gui-person-tick"
+          name="tick16"
+          types={["primary-blue"]}
+        />
       )}
       {locked && (
         <TooltipWrapper
@@ -62,7 +66,7 @@ export function Person({
         >
           <Icon
             name="lock"
-            className="person-lock"
+            className="gui-person-lock"
             types={["neutral-20"]}
             defaultActiveColor={false}
           />

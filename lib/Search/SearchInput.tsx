@@ -52,9 +52,9 @@ class SearchInput extends Component {
 
   render() {
     // @ts-expect-error TS(2339): Property 'className' does not exist on type 'Reado... Remove this comment to see the full error message
-    const classNames = cx(`search__input ${this.props.className}`, {
+    const classNames = cx(`gui-search__input ${this.props.className}`, {
       // @ts-expect-error TS(2339): Property 'showBody' does not exist on type 'Readon... Remove this comment to see the full error message
-      "is-focus": this.props.showBody || this.state.isFocussed,
+      "gui-is-focus": this.props.showBody || this.state.isFocussed,
     });
     return (
       <div className={classNames}>
@@ -67,7 +67,7 @@ class SearchInput extends Component {
         </label>
         <input
           id="search-input"
-          className="search__input--input"
+          className="gui-search__input--input"
           onChange={this.handleChange}
           value={this.state.inputValue}
           onFocus={this.handleFocus}
@@ -78,7 +78,7 @@ class SearchInput extends Component {
           onKeyPress={this.handleKeyPress}
         />
         <Button
-          className="search__input--clear"
+          className="gui-search__input--clear"
           types={["icon-only"]}
           clickHandler={this.clearInput}
           title={this.state.inputValue ? "Clear search" : "Close search"}
@@ -86,7 +86,7 @@ class SearchInput extends Component {
           <Icon name="cancel" />
         </Button>
         <Button
-          className="search__input--start"
+          className="gui-search__input--start"
           types={["icon-only"]}
           clickHandler={this.handleSearchClick}
           title="Open search"

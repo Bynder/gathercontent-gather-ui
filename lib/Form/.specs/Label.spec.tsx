@@ -8,8 +8,11 @@ import Label from "../Label";
 
 describe("Label", () => {
   it("adds modifier classes", () => {
-    const parentClasses = ["is-disabled", "form-checkbox__label--hinted"];
-    const classes = ["is-highlight", "is-active"];
+    const parentClasses = [
+      "gui-is-disabled",
+      "gui-form-checkbox__label--hinted",
+    ];
+    const classes = ["gui-is-highlight", "gui-is-active"];
     const { rerender } = render(<Label id="123" label="Its me, the label" />);
 
     let parent = screen.getByText("Its me, the label")

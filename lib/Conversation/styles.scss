@@ -18,7 +18,7 @@ $conversation-meta-text-color: $neutral-base !default;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.conversation {
+.gui-conversation {
   position: relative;
   border-radius: $conversation-border-radius;
   border: $conversation-border-width solid transparent;
@@ -27,31 +27,31 @@ $conversation-meta-text-color: $neutral-base !default;
   cursor: pointer;
   background: $conversation-background-color;
 
-  &.hover,
+  &.gui-hover,
   &:hover {
     border-color: $conversation-border-color;
     background-color: $neutral-lightest;
   }
 }
 
-.conversation__foot {
+.gui-conversation__foot {
   display: none;
   padding: $conversation-padding;
 }
 
-.conversation__header {
+.gui-conversation__header {
   display: none;
 
-  .toggle-wrapper {
+  .gui-toggle-wrapper {
     padding: $layout-spacing-base*0.5;
   }
 
-  .conversation__resolve {
+  .gui-conversation__resolve {
     margin-left: auto;
   }
 }
 
-.conversation__resolve {
+.gui-conversation__resolve {
   text-align: right;
   font-size: $typo-size-slight;
 
@@ -72,7 +72,7 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__resolve-undo {
+.gui-conversation__resolve-undo {
   position: relative;
   margin-left: $layout-spacing-base*.75;
 
@@ -90,11 +90,11 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__comment-list {
+.gui-conversation__comment-list {
   padding: 0;
 }
 
-.conversation__comment {
+.gui-conversation__comment {
   position: relative;
   display: none;
   padding: $conversation-padding $conversation-padding 0 $conversation-padding;
@@ -105,17 +105,17 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__reply-count {
+.gui-conversation__reply-count {
   padding-left: $layout-spacing-base*2;
   margin: -$conversation-padding 0 0;
   font-size: $conversation-meta-text-size;
 
-  .is-active & {
+  .gui-is-active & {
     display: none;
   }
 }
 
-.conversation__comment-body {
+.gui-conversation__comment-body {
   margin: -$typo-size-base*0.5 0 0;
   padding: $conversation-comment-body-padding;
 
@@ -128,7 +128,7 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__text {
+.gui-conversation__text {
   margin: 0;
   font-size: $typo-size-slight;
   padding-right: $layout-spacing-base*0.5;
@@ -150,13 +150,13 @@ $conversation-meta-text-color: $neutral-base !default;
     height: 30px;
   }
 
-  .conversation:hover & {
+  .gui-conversation:hover & {
     &::after {
       background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 0%,transparentize($neutral-lightest, 0.5) 50%, $neutral-lightest 100%);
     }
   }
 
-  .conversation.is-active & {
+  .gui-conversation.gui-is-active & {
     max-height: none;
 
     &::after {
@@ -164,7 +164,7 @@ $conversation-meta-text-color: $neutral-base !default;
     }
   }
 
-  .mention {
+  .gui-mention {
     background: rgba( $primary-purple, .1 );
     padding: $layout-spacing-base*0.1;
     color: $primary-purple;
@@ -173,11 +173,11 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__actions {
+.gui-conversation__actions {
   white-space: nowrap;
 }
 
-.conversation__meta {
+.gui-conversation__meta {
   font-size: $conversation-meta-text-size;
   margin: 0 $conversation-padding*0.5 0 0;
 
@@ -200,29 +200,29 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__edit-link {
+.gui-conversation__edit-link {
   cursor: pointer;
 }
 
-.conversation__focus-fallback {
+.gui-conversation__focus-fallback {
   position: absolute;
   bottom: 0;
   left: -999em;
 }
 
-.conversation__date-text,
-.conversation__failed-text {
+.gui-conversation__date-text,
+.gui-conversation__failed-text {
   color: $conversation-meta-text-color;
   font-size: $conversation-meta-text-size;
 }
 
-.conversation__meta-wrapper {
+.gui-conversation__meta-wrapper {
   margin-bottom: $conversation-padding;
   display: none;
 }
 
-.conversation__failed--icon,
-.is-active .conversation__failed--icon {
+.gui-conversation__failed--icon,
+.gui-is-active .gui-conversation__failed--icon {
   margin-right: 5px;
   vertical-align: sub;
 
@@ -231,15 +231,15 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.conversation__failed--button {
+.gui-conversation__failed--button {
   margin-left: $layout-spacing-base*0.25
 }
 
-.conversation__confirmation-overlay {
+.gui-conversation__confirmation-overlay {
   left: $conversation-comment-body-indentation;
 }
 
-.conversation__latest-reply .conversation__comment {
+.gui-conversation__latest-reply .gui-conversation__comment {
   padding-top: 0;
 }
 
@@ -247,7 +247,7 @@ $conversation-meta-text-color: $neutral-base !default;
 /* ==========================================================================
    State Styles
    ========================================================================== */
-.is-active.conversation {
+.gui-is-active.gui-conversation {
   border-color: $conversation-border-color;
   background-color: $conversation-active-background-color;
   box-shadow: $shadow-shallow;
@@ -255,16 +255,16 @@ $conversation-meta-text-color: $neutral-base !default;
   margin-bottom: $layout-spacing-base*3;
 }
 
-.is-active .conversation__foot,
-.is-active .conversation__comment {
+.gui-is-active .gui-conversation__foot,
+.gui-is-active .gui-conversation__comment {
   display: block;
 }
 
-.is-active .conversation__header {
+.gui-is-active .gui-conversation__header {
   display: flex;
   border-bottom: $conversation-border-width solid $conversation-border-color;
 
-  .conversation__icon {
+  .gui-conversation__icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,12 +277,12 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.is-active > .conversation__comment-list .conversation__comment {
+.gui-is-active > .gui-conversation__comment-list .gui-conversation__comment {
   margin-bottom: 0;
 }
 
-.is-active .conversation__comment,
-.show-reply-preview > .conversation__comment-list .conversation__comment {
+.gui-is-active .gui-conversation__comment,
+.gui-show-reply-preview > .gui-conversation__comment-list .gui-conversation__comment {
   position: relative;
 
   &::before {
@@ -295,7 +295,7 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.is-active .conversation__comment:last-child {
+.gui-is-active .gui-conversation__comment:last-child {
   border-bottom: $conversation-border-width solid $conversation-border-color;
   padding-bottom: $conversation-padding;
 
@@ -304,14 +304,14 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.is-active .conversation__meta-wrapper {
+.gui-is-active .gui-conversation__meta-wrapper {
   display: block;
   margin-bottom: $conversation-padding;
 }
 
-.is-visually-disabled .conversation__person-type,
-.is-visually-disabled .conversation__person-name,
-.is-visually-disabled .conversation__comment-body {
+.gui-is-visually-disabled .gui-conversation__person-type,
+.gui-is-visually-disabled .gui-conversation__person-name,
+.gui-is-visually-disabled .gui-conversation__comment-body {
   background: rgb(255 255 255 / 75%);
 
   @supports (filter: blur()) {
@@ -321,21 +321,21 @@ $conversation-meta-text-color: $neutral-base !default;
   }
 }
 
-.is-read-only.conversation {
-  .conversation__resolve,
-  .conversation__comment:last-child {
+.gui-is-read-only.gui-conversation {
+  .gui-conversation__resolve,
+  .gui-conversation__comment:last-child {
     border-bottom: none;
   }
 }
 
-.is-active .has-author-type.conversation__comment::before,
-.show-reply-preview > .conversation__comment-list .has-author-type.conversation__comment::before {
+.gui-is-active .gui-has-author-type.gui-conversation__comment::before,
+.gui-show-reply-preview > .gui-conversation__comment-list .gui-has-author-type.gui-conversation__comment::before {
   margin-top: $layout-spacing-base*0.25 - 1;
   height: calc(100% - #{$layout-spacing-base*0.25 - 1});
 }
 
-.has-author-type.conversation__comment {
-  .conversation__comment-body {
+.gui-has-author-type.gui-conversation__comment {
+  .gui-conversation__comment-body {
     margin: -0.1rem 0 0;
   }
 }

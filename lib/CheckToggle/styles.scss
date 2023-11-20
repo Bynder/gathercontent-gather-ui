@@ -2,7 +2,7 @@ $backgroundColour: #C2CCD6;
 $borderColour: #F8FBFC;
 
 
-.toggle-switch {
+.gui-toggle-switch {
   appearance: none;
   background: transparent;
   border-color: transparent;
@@ -19,12 +19,12 @@ $borderColour: #F8FBFC;
   width: 32px;
   z-index: 1;
 
-  .size-small & {
+  .gui-size-small & {
     height: 18px;
     width: 28px;
   }
 
-  &:checked:hover + .toggle-switch__label {
+  &:checked:hover + .gui-toggle-switch__label {
     @apply bg-green-60;
   }
 
@@ -33,46 +33,46 @@ $borderColour: #F8FBFC;
   }
 }
 
-.toggle-switch + label {
+.gui-toggle-switch + label {
   display: block;
   position: relative;
   cursor: pointer;
   outline: none;
 }
 
-.toggle-wrapper {
+.gui-toggle-wrapper {
   display: flex;
   align-items: center;
   line-height: 0;
 
-  &.margin-large {
+  &.gui-margin-large {
     margin: $layout-spacing-base*0.5 0;
   }
 
-  &.disabled {
+  &.gui-disabled {
    opacity: 0.5;
    pointer-events: none;
   }
 }
 
-.toggle-wrapper--center {
+.gui-toggle-wrapper--center {
   text-align: center;
 }
 
-.toggle-wrapper__label,
-.toggle-wrapper__inner {
+.gui-toggle-wrapper__label,
+.gui-toggle-wrapper__inner {
   position: relative;
   display: inline-block;
 }
 
-.toggle-wrapper__label {
+.gui-toggle-wrapper__label {
   font-size: 14px;
 
   &:first-of-type { margin-right: 10px; }
   &:last-of-type { margin-left: 10px; }
 }
 
-.toggle-switch + label::after {
+.gui-toggle-switch + label::after {
   top: 4px;
   left: 4px;
   bottom: 4px;
@@ -84,12 +84,12 @@ $borderColour: #F8FBFC;
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + label::after {
+.gui-toggle-switch:checked + label::after {
   margin-left: 26px;
 }
 
 /* New switch */
-.toggle-switch + .toggle-switch__label {
+.gui-toggle-switch + .gui-toggle-switch__label {
   padding: 2px;
   width: 34px;
   height: 22px;
@@ -100,14 +100,14 @@ $borderColour: #F8FBFC;
   box-shadow: inset 0 0 2px rgb(0 0 0 / 10%);
 }
 
-.toggle-switch + .toggle-switch__label::before,
-.toggle-switch + .toggle-switch__label::after {
+.gui-toggle-switch + .gui-toggle-switch__label::before,
+.gui-toggle-switch + .gui-toggle-switch__label::after {
   display: block;
   position: absolute;
   content: "";
 }
 
-.toggle-switch + .toggle-switch__label::after {
+.gui-toggle-switch + .gui-toggle-switch__label::after {
   top: 2px;
   left: 3px;
   bottom: 2px;
@@ -119,16 +119,16 @@ $borderColour: #F8FBFC;
               background 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.toggle-switch:checked + .toggle-switch__label::after {
+.gui-toggle-switch:checked + .gui-toggle-switch__label::after {
   margin-left: 10px;
 }
 
-.toggle-switch--inline + label {
+.gui-toggle-switch--inline + label {
   display: inline-block;
 }
 
-.size-small {
-  .toggle-switch + .toggle-switch__label {
+.gui-size-small {
+  .gui-toggle-switch + .gui-toggle-switch__label {
     width: $layout-spacing-base + $layout-spacing-base*0.5;
     height: $layout-spacing-base;
 
@@ -141,32 +141,32 @@ $borderColour: #F8FBFC;
     }
   }
 
-  .toggle-switch:checked + .toggle-switch__label::after {
+  .gui-toggle-switch:checked + .gui-toggle-switch__label::after {
     margin-left: $layout-spacing-base*0.5;
   }
 
-  .toggle-wrapper__label {
+  .gui-toggle-wrapper__label {
     margin: 0 0 0 $layout-spacing-base*0.25;
   }
 
-  .toggle-wrapper__inner {
+  .gui-toggle-wrapper__inner {
     max-height: $layout-spacing-base;
     min-width: 30px;
   }
 }
 
-.is-checked {
-  .toggle-switch + .toggle-switch__label {
+.gui-is-checked {
+  .gui-toggle-switch + .gui-toggle-switch__label {
     background-color: $primary-green;
   }
 }
 
-.toggle-switch__label.label-size-large {
+.gui-toggle-switch__label.gui-label-size-large {
   font-size: 1rem;
   margin: 0;
 }
 
-.toggle-wrapper__label.label-size-large {
+.gui-toggle-wrapper__label.gui-label-size-large {
   font-size: 1rem;
   margin: 0;
 }

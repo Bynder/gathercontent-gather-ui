@@ -21,18 +21,18 @@ $modal-small-width: 400px !default;
   transform: translate(0, -25%);
 }
 
-.Modal {
+.gui-Modal {
   @apply absolute bg-white shadow-xlarge rounded;
 
-  &.large {
+  &.gui-large {
     width: $modal-large-width;
   }
 
-  &.small {
+  &.gui-small {
     width: $modal-small-width;
   }
 
-  &.x-large {
+  &.gui-x-large {
     width: $modal-x-large-width;
   }
 
@@ -57,26 +57,26 @@ $modal-small-width: 400px !default;
   background: rgb(41 51 61 / 0% ) !important; // Should be theme("colors.neutral.20") but it doesn't work for some reason and have spent too long on this!
 }
 
-.react-modal-inner {
+.gui-react-modal-inner {
   @apply flex flex-col max-h-screen;
 }
 
-.react-modal-footer__confirm {
+.gui-react-modal-footer__confirm {
   @apply flex flex-row w-full p-6 items-center;
 
-  .react-modal-footer__confirm-actions {
+  .gui-react-modal-footer__confirm-actions {
     @apply ml-auto;
   }
 
-  .react-modal-footer__confirm-text {
+  .gui-react-modal-footer__confirm-text {
     @apply text-neutral-primary;
   }
 }
 
-.react-modal-header {
+.gui-react-modal-header {
   @apply flex flex-row w-full items-center relative;
 
-  .react-modal-header__text {
+  .gui-react-modal-header__text {
     font-size: 1.125em;
 
     @apply font-semi-bold pl-6 mr-auto;

@@ -37,13 +37,13 @@ export function FormInput({
     }
   };
 
-  const classNames = cx(`form__input ${className}`, {
-    "form__input--noborder": noBorder,
-    "form__input--full-width": fullWidth,
-    "form__input--padding-small": paddingSmall,
-    "form__input--has-error": hasError,
-    "form__input--display-error": hasError && errorMessage,
-    "form__input--collapse": collapse,
+  const classNames = cx(`gui-form__input ${className}`, {
+    "gui-form__input--noborder": noBorder,
+    "gui-form__input--full-width": fullWidth,
+    "gui-form__input--padding-small": paddingSmall,
+    "gui-form__input--has-error": hasError,
+    "gui-form__input--display-error": hasError && errorMessage,
+    "gui-form__input--collapse": collapse,
   });
 
   return (
@@ -60,7 +60,7 @@ export function FormInput({
         {...rest}
       />
       {hasError && errorMessage && (
-        <span role="alert" className="form-input__error-message">
+        <span role="alert" className="gui-form-input__error-message">
           {errorMessage}
         </span>
       )}

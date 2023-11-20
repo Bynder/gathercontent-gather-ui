@@ -421,29 +421,29 @@ export function Icon(props: Props) {
 
   const classNames = cx(
     props.className,
-    createClassesFromTypesList(props.types, "icon--"),
+    createClassesFromTypesList(props.types, "gui-icon--"),
     {
-      "icon--hide-text": props.hideText,
-      "icon--has-notification": props.notification,
-      "icon--default-fill-color": props.defaultFillColor,
-      "icon--default-active-color": props.defaultActiveColor,
+      "gui-icon--hide-text": props.hideText,
+      "gui-icon--has-notification": props.notification,
+      "gui-icon--default-fill-color": props.defaultFillColor,
+      "gui-icon--default-active-color": props.defaultActiveColor,
     }
   );
 
   const textClassNames = cx(
-    "icon__text",
-    createClassesFromTypesList(props.textTypes, "icon__text--")
+    "gui-icon__text",
+    createClassesFromTypesList(props.textTypes, "gui-icon__text--")
   );
   return (
     <span
-      className={`icon icon--${props.name} icon-container-${props.containerSize} ${classNames}`}
+      className={`gui-icon gui-icon--${props.name} gui-icon-container-${props.containerSize} ${classNames}`}
       role="figure"
     >
       {props.notification && (
-        <span className="icon__notification">{props.notification}</span>
+        <span className="gui-icon__notification">{props.notification}</span>
       )}
-      <span className="icon__body">
-        <span ref={svgParentRef} className="icon__image">
+      <span className="gui-icon__body">
+        <span ref={svgParentRef} className="gui-icon__image">
           <IconComponent aria-labelledby={titleId} />
         </span>
         {props.text && <span className={textClassNames}>{props.text}</span>}

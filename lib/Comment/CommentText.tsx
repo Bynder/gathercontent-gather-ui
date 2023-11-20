@@ -8,7 +8,7 @@ import { Comment } from "lib";
 function BlurBottom({ className }: any) {
   return (
     <span
-      className={`comment-blur-bottom absolute h-8 w-full top-0 left-0 mt-24 bg-blur-neutral-98-bottom group-hover:bg-blur-grey-bottom conversation__text__cutoff ${className}`}
+      className={`gui-comment-blur-bottom absolute h-8 w-full top-0 left-0 mt-24 bg-blur-neutral-98-bottom group-hover:bg-blur-grey-bottom gui-conversation__text__cutoff ${className}`}
     />
   );
 }
@@ -66,7 +66,7 @@ function CommentText({
 
   return isEditing ? null : (
     <div className={classNames}>
-      <p className="comment-text m-0 text-sm break-words">
+      <p className="gui-comment-text m-0 text-sm break-words">
         <Linkify>{highlightMentions()}</Linkify>
         {hasBeenEdited && <EditedText />}
         <BlurBottom className={showFullText ? "hidden" : ""} />

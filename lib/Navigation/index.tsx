@@ -2,8 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 export function Navigation(props: any) {
-  const classes = cx(`navigation ${props.className}`, {
-    "navigation--tabs": props.tabs,
+  const classes = cx(`gui-navigation ${props.className}`, {
+    "gui-navigation--tabs": props.tabs,
   });
 
   return (
@@ -11,10 +11,10 @@ export function Navigation(props: any) {
       {React.Children.map(props.children, (child: any) => {
         if (child?.props) {
           const itemClasses = cx(
-            "navigation__item",
+            "gui-navigation__item",
             child.props.className || "",
             {
-              "navigation__item--active": child.props.active,
+              "gui-navigation__item--active": child.props.active,
             }
           );
 

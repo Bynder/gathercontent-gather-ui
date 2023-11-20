@@ -1,6 +1,6 @@
-import React from 'react';
-import { CheckboxInput, TextForm, RadioInput } from 'lib';
-import StoryItem from '../../../../stories/styleguide/StoryItem';
+import React from "react";
+import { CheckboxInput, TextForm, RadioInput } from "lib";
+import StoryItem from "../../../../stories/styleguide/StoryItem";
 
 function SelectionControlStoryItem({ children, title }: any) {
   return (
@@ -12,7 +12,7 @@ function SelectionControlStoryItem({ children, title }: any) {
 }
 
 export default {
-  title: 'GUI/Form/Inputs/Selection Controls',
+  title: "GUI/Form/Inputs/Selection Controls",
 };
 
 export function SelectionControls() {

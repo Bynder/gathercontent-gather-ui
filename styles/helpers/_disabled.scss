@@ -1,10 +1,10 @@
 $disabled-opacity: 0.5;
 
-.is-disabled {
+.gui-is-disabled {
   opacity: $disabled-opacity;
   pointer-events: none;
 }
 
-.is-visually-disabled {
+.gui-is-visually-disabled {
   opacity: $disabled-opacity;
 }

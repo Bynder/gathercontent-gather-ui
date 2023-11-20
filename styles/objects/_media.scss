@@ -1,22 +1,22 @@
 /* ==========================================================================
    Styles
    ========================================================================== */
-.o-media-obj {
+.gui-o-media-obj {
 	clear: both;
 	overflow: hidden;
 	margin: 0 0 $layout-spacing-base;
 }
 
-.o-media-obj--radio input {
+.gui-o-media-obj--radio input {
 	float: left;
 	margin: 0 $layout-spacing-base 0 0;
 }
 
-.o-media-obj__info {
+.gui-o-media-obj__info {
 	float: left;
 }
 
-.o-media-obj__title,
-.o-media-obj__subtitle {
+.gui-o-media-obj__title,
+.gui-o-media-obj__subtitle {
 	display: block;
 }

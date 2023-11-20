@@ -12,7 +12,7 @@ export function SidebarSectionHead({
   });
 
   return (
-    <div className={`sidebar-section-head ${className}`} {...rest}>
+    <div className={`gui-sidebar-section-head ${className}`} {...rest}>
       <div className={layoutClasses}>{children}</div>
 
       {toggle && <div className="ml-auto">{toggle}</div>}

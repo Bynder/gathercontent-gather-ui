@@ -12,9 +12,9 @@ export function NavigationItem({
   const { setActiveTabId, activeTabId }: any = useContext(NavigationContext);
   const isActive = activeTabId === id;
 
-  const classNames = cx(className, "navigation--item", {
-    active: isActive,
-    disabled,
+  const classNames = cx(className, "gui-navigation--item", {
+    "gui-active": isActive,
+    "gui-disabled": disabled,
   });
   return (
     <li className={classNames} role="none">
@@ -31,7 +31,7 @@ export function NavigationItem({
       >
         {children}
       </button>
-      {isActive && <span className="navigation--active-border" />}
+      {isActive && <span className="gui-navigation--active-border" />}
     </li>
   );
 }

@@ -29,7 +29,7 @@ export function DropdownMenu({
     let isTargetDropDownButton = false;
     if (e.target.classList) {
       isTargetDropDownButton = e.target.classList.contains(
-        "dropdown-menu__button"
+        "gui-dropdown-menu__button"
       );
     }
     if (showItems && !isTargetDropDownButton) {
@@ -59,22 +59,24 @@ export function DropdownMenu({
     }
   };
 
-  const menuClass = cx(`dropdown ${className}`, {
-    "is-visible": shouldDisplay,
-    "is-hidden": !shouldDisplay,
-    "open is-active": showItems,
-    dropup: direction === "up",
-    "full-width": fullWidth,
+  const menuClass = cx(`gui-dropdown ${className}`, {
+    "gui-is-visible": shouldDisplay,
+    "gui-is-hidden": !shouldDisplay,
+    "gui-open gui-is-active": showItems,
+    "gui-dropup": direction === "up",
+    "gui-full-width": fullWidth,
   });
 
-  const listClass = cx(`dropdown-menu ${listClassName}`, {
-    "align-right": alignRight,
+  const listClass = cx(`gui-dropdown-menu ${listClassName}`, {
+    "gui-align-right": alignRight,
   });
 
   const buttonClass = cx(
-    `${buttonClassName} dropdown-menu__button dropdown-menu__button--${[type]}`,
+    `${buttonClassName} gui-dropdown-menu__button gui-dropdown-menu__button--${[
+      type,
+    ]}`,
     {
-      "dropdown-menu__button-disabled": disabled,
+      "gui-dropdown-menu__button-disabled": disabled,
     }
   );
 
@@ -83,13 +85,13 @@ export function DropdownMenu({
       <Button types={[type]} className={buttonClass} onClick={toggleShowItems}>
         {children}
         {caret && (
-          <span className="dropdown-menu__caret">
+          <span className="gui-dropdown-menu__caret">
             {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
             <Icon name="caret" size="micro" title="Caret icon" />
           </span>
         )}
         {downIcon && (
-          <span className="dropdown-menu__down">
+          <span className="gui-dropdown-menu__down">
             {/* @ts-expect-error TS(2322): Type '{ name: string; size: string; }' is not assi... Remove this comment to see the full error message */}
             <Icon name="down" size="micro" title="Down icon" />
           </span>

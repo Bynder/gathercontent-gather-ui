@@ -17,9 +17,9 @@ import ListItem from "../ListItem";
 
 describe("List", () => {
   const classList = [
-    "list--bordered-right",
-    "list--bordered-left",
-    "list--bordered",
+    "gui-list--bordered-right",
+    "gui-list--bordered-left",
+    "gui-list--bordered",
   ];
 
   it("adds modifier classes", () => {

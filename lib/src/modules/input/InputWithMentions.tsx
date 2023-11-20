@@ -74,7 +74,7 @@ export function InputWithMentions({
       className={inputWrapperClassNames}
     >
       <MentionsInput
-        className="mentions-input"
+        className="gui-mentions-input"
         value={inputValue}
         onChange={handleChange}
         suggestionsPortalHost={mentionsPortalRef.current}
@@ -128,7 +128,7 @@ export function InputWithMentions({
           whiteSpace: "pre-wrap",
           visibility: "hidden",
         }}
-        className="mentions-input__input absolute top-0"
+        className="gui-mentions-input__input absolute top-0"
       >
         {/* This 'i' is intentional, it is to ensure there is text on a new line for height calculation */}
         {inputValue}i

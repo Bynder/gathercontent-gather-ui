@@ -103,7 +103,7 @@ export function TabNameForm({
         className={surroundButtonClassNames}
       />
       <form
-        className={`tab-name-form ${className}`}
+        className={`gui-tab-name-form ${className}`}
         onSubmit={(e) => {
           e.preventDefault();
           formInputRef.current.blur();

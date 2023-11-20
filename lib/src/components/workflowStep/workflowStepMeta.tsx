@@ -25,11 +25,11 @@ export function WorkflowStepMeta({ children, actions }: any) {
   });
 
   return (
-    <div className="workflow-step__meta-container">
+    <div className="gui-workflow-step__meta-container">
       <div className="invisible absolute" ref={hiddenActionsRef}>
         {actions}
       </div>
-      <div className="workflow-step__meta">{children}</div>
+      <div className="gui-workflow-step__meta">{children}</div>
       <animated.div className="relative flex items-center" style={actionStyles}>
         <div
           style={{

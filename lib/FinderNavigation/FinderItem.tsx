@@ -10,11 +10,11 @@ function FinderItem({
   disabled,
   ...rest
 }: any) {
-  const classNames = cx(`finder-item ${className}`, {
-    "finder-item-active": active,
-    "finder-item-disabled": disabled,
-    "finder-item-hover-settings": hoverSettings,
-    "finder-item-selected": selected,
+  const classNames = cx(`gui-finder-item ${className}`, {
+    "gui-finder-item-active": active,
+    "gui-finder-item-disabled": disabled,
+    "gui-finder-item-hover-settings": hoverSettings,
+    "gui-finder-item-selected": selected,
   });
 
   return (

@@ -22,8 +22,8 @@ export function EditableTextWrapperInput({
   }, [value]);
 
   const classes = cx(
-    "editable-text__wrapper",
-    "editable-text__wrapper--editing",
+    "gui-editable-text__wrapper",
+    "gui-editable-text__wrapper--editing",
     className,
     `${className}--editing`
   );
@@ -53,13 +53,13 @@ export function EditableTextWrapperInput({
       <div className={classes}>
         <label
           htmlFor="editable-text-wrapper-input"
-          className="visually-hidden"
+          className="gui-visually-hidden"
         >
           {inputLabel}
         </label>
         <ExpandingTextArea
           placeholder={placeholder}
-          className={`editable-text__input ${inputClassNames}`}
+          className={`gui-editable-text__input ${inputClassNames}`}
           value={inputValue}
           handleOnChange={(e: any) => setInputValue(e.target.value)}
           onKeyDown={handleOnKeyDown}
@@ -75,12 +75,15 @@ export function EditableTextWrapperInput({
 
   return (
     <div className={classes}>
-      <label htmlFor="editable-text-wrapper-input" className="visually-hidden">
+      <label
+        htmlFor="editable-text-wrapper-input"
+        className="gui-visually-hidden"
+      >
         {inputLabel}
       </label>
       <input
         placeholder={placeholder}
-        className={`editable-text__input single-line ${inputClassNames}`}
+        className={`gui-editable-text__input gui-single-line ${inputClassNames}`}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleOnKeyDown}

@@ -10,7 +10,9 @@ function TabsRow({ children, colCount }: any) {
 
   const borderClasses =
     "border border-solid border-neutral-90 border-t-0 first:border-t";
-  const classNames = cx(`tab-row tw grid bg-neutral-95 h-10 ${borderClasses}`);
+  const classNames = cx(
+    `gui-tab-row tw grid bg-neutral-95 h-10 ${borderClasses}`
+  );
 
   const sharedState = {
     colCount: cssGridColCount,

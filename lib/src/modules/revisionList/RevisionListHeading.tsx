@@ -6,7 +6,7 @@ export function RevisionListHeading({
   ...rest
 }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={`${className} revision-list-heading`} {...rest}>
+    <h3 className={`${className} gui-revision-list-heading`} {...rest}>
       {children}
     </h3>
   );

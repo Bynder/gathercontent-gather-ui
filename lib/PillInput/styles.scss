@@ -1,16 +1,16 @@
-.pill-input__container {
+.gui-pill-input__container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.pill-input--focused {
+.gui-pill-input--focused {
     border-width: 2px;
     border-color: $primary-blue;
     padding: $layout-spacing-base*0.5 - 1;
     outline: none;
 }
 
-.pill-input__input {
+.gui-pill-input__input {
   border: none;
   flex: 1;
   min-width: 150px;

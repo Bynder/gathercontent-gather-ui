@@ -1,4 +1,4 @@
-.blank-slate {
+.gui-blank-slate {
   width: 100%;
   text-align: center;
 
@@ -6,7 +6,7 @@
     text-decoration: none;
     height: 100%;
 
-    &:not(.button):hover {
+    &:not(.gui-button):hover {
       text-decoration: underline;
     }
   }
@@ -58,7 +58,7 @@
       display: block;
     }
 
-    .blank-slate__svg {
+    .gui-blank-slate__svg {
       svg {
         max-width: 170px;
         height: auto;
@@ -70,7 +70,7 @@
       }
     }
 
-    .blank-slate__content {
+    .gui-blank-slate__content {
       margin: 0 auto;
     }
   }

@@ -32,7 +32,7 @@ export const PageInformation = (args: any) => (
         subtitle={
           <span>
             oOooh:{" "}
-            <span className="page-information__subtitle--highlight">
+            <span className="gui-page-information__subtitle--highlight">
               some highlighted text
             </span>
           </span>

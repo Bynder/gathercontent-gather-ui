@@ -11,14 +11,14 @@ export function SectionHeader({
   noBorder,
   ...rest
 }: any) {
-  const classes = cx(`section-header ${className}`, {
-    "section-header-collapse": collapse,
-    "section-header-no-border": noBorder,
+  const classes = cx(`gui-section-header ${className}`, {
+    "gui-section-header-collapse": collapse,
+    "gui-section-header-no-border": noBorder,
   });
 
   return (
     <div className={classes} {...rest}>
-      <div className="section-header__inner">
+      <div className="gui-section-header__inner">
         <SectionHeaderTitle title={title}>{children}</SectionHeaderTitle>
         {cta}
       </div>

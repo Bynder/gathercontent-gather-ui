@@ -6,10 +6,10 @@ function ListHead({ title, action }: any) {
   }
 
   return (
-    <div className="list__head">
-      <div className="list__head-inner">
-        <span className="list__title">{title}</span>
-        <span className="list__actions">{action}</span>
+    <div className="gui-list__head">
+      <div className="gui-list__head-inner">
+        <span className="gui-list__title">{title}</span>
+        <span className="gui-list__actions">{action}</span>
       </div>
     </div>
   );

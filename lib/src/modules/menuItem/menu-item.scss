@@ -1,16 +1,16 @@
-.menu-item {
+.gui-menu-item {
   list-style: none;
 
   a {
     cursor: pointer;
   }
 
-  &.disabled {
+  &.gui-disabled {
     pointer-events: none;
   }
 }
 
-.dropdown__content .menu-item > a {
+.gui-dropdown__content .gui-menu-item > a {
   @apply text-neutral-20 text-base py-3 px-4 block;
 
   text-decoration: none;
@@ -21,11 +21,11 @@
   }
 }
 
-.dropdown__content .menu-item.disabled {
+.gui-dropdown__content .gui-menu-item.gui-disabled {
   opacity: 0.5;
 }
 
-.dropdown__content .menu-item.divider {
+.gui-dropdown__content .gui-menu-item.gui-divider {
   @apply px-1 bg-neutral-90;
 
   height: 1px;

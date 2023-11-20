@@ -1,10 +1,10 @@
-.button-avatar {
+.gui-button-avatar {
   @apply rounded-full p-0 border-transparent relative;
 
   width: 34px;
   height: 34px;
 
-  &.button-avatar-active,
+  &.gui-button-avatar-active,
   &:active {
     @apply border-blue-primary shadow-blue-primary-1px bg-blue-primary;
 

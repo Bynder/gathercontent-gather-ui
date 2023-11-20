@@ -22,14 +22,14 @@ export function SelectionBar() {
             <Button
               clickHandler={() => {}}
               types={["link-default"]}
-              className="selection-bar__all"
+              className="gui-selection-bar__all"
             >
               Select all
             </Button>
-            <span className="selection-bar__count">
+            <span className="gui-selection-bar__count">
               {example1selectedIds.length}
             </span>
-            <span className="selection-bar__type">
+            <span className="gui-selection-bar__type">
               {pluralize(type, example1selectedIds.length)} selected
             </span>
           </SelectionBarComponent.Information>
@@ -57,14 +57,14 @@ export function SelectionBar() {
             <Button
               clickHandler={() => {}}
               types={["link-default"]}
-              className="selection-bar__all"
+              className="gui-selection-bar__all"
             >
               Select all
             </Button>
-            <span className="selection-bar__count">
+            <span className="gui-selection-bar__count">
               {example2selectedIds.length}
             </span>
-            <span className="selection-bar__type">
+            <span className="gui-selection-bar__type">
               {pluralize(type, example2selectedIds.length)} selected
             </span>
           </SelectionBarComponent.Information>

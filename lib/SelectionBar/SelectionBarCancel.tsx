@@ -5,7 +5,11 @@ import Button from "../Button";
 
 function SelectionBarCancel({ onCancel }: any) {
   return (
-    <Col sm={3} md={3} className="selection-bar__section selection-bar__cancel">
+    <Col
+      sm={3}
+      md={3}
+      className="gui-selection-bar__section gui-selection-bar__cancel"
+    >
       <Button
         title="Cancel Selection"
         types={["link-default", "collapse"]}

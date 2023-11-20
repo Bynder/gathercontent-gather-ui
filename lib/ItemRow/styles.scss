@@ -9,30 +9,30 @@ $item-row-gap: 6px;
 /* ==========================================================================
    Styles
    ========================================================================== */
-.item-row {
-  padding: $layout-spacing-base*0.5;
+.gui-item-row {
+  padding: $layout-spacing-base * 0.5;
   cursor: pointer;
   background-color: white;
   position: relative;
   margin: $item-row-gap 0 $item-row-gap;
   width: 100%;
 
-  .status-indicator {
+  .gui-status-indicator {
     display: inline-flex;
   }
 }
 
-.item-row,
-.item-row__name,
-.item-row__aside,
-.item-row__data {
+.gui-item-row,
+.gui-item-row__name,
+.gui-item-row__aside,
+.gui-item-row__data {
   display: flex;
   align-items: center;
   white-space: nowrap;
 }
 
-.item-row__name {
-  margin-right: $layout-spacing-base*0.5;
+.gui-item-row__name {
+  margin-right: $layout-spacing-base * 0.5;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
@@ -47,27 +47,27 @@ $item-row-gap: 6px;
     }
   }
 
-  .editable-text__wrapper {
+  .gui-editable-text__wrapper {
     width: calc(100% - #{$editable-text-wrapper-icon-width});
   }
 
-  .editable-text__text {
+  .gui-editable-text__text {
     text-overflow: ellipsis;
     overflow: hidden;
   }
 }
 
-.item-row__aside {
+.gui-item-row__aside {
   margin-left: auto;
   color: $neutral-base;
   font-size: $typo-size-slight;
 
-  .avatar__initials {
+  .gui-avatar__initials {
     color: $neutral-base;
   }
 }
 
-.item-row__data {
+.gui-item-row__data {
   margin-right: $layout-spacing-base;
 
   &:last-child {
@@ -79,14 +79,14 @@ $item-row-gap: 6px;
    Modifiers
    ========================================================================== */
 
-.item-row--stacked {
+.gui-item-row--stacked {
   display: flex;
   flex-wrap: wrap;
   font-size: $typo-size-slight;
 
-  .item-row__name,
-  .item-row__aside,
-  .item-row__data {
+  .gui-item-row__name,
+  .gui-item-row__aside,
+  .gui-item-row__data {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -99,17 +99,17 @@ $item-row-gap: 6px;
   }
 }
 
-.item-row-list {
+.gui-item-row-list {
   @apply my-0 pl-2 py-2 pr-0 border-solid border-l-0 border-r-0 border-t border-b border-neutral-90;
 
   margin-top: -1px;
 
-  .item-row__name {
+  .gui-item-row__name {
     @apply mr-0 leading-6;
-    @include gradient-overflow(rgba(255,255,255,1));
+    @include gradient-overflow(rgba(255, 255, 255, 1));
   }
 }
 
-.item-row--bordered {
+.gui-item-row--bordered {
   @include before-border(1px, solid, $color-border-base, $border-radius-base);
 }

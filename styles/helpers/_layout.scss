@@ -203,7 +203,7 @@ $subProps: (row, column);
    Heights
    ========================================================================== */
 
-.full-height-minus-topbar {
+.gui-full-height-minus-topbar {
   height: calc(100vh - #{$top-bar-height-medium});
 
   @include respond-to-max($screen-md) {
@@ -211,7 +211,7 @@ $subProps: (row, column);
   }
 }
 
-.dropdown-max-height {
+.gui-dropdown-max-height {
   max-height: 230px;
   overflow-y: auto;
 }
@@ -239,7 +239,7 @@ $subProps: (top, bottom, left, right, full, clear);
   }
 }
 
-.h-border-radius-clear {
+.gui-h-border-radius-clear {
   border-radius: 0;
 }
 

@@ -1,21 +1,21 @@
-.file-card-meta {
+.gui-file-card-meta {
   @apply p-2 border border-neutral-90 border-solid border-b-0 border-l-0 border-r-0 bg-white;
 }
 
-.file-card-inset-meta {
-  .file-card-meta {
+.gui-file-card-inset-meta {
+  .gui-file-card-meta {
     @apply absolute bottom-0 w-full bg-white -mb-40 transition-mb duration-200;
   }
 
-  &:not(.card-disabled) {
-    &:focus .file-card-meta,
-    &:hover .file-card-meta,
-    &:focus-within .file-card-meta, {
+  &:not(.gui-card-disabled) {
+    &:focus .gui-file-card-meta,
+    &:hover .gui-file-card-meta,
+    &:focus-within .gui-file-card-meta, {
       @apply mb-0;
     }
   }
 }
 
-.file-card .card-inner {
+.gui-file-card .gui-card-inner {
   @include file-backgound;
 };

@@ -7,7 +7,7 @@ function SelectionBarActions({ children }: any) {
       xs={12}
       sm={5}
       md={6}
-      className="selection-bar__section selection-bar__actions"
+      className="gui-selection-bar__section gui-selection-bar__actions"
     >
       {children}
     </Col>

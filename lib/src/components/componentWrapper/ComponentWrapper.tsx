@@ -1,15 +1,15 @@
-import React from 'react';
-import { ComponentWrapperHeader } from './ComponentWrapperHeader/ComponentWrapperHeader';
-import { ComponentWrapperBody } from './ComponentWrapperBody';
-import { ComponentWrapperFooter } from './ComponentWrapperFooter';
+import React from "react";
+import { ComponentWrapperHeader } from "./ComponentWrapperHeader/ComponentWrapperHeader";
+import { ComponentWrapperBody } from "./ComponentWrapperBody";
+import { ComponentWrapperFooter } from "./ComponentWrapperFooter";
 
 export const componentStatuses = {
-  active: 'ACTIVE',
-  added: 'ADDED',
-  deleted: 'DELETED',
-  movedUp: 'MOVED_UP',
-  movedDown: 'MOVED_DOWN',
-  unchanged: 'UNCHANGED'
+  active: "ACTIVE",
+  added: "ADDED",
+  deleted: "DELETED",
+  movedUp: "MOVED_UP",
+  movedDown: "MOVED_DOWN",
+  unchanged: "UNCHANGED",
 };
 
 export function ComponentWrapper({
@@ -29,7 +29,7 @@ export function ComponentWrapper({
   ...rest
 }: any) {
   return (
-    <div className={`component-wrapper ${className}`} {...rest}>
+    <div className={`gui-component-wrapper ${className}`} {...rest}>
       <ComponentWrapperHeader
         editable={editable}
         headerAside={headerAside}

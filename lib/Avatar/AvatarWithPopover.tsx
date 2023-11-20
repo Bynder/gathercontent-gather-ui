@@ -31,14 +31,14 @@ export function AvatarWithPopover({
       arrow={false}
       placement={overlayPosition}
       trigger="mouseenter focus"
-      className="avatar-tooltip__wrapper"
+      className="gui-avatar-tooltip__wrapper"
     >
       <span id={id} role="button">
         <Avatar
           email={email}
           name={name}
           {...rest}
-          className="avatar--with-toggle"
+          className="gui-avatar--with-toggle"
         />
       </span>
     </Tippy>
