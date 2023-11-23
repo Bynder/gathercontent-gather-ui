@@ -11,6 +11,10 @@
     }
   }
 
+  .gui-blank-slate__svg svg {
+    margin: 0 auto;
+  }
+
   &--fixed {
     padding: 0;
     position: absolute;
@@ -32,6 +36,7 @@
     font-size: 16px;
     color: $neutral-base;
     margin-top: 8px;
+    margin-bottom: 1rem;
   }
 
   &__heading {
