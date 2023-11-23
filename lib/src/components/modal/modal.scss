@@ -24,15 +24,15 @@ $modal-small-width: 400px !default;
 .gui-Modal {
   @apply absolute bg-white shadow-xlarge rounded;
 
-  &.large {
+  &.gui-large {
     width: $modal-large-width;
   }
 
-  &.small {
+  &.gui-small {
     width: $modal-small-width;
   }
 
-  &.x-large {
+  &.gui-x-large {
     width: $modal-x-large-width;
   }
 
