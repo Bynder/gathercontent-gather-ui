@@ -2,10 +2,7 @@ import React from 'react';
 import { Modal } from '../../components/modal/Modal';
 import { ModalUploadBody } from './ModalUploadBody';
 
-export function ModalUpload({
-  children,
-  ...rest
-}: any) {
+export function ModalUpload({ children, ...rest }: any) {
   return (
     <Modal {...rest} size="large">
       {children}
