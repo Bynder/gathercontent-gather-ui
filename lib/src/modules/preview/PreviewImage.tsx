@@ -46,7 +46,7 @@ function PreviewImage({
           src={image.src}
           alt={altText}
           title={title}
-          className="gui-invisible"
+          className="invisible"
         />
 
         <div
