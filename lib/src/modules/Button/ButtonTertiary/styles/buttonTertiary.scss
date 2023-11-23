@@ -2,17 +2,15 @@
   @apply border-neutral-90 border-solid text-neutral-20 bg-white;
 
   &:hover {
-    background-color: rgb(103 128 152 / 10%);
+    @apply bg-neutral-95;
   }
 
   &:active,
   &.gui-button-tertiary-active {
-    background-color: rgb(103 128 152 / 10%);
+    @apply bg-neutral-95;
   }
 
   &:focus {
-    background-color: rgb(103 128 152 / 20%);
-
     @apply border-neutral-20 shadow-button-tertiary-focus;
   }
 
