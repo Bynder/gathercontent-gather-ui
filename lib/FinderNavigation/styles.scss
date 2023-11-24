@@ -106,7 +106,11 @@ $finder-indent-level-support: 10 !default;
 
 .gui-finder-item-link {
   @apply no-underline text-neutral-20 flex-shrink w-full flex items-center cursor-pointer outline-none h-full truncate;
-
+  
+  &:hover {
+    @apply no-underline;
+  }
+  
   .gui-icon {
     @apply mr-3;
   }

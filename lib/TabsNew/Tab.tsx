@@ -24,7 +24,7 @@ function Tab({ children, id, index }: any) {
   );
 
   const wrapperClasses = cx(
-    `tab-wrapper flex relative group overflow-hidden ${borderClasses}`,
+    `gui-tab-wrapper flex relative group overflow-hidden ${borderClasses}`,
     {
       "bg-neutral-95 hover:bg-neutral-90": !isActive,
       "bg-white": isActive,
@@ -32,7 +32,7 @@ function Tab({ children, id, index }: any) {
   );
 
   const tabClasses = cx(
-    "tab flex items-center no-underline outline-none border-0 font-semi-bold h-full bg-transparent w-full px-2",
+    "gui-tab flex items-center no-underline outline-none border-0 font-semi-bold h-full bg-transparent w-full px-2",
     {
       "text-blue-primary": isActive,
       "text-neutral-primary focus:bg-neutral-90": !isActive,
