@@ -1,9 +1,10 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require("tailwindcss/plugin");
 const _ = require("lodash");
 
 const blue30 = "#004299";
 const blue80 = "#99C5FF";
-const bluePrimary = "#006EFF";
+const bluePrimary = "#006AFF";
 
 const red30 = "#8A0F1A";
 const red80 = "#F5A3AA";
@@ -28,6 +29,11 @@ module.exports = {
     "./stories/**/*.tsx",
   ],
   theme: {
+    screens: {
+      xs: '360px',
+      '2xs': '512px',
+      ...defaultTheme.screens,
+    },
     borderStyles: {
       colors: true,
     },
