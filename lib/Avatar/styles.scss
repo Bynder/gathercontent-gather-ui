@@ -88,6 +88,8 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
 .gui-avatar__information {
   overflow: hidden;
   margin-left: $layout-spacing-base * 0.5;
+  min-width: 300px;
+
 
   .gui-avatar__name,
   .gui-avatar__email {
@@ -98,6 +100,10 @@ $avatar-pillbox-padding: $typo-size-lead * 0.25 math.div($typo-size-lead, 3) !de
   .gui-avatar__name + .gui-avatar__email {
     color: $neutral-base;
     font-size: $typo-size-slight;
+  }
+
+  .gui-avatar__pending {
+    @apply text-purple-primary
   }
 }
 
