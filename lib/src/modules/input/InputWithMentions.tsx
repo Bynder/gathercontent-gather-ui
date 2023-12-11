@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Mention, MentionsInput } from "react-mentions";
 import cx from "classnames";
@@ -94,6 +94,7 @@ export function InputWithMentions({
               <AvatarInformation
                 email={`@${suggestion.display}`}
                 name={suggestion.name}
+                isPendingUser={suggestion.pending}
               />
             </Avatar>
           )}

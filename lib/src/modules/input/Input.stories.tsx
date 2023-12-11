@@ -34,6 +34,14 @@ export default {
 export function Inputs(args: any) {
   const mockUsers = [
     {
+      id: 1337,
+      name: "Alan Turing",
+      initials: "AT",
+      display: "Alan T.",
+      email: "the-enigma@example.com",
+      pending: "true",
+    },
+    {
       id: 2,
       name: "Bruce",
       avatar:
