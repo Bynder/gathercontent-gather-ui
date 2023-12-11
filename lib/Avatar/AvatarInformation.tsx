@@ -7,7 +7,7 @@ export function AvatarInformation(props: any) {
 
       {props.email && (
         <span className="gui-avatar__email" title={props.email}>
-          {props.isPendingUser && (
+          {props.pending && (
             <>
               <span className="gui-avatar__pending">Pending</span> •{" "}
             </>
@@ -27,7 +27,7 @@ AvatarInformation.defaultProps = {
   name: "",
   email: "",
   actions: null,
-  isPendingUser: false,
+  pending: false,
 };
 
 export default AvatarInformation;

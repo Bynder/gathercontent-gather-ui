@@ -94,7 +94,7 @@ export function InputWithMentions({
               <AvatarInformation
                 email={`@${suggestion.display}`}
                 name={suggestion.name}
-                isPendingUser={suggestion.pending}
+                pending={suggestion.pending}
               />
             </Avatar>
           )}
