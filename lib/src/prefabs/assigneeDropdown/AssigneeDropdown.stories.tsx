@@ -1,8 +1,8 @@
 import React from "react";
 import {
   AssigneeDropdown as AssigneeDropdownComponent,
-  Person,
   DropdownContent,
+  Person,
 } from "lib";
 // @ts-expect-error TS(2307): Cannot find module 'stories/styleguide/StoryItem' ... Remove this comment to see the full error message
 import StoryItem from "stories/styleguide/StoryItem";
@@ -23,10 +23,21 @@ export function AssigneeDropdown(args: any) {
     subtitle: faker.internet.email(),
     avatarUrl: faker.image.avatar(),
     selected: faker.random.boolean(),
+    pending: false,
   });
 
-  const assigned = [getPerson(), getPerson()];
-  const unassigned = [getPerson(), getPerson(), getPerson(), getPerson()];
+  const assigned = [
+    { ...getPerson(), pending: true },
+    getPerson(),
+    getPerson(),
+  ];
+  const unassigned = [
+    { ...getPerson(), pending: true },
+    getPerson(),
+    getPerson(),
+    getPerson(),
+    getPerson(),
+  ];
 
   return (
     <StoryItem
@@ -45,6 +56,7 @@ export function AssigneeDropdown(args: any) {
               subtitle={assignee.subtitle}
               avatarUrl={assignee.avatarUrl}
               selected={assignee.selected}
+              pending={assignee.pending}
               interactive
               bordered
             />
@@ -58,6 +70,7 @@ export function AssigneeDropdown(args: any) {
               subtitle={unassignee.subtitle}
               avatarUrl={unassignee.avatarUrl}
               selected={unassignee.selected}
+              pending={unassignee.pending}
               interactive
               bordered
             />
