@@ -73,6 +73,7 @@ export function PersonSearch({
                         highlightText={searchValue}
                         colour={person.colour}
                         key={person.email}
+                        pending={person.pending}
                       />
                     ))}
                   </DropdownContent.Body>
