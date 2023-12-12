@@ -18,6 +18,7 @@ export function Person({
   colour,
   locked,
   lockedTooltipText,
+  pending,
 }: any) {
   const classes = cx("gui-person", className, {
     "gui-person-selected": selected,
@@ -44,6 +45,11 @@ export function Person({
         </div>
         {!!subtitle && (
           <div className="gui-person-subtitle">
+            {pending && (
+              <>
+                <span className="gui-person-pending">Pending</span> •{" "}
+              </>
+            )}
             {shouldHighlightSubtitle ? (
               <TextHighlighter highlight={highlightText} text={subtitle} />
             ) : (
@@ -81,4 +87,5 @@ Person.defaultProps = {
   highlightText: "",
   locked: false,
   lockedTooltipText: "",
+  pending: false,
 };
