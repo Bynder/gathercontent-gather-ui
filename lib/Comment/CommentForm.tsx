@@ -1,15 +1,15 @@
-import React, { useState, useRef, useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Mention, MentionsInput } from "react-mentions";
 import cx from "classnames";
 import {
-  Comment,
   Avatar,
   AvatarInformation,
-  ShortcutTrigger,
   ButtonPrimary,
-  useLoader,
   ButtonTertiary,
+  Comment,
+  ShortcutTrigger,
+  useLoader,
 } from "lib";
 import Icon from "../Icon";
 import { CommentFailed } from "./CommentFailed";
@@ -137,6 +137,7 @@ function CommentForm({
                 <AvatarInformation
                   email={`@${suggestion.display}`}
                   name={suggestion.name}
+                  pending={suggestion.pending}
                 />
               </Avatar>
             )}

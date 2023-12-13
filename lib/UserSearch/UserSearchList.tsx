@@ -40,6 +40,7 @@ function UserSearchList({
                     name={user.name}
                   />
                 }
+                pending={user.pending}
               />
             </Avatar>
           </Dropdown.Action>
