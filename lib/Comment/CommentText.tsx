@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import Linkify from "linkifyjs/react";
 import cx from "classnames";
 import { Comment } from "lib";
+import TooltipWrapper from "../TooltipWrapper";
 
 // eslint-disable-next-line react/prop-types
 function BlurBottom({ className }: any) {
@@ -36,18 +37,22 @@ function CommentText({
         const username = subStr.substr(1);
         const matches = users.filter((user: any) => user.display === username);
         if (matches.length) {
+          const { display, name, pending } = matches[0];
           const mentionsClass = cx("font-semi-bold", {
             "text-purple-primary":
-              matches[0].display === (currentUser ? currentUser.display : ""),
+              display === (currentUser ? currentUser.display : ""),
+            "border-0 border-b-[1px] border-dashed": pending,
           });
 
           return (
-            <span
-              key={subStr}
-              title={matches[0].name}
-              className={mentionsClass}
-            >
-              {subStr}
+            <span key={subStr} title={name} className={mentionsClass}>
+              {pending ? (
+                <TooltipWrapper tooltipText="Invite pending">
+                  {subStr}
+                </TooltipWrapper>
+              ) : (
+                subStr
+              )}
             </span>
           );
         }
