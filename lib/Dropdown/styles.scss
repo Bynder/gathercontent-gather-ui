@@ -150,6 +150,10 @@ $dropdown-status-circle-width-height: 15px !default;
 .gui-dropdown__action-link {
   color: $neutral-dark;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .gui-dropdown__trigger-wrapper {
