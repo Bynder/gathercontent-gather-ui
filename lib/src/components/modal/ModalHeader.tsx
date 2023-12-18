@@ -17,7 +17,9 @@ export function ModalHeader({
       </div>
 
       {navigationItems}
-      <CloseButton onClick={onCloseClick} />
+      {typeof onCloseClick === "function" ? (
+        <CloseButton onClick={onCloseClick} />
+      ) : null}
     </div>
   );
 }
