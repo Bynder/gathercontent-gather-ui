@@ -69,6 +69,13 @@ export const mockComments = [
     createdBy: 2,
   },
   {
+    id: "comment-pending-user",
+    body: "Hey @lyndacarter, @lyndacarter, @lyndacarter, @lyndacarter, @lyndacarter @AlanT, @lyndacarter, @lyndacarter, @lyndacarter, @lyndacarter, @lyndacarter, @AlanT, @AlanT, @AlanT, @lyndacarter, @lyndacarter",
+    createdAt: "2017-06-08 10:56:41",
+    author: mockUser,
+    createdBy: 2,
+  },
+  {
     id: "comment-id-2",
     body: "Comment body and a link to http://google.com and a mention @lyndacarter, another link to @saulgoodman",
     createdAt: "Just now",

@@ -47,7 +47,10 @@ function CommentText({
           return (
             <span key={subStr} title={name} className={mentionsClass}>
               {pending ? (
-                <TooltipWrapper tooltipText="Invite pending">
+                <TooltipWrapper
+                  tooltipText="Invite pending"
+                  wrapperClassName="inline-flex"
+                >
                   {subStr}
                 </TooltipWrapper>
               ) : (
