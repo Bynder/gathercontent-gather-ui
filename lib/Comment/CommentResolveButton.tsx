@@ -12,7 +12,7 @@ export function CommentResolveButton({
     <div className="flex items-center ml-auto h-8">
       {resolved && (
         <span className="text-sm font-semi-bold text-green-primary inline-flex item justify-center items-center">
-          <Icon name="resolved" className="fill-primary-green mr-1" />
+          <Icon name="resolved" className="mr-1" />
           Resolved
           {onUndoResolve && userCanResolve && (
             <div className="ml-2">
