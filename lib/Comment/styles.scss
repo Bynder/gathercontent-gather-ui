@@ -65,3 +65,7 @@
     @apply text-neutral-primary text-xs;
   }
 }
+
+.gui-icon--resolved path {
+  @apply fill-green-primary;
+}
