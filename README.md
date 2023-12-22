@@ -8,9 +8,6 @@
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
 [![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Bynder/gathercontent-api/actions)
 
-> [!WARNING]
-> This library is being sunsetted. There will be occasional updates for bug fixes and new components we require for legacy pages, but for the most part this is no longer being maintained.
-
 UI component library for all GatherContent components.
 
 **[🧑‍🎨 Usage](#-usage)** •
@@ -25,6 +22,9 @@ UI component library for all GatherContent components.
 **[🔗 Useful links](#-useful-links)**
 
 </div>
+
+> [!CAUTION]
+> This library is being sunsetted. There will be occasional updates for bug fixes and new components we require for legacy pages, but for the most part this is no longer being maintained.
 
 ## 🧑‍🎨 Usage
 
