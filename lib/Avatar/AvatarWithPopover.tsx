@@ -20,6 +20,7 @@ export function AvatarWithPopover({
   name,
   children,
   overlayPosition,
+  pending,
   ...rest
 }: any) {
   const id = uuid();
@@ -35,7 +36,7 @@ export function AvatarWithPopover({
     >
       <span id={id} role="button">
         <Avatar
-          email={email}
+          email={`${pending ? "Pending • " : ""}${email}`}
           name={name}
           {...rest}
           className="gui-avatar--with-toggle"

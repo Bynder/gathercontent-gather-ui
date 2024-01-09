@@ -17,7 +17,12 @@ export function ParticipantInfo() {
         <ParticipantInfoComponent
           name="Angus Edwardson"
           email="example@gmail.com"
-          pillboxText="Assigned"
+        />
+        <br />
+        <ParticipantInfoComponent
+          name="Alan Turing"
+          email="alan@turing.com"
+          pending
         />
       </StoryItem>
     </div>

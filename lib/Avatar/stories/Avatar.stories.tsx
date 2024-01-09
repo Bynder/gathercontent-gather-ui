@@ -3,10 +3,10 @@ import React from "react";
 import faker from "faker";
 import {
   Avatar as AvatarComponent,
-  AvatarWithPopover,
-  ParticipantInfo,
   AvatarInformation,
+  AvatarWithPopover,
   Button,
+  ParticipantInfo,
 } from "../../index";
 import StoryItem from "../../../stories/styleguide/StoryItem";
 import { AvatarGroupMock } from "./AvatarGroupMock";
@@ -81,6 +81,33 @@ export function Avatar(args: any) {
         >
           <AvatarInformation name={props.name} email={props.email} />
         </AvatarComponent>
+      </StoryItem>
+
+      <StoryItem
+        title="AvatarComponent (with inline information) who is pending"
+        description="An avatar can display the users name & email inline and displays if they are pending"
+      >
+        <AvatarComponent
+          {...props}
+          additional={
+            <Button types={["link-danger", "size-sm"]} clickHandler={() => {}}>
+              Link type
+            </Button>
+          }
+        >
+          <AvatarInformation name={props.name} email={props.email} pending />
+        </AvatarComponent>
+      </StoryItem>
+
+      <StoryItem
+        title="AvatarComponent (with popover) who is pending"
+        description="An avatar can show a tooltip on hover that also shows pending status."
+      >
+        <div className="gui-h-display-flex">
+          <AvatarWithPopover {...props} pending>
+            <ParticipantInfo name={props.name} email={props.email} pending />
+          </AvatarWithPopover>
+        </div>
       </StoryItem>
 
       <StoryItem
