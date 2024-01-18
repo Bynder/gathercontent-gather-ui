@@ -127,7 +127,9 @@ function CommentForm({
         >
           <Mention
             trigger="@"
-            onAdd={onMention}
+            onAdd={(id: number) => {
+              onMention(id);
+            }}
             data={(search: any) => searchForUsers(search)}
             appendSpaceOnAdd
             markup="@[__display__]"
