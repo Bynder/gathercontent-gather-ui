@@ -37,7 +37,7 @@ function WorkflowDropdownStory({ search, assigned, unassigned }: any) {
       title: "Review",
       description:
         "Content to be approved by key stakeholders. If changes are to be made, pass it back to Draft for another round.",
-      colour: "#006EFF",
+      colour: "#006AFF",
     },
     {
       title: "Publish",
