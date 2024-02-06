@@ -40,7 +40,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Get new version
         id: new-version
-        uses: martinbeentjes/npm-get-version-action@main
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: version ${{ steps.new-version.outputs.current-version}}
