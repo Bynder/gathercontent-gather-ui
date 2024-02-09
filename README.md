@@ -1,6 +1,6 @@
 > [!CAUTION]
 > This library has been deprecated in favour of <a href="https://www.npmjs.com/package/@gathercontent/ui">@gathercontent/ui</a> and <a href="https://www.npmjs.com/package/@gathercontent/icons">@gathercontent/icons</a>. No further updates will be made here.  
-> For any local development the contents of this repo have been moved to <a href="hhttps://github.com/Bynder/gathercontent-csr/tree/main/webapp/src/js/gather-ui" target="_blank">**CSR →**</a>
+> For any local development the contents of this repo have been moved to <a href="https://github.com/Bynder/gathercontent-csr/tree/main/webapp/src/js/gather-ui" target="_blank">**CSR →**</a>
 
 
 <div align="center">
