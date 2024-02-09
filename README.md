@@ -1,3 +1,8 @@
+> [!CAUTION]
+> This library has been deprecated in favour of <a href="https://www.npmjs.com/package/@gathercontent/ui">@gathercontent/ui</a> and <a href="https://www.npmjs.com/package/@gathercontent/icons">@gathercontent/icons</a>. No further updates will be made here.  
+> For any local development the contents of this repo have been moved to <a href="https://github.com/Bynder/gathercontent-csr/tree/main/webapp/src/js/gather-ui" target="_blank">**CSR →**</a>
+
+
 <div align="center">
 
 # Content Workflow UI Component Library 🧩
@@ -22,9 +27,6 @@ UI component library for all GatherContent components.
 **[🔗 Useful links](#-useful-links)**
 
 </div>
-
-> [!CAUTION]
-> This library is being sunsetted. There will be occasional updates for bug fixes and new components we require for legacy pages, but for the most part this is no longer being maintained.
 
 ## 🧑‍🎨 Usage
 
