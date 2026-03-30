@@ -82,7 +82,7 @@
     "classnames": "^2.3.1",
     "d3-ease": "^1.0.7",
     "debounce": "^1.2.1",
-    "linkifyjs": "^2.1.9",
+    "linkifyjs": "^4.3.2",
     "lodash": "^4.17.15",
     "moment": "^2.29.1",
     "pluralize": "^5.0.0",
@@ -178,7 +178,7 @@
     "ts-loader": "^9.4.3",
     "ts-migrate": "^0.1.35",
     "typescript": "^5.3.3",
-    "vite": "^4.4.9",
+    "vite": "^4.5.11",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.34.3"
@@ -187,6 +187,13 @@
     "@types/react": "^18.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "rollup": "^3.30.0",
+    "braces": "^3.0.3",
+    "minimatch": "^3.1.4",
+    "immutable": "^4.3.8",
+    "picomatch": "^2.3.2"
   },
   "targets": {
     "main": false
